@@ -12,4 +12,5 @@ nav_order: 2
 
 ![](../../assets/images/spring-introduction/회원관리 예제/1.png)
 
-<>
+<center><img src="https://github.com/jeongcode/jeongcode.github.io/blob/master/assets/images/spring-introduction/회원관리 예제/2.png"></center>
+
