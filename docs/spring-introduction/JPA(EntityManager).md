@@ -151,12 +151,12 @@ public class SpringConfig {
 }
 ```
 ✅SpringConfig 클래스가 등록될 때 생성자를 EntityManager로 변경한다.
-{: .fs-5 }
+{: .fs-3 }
 ✅MemberRepository가 등록될 때 JpaMemberRepository로 변경한다.
-{: .fs-5 }
+{: .fs-3 }
 * * *
 
-**JPQL**
+**JPQL** [출처](https://ict-nroo.tistory.com/116)
 - JPA를 사용하면 엔티티 객체를 중심으로 개발
 - 문제는 검색 쿼리
 - 검색을 할 때도 테이블이 아닌 엔티티 객체를 대상으로 검색을 해야한다.
@@ -167,4 +167,3 @@ public class SpringConfig {
 - SQL과 문법이 유사하고, SELECT, FROM, WHERE, GROUP BY, HAVING, JOIN등을 지원한다.
 - **JPQL은 엔티티 객체를 대상으로 쿼리를 질의하고**
 - **SQL은 데이터베이스 테이블을 대상으로 쿼리를 질의한다.**
->[출처](https://ict-nroo.tistory.com/116)
