@@ -166,7 +166,8 @@ class MemoryMemberRepositoryTest {
 
 ## Service 개발
 ### MemberService.java
-
+Blue label
+{: .label .label-blue }
 ```java
 package hello.hellospring.service;
 
