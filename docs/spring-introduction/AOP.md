@@ -102,6 +102,7 @@ public class TimeTraceAop {
 ✅스프링 컨테이너는 AOP가 있으면 가짜 스프링 빈(프록시)을 생성 하여 실제 스프링 빈을 호출 하기 전 프록시를 호출한다.
 {: .fs-3 }
 ![](../../assets/images/spring-introduction/AOP/5.png)
+📌
 - TimeTraceAop의 AOP 대상을 지정하는 @Around 코드를 보시면,
 - SpringConfig의 timeTraceAop() 메서드도 AOP로 처리하게 됩니다. 그런데 이게 바로 자기 자신인 TimeTraceAop를 생성하는 코드인 것이지요.
 - **그래서 순환참조 문제가 발생**합니다. 반면에 컴포넌트 스캔을 사용할 때는 AOP의 대상이 되는 이런 코드 자체가 없기 때문에 문제가 발생하지 않았습니다.
