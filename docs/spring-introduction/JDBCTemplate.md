@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 스프링 DB접근 기술 - JDBCTemplate
+title: JDBCTemplate
 parent: 스프링 입문
 nav_order: 4
 ---
 
-스프링 JdbcTemplate과 MyBatis같은 라이브러리는 JDBC API에서 본 반복 코드를 대부분 제거해준다.하지만 SQL은 직접 작성해야한다
+스프링 JdbcTemplate과 MyBatis같은 라이브러리는 JDBC API에서 본 반복 코드를 대부분 제거해준다.
 {: .label .blue-label}
 
 ### JdbcTemplateMemberRepository
@@ -87,5 +87,5 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
 
 ```
 ✅**SimpleJdbcTemplate 클래스는 JdbcTemplate 과 NamedParameterJdbcTemplate 을 합쳐 놓은 템플릿 클래스**
-이름 기반의 파라미터 설정과 인덱스 기반의 파라미터 설정을 모두 지원한다.
-이름 기반의 파라미터를 설정할 때에는 Map과 SqlParameterSource 두 가지 방법을 모두 사용할 수 있다.
+- 이름 기반의 파라미터 설정과 인덱스 기반의 파라미터 설정을 모두 지원한다.
+- 이름 기반의 파라미터를 설정할 때에는 Map과 SqlParameterSource 두 가지 방법을 모두 사용할 수 있다.

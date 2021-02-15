@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 스프링 DB접근 기술 - 순수JDBC
+title: 순수JDBC
 parent: 스프링 입문
 nav_order: 3
 ---
