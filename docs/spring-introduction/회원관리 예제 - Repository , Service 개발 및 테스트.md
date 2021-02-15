@@ -166,8 +166,7 @@ class MemoryMemberRepositoryTest {
 
 ## Service 개발
 ### MemberService.java
-Blue label
-{: .label .label-blue }
+
 ```java
 package hello.hellospring.service;
 
@@ -214,7 +213,7 @@ public class MemberService {
 **테스트코드 생성(Ctrl+Shift+T)**
 : ![](../../assets/images/spring-introduction/memberExample/5.png)
 
-#### MemberServiceTest.Java
+### MemberServiceTest.Java
 ```java
 package hello.hellospring.service;
 
