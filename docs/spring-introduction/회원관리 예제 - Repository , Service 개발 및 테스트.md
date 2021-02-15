@@ -6,8 +6,8 @@ nav_order: 2
 ---
 
 
-#### 데이터 : `회원ID , 이름`
-#### 기능 : `회원등록 , 조회`
+## 데이터 : `회원ID , 이름`
+## 기능 : `회원등록 , 조회`
 
 ![](../../assets/images/spring-introduction/memberExample/1.png)
 ![](../../assets/images/spring-introduction/memberExample/2.png)
