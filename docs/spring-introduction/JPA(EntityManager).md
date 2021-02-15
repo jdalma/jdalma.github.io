@@ -26,8 +26,9 @@ spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=none
 ```
 ✅JPA에서 날리는 쿼리를 볼 수 있다.
+{: .fs-3 }
 ✅테이블 자동 생성 기능을 끈다.
-
+{: .fs-3 }
 ### JpaMemberRepository
 ```java
 public class JpaMemberRepository implements MemberRepository {
@@ -111,11 +112,11 @@ public class MemberService {
 }
 ```
 ✅스프링은 해당 클래스의 메서드를 실행할 때 트랜잭션을 시작하고 , 메서드가 정상 졸료되면 트랜잭션을 커밋한다.
-{: .fs-5 }
+{: .fs-3 }
 ✅만약 런타임 예외가 발생하면 롤백한다.
-{: .fs-5 }
+{: .fs-3 }
 ✅JPA를 통한 모든 데이터 변경은 트랜잭션 안에서 실행해야 한다.
-{: .fs-5 }
+{: .fs-3 }
 
 ### SpringConfig 수정
 ```java
