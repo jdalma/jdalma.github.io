@@ -16,7 +16,7 @@ dependencies {
 }
 ```
 ✅`spring-boot-starter-data-jpa` 는 내부에 jdbc 관련 라이브러리를 포함한다. 따라서 jdbc는 제거해도 된다
-
+{: .fs-3 }
 ### application.properties
 ```yaml
 spring.datasource.url=jdbc:h2:tcp://localhost/~/test
