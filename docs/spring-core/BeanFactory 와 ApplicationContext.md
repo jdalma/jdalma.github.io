@@ -2,7 +2,7 @@
 layout: default
 title: BeanFactory 와 ApplicationContext
 grand_parent: 스프링 핵심
-parent: 스프링 컨테이너와 스프링 빈
+parent: 스프링 컨테이너와 빈
 nav_order: 2
 ---
 ![](../../assets/images/spring-core/spring-container&bean/10.png)
