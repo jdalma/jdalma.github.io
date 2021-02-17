@@ -29,6 +29,7 @@ nav_order: 2
 -   **ResourceLoader**
     -   파일 , 클래스패스 , 외부 등에서 리소스를 편리하게 조회
 
+
 ### 📌 **정리**
 
 -   ApplicationContext는 BeanFactory의 기능을 상속받는다.
