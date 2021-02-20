@@ -85,3 +85,29 @@ permalink: /docs/whiteship
 - [www.notion.so](https://www.notion.so/12-386f4cd47d37448fa0252d3ed22b45b7#daf688bdb061428d80fde6fc17215e1c)
 - [자바의 어노테이션과 리플랙션, 어노테이션 프로세서 - gowoonsori.site](https://gowoonsori.site/java/annotation/)
 - [b-programmer.tistory.com](https://b-programmer.tistory.com/264)
+
+
+***
+
+## **Whiteship 13주차(I/O) 보기**
+
+### Keyword
+- try-with-resource 방법
+- **보조 스트림**
+  - `new BufferedInputStream(fileInputStream , {size(default:8192)});`
+- **스트림과 채널 (Stream vs Channel)**
+- **넌버퍼와 버퍼 (non-buffer vs buffer)** (성능 차이)
+- **다이렉트/논 다이렉트 버퍼**
+  - in memory data grid
+  - [bytebuffer oracle article](https://blogs.oracle.com/javamagazine/creating-a-java-off-heap-in-memory-database)
+- **블로킹과 넌블로킹 (Blocking vs non-blocking)**
+
+
+### 참고 링크
+
+[13주차 과제: I/O](https://github.com/whiteship/live-study/issues/13)
+- [www.notion.so](https://www.notion.so/I-O-af9b3036338c43a8bf9fa6a521cda242)
+- 📌[자바의 입출력](https://blog.naver.com/swoh1227/222237603565)
+- 📌[NIO의 버퍼, 채널, 셀렉터, 파일 입출력 예제](https://blog.naver.com/swoh1227/222244309304)
+- 📌[성능비교](https://velog.io/@jaden_94/13%EC%A3%BC%EC%B0%A8-%ED%95%AD%ED%95%B4%EC%9D%BC%EC%A7%80-IO)
+- 📌[직렬화](https://watrv41.gitbook.io/devbook/java/java-live-study/13_week)
