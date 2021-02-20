@@ -210,13 +210,13 @@ public class OrderServiceImpl implements OrderService{
 - 생성자 주입을 사용하면 필드 `final`키워드를 사용할 수 있다.
 - 그래서 생성자에서 혹시라도 값이 설정되지 않았을 경우 오류를 컴파일 시점에서 막아준다.
 
-<center> <strong>수정자 주입</strong>
+<center> <strong>수정자 주입</strong></center>
 
-![](../../assets/images/spring-core/dependency-auto-injection/3.png)</center>
+![](../../assets/images/spring-core/dependency-auto-injection/3.png)
 
-<center> <strong>생성자 주입</strong>
+<center> <strong>생성자 주입</strong></center>
 
-![](../../assets/images/spring-core/dependency-auto-injection/4.png)</center>
+![](../../assets/images/spring-core/dependency-auto-injection/4.png)
 
 ### 📌 정리
 - 생성자 주입 방식을 선택하는 이유는 여러가지가 있지만 , 프레임워크에 의존하지 않고 , 순수한 자바 언어의 특징을 잘 살리는 방법 이기도 하다.
