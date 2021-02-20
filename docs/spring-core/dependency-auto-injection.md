@@ -10,7 +10,7 @@ nav_order: 5
 1. TOC
 {:toc}
 ---
-## **다양한 의존관계 주입 방법**
+## 📌 **다양한 의존관계 주입 방법**
 
 ### 의존관계 주입은 크게 4가지 방법이 있다.
 - **생성자 주입**
@@ -125,3 +125,101 @@ public class OrderServiceImpl implements OrderService{
 - `MemberRepository`와 `DiscountPolicy`를 잘 보면 `final`이 있는것도 있고 , 없는것도 있다
 - 그 이유는 **의존관계가 주입 되는 시점 차이** 때문이다.
 - **생성자 주입은 구현체가 스프링 빈에 등록 되기전에 호출 되기 때문에 `final`이 가능 하지만 나머지 의존관계 주입은 구현체가 스프링 빈에 등록 되고 난 후 이기 때문에 `final`을 적용할 수 없다.**
+
+***
+
+## **자동 주입 대상을 옵션으로 처리하는 방법**
+
+주입할 스프링 빈이 없어도 동작해야 할 때가 있다.
+**그런데 `@Autowired`만 사용하면 `required` 옵션의 기본값이 `true`로 되어 있어서 자동 주입 대상이 없으면 오류가 발생한다.**
+
+- `@Autowired(required=false)` : 자동 주입할 대상이 없으면 수정자 메서드 자체가 호출 안됨
+- `org.springframework.lang.@Nullable` : 자동 주입할 대상이 없으면 null이 입력된다.
+  - 스프링 전반적으로 지원된다
+- `Optinal<>` : 자동 주입할 대상이 없으면 `Optinal.empty`가 입력된다.
+
+### AutowiredTest.class
+```java
+public class AutowiredTest {
+
+    @Test
+    void AutowiredOption(){
+        AnnotationConfigApplicationContext ac =
+                          new AnnotationConfigApplicationContext(TestBean.class);
+    }
+
+    static class TestBean{
+
+        @Autowired(required=false)
+        public void setNoBean1(Member noBean1){
+            // 예) 스프링 컨테이너에 관리되는 것이 없을 때
+            // Member객체는 스프링 컨테이너에 관리되지 않는것이다.
+            System.out.println("noBean1 = " + noBean1);
+        }
+
+        @Autowired
+        public void setNoBean2(@Nullable Member noBean2){
+            System.out.println("noBean2 = " + noBean2);
+        }
+
+        @Autowired
+        public void setNoBean3(Optional<Member> noBean3){
+            System.out.println("noBean3 = " + noBean3);
+        }
+    }
+}
+```
+![](../../assets/images/spring-core/dependency-auto-injection/2.png)
+
+***
+
+## 📌 **생성자 주입을 선택해야 하는 이유**
+**과거에는 수정자 주입과 필드 주입을 많이 사용했지만 최근에는 스프링을 포함한 DI 프레임워크 대부분이 생성자 주입을 권장한다.**
+
+### "불변"
+- 대부분의 의존관계 주입은 한 번 일어나면 애플리케이션 종료 시점까지 의존관계를 변경할 일이 없다.
+- 오히려 대부분의 의존관계는 애플리케이션 종료 전 까지 변하면 안된다. (불변 해야한다.)
+- 수정자 주입을 사용하면 setXxx 메서드를 public으로 열어두어야한다.
+- 누군가 실수로 변경할 수 도 있고 , 변경하면 안되는 메서드를 열어두는 것은 좋은 설계 방법이 아니다.
+- 생성자 주입은 객체를 생성할 때 딱 1번만 호출되므로 이후에 호출되는 일이 없다. 따라서 불변하게 설계할 수 있다.
+
+### "누락"
+- 프레임 워크 없이 순수한 자바코드를 단위 테스트 하는 경우에
+- 다음 과 같이 수정자 의존 관계인 경우
+
+```java
+@Component
+public class OrderServiceImpl implements OrderService{
+    private MemberRepository memberRepository;
+    private DiscountPolicy discountPolicy;
+
+    @Autowired
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+}
+```
+`@Autowired`가 프레임워크 안에서 동작할 때는 의존관계가 없으면 오류가 발생한다.(**스프링 컨테이너를 실행시켜야 의존관계 주입이 가능하다**)
+
+### "final 키워드"
+- 생성자 주입을 사용하면 필드 `final`키워드를 사용할 수 있다.
+- 그래서 생성자에서 혹시라도 값이 설정되지 않았을 경우 오류를 컴파일 시점에서 막아준다.
+
+<center> <strong>수정자 주입</strong>
+
+![](../../assets/images/spring-core/dependency-auto-injection/3.png)</center>
+
+<center> <strong>생성자 주입</strong>
+
+![](../../assets/images/spring-core/dependency-auto-injection/4.png)</center>
+
+### 📌 정리
+- 생성자 주입 방식을 선택하는 이유는 여러가지가 있지만 , 프레임워크에 의존하지 않고 , 순수한 자바 언어의 특징을 잘 살리는 방법 이기도 하다.
+- 기본으로 생성자 주입을 사용하고 , 필수 값이 아닌 경우에는 수정자 주입 방식을 옵션으로 부여하면 된다.
+  - 생성자 주입과 수정자 주입을 동시에 사용할 수 있다.
+- **항상 생성자 주입을 선택해라!** 그리고 가끔 옵션이 필요하면 수정자 주입을 선택해라. 필드 주입은 사용하지 않는게 좋다.
