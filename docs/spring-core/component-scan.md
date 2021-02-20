@@ -4,16 +4,11 @@ title: 컴포넌트 스캔
 parent: 스프링 핵심
 nav_order: 4
 ---
-
-# 컴포넌트 스캔
-{: .no_toc }
-
 ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
-
 ---
 
 ## **컴포넌트 스캔과 의존관계 자동 주입**

@@ -4,10 +4,6 @@ title: JPA(EntityManager)
 parent: 스프링 입문
 nav_order: 5
 ---
-
-# JPA(EntityManager)
-{: .no_toc }
-
 ## Table of contents
 {: .no_toc .text-delta }
 

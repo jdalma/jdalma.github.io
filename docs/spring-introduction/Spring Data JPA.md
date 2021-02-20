@@ -4,10 +4,6 @@ title: Spring Data JPA
 parent: 스프링 입문
 nav_order: 6
 ---
-
-# Spring Data JPA
-{: .no_toc }
-
 ## Table of contents
 {: .no_toc .text-delta }
 
