@@ -40,7 +40,8 @@ public class OrderServiceImpl implements OrderService{
     ...
 ```
 
-> ✋ **생성자가 딱 1개만 있으면 @Autowired를 생략해도 자동 주입 된다.** (스프링 빈에만 해당한다)
+> ✋ **생성자가 딱 1개만 있으면 `@Autowired`를 생략해도 자동 주입 된다.**
+(스프링 빈에만 해당한다)
 
 ### 수정자 주입
 ```java
@@ -60,7 +61,8 @@ public class OrderServiceImpl implements OrderService{
     }
     ...
 ```
-> ✋ **`@Autowired`를 찾아 주입 하여 준다.**(`@Autowired`가 없으면 들어오지 않는다.)
+> ✋ **`@Autowired`를 찾아 주입 하여 준다.**
+(`@Autowired`가 없으면 들어오지 않는다.)
 `@Autowired`의 기본 동작은 주입할 대상이 없으면 오류가 발생한다.
 주입할 대상이 없어도 동작하게 하려면 `@Autowired(required = false)`로 지정하면 된다
 
@@ -120,6 +122,6 @@ public class OrderServiceImpl implements OrderService{
 > ✋ 의존관계 자동 주입은 스프링 컨테이너가 관리하는 스프링 빈이어야 동작한다.
 스프링 빈이 아닌 Member같은 클래스에서 `@Autowired` 코드를 적용해도 아무 기능도 하지 않는다.
 
-- MemberRepository와 DiscountPolicy를 잘 보면 final이 있는것도 있고 , 없는것도 있다
+- `MemberRepository`와 `DiscountPolicy`를 잘 보면 `final`이 있는것도 있고 , 없는것도 있다
 - 그 이유는 **의존관계가 주입 되는 시점 차이** 때문이다.
-- **생성자 주입은 구현체가 스프링 빈에 등록 되기전에 호출 되기 때문에 final이 가능 하지만 나머지 의존관계 주입은 구현체가 스프링 빈에 등록 되고 난 후 이기 때문에 final을 적용할 수 없다.**
+- **생성자 주입은 구현체가 스프링 빈에 등록 되기전에 호출 되기 때문에 `final`이 가능 하지만 나머지 의존관계 주입은 구현체가 스프링 빈에 등록 되고 난 후 이기 때문에 `final`을 적용할 수 없다.**
