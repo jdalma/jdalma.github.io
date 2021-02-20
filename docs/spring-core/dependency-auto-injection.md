@@ -4,7 +4,12 @@ title: 의존관계 자동 주입
 parent: 스프링 핵심
 nav_order: 5
 ---
+## Table of contents
+{: .no_toc .text-delta }
 
+1. TOC
+{:toc}
+---
 ## **다양한 의존관계 주입 방법**
 
 ### 의존관계 주입은 크게 4가지 방법이 있다.
