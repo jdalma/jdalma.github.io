@@ -5,6 +5,17 @@ grand_parent: 스프링 핵심
 parent: 스프링 핵심 원리 이해
 nav_order: 4
 ---
+
+# IoC , DI 그리고 컨테이너
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 ### **제어의 역전(IoC - Inversion Of Control)**
 
 -   기존 프로그램은 클라이언트 구현 객체가 스스로 필요한 서버 구현 객체를 생성하고 , 연결하고 , 실행했다.

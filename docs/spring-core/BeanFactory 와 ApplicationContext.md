@@ -5,6 +5,17 @@ grand_parent: 스프링 핵심
 parent: 스프링 컨테이너와 빈
 nav_order: 2
 ---
+
+# BeanFactory 와 ApplicationContext
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 ![](../../assets/images/spring-core/spring-container&bean/10.png)
 ### **BeanFactory**
 

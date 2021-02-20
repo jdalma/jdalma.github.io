@@ -16,8 +16,9 @@ nav_order: 7
 
 ---
 
--   **모든 메소드의 호출 시간을 측정하고 싶다면?**
--   **공통 관심 사항(Cross-Cutting Concern) vs 핵심 관심 사항(Core Concern)**
+## **모든 메소드의 호출 시간을 측정하고 싶다면?**
+
+###  **공통 관심 사항(Cross-Cutting Concern) vs 핵심 관심 사항(Core Concern)**
 
 ![](../../assets/images/spring-introduction/AOP/1.png)
 ```java
@@ -37,14 +38,14 @@ public Long join(Member member){
     }
 }
 ```
-🚨 **문제**
+### 🚨 **문제**
 -   회원가입 , 회원 조회에 시간을 측정하는 기능은 핵싱 관심 사항이 아니다.
 -   시간을 측정하는 로직은 공통 관심 사항이다.
 -   시간을 측정하는 로직과 핵심 비즈니스의 로직이 섞여서 유지보수가 어렵다.
 -   시간을 측정하는 로직을 별도의 공통 로직으로 만들기 매우 어렵다.
 -   시간을 측정하는 로직을 변경할 때 모든 로직을 찾아가면서 변경해야 한다.
 
-### AOP 적용
+## **AOP 적용**
 -   **AOP : Aspect Oriented Programming**
 -   공통 관심 사항(Cross-Cutting Concern) vs 핵심 관심 사항(Core Concern) 분리
 
@@ -53,7 +54,7 @@ public Long join(Member member){
 **시간 측정 AOP등록**
 - 정형화 되지 않고 특수한 기능들은 컴포넌트 스캔보다 직접 자바 빈으로 등록
 
-### SpringConfig
+### **SpringConfig**
 ```java
 @Configuration
 public class SpringConfig {
@@ -85,7 +86,7 @@ public class SpringConfig {
 //    }
 }
 ```
-### TimeTraceAop
+### **TimeTraceAop**
 ```java
 @Aspect
 //@Component
@@ -114,7 +115,7 @@ public class TimeTraceAop {
 {: .fs-3 }
 ![](../../assets/images/spring-introduction/AOP/5.png)
 
-### 📌순환참조 문제
+### **📌순환참조 문제**
 - TimeTraceAop의 AOP 대상을 지정하는 @Around 코드를 보시면,
 - SpringConfig의 timeTraceAop() 메서드도 AOP로 처리하게 됩니다. 그런데 이게 바로 자기 자신인 TimeTraceAop를 생성하는 코드인 것이지요.
 - **그래서 순환참조 문제가 발생**합니다. 반면에 컴포넌트 스캔을 사용할 때는 AOP의 대상이 되는 이런 코드 자체가 없기 때문에 문제가 발생하지 않았습니다.
