@@ -5,10 +5,20 @@ parent: 스프링 입문
 nav_order: 4
 ---
 
+# JDBCTemplate
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 스프링 JdbcTemplate과 MyBatis같은 라이브러리는 JDBC API에서 본 반복 코드를 대부분 제거해준다.
 {: .label .blue-label}
 
-### JdbcTemplateMemberRepository
+### **JdbcTemplateMemberRepository**
 ```java
 public class JdbcTemplateMemberRepository implements MemberRepository {
 
@@ -61,7 +71,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
 }
 ```
 ![](../../assets/images/spring-introduction/JDBCTemplate/1.png)
-✅ **query메소드**
+### ✅ **query메소드**
 - query() 메소드는 파라미터의 sql을 실행하고, **결과로 나온 ResultSet을 RowMapper가 JAVA의 객체로 변환한다.** 그리고 sql 파라미터가 **인덱스 기반 파라미터를 가진 쿼리**(preparedStatement의 물음인 경우) 각 파라미터의 값을 args로 지정한다.
 
 **람다 적용**

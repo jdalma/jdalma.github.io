@@ -18,7 +18,7 @@ nav_order: 3
 주의! 이렇게 JDBC API로 직접 코딩하는 것은 20년 전 이야기 이다. 참고만 하자
 {: .label .label-red }
 
-### build.gradle 라이브러리 추가
+### **build.gradle 라이브러리 추가**
 ```java
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -28,7 +28,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 ```
-### application.properties
+### **application.properties**
 ```yaml
 spring.datasource.url=jdbc:h2:tcp://localhost/~/test"
 spring.datasource.driver-class-name=org.h2.Driver
@@ -36,7 +36,7 @@ spring.datasource.username=sa
 ```
 ✅스프링부트 2.4부터는 `spring.datasource.username=sa`를 꼭 추가해주어야 한다. 그렇지 않으면`Wrong user name or password` 오류가 발생한다.
 * * *
-### JdbcMemberRepository.java
+### **JdbcMemberRepository.java**
 ```java
 public class JdbcMemberRepository implements MemberRepository {
 
@@ -183,7 +183,7 @@ private Connection getConnection() {
     return DataSourceUtils.getConnection(dataSource);
 }
 ```
-### SpringConfig.Java
+### **SpringConfig.Java**
 ```java
 @Configuration
 public class SpringConfig {

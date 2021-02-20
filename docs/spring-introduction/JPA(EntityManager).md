@@ -4,7 +4,18 @@ title: JPA(EntityManager)
 parent: 스프링 입문
 nav_order: 5
 ---
-### build.gradle 수정
+
+# JPA(EntityManager)
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+### **build.gradle 수정**
 ```java
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -17,7 +28,7 @@ dependencies {
 ```
 ✅`spring-boot-starter-data-jpa` 는 내부에 jdbc 관련 라이브러리를 포함한다. 따라서 jdbc는 제거해도 된다
 {: .fs-3 }
-### application.properties
+### **application.properties**
 ```yaml
 spring.datasource.url=jdbc:h2:tcp://localhost/~/test
 spring.datasource.driver-class-name=org.h2.Driver
@@ -29,7 +40,7 @@ spring.jpa.hibernate.ddl-auto=none
 {: .fs-3 }
 ✅테이블 자동 생성 기능을 끈다.
 {: .fs-3 }
-### JpaMemberRepository
+### **JpaMemberRepository**
 ```java
 public class JpaMemberRepository implements MemberRepository {
 
@@ -67,7 +78,7 @@ public class JpaMemberRepository implements MemberRepository {
 }
 ```
 
-### MemberService
+### **MemberService**
 ```java
 @Transactional
 public class MemberService {
@@ -118,7 +129,7 @@ public class MemberService {
 ✅JPA를 통한 모든 데이터 변경은 트랜잭션 안에서 실행해야 한다.
 {: .fs-3 }
 
-### SpringConfig 수정
+### **SpringConfig 수정**
 ```java
 @Configuration
 public class SpringConfig {
@@ -156,7 +167,7 @@ public class SpringConfig {
 {: .fs-3 }
 * * *
 
-**JPQL** [출처](https://ict-nroo.tistory.com/116)
+### **JPQL** [출처](https://ict-nroo.tistory.com/116)
 - JPA를 사용하면 엔티티 객체를 중심으로 개발
 - 문제는 검색 쿼리
 - 검색을 할 때도 테이블이 아닌 엔티티 객체를 대상으로 검색을 해야한다.
