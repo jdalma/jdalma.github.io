@@ -5,9 +5,6 @@ nav_order: 20
 permalink: /docs/whiteship
 ---
 
-# 기록하기
-{: .no_toc }
-
 ## Table of contents
 {: .no_toc .text-delta }
 
