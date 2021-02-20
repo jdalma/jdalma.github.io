@@ -120,6 +120,6 @@ compress_html:
   endings: all
   startings: []
   blanklines: false
-  profile: false
+  profile: true
   # ignore:
   #   envs: all
