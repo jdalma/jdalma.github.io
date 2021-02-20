@@ -127,6 +127,193 @@ close : http://hello-spring.dev
 - 초기화 , 소멸 메소드의 이름을 변경할 수 없다.
 - 내가 코드를 고칠 수 없는 외부라이브러리에 적용할 수 없다.
 
+***
+
 ### 설정 정보에 초기화 메서드 , 종료 메서드 지정
+**설정 정보에 `@Bean(InitMethod="init" , destroyMethod="close")`처럼 초기화 , 소멸 메소드를 지정할 수 있다.**
+
+#### Class
+```java
+public class NetworkClient{
+    private String url;
+
+    public NetworkClient() {
+        System.out.println("생성자 호출 , url = " + url);
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    // 서비스 시작시 호출
+    public void connect(){
+        System.out.println("Connect : " + url);
+    }
+
+    public void call(String message){
+        System.out.println("Call : " + url + " message : "+ message);
+    }
+
+    // 서비스 종료시 호출
+    public void disconnect(){
+        System.out.println("close : " + url);
+    }
+
+    // 의존관계 주입이 끝나면 호출
+    public void init() throws Exception {
+        connect();
+        call("초기화 연결 메시지");
+    }
+
+    // 종료될 때
+    public void close() throws Exception {
+        System.out.println("destory");
+        disconnect();
+    }
+}
+```
+
+#### Test
+```java
+public class BeanLifeCycleTest {
+
+    @Test
+    public void lifeCycleTest(){
+        // 스프링 컨테이너 생성
+        AnnotationConfigApplicationContext ac =
+                new AnnotationConfigApplicationContext(LifeCycleConfig.class);
+        NetworkClient bean = ac.getBean(NetworkClient.class);
+
+        // 스프링 컨테이너 종료
+        ac.close();
+    }
+
+    @Configuration
+    static class LifeCycleConfig{
+        @Bean(initMethod = "init" , destroyMethod = "close")
+        public NetworkClient networkClient(){
+            NetworkClient networkClient = new NetworkClient();
+            networkClient.setUrl("http://hello-spring.dev");
+            return networkClient;
+        }
+    }
+}
+```
+#### 출력
+```
+생성자 호출 , url = null
+Connect : http://hello-spring.dev
+Call : http://hello-spring.dev message : 초기화 연결 메시지
+destory
+close : http://hello-spring.dev
+```
+
+#### 설정 정보 사용 특징
+- **`@Bean`에서만 사용 가능하다.**
+- 메소드 이름을 자유롭게 줄 수 있다.
+- 스프링 빈이 스프링 코드에 의존하지 않는다.
+- **코드가 아니라 설정 정보를 사용하기 때문에 코드를 고칠 수 없는 외부 라이브러리에도 초기화 , 종료 메소드를 적용할 수 있다.**
+
+#### 종료 메소드 추론
+- `@Bean`의 `destroyMethod`에는 아주 특별한 기능이 있다.
+- 라이브러리는 대부분 `close` , `shutdown`이라는 이름의 종료 메소드를 사용한다.
+- `@Bean`의 `destroyMethod`는 기본값이 **"inferred"**(추론)으로 등록 되어 있다.
+- 이 추론 기능은 `close` , `shutdown`이라는 이름의 메서드를 자동으로 호출해준다.
+- 이름 그대로 종료 메소드를 추론해서 호출 해준다.
+- **따라서 스프링 빈`@Bean`으로 등록하면 종료 메소드는 따로 적어주지 않아도 잘 동작한다**
+- 추론 기능을 사용하기 싫으면 빈 공백을 지정하면 된다.
+
+***
 
 ### 📌 `@PostConstruct` , `@PreDestory` 애노테이션 지정 (권장)
+
+#### Class
+```java
+package hello.core.lifeCycle;
+
+// javax는 자바에서 공식적으로 지원하는 것들
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+public class NetworkClient{
+    private String url;
+
+    public NetworkClient() {
+        System.out.println("생성자 호출 , url = " + url);
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    // 서비스 시작시 호출
+    public void connect(){
+        System.out.println("Connect : " + url);
+    }
+
+    public void call(String message){
+        System.out.println("Call : " + url + " message : "+ message);
+    }
+
+    // 서비스 종료시 호출
+    public void disconnect(){
+        System.out.println("close : " + url);
+    }
+
+    // 의존관계 주입이 끝나면 호출
+    @PostConstruct
+    public void init() throws Exception {
+        connect();
+        call("초기화 연결 메시지");
+    }
+
+    // 서버가 종료 될 때
+    @PreDestroy
+    public void close() throws Exception {
+        System.out.println("destory");
+        disconnect();
+    }
+}
+```
+
+#### Test
+```java
+public class BeanLifeCycleTest {
+
+    @Test
+    public void lifeCycleTest(){
+        // 스프링 컨테이너 생성
+        AnnotationConfigApplicationContext ac =
+                new AnnotationConfigApplicationContext(LifeCycleConfig.class);
+        NetworkClient bean = ac.getBean(NetworkClient.class);
+
+        // 스프링 컨테이너 종료
+        ac.close();
+    }
+
+    @Configuration
+    static class LifeCycleConfig{
+        @Bean
+        public NetworkClient networkClient(){
+            NetworkClient networkClient = new NetworkClient();
+            networkClient.setUrl("http://hello-spring.dev");
+            return networkClient;
+        }
+    }
+}
+```
+
+#### 출력
+```java
+생성자 호출 , url = null
+Connect : http://hello-spring.dev
+Call : http://hello-spring.dev message : 초기화 연결 메시지
+destory
+close : http://hello-spring.dev
+```
+
+#### 특징
+- **최신 스프링에서 가장 권장하는 방법이다.**
+- 스프링에 종속적인 기술이 아니라 JSR-250이라는 자바 표준이다.따라서 스프링이 아닌 다른 컨테이너에서도 동작한다.
+- 컴포넌트 스캔(자동 빈 등록)과 잘 어울린다.
+- **유일한 단점은 외부 라이브러리에는 적용하지 못한다는 것이다. 외부 라이브러리를 초기화 , 종료 해야하면 `@Bean`의 기능을 사용하자**
