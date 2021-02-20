@@ -5,6 +5,17 @@ parent: 스프링 입문
 nav_order: 6
 ---
 
+# Spring Data JPA
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+## **Spring Data JPA**
 - <span style="color:red; font-weight:bold">주의! Spring Data JPA</span>는 JPA를 편리하게 사용하도록 도와주는 기술이다.
 - 따라서 JPA를 먼저 학습한 후에 **Spring Data JPA**를 학습해야 한다
 -   스프링 부트와 JPA만 사용해도 개발 생산성이 정말 많이 증가하고 , 개발해야할 코드도 확연히 줄어든다.
@@ -13,7 +24,7 @@ nav_order: 6
 -   따라서 개발자는 핵심 비즈니스 로직을 개발하는데 집중할 수 있다.
 -   실무에서 관계형 데이터베이스를 사용한다면 **Spring Data JPA**는 선택이 아니라 필수이다.
 
-### SpringDataJpaMemberRepository
+### **SpringDataJpaMemberRepository**
 ```java
 package hello.hellospring.repository;
 
@@ -36,7 +47,7 @@ public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Lon
 {: .fs-3 }
 
 
-### SpringConfig
+### **SpringConfig**
 ```java
 package hello.hellospring;
 
@@ -78,12 +89,12 @@ public class SpringConfig {
 ```
 ![](../../assets/images/spring-introduction/SpringDataJPA/1.png)
 
-### Spring Data JPA 제공 기능
+### **Spring Data JPA 제공 기능**
 - 인터페이스를 통한 기본적인 CRUD
 - findByName() , findById() 처럼 메서드 이름 만으로 조회 기능 제공
 - 페이징 기능 자동 제공
 
-#### 참고
+### **참고**
 - 실무에서는 JPA와 스프링 데이터 JPA를 기본으로 사용하고, 복잡한 동적 쿼리는 Querydsl이라는 라이브러리를 사용하면 된다.
 - Querydsl을 사용하면 쿼리도 자바 코드로 안전하게 작성할 수 있고, 동적 쿼리도 편리하게 작성할 수 있다.
 - 이 조합으로 해결하기 어려운 쿼리는 JPA가 제공하는 네이티브 쿼리를 사용하거나, 앞서 학습한 스프링 JdbcTemplate를 사용하면 된다.
