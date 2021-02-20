@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Configuration
-nav_order: 50
-nav_exclude: true
+nav_order: 2
 ---
 
 # Configuration
