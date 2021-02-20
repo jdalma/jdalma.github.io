@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 기록
-nav_order: 1
-permalink: /docs/records
+title: Whiteship 라이브 스터디 보기
+nav_order: 20
+permalink: /docs/whiteship
 ---
 
 # 기록하기
