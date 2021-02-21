@@ -49,12 +49,14 @@ public OrderService orderService(){
 ✅반면에 **프로토타입 스코프를 스프링 컨테이너에 조회하면 스프링 컨테이너는 항상 새로운 인스턴스를 생성해서 반환한다.**
 
 ### 싱글톤 빈 요청
+
 ![](../../assets/images/spring-core/bean-scope/1.png)
 - 싱글 톤 스코프의 빈을 스프링 컨테이너에 요청 한다.
 - 스프링 컨테이너는 본인이 관리하는 스프링 빈을 반환한다.
 - 이후에 스프링 컨테이너에 같은 요청이 와도 같은 객체 인스턴스의 스프링 빈을 반환한다.
 
-### 싱글톤 테스트
+##### 테스트
+
 <div class="code-example" markdown="1">
 SingletonTest
 </div>
@@ -105,7 +107,8 @@ public class SingletonTest {
 - 스프링 컨테이너는 생성한 프로토타입 빈을 클라이언트에 반환한다.
 - **이후에 스프링 컨테이너에 같은 요청이 오면 항상 새로운 프로토타입 빈을 생성해서 반환한다.**
 
-### 프로토타입 테스트
+##### 테스트
+
 <div class="code-example" markdown="1">
 PrototypeTest
 </div>
@@ -167,6 +170,7 @@ public class PrototypeTest {
 하지만 **싱글톤 빈과 함께 사용할 때는 의도한 대로 잘 동작하지 않으므로 주의해야 한다.**
 
 ### 프로토타입 빈 직접 요청
+
 ![](../../assets/images/spring-core/bean-scope/4.png)
 - 클라이언트A는 스프링 컨테이너에 프로토타입 빈을 요청한다.
 - 스프링 컨테이너는 프로토타입 빈을 새로 생성해서 반환`('x01')`한다. 해당 빈의 `count` 필드 값은 `0`이다.
@@ -231,6 +235,7 @@ public class SingletonWithPrototypeTest1 {
 ```
 
 ### 싱글톤 빈에서 프로토타입 빈 사용
+
 **이번에는 clientBean이라는 싱글톤 빈이 의존관계 주입을 통해서 프로토타입 빈을 주입받아서 사용하는 예를 보자**
 
 ![](../../assets/images/spring-core/bean-scope/6.png)
@@ -325,10 +330,9 @@ clientB -> prototypeBean@x02
 
 ### 📌 문제 해결
 싱글톤 빈과 프로토타입 빈을 함께 사용할 때 ,
-
 **어떻게 하면 사용할 때 마다 항상 새로운 프로토타입 빈을 생성할 수 있을까?**
 
-##### 스프링 컨테이너에 요청
+##### 스프링 컨테이너에 요청 (ObjectProvider , ObjectFactory)
 
 ✅**가장 간단한 방법은 싱글톤 빈이 프로토타입을 사용할 때 마다 스프링 컨테이너에 새로 요청하는 것이다.**
 
@@ -336,3 +340,81 @@ clientB -> prototypeBean@x02
 - **의존관계를 외부에서 주입(DI)받는게 아니라 이렇게 직접 필요한 의존관계를 찾는 것을 Dependency Lookup(DL)의존관계 조회(탐색) 이라 한다.**
 - 그런데 이렇게 스프링의 애플리케이션 컨텍스트 전체를 주입 받게 되면 , 스프링 컨테이너에 종속적인 코드가 되고 ,단위 테스트도 어려워 진다.
 - 지금 필요한 기능은 지정한 프로토타입 빈을 컨테이너 에서 대신 찾아주는 DL정도의 기능만 제공하는 무언가가 있으면 된다.
+
+✅**ObjectProvider , ObjectFactory**
+```java
+@Scope("singleton")
+static class ClientBean{
+    @Autowired
+    private ObjectProvider<PrototypeBean> prototypeBeanProvider;
+
+    public int logic(){
+        PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
+        prototypeBean.addCount();
+        return prototypeBean.getCount();
+    }
+}
+
+@Scope("singleton")
+static class ClientBean{
+    @Autowired
+    private ObjectFactory<PrototypeBean> prototypeBeanProvider;
+
+    public int logic(){
+        PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
+        prototypeBean.addCount();
+        return prototypeBean.getCount();
+    }
+}
+```
+
+**ObjectProvider**
+- `prototypeBeanProvider.getObject()`는 `ac.getBean()` 처럼 **스프링 컨테이너를 통해 (제네릭에 정의된) `PrototypeBean`을 찾아 반환해준다. (DL)**
+- 스프링이 제공하는 기능을 사용하지만 , 기능이 단순하므로 단위테스트를 만들거나 mock코드를 만들기는 훨씬 쉬워진다.
+- **너무 무거운 `ac`를 새로 생성하는 것 보다 딱 필요한 DL정도의 기능만 제공한다.**
+
+**ObjectFactory**
+- 상속 , 옵션 , 스트림 처리의 편의 기능이 많다.
+- 기능이 단순 , 별도의 라이브러리 필요 없고 , 스프링에 의존한다.
+- `getObject()` 메소드 하나만 존재한다.
+
+
+##### JSR-330 Provider (자바 표준)
+
+**마지막 방법은 javax.inject.Provider라는 JSR-330 자바 표준을 사용하는 방법이다.**
+
+<div class="code-example" markdown="1">
+Gradle추가
+</div>
+```
+implementation 'javax.inject:javax.inject:1'
+```
+```java
+@Scope("singleton")
+static class ClientBean{
+    @Autowired
+    private Provider<PrototypeBean> prototypeBeanProvider;
+
+    public int logic(){
+        PrototypeBean prototypeBean = prototypeBeanProvider.get();
+        prototypeBean.addCount();
+        return prototypeBean.getCount();
+    }
+}
+```
+
+![](../../assets/images/spring-core/bean-scope/9.png)
+- `provider.get()`을 통해 항상 새로운 프로토타입 빈을 생성한다.
+- `provider.get()`을 호출하면 내부에서는 스프링 컨테이너를 통해 해당 빈을 찾아서 반환한다.(DL)
+- 기능이 단순하므로 단위테스트를 만들거나 mock코드를 만들기는 훨씬 쉬워진다.
+- Provider는 지금 딱 필요한 DL정도의 기능만 제공한다.
+- 자바 표준이므로 스프링이 아닌 다른 컨테이너에서도 사용할 수 있다.
+
+* * *
+
+### ❓ 프로토타입 빈을 언제 사용할까
+
+- **매번 사용할 때 마다 의존관계 주입이 완료된 새로운 객체가 필요하면 사용하면 된다.**
+- 그런데 실무에서 개발하다 보면 싱글톤 빈으로 대부분의 문제를 해결할 수 있기 때문에 프로토타입 빈을 직접 적으로 사용하는 경우는 매우 드물다.
+- ObjectProvider는 DL을 위한 편의 기능을 많이 제공해주고 , 스프링 외에 별도의 의존관계 추가가 필요 없이 때문에 편리하다.
+- 만약 코드를 스프링이 아닌 다른 컨테이너에서도 사용할 수 있어야 한다면 JSR-330 Provider를 사용해야 한다.
