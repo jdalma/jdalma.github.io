@@ -139,9 +139,10 @@ nav_order: 1
 **scheme**
 {: .fh-default .fs-5 }
 
-<span style="color:red; font-weight:bold">scheme</span> `//[userinfo@]host[:port][/path][?query][#fragment]`  
-
+<span style="color:red; font-weight:bold">scheme</span> `//[userinfo@]host[:port][/path][?query][#fragment]`
+{: .fh-default .fs-6 }
 <span style="color:red; font-weight:bold">https</span> `//www.google.com:443/search?q=hello&hl=ko`
+{: .fh-default .fs-6 }
 
 -   주로 프로토콜 사용
 -   프로토콜 : 어떤 방식으로 자원에 접근할 것인가 하는 약속 규칙
