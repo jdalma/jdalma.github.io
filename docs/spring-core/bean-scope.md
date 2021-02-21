@@ -48,7 +48,7 @@ public OrderService orderService(){
 
 
 ### 싱글톤 빈 요청
-
+{: .fh-default }
 ![](../../assets/images/spring-core/bean-scope/1.png)
 - 싱글 톤 스코프의 빈을 스프링 컨테이너에 요청 한다.
 - 스프링 컨테이너는 본인이 관리하는 스프링 빈을 반환한다.
@@ -98,6 +98,7 @@ public class SingletonTest {
 ```
 
 ### 프로토타입 빈 요청
+{: .fh-default }
 ![](../../assets/images/spring-core/bean-scope/2.png)
 - 프로토타입 스코프의 빈을 스프링 컨테이너에 요청한다.
 - **스프링 컨테이너는 이 시점에 프로토타입 빈을 생성하고 , 필요한 의존관계를 주입한다. (요청 시점에 생성한다.)**
@@ -169,7 +170,7 @@ public class PrototypeTest {
 
 
 ### 프로토타입 빈 직접 요청
-
+{: .fh-default }
 ![](../../assets/images/spring-core/bean-scope/4.png)
 - 클라이언트A는 스프링 컨테이너에 프로토타입 빈을 요청한다.
 - 스프링 컨테이너는 프로토타입 빈을 새로 생성해서 반환`('x01')`한다. 해당 빈의 `count` 필드 값은 `0`이다.
@@ -235,7 +236,7 @@ public class SingletonWithPrototypeTest1 {
 ```
 
 ### 싱글톤 빈에서 프로토타입 빈 사용
-
+{: .fh-default }
 
 **이번에는 clientBean이라는 싱글톤 빈이 의존관계 주입을 통해서 프로토타입 빈을 주입받아서 사용하는 예를 보자**
 
@@ -336,7 +337,7 @@ clientB -> prototypeBean@x02
 **어떻게 하면 사용할 때 마다 항상 새로운 프로토타입 빈을 생성할 수 있을까?**
 
 ##### 스프링 컨테이너에 요청 (ObjectProvider , ObjectFactory)
-
+{: .fh-default }
 
 ✅**가장 간단한 방법은 싱글톤 빈이 프로토타입을 사용할 때 마다 스프링 컨테이너에 새로 요청하는 것이다.**
 
@@ -384,7 +385,7 @@ static class ClientBean{
 
 
 ##### JSR-330 Provider (자바 표준)
-
+{: .fh-default }
 
 **마지막 방법은 javax.inject.Provider라는 JSR-330 자바 표준을 사용하는 방법이다.**
 
