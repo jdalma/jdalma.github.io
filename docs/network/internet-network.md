@@ -139,7 +139,7 @@ nav_order: 1
 **scheme**
 {: .fh-default .fs-5 }
 
-<span style="color:red; font-weight:bold">scheme</span> `//[userinfo@]host[:port][/path][?query][#fragment]`
+<span style="color:red; font-weight:bold">scheme</span> `//[userinfo@]host[:port][/path][?query][#fragment]`  
 
 <span style="color:red; font-weight:bold">https</span> `//www.google.com:443/search?q=hello&hl=ko`
 
