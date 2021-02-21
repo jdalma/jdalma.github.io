@@ -46,6 +46,7 @@ public OrderService orderService(){
 
 ✅반면에 **프로토타입 스코프를 스프링 컨테이너에 조회하면 스프링 컨테이너는 항상 새로운 인스턴스를 생성해서 반환한다.**
 
+
 ### 싱글톤 빈 요청
 
 ![](../../assets/images/spring-core/bean-scope/1.png)
@@ -106,7 +107,6 @@ public class SingletonTest {
 - **이후에 스프링 컨테이너에 같은 요청이 오면 항상 새로운 프로토타입 빈을 생성해서 반환한다.**
 
 ##### 테스트
-
 <div class="code-example" markdown="1">
 PrototypeTest
 </div>
@@ -167,6 +167,7 @@ public class PrototypeTest {
 
 하지만 **싱글톤 빈과 함께 사용할 때는 의도한 대로 잘 동작하지 않으므로 주의해야 한다.**
 
+
 ### 프로토타입 빈 직접 요청
 
 ![](../../assets/images/spring-core/bean-scope/4.png)
@@ -180,6 +181,7 @@ public class PrototypeTest {
 - 스프링 컨테이너는 프로토타입 빈을 새로 생성해서 반환`('x02')`한다. 해당 빈의 `count` 필드 값은 `0`이다.
 - 클라이언트는 조회한 프로토타입 빈에 `addCount()`를 호출하면서 `count` 필드를 `+1` 한다.
 - 결과적으로 프로토타입 빈`('x02')`의 `count`는 `1`이 된다.
+
 
 #####  테스트
 ```java
@@ -233,7 +235,10 @@ public class SingletonWithPrototypeTest1 {
 ```
 
 ### 싱글톤 빈에서 프로토타입 빈 사용
+
+
 **이번에는 clientBean이라는 싱글톤 빈이 의존관계 주입을 통해서 프로토타입 빈을 주입받아서 사용하는 예를 보자**
+
 
 ![](../../assets/images/spring-core/bean-scope/6.png)
 - `clientBean`은 싱글톤 이므로 , 보통 스프링 컨테이너 생성 시점에 함께 생성되고 , 의존관계 주입도 발생한다.
@@ -253,6 +258,7 @@ public class SingletonWithPrototypeTest1 {
 - 클라이언트B는 `clientBean.logic()` (addCount메소드 포함)을 호출한다.
 - `clientBean`은 `prototypeBean`의 `addCount()`를 호출해서 프로토타입 빈의 `count`를 증가한다.
 - 원래 `1`이였으므로 `2`가 된다.
+
 
 ##### 테스트
 ```java
@@ -331,6 +337,7 @@ clientB -> prototypeBean@x02
 
 ##### 스프링 컨테이너에 요청 (ObjectProvider , ObjectFactory)
 
+
 ✅**가장 간단한 방법은 싱글톤 빈이 프로토타입을 사용할 때 마다 스프링 컨테이너에 새로 요청하는 것이다.**
 
 - `ac.getBean()`을 통해서 항상 새로운 프로토타입 빈이 생성되는 것을 확인할 수 있다.
@@ -376,7 +383,9 @@ static class ClientBean{
 - `getObject()` 메소드 하나만 존재한다.
 
 
-##### JSR-330 Provider (자바 표준)  
+##### JSR-330 Provider (자바 표준)
+
+
 **마지막 방법은 javax.inject.Provider라는 JSR-330 자바 표준을 사용하는 방법이다.**
 
 <div class="code-example" markdown="1">
