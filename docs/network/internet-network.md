@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 네트워크
+title: 인터넷 네트워크
 parent: HTTP웹 기본 지식
 nav_order: 1
 ---
@@ -137,12 +137,12 @@ nav_order: 1
 | 쿼리 파라미터 | q=hello&hl=ko |
 
 **scheme**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-6 }
 
 <span style="color:red; font-weight:bold">scheme</span> `//[userinfo@]host[:port][/path][?query][#fragment]`
-{: .fh-default .fs-6 }
+{: .fh-default .fs-5 }
 <span style="color:red; font-weight:bold">https</span> `//www.google.com:443/search?q=hello&hl=ko`
-{: .fh-default .fs-6 }
+{: .fh-default .fs-5 }
 
 -   주로 프로토콜 사용
 -   프로토콜 : 어떤 방식으로 자원에 접근할 것인가 하는 약속 규칙
@@ -151,37 +151,44 @@ nav_order: 1
 -   https는 http에 보안 추가(HTTP Secure)
 
 **userinfo**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-6 }
 
 <span style="color:red; font-weight:bold">scheme</span> //**`[userinfo@]`** host[:port][/path][?query][#fragment]
+{: .fh-default .fs-5 }
 
 -   URL에 사용자정보를 포함해서 인증
 -   거의 사용하지 않음
 
 **host**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-6 }
 
 <span style="color:red; font-weight:bold">scheme</span> //[userinfo@]**`host`**[:port][/path][?query][#fragment]
+{: .fh-default .fs-5 }
 <span style="color:red; font-weight:bold">https</span> //**`www.google.com`**:443/search?q=hello&hl=ko
+{: .fh-default .fs-5 }
 
 -   호스트명
 -   도메인명 또는 IP주소를 직접 사용 가능
 
 **port**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-6 }
 
 <span style="color:red; font-weight:bold">scheme</span> //[userinfo@]host **`[:port]`**[/path][?query][#fragment]
+{: .fh-default .fs-5 }
 <span style="color:red; font-weight:bold">https</span> //www.google.com:**`443`**/search?q=hello&hl=ko
+{: .fh-default .fs-5 }
 
 -   포트 (PORT)
 -   접속 포트
 -   일반적으로 생략 (생략 시 http는 80 , https는 443)
 
 **path**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-6 }
 
 <span style="color:red; font-weight:bold">scheme</span> //[userinfo@]host[:port]**`[/path]`**[?query][#fragment]
+{: .fh-default .fs-5 }
 <span style="color:red; font-weight:bold">https</span> //www.google.com:443/**`search`**?q=hello&hl=ko
+{: .fh-default .fs-5 }
 
 -   리소스 경로 , 계층적 구조
 -   예)
@@ -191,10 +198,12 @@ nav_order: 1
     -   `/items/iphone12`
 
 **query**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-6 }
 
 <span style="color:red; font-weight:bold">scheme</span> //[userinfo@]host[:port][/path]**`[?query]`**[#fragment]
+{: .fh-default .fs-5 }
 <span style="color:red; font-weight:bold">https</span> //www.google.com:443/search?**`q=hello&hl=ko`**
+{: .fh-default .fs-5 }
 
 -   key = value 형태
 -   ?로 시작 , &로 추가 가능 
@@ -203,12 +212,13 @@ nav_order: 1
 -   웹 서버에 제공하는 파라미터 , 문자 형태
 
 **fragment**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-6 }
 
 
 <span style="color:red; font-weight:bold">scheme</span> //[userinfo@]host[:port][/path][?query]**`[#fragment]`**
+{: .fh-default .fs-5 }
 <span style="color:red; font-weight:bold">https</span> //docs.spring.io/spring-boot/docs/current/reference/html/gettingstarted.html **`getting-started-introducing-spring-boot`**
-
+{: .fh-default .fs-5 }
 
 -   html 내부 북마크 등에 사용
 -   서버에 전송하는 정보 아님
