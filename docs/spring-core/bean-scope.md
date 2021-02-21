@@ -179,7 +179,7 @@ public class PrototypeTest {
 - 클라이언트는 조회한 프로토타입 빈에 `addCount()`를 호출하면서 `count` 필드를 `+1` 한다.
 - 결과적으로 프로토타입 빈`('x02')`의 `count`는 `1`이 된다.
 
-### Test
+### 프로토타입 빈 직접 요청 테스트
 ```java
 public class SingletonWithPrototypeTest1 {
 
@@ -230,7 +230,7 @@ public class SingletonWithPrototypeTest1 {
 }
 ```
 
-### 📌 싱글톤 빈에서 프로토타입 빈 사용
+### 싱글톤 빈에서 프로토타입 빈 사용
 **이번에는 clientBean이라는 싱글톤 빈이 의존관계 주입을 통해서 프로토타입 빈을 주입받아서 사용하는 예를 보자**
 
 ![](../../assets/images/spring-core/bean-scope/6.png)
@@ -252,7 +252,7 @@ public class SingletonWithPrototypeTest1 {
 - `clientBean`은 `prototypeBean`의 `addCount()`를 호출해서 프로토타입 빈의 `count`를 증가한다.
 - 원래 `1`이였으므로 `2`가 된다.
 
-### Test
+### 싱글톤 빈에서 프로토타입 빈 사용 테스트
 ```java
 public class SingletonWithPrototypeTest1 {
 
@@ -328,7 +328,7 @@ clientB -> prototypeBean@x02
 
 **어떻게 하면 사용할 때 마다 항상 새로운 프로토타입 빈을 생성할 수 있을까?**
 
-#### 스프링 컨테이너에 요청
+##### 스프링 컨테이너에 요청
 ✅**가장 간단한 방법은 싱글톤 빈이 프로토타입을 사용할 때 마다 스프링 컨테이너에 새로 요청하는 것이다.**
 
 - `ac.getBean()`을 통해서 항상 새로운 프로토타입 빈이 생성되는 것을 확인할 수 있다.
