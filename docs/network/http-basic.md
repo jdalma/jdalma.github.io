@@ -55,8 +55,9 @@ nav_order: 2
 ![](../../assets/images/network/internet-network/29.png)
 ![](../../assets/images/network/internet-network/30.png)
 
-> ✋ **Stateless 실무 한계**
-> - 모든 것을 무상태로 설계 할 수 있는 경우도 있고 없는 경우도 있다.
+> ✋
+> - **Stateless 실무 한계**
+>   - 모든 것을 무상태로 설계 할 수 있는 경우도 있고 없는 경우도 있다.
 > - **무상태**
 >   - 예) 로그인이 필요 없는 단순한 서비스 소개 화면
 > - **상태 유지**
@@ -199,7 +200,8 @@ nav_order: 2
 
 ### **GET**
 ![](../../assets/images/network/internet-network/42.png)
-> ✋ - 리소스 조회
+> ✋
+> - 리소스 조회
 > - 서버에 전달하고 싶은 데이터는 query (쿼리 파라미터 , 쿼리 스트링)를 통해서 전달
 > - 메시지 바디를 사용해서 데이터를 전달할 수 있지만 , 지원하지 않는 곳이 많아서 권장하지 않음
 
@@ -209,7 +211,8 @@ nav_order: 2
 
 ### **POST**
 ![](../../assets/images/network/internet-network/46.png)
-> ✋ - 요청 데이터 처리
+> ✋
+> - 요청 데이터 처리
 > - **메시지 바디를 통해 서버로 요청 데이터 전달**
 > - 서버는 요청 데이터를 처리
 >   - **메시지 바디를 통해 들어온 데이터를 처리하는 모든 기능을 수행한다.**
