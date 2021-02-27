@@ -11,7 +11,9 @@ nav_order: 3
 {:toc}
 ---
 
-# **클라이언트가 보낸 요청의 처리 상태를 응답에서 알려주는 기능**
+**클라이언트가 보낸 요청의 처리 상태를 응답에서 알려주는 기능**
+{: .fh-default .fs-5 }
+
 -   **1xx (Informational) : 요청이 수신되어 처리중**
 -   **2xx (Successful) : 요청 정상 처리**
 -   **3xx (Redirection) : 요청을 완료하려면 추가 행동이 필요**
@@ -24,13 +26,13 @@ nav_order: 3
 -   예 ) 299 -> 2xx (Successful)
 
 
-## 1xx (Informational)
+## **1xx (Informational)**
 
-**거의 사용되지 않아 생략**
+✅**거의 사용되지 않아 생략**
 
 ***
 
-## 2xx (Successful)
+## **2xx (Successful)**
 
 ![](../../assets/images/network/internet-network/57.png)
 ![](../../assets/images/network/internet-network/58.png)
@@ -39,7 +41,7 @@ nav_order: 3
 
 ***
 
-## 3xx (Redirection)
+## **3xx (Redirection)**
 
 ✅**요청을 완료하기 위해 유저 에이전트(주로 웹 브라우저)의 추가 조치 필요**
 ✅**웹 브라우저는 3xx 응답의 결과에 Location 헤더가 있으면 Location 위치로 자동 이동**
@@ -110,7 +112,7 @@ nav_order: 3
 
 ***
 
-## 4xx (Client Error)
+## **4xx (Client Error)**
 
 -   클라이언트의 요청에 잘못된 문법등으로 서버가 요청을 수행할 수 없음
 -   **오류의 원인이 클라이언트에 있음**
@@ -157,11 +159,11 @@ nav_order: 3
 -   **서버 문제로 오류 발생**
 -   **서버에 문제가 있기 때문에 재시도하면 성공할 수도 있음**
 
-### **500 Internal Server Error**
+### 500 Internal Server Error
 
 ✅**서버 문제로 오류 발생 , 애매하면 500 오류**
 
-### **503 Service Unavailable**
+### 503 Service Unavailable
 
 ✅**서비스 이용 불가**
 
