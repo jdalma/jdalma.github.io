@@ -2,7 +2,8 @@
 layout: default
 title: 함수형 인터페이스 와 람다표현식
 parent: JAVA8
-nav_order: 3
+grand_parent: JAVA
+nav_order: 2
 ---
 ## Table of contents
 {: .no_toc .text-delta }
