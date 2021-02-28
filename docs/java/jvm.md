@@ -13,8 +13,10 @@ nav_order: 3
 
 # **JVM이란?**
 ![](../../assets/images/java/1.png)
-- **Java코드 또는 애플리케이션을 구동하기 위한 런타임 환경을 제공하는 엔진이다.**
-- **Java 바이트 코드(.class) 를 기계 언어(OS에 특화된 언어)로 변환 한다.**
+✅**Java코드 또는 애플리케이션을 구동하기 위한 런타임 환경을 제공하는 엔진이다.**
+{: .fh-default .fs-4 }
+✅**Java 바이트 코드(.class) 를 기계 언어(OS에 특화된 언어)로 변환 한다.**
+{: .fh-default .fs-4 }
 
 ## **JRE (Java Runtime Environment)**
 -   **JVM + 라이브러리**
