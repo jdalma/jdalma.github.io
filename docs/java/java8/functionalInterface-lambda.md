@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 함수형 인터페이스 와\n람다표현식
+title: 함수형 인터페이스와<br>람다표현식
 parent: JAVA8
 grand_parent: JAVA
 nav_order: 2
