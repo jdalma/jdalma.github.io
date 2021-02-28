@@ -4,6 +4,7 @@ title: JAVA8
 parent: JAVA
 has_children: true
 nav_order: 2
+permalink: /docs/java/java8
 ---
 ## 더 자바, Java 8
 
