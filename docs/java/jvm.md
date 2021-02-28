@@ -200,11 +200,14 @@ public class App {
 -   C , C++로 작성된 라이브러리
 -   실행 엔진에 필요한 Native Libraries의 모음이다.
 
--   **[A Simple Java Native Interface (JNI) example in Java and Scala | by Brian Schlining | Medium](https://schlining.medium.com/a-simple-java-native-interface-jni-example-in-java-and-scala-68fdafe76f5f)**
+-   **[A Simple Java Native Interface (JNI) example in Java and Scala](https://schlining.medium.com/a-simple-java-native-interface-jni-example-in-java-and-scala-68fdafe76f5f)**
 
 ***
 
 # **출처**
 [Java Virtual Machine's Internal Architecture](https://www.artima.com/insidejvm/ed2/jvm.html)
+{: .fh-default .fs-4 }
 [The JVM Architecture Explained - DZone Java](https://dzone.com/articles/jvm-architecture-explained)
+{: .fh-default .fs-4 }
 [더 자바, 코드를 조작하는 다양한 방법 - 인프런](https://www.inflearn.com/course/the-java-code-manipulation/dashboard)
+{: .fh-default .fs-4 }
