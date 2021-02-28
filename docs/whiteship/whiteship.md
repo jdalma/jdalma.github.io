@@ -111,3 +111,27 @@ permalink: /docs/whiteship
 - 📌[NIO의 버퍼, 채널, 셀렉터, 파일 입출력 예제](https://blog.naver.com/swoh1227/222244309304)
 - 📌[성능비교](https://velog.io/@jaden_94/13%EC%A3%BC%EC%B0%A8-%ED%95%AD%ED%95%B4%EC%9D%BC%EC%A7%80-IO)
 - 📌[직렬화](https://watrv41.gitbook.io/devbook/java/java-live-study/13_week)
+
+
+## **Whiteship 14주차(Generic) 보기**
+
+### Keyword
+- 제네릭 사용법
+- 제네릭 주요 개념 (바운디드 타입, 와일드 카드)
+- 제네릭 메소드 만들기
+- **Erasure 특성**
+- **upper , lower bounded**
+- **bridge method**
+
+```java
+// 런타임중에 타입을 알아낼 수 있다. (reflection)
+this.getClass().getGenericSuperClass().getActualTypeArguments()[0]
+```
+
+### 참고 링크
+
+[14주차 과제: Generic](https://github.com/whiteship/live-study/issues/14)
+- [sujl95.tistory.com](https://sujl95.tistory.com/73)
+- [Erasure](https://blog.naver.com/hsm622/222251602836)
+- [BridgeMethod , 제네릭타입 주의사항](https://rockintuna.tistory.com/102)
+- [effectiveJava](https://github.com/cmg1411/effectiveJava)
