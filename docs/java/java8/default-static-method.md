@@ -2,7 +2,7 @@
 layout: default
 title: 기본 메서드와 스태틱 메서드
 parent: JAVA8
-nav_order: 2
+nav_order: 4
 ---
 ## Table of contents
 {: .no_toc .text-delta }
