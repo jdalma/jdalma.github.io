@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 기본 메서드와 스태틱 메서드
+title: 기본 메서드와<br> 스태틱 메서드
 parent: JAVA8
 grand_parent: JAVA
 nav_order: 3

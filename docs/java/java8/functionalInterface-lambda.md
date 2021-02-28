@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 함수형 인터페이스 와 람다표현식
+title: 함수형 인터페이스 와\n람다표현식
 parent: JAVA8
 grand_parent: JAVA
 nav_order: 2
@@ -175,7 +175,7 @@ public static void main(String[] args) {
 ✅ **자바에서 미리 정의해둔 자주 사용할만한 함수 인터페이스**
 {: .fh-default .fs-4 }
 
-## **Function< T , R >**
+## **`Function< T , R >`**
 -   **항상 입력 인수를 반환하는 함수를 반환**
     -   (static) identity
 -   **T 타입을 받아서 R 타입을 리턴하는 함수 인터페이스**
@@ -225,20 +225,20 @@ public static void main(String[] args) {
 }
 ```
 
-## **BiFunction<T , U , R>**
+## **`BiFunction<T , U , R>`**
 -   **두 개의 값(T , U)를 받아 R 타입을 리턴하는 함수 인터페이스**
     -   R apply(T t , U u)
 -   함수 조합용 메서드
     -   (default) andThen
         -   return (T t, U u) ➜ after.apply(apply(t, u));
 
-## **Consumer<T>**
+## **`Consumer<T>`**
 -   **T 타입을 받아서 아무 값도 리턴하지 않는 함수 인터페이스**
     -   void accept(T t)
 -   함수 조합용 메서드
     -   (default) andThen
 
-## **Supplier<T>**
+## **`Supplier<T>`**
 -   **T 타입의 값을 제공하는 함수 인터페이스**
     -   T get()
 ```java
@@ -251,7 +251,7 @@ public static void main(String[] args) {
 }
 ```
 
-## **Predicate<T>**
+## **`Predicate<T>`**
 -   **T 타입을 받아서 boolean을 리턴하는 함수 인터페이스**
     -   boolean test(T t)
 -   함수 조합용 메서드
@@ -273,7 +273,7 @@ public static void main(String[] args) {
 }
 ```
 
-## **UnaryOperator<T>** extends Function<T , T>
+## **`UnaryOperator<T>`** `extends Function<T , T>`
 -   **Function<T , R> 의 특수한 형태로 , 입력 값 하나를 받아서 동일한 타입을 리턴하는 함수 인터페이스**
 
 ```java
@@ -289,7 +289,7 @@ public static void main(String[] args) {
 }
 ```
 
-## **BinaryOperator<T>** extends BiFunction<T , T , T>
+## **`BinaryOperator<T>`** `extends BiFunction<T , T , T>`
 -   **BiFunction<T , U , R>의 특수한 형태로 , 동일한 타입의 입력 값 두 개를 받아 리턴하는 함수 인터페이스**
 -   **BiFunction 3개의 인자 값이 다 같다면 한 개로 줄여서 사용할 수 있다.**
 
