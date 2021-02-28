@@ -1,7 +1,7 @@
 ---
 layout: default
 title: JAVA8
-parent: java
+parent: JAVA
 has_children: true
 nav_order: 2
 ---
