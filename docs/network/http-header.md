@@ -1,6 +1,6 @@
 ---
 layout: default
-title: HTTP 헤더,쿠키,캐시
+title: HTTP 일반헤더(쿠키)
 parent: HTTP웹 기본 지식
 nav_order: 4
 ---
@@ -13,7 +13,7 @@ nav_order: 4
 
 # **HTTP 헤더**
 
-## HTTP 헤더 개요
+## **HTTP 헤더 개요**
 **header-field = field-name ":" {OWS} field-value {OWS} (OWS : 띄어쓰기 허용)**
 
 **(field-name은 대소문자 구분 없음)**
@@ -22,7 +22,7 @@ nav_order: 4
 
 ***
 
-## HTTP 헤더 용도
+## **HTTP 헤더 용도**
 -   **HTTP 전송에 필요한 모든 부가 정보**
     -   예) 메시지 바디의 내용 , 메시지 바디의 크기 , 압축 , 인증 , 요청 클라이언트 , 서버 정보 , 캐시 관리 정보 등..
 -   **표준 헤더가 너무 많음**
@@ -32,7 +32,7 @@ nav_order: 4
 
 ***
 
-## HTTP 헤더 표준
+## **HTTP 헤더 표준**
 
 <span style="color:red; font-weight:bold">~~RFC2616~~(과거) - 폐기됨</span>
 {: .fh-default .fs-5 }
@@ -230,7 +230,7 @@ nav_order: 4
 
 -   **페이지 리다이렉션**
 -   웹 브라우저는 3xx응답의 결과에 Location 헤더가 있으면 , Location 위치로 자동 이동(리다이렉트)
--   [응답코드 3xx에서 설명](https://write-read.tistory.com/entry/HTTP-%EC%83%81%ED%83%9C-%EC%BD%94%EB%93%9C?category=905101)
+-   [응답코드 3xx에서 설명](https://jeongcode.github.io/docs/network/http-code-redirection/)
 -   201 Created : Location 값은 요청에 의해 생성된 리소스 URI
 -   3xx Redirection : Location 값은 요청을 자동으로 리다이렉션하기 위한 대상 리소스를 가리킴
 
@@ -261,3 +261,99 @@ nav_order: 4
 -   **리소스 접근 시 필요한 인증 방법 정의**
 -   401 Unauthorized
 -   예)`WWW-Authenticate: Newauth realm="apps", type=1, title="Login to \\"apps\\"", Basic realm="simple"`
+
+***
+
+# **HTTP 헤더 - 쿠키**
+
+## 📌 쿠키
+
+-   **Set-Cookie : 서버에서 클라이언트로 쿠키 전달(응답)**
+-   **Cookie : 클라이언트가 서버에서 받은 쿠키를 저장하고 , HTTP 요청 시 서버로 전달**
+
+![](../../assets/images/network/http-header/27.png)
+![](../../assets/images/network/http-header/28.png)
+![](../../assets/images/network/http-header/29.png)
+
+### Stateless
+
+-   HTTP는 무상태(Stateless) 프로토콜이다.
+-   클라이언트와 서버가 요청과 응답을 주고 받으면 연결이 끊어진다.
+-   클라이언트가 다시 요청하면 서버는 이전 요청을 기억하지 못한다.
+-   클라이언트와 서버는 서로 상태를 유지하지 않는다.
+
+![](../../assets/images/network/http-header/30.png)
+![](../../assets/images/network/http-header/31.png)
+
+🚨 **모든 요청에 정보를 넘기는 문제**
+
+-   **모든 요청에 사용자 정보가 포함되도록 개발 해야함**
+-   **브라우저를 완전히 종료하고 다시 열면?**
+
+![](../../assets/images/network/http-header/32.png)
+![](../../assets/images/network/http-header/33.png)
+![](../../assets/images/network/http-header/34.png)
+
+-   예)set-cookie : **sessionId=abcde1234; expires=**Sat, 26-Dec-2020 00:00:00 GMT; **path=**/; **domain=**.google.com; **Secure**
+-   **사용처**
+    -   사용자 로그인 세션 관리
+    -   광고 정보 트래킹
+-   **쿠키 정보는 항상 서버에 전송됨**
+    -   네트워크 트래픽 추가 유발
+    -   최소한의 정보만 사용(세션 id , 인증 토큰)
+    -   서버에 전송하지 않고 , 웹 브라우저 내부에 데이터를 저장하고 싶으면 **[웹 스토리지](https://ktko.tistory.com/entry/HTML-%EC%9B%B9-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EA%B8%B0%EB%8A%A5%EA%B3%BC-%EC%98%88%EC%A0%9C-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95)(localStorage , sessionStroage)** 참고
+- ❗ **주의!**
+    -   보안에 민감한 데이터는 저장하면 안됨(주민번호 , 신용카드 번호 등등)
+-   4KB의 저장 용량
+-   같은 사이트내에서 둘 이상의 탭을 열었을 때, 둘 이상의 트랜젝션 추적에 어려움이 있다.
+-   도메인 내의 모든 페이지에 같이 전달 된다.
+-   암호화 되지 않고 보내기 때문에 보안에 취약하다.
+-   사용자의 로컬에 텍스트로 저장 되어 있어 쉽게 접근이 가능하다.
+
+### 생명주기
+
+**Expires , max-age**
+{: .fh-default .fs-5 }
+-   Set-Cookie: **expires=**Sat, 26-Dec-2020 04:39:21 GMT
+    -   만료일이 되면 쿠키 삭제
+-   Set-Cookie : **max-age=**3600 (3600초)
+    -   0이나 음수를 지정하면 쿠키 삭제
+-   **세션 쿠키** : 만료 날짜를 생략하면 브라우저 종료시 까지만 유지
+-   **영속 쿠키** : 만료 날짜를 입력하면 해당 날짜까지 유지
+
+### 도메인
+
+-   **명시 : 명시한 문서 기준 도메인 + 서브 도메인 포함**
+    -   `domain=example.org`를 지정해서 쿠키 생성
+        -   `example.org`는 물론이고
+        -   `dev.example.org`도 쿠키 접근
+-   **생략 : 현재 문서 기준 도메인만 적용**
+    -   `example.org` 에서 쿠키를 생성하고 domain 지정을 생략
+        -   `example.org` 에서만 쿠키 접근
+        -   `dev.example.org`는 쿠키 미접근
+
+### 경로
+
+-   **예) path=/home**
+-   **이 경로를 포함한 하위 경로 페이지만 쿠키 접근**
+-   **일반적으로 path=/ 루트로 지정**
+-   예)
+    -   path=/home 지정
+    -   /home -> 가능
+    -   /home/level1 -> 가능
+    -   /home/level1/level2 -> 가능
+    -   /hello -> 불가능
+
+### 보안
+**Secure , HttpOnly , SameSite**
+{: .fh-default .fs-5 }
+-   **Secure**
+    -   쿠키는 Http,Https를 구분하지 않고 전송
+    -   Secure를 적용하면 https인 경우에만 전송
+-   **HttpOnly**
+    -   XSS 공격 방지
+    -   **자바스크립트에서 접근 불가 (document.cookie)**
+    -   HTTP 전송에만 사용
+-   **SameSite**
+    -   XSRF 공격 방지
+    -   요청 도메인과 쿠키에 설정된 도메인이 같은 경우만 쿠키 전송
