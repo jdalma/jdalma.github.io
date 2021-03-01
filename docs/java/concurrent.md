@@ -11,7 +11,7 @@ nav_order: 4
 {:toc}
 ---
 
-# **자바에서 지원하는 Concurrent 프로그래밍**
+**자바에서 지원하는 Concurrent 프로그래밍**
 - **멀티 프로세싱(Process Builder)**
 - **멀티 쓰레드**
 
@@ -180,12 +180,309 @@ public class AppForConcurrentTest {
 ***
 
 # **Executors**
+✅**Runnable을 여전히 사용하지만**
+{: .fh-default .fs-4 }
+✅**Thread 와 Runnable 처럼 Low-Level API를 직접 다루는게 아니다.**
+{: .fh-default .fs-4 }
+
+## **고수준 (High Level) Concurrency 프로그래밍**
+
+- **Thread를 만들고 관리하는 작업을 애플리케이션에서 분리**
+- **그런 기능을 Executors에게 위임**
+
+## **Executros가 하는일**
+
+-   **Thread 만들기 :** 애플리케이션이 사용할 Thread Pool을 만들어 관리한다.
+-   **Thread 관리 :** Thread 생명 주기를 관리한다.
+-   **작업 처리 및 실행 :** Thread로 실행할 작업을 제공할 수 있는 API를 제공한다.
+
+## **주요 인터페이스**
+
+-   **Executor**
+    -   execute(Runnable)
+-   **ExecutorService**
+    -   Executor 상속 받은 인터페이스로 , Callable도 실행할 수 있으며 . Executor를 종료 시키거나 , 여러 Callable을 동시에 실행하는 등의 기능을 제공한다.
+
+### ExecutorService 테스트
+```java
+
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+        // 방법 1
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Thread : " + Thread.currentThread().getName());
+            }
+        });
+
+        // 방법 2
+        executorService.submit(() -> {
+            System.out.println("Thread2 : " + Thread.currentThread().getName());
+        });
+
+        // ExecutorService는 실행 후 다음 작업을 대기 하고 있기 때문에 프로세스가 살아 있다.
+        // 명시적으로 shutdown을 해야한다.
+        // shutdown은 작업 완료가 보장된다.
+        executorService.shutdown();
+        executorService.shutdownNow();
+
+//        출력
+//        Thread : pool-1-thread-1
+//        Thread2 : pool-1-thread-1
+
+    }
+
+```
+
+### Executors.newFixedThreadPool(n)
+```java
+    public static void main(String[] args) {
+        // 2개의 Thread를 선언
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        // 2개의 Thread를 사용하여 5개의 작업을 한다.
+        // Blocking-Queue와 Thread Pool이 존재한다.
+        executorService.submit(getRunnable("Test1"));
+        executorService.submit(getRunnable("Test2"));
+        executorService.submit(getRunnable("Test3"));
+        executorService.submit(getRunnable("Test4"));
+        executorService.submit(getRunnable("Test5"));
+
+//        출력
+//        Test2 : pool-1-thread-2
+//        Test1 : pool-1-thread-1
+//        Test3 : pool-1-thread-1
+//        Test4 : pool-1-thread-1
+//        Test5 : pool-1-thread-1
+    }
+​
+    private static Runnable getRunnable(String message) {
+        return () -> {
+            System.out.println(message + " : " + Thread.currentThread().getName());
+        };
+    }
+```
+***
+
+##  **ScheduledExecutorService**
+-   **ExecutorService를 상속 받은 인터페이스로 특정 시간 이후에 또는 주기적으로 작업을 실행할 수 있다.**
+
+### Executors.newSingleThreadScheduledExecutor()
+```java
+    public static void main(String[] args) {
+        // 2개의 Thread를 선언
+        ScheduledExecutorService scheduledExecutorService
+                = Executors.newSingleThreadScheduledExecutor();
+
+        // 시작 1초 지연
+        scheduledExecutorService
+                .schedule(getRunnable("Thread1") , 1 , TimeUnit.SECONDS);
+
+        // 시작 1초 지연 후 2초 간격으로 반복 실행
+        scheduledExecutorService
+                .scheduleAtFixedRate(getRunnable("Thread2") , 1 , 2, TimeUnit.SECONDS);
+
+    }
+
+    private static Runnable getRunnable(String message) {
+        return () -> {
+            System.out.println(message + " : " + Thread.currentThread().getName());
+        };
+    }
+```
+
+## **Fork/Join 프레임워크**
+✅**ExecutorService의 구현체로 손쉽게 멀티 프로세서를 활용할 수 있게끔 도와준다.**
+{: .fh-default .fs-4 }
+
+![](../../assets/images/java/7.png)
+
+***
+
+# **Callable과 Future**
+
+**Callable**
+{: .fh-default .fs-5 }
+- **Runnable과 유사하지만 리턴 값을 받을 수 있다.**
+
+**Future**
+{: .fh-default .fs-5 }
+-   **비동기적인 작업의 현재 상태를 조회하거나 가져올 수 있다.**
+-   **[Future (Java Platform SE 8 ) (oracle.com)](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html)**
+
+## **get()**
+-   결과를 가져오기
+-   **블록킹 콜이다.**
+-   타임아웃(최대한으로 기다릴시간)을 설정할 수 있다.
+
+```java
+public static void main(String[] args) throws ExecutionException, InterruptedException {
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+    Callable<String> hello = () ->{
+        Thread.sleep(2000L);
+        return "Hello";
+    };
+
+    // submit 메소드 - <T> Future<T> submit(Callable<T> task);
+    Future<String> helloFuture = executorService.submit(hello);
+    System.out.println("Started!");
+
+    helloFuture.get();   // 블록킹 콜
+
+    System.out.println("End!");
+    executorService.shutdown();
+}
+```
+
+## **isDone()**
+-   작업상태 확인하기 
+-   완료했으면 true 아니면 false를 리턴한다.
+
+```java
+public static void main(String[] args) throws ExecutionException, InterruptedException {
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+    Callable<String> hello = () ->{
+        Thread.sleep(2000L);
+        return "Hello";
+    };
+
+    // submit 메소드 - <T> Future<T> submit(Callable<T> task);
+    Future<String> helloFuture = executorService.submit(hello);
+    System.out.println("Start!, isDone? :" + helloFuture.isDone());
+
+    helloFuture.get();   // 블록킹 콜
+
+    System.out.println("End!, isDone? :" + helloFuture.isDone());
+    executorService.shutdown();
+
+//        출력
+//        Start!, isDone? :false
+//        (2초 후) - 블록킹 콜
+//        End!, isDone? :true
+}
+```
+
+## **cancel()**
+-   작업 취소하기
+-   취소 했으면 true, 못했으면 false를 리턴한다.
+-   parameter로 true를 전달하면 현재 진행중인 Thread를 Interrupt하고 그러지 않으면 현재 진행중인 작업이 끝날 때 까지 기다린다.
+
+```java
+public static void main(String[] args) throws ExecutionException, InterruptedException {
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+    Callable<String> hello = () ->{
+        Thread.sleep(2000L);
+        return "Hello";
+    };
+
+    // submit 메소드 - <T> Future<T> submit(Callable<T> task);
+    Future<String> helloFuture = executorService.submit(hello);
+    System.out.println("Start!, isDone? :" + helloFuture.isDone());
 
 
+    helloFuture.cancel(true);
+    // cancel한 후 get을 하게 되면 java.util.concurrent.CancellationException이 발생한다.
+    // helloFuture.get();
 
+    System.out.println("End!, isDone? :" + helloFuture.isDone());
+    executorService.shutdown();
+
+//        출력
+//        Start!, isDone? :false
+//        End!, isDone? :true (cancel을 하게 되면 isDone은 ture를 반환한다.)
+}
+```
+
+## **invokeAll()**
+-   여러 작업 동시에 실행하기
+
+```java
+public static void main(String[] args) throws ExecutionException, InterruptedException {
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+//		ExecutorService executorService = Executors.newFixedThreadPool(4);
+    Callable<String> test1 = () ->{
+        Thread.sleep(1000L);
+        return "Test1";
+    };
+    Callable<String> test2 = () ->{
+        Thread.sleep(2000L);
+        return "Test2";
+    };
+    Callable<String> test3 = () ->{
+        Thread.sleep(3000L);
+        return "Test3";
+    };
+    Callable<String> test4 = () ->{
+        Thread.sleep(4000L);
+        return "Test4";
+    };
+    long start = System.currentTimeMillis();
+    List<Future<String>> list =
+            executorService.invokeAll(Arrays.asList(test1, test2, test3, test4));
+    long end = System.currentTimeMillis();
+    for(Future<String> future : list){
+        System.out.println(future.get());
+    }
+    System.out.println("경과 : " + (end - start) / 1000);
+//        출력
+//        Test1
+//        Test2
+//        Test3
+//        Test4
+//        경과 : 10
+
+//        만약 스레드가 4개라면 4초가 걸린다.
+    executorService.shutdown();
+}
+```
+
+## **invokeAny()**
+-   여러 작업중에 하나라도 먼저 응답이오면 끝내기
+-   동시에 실행한 작업중에 제일 짧게 걸리는 작업 만큼 시간이 걸린다.
+-   **블록킹 콜이다.**
+
+```java
+public static void main(String[] args) throws ExecutionException, InterruptedException {
+    ExecutorService executorService = Executors.newFixedThreadPool(1);
+
+    Callable<String> test2 = () ->{
+        Thread.sleep(2000L);
+        return "Test2";
+    };
+    Callable<String> test4 = () ->{
+        Thread.sleep(4000L);
+        return "Test4";
+    };
+    Callable<String> test1 = () ->{
+        Thread.sleep(1000L);
+        return "Test1";
+    };
+    Callable<String> test3 = () ->{
+        Thread.sleep(3000L);
+        return "Test3";
+    };
+    long start = System.currentTimeMillis();
+    String s =
+            executorService.invokeAny(Arrays.asList(test1, test2, test3, test4));
+    long end = System.currentTimeMillis();
+    System.out.println(s);
+    System.out.println("경과 : " + (end - start) / 1000);
+//        출력
+//        Test1
+//        경과 : 1
+
+    executorService.shutdown();
+}
+```
 
 # **참고**
 [Lesson: Concurrency (The Java™ Tutorials > Essential Classes) (oracle.com)](https://docs.oracle.com/javase/tutorial/essential/concurrency/)
 {: .fh-default .fs-4 }
 [Thread (Java Platform SE 8 ) (oracle.com)](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#interrupt--)
+{: .fh-default .fs-4 }
+[Executors (The Java™ Tutorials > Essential Classes > Concurrency) (oracle.com)](https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html)
 {: .fh-default .fs-4 }
