@@ -122,6 +122,7 @@ public @interface MainDiscountPolicy {
 - 이 중 RateDiscountPolicy를 MainDiscountPolicy라고 지정할려고 한다.
 
 > **OrderServiceImpl**
+
 ```java
 public class OrderServiceImpl implements OrderService{
 
@@ -137,6 +138,7 @@ public class OrderServiceImpl implements OrderService{
 ```
 
 > **RateDiscountPolicy**
+
 ```java
 @Component
 @MainDiscountPolicy
