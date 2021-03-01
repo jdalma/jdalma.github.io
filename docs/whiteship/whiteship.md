@@ -112,6 +112,7 @@ permalink: /docs/whiteship
 - 📌[성능비교](https://velog.io/@jaden_94/13%EC%A3%BC%EC%B0%A8-%ED%95%AD%ED%95%B4%EC%9D%BC%EC%A7%80-IO)
 - 📌[직렬화](https://watrv41.gitbook.io/devbook/java/java-live-study/13_week)
 
+***
 
 ## **Whiteship 14주차(Generic) 보기**
 
