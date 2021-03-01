@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 영속성 컨텍스트
+parent: JPA
 nav_order: 2
 ---
 ## Table of contents
