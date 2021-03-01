@@ -35,6 +35,8 @@ nav_order: 4
 
 ## **예제**
 
+> **Test (Entity)**
+
 ```java
 public class Test {
 
@@ -65,7 +67,7 @@ public class Test {
     }
 }
 ```
-> **MyTest (Entity)**
+> **MyTest (Entity)** extends Test implements  MyInterface
 
 ```java
 public class MyTest extends Test implements  MyInterface{
@@ -86,120 +88,120 @@ public class MyTest extends Test implements  MyInterface{
 ```
 
 ```java
-    public static void main( String[] args ) throws ClassNotFoundException{
-    // Class 가져오기
-        // 힙 영역에서 가져오기
-        Class<Test> testClass = Test.class;
-        Class<MyTest> myTestClass = MyTest.class;
-        // 객체 생성 후 가져오기
-        Test test = new Test();
-        Class<? extends Test> aClass = test.getClass();
-        // 문자열로 가져오기
-        Class<?> aClass1 = Class.forName("org.example.Test");
+public static void main( String[] args ) throws ClassNotFoundException{
+// Class 가져오기
+    // 힙 영역에서 가져오기
+    Class<Test> testClass = Test.class;
+    Class<MyTest> myTestClass = MyTest.class;
+    // 객체 생성 후 가져오기
+    Test test = new Test();
+    Class<? extends Test> aClass = test.getClass();
+    // 문자열로 가져오기
+    Class<?> aClass1 = Class.forName("org.example.Test");
 
-    // getFields()
-        Arrays.stream( testClass.getFields()).forEach(System.out::println);
-        // 출력
-        // public static java.lang.String org.example.Test.super_b
-        // public static final java.lang.String org.example.Test.super_c
-        // public java.lang.String org.example.Test.super_d
-        System.out.println();
+// getFields()
+    Arrays.stream( testClass.getFields()).forEach(System.out::println);
+    // 출력
+    // public static java.lang.String org.example.Test.super_b
+    // public static final java.lang.String org.example.Test.super_c
+    // public java.lang.String org.example.Test.super_d
+    System.out.println();
 
-        Arrays.stream( myTestClass.getFields()).forEach(System.out::println);
-        // 출력
-        // public static java.lang.String org.example.MyTest.child_b
-        // public static final java.lang.String org.example.MyTest.child_c
-        // public java.lang.String org.example.MyTest.child_d
-        // public static java.lang.String org.example.Test.super_b
-        // public static final java.lang.String org.example.Test.super_c
-        // public java.lang.String org.example.Test.super_d
-        System.out.println();
+    Arrays.stream( myTestClass.getFields()).forEach(System.out::println);
+    // 출력
+    // public static java.lang.String org.example.MyTest.child_b
+    // public static final java.lang.String org.example.MyTest.child_c
+    // public java.lang.String org.example.MyTest.child_d
+    // public static java.lang.String org.example.Test.super_b
+    // public static final java.lang.String org.example.Test.super_c
+    // public java.lang.String org.example.Test.super_d
+    System.out.println();
 
-    // getDeclaredFields()
-        Arrays.stream( testClass.getDeclaredFields()).forEach(System.out::println);
-        // 출력
-        // private java.lang.String org.example.Test.super_a
-        // public static java.lang.String org.example.Test.super_b
-        // public static final java.lang.String org.example.Test.super_c
-        // public java.lang.String org.example.Test.super_d
-        // protected java.lang.String org.example.Test.super_e
-        System.out.println();
+// getDeclaredFields()
+    Arrays.stream( testClass.getDeclaredFields()).forEach(System.out::println);
+    // 출력
+    // private java.lang.String org.example.Test.super_a
+    // public static java.lang.String org.example.Test.super_b
+    // public static final java.lang.String org.example.Test.super_c
+    // public java.lang.String org.example.Test.super_d
+    // protected java.lang.String org.example.Test.super_e
+    System.out.println();
 
-        Arrays.stream( myTestClass.getDeclaredFields()).forEach(System.out::println);
-        // 출력
-        // private java.lang.String org.example.MyTest.child_a
-        // public static java.lang.String org.example.MyTest.child_b
-        // public static final java.lang.String org.example.MyTest.child_c
-        // public java.lang.String org.example.MyTest.child_d
-        // protected java.lang.String org.example.MyTest.child_e
-        System.out.println();
+    Arrays.stream( myTestClass.getDeclaredFields()).forEach(System.out::println);
+    // 출력
+    // private java.lang.String org.example.MyTest.child_a
+    // public static java.lang.String org.example.MyTest.child_b
+    // public static final java.lang.String org.example.MyTest.child_c
+    // public java.lang.String org.example.MyTest.child_d
+    // protected java.lang.String org.example.MyTest.child_e
+    System.out.println();
 
-    // 접근하기
-        Test t1 = new Test();
-        Arrays.stream( testClass.getDeclaredFields()).forEach(field ->{
-            try {
-                // field.setAccessible(true) 해주지 않으면 private에 접근할 수 없다.
-                field.setAccessible(true);
-                System.out.println(field + " , " + field.get(t1));
-                // 출력
-                // private java.lang.String org.example.Test.super_a , private : [a]
-                // public static java.lang.String org.example.Test.super_b , public static : [b]
-                // public static final java.lang.String org.example.Test.super_c , public static final : [c]
-                // public java.lang.String org.example.Test.super_d , public : [d]
-                // protected java.lang.String org.example.Test.super_e , protected : [e]
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        });
-        System.out.println();
-
-        // 필드의 접근지정자
-        Arrays.stream( testClass.getDeclaredFields()).forEach(field -> {
-            int modifiers = field.getModifiers();
-            System.out.println(field + " - isPrivate? " + Modifier.isPrivate(modifiers) + ", isPublic? " + Modifier.isPublic(modifiers));
+// 접근하기
+    Test t1 = new Test();
+    Arrays.stream( testClass.getDeclaredFields()).forEach(field ->{
+        try {
+            // field.setAccessible(true) 해주지 않으면 private에 접근할 수 없다.
+            field.setAccessible(true);
+            System.out.println(field + " , " + field.get(t1));
             // 출력
-            // private java.lang.String org.example.Test.super_a - isPrivate? true, isPublic? false
-            // public static java.lang.String org.example.Test.super_b - isPrivate? false, isPublic? true
-            // public static final java.lang.String org.example.Test.super_c - isPrivate? false, isPublic? true
-            // public java.lang.String org.example.Test.super_d - isPrivate? false, isPublic? true
-            // protected java.lang.String org.example.Test.super_e - isPrivate? false, isPublic? false
-        });
-        System.out.println();
+            // private java.lang.String org.example.Test.super_a , private : [a]
+            // public static java.lang.String org.example.Test.super_b , public static : [b]
+            // public static final java.lang.String org.example.Test.super_c , public static final : [c]
+            // public java.lang.String org.example.Test.super_d , public : [d]
+            // protected java.lang.String org.example.Test.super_e , protected : [e]
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    });
+    System.out.println();
 
-    // getMethods()
-        Arrays.stream( testClass.getMethods()).forEach(System.out::println);
+    // 필드의 접근지정자
+    Arrays.stream( testClass.getDeclaredFields()).forEach(field -> {
+        int modifiers = field.getModifiers();
+        System.out.println(field + " - isPrivate? " + Modifier.isPrivate(modifiers) + ", isPublic? " + Modifier.isPublic(modifiers));
         // 출력
-        // public void org.example.Test.super_g()
-        // public int org.example.Test.super_h()
-        // public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException
-        // public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException
-        // public final void java.lang.Object.wait() throws java.lang.InterruptedException
-        // public boolean java.lang.Object.equals(java.lang.Object)
-        // public java.lang.String java.lang.Object.toString()
-        // public native int java.lang.Object.hashCode()
-        // public final native java.lang.Class java.lang.Object.getClass()
-        // public final native void java.lang.Object.notify()
-        // public final native void java.lang.Object.notifyAll()
-        System.out.println();
+        // private java.lang.String org.example.Test.super_a - isPrivate? true, isPublic? false
+        // public static java.lang.String org.example.Test.super_b - isPrivate? false, isPublic? true
+        // public static final java.lang.String org.example.Test.super_c - isPrivate? false, isPublic? true
+        // public java.lang.String org.example.Test.super_d - isPrivate? false, isPublic? true
+        // protected java.lang.String org.example.Test.super_e - isPrivate? false, isPublic? false
+    });
+    System.out.println();
 
-    // getConstructors()
-        Arrays.stream( testClass.getConstructors()).forEach(System.out::println);
-        // 출력
-        // public org.example.Test()
-        // public org.example.Test(java.lang.String,java.lang.String,java.lang.String)
-        System.out.println();
+// getMethods()
+    Arrays.stream( testClass.getMethods()).forEach(System.out::println);
+    // 출력
+    // public void org.example.Test.super_g()
+    // public int org.example.Test.super_h()
+    // public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException
+    // public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException
+    // public final void java.lang.Object.wait() throws java.lang.InterruptedException
+    // public boolean java.lang.Object.equals(java.lang.Object)
+    // public java.lang.String java.lang.Object.toString()
+    // public native int java.lang.Object.hashCode()
+    // public final native java.lang.Class java.lang.Object.getClass()
+    // public final native void java.lang.Object.notify()
+    // public final native void java.lang.Object.notifyAll()
+    System.out.println();
 
-    // getSuperClass()
-        System.out.println(myTestClass.getSuperclass());
-        // 출력
-        // class org.example.Test
-        System.out.println();
+// getConstructors()
+    Arrays.stream( testClass.getConstructors()).forEach(System.out::println);
+    // 출력
+    // public org.example.Test()
+    // public org.example.Test(java.lang.String,java.lang.String,java.lang.String)
+    System.out.println();
 
-    // getInterfaces()
-        Arrays.stream( myTestClass.getInterfaces()).forEach(System.out::println);
-        // 출력
-        // interface org.example.MyInterface
-    }
+// getSuperClass()
+    System.out.println(myTestClass.getSuperclass());
+    // 출력
+    // class org.example.Test
+    System.out.println();
+
+// getInterfaces()
+    Arrays.stream( myTestClass.getInterfaces()).forEach(System.out::println);
+    // 출력
+    // interface org.example.MyInterface
+}
 ```
 
 
