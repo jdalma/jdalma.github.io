@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Whiteship 라이브 스터디 보기
-nav_order: 20
+nav_order: 70
 permalink: /docs/whiteship
 ---
 
