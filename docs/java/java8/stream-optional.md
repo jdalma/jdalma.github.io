@@ -3,7 +3,7 @@ layout: default
 title: Stream , Optional
 parent: JAVA8
 grand_parent: JAVA
-nav_order: 3
+nav_order: 4
 ---
 ## Table of contents
 {: .no_toc .text-delta }
