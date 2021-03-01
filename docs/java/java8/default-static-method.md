@@ -307,6 +307,10 @@ public class AppForInterfaceTest implements InterfaceTest{
 ## **참고**
 
 [https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html](https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html)
+{: .fh-default .fs-4 }
 [https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)
+{: .fh-default .fs-4 }
 [https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)
+{: .fh-default .fs-4 }
 [https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)
+{: .fh-default .fs-4 }

@@ -382,3 +382,4 @@ public static void main(String[] args) {
 
 **참고**
 - [Method References (The Java™ Tutorials > Learning the Java Language > Classes and Objects)](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
+{: .fh-default .fs-4 }

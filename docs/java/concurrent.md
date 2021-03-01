@@ -236,7 +236,7 @@ public class AppForConcurrentTest {
 
 ```
 
-### Executors.newFixedThreadPool(n)
+### Executors.newFixedThreadPool(n) 테스트
 ```java
     public static void main(String[] args) {
         // 2개의 Thread를 선언
@@ -265,10 +265,10 @@ public class AppForConcurrentTest {
 ```
 ***
 
-##  **ScheduledExecutorService**
+###  ScheduledExecutorService
 -   **ExecutorService를 상속 받은 인터페이스로 특정 시간 이후에 또는 주기적으로 작업을 실행할 수 있다.**
 
-### Executors.newSingleThreadScheduledExecutor()
+### Executors.newSingleThreadScheduledExecutor() 테스트
 ```java
     public static void main(String[] args) {
         // 2개의 Thread를 선언
