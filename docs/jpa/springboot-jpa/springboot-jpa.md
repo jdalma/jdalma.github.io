@@ -146,6 +146,7 @@ logging.level: #띄어쓰기 없음
 ## **동작 확인**
 
 > **Entity**
+
 ```java
 @Entity
 @Getter @Setter
@@ -159,6 +160,7 @@ public class Member {
 ```
 
 > **Repository**
+
 ```java
 @Repository
 public class MemberRepository {
