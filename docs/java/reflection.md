@@ -66,6 +66,7 @@ public class Test {
 }
 ```
 > **MyTest (Entity)**
+
 ```java
 public class MyTest extends Test implements  MyInterface{
     private String child_a = "child private : [a]";
