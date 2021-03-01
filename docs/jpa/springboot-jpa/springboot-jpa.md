@@ -44,14 +44,11 @@ has_children: true
 
 ✋ **개발에 유용한 라이브러리 추가**
 {: .fh-default .fs-4 }
-`implementation 'org.springframework.boot:spring-boot-devtools'`
-{: .fh-default .fs-4 }
-**라이브러리 추가 후 재실행 , restartedMain이 뜨면 적용된 것이다.**
-{: .fh-default .fs-4 }
-![](../../../assets/images/jpa/springboot-jpa/2-1.png)
-**수정 후 recompile을 해주면 바로 적용 가능**
-{: .fh-default .fs-4 }
-![](../../../assets/images/jpa/springboot-jpa/2-2.png)
+- `implementation 'org.springframework.boot:spring-boot-devtools'`
+- **라이브러리 추가 후 재실행 , restartedMain이 뜨면 적용된 것이다.**
+- ![](../../../assets/images/jpa/springboot-jpa/2-1.png)
+- **수정 후 recompile을 해주면 바로 적용 가능**
+- ![](../../../assets/images/jpa/springboot-jpa/2-2.png)
 
 ***
 
@@ -67,23 +64,21 @@ has_children: true
 ✅**최소 한 번, 세션키 유지하여야 생성이 가능하다.**
 {: .fh-default .fs-4 }
 
-1. **h2.bat을 실행하면 커맨드 창이 뜨고 웹 창이 뜬다. (커맨드는 끄면 안된다.)**
-{: .fh-default .fs-4 }
-![](../../../assets/images/jpa/springboot-jpa/3.png)
-**http://{hostIp}:8082/login.jsp?jsessionid={id}**
-{: .fh-default .fs-4 }
-![](../../../assets/images/jpa/springboot-jpa/4.png)
+- **h2.bat을 실행하면 커맨드 창이 뜨고 웹 창이 뜬다. (커맨드는 끄면 안된다.)**
+- ![](../../../assets/images/jpa/springboot-jpa/3.png)
+- **http://{hostIp}:8082/login.jsp?jsessionid={id}**
+- ![](../../../assets/images/jpa/springboot-jpa/4.png)
 
-2. **연결 후**
+**연결 후**
 {: .fh-default .fs-4 }
-![](../../../assets/images/jpa/springboot-jpa/5.png)
-**default 경로로 여기에 생기는지는 모르겠지만 생성되었는지 확인한다.**
+- ![](../../../assets/images/jpa/springboot-jpa/5.png)
+- **default 경로로 여기에 생기는지는 모르겠지만 생성되었는지 확인한다.**
+
+**파일 생성 확인 후**
 {: .fh-default .fs-4 }
-3. **파일 생성 확인 후**
-{: .fh-default .fs-4 }
-![](../../../assets/images/jpa/springboot-jpa/6.png)
-**jdbc:h2:tcp://localhost/~/jpashop 연결하면 된다.**
-{: .fh-default .fs-4 }
+- ![](../../../assets/images/jpa/springboot-jpa/6.png)
+- **jdbc:h2:tcp://localhost/~/jpashop 연결하면 된다.**
+
 
 ***
 
