@@ -212,3 +212,131 @@ public static void main( String[] args ) throws ClassNotFoundException{
 ✅**TmpClass.class.getFields()**
 {: .fh-default .fs-4 }
 -   부모클래스에 있는 것 과 자신의 public한 필드 까지
+
+***
+
+# **Annotation 과  Reflection**
+**Annotation은 값을 가질 수 있다.**
+{: .fh-default .fs-4 }
+```java
+@Retention(RetentionPolicy.CLASS)
+@Target({ElementType.TYPE, ElementType.FIELD})
+public @interface MyAnnotation {
+    String name() default "hyunjun";
+    int number() default 100;
+
+    //or
+
+    String name();
+    int number();
+}
+```
+```java
+
+public class Test {
+    @MyAnnotation(name = "hyunjun" , number = 100)
+    private String super_a = "private : [a]";
+}
+```
+```java
+Arrays.stream(Test.class.getDeclaredFields()).forEach(field -> {
+    Arrays.stream(field.getAnnotations()).forEach(anno ->{
+        if(anno instanceof MyAnnotation){
+            MyAnnotation myAnnotation = (MyAnnotation) anno;
+            System.out.println(myAnnotation.name());
+            System.out.println(myAnnotation.number());
+            // 출력
+            // hyunjun
+            // 100
+        }
+    });
+});
+```
+
+## **중요 Annotation**
+
+### `@Retention`
+- **해당 Annotation을 언제까지 유지할 것인가?**
+  - 소스 , 클래스 , 런타임
+  - `@Retention(RetentionPolicy.CLASS)` - 기본 값
+    - **바이트코드를 로딩하였을 때 메모리에 남아있지 않는다.**
+  - `@Retention(RetentionPolicy.RUNTIME)`
+    - **런타임에도 남아 있는다.**
+
+**바이트 코드 `javap -c -v {경로}`**
+```
+SourceFile: "MyAnnotation.java"
+RuntimeVisibleAnnotations:
+  0: #7(#8=e#9.#10)
+    java.lang.annotation.Retention(
+      value=Ljava/lang/annotation/RetentionPolicy;.RUNTIME
+    )
+```
+```java
+Arrays.stream(MyInterface.class.getAnnotations())
+      .forEach(System.out::println)
+      // 출력
+      // @org.example.MyAnnotation()
+```
+
+> ✋
+> **`@Retention(RetentionPolicy.RUNTIME)` 선언 시**
+> 바이트 코드에서 `RuntimeVisibleAnnotations` 을 확인할 수 있다.
+> 런타임 시점에 `getAnnotations()`시 조회가 가능하다.
+
+### `@Inherited`
+- **해당 Annotation을 하위 클래스 까지 전달할 것인가?**
+
+### `@Target`
+- **어디에 사용할 수 있는가?**
+```java
+public enum ElementType {
+    TYPE, /** Class, interface (including annotation type), or enum declaration */
+
+    FIELD, /** Field declaration (includes enum constants) */
+
+    METHOD, /** Method declaration */
+
+    PARAMETER, /** Formal parameter declaration */
+
+    CONSTRUCTOR, /** Constructor declaration */
+
+    LOCAL_VARIABLE, /** Local variable declaration */
+
+    ANNOTATION_TYPE, /** Annotation type declaration */
+
+    PACKAGE, /** Package declaration */
+
+    /**
+     * Type parameter declaration
+     *
+     * @since 1.8
+     */
+    TYPE_PARAMETER,
+
+    /**
+     * Use of a type
+     *
+     * @since 1.8
+     */
+    TYPE_USE,
+
+    /**
+     * Module declaration.
+     *
+     * @since 9
+     */
+    MODULE
+}
+```
+
+***
+
+
+## **Reflection**
+
+### `getAnnotations()`
+- **상속 받은 (`@Inherited`) Annotation까지 조회**
+
+### `getDeclaredAnnotations()`
+- **자기 자신에만 붙어있는 Annotation 조회**
