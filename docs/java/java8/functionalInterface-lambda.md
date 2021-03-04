@@ -133,7 +133,6 @@ private void run(){
 ![](../../../assets/images/java/java8/functionalInterface-lambda/2.png)
 -   **하지만 익명 클래스와 내부 클래스는 쉐도윙이 일어난다.**
     -   **익명 클래스와 내부 클래스에서 선언된 baseNumber가 run 메소드의 baseNumber를 덮어 버린다.**
-***
 
 # **자바에서 함수형 프로그래밍**
 -   **함수를 First class object로 사용할 수 있다.**
