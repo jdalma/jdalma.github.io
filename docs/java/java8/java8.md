@@ -71,6 +71,7 @@ nav_order: 1
 {: .fh-default .fs-4 }
 
 > **@Chicken**
+
 ```java
 @Retention(RetentionPolicy.RUNTIME)
 // 이 애노테이션 정보를 언제까지 유지할 것인가
