@@ -81,16 +81,16 @@ public @interface Chicken {
 }
 ```
 ```java
-    public static void main(String[] args) {
+public static void main(String[] args) {
+
+}
+static class FeelsLikeChicken<@Chicken T> {
+    // <C> 는 타입 파라미터
+    // print 메소드의 C는 타입
+    public static <@Chicken C> void print(C c){
 
     }
-    static class FeelsLikeChicken<@Chicken T> {
-        // <C> 는 타입 파라미터
-        // print 메소드의 C는 타입
-        public static <@Chicken C> void print(C c){
-
-        }
-    }
+}
 ```
 
 ✅**TYPE_USE - 타입 변수를 포함해서 모든 타입 선언부에 사용할 수 있다.**
@@ -107,16 +107,15 @@ public @interface Chicken {
 }
 ```
 ```java
-    public static void main(@Chicken String[] args) throws @Chicken RuntimeException {
+public static void main(@Chicken String[] args) throws @Chicken RuntimeException {
         List<@Chicken String> names = Arrays.asList("hyunjun");
     }
-    static class FeelsLikeChicken<@Chicken T> {
-        // <C> 는 타입 파라미터
-        // print 메소드의 C는 타입
-        public static <@Chicken C> void print(@Chicken C c){
+static class FeelsLikeChicken<@Chicken T> {
+    // <C> 는 타입 파라미터
+    // print 메소드의 C는 타입
+    public static <@Chicken C> void print(@Chicken C c){
 
-        }
-    }
+}
 ```
 
 ***
@@ -181,25 +180,25 @@ public class AppForJava8Annotation {
 -   **합치면서 정렬한다.**
 
 ```java
-    public static void main(String[] args) {
-        int size = 1500;
-        int[] numbers = new int[size];
-        Random random = new Random();
+public static void main(String[] args) {
+    int size = 1500;
+    int[] numbers = new int[size];
+    Random random = new Random();
 
-        IntStream.range(0, size).forEach(i -> numbers[i] = random.nextInt());
-        long start = System.nanoTime(); // 시작 시간
-        Arrays.sort(numbers); // Thread를 하나만 쓴다. 퀵 정렬
-        System.out.println("serial sorting took " + (System.nanoTime() - start));
+    IntStream.range(0, size).forEach(i -> numbers[i] = random.nextInt());
+    long start = System.nanoTime(); // 시작 시간
+    Arrays.sort(numbers); // Thread를 하나만 쓴다. 퀵 정렬
+    System.out.println("serial sorting took " + (System.nanoTime() - start));
 
-        IntStream.range(0, size).forEach(i -> numbers[i] = random.nextInt());
-        start = System.nanoTime();  // 시작 시간
-        Arrays.parallelSort(numbers);
-        System.out.println("parallel sorting took " + (System.nanoTime() - start));
+    IntStream.range(0, size).forEach(i -> numbers[i] = random.nextInt());
+    start = System.nanoTime();  // 시작 시간
+    Arrays.parallelSort(numbers);
+    System.out.println("parallel sorting took " + (System.nanoTime() - start));
 
-        // 출력
-        // serial sorting took 951400
-        // parallel sorting took 716100
+    // 출력
+    // serial sorting took 951400
+    // parallel sorting took 716100
 
-        // 배열의 사이즈나 여러 가지 조건에 따라 결과가 다를수는 있다.
-    }
+    // 배열의 사이즈나 여러 가지 조건에 따라 결과가 다를수는 있다.
+}
 ```
