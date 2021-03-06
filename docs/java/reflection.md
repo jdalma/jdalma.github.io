@@ -335,8 +335,36 @@ public enum ElementType {
 
 ## **Reflection**
 
-### `getAnnotations()`
+### 클래스 정보 조회
+
+##### `getAnnotations()`
+{: .fh-default .fs-4 }
 - **상속 받은 (`@Inherited`) Annotation까지 조회**
 
-### `getDeclaredAnnotations()`
+##### `getDeclaredAnnotations()`
+{: .fh-default .fs-4 }
 - **자기 자신에만 붙어있는 Annotation 조회**
+
+### 클래스 정보 수정
+
+##### Class 인스턴스 만들기
+{: .fh-default .fs-4 }
+- `Class.newInstance()`는 deprecated(비추천) 됐으며 이제부터는
+- **생성자**를 통해서 만들어야한다.
+
+##### 생성자로 인스턴스 만들기
+{: .fh-default .fs-4 }
+- **`Constructor.newInstance(params)`**
+
+##### 필드 값 접근하기 / 설정하기
+{: .fh-default .fs-4 }
+- 특정 인스턴스가 가지고 있는 값을 가져오는 것이기 때문에 인스턴스가 필요하다.
+- **`Field.get(object)`**
+- **`Field.set(object , value)`**
+- **Static** 필드를 가져올 때는 object가 없어도 되니 `null`을 넘기면 된다.
+
+##### 메소드 실행하기
+{: .fh-default .fs-4 }
+```java
+Object Method invoke(object , params)
+```
