@@ -365,6 +365,90 @@ public enum ElementType {
 
 ##### 메소드 실행하기
 {: .fh-default .fs-4 }
+- **`Object Method invoke(object , params)`**
+
+### 📌 예제
 ```java
-Object Method invoke(object , params)
+public class Test {
+    public Test() { System.out.println("기본 생성자"); }
+    public Test(String con){
+        System.out.println("String 생성자 - " + con);
+    }
+
+    public static String A = "public static A";
+    private String B = "private B";
+
+    private void c(){
+        System.out.println("private method C");
+    }
+    public int sum(int first , int second){
+        System.out.println("public method sum - "+ (first + second));
+        return first + second;
+    }
+}
+```
+```java
+public static void main( String[] args ) throws Exception {
+    Class<?> testClass = Class.forName("org.example.Test");
+
+    // 1. 기본 생성자 메서드 가져오기
+    Constructor<?> defaultConstructor = testClass.getConstructor(null);
+    Test test1 = (Test) defaultConstructor.newInstance();
+    // 출력
+    // 기본 생성자
+
+    // 2. String을 받는 생성자 메서드 가져오기
+    Constructor<?> stringConstructor = testClass.getConstructor(String.class);
+    Test test2 = (Test) stringConstructor.newInstance("생성자 테스트");
+    // 출력
+    // String 생성자 - 생성자 테스트
+
+    // 3. public static field 가져오기
+    Field a = Test.class.getDeclaredField("A");
+    System.out.println(a.get(null));
+    // 출력
+    // public static A
+
+    // 3-1. public static field 수정하기
+    a.set(null , "public static A 수정 테스트");
+    System.out.println(a.get(null));
+    // 출력
+    // public static A 수정 테스트
+
+    // 4. private field 가져오기
+    Field b = Test.class.getDeclaredField("B");
+
+    // private은 setAccessible(true}
+    b.setAccessible(true);
+
+    // 일반 필드라서 null로는 가져올 수 없다.
+    // 비어있어서 NullPointerException
+    System.out.println(b.get(test1));
+    // 출력
+    // private B
+
+    // 4-1. private field 수정하기
+    b.set(test1 , "private B 수정 테스트");
+    System.out.println(b.get(test1));
+    // 출력
+    // private B 수정 테스트
+
+    // 5. private method 가져오기
+    Method c = Test.class.getDeclaredMethod("c");
+
+    // private은 setAccessible(true}
+    c.setAccessible(true);
+
+    // 특정 인스턴스의 메서드면 그 인스턴스를 넘겨줘야한다.
+    // c.invoke(obj , params...)
+    c.invoke(test1);
+
+    // 6. public method 가져오기
+    Method sum = Test.class.getDeclaredMethod("sum" , int.class , int.class);
+    int result = (int) sum.invoke(test2 , 5 , 10);
+    System.out.println(result);
+    // 출력
+    // public method sum - 15
+    // 15
+}
 ```
