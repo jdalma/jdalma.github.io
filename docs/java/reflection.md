@@ -455,3 +455,82 @@ public static void main( String[] args ) throws Exception {
     // 15
 }
 ```
+
+***
+
+# **간단한 DI 프레임워크 만들기**
+
+✅ **`@Inject` 어노테이션 만들어서 필드 주입 해주는 컨테이너 서비스 만들기**
+{: .fh-default .fs-5 }
+
+✅ **ContainerService.java**
+{: .fh-default .fs-5 }
+
+```java
+public static<T> T getObject(T classType)
+```
+- `classType`에 해당하는 타입의 객체를 만들어 준다.
+- 단 , 해당 객체의 필드 중에 `@Inject`가 있다면 해당 필드도 같이 만들어 제공한다.
+
+## 📌 **예제**
+
+### ContainerService.java
+```java
+public class ContainerService {
+
+    public static <T> T getObject(Class<T> classType){
+        T instance = createInstance(classType);
+        Arrays.stream(classType.getDeclaredFields()).forEach(field -> {
+            if(field.getAnnotation(Inject.class) != null){
+                Object fieldInstance = createInstance(field.getType());
+                field.setAccessible(true);
+                try {
+                    field.set(instance , fieldInstance);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        return instance;
+    }
+
+    public static <T> T createInstance(Class<T> classType){
+        try{
+            return classType.getConstructor(null).newInstance();
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+}
+```
+> ✋ **`getObject()` 메서드만 이해한다면 IoC컨테이너에 대한 기본 이해가 가능하다**
+
+### TestCode
+```java
+public class BookRepository {
+}
+```
+```java
+public class BookService {
+    @Inject
+    BookRepository bookRepository;
+}
+```
+```java
+public class ContainerServiceTest {
+
+    @Test
+    public void getObject_BookRepository(){
+        BookRepository bookRepository = ContainerService.getObject(BookRepository.class);
+        Assert.assertNotNull(bookRepository);
+    }
+
+    @Test
+    public void getObject_BookService(){
+        BookService bookService = ContainerService.getObject(BookService.class);
+        Assert.assertNotNull(bookService);
+        Assert.assertNotNull(bookService.bookRepository);
+    }
+}
+```
