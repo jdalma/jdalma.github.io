@@ -28,6 +28,12 @@ permalink: /
 
 **DBVision**
 {: .fh-default .fs-6 }
+- **Front**
+  - DHTMLX , JavaScript
+- **Back**
+  - Java8 , Spring5 , Mybatis , Mssql
+- **ETC(management , build..)**
+  - Jenkins , SVN , Apache Tomcat
 
 **`2021.01.01 ~ 현재`**
 - ERP 예산 파트 개발
