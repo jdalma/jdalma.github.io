@@ -21,6 +21,14 @@ permalink: /
 > - [Vue.js 시작하기](https://www.inflearn.com/course/Age-of-Vuejs/dashboard)
 > - [실습 UI 개발로 배워보는 순수 javascript 와 VueJS 개발](https://www.inflearn.com/course/%EC%88%9C%EC%88%98js-vuejs-%EA%B0%9C%EB%B0%9C-%EA%B0%95%EC%A2%8C/dashboard)
 
+> 📖
+> - [토비의 스프링 3.1](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=19505747)
+> - [자바 ORM 표준 JPA 프로그래밍](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=62681446)
+> - [객체지향의 사실과 오해](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=60550259)
+> - [Clean Code (로버트 C. 마틴)](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=34083680)
+> - [Think Data Structures 자바로 배우는 핵심 자료구조와 알고리즘](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=148016214)
+
+
 ***
 
 # **Experience**
