@@ -136,3 +136,35 @@ this.getClass().getGenericSuperClass().getActualTypeArguments()[0]
 - [Erasure](https://blog.naver.com/hsm622/222251602836)
 - [BridgeMethod , 제네릭타입 주의사항](https://rockintuna.tistory.com/102)
 - [effectiveJava](https://github.com/cmg1411/effectiveJava)
+
+
+***
+
+## **Whiteship 15주차(Lambda) 보기**
+
+### Keyword
+- **익명 내부 클래스와는 다르다**
+- Method References
+  - `(o1 , o2) ➜ o1.compareTo(o2)`
+  - `String::compareToIgnoreCase`
+    - `(this , o2) ➜ this.compareTo(o2)`
+- Object가 First Class(1급 개체)이다.
+  - 변수에 할당할 수 있고 ,  매개변수로 전달할 수 있고 , 리턴값으로도 받을 수 있다.
+- JAVA8 부터 함수형 프로그래밍을 지원한다.
+- 📌 `LambdaMetaFactory` ( + `MethodHandles`)
+- the devil is in the details
+
+### 참고 링크
+
+[15주차 과제: Lambda](https://github.com/whiteship/live-study/issues/15)
+- [익명 내부 클래스와 바이크코드를 비교하고 INDY까지](https://sujl95.tistory.com/76)
+- [Variable Capture에 대한 설명](https://blog.naver.com/hsm622/222260183401)
+- [자바API에서 제공하는 함수형 인터페이스 kevin-lee](https://b-programmer.tistory.com/279)
+- [지연연산](https://velog.io/@kwj1270/Lambda)
+- [쉐도윙 , 스트림과 Optional](https://www.notion.so/758e363f9fb04872a604999f8af6a1ae)
+- [INDY(Invoke-Dynamic) 정리 , Reflection에서 활용할 수 있다니](https://www.notion.so/15-757106032d85452cbc60cf1808d53978)
+
+
+> 가운데 값 까리하게 구하기
+> `left + (right - left) / 2`
+> `(start + end) >>> 1`

@@ -23,6 +23,9 @@ nav_order: 4
     -   `Class.forName("FQCN")`
     -   클래스패스에 해당 클래스가 없다면 `ClassNotFoundException`이 발생한다.
 
+> ✋ **FQCN** (Full Qualified Class name)
+> **클래스가 속한 패키지명을 모두 포함한 이름을 말한다.**
+
 ## **`Class<T>`를 통해 할 수 있는 것**
 
 -   필드(목록) 가져오기
