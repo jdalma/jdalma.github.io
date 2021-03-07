@@ -152,7 +152,6 @@ this.getClass().getGenericSuperClass().getActualTypeArguments()[0]
   - 변수에 할당할 수 있고 ,  매개변수로 전달할 수 있고 , 리턴값으로도 받을 수 있다.
 - JAVA8 부터 함수형 프로그래밍을 지원한다.
 - 📌 `LambdaMetaFactory` ( + `MethodHandles`)
-- the devil is in the details
 
 ### 참고 링크
 
