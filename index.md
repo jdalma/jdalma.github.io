@@ -8,7 +8,7 @@ permalink: /
 # **About Me**
 
 제가 매고 있는 **가방에 여러 기술을 차곡차곡 쌓아가는, 배움에 대한 즐거움**을 느끼고 있습니다.
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 
 ### ✍ **JAVA , Spring , JPA**
 
