@@ -13,6 +13,7 @@ parent: 예외 정리
 ---
 
 # **JSON 파싱**
+🚨`java.lang.ClassCastException: org.json.simple.JSONObject cannot be cast to net.sf.json.JSONObject`
 
 ```java
 JSONArray slaveGridList = (JSONArray) parser.parse(entity.getSlaveGrid());
@@ -36,8 +37,6 @@ for(int i = 0 ; i < slaveGridList.size() ; i++) {
 1. MasterForm의 데이터를 `entity` 생성
 2. `entity`안에 든 `slaveGridList`(JSON문자열) 데이터를 꺼낸다.
 3. JSONArray ➜ JSONObject 캐스팅 예외
-
-**java.lang.ClassCastException: org.json.simple.JSONObject cannot be cast to net.sf.json.JSONObject**
 
 ## **해결**
 - JSON import문제
