@@ -39,5 +39,16 @@ for(int i = 0 ; i < slaveGridList.size() ; i++) {
 3. JSONArray ➜ JSONObject 캐스팅 예외
 
 ## **해결**
+```java
+JSONParser parser = new JSONParser();
+org.json.simple.JSONArray slaveGridList = (org.json.simple.JSONArray) parser.parse(entity.getSlaveGrid());
+
+for(int i = 0 ; i < slaveGridList.size() ; i++) {
+    org.json.simple.JSONObject row = (org.json.simple.JSONObject) slaveGridList.get(i);
+    Mbsreq002Basis basisEntity = new Mbsreq002Basis(row);
+    basisEntity.setRegId(entity.getRegId());
+    ...
+```
 - JSON import문제
-- import org.json.simple.JSON ➜ import net.sf.json.JSON
+- 현재 Service로직은 net.sf.json을 사용
+- 해당 로직만 json.simple 사용
