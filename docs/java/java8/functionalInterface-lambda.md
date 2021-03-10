@@ -240,6 +240,7 @@ public static void main(String[] args) {
 ## **`Supplier<T>`**
 -   **T 타입의 값을 제공하는 함수 인터페이스**
     -   T get()
+
 ```java
 public static void main(String[] args) {
     Supplier<Integer> get = () -> 1;
