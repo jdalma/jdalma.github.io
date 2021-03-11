@@ -235,7 +235,6 @@ public @interface MyAnnotation {
 }
 ```
 ```java
-
 public class Test {
     @MyAnnotation(name = "hyunjun" , number = 100)
     private String super_a = "private : [a]";
