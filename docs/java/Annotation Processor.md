@@ -52,21 +52,67 @@ nav_order: 6
 - 여기서는 핵심 로직만 확인하자.
 - [Maven 설치](https://dev-youngjun.tistory.com/109)
 
+```java
+// Google에서 제작한 AutoService를 사용하여
+// 이 GetterProcessor를 Processor로 등록해달라고 하는 것이다.
+@AutoService(Processor.class)
+public class GetterProcessor extends AbstractProcessor {
+    // implements Processor를 구현하여도 되지만
+    // AbstractProcessor가 Processor를 어느정도 구현 해놓았다.
+
+    // 이 프로세서가 어떤 어노테이션을 처리할 것인지
+    @Override
+    public Set<String> getSupportedAnnotationTypes() {
+        // 처리할 어노테이션의 문자열
+        return Set.of(JeongGetter.class.getName());
+    }
+
+    // 어떤 소스코드의 버전을 지원하는지
+    @Override
+    public SourceVersion getSupportedSourceVersion() {
+        return SourceVersion.latestSupported();
+    }
+
+    // ture를 리턴 시 이 어노테이션의 타입을 처리하였으니 (여러 라운드의) 다음 프로세서들은 이 어노테이션의 타입을 다시 처리하진 않는다.
+    @Override
+    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+        Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(JeongGetter.class);
+
+        for(Element element : elements){
+            Name elementName = element.getSimpleName();
+            if(element.getKind() != ElementKind.INTERFACE){
+                // JeongGetter 어노테이션을 인터페이스가 아닌 다른 곳에 작성하였다면
+                // 컴파일 에러 처리
+                processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR , "Getter Annotation can not used on " + elementName);
+            }
+            else{
+                // 인터페이스에 제대로 작성하였다면
+                // 로깅
+                processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE , "Processing " + elementName);
+            }
+        }
+        return true;
+    }
+
+}
+```
 
 > ✋ Resources 폴더 만들기
 > - Resources폴더로 지정하여야 .jar안에 포함된다.
 > - ![](../../assets/images/java/annotation-processor/1.png)
 
 
-> ✋ **[AutoService](https://github.com/google/auto/tree/master/service) - 서비스 프로바이더 레지스트리 생성기 (이것도 Annotation Processor이다)**
+> ✋ **[AutoService](https://github.com/google/auto/tree/master/service) - 서비스 프로바이더 레지스트리 생성기**
+> - (이것도 Annotation Processor이다)
 > - 위에서 한 Resources 폴더를 따로 만들지 않아도 된다.
-> - 컴파일 시점에 애노테이션 프로세서를 사용하여 `META-INF/services/javax.annotation.processor.Processor` 파일 자동으로 생성해 줌.
+> - 컴파일 시점에 애노테이션 프로세서를 사용하여 `META-INF/services/javax.annotation.processor.Processor` 파일 자동으로 생성해준다.
+> - **📌 [Service Provider](https://itnext.io/java-service-provider-interface-understanding-it-via-code-30e1dd45a091?gi=6d82ed277a29)의 개념이다.**
 >
 > ```html
 > <dependency>
-> <groupId>com.google.auto.service</groupId>
-> <artifactId>auto-service</artifactId>
-> <version>1.0-rc6</version>
+>   <groupId>com.google.auto.service</groupId>
+>   <artifactId>auto-service</artifactId>
+>   <version>1.0-rc6</version>
 > </dependency>
 > ```
 > ```java
@@ -75,3 +121,30 @@ nav_order: 6
 >     ...
 > }
 > ```
+> - jar파일을 zip으로 변환하여 폴더 내부를 보면 자동으로 만들어준 걸 확인할 수 있다.
+> - ![](../../assets/images/java/annotation-processor/2.png)
+> - 인텔리
+> - ![](../../assets/images/java/annotation-processor/3.png)
+
+## **내가 만든 Annotation Processor 다른 프로젝트에 주입하기**
+✅ **원하는 프로젝트에 추가**
+{: .fh-default .fs-5 }
+
+```html
+<dependencies>
+  ...
+  <dependency>
+    <groupId>org.example</groupId>
+    <artifactId>jeong-lombok</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </dependency>
+
+</dependencies>
+```
+✅ **라이브러리에 추가된 것을 볼 수 있다.**
+{: .fh-default .fs-5 }
+![](../../assets/images/java/annotation-processor/4.png)
+
+
+> ✋ **Interface가 아닌 class에 `@JeongGetter` 작성 시 컴파일 에러를 확인할 수 있다.**
+> - ![](../../assets/images/java/annotation-processor/5.png)
