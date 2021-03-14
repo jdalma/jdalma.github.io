@@ -254,7 +254,7 @@ public static void main( String[] args ) {
   -  ButterKinfe: `@BindView` (뷰 아이디와 애노테이션 붙인 필드 바인딩)
   -  DeepLinkDispatch: 특정 URI 링크를 Activity로 연결할 때 사용
 
-# **✍**
+# **✍ 키워드**
 
 - javax.annotation.processing
   - AbstractProcessor , **[Processor](https://docs.oracle.com/javase/8/docs/api/javax/annotation/processing/Processor.html)**
