@@ -254,8 +254,15 @@ public static void main( String[] args ) {
   -  ButterKinfe: `@BindView` (뷰 아이디와 애노테이션 붙인 필드 바인딩)
   -  DeepLinkDispatch: 특정 URI 링크를 Activity로 연결할 때 사용
 
-**애노테이션 프로세서 장점**
-- 런타임 비용이 제로
+# **✍**
 
-**애노테이션 프로세서 단점**
-- 기존 클래스 코드를 변경할 때는 약간의 hack이 필요하다.
+- javax.annotation.processing
+  - AbstractProcessor , **[Processor](https://docs.oracle.com/javase/8/docs/api/javax/annotation/processing/Processor.html)**
+  - **[Filer 인터페이스](https://docs.oracle.com/en/java/javase/11/docs/api/java.compiler/javax/annotation/processing/Filer.html)**
+  - RoundEnvironment
+  - ProcessingEnvironment
+- javax.lang.model
+  - Element
+  - TypeElement
+-  **[Javapoet](https://github.com/square/javapoet)**
+-  **[AutoService](https://github.com/google/auto/tree/master/service)**
