@@ -43,15 +43,62 @@ nav_order: 6
 
 
 # **Annotation Processor 실습**
+
+> ✔
+> - **추후 Toy Project에 `JeongLombok`을 게시할 예정**
+> - 여기서는 핵심 로직만 확인하자.
+> - [Maven 설치](https://dev-youngjun.tistory.com/109)
+
 ✅ **JAVA6 부터 제공하는 Annotation Processor API를 사용**
 {: .fh-default .fs-5 }
 
 ✅ **[Processor 인터페이스](https://docs.oracle.com/en/java/javase/11/docs/api/java.compiler/javax/annotation/processing/Processor.html)** -  **여러 라운드(rounds)에 걸쳐 소스 및 컴파일 된 코드를 처리 할 수 있다.**
+{: .fh-default .fs-5 }
 
-- **추후 Toy Project에 `JeongLombok`을 게시할 예정**
-- 여기서는 핵심 로직만 확인하자.
-- [Maven 설치](https://dev-youngjun.tistory.com/109)
+✅ **[Filer 인터페이스](https://docs.oracle.com/en/java/javase/11/docs/api/java.compiler/javax/annotation/processing/Filer.html)** - **소스 코드, 클래스 코드 및 리소스를 생성할 수 있는 인터페이스**
+{: .fh-default .fs-5 }
 
+
+ > ✋  **[Javapoet](https://github.com/square/javapoet)**
+ > - **소스 코드 생성 유틸리티 라이브러리**
+ > ```html
+ > <dependency>
+>    <groupId>com.squareup</groupId>
+>    <artifactId>javapoet</artifactId>
+>    <version>1.11.1</version>
+> </dependency>
+> ```
+
+> ✋ **Resources 폴더 만들기**
+> - Resources폴더로 지정하여야 .jar안에 포함된다.
+> - ![](../../assets/images/java/annotation-processor/1.png)
+
+
+> ✋ **[AutoService](https://github.com/google/auto/tree/master/service) - 서비스 프로바이더 레지스트리 생성기**
+> - (이것도 Annotation Processor이다)
+> - 위에서 한 Resources 폴더를 따로 만들지 않아도 된다.
+> - 컴파일 시점에 애노테이션 프로세서를 사용하여 `META-INF/services/javax.annotation.processor.Processor` 파일 자동으로 생성해준다.
+> - **📌 [Service Provider](https://itnext.io/java-service-provider-interface-understanding-it-via-code-30e1dd45a091?gi=6d82ed277a29)의 개념이다.**
+>
+> ```html
+> <dependency>
+>   <groupId>com.google.auto.service</groupId>
+>   <artifactId>auto-service</artifactId>
+>   <version>1.0-rc6</version>
+> </dependency>
+> ```
+> ```java
+> @AutoService(Processor.class)
+> public class GetterProcessor extends AbstractProcessor {
+>   ...
+> }
+> ```
+> - jar파일을 zip으로 변환하여 폴더 내부를 보면 자동으로 만들어준 걸 확인할 수 있다.
+> - ![](../../assets/images/java/annotation-processor/2.png)
+> - 인텔리
+> - ![](../../assets/images/java/annotation-processor/3.png)
+
+## 📌 **핵심 로직**
 ```java
 // Google에서 제작한 AutoService를 사용하여
 // 이 GetterProcessor를 Processor로 등록해달라고 하는 것이다.
@@ -90,41 +137,48 @@ public class GetterProcessor extends AbstractProcessor {
                 // 로깅
                 processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE , "Processing " + elementName);
             }
+
+            // javax.lang.model.element public interface TypeElement를
+            // com.squareup.javapoet public final class ClassName 으로 변환할 수 있다.
+            TypeElement typeElement = (TypeElement) element;
+            // ClassName으로 그 클래스에 대한 정보를 사용할 수 있다.
+            ClassName className = ClassName.get(typeElement);
+
+            // com.squareup.javapoet public final class MethodSpec을 사용하여 메서드를 만들 수 있다.
+            MethodSpec get = MethodSpec.methodBuilder("get")
+                                        .addModifiers(Modifier.PUBLIC)
+                                        .returns(String.class)
+                                        .addStatement("return $S" , "getter")
+                                        .build();
+
+            // com.squareup.javapoet.TypeSpec을 사용하여 클래스를 만들 수 있다.
+            TypeSpec makeClass = TypeSpec.classBuilder("Getter")
+                                        .addModifiers(Modifier.PUBLIC)
+                                        .addSuperinterface(className)
+                                        .addMethod(get)
+                                        .build();
+
+            // 위에서 정의한 Spec을 사용하여 실제 Source 코드에 삽입해보자
+
+            // 1. javax.annotation.processing public interface Filer 인터페이스를 가져오자
+            Filer filer = processingEnv.getFiler();
+
+            // 2. com.squareup.javapoet public final class JavaFile 을 사용
+            // 2.1 makeClass를 해당 패키지에 만들어 달라.
+            // 2.2 위에서 가저온 filer를 사용하여 써달라.
+            try {
+                JavaFile.builder(className.packageName() , makeClass)
+                        .build()
+                        .writeTo(filer);
+            } catch (IOException e) {
+                processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR , "FATA ERROR : " + e);
+            }
         }
         return true;
     }
 
 }
 ```
-
-> ✋ Resources 폴더 만들기
-> - Resources폴더로 지정하여야 .jar안에 포함된다.
-> - ![](../../assets/images/java/annotation-processor/1.png)
-
-
-> ✋ **[AutoService](https://github.com/google/auto/tree/master/service) - 서비스 프로바이더 레지스트리 생성기**
-> - (이것도 Annotation Processor이다)
-> - 위에서 한 Resources 폴더를 따로 만들지 않아도 된다.
-> - 컴파일 시점에 애노테이션 프로세서를 사용하여 `META-INF/services/javax.annotation.processor.Processor` 파일 자동으로 생성해준다.
-> - **📌 [Service Provider](https://itnext.io/java-service-provider-interface-understanding-it-via-code-30e1dd45a091?gi=6d82ed277a29)의 개념이다.**
->
-> ```html
-> <dependency>
->   <groupId>com.google.auto.service</groupId>
->   <artifactId>auto-service</artifactId>
->   <version>1.0-rc6</version>
-> </dependency>
-> ```
-> ```java
-> @AutoService(Processor.class)
-> public class MagicMojaProcessor extends AbstractProcessor {
->     ...
-> }
-> ```
-> - jar파일을 zip으로 변환하여 폴더 내부를 보면 자동으로 만들어준 걸 확인할 수 있다.
-> - ![](../../assets/images/java/annotation-processor/2.png)
-> - 인텔리
-> - ![](../../assets/images/java/annotation-processor/3.png)
 
 ## **내가 만든 Annotation Processor 다른 프로젝트에 주입하기**
 ✅ **원하는 프로젝트에 추가**
@@ -145,6 +199,63 @@ public class GetterProcessor extends AbstractProcessor {
 {: .fh-default .fs-5 }
 ![](../../assets/images/java/annotation-processor/4.png)
 
+**mvn clean compile 시**
+```java
+@JeongGetter
+public interface getterTest {
+}
+```
+
+✅ **`@JeongGetter` 어노테이션에 의해 getterTest.interface의 Getter.class (구현체)가 생긴것을 볼 수 있다.**
+{: .fh-default .fs-5 }
+![](../../assets/images/java/annotation-processor/6.png)
 
 > ✋ **Interface가 아닌 class에 `@JeongGetter` 작성 시 컴파일 에러를 확인할 수 있다.**
 > - ![](../../assets/images/java/annotation-processor/5.png)
+
+
+**📌 해당 Annotation Processor로 생성된 코드를 사용하기**
+{: .fh-default .fs-5 }
+
+**해당 이미지의 `annotations` 폴더 아래의 파일들을 `Source`로 설정 해야 된다.**
+- ![](../../assets/images/java/annotation-processor/7.png)
+- ![](../../assets/images/java/annotation-processor/8.png)
+
+```java
+@JeongGetter
+public interface getterTest {
+    public String get();
+}
+```
+
+```java
+public static void main( String[] args ) {
+    getterTest get = new Getter();
+    System.out.println(get.get());
+    // 출력
+    // getter
+}
+```
+
+# **📌 정리**
+- **컴파일러가 컴파일 하는 중에 해당 어노테이션이 달린 클래스 정보를 읽어들여 새로운 소스 코드를 생성해내거나 기존 코드를 수정 (롬복 처럼) 할 수 있다.**
+- **별개의 메서드나 클래스를 만들어 낼 수 있는 아주 강력한 기능이다.**
+- `@JeongGetter` 어노테이션을 처리하는 Annotation Processor를 만들어 해당 Annotation Processor 프로젝트를 라이브러리로 땡겨 <span style="color:red; font-weight:bold">소스 코드에 없던 코드를 만들어 내보았다.</span>
+- **`getterTest`인터페이스에  `@JeongGetter`어노테이션을 추가하여 컴파일시점에 `getterTest`의 구현체인 `Getter`를 생성해보았다.**
+- 이 기술을 응용하여 `Jeong-Lombok`을 만들어보자!
+
+**애노테이션 프로세서 사용 예**
+- 롬복
+- AutoService: java.util.ServiceLoader용 파일 생성 유틸리티
+- `@Override`
+  -  [참고](https://stackoverflow.com/questions/18189980/how-do-annotations-like-overridework-internally-in-java/18202623)
+- Dagger 2: 컴파일 타임 DI 제공
+- 안드로이드 라이브러리
+  -  ButterKinfe: `@BindView` (뷰 아이디와 애노테이션 붙인 필드 바인딩)
+  -  DeepLinkDispatch: 특정 URI 링크를 Activity로 연결할 때 사용
+
+**애노테이션 프로세서 장점**
+- 런타임 비용이 제로
+
+**애노테이션 프로세서 단점**
+- 기존 클래스 코드를 변경할 때는 약간의 hack이 필요하다.
