@@ -45,3 +45,32 @@ nav_order: 6
 # **Annotation Processor 실습**
 ✅ **JAVA6 부터 제공하는 Annotation Processor API를 사용**
 {: .fh-default .fs-5 }
+
+✅ **[Processor 인터페이스](https://docs.oracle.com/en/java/javase/11/docs/api/java.compiler/javax/annotation/processing/Processor.html)** -  **여러 라운드(rounds)에 걸쳐 소스 및 컴파일 된 코드를 처리 할 수 있다.**
+
+- **추후 Toy Project에 `JeongLombok`을 게시할 예정**
+- 여기서는 핵심 로직만 확인하자.
+- [Maven 설치](https://dev-youngjun.tistory.com/109)
+
+
+> ✋ Resources 폴더 만들기
+> - Resources폴더로 지정하여야 .jar안에 포함된다.
+> - ![](../../assets/images/java/annotation-processor/1.png)
+
+
+> ✋ **[AutoService](https://github.com/google/auto/tree/master/service) - 서비스 프로바이더 레지스트리 생성기 (이것도 Annotation Processor이다)**
+> - 위에서 한 Resources 폴더를 따로 만들지 않아도 된다.
+> - 컴파일 시점에 애노테이션 프로세서를 사용하여 `META-INF/services/javax.annotation.processor.Processor` 파일 자동으로 생성해 줌.
+> ```html
+> <dependency>
+> <groupId>com.google.auto.service</groupId>
+> <artifactId>auto-service</artifactId>
+> <version>1.0-rc6</version>
+> </dependency>
+> ```
+> ```java
+> @AutoService(Processor.class)
+> public class MagicMojaProcessor extends AbstractProcessor {
+> ...
+> }
+> ```
