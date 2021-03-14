@@ -61,6 +61,7 @@ nav_order: 6
 > ✋ **[AutoService](https://github.com/google/auto/tree/master/service) - 서비스 프로바이더 레지스트리 생성기 (이것도 Annotation Processor이다)**
 > - 위에서 한 Resources 폴더를 따로 만들지 않아도 된다.
 > - 컴파일 시점에 애노테이션 프로세서를 사용하여 `META-INF/services/javax.annotation.processor.Processor` 파일 자동으로 생성해 줌.
+>
 > ```html
 > <dependency>
 > <groupId>com.google.auto.service</groupId>
@@ -71,6 +72,6 @@ nav_order: 6
 > ```java
 > @AutoService(Processor.class)
 > public class MagicMojaProcessor extends AbstractProcessor {
-> ...
+>     ...
 > }
 > ```
