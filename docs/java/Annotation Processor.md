@@ -256,6 +256,8 @@ public static void main( String[] args ) {
   -  ButterKinfe: `@BindView` (뷰 아이디와 애노테이션 붙인 필드 바인딩)
   -  DeepLinkDispatch: 특정 URI 링크를 Activity로 연결할 때 사용
 
+***
+
 # **✍ 키워드**
 
 - javax.annotation.processing
@@ -268,3 +270,6 @@ public static void main( String[] args ) {
   - TypeElement
 -  **[Javapoet](https://github.com/square/javapoet)**
 -  **[AutoService](https://github.com/google/auto/tree/master/service)**
+
+# **Annotation Processor**
+- [Annotation-Processing 101 번역본](https://medium.com/@jason_kim/annotation-processing-101-%EB%B2%88%EC%97%AD-be333c7b913)
