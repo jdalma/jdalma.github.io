@@ -15,10 +15,15 @@ nav_order: 1
 # **Jeong-Lombok** [Github](https://github.com/jeongcode/jeong-lombok)
 
 📌 **[Lombok은 어떻게 동작하는걸까?](https://jeongcode.github.io/docs/java/Annotation%20Processor/)**
-{: .fh-default .fs-6 }
+{: .fh-default .fs-4 }
 
 ## **`@JeongGetter`**
+- Class에만 허용한다.
+
 
 ## **`@JeongSetter`**
+- Class에만 허용한다.
+
 
 ## **`@JeongToString`**
+- Class에만 허용한다.
