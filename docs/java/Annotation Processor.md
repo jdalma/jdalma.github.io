@@ -340,3 +340,5 @@ public class MyProcessor extends AbstractProcessor {
 > ```
 - 특정 안드로이드의 호환성을 위해 `@SupportedAnnotationTypes` 와 `@SupportedSourceVersion` 대신에 `getSupportedAnnotationTypes()` 와 `getSupportedSourceVersion()` 를 사용할 것을 추천 합니다.
 
+
+### **+** Error Handling
