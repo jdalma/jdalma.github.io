@@ -273,3 +273,70 @@ public static void main( String[] args ) {
 
 # **Annotation Processor**
 - [Annotation-Processing 101 번역본](https://medium.com/@jason_kim/annotation-processing-101-%EB%B2%88%EC%97%AD-be333c7b913)
+- 컴파일 시간에 어노테이션들을 스캐닝하고 프로세싱하는 javac에 속한 빌드 툴, **JVM위에서 돌아간다.**
+- 어노테이션 프로세싱은 자바5 부터 가능하지만 유용한 API들은 자바6(2006년 12월에 출시) 부터 사용 가능
+- 특정 어노테이션을 위한 어노테이션 프로세서는 자바 코드(또는 컴파일된 바이트코드)를 인풋으로 받아서 아웃풋으로 파일(보통 .java파일)을 생성한다. ➜ 자바 코드를 생성할 수 있다.
+- <span style="color:red; font-weight:bold">이미 존재하는 자바 파일을 수정해서 메서드를 추가하는 것은 할 수 없다.</span>
+
+## **Abastract Processor**
+- 프로세서 API
+- 모든 프로세서들은 Abstract Processor를 상속 받아야 한다.
+
+```java
+public class MyProcessor extends AbstractProcessor {
+
+	@Override
+	public synchronized void init(ProcessingEnvironment env){ }
+
+	@Override
+	public boolean process(Set<? extends TypeElement> annoations, RoundEnvironment env) { }
+
+	@Override
+	public Set<String> getSupportedAnnotationTypes() { }
+
+	@Override
+	public SourceVersion getSupportedSourceVersion() { }
+
+}
+```
+
+### `init(ProcessingEnvironment env)`
+- 모든 어노테이션 프로세서 클래스는 empty생성자를 반드시 가저야 한다.
+- **대신 , `ProcessingEnvironment`를 파라미터로 받아 어노테이션 프로세싱 툴이 호출하는 특별한 init()메서드를 가지고 있다.**
+- **`ProcessingEnvironment`**
+  - Elements
+  - Types
+  - Filer
+  - ...
+  - 위와 같이 유용한 유틸 클래스들을 제공한다.
+
+
+### `process(Set<? extends TypeElement> annotations, RoundEnvironment env)`
+- 각각의 프로세서의 main() 메서드의 역할을 한다.
+- scanning , evaluating , 어노테이션 프로세싱 , 자바 파일 생성을 위한 코드를 작성한다.
+- **`RoundEnvironment` 가지고 특정 어노테이션이 달린 것들을 찾을 수 있다.**
+
+### `getSupportedAnnotationTypes()`
+- 이 어노테이션 프로세서가 처리할 어노테이션들을 명시한다.
+
+### `getSupportedSourceVersion()`
+- 사용하고있는 특정 자바 버전을 명시하는데 사용한다.
+- 보통 `SourceVersion.latestSupported()` 를 리턴하면 됩니다.
+
+> ✋ **JAVA 7**
+> ```java
+> @SupportedSourceVersion(SourceVersion.latestSupported())
+> @SupportedAnnotationTypes({
+>   // Set of full qullified annotation type names
+> })
+>public class MyProcessor extends AbstractProcessor {
+>
+>	@Override
+>	public synchronized void init(ProcessingEnvironment env){ }
+>
+>	@Override
+>	public boolean process(Set<? extends TypeElement> annoations, RoundEnvironment env) { }
+>}
+> ```
+- 특정 안드로이드의 호환성을 위해 `@SupportedAnnotationTypes` 와 `@SupportedSourceVersion` 대신에 `getSupportedAnnotationTypes()` 와 `getSupportedSourceVersion()` 를 사용할 것을 추천 합니다.
+
