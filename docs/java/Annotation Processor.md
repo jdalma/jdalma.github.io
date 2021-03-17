@@ -367,7 +367,7 @@ public class MyProcessor extends AbstractProcessor {
 > 1. 프로세싱 라운드는 어노테이션 프로세서의 `process()` 를 호출합니다.
 > 1. 해당 Processor(작성한 AnnotationProcessor)는 한번 인스턴스화 된다. (새로운 프로세서가 매 라운드마다 생성되지는 않는다.)
 > 1. 하지만 새로운 소스파일이 생겨난다면 `process()`는 여러번 호출될 수 있다.
-> - 참고 이미지 ([출처](http://hannesdorfmann.com/annotation-processing/annotationprocessing101/) - hannesdorfmann.com/annotation-processing/annotationprocessing101)
+> - 참고 이미지 ([출처](http://hannesdorfmann.com/annotation-processing/annotationprocessing101/) - hannesdorfmann.com)
 >   - ![](../../assets/images/java/annotation-processor/9.png)
 >   -  첫번째 라운드에서 우리는 MagheritaPizza, CalzonePizza, Tiramisu 를 발견하고 MealFactory.java 를 생성
 >   - 두번째 라운드에서 MealFactory 를 인풋으로 삼는다.
