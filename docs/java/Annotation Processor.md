@@ -13,10 +13,10 @@ nav_order: 6
 
 # **Lombok은 어떻게 동작하는 걸까?**
 ✅ **`@Getter`, `@Setter`, `@Builder` 등의 애노테이션과 애노테이션 프로세서를 제공하여 표준적으로 작성해야 할 코드를 개발자 대신 생성해주는 라이브러리.**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 
 ✅ **Annotation Processor의 대표적인 예**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 
 **[Lombok사용해보기](https://jeongcode.github.io/docs/spring/lombok-use/)**
 
@@ -50,13 +50,13 @@ nav_order: 6
 > - [Maven 설치](https://dev-youngjun.tistory.com/109)
 
 ✅ **JAVA6 부터 제공하는 Annotation Processor API를 사용**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 
 ✅ **[Processor 인터페이스](https://docs.oracle.com/en/java/javase/11/docs/api/java.compiler/javax/annotation/processing/Processor.html)** -  **여러 라운드(rounds)에 걸쳐 소스 및 컴파일 된 코드를 처리 할 수 있다.**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 
 ✅ **[Filer 인터페이스](https://docs.oracle.com/en/java/javase/11/docs/api/java.compiler/javax/annotation/processing/Filer.html)** - **소스 코드, 클래스 코드 및 리소스를 생성할 수 있는 인터페이스**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 
 
  > ✋  **[Javapoet](https://github.com/square/javapoet)**
@@ -184,7 +184,7 @@ public class GetterProcessor extends AbstractProcessor {
 
 ## **내가 만든 Annotation Processor 다른 프로젝트에 주입하기**
 ✅ **원하는 프로젝트에 추가**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 
 ```html
 <dependencies>
@@ -198,7 +198,7 @@ public class GetterProcessor extends AbstractProcessor {
 </dependencies>
 ```
 ✅ **라이브러리에 추가된 것을 볼 수 있다.**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 ![](../../assets/images/java/annotation-processor/4.png)
 
 **mvn clean compile 시**
@@ -209,7 +209,7 @@ public interface getterTest {
 ```
 
 ✅ **`@JeongGetter` 어노테이션에 의해 getterTest.interface의 Getter.class (구현체)가 생긴것을 볼 수 있다.**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 ![](../../assets/images/java/annotation-processor/6.png)
 
 > ✋ **Interface가 아닌 class에 `@JeongGetter` 작성 시 컴파일 에러를 확인할 수 있다.**
@@ -217,7 +217,7 @@ public interface getterTest {
 
 
 **📌 해당 Annotation Processor로 생성된 코드를 사용하기**
-{: .fh-default .fs-5 }
+{: .fh-default .fs-4 }
 
 **해당 이미지의 `annotations` 폴더 아래의 파일들을 `Source`로 설정 해야 된다.**
 - ![](../../assets/images/java/annotation-processor/7.png)
@@ -301,8 +301,7 @@ public class MyProcessor extends AbstractProcessor {
 ```
 
 ### `init(ProcessingEnvironment env)`
-- 모든 어노테이션 프로세서 클래스는 empty생성자를 반드시 가저야 한다.
-- **대신 , `ProcessingEnvironment`를 파라미터로 받아 어노테이션 프로세싱 툴이 호출하는 특별한 init()메서드를 가지고 있다.**
+- **`ProcessingEnvironment`를 파라미터로 받아 어노테이션 프로세싱 툴이 호출하는 특별한 init()메서드를 가지고 있다.**
 - **`ProcessingEnvironment`**
   - Elements
   - Types
@@ -371,7 +370,12 @@ public class MyProcessor extends AbstractProcessor {
 >   - ![](../../assets/images/java/annotation-processor/9.png)
 >   -  첫번째 라운드에서 우리는 MagheritaPizza, CalzonePizza, Tiramisu 를 발견하고 MealFactory.java 를 생성
 >   - 두번째 라운드에서 MealFactory 를 인풋으로 삼는다.
->   - `@Factory`(예제 어노테이션) 어노테이션이 업기 때문에 데이터가 수집되지 않고 , 에러를 유발하지도 않는다.
+>   - `@Factory`(예제 어노테이션) 어노테이션이 없기 때문에 데이터가 수집되지 않고 , 에러를 유발하지도 않는다.
 
  📌 **어노테이션 프로세싱은 여러 라운드가 실행되고 이미 생성된 소스 파일을 덮어 쓰거나 재생성하지 않아야한다.**
  {: .fh-default .fs-5 }
+
+
+***
+
+#
