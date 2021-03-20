@@ -40,7 +40,7 @@ nav_order: 6
   -  그럼에도 불구하고 엄청난 편리함 때문에 널리 쓰이고 있으며 대안이 몇가지 있지만 롬복의 모든 기능과 편의성을 대체하진 못하는 현실이다.
     - [AutoValue](https://github.com/google/auto/blob/master/value/userguide/index.md)
     - [Immutables](https://immutables.github.io)
-
+ - **[Javac의 원리](https://jeongcode.github.io/docs/java/javac-principle/)**
 
 # **Annotation Processor 실습**
 
@@ -99,6 +99,9 @@ nav_order: 6
 > - ![](../../assets/images/java/annotation-processor/2.png)
 > - 인텔리
 > - ![](../../assets/images/java/annotation-processor/3.png)
+
+
+
 
 ## 📌 **핵심 로직**
 ```java
@@ -238,6 +241,8 @@ public static void main( String[] args ) {
     // getter
 }
 ```
+
+***
 
 # **📌 정리**
 - **컴파일러가 컴파일 하는 중에 해당 어노테이션이 달린 클래스 정보를 읽어들여 새로운 소스 코드를 생성해내거나 기존 코드를 수정 (롬복 처럼) 할 수 있다.**
