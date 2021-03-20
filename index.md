@@ -5,6 +5,9 @@ nav_order: 1
 permalink: /
 ---
 
+💬 **Ask me about anything [here](https://github.com/jeongcode/jeongcode.github.io/issues)**
+{: .fh-default .fs-5 }
+
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjeongcode.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 # **Interest**
