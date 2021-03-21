@@ -4,6 +4,13 @@ title: Javac의 원리
 parent: JAVA
 nav_order: 7
 ---
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 ## **javac의 원리**
 - **추상 구문 트리**까지만 알아보자
