@@ -56,7 +56,7 @@ for(int i = 0 ; i < slaveGridList.size() ; i++) {
 
 ***
 
-# **JDK com.sun.* import 문제**
+# **JDK 11 `com.sun.*` import 문제**
 
 - 컴파일 시점 Annotation Processor를 통한 자바 코드 수정을 위하여 AST 접근에 필요한
 ```java
@@ -76,11 +76,13 @@ import com.sun.tools.javac.util.Names;
 - 런타임 에러는 나지 않지만 `mvn clean install` 빌드 시
 - ![](../../assets/images/exception/java/1.png)
 
-## **해결**
+## **원인**
 - 출처
   - [Java 9에서 com.sun.tools.javac.util 액세스](https://stackoverflow.com/questions/46773519/accessing-com-sun-tools-javac-util-from-java-9)
   - [Java 8에서 Java 11로 업그레이드-sun.util 패키지가 없습니다.](https://www.javaer101.com/en/article/114435.html)
   - [ "내부 API에 대한 불법 액세스"장 읽기](https://nipafx.dev/java-11-migration-guide/)
+
+> ✋
 > - 모듈 시스템의 가장 큰 판매 포인트 중 하나는 강력한 캡슐화입니다.
 > - 내 보내지 않은 패키지의 클래스뿐만 아니라 비공개 클래스도 모듈 외부에서 액세스 할 수 없도록합니다.
 > - 무엇보다도 이것은 JDK와 함께 제공되는 플랫폼 모듈에 적용되며, 여기서 java. * 및 javax. * 패키지 만 완전히 지원됩니다.
