@@ -20,14 +20,14 @@ nav_order: 1
 
 ## 외부 라이브러리 등록
 1. Project Structure - (Shift + Ctrl + Alt + S)
-![](../../assets/images/toy-project/1.png)
+- ![](../../assets/images/toy-project/1.png)
 1. 원하는 .jar 선택
-![](../../assets/images/toy-project/2.png)
+- ![](../../assets/images/toy-project/2.png)
 1. 프로젝트 선택
-![](../../assets/images/toy-project/3.png)
+- ![](../../assets/images/toy-project/3.png)
 
 > 🚨 **Global Libraries설정**
-> ![](../../assets/images/toy-project/4.png)
+> - ![](../../assets/images/toy-project/4.png)
 
 ## maven 의존성 추가
 ```html
