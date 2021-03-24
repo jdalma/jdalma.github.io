@@ -63,6 +63,13 @@ nav_order: 1
 {: .fh-default .fs-4 }
 
 
+- **Treemaker** : Abstact Syntax Tree 를 생성하는데 사용하게 된다. JCTree는 AST를 만들어내는 최상위 클래스 이다. 하지만 JCTree를 이용하여 new 를 사용하여 직접 생성할 수 없기에 Context를 이용해 AST 를 인식하고 Treemaker 라는 객체를 사용해야 한다는 것이다.
+- **Trees** : 어노테이션 프로스세의 process의 RoundEnvironment 가 코드의 element를 순회 하면서 받는 element의 정보들을 trees 에 넣기위해 선언
+- **TreePathScanner** : 모든 하위 트리노드를 방문하고, 상위 노드에 대한 경로를 유지하는 tree visitor
+- CompillationUnitTree 는 소스파일에서 패키지 선언에서 부터 abstract syntax tree 를 정의함
+- ClassTree -> 클래스 , 인터페이스, enum 어노테이션을 트리노드로 선언
+- class 정의 위에 어노테이션 작성시 내부적으로 메소드 실행
+- CompilationUnitTree AST(Abstract Syntax Tree 의 최상단)
 ## **`@JeongGetter`**
 - Class에만 허용한다.
 
