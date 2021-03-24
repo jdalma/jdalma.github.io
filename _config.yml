@@ -123,3 +123,10 @@ compress_html:
   profile: false
   # ignore:
   #   envs: all
+
+defaults:
+  -
+    scope:
+      path: "docs" # an empty string here means all files in the project
+    values:
+      layout: "page"
