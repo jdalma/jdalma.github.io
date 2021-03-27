@@ -185,7 +185,7 @@ public class GetterProcessor extends AbstractProcessor {
 }
 ```
 
-## **내가 만든 Annotation Processor 다른 프로젝트에 주입하기**
+## **내가 만든 Annotation Processor Maven 추가**
 ✅ **원하는 프로젝트에 추가**
 {: .fh-default .fs-4 }
 

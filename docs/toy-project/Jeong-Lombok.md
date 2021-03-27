@@ -51,10 +51,11 @@ nav_order: 1
 > ```
 
 # **Jeong-Lombok** [Github](https://github.com/jeongcode/jeong-lombok)
+- 롬복은 내부 컴파일러 `com.sun.*`를 사용하여 추상구문트리를 직접 수정한다.
+- **[JavaPoet](https://github.com/square/javapoet)** 을 사용하여 인터페이스에서만 사용되는 `@JeongEntity`를 만들어 보자
+- **JavaPoet**과 **AnnotationProcessor**의 이해를 위한 프로젝트이다.
+- 먼저 예시인 `@JeongGetter`를 통해 AST를 직접 조작하는 코드를 보자
 - JDK 8 , IntelliJ 2020.2.4
-- 참고
-  - [juejin.cn](https://juejin.cn/post/6844904082084233223#heading-1)
-
 
 📌 **[Lombok은 어떻게 동작하는걸까? (AnnotationProcessor에 대해)](https://jeongcode.github.io/docs/java/Annotation%20Processor/)**
 {: .fh-default .fs-4 }
@@ -62,21 +63,150 @@ nav_order: 1
 📌 **[Java 컴파일러](https://jeongcode.github.io/docs/java/javac-principle/)**
 {: .fh-default .fs-4 }
 
+## **`com.sun.*` 사용 예시**
 
-- **Treemaker** : Abstact Syntax Tree 를 생성하는데 사용하게 된다. JCTree는 AST를 만들어내는 최상위 클래스 이다. 하지만 JCTree를 이용하여 new 를 사용하여 직접 생성할 수 없기에 Context를 이용해 AST 를 인식하고 Treemaker 라는 객체를 사용해야 한다는 것이다.
-- **Trees** : 어노테이션 프로스세의 process의 RoundEnvironment 가 코드의 element를 순회 하면서 받는 element의 정보들을 trees 에 넣기위해 선언
-- **TreePathScanner** : 모든 하위 트리노드를 방문하고, 상위 노드에 대한 경로를 유지하는 tree visitor
-- CompillationUnitTree 는 소스파일에서 패키지 선언에서 부터 abstract syntax tree 를 정의함
-- ClassTree -> 클래스 , 인터페이스, enum 어노테이션을 트리노드로 선언
-- class 정의 위에 어노테이션 작성시 내부적으로 메소드 실행
-- CompilationUnitTree AST(Abstract Syntax Tree 의 최상단)
-## **`@JeongGetter`**
-- Class에만 허용한다.
+### **`@JeongGetter`**
 
+📌 **[Getter 참고](https://catch-me-java.tistory.com/49)**
+{: .fh-default .fs-4 }
+- [juejin.cn](https://juejin.cn/post/6844904082084233223#heading-1)
 
-## **`@JeongSetter`**
-- Class에만 허용한다.
+- com.sun.* 사용
+```java
+@AutoService(Processor.class)
+@SupportedAnnotationTypes("org.example.JeongGetter")
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
+public class GetterProcessor extends AbstractProcessor {
 
+    private Messager messager;
+    private ProcessingEnvironment processingEnvironment;
+    private Trees trees;
+    private TreeMaker treeMaker;
+    private Names names;
+    private Context context;
 
-## **`@JeongToString`**
-- Class에만 허용한다.
+    @Override
+    public synchronized void init(ProcessingEnvironment processingEnv) {
+        super.init(processingEnv);
+        JavacProcessingEnvironment javacProcessingEnvironment = (JavacProcessingEnvironment) processingEnv;
+        this.processingEnvironment = processingEnv;
+        this.messager = processingEnv.getMessager();
+        this.trees = Trees.instance(processingEnv);
+        this.context = javacProcessingEnvironment.getContext();
+        this.treeMaker = TreeMaker.instance(context);
+        this.names = Names.instance(context);
+    }
+
+    @Override
+    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+        System.out.println("call process =" + annotations);
+        TreePathScanner<Object, CompilationUnitTree> scanner = new TreePathScanner<Object, CompilationUnitTree>(){
+            @Override
+            public Trees visitClass(ClassTree classTree, CompilationUnitTree unitTree){
+                JCTree.JCCompilationUnit compilationUnit = (JCTree.JCCompilationUnit) unitTree;
+                if (compilationUnit.sourcefile.getKind() == JavaFileObject.Kind.SOURCE){
+                    compilationUnit.accept(new TreeTranslator() {
+                        @Override
+                        public void visitClassDef(JCTree.JCClassDecl jcClassDecl) {
+                            super.visitClassDef(jcClassDecl);
+                            List<JCTree> fields = jcClassDecl.getMembers();
+                            System.out.println("class name = " + jcClassDecl.getSimpleName());
+                            for(JCTree field : fields){
+                                System.out.println("class field = " + field);
+                                if (field instanceof JCTree.JCVariableDecl){
+                                    List<JCTree.JCMethodDecl> getters = createGetter((JCTree.JCVariableDecl) field);
+                                    for(JCTree.JCMethodDecl getter : getters){
+                                        jcClassDecl.defs = jcClassDecl.defs.prepend(getter);
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+                return trees;
+            }
+        };
+
+        for (final Element element : roundEnv.getElementsAnnotatedWith(JeongGetter.class)) {
+            System.out.println("call process - getPath() element = " + element);
+            if(element.getKind() != ElementKind.CLASS){
+                processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR, "@JeongGetter annotation cant be used on" + element.getSimpleName());
+            }else{
+                processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "@JeongGetter annotation Processing " + element.getSimpleName());
+                final TreePath path = trees.getPath(element);
+                scanner.scan(path, path.getCompilationUnit());
+            }
+        }
+        return true;
+    }
+
+    public List<JCTree.JCMethodDecl> createGetter(JCTree.JCVariableDecl var){
+        String str = var.name.toString();
+        String upperVar = str.substring(0,1).toUpperCase()+str.substring(1,var.name.length());
+        System.out.println(str + " Create Getter");
+        return List.of(
+                // treeMaker.Modifiers -> syntax tree node 에 접근하여 수정 및 삽입하는 역할
+                treeMaker.MethodDef(
+                        treeMaker.Modifiers(1), // public
+                        names.fromString("get".concat(upperVar)), // 메서드 명
+                        (JCTree.JCExpression) var.getType(), // return type
+                        List.nil(),
+                        List.nil(),
+                        List.nil(),
+                        treeMaker.Block(1, List.of(treeMaker.Return((treeMaker.Ident(var.getName()))))),
+                        null));
+    }
+}
+```
+
+```
+call process =[org.example.JeongGetter]
+call process - getPath() element = org.example.TestEntity
+class name = TestEntity
+class field =
+public <init>() {
+    super();
+}
+class field = private String TestEntity_first
+TestEntity_first Create Getter
+class field = private String TestEntity_second
+TestEntity_second Create Getter
+class field = private String TestEntity_third
+TestEntity_third Create Getter
+call process - getPath() element = org.example.TestEntity2
+class name = TestEntity2
+class field =
+public <init>() {
+    super();
+}
+class field = private String TestEntity2_first
+TestEntity2_first Create Getter
+call process =[]
+```
+- ![](../../assets/images/toy-project/5.png)
+- 해당 target의 디컴파일된 코드를 보면 `@Retention`에 의해 `@JeongGetter`는 포함되어 있지 않고 필드들의 getter메소드를 볼 수 있다.
+- 공개된 API가 아닌 컴파일러의 내부 클래스를 사용하여 AST를 수정한 것이다.
+- 특히 이클립스의 경우엔 java agent를 사용하여 컴파일러 클래스까지 조작하여 사용한다. 해당 클래스들 역시 공개된 API가 아니다보니 버전 호환성에 문제가 생길 수 있고 언제라도 그런 문제가 발생해도 이상하지 않다.
+- 그리하여 **AST를 수정하지 않고 인터페이스에 작성하여 구현체를 대신 만들어주는 어노테이션을 만들어 보고 싶어졌다.**
+
+***
+
+## **JavaPoet 사용**
+```html
+<dependency>
+   <groupId>com.squareup</groupId>
+   <artifactId>javapoet</artifactId>
+   <version>1.11.1</version>
+</dependency>
+```
+
+### **`@JeongEntity`**
+- **기능**
+  - Getter
+  - Setter
+  - toString
+  - equals
+  - Constructor
+    - full field
+    - map
+- **인터페이스에만 허용 하며 해당 엔티티 구현체를 생성한다.**
