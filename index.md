@@ -38,7 +38,7 @@ permalink: /
 - **Front**
   - DHTMLX , JavaScript
 - **Back**
-  - Java8 , Spring5 , Mybatis , Mssql
+  - Java8 , Spring5 , Mybatis , Mssql , Oracle
 - **etc (management , build..)**
   - Jenkins , SVN , Apache Tomcat
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 읽어보기
-nav_order: 90
+nav_order: 81
 permalink: /docs/only-read
 ---
 ## Table of contents
