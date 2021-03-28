@@ -52,8 +52,8 @@ nav_order: 1
 
 # **Jeong-Lombok** [Github](https://github.com/jeongcode/jeong-lombok)
 - 롬복은 내부 컴파일러 `com.sun.*`를 사용하여 추상구문트리를 직접 수정한다.
-- **[JavaPoet](https://github.com/square/javapoet)** 을 사용하여 인터페이스에서만 사용되는 `@JeongEntity`를 만들어 보자
-- **JavaPoet**과 **AnnotationProcessor**의 이해를 위한 프로젝트이다.
+- **[JavaPoet](https://www.baeldung.com/java-poet)** 을 사용하여 클래스에서만 사용되는 `@JeongPoetGetter`를 만들어 보자
+- **JavaPoet , AnnotationProcessor , Reflection , 자바컴파일러** 의 이해를 위한 프로젝트이다.
 - 먼저 예시인 `@JeongGetter`를 통해 AST를 직접 조작하는 코드를 보자
 - JDK 8 , IntelliJ 2020.2.4
 
@@ -72,6 +72,7 @@ nav_order: 1
 - [juejin.cn](https://juejin.cn/post/6844904082084233223#heading-1)
 
 - com.sun.* 사용
+
 ```java
 @AutoService(Processor.class)
 @SupportedAnnotationTypes("org.example.JeongGetter")
@@ -187,7 +188,8 @@ call process =[]
 - 해당 target의 디컴파일된 코드를 보면 `@Retention`에 의해 `@JeongGetter`는 포함되어 있지 않고 필드들의 getter메소드를 볼 수 있다.
 - 공개된 API가 아닌 컴파일러의 내부 클래스를 사용하여 AST를 수정한 것이다.
 - 특히 이클립스의 경우엔 java agent를 사용하여 컴파일러 클래스까지 조작하여 사용한다. 해당 클래스들 역시 공개된 API가 아니다보니 버전 호환성에 문제가 생길 수 있고 언제라도 그런 문제가 발생해도 이상하지 않다.
-- 그리하여 **AST를 수정하지 않고 인터페이스에 작성하여 구현체를 대신 만들어주는 어노테이션을 만들어 보고 싶어졌다.**
+- **JavaPoet으로는 클래스를 생성하고 코드를 생성할 순 있지만 , 컴파일 시점 특정 코드를 수정하고 삽입할 수는 없다.**
+
 
 ***
 
@@ -200,13 +202,14 @@ call process =[]
 </dependency>
 ```
 
-### **`@JeongEntity`**
-- **기능**
-  - Getter
-  - Setter
-  - toString
-  - equals
-  - Constructor
-    - full field
-    - map
-- **인터페이스에만 허용 하며 해당 엔티티 구현체를 생성한다.**
+### **`@JeongPoetGetter`**
+- **클래스에만 허용 하며 해당 엔티티를 상속받는다.**
+- 클래스가 아닌 곳에 작성 시 컴파일 에러
+- ![](../../assets/images/toy-project/6.png)
+- 제네릭 포함 시 `return` 클래스 에러
+```java
+protected List<String> tStringList;
+protected List<Integer> tIntList;
+protected Map<String,String> tMap;
+```
+- ![](../../assets/images/toy-project/7.png)
