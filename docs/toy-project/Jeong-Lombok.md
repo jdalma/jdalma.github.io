@@ -63,7 +63,7 @@ nav_order: 1
 📌 **[Java 컴파일러](https://jeongcode.github.io/docs/java/javac-principle/)**
 {: .fh-default .fs-4 }
 
-## **`com.sun.*` 사용 예시**
+## **`com.sun.*` AST 예제**
 
 ### **`@JeongGetter`**
 
@@ -193,7 +193,7 @@ call process =[]
 
 ***
 
-## **JavaPoet 사용**
+## **JavaPoet 예제**
 ```html
 <dependency>
    <groupId>com.squareup</groupId>
@@ -321,3 +321,16 @@ public class PoetGetterProcessor extends AbstractProcessor {
 }
 
 ```
+
+***
+
+## **`com.sun.*` 내부 클래스를 사용하여 `@JeongEntity`**
+
+- `com.sun.*` JDK 자바컴파일러 내부 클래스를 사용하여 진행한다.
+- 클래스에만 작성 가능 하다.
+- **기능**
+  - Getter
+  - Setter
+  - toString
+  - equals
+  - Constructor
