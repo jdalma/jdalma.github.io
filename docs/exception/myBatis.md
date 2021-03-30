@@ -74,13 +74,10 @@ Try setting a different JdbcType for this parameter or a different jdbcTypeForNu
 @Override
 public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
     try {
-
         ...
-
         String returnData = mapper.execSpGetNewReturn(paramMap);
 
         return returnData;
-
     } catch (Exception e) {
         throw e;
     }
@@ -97,13 +94,10 @@ public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
     try {
 
         ...
-
         mapper.execSpGetNewReturn(paramMap);
-
         String returnData = (String) paramMap.get("returnData");
 
         return strMaxNumberingSn;
-
     } catch (Exception e) {
         throw e;
     }
@@ -139,11 +133,10 @@ public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
 
 **📌 정리**
 {: .fh-default .fs-4 }
-- `param1` , `param2` , `param4` 는 **null**이 허용되지 않아 jdbcType 제거
 - 자바 서비스 로직에서 mapper호출 부분의 반환 값은 `resultType="String"`으로 반환되지 않으며 `mapper.execSpGetNewReturn(paramMap)`의 `paramMap` 객체의 `returnData`키에 반환 값이 삽입된다.
 
 
-> ✋ SET 시스템 변수(SET System Variable)적용하기, 먼저 실행한다.
+> ✋ SET 시스템 변수(SET System Variable)적용하기, **DBMSOUTPUTPUTLINE**
 > - 최상단에 미리 선언
 > - `SET SERVEROUTPUT ON`
 > - [출처](https://withthisclue.tistory.com/entry/Oracle-오라클-PLSQL-로그-사용하기-DBMSOUTPUTPUTLINE)
