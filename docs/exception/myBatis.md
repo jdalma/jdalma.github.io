@@ -53,13 +53,16 @@ java.sql.SQLException: 부적합한 열 유형: 1111
 	at oracle.jdbc.driver.OracleStatement.getInternalType(OracleStatement.java:3900) ~[ojdbc-6.jar:11.2.0.1.0]
 	at oracle.jdbc.driver.OraclePreparedStatement.setNullCritical(OraclePreparedStatement.java:4406) ~[ojdbc-6.jar:11.2.0.1.0]
 	at oracle.jdbc.driver.OraclePreparedStatement.setNull(OraclePreparedStatement.java:4388) ~[ojdbc-6.jar:11.2.0.1.0]
-    ...
-    2021-03-29 18:19:57,396 ERROR [org.exmaple.ServiceImpl] nested exception is org.apache.ibatis.type.TypeException: 
-	Could not set parameters for mapping: 
-		ParameterMapping{property='param1', mode=IN, javaType=class java.lang.String, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. 
-			Cause: org.apache.ibatis.type.TypeException: Error setting null for parameter #1 with JdbcType OTHER . Try setting a different JdbcType for this parameter or a different jdbcTypeForNull configuration property.
 
-...
+    ...
+
+2021-03-29 18:19:57,396 ERROR [org.exmaple.ServiceImpl] nested exception is org.apache.ibatis.type.TypeException:
+Could not set parameters for mapping:
+ParameterMapping{property='param1', mode=IN, javaType=class java.lang.String, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}.
+Cause: org.apache.ibatis.type.TypeException: Error setting null for parameter #1 with JdbcType OTHER .
+Try setting a different JdbcType for this parameter or a different jdbcTypeForNull configuration property.
+
+    ...
 
 ```
 
@@ -70,13 +73,36 @@ java.sql.SQLException: 부적합한 열 유형: 1111
 ```java
 @Override
 public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
-    try { 
+    try {
 
         ...
 
         String returnData = mapper.execSpGetNewReturn(paramMap);
-        
+
         return returnData;
+
+    } catch (Exception e) {
+        throw e;
+    }
+}
+```
+
+## **해결**
+
+**자바 서비스 로직**
+{: .fh-default .fs-5 }
+```java
+@Override
+public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
+    try {
+
+        ...
+
+        mapper.execSpGetNewReturn(paramMap);
+
+        String returnData = (String) paramMap.get("returnData");
+
+        return strMaxNumberingSn;
 
     } catch (Exception e) {
         throw e;
@@ -95,47 +121,10 @@ public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
                     , #{param3,mode=IN,jdbcType=VARCHAR}
                     , #{returnData,mode=OUT,jdbcType=VARCHAR})}
     ]]>
-</select>  
+</select>
 ```
 
-## **해결**
-
-**자바 서비스 로직**
-{: .fh-default .fs-5 }
-```java
-@Override
-public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
-    try { 
-
-        ...
-
-        mapper.execSpGetNewReturn(paramMap);
-        
-        String returnData = (String) paramMap.get("returnData");
-        
-        return strMaxNumberingSn;
-
-    } catch (Exception e) {
-        throw e;
-    }
-}
-```
-
-**프로시저 호출**
-{: .fh-default .fs-5 }
-```
-<select id="execSpGetNewReturn" parameterType="egovMapForNull" resultType="String" statementType="CALLABLE">
-    <![CDATA[
-        {CALL SP_GET_NUMBERING_SN(
-            #{param1},
-            #{param2},
-            #{param3},
-            #{returnData,mode=OUT,jdbcType=VARCHAR})}
-    ]]>
-</select>  
-```
-
-**콘솔**
+**결과**
 {: .fh-default .fs-5 }
 ```
 {param1=data1, param2=data2, param3=data3, returnData=}
@@ -158,6 +147,3 @@ public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
 > - 최상단에 미리 선언
 > - `SET SERVEROUTPUT ON`
 > - [출처](https://withthisclue.tistory.com/entry/Oracle-오라클-PLSQL-로그-사용하기-DBMSOUTPUTPUTLINE)
-
-
-
