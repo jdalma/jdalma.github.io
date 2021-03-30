@@ -40,3 +40,124 @@ parent: 예외 정리
 ```
 
 - `mergeUpdate` 실행 전 `<selectKey>` 쿼리가 실행 되어 `TestBean`의 `basisSn`파라미터를 채워준다.
+
+***
+
+# **PreparedStatement.setNull(1, 1111) - java.sql.SQLException: 부적합한 열 유형: 1111**
+
+**에러 내역 - MyBatis의 오라클 프로시저 호출 시 매핑 문제**
+{: .fh-default .fs-5 }
+```
+2021-03-29 18:19:57,394 ERROR [jdbc.sqltiming] 30. PreparedStatement.setNull(1, 1111)
+java.sql.SQLException: 부적합한 열 유형: 1111
+	at oracle.jdbc.driver.OracleStatement.getInternalType(OracleStatement.java:3900) ~[ojdbc-6.jar:11.2.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.setNullCritical(OraclePreparedStatement.java:4406) ~[ojdbc-6.jar:11.2.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.setNull(OraclePreparedStatement.java:4388) ~[ojdbc-6.jar:11.2.0.1.0]
+    ...
+    2021-03-29 18:19:57,396 ERROR [org.exmaple.ServiceImpl] nested exception is org.apache.ibatis.type.TypeException: 
+	Could not set parameters for mapping: 
+		ParameterMapping{property='param1', mode=IN, javaType=class java.lang.String, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. 
+			Cause: org.apache.ibatis.type.TypeException: Error setting null for parameter #1 with JdbcType OTHER . Try setting a different JdbcType for this parameter or a different jdbcTypeForNull configuration property.
+
+...
+
+```
+
+## **원인**
+
+**자바 서비스 로직**
+{: .fh-default .fs-5 }
+```java
+@Override
+public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
+    try { 
+
+        ...
+
+        String returnData = mapper.execSpGetNewReturn(paramMap);
+        
+        return returnData;
+
+    } catch (Exception e) {
+        throw e;
+    }
+}
+```
+
+**프로시저 호출**
+{: .fh-default .fs-5 }
+```
+<select id="execSpGetNewReturn" parameterType="egovMapForNull" resultType="String" statementType="CALLABLE">
+    <![CDATA[
+           {CALL SP_GET_NUMBERING_SN(
+                    #{param1,mode=IN,jdbcType=VARCHAR}
+                    , #{param2,mode=IN,jdbcType=VARCHAR}
+                    , #{param3,mode=IN,jdbcType=VARCHAR}
+                    , #{returnData,mode=OUT,jdbcType=VARCHAR})}
+    ]]>
+</select>  
+```
+
+## **해결**
+
+**자바 서비스 로직**
+{: .fh-default .fs-5 }
+```java
+@Override
+public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
+    try { 
+
+        ...
+
+        mapper.execSpGetNewReturn(paramMap);
+        
+        String returnData = (String) paramMap.get("returnData");
+        
+        return strMaxNumberingSn;
+
+    } catch (Exception e) {
+        throw e;
+    }
+}
+```
+
+**프로시저 호출**
+{: .fh-default .fs-5 }
+```
+<select id="execSpGetNewReturn" parameterType="egovMapForNull" resultType="String" statementType="CALLABLE">
+    <![CDATA[
+        {CALL SP_GET_NUMBERING_SN(
+            #{param1},
+            #{param2},
+            #{param3},
+            #{returnData,mode=OUT,jdbcType=VARCHAR})}
+    ]]>
+</select>  
+```
+
+**콘솔**
+{: .fh-default .fs-5 }
+```
+{param1=data1, param2=data2, param3=data3, returnData=}
+2021-03-30 11:16:58,915  INFO [jdbc.sqltiming] {CALL SP_GET_NEW_RETURN(
+                'data1',
+                'data2',
+                'data3',
+                '<OUT>')}
+ {executed in 11 msec}
+{param1=data1, param2=data2, param3=data3, returnData=newReturnData}
+```
+
+**📌 정리**
+{: .fh-default .fs-4 }
+- `param1` , `param2` , `param4` 는 **null**이 허용되지 않아 jdbcType 제거
+- 자바 서비스 로직에서 mapper호출 부분의 반환 값은 `resultType="String"`으로 반환되지 않으며 `mapper.execSpGetNewReturn(paramMap)`의 `paramMap` 객체의 `returnData`키에 반환 값이 삽입된다.
+
+
+> ✋ SET 시스템 변수(SET System Variable)적용하기, 먼저 실행한다.
+> - 최상단에 미리 선언
+> - `SET SERVEROUTPUT ON`
+> - [출처](https://withthisclue.tistory.com/entry/Oracle-오라클-PLSQL-로그-사용하기-DBMSOUTPUTPUTLINE)
+
+
+
