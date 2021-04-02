@@ -10,6 +10,10 @@ permalink: /
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjeongcode.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
+# **About Me**
+- 2년차 웹 개발자
+- **제가 작성한 코드** 와 **Clean Code**에 대한 고민을 생활화 합니다.
+
 # **Interest**
 
 > ✍
@@ -50,7 +54,7 @@ permalink: /
 {: .fh-default .fs-4 }
 - **서울 중구 시설관리공단 인사 파트 개발**
   - **근태관리**
-    - 개인휴무, 초과근무, 시차근무...
+    - 일일근태관리, 개인휴무, 초과근무, 시차근무...
   - **휴가관리**
     -  스프링 스케줄러를 사용하여 배치성 연차일수 프로시저
   - **인사발령**
