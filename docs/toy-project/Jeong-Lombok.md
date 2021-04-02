@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Jeong-Lombok
+title: Jeong-Lombok(진행 중)
 parent: Toy-Projects
 nav_order: 1
 ---

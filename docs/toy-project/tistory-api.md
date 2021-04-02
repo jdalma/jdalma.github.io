@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Jeong-Lombok
+title: 티스토리 Open-API 사용하여 게시글 자동 수정
 parent: Toy-Projects
-nav_order: 1
+nav_order: 2
 ---
 ## Table of contents
 {: .no_toc .text-delta }
