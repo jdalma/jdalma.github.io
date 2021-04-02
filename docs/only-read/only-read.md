@@ -3,6 +3,7 @@ layout: default
 title: 읽어보기
 nav_order: 81
 permalink: /docs/only-read
+has_children: true
 ---
 ## Table of contents
 {: .no_toc .text-delta }
