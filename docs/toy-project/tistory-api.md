@@ -18,19 +18,6 @@ nav_order: 2
 - **하지만 게시글을 작성할 때 마다 게시글을 매번 수정하여야 하는 번거로움이 있다.**
 - **그래서 티스토리 OpenAPI를 활용하여 로컬 서버를 구동시키고 한 번의 클릭(허가하기)으로 게시글을 자동으로 수정할 수 있는 프로젝트를 만들어 볼려고 한다.**
 
-## **로그인**
-```java
-@GetMapping("/login")
-public String login(){
-    return "redirect:https://www.tistory.com/oauth/authorize?"
-            + "client_id= {client_id}"
-            + "&redirect_uri={redirect_uri}"
-            + "&response_type=code";
-}
-```
-✅ login로직이 정상적으로 끝나면 afterLogin으로 넘어간다.
-{: .fh-default .fs-4 }
-
 ## **HttpURLConnection 가져오기 (GET 메소드)**
 ```java
 public HttpURLConnection urlConnectionGETMethod(String urlStr) throws IOException {
@@ -72,6 +59,19 @@ public HttpURLConnection urlConnectionPOSTMethod(String urlStr , Map<String , St
     return urlConnection;
 }
 ```
+
+## **로그인**
+```java
+@GetMapping("/login")
+public String login(){
+    return "redirect:https://www.tistory.com/oauth/authorize?"
+            + "client_id= {client_id}"
+            + "&redirect_uri={redirect_uri}"
+            + "&response_type=code";
+}
+```
+✅ login로직이 정상적으로 끝나면 `afterLogin`으로 리다이렉트 된다..
+{: .fh-default .fs-4 }
 
 ## **afterLogin**
 
