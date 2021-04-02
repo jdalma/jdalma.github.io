@@ -11,7 +11,7 @@ permalink: /
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjeongcode.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 # **About Me**
-- 2년차 웹 개발자
+- 2년차 웹 개발자 입니다.
 - **작성한 코드의 타당한 이유** 와 **Clean Code**에 대한 고민을 생활화 합니다.
 
 # **Interest**
@@ -37,7 +37,7 @@ permalink: /
 
 # **Experience**
 
-### **DBVision `2020.04.01 ~ 현재`**
+## **DBVision `2020.04.01 ~ 현재`**
 
 - **Front**
   - DHTMLX , JavaScript
@@ -46,8 +46,7 @@ permalink: /
 - **etc (management , build..)**
   - Jenkins , SVN , Apache Tomcat
 
-**`2021.01.01 ~ 현재`**
-{: .fh-default .fs-4 }
+### **`2021.01.01 ~ 현재`**
 - **ERP 예산 파트 개발**
   - **예산 과목**
   - **예산 사업**
@@ -55,19 +54,20 @@ permalink: /
   - **예산 배정 신청 및 관리**
   - **연도별 실행 예산 관리**
 
-**`2020.07.01 ~ 12.31`**
-{: .fh-default .fs-4 }
+### **`2020.07.01 ~ 12.31`**
 - **서울 중구 시설관리공단 인사 파트 개발**
   - **근태관리**
-    - 일일근태관리, 개인휴무, 초과근무, 시차근무...
+    - 일일근태관리, 초과근무, 시차근무...
   - **휴가관리**
-    -  스프링 스케줄러를 사용하여 배치성 연차일수 프로시저
+    -  스프링 스케줄러 배치성 연차일수 프로시저
+    -  개인별 근무유형 또는 개인휴무에 따른 연차일수 관리
+    -  연차일수 검증 및 결재 관련 프로시저
+  - **출장관리**
   - **인사발령**
     - 발령 시뮬레이션 프로시저
 
-**`2020.04.01 ~ 06.30`**
-{: .fh-default .fs-4 }
-- 국방통합 급여정보체계 유지보수
+### **`2020.04.01 ~ 06.30`**
+- **국방통합 급여정보체계 유지보수**
 
 ***
 
