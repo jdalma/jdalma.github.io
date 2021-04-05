@@ -326,6 +326,9 @@ public class PoetGetterProcessor extends AbstractProcessor {
 
 ```
 
+![](../../assets/images/toy-project/8.png)
+- `@JeongPoetGetter` 어노테이션이 작성된 클래스를 상속 받는다.
+
 ***
 
 ## **`@JeongEntity`**
