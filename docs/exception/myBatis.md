@@ -45,7 +45,7 @@ parent: 예외 정리
 
 # **PreparedStatement.setNull(1, 1111) - java.sql.SQLException: 부적합한 열 유형: 1111**
 
-**에러 내역 - MyBatis의 오라클 프로시저 호출 시 매핑 문제**
+**에러 내역**
 {: .fh-default .fs-5 }
 ```
 2021-03-29 18:19:57,394 ERROR [jdbc.sqltiming] 30. PreparedStatement.setNull(1, 1111)
@@ -58,7 +58,7 @@ java.sql.SQLException: 부적합한 열 유형: 1111
 
 2021-03-29 18:19:57,396 ERROR [org.exmaple.ServiceImpl] nested exception is org.apache.ibatis.type.TypeException:
 Could not set parameters for mapping:
-ParameterMapping{property='param1', mode=IN, javaType=class java.lang.String, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}.
+ParameterMapping{property='key', mode=IN, javaType=class java.lang.String, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}.
 Cause: org.apache.ibatis.type.TypeException: Error setting null for parameter #1 with JdbcType OTHER .
 Try setting a different JdbcType for this parameter or a different jdbcTypeForNull configuration property.
 
@@ -134,7 +134,8 @@ public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
 **📌 정리**
 {: .fh-default .fs-4 }
 - 자바 서비스 로직에서 mapper호출 부분의 반환 값은 `resultType="String"`으로 반환되지 않으며 `mapper.execSpGetNewReturn(paramMap)`의 `paramMap` 객체의 `returnData`키에 반환 값이 삽입된다.
-
+- <span style="color:red; font-weight:bold">이 예외는 프로시저 호출 매핑 문제가 아닌 프로시저 호출이 끝난 후 `returnData`를 사용하는 뒤 로직에서 `null`이 들어와 에러가 났다. (`String returnData = mapper.execSpGetNewReturn(paramMap);` 이처럼 `String`을 바로 반환 받으려고 하였기 때문이다.)</span>
+- <span style="color:red; font-weight:bold">예외를 자세히 읽지 않아 시간을 많이 소모하였다. 예외를 자세히 읽자!!!!!!</span>
 
 > ✋ SET 시스템 변수(SET System Variable)적용하기, **DBMSOUTPUTPUTLINE**
 > - 최상단에 미리 선언
