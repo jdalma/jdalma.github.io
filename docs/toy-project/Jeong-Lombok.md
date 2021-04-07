@@ -39,8 +39,9 @@ nav_order: 1
 ```
 
 ## 정리
-- **확실한 원인은 모르지만 당장은** <span style="color:red; font-weight:bold">JDK 8 버전으로 진행</span>
-> Java 9에서 소개 된 Jigsaw 이전에 maven은 javac클래스를 참조하는 프로젝트를 빌드하기 위해 컴파일 타임 에 클래스 경로에 jar를 전달해야합니다
+- <span style="color:red; font-weight:bold">JDK 8 버전으로 진행</span>
+
+> Java 9에서 소개 된 Jigsaw 이전에 maven은 javac클래스를 참조하는 프로젝트를 빌드하기 위해 컴파일 타임의 클래스 경로에 jar를 전달해야합니다
 > **Maven jdk.tools 래퍼 의존성 추가 [출처](https://github.com/olivergondza/maven-jdk-tools-wrapper)**
 > ```html
 > <dependency>
