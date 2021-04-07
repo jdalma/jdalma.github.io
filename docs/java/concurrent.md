@@ -480,9 +480,10 @@ public static void main(String[] args) throws ExecutionException, InterruptedExc
 ```
 
 # **참고**
-[Lesson: Concurrency (The Java™ Tutorials > Essential Classes) (oracle.com)](https://docs.oracle.com/javase/tutorial/essential/concurrency/)
-{: .fh-default .fs-4 }
-[Thread (Java Platform SE 8 ) (oracle.com)](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#interrupt--)
-{: .fh-default .fs-4 }
-[Executors (The Java™ Tutorials > Essential Classes > Concurrency) (oracle.com)](https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html)
-{: .fh-default .fs-4 }
+- [Lesson: Concurrency (The Java™ Tutorials > Essential Classes) (oracle.com)](https://docs.oracle.com/javase/tutorial/essential/concurrency/)
+
+- [Thread (Java Platform SE 8 ) (oracle.com)](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#interrupt--)
+
+- [Executors (The Java™ Tutorials > Essential Classes > Concurrency) (oracle.com)](https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html)
+
+- [스레드 풀의 적절한 사이즈는?](https://yaaam.tistory.com/entry/%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%92%80Thread-Pool-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%92%80%EC%9D%98-%EC%A0%81%EC%A0%95-%ED%81%AC%EA%B8%B0%EB%8A%94-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%92%80%EC%9D%98-%EC%A0%81%EC%A0%88%ED%95%9C-%EC%82%AC%EC%9D%B4%EC%A6%88%EB%8A%94)
