@@ -139,3 +139,12 @@ has_children: true
   - 항상 답변할때 면접관과 아이컨텍을 하자
   - 채용 공고를 자세하게 읽어보고 본인에게 맞는 공고에 지원하는게 가장 중요
   - 단순히 저 회사를 들어가고 싶다고 해서 아무공고에나 지원하지 말자
+
+***
+
+## 트랜잭션 관련 임시 저장
+
+- [Java 에서 DataBase Replication Master/Slave (write/read) 분기 처리하기](http://kwon37xi.egloos.com/m/5364167)
+- [(Spring)다중 DataSource 처리](https://supawer0728.github.io/2018/03/22/spring-multi-transaction/)
+- [Spring Transaction에 대한 노트](https://narusas.github.io/2019/07/17/Spring-Transaction-Note.html#transaction_script_example)
+- [선언적 트랜잭션 @Transactional](https://bamdule.tistory.com/51)
