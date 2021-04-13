@@ -43,7 +43,7 @@ parent: 예외 정리
 
 ***
 
-# **PreparedStatement.setNull(1, 1111) - java.sql.SQLException: 부적합한 열 유형: 1111**
+# **ORACLE - PreparedStatement.setNull(1, 1111) - java.sql.SQLException: 부적합한 열 유형: 1111**
 
 **에러 내역**
 {: .fh-default .fs-5 }
@@ -141,3 +141,74 @@ public synchronized String execSpGetNewReturn(EgovMapForNull paramMap) {
 > - 최상단에 미리 선언
 > - `SET SERVEROUTPUT ON`
 > - [출처](https://withthisclue.tistory.com/entry/Oracle-오라클-PLSQL-로그-사용하기-DBMSOUTPUTPUTLINE)
+
+***
+
+# **Mysql - Merge문 max(순번) 서브쿼리 사용 시 에러**
+
+```
+        INSERT INTO TEST_TABLE(
+
+            ...
+
+        ) VALUES (
+
+            ...
+
+            (SELECT NVL(MAX(SN) , 0) + 1 
+            FROM TEST_TABLE
+            WHERE PARAM1 = #{param1} AND
+                    PARAM2 = #{param2} AND
+                    PARAM3 = #{param3} ),
+            ...
+
+        ) ON DUPLICATE KEY UPDATE
+        
+            ...
+```
+
+**📌 해결**
+
+- MySQL 서브 쿼리 사용 시 기준 테이블의 명과 서브 쿼리 기준 테이블의 명이 동일하다면
+- 서브 쿼리의 테이블 명에 ALIAS를 기입하여야 한다.
+
+```
+        INSERT INTO TEST_TABLE(
+
+            ...
+
+        ) VALUES (
+
+            ...
+
+            (SELECT NVL(MAX(SN) , 0) + 1 
+            FROM TEST_TABLE AS SUB_TABLE
+            WHERE PARAM1 = #{param1} AND
+                    PARAM2 = #{param2} AND
+                    PARAM3 = #{param3} ),
+            ...
+
+        ) ON DUPLICATE KEY UPDATE
+        
+            ...
+```
+
+***
+
+# **✋ MySQL `IFNULL` 과 `NULLIF` 차이**
+
+- `IFNULL`
+    - 첫번째 매개값이 NULL 이면 두번째 매개값을 반환
+    - 만약 , NULL이 아니면 그냥 첫번째 매개값을 그대로 반환 
+
+- `NULLIF`
+    - 첫번째 와 두번째 매개값을 비교하여 동일하면 NULL 반환
+    - 만약 , 다른 값이면 첫번째 매개값을 반환
+
+```
+SELECT IFNULL('' , 'T') 		-> ''
+SELECT IFNULL(NULL , 'T') 		-> 'T'
+SELECT NULLIF('T' , 'T')		-> NULL
+SELECT NULLIF('T' , '')			-> 'T'
+SELECT NULLIF('' , 'T')			-> ''
+```
