@@ -212,3 +212,37 @@ SELECT NULLIF('T' , 'T')		-> NULL
 SELECT NULLIF('T' , '')			-> 'T'
 SELECT NULLIF('' , 'T')			-> ''
 ```
+
+***
+
+# **MySQL사용 시 `net.sf.json.JSONException: java.lang.reflect.InvocationTargetException`**
+
+- **`reusltType = egovMapForNull`**
+- JSON파싱 에서 데이터 타입이 맞지 않아 발생하는 예외
+- MSSQL , Oracle은 DATETIME을 SELECT하여 그대로 사용하여도 예외가 발생하지 않았지만,
+- MySQL에서 예외 발생
+
+```
+    SELECT
+    
+        ...
+        A.REG_DT,   // DATETIME
+        A.UPT_DT,   // DATETIME
+        ...
+
+    FROM TEST_TABLE A 
+
+```
+
+## **해결**
+```
+    SELECT
+    
+        ...
+        DATE_FORMAT(A.REG_DT , '%Y-%m-%d %H%i%s') AS REG_DT,
+        DATE_FORMAT(A.UPT_DT , '%Y-%m-%d %H%i%s') AS REG_DT,
+        ...
+
+    FROM TEST_TABLE A 
+```
+
