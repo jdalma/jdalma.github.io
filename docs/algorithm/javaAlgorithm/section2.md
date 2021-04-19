@@ -963,7 +963,7 @@ public static void main(String[] args){
 
 ***
 
-# **멘토링**
+# **멘토링 (실패)**
 - **설명**
   - 멘토링은 멘토(도와주는 학생)와 멘티(도움을 받는 학생)가 한 짝이 되어 멘토가 멘티의 수학공부를 도와주는 것입니다.
   - 선생님은 M번의 수학테스트 등수를 가지고 멘토와 멘티를 정합니다.
@@ -984,3 +984,104 @@ public static void main(String[] args){
   - 3
 
 ## 풀어보기
+
+**출력**
+```
+3 (0,0) > 4 (0,1) / 3 (0,0) > 1 (0,2) / 3 (0,0) > 2 (0,3) /
+4 (1,0) > 3 (1,1) / 4 (1,0) > 2 (1,2) / 4 (1,0) > 1 (1,3) /
+3 (2,0) > 1 (2,1) / 3 (2,0) > 4 (2,2) / 3 (2,0) > 2 (2,3) /
+
+4 (0,1) > 3 (0,0) / 4 (0,1) > 1 (0,2) / 4 (0,1) > 2 (0,3) /
+3 (1,1) > 4 (1,0) / 3 (1,1) > 2 (1,2) / 3 (1,1) > 1 (1,3) /
+1 (2,1) > 3 (2,0) / 1 (2,1) > 4 (2,2) / 1 (2,1) > 2 (2,3) /
+
+1 (0,2) > 3 (0,0) / 1 (0,2) > 4 (0,1) / 1 (0,2) > 2 (0,3) /
+2 (1,2) > 4 (1,0) / 2 (1,2) > 3 (1,1) / 2 (1,2) > 1 (1,3) /
+4 (2,2) > 3 (2,0) / 4 (2,2) > 1 (2,1) / 4 (2,2) > 2 (2,3) /
+
+2 (0,3) > 3 (0,0) / 2 (0,3) > 4 (0,1) / 2 (0,3) > 1 (0,2) /
+1 (1,3) > 4 (1,0) / 1 (1,3) > 3 (1,1) / 1 (1,3) > 2 (1,2) /
+2 (2,3) > 3 (2,0) / 2 (2,3) > 1 (2,1) / 2 (2,3) > 4 (2,2) /
+
+```
+
+```java
+public static void main(String[] args){
+    Scanner kb = new Scanner(System.in);
+    int n = kb.nextInt();
+    int m = kb.nextInt();
+    int[][] intArr = new int[m][n];
+    for(int i = 0 ; i < m ; i++){
+        for(int j = 0 ; j < n ; j++){
+            intArr[i][j] = kb.nextInt();
+        }
+    }
+    solution(m , n , intArr);
+}
+
+public static void solution(int m , int n , int[][] intArr){
+    int answer = 0;
+
+    for(int i = 0 ; i < n ; i++){
+        boolean flag = true;
+        for(int k = 0 ; k < n ; k++){
+            for(int q = 0 ; q < m ; q++){
+                if(i != k){
+                    System.out.println(intArr[q][i] + " (" + q + "," + i + ") > " + intArr[q][k] + " (" + q + "," + k + ") / ");
+                    if(intArr[q][i] > intArr[q][k]){
+                        flag = false;
+//                            break;
+                    }
+                }
+            }
+            System.out.println();
+        }
+        if(flag){
+            answer++;
+        }
+    }
+    System.out.println(answer);
+}
+```
+
+## 해답
+
+### 📌 4중 for문
+
+```java
+public int solution(int n, int m, int[][] arr){
+  int answer = 0;
+  for(int i = 1 ; i <= n ; i++){
+    for(int j = 1 ; j <= n ; j++){
+      int cnt = 0;
+      for(int k = 0 ; k < m ; k++){
+        int pi = 0, pj = 0;
+        for(int s = 0 ; s < n ; s++){
+          if(arr[k][s] == i) pi = s;
+          if(arr[k][s] == j) pj = s;
+        }
+        if(pi < pj) cnt++;
+      }
+      if(cnt == m){
+        answer++;
+        //System.out.println(i+" "+j);
+      }
+    }
+  }
+  return answer;
+}
+
+public static void main(String[] args){
+  Main T = new Main();
+  Scanner kb = new Scanner(System.in);
+  int n = kb.nextInt();
+  int m = kb.nextInt();
+  int[][] arr = new int[m][n];
+  for(int i = 0 ; i < m ; i++){
+    for(int j = 0 ; j < n ; j++){
+      arr[i][j] = kb.nextInt();
+    }
+  }
+  System.out.print(T.solution(n, m, arr));
+}
+```
