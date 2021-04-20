@@ -13,7 +13,7 @@ grand_parent: 알고리즘
 
 ---
 
-# **두 배열 합치기 (통과)**
+# **`[Two Pointers]` 두 배열 합치기 (통과)**
 
 - **설명**
   - 오름차순으로 정렬이 된 두 배열이 주어지면 두 배열을 오름차순으로 합쳐 출력하는 프로그램을 작성하세요.
@@ -115,7 +115,7 @@ class Main {
 
 ***
 
-# **공통 원소 구하기 (통과)**
+# **`[Two Pointers]` 공통 원소 구하기 (통과)**
 
 - **설명**
   - A, B 두 개의 집합이 주어지면 두 집합의 공통 원소를 추출하여 오름차순으로 출력하는 프로그램을 작성하세요.
@@ -221,7 +221,7 @@ class Main {
 
 ***
 
-# **[SlidingWindow] 최대 매출 (실패 - <span style="color:red;">시간초과</span>)**
+# **`[Sliding Window]` 최대 매출 (실패 - <span style="color:red;">시간초과</span>)**
 - **설명**
   - N일 동안의 매출기록을 주고 연속된 K일 동안의 최대 매출액이 얼마인지 구하라고 했습니다.
   - 만약 N=10이고 10일 간의 매출기록이 아래와 같습니다. 이때 K=3이면
@@ -302,7 +302,7 @@ class Main {
 
 ***
 
-# **연속 부분수열**
+# **`[복합적 문제]` 연속 부분수열 (통과)**
 
 - **설명**
   - N개의 수로 이루어진 수열이 주어집니다.
@@ -324,43 +324,74 @@ class Main {
 ## 풀어보기
 
 ```java
+import java.util.*;
 public class Main {
-	
-  public static void main(String[] args){
-    Scanner in=new Scanner(System.in);
-    int input1 = in.nextInt();
-    int input2 = in.nextInt();
-    int[] arr1 = new int[input1];
-    for(int i = 0 ; i < input1 ; i++) {
-    	arr1[i] = in.nextInt();
-    }
-    solution(input1 , input2 , arr1);
-  }
-  
-  public static void solution(int input1 , int input2 , int[] arr1) {
-	  int sum = 0 , answer = 0;
-	  int leftIndex = 0 ;
-	  for(int i = 0 ; i < arr1.length ; i++) {
-		  sum += arr1[i];
-		  if(sum > input2) sum -= arr1[leftIndex++];
-		  if(sum == input2) {
-			  System.out.println(leftIndex + " ~ " + i);
-			  answer++;
-			  sum -= arr1[leftIndex++];
-		  }
-	  }
-	  System.out.println(answer);
-  }
-}
 
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int input1 = in.nextInt();
+        int input2 = in.nextInt();
+        int[] arr1 = new int[input1];
+        for(int i = 0 ; i < input1 ; i++) {
+            arr1[i] = in.nextInt();
+        }
+        solution(input1 , input2 , arr1);
+    }
+
+    public static void solution(int input1 , int input2 , int[] arr1) {
+        int sum = 0 , answer = 0;
+        int leftIndex = 0;
+        for(int rightIndex = 0 ; rightIndex < input1 ; rightIndex++){
+            sum += arr1[rightIndex];
+            if(sum == input2) {
+                answer++;
+                sum -= arr1[leftIndex++];
+            }
+            while(sum > input2){
+                sum -= arr1[leftIndex++];
+                if(sum == input2) {
+                    answer++;
+                    sum -= arr1[leftIndex++];
+                }
+            }
+        }
+        System.out.println(answer);
+    }
+}
 ```
 
 ## 해답
 
+```java
+public int solution(int n, int m, int[] arr){
+  int answer = 0 , sum = 0 , lt = 0 ;
+  for(int rt = 0 ; rt < n ; rt++){
+    sum += arr[rt];
+    if(sum == m) answer++;
+    while(sum >= m){
+      sum -= arr[lt++];
+      if(sum == m) answer++;
+    }
+  }
+  return answer;
+}
+
+public static void main(String[] args){
+  Main T = new Main();
+  Scanner kb = new Scanner(System.in);
+  int n = kb.nextInt();
+  int m = kb.nextInt();
+  int[] arr = new int[n];
+  for(int i = 0 ; i < n ; i++){
+    arr[i] = kb.nextInt();
+  }
+  System.out.print(T.solution(n, m, arr));
+}
+```
 
 ***
 
-# **연속된 자연수의 합**
+# **`[Sliding Window]` 연속된 자연수의 합 (통과)**
 
 - **설명**
   - N입력으로 양의 정수 N이 입력되면 2개 이상의 연속된 자연수의 합으로 정수 N을 표현하는 방법의 가짓수를 출력하는 프로그램을 작성하세요.
@@ -380,15 +411,105 @@ public class Main {
 
 ## 풀어보기
 
+```java
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int input1 = in.nextInt();
+        int[] arr1 = new int[input1];
+        for(int i = 0 ; i < input1 ; i++) {
+            arr1[i] = i + 1;
+        }
+        solution(input1 ,  arr1);
+    }
+
+    public static void solution(int input1 , int[] arr1) {
+        int sum = 0 , result = 0;
+        int leftIndex = 0 , index = 0;
+        while(leftIndex <= arr1.length / 2 + 1){
+            sum += arr1[index];
+            if(sum >= input1){
+                if(sum == input1) result++;
+                leftIndex++;
+                sum = 0;
+                index = leftIndex;
+            }
+            index++;
+        }
+        System.out.println(result);
+    }
+}
+```
+
 ## 해답
+
+```java
+import java.util.*;
+class Main {
+	public int solution(int n){
+		int answer = 0 , sum = 0 ;
+		int m = n / 2 + 1;
+		int[] arr = new int[m];
+		for(int i = 0 ; i < m ; i++) arr[i] = i + 1;
+		int lt = 0 ;
+		for(int rt = 0 ; rt < m ; rt++){
+			sum += arr[rt];
+			if(sum == n) answer++;
+			while(sum >= n){
+				sum -= arr[lt++];
+				if(sum == n) answer++;
+			}
+		}
+		return answer;
+	}
+
+	public static void main(String[] args){
+		Main T = new Main();
+		Scanner kb = new Scanner(System.in);
+		int n = kb.nextInt();
+		System.out.print(T.solution(n));
+	}
+}
+```
+
+## ✋ (수학) 해답
+
+```java
+import java.util.*;
+class Main {
+	public int solution(int n){
+		int answer = 0;
+
+    // 미리 1을 빼놓기
+    int cnt = 1;
+		n--;
+
+		while(n > 0){
+			cnt++;
+			n = n - cnt;
+			if(n % cnt == 0) answer++;
+		}
+		return answer;
+	}
+
+	public static void main(String[] args){
+		Main T = new Main();
+		Scanner kb = new Scanner(System.in);
+		int n = kb.nextInt();
+		System.out.print(T.solution(n));
+	}
+}
+```
 
 ***
 
-# **최대 길이 연속부분수열**
+# **`[복합적 문제]` 최대 길이 연속부분수열**
 
 - **설명**
-  - 0과 1로 구성된 길이가 N인 수열이 주어집니다. 
-  - 여러분은 이 수열에서 최대 k번을 0을 1로 변경할 수 있습니다. 
+  - 0과 1로 구성된 길이가 N인 수열이 주어집니다.
+  - 여러분은 이 수열에서 최대 k번을 0을 1로 변경할 수 있습니다.
   - 여러분이 최대 k번의 변경을 통해 이 수열에서 1로만 구성된 최대 길이의 연속부분수열을 찾는 프로그램을 작성하세요.
   - 만약 길이가 길이가 14인 다음과 같은 수열이 주어지고 k=2라면
   - 1 1 0 0 1 1 0 1 1 0 1 1 0 1
@@ -408,3 +529,82 @@ public class Main {
   - 1 1 0 0 1 1 0 1 1 0 1 1 0 1
 - **예시 출력 1**
   - 8
+
+## 풀어보기
+
+```java
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int length = in.nextInt();
+        int insert = in.nextInt();
+        int[] arr1 = new int[length];
+        for(int i = 0 ; i < length ; i++) {
+            arr1[i] = in.nextInt();
+        }
+        solution(length , insert ,  arr1);
+    }
+
+    public static void solution(int length , int insert , int[] arr1) {
+        int leftIndex = 0 , insertCnt = 0;
+        int cntLength = 0 , tmpCntLength = 0;
+        for(int index = 0 ; index < arr1.length ; index++){
+            if(arr1[index] == 1) cntLength++;
+            else if(arr1[index] == 0){
+                if(insertCnt < insert) {
+                    insertCnt++;
+                    cntLength++;
+                }
+                else{
+                    insertCnt = 0;
+                    cntLength = 0;
+                    index = ++leftIndex;
+                }
+            }
+            if(tmpCntLength < cntLength){
+                tmpCntLength = cntLength;
+            }
+        }
+        System.out.println(Math.max(tmpCntLength , insert));
+    }
+}
+```
+
+
+## 해답
+
+### ✋ `leftIndex`가 `rightIndex`를 쫓아가며 0을 찾을 때 까지 총 길이를 감소
+
+```java
+import java.util.*;
+class Main {
+	public int solution(int n, int k, int[] arr){
+		int answer = 0, cnt = 0, lt = 0;
+		for(int rt = 0 ; rt < n ; rt++){
+			if(arr[rt] == 0) cnt++;
+      // ***
+			while(cnt > k){
+				if(arr[lt] == 0) cnt--;
+				lt++;
+			}
+      // ***
+			answer = Math.max(answer, rt-lt+1);
+		}
+		return answer;
+	}
+
+	public static void main(String[] args){
+		Main T = new Main();
+		Scanner kb = new Scanner(System.in);
+		int n = kb.nextInt();
+		int k = kb.nextInt();
+		int[] arr = new int[n];
+		for(int i = 0 ; i < n ; i++){
+			arr[i] = kb.nextInt();
+		}
+		System.out.print(T.solution(n, k, arr));
+	}
+}
+```
