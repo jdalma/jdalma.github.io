@@ -149,6 +149,7 @@ public class Main {
             char ch = (char) mapIter.next();
             if(!str1Map.get(ch).equals(str2Map.get(ch))){
                 resultFlag = false;
+                break;
             }
         }
         if(resultFlag){
