@@ -323,6 +323,38 @@ class Main {
 
 ## 풀어보기
 
+```java
+public class Main {
+	
+  public static void main(String[] args){
+    Scanner in=new Scanner(System.in);
+    int input1 = in.nextInt();
+    int input2 = in.nextInt();
+    int[] arr1 = new int[input1];
+    for(int i = 0 ; i < input1 ; i++) {
+    	arr1[i] = in.nextInt();
+    }
+    solution(input1 , input2 , arr1);
+  }
+  
+  public static void solution(int input1 , int input2 , int[] arr1) {
+	  int sum = 0 , answer = 0;
+	  int leftIndex = 0 ;
+	  for(int i = 0 ; i < arr1.length ; i++) {
+		  sum += arr1[i];
+		  if(sum > input2) sum -= arr1[leftIndex++];
+		  if(sum == input2) {
+			  System.out.println(leftIndex + " ~ " + i);
+			  answer++;
+			  sum -= arr1[leftIndex++];
+		  }
+	  }
+	  System.out.println(answer);
+  }
+}
+
+```
+
 ## 해답
 
 
