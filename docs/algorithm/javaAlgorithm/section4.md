@@ -187,3 +187,118 @@ class Main {
 	}
 }
 ```
+
+***
+
+# **`[Hash , Sliding Window]` 매출액의 종류 (실패 - <span style="color:red;">시간초과</span>)**
+
+- **설명**
+  - N일 동안의 매출기록을 주고 연속된 K일 동안의 매출액의 종류를 각 구간별로 구합니다.
+  - 만약 N=7이고 7일 간의 매출기록이 아래와 같고, 이때 K=4이면
+    - 20 12 20 10 23 17 10
+  - 각 연속 4일간의 구간의 매출종류는
+  - 첫 번째 구간은 [20, 12, 20, 10]는 매출액의 종류가 20, 12, 10으로 3이다.
+  - 두 번째 구간은 [12, 20, 10, 23]는 매출액의 종류가 4이다.
+  - 세 번째 구간은 [20, 10, 23, 17]는 매출액의 종류가 4이다.
+  - 네 번째 구간은 [10, 23, 17, 10]는 매출액의 종류가 3이다.
+  - N일간의 매출기록과 연속구간의 길이 K가 주어지면 첫 번째 구간부터 각 구간별
+  - 매출액의 종류를 출력하는 프로그램을 작성하세요.
+- **입력**
+  - 첫 줄에 N(5<=N<=100,000)과 K(2<=K<=N)가 주어집니다.
+  - 두 번째 줄에 N개의 숫자열이 주어집니다. 각 숫자는 500이하의 음이 아닌 정수입니다.
+- **출력**
+  - 첫 줄에 각 구간의 매출액 종류를 순서대로 출력합니다.
+- **예시 입력 1**
+  - 7 4
+  - 20 12 20 10 23 17 10
+- **예시 출력 1**
+  - 3 4 4 3
+
+
+## 풀어보기
+
+```java
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int input1 = in.nextInt();
+        int input2 = in.nextInt();
+        int[] arr1 = new int[input1];
+        for(int i = 0 ; i < arr1.length ; i++){
+            arr1[i] = in.nextInt();
+        }
+        solution(input1 , input2 , arr1);
+    }
+
+    public static void solution(int input1 , int input2 , int[] arr1) {
+        Map<Integer , Integer> map = new HashMap<>();
+        int leftIndex = 0;
+
+        for(int i = 0 ; i < arr1.length ; i++){
+           map.put(arr1[i] , map.getOrDefault(arr1[i], 0) + 1);
+           if( i >= input2 - 1){
+               System.out.print(map.keySet().stream().filter(key -> map.get(key) > 0).count() + " ");
+               map.put(arr1[leftIndex] , map.get(arr1[leftIndex]) - 1);
+               leftIndex++;
+           }
+        }
+    }
+}
+```
+
+## 해답
+
+```java
+import java.util.*;
+class Main {
+    public ArrayList<Integer> solution(int n, int k, int[] arr){
+        ArrayList<Integer> answer = new ArrayList<>();
+        HashMap<Integer, Integer> HM = new HashMap<>();
+        for(int i = 0 ; i < k - 1 ; i++){
+            HM.put(arr[i], HM.getOrDefault(arr[i], 0)+1);
+        }
+        int lt = 0;
+        for(int rt = k - 1 ; rt < n ; rt++){
+            HM.put(arr[rt], HM.getOrDefault(arr[rt], 0)+1);
+            answer.add(HM.size());
+            HM.put(arr[lt], HM.get(arr[lt]) - 1);
+            if(HM.get(arr[lt]) == 0) HM.remove(arr[lt]);
+            lt++;
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        int k=kb.nextInt();
+        int[] arr=new int[n];
+        for(int i=0; i<n; i++){
+            arr[i]=kb.nextInt();
+        }
+        for(int x : T.solution(n, k, arr)) System.out.print(x+" ");
+    }
+}
+```
+
+***
+
+# **`[Hash , Sliding Window - O(n)]` 모든 아나그램 찾기**
+
+- **설명**
+  - S문자열에서 T문자열과 아나그램이 되는 S의 부분문자열의 개수를 구하는 프로그램을 작성하세요.
+  - 아나그램 판별시 대소문자가 구분됩니다.
+  - 부분문자열은 연속된 문자열이어야 합니다.
+- **입력**
+  - 첫 줄에 첫 번째 S문자열이 입력되고, 두 번째 줄에 T문자열이 입력됩니다.
+  - S문자열의 길이는 10,000을 넘지 않으며, T문자열은 S문자열보다 길이가 작거나 같습니다.
+- **출력**
+  - S단어에 T문자열과 아나그램이 되는 부분문자열의 개수를 출력합니다.
+- **예시 입력 1**
+  - bacaAacba
+  - abc
+- **예시 출력 1**
+  - 3
