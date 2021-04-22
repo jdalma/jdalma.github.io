@@ -190,7 +190,7 @@ class Main {
 
 ***
 
-# **`[Hash , Sliding Window]` 매출액의 종류 (실패 - <span style="color:red;">시간초과</span>)**
+# **`[Hash , Sliding Window]` 매출액의 종류 (<span style="color:red;">실패 - 시간초과</span>)**
 
 - **설명**
   - N일 동안의 매출기록을 주고 연속된 K일 동안의 매출액의 종류를 각 구간별로 구합니다.
@@ -377,7 +377,7 @@ class Main {
 
 ***
 
-# **`[TreeSet]` K번째 큰 수 (실패)**
+# **`[TreeSet]` K번째 큰 수 (<span style="color:red;">실패</span>)**
 
 - **설명**
   - 1부터 100사이의 자연수가 적힌 N장의 카드를 가지고 있습니다.
