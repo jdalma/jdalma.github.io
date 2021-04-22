@@ -286,7 +286,7 @@ class Main {
 
 ***
 
-# **`[Hash , Sliding Window - O(n)]` 모든 아나그램 찾기**
+# **`[Hash , Sliding Window - O(n)]` 모든 아나그램 찾기 (통과)**
 
 - **설명**
   - S문자열에서 T문자열과 아나그램이 되는 S의 부분문자열의 개수를 구하는 프로그램을 작성하세요.
@@ -302,3 +302,204 @@ class Main {
   - abc
 - **예시 출력 1**
   - 3
+
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        byte[] byArr = str2.getBytes();
+        int sum = 0;
+        for(byte by : byArr) sum += by;
+        solution(str1 , str2 , sum);
+    }
+
+    public static void solution(String str1 , String str2 , int str2Sum){
+        int leftIndex = 0;
+        int result = 0;
+        int str1Sum = 0;
+        for(int i = 0 ; i < str2.length() ; i++) str1Sum += str1.charAt(i);
+        for(int i = str2.length() ; i <= str1.length() ; i++){
+//            System.out.print(str1.substring(leftIndex , i) + " " + i + " - " + str1Sum + " / ");
+            if(str1Sum == str2Sum){
+                result++;
+            }
+            str1Sum -= str1.charAt(leftIndex);
+            leftIndex++;
+            if(i < str1.length()) str1Sum += str1.charAt(i);
+        }
+        System.out.println(result);
+    }
+}
+```
+
+
+## 해답
+
+### 📌 `aHashMap.equals(bHashMap)`
+
+```java
+import java.util.*;
+class Main {
+	public int solution(String a, String b){
+		int answer=0;
+		HashMap<Character, Integer> am = new HashMap<>();
+		HashMap<Character, Integer> bm = new HashMap<>();
+		for(char x : b.toCharArray()) bm.put(x, bm.getOrDefault(x, 0) + 1);
+		int L = b.length() - 1;
+		for(int i = 0 ; i < L ; i++) am.put(a.charAt(i), am.getOrDefault(a.charAt(i), 0) + 1);
+		int lt = 0;
+		for(int rt = L ; rt < a.length() ; rt++){
+			am.put(a.charAt(rt), am.getOrDefault(a.charAt(rt), 0) + 1);
+			if(am.equals(bm)) answer++;
+			am.put(a.charAt(lt), am.get(a.charAt(lt)) - 1);
+			if(am.get(a.charAt(lt)) == 0) am.remove(a.charAt(lt));
+			lt++;
+		}
+		return answer;
+	}
+
+
+	public static void main(String[] args){
+		Main T = new Main();
+		Scanner kb = new Scanner(System.in);
+		String a=kb.next();
+		String b=kb.next();
+		System.out.print(T.solution(a, b));
+	}
+}
+```
+
+***
+
+# **`[TreeSet]` K번째 큰 수 (실패)**
+
+- **설명**
+  - 1부터 100사이의 자연수가 적힌 N장의 카드를 가지고 있습니다.
+  - 같은 숫자의 카드가 여러장 있을 수 있습니다.
+  - 이 중 3장을 뽑아 각 카드에 적힌 수를 합한 값을 기록하려고 합니다.
+  - 3장을 뽑을 수 있는 모든 경우를 기록합니다.
+  - 기록한 값 중 K번째로 큰 수를 출력하는 프로그램을 작성하세요.
+  - 만약 큰 수부터 만들어진 수가 25 25 23 23 22 20 19......이고 K값이 3이라면 K번째 큰 값은 22입니다.
+- **입력**
+  - 첫 줄에 자연수 N(3<=N<=100)과 K(1<=K<=50) 입력되고, 그 다음 줄에 N개의 카드값이 입력된다.
+- **출력**
+  - 첫 줄에 K번째 수를 출력합니다. K번째 수가 존재하지 않으면 -1를 출력합니다.
+- **예시 입력 1**
+  - 10 3
+  - 13 15 34 23 45 65 33 11 26 42
+- **예시 출력 1**
+  - 143
+
+## 해답
+
+### 📌 `TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder())` 내림차순 자동정렬
+
+```java
+import java.util.*;
+class Main {
+	public int solution(int[] arr, int n, int k){
+		int answer=-1;
+		TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
+		for(int i = 0 ; i < n ; i++){
+			for(int j=i + 1 ; j < n ; j++){
+				for(int l=j + 1 ; l < n ; l++){
+					Tset.add(arr[i] + arr[j] + arr[l]);
+				}
+			}
+		}
+		int cnt=0;
+		//Tset.remove(143);
+		//System.out.println(Tset.size());
+		//System.out.println("first : "+ Tset.first());
+		//System.out.println("last : "+ Tset.last());
+
+		for(int x : Tset){
+			//System.out.println(x);
+			cnt++;
+			if(cnt == k) return x;
+		}
+		return answer;
+	}
+
+	public static void main(String[] args){
+		Main T = new Main();
+		Scanner kb = new Scanner(System.in);
+		int n = kb.nextInt();
+		int k = kb.nextInt();
+		int[] arr = new int[n];
+		for(int i = 0 ; i < n ; i++){
+			arr[i] = kb.nextInt();
+		}
+		System.out.println(T.solution(arr, n, k));
+	}
+}
+```
+
+
+### ✋ **TreeSet [출처](https://coding-factory.tistory.com/555)**
+- 객체를 중복해서 저장할 수 없고 저장 순서가 유지되지 않는다는 **Set**의 성질을 그대로 가지고 있다.
+- **이진 탐색 트리** 구조로 되어 있다.
+- 추가와 삭제에는 시간이 조금 더 걸리지만 **정렬,검색**에 높은 성능을 보이는 자료구조 이다.
+- 생성자의 매개변수로 Comparator객체를 입력하여 정렬 방법을 임의로 지정해 줄 수도 있다.
+- **레드-블랙트리**로 구현되어 있다.
+  - 부모노드보다 작은 값을 가지는 노드는 왼쪽 자식으로 ,
+  - 큰 값을 가지는 노드는 오른쪽 자식으로 배치하여 균형을 맞춘다.
+
+![](../../../assets/images/algorithm/section4/1.png)
+
+- **TreeSet 선언**
+
+```java
+TreeSet<Integer> set1 = new TreeSet<Integer>();//TreeSet생성
+TreeSet<Integer> set2 = new TreeSet<>();//new에서 타입 파라미터 생략가능
+TreeSet<Integer> set3 = new TreeSet<Integer>(set1);//set1의 모든 값을 가진 TreeSet생성
+TreeSet<Integer> set4 = new TreeSet<Integer>(Arrays.asList(1,2,3));//초기값 지정
+```
+
+- **TreeSet 값 추가**
+  - 입력되는 값이 TreeSet 내부에 존재하지 않는다면 그 값을 추가한 뒤 true를 반환하고
+  - 내부에 값이 존재한다면 false를 반환한다.
+  - 7,4,9,2,5를 차례대로 TreeSet에 저장한다면 아래와같은 과정을 거치게 된다.
+
+```java
+  TreeSet<Integer> set = new TreeSet<Integer>();//TreeSet생성
+  set.add(7); //값추가
+  set.add(4);
+  set.add(9);
+  set.add(2);
+  set.add(5);
+```
+
+![](../../../assets/images/algorithm/section4/2.png)
+
+
+- **TreeSet 값 삭제**
+  -  매개변수 value의 값이 존재한다면 그 값을 삭제한 후 true를 반환하고 없으면 false를 반환한다.
+
+```java
+TreeSet<Integer> set = new TreeSet<Integer>();//TreeSet생성
+set.remove(1);//값 1 제거
+set.clear();//모든 값 제거
+```
+
+- **TreeSet 값 출력**
+
+```java
+TreeSet<Integer> set = new TreeSet<Integer>(Arrays.asList(4,2,3));//초기값 지정
+System.out.println(set); //전체출력 [2,3,4]
+System.out.println(set.first());//최소값 출력
+System.out.println(set.last());//최대값 출력
+System.out.println(set.higher(3));//입력값보다 큰 데이터중 최소값 출력 없으면 null
+System.out.println(set.lower(3));//입력값보다 작은 데이터중 최대값 출력 없으면 null
+
+Iterator iter = set.iterator();	// Iterator 사용
+while(iter.hasNext()) {//값이 있으면 true 없으면 false
+    System.out.println(iter.next());
+}
+```
