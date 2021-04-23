@@ -14,7 +14,7 @@ permalink: /docs/algorithm
 ---
 
 
-# ✋ **TreeSet [출처](https://coding-factory.tistory.com/555)**
+# ✋ **TreeSet - [출처](https://coding-factory.tistory.com/555)**
 - 객체를 중복해서 저장할 수 없고 저장 순서가 유지되지 않는다는 **Set**의 성질을 그대로 가지고 있다.
 - **이진 탐색 트리** 구조로 되어 있다.
 - 추가와 삭제에는 시간이 조금 더 걸리지만 **정렬,검색**에 높은 성능을 보이는 자료구조 이다.
