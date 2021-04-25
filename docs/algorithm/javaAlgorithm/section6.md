@@ -419,8 +419,7 @@ class Main{
 }
 ```
 
-## 해답
-## 📌 `compareTo()`
+## 해답 `[compareTo()]`
 ```java
 import java.util.*;
 class Point implements Comparable<Point>{
