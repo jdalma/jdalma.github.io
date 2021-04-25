@@ -320,8 +320,7 @@ class Main {
   - 3 8
 
 ## 해답
-
-### 📌 정렬을 사용하면 쉽게 풀 수 있는 문제
+## 📌 정렬을 사용하면 쉽게 풀 수 있는 문제
 
 ```java
 import java.util.*;
@@ -348,7 +347,7 @@ class Main {
 
 ***
 
-# **좌표 정렬**
+# **`[삽입 정렬]` 좌표 정렬 (통과)**
 - **설명**
   - N개의 평면상의 좌표(x, y)가 주어지면 모든 좌표를 오름차순으로 정렬하는 프로그램을 작성하세요.
   - 정렬기준은 먼저 x값의 의해서 정렬하고, x값이 같을 경우 y값에 의해 정렬합니다.
@@ -373,3 +372,48 @@ class Main {
   - 3 6
 
 ## 풀어보기
+
+```java
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int[][] arr1 = new int[input1][2];
+        for(int i = 0 ; i < arr1.length ; i++){
+            for(int j = 0 ; j < 2 ; j++){
+                arr1[i][j] = sc.nextInt();
+            }
+        }
+        solution(input1 , arr1);
+    }
+
+    public static void solution(int input1 , int[][] arr1){
+        for(int q = 0 ; q < input1 ; q++){
+            for(int i = 1 ; i < input1 ; i++){
+                int x = arr1[i][0];
+                int y = arr1[i][1];
+                int j;
+                for(j = i - 1 ; j >= 0 ; j--){
+                    int tmpX = arr1[j][0];
+                    int tmpY = arr1[j][1];
+                    if(arr1[j][0] == arr1[i][0] && arr1[j][1] > arr1[i][1]){
+                        arr1[i][0] = tmpX;
+                        arr1[i][1] = tmpY;
+                    }
+                    else if(arr1[j][0] > arr1[i][0]){
+                        arr1[i][0] = tmpX;
+                        arr1[i][1] = tmpY;
+                    }
+                    else break;
+                }
+                arr1[j + 1][0] = x;
+                arr1[j + 1][1] = y;
+            }
+        }
+        for(int tmp = 0 ; tmp < input1 ; tmp++){
+            System.out.println(arr1[tmp][0] + " " + arr1[tmp][1]);
+        }
+    }
+}
+```
