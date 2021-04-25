@@ -319,8 +319,9 @@ class Main {
 - **예시 출력 1**
   - 3 8
 
+## ✋ 정렬을 사용하면 쉽게 풀 수 있는 문제
 ## 해답
-## 📌 정렬을 사용하면 쉽게 풀 수 있는 문제
+
 
 ```java
 import java.util.*;
@@ -414,6 +415,39 @@ class Main{
         for(int tmp = 0 ; tmp < input1 ; tmp++){
             System.out.println(arr1[tmp][0] + " " + arr1[tmp][1]);
         }
+    }
+}
+```
+
+## 해답
+## 📌 `compareTo()`
+```java
+import java.util.*;
+class Point implements Comparable<Point>{
+    public int x, y;
+    Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+    @Override
+    public int compareTo(Point o){
+        if(this.x == o.x) return this.y - o.y;
+        else return this.x - o.x;
+    }
+}
+
+class Main {
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        ArrayList<Point> arr = new ArrayList<>();
+        for(int i = 0 ; i < n ; i++){
+            int x = kb.nextInt();
+            int y = kb.nextInt();
+            arr.add(new Point(x, y));
+        }
+        Collections.sort(arr);
+        for(Point o : arr) System.out.println(o.x + " " + o.y);
     }
 }
 ```
