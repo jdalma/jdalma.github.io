@@ -121,6 +121,16 @@ permalink: /docs/algorithm
 
 ***
 
+# **이분,이진 탐색 (Binary Search)**
+- 이진 탐색 알고리즘은 **정렬된 원소 리스트를 받아 리스트에 원하는 원소가 있을경우 그 원소의 위치를 반환**, 없을경우 null을 반환함.
+- 시간복잡도는 O(log n)으로 매우 빠른편.
+
+![](../../assets/images/algorithm/binary-search.png)
+
+- [https://velog.io/@ming/](https://velog.io/@ming/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89Binary-Search)
+
+***
+
 # **TreeSet**
 - 객체를 중복해서 저장할 수 없고 저장 순서가 유지되지 않는다는 **Set**의 성질을 그대로 가지고 있다.
 - **이진 탐색 트리** 구조로 되어 있다.
