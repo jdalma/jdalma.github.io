@@ -189,6 +189,7 @@ class Main {
 ***
 
 # **`[삽입 정렬 , Shift]` Least Recently Used (통과)**
+<!--
 - **설명**
   - 캐시메모리는 CPU와 주기억장치(DRAM) 사이의 고속의 임시 메모리로서 CPU가 처리할 작업을 저장해 놓았다가 필요시 바로 사용해서 처리속도를 높이는 장치이다.
   - **LRU 알고리즘**은 **Least Recently Used** 의 약자로 직역하자면 가장 최근에 사용되지 않은 것 정도의 의미를 가지고 있다.
@@ -198,7 +199,7 @@ class Main {
 
   - 캐시의 크기가 주어지고, 캐시가 비어있는 상태에서 N개의 작업을 CPU가 차례로 처리한다면 N개의 작업을 처리한 후
   - 캐시메모리의 상태를 가장 최근 사용된 작업부터 차례대로 출력하는 프로그램을 작성하세요.
-
+-->
 - **입력**
   - 첫 번째 줄에 캐시의 크기인 S(3<=S<=10)와 작업의 개수 N(5<=N<=1,000)이 입력된다.
   - 두 번째 줄에 N개의 작업번호가 처리순으로 주어진다. 작업번호는 1 ~100 이다.
@@ -454,12 +455,13 @@ class Main {
 
 
 ***
-# **이분 검색 (실패)**
-
+# **[이분 검색](https://cote.inflearn.com/contest/10/problem/06-08) (실패)**
+<!--
 - **설명**
   - 임의의 N개의 숫자가 입력으로 주어집니다.
   - N개의 수를 오름차순으로 정렬한 다음 N개의 수 중 한 개의 수 M이 주어지면
   - 이분검색으로 M이 정렬된 상태에서 몇 번째에 있는지 구하는 프로그램을 작성하세요. 단 중복값은 존재하지 않습니다.
+-->
 - **입력**
   - 첫 줄에 한 줄에 자연수 N(3<=N<=1,000,000)과 M이 주어집니다.
   - 두 번째 줄에 N개의 수가 공백을 사이에 두고 주어집니다.
@@ -573,7 +575,7 @@ class Main {
 
 ***
 
-# **`[결정 알고리즘]` [마구간 정하기](https://cote.inflearn.com/contest/10/problem/06-10)**
+# **`[결정 알고리즘]` [마구간 정하기](https://cote.inflearn.com/contest/10/problem/06-10) (실패)**
 <!--
 - **설명**
   - N개의 마구간이 수직선상에 있습니다. 각 마구간은 x1, x2, x3, ......, xN의 좌표를 가지며, 마구간간에 좌표가 중복되는 일은 없습니다.
@@ -591,3 +593,49 @@ class Main {
   - 1 2 8 4 9
 - **예시 출력 1**
   - 3
+
+## 해답
+
+```java
+import java.util.*;
+class Main {
+    public int count(int[] arr, int dist){
+        int cnt = 1;
+        int ep = arr[0];
+        for(int i = 1 ; i < arr.length; i++){
+            if(arr[i] - ep >= dist){
+                cnt++;
+                ep = arr[i];
+            }
+        }
+        return cnt;
+    }
+
+    public int solution(int n, int c, int[] arr){
+        int answer = 0;
+        Arrays.sort(arr);
+        int lt = 1;
+        int rt = arr[n - 1];
+        while(lt <= rt){
+            int mid=(lt + rt) / 2;
+            if(count(arr, mid) >= c){
+                answer = mid;
+                lt = mid + 1;
+            }
+            else rt = mid - 1;
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        int c = kb.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0 ; i < n ; i++) arr[i] = kb.nextInt();
+        System.out.println(T.solution(n, c, arr));
+    }
+}
+
+```
