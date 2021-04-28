@@ -507,7 +507,7 @@ class Main {
 
 ***
 
-# **`[Queue]` 공주 구하기 (<span style="color:red;">실패</span>)**
+# **`[Queue]` [공주 구하기](https://cote.inflearn.com/contest/10/problem/05-06) (<span style="color:red;">실패</span>)**
 <!--
 - **설명**
   - 정보 왕국에는 왕자가 N명이 있는데 서로 공주를 구하러 가겠다고 합니다.
@@ -646,7 +646,7 @@ class Main {
 
 ***
 
-# **`[Queue - Person객체]` 응급실 (<span style="color:red;">실패</span>)**
+# **`[Queue - Person객체]` [응급실](https://cote.inflearn.com/contest/10/problem/05-08) (<span style="color:red;">실패</span>)**
 <!--
 - **설명**
   - 응급실은 환자가 도착한 순서대로 진료를 합니다.

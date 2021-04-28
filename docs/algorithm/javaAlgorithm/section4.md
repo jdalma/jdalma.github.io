@@ -193,7 +193,7 @@ class Main {
 
 ***
 
-# **`[Hash , Sliding Window]` 매출액의 종류 (<span style="color:red;">실패 - 시간초과</span>)**
+# **`[Hash , Sliding Window]` [매출액의 종류](https://cote.inflearn.com/contest/10/problem/04-03) (<span style="color:red;">실패 - 시간초과</span>)**
 <!--
 - **설명**
   - N일 동안의 매출기록을 주고 연속된 K일 동안의 매출액의 종류를 각 구간별로 구합니다.
@@ -382,8 +382,8 @@ class Main {
 
 ***
 
-# **`[TreeSet]` K번째 큰 수 (<span style="color:red;">실패</span>)**
-
+# **`[TreeSet]` [K번째 큰 수](https://cote.inflearn.com/contest/10/problem/04-05) (<span style="color:red;">실패</span>)**
+<!--
 - **설명**
   - 1부터 100사이의 자연수가 적힌 N장의 카드를 가지고 있습니다.
   - 같은 숫자의 카드가 여러장 있을 수 있습니다.
@@ -391,7 +391,7 @@ class Main {
   - 3장을 뽑을 수 있는 모든 경우를 기록합니다.
   - 기록한 값 중 K번째로 큰 수를 출력하는 프로그램을 작성하세요.
   - 만약 큰 수부터 만들어진 수가 25 25 23 23 22 20 19......이고 K값이 3이라면 K번째 큰 값은 22입니다
-
+-->
 - **입력**
   - 첫 줄에 자연수 N(3<=N<=100)과 K(1<=K<=50) 입력되고, 그 다음 줄에 N개의 카드값이 입력된다.
 - **출력**

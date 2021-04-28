@@ -390,7 +390,7 @@ public static void main(String[] args){
 
 ***
 
-# **뒤집은 소수 (<span style="color:red;">실패</span>)**
+# **[뒤집은 소수](https://cote.inflearn.com/contest/10/problem/02-06) (<span style="color:red;">실패</span>)**
 <!--
 - **설명**
   - N개의 자연수가 입력되면 각 자연수를 뒤집은 후 그 뒤집은 수가 소수이면 그 소수를 출력하는 프로그램을 작성하세요.
@@ -976,7 +976,7 @@ public static void main(String[] args){
 
 ***
 
-# **멘토링 (<span style="color:red;">실패</span>)**
+# **[멘토링](https://cote.inflearn.com/contest/10/problem/02-12) (<span style="color:red;">실패</span>)**
 <!--
 - **설명**
   - 멘토링은 멘토(도와주는 학생)와 멘티(도움을 받는 학생)가 한 짝이 되어 멘토가 멘티의 수학공부를 도와주는 것입니다.
