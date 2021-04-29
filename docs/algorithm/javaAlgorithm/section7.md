@@ -122,7 +122,8 @@ class Main {
 ```
 
 ***
-# **피보나치 수열**
+
+# **`[메모이제이션]` 피보나치 수열 (실패)**
 - 피보나치 수열이란 앞의 2개의 수를 합하여 다음 숫자가 되는 수열이다.
 - 입력은 피보나치 수열의 총 항의 수 이다.
 - 만약 7이 입력되면 1 1 2 3 5 8 13을 출력하면 된다.
@@ -131,9 +132,126 @@ class Main {
 - **출력예제 1**
   - 1 1 2 3 5 8 13 21 34 55
 
+## 해답 1
 
-## 풀어보기
+```java
+class Main {
+    public int DFS(int n){
+        if(n==1) return 1;
+        else if(n==2) return 1;
+        else return DFS(n-2)+DFS(n-1);
+    }
+    public static void main(String[] args){
+        Main T = new Main();
+        int n=10;
+        for(int i=1; i<=n; i++) System.out.print(T.DFS(i)+" ");
+    }
+}
+```
 
+## 📌 해답 2
 
+```java
+class Main {
+    static int[] fibo;
+    public int DFS(int n){
+        if(fibo[n] > 0) return fibo[n];
+        if(n == 1) return fibo[n] = 1;
+        else if(n == 2) return fibo[n] = 1;
+        else return fibo[n] = DFS(n-2) + DFS(n-1);
+    }
+    public static void main(String[] args){
+        Main T = new Main();
+        int n = 45;
+        fibo = new int[n + 1];
+        T.DFS(n);
+        for(int i = 1 ; i <= n ; i++) System.out.print(fibo[i] + " ");
+    }
+}
+```
+
+***
+
+# **`[DFS]` 부분 집합 구하기 (실패)**
+- **입력예제 1**
+  - 3
+- **출력예제 1**
+  - 1 2 3
+  - 1 2
+  - 1 3
+  - 1
+  - 2 3
+  - 2
+  - 3
+
+## 📌 **이진트리순회**
+
+![](../../../assets/images/algorithm/section7/binary-tree.png)
+
+```java
+class Node{
+    int data;
+    Node lt, rt;
+    public Node(int val) {
+        data=val;
+        lt=rt=null;
+    }
+}
+
+public class Main{
+    Node root;
+    public void DFS(Node root){
+        if(root==null)
+            return;
+        else{
+            DFS(root.lt);
+            System.out.print(root.data+" ");
+            DFS(root.rt);
+        }
+    }
+
+    public static void main(String args[]) {
+        Main tree = new Main();
+        tree.root = new Node(1);
+        tree.root.lt = new Node(2);
+        tree.root.rt = new Node(3);
+        tree.root.lt.lt = new Node(4);
+        tree.root.lt.rt = new Node(5);
+        tree.root.rt.lt = new Node(6);
+        tree.root.rt.rt = new Node(7);
+        tree.DFS(tree.root);
+    }
+}
+```
 
 ## 해답
+
+```java
+import java.util.*;
+class Main {
+    static int n;
+    static int[] ch;
+    public void DFS(int L){
+        if(L == n + 1){
+            String tmp = "";
+            for(int i = 1; i <= n; i++){
+                if(ch[i] == 1) tmp += (i + " ");
+            }
+            if(tmp.length() > 0) System.out.println(tmp);
+        }
+        else{
+            ch[L] = 1;
+            DFS(L + 1);
+            ch[L] = 0;
+            DFS(L + 1);
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        n = 3;
+        ch = new int[n + 1];
+        T.DFS(1);
+    }
+}
+```
