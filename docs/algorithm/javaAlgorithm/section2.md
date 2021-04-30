@@ -1059,6 +1059,49 @@ public static void solution(int m , int n , int[][] intArr){
 }
 ```
 
+```java
+// 2021-04-30
+package algo;
+
+import java.util.Scanner;
+  
+public class Main {
+	
+  public static void main(String[] args){
+    Scanner in=new Scanner(System.in);
+    int input1 = in.nextInt();
+    int input2 = in.nextInt();
+    int[][] arr = new int[input2][input1];
+    for(int i = 0 ; i < input2 ; i++) {
+    	for(int j = 0 ; j < input1 ; j++) {
+    		arr[i][j] = in.nextInt();
+    	}
+    }
+    solution(arr);
+  }
+  
+  public static void solution(int[][] arr) {
+	  int[][] newArr = new int[arr[0].length][arr.length];
+	  
+	  for(int i = 0 ; i < arr.length ; i++) {
+    	for(int j = 0 ; j < arr.length ; j++) {
+    		for(int k = 0 ; k < arr[0].length ; k++) {
+    			
+    		}
+    	}
+	  }
+	  
+	  for(int i = 0 ; i < newArr.length ; i++) {
+	    	for(int j = 0 ; j < newArr[0].length ; j++) {
+	    		System.out.print(newArr[i][j]);
+	    	}
+	    	System.out.println();
+	  }
+  }
+}
+
+```
+
 ## 해답
 
 ### 📌 4중 for문
