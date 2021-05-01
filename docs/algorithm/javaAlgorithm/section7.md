@@ -13,6 +13,96 @@ grand_parent: 알고리즘
 
 ---
 
+
+# **이진트리순회**
+
+## **`[DFS]` 깊이 우선 탐색**
+![](../../../assets/images/algorithm/section7/binary-tree.png)
+
+```java
+class Node{
+    int data;
+    Node lt, rt;
+    public Node(int val) {
+        data=val;
+        lt=rt=null;
+    }
+}
+
+public class Main{
+    Node root;
+    public void DFS(Node root){
+        if(root==null)
+            return;
+        else{
+            DFS(root.lt);
+            System.out.print(root.data+" ");
+            DFS(root.rt);
+        }
+    }
+
+    public static void main(String args[]) {
+        Main tree = new Main();
+        tree.root = new Node(1);
+        tree.root.lt = new Node(2);
+        tree.root.rt = new Node(3);
+        tree.root.lt.lt = new Node(4);
+        tree.root.lt.rt = new Node(5);
+        tree.root.rt.lt = new Node(6);
+        tree.root.rt.rt = new Node(7);
+        tree.DFS(tree.root);
+    }
+}
+```
+
+## **`[BFS]` 넓이 우선 탐색 - 레벨 탐색**
+![](../../../assets/images/algorithm/section7/bfs.png)
+
+```java
+import java.util.*;
+class Node{
+    int data;
+    Node lt, rt;
+    public Node(int val) {
+        data=val;
+        lt=rt=null;
+    }
+}
+
+public class Main{
+    Node root;
+    public void BFS(Node root){
+        Queue<Node> Q=new LinkedList<>();
+        Q.add(root);
+        int L=0;
+        while(!Q.isEmpty()){
+            int len = Q.size();
+            System.out.print(L+" : ");
+            for(int i=0; i<len; i++){
+                Node cur = Q.poll();
+                System.out.print(cur.data+" ");
+                if(cur.lt!=null) Q.add(cur.lt);
+                if(cur.rt!=null) Q.add(cur.rt);
+            }
+            L++;
+            System.out.println();
+        }
+    }
+
+    public static void main(String args[]) {
+        Main tree=new Main();
+        tree.root=new Node(1);
+        tree.root.lt=new Node(2);
+        tree.root.rt=new Node(3);
+        tree.root.lt.lt=new Node(4);
+        tree.root.lt.rt=new Node(5);
+        tree.root.rt.lt=new Node(6);
+        tree.root.rt.rt=new Node(7);
+        tree.BFS(tree.root);
+    }
+}
+```
+
 # **재귀함수를 이용한 이진수 출력**
 - 10진수 N이 입력되면 2진수로 변환하여 출력하는 프로그램을 작성하세요.
 - **단, 재귀함수를 이용해서 출력해야 합니다.**
@@ -184,46 +274,6 @@ class Main {
   - 2
   - 3
 
-## 📌 **이진트리순회**
-
-![](../../../assets/images/algorithm/section7/binary-tree.png)
-
-```java
-class Node{
-    int data;
-    Node lt, rt;
-    public Node(int val) {
-        data=val;
-        lt=rt=null;
-    }
-}
-
-public class Main{
-    Node root;
-    public void DFS(Node root){
-        if(root==null)
-            return;
-        else{
-            DFS(root.lt);
-            System.out.print(root.data+" ");
-            DFS(root.rt);
-        }
-    }
-
-    public static void main(String args[]) {
-        Main tree = new Main();
-        tree.root = new Node(1);
-        tree.root.lt = new Node(2);
-        tree.root.rt = new Node(3);
-        tree.root.lt.lt = new Node(4);
-        tree.root.lt.rt = new Node(5);
-        tree.root.rt.lt = new Node(6);
-        tree.root.rt.rt = new Node(7);
-        tree.DFS(tree.root);
-    }
-}
-```
-
 ## 해답
 
 ```java
@@ -257,16 +307,16 @@ class Main {
 ```
 
 
-# **`[BFS : 상태트리탐색]` 송아지 찾기**
-- 현수의 위치와 송아지의 위치가 수직선상의 좌표 점으로 주어지면 현수는 현재 위치에서 송아지의 위치까지 다음 과 같은 방법으로 이동한다. 
-    - 송아지는 움직이지 않고 제자리에 있다. 
-    - 현수는 스카이 콩콩을 타고 가는데 한 번의 점프로 앞으로 1, 뒤로 1, 앞으로 5를 이동할 수 있다. 
-    최소 몇 번의 점프로 현수가 송아지의 위치까지 갈 수 있는지 구하는 프로그램을 작성 하세요.
+# **`[BFS : 상태트리탐색]` 송아지 찾기 (실패)**
+- 현수의 위치와 송아지의 위치가 수직선상의 좌표 점으로 주어지면 현수는 현재 위치에서 송아지의 위치까지 다음 과 같은 방법으로 이동한다.
+- 송아지는 움직이지 않고 제자리에 있다.
+- 현수는 스카이 콩콩을 타고 가는데 한 번의 점프로 앞으로 1, 뒤로 1, 앞으로 5를 이동할 수 있다.
+- 최소 몇 번의 점프로 현수가 송아지의 위치까지 갈 수 있는지 구하는 프로그램을 작성 하세요.
 - **입력설명**
-    - 첫 번째 줄에 현수의 위치 S와 송아지의 위치 E가 주어진다. 
+    - 첫 번째 줄에 현수의 위치 S와 송아지의 위치 E가 주어진다.
     - 직선의 좌표 점은 1부터 10,000까지이다.
 - **출력설명**
-    - 점프의 최소횟수를 구한다. 
+    - 점프의 최소횟수를 구한다.
     - 답은 1이상이며 반드시 존재합니다.
 - **입력예제 1**
     - 5 14
@@ -276,3 +326,5 @@ class Main {
     - 8 3
 - **출력예제 2**
     - 5
+
+## 해답
