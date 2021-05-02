@@ -366,7 +366,6 @@ class Main{
 
 ## 해답
 
-
 ```java
 import java.util.*;
 class Main {
@@ -408,3 +407,99 @@ class Main {
     }
 }
 ```
+
+***
+
+# **Tree 말단 노드까지의 가장 짧은 경로**
+- 아래 그림과 같은 이진트리에서 루트 노드 1에서 말단노드까지의 길이 중 가장 짧은 길이를
+구하는 프로그램을 작성하세요.
+- 각 경로의 길이는 루트노드에서 말단노드까지 가는데 이동하는 횟수를 즉 간선(에지)의 개수를
+길이로 하겠습니다.
+
+![](../../../assets/images/algorithm/section7/binary-tree2.png)
+
+- 가장 짧은 길이는 3번 노드까지의 길이인 1이다
+
+## **`[DFS]` (실패)**
+- **최단 길이를 구할 때는 `[BFS]`를 사용하여야 하지만 `[DFS]`를 사용하여 풀어보자**
+
+### 풀어보기
+
+```java
+import java.util.*;
+
+class Node{
+    int data;
+    Node left;
+    Node right;
+    public Node(int value){
+        this.data = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class Main{
+    static List<Integer> levelList = new ArrayList<>();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.right = new Node(3);
+        root.right.right = new Node(6);
+        root.right.right.right = new Node(9);
+
+        DFS(root , 0);
+
+        System.out.println(levelList);
+    }
+
+    public static void DFS(Node root , int level){
+        if(root == null){
+            levelList.add(--level);
+        }
+        else{
+            ++level;
+            DFS(root.left , level);
+            DFS(root.right, level);
+        }
+    }
+}
+```
+
+
+### 해답
+
+```java
+import java.util.*;
+class Node{
+    int data;
+    Node lt, rt;
+    public Node(int val) {
+        data=val;
+        lt=rt=null;
+    }
+}
+
+public class Main{
+    Node root;
+    public int DFS(int L, Node root){
+        if(root.lt == null && root.rt == null) return L;
+        else return Math.min(DFS(L + 1, root.lt), DFS(L + 1, root.rt));
+    }
+
+    public static void main(String args[]) {
+        Main tree=new Main();
+        tree.root=new Node(1);
+        tree.root.lt=new Node(2);
+        tree.root.rt=new Node(3);
+        tree.root.lt.lt=new Node(4);
+        tree.root.lt.rt=new Node(5);
+        System.out.println(tree.DFS(0, tree.root));
+    }
+}
+```
+
+## **`[BFS]`**
