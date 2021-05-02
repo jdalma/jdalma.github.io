@@ -420,57 +420,8 @@ class Main {
 
 - 가장 짧은 길이는 3번 노드까지의 길이인 1이다
 
-## **`[DFS]` (실패)**
+## **`[DFS]`**
 - **최단 길이를 구할 때는 `[BFS]`를 사용하여야 하지만 `[DFS]`를 사용하여 풀어보자**
-
-### 풀어보기
-
-```java
-import java.util.*;
-
-class Node{
-    int data;
-    Node left;
-    Node right;
-    public Node(int value){
-        this.data = value;
-        this.left = null;
-        this.right = null;
-    }
-}
-
-class Main{
-    static List<Integer> levelList = new ArrayList<>();
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
-        root.right = new Node(3);
-        root.right.right = new Node(6);
-        root.right.right.right = new Node(9);
-
-        DFS(root , 0);
-
-        System.out.println(levelList);
-    }
-
-    public static void DFS(Node root , int level){
-        if(root == null){
-            levelList.add(--level);
-        }
-        else{
-            ++level;
-            DFS(root.left , level);
-            DFS(root.right, level);
-        }
-    }
-}
-```
-
-
-### 해답
 
 ```java
 import java.util.*;
@@ -503,3 +454,123 @@ public class Main{
 ```
 
 ## **`[BFS]`**
+
+```java
+import java.util.*;
+class Node{
+    int data;
+    Node lt, rt;
+    public Node(int val) {
+        data=val;
+        lt=rt=null;
+    }
+}
+
+public class Main{
+    Node root;
+    public int BFS(Node root){
+        Queue<Node> Q = new LinkedList<>();
+        Q.offer(root);
+        int L = 0;
+        while(!Q.isEmpty()){
+            int len = Q.size();
+            for(int i = 0 ; i < len ; i++){
+                Node cur = Q.poll();
+                if(cur.lt == null && cur.rt == null) return L;
+                if(cur.lt != null) Q.offer(cur.lt);
+                if(cur.rt != null) Q.offer(cur.rt);
+            }
+            L++;
+        }
+        return 0;
+    }
+
+    public static void main(String args[]) {
+        Main tree = new Main();
+        tree.root = new Node(1);
+        tree.root.lt = new Node(2);
+        tree.root.rt = new Node(3);
+        tree.root.lt.lt = new Node(4);
+        tree.root.lt.rt = new Node(5);
+        System.out.println(tree.BFS(tree.root));
+    }
+}
+```
+
+***
+
+# **`[인접행렬]` 경로 탐색**
+
+![](../../../assets/images/algorithm/section7/graph.png)
+- Vertex : 노드 , Edge : 간선
+- 방향그래프가 주어지면 1번 정점에서 N번 정점으로 가는 모든 경로의 가지 수를 출력하는 프
+로그램을 작성하세요.
+- 아래 그래프에서 1번 정점에서 5번 정점으로 가는 가지 수는
+
+![](../../../assets/images/algorithm/section7/1.png)
+
+- 1 2 3 4 5
+- 1 2 5
+- 1 3 4 2 5
+- 1 3 4 5
+- 1 4 2 5
+- 1 4 5
+- 총 6 가지입니다.
+- **입력설명**
+  - 첫째 줄에는 정점의 수 N(1<=N<=20)와 간선의 수 M가 주어진다.
+  - 그 다음부터 M줄에 걸쳐 연결정보가 주어진다.
+- **출력설명**
+  - 총 가지수를 출력한다.
+- **입력예제 1**
+  - 5 9
+  - 1 2
+  - 1 3
+  - 1 4
+  - 2 1
+  - 2 3
+  - 2 5
+  - 3 4
+  - 4 2
+  - 4 5
+- **출력예제 1**
+  - 6
+
+## 해답
+
+```java
+import java.util.*;
+class Main {
+    static int n, m, answer=0;
+    static int[][] graph;
+    static int[] ch;
+    public void DFS(int v){
+        if(v == n) answer++;
+        else{
+            for(int i = 1 ; i <= n ; i++){
+                if(graph[v][i] == 1 && ch[i] == 0){
+                    ch[i] = 1;
+                    DFS(i);
+                    ch[i] = 0;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n = kb.nextInt();
+        m = kb.nextInt();
+        graph = new int[n+1][n+1];
+        ch = new int[n+1];
+        for(int i = 0 ; i < m ; i++){
+            int a = kb.nextInt();
+            int b = kb.nextInt();
+            graph[a][b] = 1;
+        }
+        ch[1] = 1;
+        T.DFS(1);
+        System.out.println(answer);
+    }
+}
+```
