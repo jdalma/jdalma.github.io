@@ -151,9 +151,10 @@ permalink: /docs/algorithm
 
 # **`[Graph]` 인접 행렬과 인접 리스트**
 
+## 인접행렬
+
 ![](../../assets/images/algorithm/section7/graph.png)
 
-## 인접행렬
 - **인접 행렬은 그래프의 연결 관계를 이차원 배열로 나타내는 방식**
 
 ```java
@@ -178,8 +179,11 @@ permalink: /docs/algorithm
 
 ## 인접리스트
 
+![](../../assets/images/algorithm/section7/adjacency-list1.png)
 
+- **정점(노드 , Vertex)들의 연결 관계를 각각 리스트를 생성한다.**
 
+![](../../assets/images/algorithm/section7/adjacency-list2.png)
 
 ***
 
