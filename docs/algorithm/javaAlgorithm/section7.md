@@ -576,3 +576,168 @@ class Main {
 ```
 
 ## **`[인접리스트]` (실패)**
+
+### 해답
+
+```java
+import java.util.*;
+class Main {
+    static int n, m, answer=0;
+    static ArrayList<ArrayList<Integer>> graph;
+    static int[] ch;
+    public void DFS(int v){
+        if(v==n) answer++;
+        else{
+            for(int nv : graph.get(v)){
+                if(ch[nv]==0){
+                    ch[nv]=1;
+                    DFS(nv);
+                    ch[nv]=0;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        m=kb.nextInt();
+        graph = new ArrayList<ArrayList<Integer>>();
+        for(int i=0; i<=n; i++){
+            graph.add(new ArrayList<Integer>());
+        }
+        ch=new int[n+1];
+        for(int i=0; i<m; i++){
+            int a=kb.nextInt();
+            int b=kb.nextInt();
+            graph.get(a).add(b);
+        }
+        ch[1]=1;
+        T.DFS(1);
+        System.out.println(answer);
+    }
+}
+```
+
+***
+
+# **`[BFS]` 그래프 최단거리 (실패)**
+- **최단거리는 BFS를 생각하자**
+- 다음 그래프에서 1번 정점에서 각 정점으로 가는 최소 이동 간선수를 출력하세요.
+
+![](../../../assets/images/algorithm/section7/2.png)
+
+- **입력예제 1**
+  - 6 9
+  - 1 3
+  - 1 4
+  - 2 1
+  - 2 5
+  - 3 4
+  - 4 5
+  - 4 6
+  - 6 2
+  - 6 5
+- **출력예제 1**
+  - 2 : 3
+  - 3 : 1
+  - 4 : 1
+  - 5 : 2
+  - 6 : 2
+
+## 레벨을 사용하여 풀어보기 (실패)
+
+```java
+import java.util.*;
+
+class Node{
+    int data;
+    List<Node> childs;
+    public Node(int value){
+        this.data = value;
+        this.childs = new ArrayList<Node>();
+    }
+    public void addChild(Node child){
+        this.childs.add(child);
+    }
+    public Node findParent(int targetValue , Node root){
+        return recursive(targetValue , root);
+    }
+    public Node recursive(int targetValue , Node root){
+        if(root.data == targetValue){
+            return root;
+        }
+        else{
+            for(Node tmp : root.childs){
+                recursive(targetValue , tmp);
+            }
+        }
+        return root;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        Node root = new Node(1);
+        for (int i = 0; i < input2; i++) {
+            int tmp1 = sc.nextInt();
+            int tmp2 = sc.nextInt();
+            Node parentNode = root.findParent(tmp1, root);
+            parentNode.addChild(new Node(tmp2));
+        }
+    }
+}
+```
+
+## 배열을 사용한 해답
+
+```java
+import java.util.*;
+class Main {
+    static int n, m, answer=0;
+    static ArrayList<ArrayList<Integer>> graph;
+    static int[] ch, dis;
+    public void BFS(int v){
+        ch[v]=1;
+        dis[v]=0;
+        Queue<Integer> queue=new LinkedList<>();
+        queue.offer(v);
+        while(!queue.isEmpty()){
+            int cv=queue.poll();
+            for(int nv : graph.get(cv)){
+                if(ch[nv]==0){
+                    ch[nv]=1;
+                    queue.offer(nv);
+                    dis[nv]=dis[cv]+1;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        m=kb.nextInt();
+        graph=new ArrayList<ArrayList<Integer>>();
+        for(int i=0; i<=n; i++){
+            graph.add(new ArrayList<Integer>());
+        }
+        ch=new int[n+1];
+        dis=new int[n+1];
+        for(int i=0; i<m; i++){
+            int a=kb.nextInt();
+            int b=kb.nextInt();
+            graph.get(a).add(b);
+        }
+        T.BFS(1);
+        for(int i=2; i<=n; i++){
+            System.out.println(i+" : "+dis[i]);
+        }
+    }
+}
+```
