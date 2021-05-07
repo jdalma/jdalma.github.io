@@ -1064,9 +1064,9 @@ public static void solution(int m , int n , int[][] intArr){
 package algo;
 
 import java.util.Scanner;
-  
+
 public class Main {
-	
+
   public static void main(String[] args){
     Scanner in=new Scanner(System.in);
     int input1 = in.nextInt();
@@ -1079,18 +1079,18 @@ public class Main {
     }
     solution(arr);
   }
-  
+
   public static void solution(int[][] arr) {
 	  int[][] newArr = new int[arr[0].length][arr.length];
-	  
+
 	  for(int i = 0 ; i < arr.length ; i++) {
     	for(int j = 0 ; j < arr.length ; j++) {
     		for(int k = 0 ; k < arr[0].length ; k++) {
-    			
+
     		}
     	}
 	  }
-	  
+
 	  for(int i = 0 ; i < newArr.length ; i++) {
 	    	for(int j = 0 ; j < newArr[0].length ; j++) {
 	    		System.out.print(newArr[i][j]);
