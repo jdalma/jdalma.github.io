@@ -637,5 +637,4 @@ class Main {
         System.out.println(T.solution(n, c, arr));
     }
 }
-
 ```
