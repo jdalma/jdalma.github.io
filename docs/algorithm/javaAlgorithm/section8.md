@@ -99,12 +99,116 @@ class Main{
 
 ***
 
-# **`[DFS]` [바둑이 승차](https://cote.inflearn.com/contest/10/problem/08-02) (실패)**
+# **`[DFS]` [바둑이 승차](https://cote.inflearn.com/contest/10/problem/08-02) (통과)**
 
 ## 풀어보기
+
+```java
+
+import java.util.*;
+
+class Main {
+    static int[] arr1;
+    static int input1 , result;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        arr1 = new int[input2];
+        for(int i = 0 ; i < arr1.length ; i++){
+            arr1[i] = sc.nextInt();
+        }
+        recursive( 0 , 0);
+        System.out.println(result);
+    }
+
+    public static void recursive(int level , int sum){
+        if(input1 < sum){}
+        else{
+            if(result < sum) result = sum;
+            if(level == arr1.length){}
+            else{
+                recursive(level + 1 , sum + arr1[level]);
+                recursive(level + 1, sum);
+            }
+        }
+    }
+}
+```
 
 ## 해답
 
 ```java
+import java.util.*;
+class Main{
+    static int answer=Integer.MIN_VALUE, c, n;
+    public void DFS(int L, int sum, int[] arr){
+        if(sum>c) return;
+        if(L==n){
+            answer=Math.max(answer, sum);
+        }
+        else{
+            DFS(L+1, sum+arr[L], arr);
+            DFS(L+1, sum, arr);
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        c=kb.nextInt();
+        n=kb.nextInt();
+        int[] arr=new int[n];
+        for(int i=0; i<n; i++){
+            arr[i]=kb.nextInt();
+        }
+        T.DFS(0, 0, arr);
+        System.out.println(answer);
+    }
+}
+```
+
+***
+
+# **`[DFS]` [최대점수 구하기](https://cote.inflearn.com/contest/10/problem/08-03) (진행중)**
+
+## 풀어보기
+```java
+
+import java.util.*;
+
+class Main {
+    static int[] scoreArr , timeArr;
+    static int problemCount , timeLimit , result = -1;
+    static String tmp = "";
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        problemCount = sc.nextInt();
+        timeLimit = sc.nextInt();
+        scoreArr = new int[problemCount];
+        timeArr = new int[problemCount];
+        for(int i = 0 ; i < problemCount ; i++){
+            scoreArr[i] = sc.nextInt();
+            timeArr[i] = sc.nextInt();
+//            System.out.println(problemArr[i] + " " + scoreArr[i]);
+        }
+        recursive(0 ,0 , 0);
+        System.out.println(result);
+    }
+
+    public static void recursive(int cnt , int totalScore , int totalTime){
+        if(cnt > problemCount - 1 || totalTime > timeLimit){}
+        else{
+//            result = Math.max(result , totalScore);
+            tmp += scoreArr[cnt] + " + ";
+            System.out.println(tmp + " - " + totalTime);
+            recursive(cnt + 1 , totalScore + scoreArr[cnt] , totalTime + timeArr[cnt]);
+//            recursive(cnt + 1 , totalScore, totalTime);
+        }
+    }
+}
 
 ```
+
+
+## 해답
