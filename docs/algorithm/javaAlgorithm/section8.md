@@ -13,12 +13,51 @@ grand_parent: 알고리즘
 
 ---
 
-# **`[DFS : 아마존 인터뷰]` [합이 같은 부분집합](https://cote.inflearn.com/contest/10/problem/08-01) (실패)**
+# **`[DFS : 아마존 인터뷰]` [합이 같은 부분집합](https://cote.inflearn.com/contest/10/problem/08-01) (✅ ~~실패~~)**
 
 ## 풀어보기
 
 ```java
 
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        arr1 = new int[input1];
+        for(int i = 0 ; i < arr1.length ; i++){
+            arr1[i] = sc.nextInt();
+        }
+        solution(input1 , arr1);
+        if(isFind) System.out.println("YES");
+        else System.out.println("NO");
+    }
+
+    public static void solution(int input1 , int[] arr1){
+        total = Arrays.stream(arr1).sum();
+        recursive( 0 , 0);
+    }
+    static int total;
+    static int[] arr1;
+    static boolean isFind = false;
+    public static void recursive(int level , int sum){
+        if(isFind) return;
+        if(total / 2 < sum){
+            return;
+        }
+        else if(level == arr1.length){
+            if(total - sum == sum){
+                isFind = true;
+                return;
+            }
+        }
+        else{
+            recursive(level + 1 , sum + arr1[level]);
+            recursive(level + 1 , sum);
+        }
+    }
+}
 ```
 
 ## 해답
