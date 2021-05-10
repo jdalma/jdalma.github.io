@@ -192,7 +192,7 @@ class Main {
             timeArr[i] = sc.nextInt();
 //            System.out.println(problemArr[i] + " " + scoreArr[i]);
         }
-        recursive(0 ,0 , 0);
+        recursive(0 ,0, 0);
         System.out.println(result);
     }
 
