@@ -193,18 +193,17 @@ class Main {
             timeArr[i] = sc.nextInt();
 //            System.out.println(problemArr[i] + " " + scoreArr[i]);
         }
-        recursive(0 ,0, 0);
+        recursive(0 ,0 , 0);
         System.out.println(result);
     }
 
     public static void recursive(int cnt , int totalScore , int totalTime){
         if(cnt > problemCount - 1 || totalTime > timeLimit){}
         else{
-//            result = Math.max(result , totalScore);
-            tmp += scoreArr[cnt] + " + ";
-            System.out.println(tmp + " - " + totalTime);
+            result = Math.max(result , totalScore);
+            System.out.println(totalScore + " - " + totalTime);
             recursive(cnt + 1 , totalScore + scoreArr[cnt] , totalTime + timeArr[cnt]);
-//            recursive(cnt + 1 , totalScore, totalTime);
+            recursive(cnt + 1 , totalScore, totalTime);
         }
     }
 }
