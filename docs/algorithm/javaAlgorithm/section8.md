@@ -170,17 +170,16 @@ class Main{
 
 ***
 
-# **`[DFS]` [최대점수 구하기](https://cote.inflearn.com/contest/10/problem/08-03) (진행중)**
+# **`[DFS]` [최대점수 구하기](https://cote.inflearn.com/contest/10/problem/08-03) (통과)**
 
 ## 풀어보기
 ```java
-// 2021.05.12
-
+// 2021.05.18
 import java.util.*;
 
 class Main {
     static int[] scoreArr , timeArr;
-    static int problemCount , timeLimit , result = -1;
+    static int problemCount , timeLimit , result = 0;
     static String tmp = "";
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -191,24 +190,235 @@ class Main {
         for(int i = 0 ; i < problemCount ; i++){
             scoreArr[i] = sc.nextInt();
             timeArr[i] = sc.nextInt();
-//            System.out.println(problemArr[i] + " " + scoreArr[i]);
         }
         recursive(0 ,0 , 0);
         System.out.println(result);
     }
 
     public static void recursive(int cnt , int totalScore , int totalTime){
-        if(cnt > problemCount - 1 || totalTime > timeLimit){}
-        else{
+        if(cnt > problemCount || totalTime > timeLimit){
+            return;
+        }
+        if(cnt == problemCount){
             result = Math.max(result , totalScore);
-            System.out.println(totalScore + " - " + totalTime);
-            recursive(cnt + 1 , totalScore + scoreArr[cnt] , totalTime + timeArr[cnt]);
-            recursive(cnt + 1 , totalScore, totalTime);
+        }
+        else{
+            recursive(cnt + 1, totalScore + scoreArr[cnt] , totalTime + timeArr[cnt]);
+            recursive(cnt + 1, totalScore, totalTime);
         }
     }
 }
+
 
 ```
 
 
 ## 해답
+
+```java
+import java.util.*;
+class Main{
+    static int answer=Integer.MIN_VALUE, n, m;
+    boolean flag=false;
+    public void DFS(int L, int sum, int time, int[] ps, int[] pt){
+        if(time>m) return;
+        if(L==n){
+            answer=Math.max(answer, sum);
+        }
+        else{
+            DFS(L+1, sum+ps[L], time+pt[L], ps, pt);
+            DFS(L+1, sum, time, ps, pt);
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        m=kb.nextInt();
+        int[] a=new int[n];
+        int[] b=new int[n];
+        for(int i=0; i<n; i++){
+            a[i]=kb.nextInt();
+            b[i]=kb.nextInt();
+        }
+        T.DFS(0, 0, 0, a, b);
+        System.out.println(answer);
+    }
+}
+```
+
+***
+
+# **`[DFS]` 중복순열 구하기**
+- 1부터 N까지 번호가 적힌 구슬이 있습니다.
+- 이 중 중복을 허락하여 M번을 뽑아 일렬로 나열하는 방법을 모두 출력합니다.
+- 출력순서는 사전순으로 오름차순으로 출력합니다.
+- 첫 번째 줄에 자연수 N(3<=N<=10)과 M(2<=M<=N) 이 주어집니다.
+- **입력예제 1**
+  - 3 2
+- **출력예제 1**
+  - 1 1
+  - 1 2
+  - 1 3
+  - 2 1
+  - 2 2
+  - 2 3
+  - 3 1
+  - 3 2
+  - 3 3
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+//    private static int[] checkArr;
+    static int limit;
+    static int count;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        limit = sc.nextInt();
+        count = sc.nextInt();
+//        checkArr = new int[limit + 1];
+        recursive(1);
+    }
+
+    public static void recursive(int num){
+        if(num > limit){
+            return;
+        }
+        else{
+            for(int i = 1 ; i <= limit ; i++){
+                System.out.println(num + " " + i);
+            }
+            recursive(num + 1);
+        }
+    }
+}
+```
+
+## 해답
+
+```java
+import java.util.*;
+class Main{
+    static int[] pm;
+    static int n, m;
+    public void DFS(int L){
+        if(L==m){
+            for(int x : pm) System.out.print(x+" ");
+            System.out.println();
+        }
+        else{
+            for(int i=1; i<=n; i++){
+                pm[L]=i;
+                DFS(L+1);
+            }
+        }
+    }
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        m=kb.nextInt();
+        pm=new int[m];
+        T.DFS(0);
+    }
+}
+```
+
+***
+
+# **`[DFS]` [동전 교환](https://cote.inflearn.com/contest/10/problem/08-05) (실패)**
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+    static int[] coinArr;
+    static int coinEa;
+    static int totalAmt;
+    static int result = 0;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        coinEa = sc.nextInt();
+        coinArr = new int[coinEa];
+        for(int i = 0 ; i < coinEa ; i++){
+            coinArr[i] = sc.nextInt();
+        }
+        totalAmt = sc.nextInt();
+        Arrays.sort(coinArr);
+        recursive(coinEa - 1 , totalAmt);
+        System.out.println(result);
+    }
+
+    public static void recursive(int index , int amt){
+        if(index < 0 || amt <= 0){
+            return;
+        }
+        else{
+            while(coinArr[index] <= amt){
+                amt -= coinArr[index];
+                result++;
+            }
+            recursive(index - 1 , amt);
+        }
+    }
+}
+```
+
+## 해답
+
+### `Arrays.sort(Integer[] arr , Collections.reverseOrder())`
+
+```java
+import java.util.*;
+class Main{
+    static int n, m, answer=Integer.MAX_VALUE;
+    public void DFS(int L, int sum, Integer[] arr){
+        if(sum>m) return;
+        if(L>=answer) return;
+        if(sum==m){
+            answer=Math.min(answer, L);
+        }
+        else{
+            for(int i=0; i<n; i++){
+                DFS(L+1, sum+arr[i], arr);
+            }
+        }
+    }
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        Integer[] arr=new Integer[n];
+        for(int i=0; i<n; i++) arr[i]=kb.nextInt();
+        Arrays.sort(arr, Collections.reverseOrder());
+        m=kb.nextInt();
+        T.DFS(0, 0, arr);
+        System.out.println(answer);
+    }
+}
+```
+
+***
+
+# **순열 구하기**
+- 10이하의 N개의 자연수가 주어지면 이 중 M개를 뽑아 일렬로 나열하는 방법을 모두 출력
+- 첫 번째 줄에 자연수 N(3<=N<=10)과 M(2<=M<=N) 이 주어집니다.
+- 두 번째 줄에 N개의 자연수가 오름차순으로 주어집니다.
+- 출력순서는 사전순으로 오름차순으로 출력합니다.
+- **입력예제 1**
+  - 3 2
+  - 3 6 9
+- **출력예제 1**
+  - 3 6
+  - 3 9
+  - 6 3
+  - 6 9
+  - 9 3
+  - 9 6
