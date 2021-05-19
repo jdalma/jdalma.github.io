@@ -422,3 +422,32 @@ class Main{
   - 6 9
   - 9 3
   - 9 6
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+    static int input1;
+    static int input2;
+    static int[] arr;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        input1 = sc.nextInt();
+        input2 = sc.nextInt();
+        arr = new int[input1];
+        for(int i = 0 ; i < input1 ; i++){
+            arr[i] = sc.nextInt();
+        }
+
+    }
+
+    public static void recursive(int ){
+
+    }
+}
+```
+
+## 해답
