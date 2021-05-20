@@ -407,7 +407,7 @@ class Main{
 
 ***
 
-# **순열 구하기**
+# **순열 구하기 (실패)**
 - 10이하의 N개의 자연수가 주어지면 이 중 M개를 뽑아 일렬로 나열하는 방법을 모두 출력
 - 첫 번째 줄에 자연수 N(3<=N<=10)과 M(2<=M<=N) 이 주어집니다.
 - 두 번째 줄에 N개의 자연수가 오름차순으로 주어집니다.
@@ -423,31 +423,99 @@ class Main{
   - 9 3
   - 9 6
 
+## 해답
+
+```java
+import java.util.*;
+class Main{
+    static int[] pm, ch, arr;
+    static int n, m;
+    public void DFS(int L){
+        if(L==m){
+            for(int x : pm) System.out.print(x+" ");
+            System.out.println();
+        }
+        else{
+            for(int i=0; i<n; i++){
+                if(ch[i]==0){
+                    ch[i]=1;
+                    pm[L]=arr[i];
+                    DFS(L+1);
+                    ch[i]=0;
+                }
+            }
+        }
+    }
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        m=kb.nextInt();
+        arr=new int[n];
+        for(int i=0; i<n; i++) arr[i]=kb.nextInt();
+        ch=new int[n];
+        pm=new int[m];
+        T.DFS(0);
+    }
+}
+```
+
+***
+
+# **`[메모이제이션]` [조합의 경우 수](https://cote.inflearn.com/contest/10/problem/08-07) (통과)**
+
 ## 풀어보기
 
 ```java
 import java.util.*;
 
 class Main {
-    static int input1;
-    static int input2;
-    static int[] arr;
-
+    static int[][] checkArr;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        input1 = sc.nextInt();
-        input2 = sc.nextInt();
-        arr = new int[input1];
-        for(int i = 0 ; i < input1 ; i++){
-            arr[i] = sc.nextInt();
-        }
-
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        checkArr = new int[input1 + 1][input2 + 1];
+        System.out.println(recursive(input1 , input2));
     }
 
-    public static void recursive(int ){
-
+    public static int recursive(int n , int r){
+        if(r == 0) return 1;
+        else if(n == r) return 1;
+        else if(checkArr[n][r] != 0) return checkArr[n][r];
+        else{
+            return recursive(n - 1 , r - 1) + recursive(n - 1 , r);
+        }
     }
 }
 ```
+
+## 해답
+
+```java
+import java.util.*;
+class Main{
+    int[][] dy=new int[35][35];
+    public int DFS(int n, int r){
+        if(dy[n][r]>0) return dy[n][r];
+        if(n==r || r==0) return 1;
+        else return dy[n][r]=DFS(n-1, r-1)+DFS(n-1, r);
+    }
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        int r=kb.nextInt();
+        System.out.println(T.DFS(n, r));
+    }
+}
+```
+
+***
+
+# **`[순열 구하기 응용]` [수열 추측하기](https://cote.inflearn.com/contest/10/problem/08-08)**
+
+## 풀어보기
+
 
 ## 해답
