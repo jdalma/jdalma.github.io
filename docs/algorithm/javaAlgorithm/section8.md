@@ -464,6 +464,8 @@ class Main{
 
 # **`[메모이제이션]` [조합의 경우 수](https://cote.inflearn.com/contest/10/problem/08-07) (통과)**
 
+![](../../../assets/images/algorithm/section8/1.png)
+
 ## 풀어보기
 
 ```java
@@ -484,7 +486,7 @@ class Main {
         else if(n == r) return 1;
         else if(checkArr[n][r] != 0) return checkArr[n][r];
         else{
-            return recursive(n - 1 , r - 1) + recursive(n - 1 , r);
+            return checkArr[n][r] =  recursive(n - 1 , r - 1) + recursive(n - 1 , r);
         }
     }
 }
@@ -513,9 +515,145 @@ class Main{
 
 ***
 
-# **`[순열 구하기 응용]` [수열 추측하기](https://cote.inflearn.com/contest/10/problem/08-08)**
+# 🔥 **`[순열 구하기 응용]` [수열 추측하기](https://cote.inflearn.com/contest/10/problem/08-08) (실패)**
+
+## 해답
+
+### 📌
+
+```java
+import java.util.*;
+class Main{
+    static int[] b, p, ch;
+    static int n, f;
+    boolean flag=false;
+    int[][] dy=new int[35][35];
+    public int combi(int n, int r){
+        if(dy[n][r]>0) return dy[n][r];
+        if(n==r || r==0) return 1;
+        else return dy[n][r]=combi(n-1, r-1)+combi(n-1, r);
+    }
+
+    public void DFS(int L, int sum){
+        if(flag) return;
+        if(L==n){
+            if(sum==f){
+                for(int x : p) System.out.print(x+" ");
+                flag=true;
+            }
+        }
+        else{
+            for(int i=1; i<=n; i++){
+                if(ch[i]==0){
+                    ch[i]=1;
+                    p[L]=i;
+                    DFS(L+1, sum+(p[L]*b[L]));
+                    ch[i]=0;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        f=kb.nextInt();
+        b=new int[n];
+        p=new int[n];
+        ch=new int[n+1];
+        for(int i=0; i<n; i++){
+            b[i]=T.combi(n-1, i);
+        }
+        T.DFS(0, 0);
+    }
+}
+
+```
+
+***
+
+# **`[DFS]` 조합 구하기 (통과 - 비효율적)**
+- 1부터 N까지 번호가 적힌 구슬이 있습니다.
+- 이 중 M개를 뽑는 방법의 수를 출력하는 프로그램을 작성하세요.
+- **입력예제 1**
+  - 4 2
+- **출력예제 1**
+  - 1 2
+  - 1 3
+  - 1 4
+  - 2 3
+  - 2 4
+  - 3 4
+
 
 ## 풀어보기
 
+```java
+import java.util.*;
+
+class Main {
+    static int[] checkArr , printArr , numArr;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        checkArr = new int[input1];
+        printArr = new int[input2];
+        numArr = new int[input1];
+        for(int i = 0 ; i < input1 ; i++) numArr[i] = i + 1;
+        recursive(0 , input1 , input2);
+    }
+
+    public static void recursive(int level , int n , int r){
+        if(level > r){}
+        else if(level == r){
+            for(int p : printArr) System.out.print(p + " ");
+            System.out.println();
+        }
+        else{
+            for(int i = 0 ; i < n ; i++){
+                if(checkArr[i] == 0 && numArr[i] - 1 <= i){
+                    checkArr[i] = 1;
+                    printArr[level] = numArr[i];
+                    recursive(level + 1 , n , r);
+                    for(int j = i + 1 ; j < n ; j++){
+                        checkArr[j] = 0;
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
 
 ## 해답
+
+```java
+import java.util.*;
+class Main{
+    static int[] combi;
+    static int n, m;
+    public void DFS(int L, int s){
+        if(L==m){
+            for(int x : combi) System.out.print(x+" ");
+            System.out.println();
+        }
+        else{
+            for(int i=s; i<=n; i++){
+                combi[L]=i;
+                DFS(L+1, i+1);
+            }
+        }
+    }
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        m=kb.nextInt();
+        combi=new int[m];
+        T.DFS(0, 1);
+    }
+}
+```
