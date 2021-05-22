@@ -662,7 +662,7 @@ class Main{
 
 ## 풀어보기
 
-### 시작지점을 1로 바꾸지 않아 16번이 나왔었음
+### 시작지점을 1로 `board[0][0] = 1;`
 
 ```java
 import java.util.*;
@@ -707,3 +707,414 @@ class Main {
 ```
 
 ## 해답
+
+```java
+import java.util.*;
+class Main {
+    static int[] dx={-1, 0, 1, 0};
+    static int[] dy={0, 1, 0, -1};
+    static int[][] board;
+    static int answer=0;
+
+    public void DFS(int x, int y){
+        if(x==7 && y==7) answer++;
+        else{
+            for(int i=0; i<4; i++){
+                int nx=x+dx[i];
+                int ny=y+dy[i];
+                if(nx>=1 && nx<=7 && ny>=1 && ny<=7 && board[nx][ny]==0){
+                    board[nx][ny]=1;
+                    DFS(nx, ny);
+                    board[nx][ny]=0;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        board=new int[8][8];
+        for(int i=1; i<=7; i++){
+            for(int j=1; j<=7; j++){
+                board[i][j]=kb.nextInt();
+            }
+        }
+        board[1][1]=1;
+        T.DFS(1, 1);
+        System.out.print(answer);
+    }
+}
+```
+
+***
+
+# **`[BFS]` [미로의 최단거리 탐색](https://cote.inflearn.com/contest/10/problem/08-11) (통과)**
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Position{
+    int x;
+    int y;
+    public Position(int x , int y){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Main {
+
+    static int[][] board;
+    static int[] dx = {-1 , 0 , 1 , 0};
+    static int[] dy = {0 , 1 , 0 , -1};
+    static Queue<Position> queue = new LinkedList<>();
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        board = new int[7][7];
+        for(int i = 0 ; i < 7 ; i++){
+            for(int j = 0 ; j < 7 ; j++){
+                board[i][j] = sc.nextInt();
+            }
+        }
+        queue.offer(new Position(0 , 0));
+
+        List<Integer> costList = new ArrayList<>();
+        while(!queue.isEmpty()){
+            Position pos = queue.poll();
+            if(pos.x == 6 && pos.y == 6){
+                costList.add(board[pos.x][pos.y]);
+            }
+            else{
+                for(int i = 0 ; i < 4 ; i++){
+                    int moveX = pos.x + dx[i];
+                    int moveY = pos.y + dy[i];
+                    if(moveX >= 0 && moveX < 7 && moveY >= 0 && moveY < 7){
+                        if(board[moveX][moveY] == 0){
+                            board[moveX][moveY] = board[pos.x][pos.y] + 1;
+                            queue.offer(new Position(moveX , moveY));
+                        }
+                    }
+                }
+            }
+        }
+        if(costList.isEmpty()){
+            System.out.println(-1);
+        }
+        else{
+            System.out.println(costList.stream().min(Comparator.comparing(x -> x)).get());
+        }
+    }
+}
+```
+
+## 해답
+
+```java
+import java.util.*;
+class Point{
+    public int x, y;
+    Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+}
+class Main {
+    static int[] dx={-1, 0, 1, 0};
+    static int[] dy={0, 1, 0, -1};
+    static int[][] board, dis;
+    public void BFS(int x, int y){
+        Queue<Point> Q=new LinkedList<>();
+        Q.offer(new Point(x, y));
+        board[x][y]=1;
+        while(!Q.isEmpty()){
+            Point tmp=Q.poll();
+            for(int i=0; i<4; i++){
+                int nx=tmp.x+dx[i];
+                int ny=tmp.y+dy[i];
+                if(nx>=1 && nx<=7 && ny>=1 && ny<=7 && board[nx][ny]==0){
+                    board[nx][ny]=1;
+                    Q.offer(new Point(nx, ny));
+                    dis[nx][ny]=dis[tmp.x][tmp.y]+1;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        board=new int[8][8];
+        dis=new int[8][8];
+        for(int i=1; i<=7; i++){
+            for(int j=1; j<=7; j++){
+                board[i][j]=kb.nextInt();
+            }
+        }
+        T.BFS(1, 1);
+        if(dis[7][7]==0) System.out.println(-1);
+        else System.out.println(dis[7][7]);
+    }
+}
+```
+
+***
+
+# **`[BFS 활용]` [토마토](https://cote.inflearn.com/contest/10/problem/08-12) (통과)**
+
+## 풀어보기
+```java
+import java.util.*;
+
+class Position{
+    int x;
+    int y;
+    public Position(int x , int y){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Main {
+
+    static int[][] board;
+    static int[][] cost;
+    static int[] dx = {-1 , 0 , 1 , 0};
+    static int[] dy = {0 , 1 , 0 , -1};
+    static Queue<Position> queue = new LinkedList<>();
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int col = sc.nextInt();
+        int row = sc.nextInt();
+        board = new int[row][col];
+        cost = new int[row][col];
+        for(int i = 0 ; i < row ; i++){
+            for(int j = 0 ; j < col ; j++){
+                board[i][j] = sc.nextInt();
+                if(board[i][j] == 1){
+                    queue.offer(new Position(i , j));
+                    cost[i][j] = 1;
+                }
+                else if(board[i][j] == -1){
+                    cost[i][j] = -1;
+                }
+            }
+        }
+
+        while(!queue.isEmpty()){
+            Position pos = queue.poll();
+            for(int i = 0 ; i < 4 ; i++){
+                int moveX = pos.x + dx[i];
+                int moveY = pos.y + dy[i];
+                if(moveX >= 0 && moveX < row && moveY >= 0 && moveY < col){
+                    if(board[moveX][moveY] == 0){
+                        board[moveX][moveY] = board[pos.x][pos.y] + 1;
+                        cost[moveX][moveY] = board[pos.x][pos.y];
+                        queue.offer(new Position(moveX , moveY));
+                    }
+                }
+            }
+        }
+        int result = 0;
+        loop:
+        for(int i = 0 ; i < row ; i++){
+            for(int j = 0 ; j < col ; j++){
+//                System.out.print(cost[i][j]);
+                if(cost[i][j] == 0) {
+                    result = -1;
+                    break loop;
+                }
+                else if(cost[i][j] > result) result = cost[i][j];
+            }
+//            System.out.println();
+        }
+        if(result == 1) System.out.println(0);
+        else System.out.println(result);
+    }
+
+}
+```
+
+## 해답
+
+```java
+import java.util.*;
+class Point{
+    public int x, y;
+    Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+}
+class Main {
+    static int[] dx={-1, 0, 1, 0};
+    static int[] dy={0, 1, 0, -1};
+    static int[][] board, dis;
+    static int n, m;
+    static Queue<Point> Q=new LinkedList<>();
+    public void BFS(){
+        while(!Q.isEmpty()){
+            Point tmp=Q.poll();
+            for(int i=0; i<4; i++){
+                int nx=tmp.x+dx[i];
+                int ny=tmp.y+dy[i];
+                if(nx>=0 && nx<n && ny>=0 && ny<m && board[nx][ny]==0){
+                    board[nx][ny]=1;
+                    Q.offer(new Point(nx, ny));
+                    dis[nx][ny]=dis[tmp.x][tmp.y]+1;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        m=kb.nextInt();
+        n=kb.nextInt();
+        board=new int[n][m];
+        dis=new int[n][m];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                board[i][j]=kb.nextInt();
+                if(board[i][j]==1) Q.offer(new Point(i, j));
+            }
+        }
+        T.BFS();
+        boolean flag=true;
+        int answer=Integer.MIN_VALUE;
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                if(board[i][j]==0) flag=false;
+            }
+        }
+        if(flag){
+            for(int i=0; i<n; i++){
+                for(int j=0; j<m; j++){
+                    answer=Math.max(answer, dis[i][j]);
+                }
+            }
+            System.out.println(answer);
+        }
+        else System.out.println(-1);
+    }
+}
+```
+
+***
+
+# **[섬나라 아일랜드](https://cote.inflearn.com/contest/10/problem/08-13)**
+
+## `[DFS]` 풀어보기 `[메모이제이션 배열 사용]`
+
+```java
+import java.util.*;
+
+class Main {
+
+    static int[][] board;
+    static int[][] memoization;
+    static int[] dx = {-1 , -1 , 0 , 1 , 1 , 1, 0 , -1};
+    static int[] dy = {0 , 1 , 1 , 1 , 0 , -1 , -1 , -1};
+    static int result = 0;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        board = new int[input1][input1];
+        memoization = new int[input1][input1];
+        for(int i = 0 ; i < input1 ; i++){
+            for(int j = 0 ; j < input1 ; j++){
+                board[i][j] = sc.nextInt();
+            }
+        }
+
+        for(int i = 0 ; i < input1 ; i++){
+            for(int j = 0 ; j < input1 ; j++){
+                if(memoization[i][j] != 1 && board[i][j] != 0){
+                    recursive(input1 , i , j);
+                    result++;
+                }
+            }
+        }
+
+        System.out.println(result);
+    }
+
+    public static void recursive(int size , int x , int y){
+        if(memoization[x][y] == 1){}
+        else if(board[x][y] == 0){}
+        else{
+            memoization[x][y] = 1;
+            for(int i = 0 ; i < 8 ; i++){
+                int moveX = x + dx[i];
+                int moveY = y + dy[i];
+                if(moveX >= 0 && moveX < size && moveY >= 0 && moveY < size){
+                    if(board[moveX][moveY] == 1){
+                        recursive(size , moveX , moveY);
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+
+## `[DFS]` 해답 `[메모이제이션 배열 미사용]`
+
+```java
+import java.util.*;
+class Main {
+    static int answer=0, n;
+    static int[] dx={-1, -1, 0, 1, 1, 1, 0, -1};
+    static int[] dy={0, 1, 1, 1, 0, -1, -1, -1};
+    public void DFS(int x, int y, int[][] board){
+        for(int i=0; i<8; i++){
+            int nx=x+dx[i];
+            int ny=y+dy[i];
+            if(nx>=0 && nx<n && ny>=0 && ny<n && board[nx][ny]==1){
+                board[nx][ny]=0;
+                DFS(nx, ny, board);
+            }
+        }
+    }
+    public void solution(int[][] board){
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(board[i][j]==1){
+                    answer++;
+                    board[i][j]=0;
+                    DFS(i, j, board);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        int[][] arr=new int[n][n];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                arr[i][j]=kb.nextInt();
+            }
+        }
+        T.solution(arr);
+        System.out.println(answer);
+    }
+}
+```
+
+## `[BFS]` 풀어보기
+
+
+## `[BFS]` 해답
+
+***
+
+# **`[삼성 SW역량평가 기출문제 : DFS활용]` [피자 배달 거리](https://cote.inflearn.com/contest/10/problem/08-14)**
