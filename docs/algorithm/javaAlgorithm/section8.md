@@ -519,8 +519,6 @@ class Main{
 
 ## 해답
 
-### 📌
-
 ```java
 import java.util.*;
 class Main{
@@ -657,3 +655,55 @@ class Main{
     }
 }
 ```
+
+***
+
+# **`[DFS]` [미로탐색](https://cote.inflearn.com/contest/10/problem/08-10) (통과)**
+
+## 풀어보기
+
+### 시작지점을 1로 바꾸지 않아 16번이 나왔었음
+
+```java
+import java.util.*;
+
+class Main {
+    static int[][] board;
+    static int[] dx = {-1 , 0 , 1 , 0};
+    static int[] dy = {0 , 1 , 0 , -1};
+    static int result = 0;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        board = new int[7][7];
+        for(int i = 0 ; i < 7 ; i++){
+            for(int j = 0 ; j < 7 ; j++){
+                board[i][j] = sc.nextInt();
+            }
+        }
+        board[0][0] = 1;
+        recursive(0 , 0);
+        System.out.println(result);
+    }
+
+    public static void recursive(int x , int y){
+        if(x == 6 && y == 6){
+            result++;
+        }
+        else{
+            for(int i = 0 ; i < 4 ; i++){
+                int moveX = x + dx[i];
+                int moveY = y + dy[i];
+                if(moveX >= 0 && moveX < 7 && moveY >= 0 && moveY < 7){
+                    if(board[moveX][moveY] == 0){
+                        board[moveX][moveY] = 1;
+                        recursive(moveX , moveY);
+                        board[moveX][moveY] = 0;
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+## 해답
