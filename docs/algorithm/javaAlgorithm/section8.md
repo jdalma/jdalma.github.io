@@ -1237,10 +1237,140 @@ class Main {
 ```
 ***
 
-# **`[삼성 SW역량평가 기출문제 : DFS활용 + 조합]` [피자 배달 거리](https://cote.inflearn.com/contest/10/problem/08-14)**
+# **`[삼성 SW역량평가 기출문제 : DFS활용 + 조합]` [피자 배달 거리](https://cote.inflearn.com/contest/10/problem/08-14) (통과)**
 
 ## 풀어보기
 
+```java
+import java.util.*;
 
+class Position{
+    int x;
+    int y;
+    public Position(int x , int y){
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "Position{" + "x=" + x + ", y=" + y + '}';
+    }
+}
+
+class Main {
+
+    static List<Position> houseList = new ArrayList<>();
+    static List<Position> pizzaList = new ArrayList<>();
+    static int[] pizzaLimitArr;
+    static int[] pizzaCheckArr;
+    static int result = Integer.MAX_VALUE;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        pizzaLimitArr = new int[input2];
+        for(int i = 0 ; i < input1; i++){
+            for(int j = 0 ; j < input1 ; j++){
+                int value = sc.nextInt();
+                if(value == 1) houseList.add(new Position(i , j ));
+                else if(value == 2) pizzaList.add(new Position(i , j));
+            }
+        }
+        pizzaCheckArr = new int[pizzaList.size()];
+        combinationRecursive(0 , 0 , input2);
+        System.out.println(result);
+    }
+
+    public static void combinationRecursive(int level , int dupl , int pizzaLimit){
+        if(level > pizzaLimit){}
+        else if(level == pizzaLimit){
+            int totalCost = 0;
+            for(Position house : houseList){
+                int min = Integer.MAX_VALUE;
+                for(int i : pizzaLimitArr){
+                    Position pizza = pizzaList.get(i);
+//                    System.out.println(totalCost + " : " + house.x + " - " + pizza.x + " + " + house.y + " - " + pizza.y);
+                    int cost = Math.abs(house.x - pizza.x) + Math.abs(house.y - pizza.y);
+                    if(min > cost) min = cost;
+                }
+                totalCost += min;
+            }
+            if(result > totalCost) result = totalCost;
+//            for(int i : pizzaLimitArr){
+//                Position pizza = pizzaList.get(i);
+//                System.out.print(pizza);
+//            }
+//            System.out.println();
+        }
+        else{
+            for(int i = dupl ; i < pizzaList.size() ; i++){
+                if(pizzaCheckArr[i] == 0){
+                    pizzaCheckArr[i] = 1;
+                    pizzaLimitArr[level] = i;
+                    combinationRecursive(level + 1 , i + 1, pizzaLimit);
+                    pizzaCheckArr[i] = 0;
+                }
+            }
+        }
+    }
+}
+```
 
 ## 해답
+
+```java
+import java.util.*;
+class Point{
+    public int x, y;
+    Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+}
+class Main {
+    static int n, m, len, answer=Integer.MAX_VALUE;
+    static int[] combi;
+    static ArrayList<Point> hs, pz;
+    public void DFS(int L, int s){
+        if(L==m){
+            int sum=0;
+            for(Point h : hs){
+                int dis=Integer.MAX_VALUE;
+                for(int i : combi){
+                    dis=Math.min(dis, Math.abs(h.x-pz.get(i).x)+Math.abs(h.y-pz.get(i).y));
+                }
+                sum+=dis;
+            }
+            answer=Math.min(answer, sum);
+        }
+        else{
+            for(int i=s; i<len; i++){
+                combi[L]=i;
+                DFS(L+1, i+1);
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        m=kb.nextInt();
+        pz=new ArrayList<>();
+        hs=new ArrayList<>();
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                int tmp=kb.nextInt();
+                if(tmp==1) hs.add(new Point(i, j));
+                else if(tmp==2) pz.add(new Point(i, j));
+            }
+        }
+        len=pz.size();
+        combi=new int[m];
+        T.DFS(0, 0);
+        System.out.println(answer);
+    }
+}
+```
