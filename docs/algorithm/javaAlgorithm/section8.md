@@ -1009,7 +1009,7 @@ class Main {
 
 # **[섬나라 아일랜드](https://cote.inflearn.com/contest/10/problem/08-13)**
 
-## `[DFS]` 풀어보기 `[메모이제이션 배열 사용]`
+## `[DFS - 메모이제이션 배열 사용]` 풀어보기 (통과)
 
 ```java
 import java.util.*;
@@ -1064,7 +1064,7 @@ class Main {
 ```
 
 
-## `[DFS]` 해답 `[메모이제이션 배열 미사용]`
+## `[DFS - 메모이제이션 배열 미사용]` 해답
 
 ```java
 import java.util.*;
@@ -1110,11 +1110,137 @@ class Main {
 }
 ```
 
-## `[BFS]` 풀어보기
+## `[BFS]` 풀어보기 (통과)
 
+```java
+import java.util.*;
+
+class Position{
+    int x;
+    int y;
+    public Position(int x , int y){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Main {
+
+    static int[][] board;
+    static int[] dx = {-1 , -1 , 0 , 1 , 1 , 1, 0 , -1};
+    static int[] dy = {0 , 1 , 1 , 1 , 0 , -1 , -1 , -1};
+    static int result = 0;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        board = new int[input1][input1];
+        for(int i = 0 ; i < input1 ; i++){
+            for(int j = 0 ; j < input1 ; j++){
+                board[i][j] = sc.nextInt();
+            }
+        }
+
+        Queue<Position> queue = new LinkedList<>();
+
+        for(int row = 0 ; row < input1 ; row++){
+            for(int col = 0 ; col < input1 ; col++){
+                if(board[row][col] == 1) {
+                    result++;
+                    queue.offer(new Position(row , col));
+                    board[row][col] = 0;
+                    while(!queue.isEmpty()){
+                        Position pos = queue.poll();
+                        board[pos.x][pos.y] = 0;
+                        for(int i = 0 ; i < 8 ; i++){
+                            int moveX = pos.x + dx[i];
+                            int moveY = pos.y + dy[i];
+                            if(moveX >= 0 && moveX < input1 && moveY >= 0 && moveY < input1){
+                                if(board[moveX][moveY] == 1){
+                                    board[moveX][moveY] = 0;
+                                    queue.offer(new Position(moveX , moveY));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+//        for(int i = 0 ; i < input1 ; i++){
+//            for(int j = 0 ; j < input1 ; j++){
+//                System.out.print(board[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+
+        System.out.println(result);
+    }
+}
+```
 
 ## `[BFS]` 해답
+```java
 
+import java.util.*;
+class Point{
+    int x, y;
+    Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+}
+class Main {
+    static int answer=0, n;
+    static int[] dx={-1, -1, 0, 1, 1, 1, 0, -1};
+    static int[] dy={0, 1, 1, 1, 0, -1, -1, -1};
+    Queue<Point> queue = new LinkedList<>();
+    public void BFS(int x, int y, int[][] board){
+        queue.add(new Point(x, y));
+        while(!queue.isEmpty()){
+            Point pos = queue.poll();
+            for(int i=0; i<8; i++){
+                int nx=pos.x+dx[i];
+                int ny=pos.y+dy[i];
+                if(nx>=0 && nx<n && ny>=0 && ny<n && board[nx][ny]==1){
+                    board[nx][ny]=0;
+                    queue.add(new Point(nx, ny));
+                }
+            }
+        }
+    }
+
+    public void solution(int[][] board){
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(board[i][j]==1){
+                    answer++;
+                    board[i][j]=0;
+                    BFS(i, j, board);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        int[][] arr=new int[n][n];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                arr[i][j]=kb.nextInt();
+            }
+        }
+        T.solution(arr);
+        System.out.println(answer);
+    }
+}
+```
 ***
 
-# **`[삼성 SW역량평가 기출문제 : DFS활용]` [피자 배달 거리](https://cote.inflearn.com/contest/10/problem/08-14)**
+# **`[삼성 SW역량평가 기출문제 : DFS활용 + 조합]` [피자 배달 거리](https://cote.inflearn.com/contest/10/problem/08-14)**
+
+## 풀어보기
+
+
+
+## 해답
