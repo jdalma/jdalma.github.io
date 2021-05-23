@@ -12,3 +12,6 @@ grand_parent: 알고리즘
 {:toc}
 
 ---
+
+
+# **[씨름 선수](https://cote.inflearn.com/contest/10/problem/09-01)**
