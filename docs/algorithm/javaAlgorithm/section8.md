@@ -1009,7 +1009,7 @@ class Main {
 
 # **[섬나라 아일랜드](https://cote.inflearn.com/contest/10/problem/08-13)**
 
-## `[DFS - 메모이제이션 배열 사용]` 풀어보기 (통과)
+## `[DFS]` 풀어보기 (메모이제이션 배열 사용 - 통과)
 
 ```java
 import java.util.*;
@@ -1064,7 +1064,7 @@ class Main {
 ```
 
 
-## `[DFS - 메모이제이션 배열 미사용]` 해답
+## `[DFS]` 해답 - (메모이제이션 배열 미사용)
 
 ```java
 import java.util.*;
