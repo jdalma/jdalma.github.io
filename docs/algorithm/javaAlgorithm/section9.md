@@ -32,10 +32,6 @@ class Person implements Comparable<Person>{
         if(this.height > o.height) return o.height - this.height;
         else return this.height - o.height;
     }
-    @Override
-    public String toString(){
-
-    }
 }
 
 class Main {
