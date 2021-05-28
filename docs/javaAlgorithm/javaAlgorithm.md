@@ -1,8 +1,7 @@
 ---
 layout: default
 title: 자바 코딩테스트 대비
-nav_order: 1
-parent: 알고리즘
+nav_order: 61
 has_children: true
 ---
 
