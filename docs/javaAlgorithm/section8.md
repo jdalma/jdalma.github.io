@@ -463,7 +463,7 @@ class Main{
 
 # **`[메모이제이션]` [조합의 경우 수](https://cote.inflearn.com/contest/10/problem/08-07) ✔**
 
-![](../../../assets/images/algorithm/section8/1.png)
+![](../../assets/images/algorithm/section8/1.png)
 
 ## 풀어보기
 

@@ -189,7 +189,7 @@ class Main {
 
 # **`[삽입 정렬 , Shift]` Least Recently Used ✔**
 
-![](../../../assets/images/algorithm/section6/1.png)
+![](../../assets/images/algorithm/section6/1.png)
 
 - **입력**
   - 첫 번째 줄에 캐시의 크기인 S(3<=S<=10)와 작업의 개수 N(5<=N<=1,000)이 입력된다.

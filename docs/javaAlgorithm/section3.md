@@ -467,7 +467,7 @@ class Main {
 - 1 1 0 0 1 1 0 1 1 0 1 1 0 1
 - 여러분이 만들 수 있는 1이 연속된 연속부분수열은
 
-![](../../../assets/images/algorithm/section3/1.png)
+![](../../assets/images/algorithm/section3/1.png)
 
 - **입력**
   - 첫 번째 줄에 수열의 길이인 자연수 N(5<=N<100,000)이 주어집니다.

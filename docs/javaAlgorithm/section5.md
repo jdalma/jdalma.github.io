@@ -343,7 +343,7 @@ class Main {
 
 # **`[Stack]` [쇠 막대기](https://www.acmicpc.net/problem/10799) ✔**
 
-![](../../../assets/images/algorithm/section4/3.png)
+![](../../assets/images/algorithm/section4/3.png)
 
 - **예시 입력 1**
   - ()(((()())(())()))(())
@@ -432,7 +432,7 @@ class Main {
 
 # **`[Queue]` [공주 구하기](https://cote.inflearn.com/contest/10/problem/05-06) ❌**
 
-![](../../../assets/images/algorithm/section4/4.png)
+![](../../assets/images/algorithm/section4/4.png)
 
 - **예시 입력 1**
   - 8 3

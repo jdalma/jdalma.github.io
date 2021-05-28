@@ -16,7 +16,7 @@ parent: 자바 코딩테스트 대비
 # **이진트리순회**
 
 ## **`[DFS]` 깊이 우선 탐색**
-![](../../../assets/images/algorithm/section7/binary-tree.png)
+![](../../assets/images/algorithm/section7/binary-tree.png)
 
 ```java
 class Node{
@@ -55,7 +55,7 @@ public class Main{
 ```
 
 ## **`[BFS]` 넓이 우선 탐색 - 레벨 탐색**
-![](../../../assets/images/algorithm/section7/bfs.png)
+![](../../assets/images/algorithm/section7/bfs.png)
 
 ```java
 import java.util.*;
@@ -415,7 +415,7 @@ class Main {
 - 각 경로의 길이는 루트노드에서 말단노드까지 가는데 이동하는 횟수를 즉 간선(에지)의 개수를
 길이로 하겠습니다.
 
-![](../../../assets/images/algorithm/section7/binary-tree2.png)
+![](../../assets/images/algorithm/section7/binary-tree2.png)
 
 - 가장 짧은 길이는 3번 노드까지의 길이인 1이다
 
@@ -503,7 +503,7 @@ public class Main{
 - 방향그래프가 주어지면 1번 정점에서 N번 정점으로 가는 모든 경로의 가지 수를 출력하는 프로그램을 작성하세요.
 - 아래 그래프에서 1번 정점에서 5번 정점으로 가는 가지 수는
 
-![](../../../assets/images/algorithm/section7/1.png)
+![](../../assets/images/algorithm/section7/1.png)
 
 - 1 2 3 4 5
 - 1 2 5
@@ -624,7 +624,7 @@ class Main {
 - **최단거리는 BFS를 생각하자**
 - 다음 그래프에서 1번 정점에서 각 정점으로 가는 최소 이동 간선수를 출력하세요.
 
-![](../../../assets/images/algorithm/section7/2.png)
+![](../../assets/images/algorithm/section7/2.png)
 
 - **입력예제 1**
   - 6 9

@@ -152,7 +152,7 @@ public static void main(String[] args){
 
 # **가위 바위 보 ✔**
 
-![](../../../assets/images/algorithm/section2/1.png)
+![](../../assets/images/algorithm/section2/1.png)
 
 - **입력**
   - 첫 번째 줄에 게임 횟수인 자연수 N(1<=N<=100)이 주어집니다.
@@ -457,7 +457,7 @@ public static void main(String[] args){
 # **점수계산 ✔**
 
 - 점수 계산은 아래 표와 같이 계산되어, 총 점수는 1+1+2+3+1+2=10 점이다.
-![](../../../assets/images/algorithm/section2/2.png)
+![](../../assets/images/algorithm/section2/2.png)
 
   - 시험문제의 채점 결과가 주어졌을 때, 총 점수를 계산하는 프로그램을 작성하시오.
 - **입력**
@@ -685,7 +685,7 @@ public static void main(String[] args){
 
 # **봉우리 ✔**
 
-![](../../../assets/images/algorithm/section2/4.png)
+![](../../assets/images/algorithm/section2/4.png)
 
 - **예시 입력 1**
   - 5
