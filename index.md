@@ -42,7 +42,7 @@ permalink: /
 - **Front**
   - DHTMLX , JavaScript
 - **Back**
-  - Java8 , 전자정부프레임워크(Spring 4) , Mybatis , Mssql , Oracle
+  - Java8 , 전자정부프레임워크(Spring 4) , RDB
 - **etc (management , build..)**
   - Jenkins , SVN , Apache Tomcat
 
