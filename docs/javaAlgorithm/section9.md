@@ -226,34 +226,28 @@ class Main {
 
 ***
 
-# **[결혼식](https://cote.inflearn.com/contest/10/problem/09-03)**
+# **[결혼식](https://cote.inflearn.com/contest/10/problem/09-03) ✔ ~~❌~~**
 
 ## 풀어보기
 ```java
 import java.util.*;
 
 class Time implements Comparable<Time>{
-    int start;
-    int end;
-    public Time(int start , int end){
-        this.start = start;
-        this.end = end;
+    int time;
+    char status;
+    public Time(int time , char status){
+        this.time = time;
+        this.status = status;
     }
     @Override
     public int compareTo(Time o){
-        if(this.end > o.end) return 1;
-        else if(this.end == o.end){
-            if(this.start > o.start){
-                return 1;
-            }
-            else return -1;
-        }
-        else return -1;
+        if(this.time == o.time) return this.status - o.status;
+        else return this.time - o.time;
     }
 
     @Override
     public String toString() {
-        return this.start + " - " + this.end;
+        return this.time + " - " + this.status;
     }
 }
 
@@ -265,20 +259,35 @@ class Main {
         List<Time> times = new ArrayList<>();
         for(int i = 0 ; i < input1 ; i++){
             int start = sc.nextInt();
+            times.add(new Time(start , 'S'));
             int end = sc.nextInt();
-            times.add(new Time(start , end));
+            times.add(new Time(end , 'E'));
         }
 
         Collections.sort(times);
 
-        int result = 1;
-        int tmpEnd = times.get(0).end;
+        int result = 0;
+        int start = 0;
         for(Time time : times){
+            if(time.status == 'S') {
+                start = time.time;
+                result++;
+            }
+            else if(time.status == 'E') result--;
             System.out.println(time);
         }
         System.out.println(result);
     }
-
+//5 - S
+//12 - S
+//14 - E
+//14 - S
+//15 - E
+//15 - S
+//18 - E
+//20 - E
+//20 - S
+//30 - E
 }
 ```
 
