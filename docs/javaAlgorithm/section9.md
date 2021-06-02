@@ -266,29 +266,127 @@ class Main {
 
         Collections.sort(times);
 
+        int cnt = 0;
         int result = 0;
-        int start = 0;
         for(Time time : times){
             if(time.status == 'S') {
-                start = time.time;
-                result++;
+                cnt++;
             }
-            else if(time.status == 'E') result--;
-            System.out.println(time);
+            else cnt--;
+            result = Math.max(cnt , result);
         }
         System.out.println(result);
     }
-//5 - S
-//12 - S
-//14 - E
-//14 - S
-//15 - E
-//15 - S
-//18 - E
-//20 - E
-//20 - S
-//30 - E
+
 }
 ```
+
+## 해답
+
+```java
+import java.util.*;
+class Time implements Comparable<Time>{
+    public int time;
+    public char state;
+    Time(int time, char state) {
+        this.time = time;
+        this.state = state;
+    }
+    @Override
+    public int compareTo(Time ob){
+        if(this.time==ob.time) return this.state-ob.state;
+        else return this.time-ob.time;
+    }
+}
+
+class Main {
+    public int solution(ArrayList<Time> arr){
+        int answer=Integer.MIN_VALUE;
+        Collections.sort(arr);
+        int cnt=0;
+        for(Time ob : arr){
+            if(ob.state=='s') cnt++;
+            else cnt--;
+            answer=Math.max(answer, cnt);
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        ArrayList<Time> arr = new ArrayList<>();
+        for(int i=0; i<n; i++){
+            int sT=kb.nextInt();
+            int eT=kb.nextInt();
+            arr.add(new Time(sT, 's'));
+            arr.add(new Time(eT, 'e'));
+        }
+        System.out.println(T.solution(arr));
+    }
+}
+```
+
+***
+
+# **`[PriorityQueue 응용문제]` [최대 수입 스케쥴](https://cote.inflearn.com/contest/10/problem/09-04)**
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Lecture implements Comparable<Lecture>{
+    int money;
+    int day;
+    public Lecture(int money , int day){
+        this.money = money;
+        this.day = day;
+    }
+    @Override
+    public int compareTo(Lecture o){
+        if(this.day == o.day) return o.money - this.money;
+        else return o.day - this.day;
+    }
+
+    @Override
+    public String toString() {
+        return this.money + " - " + this.day;
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        List<Lecture> lectures = new ArrayList<>();
+        int maxDay = 0;
+        for(int i = 0 ; i < input1 ; i++){
+            int money = sc.nextInt();
+            int day = sc.nextInt();
+            if(maxDay < day) maxDay = day;
+            lectures.add(new Lecture(money , day));
+        }
+
+        Collections.sort(lectures);
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>(Collections.reverseOrder());
+        int result = 0;
+
+
+        for(int i = 0 ; i < lectures.size() ; i++){
+            Lecture lec = lectures.get(i);
+            if(maxDay != lec.day || i == lectures.size() - 1){
+                result += priorityQueue.poll();
+                maxDay = lec.day;
+            }
+            priorityQueue.offer(lec.money);
+        }
+        System.out.println(result);
+    }
+}
+```
+
 
 ## 해답
