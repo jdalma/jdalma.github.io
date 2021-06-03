@@ -24,6 +24,7 @@ permalink: /
 > - [HTTP 웹 기본 지식](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/dashboard)
 > - [스프링 핵심 - 기본](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/dashboard)
 > - [스프링 입문](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)
+> - [자바 코딩테스트 대비](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard)
 
 > 📖
 > - [토비의 스프링 3.1](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=19505747)
@@ -31,7 +32,7 @@ permalink: /
 > - [객체지향의 사실과 오해](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=60550259)
 > - [Clean Code](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=34083680)
 > - [Think Data Structures](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=148016214)
-
+> - [코딩 인터뷰 완전 분석](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=115116545)
 
 ***
 
