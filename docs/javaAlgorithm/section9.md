@@ -442,3 +442,63 @@ class Main {
     }
 }
 ```
+
+***
+
+# **다익스트라 알고리즘**
+- 아래의 가중치 방향그래프에서 1번 정점에서 모든 정점으로의 최소 거리비용을 출력하는 프로
+그램을 작성하세요.
+- 경로가 없으면 Impossible를 출력한다
+
+![](../../assets/images/algorithm/section9/dijkstra.png)
+
+- **출력설명**
+1번 정점에서 각 정점으로 가는 최소비용을 2번 정점부터 차례대로 출력하세요.
+- **입력예제 1**
+  - 6 9
+  - 1 2 12 // 1번 정점에서 2번정점으로 가는데 12의 비용이 든다.
+  - 1 3 4
+  - 2 1 2
+  - 2 3 5
+  - 2 5 5
+  - 3 4 5
+  - 4 2 2
+  - 4 5 5
+  - 6 4 5
+- **출력예제 1**
+  - 2 : 11
+  - 3 : 4
+  - 4 : 9
+  - 5 : 14
+  - 6 : impossible
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arrSize = sc.nextInt();
+        int size = sc.nextInt();
+        int[][] array = new int[arrSize + 1][arrSize + 1];
+
+        for(int i = 0 ; i < size ; i++){
+            int start = sc.nextInt();
+            int end = sc.nextInt();
+            int cost = sc.nextInt();
+            array[start][end] = cost;
+        }
+
+        for(int i = 0 ; i < arrSize + 1 ; i++){
+            for(int j = 0 ; j < arrSize + 1 ; j++){
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+}
+```
