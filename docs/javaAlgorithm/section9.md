@@ -330,7 +330,7 @@ class Main {
 
 ***
 
-# **`[PriorityQueue 응용문제]` [최대 수입 스케쥴](https://cote.inflearn.com/contest/10/problem/09-04)**
+# **`[PriorityQueue 응용문제]` [최대 수입 스케쥴](https://cote.inflearn.com/contest/10/problem/09-04) ❌**
 
 ## 풀어보기
 
@@ -346,8 +346,7 @@ class Lecture implements Comparable<Lecture>{
     }
     @Override
     public int compareTo(Lecture o){
-        if(this.day == o.day) return o.money - this.money;
-        else return o.day - this.day;
+        return o.day - this.day;
     }
 
     @Override
@@ -369,24 +368,77 @@ class Main {
             if(maxDay < day) maxDay = day;
             lectures.add(new Lecture(money , day));
         }
-
         Collections.sort(lectures);
+        lectures.add(new Lecture(0 , 0));
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>(Collections.reverseOrder());
         int result = 0;
 
-
         for(int i = 0 ; i < lectures.size() ; i++){
             Lecture lec = lectures.get(i);
-            if(maxDay != lec.day || i == lectures.size() - 1){
+            if(maxDay != lec.day){
+//                for(int test : priorityQueue){
+//                    System.out.print(test + " ");
+//                }
+//                System.out.println();
                 result += priorityQueue.poll();
                 maxDay = lec.day;
             }
             priorityQueue.offer(lec.money);
+//            System.out.println(lec);
         }
         System.out.println(result);
     }
+
 }
 ```
 
 
 ## 해답
+
+```java
+import java.util.*;
+class Lecture implements Comparable<Lecture>{
+    public int money;
+    public int time;
+    Lecture(int money, int time) {
+        this.money = money;
+        this.time = time;
+    }
+    @Override
+    public int compareTo(Lecture ob){
+        return ob.time-this.time;
+    }
+}
+
+class Main {
+    static int n, max=Integer.MIN_VALUE;
+    public int solution(ArrayList<Lecture> arr){
+        int answer=0;
+        PriorityQueue<Integer> pQ = new PriorityQueue<>(Collections.reverseOrder());
+        Collections.sort(arr);
+        int j=0;
+        for(int i=max; i>=1; i--){
+            for(; j<n; j++){
+                if(arr.get(j).time<i) break;
+                pQ.offer(arr.get(j).money);
+            }
+            if(!pQ.isEmpty()) answer+=pQ.poll();
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        ArrayList<Lecture> arr = new ArrayList<>();
+        for(int i=0; i<n; i++){
+            int m=kb.nextInt();
+            int d=kb.nextInt();
+            arr.add(new Lecture(m, d));
+            if(d>max) max=d;
+        }
+        System.out.println(T.solution(arr));
+    }
+}
+```
