@@ -483,8 +483,9 @@ class Main {
         Scanner sc = new Scanner(System.in);
         int arrSize = sc.nextInt();
         int size = sc.nextInt();
+        List<List<Integer>> list = new ArrayList<>();
         int[][] array = new int[arrSize + 1][arrSize + 1];
-
+        int[] distance = new int[arrSize + 1];
         for(int i = 0 ; i < size ; i++){
             int start = sc.nextInt();
             int end = sc.nextInt();
