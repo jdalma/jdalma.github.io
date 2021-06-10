@@ -507,7 +507,7 @@ class Main {
 ## 해답
 
 ### 📌 `Arrays.fill(dis, Integer.MAX_VALUE);`
-
+### 📌 `PriorityQueue<Edge> pQ = new PriorityQueue<>();`
 ```java
 import java.util.*;
 class Edge implements Comparable<Edge>{
@@ -570,3 +570,11 @@ class Main {
     }
 }
 ```
+
+***
+
+# **`Disjoint-Set : Union&Find` [친구인가?](https://cote.inflearn.com/contest/10/problem/09-06)**
+
+## 풀어보기
+
+## 해답
