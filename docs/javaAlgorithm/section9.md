@@ -445,7 +445,7 @@ class Main {
 
 ***
 
-# **다익스트라 알고리즘 ❌**
+# **🔥 다익스트라 알고리즘 ❌**
 - 아래의 가중치 방향그래프에서 1번 정점에서 모든 정점으로의 최소 거리비용을 출력하는 프로
 그램을 작성하세요.
 - 경로가 없으면 Impossible를 출력한다
@@ -573,8 +573,41 @@ class Main {
 
 ***
 
-# **`Disjoint-Set : Union&Find` [친구인가?](https://cote.inflearn.com/contest/10/problem/09-06)**
+# **🔥 `Disjoint-Set(서로소 집합) : Union&Find 알고리즘` [친구인가?](https://cote.inflearn.com/contest/10/problem/09-06) ❌**
 
 ## 풀어보기
 
 ## 해답
+```java
+import java.util.*;
+class Main {
+    static int[] unf;
+    public static int Find(int v){
+        if(v==unf[v]) return v;
+        else return unf[v]=Find(unf[v]);
+    }
+    public static void Union(int a, int b){
+        int fa=Find(a);
+        int fb=Find(b);
+        if(fa!=fb) unf[fa]=fb;
+    }
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        int m=kb.nextInt();
+        unf=new int[n+1];
+        for(int i=1; i<=n; i++) unf[i]=i;
+        for(int i=1; i<=m; i++){
+            int a=kb.nextInt();
+            int b=kb.nextInt();
+            Union(a, b);
+        }
+        int a=kb.nextInt();
+        int b=kb.nextInt();
+        int fa=Find(a);
+        int fb=Find(b);
+        if(fa==fb) System.out.println("YES");
+        else System.out.println("NO");
+    }
+}
+```
