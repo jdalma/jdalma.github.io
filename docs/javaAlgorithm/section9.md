@@ -577,7 +577,48 @@ class Main {
 
 ## 풀어보기
 
+```java
+import java.util.*;
+
+class Main {
+    static int[] relation;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        relation = new int[input1 + 1];
+        for(int i = 1 ; i < input1 + 1 ; i++) relation[i] = i;
+
+        for(int i = 0 ; i < input2 ; i++){
+            int value1 = sc.nextInt();
+            int value2 = sc.nextInt();
+            Union(value1 , value2);
+        }
+        int value1 = sc.nextInt();
+        int value2 = sc.nextInt();
+        if(Find(value1) != Find(value2)) System.out.println("NO");
+        else System.out.println("YES");
+    }
+
+    public static int Find(int value){
+        if(value == relation[value]) return value;
+        else return relation[value] = Find(relation[value]);
+    }
+
+    public static void Union(int value1 , int value2){
+        int findA = Find(value1);
+        int findB = Find(value2);
+        if(findA != findB) relation[findA] = findB;
+    }
+
+}
+```
+
 ## 해답
+
+### 📌 경로 압축 - `else return unf[v]=Find(unf[v]);`
+
 ```java
 import java.util.*;
 class Main {
@@ -611,3 +652,21 @@ class Main {
     }
 }
 ```
+
+***
+
+# **🔥 [원더랜드](https://cote.inflearn.com/contest/10/problem/09-07)**
+
+![](../../assets/images/algorithm/section9/wonderland.png)
+
+## `최소스패닝트리 : 크루스칼, Union&Find 활용`
+
+### 풀어보기
+
+### 해답
+
+## `최소스패닝트리 : 프림, PriorityQueue 활용`
+
+### 풀어보기
+
+### 해답
