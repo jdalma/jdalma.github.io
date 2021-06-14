@@ -573,7 +573,7 @@ class Main {
 
 ***
 
-# **🔥 `Disjoint-Set(서로소 집합) : Union&Find 알고리즘` [친구인가?](https://cote.inflearn.com/contest/10/problem/09-06) ❌**
+# **🔥 `Disjoint-Set(서로소 집합) : Union&Find 알고리즘` [친구인가?](https://cote.inflearn.com/contest/10/problem/09-06) ✔ ~~❌~~**
 
 ## 풀어보기
 
@@ -663,10 +663,69 @@ class Main {
 
 ### 풀어보기
 
+```java
+import java.util.*;
+
+class Node{
+    int vertex;
+    int edge;
+    public Node(int vertex , int edge){
+        this.vertex = vertex;
+        this.edge = edge;
+    }
+}
+
+class Main {
+    static List<List<Node>> roads = new ArrayList<>();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+
+        for(int i = 1 ; i <= input1 ; i++) roads.add(new ArrayList<>());
+
+        for(int i = 0 ; i < input2 ; i++){
+            int value1 = sc.nextInt();
+            int value2 = sc.nextInt();
+            int cost = sc.nextInt();
+            roads.get(value1).add(new Node(value2 , cost));
+            Union(value1 , value2);
+        }
+        int value1 = sc.nextInt();
+        int value2 = sc.nextInt();
+
+        if(Find(value1) != Find(value2)) System.out.println("NO");
+        else System.out.println("YES");
+    }
+
+    public static int Find(int value){
+        return 0;
+    }
+
+    public static void Union(int value1 , int value2){
+
+    }
+
+}
+
+```
+
 ### 해답
+
+```java
+
+```
 
 ## `최소스패닝트리 : 프림, PriorityQueue 활용`
 
 ### 풀어보기
 
+```java
+
+```
+
 ### 해답
+
+```java
+
+```
