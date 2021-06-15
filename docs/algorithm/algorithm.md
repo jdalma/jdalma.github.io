@@ -121,7 +121,7 @@ permalink: /docs/algorithm
 
 ***
 
-# **이분,이진 탐색 (Binary Search)**
+# **`Binary Search` 이분,이진 탐색**
 - 이진 탐색 알고리즘은 **정렬된 원소 리스트를 받아 리스트에 원하는 원소가 있을경우 그 원소의 위치를 반환**, 없을경우 null을 반환함.
 - 시간복잡도는 O(log n)으로 매우 빠른편.
 
@@ -132,7 +132,7 @@ permalink: /docs/algorithm
 
 ***
 
-# **백트래킹(Backtracking)의 특징**
+# **`Backtracking` 백트래킹 특징**
 - 백트래킹은 말 그대로 **역추적**을 의미한다
 - 문제 해결을 위한 모든 경우의 수를 따져보기 위해서 일반적으로 활용되는 기법 중 하나이다.
   - `(완전 검색 (Exhaustive search), 실제로 모든 케이스를 다 직접 확인한다는 의미는 아니다)`
@@ -200,7 +200,7 @@ permalink: /docs/algorithm
 
 ## [문제 - K번째 큰 수](https://jeongcode.github.io/docs/algorithm/javaAlgorithm/section4/#treeset-k%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-%EC%8B%A4%ED%8C%A8)
 
-## TreeSet 선언
+**TreeSet 선언**
 
 ```java
 TreeSet<Integer> set1 = new TreeSet<Integer>();//TreeSet생성
@@ -209,7 +209,7 @@ TreeSet<Integer> set3 = new TreeSet<Integer>(set1);//set1의 모든 값을 가�
 TreeSet<Integer> set4 = new TreeSet<Integer>(Arrays.asList(1,2,3));//초기값 지정
 ```
 
-## TreeSet 값 추가
+**TreeSet 값 추가**
   - 입력되는 값이 TreeSet 내부에 존재하지 않는다면 그 값을 추가한 뒤 true를 반환하고
   - 내부에 값이 존재한다면 false를 반환한다.
   - 7,4,9,2,5를 차례대로 TreeSet에 저장한다면 아래와같은 과정을 거치게 된다.
@@ -226,7 +226,7 @@ TreeSet<Integer> set4 = new TreeSet<Integer>(Arrays.asList(1,2,3));//초기값 �
 ![](../../assets/images/algorithm/section4/2.png)
 
 
-## TreeSet 값 삭제
+**TreeSet 값 삭제**
   -  매개변수 value의 값이 존재한다면 그 값을 삭제한 후 true를 반환하고 없으면 false를 반환한다.
 
 ```java
@@ -235,7 +235,7 @@ set.remove(1);//값 1 제거
 set.clear();//모든 값 제거
 ```
 
-## TreeSet 값 출력
+**TreeSet 값 출력**
 
 ```java
 TreeSet<Integer> set = new TreeSet<Integer>(Arrays.asList(4,2,3));//초기값 지정
@@ -251,6 +251,40 @@ while(iter.hasNext()) {//값이 있으면 true 없으면 false
 }
 ```
 
+***
+
+# **`Heap` 힙**
+- **`Complete Binary Tree` 완전 이진 트리 이다.**
+- **모든 노드에 저장된 값들은 자식 노드들의 것보다 크거나 같다.**
+- **일종의 반정렬 상태(느슨한 정렬 상태) 를 유지한다.**
+  - 큰 값이 상위 레벨에 있고 작은 값이 하위 레벨에 있다는 정도
+  - 간단히 말하면 부모 노드의 키 값이 자식 노드의 키 값보다 항상 큰(작은) 이진 트리를 말한다.
+
+
+***
+
+# **`PriorityQueue` 우선순위 큐**
+- **들어간 순서에 상관없이 우선순위가 높은 데이터가 먼저 나오는 것**이다.
+- **Heap을 이용하여 구현**
+
+
+
+
+***
+
+# **`Kruskal Algorithm` 크루스칼 알고리즘**
+- [참고 문제](https://jeongcode.github.io/docs/javaAlgorithm/section9/#-%EC%9B%90%EB%8D%94%EB%9E%9C%EB%93%9C)
+- **가장 적은 비용으로 모든 노드를 연결** 하기 위해 사용 한다.
+- **`Minimum Spanning Tree, MST` 최소 신장 트리**를 구하기 위해 사용한다.
+  - 그래프에서 **모든 정점을 포함**
+  - **정점 간 서로 연결이 되며 사이클이 존재하지 않는** 그래프
+  - 따라서 **정점의 갯수가 n개일 때 , 간선이 n-1개가 된다.**
+- 그리디 알고리즘의 일종이다.
+  - 그래프 간선들을 **가중치의 오름차순**으로 정렬해 놓은 뒤 , 사이클을 형성하지 않는 선에서 정렬된 순서대로 간선을 선택한다.
+- **`Union & Find 활용` 사이클 판단하기**
+  - **Union-Find 란?**
+    - Disjoint Set (서로소 집합) 을 표현하는 자료구조
+    - **서로 다른 두 집합을 병합하는 Union 연산**, **집합 원소가 어떤 집합에 속해있는지 찾는 Find 연산**을 지원하기에 이러한 이름이 붙었다. [참고 문제](https://jeongcode.github.io/docs/javaAlgorithm/section9/#-disjoint-set%EC%84%9C%EB%A1%9C%EC%86%8C-%EC%A7%91%ED%95%A9--unionfind-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%B9%9C%EA%B5%AC%EC%9D%B8%EA%B0%80--)
 
 ***
 
