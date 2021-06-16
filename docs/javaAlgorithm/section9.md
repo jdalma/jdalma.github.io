@@ -659,7 +659,7 @@ class Main {
 
 ![](../../assets/images/algorithm/section9/wonderland.png)
 
-## `최소스패닝트리 : 크루스칼, Union&Find 활용`
+## **최소스패닝트리 : `크루스칼`, `Union&Find`활용**
 
 ### 풀어보기
 
@@ -796,7 +796,7 @@ class Main {
 }
 ```
 
-## `최소스패닝트리 : 프림, PriorityQueue 활용`
+## **최소스패닝트리 : `프림`, `PriorityQueue` 활용**
 
 ### 풀어보기
 
