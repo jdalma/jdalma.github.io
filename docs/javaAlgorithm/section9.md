@@ -666,54 +666,134 @@ class Main {
 ```java
 import java.util.*;
 
-class Node{
-    int vertex;
-    int edge;
-    public Node(int vertex , int edge){
-        this.vertex = vertex;
-        this.edge = edge;
+class Edge implements Comparable<Edge>{
+    int vertex1;
+    int vertex2;
+    int cost;
+    public Edge(int vertex1 , int vertex2 , int cost){
+        this.vertex1 = vertex1;
+        this.vertex2 = vertex2;
+        this.cost = cost;
+    }
+    @Override
+    public String toString() {
+        return "Edge{" +
+                "vertex1=" + vertex1 +
+                ", vertex2=" + vertex2 +
+                ", cost=" + cost +
+                '}';
+    }
+    @Override
+    public int compareTo(Edge o) {
+        return this.cost - o.cost;
     }
 }
 
 class Main {
-    static List<List<Node>> roads = new ArrayList<>();
+    static int[] relation;
+    static List<Edge> roads;
+    static int totalCost = 0;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int input1 = sc.nextInt();
         int input2 = sc.nextInt();
 
-        for(int i = 1 ; i <= input1 ; i++) roads.add(new ArrayList<>());
+        roads = new ArrayList<Edge>();
+        relation = new int[input1 + 1];
+        // 관계 배열 초기화
+        for(int i = 0 ; i < input1 + 1 ; i++) relation[i] = i;
 
         for(int i = 0 ; i < input2 ; i++){
             int value1 = sc.nextInt();
             int value2 = sc.nextInt();
             int cost = sc.nextInt();
-            roads.get(value1).add(new Node(value2 , cost));
-            Union(value1 , value2);
+            roads.add(new Edge(value1 , value2 , cost));
         }
-        int value1 = sc.nextInt();
-        int value2 = sc.nextInt();
+        Collections.sort(roads);
 
-        if(Find(value1) != Find(value2)) System.out.println("NO");
-        else System.out.println("YES");
+        for(Edge edge : roads){
+            Union(edge);
+        }
+        System.out.println(totalCost);
     }
 
-    public static int Find(int value){
-        return 0;
+    // 집합 관계 찾기
+    public static int Find(int vertex){
+//        System.out.println(vertex + " - " + relation[vertex]);
+        if(vertex == relation[vertex]) return vertex;
+        else return relation[vertex] = Find(relation[vertex]);
     }
 
-    public static void Union(int value1 , int value2){
-
+    // 집합 병합
+    public static void Union(Edge edge){
+        int vertex1 = Find(edge.vertex1);
+        int vertex2 = Find(edge.vertex2);
+        if(vertex1 != vertex2) {
+            totalCost += edge.cost;
+            relation[vertex1] = vertex2;
+        }
     }
 
 }
-
 ```
 
 ### 해답
 
 ```java
 
+import java.util.*;
+class Edge implements Comparable<Edge>{
+    public int v1;
+    public int v2;
+    public int cost;
+    Edge(int v1, int v2, int cost) {
+        this.v1 = v1;
+        this.v2 = v2;
+        this.cost = cost;
+    }
+    @Override
+    public int compareTo(Edge ob){
+        return this.cost-ob.cost;
+    }
+}
+
+class Main {
+    static int[] unf;
+    public static int Find(int v){
+        if(v==unf[v]) return v;
+        else return unf[v]=Find(unf[v]);
+    }
+    public static void Union(int a, int b){
+        int fa=Find(a);
+        int fb=Find(b);
+        if(fa!=fb) unf[fa]=fb;
+    }
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        int m=kb.nextInt();
+        unf=new int[n+1];
+        ArrayList<Edge> arr=new ArrayList<>();
+        for(int i=1; i<=n; i++) unf[i]=i;
+        for(int i=0; i<m; i++){
+            int a=kb.nextInt();
+            int b=kb.nextInt();
+            int c=kb.nextInt();
+            arr.add(new Edge(a, b, c));
+        }
+        int answer=0;
+        Collections.sort(arr);
+        for(Edge ob : arr){
+            int fv1=Find(ob.v1);
+            int fv2=Find(ob.v2);
+            if(fv1!=fv2){
+                answer+=ob.cost;
+                Union(ob.v1, ob.v2);
+            }
+        }
+        System.out.println(answer);
+    }
+}
 ```
 
 ## `최소스패닝트리 : 프림, PriorityQueue 활용`
