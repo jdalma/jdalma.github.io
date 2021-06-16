@@ -52,7 +52,7 @@ public static void solution(int n , int[] arr){
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public ArrayList<Integer> solution(int n, int[] arr){
@@ -123,7 +123,7 @@ public static int solution(int n , int[] arr){
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public int solution(int n, int[] arr){
@@ -212,7 +212,7 @@ public static int solution(int n , int[] arr1 , int[] arr2){
 
 ```
 
-## 해답
+## 풀이
 
 ```java
 public String solution(int n, int[] a, int[] b){
@@ -270,7 +270,7 @@ public static void solution(int n){
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public int[] solution(int n){
@@ -330,7 +330,7 @@ public static void main(String[] args){
   - 위의 과정을 반복하면 구하는 구간의 모든 소수가 남는다.
 
 
-## 해답
+## 풀이
 
 ### 📌 `for(int j = i ; j <= n ; j = j + i) ch[j] = 1`
 
@@ -411,7 +411,7 @@ public static void solution(int n , int[] intArr){
 }
 ```
 
-## 해답
+## 풀이
 
 ### ✋ `public boolean isPrime(int num)` 확인
 
@@ -502,7 +502,7 @@ public static int solution(int n , int[] intArr){
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public int solution(int n, int[] arr){
@@ -565,7 +565,7 @@ public static void solution(int n , int[] intArr){
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public int[] solution(int n, int[] arr){
@@ -642,7 +642,7 @@ public static void solution(int n , int[][] intArr){
 
 ```
 
-## 해답
+## 풀이
 
 ```java
 public int solution(int n, int[][] arr){
@@ -729,7 +729,7 @@ public static void solution(int n , int[][] intArr){
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 상하좌우를 반복문으로 처리 (8방향 대비)
 ### `int[] dx = {-1, 0, 1, 0};`
@@ -829,7 +829,7 @@ public static void solution(int n , int[][] intArr){
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public int solution(int n, int[][] arr){
@@ -981,7 +981,7 @@ public class Main {
 
 ```
 
-## 해답
+## 풀이
 
 ### 📌 4중 for문
 

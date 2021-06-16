@@ -48,7 +48,7 @@ public class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 `map.getOrDefault(x, 0)`
 
@@ -141,7 +141,7 @@ public class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -206,7 +206,7 @@ public class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -291,7 +291,7 @@ class Main {
 ```
 
 
-## 해답
+## 풀이
 
 ### 📌 `aHashMap.equals(bHashMap)`
 
@@ -331,7 +331,7 @@ class Main {
 
 # **`[TreeSet]` [K번째 큰 수](https://cote.inflearn.com/contest/10/problem/04-05) ❌**
 
-## 해답
+## 풀이
 
 ### 📌 `TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder())` 내림차순 자동정렬
 

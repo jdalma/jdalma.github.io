@@ -59,7 +59,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -135,7 +135,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -212,7 +212,7 @@ class Main {
 ```
 
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -298,7 +298,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -370,7 +370,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ### `Arrays.sort(Integer[] arr , Collections.reverseOrder())`
 
@@ -422,7 +422,7 @@ class Main{
   - 9 3
   - 9 6
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -491,7 +491,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -516,7 +516,7 @@ class Main{
 
 # 🔥 **`[순열 구하기 응용]` [수열 추측하기](https://cote.inflearn.com/contest/10/problem/08-08) ❌**
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -625,7 +625,7 @@ class Main {
 ```
 
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -705,7 +705,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -810,7 +810,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -938,7 +938,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -1063,7 +1063,7 @@ class Main {
 ```
 
 
-## `[DFS]` 해답 - (메모이제이션 배열 미사용)
+## `[DFS]` 풀이 - (메모이제이션 배열 미사용)
 
 ```java
 import java.util.*;
@@ -1176,7 +1176,7 @@ class Main {
 }
 ```
 
-## `[BFS]` 해답
+## `[BFS]` 풀이
 ```java
 
 import java.util.*;
@@ -1317,7 +1317,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;

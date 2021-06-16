@@ -42,7 +42,7 @@ public static void main(String[] args) {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public int solution(String str, char t){
@@ -97,7 +97,7 @@ public static String solution(String input1){
 ```
 
 
-## 해답
+## 풀이
 ### 📌 `Character.isLowerCase()`
 
 ```java
@@ -173,7 +173,7 @@ public static String solution(String input1){
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public String solution(String str){
@@ -254,7 +254,7 @@ public static String solution(String input2){
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public ArrayList<String> solution(int n, String[] str){
@@ -359,7 +359,7 @@ public static String solution(String input1){
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 `int lt = 0, rt = x.length() - 1` index 사용
 
@@ -426,7 +426,7 @@ public static String solution(String str){
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 `if(str.indexOf(str.charAt(i)) == i) answer += str.charAt(i);`
 
@@ -495,7 +495,7 @@ public static String solution(String str){
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 `for(int i = 0 ; i < len / 2 ; i++)` ➜ `if(str.charAt(i) != str.charAt(len - i - 1))`
 
@@ -556,7 +556,7 @@ public static void main(String[] args){
 - **예시 출력 1**
   - YES
 
-## 해답
+## 풀이
 
 ### 📌`s.toUpperCase().replaceAll("[^A-Z]", "")`
 
@@ -601,7 +601,7 @@ public static int solution(String s){
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 1. `if(x >= 48 && x <= 57) answer = answer * 10 + (x - 48);`
 ### 📌 2. `answer=answer*10 + Character.getNumericValue(x)`
@@ -672,10 +672,10 @@ public static int[] solution(String s , char c){
 }
 ```
 
-## 해답
+## 풀이
 
 ### 나는 반복문을 돌며 target을 찾아 left, right index를 따로 계산하였지만,
-### 해답은 왼쪽에서 오른쪽으로 1번 , 오른쪽에서 왼쪽 1번으로 해결
+### 풀이은 왼쪽에서 오른쪽으로 1번 , 오른쪽에서 왼쪽 1번으로 해결
 
 |  | t  | e | a  | c | h  | e | r  | m | o  | d | e  |
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
@@ -758,7 +758,7 @@ public static String solution(String s){
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 char[]로 바꾸기 보단 `s.charAt()` 과 `s.valueOf()` 활용
 
@@ -841,7 +841,7 @@ public static String solution(int n , String s){
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 `String tmp = s.substring(0, 7).replace('#', '1').replace('*', '0')`
 ### 📌 `Integer.parseInt(tmp, 2)`

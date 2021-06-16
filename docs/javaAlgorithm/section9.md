@@ -71,7 +71,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -178,7 +178,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -281,7 +281,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -393,7 +393,7 @@ class Main {
 ```
 
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -504,7 +504,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 `Arrays.fill(dis, Integer.MAX_VALUE);`
 ### 📌 `PriorityQueue<Edge> pQ = new PriorityQueue<>();`
@@ -615,7 +615,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ### 📌 경로 압축 - `else return unf[v]=Find(unf[v]);`
 
@@ -737,7 +737,7 @@ class Main {
 }
 ```
 
-### 해답
+### 풀이
 
 ```java
 
@@ -804,7 +804,7 @@ class Main {
 
 ```
 
-### 해답
+### 풀이
 
 ```java
 

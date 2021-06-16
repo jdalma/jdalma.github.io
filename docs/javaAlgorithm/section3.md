@@ -68,7 +68,7 @@ public class Main {
 
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -161,7 +161,7 @@ public class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -236,7 +236,7 @@ public class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -321,7 +321,7 @@ public class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 public int solution(int n, int m, int[] arr){
@@ -400,7 +400,7 @@ public class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -431,7 +431,7 @@ class Main {
 }
 ```
 
-## ✋ (수학) 해답
+## ✋ (수학) 풀이
 
 ```java
 import java.util.*;
@@ -523,7 +523,7 @@ public class Main {
 ```
 
 
-## 해답
+## 풀이
 
 ### ✋ `leftIndex`가 `rightIndex`를 쫓아가며 0을 찾을 때 까지 총 길이를 감소
 

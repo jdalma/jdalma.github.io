@@ -65,7 +65,7 @@ class Main {
 
 ```
 
-### 해답
+### 풀이
 
 ```java
 import java.util.*;
@@ -127,7 +127,7 @@ class Main{
 }
 ```
 
-### 해답
+### 풀이
 
 ```java
 import java.util.*;
@@ -157,7 +157,7 @@ class Main {
 
 ## **삽입 정렬**
 
-### 해답
+### 풀이
 
 ```java
 import java.util.*;
@@ -252,7 +252,7 @@ class Main{
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -293,7 +293,7 @@ class Main {
 # **[장난꾸러기](https://cote.inflearn.com/contest/10/problem/06-06) ❌**
 
 ## ✋ 정렬을 사용하면 쉽게 풀 수 있는 문제
-## 해답
+## 풀이
 
 
 ```java
@@ -385,7 +385,7 @@ class Main{
 }
 ```
 
-## 해답 `[implements Comparable<T> - compareTo()]`
+## 풀이 `[implements Comparable<T> - compareTo()]`
 ```java
 import java.util.*;
 class Point implements Comparable<Point>{
@@ -421,7 +421,7 @@ class Main {
 ***
 # **[이분 검색](https://cote.inflearn.com/contest/10/problem/06-08) ❌**
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -469,7 +469,7 @@ class Main {
 - **예시 출력 1**
   - 17
 
-## 해답
+## 풀이
 - **이분 검색을 사용**
 
 ```java
@@ -527,7 +527,7 @@ class Main {
 - **예시 출력 1**
   - 3
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;

@@ -137,7 +137,7 @@ class Main{
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -194,7 +194,7 @@ class Main{
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -221,7 +221,7 @@ class Main {
 - **출력예제 1**
   - 1 1 2 3 5 8 13 21 34 55
 
-## 해답 1
+## 풀이 1
 
 ```java
 class Main {
@@ -238,7 +238,7 @@ class Main {
 }
 ```
 
-## 해답 2 📌
+## 풀이 2 📌
 
 ```java
 class Main {
@@ -273,7 +273,7 @@ class Main {
   - 2
   - 3
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -363,7 +363,7 @@ class Main{
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -533,7 +533,7 @@ public class Main{
 
 ## **`[인접행렬]` ❌**
 
-### 해답
+### 풀이
 
 ```java
 import java.util.*;
@@ -575,7 +575,7 @@ class Main {
 
 ## **`[인접리스트]` ❌**
 
-### 해답
+### 풀이
 
 ```java
 import java.util.*;
@@ -691,7 +691,7 @@ class Main {
 }
 ```
 
-## 배열을 사용한 해답
+## 배열을 사용한 풀이
 
 ```java
 import java.util.*;

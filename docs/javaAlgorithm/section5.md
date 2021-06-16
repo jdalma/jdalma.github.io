@@ -57,7 +57,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -127,7 +127,7 @@ class Main {
 ```
 
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -209,7 +209,7 @@ class Main {
 
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -306,7 +306,7 @@ class Main {
 }
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -401,7 +401,7 @@ class Main {
 [(, (, (, (, ), (, (, ), (, ), (, (, ), (, ), (, (, ), (, )] / 23
 24
 ```
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -439,7 +439,7 @@ class Main {
 - **예시 출력 1**
   - 7
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -506,7 +506,7 @@ class Main {
 
 ```
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
@@ -537,7 +537,7 @@ class Main {
 
 # **`[Queue - Person객체]` [응급실](https://cote.inflearn.com/contest/10/problem/05-08) ❌**
 
-## 해답
+## 풀이
 
 ```java
 import java.util.*;
