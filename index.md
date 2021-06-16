@@ -38,7 +38,7 @@ permalink: /
 
 # **Experience**
 
-## **DBVision `2020.04.01 ~ 현재`**
+## **ERP SI `2020.04.01 ~ 현재`**
 
 - **Front**
   - DHTMLX , JavaScript
