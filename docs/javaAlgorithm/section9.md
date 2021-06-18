@@ -878,7 +878,6 @@ class Main {
         }
         System.out.println(totalCost);
     }
-
 }
 ```
 
