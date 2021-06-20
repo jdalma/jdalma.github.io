@@ -655,7 +655,7 @@ class Main {
 
 ***
 
-# **🔥 [원더랜드](https://cote.inflearn.com/contest/10/problem/09-07)**
+# **🔥 [원더랜드](https://cote.inflearn.com/contest/10/problem/09-07) ✔**
 
 ![](../../assets/images/algorithm/section9/wonderland.png)
 
@@ -801,80 +801,67 @@ class Main {
 ### 풀어보기
 
 ```java
-package algo;
-
 import java.util.*;
 
 class Edge implements Comparable<Edge>{
     int vertex1;
-    int vertex2;
     int cost;
-    public Edge(int vertex1 , int vertex2 , int cost){
+    public Edge(int vertex1 , int cost){
         this.vertex1 = vertex1;
-        this.vertex2 = vertex2;
         this.cost = cost;
     }
     @Override
     public String toString() {
         return "Edge{" +
                 "vertex1= " + vertex1 +
-                " vertex2= " + vertex2 +
                 " , cost=" + cost +
                 '}';
     }
-	@Override
-	public int compareTo(Edge o) {
-		return this.cost - o.cost;
-	}
-    
+    @Override
+    public int compareTo(Edge o) {
+        return this.cost - o.cost;
+    }
+
 }
 
 class Main {
     static int[] relation;
     static int totalCost = 0;
     public static void main(String[] args) {
-        
-    	List<Edge> roads = new ArrayList<>();
-    	PriorityQueue<Edge> pq = new PriorityQueue<Edge>();
-    	
+
+        List<List<Edge>> roads = new ArrayList<>();
+        PriorityQueue<Edge> pq = new PriorityQueue<Edge>();
+
         Scanner sc = new Scanner(System.in);
         int input1 = sc.nextInt();
         int input2 = sc.nextInt();
 
-        
         relation = new int[input1 + 1];
+        for(int i = 0 ; i <= input1 + 1 ; i++) roads.add(new ArrayList<Edge>());
+
         for(int i = 0 ; i < input2 ; i++){
             int value1 = sc.nextInt();
             int value2 = sc.nextInt();
             int cost = sc.nextInt();
-            roads.add(new Edge(value1 , value2 , cost));
-            if(i == 0) pq.offer(new Edge(value1 , value2 , cost));
+            roads.get(value1).add(new Edge(value2 , cost));
+            roads.get(value2).add(new Edge(value1 , cost));
         }
-        
-//        Comparator<Edge> comparator = (o1, o2) -> {
-//            return o1.vertex1 - o2.vertex1;
-//        };
-//        roads.sort(comparator);
-        
-//        while(!pq.isEmpty()) {
-//        	
-//        }
-
-        relation[1] = 1;
-        int startEdge = 1;
-        for(Edge road : roads) {
-        	if(startEdge != road.vertex1) {
-        		startEdge = road.vertex1;
-        		Edge popEdge = pq.poll();
-        		if(popEdge != null) {
-        			relation[popEdge.vertex2] = 1;
-        			System.out.println(popEdge);
-        			totalCost += popEdge.cost;
-        		}
-        	}
-        	else if(relation[road.vertex2] != 1){
-        		pq.offer(road);
-        	}
+        pq.offer(new Edge(1 , 0));
+        while(!pq.isEmpty()){
+            Edge edge = pq.poll();
+            if(relation[edge.vertex1] != 1){
+//                System.out.print(edge.cost + " ");
+                totalCost += edge.cost;
+                List<Edge> edges = roads.get(edge.vertex1);
+                for(Edge tmp : edges){
+                    pq.offer(tmp);
+                }
+                relation[edge.vertex1] = 1;
+/*                for(int value : relation){
+                    System.out.print(value + " ");
+                }
+                System.out.println();*/
+            }
         }
         System.out.println(totalCost);
     }
