@@ -296,6 +296,18 @@ while(iter.hasNext()) {//값이 있으면 true 없으면 false
 
 ***
 
+# **`LIS` 최장 증가 부분 수열 알고리즘**
+- 원소가 n개인 배열의 일부 원소를 골라내서 만든 부분 수열 중,
+- 각 원소가 이전 원소보다 크다는 조건을 만족하고, 그 길이가 최대인 부분 수열을 **최장 증가 부분 수열**이라고 합니다.
+
+- 예를 들어, { 6, **2**, **5**, 1, **7**, 4, **8**, 3} 이라는 배열이 있을 경우, LIS는 **{ 2, 5, 7, 8 }** 이 됩니다.
+- { 2, 5 }, { 2, 7 } 등 증가하는 부분 수열은 많지만 그 중에서 가장 긴 것이 { 2, 5, 7, 8 } 입니다.
+-  일반적으로 최장 증가 부분 수열의 길이가 얼마인지 푸는 간편한 방법은 **DP**를 이용하는 것입니다.
+    - 시간복잡도를 개선하기 위하여 LIS를 구성할 때 이분탐색을 활용한다.
+
+
+[출처](https://chanhuiseok.github.io/posts/algo-49/)
+
 # **참고 및 출처**
 - [https://coding-factory.tistory.com](https://coding-factory.tistory.com/555)
 - [https://github.com/GimunLee](https://github.com/GimunLee/tech-refrigerator/tree/master/Algorithm)
