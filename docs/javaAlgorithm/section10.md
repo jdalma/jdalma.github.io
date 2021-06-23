@@ -204,7 +204,7 @@ class Brick implements Comparable<Brick>{
 
     @Override
     public int compareTo(Brick o) {
-        return o.weight - this.weight;
+        return o.width - this.width;
     }
 
     @Override
@@ -219,17 +219,121 @@ class Brick implements Comparable<Brick>{
 
 class Main {
     static List<Brick> bricks = new ArrayList<Brick>();
+    static int[] dynamic;
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int count = sc.nextInt();
-
+        dynamic = new int[count];
         for(int i = 0 ; i < count ; i++){
-            bricks.add(new Brick(sc.nextInt() , sc.nextInt() , sc.nextInt()));
+            int width = sc.nextInt();
+            int height = sc.nextInt();
+            int weight = sc.nextInt();
+            bricks.add(new Brick(width , height , weight));
         }
-
         Collections.sort(bricks);
+//        bricks.forEach(System.out::println);
 
-        bricks.forEach(System.out::println);
+        dynamic[0] = bricks.get(0).height;
+        for(int i = 1 ; i < count ; i++){
+            Brick stan = bricks.get(i);
+            for(int j = i - 1 ; j >= 0 ; j--){
+                Brick before = bricks.get(j);
+                int sumHeight = stan.height + dynamic[j];
+                if(before.weight > stan.weight && dynamic[i] < sumHeight){
+                    dynamic[i] = sumHeight;
+                }
+            }
+            if(dynamic[i] == 0) dynamic[i] = stan.height;
+        }
+//        Arrays.stream(dynamic).forEach(System.out::print);
+//        System.out.println();
+        System.out.println(Arrays.stream(dynamic).max().getAsInt());
+    }
+}
+```
+
+## 풀이
+
+```java
+import java.util.*;
+class Brick implements Comparable<Brick>{
+    public int s, h, w;
+    Brick(int s, int h, int w) {
+        this.s = s;
+        this.h = h;
+        this.w = w;
+    }
+    @Override
+    public int compareTo(Brick o){
+        return o.s-this.s;
+    }
+}
+class Main{
+    static int[] dy;
+    public int solution(ArrayList<Brick> arr){
+        int answer=0;
+        Collections.sort(arr);
+        dy[0]=arr.get(0).h;
+        answer=dy[0];
+        for(int i=1; i<arr.size(); i++){
+            int max_h=0;
+            for(int j=i-1; j>=0; j--){
+                if(arr.get(j).w > arr.get(i).w && dy[j]>max_h){
+                    max_h=dy[j];
+                }
+            }
+            dy[i]=max_h+arr.get(i).h;
+            answer=Math.max(answer, dy[i]);
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        ArrayList<Brick> arr=new ArrayList<>();
+        dy=new int[n];
+        for(int i=0; i<n; i++){
+            int a=kb.nextInt();
+            int b=kb.nextInt();
+            int c=kb.nextInt();
+            arr.add(new Brick(a, b, c));
+        }
+        System.out.print(T.solution(arr));
+    }
+}
+```
+
+***
+
+# **`Napsack` 동전교환**
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int count = sc.nextInt();
+        int[] coin = new int[count];
+        for(int i = 0 ; i < count ; i++) coin[i] = sc.nextInt();
+        int cost = sc.nextInt();
+
+        int[] dynamic = new int[cost + 1];
+//        Arrays.fill(dynamic , Integer.MAX_VALUE);
+        for(int i = 0 ; i < dynamic.length ; i++) dynamic[i] = i;
+
+        for(int i = 1 ; i < coin.length ; i++){
+            for(int j = i + 1 ; j < dynamic.length ; j++){
+
+            }
+        }
+        for (int value : dynamic){
+            System.out.print(value + " ");
+        }
     }
 }
 ```
