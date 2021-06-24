@@ -307,7 +307,7 @@ class Main{
 
 ***
 
-# **`Napsack` 동전교환**
+# 🔥 **`Napsack` 동전교환 ✔~~❌~~**
 
 ## 풀어보기
 
@@ -324,18 +324,140 @@ class Main {
 
         int[] dynamic = new int[cost + 1];
 //        Arrays.fill(dynamic , Integer.MAX_VALUE);
-        for(int i = 0 ; i < dynamic.length ; i++) dynamic[i] = i;
+        for(int i = 0 ; i < dynamic.length ; i++) dynamic[i] = i / coin[0];
 
         for(int i = 1 ; i < coin.length ; i++){
             for(int j = i + 1 ; j < dynamic.length ; j++){
-
+                if(j >= coin[i]){
+                    int calc = dynamic[j - coin[i]] + 1;
+                    if(dynamic[j] > calc){
+                        dynamic[j] = calc;
+                    }
+                }
             }
         }
-        for (int value : dynamic){
-            System.out.print(value + " ");
-        }
+//        for (int value : dynamic){
+//            System.out.print(value + " ");
+//        }
+        System.out.println(dynamic[cost]);
     }
 }
 ```
 
 ## 풀이
+
+```java
+import java.util.*;
+class Main{
+    static int n, m;
+    static int[] dy;
+    public int solution(int[] coin){
+        Arrays.fill(dy, Integer.MAX_VALUE);
+        dy[0]=0;
+        for(int i=0; i<n; i++){
+            for(int j=coin[i]; j<=m; j++){
+                dy[j]=Math.min(dy[j], dy[j-coin[i]]+1);
+            }
+        }
+        return dy[m];
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        int[] arr=new int[n];
+        for(int i=0; i<n; i++){
+            arr[i]=kb.nextInt();
+        }
+        m=kb.nextInt();
+        dy=new int[m+1];
+        System.out.print(T.solution(arr));
+    }
+}
+```
+
+***
+
+#  **`Napsack` [최대점수 구하기](https://cote.inflearn.com/contest/10/problem/10-06)**
+
+## 📌 문제의 전제는 **동전교환**과 달리 입력 정보를 1번만 사용할 수 있다..
+## 냅색 알고리즘은 입력 정보의 개수가 정해져있거나 유한하면 뒤에서 부터 다이나믹 테이블을 적용한다.
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Question{
+    int score;
+    int time;
+    public Question(int score, int time) {
+        this.score = score;
+        this.time = time;
+    }
+    @Override
+    public String toString() {
+        return "Question{" +
+                "score=" + score +
+                ", time=" + time +
+                '}';
+    }
+}
+
+class Main {
+    static int[] dynamic;
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int count = sc.nextInt();
+        int limitTime = sc.nextInt();
+
+        List<Question> qs = new ArrayList<>();
+        for(int i = 0 ; i < count ; i++){
+            qs.add(new Question(sc.nextInt() , sc.nextInt()));
+        }
+        dynamic = new int[limitTime + 1];
+
+//        qs.forEach(System.out::println);
+
+        for(int i = 0 ; i < qs.size() ; i++){
+            Question q = qs.get(i);
+            for(int j = dynamic.length - 1 ; j >= q.time ; j--){
+                int dynamicIndex = j - q.time;
+                if(dynamicIndex >= 0){
+                    int sumScore = dynamic[j - q.time] + q.score;
+                    if(dynamic[j] < sumScore) dynamic[j] = sumScore;
+                }
+                if(dynamic[j] == 0) dynamic[j] = q.score;
+            }
+        }
+//        for(int i : dynamic){
+//            System.out.print(i + " ");
+//        }
+
+        System.out.println(Arrays.stream(dynamic).max().getAsInt());
+    }
+}
+```
+
+## 풀이
+
+```java
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        int m=kb.nextInt();
+        int[] dy=new int[m+1];
+        for(int i=0; i<n; i++){
+            int ps=kb.nextInt();
+            int pt=kb.nextInt();
+            for(int j=m; j>=pt; j--){
+                dy[j]=Math.max(dy[j], dy[j-pt]+ps);
+            }
+        }
+        System.out.print(dy[m]);
+    }
+}
+```
