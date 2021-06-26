@@ -171,36 +171,39 @@ class Main {
 
 ***
 
-# **`[Hash , Sliding Window]` [매출액의 종류](https://cote.inflearn.com/contest/10/problem/04-03) (❌ <span style="color:red;">시간초과</span>)**
+# **`[Hash , Sliding Window]` [매출액의 종류](https://cote.inflearn.com/contest/10/problem/04-03) ✔**
 
 ## 풀어보기
 
 ```java
 import java.util.*;
-public class Main {
 
+class Main {
     public static void main(String[] args){
-        Scanner in=new Scanner(System.in);
-        int input1 = in.nextInt();
-        int input2 = in.nextInt();
-        int[] arr1 = new int[input1];
-        for(int i = 0 ; i < arr1.length ; i++){
-            arr1[i] = in.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        int[] arr = new int[input1];
+
+        for(int i = 0 ; i < input1 ; i++){
+            arr[i] = sc.nextInt();
         }
-        solution(input1 , input2 , arr1);
-    }
+        HashMap<Integer , Integer> record = new HashMap<>();
 
-    public static void solution(int input1 , int input2 , int[] arr1) {
-        Map<Integer , Integer> map = new HashMap<>();
+        for(int i = 0 ; i < input2 - 1; i++){
+            record.put(arr[i] , record.getOrDefault(arr[i] , 0) + 1);
+        }
+
         int leftIndex = 0;
-
-        for(int i = 0 ; i < arr1.length ; i++){
-           map.put(arr1[i] , map.getOrDefault(arr1[i], 0) + 1);
-           if( i >= input2 - 1){
-               System.out.print(map.keySet().stream().filter(key -> map.get(key) > 0).count() + " ");
-               map.put(arr1[leftIndex] , map.get(arr1[leftIndex]) - 1);
-               leftIndex++;
-           }
+        for(int i = input2 - 1 ; i < arr.length ; i++){
+            record.put(arr[i] , record.getOrDefault(arr[i] , 0) + 1);
+            System.out.print(record.size() + " ");
+            int count = record.get(arr[leftIndex]) - 1;
+            if(count == 0){
+                record.remove(arr[leftIndex]);
+            }
+            else record.put(arr[leftIndex] , count);
+            leftIndex++;
         }
     }
 }
