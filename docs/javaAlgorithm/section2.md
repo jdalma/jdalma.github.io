@@ -311,46 +311,73 @@ public static void main(String[] args){
 
 ***
 
-# **소수(에라토스테네스 체) ❌**
+# **소수(에라토스테네스 체) ✔ ~~❌~~**
 - **예시 입력 1**
   - 20
 - **예시 출력 1**
   - 8
 
-  ## ✋ 에라토스테네스 체
-  - 2부터 소수를 구하고자 하는 구간의 모든 수를 나열한다.
-  - 2는 소수이다.
-  - 자기 자신을 제외한 2의 배수를 모두 지운다.
-  - 남아있는 수 가운데 3은 소수이다.
-  - 자기 자신을 제외한 3의 배수를 모두 지운다.
-  - 남아있는 수 가운데 5는 소수이다.
-  - 자기 자신을 제외한 5의 배수를 모두 지운다.
-  - 남아있는 수 가운데 7은 소수이다.
-  - 자기 자신을 제외한 7의 배수를 모두 지운다.
-  - 위의 과정을 반복하면 구하는 구간의 모든 소수가 남는다.
+## ✋ 에라토스테네스 체
+- 2부터 소수를 구하고자 하는 구간의 모든 수를 나열한다.
+- 2는 소수이다.
+- 자기 자신을 제외한 2의 배수를 모두 지운다.
+- 남아있는 수 가운데 3은 소수이다.
+- 자기 자신을 제외한 3의 배수를 모두 지운다.
+- 남아있는 수 가운데 5는 소수이다.
+- 자기 자신을 제외한 5의 배수를 모두 지운다.
+- 남아있는 수 가운데 7은 소수이다.
+- 자기 자신을 제외한 7의 배수를 모두 지운다.
+- 위의 과정을 반복하면 구하는 구간의 모든 소수가 남는다.
 
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input = sc.nextInt();
+        int[] array = new int[input + 1];
+        int result = 0;
+        for(int i = 2; i <= input ; i++){
+            if(array[i] == 0){
+                result++;
+                for(int j = i ; j <= input; j = j + i) array[j]=1;
+            }
+        }
+        System.out.println(result);
+
+//        System.out.println(Arrays.stream(array).filter(val -> val == 1).count());
+    }
+
+}
+```
 
 ## 풀이
 
 ### 📌 `for(int j = i ; j <= n ; j = j + i) ch[j] = 1`
 
 ```java
-public int solution(int n){
-  int cnt = 0;
-  int[] ch = new int[n+1];
-  for(int i = 2 ; i <= n ; i++){
-    if(ch[i] == 0){
-      cnt++;
-      for(int j = i ; j <= n ; j = j + i) ch[j] = 1;
+import java.util.*;
+class Main {
+    public int solution(int n){
+        int cnt=0;
+        int[] ch = new int[n+1];
+        for(int i=2; i<=n; i++){
+            if(ch[i]==0){
+                cnt++;
+                for(int j=i; j<=n; j=j+i) ch[j]=1;
+            }
+        }
+        return cnt;
     }
-  }
-  return cnt;
-}
-public static void main(String[] args){
-  Main T = new Main();
-  Scanner kb = new Scanner(System.in);
-  int n = kb.nextInt();
-  System.out.println(T.solution(n));
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        System.out.println(T.solution(n));
+    }
 }
 ```
 

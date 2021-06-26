@@ -538,7 +538,7 @@ public static void main(String[] args){
 
 ***
 
-# **유효한 팰린드롬 ❌**
+# **유효한 팰린드롬 ✔~~❌~~**
 <!--
 - **설명**
   - 앞에서 읽을 때나 뒤에서 읽을 때나 같은 문자열을 팰린드롬이라고 합니다.
@@ -555,6 +555,38 @@ public static void main(String[] args){
   - found7, time: study; Yduts; emit, 7Dnuof
 - **예시 출력 1**
   - YES
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+    static int[] dynamic;
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine().toLowerCase().replaceAll("[^a-z]" , "");
+//        System.out.println(input);
+        int index = 0;
+        int length = input.length();
+        boolean valid = true;
+        int leftIndex = 0;
+        int rightIndex = input.length();
+        while(leftIndex < rightIndex){
+            if(valid){
+                leftIndex = index;
+                rightIndex = length - index - 1;
+                if(input.charAt(leftIndex) != input.charAt(rightIndex)) valid = false;
+                index++;
+            }
+            else break;
+        }
+
+        if(valid) System.out.println("YES");
+        else System.out.println("NO");
+    }
+}
+```
 
 ## 풀이
 
