@@ -202,37 +202,40 @@ class Main {
 
 ***
 
-# **`[Sliding Window]` [최대 매출](https://cote.inflearn.com/contest/10/problem/03-03) (❌<span style="color:red;">시간초과</span>)**
+# **`[Sliding Window]` [최대 매출](https://cote.inflearn.com/contest/10/problem/03-03) (✔ ~~❌<span style="color:red;">시간초과</span>~~)**
 
 ## 풀어보기
 
 ```java
 import java.util.*;
-public class Main {
+
+class Main {
     public static void main(String[] args){
-        Scanner kb = new Scanner(System.in);
-        int length = kb.nextInt();
-        int days = kb.nextInt();
-        int[] arr1 = new int[length];
-        for(int i = 0 ; i < length ; i++){
-            arr1[i] = kb.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int totalDays = sc.nextInt();
+        int days = sc.nextInt();
+
+        int[] costs = new int[totalDays];
+        int[] tmp = new int[totalDays];
+        for(int i = 0 ; i < totalDays ; i++){
+            costs[i] = sc.nextInt();
         }
-        solution(arr1 , days);
+
+        int leftIndex = 0;
+        int totalCost = 0;
+        for(int i = 0 ; i < costs.length ; i++){
+            if(i - leftIndex == days - 1){
+                totalCost += costs[i];
+                tmp[leftIndex] = totalCost;
+                totalCost = totalCost - costs[leftIndex];
+                tmp[i] = totalCost;
+                leftIndex++;
+            }
+            else totalCost += costs[i];
+        }
+        System.out.println(Arrays.stream(tmp).max().getAsInt());
     }
 
-    public static void solution(int[] arr1 , int days){
-        int total = 0;
-        for(int i = 0 ; i < arr1.length - days ; i++){
-            int tmp = 0;
-            for(int k = i ; k < i + days ; k++){
-                tmp += arr1[k];
-            }
-            if(total < tmp){
-                total = tmp;
-            }
-        }
-        System.out.println(total);
-    }
 }
 ```
 

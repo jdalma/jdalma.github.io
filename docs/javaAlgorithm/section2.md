@@ -383,7 +383,7 @@ class Main {
 
 ***
 
-# **[뒤집은 소수](https://cote.inflearn.com/contest/10/problem/02-06) ❌**
+# **[뒤집은 소수](https://cote.inflearn.com/contest/10/problem/02-06) ✔ ~~❌~~**
 - **입력**
   - 첫 줄에 자연수의 개수 N(3<=N<=100)이 주어지고, 그 다음 줄에 N개의 자연수가 주어진다.
   - 각 자연수의 크기는 100,000를 넘지 않는다.
@@ -396,45 +396,36 @@ class Main {
 - **예시 출력 1**
   - 23 2 73 2 3
 
-
 ## 풀어보기
 
 ```java
-public static void main(String[] args){
-    Scanner kb = new Scanner(System.in);
-    int n=kb.nextInt();
-    int[] intArr = new int[n];
-    for(int i = 0 ; i < n ; i++){
-        intArr[i] = kb.nextInt();
-    }
-    solution(n , intArr);
-}
+import java.util.*;
 
-public static void solution(int n , int[] intArr){
-    int result = 0;
-    int[] reverseArr = new int[n];
-    List<Integer> resultList = new ArrayList<Integer>();
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int count = sc.nextInt();
 
-    for(int i = 0 ; i < n ; i++){
-        int num = intArr[i];
-        String numStr = "";
-        while(num > 0){
-            numStr += Integer.toString(num % 10);
-            num = num / 10;
+        for(int i = 0 ; i < count ; i++){
+            int value = sc.nextInt();
+            int reverseValue = reverse(value);
+            boolean flag = true;
+            for(int j = 2 ; j < reverseValue ; j++){
+                if(reverseValue % j == 0) flag = false;
+            }
+            if(flag && reverseValue > 1) System.out.print(reverseValue + " ");
         }
-        reverseArr[i] = Integer.parseInt(numStr);
-    }
-    for(int i = 0 ; i < reverseArr.length ; i++){
-        int reverseNum = reverseArr[i];
-        int printNum = 0;
-        if(reverseNum == 2 || reverseNum == 3 || reverseNum == 5 || reverseNum == 7) resultList.add(reverseNum);
-        else if(reverseNum != 1 && reverseNum % 2 != 0 && reverseNum % 3 != 0 && reverseNum % 5 != 0 && reverseNum % 7 != 0) resultList.add(reverseNum);
 
     }
 
-    resultList.forEach(num -> {
-        System.out.print(num + " ");
-    });
+    public static int reverse(int value){
+        String tmp = "";
+        while(value != 0){
+            tmp += String.valueOf(value % 10);
+            value = value / 10;
+        }
+        return Integer.parseInt(tmp);
+    }
 }
 ```
 
@@ -895,7 +886,7 @@ public static void main(String[] args){
 
 ***
 
-# **[멘토링](https://cote.inflearn.com/contest/10/problem/02-12) ❌**
+# **[멘토링](https://cote.inflearn.com/contest/10/problem/02-12) ✔ ~~❌~~**
 - **예시 입력 1**
   - 4 3
   - 3 4 1 2
@@ -963,49 +954,6 @@ public static void solution(int m , int n , int[][] intArr){
     }
     System.out.println(answer);
 }
-```
-
-```java
-// 2021-04-30
-package algo;
-
-import java.util.Scanner;
-
-public class Main {
-
-  public static void main(String[] args){
-    Scanner in=new Scanner(System.in);
-    int input1 = in.nextInt();
-    int input2 = in.nextInt();
-    int[][] arr = new int[input2][input1];
-    for(int i = 0 ; i < input2 ; i++) {
-    	for(int j = 0 ; j < input1 ; j++) {
-    		arr[i][j] = in.nextInt();
-    	}
-    }
-    solution(arr);
-  }
-
-  public static void solution(int[][] arr) {
-	  int[][] newArr = new int[arr[0].length][arr.length];
-
-	  for(int i = 0 ; i < arr.length ; i++) {
-    	for(int j = 0 ; j < arr.length ; j++) {
-    		for(int k = 0 ; k < arr[0].length ; k++) {
-
-    		}
-    	}
-	  }
-
-	  for(int i = 0 ; i < newArr.length ; i++) {
-	    	for(int j = 0 ; j < newArr[0].length ; j++) {
-	    		System.out.print(newArr[i][j]);
-	    	}
-	    	System.out.println();
-	  }
-  }
-}
-
 ```
 
 ## 풀이
