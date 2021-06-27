@@ -430,7 +430,7 @@ class Main {
 
 ***
 
-# **`[Queue]` [공주 구하기](https://cote.inflearn.com/contest/10/problem/05-06) ❌**
+# **`[Queue]` [공주 구하기](https://cote.inflearn.com/contest/10/problem/05-06) ✔ ~~❌~~**
 
 ![](../../assets/images/algorithm/section4/4.png)
 
@@ -562,7 +562,64 @@ class Main {
 
 ***
 
-# **`[Queue - Person객체]` [응급실](https://cote.inflearn.com/contest/10/problem/05-08) ❌**
+# **`[Queue - Person객체]` [응급실](https://cote.inflearn.com/contest/10/problem/05-08) ✔ ~~❌~~**
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Patient{
+    int order;
+    int risk;
+
+    public Patient(int order, int risk) {
+        this.order = order;
+        this.risk = risk;
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "order=" + order +
+                ", risk=" + risk +
+                '}';
+    }
+}
+
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+
+        Queue<Patient> patients = new LinkedList<>();
+        for(int i = 0 ; i < input1 ; i++){
+            int risk = sc.nextInt();
+            patients.offer(new Patient(i , risk));
+        }
+
+        int count = 0;
+        while(!patients.isEmpty()){
+            int risk = getMaxRisk(patients);
+            Patient tmp = patients.poll();
+            if(tmp.risk == risk) {
+                count++;
+                if(tmp.order == input2) System.out.println(count);
+            }
+            else patients.offer(tmp);
+        }
+    }
+
+    public static int getMaxRisk(Queue<Patient> patients){
+        int maxRisk = 0;
+        for(Patient tmp : patients){
+            if(maxRisk < tmp.risk) maxRisk = tmp.risk;
+        }
+        return maxRisk;
+    }
+}
+```
 
 ## 풀이
 
