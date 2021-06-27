@@ -155,7 +155,37 @@ class Main {
 }
 ```
 
-## **삽입 정렬**
+## **삽입 정렬 ✔ ~~❌~~**
+
+### 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int[] arr = new int[input1];
+        for(int i = 0 ; i < input1 ; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        for(int i = 1 ; i < input1 ; i++){
+            int tmp = arr[i];
+            int j = i - 1;
+            for(; j >= 0 ; j--){
+                if(tmp < arr[j]) arr[j + 1] = arr[j];
+                else break;
+            }
+            arr[j + 1] = tmp;
+        }
+
+        for(int value : arr){
+            System.out.print(value + " ");
+        }
+    }
+}
+```
 
 ### 풀이
 
@@ -290,11 +320,88 @@ class Main {
 
 ***
 
-# **[장난꾸러기](https://cote.inflearn.com/contest/10/problem/06-06) ❌**
+# **[중복 확인](https://cote.inflearn.com/contest/10/problem/06-05) ✔**
 
-## ✋ 정렬을 사용하면 쉽게 풀 수 있는 문제
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        Set<Integer> set = new HashSet<>();
+        for(int i = 0 ; i < input1 ; i++){
+            set.add(sc.nextInt());
+        }
+
+        if(input1 != set.size()) System.out.println("D");
+        else System.out.println("U");
+    }
+}
+```
+
 ## 풀이
 
+```java
+import java.util.*;
+class Main {
+    public String solution(int n, int[] arr){
+        String answer="U";
+        Arrays.sort(arr);
+        for(int i=0; i<n-1; i++){
+            if(arr[i]==arr[i+1]){
+                answer="D";
+                break;
+            }
+        }
+        return answer;
+    }
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        int[] arr=new int[n];
+        for(int i=0; i<n; i++) arr[i]=kb.nextInt();
+        System.out.println(T.solution(n, arr));
+    }
+}
+```
+
+***
+
+# **[장난꾸러기](https://cote.inflearn.com/contest/10/problem/06-06) ✔ ~~❌~~**
+
+## ✋ 정렬을 사용하면 쉽게 풀 수 있는 문제
+
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int[] arr1 = new int[input1];
+        int[] arr2 = new int[input1];
+        for(int i = 0 ; i < input1 ; i++){
+            int value = sc.nextInt();
+            arr1[i] = value;
+            arr2[i] = value;
+        }
+
+        Arrays.sort(arr2);
+
+        for(int i = 0 ; i < input1 ; i++){
+            if(arr1[i] != arr2[i]){
+                System.out.print( (i + 1) + " ");
+            }
+        }
+    }
+}
+```
+
+## 풀이
 
 ```java
 import java.util.*;
@@ -419,7 +526,43 @@ class Main {
 
 
 ***
-# **[이분 검색](https://cote.inflearn.com/contest/10/problem/06-08) ❌**
+# **[이분 검색](https://cote.inflearn.com/contest/10/problem/06-08) ✔ ~~❌~~**
+
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        int[] arr1 = new int[input1];
+
+        for(int i = 0 ; i < input1 ; i++){
+            arr1[i] = sc.nextInt();
+        }
+
+        Arrays.sort(arr1);
+//        Arrays.stream(arr1).forEach(val -> {
+//            System.out.print(val + " ");
+//        });
+//        System.out.println();
+
+        int leftIndex = 0;
+        int rightIndex = arr1.length - 1;
+        while(leftIndex < rightIndex){
+            int mid = (leftIndex + rightIndex) / 2;
+            if(arr1[mid] == input2){
+                System.out.println(mid + 1);
+                break;
+            }
+            else if(arr1[mid] > input2)  rightIndex = mid;
+            else if(arr1[mid] < input2)  leftIndex = mid;
+        }
+    }
+}
+```
 
 ## 풀이
 
