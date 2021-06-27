@@ -557,8 +557,8 @@ class Main {
                 System.out.println(mid + 1);
                 break;
             }
-            else if(arr1[mid] > input2)  rightIndex = mid;
-            else if(arr1[mid] < input2)  leftIndex = mid;
+            else if(arr1[mid] > input2)  rightIndex = mid - 1;
+            else if(arr1[mid] < input2)  leftIndex = mid + 1;
         }
     }
 }
