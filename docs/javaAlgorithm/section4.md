@@ -332,7 +332,46 @@ class Main {
 
 ***
 
-# **`[TreeSet]` [K번째 큰 수](https://cote.inflearn.com/contest/10/problem/04-05) ❌**
+# **`[TreeSet]` [K번째 큰 수](https://cote.inflearn.com/contest/10/problem/04-05) ✔ ~~❌~~**
+
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        int[] arr = new int[input1];
+        TreeSet<Integer> ts = new TreeSet<>(Collections.reverseOrder());
+
+        for(int i = 0 ; i < input1 ; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        for(int i = 0 ; i < input1 ; i++){
+            for(int j = i + 1 ; j < input1 ; j++){
+                for(int k = j + 1 ; k < input1 ; k++){
+                    ts.add(arr[i] + arr[j] + arr[k]);
+                }
+            }
+        }
+//        System.out.println(ts);
+        int cnt = 0;
+        boolean isPrint = false;
+        for(int value : ts){
+            cnt++;
+            if(cnt == input2) {
+                isPrint = true;
+                System.out.print(value);
+            }
+        }
+        if(!isPrint) System.out.println("-1");
+    }
+}
+```
 
 ## 풀이
 

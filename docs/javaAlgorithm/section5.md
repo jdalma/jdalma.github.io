@@ -439,6 +439,33 @@ class Main {
 - **예시 출력 1**
   - 7
 
+## 풀어보기
+
+```java
+import java.util.*;
+
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        Queue<Integer> que = new LinkedList<>();
+
+        for(int i = 1 ; i <= input1 ; i++) que.offer(i);
+
+        while(que.size() != 1){
+            for(int i = 1 ; i <= input2 ; i++){
+                if(i != input2){
+                    que.offer(que.poll());
+                }
+                else que.poll();
+            }
+        }
+        System.out.println(que.peek());
+    }
+}
+```
+
 ## 풀이
 
 ```java
