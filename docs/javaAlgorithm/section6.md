@@ -635,28 +635,30 @@ class Main {
 
         int leftIndex = max;
         int rightIndex = total;
-        int result = Integer.MAX_VALUE;
-        while(leftIndex < rightIndex){
+        int result = 0;
+        while(leftIndex <= rightIndex){
             int mid = (leftIndex + rightIndex) / 2;
             int calc = check(arr , mid);
-            System.out.println(leftIndex + " " + mid + " " + rightIndex + " " + calc);
-            if(input2 >= calc) rightIndex = mid - 1;
-            else if(input2 < calc) leftIndex = mid + 1;
+//            System.out.println(leftIndex + " " + mid + " " + rightIndex + " " + calc);
+            if(input2 >= calc) {
+                result = mid;
+                rightIndex = mid - 1;
+            }
+            else leftIndex = mid + 1;
         }
         System.out.println(result);
     }
 
     public static int check(int[] arr , int target){
-        int result = 0;
+        int result = 1;
         int tmp = 0;
         for(int i = 0 ; i < arr.length ; i++){
             if(tmp + arr[i] > target){
                 tmp = arr[i];
-                ++result;
+                result++;
             }
             else tmp += arr[i];
         }
-        System.out.println("result = " + result);
         return result;
     }
 }
