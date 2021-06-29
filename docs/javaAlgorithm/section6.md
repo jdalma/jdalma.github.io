@@ -612,6 +612,56 @@ class Main {
 - **예시 출력 1**
   - 17
 
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        int[] arr = new int[input1];
+
+        int total = 0;
+        int max = 0;
+
+        for(int i = 0 ; i < input1 ; i++){
+            int value = sc.nextInt();
+            arr[i] = value;
+            total += value;
+            if(max < value) max = value;
+        }
+
+        int leftIndex = max;
+        int rightIndex = total;
+        int result = Integer.MAX_VALUE;
+        while(leftIndex < rightIndex){
+            int mid = (leftIndex + rightIndex) / 2;
+            int calc = check(arr , mid);
+            System.out.println(leftIndex + " " + mid + " " + rightIndex + " " + calc);
+            if(input2 >= calc) rightIndex = mid - 1;
+            else if(input2 < calc) leftIndex = mid + 1;
+        }
+        System.out.println(result);
+    }
+
+    public static int check(int[] arr , int target){
+        int result = 0;
+        int tmp = 0;
+        for(int i = 0 ; i < arr.length ; i++){
+            if(tmp + arr[i] > target){
+                tmp = arr[i];
+                ++result;
+            }
+            else tmp += arr[i];
+        }
+        System.out.println("result = " + result);
+        return result;
+    }
+}
+```
+
 ## 풀이
 - **이분 검색을 사용**
 
