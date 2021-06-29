@@ -599,7 +599,7 @@ class Main {
 ***
 
 
-# **`[결정 알고리즘]` [뮤직비디오](https://cote.inflearn.com/contest/10/problem/06-09) ❌**
+# **`[결정 알고리즘]` [뮤직비디오](https://cote.inflearn.com/contest/10/problem/06-09) ✔ ~~❌~~**
 - **입력**
   - 첫째 줄에 자연수 N(1≤N≤1,000), M(1≤M≤N)이 주어진다.
   - 부른 곡의 길이가 분 단위로(자연수) 주어진다.
