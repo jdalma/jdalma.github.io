@@ -212,7 +212,7 @@ class Main {
 
 ***
 
-# **`[메모이제이션]` 피보나치 수열 ❌**
+# **`[메모이제이션]` 피보나치 수열 ✔ ~~❌~~**
 - 피보나치 수열이란 앞의 2개의 수를 합하여 다음 숫자가 되는 수열이다.
 - 입력은 피보나치 수열의 총 항의 수 이다.
 - 만약 7이 입력되면 1 1 2 3 5 8 13을 출력하면 된다.
@@ -220,6 +220,33 @@ class Main {
   - 10
 - **출력예제 1**
   - 1 1 2 3 5 8 13 21 34 55
+
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int[] arr = new int[input1];
+        arr[0] = 1;
+        arr[1] = 1;
+
+        recursive(arr , input1 - 1);
+        for(int value : arr){
+            System.out.print(value + " ");
+        }
+    }
+    public static int recursive(int[] arr , int count){
+        if(count == 0 || count == 1) return 1;
+        else if(arr[count] != 0) return arr[count];
+        else {
+            return arr[count] = recursive(arr , count - 1) + recursive(arr , count - 2 );
+        }
+    }
+}
+```
 
 ## 풀이 1
 
@@ -261,7 +288,7 @@ class Main {
 
 ***
 
-# **`[DFS]` 부분 집합 구하기 ❌**
+# **`[DFS]` 부분 집합 구하기 ✔ ~~❌~~**
 - **입력예제 1**
   - 3
 - **출력예제 1**
@@ -272,6 +299,36 @@ class Main {
   - 2 3
   - 2
   - 3
+
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    static int input1;
+    static int[] check;
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        input1 = sc.nextInt();
+        check = new int[input1 + 1];
+        recursive(1);
+    }
+    public static void recursive(int level){
+        if(level == input1 + 1){
+            for(int i = 1 ; i < check.length ; i++){
+                if(check[i] == 1) System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+        else{
+            check[level] = 1;
+            recursive(level + 1);
+            check[level] = 0;
+            recursive(level + 1);
+        }
+    }
+}
+```
 
 ## 풀이
 
