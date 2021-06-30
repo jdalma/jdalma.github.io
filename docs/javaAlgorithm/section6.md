@@ -710,7 +710,7 @@ class Main {
 
 ***
 
-# **`[결정 알고리즘]` [마구간 정하기](https://cote.inflearn.com/contest/10/problem/06-10) ❌**
+# **`[결정 알고리즘]` [마구간 정하기](https://cote.inflearn.com/contest/10/problem/06-10) ✔ ~~❌~~**
 - **입력**
   - 첫 줄에 자연수 N(3<=N<=200,000)과 C(2<=C<=N)이 공백을 사이에 두고 주어집니다.
   - 둘째 줄에 마구간의 좌표 xi(0<=xi<=1,000,000,000)가 차례로 주어집니다.
@@ -721,6 +721,46 @@ class Main {
   - 1 2 8 4 9
 - **예시 출력 1**
   - 3
+
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        int[] arr = new int[input1];
+        for(int i = 0 ; i < input1 ; i++){
+            arr[i] = sc.nextInt();
+        }
+        Arrays.sort(arr);
+
+        int result = 0;
+        int leftIndex = 1;
+        int rightIndex = arr[input1 - 1];
+        while(leftIndex <= rightIndex){
+            int positionValue = arr[0];
+            int count = 1;
+            int mid = (leftIndex + rightIndex) / 2;
+            for(int i = 1 ; i < arr.length ; i++){
+                if(arr[i] - positionValue >= mid){
+                    count++;
+                    positionValue = arr[i];
+                }
+            }
+//            System.out.println(leftIndex + " " + mid  + " " + rightIndex + " " + count);
+            if(count >= input2){
+                leftIndex = mid + 1;
+                result = mid;
+            }
+            else rightIndex = mid - 1;
+        }
+        System.out.println(result);
+    }
+}
+```
 
 ## 풀이
 
