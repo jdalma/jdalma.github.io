@@ -592,7 +592,44 @@ public class Main{
 - **출력예제 1**
   - 6
 
-## **`[인접행렬]` ❌**
+## **`[인접행렬]` ✔ ~~❌~~**
+
+### 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    static int[][] edge;
+    static int[] check;
+    static int result = 0;
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int node = sc.nextInt();
+        int count = sc.nextInt();
+        edge = new int[node + 1][node + 1];
+        check = new int[node + 1];
+        for(int i = 0 ; i < count ; i++){
+            edge[sc.nextInt()][sc.nextInt()] = 1;
+        }
+        check[1] = 1;
+        recursive(1 , node);
+        System.out.println(result);
+    }
+
+    public static void recursive(int node , int target){
+        if(node == target) result++;
+        else{
+            for(int i = 1 ; i <= target ; i++){
+                if(edge[node][i] == 1 && check[i] == 0){
+                    check[i] = 1;
+                    recursive(i , target);
+                    check[i] = 0;
+                }
+            }
+        }
+    }
+}
+```
 
 ### 풀이
 
@@ -634,7 +671,48 @@ class Main {
 }
 ```
 
-## **`[인접리스트]` ❌**
+## **`[인접리스트]` ✔ ~~❌~~**
+
+### 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    static List<List<Integer>> edge;
+    static int[] check;
+    static int result = 0;
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int node = sc.nextInt();
+        int count = sc.nextInt();
+        edge = new ArrayList<List<Integer>>();
+        check = new int[node + 1];
+        for(int i = 0; i <= node ; i++) edge.add(new ArrayList<>());
+
+        for(int i = 0 ; i < count ; i++){
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            edge.get(x).add(y);
+        }
+        check[1] = 1;
+        recursive(1 , node);
+        System.out.println(result);
+    }
+
+    public static void recursive(int node , int target){
+        if(node == target) result++;
+        else{
+            for(int tmp : edge.get(node)){
+                if(check[tmp] == 0){
+                    check[tmp] = 1;
+                    recursive(tmp , target);
+                    check[tmp] = 0;
+                }
+            }
+        }
+    }
+}
+```
 
 ### 풀이
 
