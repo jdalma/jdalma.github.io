@@ -363,7 +363,7 @@ class Main {
 ```
 
 
-# **`[BFS : 상태트리탐색]` 송아지 찾기 ❌**
+# **`[BFS : 상태트리탐색]` 송아지 찾기 ✔ ~~❌~~**
 - 현수의 위치와 송아지의 위치가 수직선상의 좌표 점으로 주어지면 현수는 현재 위치에서 송아지의 위치까지 다음 과 같은 방법으로 이동한다.
 - 송아지는 움직이지 않고 제자리에 있다.
 - 현수는 스카이 콩콩을 타고 가는데 한 번의 점프로 앞으로 1, 뒤로 1, 앞으로 5를 이동할 수 있다.
@@ -387,35 +387,39 @@ class Main {
 
 ```java
 import java.util.*;
-
-class Node{
-    int data;
-    List<Node> child;
-    public Node(int value){
-        this.data = value;
-        this.child = new ArrayList<Node>();
-    }
-}
-
-class Main{
-    public static void main(String[] args) {
+class Main {
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int start = sc.nextInt();
-        int destination = sc.nextInt();
-        BFS(start , destination);
-    }
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        int[] move = new int[]{1 , -1 , 5};
+        Queue<Integer> positionQ = new LinkedList<>();
+        int[] check = new int[10000];
+        check[input1] = 1;
 
-    public static void BFS(int start , int destination){
-        int result = 0;
-        int[] move = {1 ,-1 ,5};
-        Queue<Node> que = new LinkedList<>();
-        Node startNode = new Node(start);
-        que.offer(startNode);
-        int levelCount = 1;
-        while(destination != result){
-            Node tmp = que.poll();
+        positionQ.offer(input1);
+        int level = 0;
 
+        loop:
+        while(!positionQ.isEmpty()){
+            int qSize = positionQ.size();
+            for(int i = 0 ; i < qSize ; i++){
+                int nowPos = positionQ.poll();
+                if (nowPos == input2) {
+                    break loop;
+                }
+                for (int k : move) {
+                    int movePos = nowPos + k;
+                    if (movePos <= 10000 && movePos >= 0 && check[movePos] == 0) {
+                        check[movePos] = 1;
+                        positionQ.offer(movePos);
+                    }
+                }
+            }
+//            System.out.println(positionQ);
+            level++;
         }
+        System.out.println(level);
     }
 }
 ```
