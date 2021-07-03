@@ -783,48 +783,48 @@ class Main {
   - 5 : 2
   - 6 : 2
 
-## 레벨을 사용하여 풀어보기 ❌
+## 레벨을 사용하여 풀어보기 ✔ ~~❌~~
 
 ```java
 import java.util.*;
-
-class Node{
-    int data;
-    List<Node> childs;
-    public Node(int value){
-        this.data = value;
-        this.childs = new ArrayList<Node>();
-    }
-    public void addChild(Node child){
-        this.childs.add(child);
-    }
-    public Node findParent(int targetValue , Node root){
-        return recursive(targetValue , root);
-    }
-    public Node recursive(int targetValue , Node root){
-        if(root.data == targetValue){
-            return root;
-        }
-        else{
-            for(Node tmp : root.childs){
-                recursive(targetValue , tmp);
-            }
-        }
-        return root;
-    }
-}
-
 class Main {
-    public static void main(String[] args) {
+    static List<List<Integer>> edge;
+    static int[] check;
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int input1 = sc.nextInt();
-        int input2 = sc.nextInt();
-        Node root = new Node(1);
-        for (int i = 0; i < input2; i++) {
-            int tmp1 = sc.nextInt();
-            int tmp2 = sc.nextInt();
-            Node parentNode = root.findParent(tmp1, root);
-            parentNode.addChild(new Node(tmp2));
+        int node = sc.nextInt();
+        int count = sc.nextInt();
+        edge = new ArrayList<List<Integer>>();
+        check = new int[node + 1];
+        int[] levelArr = new int[node + 1];
+        for(int i = 0; i <= node ; i++) edge.add(new ArrayList<>());
+
+        for(int i = 0 ; i < count ; i++){
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            edge.get(x).add(y);
+        }
+        check[1] = 1;
+        Queue<Integer> nodes = new LinkedList<>();
+        nodes.offer(1);
+
+        int level = 1;
+        while(!nodes.isEmpty()){
+            int qSize = nodes.size();
+            for(int i = 0 ; i < qSize ; i++){
+                int value = nodes.poll();
+                for(int tmp : edge.get(value)){
+                    if(check[tmp] != 1){
+                        check[tmp] = 1;
+                        nodes.offer(tmp);
+                        levelArr[tmp] = level;
+                    }
+                }
+            }
+            level++;
+        }
+        for(int i = 1 ; i < levelArr.length ; i++){
+            System.out.println(i + " : " + levelArr[i]);
         }
     }
 }
