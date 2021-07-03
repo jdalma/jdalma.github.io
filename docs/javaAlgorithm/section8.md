@@ -330,41 +330,39 @@ class Main{
 
 ***
 
-# **`[DFS]` [동전 교환](https://cote.inflearn.com/contest/10/problem/08-05) ❌**
+# **`[DFS]` [동전 교환](https://cote.inflearn.com/contest/10/problem/08-05) ✔ ~~❌~~**
 
 ## 풀어보기
 
 ```java
 import java.util.*;
-
 class Main {
-    static int[] coinArr;
-    static int coinEa;
-    static int totalAmt;
-    static int result = 0;
-    public static void main(String[] args) {
+    static int target;
+    static Integer[] coinArr;
+    static int result = Integer.MAX_VALUE;
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        coinEa = sc.nextInt();
-        coinArr = new int[coinEa];
-        for(int i = 0 ; i < coinEa ; i++){
+        int count = sc.nextInt();
+        coinArr = new Integer[count];
+        for(int i = 0 ; i < coinArr.length ; i++){
             coinArr[i] = sc.nextInt();
         }
-        totalAmt = sc.nextInt();
-        Arrays.sort(coinArr);
-        recursive(coinEa - 1 , totalAmt);
+        target = sc.nextInt();
+        Arrays.sort(coinArr , Collections.reverseOrder());
+        recursive(0 , 0);
         System.out.println(result);
     }
 
-    public static void recursive(int index , int amt){
-        if(index < 0 || amt <= 0){
-            return;
+    public static void recursive(int ea , int sum){
+        if(sum > target) return;
+        if(result <= ea) return;
+        if(sum == target){
+            result = Math.min(result , ea);
         }
         else{
-            while(coinArr[index] <= amt){
-                amt -= coinArr[index];
-                result++;
+            for(int i = 0 ; i < coinArr.length ; i++){
+                recursive(ea + 1 , sum + coinArr[i]);
             }
-            recursive(index - 1 , amt);
         }
     }
 }
