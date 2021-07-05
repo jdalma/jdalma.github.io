@@ -404,7 +404,7 @@ class Main{
 
 ***
 
-# **순열 구하기 ❌**
+# **순열 구하기 ✔ ~~❌~~**
 - 10이하의 N개의 자연수가 주어지면 이 중 M개를 뽑아 일렬로 나열하는 방법을 모두 출력
 - 첫 번째 줄에 자연수 N(3<=N<=10)과 M(2<=M<=N) 이 주어집니다.
 - 두 번째 줄에 N개의 자연수가 오름차순으로 주어집니다.
@@ -419,6 +419,49 @@ class Main{
   - 6 9
   - 9 3
   - 9 6
+
+## 풀어보기
+
+```java
+import java.util.*;
+class Main {
+    static int[] arr;
+    static int[] check;
+    static int[] printArr;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        arr = new int[input1];
+        check = new int[input1];
+        printArr = new int[input2];
+        for(int i = 0 ; i < input1 ; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        recursive(1 , input1);
+    }
+
+    public static void recursive(int count , int input1){
+        if(count == input1){
+            for(int value : printArr){
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+        else{
+            for(int i = 0 ; i < input1 ; i++){
+                if(check[i] == 0){
+                    check[i] = 1;
+                    printArr[count - 1] = arr[i];
+                    recursive(count + 1 , input1);
+                    check[i] = 0;
+                }
+            }
+        }
+    }
+}
+```
 
 ## 풀이
 
