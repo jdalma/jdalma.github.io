@@ -338,57 +338,47 @@ class Main {
 import java.util.*;
 
 class Lecture implements Comparable<Lecture>{
-    int money;
+    int fee;
     int day;
-    public Lecture(int money , int day){
-        this.money = money;
+    public Lecture(int fee , int day) {
+        this.fee = fee;
         this.day = day;
     }
     @Override
-    public int compareTo(Lecture o){
+    public int compareTo(Lecture o) {
         return o.day - this.day;
-    }
-
-    @Override
-    public String toString() {
-        return this.money + " - " + this.day;
     }
 }
 
 class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int input1 = sc.nextInt();
+
         List<Lecture> lectures = new ArrayList<>();
         int maxDay = 0;
         for(int i = 0 ; i < input1 ; i++){
-            int money = sc.nextInt();
+            int fee = sc.nextInt();
             int day = sc.nextInt();
+            lectures.add(new Lecture(fee , day));
             if(maxDay < day) maxDay = day;
-            lectures.add(new Lecture(money , day));
         }
         Collections.sort(lectures);
-        lectures.add(new Lecture(0 , 0));
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>(Collections.reverseOrder());
-        int result = 0;
 
-        for(int i = 0 ; i < lectures.size() ; i++){
-            Lecture lec = lectures.get(i);
-            if(maxDay != lec.day){
-//                for(int test : priorityQueue){
-//                    System.out.print(test + " ");
-//                }
-//                System.out.println();
-                result += priorityQueue.poll();
-                maxDay = lec.day;
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        int index = 0;
+        int result = 0;
+        for(int i = maxDay ; i >= 1 ; i--){
+            for( ; index < input1 ; index++){
+                if(lectures.get(index).day < i) break;
+                else{
+                    pq.offer(lectures.get(index).fee);
+                }
             }
-            priorityQueue.offer(lec.money);
-//            System.out.println(lec);
+            if(!pq.isEmpty()) result += pq.poll();
         }
         System.out.println(result);
     }
-
 }
 ```
 
