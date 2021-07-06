@@ -330,7 +330,7 @@ class Main {
 
 ***
 
-# **`[PriorityQueue 응용문제]` [최대 수입 스케쥴](https://cote.inflearn.com/contest/10/problem/09-04) ❌**
+# **`[PriorityQueue 응용문제]` [최대 수입 스케쥴](https://cote.inflearn.com/contest/10/problem/09-04) ✔ ~~❌~~**
 
 ## 풀어보기
 
