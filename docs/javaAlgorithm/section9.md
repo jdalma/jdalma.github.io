@@ -435,7 +435,7 @@ class Main {
 
 ***
 
-# **🔥 다익스트라 알고리즘 ❌**
+# **🔥 다익스트라 알고리즘 ✔ ~~❌~~**
 - 아래의 가중치 방향그래프에서 1번 정점에서 모든 정점으로의 최소 거리비용을 출력하는 프로
 그램을 작성하세요.
 - 경로가 없으면 Impossible를 출력한다
@@ -467,30 +467,65 @@ class Main {
 ```java
 import java.util.*;
 
-class Main {
+class Node implements Comparable<Node>{
+    int node;
+    int cost;
+    public Node(int node, int cost) {
+        this.node = node;
+        this.cost = cost;
+    }
+    @Override
+    public int compareTo(Node o) {
+        return this.cost - o.cost;
+    }
+    @Override
+    public String toString() {
+        return "Node{" +
+                "node=" + node +
+                ", cost=" + cost +
+                '}';
+    }
+}
 
+class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int arrSize = sc.nextInt();
         int size = sc.nextInt();
-        List<List<Integer>> list = new ArrayList<>();
-        int[][] array = new int[arrSize + 1][arrSize + 1];
+
+        List<ArrayList<Node>> list = new ArrayList<ArrayList<Node>>();
         int[] distance = new int[arrSize + 1];
+        Arrays.fill(distance , Integer.MAX_VALUE);
+        for(int i = 0 ; i < distance.length ; i++) list.add(new ArrayList<Node>());
+
+        distance[1] = 0;
         for(int i = 0 ; i < size ; i++){
             int start = sc.nextInt();
             int end = sc.nextInt();
             int cost = sc.nextInt();
-            array[start][end] = cost;
+            list.get(start).add(new Node(end , cost));
         }
 
-        for(int i = 0 ; i < arrSize + 1 ; i++){
-            for(int j = 0 ; j < arrSize + 1 ; j++){
-                System.out.print(array[i][j] + " ");
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        pq.offer(new Node(1 , 0));
+        while(!pq.isEmpty()){
+            Node now = pq.poll();
+            int stanNode = now.node;
+            int cost = now.cost;
+            for(Node moveNode : list.get(stanNode)){
+                if(distance[moveNode.node] > cost + moveNode.cost){
+                    distance[moveNode.node] = cost + moveNode.cost;
+                    pq.offer(new Node(moveNode.node , moveNode.cost + cost));
+                }
             }
-            System.out.println();
+        }
+        for(int i = 2 ; i < distance.length ; i++){
+            if(distance[i] == Integer.MAX_VALUE){
+                System.out.println(i + " : impossible");
+            }
+            else System.out.println( i + " : " + distance[i]);
         }
     }
-
 }
 ```
 
