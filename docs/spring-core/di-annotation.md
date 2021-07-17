@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 의존성 주입 Annotation
-nav_order: 1
-parent: Spring
+nav_order: 6
+parent: 스프링 핵심 원리 이해
 ---
 ## Table of contents
 {: .no_toc .text-delta }

@@ -2,7 +2,7 @@
 layout: default
 title: 빈 생명주기
 parent: 스프링 핵심
-nav_order: 6
+nav_order: 7
 ---
 ## Table of contents
 {: .no_toc .text-delta }
