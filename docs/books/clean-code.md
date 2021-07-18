@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Clean Code
-parent: books
+parent: Books
 nav_order: 1
 ---
 ## Table of contents
