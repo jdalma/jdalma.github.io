@@ -10,10 +10,6 @@ permalink: /
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjeongcode.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-# **About Me**
-- 2년차 웹 개발자 입니다.
-- **작성한 코드의 타당한 이유** 와 **Clean Code**에 대한 고민을 생활화 합니다.
-
 # **Interest**
 
 > ✍
@@ -47,21 +43,7 @@ permalink: /
 - **etc (management , build..)**
   - Jenkins , SVN , Apache Tomcat
 - **예산 파트 개발**
-  - **예산 관항목 기준 관리**
-  - **예산 사업단위 기준 관리**
-  - **예산 편성 신청 및 관리**
-    - 일반 , 추가 , 간주 예산 편성
-  - **예산 배정 신청 및 관리**
-  - **연도별 실행 예산 관리**
 - **인사 파트 개발**
-  - **근태관리**
-  - **휴가관리**
-    -  스프링 스케줄러 배치성 연차일수 프로시저
-    -  개인별 근무유형 또는 개인휴무에 따른 휴가신청
-    -  연차일수 검증 및 결재 관련 프로시저
-  - **출장관리**
-  - **인사발령**
-    - 발령 시뮬레이션 프로시저
 
 ***
 
