@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 운영체재
+title: 운영체제
 nav_order: 5
 permalink: /docs/operating-system
 has_children: true

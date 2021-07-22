@@ -1,8 +1,8 @@
 ---
 layout: default
-title: O/S Structures
+title: Processes
 parent: 운영체제
-nav_order: 1
+nav_order: 2
 ---
 ## Table of contents
 {: .no_toc .text-delta }
