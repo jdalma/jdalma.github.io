@@ -111,4 +111,5 @@ nav_order: 1
 ![](../../assets/images/operating-system/OS-Structure/8.png)
 
 > ✋ **C 표준 라이브러리 ➜ printF 실행**
-> ![](../../assets/images/operating-system/OS-Structure/9.png)
+
+![](../../assets/images/operating-system/OS-Structure/9.png)
