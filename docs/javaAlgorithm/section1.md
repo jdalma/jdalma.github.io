@@ -2,7 +2,7 @@
 layout: default
 title: String (문자열)
 nav_order: 2
-parent: 자바 코딩테스트 대비
+parent: 자바 코딩 테스트 대비
 ---
 ## Table of contents
 {: .no_toc .text-delta }
