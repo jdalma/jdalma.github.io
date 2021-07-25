@@ -395,3 +395,96 @@ int main()
 // PARENT : 3
 // PARENT : 4
 ```
+
+***
+
+# **프로세스간 통신 IPC (Inter-Process Communication)**
+
+- **프로세스가 독립적일 때**
+  - 다른 프로세스와 데이터를 공유하지 않는 경우
+- **부모와 자식 프로세스가 협력(cooperating)할 때**
+  - <span style="color:red; font-weight:bold">어떤 프로세스가 메세지와 데이터를 공유할 때 이 문제를 어떻게 해결할 것 인가?</span>
+- 위와 같이 프로세스가 협력할 때 **IPC 메커니즘**이 필요하다.
+
+## **IPC의 두 가지 기본 모델**
+![](../../assets/images/operating-system/Processes/10.png)
+
+### **Shared Memory (공유 메모리)**
+- **Producer-Consumer Problem (생산자-소비자 문제)**
+  - Producer(생산자)는 정브롤 생산 하고 , Consumer(소비자)는 정보를 소비한다.
+  - `컴파일러는 어셈블리 코드를 생성하고 어셈블러는 이를 사용한다.`
+  - `웹 서버는 HTML 파일을 생성하고 브라우저는 HTML 파일을 사용한다.`
+  - 생산자와 소비자가 **동시(Concurrently)에 실행 되도록**한다.
+  - **버퍼(Buffer)** 도 메모리 영역이다.
+  - **버퍼(Buffer)** 를 **Shared Memory (공유 메모리)** 로 만들어 생산자는 버퍼를 채우고 , 소비자는 버퍼를 비우도록 한다.
+  - 소비자는 버퍼가 비어있다면 wait한다.
+- 메모리 영역을 공유 하고 , 공유 메모리에 액세스하고 조작하기 위한 아래와 같은 코드를 프로그래머가 명시 해야한다.
+
+```c
+#define BUFFER_SIZE 10
+
+typedef struct{
+  ...
+} item
+
+item buffer [BUFFER_SIZE];
+int in = 0;   // 생산자용 인덱스
+int out = 0;  // 소비자용 인덱스
+item next_produced;
+
+while(true){
+
+  /* produce an item in next_produced */
+
+  while(((in + 1) % BUFFER_SIZE) == out) ; /* do nothing*/
+
+  buffer[in] = next_produced;
+  in = (in + 1) % BUFFER_SIZE;
+}
+
+item next_consumed;
+
+while(true){
+  while(in == out) ; /* do nothing */
+
+  next_consumed = buffer[out];
+  out = (out + 1) % BUFFER_SIZE;
+
+  /* consume the item in next_consumed*/
+}
+```
+
+### **Message Passing (메시지 전달)**
+- **O/S가 서로 협력 하는 프로세스를 위해 제공 하는 기능**
+- `send(message)`
+- `receive(message)`
+- 서로 메세지를 주고 받으면 된다.
+- **Communication Links 프로세스의 통신 방법**
+  - **Direct Communication - 직접 커뮤니케이션**
+    - 통신의 수신자 또는 발신자의 이름을 명시적으로 지정해야 한다.
+    - **send(𝑃, message)** - 𝑃 처리에 메시지를 보낸다.
+    - **receive(𝑄, message)** - 프로세스 𝑄에서 메시지를 받는다.
+    - **속성**
+      - 링크는 자동으로 설정되고 정확히 두 개의 프로세스와 연결된다.
+      - 각 프로세스 사이에는 하나의 링크만 존재한다.
+  - **Indirect Communication - 간접 커뮤니케이션**
+    - 메시지는 메일박스 또는 포트에서 송수신된다.
+    - 사서함(포트라고도 함)
+    - 추상적으로 객체로 볼 수 있다.
+    - **send(𝐴, message)** - 메일함 𝐴으로 메시지를 보냅니다.
+    - **receive(𝐴, message)** - 편지함 𝐴에서 메시지를 받습니다.
+    - **속성**
+      - 한 쌍의 프로세스 간에 링크가 설정된다.
+      - 쌍의 두 구성원이 공유 사서함을 가지고 있는 경우에만 가능하다.
+      - 링크는 두 개 이상의 프로세스와 연관될 수 있다.
+      - 각 프로세스 쌍 사이에 서로 다른 여러 링크가 존재할 수 있다.
+      - 각 링크는 하나의 사서함에 해당한다.
+
+  - **Synchronous and Asynchronous Communication - 동기 및 비동기 통신**
+    - **Blocking or Non-blocking** : **Synchronous or Asynchronous**
+    - **Blocking send** : 메시지를 받을 때까지 보낸 사람이 블록된다.
+    - **Non-blocking send** : 보낸 사람이 메시지를 보내고 계속된다.
+    - **Blocking receive** : 수신자는 메시지를 사용할 수 있을 때까지 블록된다.
+    - **Non-blocking receive**
+
+  - **Automatic or Explicit Buffering - 자동 또는 명시적 버퍼링**
