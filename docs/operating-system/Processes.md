@@ -485,6 +485,6 @@ while(true){
     - **Blocking send** : 메시지를 받을 때까지 보낸 사람이 블록된다.
     - **Non-blocking send** : 보낸 사람이 메시지를 보내고 계속된다.
     - **Blocking receive** : 받는 사람은 메시지를 사용할 수 있을 때까지 블록된다.
-    - **Non-blocking receive** 
+    - **Non-blocking receive**
 
   - **Automatic or Explicit Buffering - 자동 또는 명시적 버퍼링**
