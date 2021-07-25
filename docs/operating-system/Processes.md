@@ -135,3 +135,263 @@ nav_order: 2
 > ✋ **init 프로세스**
 > - 유닉스 계열의 운영체제에서 부팅 과정 중 생성되는 **최초의 프로세스** 이며 ,
 > - 시스템이 종료 될 때 까지 계속 살아있는 **데몬 프로세스** 이다.
+
+***
+
+# **프로세스의 생성**
+
+## **fork()**
+
+- **fork()** System call에 의해 새로운 프로세스가 생성된다.
+- **프로세스의 리턴 코드가 0이면 자식 프로세스 이고 , 0이 아니면 부모 프로세스이다.**
+
+> - 부모 프로세스의 주소 정보를 복사한다.
+> - 부모 프로세스는 계속 진행된다.
+> - **wait()** 을 사용하여 자식 프로세스가 진행 되는 동안 기다릴 수 있다.  (Wait queue에서 대기한다)
+
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main()
+{
+    pid_t pid;
+    pid = fork();
+    printf("Hello , Process %d \n" , pid);
+
+    return 0;
+}
+// Hello, Process 296
+// Hello, Process 0
+```
+
+### **fork() 예제 1 - 부모 프로세스 `wait()`**
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main()
+{
+    pid_t pid;
+    pid = fork();
+    if(pid > 0) wait(NULL);
+    printf("Hello , Process %d \n" , pid);
+
+    return 0;
+}
+// Hello , Process 0
+// Hello , Process 306
+```
+
+### **fork() 예제 2 - 자식 프로세스 `value += 15`**
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int value = 5;
+
+int main()
+{
+    pid_t pid;
+    pid = fork();
+    if(pid == 0) {
+        wait(NULL);
+        value += 15;
+    }
+    else if(pid > 0){
+        printf("Hello , Parent Process %d \n", value);
+    }
+
+    return 0;
+}
+// Hello , Parent Process 5
+```
+
+> ✋ **위의 value 값이 5가 나오는 이유**
+> - 자식 프로세스의 value 값이 20으로 증가하고 , 부모 프로세스의 value 값은 5 그대로 이다.
+
+### **fork() 예제 3 - 연속 fork()**
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <wait.h>
+
+    /**
+     *  How many processes are created?
+    */
+    int main()
+{
+    fork(); // fork a child process , 2개
+    fork(); // fork another child process , 4개
+    fork(); // and fork another 8개
+    printf("process \n");
+    return 0;
+}
+// process
+// process
+// process
+// process
+// process
+// process
+// process
+// process
+```
+
+### **fork() 예제 4 - `value += 5` , 연속 fork()**
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <wait.h>
+
+    int value = 0;
+
+    int main()
+{
+    pid_t pid;
+    value += 5;
+    pid = fork();
+    printf("Process : %d -> %d\n", pid, value);
+    value += 5;
+    pid = fork();
+    printf("Process : %d -> %d\n", pid, value);
+    value += 5;
+    pid = fork();
+    printf("Process : %d -> %d\n" , pid , value);
+
+    return 0;
+}
+
+// Process : 581 -> 5
+// Process : 0 -> 5
+// Process : 582 -> 10
+// Process : 0 -> 10
+// Process : 583 -> 15
+// Process : 0 -> 15
+// Process : 584 -> 15
+// Process : 585 -> 10
+// Process : 0 -> 15
+// Process : 0 -> 10
+// Process : 586 -> 15
+// Process : 587 -> 15
+// Process : 0 -> 15
+// Process : 0 -> 15
+```
+
+### **fork() 예제 5 - 자식 프로세스 `execlp("/bin/ls" , "ls" , NULL);`**
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <wait.h>
+
+    int value = 0;
+
+    int main()
+{
+    pid_t pid;
+    pid = fork();
+
+    if(pid == 0){ // child process
+        execlp("/bin/ls" , "ls" , NULL);
+        printf("LINE J\n");
+    }
+    else if(pid > 0){
+        wait(NULL);
+        printf("Child Complete \n");
+    }
+
+    return 0;
+}
+// a.out hello.c
+// Child Complete
+```
+
+>  ✋ `printf("LINE J\n");` 는 실행되지 않는다.
+> - `execlp()` 는 해당 자식 프로세스의 주소에 ls명령어로 덮어 쓴다.
+
+
+### **fork() 예제 6 - `getpid()`**
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <wait.h>
+
+    int value = 0;
+
+    int main()
+{
+    pid_t pid , pid1;
+    pid = fork();
+
+    if(pid == 0){ // child process
+        pid1 = getpid();
+        printf("child : pid = %d\n" , pid);
+        printf("child : pid1 = %d\n", pid1);
+    }
+    else if(pid > 0){   // parent process
+        wait(NULL);
+        pid1 = getpid();
+        printf("parent : pid = %d\n", pid);
+        printf("parent : pid1 = %d\n", pid1);
+    }
+
+    return 0;
+}
+// child : pid = 0
+// child : pid1 = 706
+// parent : pid = 706
+// parent : pid1 = 705
+```
+
+### **fork() 예제 7 - `int nums[size] = {0 , 1 , 2 , 3 , 4}`**
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <wait.h>
+
+#define SIZE 5
+int nums[SIZE] = {0, 1, 2, 3, 4};
+
+int main()
+{
+    pid_t pid;
+    int i;
+    pid = fork();
+
+    if(pid == 0){ // child process
+        for(i = 0 ; i < SIZE ; i++){
+            nums[i] *= i;
+            printf("CHILD : %d \n" , nums[i]);
+        }
+
+    }
+    else if(pid > 0){   // parent process
+        wait(NULL);
+        for (i = 0 ; i < SIZE ; i++){
+            printf("PARENT : %d \n", nums[i]);
+        }
+    }
+
+    return 0;
+}
+// CHILD : 0
+// CHILD : 1
+// CHILD : 4
+// CHILD : 9
+// CHILD : 16
+// PARENT : 0
+// PARENT : 1
+// PARENT : 2
+// PARENT : 3
+// PARENT : 4
+```
