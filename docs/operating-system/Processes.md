@@ -488,3 +488,23 @@ while(true){
     - **Non-blocking receive**
 
   - **Automatic or Explicit Buffering - 자동 또는 명시적 버퍼링**
+
+***
+
+# **프로세스간 통신 사례**
+
+## Shared Memory : **POSIX Shared Memory**
+- **POSIX** - Portable Operating System Interface (for Unix)
+- 메모리 매핑된 파일을 사용하여 구성한다.
+- **공유 메모리 영역을 파일과 연결**
+
+1. 먼저 공유 메모리 개체를 만든다.
+  - `fd = shm_open(name, O_CREAT | ORDWR, 0666);`
+2. 개체의 크기를 바이트 단위로 구성한다.
+  - `ftruncate(fd, 4096);`
+3. 마지막으로 메모리 매핑된 파일을 설정한다.
+  - `mmap(0, SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);`
+
+
+## Message Passing : **Pipes**
+- UNIX 시스템의 초기 IPC 메커니즘 중 하나
