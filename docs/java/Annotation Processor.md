@@ -18,7 +18,7 @@ nav_order: 6
 ✅ **Annotation Processor의 대표적인 예**
 {: .fh-default .fs-4 }
 
-**[Lombok사용해보기](https://jeongcode.github.io/docs/spring/lombok-use/)**
+**[Lombok사용해보기](https://jeongcode.github.io/docs/spring-introduction/lombok-use/)**
 
 **Maven**
 ```html
