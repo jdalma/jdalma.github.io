@@ -505,6 +505,95 @@ while(true){
 3. 마지막으로 메모리 매핑된 파일을 설정한다.
   - `mmap(0, SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);`
 
+### Producer - 생산자
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/shm.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+
+int main()
+{
+    const int SIZE = 4096;   // 공유 메모리의 사이즈
+    const char *name = "OS"; // 공유 메모리의 이름
+    const char *message_0 = "Hello , ";
+    const char *message_1 = "Shared Memory!\n";
+
+    int shm_fd;
+    char *ptr; // 공유 메모리의 포인터
+
+    // 공유 메모리 생성
+    shm_fd = shm_open(name, O_CREAT | O_RDWR, 0666);
+
+    // 공유 메모리 사이즈 설정
+    ftruncate(shm_fd, SIZE);
+
+    // 공유 메모리 매핑
+    ptr = (char *)mmap(0, SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+
+    // 공유 메모리 Write
+    sprintf(ptr, "%s", message_0);
+    ptr += strlen(message_0);
+    sprintf(ptr, "%s", message_1);
+    ptr += strlen(message_1);
+
+    return 0;
+}
+```
+
+### Consumer - 소비자
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/shm.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+
+int main()
+{
+    const int SIZE = 4096;   // 공유 메모리의 사이즈
+    const char *name = "OS"; // 공유 메모리의 이름
+    const char *message_0 = "Hello , ";
+    const char *message_1 = "Shared Memory!\n";
+
+    int shm_fd;
+    char *ptr; // 공유 메모리의 포인터
+
+    // 공유 메모리 생성
+    shm_fd = shm_open(name, O_CREAT | O_RDWR, 0666);
+
+    // 공유 메모리 사이즈 설정
+    ftruncate(shm_fd, SIZE);
+
+    // 공유 메모리 매핑
+    ptr = (char *)mmap(0, SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+
+    // 공유 메모리 Read
+    printf("%s", (char *)ptr);
+
+    // 공유 메모리 삭제
+    shm_unlink(name);
+
+    return 0;
+}
+```
+- 재실행 시 출력되지 않는다.
+```
+jeongdalma@DESKTOP-LBC6EVJ:~/testwsl$ ./a.out
+Hello , Shared Memory!
+jeongdalma@DESKTOP-LBC6EVJ:~/testwsl$ ./a.out
+jeongdalma@DESKTOP-LBC6EVJ:~/testwsl$ ./a.out
+```
+
 
 ## Message Passing : **Pipes**
 - UNIX 시스템의 초기 IPC 메커니즘 중 하나
