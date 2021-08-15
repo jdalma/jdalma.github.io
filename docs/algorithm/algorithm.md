@@ -311,6 +311,14 @@ while(iter.hasNext()) {//값이 있으면 true 없으면 false
 
 # **`Napsack` 배낭 알고리즘**
 
+***
+
+# **Trie**
+
+![](../../assets/images/algorithm/trie.png)
+
+- 문자열을 저장하고 효율적으로 탐색하기 위한 트리 형태의 자료구조
+- [출처 및 참고](https://twpower.github.io/187-trie-concept-and-basic-problem)
 
 
 # **참고 및 출처**
