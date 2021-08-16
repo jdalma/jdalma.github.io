@@ -318,6 +318,7 @@ while(iter.hasNext()) {//값이 있으면 true 없으면 false
 ![](../../assets/images/algorithm/trie.png)
 
 - 문자열을 저장하고 효율적으로 탐색하기 위한 트리 형태의 자료구조
+- [기초 개념 자세히 보기](https://the-dev.tistory.com/2?category=1059400)
 - [출처 및 참고](https://twpower.github.io/187-trie-concept-and-basic-problem)
 
 
