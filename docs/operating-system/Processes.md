@@ -596,4 +596,127 @@ jeongdalma@DESKTOP-LBC6EVJ:~/testwsl$ ./a.out
 
 
 ## Message Passing : **Pipes**
-- UNIX 시스템의 초기 IPC 메커니즘 중 하나
+- **UNIX 시스템의 초기 IPC 메커니즘 중 하나**
+- 두 개의 프로세스가 소통하는 것
+- **Pipe 구현 시 고려해야할 사항**
+  - **unidirectional (단방향)** 인지 **bidirectional (양방향)** 인지?
+  - **half-duplex (반이중)** 인지 **full-duplex(전이중)** 인지?
+  - 소통하는 프로세스간에 관계가 존재해야하는지? (parent , child)
+  - 파이프가 네트워크를 통해 통신할 수 있는지?
+
+### **두 가지의 일반적인 파이프 유형**
+- **Ordinary Pipes** - 일반 파이프
+  - 생성한 프로세스 외부에서 액세스할 수 없다.
+  - 일반적으로 상위 프로세스가 파이프를 생성하여 사용한다.
+  - 생성한 자식 프로세스와 통신한다.
+  - 두 프로세스가 **생산자-소비자 방식**으로 통신할 수 있도록 합다.
+
+![](../../assets/images/operating-system/Processes/11.png)
+
+**단방향**
+```c
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+#define BUFFER_SIZE 25
+#define READ_END 0
+#define WRITE_END 1
+
+int main()
+{
+    char write_msg[BUFFER_SIZE] = "Greetings";
+    char read_msg[BUFFER_SIZE];
+
+    int fd[2];
+    pid_t pid;
+
+    /* 파이프 생성 */
+    pipe(fd);
+    pid = fork(); // 자식 프로세스 생성
+
+    if(pid > 0){ // 0 이상이면 부모 프로세스
+        close(fd[READ_END]);
+
+        /* 쓰기 */
+        write(fd[WRITE_END], write_msg, strlen(write_msg) + 1);
+        close(fd[WRITE_END]);
+    }
+    else if(pid == 0){ // 0이면 자식 프로세스
+        close(fd[WRITE_END]);
+
+        /* 읽기 */
+        read(fd[READ_END] , read_msg , BUFFER_SIZE);
+        printf("read %s\n" , read_msg);
+        close(fd[READ_END]);
+    }
+
+    return 0;
+}
+```
+
+```
+read Greetings
+```
+
+**양방향**
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+
+#define BUFFER_SIZE 25
+#define READ_END 0
+#define WRITE_END 1
+
+int main()
+{
+    char write_msg1[BUFFER_SIZE] = "HIGH";
+    char write_msg2[BUFFER_SIZE] = "LOW";
+    char read_msg[BUFFER_SIZE];
+
+    int fd[2];
+    pid_t pid , pid1;
+
+
+    /* 파이프 생성 */
+    pipe(fd);
+    pid = fork(); // 자식 프로세스 생성
+
+    if(pid > 0){ // 0 이상이면 부모 프로세스
+        pid1 = getpid();
+        /* 쓰기 */
+        write(fd[WRITE_END], write_msg1, strlen(write_msg1) + 1);
+
+        wait(NULL);
+        /* 읽기 */
+        read(fd[READ_END], read_msg, BUFFER_SIZE);
+        printf("parent read %d - %s\n", pid1 , read_msg);
+
+        close(fd[READ_END]);
+        close(fd[WRITE_END]);
+    }
+    else if(pid == 0){ // 0이면 자식 프로세스
+        /* 읽기 */
+        read(fd[READ_END] , read_msg , BUFFER_SIZE);
+        printf("child read %d - %s\n" , pid , read_msg);
+
+        write(fd[WRITE_END], write_msg2, strlen(write_msg2) + 1);
+    }
+
+    return 0;
+}
+```
+
+```
+child read 0 - HIGH
+parent read 1075 - LOW
+```
+
+
+- **Named Pipes** - 명명된 파이프
+  - 부모-자식 관계 없이 접근 가능
