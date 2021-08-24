@@ -42,8 +42,8 @@ permalink: /
   - DHTMLX , JavaScript
 - **Back**
   - Java8 , 전자정부프레임워크(Spring 4) , RDB
-- **etc (management , build..)**
-  - Jenkins , SVN , Apache Tomcat
+- **CI/CD , 버전 관리**
+  - Jenkins , SVN
 - **예산 파트 개발**
 - **인사 파트 개발**
 
