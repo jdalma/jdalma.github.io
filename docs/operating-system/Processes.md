@@ -716,7 +716,84 @@ int main()
 child read 0 - HIGH
 parent read 1075 - LOW
 ```
-
-
 - **Named Pipes** - 명명된 파이프
   - 부모-자식 관계 없이 접근 가능
+
+
+## **클라이언트-서버 시스템의 두 가지 다른 전략**
+
+### **Socket : 소켓**
+- 통신을 위한 양종단으로 정의 된다.
+- IP로 양 쪽 시스템을 특정하고 , 양 쪽 시스템의 파이프를 특정할 때는 포트로 특정한다.
+- 양 쪽 시스템 환경의 다름으로 인한 문제를 해결하기 위해 **RPCs**가 등장했다.
+
+![](../../assets/images/operating-system/Processes/12.png)
+
+- **자바 제공**
+  - 소켓에 대한 훨씬 쉬운 인터페이스 및 세 가지 유형의 소켓 제공
+    - 📌 **소켓 클래스** : 연결 지향(TCP)
+    - **DatagramSocket 클래스** : 비연결(UDP) , 브로드캐스팅
+    - **MulticastSocket 클래스** : 특정 멀티 컨테이너
+
+```java
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.*;
+
+public class dateServer {
+    public static void main(String[] args) throws Exception {
+        ServerSocket server = new ServerSocket(7078);
+
+        /* 6013 포트로 들어오는 요청을 기다린다 listener */
+        while(true){
+            System.out.println("..... Listening");
+            Socket client = server.accept();
+            PrintWriter pout = new PrintWriter(client.getOutputStream());
+            System.out.println("..... New client is Connected....");
+            /* 현재 일자를 전송 */
+            pout.println(new java.util.Date().toString());
+
+            /* 전송할 때 사용한 클라이언트를 닫는다. */
+            client.close();
+        }
+    }
+}
+```
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+public class dateClient {
+    public static void main(String[] args) throws IOException {
+
+        /* 서버 소켓 커넥션을 생성한다. */
+        Socket socket = new Socket("127.0.0.1" , 7078);
+
+        InputStream in = socket.getInputStream();
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+        /* 소켓을 통해 받은 정보를 출력한다. */
+        String line = null;
+        while((line = br.readLine()) != null){
+            System.out.println(line);
+        }
+
+        /* 소켓 커넥션을 닫는다. */
+        socket.close();
+    }
+}
+```
+
+### **RPCs (Remote Procedure Calls) : 원격 프로시저 호출**
+- **네트워크로 연결된 시스템의 프로세스 간의 프로시저 호출**
+- 의사 소통을 가능하게 하는 세부 사항을 숨긴다.
+- 클라이언트 측에서 **스텁**을 제공함으로써. 클라이언트 측의 스텁은 서버를 찾고 매개변수를 **마샬링** 한다.
+- 서버 측의 스텁이 이 메시지를 수신하면. 마샬링된 매개변수의 압축을 풀고 서버에서 절차를 수행한다.
+
+> - **Stub** - 상대 시스템의 함수 정보
+> - **[직렬화 vs 마샬링](https://hyesun03.github.io/2019/09/08/marshalling-vs-serialization/)**
