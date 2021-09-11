@@ -146,3 +146,57 @@ class Main {
     }
 }
 ```
+
+### **쓰레드의 종료**
+
+```java
+class Main {
+    public static void main(String[] args) throws InterruptedException {
+        Runnable task = () -> {
+            try{
+                while(true){
+                    System.out.println("Hello , Lambda Runnable!");
+                    Thread.sleep(100);
+                }
+            }
+            catch (InterruptedException ie){
+                System.out.println("I'm Interrupted");
+            }
+        };
+        Thread thread = new Thread(task);
+        thread.start();
+        Thread.sleep(500);
+        thread.interrupt();
+        System.out.println("Hello , My Interrupted Child!");
+    }
+}
+```
+
+> **✋[인터럽트(Interrupt)란?](https://whatisthenext.tistory.com/147)**
+
+***
+
+## **멀티코어 시스템의 멀티스레딩**
+- **향상된 동시성을 위해 다중 코어를 보다 효율적으로 사용한다.**
+- **단일 코어** - 스레드는 시간이 지남에 따라 **Interleave - 인터리브**된다.
+- **다중 코어** - 일부 스레드는 병렬로 실행될 수 있다.
+
+![](../../assets/images/operating-system/Thread/3.png)
+
+> **✋ [인터리브(Interleave)란?](https://www.scienceall.com/%EC%9D%B8%ED%84%B0%EB%A6%AC%EB%B8%8Cinterleave/)**
+> - 컴퓨터 하드디스크의 성능을 높이기 위해 **데이터를 서로 인접하지 않게 배열하는 방식을 말한다.**
+> - 인터리브(interleave)라는 단어는 ‘교차로 배치하다’라는 뜻이며, 이를 통해 디스크 드라이브를 좀더 효율적으로 만들수 있다.
+> - 인터리브는 기억장치를 몇 개의 부분으로 나누어서 메모리 액세스를 동시에 할 수 있게 함으로써 복수의 명령을 처리하여 메모리 액세스의 효율화를 도모하는 것이다.
+> - 대부분의 하드디스크는 드라이브의 속도와 운영체제(OS), 응용 프로그램 등에 영향을 받기 때문에 인터리브 값을 미리 설정하지는 않는다.
+> - 인터리브 값이 작을수록 하드디스크 드라이브의 속도가 빨라진다.
+
+### **멀티코어 시스템 프로그래밍 시 고려할 점**
+- **Identifying tasks (작업 식별)** - 각 스레드가 수행해야 할 작업을 확실히 구별 해야한다.
+- **Balance (균형)** -  각 스레드의 작업 균형을 확인해야 한다.
+- **Data splitting (데이터 분할)** - 별도의 코어에서 실행하려면 데이터도 분할해야 한다.
+- **Data dependency (데이터 종속성)** - 작업 실행이 동기화되었는지 확인한다.
+- **Testing and debugging (테스트 및 디버깅)**
+
+![](../../assets/images/operating-system/Thread/4.png)
+
+### **✋ 코어는 무조건 많을수록 좋은가? [Amdahl’s Law - 암달의 법칙](https://johngrib.github.io/wiki/amdahl-s-law/)**
