@@ -200,3 +200,153 @@ class Main {
 ![](../../assets/images/operating-system/Thread/4.png)
 
 ### **✋ 코어는 무조건 많을수록 좋은가? [Amdahl’s Law - 암달의 법칙](https://johngrib.github.io/wiki/amdahl-s-law/)**
+
+***
+
+# **두 가지 유형의 Thread**
+![](../../assets/images/operating-system/Thread/5.png)
+
+## **User Thread - 사용자 스레드**
+- 커널 위에서 지원되며, **커널 지원 없이 관리된다.**
+
+## **Kernel Thread - 커널 스레드**
+- 운영 체제에서 직접 지원 및 관리된다.
+
+- **Many-to-One Model**
+
+![](../../assets/images/operating-system/Thread/6.png)
+
+- **One-to-One Model**
+
+![](../../assets/images/operating-system/Thread/7.png)
+
+- **Many-to-Many Model**
+
+![](../../assets/images/operating-system/Thread/8.png)
+
+***
+
+# **세 가지 주요 스레드 라이브러리**
+
+## **POSIX Pthread**
+- POSIX 표준(IEEE 1003.1c)
+- 구현이 아닌 스레드 동작에 대한 사양
+
+### 예제 1
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+/* 스레드 간 공유 변수 */
+int sum;
+
+/* 스레드 간 호출 함수 */
+void * runner(void *param);
+
+int main(int argc , char *argv[])
+{
+    pthread_t tid;          // 스레드 id
+    pthread_attr_t attr;    // 스레드 속성
+
+    pthread_attr_init(&attr);
+    pthread_create(&tid , &attr , runner , argv[1]);
+    pthread_join(tid , NULL);
+
+    printf("sum = %d , %ld\n" , sum , tid);
+    // ./a.out 100
+    // sum = 5050 , 140363881649920
+}
+
+void *runner(void *param)
+{
+    int i;
+    int upper = atoi(param); // atoi - 문자열을 정수로 변환
+    sum = 0;
+    for(i = 0 ; i <= upper ; i++){
+        sum += i;
+    }
+    pthread_exit(0);
+}
+```
+
+### 예제 2
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <wait.h>
+#include <pthread.h>
+
+int value;
+void * runner(void *param);
+
+int main(int argc , char *argv[])
+{
+    pid_t pid;
+    pthread_t tid;
+    pthread_attr_t attr;
+
+    pid = fork();
+
+    if(pid == 0){   // 자식 프로세스
+        pthread_attr_init(&attr);
+        pthread_create(&tid , &attr , runner , NULL);   // create 하자마자 runnner 실행
+        pthread_join(tid , NULL);
+        printf("CHILD : value = %d , pid = %d\n" , value , pid);
+    }
+    else if(pid > 0){   // 부모 프로세스
+        wait(NULL);
+        printf("PARENT : value = %d , pid = %d\n" , value , pid);
+    }
+    // CHILD : value = 5 , pid = 0
+    // PARENT : value = 0 , pid = 5080
+}
+
+void *runner(void *param)
+{
+    value = 5;
+    pthread_exit(0);
+}
+```
+
+### **❓ 문제**
+
+```c
+pid_t pid;
+
+pid = fork();
+if(pid == 0){
+  fork();
+  thread_create(...);
+}
+fork();
+```
+- **고유한 프로세스는 몇 개 생성되었는가?** - 6개
+- **고유한 스레드는 몇 개 생성되었는가?** - 2개 또는 프로세스를 포함한 8개
+
+## **Windows 스레드**
+## **자바 스레드**
+
+***
+
+# **The Strategy of Implicit Threading - 암시적 스레딩 전략**
+- **동시 및 병렬 애플리케이션 설계**
+  - 즉, **멀티코어 시스템에서 멀티스레딩 설계**
+  - 개발자에게 너무 어렵다.
+- 이 어려움을 컴파일러 또는 런타임 라이브러리가  알아서 해준다.
+
+## **암시적 스레딩을 사용하는 네 가지 대안**
+
+### Thread Pools - 스레드 풀
+- 작업을 기다리는 풀에 여러 스레드를 만든다.
+
+### Fork & Join - 포크 및 조인
+- 명시적 스레딩이지만 암시적 스레딩에 대한 훌륭한 후보
+
+### OpenMP
+- C/C++로 작성된 프로그램용 컴파일러 지시문 및 API 세트
+
+### Grand Central Dispatch (GCD)
+- Apple에서 macOS 및 iOS 운영 체제용으로 개발됐다.
