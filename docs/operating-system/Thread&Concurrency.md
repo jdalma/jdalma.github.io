@@ -345,8 +345,129 @@ fork();
 ### Fork & Join - 포크 및 조인
 - 명시적 스레딩이지만 암시적 스레딩에 대한 훌륭한 후보
 
-### OpenMP
+### **OpenMP**
 - C/C++로 작성된 프로그램용 컴파일러 지시문 및 API 세트
+- 병렬 영역을 병렬로 실행할 수 있는 코드 블록으로 식별한다.
+- 컴파일러 지시문을 병렬 영역의 소스 코드에 삽입한다.
+- 이 지시문은 **OpenMP 런타임 라이브러리가 영역을 실행하도록 지시한다.**
+
+#### 예제 1
+
+```c
+#include <stdio.h>
+#include <omp.h>
+
+int main(int argc , char *argv[])
+{
+    #pragma omp parallel // 컴파일러 지시문
+    {
+        printf("Parallel region. \n");
+    }
+
+    return 0;
+}
+```
+
+```
+root@DESKTOP-LBC6EVJ:~/example# gcc parallel.c
+root@DESKTOP-LBC6EVJ:~/example# ./a.out
+Parallel region.
+
+root@DESKTOP-LBC6EVJ:~/example# gcc -fopenmp parallel.c
+root@DESKTOP-LBC6EVJ:~/example# ./a.out
+Parallel region.
+Parallel region.
+Parallel region.
+Parallel region.
+Parallel region.
+Parallel region.
+Parallel region.
+Parallel region.
+```
+
+#### 예제 2
+
+```c
+#include <stdio.h>
+#include <omp.h>
+
+int main(int argc , char *argv[])
+{
+    omp_set_num_threads(4); // 스레드 갯수 제한
+    #pragma omp parallel // 컴파일러 지시문
+    {
+        printf("Parallel region OpenMP thread : %d\n" , omp_get_thread_num());
+    }
+
+    return 0;
+}
+```
+
+```
+root@DESKTOP-LBC6EVJ:~/example# gcc -fopenmp parallel.c
+root@DESKTOP-LBC6EVJ:~/example# ./a.out
+Parallel region OpenMP thread : 0
+Parallel region OpenMP thread : 3
+Parallel region OpenMP thread : 2
+Parallel region OpenMP thread : 1
+```
+
+#### 예제 3
+
+```c
+#include <stdio.h>
+#include <omp.h>
+
+#define SIZE 1000000000
+
+int a[SIZE] , b[SIZE] , c[SIZE];
+
+int main(int argc , char *argv[])
+{
+    int i;
+    for(i = 0 ; i < SIZE ; i++) a[i] = b[i] = i;
+
+    #pragma omp parallel for
+    for(i = 0 ; i < SIZE ; i++){
+        c[i] = a[i] + b[i];
+    }
+
+    return 0;
+}
+```
+
+```
+root@DESKTOP-LBC6EVJ:~/example# gcc -fopenmp parallel.c
+root@DESKTOP-LBC6EVJ:~/example# ./a.out
+root@DESKTOP-LBC6EVJ:~/example# time ./sum_not_parallel
+bash: ./sum_not_parallel: No such file or directory
+
+real    0m0.002s
+user    0m0.001s   -> 유저 모드
+sys     0m0.001s    -> OS 커널 모드
+```
+
+```
+root@DESKTOP-LBC6EVJ:~/example# time ./sum_with_openmp
+bash: ./sum_with_openmp: No such file or directory
+
+real    0m0.001s
+user    0m0.001s
+sys     0m0.000s
+```
 
 ### Grand Central Dispatch (GCD)
 - Apple에서 macOS 및 iOS 운영 체제용으로 개발됐다.
+
+
+***
+
+# **틀린 퀴즈**
+
+## Pthread
+
+![](../../assets/images/operating-system/Thread/9.png)
+
+## Java 멀티 쓰레드
+
+![](../../assets/images/operating-system/Thread/10.png)
