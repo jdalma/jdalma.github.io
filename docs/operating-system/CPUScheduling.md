@@ -39,3 +39,25 @@ nav_order: 4
     - 오버헤드가 크다
 
 > ✋ **[선점 , 비선점 스케줄링](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=rlaauddlf200&logNo=30141162460)**
+
+## **CPU 스케줄링 선점 , 비선점 결정**
+1. 프로세스가 실행 중에서 대기 상태로 전환될 때
+1. 프로세스가 실행 중에서 준비 상태로 전환될 때
+1. 프로세스가 대기 상태에서 준비 상태로 전환될 때
+1. 프로세스가 종료되는 경우.
+- **1번 과 4번 - 선택할 수 없다 -> 비선점**
+- **2번 과 3번 - 선택할 수 있다 -> 선점형 또는 비선점형**
+
+## **Dispatcher 디스패처**
+- **CPU의 코어를 제어하는 모듈**
+- **디스패처의 기능**
+  - **한 프로세스에서 다른 프로세스로 컨텍스트 전환**
+  - 사용자 모드로 전환
+  - 사용자 프로그램을 재개하기 위해 적절한 위치로 점프
+- **모든 컨텍스트 전환 중에 호출되기 때문에 디스패처는 가능한 빨라야 한다**
+- **디스패처 대기 시간은 한 프로세스를 중지하고 다른 실행을 시작하는 시간**
+  - **[PCB (Process Control Block)](https://jwprogramming.tistory.com/16)** 를 저장하고 새로운 블록을 실행한다.
+
+![](../../assets/images/operating-system/CPUScheduling/2.png)
+
+![](../../assets/images/operating-system/CPUScheduling/3.png)
