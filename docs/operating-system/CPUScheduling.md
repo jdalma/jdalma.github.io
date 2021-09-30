@@ -38,7 +38,7 @@ nav_order: 4
     - **빠른 응답 시간을 요구하는 시스템에서 사용**
     - 오버헤드가 크다
 
-> ✋ **[선점 , 비선점 스케줄링](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=rlaauddlf200&logNo=30141162460)**
+> ✋ **[선점 , 비선점 스케줄링](https://colomy.tistory.com/120)**
 
 ## **CPU 스케줄링 선점 , 비선점 결정**
 1. 프로세스가 실행 중에서 대기 상태로 전환될 때
@@ -55,9 +55,19 @@ nav_order: 4
   - 사용자 모드로 전환
   - 사용자 프로그램을 재개하기 위해 적절한 위치로 점프
 - **모든 컨텍스트 전환 중에 호출되기 때문에 디스패처는 가능한 빨라야 한다**
-- **디스패처 대기 시간은 한 프로세스를 중지하고 다른 실행을 시작하는 시간**
+- **디스패처 지연시간(Dispatcher Latency)은 한 프로세스를 중지하고 다른 실행을 시작하는 시간**
   - **[PCB (Process Control Block)](https://jwprogramming.tistory.com/16)** 를 저장하고 새로운 블록을 실행한다.
 
 ![](../../assets/images/operating-system/CPUScheduling/2.png)
 
 ![](../../assets/images/operating-system/CPUScheduling/3.png)
+
+## **Scheduling Criteria 스케줄링 기준**
+- **CPU Utilization - CPU 사용률** : CPU를 최대로 사용하자.
+- **Throughput - 처리량** : 단위 시간 내에 프로세스를 최대한 빠르게 처리하자.
+- **Turnaround Time - 처리 시간** : 실행에서 종료까지의 시간을 최소화하자.
+- **📌 Waiting Time - 대기 시간** : 프로세스가 준비 대기열 Ready Queue 에서 대기하는 데 소비하는 시간을 최소화 하자
+- **Response Time - 응답 시간** : 응답을 시작하는 데 걸리는 시간
+
+
+## **준비 대기열 Ready Queue에 있는 어느 프로세스에게 CPU의 코어를 할당하나?**
