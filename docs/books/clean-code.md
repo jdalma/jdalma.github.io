@@ -72,9 +72,53 @@ nav_order: 1
 ## 3. 의미 있게 구분하라.
 - 컴파일러나 인터프리터만 통과하려는 생각으로 코드를 구현하는 프로그래머는 스스로 문제를 일으킨다.
 - **연속된 숫자를 덧붙이거나 [불용어](https://bkshin.tistory.com/entry/NLP-3-%EB%B6%88%EC%9A%A9%EC%96%B4Stop-word-%EC%A0%9C%EA%B1%B0)**를 추가하는 방식은 적절하지 못하다.
+- `Info` 나 `Data`는 a , an , the,와 마찬가지로 의미가 불분명한 불용어다.
+- 에를 들어 모든 지역변수는 a를 사용하고 모든 함수 인수는 the를 사용해도 되겠다.
+- 코드를 읽다가 `Customer`라는 클래스와 `CustomerObject`라는 클래스의 발견하게되면 차이를 알 수 있는가?
+  - moneyAmount <-> money
+  - customerInfo <-> customer
+  - accountData <-> account
+  - theMessage <-> message
+  - 서로 구분이 안된다.
 
-발음하기 쉬운 이름을 사용하라
-검색하기 쉬운 이름을 사용하라
+## 4. 발음하기 쉬운 이름을 사용하라
+
+```java
+class DtaRcrd102{
+  private Date genymdhms;
+  private Date modymdhms;
+  private final String pszqint = "102";
+  ...
+}
+```
+
+```java
+class Customer{
+  private Date generationTimestamp;
+  private Date modificationTimestamp;
+  private final String recordId = "102";
+  ...
+}
+```
+
+- 2번째 코드는 지적인 대화가 가능하다.
+
+
+## 5. 검색하기 쉬운 이름을 사용하라
+- **문자 하나를 사용하는 이름과 상수는 텍스트 코드에서 쉽게 눈에 띄지 않는다는 문제점이 있다.**
+- 이런 관점에서 긴 이름이 짧은 이름보다 좋다.
+- 검색하기 쉬운 이름이 상수보다 좋다.
+
+```java
+for(int j = 0 ; j < 34 ; j++){
+  s += (t[j] * 4) / 5;
+}
+```
+
+```java
+int realDaysPerIdealDay
+```
+
 인코딩을 피하라
 __ 헝가리식 표기법
 __ 멤버 변수 접두어
