@@ -116,10 +116,23 @@ for(int j = 0 ; j < 34 ; j++){
 ```
 
 ```java
-int realDaysPerIdealDay
+int realDaysPerIdealDay =4;
+const int WORK_DAYS_PER_WEEK = 5;
+int sum = 0;
+for (int j = 0 ; j < NUMBER_OF_TASKS ; j++){
+  int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
+  int realTaskWeeks = (realTaskDays / WORK_DAYS_PER_WEEK);
+  sum += realTaskWeeks;
+}
 ```
+- **이름을 의미있게 지으면 함수가 길어진다.**
+- 하지만 `WORK_DAYS_PER_WEEK`을 찾기가 얼마나 쉬운지 생각해 보라.
 
-인코딩을 피하라
+## 6. 인코딩을 피하라
+- **유형이나 범위정보 까지 인코딩에 넣으면 그만큼 이름을 해독하기 어려워진다.**
+- 인코딩한 이름은 발음하기도 어려우며 오타가 생기기도 쉽다.
+
+
 __ 헝가리식 표기법
 __ 멤버 변수 접두어
 __ 인터페이스 클래스와 구현 클래스
