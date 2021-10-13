@@ -72,13 +72,45 @@ nav_order: 4
 
 ## **준비 대기열 Ready Queue에 있는 어느 프로세스에게 CPU의 코어를 할당하나?**
 
-### **FCFS(First-Come, First-Served)** - 선착순
-### **SJF(Shortest Job First)** - 가장 짧은 작업 우선 (SRTF : 가장 짧은 남은 시간 우선)
+### **FCFS(First-Come, First-Served)**
+- 선착순
+- **FIFO 대기열로 쉽게 구현**
+- **비선점형**
+- **Convoy Effect (호송 효과)**
+  - 다른 모든 프로세스는 하나의 큰 프로세스가 CPU에서 나올 때까지 기다린다.
+  - CPU 및 장치 사용률이 낮다.
+
+![](../../assets/images/operating-system/CPUScheduling/4.png)
+
+![](../../assets/images/operating-system/CPUScheduling/5.png)
+
+- Waiting Time for 𝑃1 = 0, 𝑃2 = 24, 𝑃3 = 27
+- **Total Waiting Time** : (0 + 24 + 27) = 51
+- **Average Waiting Time** : 51/3 = 17
+
+**Turnaround Time(소요 시간)**
+- Turnaround Time for 𝑃1 = 24, 𝑃2 = 27, 𝑃3 = 30
+- **Total Turnaround Time** : (24 + 27 + 30) = 81
+- **Average Turnaround Time** : 81/3 = 27
+
+### **SJF(Shortest Job First)**
+- 가장 짧은 작업 우선 (SRTF : 가장 짧은 남은 시간 우선)
+- CPU Burst가 가장 작은 프로세스에 할당 된다.
+- **두 개 이상의 프로세스가 똑같을 시 FCFS 사용**
+
+![](../../assets/images/operating-system/CPUScheduling/6.png)
+
+![](../../assets/images/operating-system/CPUScheduling/7.png)
+
+- Waiting Time for 𝑃1 = 3, 𝑃2 = 16, 𝑃3 = 9, 𝑃4 = 0
+- **Total Waiting Time** : (3 + 16 + 9 + 0) = 28
+- **Average Waiting Time** : 28/4 = 7
+
 ### **RR(Round Robin)** - 시분할 시스템을 위해 설계된 선점형 스케줄링
 - 프로세스들 사이에 우선순위를 두지 않고 , 순서대로 시간단위(Time Quantum/Slice)로 CPU를 할당하는 방식의 CPU 스케줄링 알고리즘
 - 컴퓨터 자원을 사용할 수 있는 기회를 프로세스들에게 공정하게 부여하기 위한 한 방법
 - 할당된 시간이 지나면 그 프로세스는 잠시 보류한 뒤 다른 프로세스에게 기회를 준다.
   - 보통 시간 단위는 10ms ~ 100ms 정도 , 시간 단위동안 수행한 프로세스는 준비 큐의 끝으로 밀려나게 되고, 문맥 전환의 오버헤드가 큰 반면에 응답시간이 짧아지는 장점이 있어 실시간 시스템에 유리
-• 우선순위 기반
-• MLQ: 다단계 대기열
-• MLFQ: 다단계 피드백 대기열
+### **Priority-based** - 우선순위 기반
+### **MLQ(Multi-Level Queue)** - 다단계 대기열
+### **MLFQ(Multi-Level Feedback Queue)** - 다단계 피드백 대기열
