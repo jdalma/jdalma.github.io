@@ -160,11 +160,57 @@ ld - long double
   - 대부분 구현클래스 이름에 접두어를 붙인다.
   - `TestServiceImpl`
 
-자신의 기억력을 자랑하지 마라
-클래스 이름
-메서드 이름
-기발한 이름은 피하라
-한 개념에 한 단어를 사용하라
+## 7. 자신의 기억력을 자랑하지 마라
+- **📌 명료함이 최고**
+- **독자가 코드를 읽으면서 변수 이름을 자신이 아는 이름으로 변환해야 한다면 그 변수 이름은 바람직하지 못하다.**
+  - 루프에서 반복횟수를 세는 변수 i,j,k 까지는 괜찮다.
+
+## 8. 클래스 이름
+- **클래스 이름과 객체 이름은 명사나 명사구가 적합하다.**
+  - `Customer` , `WikiPage` , `Account` , `AddressParser` 등이 좋은 예다.
+  - **`Manager` , `Processor` , `Data` , `Info` 등과 같은 단어는 피하고 , 동사는 사용하지 않는다.**
+
+## 9. 메서드 이름
+- **메서드 이름은 동사나 동사구가 적합하다.**
+  - `postPayment` , `deletePage` , `save` 등이 좋은 예다.
+- `Accessor`(접근자) , `Mutator`(변경자) , `Predicate`(조건자)는 **javabean표준**에 따라 `get` , `set` , `is`를 붙인다.
+- 📌`Constructor`(생성자)를 `overload`(중복정의)할 때는 **정적 팩토리 메서드**를 사용한다.
+  - 메서드는 인수를 설명하는 이름을 사용한다.
+  - `Complex fulcrumPoint = Complex.FromRealNumber(23.0);`👍
+  - `Complex fulcrumPoing = new Complex(23.0);`👎
+
+## 10. 기발한 이름은 피하라
+- **재미난 이름보다 명료한 이름을 선택하라**
+- 이름이 너무 기발하면 저자와 유머 감각이 비슷한 사람만 , 그리고 농담을 기억하는 동안만, 이름을 기억한다.
+- **특정 문화에서만 사용하는 농담은 피하는 편이 좋다. 의도를 분명하고 솔직하게 표현하라**
+
+## 11. 한 개념에 한 단어를 사용하라
+- **추상적인 개념 하나에 단어 하나를 선택해 이를 고수한다.**
+  - 예를 들어 , 똑같은 메서드를 클래스마다 `fetch` ,  `retrieve` , `get`으로 제가각 부르면 혼란스럽다.
+- 메서드 이름은 독자적이고 **일관적이어야 한다.**
+  - 그래야 주석을 뒤져보지 않고도 개발자가 올바른 메서드를 선택할 수 있다.
+- 마찬가지로, 동일 코드 기반에 **Controller** , **Manager** , **Driver**를 섞어쓰면 혼란스럽다.
+  - `DeviceManager`와 `ProtocolController`는 근본적으로 어떻게 다른가?
+  - 어째서 둘 다 `Controller`가 아닌가?
+  - 어째서 둘 다 `Manager`가 아닌가?
+  - 정말 둘 다 `Driver`가 아닌가?
+  - **이름이 다르면 독자는 당연히 클래스도 다르고 타입도 다르다고 생각한다.**
+
+> [Get , retrieve , fetch](https://nassol.tistory.com/3)
+> **Get** 
+> - to **get back** something that **you had before**
+> - 전에 **가졌던** 사물을 다시 돌려 받다.
+> **Retrieve**
+> - **(formal)** to get back something after you have **put it** somewhere
+> - **어딘가에 두었던 것을** 그 후에, 다시 가져오다.
+> **Take**
+> - **to go** to a place and **take** someone tor something from there
+> - 어떤 장소로 **가서** 사람이나 물건을 그곳에서 **가져오는 것**
+> **Fetch**
+> - **(British)** **to go** to get someone or something that **you need** and **bring** them back
+> - **필요로 하는 것을** 가지러 **가서 가져** 오다.
+
+
 말장난을 하지 마라
 해법 영역에서 가져온 이름을 사용하라
 문제 영역에서 가져온 이름을 사용하라
