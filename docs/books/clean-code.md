@@ -196,19 +196,19 @@ ld - long double
   - 정말 둘 다 `Driver`가 아닌가?
   - **이름이 다르면 독자는 당연히 클래스도 다르고 타입도 다르다고 생각한다.**
 
-> [Get , retrieve , fetch](https://nassol.tistory.com/3)
-> **Get** 
-> - to **get back** something that **you had before**
-> - 전에 **가졌던** 사물을 다시 돌려 받다.
-> **Retrieve**
-> - **(formal)** to get back something after you have **put it** somewhere
-> - **어딘가에 두었던 것을** 그 후에, 다시 가져오다.
-> **Take**
-> - **to go** to a place and **take** someone tor something from there
-> - 어떤 장소로 **가서** 사람이나 물건을 그곳에서 **가져오는 것**
-> **Fetch**
-> - **(British)** **to go** to get someone or something that **you need** and **bring** them back
-> - **필요로 하는 것을** 가지러 **가서 가져** 오다.
+> ✋ [get , retrieve , fetch](https://nassol.tistory.com/3)
+> - **Get** 
+>   - to **get back** something that **you had before**
+>   - 전에 **가졌던** 사물을 다시 돌려 받다.
+> - **Retrieve**
+>   - **(formal)** to get back something after you have **put it** somewhere
+>   - **어딘가에 두었던 것을** 그 후에, 다시 가져오다.
+> - **Take**
+>   - **to go** to a place and **take** someone tor something from there
+>   - 어떤 장소로 **가서** 사람이나 물건을 그곳에서 **가져오는 것**
+> - **Fetch**
+>   - **(British)** **to go** to get someone or something that **you need** and **bring** them back
+>   - **필요로 하는 것을** 가지러 **가서 가져** 오다.
 
 
 말장난을 하지 마라
