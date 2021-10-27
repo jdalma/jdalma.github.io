@@ -317,8 +317,42 @@ public class GuessStatisticsMessage{
 - `accountAddress` 와 `customerAddress`는 **Address클래스 인스턴스로는 좋은 이름**이지만 **클래스 이름으로는 적합하지 못하다.**
 
 # **3장. 함수**
-작게 만들어라!
-__ 블록과 들여쓰기
+- **어떤 프로그램이든 가장 기본적인 단위가 함수다.**
+  - **의도를 분명히 표현하는 함수를 어떻게 구현할 수 있을까?**
+  - **함수에 어떤 속성을 부여해야 처음 읽는 사람이 프로그램 내부를 직관적으로 파악할 수 있을까?**
+
+## 1. 작게 만들어라!
+- 2,3,4줄 로도 명백한 함수를 작성할 수 있다.
+
+### Before 👎
+
+```java
+public static String renderPageWithSetupsAndTearDowns(PageData pageData , boolean isSuite) throws Exception{
+  boolean isTestPage = pageData.hasAttribute("Test");
+  if(isTestPage){
+    WikiPage testPage = pageData.getWikiPage();
+    StringBuffer newPageContent = new StringBuffer();
+    includeSetupPages(testPage , newPageContent , isSuite);
+    newPageContent.append(pageData.getContent());
+    includeTeardownPages(testPage , newPageContent , isSuite);
+    pageData.setContent(newPageContent.toString());
+  }
+  return pageData.getHtml();
+}
+```
+
+### After 👍
+
+```java
+public static String renderPageWithSetupsAndTeardowns(PageData pageData , boolean isSuite) throws Exception{
+  if(isTestPage(pageData)) includeSetupAndTeardownPages(pageData , isSuite);
+  return pageData.getHtml();
+}
+```
+
+### 블록과 들여쓰기
+
+
 한 가지만 해라!
 __ 함수 내 섹션
 함수 당 추상화 수준은 하나로!
