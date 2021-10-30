@@ -96,6 +96,7 @@ nav_order: 4
 ### **SJF(Shortest Job First)**
 - 가장 짧은 작업 우선 (SRTF : 가장 짧은 남은 시간 우선)
 - CPU Burst가 가장 작은 프로세스에 할당 된다.
+- **최적임이 입증 되었다.**
 - **두 개 이상의 프로세스가 똑같을 시 FCFS 사용**
 
 ![](../../assets/images/operating-system/CPUScheduling/6.png)
@@ -105,6 +106,9 @@ nav_order: 4
 - Waiting Time for 𝑃1 = 3, 𝑃2 = 16, 𝑃3 = 9, 𝑃4 = 0
 - **Total Waiting Time** : (3 + 16 + 9 + 0) = 28
 - **Average Waiting Time** : 28/4 = 7
+
+- **이 알고리즘을 구현할 수 있을까?**
+  - 다음 CPU 버스트를 사ㅣㅇ
 
 ### **RR(Round Robin)** - 시분할 시스템을 위해 설계된 선점형 스케줄링
 - 프로세스들 사이에 우선순위를 두지 않고 , 순서대로 시간단위(Time Quantum/Slice)로 CPU를 할당하는 방식의 CPU 스케줄링 알고리즘
