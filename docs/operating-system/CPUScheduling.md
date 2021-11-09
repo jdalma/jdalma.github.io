@@ -131,14 +131,40 @@ nav_order: 4
 
 ![](../../assets/images/operating-system/CPUScheduling/9.png)
 
-
 ### **RR(Round Robin)** - 시분할 시스템을 위해 설계된 선점형 스케줄링
 - **프로세스들 사이에 우선순위를 두지 않고 , 순서대로 시간단위(Time Quantum/Slice)로 CPU를 할당하는 방식의 CPU 스케줄링 알고리즘**
 - 컴퓨터 자원을 사용할 수 있는 기회를 프로세스들에게 공정하게 부여하기 위한 한 방법
+- **평균 대기 시간이 긴 경우가 많다.**
 - **할당된 시간이 지나면 그 프로세스는 잠시 보류한 뒤 다른 프로세스에게 기회를 준다.**
   - **보통 시간 단위는 `10ms ~ 100ms` 정도**
-  - **시간 단위동안 수행한 프로세스는 준비 큐의 끝으로 밀려나게 되고,**
   - **문맥 전환의 오버헤드가 큰 반면에 응답시간이 짧아지는 장점이 있어 실시간 시스템에 유리**
+- **CPU 사용 시간이 라운드 로빈의 시간 단위보다 짧을 때는 자발적으로 해제한다.**
+- **CPU 사용 시간이 라운드 로빈의 시간 단위보다 길 때는**
+  - Watch Dog가 꺼지고 OS에 인터럽트가 발생한다.
+  - 컨텍스트 스위칭이 발생한다.
+  - 프로세스는 준비 대기열의 맨 뒤에 놓인다.
+
+![](../../assets/images/operating-system/CPUScheduling/10.png)
+
+- **The waiting time**
+  - Waiting Time for 𝑃<sub>1</sub> = 10 − 4 = 6, 𝑃<sub>2</sub> = 4, 𝑃<sub>3</sub> = 7
+  - Total Waiting Time: (6 + 4 + 7) = 17
+  - Average Waiting Time: 17/3 = 5.66
+
+- **Time Quantum을 얼마로 줬냐에 따라 RR의 성능이 많이 바뀐다.**
+  - Time Quantum이 무한이면 `FCFS`
+
+![](../../assets/images/operating-system/CPUScheduling/11.png)
+
 ### **Priority-based** - 우선순위 기반
+- **각 프로세스에는 우선순위가 연결되어 있으며 , 가장 높은 우선순위를 가진 프로세스에 할당한다.**
+  - 우선순위가 같다면 `FCFS`로 스케줄링 한다.
+- `SJF`는 **우선순위 기반 스케줄링의 특별한 경우이다.**
+
+![](../../assets/images/operating-system/CPUScheduling/12.png)
+
+
 ### **MLQ(Multi-Level Queue)** - 다단계 대기열
+
 ### **MLFQ(Multi-Level Feedback Queue)** - 다단계 피드백 대기열
+
