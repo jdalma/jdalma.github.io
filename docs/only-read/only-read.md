@@ -21,3 +21,6 @@ has_children: true
 
 # **교차 출처 리소스 공유 (CORS)**
 - [MDN Mozilla](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS)
+
+# **LeetCode 문제 추천 블로그**
+- [inner-game.tistory)](https://inner-game.tistory.com/11)
