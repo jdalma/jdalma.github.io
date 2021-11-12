@@ -44,8 +44,15 @@ permalink: /
   - Java8 , 전자정부프레임워크(Spring 4) , RDB
 - **CI/CD , 버전 관리**
   - Jenkins , SVN
+- **내부 전자결재 개발**
 - **예산 파트 개발**
 - **인사 파트 개발**
+
+***
+
+# **Study**
+
+## **[코테, 코딩 인터뷰 완전 분석 스터디](https://github.com/CodingInterviewStudy/CrackingTheCodingInterview/wiki) `2021.11.03 ~ 현재`**
 
 ***
 
