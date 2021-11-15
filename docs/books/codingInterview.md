@@ -91,9 +91,12 @@ nav_order: 2
   - 최소 원소는 가장 위에 놓이기 때문에 최소 원소를 찾기란 쉬운 일이다.
   - **이 최소 값을 어떻게 힙에서 제거하느냐가 까다로운 일이다.**
   1. 최소 원소를 제거한 후에 힙에 있는 가장 마지막 원소(밑바닥 가장 왼쪽에 위치한 원소)와 교환한다.
-  2. 최소 힙의 성질을 만족하도록 , 해당 노드를 자식 노드와 교환해 나감으로 써 밑으로 내보낸다.
+  2. 최소 힙의 성질을 만족하도록 , 해당 노드를 자식 노드와 교환해 나감으로 써 밑으로 내보낸다. (*자식들 중 최소 값을 선택한다.*)
 
+![](../../assets/images/books/codingInterview/TreeAndGraph7.png)
 
+> ![](../../assets/images/books/codingInterview/TreeAndGraph6.png)
+> - [출처 및 최대 힙](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)
 
 
 ## **균형 vs 비균형** (레드-블랙 트리 , AVL트리 ->고급 주제에서 다룰 예정)
