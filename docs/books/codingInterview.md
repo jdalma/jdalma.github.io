@@ -35,7 +35,97 @@ nav_order: 2
 
 ## **그래프 탐색**
 
-[백준(DFS , 백트래킹) - N과 M](https://www.acmicpc.net/workbook/view/9372)
+### **깊이 우선 탐색 (DFS)**
+- **루트 노드 (혹은 다른 임의의 노드)에서 시작해서 다음 분기로 넘어가기 전에 해당 분기를 완벽하게 탐색하는 방법**
+- 모든 노드를 방문하고자 할 때 더 선호되는 편이다.
+- [백준(DFS , 백트래킹) - N과 M](https://www.acmicpc.net/workbook/view/9372)
+
+
+- **[Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)**
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        dfs(list , root , 0);
+        return list;
+    }
+
+    public void dfs(List<List<Integer>> list , TreeNode node , int level){
+        if(node != null){
+            // 노드의 개수를 바로 알 수 있는 방법이 있다면 리스트에 레벨 만큼 미리 넣어줄 수 있는데??
+            if(list.size() <= level) list.add(new ArrayList<Integer>());
+            list.get(level).add(node.val);
+            // System.out.println(node.val + " " + level);
+            dfs(list , node.left , level + 1);
+            dfs(list , node.right , level + 1);
+        }
+    }
+}
+```
+
+### **넓이 우선 탐색 (BFS)**
+- 노드 사이의 최단 경로 혹은 임의의 경로를 찾고 싶을 때 사용한다.
+- 큐(Queue)를 사용하여 구현한다.
+
+- **[Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/)**
+
+```java
+class Solution {
+    public boolean validPath(int n, int[][] edges, int start, int end) {
+        List<ArrayList<Integer>> list = new ArrayList<>();
+        Queue<Integer> queue = new LinkedList<Integer>();
+        boolean[] visited = new boolean[n];
+        if(start == end) return true;
+        for(int i = 0 ; i <= n ; i++) list.add(new ArrayList<Integer>());
+        for(int i = 0 ; i < edges.length ; i++){
+            int x = edges[i][0];
+            int y = edges[i][1];
+            list.get(x).add(y);
+            list.get(y).add(x);
+        }
+
+        queue.offer(start);
+
+        while(!queue.isEmpty()){
+            int now = queue.poll();
+            visited[now] = true;
+            for(int next : list.get(now)){
+                if(next == end){
+                    return true;
+                }
+                else if(!visited[next]){
+                    queue.offer(next);
+                }
+            }
+        }
+        return false;
+    }
+}
+```
+
+### **양방향 탐색**
+- **출발지와 도착지 사이에 최단 경로를 찾을 때 사용된다.**
+- 기본적으로 , 출발지와 도착지 두 노드에서 동시에 너비 우선 탐색을 사용한 뒤 , 두 탐색 지점이 충돌하는 경우에 경로를 찾는 방식이다.
+
+![](../../assets/images/books/codingInterview/TreeAndGraph8.png)
+
+> 추가로 읽을 거리 - 위상정렬 , 다익스트라 , AVL , 레드블랙트리
 
 # **트리**
 - 노드로 이루어져있고 그래프의 한 종류인 자료구조이다.
