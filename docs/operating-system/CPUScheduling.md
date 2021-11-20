@@ -156,15 +156,43 @@ nav_order: 4
 
 ![](../../assets/images/operating-system/CPUScheduling/11.png)
 
-### **Priority-based** - 우선순위 기반
-- **각 프로세스에는 우선순위가 연결되어 있으며 , 가장 높은 우선순위를 가진 프로세스에 할당한다.**
+## **Priority-based** - 우선순위 기반
+- **각 프로세스에는 우선순위가 존재하며 , 가장 높은 우선순위를 가진 프로세스에 할당한다.**
   - 우선순위가 같다면 `FCFS`로 스케줄링 한다.
 - `SJF`는 **우선순위 기반 스케줄링의 특별한 경우이다.**
 
 ![](../../assets/images/operating-system/CPUScheduling/12.png)
 
+- **기아 문제 (indefinite blocking)**
+  - 일부 낮은 우선 순위 프로세스는 무기한 대기할 수 있다.
+- 기아 문제의 해법은 **aging** *(노화)* 이다.
+  - 시스템에서 오랫동안 기다리면 프로세스의 우선순위를 점차적으로 높혀주자
+
+- 일반적으로 **RR 과 Priority Scheduling** 섞어 쓴다.
+  - *우선순위 스케줄링을 사용하되 우선순위가 같다면 라운드로빈을 사용한다.*
+
+![](../../assets/images/operating-system/CPUScheduling/13.png)
 
 ### **MLQ(Multi-Level Queue)** - 다단계 대기열
 
+- 휴대폰 게임을 하고 있다면 ,
+  - 네트워크 데이터 , 사운드 , 디스플레이 , 카톡 , 전화 등등 각각 우선순위가 다 다르다
+- **'n'개의 우선순위** 를 두고 각각 **Ready Queue**를 두자
+
+![](../../assets/images/operating-system/CPUScheduling/14.png)
+
+![](../../assets/images/operating-system/CPUScheduling/15.png)
+
+
 ### **MLFQ(Multi-Level Feedback Queue)** - 다단계 피드백 대기열
 
+- **실전O/S**의 CPU 스케줄링 알고리즘이다. (+ Multicore)
+
+![](../../assets/images/operating-system/CPUScheduling/16.png)
+
+> -  규칙 1 : 우선순위가 높은 프로세스들을 먼저 수행한다.
+> - 규칙 2 : 작업들이 같은 우선순위를 갖는다면 RR로 수행한다.
+> - 규칙 3 : 새로운 프로세스가 시스템에 들어가면 가장 높은 우선순위를 부여한다.
+> - 규칙 4 : 작업은 모든 우선순위에서 주어진 time slice를 모두 사용하면 우선순위가 감소한다.
+> - 규칙 5 : 일정 시간 후 시스템의 모든 작업을 우선순위가 가장 높은 큐로 이동한다.
+> - 출처: [PinguiOS](https://icksw.tistory.com/124)
