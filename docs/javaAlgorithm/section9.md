@@ -684,6 +684,26 @@ class Main {
 
 ![](../../assets/images/algorithm/section9/wonderland.png)
 
+- 첫째 줄에 도시의 개수 V(1≤V≤100)와 도로의 개수 E(1≤E≤1,000)가 주어진다.
+- 다음 E개의 줄에는 각 도로에 대한 정보를 나타내는 세 정수 A, B, C가 주어진다.
+- 이는 A번 도시와 B번 도시가 유지비용이 C인 도로로 연결되어 있다는 의미이다.
+
+```
+9 12
+1 2 12
+1 9 25
+2 3 10
+2 8 17
+2 9 8
+3 4 18
+3 7 55
+4 5 44
+5 6 60
+5 7 38
+7 8 35
+8 9 15
+```
+
 ## **최소스패닝트리 : `크루스칼`, `Union&Find`활용**
 
 ### 풀어보기
@@ -734,6 +754,7 @@ class Main {
             int cost = sc.nextInt();
             roads.add(new Edge(value1 , value2 , cost));
         }
+        // 비옹 별 정렬
         Collections.sort(roads);
 
         for(Edge edge : roads){
@@ -761,6 +782,63 @@ class Main {
 
 }
 ```
+
+```
+		Edge{vertex1=2, vertex2=9, cost=8}
+		Edge{vertex1=2, vertex2=3, cost=10}
+		Edge{vertex1=1, vertex2=2, cost=12}
+		Edge{vertex1=8, vertex2=9, cost=15}
+		Edge{vertex1=2, vertex2=8, cost=17}
+		Edge{vertex1=3, vertex2=4, cost=18}
+		Edge{vertex1=1, vertex2=9, cost=25}
+		Edge{vertex1=7, vertex2=8, cost=35}
+		Edge{vertex1=5, vertex2=7, cost=38}
+		Edge{vertex1=4, vertex2=5, cost=44}
+		Edge{vertex1=3, vertex2=7, cost=55}
+		Edge{vertex1=5, vertex2=6, cost=60}
+  		[1]. vertex = 2 relation[vertex] = 2
+		[1]. vertex = 9 relation[vertex] = 9
+		[1]. vertex = 2 relation[vertex] = 9
+			[2]. vertex = 9 relation[vertex] = 9
+		[1]. vertex = 3 relation[vertex] = 3
+		[1]. vertex = 1 relation[vertex] = 1
+		[1]. vertex = 2 relation[vertex] = 9
+			[2]. vertex = 9 relation[vertex] = 3
+				[3]. vertex = 3 relation[vertex] = 3
+		[1]. vertex = 8 relation[vertex] = 8
+		[1]. vertex = 9 relation[vertex] = 3
+			[2]. vertex = 3 relation[vertex] = 3
+		[1]. vertex = 2 relation[vertex] = 3
+			[2]. vertex = 3 relation[vertex] = 3
+		[1]. vertex = 8 relation[vertex] = 3
+			[2]. vertex = 3 relation[vertex] = 3
+		[1]. vertex = 3 relation[vertex] = 3
+		[1]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 1 relation[vertex] = 3
+			[2]. vertex = 3 relation[vertex] = 4
+				[3]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 9 relation[vertex] = 3
+			[2]. vertex = 3 relation[vertex] = 4
+				[3]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 7 relation[vertex] = 7
+		[1]. vertex = 8 relation[vertex] = 3
+			[2]. vertex = 3 relation[vertex] = 4
+				[3]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 5 relation[vertex] = 5
+		[1]. vertex = 7 relation[vertex] = 4
+			[2]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 5 relation[vertex] = 4
+			[2]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 3 relation[vertex] = 4
+			[2]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 7 relation[vertex] = 4
+			[2]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 5 relation[vertex] = 4
+			[2]. vertex = 4 relation[vertex] = 4
+		[1]. vertex = 6 relation[vertex] = 6
+```
+
 
 ### 풀이
 
