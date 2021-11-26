@@ -52,7 +52,9 @@ permalink: /
 
 # **Study**
 
-## **[코테, 코딩 인터뷰 완전 분석 스터디](https://github.com/CodingInterviewStudy/CrackingTheCodingInterview/wiki) `2021.11.03 ~ 현재`**
+## **[코테, 코딩 인터뷰 완전 분석 책 스터디](https://github.com/CodingInterviewStudy/CrackingTheCodingInterview/wiki) `2021.11.03 ~ 현재`**
+
+## **[모던 자바 인 액션 책 스터디](https://github.com/Modern-Java-in-Action/Online-Study/wiki) `2021.12.05 ~ 현재`**
 
 ***
 
