@@ -12,7 +12,9 @@ nav_order: 2
 
 ---
 
-**[코딩 인터뷰 완전 분석](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=115116545)**
+## **[코딩 인터뷰 완전 분석](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=115116545)**
+## 📌 **[그래프 , 트리 예제](https://jeongcode.github.io/docs/algorithm/2021y11m/)**
+
 
 # **그래프**
 - **노드와 그 노드를 연결하는 간선(edge)를 하나로 모아 놓은 것이다.**
@@ -224,3 +226,14 @@ class Solution {
 ![](../../assets/images/books/codingInterview/TreeAndGraphTrie.png)
 
 - **유효한 단어 집합을 이용하는 많은 문제들은 트라이를 통해 최적화 할 수 있다.**
+
+***
+
+# **해시 테이블**
+- 간단한 해시 테이블을 구현하기 위해선 , **연결리스트**와 **해시 코드 함수**만 있으면 된다.
+
+## 📌 **키와 값을 해시테이블에 넣을 때**는 다음의 과정을 거친다.
+1. **처음엔 키의 해시 코드를 계산한다.**
+    - 키의 자료형은 보통 `int` 혹은 `long`이 된다.
+    - **서로 다른 두 개의 키가 같은 해시 코드를 가리킬 수 있다는 사실을 명심하자**
+2. 그 다음엔 `hash(key) % array_length`와 같은 방식으로 해시 코드를 이용해 배열의 인덱스를 구한다.
