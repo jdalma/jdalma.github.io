@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Clean Code
+title: 클린 코드
 parent: Books
 nav_order: 1
 ---
@@ -197,7 +197,7 @@ ld - long double
   - **이름이 다르면 독자는 당연히 클래스도 다르고 타입도 다르다고 생각한다.**
 
 > ✋ [get , retrieve , fetch](https://nassol.tistory.com/3)
-> - **Get** 
+> - **Get**
 >   - to **get back** something that **you had before**
 >   - 전에 **가졌던** 사물을 다시 돌려 받다.
 > - **Retrieve**

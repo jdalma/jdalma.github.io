@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 코딩 인터뷰 대비
+title: 코딩 인터뷰 완전 분석
 parent: Books
 nav_order: 2
 ---
