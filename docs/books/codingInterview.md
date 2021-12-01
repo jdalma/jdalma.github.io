@@ -238,6 +238,7 @@ class Solution {
     - 키의 자료형은 보통 `int` 혹은 `long`이 된다.
     - **서로 다른 두 개의 키가 같은 해시 코드를 가리킬 수 있다는 사실을 명심하자**
 2. 그 다음엔 `hash(key) % array_length`와 같은 방식으로 해시 코드를 이용해 배열의 인덱스를 구한다.
+    - **hashCode는 객체의 주소값을 변환하여 생성한 객체의 고유한 정수값이다.**
     - **물론 서로 다른 두개의 해시 코드가 같은 인덱스를 가리킬 수도 있다.**
 3. 배열의 각 인덱스에는 키와 값으로 이루어진 연결 리스트가 존재한다.
     - **충돌에 대비해서 반드시 연결 리스트를 이용해야 한다.**
@@ -250,6 +251,10 @@ class Solution {
   - 이 경우에 탐색 시간은 `O(log N)`이 된다.
   - 키의 집합을 특정 순서로 차례대로 접근할 수 있는데 , 어떤 경우에는 이런 기능이 유용하기도 하다.
 
+> ✋ **[객체의 hashCode() 와 String의 hashCode()](https://brunch.co.kr/@mystoryg/133)**
+> - `equals()`가 **false**이고 `hashCode()`가 **true**인 경우 ➜ HashMap에서 **다른 key**로 처리
+> - `equals()`가 **true**이고 `hashCode()`가 **false**인 경우 ➜ HashMap에서 **다른 key**로 처리
+> - `equals()`가 **true**이고 `hashCode()`가 **true**인 경우 ➜ HashMap에서 **같은 key**로 처리
 
 
 # **해시 충돌 해결 방법**
