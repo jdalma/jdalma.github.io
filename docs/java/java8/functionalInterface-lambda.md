@@ -13,10 +13,10 @@ nav_order: 2
 ---
 
 # **함수형 인터페이스 (Functional Interface)**
--   <span style="color:red; font-weight:bold">추상 메서드를 딱 하나만</span>**가지고 있는 인터페이스**
--   **SAM (Single Abstract Method) 인터페이스**
--   **[default , static 메서드가](https://atoz-develop.tistory.com/entry/JAVA-8-interface-default-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%99%80-static-%EB%A9%94%EC%86%8C%EB%93%9C) 사용 가능하다.**
-    -   static은 재정의가 불가하지만 default는 재정의가 가능하다.
+- <span style="color:red; font-weight:bold">추상 메서드를 딱 하나만</span>**가지고 있는 인터페이스**
+- **SAM (Single Abstract Method) 인터페이스**
+- **[default , static 메서드가](https://atoz-develop.tistory.com/entry/JAVA-8-interface-default-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%99%80-static-%EB%A9%94%EC%86%8C%EB%93%9C) 사용 가능하다.**
+    - static은 재정의가 불가하지만 default는 재정의가 가능하다.
 
 ```java
 // 추상화 메소드가 딱 1개라면 함수형 인터페이스 이다.
