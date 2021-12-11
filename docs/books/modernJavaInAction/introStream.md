@@ -177,7 +177,7 @@ public class Dish {
 5. **내부 반복**
     - 반복자를 이용해서 명시적으로 반복하는 컬렉션과 달리 **스트림은 내부 반복을 지원한다.** *(4.3.2절 에서 설명)*
 
-## **예제**
+## 예제
 
 ```java
   List<String> threeHighCaloricDishNames =
@@ -246,8 +246,131 @@ Exception in thread "main" java.lang.IllegalStateException: stream has already b
 */
 ```
 
-***
-# **내부 반복과 외부 반복**
+## 내부 반복과 외부 반복
+- **외부 반복**
+  - 사용자가 직접 요소를 반복하는 것 (컬렉션 인터페이스 `for-each`등)
+  - 컬렉션 내부적으로 숨겨졌던 반복자를 사용하는 것
+  - **즉 , 명시적으로 컬렉션 항목을 하나씩 가져와서 처리한다.**
+  - **병렬성을 스스로 관리**해야한다.
+```java
+  List<String> names = new ArrayList<>();
+  for(Dish dish : menu){
+      names.add(dish.getName());
+  }
+
+  Iterator<Dish> iterator = menu.iterator();
+  while(iterator.hasNext()){
+      Dish dish = iterator.next();
+      names.add(dish.getName());
+  }
+```
+
+
+- 스트림 라이브러리는 **내부 반복**을 사용한다.
+  - **반복을 알아서 처리하고 결과 스트림 값을 어딘가에 저장해주는 것**
+  - **함수에 어떤 작업을 수행할지만 지정하면 모든것이 알아서 처리된다.**
+  - **작업을 투명하게 병렬로 처리하거나 , 더 최적화된 다양한 순서로 처리할 수 있다**.
+```java
+List<String> innerIterNames = menu.stream()
+                                  .map(dish -> dish.getName())
+                                  .collect(toList());
+```
+
+![](../../../assets/images/books/modernJavaInAction/introStream/innerouterIter.png)
 
 ***
-# **중간 연산과 최종 연산**
+
+# **스트림 연산**
+- `java.util.stream.Stream` 인터페이스는 많은 연산을 정의한다.
+
+## 중간 연산
+- **연결할 수 있는 스트림 연산**
+- `filter` 나 `sorted` 같은 중간 연산은 **다른 스트림을 반환한다.**
+- 📌**중간 연산의 중요한 특징은 최종 연산을 스트림 파이프라인에 실행하기 전까지는 아무 연산도 수행하지 않는다는 것** ➜ `lazy`
+  - *중간 연산을 합친 다음에 합쳐진 중간 연산을 최종 연산으로 한 번에 처리하기 때문이다.*
+
+```java
+  List<String> threeHighCaloricDishNames =
+          menu.stream()
+                  .filter(dish -> {
+                      System.out.println("filtering : " + dish.getName());
+                      return dish.getCalories() > 300;
+                  })
+                  .map(dish -> {
+                      System.out.println("mapping : " + dish.getName());
+                      return dish.getName();
+                  })
+                  .limit(3)
+                  .collect(toList());
+
+  System.out.println(threeHighCaloricDishNames);
+```
+```
+filtering : pork
+mapping : pork
+filtering : beef
+mapping : beef
+filtering : chicken
+mapping : chicken
+[pork, beef, chicken]
+```
+**`lazy`한 특성 덕분에 몇 가지 최적화 효과를 얻을 수 있었다.**
+1. 300칼로리가 넘는 요리는 여러 개지만 오직 처음 3개만 선택되었다.
+    - 이는 `limit`연산 그리고 **쇼트 서킷**이라 불리는 기법 덕분이다. *(5장에서 설명)*
+2. `filter`와 `map`은 서로 다른 연산이지만 **루프 퓨전**을 사용하여 **한 과정으로 병합되었다.**
+
+|연산|반환 형식|연산의 인수|함수 디스크립터|
+|------|---|---|---|
+|**filter**|`Stream<T>`|`Predicate<T>`| T ➜ boolean
+|**map**|`Stream<T>`|`Function<T , R>`| T ➜ R
+|**limit**|`Stream<T>`|
+|**sorted**|`Stream<T>`|`Comparator<T>`|  (T , T) ➜ int
+|**distinct**|`Stream<T>`|
+
+## 최종 연산
+- **스트림을 닫는 연산**
+- 스트림 파이프라인에서 결과를 도출한다.
+- **보통 최종 연산에 의해 List , Integer , void 등 스트림 이외의 결과가 반환된다.**
+
+|연산|반환 형식|목적|
+|------|---|---|
+|**forEach**|`void`|스트림의 각 요소를 소비하면서 람다를 적용한다.|
+|**count**|`long`|스트림의 요소개수를 반환한다.|
+| **collect** || 스트림을 리듀스해서 리스트 , 맵 , 정수 형식의 컬렉션을 만든다. *6장 참조* |
+
+## 퀴즈
+- **다음 스트림 파이프라인에서 중간 연산과 최종 연산을 구별하시오.**
+```java
+long count = menu.stream()
+                  .filter(d -> d.getCalories() > 300)
+                  .distinct()
+                  .limit(3)
+                  .count();
+```
+- `count`는 스트림이 아닌 `long`을 반환한다.
+- 따라서 `count`는 최종 연산이다.
+- `filter` , `distinct` , `limit`은 스트림을 반환하며 서로 연결할 수 있으니 , 중간 연산이다.
+
+***
+
+# **스트림 이용하기**
+- **스트림 이용 과정은 다음과 같이 세가지로 요약할 수 있다.**
+1. **질의를 수행할 (컬렉션 같은) 데이터 소스**
+2. **스트림 파이프라인을 구성할 중간 연산 연결**
+3. **스트림 파이프라인을 실행하고 결과를 만들 최종 연산**
+
+- 스트림 파이프라인의 개념은 **빌더 패턴**과 비슷하다.
+  - 빌더 패턴에서는 호출을 연결해서 설정을 만든다.
+    - *스트림에서 중간 연산을 연결하는 것과 같다.*
+  - 그리고 준비된 설정에 `build`메서드를 호출한다
+    - *스트림에서 최종 연산과 같다.*
+
+***
+
+# 📌**마치며**
+- 스트림은 소스에서 추출된 연속 요소로 , 데이터 처리 연산을 지원한다.
+- 스트림은 내부 반복을 지원한다.
+- 스트림에는 중간 연산과 최종 연산이 있다.
+- 중간 연산은 `stream`을 반환하는 것이며 , 중간 연산으로는 어떤 결과도 생성할 수 없다.
+- 최종 연산은 `forEach`나 `count`처럼 `stream`을 반환하지 않는 것이다.
+- 스트림의 요소는 요청할 때 `lazy`하게 계산된다.
