@@ -796,6 +796,7 @@ class Main {
 		Edge{vertex1=4, vertex2=5, cost=44}
 		Edge{vertex1=3, vertex2=7, cost=55}
 		Edge{vertex1=5, vertex2=6, cost=60}
+
   		[1]. vertex = 2 relation[vertex] = 2
 		[1]. vertex = 9 relation[vertex] = 9
 		[1]. vertex = 2 relation[vertex] = 9
