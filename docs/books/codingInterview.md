@@ -441,6 +441,9 @@ public int fibo(int n){
 ## 다익스트라 알고리즘
 - 그래프의 간선에 가중치를 부여돼어있을 때 , `현재 위치에서 목표 위치까지 최단 경로`는?(**단일 출발 최단경로**문제) **다익스트라 알고리즘**
 - 📌 **사이클이 있을수도 있는 가중 방향 그래프에서 두 지점간의 최단 경로를 찾는 방법이다.**
+- **참고 예제**
+  - [백준 - 최단경로](https://jeongcode.github.io/docs/algorithm/2021y10m/#%EB%B0%B1%EC%A4%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC---%EA%B8%B0%EC%B4%88%EB%AC%B8%EC%A0%9C-%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC)
+  - [백준 - 숨바꼭질3](https://jeongcode.github.io/docs/algorithm/2021y09m/#-%EB%B0%B1%EC%A4%80-bfs-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%883)
 - **동작 원리**
   1. `s`에서 시작한다．
   2. `s`의 유출 간선의 개수만큼 우리 자신을 복제한 뒤 해당 간선을 걸어간다.`(s, x)`
@@ -450,11 +453,6 @@ public int fibo(int n){
   자동으로 현재 경로는 다른 경로보다 더 빠를 수 없게 된다. **아무도 도착한 적
   이 없다면 , 다시 우리 자신을 복제한 뒤 가능한 모든 경로로 나아간다.**
   4. 먼저 `t`에 도착하는사람이 이긴다.
-- **참고 예제**
-  - [백준 - 최단경로](https://jeongcode.github.io/docs/algorithm/2021y10m/#%EB%B0%B1%EC%A4%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC---%EA%B8%B0%EC%B4%88%EB%AC%B8%EC%A0%9C-%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC)
-  - [백준 - 숨바꼭질3](https://jeongcode.github.io/docs/algorithm/2021y09m/#-%EB%B0%B1%EC%A4%80-bfs-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%883)
-
-## 예제
 
 ![](../../assets/images/books/codingInterview/dijkstra.png)
 
