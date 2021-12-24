@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# **뮤텍스(Mutex)와 세마포어(Semaphore)의 차이**
+
+- [링크](https://worthpreading.tistory.com/90)
+
 # **트랜잭션 관련**
 
 - [Java 에서 DataBase Replication Master/Slave (write/read) 분기 처리하기](http://kwon37xi.egloos.com/m/5364167)
