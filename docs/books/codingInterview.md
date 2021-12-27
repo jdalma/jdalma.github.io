@@ -18,17 +18,170 @@ nav_order: 2
 이 알고리즘들이 모든 컴퓨터 분야에 필수인 것은 절대 아니고, 오히려 실무에서는 몰라도 큰 상관이 없을 때가 많습니다.
 고급 알고리즘이 꼭 좋은 것도 아닙니다. 
 실무와 개발에 있어서는 유지보수성과 협업을 신경쓰는 것도 굉장히 중요한데요. 
-성능은 좋지만 그렇게 필수적이지는 않았는데도 구현이 난해한 알고리즘을 너무 남발하다 보면, 시간이 지나고 자신의 코드를 되돌아볼 때나 다른 사람과 협업해야 할 때, 다른 사람이 이어서 작업해야 할 때 등 상당히 골치 아파지는 경우도 있을 것입니다. 
-(물론, 항상 좋은 것이 아니랬지 성능이 무조건적으로 우선인 곳에서는 잘 사용할 때도 있습니다. 리눅스의 스케쥴러가 레드블랙트리로 구현되어 있는 것이 좋은 예)
-어느 정도 가벼이 취미로 하기에 재밌기도 하고, 이때는 취미를 하면서 코딩/구현 실력도 늘릴 수 있다는 점에서 컴퓨터분야 종사자의 취미생활로써는 굉장히 도움이 많이 되지만, 주 목적이 되는 일은 흔치 않을 것입니다. 
+성능은 좋지만 그렇게 필수적이지는 않았는데도 구현이 난해한 알고리즘을 너무 남발하다 보면,
+시간이 지나고 자신의 코드를 되돌아볼 때나 다른 사람과 협업해야 할 때, 
+다른 사람이 이어서 작업해야 할 때 등 상당히 골치 아파지는 경우도 있을 것입니다. 
+(물론, 항상 좋은 것이 아니랬지 성능이 무조건적으로 우선인 곳에서는 잘 사용할 때도 있습니다.)
+(리눅스의 스케쥴러가 레드블랙트리로 구현되어 있는 것이 좋은 예)
+어느 정도 가벼이 취미로 하기에 재밌기도 하고, 이때는 취미를 하면서 코딩/구현 실력도 늘릴 수 있다는 점에서 컴퓨터분야 종사자의 취미생활로써는 굉장히 도움이 많이 되지만, 
+주 목적이 되는 일은 흔치 않을 것입니다. 
 덤으로 제가 모든 개발자가 기본소양(?) 정도로 갖추면 좋겠을 지식은 기초 자료구조들 및 그리디, DP 정도가 뭔지를 아는 것이 끝입니다. 
 또 어느때나 물어보면 즉시 구현이 가능할 정도도 아니고, 아는 것만으로 충분하다고 봅니다.
 ```
 - [출처](https://blog.naver.com/kks227)
 
 ## **[코딩 인터뷰 완전 분석](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=115116545)**
-### 📌 **[그래프 , 트리 , 문자열 예제](https://jeongcode.github.io/docs/algorithm/2021y11m/)**
-### 📌 **[동적프로그래밍 예제](https://jeongcode.github.io/docs/algorithm/2021y12m/)**
+### 📌 **[Cracking The Coding Interview 6th Edition In LeetCode](https://leetcode.com/discuss/general-discussion/1152824/cracking-the-coding-interview-6th-edition-in-leetcode#4)**
+
+***
+
+# **널리 사용되는 정렬 알고리즘**
+
+- ✋ [TimSort에 대해 - NaverD2](https://d2.naver.com/helloworld/0315536)
+
+![](../../assets/images/algorithm/big-o.png)
+- [joshuajangblog.wordpress.com](https://joshuajangblog.wordpress.com/2016/09/21/time_complexity_big_o_in_easy_explanation/)
+- **O(1) – 상수 시간** : 알고리즘이 문제를 해결하는데 오직 한 단계만 거칩니다.
+- **O(log n) – 로그 시간** : 문제를 해결하는데 필요한 단계들이 연산마다 특정 요인에 의해 줄어듭니다.
+- **O(n) – 직선적 시간** : 문제를 해결하기 위한 단계의 수와 입력값 n이 1:1 관계를 가집니다.
+- **O(n<sup>2</sup>) – 2차 시간** : 문제를 해결하기 위한 단계의 수는 입력값 n의 제곱입니다.
+- **O(C<sup>n</sup>) – 지수 시간** : 문제를 해결하기 위한 단계의 수는 주어진 상수값 C 의 n 제곱입니다. (상당히 큰수가 됩니다)
+
+![](../../assets/images/algorithm/sort.png)
+
+- **안정 정렬 (Stable Sort) , 불안정 정렬 (Unstable Sort)**
+  - 정렬의 안정적 특성이란 **"정렬되지 않은 상태에서 같은 키값을 가진 원소의 순서가 정렬 후에도 유지되느냐"** 이다.
+  - 정렬 방법 마다 **중복된 원소**가 본래 순서대로 정렬될 수도 있고 , 섞일 수도 있다.
+  - **안정 정렬**
+    - 중복된 값을 입력 순서와 동일하게 정렬되는 것
+    - **삽입 정렬 , 병합 정렬 , 버블 정렬**
+  - **불안정 정렬**
+    - 중복된 값이 입력 순서와 동일하지 않게 정렬되는 것
+    - **퀵 정렬 , 선택정렬 , 계수정렬**
+
+## **버블 정렬 (Bubble Sort) - 평균 및 최악 실행 시간 : O(n<sup>2</sup>) , 메모리 : O(1)**
+
+- **서로 인접한 두 원소의 대소를 비교하고, 조건에 맞지 않다면 자리를 교환하며 정렬하는 알고리즘**
+
+1. 1회전에 첫 번째 원소와 두 번째 원소를, 두 번째 원소와 세 번째 원소를, 세 번째 원소와 네 번째 원소를, … 이런 식으로 (마지막-1)번째 원소와 마지막 원소를 비교하여 조건에 맞지 않는다면 서로 교환합니다.
+2. **1회전을 수행하고 나면 가장 큰 원소가 맨 뒤로 이동하므로 2회전에서는 맨 끝에 있는 원소는 정렬에서 제외되고, 2회전을 수행하고 나면 끝에서 두 번째 원소까지는 정렬에서 제외됩니다.** 
+- 이렇게 정렬을 1회전 수행할 때마다 정렬에서 제외되는 데이터가 하나씩 늘어납니다.
+
+![](../../assets/images/algorithm/bubble-sort-001.gif)
+
+- **장점**
+  - 정렬하고자 하는 배열 안에서 교환하는 방식이므로, 다른 메모리 공간을 필요로 하지 않는다.. ➜ 제자리 정렬(in-place sorting)
+  - **안정 정렬(Stable Sort)**
+- **단점**
+  - **시간복잡도가 최악, 최선, 평균 모두 O(n^<sup>2</sup>)으로, 굉장히 비효율적입니다.**
+  - 정렬 돼있지 않은 원소가 정렬 됐을때의 자리로 가기 위해서, 교환 연산(swap)이 많이 일어나게 됩니다.
+
+## **선택 정렬 (Selection Sort) - 평균 및 최악 실행 시간 : O(n<sup>2</sup>) , 메모리 : O(1)**
+
+- **해당 순서에 원소를 넣을 위치는 이미 정해져 있고, 어떤 원소를 넣을지 선택하는 알고리즘**
+- **해당 자리를 선택하고 그 자리에 오는 값을 찾는 것**
+
+1. 주어진 배열 중에 최소값을 찾는다.
+2. 그 값을 맨 앞에 위치한 값과 교체한다.
+3. 맨 처음 위치를 뺀 나머지 배열을 같은 방법으로 교체한다.
+
+![](../../assets/images/algorithm/selection-sort-001.gif)
+
+- **장점**
+  - 정렬을 위한 비교 횟수는 많지만, Bubble Sort에 비해 실제로 교환하는 횟수는 적기 때문에 많은 교환이 일어나야 하는 자료상태에서 비교적 효율적이다.
+  - 정렬하고자 하는 배열 안에서 교환하는 방식이므로, 다른 메모리 공간을 필요로 하지 않는다. ➜ 제자리 정렬(in-place sorting)
+
+- **단점**
+  - 시간복잡도가 O(n<sup>2</sup>)으로, 비효율적이다.
+  - **불안정 정렬(Unstable Sort)**
+
+## **병합 정렬 (Merge Sort) - 평균 및 최악 실행 시간 : O(n log n) , 메모리 : 상황에 따라 다름**
+
+- **배열을 절반씩 나누어 각각을 정렬한 다음 이 둘을 합하여 다시 정렬 하는 방법이다.**
+- 나눈 절반을 정렬할 때도 같은 알고리즘이 사용되고 , **결국에는 원소 한 개짜리 배열 두 개를 병합하게 된다.**
+- **분할 (Divide)** : 입력 배열을 같은 크기의 2개의 부분 배열로 분할
+- **정복 (Conquer)** : 부분 배열을 정렬한다. 부분 배열의 크기가 충분히 작지 않으면 **순환 호출**을 이용하여 다시 분할 정복 방법을 적용한다.
+- **결합 (Combine)** : 정렬된 부분 배열들을 하나의 배열에 합병한다.
+- **안정 정렬(Stable Sort)**
+- **분할 정복 알고리즘의 하나**
+
+![](../../assets/images/books/codingInterview/mergesort.png)
+
+```java
+import java.io.*;
+import java.util.*;
+
+
+class Main {
+	
+    public static void main(String[] args) throws IOException {
+    	int[] numArr = new int[30];
+    	
+    	for(int i = 0 ; i < 30 ; i++) {
+    		int value = (int)(Math.random()*100);
+    		System.out.print(value + " ");
+    		numArr[i] = value;
+    	}
+    	System.out.println();
+    	
+    	mergesort(numArr);
+    	
+    	for(int value : numArr) {
+    		System.out.print(value + " ");
+    	}
+    	
+//    	34 12 82 6 96 97 29 21 38 25 57 45 26 16 71 58 9 82 97 90 71 36 39 23 93 72 71 69 45 82 
+//    	6 9 12 16 21 23 25 26 29 34 36 38 39 45 45 57 58 69 71 71 71 72 82 82 82 90 93 96 97 97 
+    }	
+
+	public static void mergesort(int[] array) {
+		int[] helper = new int[array.length];
+		mergesort(array, helper, 0, array.length - 1);
+	}
+
+	public static void mergesort(int[] array, int[] helper, int low, int high) {
+		if (low < high) {
+			int middle = (low + high) / 2;
+			mergesort(array, helper, low, middle); // 왼쪽 절반 정렬
+			mergesort(array, helper, middle + 1, high); // 오른쪽 절반 정렬
+			merge(array, helper, low, middle, high); // 병합
+		}
+	}
+	
+	public static void merge(int[] array , int[] helper , int low , int middle , int high) {
+		/* 절반짜리 두 배열을 helper 배열에 복사한다. */
+		for(int i = low ; i <= high ; i++) {
+			helper[i] = array[i];
+		}
+		
+		int helperLeft = low;
+		int helperRight = middle + 1;
+		int current = low;
+		
+		/* helper 배열 순회 , 왼쪽 절반과 오른쪽 절반을 비교하여 작은 원소를 원래 배열에 복사하여 넣는다. */
+		while(helperLeft <= middle && helperRight <= high) {
+			if(helper[helperLeft] <= helper[helperRight]) {
+				array[current] = helper[helperLeft];
+				helperLeft++;
+			}
+			else { // 오른쪽 원소가 왼쪽 원소보다 작으면
+				array[current] = helper[helperRight];
+				helperRight++;
+			}
+			current++;
+		}
+		
+		/* 왼쪽 절반 배열에 남은 원소들을 원래 배열에 복사해 넣는다. */
+		int remaining = middle - helperLeft;
+		for(int i = 0 ; i <= remaining ; i++) {
+			array[current + i] = helper[helperLeft + i];
+		}
+	}
+}
+```
+
+
+***
 
 # **그래프**
 - **노드와 그 노드를 연결하는 간선(edge)를 하나로 모아 놓은 것이다.**
