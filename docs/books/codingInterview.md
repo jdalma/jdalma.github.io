@@ -37,7 +37,7 @@ nav_order: 2
 
 # **널리 사용되는 정렬 알고리즘**
 
-- ✋ [TimSort에 대해 - NaverD2](https://d2.naver.com/helloworld/0315536)
+## ✋ **[TimSort에 대해 - NaverD2](https://d2.naver.com/helloworld/0315536)**
 
 ![](../../assets/images/algorithm/big-o.png)
 - [joshuajangblog.wordpress.com](https://joshuajangblog.wordpress.com/2016/09/21/time_complexity_big_o_in_easy_explanation/)
