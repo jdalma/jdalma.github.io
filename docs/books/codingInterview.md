@@ -603,6 +603,93 @@ class Solution {
 
 ***
 
+# **TreeSet**
+- 객체를 중복해서 저장할 수 없고 저장 순서가 유지되지 않는다는 **Set**의 성질을 그대로 가지고 있다.
+- **이진 탐색 트리** 구조로 되어 있다.
+- 추가와 삭제에는 시간이 조금 더 걸리지만 **정렬,검색**에 높은 성능을 보이는 자료구조 이다.
+- 생성자의 매개변수로 Comparator객체를 입력하여 정렬 방법을 임의로 지정해 줄 수도 있다.
+- **레드-블랙트리**로 구현되어 있다.
+  - 부모노드보다 작은 값을 가지는 노드는 왼쪽 자식으로 ,
+  - 큰 값을 가지는 노드는 오른쪽 자식으로 배치하여 균형을 맞춘다.
+
+![](../../assets/images/algorithm/section4/1.png)
+
+## [문제 - K번째 큰 수](https://jeongcode.github.io/docs/algorithm/javaAlgorithm/section4/#treeset-k%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-%EC%8B%A4%ED%8C%A8)
+
+**TreeSet 선언**
+
+```java
+TreeSet<Integer> set1 = new TreeSet<Integer>();//TreeSet생성
+TreeSet<Integer> set2 = new TreeSet<>();//new에서 타입 파라미터 생략가능
+TreeSet<Integer> set3 = new TreeSet<Integer>(set1);//set1의 모든 값을 가진 TreeSet생성
+TreeSet<Integer> set4 = new TreeSet<Integer>(Arrays.asList(1,2,3));//초기값 지정
+```
+
+**TreeSet 값 추가**
+- 입력되는 값이 TreeSet 내부에 존재하지 않는다면 그 값을 추가한 뒤 true를 반환하고
+- 내부에 값이 존재한다면 false를 반환한다.
+- 7,4,9,2,5를 차례대로 TreeSet에 저장한다면 아래와같은 과정을 거치게 된다.
+
+```java
+  TreeSet<Integer> set = new TreeSet<Integer>();//TreeSet생성
+  set.add(7); //값추가
+  set.add(4);
+  set.add(9);
+  set.add(2);
+  set.add(5);
+```
+
+![](../../assets/images/algorithm/section4/2.png)
+
+
+**TreeSet 값 삭제**
+  -  매개변수 value의 값이 존재한다면 그 값을 삭제한 후 true를 반환하고 없으면 false를 반환한다.
+
+```java
+TreeSet<Integer> set = new TreeSet<Integer>();//TreeSet생성
+set.remove(1);//값 1 제거
+set.clear();//모든 값 제거
+```
+
+**TreeSet 값 출력**
+
+```java
+TreeSet<Integer> set = new TreeSet<Integer>(Arrays.asList(4,2,3));//초기값 지정
+System.out.println(set); //전체출력 [2,3,4]
+System.out.println(set.first());//최소값 출력
+System.out.println(set.last());//최대값 출력
+System.out.println(set.higher(3));//입력값보다 큰 데이터중 최소값 출력 없으면 null
+System.out.println(set.lower(3));//입력값보다 작은 데이터중 최대값 출력 없으면 null
+
+Iterator iter = set.iterator();	// Iterator 사용
+while(iter.hasNext()) {//값이 있으면 true 없으면 false
+    System.out.println(iter.next());
+}
+```
+
+***
+
+# **`Heap` 힙**
+- **`Complete Binary Tree` 완전 이진 트리 이다.**
+- **모든 노드에 저장된 값들은 자식 노드들의 것보다 크거나 같다.**
+- **일종의 반정렬 상태(느슨한 정렬 상태) 를 유지한다.**
+  - 큰 값이 상위 레벨에 있고 작은 값이 하위 레벨에 있다는 정도
+  - 간단히 말하면 부모 노드의 키 값이 자식 노드의 키 값보다 항상 큰(작은) 이진 트리를 말한다.
+- **힙을 저장하는 표준적인 자료구조는 배열** 이다.
+  - 구현을 쉽게 하기 위하여 배열의 첫 번째 인덱스인 0은 사용되지 않는다.
+  - 특정 위치의 노드 번호는 새로운 노드가 추가되어도 변하지 않는다.
+  - 예를 들어 루트 노드의 오른쪽 노드의 번호는 항상 3이다.
+- **힙에서의 부모 노드와 자식 노드의 관계**
+  - **왼쪽 자식의 인덱스 = (부모의 인덱스) * 2**
+  - **오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1**
+  - **부모의 인덱스 = (자식의 인덱스) / 2**
+
+![](../../assets/images/algorithm/heap.png)
+
+[출처](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)
+
+***
+
 # **해시 테이블**
 - 간단한 해시 테이블을 구현하기 위해선 , **연결리스트**와 **해시 코드 함수**만 있으면 된다.
 - **Hashtable 클래스는 컬렉션 프레임웍이 만들어지기 이전부터 존재**하던 것이기 때문에 컬렉션 프레임워의 명명법을 따르지 않는다.
@@ -900,3 +987,53 @@ public int fibo(int n){
   - **벨만-포드**는 <span style="color:red; font-weight:bold;">모든 간선에 대해 업데이트를 진행</span>
   - **SPFA**는 <span style="color:red; font-weight:bold;">바뀐 정점과 연결된 간선에 대해서만 업데이트를 진행</span>
 - **이를 위해 바뀐 정점은 큐를 이용해서 관리하고, 큐에 해당 정점이 있는지 없는지는 배열을 이용해서 체크한다.**
+
+
+***
+
+# **`Kruskal Algorithm` 크루스칼 알고리즘**
+- [참고 문제](https://jeongcode.github.io/docs/javaAlgorithm/section9/#-%EC%9B%90%EB%8D%94%EB%9E%9C%EB%93%9C)
+- **가장 적은 비용으로 모든 노드를 연결** 하기 위해 사용 한다.
+- **`Minimum Spanning Tree, MST` 최소 신장 트리**를 구하기 위해 사용한다.
+  - 그래프에서 **모든 정점을 포함**
+  - **정점 간 서로 연결이 되며 사이클이 존재하지 않는** 그래프
+  - 따라서 **정점의 갯수가 n개일 때 , 간선이 n-1개가 된다.**
+- 그리디 알고리즘의 일종이다.
+  - 그래프 간선들을 **가중치의 오름차순**으로 정렬해 놓은 뒤 , 사이클을 형성하지 않는 선에서 정렬된 순서대로 간선을 선택한다.
+- **`Union & Find 활용` 사이클 판단하기**
+  - **Union-Find 란?**
+    - Disjoint Set (서로소 집합) 을 표현하는 자료구조
+    - **서로 다른 두 집합을 병합하는 Union 연산**, **집합 원소가 어떤 집합에 속해있는지 찾는 Find 연산**을 지원하기에 이러한 이름이 붙었다. 
+    - [참고 문제](https://jeongcode.github.io/docs/javaAlgorithm/section9/#-disjoint-set%EC%84%9C%EB%A1%9C%EC%86%8C-%EC%A7%91%ED%95%A9--unionfind-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%B9%9C%EA%B5%AC%EC%9D%B8%EA%B0%80--)
+
+***
+
+# **`LIS` 최장 증가 부분 수열 알고리즘**
+- 원소가 n개인 배열의 일부 원소를 골라내서 만든 부분 수열 중,
+- 각 원소가 이전 원소보다 크다는 조건을 만족하고, 그 길이가 최대인 부분 수열을 **최장 증가 부분 수열**이라고 합니다.
+
+- 예를 들어, { 6, **2**, **5**, 1, **7**, 4, **8**, 3} 이라는 배열이 있을 경우, LIS는 **{ 2, 5, 7, 8 }** 이 됩니다.
+- { 2, 5 }, { 2, 7 } 등 증가하는 부분 수열은 많지만 그 중에서 가장 긴 것이 { 2, 5, 7, 8 } 입니다.
+-  일반적으로 최장 증가 부분 수열의 길이가 얼마인지 푸는 간편한 방법은 **DP**를 이용하는 것입니다.
+    - 시간복잡도를 개선하기 위하여 LIS를 구성할 때 이분탐색을 활용한다.
+
+[출처](https://chanhuiseok.github.io/posts/algo-49/)
+
+***
+
+# **`Backtracking` 백트래킹 특징**
+- 백트래킹은 말 그대로 **역추적**을 의미한다
+- 문제 해결을 위한 모든 경우의 수를 따져보기 위해서 일반적으로 활용되는 기법 중 하나이다.
+  - `(완전 검색 (Exhaustive search), 실제로 모든 케이스를 다 직접 확인한다는 의미는 아니다)`
+- 백트래킹은 우선 어떤 하나의 가능한 케이스를 확인하고, 가능하지 않다면 다시 Back하고,
+- 다시 다른 가능성있는 케이스를 확인하면서 Solution이 도출될 때까지 이런 과정이 계속적으로 반복되도록 구현하게 된다.
+- 따라서 **일반적으로 백트래킹은 알고리즘의 구조 특성상 재귀함수를 사용하여 구현**된다.
+- 백트래킹에 있어 중요한 것은 문제의 요구사항에 따라서, 구현된 알고리즘의 연산량이 제한 시간을 넘어버리게 되는 경우가 발생한다는 것이다.
+- 무작정 전 검색을 수행하는 데에는 한계가 발생할 수 밖에 없다.
+- 따라서, 더 이상 탐색할 필요가 없는 후보군에 대해서는 재귀 호출을 더 이상 하지 않고 **가지치기 (Pruning 또는 Branch and bound) 하는 것이 매우 중요**합니다.
+- 굳이 체크할 필요가 없다고 판단되는 후보군들을 적절히 제외시켜서, 연산 시간은 줄이면서 완전 검색이 수행되도록 하는 것이 백트래킹의 핵심이라고 할 수 있다.
+- [N Queen 문제 최적화 (Backtracking)](https://jayce-with.tistory.com/17)
+
+[출처 Jayce's Blog](https://jayce-with.tistory.com/16)
+
+***
