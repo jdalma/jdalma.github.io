@@ -95,6 +95,29 @@ nav_order: 2
   - 시간복잡도가 O(n<sup>2</sup>)으로, 비효율적이다.
   - **불안정 정렬(Unstable Sort)**
 
+## **삽입 정렬 (Insertion Sort) - 평균 및 최악 실행 시간 : O(n<sup>2</sup>) , 메모리 : 상황에 따라 다름**
+
+- **2번째 원소부터 시작하여 그 앞(왼쪽)의 원소들과 비교하여 삽입할 위치를 지정한 후, 원소를 뒤로 옮기고 지정된 자리에 자료를 삽입 하여 정렬하는 알고리즘**
+- 최선의 경우 O(N)이라는 엄청나게 빠른 효율성을 가지고 있어, <span style="color:red; font-weight:bold">다른 정렬 알고리즘의 일부로 사용될 만큼 좋은 정렬 알고리즘</span>
+  - 모두 정렬이 되어있는 경우(Optimal)한 경우, 한번씩 밖에 비교를 안하므로 O(n) 의 시간복잡도를 가지게 된다.
+  - **또한, 이미 정렬되어 있는 배열에 자료를 하나씩 삽입/제거하는 경우에는, 현실적으로 최고의 정렬 알고리즘이 된다.**
+
+1. 정렬은 2번째 위치(index)의 값을 temp에 저장합니다.
+1. temp와 이전에 있는 원소들과 비교하며 삽입해나갑니다.
+1. '1'번으로 돌아가 다음 위치(index)의 값을 temp에 저장하고, 반복합니다.
+
+![](../../assets/images/algorithm/insertion-sort-001.gif)
+
+
+- **장점**
+  - 대부분의 원소가 이미 정렬되어 있는 경우, 매우 효율적일 수 있다.
+  - 정렬하고자 하는 배열 안에서 교환하는 방식이므로, 다른 메모리 공간을 필요로 하지 않는다..  ➜ 제자리 정렬(in-place sorting)
+  - **안정 정렬(Stable Sort)**
+  - **Selection Sort나 Bubble Sort과 같은 O(n<sup>2</sup>) 알고리즘에 비교하여 상대적으로 빠르다.**
+- **단점**
+  - 평균과 최악의 시간복잡도가 O(n<sup>2</sup>)으로 비효율적입니다.
+  - Bubble Sort와 Selection Sort와 마찬가지로, 배열의 길이가 길어질수록 비효율적입니다.
+
 ## **병합 정렬 (Merge Sort) - 평균 및 최악 실행 시간 : O(n log n) , 메모리 : 상황에 따라 다름**
 
 - **배열을 절반씩 나누어 각각을 정렬한 다음 이 둘을 합하여 다시 정렬 하는 방법이다.**
@@ -180,29 +203,6 @@ class Main {
 }
 ```
 
-## **삽입 정렬 (Insertion Sort) - 평균 및 최악 실행 시간 : O(n<sup>2</sup>) , 메모리 : 상황에 따라 다름**
-
-- **2번째 원소부터 시작하여 그 앞(왼쪽)의 원소들과 비교하여 삽입할 위치를 지정한 후, 원소를 뒤로 옮기고 지정된 자리에 자료를 삽입 하여 정렬하는 알고리즘**
-- 최선의 경우 O(N)이라는 엄청나게 빠른 효율성을 가지고 있어, <span style="color:red; font-weight:bold">다른 정렬 알고리즘의 일부로 사용될 만큼 좋은 정렬 알고리즘</span>
-  - 모두 정렬이 되어있는 경우(Optimal)한 경우, 한번씩 밖에 비교를 안하므로 O(n) 의 시간복잡도를 가지게 된다.
-  - **또한, 이미 정렬되어 있는 배열에 자료를 하나씩 삽입/제거하는 경우에는, 현실적으로 최고의 정렬 알고리즘이 된다.**
-
-1. 정렬은 2번째 위치(index)의 값을 temp에 저장합니다.
-1. temp와 이전에 있는 원소들과 비교하며 삽입해나갑니다.
-1. '1'번으로 돌아가 다음 위치(index)의 값을 temp에 저장하고, 반복합니다.
-
-![](../../assets/images/algorithm/insertion-sort-001.gif)
-
-
-- **장점**
-  - 대부분의 원소가 이미 정렬되어 있는 경우, 매우 효율적일 수 있다.
-  - 정렬하고자 하는 배열 안에서 교환하는 방식이므로, 다른 메모리 공간을 필요로 하지 않는다..  ➜ 제자리 정렬(in-place sorting)
-  - **안정 정렬(Stable Sort)**
-  - **Selection Sort나 Bubble Sort과 같은 O(n<sup>2</sup>) 알고리즘에 비교하여 상대적으로 빠르다.**
-- **단점**
-  - 평균과 최악의 시간복잡도가 O(n<sup>2</sup>)으로 비효율적입니다.
-  - Bubble Sort와 Selection Sort와 마찬가지로, 배열의 길이가 길어질수록 비효율적입니다.
-
 ## **퀵 정렬 (Quick Sort) - 실행 시간： 평균 O(nlogn), 최악 O(n<sup>2</sup>). 메모리： O(log n)**
 
 - **분할 정복(divide and conquer) 방법**
@@ -229,23 +229,21 @@ class Main {
   - 배열 분할에 사용되는 원소가 중간값에 가까운 값이 되리라는 보장이 없기 때문에 , 정렬 알고리즘이 느리게 동작할 수 있다.
 
 ```java
-package algorithm;
-
 public class main {
 	
 	public static void main(String[] args) {
 		int[] numArr = new int[30];
-    	for(int i = 0 ; i < 30 ; i++) {
-    		int value = (int)(Math.random()*100);
-    		System.out.print(value + " ");
-    		numArr[i] = value;
-    	}
-    	System.out.println();
-    	sort(numArr);
-    	
-    	for(int value : numArr) {
-    		System.out.print(value + " ");
-    	}
+		for(int i = 0 ; i < 30 ; i++) {
+			int value = (int)(Math.random()*100);
+			System.out.print(value + " ");
+			numArr[i] = value;
+		}
+		System.out.println();
+		sort(numArr);
+
+		for(int value : numArr) {
+			System.out.print(value + " ");
+		}
 	}
 	
 	public static void sort(int[] a) {
@@ -313,8 +311,6 @@ public class main {
 		m_pivot_sort(a, pivot + 1, hi);
 	}
 	
-	
-	
 	/**
 	 * pivot을 기준으로 파티션을 나누기 위한 약한 정렬 메소드
 	 * 
@@ -324,7 +320,6 @@ public class main {
 	 * @return		최종적으로 위치한 피벗의 위치(hi)를 반환
 	 */
 	private static int partition(int[] a, int left, int right) {
-		
 		// lo와 hi는 각각 배열의 끝에서 1 벗어난 위치부터 시작한다.
 		int lo = left - 1;
 		int hi = right + 1;
@@ -332,7 +327,6 @@ public class main {
 		
  
 		while(true) {
-			
 			/*
 			 * 1 증가시키고 난 뒤의 lo 위치의 요소가 pivot보다 큰 요소를
 			 * 찾을 떄 까지 반복한다.
@@ -340,7 +334,6 @@ public class main {
 			do { 
 				lo++; 
 			} while(a[lo] < pivot);
- 
 			
 			/*
 			 * 1 감소시키고 난 뒤의 hi 위치가 lo보다 크거나 같은 위치이면서
@@ -350,7 +343,6 @@ public class main {
 				hi--;
 			} while(a[hi] > pivot && lo <= hi);
 			
-			
 			/*
 			 * 만약 hi가 lo보다 크지 않다면(엇갈린다면) swap하지 않고 hi를 리턴한다.
 			 */
@@ -358,21 +350,16 @@ public class main {
 				return hi;
 			}
 			
-			
 			// 교환 될 두 요소를 찾았으면 두 요소를 바꾼다.
 			swap(a, lo, hi);
 		}
-		
 	}
-	
-	
 	
 	private static void swap(int[] a, int i, int j) {
 		int temp = a[i];
 		a[i] = a[j];
 		a[j] = temp;
 	}
-	
 }
 ```
 - [퀵 정렬 구현코드 출처](https://st-lab.tistory.com/250)
