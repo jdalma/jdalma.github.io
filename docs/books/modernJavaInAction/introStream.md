@@ -1,9 +1,9 @@
 ---
 layout: default
-title: 스트림 소개
+title: 4. 스트림 소개
 parent: 모던 자바 인 액션
 grand_parent: Books
-nav_order: 2
+nav_order: 4
 ---
 ## Table of contents
 {: .no_toc .text-delta }
