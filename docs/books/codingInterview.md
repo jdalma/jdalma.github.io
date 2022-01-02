@@ -118,7 +118,6 @@ nav_order: 2
   - 평균과 최악의 시간복잡도가 O(n<sup>2</sup>)으로 비효율적입니다.
   - Bubble Sort와 Selection Sort와 마찬가지로, 배열의 길이가 길어질수록 비효율적입니다.
 
-
 ## **병합 정렬 (Merge Sort) - 평균 및 최악 실행 시간 : O(n log n) , 메모리 : 상황에 따라 다름**
 
 - **배열을 절반씩 나누어 각각을 정렬한 다음 이 둘을 합하여 다시 정렬 하는 방법이다.**
@@ -230,23 +229,21 @@ class Main {
   - 배열 분할에 사용되는 원소가 중간값에 가까운 값이 되리라는 보장이 없기 때문에 , 정렬 알고리즘이 느리게 동작할 수 있다.
 
 ```java
-package algorithm;
-
 public class main {
 	
 	public static void main(String[] args) {
 		int[] numArr = new int[30];
-    	for(int i = 0 ; i < 30 ; i++) {
-    		int value = (int)(Math.random()*100);
-    		System.out.print(value + " ");
-    		numArr[i] = value;
-    	}
-    	System.out.println();
-    	sort(numArr);
-    	
-    	for(int value : numArr) {
-    		System.out.print(value + " ");
-    	}
+		for(int i = 0 ; i < 30 ; i++) {
+			int value = (int)(Math.random()*100);
+			System.out.print(value + " ");
+			numArr[i] = value;
+		}
+		System.out.println();
+		sort(numArr);
+
+		for(int value : numArr) {
+			System.out.print(value + " ");
+		}
 	}
 	
 	public static void sort(int[] a) {
@@ -314,8 +311,6 @@ public class main {
 		m_pivot_sort(a, pivot + 1, hi);
 	}
 	
-	
-	
 	/**
 	 * pivot을 기준으로 파티션을 나누기 위한 약한 정렬 메소드
 	 * 
@@ -325,7 +320,6 @@ public class main {
 	 * @return		최종적으로 위치한 피벗의 위치(hi)를 반환
 	 */
 	private static int partition(int[] a, int left, int right) {
-		
 		// lo와 hi는 각각 배열의 끝에서 1 벗어난 위치부터 시작한다.
 		int lo = left - 1;
 		int hi = right + 1;
@@ -333,7 +327,6 @@ public class main {
 		
  
 		while(true) {
-			
 			/*
 			 * 1 증가시키고 난 뒤의 lo 위치의 요소가 pivot보다 큰 요소를
 			 * 찾을 떄 까지 반복한다.
@@ -341,7 +334,6 @@ public class main {
 			do { 
 				lo++; 
 			} while(a[lo] < pivot);
- 
 			
 			/*
 			 * 1 감소시키고 난 뒤의 hi 위치가 lo보다 크거나 같은 위치이면서
@@ -351,7 +343,6 @@ public class main {
 				hi--;
 			} while(a[hi] > pivot && lo <= hi);
 			
-			
 			/*
 			 * 만약 hi가 lo보다 크지 않다면(엇갈린다면) swap하지 않고 hi를 리턴한다.
 			 */
@@ -359,21 +350,16 @@ public class main {
 				return hi;
 			}
 			
-			
 			// 교환 될 두 요소를 찾았으면 두 요소를 바꾼다.
 			swap(a, lo, hi);
 		}
-		
 	}
-	
-	
 	
 	private static void swap(int[] a, int i, int j) {
 		int temp = a[i];
 		a[i] = a[j];
 		a[j] = temp;
 	}
-	
 }
 ```
 - [퀵 정렬 구현코드 출처](https://st-lab.tistory.com/250)
