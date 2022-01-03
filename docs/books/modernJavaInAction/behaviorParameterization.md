@@ -1,9 +1,9 @@
 ---
 layout: default
-title: 3. 동작 파라미터화 코드 전달하기
+title: 동작 파라미터화 코드 전달하기
 parent: 모던 자바 인 액션
 grand_parent: Books
-nav_order: 3
+nav_order: 2
 ---
 ## Table of contents
 {: .no_toc .text-delta }
