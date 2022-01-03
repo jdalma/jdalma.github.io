@@ -11,3 +11,26 @@ nav_order: 3
 1. TOC
 {:toc}
 ---
+
+# **동작 파라미터화**
+
+```java
+// 인터페이스
+public interface ApplePredicate{
+    boolean test (Apple apple);
+}
+
+public class AppleHeavyWeightPredicate implements ApplePredicate{
+    public boolean test(Apple apple){
+        return apple.getWeight() > 150;
+    }
+}
+
+public class AppleGreenColorPredicate implements ApplePredicate{
+    public boolean test(Apple apple){
+        return GREEN.equals(apple.getColor());
+    }
+}
+
+```
+
