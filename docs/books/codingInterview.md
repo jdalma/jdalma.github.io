@@ -374,6 +374,34 @@ public class main {
 
 - [https://velog.io/@ming/](https://velog.io/@ming/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89Binary-Search)
 
+## Basic Template
+
+- 배열의 단일 인덱스에 접근하여 검색할 때 사용 된다.
+- Initial Condition : `left = 0, right = length-1`
+- Termination : `left > right`
+- Searching Left : `right = mid-1`
+- Searching Right : `left = mid+1`
+
+
+```java
+int binarySearch(int[] nums, int target){
+  if(nums == null || nums.length == 0)
+    return -1;
+
+  int left = 0, right = nums.length - 1;
+  while(left <= right){
+    // Prevent (left + right) overflow
+    int mid = left + (right - left) / 2;
+    if(nums[mid] == target){ return mid; }
+    else if(nums[mid] < target) { left = mid + 1; }
+    else { right = mid - 1; }
+  }
+
+  // End Condition: left > right
+  return -1;
+}
+```
+
 
 ***
 
