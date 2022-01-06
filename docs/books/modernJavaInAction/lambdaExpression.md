@@ -169,3 +169,68 @@ class Main {
 - 함수형 인터페이스의 추상 메서드 시그니처는 람다 표현식의 시그니처를 가리킨다.
 - 람다 표현식의 [시그니처](https://wanna-b.tistory.com/75)를 서술하는 메서드를 **함수 디스크립터**라고 부른다.
 
+### 왜 함수형 인터페이스를 인수로 받는 메서드에만 람다 표현식을 사용할 수 있을까?
+- 언어 설계자들은 함수 형식(*람다 표현식을 표현하는데 사용한 시그니처와 같은 특별한 표기법*)을 추가하는 방법도 대안으로 고려했다.
+- 하지만 언어 설계자들은 언어를 더 복잡하게 만들이 않는 현재 방법을 선택했다.
+- **어디에 람다를 사용할 수 있을까?**
+
+```java
+1. 
+    execute(() -> {});
+    public void execute(Runnable r){
+        r.run();
+    }
+
+2. 
+    public Callable<String> fetch(){
+        return () -> "Tricky Example";
+    }
+    System.out.println(fetch().call());
+
+3. 
+    Predicate<Apple> p = (Apple a) -> a.getWeight();
+```
+
+- 1번과 2번은 유효한 람다 표현식이다.
+- `() -> {}`의 시그니처는 `() -> void`며 `Runnable`의 추상 메서드 `run`의 시그니처와 일치하므로 유효한 람다 표현식이다.
+- `Callable<String>`의 시그니처는 `() -> String`이 된다.
+- `(Apple a) -> a.getWeight()` 는 `(Apple) -> Integer`이므로 `Predicate`의 시그니처와 일치하지 않기 때문에 유효하지 않다.
+
+- ✋ `Callable`
+```java
+@FunctionalInterface
+public interface Callable<V> {
+    /**
+     * Computes a result, or throws an exception if unable to do so.
+     *
+     * @return computed result
+     * @throws Exception if unable to compute a result
+     */
+    V call() throws Exception;
+}
+
+```
+
+> - ✋ `@FunctionalInterface`는 무엇인가?
+> - 함수형 인터페이스임을 가리키는 어노테이션이다.
+> - `@FunctionalInterface`로 인터페이스를 선언했지만 실제로 함수형 인터페이스가 아니면 컴파일러가 에러를 발생시킨다.
+> - 예를들어 , 추상 메서드가 한 개 이상이라면 **"Multiple nonoverriding abstract methods found int interface Foo"**(인터페이스 Foo에 오버라이드 하지 않은 여러 추상 메서드가 있다) 같은 에러가 발생할 수 있다.
+
+
+## **람다 활용 : 실행 어라운드 패턴**
+- 람다와 동작 파라미터화로 유연하고 간결한 코드를 구현하는 데 도움을 주느 실용적인 예제를 살펴보자
+- **자원 처리** (예를 들면 , 데이터 베이스의 파일처리)에 사용하는 **순환 패턴**은 자원을 열고 , 처리한 다음에 , 자원을 닫는 순서로 이루어진다.
+- 즉 , **실제 자원을 처리하는 코드**를 **설정**과 **정리** 두 과정이 둘러싸는 형태를 **실행 어라운드 패턴**이라고 부른다.
+
+```java
+    public String processFile() throws IOException{
+        try(BufferedReader br = new BufferedReader(new FileReader("data.txt"));){
+            return br.readLine();
+        }
+    }
+```
+
+- ✋ 해당 예제는 자바 7에 새로 추가된 [try-with-resources](https://ryan-han.com/post/java/try_with_resources/)를 사용했다.
+
+### 1단계 : **동작 파라미터화를 기억하라**
+
