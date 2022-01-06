@@ -12,6 +12,7 @@ nav_order: 4
 {:toc}
 ---
 
+# ✋[자바 8 Stream API 사용 시 주의사항](https://hamait.tistory.com/547)
 # 📌 **Stream 소개**
 
 -   <span style="color:red; font-weight:bold">데이터를 담고 있는 저장소(컬렉션)가 아니다.</span>
@@ -143,8 +144,7 @@ nav_order: 4
 //        LEE
 ```
 -   인스턴스가 사용되지 않는 collect3은 중개형 오퍼레이터가 실행되지 않는다.
--   인스턴스가 사용되는 collect4는 중개형 오퍼레이터가 실행 되지만 출력 순서가 조금 이상하다.
-    -   collect4의 forEach안에서 중개형 오퍼레이터를 실행하여 sout을 찍고 , forEach의 sout을 찍는 것 같다.
+-   인스턴스가 사용되는 collect4는 중개형 오퍼레이터가 실행 되지만 출력 순서가 조금 이상하다. `lazy`
 
 ### stream , parallelStream
 
@@ -192,26 +192,20 @@ nav_order: 4
 # **Stream API 사용 예제**
 
 ## **걸러내기**
-
 -   **Filter(Predicate)**
 -   예) 이름이 3글자 이상인 데이터만 새로운 스트림으로
 
 ## **변경하기**
-
 -   **Map(Function) 또는 [FlatMap](https://madplay.github.io/post/difference-between-map-and-flatmap-methods-in-java)(Function)**
 -   예) 각각의 Post 인스턴스에서 String title만 새로운 스트림으로
 
 ## **생성하기**
-
 -   **generate(Supplier) 또는 Iterate(T seed , UnaryOperator)**
--   예) 10부터 1씩 증가하는 무제한 숫자 스트림
--   예) 랜덤 int 무제한 스트림
 
 ## **제한하기**
-
 -   **limit(long) 또는 skip(long)**
--   예) 최대 5개의 요소가 담긴 스트림을 리턴한다.
--   예) 앞에서 3개를 뺀 나머지 스트림을 리턴한다.
+
+## **에제**
 
 ```java
 public class ClassForStreamAPIPractice {
@@ -225,130 +219,198 @@ public class ClassForStreamAPIPractice {
         this.closed = closed;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public boolean isClosed() {
-        return closed;
-    }
-
-    public void setClosed(boolean closed) {
-        this.closed = closed;
-    }
-
-    @Override
-    public String toString() {
-        return "ClassForStreamAPIPractice{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", closed=" + closed +
-                '}';
-    }
+    // getter , setter . toString 생략
 }
+
+    List<ClassForStreamAPIPractice> springClasses = new ArrayList<>();
+    springClasses.add(new ClassForStreamAPIPractice(1 , "spring boot" , true));
+    springClasses.add(new ClassForStreamAPIPractice(2 , "spring data jpa" , true));
+    springClasses.add(new ClassForStreamAPIPractice(3 , "spring mvc" , false));
+    springClasses.add(new ClassForStreamAPIPractice(4 , "spring core" , false));
+    springClasses.add(new ClassForStreamAPIPractice(5 , "rest api development" , false));
+
+    List<ClassForStreamAPIPractice> javaClasses = new ArrayList<>();
+    javaClasses.add(new ClassForStreamAPIPractice(6 , "The Java , Test" , true));
+    javaClasses.add(new ClassForStreamAPIPractice(7 , "The Java , Code manipulation" , true));
+    javaClasses.add(new ClassForStreamAPIPractice(8 , "The Java , 8 to 11" , false));
+
+    List<List<ClassForStreamAPIPractice>> keesunEvents = new ArrayList<>();
+    keesunEvents.add(springClasses);
+    keesunEvents.add(javaClasses);
+
 ```
 
+- **spring으로 시작하는 수업 출력**
 ```java
-public class AppForStreamAPIPractice {
-    public static void main(String[] args) {
-        List<ClassForStreamAPIPractice> springClasses = new ArrayList<>();
-        springClasses.add(new ClassForStreamAPIPractice(1 , "spring boot" , true));
-        springClasses.add(new ClassForStreamAPIPractice(2 , "spring data jpa" , true));
-        springClasses.add(new ClassForStreamAPIPractice(3 , "spring mvc" , false));
-        springClasses.add(new ClassForStreamAPIPractice(4 , "spring core" , false));
-        springClasses.add(new ClassForStreamAPIPractice(5 , "rest api development" , false));
+springClasses.stream()
+             .filter(sc -> sc.getTitle().startsWith("spring"))
+             .forEach(sc -> System.out.println(sc.getId()));
+```
+- **spring으로 시작하는 수업 리스트로 반환**
+```java
+List<ClassForStreamAPIPractice> exam1List = 
+            springClasses.stream()
+                         .filter(oc -> oc.getTitle().startsWith("spring"))
+                         .collect(Collectors.toList());
+```
+- **close 되지 않은 수업**
+```java
+springClasses.stream()
+             .filter(oc -> !oc.isClosed())
+             .forEach(oc -> System.out.println(oc.getId()));
+```
+- **close 되지 않은 수업** (스태틱 메서드와 메서드 레퍼런스 활용)
+```java
+springClasses.stream()
+             .filter(Predicate.not(ClassForStreamAPIPractice::isClosed))
+             .forEach(oc -> System.out.println(oc.getId()));
+```
+- ✋ **Predicate 인터페이스 static method**
+```java
+    static <T> Predicate<T> isEqual(Object targetRef) {
+        return (null == targetRef)
+                ? Objects::isNull
+                : object -> targetRef.equals(object);
+    }
 
-        System.out.println(" spring으로 시작하는 수업 ");
-        springClasses.stream()
-                .filter(oc -> oc.getTitle().startsWith("spring"))
-                .forEach(oc -> System.out.println(oc.getId()));
-        // 필터에 걸린 객체를 리스트로 받기
-        List<ClassForStreamAPIPractice> exam1List = springClasses.stream()
-                 .filter(oc -> oc.getTitle().startsWith("spring"))
-                 .collect(Collectors.toList());
+    @SuppressWarnings("unchecked")
+    static <T> Predicate<T> not(Predicate<? super T> target) {
+        Objects.requireNonNull(target);
+        return (Predicate<T>)target.negate();
+    }
+```
+- **수업 이름만 모아서 스트림 만들기**
+```java
+springClasses.stream()
+             .map(ClassForStreamAPIPractice::getTitle)
+             .forEach(System.out::println);
+```
 
-        exam1List.forEach(System.out::println);
+- **두 수업 리스트가 담긴 리스트 기준으로 모든 수업 출력**
+```java
+keesunEvents.forEach(subList -> subList.forEach(System.out::println));
+```
 
-        System.out.println(" close되지 않은 수업 ");
-        springClasses.stream()
-                .filter(oc -> !oc.isClosed())
-                .forEach(oc -> System.out.println(oc.getId()));
+- **두 수업 리스트가 담긴 리스트 기준으로 모든 수업 출력** (flatMap 사용)
+```java
+keesunEvents.stream()
+            .flatMap(Collection::stream)
+            .forEach(System.out::println);
+```
 
-        // 스태틱 메서드와 메서드 레퍼런스 활용
-        springClasses.stream()
-                .filter(Predicate.not(ClassForStreamAPIPractice::isClosed))
-                .forEach(oc -> System.out.println(oc.getId()));
+- **1부터 1씩 증가하는 무제한 스트림 중에서 앞에 10개 빼고 최대 10개 까지만**
+```java
+Stream.iterate(1 , i  -> i + 1)
+      .skip(10)
+      .limit(10)
+      .forEach(System.out::println);
+```
 
-        // 필터에 걸린 객체를 리스트로 받기
-        List<ClassForStreamAPIPractice> exam2List = springClasses.stream()
-                .filter(Predicate.not(ClassForStreamAPIPractice::isClosed))
-                .collect(Collectors.toList());
+- **자바 수업 중에 Test가 붙어 있는 수업이 있는지 확인**
+```java
+boolean test = javaClasses.stream()
+                          .anyMatch(oc -> oc.getTitle().contains("Test"));
+```
 
-        exam2List.forEach(System.out::println);
+- **스프링 수업 중에 제목에 spring이 들어간 제목만 모아서 List로 반환**
+```java
+List<String> titleList = 
+            springClasses.stream()
+                         .map(ClassForStreamAPIPractice::getTitle)
+                         .filter(t -> t.contains("spring"))
+                         .collect(Collectors.toList());
+```
+
+- **스프링 수업 중에 제목에 spring이 들어간 객체를 모아서 List로 반환**
+```java
+List<ClassForStreamAPIPractice> objList = 
+            springClasses.stream()
+                         .filter(oc -> oc.getTitle().contains("spring"))
+                         .collect(Collectors.toList());
+```
+
+## **심화 예제** [출처](https://jeong-pro.tistory.com/212)
+```java
+    List<List<String>> persons = Arrays.asList(
+        Arrays.asList("김프로,축구:농구:야구,구기종목 좋아요".split(",")),
+        Arrays.asList("정프로,개발:당구:족구,개발하는데 뛰긴 싫어".split(",")),
+        Arrays.asList("앙몬드,피아노, 죠르디가 좋아요 좋아좋아너무좋아".split(",")),
+        Arrays.asList("죠르디,스포츠댄스:개발,개발하는 죠르디".split(","))
+    );
+```
+
+- **취미별 인원 수**
+```java
+Map<String, Integer> result = new HashMap<>();
+
+persons.stream()
+        .flatMap(member -> Arrays.stream(member.get(1).split(":")))
+        .forEach(hobby -> result.merge(hobby , 1 , (oldValue , newValue) -> ++oldValue));
+
+result.entrySet().forEach(entry-> System.out.println(entry.getKey() + " " + entry.getValue()));
+
+//		스포츠댄스 1
+//		족구 1
+//		당구 1
+//		개발 2
+//		야구 1
+//		피아노 1
+//		농구 1
+//		축구 1
+```
+
+- ✋ **Map의 merge**
+```java
+    default V merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> remappingFunction) {
+        Objects.requireNonNull(remappingFunction);
+        Objects.requireNonNull(value);
+        V oldValue = get(key);
+        V newValue = (oldValue == null) ? value :
+                   remappingFunction.apply(oldValue, value);
+        if (newValue == null) {
+            remove(key);
+        } else {
+            put(key, newValue);
+        }
+        return newValue;
+    }
+```
+
+- **취미별 정씨 성을 갖는 멤버 수**
+```java
+    Map<String, Integer> result = new HashMap<>(); 
+    persons.stream()
+            .filter(member-> member.get(0).startsWith("정"))
+            .flatMap(member -> Arrays.stream(member.get(1).split(":")))
+            .forEach(hobby -> result.merge(hobby, 1, (oldValue, newValue) -> ++oldValue));
+    
+    result.entrySet().forEach(entry-> System.out.println(entry.getKey() + " " + entry.getValue()));
+
+//		족구 1
+//		당구 1
+//		개발 1
+```
+
+- **소개 내용에 '좋아'가 몇 번 등장하는지 구하라**
+```java
+    final String word = "좋아"; 
+    int result = persons.stream()
+                        .map(member -> countFindString(member.get(2), word))
+                        .reduce(0, Integer::sum); 
+    System.out.println(word + " " + result);
 
 
-        System.out.println(" 수업 이름만 모아서 스트림 만들기 ");
-        // 중개 오퍼레이터인 map은 객체를 map으로 받아들여 나갈때는 다른 타입으로 변경할 수 있다.
-        springClasses.stream()
-                        .map(ClassForStreamAPIPractice::getTitle)
-                        .forEach(System.out::println);
-
-
-        List<ClassForStreamAPIPractice> javaClasses = new ArrayList<>();
-        javaClasses.add(new ClassForStreamAPIPractice(6 , "The Java , Test" , true));
-        javaClasses.add(new ClassForStreamAPIPractice(7 , "The Java , Code manipulation" , true));
-        javaClasses.add(new ClassForStreamAPIPractice(8 , "The Java , 8 to 11" , false));
-
-        List<List<ClassForStreamAPIPractice>> keesunEvents = new ArrayList<>();
-        keesunEvents.add(springClasses);
-        keesunEvents.add(javaClasses);
-
-        System.out.println(" 두 수업 목록에 들어 있는 모든 수업 아이디 출력 ");
-        // 메서드 레퍼런스
-        keesunEvents.forEach(oc -> {
-            oc.forEach(System.out::println);
-        });
-        // flatMap
-        // forEach에는 리스트안의 객체 타입으로 들어간다.
-        keesunEvents.stream().flatMap(Collection::stream)
-                .forEach(System.out::println);
-
-        System.out.println(" 1부터 1씩 증가하는 무제한 스트림 중에서 앞에 10개 빼고 최대 10개 까지만 ");
-        Stream.iterate(1 , i  -> i + 1)
-                .skip(10)
-                .limit(10)
-                .forEach(System.out::println);
-
-        System.out.println(" 자바 수업 중에 Test가 들어 있는 수업이 있는지 확인 ");
-        boolean test = javaClasses.stream().anyMatch(oc -> oc.getTitle().contains("Test"));
-        System.out.println(test);
-
-        System.out.println(" 스프링 수업 중에 제목에 spring이 들어간 제목만 모아서 List로 만들기 ");
-        List<String> titleList = springClasses.stream()
-                                        .map(ClassForStreamAPIPractice::getTitle)
-                                        .filter(t -> t.contains("spring"))
-                                        .collect(Collectors.toList());
-        titleList.forEach(System.out::println);
-
-        System.out.println(" 스프링 수업 중에 제목에 spring이 들어간 객체를 모아서 List로 만들기 ");
-        List<ClassForStreamAPIPractice> objList = springClasses.stream()
-                                            .filter(oc -> oc.getTitle().contains("spring"))
-                                            .collect(Collectors.toList());
-        objList.forEach(System.out::println);
+private static int countFindString(String source , String target) {
+    int idx = source.indexOf(target);
+    if(idx == -1) {
+        return 0;
+    }
+    else {
+        return 1 + countFindString(source.substring(idx + 1) , target);
     }
 }
+
+// 좋아 5
 ```
 
 ***
