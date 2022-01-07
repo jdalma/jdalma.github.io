@@ -1,3 +1,3 @@
 source "https://rubygems.org"
-gem 'jekyll-sitemap'
+gem "just-the-docs"
 gemspec

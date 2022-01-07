@@ -1052,3 +1052,5 @@ public int fibo(int n){
 [출처 Jayce's Blog](https://jayce-with.tistory.com/16)
 
 ***
+
+# **[Kadane’s Algorithm](https://sustainable-dev.tistory.com/23)**
