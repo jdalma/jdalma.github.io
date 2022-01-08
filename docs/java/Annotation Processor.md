@@ -219,7 +219,7 @@ public interface getterTest {
 > - ![](../../assets/images/java/annotation-processor/5.png)
 
 
-**📌 해당 Annotation Processor로 생성된 코드를 사용하기**
+📌 **해당 Annotation Processor로 생성된 코드를 사용하기**
 {: .fh-default .fs-4 }
 
 **해당 이미지의 `annotations` 폴더 아래의 파일들을 `Source`로 설정 해야 된다.**
@@ -244,7 +244,7 @@ public static void main( String[] args ) {
 
 ***
 
-# **📌 정리**
+# 📌 **정리**
 - **컴파일러가 컴파일 하는 중에 해당 어노테이션이 달린 클래스 정보를 읽어들여 새로운 소스 코드를 생성해내거나 기존 코드를 수정 (롬복 처럼) 할 수 있다.**
 - **별개의 메서드나 클래스를 만들어 낼 수 있는 아주 강력한 기능이다.**
 - `@JeongGetter` 어노테이션을 처리하는 Annotation Processor를 만들어 해당 Annotation Processor 프로젝트를 라이브러리로 땡겨 <span style="color:red; font-weight:bold">소스 코드에 없던 코드를 만들어 내보았다.</span>
@@ -263,7 +263,7 @@ public static void main( String[] args ) {
 
 ***
 
-# **✍ 키워드**
+# ✍ **키워드**
 
 - javax.annotation.processing
   - AbstractProcessor , **[Processor](https://docs.oracle.com/javase/8/docs/api/javax/annotation/processing/Processor.html)**
