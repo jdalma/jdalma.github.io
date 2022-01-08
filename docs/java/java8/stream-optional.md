@@ -340,6 +340,7 @@ List<ClassForStreamAPIPractice> objList =
 ```
 
 - **취미별 인원 수**
+
 ```java
 Map<String, Integer> result = new HashMap<>();
 
@@ -360,6 +361,7 @@ result.entrySet().forEach(entry-> System.out.println(entry.getKey() + " " + entr
 ```
 
 - ✋ **Map의 merge**
+
 ```java
     default V merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> remappingFunction) {
         Objects.requireNonNull(remappingFunction);
@@ -377,6 +379,7 @@ result.entrySet().forEach(entry-> System.out.println(entry.getKey() + " " + entr
 ```
 
 - **취미별 정씨 성을 갖는 멤버 수**
+
 ```java
     Map<String, Integer> result = new HashMap<>(); 
     persons.stream()
@@ -392,6 +395,7 @@ result.entrySet().forEach(entry-> System.out.println(entry.getKey() + " " + entr
 ```
 
 - **소개 내용에 '좋아'가 몇 번 등장하는지 구하라**
+
 ```java
     final String word = "좋아"; 
     int result = persons.stream()
