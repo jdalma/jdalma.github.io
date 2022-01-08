@@ -87,50 +87,56 @@ public static void main(String[] args) {
 
 ```java
 private void run(){
-  // final 없어도 참조가 가능하다.
-  // final 없지만 어디에서도 이 변수를 수정하지 않는 것 (사실상 final - effective final)
-  int baseNumber = 10;
+        // final 없어도 참조가 가능하다.
+        // final 없지만 어디에서도 이 변수를 수정하지 않는 것 (사실상 final - effective final)
+        int baseNumber = 10;
 
-  // 쉐도윙
-  // Foo class -> run method -> 람다 , 익명 클래스 , 내부 클래스
-  // 내부 클래스 , 익명 클래스 - 쉐도윙이 일어난다.
-  // 람다 - 쉐도윙이 일어나지 않는다.
+        // 쉐도윙
+        // Foo class -> run method -> 람다 , 익명 클래스 , 내부 클래스
+        // 내부 클래스 , 익명 클래스 - 쉐도윙이 일어난다.
+        // 람다 - 쉐도윙이 일어나지 않는다.
 
-  // 람다 표현식 지역 변수 참조
-  IntConsumer printInt = (i) -> {
-      int baseNumber = 11;
-      System.out.println(i + baseNumber);
-  };
-  printInt.accept(10);
+        // 람다 표현식 지역 변수 참조
+        IntConsumer printInt = (i) -> {
+            System.out.println("람다 표현식 지역 변수 참조 : " + (i + baseNumber));
+        };
+        printInt.accept(10);
 
 
-  // 익명 클래스에서 지역 변수 참조
-  Consumer<Integer> test2 = new Consumer<Integer>() {
-      @Override
-      public void accept(Integer integer) {
-          int baseNumber = 12;
-          System.out.println(baseNumber);
-      }
-  };
+        // 익명 클래스에서 지역 변수 참조
+        Consumer<Integer> test2 = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                int baseNumber = 90;
+                System.out.println("익명 클래스에서 지역 변수 참조 : " + (integer + baseNumber));
+            }
+        };
+        test2.accept(10);
 
-  // 내부(로컬) 클래스에서 지역 변수 참조
-  class LocalClass{
-      void printBaseNumber(){
-          int baseNumber = 13;
-          System.out.println(baseNumber);
-      }
-  }
-}
+        // 내부(로컬) 클래스에서 지역 변수 참조
+        class LocalClass{
+            void printBaseNumber(int value){
+                int baseNumber = 90;
+                System.out.println("내부(로컬) 클래스에서 지역 변수 참조 : " + (value + baseNumber));
+            }
+        }
+        LocalClass test3 = new LocalClass();
+        test3.printBaseNumber(10);
+
+//        람다 표현식 지역 변수 참조 : 20
+//        익명 클래스에서 지역 변수 참조 : 100
+//        내부(로컬) 클래스에서 지역 변수 참조 : 100
 ```
 ✅ **람다 scope 안의 int baseNumber = 11;은 컴파일 에러가 난다. (쉐도윙이 일어나지 않는다.)**
 {: .fh-default .fs-4 }
 
 ![](../../../assets/images/java/java8/functionalInterface-lambda/1.png)
--  **scope가 동일하여 동일한 변수가 2개 선언되었기 때문에**
--   **람다 표현식의 scope(범위)와 메소드의 scope가 동일하다.**
--   **scope가 동일하기 때문에 baseNumber가 변경된다면 컴파일 에러가 발생한다.**
 
 ![](../../../assets/images/java/java8/functionalInterface-lambda/2.png)
+-  **scope가 동일하여 동일한 변수가 2개 선언되었기 때문에**
+-  **람다 표현식의 scope(범위)와 메소드의 scope가 동일하다.**
+-  **scope가 동일하기 때문에 baseNumber가 변경된다면 컴파일 에러가 발생한다.**
+
 -   **하지만 익명 클래스와 내부 클래스는 쉐도윙이 일어난다.**
     -   **익명 클래스와 내부 클래스에서 선언된 baseNumber가 run 메소드의 baseNumber를 덮어 버린다.**
 

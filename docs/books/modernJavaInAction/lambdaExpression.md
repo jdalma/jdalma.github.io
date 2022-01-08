@@ -41,15 +41,15 @@ nav_order: 3
        - 익명 클래스처럼 많은 자질구레한 코드를 구현할 필요가 없다.
 - `Comparator`를 구현하는 기존 코드
 ```java
-Comparator<Apple> byWeight = new Comparator<Apple>(){
-    public int compare(Apple a1 , Apple a2){
-        return a1.getWeight().compareTo(a2.getWeight());
-    }
-};
+    Comparator<Apple> byWeight = new Comparator<Apple>(){
+        public int compare(Apple a1 , Apple a2){
+            return a1.getWeight().compareTo(a2.getWeight());
+        }
+    };
 ```
 - `람다`를 사용한 코드
 ```java
-Comparator<Apple> byWeight = (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
+    Comparator<Apple> byWeight = (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
 ```
 
 ![](../../../assets/images/books/modernJavaInAction/lambdaExpression/lambdaExpression.png)
@@ -64,20 +64,20 @@ Comparator<Apple> byWeight = (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a
 ## 람다 표현식 예제
 
 ```java
-(String s) -> s.length
+    (String s) -> s.length
 ```
 - `String` 형식의 파라미터 하나를 가지며 `int`를 반환한다.
 - **람다 표현식에는 return이 함축되어 있으므로 return 문을 명시적으로 사용하지 않아도 된다.**
 
 ```java
-(Apple a) -> a.getWeight() > 150
+    (Apple a) -> a.getWeight() > 150
 ```
 - `Apple`형식의 파라미터 하나를 가지며 `boolean`을 반환한다.
 
 ```java
-(int x , int y) -> {
-    System.out.println("Result : " + x + y);
-}
+    (int x , int y) -> {
+        System.out.println("Result : " + x + y);
+    }
 ```
 - `int`형식의 파라미터 두 개를 가지며 `void` 리턴이다.
 - **람다 표현식은 여러 행의 문장을 포함할 수 있다.**
@@ -87,10 +87,10 @@ Comparator<Apple> byWeight = (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a
 ```
 - 파라미터가 없으며 `int` 42를 반환한다.
 
-## **어디에 , 어떻게 람다를 사용할까?**
+# **어디에 , 어떻게 람다를 사용할까?**
 - **함수형 인터페이스**라는 문맥에서 람다 표현식을 사용할 수 있다.
 
-### 함수형 인터페이스
+## 함수형 인터페이스
 - **정확히 하나의 추상 메서드를 지정하는 인터페이스**
 - 📌 함수형 인터페이스로 뭘 할 수 있을까?
   - 람다 표현식으로 함수형 인터페이스의 추상 메서드 구현을 직접 전달할 수 있으므로 **전체 표현식을 함수형 인터페이스의 인스턴스로 취급**할 수 있다.
@@ -98,37 +98,37 @@ Comparator<Apple> byWeight = (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a
 
 - `java.util.Comparator`
 ```java
-public interface Comparator<T>{
-    int compare(T o1 , T o2);
-}
+    public interface Comparator<T>{
+        int compare(T o1 , T o2);
+    }
 ```
 
 - `java.lang.Runnable`
 ```java
-public interface Runnable{
-    void run();
-}
+    public interface Runnable{
+        void run();
+    }
 ```
 
 - `java.awt.event.ActionListener`
 ```java
-public interface ActionListener extends EventListener{
-    void actionPerformed(ActionEvent e);
-}
+    public interface ActionListener extends EventListener{
+        void actionPerformed(ActionEvent e);
+    }
 ```
 
 - `java.util.concurrent.Callable`
 ```java
-public interface Callable<V>{
-    V call() thorws Exception;
-}
+    public interface Callable<V>{
+        V call() thorws Exception;
+    }
 ```
 
 - `java.security.PrivilegedAction`
 ```java
-public interface PrivilegedAction<T>{
-    T run();
-}
+    public interface PrivilegedAction<T>{
+        T run();
+    }
 ```
 
 > - 인터페이스는 **디폴트 메서드 (인터페이스의 메서드를 구현하지 않은 클래스를 고려해서 기본 구현을 제공하는 바디를 포함하는 메서드)** 를 포함할 수 있다.
@@ -137,44 +137,41 @@ public interface PrivilegedAction<T>{
 - `Runnable`이 오직 하나의 추상 메서드 `run`을 정의하는 함수형 인터페이스 이므로 아래 예제는 올바른 구현 코드이다.
 
 ```java
-class Main {
-    public static void main(String[] args) throws IOException {
-        // 람다 사용
-        Runnable r1 = () -> System.out.println("Hello World");
+    class Main {
+        public static void main(String[] args) throws IOException {
+            // 람다 사용
+            Runnable r1 = () -> System.out.println("Hello World");
 
-        // 익명 클래스 사용
-        Runnable r2 = new Runnable(){
-            public void run(){
-                System.out.println("Hello World 2");
-            }
-        };
+            // 익명 클래스 사용
+            Runnable r2 = new Runnable(){
+                public void run(){
+                    System.out.println("Hello World 2");
+                }
+            };
 
-        process(r1);
-        process(r2);
-        // 직접 전달된 람다 표현식
-        process(() -> System.out.println("Hello World 3"));
+            process(r1);
+            process(r2);
+            // 직접 전달된 람다 표현식
+            process(() -> System.out.println("Hello World 3"));
 
-        // Hello World
-        // Hello World 2
-        // Hello World 3        
+            // Hello World
+            // Hello World 2
+            // Hello World 3        
+        }
+
+        public static void process(Runnable r){
+            r.run();
+        }
     }
-
-    public static void process(Runnable r){
-        r.run();
-    }
-}
 ```
 
-### 함수 디스크립터
-- 함수형 인터페이스의 추상 메서드 시그니처는 람다 표현식의 시그니처를 가리킨다.
-- 람다 표현식의 [시그니처](https://wanna-b.tistory.com/75)를 서술하는 메서드를 **함수 디스크립터**라고 부른다.
-
-### 왜 함수형 인터페이스를 인수로 받는 메서드에만 람다 표현식을 사용할 수 있을까?
+## 왜 함수형 인터페이스를 인수로 받는 메서드에만 람다 표현식을 사용할 수 있을까?
 - 언어 설계자들은 함수 형식(*람다 표현식을 표현하는데 사용한 시그니처와 같은 특별한 표기법*)을 추가하는 방법도 대안으로 고려했다.
 - 하지만 언어 설계자들은 언어를 더 복잡하게 만들이 않는 현재 방법을 선택했다.
 - **어디에 람다를 사용할 수 있을까?**
 
 ```java
+
 1. 
     execute(() -> {});
     public void execute(Runnable r){
@@ -189,6 +186,7 @@ class Main {
 
 3. 
     Predicate<Apple> p = (Apple a) -> a.getWeight();
+    
 ```
 
 - 1번과 2번은 유효한 람다 표현식이다.
@@ -198,6 +196,7 @@ class Main {
 - ✋ `Callable`
 
 ```java
+
 @FunctionalInterface
 public interface Callable<V> {
     /**
@@ -208,6 +207,7 @@ public interface Callable<V> {
      */
     V call() throws Exception;
 }
+
 ```
 
 > - ✋ **`@FunctionalInterface`는 무엇인가?**
@@ -215,22 +215,335 @@ public interface Callable<V> {
 > - `@FunctionalInterface`로 인터페이스를 선언했지만 실제로 함수형 인터페이스가 아니면 컴파일러가 에러를 발생시킨다.
 > - 예를들어 , 추상 메서드가 한 개 이상이라면 **"Multiple nonoverriding abstract methods found int interface Foo"**(인터페이스 Foo에 오버라이드 하지 않은 여러 추상 메서드가 있다) 같은 에러가 발생할 수 있다.
 
-## **람다 활용 : 실행 어라운드 패턴**
+# **람다 활용 : 실행 어라운드 패턴**
 - 람다와 동작 파라미터화로 유연하고 간결한 코드를 구현하는 데 도움을 주느 실용적인 예제를 살펴보자
 - **자원 처리** (예를 들면 , 데이터 베이스의 파일처리)에 사용하는 **순환 패턴**은 자원을 열고 , 처리한 다음에 , 자원을 닫는 순서로 이루어진다.
 - 즉 , **실제 자원을 처리하는 코드**를 **설정**과 **정리** 두 과정이 둘러싸는 형태를 **실행 어라운드 패턴**이라고 부른다.
 
 ```java
+
     public String processFile() throws IOException{
         try(BufferedReader br = new BufferedReader(new FileReader("data.txt"));){
             return br.readLine();
         }
     }
+
 ```
 
 - ✋ 해당 예제는 자바 7에 새로 추가된 [try-with-resources](https://ryan-han.com/post/java/try_with_resources/)를 사용했다.
 
-### 1단계 : **동작 파라미터화를 기억하라**
+## 1단계 : **동작 파라미터화를 기억하라**
 - 현재 코드는 파일에서 한 번에 한 줄만 읽을 수 있다.
 - 한 번에 두 줄을 읽거나 가장 자주 사용되는 단어를 반환하려면 어떻게 해야할까?
 - 기존의 설정 , 정리 과정은 재사용하고 `processFile`메서드의 동작을 파라미터화 해야한다.
+
+## 2단계 : **함수형 인터페이스를 이용해서 동작 전달**
+- `BufferedReader -> String`과 `IOException`을 던질 수 있는 시그니처와 일치하는 함수형 인터페이스를 만들어 `processFile`메서드의 인수로 전달할 수 있다.
+
+```java
+
+    @FunctionalInterface
+    public interface BufferedReaderProcessor{
+        String process(BufferedReader br) throws IOException;
+    }
+
+    String result = processFile((BufferedReader br) -> br.readLine() + br.readLine());
+```
+- ✋ [람다 표현식 , 익명 , 내부 클래스 각각 지역변수 참조](https://jeongcode.github.io/docs/java/java8/functionalInterface-lambda/#%EB%B3%80%EC%88%98-%EC%BA%A1%EC%B2%98-variable-capture)
+
+## 3단계 : **동작 실행**
+
+- `process` 메서드의 시그니처 `(BufferedReader -> String)`과 일치하는 함수형 인터페이스를 람다 표현식으로 추상 메서드 구현을 직접 전달할 수 있다.
+- 전달된 코드는 함수형 인터페이스의 인스턴스로 전달된 코드와 같은 방식으로 처리한다.
+
+```java
+
+    public String processFile(BufferedReaderProcessr p) throws IOException{
+        try(BufferedReader br = new BufferedReader(new FileReader("data.txt"));){
+            return p.process(br);
+        }
+    }
+
+```
+
+## 4단계 : **람다 전달**
+
+- 함수형 인터페이스를 람다로 인스턴스화 해서 다양한 동작을 `processFile` 메서드로 전달할 수 있다.
+- `한 행을 처리하는 코드`
+
+```java
+    String oneLine = processFile((BufferedReader br) -> br.readLine());
+```
+
+- `두 행을 처리하는 코드`
+
+```java
+    String twoLines = processFile((BufferedReader br) -> br.readLine() + br.readLine());
+```
+
+# **함수형 인터페이스 사용**
+- 함수형 인터페이스는 오직 하나의 추상 메서드를 지정한다.
+- 함수형 인터페이스의 추상 메서드는 람다 표현식의 [시그니처](https://wanna-b.tistory.com/75)를 묘사한다.
+- 함수형 인터페이스의 추상 메서드 시그니처를 **함수 디스크립터**라고 한다.
+- **다양한 람다 표현식을 사용하려면 공통의 함수 디스크립터를 기술하는 함수형 인터페이스 집합이 필요하다.**
+- `java.util.function` 패키지로 여러가지 새로운 함수형 인터페이스를 제공한다.
+
+## `Predicate<T>`
+- 제네릭 형식 `T`의 객체를 인수로 받아 `boolean`을 반환하는 `test`라는 추상 메서드를 정의한다.
+
+```java
+
+    public <T> List<T> filter(List<T> list , Predicate<T> p){
+        List<T> results = new ArrayList<>();
+        for(T t : list){
+            if(p.test(t)) results.add(t);
+        }
+        return results;
+    }
+
+    Predicate<String> nonEmptyStringPredicate = (String s) -> !s.isEmpty();
+    List<String> nonEmpty = filter(listOfStrings , nonEmptyStringPredicate);
+
+```
+
+## `Consumer<T>`
+- 제네릭 형식 `T`의 객체를 인수로 받아 `void`을 반환하는 `accept`라는 추상 메서드를 정의한다.
+- `T`형식의 **객체를 인수로 받아서 어떤 동작을 수행하고 싶을 때** `Consumer`라는 인터페이스를 사용할 수 있다.
+
+```java
+
+    public <T> void forEach(List<T> list , Consumer<T> c){
+        for(T t : list){
+            c.accept(t);
+        }
+    }
+
+    forEach(
+        Arrays.asList(1,2,3,4,5);
+        (Integer i) -> System.out.println(i); // Consumer의 accept메서드를 구현하는 람다
+    )
+
+```
+
+## `Function<T , R>`
+
+- 제네릭 형식 `T`를 인수로 받아 `R` 객체를 반환하는 `apply`라는 추상 메서드를 정의한다.
+- **입력을 출력으로 매핑하는 람다를 정의할 때 `Function`인터페이스를 활용할 수 있다.**
+  - 사과의 무게 정보를 추출하거나 , 문자열을 길이와 매핑
+
+```java
+
+    @FunctionalInterface
+    public interface Function<T , R>{
+        R apply(T t);
+    }
+
+
+    public <T , R> List<R> map(List<T> list , Function<T , R> f){
+        List<R> result = new ArrayList<>();
+        for(T t : list){
+            result.add(f.apply(t));
+        }
+        return result;
+    }
+
+    List<Integer> list = map(
+        Arrays.asList("lambdas" , "in" , "action"),
+        (String s) -> s.length()
+    );
+
+```
+
+## 기본형 특화
+- 자바의 모든 형식은 **참조형** (Byte , Integer , Object , List...) 아니면 **기본형** (int , double , byte , char...)에 해당한다.
+
+```java
+    // int ➜ Integer 오토박싱
+    List<Integer> list = new ArrayList<>();
+    for(int i = 300 ; i < 400 ; i++){
+        list.add(i);
+    }
+```
+
+- **함수형 인터페이스의 제네릭 파라미터에는 참조형만 사용할 수 있기 때문에 위와 같은 오토박싱 변환 과정을 수행하는 비용이 소모된다.**
+  - 박싱한 값은 기본형을 감싸는 래퍼며 힙에 저장된다.
+  - 따라서 박싱한 값은 메모리를 더 소비하며 기본형을 가져올 때도 메모리를 탐색하는 과정이 필요하다.
+- 📌 자바 8 에서는 기본형을 입출력으로 사용하는 상황에서 **오토박싱 동작을 피할 수 있도록 틀벽한 버전의 함수형 인터페이스를 제공한다.**
+
+```java
+
+    public interface IntPredicate{
+        boolean test(int t);
+    }
+
+    IntPredicate evenNumbers = (int i) -> i % 2 == 0;
+    evenNumbers.test(1000);
+
+    Predicate<Integer> oddNumbers = (Integer i) -> i % 2 != 0;
+    oddNumbers.test(1000);
+
+```
+
+![](../../../assets/images/books/modernJavaInAction/lambdaExpression/basicSpecialization.png)
+
+## 예제
+
+- `T -> R`
+   - `Function<T , R>`이 대표적인 예제다.
+   - `T`형식의 객체를 `R`형식의 객체로 변환할 때 사용한다.
+- `(int , int) -> int`
+    - `IntBinaryOperator`는 `(int , int) -> int`형식의 시그니처를 갖는 추상 메서드 `applyAsInt`를 정의한다.
+- `() -> T`
+    - `Supplier<T>`는 `() -> T`형식의 시그니처를 갖는 추상 메서드 `get`을 정의한다.
+    - `Callable<T>`도 `() -> T`형식의 시그니처를 갖는 추상 메서드 `call`을 정의한다.
+- `(T , U) -> R`
+    - `BiFunction<T , U , R>`은 `(T , U) -> R`형식의 시그니처를 갖는 추상 메서드 `apply`를 정의한다.
+- **boolean표현**
+
+```java
+    // 람다 예제
+    (List<String> list) -> list.isEmpty()
+
+    // 대응하는 함수형 인터페이스
+    Predicate<List<String>>
+```
+
+- **객체 생성**
+
+```java
+    // 람다 예제
+    () -> new Apple(10)
+
+    // 대응하는 함수형 인터페이스
+    Supplier<Apple>
+```
+
+- **객체에서 소비**
+
+```java
+    // 람다 예제
+    (Apple a) -> System.out.println(a.getWeight())
+
+    // 대응하는 함수형 인터페이스
+    Consumer<Apple>
+```
+
+- **객체에서 선택/추출**
+
+```java
+    // 람다 예제
+    (String s) -> s.length()
+
+    // 대응하는 함수형 인터페이스
+    Function<String , Integer> 또는
+    ToIntFunction<String>
+```
+
+- **두 값 조합**
+
+```java
+    // 람다 예제
+    (int a , int b) -> a * b
+
+    // 대응하는 함수형 인터페이스
+    intBinaryOperator
+```
+
+- **두 객체 비교**
+
+```java
+    // 람다 예제
+    (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight())
+
+    // 대응하는 함수형 인터페이스
+    Comparator<Apple> 또는
+    BiFunction<Apple , Apple , Integer> 또는
+    ToIntBiFunction<Apple , Apple>
+```
+
+- **예외를 던지는 람다 표현식**
+
+```java
+
+    // 함수형 인터페이스에서 직접 정의
+    public String processFile(BufferedReaderProcessr p) throws IOException{
+        try(BufferedReader br = new BufferedReader(new FileReader("data.txt"));){
+            return p.process(br);
+        }
+    }
+
+    // try/catch 블록
+    Function<BufferedReader , String> f = (BufferedReader b) -> {
+        try{
+            return b.readLine();
+        }
+        catch(IOException e){
+            throw new RuntimeException(e);
+        }
+    };
+```
+
+# **형식 검사 , 형식 추론 , 제약**
+- 람다 표현식 자체에는 람다가 어떤 함수형 인터페이스를 구현하는지의 정보가 포함되어 있지 않다.
+- 람다의 실제 형식을 파악해보자
+
+## 형식 검사
+- 람다가 사용되는 **콘텍스트**를 이용해서 람다의 형식을 **추론**할 수 있다.
+- 어떤 콘텍스트 *(람다가 전달된 메서드 파라미터나 람다가 할당되는 변수 등)*에서 기대되는 람다 표현식의 형식을 **대상 형식**이라고 부른다.
+
+```java
+    List<Apple> heavierThan150g = filter(inventory , (Apple apple) -> apple.getWeight() > 150);
+```
+
+![](../../../assets/images/books/modernJavaInAction/lambdaExpression/lambdaExpressionValidation.png)
+
+## 같은 람다 , 다른 함수형 인터페이스
+
+- **대상 형식**이라는 특징 때문에 같은 람다 표현식이더라도 호환되는 추상 메서드를 가진 다른 함수를 인터페이스로 사용될 수 있다.
+- **즉, 하나의 람다 표현식을 다양한 함수형 인터페이스에 사용할 수 있다.**
+
+```java
+
+    Comparator<Apple> c1 = 
+                    (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
+    Comparator<Apple , Apple> c2 = 
+                    (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
+    BiFunction<Apple , Apple , Integer> c3 = 
+                    (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
+
+```
+
+## 형식 추론
+- 자바 컴파일러는 람다 표현식이 사용된 콘텍스트(대상 형식)을 이용해서 람다 표현식과 관련된 함수형 인터페이스를 추론한다.
+- 즉, 대상 형식을 이용해서 함수 디스크립터를 알 수 있으므로 컴파일러는 람다의 시그니처도 추론할 수 있다.
+- 결과적으로 **컴파일러는 람다 표현식의 파라미터 형식에 접근할 수 있으므로 람다 문법에서 이를 생략할 수 있다.**
+
+```java
+    Comparator<Apple> c1 = (a1 , a2) -> a1.getWeight().compareTo(a2.getWeight());
+```
+
+## 지역 변수 사용 [변수 캡쳐](https://jeongcode.github.io/docs/java/java8/functionalInterface-lambda/#%EB%B3%80%EC%88%98-%EC%BA%A1%EC%B2%98-variable-capture)
+- 람다 표현식에서는 익명 함수가 하는 것처럼 **자유 변수 (파라미터로 넘겨진 변수가 아닌 외부에서 정의된 변수)**를 활용할 수 있다.
+- 이와 같은 동작을 **람다 캡쳐링**이라고 부른다.
+
+```java
+
+    int portNumber = 1337;
+    Runnable r = () -> System.out.println(portNumber);
+    portNumber = 3338;
+
+```
+
+- 지역변수는 명시적으로 `final`로 선언되어 있어야 하거나 , 실질적으로 `final`로 선언된 변수와 똑같이 사용되어야 한다.
+- 위의 예제는 컴파일 할 수 없다.
+
+### 지역 변수의 제약
+- 인스턴스 변수는 힙에 위치하며 , 지역 변수는 스택에 위치한다.
+- 람다가 스레드에서 실행된다면 변수를 할당한 스레드가 사라져서 변수 할당이 해제되었는데도 람다를 실행하는 스레드에서는 해당 변수에 접근하려 할 수 있다.
+- 따라서 자바 구현에서는 **원래 변수에 접근을 허용하는 것이 아니라 자유 지역 변수의 복사본을 제공한다.**
+  - *복사본의 값이 바뀌지 않아야 하므로 지역 변수에는 한 번만 값을 할당해야 한다는 제약이 생긴 것이다.*
+- 병렬화를 방해하는 요소가 될 수도 있다.
+
+
+# **메서드 참조**
+
