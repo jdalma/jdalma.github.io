@@ -123,7 +123,7 @@ permalink: /docs/whiteship
 - **Erasure 특성**
 - **upper , lower bounded**
 - **bridge method**
-
+- [`<?> , <T> , extends , super`](https://pathas.tistory.com/160)
 ```java
 // 런타임중에 타입을 알아낼 수 있다. (reflection)
 this.getClass().getGenericSuperClass().getActualTypeArguments()[0]
