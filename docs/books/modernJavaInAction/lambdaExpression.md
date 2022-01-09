@@ -506,7 +506,7 @@ public interface Callable<V> {
 
     Comparator<Apple> c1 = 
                     (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
-    Comparator<Apple , Apple> c2 = 
+    ToIntBiFunction<Apple , Apple> c2 = 
                     (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
     BiFunction<Apple , Apple , Integer> c3 = 
                     (Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
@@ -546,4 +546,382 @@ public interface Callable<V> {
 
 
 # **메서드 참조**
+- 특정 메서드만을 호출하는 람다의 축약형이라고 생각할 수 있다.
+- 메저드 참조를 이용하면 기존 메서드 구현으로 람다 표현식을 만들 수 있다.
+- 메서드명 앞에 구분자 `::`를 붙이는 방식으로 메서드 참조를 활용할 수 있다.
+- **실제로 메서드를 호출하는 것은 아니므로 괄호는 필요 없음을 기억하자**
+- 메서드 참조를 새로운 기능이 아니라 하나의 메서드를 참조하는 람다를 편리하게 표현할 수 있는 문법으로 간주할 수 있다.
 
+| 람다    | 메서드 참조 단축 표현  |
+|:--------------|:---------------------|
+| `(Apple apple) -> apple.getWeight()`| `Apple::getWeight`|
+| `() -> Thread.currentThread().dumpStack()`| `Thread.currentThread()::dumpStack`|
+| `(str , i) -> str.substring(i)` | `String::substring` |
+| `(String s) -> System.out.println(s)` | `System.out::println`|
+| `(String s) -> this.isValidName(s)` | `this::isValidName`|
+
+## 메서드 참조를 만드는 방법
+
+1. **정적 메서드 참조**
+   - `Integer::parseInt` ...
+2. **다양한 형식의 인스턴스 메서드 참조**
+   - `String`의 `length`메서드는 `String::length`
+3. **기존 객체의 인스턴스 메서드 참조**
+   - `Transaction`클래스에는 `getValue`메서드가 있고 해당 클래스를 할당 받은 `expensiveTransaction`지역 변수가 있다.
+   - 이를 `expensiveTransaction::getValue`표현할 수 있다.
+
+![](../../../assets/images/books/modernJavaInAction/lambdaExpression/methodReference.png)
+
+```java
+
+    List<String> str = Arrays.asList("a" , "b" , "A" , "B");
+    str.sort((s1 , s2) -> s1.compareToIgnoreCase(s2));
+    str.sort(String::compareToIgnoreCase);
+
+    1.  ToIntFunction<String> stringToInt = (String s) -> Integer.parseInt(s);
+        ToIntFunction<String> stringToInt = Integer::parseInt;
+
+    2.  BiPredicate<List<String> , String> contains = (list , element) -> list.contains(element);
+        BiPredicate<List<String> , String> contains = List::contains;
+
+    3.  // 비공개 헬퍼 메서드 호출
+        class test{
+            Predicate<String> startsWithNumber = (String string) -> this.startsWithNumber(string);
+            Predicate<String> startsWithNumber2 = this::startsWithNumber;
+
+            private boolean startsWithNumber(String string) {
+                return true;
+            }
+        }
+
+```
+
+## 생성자 참조
+
+- `ClassName::new`처럼 클래스명과 `new`키워드를 이용해서 기존 생성자의 참조를 만들 수 있다.
+- 이것은 정적 메서드의 참조를 만드는 방법과 비슷하다.
+- 예를 들어 인수가 없는 생성자 , `Supplier`의 `() -> Apple`과 같은 시그니처를 갖는 생성자가 있다고 가정하자.
+
+```java
+
+    @FunctionalInterface
+    public interface TriFunction<T , U , V , R> {
+        R get(T t, U u, V v);
+    }
+
+    class Apple{
+        int weight;
+        Color color;
+        String status;
+        int objectHashCode = this.hashCode();
+
+        public Apple() {
+        }
+        public Apple(int weight) {
+            this.weight = weight;
+        }
+        public Apple(int weight, Color color) {
+            this.weight = weight;
+            this.color = color;
+        }
+        public Apple(int weight, String status) {
+            this.weight = weight;
+            this.status = status;
+        }
+        public Apple(int weight, Color color, String status) {
+            this.weight = weight;
+            this.color = color;
+            this.status = status;
+        }
+
+        @Override
+        public String toString() {
+            return "Apple{" +
+                    "weight=" + weight +
+                    ", color='" + color + '\'' +
+                    ", status='" + status + '\'' +
+                    ", objectHashCode=" + objectHashCode +
+                    '}';
+        }
+        public enum Color {GREEN , RED , YELLOW}
+    }
+
+    class Main {
+        public static void main(String[] args) throws Exception {
+            run();
+
+            Supplier<Apple> supplier1 = Apple::new;
+            System.out.println(supplier1.get());
+
+            Supplier<Apple> supplier2 = () -> new Apple();
+            System.out.println(supplier2.get());
+
+            Function<Integer , Apple> function1 = Apple::new;
+            System.out.println(function1.apply(11));
+
+            List<Integer> weights = Arrays.asList(21 , 22 , 23 , 24 , 25);
+            List<Apple> apples = map(weights , function1);
+            apples.forEach(System.out::println);
+
+            BiFunction<Integer , Apple.Color, Apple> biFunction1 = Apple::new;
+            System.out.println(biFunction1.apply(31 , Apple.Color.GREEN));
+
+            BiFunction<Integer , String , Apple> biFunction2 = Apple::new;
+            System.out.println(biFunction2.apply(41 , "GOOD"));
+
+            TriFunction<Integer , Apple.Color , String , Apple> triFunction1 = Apple::new;
+            System.out.println(triFunction1.get(51 , Apple.Color.RED , "BAD"));
+
+    //        Apple{weight=0, color='null', status='null', objectHashCode=1854731462}
+    //        Apple{weight=0, color='null', status='null', objectHashCode=214126413}
+    //        Apple{weight=11, color='null', status='null', objectHashCode=1867750575}
+    //        Apple{weight=21, color='null', status='null', objectHashCode=2046562095}
+    //        Apple{weight=22, color='null', status='null', objectHashCode=1342443276}
+    //        Apple{weight=23, color='null', status='null', objectHashCode=769287236}
+    //        Apple{weight=24, color='null', status='null', objectHashCode=1587487668}
+    //        Apple{weight=25, color='null', status='null', objectHashCode=1199823423}
+    //        Apple{weight=31, color='GREEN', status='null', objectHashCode=1896277646}
+    //        Apple{weight=41, color='null', status='GOOD', objectHashCode=1702297201}
+    //        Apple{weight=51, color='RED', status='BAD', objectHashCode=1296064247}
+
+        }
+
+        public static List<Apple> map(List<Integer> list , Function<Integer , Apple> f){
+            List<Apple> result = new ArrayList<>();
+            for(Integer i : list){
+                result.add(f.apply(i));
+            }
+            return result;
+        }
+    }
+```
+
+- 인스턴스화 하지 않고도 생성자에 접근할 수 있는 기능을 다양한 상황에 응용할 수 있다.
+- 예를 들어 `Map`으로 생성자와 문자열 값을 관련시킬 수 있다.
+- 그리고 `String`과 `Integer`가 주어졌을 때 다양한 무게를 갖는 여러 종류의 과일을 만드는 `giveMeFruit`메서드를 만들 수 있다.
+
+```java
+
+    static Map<String , Function<Integer , Fruit>> map = new HashMap<>();
+    static{
+        map.put("apple" , Apple::new);
+        map.put("orange" , Orange::new);
+        ...
+    }
+
+    public static Fruit giveMeFruit(String fruit , Integer weight){
+        return map.get(fruit.toLowerCase()) // map에서 Function<Integer , Fruit>을 얻었다.
+                  .apply(weight);           // Function의 apply메서드에 정수를 제공하여 Fruit을 생성할 수 있다.
+    }
+
+```
+
+# **람다 , 메서드 참조 활용하기**
+
+## 1단계 : **코드 전달**
+
+- `List`의 `sort`메서드 시그니처
+
+```java
+    void sort(Comparator<? super E> c)
+```
+
+- 1단계의 코드는 다음와 같다
+- `sort`의 **동작**은 **파라미터화**되었다. (정렬 전략에 따라 동작이 달라진다.)
+
+```java
+    
+    public class AppleComparator implements Comparator<Apple>{
+        public int compare(Apple a1 , Apple a2){
+            return a1.getWeight().compareTo(a2.getWeight());
+        }
+    }
+    inventory.sort(new AppleComparator());
+
+```
+
+## 2단계 : **익명 클래스 사용**
+
+- 한 번만 사용할 `Comparator`를 구현하기 보다는 **익명 클래스**를 이용하는 것이 좋다.
+
+```java
+
+    inventory.sort(new Comparator<Apple>(){
+        public int compare(Apple a1 , Apple a2){
+            return a1.getWeight().compareTo(a2.getWeight());
+        }
+    });
+
+```
+
+## 3단계 : **람다 표현식 사용**
+
+- **함수형 인터페이스**를 기대하는 곳 어디에나 람다 표현식을 사용할 수 있다.
+
+```java
+
+    inventory.sort((Apple a1 , Apple a2) ->> a1.getWeight().compareTo(a2.getWeight()));
+    
+```
+
+- 자바 컴파일러는 람다 표현식이 사용된 콘텍스트를 활용해서 **람다의 파라미터 형식을 추론**하기 때문에 더 줄일 수 있다.
+
+```java
+
+    inventory.sort((a1 , a2) ->> a1.getWeight().compareTo(a2.getWeight()));
+
+```
+
+## 4단계 : **메서드 참조 사용**
+
+- `java.util.Comparator.comparing`을 정적으로 임포트했다고 가정
+- ✋ `comparing()`
+    - `Comparator`는 `Comparable`키를 추출해서 `Comparator`객체로 만드는 `Function`함수를 인수로 받는 정적 메서드 `comparing`을 포함한다.
+    - 이 메서드가 정적 메서드인 이유는 9장에서 설명한다.
+
+```java
+
+    Comparator<Apple> c = Comparator.comparing((Apple a) -> a.getWeight());
+
+    import static java.util.Comparator.comparing;
+    inventory.sort(comparing(apple -> a.getWeight()));
+
+```
+
+- 메서드 참조를 사용하여 코드를 조금더 간소화 하자
+
+```java
+
+    inventory.sort(comparing(Apple::getWeight));
+
+```
+
+- 최적의 코드 , 코드의 의미도 명확하다.
+- `Apple을 weight별로 비교해서 inventory를 sort하라`
+
+# **람다 표현식을 조합할 수 있는 유용한 메서드**
+- 몇몇 함수형 인터페이스는 다양한 유틸리티 메서드를 포함한다.
+- 간단한 여러 개의 람다 표현식을 조합해서 복잡한 람다 표현식을 만들 수 있다.
+- 이와 같은 기능을 가능케 하는것은 **디폴트 메서드**이다. (9장에서 자세히 설명)
+- **디폴트 메서드**가 어떤 메서드인지만 이해하자.
+
+## `Comparator` 조합
+- 이전에도 보았듯이 , 정적 메서드 `Comparator.comparing`을 이용해서 비교에 사용할 키를 추출 하는 `Function` 기반의 `Comparator`를 반환할 수 있다.
+
+```java
+
+    public static <T, U extends Comparable<? super U>> Comparator<T> comparing(
+        Function<? super T, ? extends U> keyExtractor)
+    {
+        Objects.requireNonNull(keyExtractor);
+        return (Comparator<T> & Serializable)
+            (c1, c2) -> keyExtractor.apply(c1).compareTo(keyExtractor.apply(c2));
+    }
+
+
+    Comparator<Apple> c = Comparator.comparing((Apple a) -> a.getWeight());
+
+```
+
+### 역정렬
+- 사과의 무게를 내림차순으로 정렬하고 싶다면? 다른 `Comparator`인스턴스를 만들 필요가 없다.
+- 인터페이스 자체에서 `reversed`라는 디폴트 메서드를 제공하기 때문이다.
+
+```java
+
+    inventory.sort(comparing(Apple::getWeight).reversed());
+
+```
+
+### `Comparator`연결
+- 무게가 같은 사과는 어떻게 정렬 해야 할까?
+- 이럴 땐 비교 결과를 더 다듬을 수 있는 두 번째 `Comparator`를 만들 수 있다.
+- `thenComparing`메서드로 두 번째 비교자를 만들 수 있다.
+
+```java
+
+    inventory.sort(comparing(Apple::getWeight)
+                    .reversed()
+                    .thenComparing(Apple::getCountry));
+
+```
+
+## `Predicate` 조합
+- `negate` , `and` , `or` 세가지 메서드를 제공한다.
+
+### `negate`
+
+```java
+
+    Predicate<Apple> notRedApple = redApple.negate();
+
+```
+
+### `and`
+
+```java
+
+    Predicate<Apple> redAndHeavyApple = redApple.and(apple -> apple.getWeight > 150);
+
+```
+
+### `or`
+
+```java
+
+    Predicate<Apple> redAndHeavyAppleOrGreen = redApple.and(apple -> apple.getWeight > 150)
+                                                       .or(apple -> GREEN.equals(apple.getColor()));
+
+```
+
+## `Function` 조합
+- `Function` 인스턴스를 반환하는 `andThen` , `compose` 두 가지 디폴트 메서드를 제공한다.
+
+### `andThen`
+
+```java
+
+    Function<Integer , Integer> f = x -> x + 1;
+    Function<Integer , Integer> g = x -> x * 2;
+    Function<Integer , Integer> h = f.andThen(g);
+
+    int result = h.apply(1);
+    // g(f(x))
+    // 4를 반환
+```
+
+### `compose`
+
+```java
+
+    Function<Integer , Integer> f = x -> x + 1;
+    Function<Integer , Integer> g = x -> x * 2;
+    Function<Integer , Integer> h = f.compose(g);
+
+    int result = h.apply(1);
+    // f(g(x))
+    // 3을 반환
+
+```
+
+- 유틸리티 메서드를 조합해서 다양한 변환 파이프 라인을 만들 수 있다.
+
+```java
+
+    Function<String , String> addHeader = Letter::addHeader;
+    Function<String , String> transformationPipeline = addHeader.andThen(Letter::checkSpelling)
+                                                                .andThen(Letter::addFooter);
+
+```
+
+# 📌 **마치며**
+
+- **람다 표현식**은 익명 함수의 일종이다.
+  - 이름은 없지만 , 파라미터 리스트 , 바디 , 반환 형식을 가지며 예외를 던질 수 있다.
+- **함수형 인터페이스**는 하나의 추상 메서드만을 정의하는 인터페이스다.
+  - *함수형 인터페이스를 기대하는 곳에서만 람다 표현식을 사용할 수 있다.*
+- 람다 표현식을 이용해서 함수형 인터페이스의 추상 메서드를 즉석으로 제공할 수 있으며 **람다 표현식 전체가 함수형 인터페이스의 인스턴스로 취급된다.**
+- 자바 8은 제네릭 함수형 인터페이스와 관련한 박싱 동작을 피할 수 있는 기본형 특화 인터페이스가 제공된다.
+- 실행 어라운드 패턴 *(자원의 할당 , 자원 정리 등 코드 중간에 실행해야 하는 메서드에 꼭 필요한 코드)*을 람다와 활용하면 유연성과 재사용성을 얻을 수 있다.
+- 람다 표현식의 기대 형식을 **대상 형식** 이라고 한다.
+- **메서드 참조를 이용하면 기존의 메서드 구현을 재사용하고 직접 전달할 수 있다.**
