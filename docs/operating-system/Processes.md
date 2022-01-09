@@ -411,7 +411,7 @@ int main()
 
 ### **Shared Memory (공유 메모리)**
 - **Producer-Consumer Problem (생산자-소비자 문제)**
-  - Producer(생산자)는 정브롤 생산 하고 , Consumer(소비자)는 정보를 소비한다.
+  - Producer(생산자)는 정보를 생산 하고 , Consumer(소비자)는 정보를 소비한다.
   - `컴파일러는 어셈블리 코드를 생성하고 어셈블러는 이를 사용한다.`
   - `웹 서버는 HTML 파일을 생성하고 브라우저는 HTML 파일을 사용한다.`
   - 생산자와 소비자가 **동시(Concurrently)에 실행 되도록**한다.

@@ -172,7 +172,7 @@ class Main {
 }
 ```
 
-> **✋[인터럽트(Interrupt)란?](https://whatisthenext.tistory.com/147)**
+> ✋ **[인터럽트(Interrupt)란?](https://whatisthenext.tistory.com/147)**
 
 ***
 
@@ -183,7 +183,7 @@ class Main {
 
 ![](../../assets/images/operating-system/Thread/3.png)
 
-> **✋ [인터리브(Interleave)란?](https://www.scienceall.com/%EC%9D%B8%ED%84%B0%EB%A6%AC%EB%B8%8Cinterleave/)**
+> ✋  **[인터리브(Interleave)란?](https://www.scienceall.com/%EC%9D%B8%ED%84%B0%EB%A6%AC%EB%B8%8Cinterleave/)**
 > - 컴퓨터 하드디스크의 성능을 높이기 위해 **데이터를 서로 인접하지 않게 배열하는 방식을 말한다.**
 > - 인터리브(interleave)라는 단어는 ‘교차로 배치하다’라는 뜻이며, 이를 통해 디스크 드라이브를 좀더 효율적으로 만들수 있다.
 > - 인터리브는 기억장치를 몇 개의 부분으로 나누어서 메모리 액세스를 동시에 할 수 있게 함으로써 복수의 명령을 처리하여 메모리 액세스의 효율화를 도모하는 것이다.
@@ -199,7 +199,7 @@ class Main {
 
 ![](../../assets/images/operating-system/Thread/4.png)
 
-### **✋ 코어는 무조건 많을수록 좋은가? [Amdahl’s Law - 암달의 법칙](https://johngrib.github.io/wiki/amdahl-s-law/)**
+### ✋ **코어는 무조건 많을수록 좋은가? [Amdahl’s Law - 암달의 법칙](https://johngrib.github.io/wiki/amdahl-s-law/)**
 
 ***
 
@@ -311,7 +311,7 @@ void *runner(void *param)
 }
 ```
 
-### **❓ 문제**
+### ❓ **문제**
 
 ```c
 pid_t pid;

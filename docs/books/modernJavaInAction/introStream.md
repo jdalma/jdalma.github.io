@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 스트림 소개
+title: CH 4. 스트림 소개
 parent: 모던 자바 인 액션
 grand_parent: Books
 nav_order: 4
