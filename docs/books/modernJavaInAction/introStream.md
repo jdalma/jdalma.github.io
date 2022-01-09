@@ -254,6 +254,7 @@ Exception in thread "main" java.lang.IllegalStateException: stream has already b
   - 컬렉션 내부적으로 숨겨졌던 반복자를 사용하는 것
   - **즉 , 명시적으로 컬렉션 항목을 하나씩 가져와서 처리한다.**
   - **병렬성을 스스로 관리**해야한다.
+
 ```java
   List<String> names = new ArrayList<>();
   for(Dish dish : menu){
@@ -272,6 +273,7 @@ Exception in thread "main" java.lang.IllegalStateException: stream has already b
   - **반복을 알아서 처리하고 결과 스트림 값을 어딘가에 저장해주는 것**
   - **함수에 어떤 작업을 수행할지만 지정하면 모든것이 알아서 처리된다.**
   - **작업을 투명하게 병렬로 처리하거나 , 더 최적화된 다양한 순서로 처리할 수 있다**.
+
 ```java
 List<String> innerIterNames = menu.stream()
                                   .map(dish -> dish.getName())
