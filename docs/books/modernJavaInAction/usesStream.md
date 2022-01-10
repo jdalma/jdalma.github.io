@@ -154,7 +154,7 @@ nav_order: 5
 
 - 스트림은 **함수를 인수로 받는 `map`메서드를 지원한다.**
 - **인수로 제공된 함수는 각 요소에 적용되며 함수를 적용한 결과가 새로운 요소로 매핑된다.**
-  - *(이 과정은 기존의 값은 `고친다` 라는 개념보다는 `새로운 버전을 만든다`라는 개념에 가까우므로 **변환**에 가까운 **매핑**이라는 단어를 사용한다.)*
+  - *(이 과정은 기존의 값을 `고친다` 라는 개념보다는 `새로운 버전을 만든다`라는 개념에 가까우므로 **변환**에 가까운 **매핑**이라는 단어를 사용한다.)*
 - 스트림의 요리명을 추출하는 코드
 
 ```java
@@ -163,4 +163,134 @@ nav_order: 5
                                  .map(Dish::getName)
                                  .collect(toList());
     
+```
+
+- 단어 리스트가 주어졌을 때 단어가 포함하는 글자 수의 리스트를 반환
+
+```java
+
+    List<String> words = Arrays.asList("Modern" , "Java" , "In" , "Action");
+    List<Integer> wordLengths = words.stream()
+                                     .map(String::length)
+                                     .collect(toList());
+
+```
+
+## 스트림 평면화
+
+- 리스트에서 **고유 문자**로 이루어진 리스트를 반환해보자.
+- `["Hello" , "World"]` ➜ `["H" , "e" , "l" , "l" , "o" , "W" , "o" , "r" , "l" , "d"]`;
+
+```java
+
+    List<String> words = Arrays.asList("Hello" , "World");
+    List<String> result = words.stream()
+                                .map(str -> str.split(""))
+                                .distinct()
+                                .collect(Collectors.toList());    
+
+```
+
+- 위 코드에서 `map`으로 전달한 람다는 각 단어의 `String[]`을 반환한다는 점이 문제다.
+- `map`메소드가 반환된 스트림의 형식은 `Stream<String[]>`이다.
+- 우리가 원하는 것은 `Stream<String>`
+
+![](../../../assets/images/books/modernJavaInAction/usesStream/mapBadCase.png)
+
+### `map` 과 `Arrays.stream` 활용 - 실패 사례
+
+- 우선 배열 스트림 대신 문자열 스트림이 필요하다.
+- **문자열을 받아 스트림을 만드는 `Arrays.stream()` 메서드가 있다.**
+
+```java
+
+    String[] arrayOfWords = {"Goodbye" , "World"};
+    Stream<String> streamOfWords = Arrays.stream(arrayOfWords);
+    // [Goodbye, World]
+
+    // 적용
+    List<String> words = Arrays.asList("Hello" , "World");
+
+    words.stream()
+            .map(str -> str.split(""))
+            .map(Arrays::stream)
+            .distinct()
+            .collect(Collectors.toList());
+
+```
+
+- 결국 스트림 리스트 (엄밀히 따지면 `List<Stream<String>>`)가 만들어지면서 **문제가 해결되지 않았다.**
+- 📌 **문제를 해결하려면 각 단어를 개별 문자열로 이루어진 배열로 만든 다음에 각 배열을 별도의 스트림으로 만들어야한다.**
+
+### `flatMap` 사용
+
+```java
+
+    List<String> uniqueCharacters = words.stream()
+                                            .map(word -> word.split(""))
+                                            .flatMap(Arrays::stream)
+                                            .distinct()
+                                            .collect(Collectors.toList());
+    // [H, e, l, o, W, r, d]
+```
+
+
+
+![](../../../assets/images/books/modernJavaInAction/usesStream/flatMap.png)
+
+- `flatMap`은 각 배열을 스트림이 아니라 스트림의 콘텐츠로 매핑한다.
+  - **스트림의 각 값을 다른 스트림으로 만든 다음에 모든 스트림을 하나의 스트림으로 연결하는 기능을 수행한다.**
+- 즉 , **`map(Arrays::stream)`과 달리 `flatMap`은 하나의 평면화된 스트림을 반환한다.**
+
+
+
+
+
+# ✋ **퀴즈**
+
+- 숫자 리스트가 주어졌을 때 각 숫자의 제곱근으로 이루어진 리스트를 반환하시오
+- `[1 , 2 , 3 , 4 , 5]` ➜ `[1 , 4 , 9 , 16 , 25]`
+
+```java
+
+    List<Integer> numbers = Arrays.asList(1 , 2 , 3 , 4 , 5);
+    List<Integer> squares = numbers.stream()
+                                    .map(number -> number * number)
+                                    .collect(Collectors.toList());
+
+```
+
+- 두 개의 숫자 리스트가 있을 때 모든 숫자 쌍의 리스트를 반환하시오.
+- `[1 , 2 , 3]` , `[3 , 4]` ➜ `[(1 ,3) , (1 , 4) , (2 , 3) , (2 , 4) , (3, 3) , (3 , 4)]`
+
+```java
+
+    List<Integer> numbers1 = Arrays.asList(1 , 2 , 3);
+    List<Integer> numbers2 = Arrays.asList(3 , 4);
+
+    List<int[]> pairs = numbers1.stream()
+                                .flatMap(i -> numbers2.stream()
+                                                        .map(j -> new int[]{i , j}))
+                                .collect(Collectors.toList());
+
+    for(int[] numbers : pairs){
+        System.out.println(numbers[0] + " , " + numbers[1]);
+    }
+
+//        1 , 3
+//        1 , 4
+//        2 , 3
+//        2 , 4
+//        3 , 3
+//        3 , 4
+
+```
+
+- 이전 예제에서 합이 3으로 나누어떨어지는 쌍만 반환하려면 어떻게 해야 할까?
+- `(2 , 4) , (3 , 3)`을 반환해야한다.
+
+
+```java
+
+
 ```
