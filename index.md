@@ -10,45 +10,31 @@ permalink: /
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjeongcode.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-## **반기 목표**
-
-1. 🔥 **[모던 자바 인 액션 스터디](https://jeongcode.github.io/docs/books/modernJavaInAction/modernJavaInAction/) 정리 꾸준히 하기**
-1. 🔥 `꾸준히` 알고리즘 
-   - **1월** [Dynamic Programming 21days 끝내기](https://leetcode.com/study-plan/dynamic-programming/?progress=aggho2s)
-1. 🔥 운영체제 강의
-   - `1월 11일 기준` - 18/40강 (45%)
-   - **2월달 까지 끝내기**
-1. 디자인 패턴 강의
-   - **3월달 , 1달 만에 끝내기**
-1. 롬복 토이프로젝트 끝내기
-1. `Spring MVC` , `JPA` 진행 및 **꾸준히 가꿀 프로젝트 시작하기**
-
-
 # **Interest**
 
 > ✍
-> - ✅ [HTTP 웹 기본 지식](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/dashboard)
-> - ✅ [JAVA - 코드를 조작하는 다양한 방법](https://www.inflearn.com/course/the-java-code-manipulation/dashboard)
-> - ✅ [JAVA8](https://www.inflearn.com/course/the-java-java8#)
-> - ✅ [자바 코딩테스트 대비](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard)
-> - ✅ [스프링 핵심 - 기본](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/dashboard)
-> - ✅ [스프링 입문](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)
-> - 🚩 [운영체제 공룡책](https://www.inflearn.com/course/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%EA%B3%B5%EB%A3%A1%EC%B1%85-%EC%A0%84%EA%B3%B5%EA%B0%95%EC%9D%98/dashboard)
-> - 🚩 [GoF의 디자인패턴](https://www.inflearn.com/course/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/dashboard)
-> - [자바 ORM 표준 JPA 프로그래밍 - 기본편](https://www.inflearn.com/course/ORM-JPA-Basic/dashboard)
-> - [실전! 스프링 부트와 JPA 활용1](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1/dashboard)
-> - [스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
-> - [스프링 MVC 2편 - 백엔드 웹 개발 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+> - [x] [HTTP 웹 기본 지식](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/dashboard)
+> - [x] [JAVA - 코드를 조작하는 다양한 방법](https://www.inflearn.com/course/the-java-code-manipulation/dashboard)
+> - [x] [JAVA8](https://www.inflearn.com/course/the-java-java8#)
+> - [x] [자바 코딩테스트 대비](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard)
+> - [x] [스프링 핵심 - 기본](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/dashboard)
+> - [x] [스프링 입문](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)
+> - [ ] [운영체제 공룡책](https://www.inflearn.com/course/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%EA%B3%B5%EB%A3%A1%EC%B1%85-%EC%A0%84%EA%B3%B5%EA%B0%95%EC%9D%98/dashboard)
+> - [ ] [GoF의 디자인패턴](https://www.inflearn.com/course/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/dashboard)
+> - [ ] [자바 ORM 표준 JPA 프로그래밍 - 기본편](https://www.inflearn.com/course/ORM-JPA-Basic/dashboard)
+> - [ ] [실전! 스프링 부트와 JPA 활용1](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1/dashboard)
+> - [ ] [스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+> - [ ] [스프링 MVC 2편 - 백엔드 웹 개발 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
 
 > 📖
-> - ✅ 객체지향의 사실과 오해
-> - ✅ Think Data Structures
-> - 🚩 [모던 자바 인 액션](https://jeongcode.github.io/docs/books/modernJavaInAction/)
-> - 🚩 [코딩 인터뷰 완전 분석](https://jeongcode.github.io/docs/books/codingInterview/)
-> - 🚩 [Clean Code](https://jeongcode.github.io/docs/books/clean-code/)
-> - 토비의 스프링 3.1
-> - 자바 ORM 표준 JPA 프로그래밍
-> - 이펙티브 자바
+> - [x] 객체지향의 사실과 오해
+> - [x] Think Data Structures
+> - [ ] [모던 자바 인 액션](https://jeongcode.github.io/docs/books/modernJavaInAction/)
+> - [ ] [코딩 인터뷰 완전 분석](https://jeongcode.github.io/docs/books/codingInterview/)
+> - [ ] [Clean Code](https://jeongcode.github.io/docs/books/clean-code/)
+> - [ ] 토비의 스프링 3.1
+> - [ ] 자바 ORM 표준 JPA 프로그래밍
+> - [ ] 이펙티브 자바
 
 
 ***
