@@ -19,8 +19,8 @@ nav_order: 5
 
 ```java
 
-    List<Dish> vegeterianMenu = menu.stream()
-                                    .filter(Dish::isVegeterian)
+    List<Dish> vegetarianMenu = menu.stream()
+                                    .filter(Dish::isVegetarian)
                                     .collect(toList());
 
 ```
@@ -150,7 +150,7 @@ nav_order: 5
 - 특정 객체에서 특정 데이터를 선택하는 작업은 데이터 처리 과정에서 자주 수행되는 연산이다.
 - `map` 과 `flatMap`메서드는 특정 데이터를 선택하는 기능을 제공한다.
 
-## 스트림의 각 요소에 함수 적용하기
+## `map`
 
 - 스트림은 **함수를 인수로 받는 `map`메서드를 지원한다.**
 - **인수로 제공된 함수는 각 요소에 적용되며 함수를 적용한 결과가 새로운 요소로 매핑된다.**
@@ -242,11 +242,122 @@ nav_order: 5
   - **스트림의 각 값을 다른 스트림으로 만든 다음에 모든 스트림을 하나의 스트림으로 연결하는 기능을 수행한다.**
 - 즉 , **`map(Arrays::stream)`과 달리 `flatMap`은 하나의 평면화된 스트림을 반환한다.**
 
+# **검색과 매칭**
+- **특정 속성이 데이터 집합에 있는지 여부를 검색하는 데이터 처리도 자주 사용된다.**
+- `anyMatch` , `allMatch` , `noneMatch` , `findFirst` , `findAny` 등의 연산은 **스트림 쇼트서킷** 기법이다.
+    - 즉 *자바의 `&&` , `||`와 같은 연산을 활용한다.*
+
+> - ✋ **쇼트 서킷**
+> - 모든 스트림의 요소를 처리하지 않고 원하는 요소를 찾았으면 결과를 반환할 수 있다.
+> - 마찬가지로 스트림의 모든 요소를 처리할 필요 없이 주어진 크기의 스트림을 생성하는 `limit`도 **쇼트 서킷** 연산이다.
+> - **특히 무한한 요소를 가진 스트림을 유한한 크기로 줄일 수 있는 유용한 연산이다.**
 
 
 
+## `anyMatch`
+- `Predicate`가 주어진 스트림에서 적어도 한 요소와 일치하는지 확인할 때 `anyMatch`메서드를 이용한다.
 
-# ✋ **퀴즈**
+```java
+
+    if(menu.stream().anyMatch(Dish::isVegetarian)){
+        System.out.println("The menu is (somewhat) vegetarian friendly!!");
+    }
+
+```
+
+## `allMatch`
+- 스트림의 모든 요소가 주어진 `Predicate`와 일치하는지 검사한다.
+
+```java
+
+    boolean isHealthy = menu.stream()
+                            .allMatch(dish -> dish.getCalories() < 1000);
+
+```
+
+## `noenMatch`
+- `allMatch`와 반대연산을 수행한다.
+- 주어진 `Predicate`와 일치하는 요소가 없는지 확인한다.
+
+ ```java
+
+    boolean isHealthy = menu.stream()
+                            .noneMatch(dish -> dish.getCalories() >= 1000);
+
+ ```
+
+## `findAny`
+- 현재 스트림에서 임의의 요소를 반환한다.
+- 다른 스트림 연산과 연결해서 사용할 수 있다.
+
+```java
+
+    Optional<Dish> dish = menus.stream()
+                               .filter(Dish::isVegetarian)
+                               .findAny()
+                               // 값이 없으면 출력하지 않는다.
+                               .ifPresent(dish -> System.out.println(dish.getName()));
+
+```
+
+> - ✋ **[Optional 이란?](https://jeongcode.github.io/docs/java/java8/stream-optional/#optional)**
+> - 값의 존재나 부재 여부를 표현하는 컨테이너 클래스
+> - `findAny`는 아무 요소도 반환하지 않을 수 있다. `null`은 쉽게 에러를 일으킬 수 있으므로 ,
+> - `null`확인 관련 버그를 피하는 방법이다.
+
+## `findFirst`
+- 리스트 또는 정렬된 연속 데이터로 부터 생성된 스트림처럼 일부 스트림에는 **논리적인 아이템 순서**가 정해져 있을 수 있다.
+
+```java
+
+    List<Integer> someNumbers = Arrays.asList(1 , 2 , 3 , 4 , 5);
+    Optional<Integer> firstSquareDivisibleByThree = someNumbers.stream()
+                                                                .map(n -> n * n)
+                                                                .filter(n -> n % 3 == 0)
+                                                                .findFirst();    
+
+```
+
+## ✋ 왜 `findFirst`와  `findAny` 메서드가 모두 필요할까?
+- **병렬성** 때문이다.
+- 병렬 실행에서는 첫 번째 요소를 찾기 어렵다.
+- 따라서 요소의 반환 순서가 상관없다면 병렬 스트림에서는 제약이 적은 `findAny`를 사용한다.
+
+# **리듀싱**
+- `reduce`연산을 이용해서 **메뉴의 모든 칼로리의 합계를 구하시오** , **메뉴에서 칼로리가 가장 높은 요리는?** 같이 스트림 요소를 조합해서 더 복잡한 질의를 표현하는 방법을 설명한다.
+- 이러한 질의를 수행하려면 `Integer` 같은 결과가 나올 때 까지 스트림의 모든 요소를 반복적으로 처리해야 한다.
+- 이런 질의를 **리듀싱 연산 (모든 스트림 요소를 처리해서 값으로 도출하는)** 이라고 한다.
+- 이 과정이 마치 종이(우리의 스트림)를 작은 조각이 될 때 까지 반복해서 접는 것과 비슷하다는 의미로 **폴드**라고 부른다.
+
+## 요소의 합
+- `for-each`
+  - `sum`변수의 초깃값 0
+  - 리스트의 모든 요소를 조합하는 연산 `+`
+```java
+    
+    int sum = 0;
+    for(int x : numbers) sum += x;
+
+```
+
+- `reduce`
+  - 초기값 0
+  - 두 요소를 조합해서 새로운 값을 만드는 `BinaryOperator<T>`
+
+```java
+
+    // 람다 표현식
+    int sum = numbers.stream().reduce(0 , (a , b) -> a + b);
+
+    // 메서드 참조
+    int sum = numbers.stream().reduce(0 , Integer::sum);
+
+```
+
+![](../../../assets/images/books/modernJavaInAction/usesStream/reduce.png)
+
+
+# 📌 **퀴즈**
 
 - 숫자 리스트가 주어졌을 때 각 숫자의 제곱근으로 이루어진 리스트를 반환하시오
 - `[1 , 2 , 3 , 4 , 5]` ➜ `[1 , 4 , 9 , 16 , 25]`
@@ -292,5 +403,20 @@ nav_order: 5
 
 ```java
 
+    List<Integer> numbers1 = Arrays.asList(1 , 2 , 3);
+    List<Integer> numbers2 = Arrays.asList(3 , 4);
+
+    List<int[]> pairs = numbers1.stream()
+                                .flatMap(i -> numbers2.stream()
+                                                        .filter(j -> (i + j) % 3 == 0)
+                                                        .map(j -> new int[]{i , j}))
+                                .collect(Collectors.toList());
+
+    for(int[] numbers : pairs){
+        System.out.println(numbers[0] + " , " + numbers[1]);
+    }
+
+//        2 , 4
+//        3 , 3    
 
 ```
