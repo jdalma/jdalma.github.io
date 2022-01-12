@@ -12,6 +12,8 @@ nav_order: 5
 {:toc}
 ---
 
+![](../../../assets/images/books/modernJavaInAction/usesStream/calculate.png)
+
 
 # **필터링**
 
@@ -343,6 +345,7 @@ nav_order: 5
 - `reduce`
   - 초기값 0
   - 두 요소를 조합해서 새로운 값을 만드는 `BinaryOperator<T>`
+  - `map`과 `reduce`를 연결하는 기법을 **맵 리듀스 패턴**이라 하며 , 쉽게 병렬화하는 특징 덕분에 구글이 웹 검색에 적용하면서 유명해졌다.
 
 ```java
 
@@ -357,10 +360,183 @@ nav_order: 5
 ![](../../../assets/images/books/modernJavaInAction/usesStream/reduce.png)
 
 
+> - ✋ `reduce` **메서드의 장점과 병렬화**
+> - 기존의 단계적 반복으로 합계를 구하는 것과 `reduce`를 이용해서 합계를 구한느 것은 어떤 차이가 있을까?
+> - `reduce`를 이용하면 내부 반복이 추상화되면서 **내부 구현에서 병렬로 `reduce`를 실행할 수 있게 된다.**
+> - **반복적인 합계에서는 `sum`변수를 공유해야 하므로 쉽게 병렬화하기 어렵다.**
+> - `parallelStream`메서드를 사용하여 병렬로 실행할 수 있지만 , `reduce`에 넘겨준 람다의 상태(인스턴스 변수 같은)가 바뀌지 말아야 하며 , 연산이 어떤 순서로 실행되더라도 결과가 바뀌지 않는 구조여야 한다.
+
+# ✋ **스트림 연산 : 상태 없음과 상태 있음**
+- `map` , `filter` 등은 입력 스트림에서 각 요소를 받아 0 또는 결과를 출력 스트림으로 보낸다.
+  - 따라서 *(사용자가 제공한 람다나 메서드 참조가 내부적인 가변 상태를 갖지 않는다는 가정하에)* 이들은 보통 상태가 없는 , **내부 상태를 갖지 않는 연산**이다.
+- 하지만 `reduce` , `sum` , `max` 같은 연산은 결과를 누적할 내부 상태가 필요하다.
+  - 예제에서는 `int`나 `double`을 내부 상태로 사용했다.
+  - 스트림에서 처리하는 요소 수와 관계없이 내부 상태의 크기는 **한정**되어 있다.
+- 반면 `sorted`나 `distinct` 같은 연산은 `filter`나 `map`처럼 스트림을 입력으로 받아 다른 스트림을 출력하는 것처럼 보일 수 있다.
+- 스트림의 요소를 정렬하거나 , 중복을 제거하려면 과거의 이력을 알고 있어야 한다.
+- 예를 들어 어떤 요소를 출력 스트림으로 추가하려면 **모든 요소가 버퍼에 추가돼 있어야 한다.**
+  - 연산을 수행하는데 필요한 저장소 크기는 정해져있지 않다.
+- 따라서 **데이터 스트림의 크기가 크거나 무한이라면 문제가 될 수 있다.**
+  - 예를 들어 , 모든 소수를 포함하는 스트림을 역순으로 만들면 어떤일이 일어날까?
+  - 첫 번째 요소로 가장 큰 소수 , 즉 세상에 존재하지 않는 수를 반환해야 한다.
+- 이러한 연산을 **내부 상태를 갖는 연산**이라 한다.
+
+# 📌 **실전 연습**
+
+<details>
+<summary>Trader Class</summary>
+<div markdown="1">
+
+```java
+import java.util.Objects;
+
+public class Trader {
+    private String name;
+    private String city;
+
+    public Trader(String n, String c) {
+        name = n;
+        city = c;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 17;
+        hash = hash * 31 + (name == null ? 0 : name.hashCode());
+        hash = hash * 31 + (city == null ? 0 : city.hashCode());
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if (!(other instanceof Trader)) {
+            return false;
+        }
+        Trader o = (Trader) other;
+        boolean eq = Objects.equals(name, o.getName());
+        eq = eq && Objects.equals(city, o.getCity());
+        return eq;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Trader:%s in %s", name, city);
+    }
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Transaction Class</summary>
+<div markdown="1">
+
+```java
+import java.util.Objects;
+
+public class Transaction {
+    private Trader trader;
+    private int year;
+    private int value;
+
+    public Transaction(Trader trader, int year, int value) {
+        this.trader = trader;
+        this.year = year;
+        this.value = value;
+    }
+
+    public Trader getTrader() {
+        return trader;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    /*
+        인텔리제이 equals , hashCode generate
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transaction that = (Transaction) o;
+        return year == that.year && value == that.value && trader.equals(that.trader);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(trader, year, value);
+    }
+    */
+    
+    @Override
+    public int hashCode() {
+        int hash = 17;
+        hash = hash * 31 + (trader == null ? 0 : trader.hashCode());
+        hash = hash * 31 + year;
+        hash = hash * 31 + value;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if (!(other instanceof Transaction)) {
+            return false;
+        }
+        Transaction o = (Transaction) other;
+        boolean eq = Objects.equals(trader, o.getTrader());
+        eq = eq && year == o.getYear();
+        eq = eq && value == o.getValue();
+        return eq;
+    }
+
+    @SuppressWarnings("boxing")
+    @Override
+    public String toString() {
+        return String.format("{%s, year: %d, value: %d}", trader, year, value);
+    }
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Init</summary>
+<div markdown="1">
+
+```java
+
+```
+
+</div>
+</details>
+
+
+
 # 📌 **퀴즈**
 
-- 숫자 리스트가 주어졌을 때 각 숫자의 제곱근으로 이루어진 리스트를 반환하시오
-- `[1 , 2 , 3 , 4 , 5]` ➜ `[1 , 4 , 9 , 16 , 25]`
+1. 숫자 리스트가 주어졌을 때 각 숫자의 제곱근으로 이루어진 리스트를 반환하시오
+   - `[1 , 2 , 3 , 4 , 5]` ➜ `[1 , 4 , 9 , 16 , 25]`
 
 ```java
 
@@ -371,8 +547,8 @@ nav_order: 5
 
 ```
 
-- 두 개의 숫자 리스트가 있을 때 모든 숫자 쌍의 리스트를 반환하시오.
-- `[1 , 2 , 3]` , `[3 , 4]` ➜ `[(1 ,3) , (1 , 4) , (2 , 3) , (2 , 4) , (3, 3) , (3 , 4)]`
+2. 두 개의 숫자 리스트가 있을 때 모든 숫자 쌍의 리스트를 반환하시오.
+   - `[1 , 2 , 3]` , `[3 , 4]` ➜ `[(1 ,3) , (1 , 4) , (2 , 3) , (2 , 4) , (3, 3) , (3 , 4)]`
 
 ```java
 
@@ -397,8 +573,8 @@ nav_order: 5
 
 ```
 
-- 이전 예제에서 합이 3으로 나누어떨어지는 쌍만 반환하려면 어떻게 해야 할까?
-- `(2 , 4) , (3 , 3)`을 반환해야한다.
+3. 이전 예제에서 합이 3으로 나누어떨어지는 쌍만 반환하려면 어떻게 해야 할까?
+   - `(2 , 4) , (3 , 3)`을 반환해야한다.
 
 
 ```java
@@ -418,5 +594,16 @@ nav_order: 5
 
 //        2 , 4
 //        3 , 3    
+
+```
+
+4. `map`과 `reduce`를 이용해서 스트림의 요리 개수를 반환하시오
+
+```java
+
+    int count = menus.stream()
+                     .map(e -> 1)
+                     .reduce(0 , (e1 , e2) -> e1 + e2);
+
 
 ```
