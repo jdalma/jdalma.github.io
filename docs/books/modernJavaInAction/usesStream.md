@@ -382,8 +382,107 @@ nav_order: 5
   - 첫 번째 요소로 가장 큰 소수 , 즉 세상에 존재하지 않는 수를 반환해야 한다.
 - 이러한 연산을 **내부 상태를 갖는 연산**이라 한다.
 
-# 📌 **실전 연습**
+# **숫자형 스트림**
 
+- 앞에서 `reduce`메서드로 스트림 요소의 합을 구했었지만, 다음과 같이 구할수도 있다.
+
+```java
+int calories = menu.stream()
+                   .map(Dish::getCalories)
+                   .reduce(0 , Integer::sum);
+```
+
+- 위 코드에는 박싱이 숨어있다.
+- 내부적으로 합계를 계산하기 전에 `Integer`를 기본형으로 언박싱해야 한다.
+
+```java
+int calories = menu.stream()
+                   .map(Dish::getCalories)
+                   .sum();
+```
+
+- `map`메서드가 `Stream<T>`를 생성하기 때문에 이와 같이 `sum` 메서드를 호출할 수는 없다.
+- 스트림의 요소 형식은 `Integer`지만 인터페이스에는 `sum`메서드가 없다.
+- **이와 같은 문제를 해결하기 위해 `기본형 특화 스트림`을 제공한다.**
+
+## 기본형 특화 스트림
+- 자바 8 에서는 세 가지 기본형 특화 스트림을 제공한다.
+- `int` ➜ `IntStream`
+- `double` ➜ `DoubleStream`
+- `long` ➜ `LongStream`
+- 각각의 인터페이스는 숫자 스트림의 합계를 계산하는 `sum` , 최댓값 `max` 같이 **자주 사용하는 숫자 관련 리듀싱 연산 수행 메서드를 제공한다.**
+- 또한 필요할 때 **다시 객체 스트림으로 복원하는 기능도 제공한다.**
+- 📌 **특화 스트림은 오직 박싱 과정에서 일어나는 효율성과 관련 있으며 스트림에 추가 기능을 제공하지는 않는다!**
+
+
+# 📌 **퀴즈**
+
+- **숫자 리스트가 주어졌을 때 각 숫자의 제곱근으로 이루어진 리스트를 반환하시오**
+   - `[1 , 2 , 3 , 4 , 5]` ➜ `[1 , 4 , 9 , 16 , 25]`
+
+```java
+    List<Integer> numbers = Arrays.asList(1 , 2 , 3 , 4 , 5);
+    List<Integer> squares = numbers.stream()
+                                    .map(number -> number * number)
+                                    .collect(Collectors.toList());
+```
+
+- **두 개의 숫자 리스트가 있을 때 모든 숫자 쌍의 리스트를 반환하시오.**
+   - `[1 , 2 , 3]` , `[3 , 4]` ➜ `[(1 ,3) , (1 , 4) , (2 , 3) , (2 , 4) , (3, 3) , (3 , 4)]`
+
+```java
+    List<Integer> numbers1 = Arrays.asList(1 , 2 , 3);
+    List<Integer> numbers2 = Arrays.asList(3 , 4);
+
+    List<int[]> pairs = numbers1.stream()
+                                .flatMap(i -> numbers2.stream()
+                                                        .map(j -> new int[]{i , j}))
+                                .collect(Collectors.toList());
+
+    for(int[] numbers : pairs){
+        System.out.println(numbers[0] + " , " + numbers[1]);
+    }
+
+//        1 , 3
+//        1 , 4
+//        2 , 3
+//        2 , 4
+//        3 , 3
+//        3 , 4
+
+```
+
+- **이전 예제에서 합이 3으로 나누어떨어지는 쌍만 반환하려면 어떻게 해야 할까?**
+   - `(2 , 4) , (3 , 3)`을 반환해야한다.
+
+
+```java
+    List<Integer> numbers1 = Arrays.asList(1 , 2 , 3);
+    List<Integer> numbers2 = Arrays.asList(3 , 4);
+
+    List<int[]> pairs = numbers1.stream()
+                                .flatMap(i -> numbers2.stream()
+                                                        .filter(j -> (i + j) % 3 == 0)
+                                                        .map(j -> new int[]{i , j}))
+                                .collect(Collectors.toList());
+
+    for(int[] numbers : pairs){
+        System.out.println(numbers[0] + " , " + numbers[1]);
+    }
+
+//        2 , 4
+//        3 , 3   
+```
+
+- **`map`과 `reduce`를 이용해서 스트림의 요리 개수를 반환하시오**
+
+```java
+    int count = menus.stream()
+                     .map(e -> 1)
+                     .reduce(0 , (e1 , e2) -> e1 + e2);
+```
+
+***
 
 - `Trader Class`
 
@@ -535,7 +634,7 @@ public class Transaction {
 
 ```
 
-1. 2011년에 일어난 모든 트랜잭션을 찾아 값을 오름차순으로 정렬
+- **2011년에 일어난 모든 트랜잭션을 찾아 값을 오름차순으로 정렬**
 
 ```java
     List quiz1 = transactions.stream()
@@ -544,34 +643,29 @@ public class Transaction {
                             .collect(Collectors.toList());
 ```
 
-2. 거래자가 근무하는 모든 도시를 중복 없이 나열
+- **거래자가 근무하는 모든 도시를 중복 없이 나열**
 
 ```java
-
     List<String> quiz = transactions.stream()
                                     .map(t -> t.getTrader().getCity())
                                     .distinct()
                                     .collect(Collectors.toList());
-
 ```
 
-3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬
+- **케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬**
 
 ```java
-
     List<Trader> quiz = transactions.stream()
                                     .filter(e -> e.getTrader().getCity().equals("Cambridge"))
                                     .map(e -> e.getTrader())
                                     .distinct()
                                     .sorted(Comparator.comparing(Trader::getName))
                                     .collect(Collectors.toList());
-
 ```
 
-4. 모든 거래자의 이름을 알파벳순으로 정렬해서 반환
+- **모든 거래자의 이름을 알파벳순으로 정렬해서 반환**
 
 ```java
-
     List<String> quiz = transactions.stream()
                                     .map(t -> t.getTrader().getName())
                                     .distinct()
@@ -584,7 +678,6 @@ public class Transaction {
                               .sorted(String::compareTo)
                               .reduce("" , (n1 , n2) -> n1 + " " + n2);
     // [ Alan Brian Mario Raoul]
-
 ```
 
 - 각 반복 과저에서 모든 문자열을 반복적으로 연결해서 새로운 문자열 객체를 만들기 때문에 효율성이 굉장히 부족하다.
@@ -592,133 +685,45 @@ public class Transaction {
 
 
 ```java
-
     String quiz = transactions.stream()
                               .map(t -> t.getTrader().getName())
                               .distinct()
                               .sorted(String::compareTo)
                               .collect(Collectors.joining());
-
 ```
 
-5. 밀라노에 거래자가 있는지
+- **밀라노에 거래자가 있는지**
 
 ```java
-
     boolean quiz = transactions.stream()
                                 .anyMatch(e -> e.getTrader().getCity().equals("Milan"));
-
 ```
 
-6. 케임브리지에 거주하는 거래자의 모든 트랜잭션 값을 출력
+- **케임브리지에 거주하는 거래자의 모든 트랜잭션 값을 출력**
 
 ```java
-
     List<Transaction> quiz = transactions.stream()
                                          .filter(e -> e.getTrader().getCity().equals("Cambridge"))
                                          .collect(Collectors.toList());
-
 ```
 
-7. 전체 트랜잭션 중 최댓값 , 최솟값 은 얼마
+- **전체 트랜잭션 중 최댓값 , 최솟값 은 얼마**
 
 ```java
-
 // 최댓값
-        Optional<Integer> maxValue = transactions.stream()  
-                                                 .map(Transaction::getValue)
-                                                 .reduce(Integer::max);
+Optional<Integer> maxValue = transactions.stream()  
+                                         .map(Transaction::getValue)
+                                         .reduce(Integer::max);
 
-        transactions.stream().max(Comparator.comparingInt(Transaction::getValue)).ifPresent(System.out::println);
+transactions.stream().max(Comparator.comparingInt(Transaction::getValue)).ifPresent(System.out::println);
 //        {Trader{name='Raoul', city='Cambridge'}, year: 2012, value: 1000}
-
-
 
 // 최솟값
 
+transactions.stream().min(Comparator.comparingInt(Transaction::getValue)).ifPresent(System.out::println);
 
-        transactions.stream().min(Comparator.comparingInt(Transaction::getValue)).ifPresent(System.out::println);
-
-        Optional<Transaction> minValue = transactions.stream()
-                                                     .reduce((v1 , v2) -> v1.getValue() < v2.getValue() ? v1 : v2);
+Optional<Transaction> minValue = transactions.stream()
+                                    .reduce((v1 , v2) -> v1.getValue() < v2.getValue() ? v1 : v2);
 
 //        {Trader{name='Brian', city='Cambridge'}, year: 2011, value: 300} 
-
-
-```
-
-
-# 📌 **퀴즈**
-
-1. 숫자 리스트가 주어졌을 때 각 숫자의 제곱근으로 이루어진 리스트를 반환하시오
-   - `[1 , 2 , 3 , 4 , 5]` ➜ `[1 , 4 , 9 , 16 , 25]`
-
-```java
-
-    List<Integer> numbers = Arrays.asList(1 , 2 , 3 , 4 , 5);
-    List<Integer> squares = numbers.stream()
-                                    .map(number -> number * number)
-                                    .collect(Collectors.toList());
-
-```
-
-2. 두 개의 숫자 리스트가 있을 때 모든 숫자 쌍의 리스트를 반환하시오.
-   - `[1 , 2 , 3]` , `[3 , 4]` ➜ `[(1 ,3) , (1 , 4) , (2 , 3) , (2 , 4) , (3, 3) , (3 , 4)]`
-
-```java
-
-    List<Integer> numbers1 = Arrays.asList(1 , 2 , 3);
-    List<Integer> numbers2 = Arrays.asList(3 , 4);
-
-    List<int[]> pairs = numbers1.stream()
-                                .flatMap(i -> numbers2.stream()
-                                                        .map(j -> new int[]{i , j}))
-                                .collect(Collectors.toList());
-
-    for(int[] numbers : pairs){
-        System.out.println(numbers[0] + " , " + numbers[1]);
-    }
-
-//        1 , 3
-//        1 , 4
-//        2 , 3
-//        2 , 4
-//        3 , 3
-//        3 , 4
-
-```
-
-3. 이전 예제에서 합이 3으로 나누어떨어지는 쌍만 반환하려면 어떻게 해야 할까?
-   - `(2 , 4) , (3 , 3)`을 반환해야한다.
-
-
-```java
-
-    List<Integer> numbers1 = Arrays.asList(1 , 2 , 3);
-    List<Integer> numbers2 = Arrays.asList(3 , 4);
-
-    List<int[]> pairs = numbers1.stream()
-                                .flatMap(i -> numbers2.stream()
-                                                        .filter(j -> (i + j) % 3 == 0)
-                                                        .map(j -> new int[]{i , j}))
-                                .collect(Collectors.toList());
-
-    for(int[] numbers : pairs){
-        System.out.println(numbers[0] + " , " + numbers[1]);
-    }
-
-//        2 , 4
-//        3 , 3    
-
-```
-
-4. `map`과 `reduce`를 이용해서 스트림의 요리 개수를 반환하시오
-
-```java
-
-    int count = menus.stream()
-                     .map(e -> 1)
-                     .reduce(0 , (e1 , e2) -> e1 + e2);
-
-
 ```
