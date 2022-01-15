@@ -414,6 +414,41 @@ int calories = menu.stream()
 - 또한 필요할 때 **다시 객체 스트림으로 복원하는 기능도 제공한다.**
 - 📌 **특화 스트림은 오직 박싱 과정에서 일어나는 효율성과 관련 있으며 스트림에 추가 기능을 제공하지는 않는다!**
 
+### 숫자 스트림으로 매핑
+- 스트림을 특화 스트림으로 변환할 때는 `mapToInt` , `mapToDouble` , `mapToLong` 세 가지 메서드를 가장 많이 사용한다. 
+  - `Stream<T>`대신 **특화된 스트림을 반환한다.**
+
+
+```java
+int calories = menu.stream()    // Stream<Dish> 반환
+                   .mapToInt(Dish::getCalories) // IntStream 반환
+                   .sum();
+```
+- 스트림이 비어있으면 `sum`은 기본값 `0`을 반환한다.
+
+### 객체 스트림으로 복원하기
+- `IntStream`의 `map`연산은 `int`를 인수로 받아서 `int`를 반환하는 람다(`IntUnaryOperator`)를 인수로 받는다.
+- 하지만 정수가 아닌 `Dish`같은 다른 값을 반환하고 어떻게 해야할까?
+
+```java
+IntStream intStream = menu.stream().mapToInt(Dish::getCalories);
+Stream<Integer> stream = intStream.boxed(); // 숫자 스트림을 스트림으로 반환
+```
+
+### 기본값 : `OptionalInt` , `OptionalDouble` , `OptionalLong`
+- `IntStream`에서 최대값을 찾을 때는 `0`이라는 기본값 때문에 잘못된 결과가 도출될 수 있다.
+- 스트림에 요소가 없는 상황과 실제 최대값이 0인 경우를 어떻게 구별할 수 있을까?
+
+```java
+OptionalInt maxCalories = menu.stream()
+                              .mapToInt(Dish::getCalories)
+                              .max();
+
+int max = maxCalories.orElse(1) // 값이 없을 때 기본 최댓값을 명시적으로 설정
+```
+
+## 숫자 범위
+- 자바 8의 `IntStream`과 `LongStream`에서는 `range`와 `rangeClosed`라는 두 가지 정적 메서드를 제공한다.
 
 # 📌 **퀴즈**
 
