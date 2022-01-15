@@ -89,7 +89,7 @@ nav_order: 5
 
 ```
 
-### **`dropWhile`** 활용
+### **`dropWhile` 활용**
 
 - 나머지 요소를 선택하려면 어떻게 해야 할까?
 
@@ -106,7 +106,7 @@ nav_order: 5
   - `Predicate`가 거짓이되면 그 지점에서 작업을 중단하고 남은 요소를 모두 반환한다.
   - 무한한 남은 요소를 가진 무한 스트림에서도 동작한다.
 
-## **스트림 축소**
+## **스트림 축소** `limit(n)`
 
 - **스트림은 주어진 값 이하의 크기를 갖는 새로운 스트림을 반환하는 `limit(n)` 메서드를 지원한다.**
 
@@ -325,13 +325,11 @@ nav_order: 5
 - 병렬 실행에서는 첫 번째 요소를 찾기 어렵다.
 - 따라서 요소의 반환 순서가 상관없다면 병렬 스트림에서는 제약이 적은 `findAny`를 사용한다.
 
-# **리듀싱**
+# **`reduce`**
 - `reduce`연산을 이용해서 **메뉴의 모든 칼로리의 합계를 구하시오** , **메뉴에서 칼로리가 가장 높은 요리는?** 같이 스트림 요소를 조합해서 더 복잡한 질의를 표현하는 방법을 설명한다.
 - 이러한 질의를 수행하려면 `Integer` 같은 결과가 나올 때 까지 스트림의 모든 요소를 반복적으로 처리해야 한다.
 - 이런 질의를 **리듀싱 연산 (모든 스트림 요소를 처리해서 값으로 도출하는)** 이라고 한다.
 - 이 과정이 마치 종이(우리의 스트림)를 작은 조각이 될 때 까지 반복해서 접는 것과 비슷하다는 의미로 **폴드**라고 부른다.
-
-## 요소의 합
 - `for-each`
   - `sum`변수의 초깃값 0
   - 리스트의 모든 요소를 조합하는 연산 `+`
@@ -405,7 +403,7 @@ int calories = menu.stream()
 - 스트림의 요소 형식은 `Integer`지만 인터페이스에는 `sum`메서드가 없다.
 - **이와 같은 문제를 해결하기 위해 `기본형 특화 스트림`을 제공한다.**
 
-## 기본형 특화 스트림
+## **기본형 특화 스트림**
 - 자바 8 에서는 세 가지 기본형 특화 스트림을 제공한다.
 - `int` ➜ `IntStream`
 - `double` ➜ `DoubleStream`
@@ -414,7 +412,7 @@ int calories = menu.stream()
 - 또한 필요할 때 **다시 객체 스트림으로 복원하는 기능도 제공한다.**
 - 📌 **특화 스트림은 오직 박싱 과정에서 일어나는 효율성과 관련 있으며 스트림에 추가 기능을 제공하지는 않는다!**
 
-### 숫자 스트림으로 매핑
+### 숫자 스트림으로 매핑 `mapToInt` , `mapToDouble` , `mapToLong` 
 - 스트림을 특화 스트림으로 변환할 때는 `mapToInt` , `mapToDouble` , `mapToLong` 세 가지 메서드를 가장 많이 사용한다. 
   - `Stream<T>`대신 **특화된 스트림을 반환한다.**
 
@@ -426,7 +424,7 @@ int calories = menu.stream()    // Stream<Dish> 반환
 ```
 - 스트림이 비어있으면 `sum`은 기본값 `0`을 반환한다.
 
-### 객체 스트림으로 복원하기
+### 객체 스트림으로 복원하기 `boxed()`
 - `IntStream`의 `map`연산은 `int`를 인수로 받아서 `int`를 반환하는 람다(`IntUnaryOperator`)를 인수로 받는다.
 - 하지만 정수가 아닌 `Dish`같은 다른 값을 반환하고 어떻게 해야할까?
 
@@ -447,8 +445,209 @@ OptionalInt maxCalories = menu.stream()
 int max = maxCalories.orElse(1) // 값이 없을 때 기본 최댓값을 명시적으로 설정
 ```
 
-## 숫자 범위
+## **숫자 범위** `range` , `rangeClosed` 
 - 자바 8의 `IntStream`과 `LongStream`에서는 `range`와 `rangeClosed`라는 두 가지 정적 메서드를 제공한다.
+- 두 메서드 모두 **첫 번째 인수로 시작값**을, **두 번째 인수로 종료값**을 갖는다.
+- `range`메서드는 **시작값과 종료값이 결과에 포함되지 않고**
+- `rangeClosed`는 **시작값과 종료값이 결과에 포함된다.**
+
+```java
+IntStream evenNumbers = IntStream.rangeClosed(1 , 100)
+                                 .filter(n -> n % 2 == 0);
+        // evenNumbers.count() -> 50                                 
+```
+
+## 📝 **숫자 스트림 활용 : 피타고라스 수 스트림 만들기**
+- `피타고라스 수` 스트림을 만들자
+- `a * a + b * b = c * c`
+- `a` , `b` 두 수가 제공 되었을 때 , `a * a + b * b`의 제곱근이 정수인지 확인
+
+```java
+    Stream<int[]> pythagoreanTriples =
+            IntStream.rangeClosed(1 , 100)
+                     .boxed()
+                     .flatMap(a -> IntStream.rangeClosed(a , 100)
+                                            .filter(b -> Math.sqrt(a*a + b*b) % 1 == 0)
+                                            .mapToObj(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)})
+                            );
+
+    pythagoreanTriples.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2]));
+```
+
+- `1` 부터 `100`까지의 수를 만들었다.
+- 주어진 수를 이용해서 세 수의 스트림을 만든다.
+   - 스트림 `a`의 값을 매핑하면 스트림의 스트림이 만들어질 것이다.
+- `flatMap`은 **생성된 각각의 스트림을 하나의 평준화된 스트림으로 만들어준다.**
+- `filter`로 `a`와 함께 피타고라스 수를 구성하는 모든 `b`를 필터링 할 수 있다.
+- `IntStream`의 `mapToObj`메서드를 이용하여 개체값 스트림을 받는다.
+- ❓ **개선할 점?**
+  - 제곱근 계산을 두 번 한다.
+  - `(a*a , b*b , a*a + b*b)`형식을 만족하는 세 수를 만든 다음
+  - 원하는 조건에 맞는 결과만 필터링 하는것이 더 최적화된 방법이다.
+
+```java
+    Stream<double[]> pythagoreanTriples =
+            IntStream.rangeClosed(1 , 100)
+                     .boxed()
+                     .flatMap(a -> IntStream.rangeClosed(a , 100)
+                                            .mapToObj(b -> new double[]{a, b, Math.sqrt(a * a + b * b)})
+                                            .filter(t -> t[2] % 1 == 0));
+
+    pythagoreanTriples.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2]));
+```
+
+# **스트림 만들기**
+
+## 값으로 스트림 만들기 `Stream.of`
+
+- 임의의 수를 인수로 받는 정적 메서드 `Stream.of`를 이용해서 스트림을 만들 수 있다.
+
+```java
+    Stream<String> stream = Stream.of("Modern " , "Java " , "Modern " , "In " , "Action ");
+    stream.map(String::toUpperCase).forEach(System.out::println);
+
+    stream = Stream.empty();
+    stream.map(String::toUpperCase).forEach(System.out::println);
+```
+
+## `null`이 될 수 있는 객체로 스트림 만들기 `Stream.ofNullable()`
+
+- 자바 9에서는 `null`이 될 수 있는 개체를 스트림으로 만들 수 있는 새로운 메소드가 추가 되었다.
+- ✋ [System.getProperty()](https://unabated.tistory.com/entry/Java%EC%97%90%EC%84%9C-SystemgetProperty) 
+- `null`이 될 수 있는 객체를 포함하는 스트림 값을 `flatMap`과 함께 사용하는 상황에서는 이 패턴을 더 유용하게 사용할 수 있다.
+
+```java
+Stream<String> values =
+        Stream.of("config" , "user" , "home")
+              .flatMap(key -> Stream.ofNullable(System.getProperty(key)));
+
+Stream<String> values =
+        Stream.of("config" , "user" , null)
+              .flatMap(key -> Stream.ofNullable(key));
+```
+
+## 배열로 스트림 만들기 `Arrays.stream`
+- 배열을 인수로 받는 정적 메서드 `Arrays.stream`을 이용하여 만들 수 있다.
+
+```java
+int[] numbers = {2, 3, 5, 7, 11, 13};
+int sum = Arrays.stream(numbers).sum();
+```
+
+## 파일로 스트림 만들기
+- 파일을 처리하는 등의 `I/O 연산`에 사용하는 `NIO API`(논블록 IO)도 스트림 API를 활용할 수 있다.
+- `java.nio.file.Files`의 많은 정적 메소드가 스트림을 반환한다.
+- `Files.lines`는 **주어진 파일의 행 스트림을 문자열로 반환**한다.
+- `Stream` 인터페이스는 `AutoCloseable` 인터페이스를 구현한다.
+
+```java
+    System.out.println(System.getProperty("user.home")); // C:\Users\Administrator
+    long uniqueWords = 0;
+    try(Stream<String> lines = Files.lines(Paths.get("C:\\Users\\Administrator\\data.txt") , Charset.defaultCharset())){
+        uniqueWords = lines.flatMap(line -> Arrays.stream(line.split("")))
+                            .distinct()
+                            .count();
+    }
+    catch(IOException e){
+        System.out.println("에외!!!");
+    }
+    System.out.println(uniqueWords);
+```
+
+## 함수로 무한 스트림 만들기
+- 함수에서 스트림을 만들 수 있는 두 정적 메서드 `Stream.iterate` , `Stream.generate`를 제공
+- 두 연산을 이용해서 **무한 스트림** , 크기가 고정되지 않은 스트림을 만들 수 있다.
+
+### `Stream.iterate`
+- 요청할 때 마다 값을 생산할 수 있으며 끝이 없으므로 **무한 스트림**을 만든다.
+- 이러한 스트림을 **언바운드 스트림**이라고 표현한다.
+- 바로 이런 특징이 **스트림과 컬렉션의 가장 큰 차이점**이다.
+- 초깃값 `0`과 람다 (*`UnaryOperator<T>` 사용*)를 인수로 받아서 새로운 값을 끊임없이 생산할 수 있다.
+
+```java
+    Stream.iterate(0 , n -> n + 2)
+          .limit(10)
+          .forEach(System.out::println);
+```
+
+- 자바 9의 `iterate`메소드는 `Predicate<T>`를 지원한다.
+
+```java
+    // `0`에서 시작해 `100`보다 크면 중단
+    IntStream.iterate(0 , n -> n < 100 , n -> n + 4)
+             .forEach(System.out::println);
+```
+
+
+```java
+    IntStream.iterate(0 , n -> n + 4)
+             .filter(n -> n < 100)
+             .forEach(System.out::println);
+```
+
+- 위와 같은 방법으로는 같은 결과를 얻을 수 없다.
+- `filter`메소드는 언제 이 작업을 중단해야 하는지를 알 수 없기 때문이다.
+- **스트림 쇼트서킷**을 지원하는 `takeWhile`을 이용하는 것이 해법이다.
+
+```java
+    IntStream.iterate(0 , n -> n + 4)
+             .takeWhile(0 -> n < 100)
+             .forEach(System.out::println);
+```
+
+### `Stream.generate`
+- `iterate`와 달리 **생산된 각 값을 연속적으로 계산하지 않는다.**
+- `generate`는 `Supplier<T>`를 인수로 받아 새로운 값을 생상한다.
+
+```java
+    Stream.generate(Math::random)
+          .limit(5)
+          .forEach(System.out::println);
+```
+
+- `limit`메서드를 이용해서 스트림의 크기를 한정했다. `limit`가 없다면 언바운드 상태가 된다.
+
+```java
+    IntStream ones = IntStream.generate(() -> 1);
+```
+
+- 위의 코드는 박싱 연산 문제를 피하고 무한 스트림을 생성하는 코드다.
+  - `IntStream`의 `generate`는 `IntSupplier`를 인수로 받는다.
+
+```java
+    IntStream twos = IntStream.generate(new IntSupplier(){
+        public int getAsInt(){
+            return 2;
+        }
+    });
+```
+
+- `generate`메서드는 주어진 발행자를 이용해서 2를 반환하는 `getAsInt`메서드를 반복적으로 호출할 것이다.
+- 위의 코드에서 사용한 익명 클래스와 람다는 비슷한 연산을 수행하지만
+  - 익명 클래스에서는 `getAsInt`메서드의 연산을 커스터마이즈 할 수 있는 상태 필드를 정의할 수 있다는 점이 다르다.
+  - **부작용이 생길 수 있음을 보여주는 예제다.** , `람다는 상태를 바꾸지 않는다.`
+- `generate`로 피보나치 구현
+
+```java
+    IntSupplier fibo = new IntSupplier(){
+        private int prev = 0;
+        private int curr = 1;
+        public int getAsInt(){
+            int oldPrev = this.prev;
+            int nextVal = this.prev + this.curr;
+            this.prev = this.curr;
+            this.curr = nextVal;
+            return oldPrev;
+        }
+    };
+    IntStream.generate(fibo).limit(10).forEach(System.out::println);
+```
+
+- `IntSupplier` 인스턴스를 만들었다.
+- 해당 객체는 기존 피보나치 요소와 두 인스턴스 변수에 어떤 피보나치 요소가 들어있는지 추적하므로 **가변상태 객체**다.
+- `getAsInt`를 호출하면 객체 상태가 바뀌며 새로운 값을 생산한다.
+- `iterate`를 사용했을 때는 각 과정에서 새로운 값을 생성하면서도 기존 상태를 바꾸지 않는 순수한 **불변상태**를 유지햇다.
+
 
 # 📌 **퀴즈**
 
@@ -762,3 +961,20 @@ Optional<Transaction> minValue = transactions.stream()
 
 //        {Trader{name='Brian', city='Cambridge'}, year: 2011, value: 300} 
 ```
+
+- `iterate`를 사용하여 **피보나치수열 20개 출력**
+
+```java
+    Stream.iterate(new int[]{0 , 1} , v -> new int[]{v[1] , v[0] + v[1]})
+            .limit(20)
+            .map(arr -> arr[0])
+            .forEach(System.out::println);
+```
+
+# 📌 **마치며**
+
+1. 소스가 정렬되어 있다는 사실을 알고 있을 때 `takeWhile`과 `dropWhile` 메소드를 효과적으로 사용할 수 있다.
+2. `findFirst` , `findAny` , `allMatch` , `noneMatch` , `anyMatch` 이 메서드들은 **쇼트서킷**이다.
+3. `filter` , `map`등은 상태를 저장하지 않는 **상태 없는 연산**이다. 
+4. `reduce` 같은 연산은 값을 계산하는 데 필요한 상태를 저장하며 , `sorted` , `distinct`등의 메서드는 새로운 스트림을 반환하기에 앞서 스트림의 모든 요소를 버퍼에 저장해야 한다.
+   - 이런 메서드를 **상태 있는 연산이라고 부른다**
