@@ -108,6 +108,11 @@ figure.highlight {
   }
 }
 
+.language-plaintext {
+  background-color: $grey-lt-000;
+  font-family: Consolas;
+}
+
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight, .highlight .w {
