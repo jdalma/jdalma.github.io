@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 코딩 테스트 대비
-nav_order: 61
+nav_order: 65
 has_children: true
 permalink: /docs/javaAlgorithm
 ---
