@@ -12,9 +12,9 @@ has_children: true
 {:toc}
 ---
 
-# **뮤텍스(Mutex)와 세마포어(Semaphore)의 차이**
+# **[`Spring RequestContextHolder`](https://gompangs.tistory.com/entry/Spring-RequestContextHolder#%EA%B-%AC%EA%B-%--%EB%A-%--%EC%-D%--%--%EB%A-%B-%EC%-B%A-%ED%--%--%EC%A-%--%--%EB%A-%--%EC%-E%--)**
 
-- [링크](https://worthpreading.tistory.com/90)
+# **[뮤텍스(Mutex)와 세마포어(Semaphore)의 차이](https://worthpreading.tistory.com/90)**
 
 # **트랜잭션 관련**
 
