@@ -201,7 +201,7 @@ public class TourDirector {
   - `UriComponentsBuilder`
   - `MockMvcWebClientBuilder`
   - `...Builder`
-- [`롬복의 @Builder`](https://projectlombok.org/features/Builde)
+- [`롬복의 @Builder`](https://projectlombok.org/features/Builder)
 
 ## 장점과 단점
 
