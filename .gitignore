@@ -6,3 +6,6 @@
 _site
 Gemfile.lock
 node_modules
+Gemfile
+assets/js/zzzz-search-data.json
+bin/just-the-docs
