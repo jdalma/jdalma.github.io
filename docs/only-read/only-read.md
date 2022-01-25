@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-01-25`
+
+## **[알고리즘 시간복잡도 뽀개기](https://goodgid.github.io/Algorithm-Time-Complexity-Analysis/)**
+
 ## **[`Spring RequestContextHolder`](https://gompangs.tistory.com/entry/Spring-RequestContextHolder#%EA%B-%AC%EA%B-%--%EB%A-%--%EC%-D%--%--%EB%A-%B-%EC%-B%A-%ED%--%--%EC%A-%--%--%EB%A-%--%EC%-E%--)**
 
 ## **[`Immutable Object`(불변객체)](https://velog.io/@conatuseus/Java-Immutable-Object%EB%B6%88%EB%B3%80%EA%B0%9D%EC%B2%B4)**
@@ -28,14 +32,14 @@ has_children: true
 - [Spring Transaction에 대한 노트](https://narusas.github.io/2019/07/17/Spring-Transaction-Note.html#transaction_script_example)
 - [선언적 트랜잭션 @Transactional](https://bamdule.tistory.com/51)
 
-
 ## **[뮤텍스(Mutex)와 세마포어(Semaphore)의 차이](https://worthpreading.tistory.com/90)**
-
 
 ## **[교차 출처 리소스 공유 (CORS)](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS)**
 
 ## **[LeetCode 문제 추천 블로그]((https://inner-game.tistory.com/11))**
 
-## **[개발자가 알아야 할 스톡옵션의 모든 것](https://evan-moon.github.io/2021/12/04/what-is-stock-options/?fbclid=IwAR1i_sCoxxOOanOmPCMofKnhnFjTdMuypjwce3T1cq4U8F-Sdt5wJnIKBQ4#%EC%97%B0%EB%B4%89-5%EB%B0%B1%EB%A7%8C%EC%9B%90-%EC%98%AC%EB%A6%B4%EB%9E%98-%EC%8A%A4%ED%86%A1%EC%98%B5%EC%85%98-5%EC%B2%9C%EB%A7%8C%EC%9B%90-%EC%96%B4%EC%B9%98-%EB%B0%9B%EC%9D%84%EB%9E%98)**
+## **[Java Code Conventions / 자바 코딩 규칙](http://kwangshin.pe.kr/blog/java-code-conventions-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99/?ckattempt=1)**
+
+## **[목적의식 있는 연습을 통한 효과적인 학습](https://techblog.woowahan.com/2626/)**
 
 ## 📢 **[The Top 433 Korean Open Source Projects on Github](https://awesomeopensource.com/projects/korean)**
