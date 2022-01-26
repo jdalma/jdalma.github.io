@@ -12,6 +12,11 @@ has_children: true
 {:toc}
 ---
 
+# `2022-01-26`
+## **[JWT (로그인 기능 구현 시)](https://white-board.tistory.com/199)**
+
+## **[`Fail-Fast Iterator`](https://perfectacle.github.io/2021/08/14/fail-fast-iterator/)**
+
 # `2022-01-25`
 
 ## **[알고리즘 시간복잡도 뽀개기](https://goodgid.github.io/Algorithm-Time-Complexity-Analysis/)**
