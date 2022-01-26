@@ -734,28 +734,6 @@ while(iter.hasNext()) {//값이 있으면 true 없으면 false
 
 > ✋ **[HashTable vs HashMap vs ConcurrentHashMap](https://devlog-wjdrbs96.tistory.com/269)**
 
-
-> ✋ `.intern()`
-
-```java
-    public static void main (String[] args) {
-    	String a = "테스트";
-    	String b = new String("테스트");
-    	
-    	System.out.println("a equals b : " + a.equals(b));
-    	System.out.println("a == b : " + (a == b));
-
-    	b = b.intern();
-    	System.out.println("a equals b : " + a.equals(b));
-    	System.out.println("a == b : " + (a == b));
-    	
-//    	a equals b 	: true
-//    	a == b 		: false
-//    	a equals b 	: true
-//    	a == b 		: true    	
-    }
-```
-
 # **해시 충돌 해결 방법**
 
 ## **개방 주소법(Open Addressing)**
@@ -811,6 +789,27 @@ static final int UNTREEIFY_THRESHOLD = 6;
 
 - **[문자열(String) 객체가 저장되는 String Pool에 대하여](https://dololak.tistory.com/718)**
 - **[String은 항상 StringBuilder로 변환될까?](https://siyoon210.tistory.com/160)**
+
+> ✋ `String.intern()`
+
+```java
+    public static void main (String[] args) {
+    	String a = "테스트";
+    	String b = new String("테스트");
+    	
+    	System.out.println("a equals b : " + a.equals(b));
+    	System.out.println("a == b : " + (a == b));
+
+    	b = b.intern();
+    	System.out.println("a equals b : " + a.equals(b));
+    	System.out.println("a == b : " + (a == b));
+    	
+//    	a equals b 	: true
+//    	a == b 		: false
+//    	a equals b 	: true
+//    	a == b 		: true    	
+    }
+```
 
 ***
 
