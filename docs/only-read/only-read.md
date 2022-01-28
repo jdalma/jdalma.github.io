@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-01-27`
+
+## **[Curated List of Top 75 LeetCode Questions to Save Your Time](https://leetcode.com/list/xi4ci4ig/)**
+
 # `2022-01-26`
 ## **[JWT (로그인 기능 구현 시)](https://white-board.tistory.com/199)**
 
