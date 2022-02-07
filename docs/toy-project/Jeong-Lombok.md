@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Jeong-Lombok(진행 중)
+title: Jeong-Lombok
 parent: Toy-Projects
 nav_order: 1
 ---
@@ -56,8 +56,8 @@ nav_order: 1
   - 롬복은 내부 컴파일러 `com.sun.*`를 사용하여 추상구문트리를 직접 수정한다.
 - `@JeongPoetGetter`
   - **[JavaPoet](https://www.baeldung.com/java-poet)** 을 사용하여 클래스에서만 사용 가능한 어노테이션
-- `@JeongEntity`
-  - 위의 `@JeongGetter`를 활용하여 롬복의 기능을 만들어보자
+- ~~`@JeongEntity`~~
+  - ~~위의 `@JeongGetter`를 활용하여 롬복의 기능을 만들어보자~~
 - **JavaPoet , AnnotationProcessor , Reflection , 자바컴파일러** 의 이해를 위한 프로젝트이다.
 - 먼저 `@JeongGetter`를 통해 AST를 직접 조작하는 코드를 보자
 - JDK 8 , IntelliJ 2020.2.4
@@ -332,7 +332,7 @@ public class PoetGetterProcessor extends AbstractProcessor {
 
 ***
 
-## **`@JeongEntity`**
+## ~~**`@JeongEntity`**~~
 
 - `com.sun.*` JDK 자바컴파일러 내부 클래스를 사용하여 진행한다.
 - 클래스에만 작성 가능 하다.
