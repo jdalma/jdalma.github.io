@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-02-10`
+
+## **[언제 static 함수 모음 Class를 만들어야 할까?](http://kwon37xi.egloos.com/4844149)**
+
 # `2022-01-27`
 
 ## **[Curated List of Top 75 LeetCode Questions to Save Your Time](https://leetcode.com/list/xi4ci4ig/)**
