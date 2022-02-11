@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-02-11`
+
+## **[@Transactional 사용 시 주의해야하는 8가지](https://flambeeyoga.tistory.com/entry/Transactional-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90)**
+
 # `2022-02-10`
 
 ## **[언제 static 함수 모음 Class를 만들어야 할까?](http://kwon37xi.egloos.com/4844149)**
