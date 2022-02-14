@@ -133,6 +133,7 @@ public class App {
     -   2개의 Survivor Space
 -   **Old Generation (오래된 객체들)**
 -   [PermGen (JAVA8에서 사라짐 , Metaspace로 변경)](https://dzone.com/articles/permgen-and-metaspace)
+    -   📌 [JDK 8에서 Perm 영역은 왜 삭제됐을까](https://johngrib.github.io/wiki/java8-why-permgen-removed/)
 -  ✋ **[문자열(String) 객체가 저장되는 String Pool에 대하여](https://dololak.tistory.com/718)**
     - Java6 버전까지는 JVM Heap내부의 PermGen 영역에 있었으며, 그러한 이유로 String Pool에 문자열 객체가 많이 생성된다거나 다른 이유로 이 영역이 가득 차게되면 OutOfMemory 에러가 발생했습니다.
     - Java7 부터는 다른 일반 객체들과 마찬가지로 Perm영역이 아닌 Heap에 String Pool을 생성합니다
