@@ -1277,7 +1277,7 @@ public class OrderController {
 ```
 
 **자세한 코드는**
-[jeongcode/springboot-jpa-uses](https://github.com/jeongcode/springboot-jpa-uses)
+[jdalma/springboot-jpa-uses](https://github.com/jdalma/springboot-jpa-uses)
 
 ***
 

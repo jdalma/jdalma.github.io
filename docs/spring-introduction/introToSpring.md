@@ -11,7 +11,7 @@ permalink: /docs/spring-introduction
 1. TOC
 {:toc}
 ---
-## **스프링 이란?** [Github](https://github.com/jeongcode/hello-spring)
+## **스프링 이란?** [Github](https://github.com/jdalma/hello-spring)
 ![](../../assets/images/spring-introduction/1.png)
 ### **스프링 프레임워크**
 

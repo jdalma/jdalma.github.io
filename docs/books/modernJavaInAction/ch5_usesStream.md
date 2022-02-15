@@ -302,7 +302,7 @@ nav_order: 5
 
 ```
 
-> - ✋ **[Optional 이란?](https://jeongcode.github.io/docs/java/java8/stream-optional/#optional)**
+> - ✋ **[Optional 이란?](https://jdalma.github.io/docs/java/java8/stream-optional/#optional)**
 > - 값의 존재나 부재 여부를 표현하는 컨테이너 클래스
 > - `findAny`는 아무 요소도 반환하지 않을 수 있다. `null`은 쉽게 에러를 일으킬 수 있으므로 ,
 > - `null`확인 관련 버그를 피하는 방법이다.

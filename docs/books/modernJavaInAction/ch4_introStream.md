@@ -201,9 +201,9 @@ public class Dish {
     - **파이프라인은 소스에 적용하는 질의 같은 존재다.**
 3. 마지막으로 `collect`연산으로 파이프라인을 처리해서 결과를 반환한다.
     - **마지막에 `collect`를 호출하기 전까지는 menu에서 무엇도 선택되지 않으며 출력 결과도 없다.**
-    - ✋ [종료형 오퍼레이터 유무 , 종료형 오퍼레이터는 없지만 인스턴스가 사용될 때](https://jeongcode.github.io/docs/java/java8/stream-optional/#-%EC%A2%85%EB%A3%8C%ED%98%95-%EC%98%A4%ED%8D%BC%EB%A0%88%EC%9D%B4%ED%84%B0%EB%8A%94-%EC%97%86%EC%A7%80%EB%A7%8C-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EA%B0%80-%EC%82%AC%EC%9A%A9%EB%90%A0-%EB%95%8C)
+    - ✋ [종료형 오퍼레이터 유무 , 종료형 오퍼레이터는 없지만 인스턴스가 사용될 때](https://jdalma.github.io/docs/java/java8/stream-optional/#-%EC%A2%85%EB%A3%8C%ED%98%95-%EC%98%A4%ED%8D%BC%EB%A0%88%EC%9D%B4%ED%84%B0%EB%8A%94-%EC%97%86%EC%A7%80%EB%A7%8C-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EA%B0%80-%EC%82%AC%EC%9A%A9%EB%90%A0-%EB%95%8C)
       - *필요할 때만 값을 계산한다.*
-> ✋ [JAVA에서 제공하는 함수형 인터페이스](https://jeongcode.github.io/docs/java/java8/functionalInterface-lambda/#java%EC%97%90%EC%84%9C-%EC%A0%9C%EA%B3%B5%ED%95%98%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4)
+> ✋ [JAVA에서 제공하는 함수형 인터페이스](https://jdalma.github.io/docs/java/java8/functionalInterface-lambda/#java%EC%97%90%EC%84%9C-%EC%A0%9C%EA%B3%B5%ED%95%98%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4)
 
 ***
 # **컬렉션과 스트림**

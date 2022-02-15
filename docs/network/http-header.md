@@ -230,7 +230,7 @@ nav_order: 4
 
 -   **페이지 리다이렉션**
 -   웹 브라우저는 3xx응답의 결과에 Location 헤더가 있으면 , Location 위치로 자동 이동(리다이렉트)
--   [응답코드 3xx에서 설명](https://jeongcode.github.io/docs/network/http-code-redirection/)
+-   [응답코드 3xx에서 설명](https://jdalma.github.io/docs/network/http-code-redirection/)
 -   201 Created : Location 값은 요청에 의해 생성된 리소스 URI
 -   3xx Redirection : Location 값은 요청을 자동으로 리다이렉션하기 위한 대상 리소스를 가리킴
 

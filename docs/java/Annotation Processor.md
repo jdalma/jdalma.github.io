@@ -18,7 +18,7 @@ nav_order: 6
 ✅ **Annotation Processor의 대표적인 예**
 {: .fh-default .fs-4 }
 
-**[Lombok사용해보기](https://jeongcode.github.io/docs/spring-introduction/lombok-use/)**
+**[Lombok사용해보기](https://jdalma.github.io/docs/spring-introduction/lombok-use/)**
 
 **Maven**
 ```html
@@ -40,7 +40,7 @@ nav_order: 6
   -  그럼에도 불구하고 엄청난 편리함 때문에 널리 쓰이고 있으며 대안이 몇가지 있지만 롬복의 모든 기능과 편의성을 대체하진 못하는 현실이다.
     - [AutoValue](https://github.com/google/auto/blob/master/value/userguide/index.md)
     - [Immutables](https://immutables.github.io)
- - **[Javac의 원리](https://jeongcode.github.io/docs/java/javac-principle/)**
+ - **[Javac의 원리](https://jdalma.github.io/docs/java/javac-principle/)**
 
 # **Annotation Processor 실습**
 

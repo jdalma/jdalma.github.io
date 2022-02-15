@@ -249,7 +249,7 @@ public interface Callable<V> {
 
     String result = processFile((BufferedReader br) -> br.readLine() + br.readLine());
 ```
-- ✋ [람다 표현식 , 익명 , 내부 클래스 각각 지역변수 참조](https://jeongcode.github.io/docs/java/java8/functionalInterface-lambda/#%EB%B3%80%EC%88%98-%EC%BA%A1%EC%B2%98-variable-capture)
+- ✋ [람다 표현식 , 익명 , 내부 클래스 각각 지역변수 참조](https://jdalma.github.io/docs/java/java8/functionalInterface-lambda/#%EB%B3%80%EC%88%98-%EC%BA%A1%EC%B2%98-variable-capture)
 
 ## 3단계 : **동작 실행**
 
@@ -522,7 +522,7 @@ public interface Callable<V> {
     Comparator<Apple> c1 = (a1 , a2) -> a1.getWeight().compareTo(a2.getWeight());
 ```
 
-## 지역 변수 사용 [변수 캡쳐](https://jeongcode.github.io/docs/java/java8/functionalInterface-lambda/#%EB%B3%80%EC%88%98-%EC%BA%A1%EC%B2%98-variable-capture)
+## 지역 변수 사용 [변수 캡쳐](https://jdalma.github.io/docs/java/java8/functionalInterface-lambda/#%EB%B3%80%EC%88%98-%EC%BA%A1%EC%B2%98-variable-capture)
 - 람다 표현식에서는 익명 함수가 하는 것처럼 **자유 변수 (파라미터로 넘겨진 변수가 아닌 외부에서 정의된 변수)**를 활용할 수 있다.
 - 이와 같은 동작을 **람다 캡쳐링**이라고 부른다.
 

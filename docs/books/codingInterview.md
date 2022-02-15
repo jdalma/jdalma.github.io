@@ -629,7 +629,7 @@ class Solution {
 
 ![](../../assets/images/algorithm/section4/1.png)
 
-## [문제 - K번째 큰 수](https://jeongcode.github.io/docs/algorithm/javaAlgorithm/section4/#treeset-k%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-%EC%8B%A4%ED%8C%A8)
+## [문제 - K번째 큰 수](https://jdalma.github.io/docs/algorithm/javaAlgorithm/section4/#treeset-k%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-%EC%8B%A4%ED%8C%A8)
 
 **TreeSet 선언**
 
@@ -939,8 +939,8 @@ public int fibo(int n){
 - 그래프의 간선에 가중치를 부여돼어있을 때 , `현재 위치에서 목표 위치까지 최단 경로`는?(**단일 출발 최단경로**문제) **다익스트라 알고리즘**
 - 📌 **사이클이 있을수도 있는 가중 방향 그래프에서 두 지점간의 최단 경로를 찾는 방법이다.**
 - **참고 예제**
-  - [백준 - 최단경로](https://jeongcode.github.io/docs/algorithm/2021y10m/#%EB%B0%B1%EC%A4%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC---%EA%B8%B0%EC%B4%88%EB%AC%B8%EC%A0%9C-%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC)
-  - [백준 - 숨바꼭질3](https://jeongcode.github.io/docs/algorithm/2021y09m/#-%EB%B0%B1%EC%A4%80-bfs-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%883)
+  - [백준 - 최단경로](https://jdalma.github.io/docs/algorithm/2021y10m/#%EB%B0%B1%EC%A4%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC---%EA%B8%B0%EC%B4%88%EB%AC%B8%EC%A0%9C-%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC)
+  - [백준 - 숨바꼭질3](https://jdalma.github.io/docs/algorithm/2021y09m/#-%EB%B0%B1%EC%A4%80-bfs-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%883)
 - **동작 원리**
   1. `s`에서 시작한다．
   2. `s`의 유출 간선의 개수만큼 우리 자신을 복제한 뒤 해당 간선을 걸어간다.`(s, x)`
@@ -1058,8 +1058,8 @@ public int fibo(int n){
   - 간선을 기준으로 정렬하는 과정이 오래 걸린다.
 - **간선의 개수가 작은 경우**에는 **크루스칼**
 - **간선의 개수가 많은 경우**에는 **프림**
-- [참고 문제1](https://jeongcode.github.io/docs/javaAlgorithm/section9/#-원더랜드-)
-- [참고 문제2](https://jeongcode.github.io/docs/algorithm/2022y02m/#프로그래머스-최소신장트리-섬-연결하기)
+- [참고 문제1](https://jdalma.github.io/docs/javaAlgorithm/section9/#-원더랜드-)
+- [참고 문제2](https://jdalma.github.io/docs/algorithm/2022y02m/#프로그래머스-최소신장트리-섬-연결하기)
 
 ***
 

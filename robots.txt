@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jeongcode.github.io/sitemap.xml
+Sitemap: https://jdalma.github.io/sitemap.xml

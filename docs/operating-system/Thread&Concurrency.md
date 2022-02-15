@@ -101,7 +101,7 @@ class Main {
 
 ### **Lambda 표현식 사용(Java 버전 1.8부터)**
 - 새로운 클래스를 정의하지 않고 대신 **Runnable의 람다 식을 사용**한다.
-- 참고 - **[JAVA8 Concurrent Programming](https://jeongcode.github.io/docs/java/concurrent/)**
+- 참고 - **[JAVA8 Concurrent Programming](https://jdalma.github.io/docs/java/concurrent/)**
 
 ```java
 class Main {

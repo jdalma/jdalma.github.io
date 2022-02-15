@@ -11,7 +11,7 @@ nav_order: 1
 {:toc}
 ---
 
-# **[`Builder Pattern`](https://github.com/jeongcode/design-patterns/tree/master/src/main/java/me/whiteship/designpatterns/_01_creational_patterns/_04_builder)** 
+# **[`Builder Pattern`](https://github.com/jdalma/design-patterns/tree/master/src/main/java/me/whiteship/designpatterns/_01_creational_patterns/_04_builder)** 
 
 ## 패턴 소개
 - **동일한 프로세스를 거쳐 다양한 구성의 인스턴스를 만드는 방법**
