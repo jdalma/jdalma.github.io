@@ -61,3 +61,54 @@ class Solution {
 }
 ```
 
+***
+
+## **`Two Pointers` [Rotate Array](https://leetcode.com/problems/rotate-array/submissions/)**
+
+### 여분의 배열 사용 , 공간 : `O(N)`
+
+```java
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int[] result = new int[nums.length];
+        for(int i = 0 ; i < nums.length ; i++){
+            result[(i + k) % nums.length] = nums[i];
+        }
+        for(int i = 0 ; i < nums.length ; i++){
+            nums[i] = result[i];
+        }
+    }
+}
+```
+
+### 공간 : `O(1)` 👍 
+
+```
+n = 7 , k = 3
+
+Original List                   : 1 2 3 4 5 6 7
+After reversing all numbers     : 7 6 5 4 3 2 1
+After reversing first k numbers : 5 6 7 4 3 2 1
+After revering last n-k numbers : 5 6 7 1 2 3 4 --> Result
+```
+
+```java
+class Solution {
+    public void rotate(int[] nums, int k) {
+        k %= nums.length;
+        reverse(nums , 0 , nums.length - 1);
+        reverse(nums , 0 , k - 1);
+        reverse(nums , k , nums.length - 1);
+    }
+    
+    public void reverse(int[] nums , int start , int end){
+        while(start < end){
+            int tmp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = tmp;
+            start++;
+            end--;
+        }
+    }
+}
+```
