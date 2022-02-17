@@ -12,9 +12,14 @@ has_children: true
 {:toc}
 ---
 
+# `Test`
+- `Enumeration` , `Iterator` **Fail-Fast**
+
 # `2022-02-16`
 
 ## **[RequestContextHolder , Child Thread도 똑같은 RequestContextHolder 가져오기](https://gompangs.tistory.com/entry/Spring-RequestContextHolder)**
+
+### [Spring RequestContextHolder - 어디서든 HttpServletReqeust 사용하기](http://dveamer.github.io/backend/SpringRequestContextHolder.html)
 
 # `2022-02-11`
 
