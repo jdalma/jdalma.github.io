@@ -12,7 +12,7 @@ parent: LeetCode Study Plan
 
 ---
 
-# # **`Binary Search` [Search Insert Position](https://leetcode.com/problems/search-insert-position/)**
+## **`Binary Search` [Search Insert Position](https://leetcode.com/problems/search-insert-position/)**
 
 ```java
 class Solution {
@@ -32,3 +32,32 @@ class Solution {
     }
 }
 ```
+
+## **`Two Pointers` [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)** ✨
+
+```java
+
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int[] result = new int[nums.length];
+        int start = 0;
+        int end = nums.length - 1;
+        int insert = end;
+        while(start <= end){
+            int pow1 = nums[start] * nums[start];
+            int pow2 = nums[end] * nums[end];
+            if(pow1 > pow2){
+                result[insert--] = pow1;
+                start++;
+            }
+            else{
+                result[insert--] = pow2;
+                end--;
+            }
+        }
+        
+        return result;
+    }
+}
+```
+
