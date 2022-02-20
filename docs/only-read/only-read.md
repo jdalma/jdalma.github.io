@@ -15,9 +15,14 @@ has_children: true
 # `Test`
 - `Enumeration` , `Iterator` **Fail-Fast**
 
+# `2022-02.19`
+
+## **[Guide to hashCode() in Java](https://www.baeldung.com/java-hashcode)**
+
+
 # `2022-02-17`
 
-# **[[마틴 파울러] 리팩토링의 중요성 feat.테스트 코드를 짜는 이유](https://www.youtube.com/watch?v=mNPpfB8JSIU)**
+## **[[마틴 파울러] 리팩토링의 중요성 feat.테스트 코드를 짜는 이유](https://www.youtube.com/watch?v=mNPpfB8JSIU)**
 
 # `2022-02-16`
 
