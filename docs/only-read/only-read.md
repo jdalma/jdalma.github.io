@@ -14,8 +14,30 @@ has_children: true
 
 # `Test`
 - `Enumeration` , `Iterator` **Fail-Fast**
+- `RestTemplate` POST 방식 - 파라미터가 담기지 않는 문제
+    - `request`를 확인하면 파라미터가 담겨 있지만 , 받는 측에서 파라미터를 인식하지 못함
 
-# `2022-02.19`
+```java
+	public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws Exception {
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		
+		String queryString = objectMapper.writeValueAsString(paramMap);
+		HttpEntity<String> request = new HttpEntity<String>(queryString , headers);
+		return JSONObject.fromObject(restTemplate.postForObject(url, request, String.class));
+	}
+```
+
+# `2022-02-21`
+
+## **[ResponseEntity란 무엇인가?](https://a1010100z.tistory.com/106)**
+    - `@ControllerAdvice`
+    - `ExceptionHandler`
+
+# `2022-02-19`
 
 ## **[Guide to hashCode() in Java](https://www.baeldung.com/java-hashcode)**
 
