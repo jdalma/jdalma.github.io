@@ -112,3 +112,317 @@ class Solution {
     }
 }
 ```
+
+***
+
+## **`Two Pointers` [Move Zeroes](https://leetcode.com/problems/move-zeroes/)**
+
+### 👎 `임시 배열 생성`
+
+```java
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int[] tmp = new int[nums.length];
+        int tmpIndex = -1;
+        int zeroCount = 0;
+        
+        for(int i = 0 ; i < nums.length ; i++){
+            if(nums[i] == 0){
+                zeroCount++;
+                continue;
+            }
+            tmpIndex++;
+            tmp[tmpIndex] = nums[i];
+        }
+        
+        for(int i = nums.length - zeroCount ; i < nums.length ; i++){
+            tmp[i] = 0;
+        }
+        
+        for(int i = 0 ; i < nums.length ; i++){
+            nums[i] = tmp[i];
+        }
+    }
+}
+```
+
+### 👍 `최적화`
+
+```java
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int lastNoneZeroIndex = 0;
+        
+        for(int i = 0 ; i < nums.length ; i++){
+            if(nums[i] != 0){
+                nums[lastNoneZeroIndex++] = nums[i];
+                continue;
+            }
+        }
+        
+        for(int i = lastNoneZeroIndex ; i < nums.length ; i++){
+            nums[i] = 0;
+        }
+    }
+}
+```
+
+***
+
+## **`Two Pointers` [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)**
+
+### `Two Pointers`
+
+```java
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int[] result = new int[2];
+        int left = 0;
+        int right = numbers.length - 1;
+        while(left < right){
+            int sum = numbers[left] + numbers[right];
+            if(target == sum){
+                result[0] = left + 1;
+                result[1] = right + 1;
+                break;
+            }
+            else if(sum < target){
+                ++left;
+            }
+            else{
+                --right;
+            }
+        }
+        return result;
+    }
+}
+```
+
+
+### 👍 `Binary Search`
+
+```java
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int[] result = new int[2];
+        int left = 0;
+        int right = numbers.length - 1;
+        while(left < right){
+            int mid = (left + right) / 2;
+            int sum = numbers[left] + numbers[right];
+            if(target == sum){
+                result[0] = left + 1;
+                result[1] = right + 1;
+                break;
+            }
+            else if(sum < target){
+                left = (numbers[mid] + numbers[right] < target) ? mid : left + 1;
+            }
+            else{
+                right = (numbers[mid] + numbers[left] > target) ? mid : right - 1;
+            }
+        }
+        return result;
+    }
+}
+```
+
+***
+
+## **`Two Pointers` [Reverse String](https://leetcode.com/problems/reverse-string/)**
+
+```java
+class Solution {
+    public void reverseString(char[] s) {
+        int left = 0;
+        int right = s.length - 1;
+        while(left < right){
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+            left++;
+            right--;
+        }
+    }
+}
+```
+
+***
+
+## **[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)**
+
+### `Two Pointers`
+
+```java
+class Solution {
+    public String reverseWords(String s) {
+        StringBuilder sb = new StringBuilder();
+        String[] sArr = s.split(" ");
+        int count = 1;
+        for(String word : sArr){
+            for(int i = word.length() - 1 ; i >= 0 ; i--){
+                sb.append(word.charAt(i));
+            }
+            if(count != sArr.length){
+                sb.append(" ");
+                count++;
+            }
+        }
+        return sb.toString();
+    }
+}
+```
+
+### `Stream` ✨
+
+```java
+class Solution {
+    public String reverseWords(String s) {
+        return Arrays.stream(s.split(" "))
+            .map(word -> new StringBuilder(word).reverse().toString())
+            .collect(Collectors.joining(" "));
+    }
+}
+```
+
+***
+
+## **[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)**
+
+### `Array`
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode[] arr = new ListNode[101];
+        int depth = 0;
+        while(head != null){
+            arr[depth++] = head;
+            head = head.next;
+        }
+        return arr[depth / 2];
+    }
+}
+```
+
+### `Pointer` ✨
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        int depth = 0;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+```
+
+***
+
+# **[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)**
+
+## `Two Pass algorithm`
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        int length = 0;
+        ListNode currentNode = head;
+        
+        // find length of list
+        while(currentNode != null){
+            currentNode = currentNode.next;
+            length++;
+        }
+        
+        if(length == n){
+            return head.next;
+        }
+        
+        // find node to remove index = (length - n)
+        int nodeBeforeRemoveIndex = length - n - 1;
+        currentNode = head;
+        
+        for(int i = 0 ; i < nodeBeforeRemoveIndex ; i++){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = currentNode.next.next;
+        
+        return head;
+    }
+}
+```
+
+## `One Pass algorithm`
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode currentNode = head;
+        
+        for(int i = 0 ; i < n ; i++){
+            currentNode = currentNode.next;
+        }
+        
+        if(currentNode == null){
+            return head.next;
+        }
+
+        ListNode nodeBeforeRemoved = head;
+        
+        while(currentNode.next != null){
+            currentNode = currentNode.next;
+            nodeBeforeRemoved = nodeBeforeRemoved.next;
+        }
+        
+        nodeBeforeRemoved.next = nodeBeforeRemoved.next.next;
+        
+        return head;
+    }
+}
+```
