@@ -15,7 +15,7 @@ has_children: true
 # `Test`
 - `Enumeration` , `Iterator` **Fail-Fast**
 - `RestTemplate` POST 방식 - 파라미터가 담기지 않는 문제
-    - `request`를 확인하면 파라미터가 담겨 있지만 , 받는 측에서 파라미터를 인식하지 못함
+    - `request`를 확인하면 파라미터가 담겨 있지만 , 받는 측에서는 비어있음
 
 ```java
 	public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws Exception {
@@ -29,6 +29,87 @@ has_children: true
 		HttpEntity<String> request = new HttpEntity<String>(queryString , headers);
 		return JSONObject.fromObject(restTemplate.postForObject(url, request, String.class));
 	}
+
+	public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) throws Exception {
+		System.out.println("sendPOST-----------------------------------");
+		HttpEntity<EgovMapForNull> request = new HttpEntity<>(paramMap);
+		System.out.println(request);
+		EgovMapForNull response = 
+				restTemplate.postForObject(url , request , EgovMapForNull.class);
+		System.out.println(url);
+		System.out.println(response);
+		return response;
+	}    
+```
+
+- 위의 경우는 
+> - ✋
+> - **HTTP Request로 넘어온 값들 중 일부는**
+> - `getParameter()`나 `getParameterValues()`로 읽을 수 없는 경우가 있다. 
+> - **POST 메서드를 사용하면서 CONTENT-TYPE이 "application/json" 형식일 때 발생**하는데, 
+> - 이를 `RequestBody post data`라고 하며 이러한 값은 
+> - `Request.getInputStream()` 혹은 `Request.getReader()`를 통해 직접 읽어와야 한다고 한다.
+
+
+```java
+        	StringBuilder stringBuilder = new StringBuilder();
+        	BufferedReader bufferedReader = null;
+            InputStream inputStream = request.getInputStream();
+            if (inputStream != null) {
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                char[] charBuffer = new char[128];
+                int bytesRead = -1;
+                while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
+                    stringBuilder.append(charBuffer, 0, bytesRead);
+                }
+            }
+```
+
+
+```java
+	public static LinkedMultiValueMap<String, String> egovMapConvertToMultiValueMap(EgovMapForNull map){
+		LinkedMultiValueMap<String, String> result = new LinkedMultiValueMap<String, String>();
+		Set<String> keys = map.keySet();
+		for (String key : keys) {
+			result.add(key, (String) map.get(key));
+		}
+		return result;
+	}	
+	
+	public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) throws Exception {
+		System.out.println("1. sendPOST-----------------------------------");
+//		HttpEntity<EgovMapForNull> request = new HttpEntity<>(paramMap);
+		LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
+		System.out.println(request);
+		EgovMapForNull response = 
+				restTemplate.postForObject(url , request , EgovMapForNull.class);
+		System.out.println(url);
+		System.out.println(response);
+		return response;
+	}
+```
+
+```java
+        Enumeration enums = request.getParameterNames();
+
+        System.out.println("\n\n--------parameter info---------");
+        System.out.println(String.format("%s:::[%s]", "url", request.getContextPath()+""+request.getServletPath()));
+
+        while (enums.hasMoreElements()) {
+
+            String paramName = (String) enums.nextElement();
+            String[] parameters = request.getParameterValues(paramName);
+            
+            if (!paramName.equals("regId") && !paramName.equals("uptId")) {
+                if (parameters.length > 1) {
+                    params.put(paramName, parameters);
+                    System.out.println(String.format("%s:::[%s]", paramName, parameters));
+                } else {
+                    params.put(paramName, parameters[0]);
+                    System.out.println(String.format("%s:::[%s]", paramName, parameters[0]));
+                }
+            }
+        }
 ```
 
 # `2022-02-21`
@@ -36,6 +117,7 @@ has_children: true
 ## **[ResponseEntity란 무엇인가?](https://a1010100z.tistory.com/106)**
     - `@ControllerAdvice`
     - `ExceptionHandler`
+## **[RestAPI 제대로 알고 사용하기](https://meetup.toast.com/posts/92)**
 
 # `2022-02-19`
 
