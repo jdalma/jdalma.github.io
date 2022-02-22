@@ -112,6 +112,62 @@ has_children: true
         }
 ```
 
+
+- **Receive 측 응답 코드**
+
+```java
+
+    // 1.
+    response.getWriter().print(callStr);
+
+    Could not extract response: no suitable HttpMessageConverter found for response type [EgovMapForNull] and content type [application/octet-stream]
+
+
+    // 2.
+    response.setContentType("text/plain");
+    response.setCharacterEncoding("utf-8");
+    response.getWriter().print(callStr);
+
+    Could not extract response: no suitable HttpMessageConverter found for response type [EgovMapForNull] and content type [text/plain;charset=utf-8]
+```
+
+- [no-suitable-httpmessageconverter-found-for-response-type](https://stackoverflow.com/questions/21854369/no-suitable-httpmessageconverter-found-for-response-type)
+- [MIME 타입](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+
+```
+application/octet-stream이 뭔데?
+결국 MIME의 개별 타입 중 application에 속하는 타입 , 8비트 단위의 binary data라는 뜻
+이 타입은 이진 파일을 위한 기본값입니다. 
+이 타입은 실제로 잘 알려지지 않은 이진 파일을 의미하므로, 브라우저는 보통 자동으로 실행하지 않거나 실행해야 할지 묻기도 합니다. 
+Content-Disposition 헤더가 값 attachment 와 함게 설정되었고 'Save As' 파일을 제안하는지 여부에 따라 브라우저가 그것을 다루게 됩니다.
+```
+
+- `Handle Error`
+
+```java
+@Component
+public class RestTemplateResponseErrorHandler implements ResponseErrorHandler{
+
+	@Override
+	public boolean hasError(ClientHttpResponse response) throws IOException {
+		return (response.getStatusCode().series() == Series.CLIENT_ERROR ||
+				response.getStatusCode().series() == Series.SERVER_ERROR);
+	}
+
+	@Override
+	public void handleError(ClientHttpResponse response) throws IOException {
+		if(response.getStatusCode().series() == HttpStatus.Series.SERVER_ERROR) {
+			// handle SERVER_ERROR
+		}
+		else if(response.getStatusCode().series() == HttpStatus.Series.CLIENT_ERROR) {
+			// handle CLIENT_ERROR
+			if(response.getStatusCode() == HttpStatus.NOT_FOUND)
+				throw new NotFoundException();
+		}
+	}
+}
+```
+
 # `2022-02-21`
 
 ## **[ResponseEntity란 무엇인가?](https://a1010100z.tistory.com/106)**
