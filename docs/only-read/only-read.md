@@ -13,6 +13,8 @@ has_children: true
 ---
 
 # `Test`
+- [자바 공부를 어떻게 하길래, "언체크드 예외 발생시 트랜잭션 롤백?"](https://www.youtube.com/watch?v=_WkMhytqoCc)
+  - 스프링 예외 테스트 해보자
 - `Enumeration` , `Iterator` **Fail-Fast**
 - `RestTemplate` POST 방식 - 파라미터가 담기지 않는 문제
     - `request`를 확인하면 파라미터가 담겨 있지만 , 받는 측에서는 비어있음
@@ -141,6 +143,38 @@ application/octet-stream이 뭔데?
 이 타입은 실제로 잘 알려지지 않은 이진 파일을 의미하므로, 브라우저는 보통 자동으로 실행하지 않거나 실행해야 할지 묻기도 합니다. 
 Content-Disposition 헤더가 값 attachment 와 함게 설정되었고 'Save As' 파일을 제안하는지 여부에 따라 브라우저가 그것을 다루게 됩니다.
 ```
+
+- 수정 코드
+
+```java
+	public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) {
+		try {
+			EgovMapForNull result = new EgovMapForNull();
+			LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
+			ResponseEntity<String> response = restTemplate.postForEntity(url , request, String.class);
+            // header
+			// {
+			// 	Access-Control-Allow-Origin=[http://localhost:8080], 
+			// 	Access-Control-Allow-Methods=[POST, PUT, GET, OPTIONS, DELETE], 
+			// 	Access-Control-Max-Age=[3600], 
+			// 	Access-Control-Request-Headers=[authorization, content-type], 
+			// 	Access-Control-Allow-Headers=[X-Requested-With, Origin, Content-Type, Accept, x-device-user-agent, Content-Type], 
+			// 	Content-Length=[4], 
+			// 	Date=[Tue, 22 Feb 2022 04:32:45 GMT],
+			// 	Keep-Alive=[timeout=20], 
+			// 	Connection=[keep-alive]}
+			// }
+            //  body - test
+            //  statusCode - 200
+			return result;
+		}
+		catch(Exception e) {
+			throw e;
+		}
+	}
+```
+
+- **response**를 원하는 `Map` 객체 자체로 받을려고 해서 그런지... `ResponseEntity`로 감싸주니 정상으로 받았다.
 
 - `Handle Error`
 
