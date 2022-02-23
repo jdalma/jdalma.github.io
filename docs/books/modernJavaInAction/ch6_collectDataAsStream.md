@@ -20,24 +20,91 @@ nav_order: 6
 - ✋ `통화별로 트랜잭션을 그룹화 하시오`
 
 ```java
-    List<Transaction> transactions = Arrays.asList(...);
+class Main {
+	public static class Transaction {
+	    private final Currency currency;
+	    private final double value;
 
-    Map<Currency , List<Transaction>> transactionsByCurrencies = new HashMap<>();
-    for(Transaction transaction : transactions){
-        Currency currency = transaction.getCurrency();
-        List<Transaction> transactionsForCurrency = transactionsByCurrencies.get(currency);
-        if(transactionsForCurrency == null){
-            transactionsForCurrency = new ArrayList<>();
-            transactionsByCurrencies.put(currency , transactionsForCurrency);
+	    public Transaction(Currency currency, double value) {
+	        this.currency = currency;
+	        this.value = value;
+	    }
+
+	    public Currency getCurrency() {
+	        return currency;
+	    }
+
+	    public double getValue() {
+	        return value;
+	    }
+
+	    @Override
+	    public String toString() {
+	        return currency + " " + value;
+	    }
+	}
+
+	public enum Currency {
+	    EUR, USD, JPY, GBP, CHF
+	}
+	
+    public static void main(String[] args) throws IOException {
+    	List<Transaction> transactions = Arrays.asList(
+    			new Transaction(Currency.EUR, 1500.0),
+                new Transaction(Currency.USD, 2300.0),
+                new Transaction(Currency.GBP, 9900.0),
+                new Transaction(Currency.EUR, 1100.0),
+                new Transaction(Currency.JPY, 7800.0),
+                new Transaction(Currency.CHF, 6700.0),
+                new Transaction(Currency.EUR, 5600.0),
+                new Transaction(Currency.USD, 4500.0),
+                new Transaction(Currency.CHF, 3400.0),
+                new Transaction(Currency.GBP, 3200.0),
+                new Transaction(Currency.USD, 4600.0),
+                new Transaction(Currency.JPY, 5700.0),
+                new Transaction(Currency.EUR, 6800.0));
+    	
+        Map<Currency , List<Transaction>> transactionsByCurrencies = new HashMap<>();
+        for(Transaction transaction : transactions){
+            Currency currency = transaction.getCurrency();
+            List<Transaction> transactionsForCurrency = transactionsByCurrencies.get(currency);
+            if(transactionsForCurrency == null){
+                transactionsForCurrency = new ArrayList<>();
+                transactionsByCurrencies.put(currency , transactionsForCurrency);
+            }
+            transactionsForCurrency.add(transaction);
         }
-        transactionsForCurrency.add(transaction);
+    	
+        for(Currency key : transactionsByCurrencies.keySet()) {
+        	System.out.println(key + " " + transactionsByCurrencies.get(key));
+        }        
+        
+        System.out.println("--------------------------");
+
+        Map<Currency , List<Transaction>> transactionsByCurrencies2 = 
+                transactions.stream().collect(Collectors.groupingBy(Transaction::getCurrency));
+        
+        for(Currency key : transactionsByCurrencies2.keySet()) {
+        	System.out.println(key + " " + transactionsByCurrencies2.get(key));
+        }
     }
+}
 ```
 
-```java
-    Map<Currency , List<Transaction>> transactionsByCurrencies = 
-        transactions.stream().collect(groupingBy(Transaction::getCurrency));
 ```
+USD [USD 2300.0, USD 4500.0, USD 4600.0]
+JPY [JPY 7800.0, JPY 5700.0]
+EUR [EUR 1500.0, EUR 1100.0, EUR 5600.0, EUR 6800.0]
+GBP [GBP 9900.0, GBP 3200.0]
+CHF [CHF 6700.0, CHF 3400.0]
+--------------------------
+USD [USD 2300.0, USD 4500.0, USD 4600.0]
+JPY [JPY 7800.0, JPY 5700.0]
+GBP [GBP 9900.0, GBP 3200.0]
+EUR [EUR 1500.0, EUR 1100.0, EUR 5600.0, EUR 6800.0]
+CHF [CHF 6700.0, CHF 3400.0]
+```
+
 
 ***
 
