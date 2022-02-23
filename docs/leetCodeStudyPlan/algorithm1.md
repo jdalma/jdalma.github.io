@@ -2,7 +2,7 @@
 layout: default
 title: Algorithm I
 nav_order: 1
-parent: LeetCode Study Plan
+parent: 🔥 LeetCode Study Plan
 ---
 ## Table of contents
 {: .no_toc .text-delta }
