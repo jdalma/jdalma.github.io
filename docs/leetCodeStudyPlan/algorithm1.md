@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 14 Days Study Plan To Crack Algo
+title: Algorithm I
 nav_order: 1
 parent: LeetCode Study Plan
 ---
@@ -505,6 +505,98 @@ public class Solution {
         }
 
         return res;
+    }
+}
+```
+
+***
+
+# **`BFS` [Flood Fill](https://leetcode.com/problems/flood-fill/)**
+
+```java
+class Solution {
+    int[] moveX = {-1 , 0 , 1 , 0};
+    int[] moveY = {0 , 1 , 0 , -1};    
+    int rowSize , colSize , beforeColor;
+    boolean[][] checked;
+    Queue<int[]> queue;
+    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+        rowSize = image.length;
+        colSize = image[0].length;
+        checked = new boolean[rowSize][colSize];
+        beforeColor = image[sr][sc];
+        
+        queue = new LinkedList<int[]>();
+        filling(image , sr , sc , newColor);
+        
+        while(!queue.isEmpty()){
+            int[] now = queue.poll();
+            for(int i = 0 ; i < 4 ; i++){
+                int moveXpos = now[0] + moveX[i];
+                int moveYpos = now[1] + moveY[i];
+                filling(image , moveXpos , moveYpos , newColor);
+            }
+        }
+        return image;
+    }
+    public void filling(int[][] image , int x , int y , int newColor ){
+        if(x >= 0 && x < rowSize && y >= 0 && y < colSize){
+            if(image[x][y] == beforeColor && !checked[x][y]){
+                checked[x][y] = true;
+                image[x][y] = newColor;
+                queue.offer(new int[]{x , y});
+            }
+        }        
+    }
+}
+```
+
+***
+
+# **`BFS` [Max Area of Island](https://leetcode.com/problems/max-area-of-island/)**
+
+```java
+class Solution {
+    int[] moveX = {-1 , 0 , 1 , 0};
+    int[] moveY = {0 , 1 , 0 , -1};    
+    int rowSize , colSize;
+    Queue<int[]> queue;
+    public int maxAreaOfIsland(int[][] grid) {
+        rowSize = grid.length;
+        colSize = grid[0].length;
+        int maxCount = 0;
+        
+        for(int i = 0 ; i < rowSize ; i++){
+            for(int j = 0 ; j < colSize ; j++){
+                if(grid[i][j] == 1){
+                    maxCount = Math.max(maxCount , fillZero(grid , i , j));
+                }
+            }
+        }
+        return maxCount;
+    }
+    
+    public int fillZero(int[][] grid , int sx , int sy){
+        queue = new LinkedList<int[]>();
+        queue.offer(new int[] {sx , sy});
+        int areaCount = 1;
+        grid[sx][sy] = 0;
+        
+        while(!queue.isEmpty()){
+            int[] now = queue.poll();
+            for(int i = 0 ; i < 4 ; i++){
+                int x = now[0] + moveX[i];
+                int y = now[1] + moveY[i];
+                if(x >= 0 && x < rowSize && y >= 0 && y < colSize){
+                    if(grid[x][y] == 1){
+                        grid[x][y] = 0;
+                        areaCount++;
+                        queue.offer(new int[]{x , y});
+                    }
+                }
+            }
+        }
+        return areaCount;
     }
 }
 ```
