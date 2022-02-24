@@ -511,6 +511,89 @@ public class Solution {
 
 ***
 
+# **[Permutation in String](https://leetcode.com/problems/permutation-in-string/)**
+
+## `Using Array` - `2xx ms`
+
+```java
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+        if(s1.length() > s2.length())
+            return false;
+        int[] s1Map = new int[26];
+        for(int i = 0 ; i < s1.length() ; i++){
+            s1Map[s1.charAt(i) - 'a']++;           
+        }
+        
+        for(int i = 0 ; i <= s2.length() - s1.length() ; i++){
+            int[] s2Map = new int[26];
+            for(int j = 0 ; j < s1.length() ; j++){
+                // s2의 인덱스를 하나씩 증가 시키며, s1 길이만큼 아스키코드를 이용힌 인덱스에 카운트한다.
+                s2Map[s2.charAt(i + j) - 'a']++;
+            }
+            if(matches(s1Map , s2Map))
+                return true;
+        }
+        
+        return false;
+    }
+    
+    public boolean matches(int[] s1Map , int[] s2Map){
+        for(int i = 0 ; i < 26 ; i++){
+            if(s1Map[i] != s2Map[i])
+                return false;
+        }
+        return true;
+    }
+}
+```
+
+## `Sliding Window` - `1x ms`
+
+```java
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+        // s1 "ab"
+        // s2 "eidbaooo"        
+        if(s1.length() > s2.length())
+            return false;
+        int[] s1Map = new int[26];
+        int[] s2Map = new int[26];
+        
+        for(int i = 0 ; i < s1.length() ; i++){
+            // s1의 길이만큼 각 s1,s2의 문자 카운트를 증가
+            s1Map[s1.charAt(i) - 'a']++;
+            s2Map[s2.charAt(i) - 'a']++;
+        }
+        for(int i = 0 ; i < s2.length() - s1.length() ; i++){
+            if(matches(s1Map , s2Map)) 
+                return true;
+            // s2의 i + s1.length()의 문자 카운트를 증가
+            s2Map[s2.charAt(i + s1.length()) - 'a']++;
+            
+            // matches를 통해 똑같은지 체크하였지만 다르다면 s2의 문자 카운트를 감소
+            // 1. 처음 for문에서 [a , b] , [e , i]를 증가
+            // 2. 해당 반복문 matches 체크
+            // 3. 다르다면 앞에서 증가시켜놓은 문자 카운트를 감소 시킨다.
+            
+            s2Map[s2.charAt(i) - 'a']--;
+        }
+        
+        return matches(s1Map , s2Map);
+    }
+    
+    public boolean matches(int[] s1Map , int[] s2Map){
+        for(int i = 0 ; i < 26 ; i++){
+            if(s1Map[i] != s2Map[i])
+                return false;
+        }
+        return true;
+    }
+}
+```
+
+***
+
 # **`BFS` [Flood Fill](https://leetcode.com/problems/flood-fill/)**
 
 ```java
