@@ -683,3 +683,117 @@ class Solution {
     }
 }
 ```
+
+***
+
+# **[Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)**
+
+## `각 레벨별 순회`
+
+```
+Your input
+[1,2,3,4,5,6,7]
+stdout
+
+[전위순회]
+
+1 Node@685f4c2e Node@7daf6ecc null
+2 Node@2e5d6d97 Node@238e0d81 Node@7daf6ecc
+4 null null Node@238e0d81
+5 null null Node@31221be2
+3 Node@31221be2 Node@377dca04 null
+6 null null Node@377dca04
+7 null null null
+```
+
+```java
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public Node left;
+    public Node right;
+    public Node next;
+
+    public Node() {}
+    
+    public Node(int _val) {
+        val = _val;
+    }
+
+    public Node(int _val, Node _left, Node _right, Node _next) {
+        val = _val;
+        left = _left;
+        right = _right;
+        next = _next;
+    }
+};
+*/
+
+class Solution {
+    public Node connect(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        
+        while(!queue.isEmpty()){
+            int queueSize = queue.size();
+            for(int i = 0 ; i < queueSize ; i++){
+                Node now = queue.poll();    
+                if(now == null) continue;
+                
+                if(i < queueSize - 1){
+                    now.next = queue.peek();
+                }
+                if(now.left != null) queue.offer(now.left);
+                if(now.right != null) queue.offer(now.right);   
+            }
+        }
+        return root;
+    }
+}
+```
+
+## `이전에 설정된 포인터 사용` 👍👍
+
+```java
+class Solution {
+    public Node connect(Node root) {
+        
+        if (root == null) {
+            return root;
+        }
+        
+        // Start with the root node. There are no next pointers
+        // that need to be set up on the first level
+        Node leftmost = root;
+        
+        // Once we reach the final level, we are done
+        while (leftmost.left != null) {
+            
+            // Iterate the "linked list" starting from the head
+            // node and using the next pointers, establish the 
+            // corresponding links for the next level
+            Node head = leftmost;
+            
+            while (head != null) {
+                
+                // CONNECTION 1
+                head.left.next = head.right;
+                
+                // CONNECTION 2
+                if (head.next != null) {
+                    head.right.next = head.next.left;
+                }
+                
+                // Progress along the list (nodes on the current level)
+                head = head.next;
+            }
+            
+            // Move onto the next level
+            leftmost = leftmost.left;
+        }
+        
+        return root;
+    }
+}
+```
