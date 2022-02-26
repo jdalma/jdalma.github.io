@@ -511,7 +511,7 @@ public class Solution {
 
 ***
 
-# **[Permutation in String](https://leetcode.com/problems/permutation-in-string/)**
+# **[Permutation in String](https://leetcode.com/problems/permutation-in-string/)** ✨
 
 ## `Using Array` - `2xx ms`
 
@@ -686,7 +686,42 @@ class Solution {
 
 ***
 
-# **[Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)**
+# **`DFS` [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)** ✨
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
+        if(root1 == null) return root2;
+        if(root2 == null) return root1;
+        
+        root1.val += root2.val;
+        root1.left = mergeTrees(root1.left , root2.left);
+        root1.right = mergeTrees(root1.right , root2.right);
+        
+        return root1;
+    }
+}
+```
+
+
+***
+
+# **`BFS` [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)** ✨
 
 ## `각 레벨별 순회`
 
@@ -794,6 +829,479 @@ class Solution {
         }
         
         return root;
+    }
+}
+```
+
+***
+
+# **`BFS` [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)**
+
+## ❗️ `int[][] directions = { {-1, 0}, {0, 1}, {1, 0}, {0, -1}};`
+## ❗️ `Queue<Pair<Integer, Integer>> queue = new ArrayDeque();`
+
+## `Solve`
+
+```java
+class Solution {
+    int[] moveX = {-1 , 0 , 1 , 0};
+    int[] moveY = {0 , 1 , 0 , -1};
+    int rowSize , colSize , freshOrangeCount = 0;
+    public int orangesRotting(int[][] grid) {
+        Queue<int[]> positions = findRottenOranges(grid);
+        int time = 0;
+        
+        while(!positions.isEmpty()){
+            int size = positions.size();
+            boolean freshFlag = false;
+            for(int i = 0 ; i < size ; i++){
+                int[] now = positions.poll();
+                for(int j = 0 ; j < 4 ; j++){
+                    int moveXpos = now[0] + moveX[j];
+                    int moveYpos = now[1] + moveY[j];
+                    if(moveXpos >= 0 && moveXpos < rowSize && moveYpos >= 0 && moveYpos < colSize){
+                        if(grid[moveXpos][moveYpos] == 1){
+                            grid[moveXpos][moveYpos] = 2;
+                            positions.offer(new int[] {moveXpos , moveYpos});
+                            freshOrangeCount--;
+                            freshFlag = true;
+                        }
+                    }
+                }
+            }
+            if(freshFlag)
+                time++;
+        }
+        
+        return freshOrangeCount == 0 ? time : -1;
+    }
+    
+    public Queue<int[]> findRottenOranges(int[][] grid){
+        rowSize = grid.length;
+        colSize = grid[0].length;
+        Queue<int[]> queue = new LinkedList<>();
+        
+        for(int i = 0 ; i < rowSize ; i++){
+            for(int j = 0 ; j < colSize ; j++){
+                if(grid[i][j] == 2){
+                    queue.offer(new int[]{i , j});
+                }
+                if(grid[i][j] == 1) freshOrangeCount++;
+            }
+        }
+        
+        return queue;
+    }
+}
+```
+
+***
+
+# **[01 Matrix](https://leetcode.com/problems/01-matrix/)**
+
+## `1의 위치 기준, Normal 4 Direction BFS` - <span class="text-red-300">Time Limit Exceeded</span>
+
+```java
+class Solution {
+    int[][] dist;
+    int[][] move = {{-1 , 0} , {0 , 1} , {1 , 0} , {0 , -1}};
+    int rowSize , colSize;
+    public int[][] updateMatrix(int[][] mat) {
+        rowSize = mat.length;
+        colSize = mat[0].length;
+        
+        dist = new int[rowSize][colSize];
+        
+        for(int i = 0 ; i < rowSize ; i++){
+            for(int j = 0 ; j < colSize ; j++){
+                if(mat[i][j] == 1)
+                    findZero(mat , i , j);
+            }
+        }
+        
+        return dist;
+    }
+    
+    public void findZero(int[][] mat , int x , int y){
+        Queue<int[]> queue = new ArrayDeque<>();
+        queue.offer(new int[] {x , y , 0});
+        
+        while(!queue.isEmpty()){
+            int[] cell = queue.poll();
+            for(int[] moving : move){
+                int moveX = cell[0] + moving[0];
+                int moveY = cell[1] + moving[1];
+                int cost = cell[2] + 1;
+                if(moveX >= 0 && moveX < rowSize && moveY >= 0 && moveY < colSize){
+                    if(mat[moveX][moveY] == 0){
+                        dist[x][y] = cost;
+                        return;
+                    }
+                    queue.offer(new int[] {moveX , moveY , cost});
+                }
+            }
+        }
+    }
+}
+```
+
+## `0의 위치 기준, Normal 4 Direction BFS , Memoization`
+
+```java
+class Solution {
+    int[][] memo;
+    int[][] move = {{-1 , 0} , {0 , 1} , {1 , 0} , {0 , -1}};
+    int rowSize , colSize;
+    Queue<int[]> queue = new ArrayDeque<>();
+    public int[][] updateMatrix(int[][] mat) {
+        rowSize = mat.length;
+        colSize = mat[0].length;
+        
+        memo = new int[rowSize][colSize];
+        
+        for(int i = 0 ; i < rowSize ; i++){
+            for(int j = 0 ; j < colSize ; j++){
+                if(mat[i][j] == 0){
+                    queue.offer(new int[] {i , j});
+                }
+                else memo[i][j] = Integer.MAX_VALUE;
+            }
+        }
+        
+        bfs();
+        
+        return memo;
+    }
+    
+    public void bfs(){
+        while(!queue.isEmpty()){
+            int[] cell = queue.poll();
+            int x = cell[0];
+            int y = cell[1];
+            for(int[] moving : move){
+                int moveX = cell[0] + moving[0];
+                int moveY = cell[1] + moving[1];
+                if(moveX >= 0 && moveX < rowSize && moveY >= 0 && moveY < colSize){
+                    if(memo[moveX][moveY] > memo[x][y] + 1){
+                        memo[moveX][moveY] = memo[x][y] + 1;
+                        queue.offer(new int[] {moveX , moveY});
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+## `DP` ✨✨✨
+
+```java
+class Solution {
+    int[][] dist;
+    public int[][] updateMatrix(int[][] mat) {
+        int rowSize = mat.length;
+        int colSize = mat[0].length;
+        
+        if(rowSize == 0) return mat;
+        
+        dist = new int[rowSize][colSize];
+        
+        //First pass: check for left and top
+        for(int i = 0 ; i < rowSize ; i++){
+            for(int j = 0 ; j < colSize ; j++){
+                if(mat[i][j] == 0){
+                    dist[i][j] = 0;
+                }
+                else{
+                    dist[i][j] = 10000000;
+                    if(i > 0)
+                        dist[i][j] = Math.min(dist[i][j], dist[i - 1][j] + 1);
+                    if(j > 0)
+                        dist[i][j] = Math.min(dist[i][j], dist[i][j - 1] + 1);
+                }
+            }
+        }
+
+        //Second pass: check for bottom and right
+        for (int i = rowSize - 1; i >= 0; i--) {
+            for (int j = colSize - 1; j >= 0; j--) {
+                if (i < rowSize - 1)
+                    dist[i][j] = Math.min(dist[i][j], dist[i + 1][j] + 1);
+                if (j < colSize - 1)
+                    dist[i][j] = Math.min(dist[i][j], dist[i][j + 1] + 1);
+            }
+        }
+        
+        return dist;
+    }
+}
+```
+
+***
+
+# **[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)**
+
+## `Recursion` ✨✨
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if(list1 == null)
+            return list2;
+        if(list2 == null)
+            return list1;
+        else if(list1.val < list2.val){
+            list1.next = mergeTwoLists(list1.next , list2);
+            return list1;
+        }
+        else{
+            list2.next = mergeTwoLists(list1 , list2.next);
+            return list2;
+        }
+    }
+}
+```
+
+## `Iteration` ✨✨
+
+```java
+class Solution {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        // maintain an unchanging reference to node ahead of the return node.
+        ListNode prehead = new ListNode(-1);
+
+        ListNode prev = prehead;
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                prev.next = l1;
+                l1 = l1.next;
+            } else {
+                prev.next = l2;
+                l2 = l2.next;
+            }
+            prev = prev.next;
+        }
+
+        // At least one of l1 and l2 can still have nodes at this point, so connect
+        // the non-null list to the end of the merged list.
+        prev.next = l1 == null ? l2 : l1;
+
+        return prehead.next;
+    }
+}
+```
+
+***
+
+# **[Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)**
+
+## `Iterative` ✨✨
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while(curr != null){
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+        return prev;
+    }
+}
+```
+
+***
+
+# **[Combinations](https://leetcode.com/problems/combinations/)**
+
+## `DFS Solve`
+
+```java
+class Solution {
+    List<List<Integer>> result = new ArrayList<>();
+    int[] print;
+    public List<List<Integer>> combine(int n, int k) {
+        print = new int[k];
+        make(n , k , 0 , 1);
+        return result;
+    }
+    
+    public void make(int numberSize , int printSize , int count , int startNumber){
+        if(count == printSize){
+            result.add(Arrays.stream(print).boxed().collect(Collectors.toList()));
+            return;
+        }
+        for(int i = startNumber ; i <= numberSize ; i++){
+            print[count] = i;
+            make(numberSize , printSize , count + 1 , i + 1);
+        }
+    }
+}
+```
+
+***
+
+# **[Permutations](https://leetcode.com/problems/permutations/)**
+
+## `DFS Solve`
+
+```java
+class Solution {
+    List<List<Integer>> result = new ArrayList<>();
+    boolean[] checked;
+    int[] print;
+    int arrSize;
+    public List<List<Integer>> permute(int[] nums) {
+        this.arrSize = nums.length;
+        checked = new boolean[arrSize];
+        print = new int[arrSize];
+        
+        dfs(nums , 0);
+        
+        return result;
+    }
+    
+    public void dfs(int[] nums , int count){
+        if(count == arrSize){
+            result.add(Arrays.stream(print).boxed().collect(Collectors.toList()));
+            return;
+        }
+        for(int i = 0 ; i < arrSize ; i++){
+            if(!checked[i]){
+                checked[i] = true;
+                print[count] = nums[i];
+                dfs(nums , count + 1);
+                checked[i] = false;
+            }
+        }
+    }
+}
+```
+
+## `DFS Swap`
+
+### ❗️ `Collections.swap(nums, first, i);`
+
+![](../../assets/images/algorithm/permutations.png)
+
+```java
+class Solution {
+  public void backtrack(int n, ArrayList<Integer> nums, List<List<Integer>> output, int first) {
+    // if all integers are used up
+    if (first == n)
+        output.add(new ArrayList<Integer>(nums));
+    for (int i = first; i < n; i++) {
+        // place i-th integer first 
+        // in the current permutation
+        Collections.swap(nums, first, i);
+        // use next integers to complete the permutations
+        backtrack(n, nums, output, first + 1);
+        // backtrack
+        Collections.swap(nums, first, i);
+    }
+  }
+
+    public List<List<Integer>> permute(int[] nums) {
+        // init output list
+        List<List<Integer>> output = new LinkedList();
+
+        // convert nums into list since the output is a list of lists
+        ArrayList<Integer> nums_lst = new ArrayList<Integer>();
+        for (int num : nums)
+          nums_lst.add(num);
+
+        int n = nums.length;
+        backtrack(n, nums_lst, output, 0);
+        return output;
+    }
+}
+```
+
+***
+
+# **[Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)** 🔥
+
+## `Iterator` ✨
+
+```java
+class Solution {
+    public List<String> letterCasePermutation(String S) {
+        List<StringBuilder> ans = new ArrayList();
+        ans.add(new StringBuilder());
+
+        for (char c: S.toCharArray()) {
+            int n = ans.size();
+            if (Character.isLetter(c)) {
+                for (int i = 0; i < n; ++i) {
+                    ans.add(new StringBuilder(ans.get(i)));
+                    ans.get(i).append(Character.toLowerCase(c));
+                    ans.get(n+i).append(Character.toUpperCase(c));
+                }
+            } else {
+                for (int i = 0; i < n; ++i)
+                    ans.get(i).append(c);
+            }
+        }
+
+        List<String> finalans = new ArrayList();
+        for (StringBuilder sb: ans)
+            finalans.add(sb.toString());
+        return finalans;
+    }
+}
+```
+
+## `Bit Mask` ✨
+
+```java
+class Solution {
+    public List<String> letterCasePermutation(String S) {
+        int B = 0;
+        for (char c: S.toCharArray())
+            if (Character.isLetter(c))
+                B++;
+
+        List<String> ans = new ArrayList();
+
+        for (int bits = 0; bits < 1<<B; bits++) {
+            int b = 0;
+            StringBuilder word = new StringBuilder();
+            for (char letter: S.toCharArray()) {
+                if (Character.isLetter(letter)) {
+                    if (((bits >> b++) & 1) == 1)
+                        word.append(Character.toLowerCase(letter));
+                    else
+                        word.append(Character.toUpperCase(letter));
+                } else {
+                    word.append(letter);
+                }
+            }
+            ans.add(word.toString());
+        }
+        return ans;
     }
 }
 ```
