@@ -1305,3 +1305,177 @@ class Solution {
     }
 }
 ```
+
+***
+
+# **`DP` [House Robber](https://leetcode.com/problems/house-robber/)** ❌
+
+***
+
+# **`DP` [Triangle](https://leetcode.com/problems/triangle/)** ❌
+
+***
+
+# **`Bit Manipulation` [Power of Two](https://leetcode.com/problems/power-of-two/)** ✨
+
+## <span class="text-red-300">Time Limit Exceeded</span>
+
+```java
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if(n == 1) return true;
+        
+        int number = 0;
+        int pow = 1;
+        while(number <= n){ 
+            if(number == n) return true;
+            number = 1 << pow++;
+        }
+        
+        return false;
+    }
+}
+```
+
+## `Solve`
+
+```java
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if (n == 0) return false;
+        while (n % 2 == 0) n /= 2;
+        return n == 1;
+    }
+}
+```
+
+## `비트연산`
+
+- **이진 표현에서 2의 거듭제곱은 1비트 1개이고 그 뒤에 0이 몇 개 오는 것입니다.**
+
+```
+1 = (0000 0001)
+2 = (0000 0010)​
+​4 = (0000 0100)
+8 = (0000 1000)
+``` 
+
+- **2의 거듭제곱이 아닌 숫자는 이진 표현에서 하나 이상의 1비트를 갖습니다.**
+
+```
+3 = (0000 0011)
+5 = (0000 0101)
+6 = (0000 1010)
+7 = (0000 1011)
+```
+
+### `가장 오른쪽에 있는 1비트 가져오기`
+
+- `long`으로 캐스팅한 이유는 `-2147483648`의 오버플로우를 막기 위함이다.
+- 음수를 `false`로 반환하면 캐스팅은 없어도 된다.
+- `x` 와 `-x`를 `AND`연산한 것이 `x`와 같은지
+
+```
+x = 8
+0 0 0 0 1 0 0 0
+
+~x
+1 1 1 1 0 1 1 1
+
+-x = ~x + 1
+1 1 1 1 1 0 0 0
+
+x & (-x) == x ➔ true
+0 0 0 0 1 0 0 0
+
+---------------
+x = 6
+0 0 0 0 0 1 1 0
+
+~x
+1 1 1 1 1 0 0 1
+
+-x = ~x + 1
+1 1 1 1 1 0 1 0
+
+x & (-x) == x ➔ false
+
+0 0 0 0 0 0 1 0
+```
+
+```java
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if (n == 0) return false;
+        long x = (long) n;
+        return (x & (-x)) == x;
+    }
+}
+```
+
+### `맨 오른쪽 1비트 끄기`
+
+```
+x = 4
+0 0 0 0 0 1 0 0
+
+x - 1
+0 0 0 0 0 0 1 1
+
+x & (x - 1) == 0 ➔ true
+0 0 0 0 0 0 0 0
+
+---------------
+
+x = 6
+0 0 0 0 0 1 1 0
+
+x - 1
+0 0 0 0 0 1 0 1
+
+x & (x - 1) == 0 ➔ false
+0 0 0 0 0 1 0 0
+```
+
+```java
+class Solution {
+  public boolean isPowerOfTwo(int n) {
+    if (n == 0) return false;
+    long x = (long) n;
+    return (x & (x - 1)) == 0;
+  }
+}
+```
+
+***
+
+# **`Bit Manipulation` [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)** ✨
+
+```java
+public class Solution {
+    // you need to treat n as an unsigned value
+    public int hammingWeight(int n) {
+        // 1.
+        int bits = 0;
+        int mask = 1;
+        for (int i = 0; i < 32; i++) {
+            if ((n & mask) != 0) {
+                bits++;
+            }
+            mask <<= 1;
+        }
+        return bits;
+        
+        // 2.
+        int sum = 0;
+        while (n != 0) {
+            sum++;
+            n &= (n - 1);
+        }
+        return sum;
+        
+        // 3.
+        return Integer.bitCount(n);
+    }
+}
+```
