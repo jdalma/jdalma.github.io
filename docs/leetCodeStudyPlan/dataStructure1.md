@@ -127,3 +127,79 @@ class Solution {
     }
 }
 ```
+
+***
+
+# **`Array` [Two Sum](https://leetcode.com/problems/two-sum/)**
+
+## `Solve`
+
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int first = 0;
+        int second = 0;
+        Map<Integer , Integer> map = new HashMap<>();
+        for(int i = 0 ; i < nums.length ; i++){
+            map.put(nums[i] , i);
+        }
+        
+        for(int i = 0 ; i < nums.length ; i++){
+            int diff = target - nums[i]; 
+            if(map.containsKey(diff) && map.get(diff) != i){
+                first = i;
+                second = map.get(diff);
+                break;
+            }
+        }
+        
+        return new int[] {first , second};
+    }
+}
+```
+
+## `One Pass`
+
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
+        // In case there is no solution, we'll just return null
+        return null;
+    }
+}
+```
+
+***
+
+# **`Array` [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)**
+
+## `Three Pointers`  ✨
+
+```java
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int pointer1 = m - 1;
+        int pointer2 = n - 1;
+        
+        for(int pointer3 = m + n - 1 ; pointer3 >= 0 ; pointer3--){
+            if(pointer2 < 0) break;
+            
+            
+            if(pointer1 < 0 || nums1[pointer1] < nums2[pointer2]){
+                nums1[pointer3] = nums2[pointer2--];
+            }
+            else{
+                nums1[pointer3] = nums1[pointer1--];
+            }
+        }
+    }
+}
+```
