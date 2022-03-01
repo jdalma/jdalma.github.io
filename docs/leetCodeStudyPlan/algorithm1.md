@@ -12,7 +12,7 @@ parent: 🔥 LeetCode Study Plan
 
 ---
 
-## **`Binary Search` [Search Insert Position](https://leetcode.com/problems/search-insert-position/)**
+# **`Binary Search` [Search Insert Position](https://leetcode.com/problems/search-insert-position/)**
 
 ```java
 class Solution {
@@ -33,7 +33,7 @@ class Solution {
 }
 ```
 
-## **`Two Pointers` [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)** ✨
+# **`Two Pointers` [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)** ✨
 
 ```java
 
@@ -63,9 +63,9 @@ class Solution {
 
 ***
 
-## **`Two Pointers` [Rotate Array](https://leetcode.com/problems/rotate-array/submissions/)**
+# **`Two Pointers` [Rotate Array](https://leetcode.com/problems/rotate-array/submissions/)**
 
-### 여분의 배열 사용 , 공간 : `O(N)`
+## 여분의 배열 사용 , 공간 : `O(N)`
 
 ```java
 class Solution {
@@ -81,7 +81,7 @@ class Solution {
 }
 ```
 
-### 공간 : `O(1)` 👍 
+## 공간 : `O(1)` 👍 
 
 ```
 n = 7 , k = 3
@@ -115,9 +115,9 @@ class Solution {
 
 ***
 
-## **`Two Pointers` [Move Zeroes](https://leetcode.com/problems/move-zeroes/)**
+# **`Two Pointers` [Move Zeroes](https://leetcode.com/problems/move-zeroes/)**
 
-### 👎 `임시 배열 생성`
+## 👎 `임시 배열 생성`
 
 ```java
 class Solution {
@@ -146,7 +146,7 @@ class Solution {
 }
 ```
 
-### 👍 `최적화`
+## 👍 `최적화`
 
 ```java
 class Solution {
@@ -169,9 +169,9 @@ class Solution {
 
 ***
 
-## **`Two Pointers` [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)**
+# **`Two Pointers` [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)**
 
-### `Two Pointers`
+## `Two Pointers`
 
 ```java
 class Solution {
@@ -199,7 +199,7 @@ class Solution {
 ```
 
 
-### 👍 `Binary Search`
+## 👍 `Binary Search`
 
 ```java
 class Solution {
@@ -229,7 +229,7 @@ class Solution {
 
 ***
 
-## **`Two Pointers` [Reverse String](https://leetcode.com/problems/reverse-string/)**
+# **`Two Pointers` [Reverse String](https://leetcode.com/problems/reverse-string/)**
 
 ```java
 class Solution {
@@ -249,9 +249,9 @@ class Solution {
 
 ***
 
-## **[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)**
+# **[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)**
 
-### `Two Pointers`
+## `Two Pointers`
 
 ```java
 class Solution {
@@ -273,7 +273,7 @@ class Solution {
 }
 ```
 
-### `Stream` ✨
+## `Stream` ✨
 
 ```java
 class Solution {
@@ -287,9 +287,9 @@ class Solution {
 
 ***
 
-## **[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)**
+# **[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)**
 
-### `Array`
+## `Array`
 
 ```java
 /**
@@ -315,7 +315,7 @@ class Solution {
 }
 ```
 
-### `Pointer` ✨
+## `Pointer` ✨
 
 ```java
 /**
