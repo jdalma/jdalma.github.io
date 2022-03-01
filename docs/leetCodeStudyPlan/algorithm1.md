@@ -837,7 +837,7 @@ class Solution {
 
 # **`BFS` [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)**
 
-## ❗️ `int[][] directions = { {-1, 0}, {0, 1}, {1, 0}, {0, -1}};`
+## ❗️ `int[][] directions = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };`
 ## ❗️ `Queue<Pair<Integer, Integer>> queue = new ArrayDeque();`
 
 ## `Solve`
@@ -904,7 +904,7 @@ class Solution {
 ```java
 class Solution {
     int[][] dist;
-    int[][] move = {{-1 , 0} , {0 , 1} , {1 , 0} , {0 , -1}};
+    int[][] move = { {-1 , 0} , {0 , 1} , {1 , 0} , {0 , -1} };
     int rowSize , colSize;
     public int[][] updateMatrix(int[][] mat) {
         rowSize = mat.length;
@@ -950,7 +950,7 @@ class Solution {
 ```java
 class Solution {
     int[][] memo;
-    int[][] move = {{-1 , 0} , {0 , 1} , {1 , 0} , {0 , -1}};
+    int[][] move = { {-1 , 0} , {0 , 1} , {1 , 0} , {0 , -1} };
     int rowSize , colSize;
     Queue<int[]> queue = new ArrayDeque<>();
     public int[][] updateMatrix(int[][] mat) {
