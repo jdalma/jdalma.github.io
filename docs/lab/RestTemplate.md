@@ -16,23 +16,23 @@ parent: 👨‍🔬 Lab
 - `request`를 확인하면 파라미터가 담겨 있지만 , 수신 측에서는 비어있음
 
 ```java
-    public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws Exception {
-        
-        ObjectMapper objectMapper = new ObjectMapper();
-        
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        
-        String queryString = objectMapper.writeValueAsString(paramMap);
-        HttpEntity<String> request = new HttpEntity<String>(queryString , headers);
-        return JSONObject.fromObject(restTemplate.postForObject(url, request, String.class));
-    }
+public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws Exception {
 
-	public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) throws Exception {
-		LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
-		EgovMapForNull response = restTemplate.postForObject(url , request , EgovMapForNull.class);
-		return response;
-	}
+    ObjectMapper objectMapper = new ObjectMapper();
+
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+
+    String queryString = objectMapper.writeValueAsString(paramMap);
+    HttpEntity<String> request = new HttpEntity<String>(queryString , headers);
+    return JSONObject.fromObject(restTemplate.postForObject(url, request, String.class));
+}
+
+public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) throws Exception {
+    LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
+    EgovMapForNull response = restTemplate.postForObject(url , request , EgovMapForNull.class);
+    return response;
+}
 ```
 
 > - ✋
@@ -62,12 +62,12 @@ parent: 👨‍🔬 Lab
 
 ```java
     Enumeration enums = request.getParameterNames();
-
+    
     System.out.println("\n\n--------parameter info---------");
     System.out.println(String.format("%s:::[%s]", "url", request.getContextPath()+""+request.getServletPath()));
-
+    
     while (enums.hasMoreElements()) {
-
+    
         String paramName = (String) enums.nextElement();
         String[] parameters = request.getParameterValues(paramName);
         
@@ -102,31 +102,31 @@ parent: 👨‍🔬 Lab
 - 수정 코드
 
 ```java
-	public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) {
-		try {
-			EgovMapForNull result = new EgovMapForNull();
-			LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
-			ResponseEntity<String> response = restTemplate.postForEntity(url , request, String.class);
-            // header
-			// {
-			// 	Access-Control-Allow-Origin=[http://localhost:8080], 
-			// 	Access-Control-Allow-Methods=[POST, PUT, GET, OPTIONS, DELETE], 
-			// 	Access-Control-Max-Age=[3600], 
-			// 	Access-Control-Request-Headers=[authorization, content-type], 
-			// 	Access-Control-Allow-Headers=[X-Requested-With, Origin, Content-Type, Accept, x-device-user-agent, Content-Type], 
-			// 	Content-Length=[4], 
-			// 	Date=[Tue, 22 Feb 2022 04:32:45 GMT],
-			// 	Keep-Alive=[timeout=20], 
-			// 	Connection=[keep-alive]}
-			// }
-            //  body - test
-            //  statusCode - 200
-			return result;
-		}
-		catch(Exception e) {
-			throw e;
-		}
-	}
+public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) {
+    try {
+        EgovMapForNull result = new EgovMapForNull();
+        LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
+        ResponseEntity<String> response = restTemplate.postForEntity(url , request, String.class);
+        // header
+        // {
+        // 	Access-Control-Allow-Origin=[http://localhost:8080],
+        // 	Access-Control-Allow-Methods=[POST, PUT, GET, OPTIONS, DELETE],
+        // 	Access-Control-Max-Age=[3600],
+        // 	Access-Control-Request-Headers=[authorization, content-type],
+        // 	Access-Control-Allow-Headers=[X-Requested-With, Origin, Content-Type, Accept, x-device-user-agent, Content-Type],
+        // 	Content-Length=[4],
+        // 	Date=[Tue, 22 Feb 2022 04:32:45 GMT],
+        // 	Keep-Alive=[timeout=20],
+        // 	Connection=[keep-alive]}
+        // }
+        //  body - test
+        //  statusCode - 200
+        return result;
+    }
+    catch(Exception e) {
+        throw e;
+    }
+}
 ```
 
 - **response**를 원하는 `Map` 객체 자체로 받을려고 해서 그런지... `ResponseEntity`로 감싸주니 정상으로 받았다.
@@ -174,22 +174,22 @@ parent: 👨‍🔬 Lab
 @Component
 public class RestTemplateResponseErrorHandler implements ResponseErrorHandler{
 
-	@Override
-	public boolean hasError(ClientHttpResponse response) throws IOException {
-		return (response.getStatusCode().series() == Series.CLIENT_ERROR ||
-				response.getStatusCode().series() == Series.SERVER_ERROR);
-	}
+    @Override
+    public boolean hasError(ClientHttpResponse response) throws IOException {
+        return (response.getStatusCode().series() == Series.CLIENT_ERROR ||
+                response.getStatusCode().series() == Series.SERVER_ERROR);
+    }
 
-	@Override
-	public void handleError(ClientHttpResponse response) throws IOException {
-		if(response.getStatusCode().series() == HttpStatus.Series.SERVER_ERROR) {
-			// handle SERVER_ERROR
-		}
-		else if(response.getStatusCode().series() == HttpStatus.Series.CLIENT_ERROR) {
-			// handle CLIENT_ERROR
-			if(response.getStatusCode() == HttpStatus.NOT_FOUND)
-				throw new NotFoundException();
-		}
-	}
+    @Override
+    public void handleError(ClientHttpResponse response) throws IOException {
+        if(response.getStatusCode().series() == HttpStatus.Series.SERVER_ERROR) {
+            // handle SERVER_ERROR
+        }
+        else if(response.getStatusCode().series() == HttpStatus.Series.CLIENT_ERROR) {
+            // handle CLIENT_ERROR
+            if(response.getStatusCode() == HttpStatus.NOT_FOUND)
+                throw new NotFoundException();
+        }
+    }
 }
 ```
