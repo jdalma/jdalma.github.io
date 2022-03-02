@@ -28,12 +28,67 @@ public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws E
     return JSONObject.fromObject(restTemplate.postForObject(url, request, String.class));
 }
 
-public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) throws Exception {
-    LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
-    EgovMapForNull response = restTemplate.postForObject(url , request , EgovMapForNull.class);
-    return response;
+@RequestMapping(value="callXerp", method=RequestMethod.POST)
+@ResponseBody // 존재 유무 예외 발생
+public void callXerp(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    try {
+        EgovMapForNull paramMap = StringUtil.requestToMapNoSession(request);
+        String callStr = service.callQdbino(paramMap);
+        // response body에 20200302가 담겨있을 때
+        //  A JSONObject text must begin with '{' at character 1 of 20220302
+
+        // response.getWriter().print(new JsonMsgMng().makeJsonObject(callStr)); 일 때 정상 반환
+        // {"action":"update","data":"20220302","code":"000","message":"SUCCESS"}
+        response.getWriter().print(callStr);
+    } catch (Exception e) {
+        response.getWriter().print(new Exceptions(new Throwable(), e).getResultStatus().toString());
+    }
 }
 ```
+
+```java
+// 수신 측 응답 response.getWriter().print(new JsonMsgMng().makeJsonObject(callStr));
+// content-type을 지정해주지 않았을 시 
+public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws Exception {
+    try {
+        LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
+        JSONObject response = restTemplate.postForObject(url , request, JSONObject.class);
+        return response;
+    }
+    catch(Exception e) {
+        throw e;
+    }
+}
+// no suitable HttpMessageConverter found for response type [class net.sf.json.JSONObject] and content type [application/octet-stream] 예외 발생
+
+// content-type을 지정하지 않고 ResponseEntity<JSONObject>로 받았을 시
+public static ResponseEntity<JSONObject> sendPOST(String url , EgovMapForNull paramMap) throws Exception {
+    try {
+        LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
+        ResponseEntity<JSONObject> response = restTemplate.postForEntity(url , request, JSONObject.class);
+        return response;
+    }
+    catch(Exception e) {
+        throw e;
+    }
+}
+// no suitable HttpMessageConverter found for response type [class net.sf.json.JSONObject] and content type [application/octet-stream] 예외 발생
+
+
+// content-type을 지정하지 않고 ResponseEntity<String>으로 받았을 시
+public static ResponseEntity<String> sendPOST(String url , EgovMapForNull paramMap) throws Exception {
+    try {
+        LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
+        ResponseEntity<String> response = restTemplate.postForEntity(url , request, String.class);
+        return response;
+    }
+    catch(Exception e) {
+        throw e;
+    }
+}
+// {"action":"update","data":"20220302","code":"000","message":"SUCCESS"}
+```
+
 
 > - ✋
 > - **HTTP Request로 넘어온 값들 중 일부는**
