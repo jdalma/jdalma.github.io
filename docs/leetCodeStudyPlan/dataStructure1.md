@@ -203,3 +203,109 @@ class Solution {
     }
 }
 ```
+
+***
+
+# **`Array` [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/)**
+
+- 중첩 원소를 반환
+
+## `Two Pointers`
+
+```java
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        List<Integer> list = new ArrayList<>();
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        
+        int pointer1 = 0;
+        int pointer2 = 0;
+        
+        while(true){
+            if(pointer1 >= nums1.length || pointer2 >= nums2.length) break;
+            
+            int value1 = nums1[pointer1];
+            int value2 = nums2[pointer2];  
+            
+            if(value1 == value2){
+                list.add(value1);
+                pointer1++;
+                pointer2++;
+            }
+            else if(value1 < value2){
+                pointer1++;
+            }
+            else{
+                pointer2++;
+            }
+        }
+    
+        return list.stream().mapToInt(Integer::intValue).toArray();
+    }
+}
+```
+
+## `Two Pointers`
+
+```java
+    public int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        int i = 0, j = 0, k = 0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                ++i;
+            } else if (nums1[i] > nums2[j]) {
+                ++j;
+            } else {
+                nums1[k++] = nums1[i++];
+                ++j;
+            }
+        }
+        return Arrays.copyOfRange(nums1, 0, k);
+    }
+```
+
+***
+
+# **`Array` [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)**
+
+## `Brute Force` ➜ <span class="text-red-300">Time Limit Exceeded</span>
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int diff = Integer.MIN_VALUE;
+        for(int i = 0 ; i < prices.length ; i++){
+            for(int j = i ; j < prices.length ; j++){
+                diff = Math.max(diff , prices[j] - prices[i]);
+            }
+        }
+        return diff;
+    }
+}
+```
+
+## `One Pass`
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int profit = 0;
+        int minPrice = Integer.MAX_VALUE;
+        for(int i = 0 ; i < prices.length ; i++){
+            if(minPrice > prices[i]){
+                minPrice = prices[i];
+            }   
+            else{
+                profit = Math.max(prices[i] - minPrice , profit);
+            }
+        }
+        return profit;
+    }
+}
+```
