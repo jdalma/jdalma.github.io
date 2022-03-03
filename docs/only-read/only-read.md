@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-03-03`
+
+## **[CSR , SSR | SPA , MPA](https://velog.io/@namezin/CSR-SSR)** 
+
 # `2022-03-01`
 
 ## **[Web Server와 WAS의 차이와 웹 서비스 구조](https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html)**
