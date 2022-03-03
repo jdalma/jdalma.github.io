@@ -1,8 +1,9 @@
 ---
 layout: default
-title: 코딩 인터뷰 완전 분석
-parent: Books
-nav_order: 2
+title: 📕 알고리즘 이론
+nav_order: 67
+has_children: true
+permalink: /docs/algorithmTheory
 ---
 ## Table of contents
 {: .no_toc .text-delta }
@@ -128,7 +129,7 @@ nav_order: 2
 - **안정 정렬(Stable Sort)**
 - **분할 정복 알고리즘의 하나**
 
-![](../../assets/images/books/codingInterview/mergesort.png)
+![](../../assets/images/algorithmTheory/mergesort.png)
 
 ```java
 import java.io.*;
@@ -415,14 +416,14 @@ int binarySearch(int[] nums, int target){
 ## **인접 리스트**
 - 그래프를 표현할 때 사용되는 가장 일반적인 방법이다.
 
-![](../../assets/images/books/codingInterview/TreeAndGraphAdjacencyList.png)
+![](../../assets/images/algorithmTheory/TreeAndGraphAdjacencyList.png)
 
 
 ## **인접 행렬**
 - `N*N` 행렬 로써 `행렬[i][j]`에 정보가 존재한다면 **i에서 j로의 간선**이 있다는 뜻이다.
 - 무방향 그래프를 인접 행렬로 표현한다면 이 행렬은 **대칭 행렬(symmetric matrix)**이 된다.
 
-![](../../assets/images/books/codingInterview/TreeAndGraphAdjacencyMatrix.png)
+![](../../assets/images/algorithmTheory/TreeAndGraphAdjacencyMatrix.png)
 
 ## **그래프 탐색**
 
@@ -514,7 +515,7 @@ class Solution {
 - **출발지와 도착지 사이에 최단 경로를 찾을 때 사용된다.**
 - 기본적으로 , 출발지와 도착지 두 노드에서 동시에 너비 우선 탐색을 사용한 뒤 , 두 탐색 지점이 충돌하는 경우에 경로를 찾는 방식이다.
 
-![](../../assets/images/books/codingInterview/TreeAndGraph8.png)
+![](../../assets/images/algorithmTheory/TreeAndGraph8.png)
 
 > 추가로 읽을 거리 - 위상정렬 , 다익스트라 , AVL , 레드블랙트리
 
@@ -538,7 +539,7 @@ class Solution {
 > - 같은 값을 처리하는 방식에 따라 이진 탐색 트리는 약간씩 정의가 달라질 수 있다.
 > - 어떤 곳에서는 중복된 값을 가지면 안 된다고 나오고 , 또 다른 곳에서는 중복된 값은 오른 쪽 혹은 양쪽 어느 곳이든 존재할 수 있다고 나온다.
 
-![](../../assets/images/books/codingInterview/TreeAndGraph1.png)
+![](../../assets/images/algorithmTheory/TreeAndGraph1.png)
 
 - 모든 노드에 대해서 그 **왼쪽 자식들의 값이 현재 노드 값보다 작거나 같도록 하고** , **오른쪽 자식들의 값은 현재 노드의 값보다 반드시 커야 한다**.
 
@@ -546,13 +547,13 @@ class Solution {
 - **트리의 모든 높이에서 노드가 꽉 차 있는 이진트리를 말한다.**
 - 마지막 레벨은 꽉 차 있지 않아도 되지만 **왼쪽에서 오른쪽으로 채워져야 한다.**
 
-![](../../assets/images/books/codingInterview/TreeAndGraph2.png)
+![](../../assets/images/algorithmTheory/TreeAndGraph2.png)
 
 ## **전 이진 트리 (Full Binary Tree)**
 - **모든 노드의 자식이 없거나 정확히 두 개 있는 경우를 말한다.**
 - 즉, *자식이 하나만 있는 노드가 존재해서는 안된다.*
 
-![](../../assets/images/books/codingInterview/TreeAndGraph3.png)
+![](../../assets/images/algorithmTheory/TreeAndGraph3.png)
 
 ## **포화 이진 트리 (Perfect Binary Tree)**
 - **전 이진 트리**이면서 **완전 이진 트리**인 경우를 말한다.
@@ -574,7 +575,7 @@ class Solution {
 - **모든 자식 노드들을 먼저 방문한 뒤 마지막에 현재 노드를 방문하는 방법을 말한다.**
 - 후위 순회에서 가장 마지막에 방문하게 될 노드는 언제나 루트이다.
 
-![](../../assets/images/books/codingInterview/TreeAndGraphTraversal.png)
+![](../../assets/images/algorithmTheory/TreeAndGraphTraversal.png)
 
 
 ## **이진 힙 (최소 힙)**
@@ -582,14 +583,14 @@ class Solution {
 - 최소 힙은 트리의 마지막 단계에서 오른쪽 부분을 뺀 나머지 부분이 가득 채워져 있다는 점에서 완전 이진 트리이다.
 - **각 노드의 원소가 자식들의 원소보다 작다는 특성이 있다.**
 
-![](../../assets/images/books/codingInterview/TreeAndGraph4.png)
+![](../../assets/images/algorithmTheory/TreeAndGraph4.png)
 
 - **삽입 (Insert)**
   - **원소를 삽입할 때는 언제나 트리의 밑바닥에서부터 삽입을 시작한다.**
   - *완전 트리의 속성에 위배되지 않게 새로운 원소는 밑바닥 가장 오른쪽 위치로 삽입된다.*
   - 새로 삽입된 원소가 제대로 된 자리를 찾을 때 까지 부모 노드와 교환해 나간다.
 
-![](../../assets/images/books/codingInterview/TreeAndGraph5.png)
+![](../../assets/images/algorithmTheory/TreeAndGraph5.png)
 
 - **최소 원소 뽑아내기 (Extract_Min)**
   - 최소 원소는 가장 위에 놓이기 때문에 최소 원소를 찾기란 쉬운 일이다.
@@ -597,9 +598,9 @@ class Solution {
   1. 최소 원소를 제거한 후에 힙에 있는 가장 마지막 원소(밑바닥 가장 왼쪽에 위치한 원소)와 교환한다.
   2. 최소 힙의 성질을 만족하도록 , 해당 노드를 자식 노드와 교환해 나감으로 써 밑으로 내보낸다. (*자식들 중 최소 값을 선택한다.*)
 
-![](../../assets/images/books/codingInterview/TreeAndGraph7.png)
+![](../../assets/images/algorithmTheory/TreeAndGraph7.png)
 
-> ![](../../assets/images/books/codingInterview/TreeAndGraph6.png)
+> ![](../../assets/images/algorithmTheory/TreeAndGraph6.png)
 > - [출처 및 최대 힙](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)
 
 ## **균형 vs 비균형** (레드-블랙 트리 , AVL트리 ->고급 주제에서 다룰 예정)
@@ -612,7 +613,7 @@ class Solution {
   - **`*`노드** 의 실제 구현은 특별한 종류의 자식 노드로 표현될 수도 있다.
   - 아니면 **`*`노드** 의 **부모 노드 안에 boolean flag 새로 정의함으로써 단어의 끝을 표현할 수도 있다.**
 
-![](../../assets/images/books/codingInterview/TreeAndGraphTrie.png)
+![](../../assets/images/algorithmTheory/TreeAndGraphTrie.png)
 
 - **유효한 단어 집합을 이용하는 많은 문제들은 트라이를 통해 최적화 할 수 있다.**
 
@@ -721,7 +722,7 @@ while(iter.hasNext()) {//값이 있으면 true 없으면 false
 
 > - 충돌이 자주 발생한다면 , 최악의 경우의 수행시간 `worst case runtime`은 `O(N)`이 된다.
 
-![](../../assets/images/books/codingInterview/HashTable.png)
+![](../../assets/images/algorithmTheory/HashTable.png)
 
 - **균형 이진 탐색 트리로 구현**
   - 이 경우에 탐색 시간은 `O(log N)`이 된다.
@@ -744,7 +745,7 @@ while(iter.hasNext()) {//값이 있으면 true 없으면 false
     3. **Double Hashing Probing** : 해시된 값을 한번 더 해싱하여 새로운 주소를 할당하기 때문에 다른 방법들보다 많은 연산을 하게 된다.
     - 1, 2번은 버킷 조사를 원형으로 회전하게 된다 테이블의 마지막에 도달하면 다시 처음으로 이동한다.
 
-![](../../assets/images/books/codingInterview/Probing.png)
+![](../../assets/images/algorithmTheory/Probing.png)
 
 
 ## **분리 연결법(Seperate Chaining)**
@@ -754,7 +755,7 @@ while(iter.hasNext()) {//값이 있으면 true 없으면 false
 > - 충돌이 많이 발생해서 리스트의 형태로 계속 데이터가 쌓이게 되면 검색하는데 **시간 복잡도가 `O(n)`** 으로 나빠지게 된다.
 > - 그래서 Java8의 HashMap은 리스트의 개수가 8개 이상이 되면 **Self-Balancing Binary Search Tree 자료구조를 사용해 Chaining 방식을 구현** 하였다. **탐색할 때 `O(logN)`으로 성능이 좋아집니다.**
 
-![](../../assets/images/books/codingInterview/Chaining.png)
+![](../../assets/images/algorithmTheory/Chaining.png)
 
 ## **JAVA8의 분리 연결법**
 - Java 7까지는 분리 연결법에서 충돌이 발생하면 연결 리스트를 이용하였다.
@@ -850,7 +851,7 @@ static final int UNTREEIFY_THRESHOLD = 6;
 
 ### Recursive Fibo
 
-![](../../assets/images/books/codingInterview/Fibo.png)
+![](../../assets/images/algorithmTheory/Fibo.png)
 
 ```java
 int fibo(int i){
@@ -876,7 +877,7 @@ public int fibo(int i){
 }
 ```
 
-![](../../assets/images/books/codingInterview/memoFibo.png)
+![](../../assets/images/algorithmTheory/memoFibo.png)
 
 - **사각형 부분은 캐시값을 그대로 사용한 부분이며 , `O(N)` 수행 시간이 걸린다.**
 
@@ -951,7 +952,7 @@ public int fibo(int n){
   이 없다면 , 다시 우리 자신을 복제한 뒤 가능한 모든 경로로 나아간다.**
   4. 먼저 `t`에 도착하는사람이 이긴다.
 
-![](../../assets/images/books/codingInterview/dijkstra.png)
+![](../../assets/images/algorithmTheory/dijkstra.png)
 
 <!-- |    |**a**|**b**|**c**|**d**|**e**|**f**|**g**|**h**|**i**|
 |----|---|---|---|---|---|---|---|---|---|
@@ -990,7 +991,7 @@ public int fibo(int n){
 - 아래의 다이어그램은 `path_weight`(왼쪽)와 `previous`(오른쪽)가 변하는 것을 단계별로 보여준다.
 
 
-![](../../assets/images/books/codingInterview/dijkstraDiagram.png)
+![](../../assets/images/algorithmTheory/dijkstraDiagram.png)
 
 ## 벨만-포드 알고리즘
 - **출처 [ratsgo.github.io](https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/)**
@@ -998,7 +999,7 @@ public int fibo(int n){
   - *하지만 , 다익스트라 알고리즘에 비해 느리므로 , **가중치가 모두 양수일 경우에는 다익스트라 알고리즘을 사용한다.***
 - **동작 원리**
 
-![](../../assets/images/books/codingInterview/bellmanFord2.png)
+![](../../assets/images/algorithmTheory/bellmanFord2.png)
 
 - [벨만-포드 참고](https://coder-in-war.tistory.com/entry/%EA%B0%9C%EB%85%90-38-%EB%B2%A8%EB%A7%8C%ED%8F%AC%EB%93%9CBellman-Ford-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
   - `(vertex - 1) * edge`만큼만 확인하는 이유
@@ -1008,7 +1009,7 @@ public int fibo(int n){
 
 ### 음수간선
 
-![](../../assets/images/books/codingInterview/bellmanFord.png)
+![](../../assets/images/algorithmTheory/bellmanFord.png)
 
 > - 위 그림에서 `c`,`d` 그리고 `e`,`f`가 사이클을 이루고 있는 걸 확인할 수 있습니다. 
 > - `c`,`d`의 경우 사이클을 돌 수록 거리가 커져서 최단경로를 구할 때 문제가 되지 않습니다. 
