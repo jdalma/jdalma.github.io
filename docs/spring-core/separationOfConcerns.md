@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 관심사의 분리
-grand_parent: 스프링 핵심
+grand_parent: 🌱 스프링
 parent: 스프링 핵심 원리 이해
 nav_order: 3
 ---

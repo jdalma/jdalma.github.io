@@ -1,7 +1,7 @@
 ---
 layout: default
 title: IoC , DI 그리고 컨테이너
-grand_parent: 스프링 핵심
+grand_parent: 🌱 스프링
 parent: 스프링 핵심 원리 이해
 nav_order: 4
 ---

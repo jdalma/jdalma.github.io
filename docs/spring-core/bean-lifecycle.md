@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 빈 생명주기
-parent: 스프링 핵심
+parent: 🌱 스프링
 nav_order: 7
 ---
 ## Table of contents

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 컴포넌트 스캔
-parent: 스프링 핵심
+parent: 🌱 스프링
 nav_order: 4
 ---
 ## Table of contents

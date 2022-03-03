@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 스프링 컨테이너와 빈
-parent: 스프링 핵심
+parent: 🌱 스프링
 has_children: true
 nav_order: 2
 ---

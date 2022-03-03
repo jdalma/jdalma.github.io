@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 싱글톤 컨테이너
-parent: 스프링 핵심
+parent: 🌱 스프링
 nav_order: 3
 ---
 ## Table of contents

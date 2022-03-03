@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 의존관계 자동 주입
-parent: 스프링 핵심
+parent: 🌱 스프링
 nav_order: 5
 ---
 ## Table of contents

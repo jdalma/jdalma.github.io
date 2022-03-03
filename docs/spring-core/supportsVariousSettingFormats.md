@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 다양한 설정 형식 지원
-grand_parent: 스프링 핵심
+grand_parent: 🌱 스프링
 parent: 스프링 컨테이너와 빈
 nav_order: 3
 ---

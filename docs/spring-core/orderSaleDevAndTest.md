@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 주문,할인 개발 및 테스트
-grand_parent: 스프링 핵심
+grand_parent: 🌱 스프링
 parent: 스프링 핵심 원리 이해
 nav_order: 2
 ---

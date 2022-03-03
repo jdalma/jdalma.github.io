@@ -1,7 +1,7 @@
 ---
 layout: default
 title: BeanFactory 와 ApplicationContext
-grand_parent: 스프링 핵심
+grand_parent: 🌱 스프링
 parent: 스프링 컨테이너와 빈
 nav_order: 2
 ---

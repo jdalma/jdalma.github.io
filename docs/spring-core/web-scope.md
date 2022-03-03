@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 웹 스코프
-parent: 스프링 핵심
+parent: 🌱 스프링
 nav_order: 9
 ---
 ## Table of contents

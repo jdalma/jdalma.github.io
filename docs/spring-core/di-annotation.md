@@ -2,6 +2,7 @@
 layout: default
 title: 의존성 주입 Annotation
 nav_order: 6
+grand_parent: 🌱 스프링
 parent: 스프링 핵심 원리 이해
 ---
 ## Table of contents

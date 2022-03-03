@@ -1,8 +1,8 @@
 ---
 layout: default
 title: AOP
-parent: 스프링 입문
-nav_order: 80
+parent: 🌱 스프링
+nav_order: 30
 ---
 ## Table of contents
 {: .no_toc .text-delta }
@@ -16,7 +16,7 @@ nav_order: 80
 
 ###  **공통 관심 사항(Cross-Cutting Concern) vs 핵심 관심 사항(Core Concern)**
 
-![](../../assets/images/spring-introduction/AOP/1.png)
+![](../../assets/images/spring-core/AOP/1.png)
 ```java
 public Long join(Member member){
     long start = System.currentTimeMillis();
@@ -45,7 +45,7 @@ public Long join(Member member){
 -   **AOP : Aspect Oriented Programming**
 -   공통 관심 사항(Cross-Cutting Concern) vs 핵심 관심 사항(Core Concern) 분리
 
-![](../../assets/images/spring-introduction/AOP/2.png)
+![](../../assets/images/spring-core/AOP/2.png)
 
 **시간 측정 AOP등록**
 - 정형화 되지 않고 특수한 기능들은 컴포넌트 스캔보다 직접 자바 빈으로 등록
@@ -105,11 +105,11 @@ public class TimeTraceAop {
     }
 }
 ```
-![](../../assets/images/spring-introduction/AOP/3.png)
-![](../../assets/images/spring-introduction/AOP/4.png)
+![](../../assets/images/spring-core/AOP/3.png)
+![](../../assets/images/spring-core/AOP/4.png)
 ✅스프링 컨테이너는 AOP가 있으면 가짜 스프링 빈(프록시)을 생성 하여 실제 스프링 빈을 호출 하기 전 프록시를 호출한다.
 {: .fs-3 }
-![](../../assets/images/spring-introduction/AOP/5.png)
+![](../../assets/images/spring-core/AOP/5.png)
 
 ### **📌순환참조 문제**
 - TimeTraceAop의 AOP 대상을 지정하는 @Around 코드를 보시면,
