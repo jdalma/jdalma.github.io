@@ -2,7 +2,7 @@
 layout: default
 title: AOP
 parent: 스프링 입문
-nav_order: 7
+nav_order: 80
 ---
 ## Table of contents
 {: .no_toc .text-delta }

@@ -2,7 +2,7 @@
 layout: default
 title: 프로젝트 빌드
 parent: 스프링 입문
-nav_order: 1
+nav_order: 30
 ---
 ## Table of contents
 {: .no_toc .text-delta }

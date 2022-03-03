@@ -2,7 +2,7 @@
 layout: default
 title: Servlet
 nav_order: 10
-parent: 👨‍🔬 Lab
+parent: 스프링 입문
 ---
 ## Table of contents
 {: .no_toc .text-delta }
@@ -17,7 +17,7 @@ parent: 👨‍🔬 Lab
 - [Spring MVC 강의](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)를 보다가 서블릿을 확실히 이해하고자 정리한다.
 
 
-![](../../assets/images/lab/servlet/process.png)
+![](../../assets/images/spring-introduction/servlet/process.png)
 
 
 - **서블릿을 지원하는 WAS를 사용하면 위 이미지의 검은 실선의 작업들을 서블릿이 직접 수행 해준다고한다.**
@@ -51,7 +51,7 @@ public class MemberController extends HttpServlet {
     ...
 ```
 
-![](../../assets/images/lab/servlet/servletFlow.png)
+![](../../assets/images/spring-introduction/servlet/servletFlow.png)
 
 1. **WAS**는 **HTTP 요청 메세지를 기반으로** `Request`와 `Response` 객체를 새로 만들어 서블릿 객체를 호출한다.
 1. `/member/*` 해당 패턴과 같다면 서블릿 코드가 실행된다.
@@ -61,7 +61,7 @@ public class MemberController extends HttpServlet {
 
 # **Servlet Container**
 
-![](../../assets/images/lab/servlet/servletContainer.png)
+![](../../assets/images/spring-introduction/servlet/servletContainer.png)
 
 - **Servlet Container**가 `/member/*` 해당 **Servlet**을 호출하여 주고 객체의 생명주기를 담당한다. **(싱글톤으로 관리)**
 - 톰캣처럼 서블릿을 지원하는 **WAS**를 **Servlet Container**라고 한다.
@@ -72,7 +72,7 @@ public class MemberController extends HttpServlet {
 
 - **서블릿 객체를 누가 호출하지?** ➔ 쓰레드 
 
-![](../../assets/images/lab/servlet/multiThread.png)
+![](../../assets/images/spring-introduction/servlet/multiThread.png)
 
 - **장점**
   - 동시 요청을 처리 가능
@@ -83,7 +83,7 @@ public class MemberController extends HttpServlet {
   - 쓰레드는 컨텍스트 스위칭 비용이 발생한다.
   - 쓰레드 생성에 제한이 없어 , CPU 또는 메모리 임계점을 넘을수도 있다.
 
-![](../../assets/images/lab/servlet/ThreadPool.png)
+![](../../assets/images/spring-introduction/servlet/ThreadPool.png)
 
 ## **Thread Pool**
 - 쓰레드가 필요하면 이미 생성되어 있는 쓰레드를 꺼내어 사용 후 반납

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Lombok 사용해보기
-nav_order: 0
+nav_order: 20
 parent: 스프링 입문
 ---
 ## Table of contents

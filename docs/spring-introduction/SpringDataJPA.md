@@ -2,7 +2,7 @@
 layout: default
 title: Spring Data JPA
 parent: 스프링 입문
-nav_order: 6
+nav_order: 70
 ---
 ## Table of contents
 {: .no_toc .text-delta }

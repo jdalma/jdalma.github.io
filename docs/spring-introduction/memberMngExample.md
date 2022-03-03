@@ -2,7 +2,7 @@
 layout: default
 title: 회원관리 예제
 parent: 스프링 입문
-nav_order: 2
+nav_order: 40
 ---
 ## Table of contents
 {: .no_toc .text-delta }

@@ -2,7 +2,7 @@
 layout: default
 title: 객체지향설계의 5가지 원칙
 parent: 스프링 입문
-nav_order: 8
+nav_order: 90
 ---
 ## Table of contents
 {: .no_toc .text-delta }

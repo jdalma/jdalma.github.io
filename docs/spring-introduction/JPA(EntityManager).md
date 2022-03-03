@@ -2,7 +2,7 @@
 layout: default
 title: JPA(EntityManager)
 parent: 스프링 입문
-nav_order: 5
+nav_order: 70
 ---
 ## Table of contents
 {: .no_toc .text-delta }

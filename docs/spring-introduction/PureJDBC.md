@@ -2,7 +2,7 @@
 layout: default
 title: 순수JDBC
 parent: 스프링 입문
-nav_order: 3
+nav_order: 50
 ---
 ## Table of contents
 {: .no_toc .text-delta }
