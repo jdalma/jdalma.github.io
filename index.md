@@ -28,7 +28,7 @@ permalink: /
 > - [x] 객체지향의 사실과 오해
 > - [x] Think Data Structures
 > - [ ] [모던 자바 인 액션](https://jdalma.github.io/docs/books/modernJavaInAction/)
-> - [ ] [코딩 인터뷰 완전 분석](https://jdalma.github.io/docs/books/codingInterview/)
+> - [ ] 코딩 인터뷰 완전 분석
 > - [ ] [Clean Code](https://jdalma.github.io/docs/books/clean-code/)
 > - [ ] 토비의 스프링 3.1
 > - [ ] 자바 ORM 표준 JPA 프로그래밍
