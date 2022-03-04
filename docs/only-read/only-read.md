@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-04-04`
+
+## **[Spring Docs](https://docs.spring.io/spring-framework/docs)**
+
 # `2022-03-03`
 
 ## **[CSR , SSR | SPA , MPA](https://velog.io/@namezin/CSR-SSR)** 
@@ -72,12 +76,6 @@ has_children: true
 ## **[스프링 `RestTemplate`](https://advenoh.tistory.com/46)**
 
 ## **[Spring WebSocket 소개](https://supawer0728.github.io/2018/03/30/spring-websocket/)**
-
-## **트랜잭션 관련**
-- [Java 에서 DataBase Replication Master/Slave (write/read) 분기 처리하기](http://kwon37xi.egloos.com/m/5364167)
-- [(Spring)다중 DataSource 처리](https://supawer0728.github.io/2018/03/22/spring-multi-transaction/)
-- [Spring Transaction에 대한 노트](https://narusas.github.io/2019/07/17/Spring-Transaction-Note.html#transaction_script_example)
-- [선언적 트랜잭션 @Transactional](https://bamdule.tistory.com/51)
 
 ## **[뮤텍스(Mutex)와 세마포어(Semaphore)의 차이](https://worthpreading.tistory.com/90)**
 
