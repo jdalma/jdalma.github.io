@@ -309,3 +309,129 @@ class Solution {
     }
 }
 ```
+
+***
+
+# **`Array` [Reshape The Matrix](https://leetcode.com/problems/reshape-the-matrix/)**
+
+## `Queue 사용`
+
+```java
+class Solution {
+    public int[][] matrixReshape(int[][] mat, int r, int c) {
+        
+        if(mat.length == 0 || r * c != mat.length * mat[0].length) return mat;
+        
+        Queue<Integer> queue = new ArrayDeque<>();
+        int[][] resultMat = new int[r][c];
+        
+        for(int i = 0 ; i < mat.length ; i++){
+            for(int j = 0 ; j < mat[0].length ; j++){
+                queue.offer(mat[i][j]);
+            }
+        }
+        
+        for(int i = 0 ; i < r ; i++){
+            for(int j = 0 ; j < c ; j++){
+                resultMat[i][j] = queue.poll();
+            }
+        }
+        
+        return resultMat;
+    }
+}
+```
+
+## `Queue 없이 One Pass`
+
+```java
+class Solution {
+    public int[][] matrixReshape(int[][] mat, int r, int c) {
+        
+        if(mat.length == 0 || r * c != mat.length * mat[0].length) return mat;
+        
+        int[][] resultMat = new int[r][c];
+        
+        int row = 0 , col = 0;
+        
+        for(int i = 0 ; i < mat.length ; i++){
+            for(int j = 0 ; j < mat[0].length ; j++){
+                if(col == c){
+                    row++;
+                    col = 0;
+                }
+                resultMat[row][col] = mat[i][j];
+                col++;
+            }
+        }        
+        return resultMat;
+    }
+}
+```
+
+## `인덱스 계산` 👍
+
+```
+nums = [[1,2],[3,4]], r = 1, c = 4
+
+resultMat[i / c][i % c] = nums[i / nums[0].length][i % nums[0].length];
+
+i / c
+0   4 = 0
+1   4 = 0
+..
+
+i % c
+0   4 = 0
+1   4 = 1
+..
+
+Output: [[1,2,3,4]]
+```
+
+```java
+class Solution {
+    public int[][] matrixReshape(int[][] nums, int r, int c) {
+        if(nums.length == 0 || r * c != nums.length * nums[0].length)
+            return nums;
+        
+        int[][]resultMat = new int[r][c];
+        for(int i = 0; i < r*c; i++) {
+            resultMat[i / c][i % c] = nums[i / nums[0].length][i % nums[0].length];
+        }
+        return resultMat;
+    }
+}
+```
+
+***
+
+# **`Array` [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)**
+
+## `DP`
+
+- 0번 인덱스의 1을 재사용하기 때문에 `DP`
+
+```java
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result = new ArrayList<>();
+        
+        result.add(new ArrayList<>());
+        result.get(0).add(1);
+        
+        for(int row = 1 ; row < numRows ; row++){
+            result.add(new ArrayList<>());
+            List<Integer> nowRow = result.get(row);
+            nowRow.add(1);
+            for(int col = 1 ; col < row ; col++){
+                List<Integer> beforeRow = result.get(row - 1);
+                nowRow.add(beforeRow.get(col - 1) + beforeRow.get(col));
+            }
+            nowRow.add(1);
+        }
+        
+        return result;
+    }
+}
+```
