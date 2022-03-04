@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 읽어보기
+title: 🔖 Bookmark
 nav_order: 81
-permalink: /docs/only-read
+permalink: /docs/bookmark
 has_children: true
 ---
 ## Table of contents
@@ -15,6 +15,7 @@ has_children: true
 # `2022-04-04`
 
 ## **[Spring Docs](https://docs.spring.io/spring-framework/docs)**
+## **[DB 트랜잭션과 커넥션 이해하기](https://jiwondev.tistory.com/163)**
 
 # `2022-03-03`
 
