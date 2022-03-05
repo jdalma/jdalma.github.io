@@ -435,3 +435,258 @@ class Solution {
     }
 }
 ```
+
+***
+
+# **`Array` [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)** 📝
+
+![](../../assets/images/leetcodeStudyPlan/sudoku.png)
+
+## `HashSet`
+
+```java
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        int N = 9;
+
+        HashSet<Character>[] rows = new HashSet[N];
+        HashSet<Character>[] cols = new HashSet[N];
+        HashSet<Character>[] boxes = new HashSet[N];
+        for (int r = 0; r < N; r++) {
+            rows[r] = new HashSet<Character>();
+            cols[r] = new HashSet<Character>();
+            boxes[r] = new HashSet<Character>();
+        }
+
+        for (int r = 0; r < N; r++) {
+            for (int c = 0; c < N; c++) {
+                char val = board[r][c];
+
+                if (val == '.') {
+                    continue;
+                }
+
+                if (rows[r].contains(val)) {
+                    return false;
+                }
+                rows[r].add(val);
+
+                if (cols[c].contains(val)) {
+                    return false;
+                }
+                cols[c].add(val);
+
+                int idx = (r / 3) * 3 + c / 3;
+                if (boxes[idx].contains(val)) {
+                    return false;
+                }
+                boxes[idx].add(val);
+            }
+        }
+        return true;
+    }
+}
+```
+
+## `Extra Array`
+
+```java
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        int N = 9;
+
+        int[][] rows = new int[N][N];
+        int[][] cols = new int[N][N];
+        int[][] boxes = new int[N][N];
+
+        for (int r = 0; r < N; r++) {
+            for (int c = 0; c < N; c++) {
+                if (board[r][c] == '.') {
+                    continue;
+                }
+                int pos = board[r][c] - '1';
+
+                if (rows[r][pos] == 1) {
+                    return false;
+                }
+                rows[r][pos] = 1;
+
+                if (cols[c][pos] == 1) {
+                    return false;
+                }
+                cols[c][pos] = 1;
+
+                int idx = (r / 3) * 3 + c / 3;
+                if (boxes[idx][pos] == 1) {
+                    return false;
+                }
+                boxes[idx][pos] = 1;
+            }
+        }
+        return true;
+    }
+}
+```
+
+***
+
+# **`Array` [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)** 📝
+
+```java
+class Solution {
+    // box size
+    int n = 3;
+    // row size
+    int N = n * n;
+
+    int [][] rows = new int[N][N + 1];
+    int [][] columns = new int[N][N + 1];
+    int [][] boxes = new int[N][N + 1];
+
+    char[][] board;
+
+    boolean sudokuSolved = false;
+
+    public boolean couldPlace(int d, int row, int col) {
+        /*
+            Check if one could place a number d in (row, col) cell
+        */
+        int idx = (row / n ) * n + col / n;
+        return rows[row][d] + columns[col][d] + boxes[idx][d] == 0;
+    }
+
+    public void placeNumber(int d, int row, int col) {
+        /*
+        Place a number d in (row, col) cell
+        */
+        int idx = (row / n ) * n + col / n;
+
+        rows[row][d]++;
+        columns[col][d]++;
+        boxes[idx][d]++;
+        board[row][col] = (char)(d + '0');
+    }
+
+    public void removeNumber(int d, int row, int col) {
+        /*
+        Remove a number which didn't lead to a solution
+        */
+        int idx = (row / n ) * n + col / n;
+        rows[row][d]--;
+        columns[col][d]--;
+        boxes[idx][d]--;
+        board[row][col] = '.';
+    }
+
+    public void placeNextNumbers(int row, int col) {
+        /*
+        Call backtrack function in recursion
+        to continue to place numbers
+        till the moment we have a solution
+        */
+        // if we're in the last cell
+        // that means we have the solution
+        if ((col == N - 1) && (row == N - 1)) {
+            sudokuSolved = true;
+        }
+        // if not yet
+        else {
+        // if we're in the end of the row
+            // go to the next row
+            if (col == N - 1) backtrack(row + 1, 0);
+            // go to the next column
+            else backtrack(row, col + 1);
+        }
+    }
+
+    public void backtrack(int row, int col) {
+        /*
+        Backtracking
+        */
+        // if the cell is empty
+        if (board[row][col] == '.') {
+            // iterate over all numbers from 1 to 9
+            for (int d = 1; d < 10; d++) {
+                if (couldPlace(d, row, col)) {
+                    placeNumber(d, row, col);
+                    placeNextNumbers(row, col);
+                    // if sudoku is solved, there is no need to backtrack
+                    // since the single unique solution is promised
+                    if (!sudokuSolved) removeNumber(d, row, col);
+                }
+            }
+        }
+        else placeNextNumbers(row, col);
+    }
+
+    public void solveSudoku(char[][] board) {
+        this.board = board;
+
+        // init rows, columns and boxes
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                char num = board[i][j];
+                if (num != '.') {
+                    int d = Character.getNumericValue(num);
+                    placeNumber(d, i, j);
+                }
+            }
+        }
+        backtrack(0, 0);
+    }
+}
+```
+
+***
+
+# **`Array` [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)**
+
+## `Solve`
+
+```java
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int rowSize = matrix.length;
+        int colSize = matrix[0].length;
+        
+        for(int i = 0 ; i < rowSize ; i++){
+            if(matrix[i][0] <= target && target <= matrix[i][colSize - 1]){
+                for(int j = 0 ; j < colSize ; j++){
+                    if(matrix[i][j] == target) return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+}
+```
+
+## `Binary Search`
+
+```java
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int rowSize = matrix.length;
+        if (rowSize == 0)
+            return false;
+        int colSize = matrix[0].length;
+        
+        int left = 0, right = rowSize * colSize - 1;
+        int pivotIdx, pivotElement;
+        while (left <= right) {
+            pivotIdx = (left + right) / 2;
+            pivotElement = matrix[pivotIdx / colSize][pivotIdx % colSize];
+            if (target == pivotElement)
+                return true;
+            else {
+                if (target < pivotElement)
+                    right = pivotIdx - 1;
+                else
+                    left = pivotIdx + 1;
+            }
+        }
+        return false;
+    }
+}
+```
