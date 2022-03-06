@@ -12,7 +12,11 @@ has_children: true
 {:toc}
 ---
 
-# `2022-04-04`
+# `2022-03-06`
+
+## **[Spring Data JPA - Reference Documentation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#preface)**
+
+# `2022-03-04`
 
 ## **[Spring Docs](https://docs.spring.io/spring-framework/docs)**
 ## **[DB 트랜잭션과 커넥션 이해하기](https://jiwondev.tistory.com/163)**
