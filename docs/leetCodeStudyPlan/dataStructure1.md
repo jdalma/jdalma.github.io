@@ -690,3 +690,62 @@ class Solution {
     }
 }
 ```
+
+***
+
+# **`String` [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)**
+
+## `HashMap`
+
+```java
+class Solution {
+    public int firstUniqChar(String s) {
+        Map<Character , Integer> map = new HashMap<>();
+        
+        for(int i = 0 ; i < s.length() ; i++){
+            char ch = s.charAt(i);
+            map.put(ch , map.getOrDefault(ch , 0) + 1);
+        }
+        
+        for(int i = 0 ; i < s.length() ; i++){
+            char ch = s.charAt(i);
+            if(map.get(ch) == 1) return i;
+        }
+        
+        return -1;
+    }
+}
+```
+
+## `ASCII코드를 이용한 배열 사용`
+
+```java
+class Solution {
+    public int firstUniqChar(String s) {
+        int[] count = new int[26];
+        int n = s.length();
+
+        for (int i = 0; i < n; i++) {            
+            int index = s.charAt(i) - 'a';
+            count[index]++;
+        }
+        
+        for (int i = 0; i < n; i++) {
+            int index = s.charAt(i) - 'a';
+            if (count[index] == 1) {
+                return i;
+            }
+                
+        }
+        return -1;
+    }
+}
+```
+
+***
+
+# **`String` [Ransom Note](https://leetcode.com/problems/ransom-note/)**
+
+```java
+
+```
