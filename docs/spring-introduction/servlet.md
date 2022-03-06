@@ -15,7 +15,7 @@ parent: 스프링 입문
 # **Servlet**
 
 - [Spring MVC 강의](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)를 보다가 서블릿을 확실히 이해하고자 정리한다.
-
+- `Http` 요청과 응답을 개발자가 어떻게 편하게 구현할까가 포인트
 
 ![](../../assets/images/spring-introduction/servlet/process.png)
 
