@@ -16,7 +16,7 @@ parent: 예외 정리
 
 ### `Invalid bound statement (not found): {classPath}.testMapper.selectAll`
 
-- 해당 `Mapper`는 `org.apache.ibatis.binding.MapperProxy@9d77d5`객체가 생성되어 있었지만
+- 해당 `Mapper`는 `org.apache.ibatis.binding.MapperProxy@9d77d5` 주입받았지만
 - `SelectAll`쿼리가 실행이 안됐다.
 
 1. `@Mapper` 확인
@@ -68,7 +68,7 @@ parent: 예외 정리
 	<tx:annotation-driven transaction-manager="txManager"/>
 ```
 
-- `context-maapper.xml`
+- `context-mapper.xml`
 
 ```xml
 	<!-- SqlSession setup for MyBatis Database Layer -->
