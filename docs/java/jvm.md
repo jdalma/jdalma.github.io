@@ -190,9 +190,9 @@ public class App {
 -   JIT 컴파일러를 사용하는 JVM들은 내부적으로 해당 메서드가 얼마나 자주 수행되는지 체크하여 일정 수가 넘을 때에만 실행한다.
 
 ### [Garbage Collector](https://d2.naver.com/helloworld/1329)
-
--   참조되지 않는 객체를 수집하고 제거한다.
--   System.gc()로 호출할 수는 있지만 실행이 보장되지는 않는다.
+- [Java Reference와 GC](https://d2.naver.com/helloworld/329631)
+- 참조되지 않는 객체를 수집하고 제거한다.
+- System.gc()로 호출할 수는 있지만 실행이 보장되지는 않는다.
 
 ### JNI(Java Native Interface)
 
