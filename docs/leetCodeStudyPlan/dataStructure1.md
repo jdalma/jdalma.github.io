@@ -746,6 +746,79 @@ class Solution {
 
 # **`String` [Ransom Note](https://leetcode.com/problems/ransom-note/)**
 
+## `ASCII코드를 이용한 배열 사용`
+
 ```java
+class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+        int[] code = new int[26];
+        for(int i = 0 ; i < magazine.length() ; i++){
+            code[magazine.charAt(i) - 'a']++;
+        }
+        
+        for(int i = 0 ; i < ransomNote.length() ; i++){
+            int count = code[ransomNote.charAt(i) - 'a'];
+            
+            if(count <= 0) return false;
+            code[ransomNote.charAt(i) - 'a']--;
+        }
+        
+        return true;
+    }
+}
+```
+
+***
+
+# **`String` [Valid Anagram](https://leetcode.com/problems/valid-anagram/)**
 
 ```
+어구전철(語句轉綴) 또는 애너그램(anagram)은 단어나 문장을 구성하고 있는 문자의 순서를 바꾸어 다른 단어나 문장을 만드는 놀이이다.
+```
+
+## `Sorting`
+
+```java
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        char[] str1 = s.toCharArray();
+        char[] str2 = t.toCharArray();
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+        return Arrays.equals(str1, str2);
+    }
+}
+```
+
+## `HashMap`
+
+```java
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        Map<Character , Integer> sMap = getCharMap(s);
+        Map<Character , Integer> tMap = getCharMap(t);
+
+        Set<Character> keySet = sMap.keySet().size() < tMap.keySet().size() ? tMap.keySet() : sMap.keySet();
+        for(char ch : keySet){
+            int sCount = sMap.getOrDefault(ch , 0);
+            int tCount = tMap.getOrDefault(ch , 0);
+            if(sCount != tCount) return false;
+        }
+        return true;
+    }
+
+    private Map<Character , Integer> getCharMap(String str){
+        Map<Character, Integer> map = new HashMap<>();
+        char[] charArr = str.toCharArray();
+        for(char ch : charArr) map.put(ch , map.getOrDefault(ch , 0) + 1);
+        return map;
+    }
+}
+```
+
+***
+
+# **`Linked List` [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)**
