@@ -1095,3 +1095,36 @@ public int fibo(int n){
 ***
 
 # **[Kadane’s Algorithm](https://sustainable-dev.tistory.com/23)**
+
+***
+
+# **Floyd's Cycle Finding Algorithm**
+
+- [참고 문제](https://jdalma.github.io/docs/leetCodeStudyPlan/dataStructure1/#linked-list-linked-list-cycle)
+
+![](../../assets/images/algorithmTheory/floyd%60sfindcycle.png)
+
+- `Fast`가 `null`이거나 `Fast.next`가 `null`이면 사이클이 없는 것
+- `Slow`와 `Fast`가 같다면 사이클이 발생한 것이다.
+
+```
+1.
+S - 1
+F - 1
+
+2.
+S - 2
+F - 3
+
+3.
+S - 3
+F - 5
+
+4.
+S - 4
+F - 3
+
+5.
+S - 5
+F - 5
+```
