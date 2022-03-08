@@ -11,19 +11,110 @@ nav_order: 2
 {:toc}
 ---
 
-# **임시**
+# **영속성 컨텍스트**
 
+- **"엔티티를 영구 저장하는 환경"**이라는 뜻
+- `EntityManager`를 통해 **영속성 컨텍스트**에 접근
+- 1차 캐시와 동일성 보장
+  - 같은 트랜잭션 안에서는 같은 엔티티를 반환
+  - DB Isolation Level이 Read Commit 이어도 애플리케이션에서 Repeatable Read 보장
+- 트랜잭션을 지원하는 쓰기 지연 (transactional write-behind)
+  - 트랜잭션을 커밋할 때 까지 INSERT SQL을 모은다
+    - JDBC BATCH SQL 기능을 사용해서 한번에 SQL 전송
+  - UPDATE , DELETE로 인한 ROW 락 시간 최소화
+    - 트랜잭션 커밋 시 UPDATE , DELETE SQL 실행하고 , 바로 커밋
+- 변경 감지(`Dirty Checking`)
+- 지연 로딩(`Lazy Loading`)
+
+# **`EntityManagerFactory`**
+
+![](../../assets/images/jpa/Persistence-context/entityManagerFactory.png)
 
 ***
 
-# 📌 **준영속 엔티티**
+# **Entity Life Cycle**
 
--   **영속성 컨텍스트**가 더는 관리하지 않는 엔티티를 말한다.
-    - 임의로 만들어낸 엔티티도 기존 식별자를 가지고 있으면 준영속 엔티티로 볼 수 있다.
+## **비영속 `new` / `transient`**
+- **영속성 컨텍스트와 전혀 관계가 없는 새로운 상태**
 
-## **준영속 엔티티를 수정하는 2가지 방법**
+```java
+    Member member = new Member();
+    member.setId("1");
+    member.setName("멤버1");
+```
 
-### 변경 감지 기능
+
+## **영속 `managed`**
+- 영속성 컨텍스트에게 **관리되는 상태**
+
+```java
+    // <비영속>
+    Member member = new Member();
+    member.setId(3L);
+    member.setName("이 멤버는 영속상태");
+    // </비영속>
+
+    // <영속>
+    entityManager.persist(member);
+    // </영속>
+
+    transaction.commit();
+```
+
+- 영속 시킨 후에 `Member`객체의 필드를 변경해도 적용된다.
+- **하지만 아래의 두 경우는 쿼리가 날라가지 않는다.**
+
+```java
+    // 1. 영속 된 후 키 값을 바꾼다면?
+    Member member = new Member();
+    member.setId(5L);
+
+    entityManager.persist(member);
+
+    member.setId(6L);
+    member.setName("영속 된 후 키 값을 바꾼다면?");
+
+    transaction.commit();
+
+    // 2. 영속 되기전에 키값을 넣지 않는다면?
+    Member member = new Member();
+
+    entityManager.persist(member);
+
+    member.setId(6L);
+    member.setName("영속 되기전에 키값을 넣지 않는다면?");
+
+    transaction.commit();
+```
+
+## 📌 **준영속 `detached`**
+
+- 영속성 컨텍스트에 저장되었다가 **분리**된 상태
+  - ✋ **임의로 만들어낸 엔티티도 기존 식별자를 가지고 있으면 준영속 엔티티로 볼 수 있다.**
+
+```java
+    // <비영속>
+    Member member = new Member();
+    member.setId(4L);
+    member.setName("이 멤버는 영속상태 1");
+    // </비영속>
+
+    // <영속>
+    entityManager.persist(member);
+    // </영속>
+
+    // <비영속>
+    entityManager.detach(member);
+    // 쿼리가 날라가지 않는다.
+    // </비영속>
+
+    transaction.commit();
+```
+
+### **준영속 엔티티를 수정하는 2가지 방법**
+
+- **변경 감지 기능**
+
 ```java
     @Transactional
     // bookParam은 준영속 상태의 엔티티이다.
@@ -40,7 +131,7 @@ nav_order: 2
 -   트랜잭션 안에서 엔티티를 다시 조회 , 변경할 값을 선택 ➜ 트랜잭션 커밋 시점에 변경 감지(`Dirty Checking`)
 -   이 동작에서 데이터베이스 UPDATE SQL 실행
 
-### 병합 (merge) 사용
+- **병합 (`merge`) 사용**
 
 ```java
     @Transactional
@@ -50,11 +141,12 @@ nav_order: 2
         Item mergeItem = em.merge(itemParam);
     }
 ```
--   **병합은 준영속 상태의 엔티티를 영속 상태로 변경할 때 사용하는 기능이다**
+- 📌 **병합은 준영속 상태의 엔티티를 영속 상태로 변경할 때 사용하는 기능이다**
 
 ![](../../assets/images/jpa/Persistence-context/1.png)
 
-### 병합 (merge) 동작 방식
+- 병합 (merge) 동작 방식
+
 1.  `merge()`를 실행 
 2.  파라미터로 넘어온 준영속 엔티티의 식별자 값으로 1차 캐시에서 엔티티를 조회
 3.  만약 1차 캐시에 엔티티가 없으면 데이터베이스에서 엔티티 조회 후 1차 캐시에 저장
@@ -136,3 +228,7 @@ public class ItemRepository {
 -   컨트롤러에서 어설프게 엔티티를 생성하지 말자
 -   트랜잭션이 있는 서비스 계층에서 식별자(id)와 변경할 데이터를 명확하게 전달하자
 -   트랜잭션이 있는 서비스 계층에서 영속 상태의 엔티티를 조회 하고 , 엔티티의 데이터를 직접 변경하자.(원하는 필드만)
+
+***
+
+## **삭제 `removed`**
