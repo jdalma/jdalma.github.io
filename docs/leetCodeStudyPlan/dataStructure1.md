@@ -822,3 +822,254 @@ class Solution {
 ***
 
 # **`Linked List` [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)**
+
+## **<span class="text-red-300">Wrong Answer</span>**
+
+- 해당 `value`를 `Set`에 넣고 값이 중복되면 `true`를 리턴했지만
+- `[-21,10,17,8,4,26,5,35,33,-7,-16,27,-12,6,29,-12,5,9,20,14,14,2,13,-24,21,23,-21,5]` 해당 테케 실패
+- `value`가 중복되면 `cycle`이 있는게 아닌지..?
+
+```java
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        Set<Integer> set = new HashSet();
+        while(head != null){
+            if(!set.add(head.val)) return true;
+            head = head.next;
+        }
+        return false;
+    }
+}
+```
+
+## `Solve`
+
+- `value` 기준이 아니라 **객체의 주소 기준**이였다.
+- `hashCode`를 `Set`에 넣어 중복 확인 하였다.
+
+```java
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        Set<Integer> set = new HashSet();
+        while(head != null){
+            if(!set.add(head.hashCode())) return true;
+            head = head.next;
+        }
+        return false;
+    }
+}
+```
+
+## `Floyd's Cycle Finding Algorithm` 👍
+
+```java
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if (head == null) {
+            return false;
+        }
+
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
+}
+```
+
+***
+
+# **`Linked List` [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)** 📝
+
+## `Recursion`
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if(list1 == null)
+            return list2;
+        if(list2 == null)
+            return list1;
+        else if(list1.val < list2.val){
+            list1.next = mergeTwoLists(list1.next , list2);
+            return list1;
+        }
+        else{
+            list2.next = mergeTwoLists(list1 , list2.next);
+            return list2;
+        }
+    }
+}
+```
+
+## `Iteration` ✨✨
+
+```java
+class Solution {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode prehead = new ListNode(-1);
+
+        ListNode prev = prehead;
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                prev.next = l1;
+                l1 = l1.next;
+            } else {
+                prev.next = l2;
+                l2 = l2.next;
+            }
+            prev = prev.next;
+        }
+        prev.next = l1 == null ? l2 : l1;
+
+        return prehead.next;
+    }
+}
+```
+
+***
+
+# **`Linked List` [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)**
+
+## **Step 1. `Brute Force`**
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        if (head == null) return null;
+        
+        List<ListNode> storage = new ArrayList<>();
+        ListNode curr = head;
+        
+        while (curr != null) {
+            if (curr.val != val) storage.add(curr);
+            curr = curr.next;
+        }
+        
+        if (storage.size() == 0) return null;
+        
+        // result = root
+        ListNode result = storage.get(0);
+        result.next = null;
+        // curr은 계속 타고 들어가는 포인터 역할
+        curr = result;
+        for (int i = 1; i < storage.size(); i++) {
+            // storage에 들어있는 ListNode를 꺼내고 next를 null로 변경
+            ListNode temp = storage.get(i);
+            temp.next = null;
+            curr.next = temp;
+            curr = curr.next;
+        }
+        
+        return result;
+    }
+}
+```
+
+## **Step 2. `Optimal`** ❓❓❓
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        if (head == null) return null;
+        
+        ListNode result = new ListNode(-1);
+        
+        // prev가 tmp 역할
+        ListNode prev = result;
+        prev.next = head;
+        
+        while (head != null) {
+            if (head.val == val) {
+                prev.next = head.next;
+            }
+            else {
+                prev = head;
+            }
+            head = head.next;
+        }
+        
+        return result.next;
+    }
+}
+```
+
+## **Step 3. `Best Recursion`** 👍
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        if (head == null) return null;
+        head.next = removeElements(head.next, val);
+        return (head.val == val) ? head.next : head;
+    }
+}
+```
