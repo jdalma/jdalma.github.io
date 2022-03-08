@@ -51,8 +51,8 @@ parent: 👨‍🔬 Lab
         return map.put(e, PRESENT)==null;
     }
 ```
-- 주석 내용을 보면 `if this set did not already contain the specified`
-  - `HashSet`에 추가하려는 값이 존재한다면 `true` , 아니면 `false`이다.
+- 주석 내용을 보면 `if this set did not already contain the specified element`
+  - 이 세트에 지정된 요소가 아직 포함되어 있지 않은 경우 `true` , 아니면 `false`이다.
   - `HashMap`의 `put(K key, V value)`메서드를 살펴보자
 
 ### `HashMap`의 `put(K key, V value)`
