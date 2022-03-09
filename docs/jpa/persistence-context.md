@@ -434,7 +434,7 @@ public class ItemRepository {
 
 - `EntityKey`
 
-![](../../assets/images/jpa/persistence-context/entityManager_entityKey.png)
+![](../../assets/images/jpa/persistence-context/entityManager_EntityKey.png)
 
 - `StatefulPersistenceContext implements PersistenceContext`
 
