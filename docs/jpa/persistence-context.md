@@ -18,7 +18,7 @@ nav_order: 2
   - 따라서 , **영속 상태는 식별자 값이 반드시 있어야 한다.**
   - 식별자 값이 없으면 예외 발생
 
-![](../../assets/images/jpa/Persistence-context/entityManagerFactory.png)
+![](../../assets/images/jpa/persistence-context/entityManagerFactory.png)
 
 - 데이터베이스를 하나만 사용하는 애플리케이션은 일반적으로 `EntityManagerFactory`를 하나만 생성한다.
 - `EntityManagerFactory`는 여러 스레드가 동시에 접근해도 안전하므로 서로 다른 스레드간에 공유해도 되지만 ,
@@ -102,7 +102,7 @@ nav_order: 2
 // false
 ```
 
-![](../../assets/images/jpa/Persistence-context/cache1.png)
+![](../../assets/images/jpa/persistence-context/cache1.png)
 
 - `1차 캐시`에 없는 `row`를 찾는다면 , **DB에서 조회 후 `1차 캐시`에 저장하고 해당 `row`를 반환한다.**
     - 앞에서 말했듯이 `entityManager`는 하나의 쓰레드의 트랜잭션에 속해있다.
@@ -184,7 +184,7 @@ transaction.commit();
 //            where id=?
 ```
 
-![](../../assets/images/jpa/Persistence-context/dirtyChecking.png)
+![](../../assets/images/jpa/persistence-context/dirtyChecking.png)
 
 - `Snap Shot` 과 `Entity`를 비교하여 변경된 부분을 자동 **UPDATE**
   - `EntityManager.persist()`를 호출하면 안된다
@@ -201,7 +201,7 @@ transaction.commit();
 
 # **Entity Life Cycle**
 
-![](../../assets/images/jpa/Persistence-context/entityLifeCycle.png)
+![](../../assets/images/jpa/persistence-context/entityLifeCycle.png)
 
 ## **비영속 `new` / `transient`**
 - **영속성 컨텍스트와 전혀 관계가 없는 새로운 상태**
@@ -321,7 +321,7 @@ transaction.commit();
 ```
 - 📌 **병합은 준영속 상태의 엔티티를 영속 상태로 변경할 때 사용하는 기능이다**
 
-![](../../assets/images/jpa/Persistence-context/1.png)
+![](../../assets/images/jpa/persistence-context/1.png)
 
 - 병합 (merge) 동작 방식
 
@@ -379,7 +379,7 @@ public class ItemRepository {
 -   여기서 사용하는 수정(병합)은 준영속 상태의 엔티티를 수정할 때 사용한다.
 
 ### 📌 핵심
-![](../../assets/images/jpa/Persistence-context/2.png)
+![](../../assets/images/jpa/persistence-context/2.png)
 
 > **Q.**  여기서의 **`new Book()`으로 생성된 `book` 객체는 준영속 엔티티**이다.
 >
@@ -426,16 +426,16 @@ public class ItemRepository {
 
 - `insert`
 
-![](../../assets/images/jpa/Persistence-context/entityManager_actionQueue.png)
+![](../../assets/images/jpa/persistence-context/entityManager_actionQueue.png)
 
 - `PersistenceContext`
 
-![](../../assets/images/jpa/Persistence-context/entityManager_persistenceContext.png)
+![](../../assets/images/jpa/persistence-context/entityManager_persistenceContext.png)
 
 - `EntityKey`
 
-![](../../assets/images/jpa/Persistence-context/entityManager_entityKey.png)
+![](../../assets/images/jpa/persistence-context/entityManager_entityKey.png)
 
 - `StatefulPersistenceContext implements PersistenceContext`
 
-![](../../assets/images/jpa/Persistence-context/persistenceContext.png)
+![](../../assets/images/jpa/persistence-context/persistenceContext.png)
