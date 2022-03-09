@@ -13,26 +13,195 @@ nav_order: 2
 
 # **영속성 컨텍스트**
 
-- **"엔티티를 영구 저장하는 환경"**이라는 뜻
-- `EntityManager`를 통해 **영속성 컨텍스트**에 접근
-- 1차 캐시와 동일성 보장
-  - 같은 트랜잭션 안에서는 같은 엔티티를 반환
-  - DB Isolation Level이 Read Commit 이어도 애플리케이션에서 Repeatable Read 보장
-- 트랜잭션을 지원하는 쓰기 지연 (transactional write-behind)
-  - 트랜잭션을 커밋할 때 까지 INSERT SQL을 모은다
-    - JDBC BATCH SQL 기능을 사용해서 한번에 SQL 전송
-  - UPDATE , DELETE로 인한 ROW 락 시간 최소화
-    - 트랜잭션 커밋 시 UPDATE , DELETE SQL 실행하고 , 바로 커밋
-- 변경 감지(`Dirty Checking`)
-- 지연 로딩(`Lazy Loading`)
-
-# **`EntityManagerFactory`**
+- **"엔티티를 영구 저장하는 환경"** 이라는 뜻
+- **엔티티**를 식별자 값(`@Id`로 테이블의 기본 키와 매핑한 값)으로 구분한다.
+  - 따라서 , **영속 상태는 식별자 값이 반드시 있어야 한다.**
+  - 식별자 값이 없으면 예외 발생
 
 ![](../../assets/images/jpa/Persistence-context/entityManagerFactory.png)
+
+- 데이터베이스를 하나만 사용하는 애플리케이션은 일반적으로 `EntityManagerFactory`를 하나만 생성한다.
+- `EntityManagerFactory`는 여러 스레드가 동시에 접근해도 안전하므로 서로 다른 스레드간에 공유해도 되지만 ,
+- `EntityManager`는 **스레드간에 절대 공유하면 안된다.**
+
+## 1차 캐시와 동일성 보장
+- **같은 트랜잭션 안에서는 같은 엔티티를 반환**
+- 애플리케이션에서 반복 가능한 읽기 `Repeatable Read` 보장
+  - 트랜잭션 격리 수준을 `DB`가 아닌 애플리케이션 차원에서 제공
+- `DB Isolation Level` ❓ 이 `Read Commit`❓
+
+```java
+    Member member = new Member();
+    member.setId(10L);
+    member.setName("1차 캐시에 넣기");
+
+    entityManager.persist(member);
+
+    Member cacheMember = entityManager.find(Member.class , 10L);
+
+    System.out.println(member);
+    System.out.println(cacheMember);
+    System.out.println(member == cacheMember);
+
+// Member{id=10, name='1차 캐시에 넣기'}
+// Member{id=10, name='1차 캐시에 넣기'}
+// true
+```
+
+```java
+    Member member = new Member();
+    member.setId(10L);
+    member.setName("1차 캐시에 넣기");
+
+    entityManager.persist(member);
+
+    // 영속성 컨텍스트에도 없고 DB에도 없는 Member를 조회한다면 ?
+    Member cacheMember = entityManager.find(Member.class , 11L);
+
+    System.out.println(member);
+    System.out.println(cacheMember);
+    System.out.println(member == cacheMember);
+
+// Hibernate: 
+//     select
+//         member0_.id as id1_0_0_,
+//         member0_.name as name2_0_0_ 
+//     from
+//         Member member0_ 
+//     where
+//         member0_.id=?
+// Member{id=10, name='1차 캐시에 넣기'}
+// null
+// false    
+```
+
+```java
+    Member member = new Member();
+    member.setId(10L);
+    member.setName("1차 캐시에 넣기");
+
+    entityManager.persist(member);
+
+    // 영속성 컨텍스트에도 없고 DB에도 없는 Member를 조회한다면 ?
+    Member cacheMember = entityManager.find(Member.class , 1L);
+
+    System.out.println(member);
+    System.out.println(cacheMember);
+    System.out.println(member == cacheMember);
+
+// Hibernate: 
+//     select
+//         member0_.id as id1_0_0_,
+//         member0_.name as name2_0_0_ 
+//     from
+//         Member member0_ 
+//     where
+//         member0_.id=?
+// Member{id=10, name='1차 캐시에 넣기'}
+// Member{id=1, name='update name'}
+// false
+```
+
+![](../../assets/images/jpa/Persistence-context/cache1.png)
+
+- `1차 캐시`에 없는 `row`를 찾는다면 , **DB에서 조회 후 `1차 캐시`에 저장하고 해당 `row`를 반환한다.**
+    - 앞에서 말했듯이 `entityManager`는 하나의 쓰레드의 트랜잭션에 속해있다.
+
+> - ✋ 객체의 `@Id`컬럼이 `@GeneratedValue`라면?
+>   - 영속성 컨텍스트에 저장되려면 객체의 `Id`필드 값은 필수이며 , 
+>   - `persist()`시점에 DB에서 `Id`필드 값을 조회하여 채워주게 된다.
+
+## 트랜잭션을 지원하는 쓰기 지연 (`transactional write-behind`)
+- 영속성 컨텍스트에 변경이 발생했을 때, 바로 데이터베이스로 쿼리를 보내지 않고 **SQL 쿼리를 쓰기 지연 SQL저장소에 모아뒀다가,** 
+- **영속성 컨텍스트가 `flush` 하는 시점에 모아둔 SQL 쿼리를 데이터베이스로 보내는 기능**
+  - ex) **XML설정** - `<property name="hibernate.jdbc.batch_size" value="10"/>`
+  - JDBC BATCH SQL 기능을 사용해서 한번에 SQL 전송
+  - UPDATE , DELETE로 인한 ROW 락 시간 최소화
+    - 트랜잭션 커밋 시 UPDATE , DELETE SQL 실행하고 , 바로 커밋
+- `쓰기 지연 SQL 저장소`는 어떤 구조로 생겼을까 ❓
+- `JDBC BATCH SQL 기능`은 무엇일까 ❓
+
+```java
+updateItem(item1);
+deleteItem(item2);
+
+    // 비지니스 로직 수행 - 위에서 수정한 로우는 락이 걸리지 않는다.
+
+// 커밋하는 순간 데이터베이스에 UPDATE , DELETE SQL을 보낸다
+transaction.commit();
+```
+
+### `flush`가 발생하는 경우
+
+> - ✋ `flush`모드 옵션
+> - `entityManager.setFlushMode({mode})`
+>   - `FlushModeType.AUTO` : 커밋이나 쿼리를 실행할 때 플러시 **(default)**
+>   - `FlushModeType.COMMIT` : 커밋할 때만 플러시
+
+
+- **직접 `flush()` 호출**
+    - `flush()`를 호출하여도 `1차 캐시`는 계속 유지된다.
+    - `쓰기 지연 SQL 저장소`에 있는 SQL만 전송한다.
+- **`JPQL` 쿼리 실행시**
+    - `persist`메서드에서 쿼리를 실행하는 것이 아니기 때문에 `member` , `member1` , `member2`가 없는 상태에서 `SELECT` 쿼리를 날릴 때 문제가 발생할 수 있다.
+    - 이와 같은 이유로 `JPQL`실행 시 `flush`가 호출된다.
+
+```java
+    entityManager.persist(member);
+    entityManager.persist(member1);
+    entityManager.persist(member2);
+    // persist한 객체의 순서는 보장된다.    
+    // JPQL 실행
+    TypedQuery<Member> query = 
+                entityManager.createQuery("select m from Member m", Member.class);
+    List<Member> members = query.getResultList();
+```
+
+- **트랜잭션 `commit()` 시**
+
+
+## 변경 감지(`Dirty Checking`)
+
+```java
+        transaction.begin();
+
+        Member member1 = entityManager.find(Member.class , 30L);
+        member1.setName("first name 2");
+
+        transaction.commit();
+//            Hibernate:
+//            select
+//            member0_.id as id1_0_0_,
+//                    member0_.name as name2_0_0_
+//            from
+//            Member member0_
+//            where
+//            member0_.id=?
+//            Hibernate: 
+//          /* update hellojpa.Member */ 
+//            update Member
+//            set name=?
+//            where id=?
+```
+
+![](../../assets/images/jpa/Persistence-context/dirtyChecking.png)
+
+- `Snap Shot` 과 `Entity`를 비교하여 변경된 부분을 자동 **UPDATE**
+  - `EntityManager.persist()`를 호출하면 안된다
+  - 값을 바꾸게 되면 자동으로 쿼리가 생성된다.
+- `SnapShot`
+  - 영속성 컨텍스트 (1차 캐시)에 최초 읽어온 시점
+  - `Snap Shot` 과 `Entity`를 어떻게 비교할까 ❓
+
+
+## 지연 로딩(`Lazy Loading`)
+
 
 ***
 
 # **Entity Life Cycle**
+
+![](../../assets/images/jpa/Persistence-context/entityLifeCycle.png)
 
 ## **비영속 `new` / `transient`**
 - **영속성 컨텍스트와 전혀 관계가 없는 새로운 상태**
@@ -89,8 +258,17 @@ nav_order: 2
 
 ## 📌 **준영속 `detached`**
 
-- 영속성 컨텍스트에 저장되었다가 **분리**된 상태
+- 영속 상태의 엔티티가 영속성 컨텍스트에서 **분리**된 상태
+  -`영속성 컨텍스트의 관리를 받지 않는다.`
   - ✋ **임의로 만들어낸 엔티티도 기존 식별자를 가지고 있으면 준영속 엔티티로 볼 수 있다.**
+
+1. `entityManager.detach({Object});`
+   - 특정 엔티티만 준영속 상태로 전환 
+2. `entityManager.clear()`
+   - 영속성 컨텍스트를 완전히 초기화
+3. `entityManager.close()`
+   - 영속성 컨텍스트를 종료
+
 
 ```java
     // <비영속>
@@ -103,10 +281,10 @@ nav_order: 2
     entityManager.persist(member);
     // </영속>
 
-    // <비영속>
+    // <준영속>
     entityManager.detach(member);
     // 쿼리가 날라가지 않는다.
-    // </비영속>
+    // </준영속>
 
     transaction.commit();
 ```
@@ -169,6 +347,7 @@ nav_order: 2
 ***
 
 ### 예제
+
 ```java
 package jpabook.jpashop.repository;
 @Repository
@@ -232,3 +411,31 @@ public class ItemRepository {
 ***
 
 ## **삭제 `removed`**
+
+
+
+***
+
+## `EntityManager` , `PersistenceContext` ??
+
+```java
+    Member member1 = new Member(500L , "debug Mode");
+    entityManager.persist(member1);
+    Member member2 = entityManager.find(Member.class , 10L);
+```
+
+- `insert`
+
+![](../../assets/images/jpa/Persistence-context/entityManager_actionQueue.png)
+
+- `PersistenceContext`
+
+![](../../assets/images/jpa/Persistence-context/entityManager_persistenceContext.png)
+
+- `EntityKey`
+
+![](../../assets/images/jpa/Persistence-context/entityManager_entityKey.png)
+
+- `StatefulPersistenceContext implements PersistenceContext`
+
+![](../../assets/images/jpa/Persistence-context/persistenceContext.png)
