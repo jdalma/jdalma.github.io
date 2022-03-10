@@ -1014,7 +1014,7 @@ class Solution {
 }
 ```
 
-## **Step 2. `Optimal`** ❓❓❓
+## **Step 2. `Optimal`** 📝
 
 ```java
 /**
@@ -1073,3 +1073,187 @@ class Solution {
     }
 }
 ```
+
+***
+
+# **`Linked List - Swap` [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)**
+
+```
+    
+    1 ➔ 2 ➔ 3 ➔ 4
+
+---------------------
+
+[first]
+
+- curr = 1 ➔ 2 ➔ 3 ➔ 4
+- curr.next = 2 ➔ 3 ➔ 4
+- prev = null
+
+1. temp = curr.next (2 ➔ 3 ➔ 4)
+2. curr.next = prev (null)
+3. prev = curr (1 ➔ null)
+4. curr = temp (2 ➔ 3 ➔ 4)
+
+---------------------
+
+[second]
+
+- curr = 2 ➔ 3 ➔ 4
+- curr.next = 3 ➔ 4
+- prev = 1 ➔ null 
+
+1. temp = curr.next (3 ➔ 4)
+2. curr.next = prev (1 ➔ null)
+3. prev = curr(2 ➔ 1 ➔ null)
+4. curr = temp (3 ➔ 4)
+
+...
+
+```
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        
+        while(curr != null){
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+        
+        return prev;
+    }
+}
+```
+
+***
+
+# **`Linked List` [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)**
+
+## `Solve`
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if(head == null || head.next == null) return head;
+        
+        ListNode curr = head;
+        ListNode next = head.next;
+        
+        while(curr != null && next != null){
+            if(curr.val == next.val){
+                curr.next = next.next;
+                next = next.next;
+            }
+            else{
+                curr = curr.next;   
+            }
+        }
+        return head;
+    }
+}
+```
+
+***
+
+# **`Stack` [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)**
+
+## `Solve`
+
+```java
+class Solution {
+    
+    Deque<Character> stack = new ArrayDeque<>();
+    public boolean isValid(String s) {
+        if(s.length() <= 1) return false;
+        
+        for(int i = 0 ; i < s.length() ; i++){
+            char ch = s.charAt(i);
+            if(isCloseBracket(ch)){
+                if(!isSameBracket(ch)){
+                    return false;
+                }
+            }
+            else stack.push(ch);
+        }
+        
+        return stack.isEmpty();
+    }
+    
+    public boolean isCloseBracket(char ch){
+        if(ch == ')' || ch == ']' || ch == '}') return true;
+        return false;
+    }
+    
+    public boolean isSameBracket(char closeBracket){
+        if(stack.peek() == null) return false;
+        
+        char openBracket = stack.pop();
+        if(closeBracket == ')' && openBracket != '(') return false;
+        else if(closeBracket == ']' && openBracket != '[') return false;
+        else if(closeBracket == '}' && openBracket != '{') return false;
+        
+        return true;
+    }
+}
+```
+
+## `Solution - Bracket Mapping`
+
+```java
+class Solution {
+
+    private HashMap<Character, Character> mappings;
+
+    public Solution() {
+        this.mappings = new HashMap<Character, Character>();
+        this.mappings.put(')', '(');
+        this.mappings.put('}', '{');
+        this.mappings.put(']', '[');
+    }
+
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<Character>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            if (this.mappings.containsKey(c)) {
+                char topElement = stack.empty() ? '#' : stack.pop();
+                if (topElement != this.mappings.get(c)) {
+                    return false;
+                }
+            } 
+            else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
+    }
+}
+```
+
