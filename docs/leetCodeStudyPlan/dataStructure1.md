@@ -12,9 +12,11 @@ parent: 🔥 LeetCode Study Plan
 
 ---
 
-# **`Array` [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)**
+# `Array`
 
-## `Sort`
+## **[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)**
+
+### `Sort`
 
 ```java
 class Solution {
@@ -30,9 +32,9 @@ class Solution {
 
 ***
 
-# **`Array` [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)** 🔥
+## **[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)** 🔥
 
-## `Solve`
+### `Solve`
 
 ```java
 class Solution {
@@ -49,7 +51,7 @@ class Solution {
 }
 ```
 
-## `DP - Kadane's Algorithm` 👍
+### `DP - Kadane's Algorithm` 👍
 
 
 ![](../../assets/images/algorithm/kadane.png)
@@ -76,7 +78,7 @@ class Solution {
 }
 ```
 
-## `Divide and Conquer (Advanced)`
+### `Divide and Conquer (Advanced)`
 
 ```java
 class Solution {
@@ -130,9 +132,9 @@ class Solution {
 
 ***
 
-# **`Array` [Two Sum](https://leetcode.com/problems/two-sum/)**
+## **[Two Sum](https://leetcode.com/problems/two-sum/)**
 
-## `Solve`
+### `Solve`
 
 ```java
 class Solution {
@@ -158,7 +160,7 @@ class Solution {
 }
 ```
 
-## `One Pass`
+### `One Pass`
 
 ```java
 class Solution {
@@ -179,9 +181,9 @@ class Solution {
 
 ***
 
-# **`Array` [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)**
+## **[Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)**
 
-## `Three Pointers`  ✨
+### `Three Pointers`  ✨
 
 ```java
 class Solution {
@@ -206,11 +208,11 @@ class Solution {
 
 ***
 
-# **`Array` [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/)**
+## **[Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/)**
 
 - 중첩 원소를 반환
 
-## `Two Pointers`
+### `Two Pointers`
 
 ```java
 import java.util.ArrayList;
@@ -249,7 +251,7 @@ class Solution {
 }
 ```
 
-## `Two Pointers`
+### `Two Pointers`
 
 ```java
     public int[] intersect(int[] nums1, int[] nums2) {
@@ -272,9 +274,9 @@ class Solution {
 
 ***
 
-# **`Array` [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)**
+## **[Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)**
 
-## `Brute Force` ➜ <span class="text-red-300">Time Limit Exceeded</span>
+### `Brute Force` ➜ <span class="text-red-300">Time Limit Exceeded</span>
 
 ```java
 class Solution {
@@ -290,7 +292,7 @@ class Solution {
 }
 ```
 
-## `One Pass`
+### `One Pass`
 
 ```java
 class Solution {
@@ -312,9 +314,9 @@ class Solution {
 
 ***
 
-# **`Array` [Reshape The Matrix](https://leetcode.com/problems/reshape-the-matrix/)**
+## **[Reshape The Matrix](https://leetcode.com/problems/reshape-the-matrix/)**
 
-## `Queue 사용`
+### `Queue 사용`
 
 ```java
 class Solution {
@@ -342,7 +344,7 @@ class Solution {
 }
 ```
 
-## `Queue 없이 One Pass`
+### `Queue 없이 One Pass`
 
 ```java
 class Solution {
@@ -369,7 +371,7 @@ class Solution {
 }
 ```
 
-## `인덱스 계산` 👍
+### `인덱스 계산` 👍
 
 ```
 nums = [[1,2],[3,4]], r = 1, c = 4
@@ -406,9 +408,9 @@ class Solution {
 
 ***
 
-# **`Array` [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)**
+## **[Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)**
 
-## `DP`
+### `DP`
 
 - 0번 인덱스의 1을 재사용하기 때문에 `DP`
 
@@ -438,11 +440,11 @@ class Solution {
 
 ***
 
-# **`Array` [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)** 📝
+## **[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)** 📝
 
 ![](../../assets/images/leetcodeStudyPlan/sudoku.png)
 
-## `HashSet`
+### `HashSet`
 
 ```java
 class Solution {
@@ -488,7 +490,7 @@ class Solution {
 }
 ```
 
-## `Extra Array`
+### `Extra Array`
 
 ```java
 class Solution {
@@ -530,7 +532,7 @@ class Solution {
 
 ***
 
-# **`Array` [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)** 📝
+## **[Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)** 📝
 
 ```java
 class Solution {
@@ -639,9 +641,9 @@ class Solution {
 
 ***
 
-# **`Array` [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)**
+## **[Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)**
 
-## `Solve`
+### `Solve`
 
 ```java
 class Solution {
@@ -662,7 +664,7 @@ class Solution {
 }
 ```
 
-## `Binary Search`
+### `Binary Search`
 
 ```java
 class Solution {
@@ -693,9 +695,11 @@ class Solution {
 
 ***
 
-# **`String` [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)**
+# `String`
 
-## `HashMap`
+## **[First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)**
+
+### `HashMap`
 
 ```java
 class Solution {
@@ -717,7 +721,7 @@ class Solution {
 }
 ```
 
-## `ASCII코드를 이용한 배열 사용`
+### `ASCII코드를 이용한 배열 사용`
 
 ```java
 class Solution {
@@ -744,9 +748,9 @@ class Solution {
 
 ***
 
-# **`String` [Ransom Note](https://leetcode.com/problems/ransom-note/)**
+## **[Ransom Note](https://leetcode.com/problems/ransom-note/)**
 
-## `ASCII코드를 이용한 배열 사용`
+### `ASCII코드를 이용한 배열 사용`
 
 ```java
 class Solution {
@@ -770,13 +774,13 @@ class Solution {
 
 ***
 
-# **`String` [Valid Anagram](https://leetcode.com/problems/valid-anagram/)**
+## **[Valid Anagram](https://leetcode.com/problems/valid-anagram/)**
 
 ```
 어구전철(語句轉綴) 또는 애너그램(anagram)은 단어나 문장을 구성하고 있는 문자의 순서를 바꾸어 다른 단어나 문장을 만드는 놀이이다.
 ```
 
-## `Sorting`
+### `Sorting`
 
 ```java
 class Solution {
@@ -793,7 +797,7 @@ class Solution {
 }
 ```
 
-## `HashMap`
+### `HashMap`
 
 ```java
 class Solution {
@@ -821,9 +825,11 @@ class Solution {
 
 ***
 
-# **`Linked List` [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)**
+# `Linked List`
 
-## **<span class="text-red-300">Wrong Answer</span>**
+## **[Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)**
+
+### **<span class="text-red-300">Wrong Answer</span>**
 
 - 해당 `value`를 `Set`에 넣고 값이 중복되면 `true`를 리턴했지만
 - `[-21,10,17,8,4,26,5,35,33,-7,-16,27,-12,6,29,-12,5,9,20,14,14,2,13,-24,21,23,-21,5]` 해당 테케 실패
@@ -853,7 +859,7 @@ public class Solution {
 }
 ```
 
-## `Solve`
+### `Solve`
 
 - `value` 기준이 아니라 **객체의 주소 기준**이였다.
 - `hashCode`를 `Set`에 넣어 중복 확인 하였다.
@@ -882,7 +888,7 @@ public class Solution {
 }
 ```
 
-## `Floyd's Cycle Finding Algorithm` 👍
+### `Floyd's Cycle Finding Algorithm` 👍
 
 ```java
 public class Solution {
@@ -907,9 +913,9 @@ public class Solution {
 
 ***
 
-# **`Linked List` [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)** 📝
+## **[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)** 📝
 
-## `Recursion`
+### `Recursion`
 
 ```java
 /**
@@ -940,7 +946,7 @@ class Solution {
 }
 ```
 
-## `Iteration` ✨✨
+### `Iteration` ✨✨
 
 ```java
 class Solution {
@@ -967,9 +973,9 @@ class Solution {
 
 ***
 
-# **`Linked List` [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)**
+## **[Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)**
 
-## **Step 1. `Brute Force`**
+### **Step 1. `Brute Force`**
 
 ```java
 /**
@@ -1014,7 +1020,7 @@ class Solution {
 }
 ```
 
-## **Step 2. `Optimal`** 📝
+### **Step 2. `Optimal`** 📝
 
 ```java
 /**
@@ -1052,7 +1058,7 @@ class Solution {
 }
 ```
 
-## **Step 3. `Best Recursion`** 👍
+### **Step 3. `Best Recursion`** 👍
 
 ```java
 /**
@@ -1076,7 +1082,7 @@ class Solution {
 
 ***
 
-# **`Linked List - Swap` [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)**
+## **[Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)**
 
 ```
     
@@ -1112,6 +1118,8 @@ class Solution {
 
 ```
 
+### `Swap` 
+
 ```java
 /**
  * Definition for singly-linked list.
@@ -1142,9 +1150,9 @@ class Solution {
 
 ***
 
-# **`Linked List` [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)**
+## **[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)**
 
-## `Solve`
+### `Solve`
 
 ```java
 /**
@@ -1180,9 +1188,11 @@ class Solution {
 
 ***
 
-# **`Stack` [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)**
+# `Stack`
 
-## `Solve`
+## **[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)**
+
+### `Solve`
 
 ```java
 class Solution {
@@ -1257,3 +1267,420 @@ class Solution {
 }
 ```
 
+***
+
+# `Queue` 
+
+## **[Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)**
+
+
+### `Solve 1`
+
+```java
+class MyQueue {
+
+    public MyQueue() {
+        
+    }
+    
+    private Stack<Integer> s1 = new Stack<>();
+    private Stack<Integer> s2 = new Stack<>();    
+    private int front;
+
+    public void push(int x) {
+        if (s1.empty())
+            front = x;
+        while (!s1.isEmpty())
+            s2.push(s1.pop());
+        s2.push(x);
+        while (!s2.isEmpty())
+            s1.push(s2.pop());
+    }
+    
+    public int pop() {
+        int result = s1.pop();
+        if (!s1.empty())
+            front = s1.peek();
+        return result;
+    }
+    
+    public int peek() {
+        return front;
+    }
+    
+    public boolean empty() {
+        return s1.isEmpty();
+    }
+}
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue obj = new MyQueue();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.peek();
+ * boolean param_4 = obj.empty();
+ */
+```
+
+## `Solve 2`
+
+```java
+class MyQueue {
+
+    public MyQueue() {
+        
+    }
+    
+    private Stack<Integer> s1 = new Stack<>();
+    private Stack<Integer> s2 = new Stack<>();    
+    private int front;
+
+    public void push(int x) {
+        if (s1.empty())
+            front = x;
+        s1.push(x);
+    }
+    
+    public int pop() {
+        if (s2.isEmpty()) {
+            while (!s1.isEmpty()) s2.push(s1.pop());
+        }
+        return s2.pop();   
+    }
+    
+    public int peek() {
+        if (!s2.isEmpty()) {
+                return s2.peek();
+        }
+        return front;
+    }
+    
+    public boolean empty() {
+        return s1.isEmpty() && s2.isEmpty();
+    }
+}
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue obj = new MyQueue();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.peek();
+ * boolean param_4 = obj.empty();
+ */
+```
+
+***
+
+# `Tree`
+
+## **[Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)**
+
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+```
+
+### `Solve`
+
+```java
+class Solution {
+    private List<Integer> numbers;
+    public List<Integer> preorderTraversal(TreeNode root) {
+        numbers = new ArrayList<>();
+        preorder(root);
+        return numbers;
+    }
+    
+    public void preorder(TreeNode node){
+        if(node == null) return;
+        
+        numbers.add(node.val);
+        preorder(node.left);
+        preorder(node.right);
+    }
+}
+```
+
+### `Morris traversal`
+
+```java
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        TreeNode node = root;
+        while(node != null) {
+            res.add(node.val);
+
+            if(node.left == null) {
+                node = node.right;
+            } else {
+                TreeNode left = node.left;
+                TreeNode right = node.right;
+                node = node.left;
+
+                TreeNode rightMostOfLeft = left;
+                while(rightMostOfLeft.right != null) {
+                    rightMostOfLeft = rightMostOfLeft.right;
+                }
+                rightMostOfLeft.right = right;
+            }
+        }
+        return res;
+    }
+}
+```
+
+***
+
+## **[Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)**
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+```
+
+### `Solve`
+
+```java
+class Solution {
+    private List<Integer> numbers;
+    public List<Integer> inorderTraversal(TreeNode root) {
+        numbers = new ArrayList<>();
+        inorder(root);
+        return numbers;
+    }
+    
+    public void inorder(TreeNode node){
+        if(node == null) return;
+        
+        inorder(node.left);
+        numbers.add(node.val);
+        inorder(node.right);
+    }
+}
+``` 
+
+### `Morris Traversal`
+
+```java
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        TreeNode curr = root;
+        TreeNode pre;
+        while (curr != null) {
+            if (curr.left == null) {
+                res.add(curr.val);
+                curr = curr.right; // move to next right node
+            } else { // has a left subtree
+                pre = curr.left;
+                while (pre.right != null) { // find rightmost
+                    pre = pre.right;
+                }
+                pre.right = curr; // put cur after the pre node
+                TreeNode temp = curr; // store cur node
+                curr = curr.left; // move cur to the top of the new tree
+                temp.left = null; // original cur left be null, avoid infinite loops
+            }
+        }
+        return res;
+    }
+}
+```
+
+***
+
+## **[Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)**
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+```
+
+```java
+class Solution {
+    private List<Integer> numbers;
+    public List<Integer> postorderTraversal(TreeNode root) {
+        numbers = new ArrayList<>();
+        postOrder(root);
+        return numbers;
+    }
+    
+    public void postOrder(TreeNode node){
+        if(node == null) return;
+        
+        postOrder(node.left);
+        postOrder(node.right);
+        numbers.add(node.val);
+    }
+}
+```
+
+***
+
+## **[Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)**
+
+### `BFS`
+
+```java
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if(root == null) return result;
+        
+        Queue<TreeNode> queue = new LinkedList<>();
+        
+        queue.offer(root);
+        
+        int level = 0;
+        while(!queue.isEmpty()){
+            int queueSize = queue.size();
+            result.add(new ArrayList<>());
+            
+            for(int i = 0 ; i < queueSize ; i++){
+                TreeNode node = queue.poll();
+                result.get(level).add(node.val);                
+                
+                if(node.left != null) queue.offer(node.left);
+                if(node.right != null) queue.offer(node.right);
+            }
+            level++;
+        }
+        
+        return result;
+    }
+}
+```
+
+### `DFS`
+
+```java
+class Solution {
+    List<List<Integer>> result;
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        result = new ArrayList<>();
+        if(root == null) return result;
+        
+        dfs(root , 0);
+        return result;
+    }
+    
+    public void dfs(TreeNode node , int level){
+        if(node == null) return;
+        
+        if(result.size() <= level) result.add(new ArrayList<>());
+        
+        result.get(level).add(node.val);
+        dfs(node.left , level + 1);
+        dfs(node.right , level + 1);
+    }
+}
+```
+
+***
+
+## **[Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)**
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+```
+
+### `DFS`
+
+```java
+class Solution {
+    public int maxDepth(TreeNode root) {
+        return findDepth(root , 0);
+    }
+    
+    public int findDepth(TreeNode node , int depth){
+        if(node == null) return depth;
+        int leftDepth = findDepth(node.left , depth + 1);
+        int rightDepth = findDepth(node.right , depth + 1);
+        
+        return Math.max(leftDepth , rightDepth);
+    }
+}
+```
+
+***
+
+## **[Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)**
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+```
+
+```java
+
+```
