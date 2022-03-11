@@ -12,6 +12,16 @@ has_children: true
 {:toc}
 ---
 
+# `2022-03-11`
+
+## **[restfulapi.net](https://restfulapi.net/)**
+## **[RESTful API Designing guidelines — The best practices 번역글](https://wayhome25.github.io/etc/2017/11/26/restful-api-designing-guidelines/)**
+
+# `2022-03-10`
+
+## **[식사하는 철학자 문제(운영체제)](https://luv-n-interest.tistory.com/438)**
+## **[뮤텍스(Mutex)와 세마포어(Semaphore)의 차이](https://worthpreading.tistory.com/90)**
+
 # `2022-03-06`
 
 ## **[Spring Data JPA - Reference Documentation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#preface)**
@@ -81,8 +91,6 @@ has_children: true
 ## **[스프링 `RestTemplate`](https://advenoh.tistory.com/46)**
 
 ## **[Spring WebSocket 소개](https://supawer0728.github.io/2018/03/30/spring-websocket/)**
-
-## **[뮤텍스(Mutex)와 세마포어(Semaphore)의 차이](https://worthpreading.tistory.com/90)**
 
 ## **[교차 출처 리소스 공유 (CORS)](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS)**
 
