@@ -1663,6 +1663,8 @@ class Solution {
 
 ## **[Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)**
 
+### `Recursion`
+
 ```
 /**
  * Definition for a binary tree node.
@@ -1682,5 +1684,212 @@ class Solution {
 ```
 
 ```java
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return isSame(root.left , root.right);   
+    }
+    
+    public boolean isSame(TreeNode node1 , TreeNode node2){
+        if(node1 == null && node2 == null) return true;
+        if(node1 == null || node2 == null) return false;
+        return (node1.val == node2.val && isSame(node1.left , node2.right) && isSame(node2.left , node1.right));
+    }
+}
+```
 
+### `Iterative Use Queue`
+
+```java
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        
+        Queue<TreeNode> q = new LinkedList<>();
+        
+        q.offer(root.left);
+        q.offer(root.right);
+        
+        while(!q.isEmpty()){
+            TreeNode node1 = q.poll();
+            TreeNode node2 = q.poll();
+            if(node1 == null && node2 == null) continue;
+            if(node1 == null || node2 == null) return false;
+            if(node1.val != node2.val) return false;
+            
+            q.offer(node1.left);
+            q.offer(node2.right);
+            q.offer(node1.right);
+            q.offer(node2.left);
+        }
+        
+        return true;
+    }
+}
+```
+
+***
+
+## **[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)**
+
+### 주소를 바꿧는데..? 📝
+
+```
+Your input
+[4,2,7,1,3,6,9]
+
+stdout
+TreeNode@31cefde0 TreeNode@439f5b3d
+TreeNode@439f5b3d TreeNode@31cefde0
+TreeNode@1d56ce6a TreeNode@5197848c
+TreeNode@5197848c TreeNode@1d56ce6a
+TreeNode@17f052a3 TreeNode@2e0fa5d3
+TreeNode@2e0fa5d3 TreeNode@17f052a3
+4
+2
+1
+3
+7
+6
+9
+
+Output
+[4,2,7,1,3,6,9]
+
+Expected
+[4,7,2,9,6,3,1]
+```
+
+
+```java
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        swap(root.left , root.right);
+        traversal(root);
+        return root;
+    }
+    
+    public void swap(TreeNode node1 , TreeNode node2){
+        if(node1 == null && node2 == null) return;
+        
+        System.out.println(node1.val + " " + node2.val);
+        
+        TreeNode tmp = node1;
+        node1 = node2;
+        node2 = tmp;
+        
+        System.out.println(node1.val + " " + node2.val);
+        
+        // swap(node1.left , node1.right);
+        // swap(node2.left , node2.right);
+    }
+    
+    public void traversal(TreeNode node){
+        if(node != null){
+            System.out.println(node.val);
+            traversal(node.left);
+            traversal(node.right);
+        }
+    }
+}
+```
+
+### `Solve`
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if(root == null) return null;
+        swap(root);
+        return root;
+    }
+    
+    public void swap(TreeNode node){
+        TreeNode tmp = node.left;
+        node.left = node.right;
+        node.right = tmp;
+        
+        if(node.left != null) swap(node.left);
+        if(node.right != null) swap(node.right);
+    }
+}
+```
+
+### `Iterative Using Queue`
+
+```java
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) return null;
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode current = queue.poll();
+            TreeNode temp = current.left;
+            current.left = current.right;
+            current.right = temp;
+            if (current.left != null) queue.add(current.left);
+            if (current.right != null) queue.add(current.right);
+        }
+        return root;
+    }
+}
+```
+
+***
+
+## **[Path Sum](https://leetcode.com/problems/path-sum/)**
+
+
+### `Solve`
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if(root == null) return false;
+        
+        return nextNode(root , targetSum , 0);
+    }
+    
+    public boolean nextNode(TreeNode node , int target , int sum){
+        
+        int total = sum + node.val;
+        if(total == target && node.left == null && node.right == null) return true;
+        
+        boolean flag1 = false , flag2 = false;
+        
+        if(node.left != null) flag1 = nextNode(node.left , target , total);
+        if(node.right != null) flag2 = nextNode(node.right , target , total);
+        
+        return flag1 || flag2;
+    }
+}
 ```
