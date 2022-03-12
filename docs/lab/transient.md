@@ -1,7 +1,7 @@
 ---
 layout: default
 title: transient
-nav_order: 21
+nav_order: 18
 parent: 👨‍🔬 Lab
 ---
 ## Table of contents
