@@ -1893,3 +1893,121 @@ class Solution {
     }
 }
 ```
+
+***
+
+## **[Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)**
+
+### `Solve`
+
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        if(root == null) return null;
+        else if(root.val == val) return root;
+        else if(root.val > val) return searchBST(root.left , val);
+        else return searchBST(root.right , val);
+    }
+}
+```
+
+### `Optimized`
+
+```java
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        if (root == null || val == root.val) return root;
+
+        return val < root.val ? searchBST(root.left, val) : searchBST(root.right, val);
+    }
+}
+```
+
+### `Iterator`
+
+```java
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        while (root != null && val != root.val)
+            root = val < root.val ? root.left : root.right;
+        return root;
+    }
+}
+```
+
+***
+
+## **[Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/)**
+
+### `Solve`
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        if(root == null) return new TreeNode(val);
+        
+        insert(root , val);
+        return root;
+    }
+    
+    public void insert(TreeNode node , int val){
+        if(node.val < val){
+            if(node.right == null) node.right = new TreeNode(val);
+            else{
+                insert(node.right , val);
+            }
+        }
+        else{
+            if(node.left == null) node.left = new TreeNode(val);
+            else{
+                insert(node.left , val);
+            }            
+        }
+    }
+}
+```
+
+### `Optimized`
+
+```java
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        if (root == null) return new TreeNode(val);
+
+        if (val > root.val) root.right = insertIntoBST(root.right, val);
+        else root.left = insertIntoBST(root.left, val);
+        return root;
+    }
+}
+```
