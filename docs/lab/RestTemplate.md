@@ -12,7 +12,9 @@ parent: 👨‍🔬 Lab
 
 ---
 
-## `RestTemplate` POST 방식 - 파라미터가 담기지 않는 문제
+# `RestTemplate`
+
+## POST 방식 - 파라미터가 담기지 않는 문제
 - `request`를 확인하면 파라미터가 담겨 있지만 , 수신 측에서는 비어있음
 
 ```java
@@ -186,21 +188,21 @@ public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) {
 
 - **response**를 원하는 `Map` 객체 자체로 받을려고 해서 그런지... `ResponseEntity`로 감싸주니 정상으로 받았다.
 
-## **그래서 이런 현상이 왜 발생했을까?** ❓
+## **그래서 이런 현상이 왜 발생했을까?**
 1. `Could not extract response: no suitable HttpMessageConverter found for response type [EgovMapForNull] and content type [application/octet-stream]`
     - 송신 측과 수신 측에 `Content-Type`을 따로 지정해주지 않았기 때문에 일단 기본 타입은 `application/octet-stream`이 맞다.
     - **수신 측에서 `Response`에 특정 상황에만 문자열을 담아주는 상황이였기 때문에 해당 문자열이 담기면 수신 측에 나는 에러였다.**
     - 해당 문제는 `ResponseEntity<String>`으로 받으니 해결되었다.
     - `EgovMapForNull`로는 `Response`를 매핑할 수 없어서 나는 문제인 것 같다..
 
-## **왜 `getParameter()`나 `getParameterValues()`로 읽을 수 없는 경우가 생겼을까** ❓ 
+## **왜 `getParameter()`나 `getParameterValues()`로 읽을 수 없는 경우가 생겼을까?**
 - 해당 문제는 파라미터를 `String`으로 보냈었지만 `LinkedMultiValueMap`으로 변환하여 보내니 `getParameter()`나 `getParameterValues()`로 읽을 수 있었다.
 
-## **그럼 어떨 때 `getParameter()`나 `getParameterValues()`로 읽을 수 없을까** ❓
+## **그럼 어떨 때 `getParameter()`나 `getParameterValues()`로 읽을 수 없을까?**
 - `RequestBody Post Data`
 - [Request Body로 보내지는 JSON의 행방 불명](https://github.com/HomoEfficio/dev-tips/blob/master/Request%20Body로%20보내지는%20JSON의%20행방%20불명.md)
 
-## `Payload`란 ❓
+## `Payload`란
 - **전송되는 데이터**를 말한다.
   - **데이터 자체를 의미**
 
@@ -220,10 +222,10 @@ public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) {
 }
 ```
 
-## `Response`를 꼭 `ResponseEntity`로 감싸서 받아야하나 ❓ 
+## `Response`를 꼭 `ResponseEntity`로 감싸서 받아야하나? 🚩
 
 
-## ➕ `Handle Error`
+## `ResponseErrorHandler`
 
 ```java
 @Component

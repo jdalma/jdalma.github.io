@@ -1730,34 +1730,7 @@ class Solution {
 
 ## **[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)**
 
-### 주소를 바꿧는데..? 📝
-
-```
-Your input
-[4,2,7,1,3,6,9]
-
-stdout
-TreeNode@31cefde0 TreeNode@439f5b3d
-TreeNode@439f5b3d TreeNode@31cefde0
-TreeNode@1d56ce6a TreeNode@5197848c
-TreeNode@5197848c TreeNode@1d56ce6a
-TreeNode@17f052a3 TreeNode@2e0fa5d3
-TreeNode@2e0fa5d3 TreeNode@17f052a3
-4
-2
-1
-3
-7
-6
-9
-
-Output
-[4,2,7,1,3,6,9]
-
-Expected
-[4,7,2,9,6,3,1]
-```
-
+### 주소를 바꿧는데..?
 
 ```java
 class Solution {
@@ -1791,6 +1764,11 @@ class Solution {
     }
 }
 ```
+
+- 위의 코드는 `swap` 메소드 안에서 `node1`과 `node2`의 참조를 서로 바꾸었다.
+- 처음 `swap(root.left , root.right)`를 넘겨서 `swap`메소드 안에서 바꾸어도 파라미터로 넘긴 `(root.left , root.right)`를 `root`가 바라보고 있는 줄 알았다....
+- **하지만 정작 바뀐 참조를 들고 있는 `node1`과 `node2`를 가질 인스턴스가 없다.**
+
 
 ### `Solve`
 

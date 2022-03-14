@@ -1,7 +1,7 @@
 ---
 layout: default
 title: HashMap
-nav_order: 18
+nav_order: 19
 parent: 👨‍🔬 Lab
 ---
 ## Table of contents
