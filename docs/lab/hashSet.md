@@ -1,7 +1,7 @@
 ---
 layout: default
 title: HashSet
-nav_order: 19
+nav_order: 18
 parent: 👨‍🔬 Lab
 ---
 ## Table of contents
