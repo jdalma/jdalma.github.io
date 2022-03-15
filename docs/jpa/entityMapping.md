@@ -15,26 +15,83 @@ nav_order: 3
 
 - 다양한 매핑 어노테이션을 지원하는데 크게 4가지로 분류할 수 있다.
 - **객체와 테이블 매핑** : `@Entity` , `@Table`
-- **기본 키 매핑** : `@Id`
+- **기본 키 매핑** : `@Id` , `@GeneratedValue`
 - **필드와 컬럼 매핑** : `@Column` , `@Enumerated` , `@Temporal` , `@Lob` , `@Transient`
 - **연관관계 매핑** : `@ManyToOne` , `@JoinColumn`
 - **기타** : `@Access`
 
 ***
 
-# **@Id**
+# **JPA가 제공하는 데이터베이스 기본 키 생성 전략**
 - 기본 키를 직접 할당할 수도 있지만 , `SEQUENCE` 또는 `AUTO_INCREMENT` 같은 기능은 어떻게 사용할까?
+- 키 생성 전략을 사용하려면 아래의 속성을 반드시 추가해야한다.
 
-## **JPA가 제공하는 데이터베이스 기본 키 생성 전략**
+```xml
+    <property name="hibernate.id.new_generator_mappings" value="true"/>
+```
 
-###  **직접 할당**
+- 과거 버전과의 호환성을 유지하려고 기본값은 `false`이다
+- 아래에서 설명하는 내용은 이 옵션을 `true`로 설정했다고 가정한다.
+- 이 옵션을 `true`로 설정하면 **키 생성 성능을 최적화 하는 `allocationSize` 속성을 사용하는 방식이 달라진다.**
+
+## `allocationSize` 🚩
+
+## **직접 할당 `@Id`**
 - 기본 키를 애플리케이션에서 직접 할당한다.
+- 자바 `Wrapper` 형
+  - `String`
+  - `java.util.Date`
+  - `java.sql.Date`
+  - `java.math.BigDecimal`
+  - `java.math.BigInteger`
 
-### **자동 생성** 🚩 (131p)
+
+## **자동 생성 `@GeneratedValue`**
 
 - **IDENTITY**
+  - 기본 키 생성을 **데이터베이스에 위임하는 전략**이다.
+  - **데이터베이스에 값을 저장하고 나서야 기본 키 값을 구할 수 있을 때 사용한다.** 📌
+  - 주로 `MySQL` , `PostgreSQL` , `SQL Server` , `DB2`에서 사용
+
+> ✋ 최적화 [Statement.getGeneratedKey()](http://m.1day1.org/cubrid/manual/api/api_jdbc_programming_autoincr.htm)
+> 
+> 데이터베이스에 `INSERT`한 후에 기본 키 값을 조회할 수 있다.
+> 
+> 따라서 엔티티에 식별자 값을 할당하려면 추가로 데이터베이스를 조회해야 한다.
+> 
+> `JDBC3`에 추가된 `Statement.getGeneratedKey()`를 사용하면 데이터를 저장하면서 
+> 
+> 동시에 생성된 기본 키 값도 얻어 올 수 있다.
+> 
+> **엔티티가 영속 상태가 되려면 식별자가 반드시 필요하다.**
+> 
+> 그런데 `IDENTITY`식별자 생성 전략은 엔티티를 데이터베이스에 저장해야 식별자를 구할 수 있으므로 
+> 
+> `SQL`이 바로 실행 되기 때문에 **지연 로딩이 불가하다.**
+
 - **SEQUENCE**
+    - **데이터베이스 시퀀스는 유일한 값을 순서대로 생성하는 특별한 데이터베이스 오브젝트**다.
+    - 이 전략은 시퀀스를 지원하는 데이터베이스에서 사용할 수 있다.
+
+```java
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private long id;
+```
+
+```
+Hibernate: create sequence HIBERNATE_SEQUENCE start with 1 increment by 1
+
+...
+
+Hibernate: 
+    call next value for HIBERNATE_SEQUENCE
+```
+
+#### `@SequenceGenerator` 🚩
+
 - **TABLE**
+- **AUTO**
 
 ***
 
@@ -243,9 +300,7 @@ alter table MEMBER
     CREATED_FULL_DATE timestamp,
 ```
 
-- 자바 8 이후는 🚩
-
-- 하이버네이트  5.2 이상이라면
+- 자바 8 이상 이고 하이버네이트  5.2 이상이라면
   - `@CreationTimestamp` , `@UpdateTimestamp`
 
 ```java
@@ -261,18 +316,139 @@ alter table MEMBER
     UPDATED_FULL_DATE timestamp,
 ```
 
+- **생성과 수정을 동시에하면 생성 시간와 수정 시간은 어떻게 입력될까?**
+  
+```java
+    transaction.begin();
+
+    Member test1 = new Member(1L , "test1" , new BigDecimal(10) , Member.RoleType.USER);
+
+    entityManager.persist(test1);
+
+    Thread.sleep(1000);
+
+    Member cacheTest1 = entityManager.find(Member.class , 1L);
+    cacheTest1.setName("1초 후 수정");
+
+    transaction.commit();
+```
+
+```
+ID  CREATED_FULL_DATE  	NAME        UPDATED_FULL_DATE  
+1	null	            1초 후 수정   2022-03-15 22:06:34.969
+```
+
+- 안타깝게도 위와 같이하면 **생성시간은 `null`이다.**
+- 아래와 같이 생성하고 `commit`을 하여 DB에 insert 후 다시 find하여 수정하니 제대로 들어갔다.
+
+```java
+    // 첫 번째 트랜잭션 시작
+    transaction.begin();
+
+    Member test1 = new Member(1L , "test1" , new BigDecimal(10) , Member.RoleType.USER);
+
+    entityManager.persist(test1);
+
+    // 첫 번째 트랜잭션 커밋
+    transaction.commit();
+
+    // 1초 후
+    Thread.sleep(1000);
+
+    // 두 번째 트랜잭션 get
+    transaction = entityManager.getTransaction();
+
+    // 두 번째 트랜잭션 시작
+    transaction.begin();
+
+    Member cacheTest1 = entityManager.find(Member.class , 1L);
+    cacheTest1.setName("1초 후 수정");
+
+    // 두 번째 트랜잭션 시작
+    transaction.commit();
+```
+
+```
+ID  CREATED_FULL_DATE  	    NAME  	    ROLE_TYPE  	UPDATED_FULL_DATE  
+1	2022-03-15 22:03:10.618	1초 후 수정	  USER	      2022-03-15 22:03:11.646
+```
+
 ***
 
-# **@Lob** 🚩 
+# **@Lob**
+- 데이터베이스 `BLOB` , `CLOB` 타입과 매핑한다.
+- 매핑하는 필드타입이 문자면 `CLOB` , 나머지는 `BLOB`으로 매핑한다.
 
 ***
 
-# **@Transient** 🚩 
+# **@Transient**
+- **이 필드는 매핑하지 않는다.**
+- 객체에 임시로 어떤 값을 보관하고 싶을 때 사용한다.
 
 ***
 
-# **@Access** 🚩 
+# **@Access**
+- JPA가 엔티티 데이터 접근하는 방식을 지정한다.
+- **필드 접근**
+  - `AccessType.FIELD`로 지정한다.
+  - 필드에 직접 접근한다.
+  - 필드 접근 권한이 `private`이어도 접근할 수 있다.
+- **프로퍼티 접근**
+  - `AccessType.PROPERTY`로 지정한다.
+  - 접근자 `Getter`를 사용한다.
+- `@Access`를 설정하지 않으면 `@Id`의 위치를 기준으로 접근 방식이 선정된다.
+- 아래는 `@Id`가 필드에 있으므로 `@Access(AccessType.FIELD)`로 설정한 것과 같다.
 
+```java
+    @Id
+    private Long id;
+```
 
-***
+- 아래는 `@Id`가 프로퍼티에 있으므로 `@Access(AccessType.PROPERTY)`로 설정한 것과 같다.
 
+```java
+    @Id
+    public Long getId() {
+        return id;
+    } 
+```
+
+- ✋ `Getter`가 없는 필드는 접근하지 못한다.
+
+```
+Hibernate: 
+    /* insert hellojpa.Member
+        */ insert 
+        into
+            MEMBER
+            (ID) 
+        values
+            (?)
+```
+
+## **직접 접근과 프로퍼티 접근을 동시에 사용할 수 있다.**
+
+```java
+    @Id
+    private Long id;
+
+    @Access(AccessType.PROPERTY)
+    private String fullDescription;
+
+    // 또는 
+
+    @Access(AccessType.PROPERTY)
+    public String getFullDescription() {
+        return this.firstDescription + this.secondDescription;
+    }
+
+    // main
+    Member test1 = new Member(1L , "test1" , new BigDecimal(10) , Member.RoleType.USER);
+    test1.setFirstDescription("첫 번째");
+    test1.setSecondDescription(" 두 번째");    
+```
+
+```
+FIRST_DESCRIPTION  SECOND_DESCRIPTION    FULL_DESCRIPTION
+첫 번째              두 번째                 첫 번째 두 번째	    
+```
