@@ -1992,7 +1992,7 @@ class Solution {
 
 ***
 
-# **[Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)** 🔥
+## **[Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)** 🔥
 
 - **높이의 균형을 확인하는 문제**
 - 📌 `높이 균형이 맞는 이진 트리는 모든 노드들의 왼쪽 및 오른쪽 서브 트리의 높이 차이가 1을 초과하지 않는 트리를 의미한다.`
@@ -2002,7 +2002,7 @@ class Solution {
 
 ![](../../assets/images/algorithm/2021y11m/2.png)
 
-## `Top-down recursion`
+### `Top-down recursion`
 
 ![](../../assets/images/algorithm/2021y11m/3.png)
 
@@ -2049,7 +2049,7 @@ class Solution {
 }
 ```
 
-## **추가로 memoization 사용해보기**
+### **추가로 memoization 사용해보기**
 
 ![](../../assets/images/algorithm/2021y11m/4.png)
 
@@ -2113,7 +2113,7 @@ class Solution {
 }
 ```
 
-## `Bottom-up recursion`
+### `Bottom-up recursion`
 
 ```java
 // Utility class to store information from recursive calls
@@ -2162,10 +2162,10 @@ class Solution {
 
 ***
 
-# **[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)** 🔥
+## **[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)** 🔥
 
 
-## 실패 코드 (`모든 왼쪽 자식들 <= n < 모든 오른쪽 자식들 속성`은 **모든 노드 대해서 반드시 참이어야 한다.**)
+### 실패 코드 (`모든 왼쪽 자식들 <= n < 모든 오른쪽 자식들 속성`은 **모든 노드 대해서 반드시 참이어야 한다.**)
 
 ```java
 /**
@@ -2208,7 +2208,7 @@ class Solution {
 }
 ```
 
-## **Solution**
+### **Solution**
 
 ```java
 class Solution {
@@ -2228,3 +2228,63 @@ class Solution {
     }
 }
 ```
+
+***
+
+## **[Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)** ❌
+
+```java
+```
+
+***
+
+
+## **[LCA(Lowest Common Ancestor) - 최소 공통 조상` Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)** ❌
+
+- **[최소 공통 조상 - 동빈나](https://blog.naver.com/ndb796/221282478466)**
+- 트리 구조에서 특정한 두 노드의 공통된 조상 중에서 가장 가까운 조상을 의미한다.
+- 두 노드 사이의 거리를 빠르게 구하는 등 다양한 계산에 활용될 수 있다.
+- 일종의 다이나믹 프로그래밍이며 최소 공통 조상을 빠르게 찾아내는 알고리즘이다.
+
+### `Iterate`
+
+- 아래의 코드는 `BST`이기 때문에 가능하다
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null) return root;
+        
+        int value1 = p.val;
+        int value2 = q.val;
+        
+        while(root != null){
+            int nodeValue = root.val;    
+            
+            if(value1 > nodeValue && value2 > nodeValue){
+                root = root.right;
+            }
+            else if(value1 < nodeValue && value2 < nodeValue){
+                root = root.left;
+            }            
+            else break;
+        }
+        
+        return root;
+    }
+}
+```
+
+
+
+ 
