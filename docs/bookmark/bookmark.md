@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-03-16`
+
+## **[운영체제 - 반효경 교수](http://www.kocw.net/home/search/kemView.do?kemId=1046323)**
+
 # `2022-03-14`
 
 ## **[No newline at a end of file, 왜 체크해야하나?](https://minz.dev/19)**
