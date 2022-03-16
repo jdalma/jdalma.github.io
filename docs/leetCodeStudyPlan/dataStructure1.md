@@ -12,7 +12,7 @@ parent: 🔥 LeetCode Study Plan
 
 ---
 
-# `Array`
+# **Array**
 
 ## **[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)**
 
@@ -695,7 +695,7 @@ class Solution {
 
 ***
 
-# `String`
+# **String**
 
 ## **[First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)**
 
@@ -1188,7 +1188,7 @@ class Solution {
 
 ***
 
-# `Stack`
+# **Stack**
 
 ## **[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)**
 
@@ -1269,7 +1269,7 @@ class Solution {
 
 ***
 
-# `Queue` 
+# **Queue**
 
 ## **[Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)**
 
@@ -1373,7 +1373,7 @@ class MyQueue {
 
 ***
 
-# `Tree`
+# **Tree**
 
 ## **[Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)**
 
