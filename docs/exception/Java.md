@@ -86,3 +86,16 @@ import com.sun.tools.javac.util.Names;
 - [출처](https://stackoverflow.com/questions/26292073/whats-the-difference-between-maven-plugins-and-dependencies)
 - 종속성 은 프로젝트가 특정 시점 (즉, 컴파일 타임 또는 런타임)에서 클래스 경로에서 사용할 수 있어야하는 아티팩트 (예 : jar)입니다.
 - 그러나 플러그인은 프로젝트 빌드 중에 실제로 작업을 수행하도록 프로젝트에서 구성 할 수있는 아티팩트입니다. (예를 들어 실제로 Java 클래스를 컴파일하거나 파일을 복사하거나 데이터베이스를 시작 및 중지하는 플러그인이 있습니다.) 프로젝트의 클래스 경로에서 플러그인을 사용할 수 없습니다.
+
+***
+
+# `Arrays.asList`
+
+- `Arrays.asList` 해당 메서드로 생성된 리스트는 수정할 수 없다.
+- `unmodifiable`이라 하여 remove 및 add를 할 수 가 없다.
+
+```java
+    List<Integer> list = Arrays.asList(1 ,2 ,3 ,4 , 5);
+    list.remove(2);
+    // java.lang.UnsupportedOperationException 예외 발생
+```
