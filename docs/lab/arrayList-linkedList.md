@@ -12,6 +12,8 @@ parent: 👨‍🔬 Lab
 
 ---
 
+## **들어가기 전**
+
 - **Array** : 고정 길이 배열
 - **ArrayList** : 가변 길이 배열
 - **LinkedList** : 양방향 연결 배열 
@@ -203,7 +205,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAcce
 
 ***
 
-## `LinkedList`
+## **LinkedList**
 
 - 🖐 [내부(inner) class와 내부(inner) static class 차이](https://siyoon210.tistory.com/141)
 
