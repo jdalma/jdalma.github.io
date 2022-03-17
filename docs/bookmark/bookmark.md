@@ -12,6 +12,11 @@ has_children: true
 {:toc}
 ---
 
+# `2022-03-17`
+
+## **[클래스는 언제 로딩되고 초기화되는가? (feat. 싱글톤)](https://velog.io/@skyepodium/%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%96%B8%EC%A0%9C-%EB%A1%9C%EB%94%A9%EB%90%98%EA%B3%A0-%EC%B4%88%EA%B8%B0%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80)**
+
+
 # `2022-03-16`
 
 ## **[운영체제 - 반효경 교수](http://www.kocw.net/home/search/kemView.do?kemId=1046323)**
