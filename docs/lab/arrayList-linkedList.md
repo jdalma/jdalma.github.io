@@ -302,6 +302,7 @@ public class LinkedList<E> extends AbstractSequentialList<E>
     void linkBefore(E e, Node<E> succ) {
         // assert succ != null;
         final Node<E> pred = succ.prev;
+        
         // final Node<E> newNode = new Node<>(해당 위치에 있었던 노드의 prev , 넣을 값 , 해당 위치에 있었던 노드);
         final Node<E> newNode = new Node<>(pred, e, succ);
         succ.prev = newNode;
