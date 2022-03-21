@@ -2,7 +2,7 @@
 layout: default
 title: 엔티티 매핑
 parent: JPA
-nav_order: 3
+nav_order: 10
 ---
 ## Table of contents
 {: .no_toc .text-delta }
@@ -25,6 +25,7 @@ nav_order: 3
 # **JPA가 제공하는 데이터베이스 기본 키 생성 전략**
 - 기본 키를 직접 할당할 수도 있지만 , `SEQUENCE` 또는 `AUTO_INCREMENT` 같은 기능은 어떻게 사용할까?
 - 키 생성 전략을 사용하려면 아래의 속성을 반드시 추가해야한다.
+- 권장 : **Long형 + 대체 키(비즈니스와 관련없는 임의로 만들어진 키) + 키 생성전략 사용**
 
 ```xml
     <property name="hibernate.id.new_generator_mappings" value="true"/>
@@ -34,7 +35,15 @@ nav_order: 3
 - 아래에서 설명하는 내용은 이 옵션을 `true`로 설정했다고 가정한다.
 - 이 옵션을 `true`로 설정하면 **키 생성 성능을 최적화 하는 `allocationSize` 속성을 사용하는 방식이 달라진다.**
 
-## `allocationSize` 🚩
+> ✋ `allocationSize`
+> 
+> 시퀀스에 접근하는 횟수를 줄이기 위해 `@SequenceGenerator.allocationSize`를 사용한다.
+> 
+> 여기에 **설정한 값 만큼 시퀀스 값을 증가시키고 , 그만큼 메모리에 시퀀스 값을 할당한다.**
+> (한번에 많이 증가한다는 점을 염두해두어야 한다.)
+> 
+> `public static class BasicHolder implements IntegralDataTypeHolder` 해당 클래스가 메모리 역할을 한다.
+
 
 ## **직접 할당 `@Id`**
 - 기본 키를 애플리케이션에서 직접 할당한다.
@@ -48,10 +57,10 @@ nav_order: 3
 
 ## **자동 생성 `@GeneratedValue`**
 
-- **IDENTITY**
-  - 기본 키 생성을 **데이터베이스에 위임하는 전략**이다.
-  - **데이터베이스에 값을 저장하고 나서야 기본 키 값을 구할 수 있을 때 사용한다.** 📌
-  - 주로 `MySQL` , `PostgreSQL` , `SQL Server` , `DB2`에서 사용
+### **IDENTITY**
+- 기본 키 생성을 **데이터베이스에 위임하는 전략**이다.
+- **데이터베이스에 값을 저장하고 나서야 기본 키 값을 구할 수 있을 때 사용한다.** 📌
+- 주로 `MySQL` , `PostgreSQL` , `SQL Server` , `DB2`에서 사용
 
 > ✋ 최적화 [Statement.getGeneratedKey()](http://m.1day1.org/cubrid/manual/api/api_jdbc_programming_autoincr.htm)
 > 
@@ -67,11 +76,13 @@ nav_order: 3
 > 
 > 그런데 `IDENTITY`식별자 생성 전략은 엔티티를 데이터베이스에 저장해야 식별자를 구할 수 있으므로 
 > 
-> `SQL`이 바로 실행 되기 때문에 **지연 로딩이 불가하다.**
+> 🚨 `SQL`이 바로 실행 되기 때문에 **지연 로딩이 불가하다.**
 
-- **SEQUENCE**
-    - **데이터베이스 시퀀스는 유일한 값을 순서대로 생성하는 특별한 데이터베이스 오브젝트**다.
-    - 이 전략은 시퀀스를 지원하는 데이터베이스에서 사용할 수 있다.
+### **SEQUENCE**
+- **데이터베이스 시퀀스는 유일한 값을 순서대로 생성하는 특별한 데이터베이스 오브젝트**다.
+- 이 전략은 시퀀스를 지원하는 데이터베이스에서 사용할 수 있다.
+- `EntityManager.persist`를 호출할 때 먼저 데이터베이스 시퀀스를 사용해서 식별자를 조회한다.
+- 그리고 조회한 식별자를 엔티티에 할당한 후에 엔티티를 영속성 컨텍스트에 저장한다.
 
 ```java
     @Id
@@ -88,10 +99,86 @@ Hibernate:
     call next value for HIBERNATE_SEQUENCE
 ```
 
-#### `@SequenceGenerator` 🚩
+- `@SequenceGenerator` : `SEQUENCE`이름 , 시작 값 , `allocationSize`를 지정할 수 있다.
 
-- **TABLE**
-- **AUTO**
+```java
+  @Entity
+  @SequenceGenerator(
+          name = "MEMBER_SEQ_GENERATOR",
+          sequenceName = "MEMBER_SEQUENCE",
+          initialValue = 10 , allocationSize = 1
+  )
+  public class Member2 {
+
+      @Id
+      @GeneratedValue(generator = "MEMBER_SEQ_GENERATOR")
+      private long id;
+
+      ...
+```
+
+```
+  drop sequence if exists MEMBER_SEQUENCE
+  Hibernate: create sequence MEMBER_SEQUENCE start with 10 increment by 100
+  
+  ...
+  
+  Hibernate:
+  call next value for MEMBER_SEQUENCE     
+```
+
+
+### **TABLE**
+- **키 생성 전용 테이블을 하나 만들어서 데이터베이스 시퀀스를 흉내내는 전략**
+- 테이블을 사용한다는 것만 제외하면 `SEQUENCE` 전략과 내부 동작방식이 같다
+- 모든 데이터베이스에 적용 가능하지만 , 성능이 문제다
+- `@TableGenerator`
+  - `name` : 식별자 생성기 이름
+  - `table` : 키 생성 테이블명
+  - `pkColumnName` : 시퀀스 컬럼명
+  - `valueColumnNa` : 시퀀스 값 컬럼명
+  - `pkColumnValue` : 키로 사용할 값 이름
+  - `initialValue` : 초기 값 , 마지막으로 생성된 값이 기준
+  - `allocationSize` : 시퀀스 한 번 호출에 증가하는 수
+  - `uniqueConstraints` : 유니크 제약 조건 지정 가능
+
+```java
+@Entity
+@TableGenerator(
+        name = "MEMBER_TABLE_GENERATOR",
+        table = "MY_SEQUENCE_TABLE",
+        pkColumnValue = "MEMBER_TABLE",
+        initialValue = 20
+)
+public class Member2 {
+
+    @Id
+    @GeneratedValue(generator = "MEMBER_TABLE_GENERATOR")
+    private long id;
+
+```
+
+```
+Hibernate: 
+    
+    create table MY_SEQUENCE_TABLE (
+       sequence_name varchar(255) not null,
+        next_val bigint,
+        primary key (sequence_name)
+    )
+
+Hibernate: 
+    select
+        tbl.next_val 
+    from
+        MY_SEQUENCE_TABLE tbl 
+    where
+        tbl.sequence_name=? for update
+```
+
+### **AUTO** (DEFAULT)
+- 선택한 데이터베이스 방언에 따라 자동으로 선택한다.
+- `@GeneratedValue`만 선언해주어도 된다.
 
 ***
 
@@ -452,3 +539,4 @@ Hibernate:
 FIRST_DESCRIPTION  SECOND_DESCRIPTION    FULL_DESCRIPTION
 첫 번째              두 번째                 첫 번째 두 번째	    
 ```
+
