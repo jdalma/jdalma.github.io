@@ -28,7 +28,6 @@ nav_order: 2
 - **같은 트랜잭션 안에서는 같은 엔티티를 반환**
 - 애플리케이션에서 반복 가능한 읽기 `Repeatable Read` 보장
   - 트랜잭션 격리 수준을 `DB`가 아닌 애플리케이션 차원에서 제공
-- `DB Isolation Level` ❓ 이 `Read Commit`❓
 
 ```java
     Member member = new Member();
@@ -118,8 +117,6 @@ nav_order: 2
   - JDBC BATCH SQL 기능을 사용해서 한번에 SQL 전송
   - UPDATE , DELETE로 인한 ROW 락 시간 최소화
     - 트랜잭션 커밋 시 UPDATE , DELETE SQL 실행하고 , 바로 커밋
-- `쓰기 지연 SQL 저장소`는 어떤 구조로 생겼을까 ❓
-- `JDBC BATCH SQL 기능`은 무엇일까 ❓
 
 ```java
 updateItem(item1);
@@ -191,7 +188,6 @@ transaction.commit();
   - 값을 바꾸게 되면 자동으로 쿼리가 생성된다.
 - `SnapShot`
   - 영속성 컨텍스트 (1차 캐시)에 최초 읽어온 시점
-  - `Snap Shot` 과 `Entity`를 어떻게 비교할까 ❓
 
 
 ## 지연 로딩(`Lazy Loading`)
@@ -428,7 +424,7 @@ public class ItemRepository {
 
 ***
 
-## `EntityManager` , `PersistenceContext` ??
+# `SQL`은 어디에 저장될까?
 
 ```java
     Member member1 = new Member(500L , "debug Mode");
@@ -451,3 +447,12 @@ public class ItemRepository {
 - `StatefulPersistenceContext implements PersistenceContext`
 
 ![](../../assets/images/jpa/persistence-context/persistenceContext.png)
+
+
+# `JDBC BATCH SQL 기능`은 무엇일까
+
+- [출처 Batch Processing in JDBC by Baeldung](https://www.baeldung.com/jdbc-batch-processing)
+
+# (변경감지) `Snap Shot` 과 `Entity`를 어떻게 비교할까 🚩
+
+# `DB Isolation Level` ? , `Read Commit` ? 🚩
