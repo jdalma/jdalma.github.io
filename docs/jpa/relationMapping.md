@@ -11,7 +11,7 @@ nav_order: 15
 {:toc}
 ---
 
-# 들어가기
+# 객체와 테이블간에 연관관계란?
 
 ![](../../assets/images/jpa/relationMapping/mappingExampleTable.png)
 
@@ -37,19 +37,6 @@ nav_order: 15
 
 - 객체는 참조를 사용해서 연관된 객체를 찾고 ,
 - 테이블은 외래 키를 사용해서 연관된 테이블을 찾으므로 둘 사이에는 큰 차이가 있다.
-- **참조와 외래 키를 어떻게 매핑하는지 알아보자**
-
-***
-
-# **단방향 연관관계**
-- `다대일 (N:1)`단방향 관계를 가장 먼저 이해해야 한다.
-- 회원과 팀의 관계를 통해 알아보자.
-  - 회원과 팀이 있다.
-  - 회원은 하나의 팀에만 소속될 수 있다.
-  - 회원과 팀은 다대일 관계다.
-
-![](../../assets/images/jpa/relationMapping/onewayRelation.png)
-
 - **객체 연관관계**
   - 회원 객체는 `Member.team`필드로 팀 객체와 연관관계를 맺는다.
   - 회원 객체와 팀 객체는 **단방향 관계**다.
@@ -64,8 +51,59 @@ nav_order: 15
   - 정확히 이야기하면 **양방향 관계가 아니라 서로 다른 단방향 관계가 2개다.**
   - **객체는 `참조(주소)`로 연관관계를 맺는다.**
   - **테이블은 `외래 키`로 연관관계를 맺는다.**
+- **참조와 외래 키를 어떻게 매핑하는지 알아보자**
 
-- 양방향 (서로 다른 단방향 관계 2개) 테스트
+***
+
+# **@JoinColumn**
+- 외래 키를 매핑할 때 사용
+- 속성
+  - `name`
+    - 기본 값 : `필드명` + `_` + `참조하는 테이블의 기본 키 컬럼명`
+    - 매핑할 외래 키 이름
+  - `referenceColumnName`
+    - 기본 값 : `참조하는 테이블의 기본 키 컬럼명`
+    - 외래 키가 참조하는 대상 테이블의 컬럼명
+  - `foreignKey` (DDL)
+    - 외래 키 제약조건을 직접 지정할 수 있다.
+    - 이 속성은 테이블을 생성할 때만 사용한다.
+  - 나머지는 `@Column`의 속성과 같다.
+
+> ✋ `@JoinColumn` 생략
+> 
+> - 다음처럼 `@JoinColumn`을 생략하면 외래 키를 찾을 때 기본전략을 사용한다.
+> 
+> ```java
+> @ManyToOne
+> private Team team;
+> ```
+> - 기본 전략 : `필드명` + `_` + `참조하는 테이블의 기본 키 컬럼명`
+> - `team_TEAM_ID` 외래 키를 사용한다.
+
+# **@ManyToOne** 🚩 (173p 또는 8장)
+
+## `mappedBy` ⭐️
+- **객체와 테이블간에 연관관계를 맺는 차이를 이해해야 한다.**
+
+
+***
+
+# **단방향 연관관계**
+- `다대일 (N:1)`단방향 관계를 가장 먼저 이해해야 한다.
+- 회원과 팀의 관계를 통해 알아보자.
+  - 회원과 팀이 있다.
+  - 회원은 하나의 팀에만 소속될 수 있다.
+  - 회원과 팀은 다대일 관계다.
+
+![](../../assets/images/jpa/relationMapping/onewayRelation.png)
+
+***
+
+# **양방향 연관관계**
+
+![](../../assets/images/jpa/relationMapping/bidirectionalRelation.png)
+
+## **조회 - 객체 그래프 탐색**
 
 ```java
 @Entity
@@ -96,8 +134,7 @@ public class Team {
 
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "TEAM_ID")
+    @OneToMany(mappedBy = "team")
     private List<Member> members;
     ...
 }
@@ -167,10 +204,224 @@ Hibernate:
         MEMBER members0_ 
     where
         members0_.TEAM_ID=?
-        
+
 [
     Member{id=3, team=Team{id=1, name='teamA'}, username='a'}, 
     Member{id=4, team=Team{id=1, name='teamA'}, username='b'}, 
     Member{id=5, team=Team{id=1, name='teamA'}, username='c'}
 ]
+```
+
+## **조회 - 객체지향 쿼리 사용**
+- `:` 파라미터를 받는 바인딩 문법이다.
+- `JPQL`은 객체를 대상으로하고 `SQL`보다 간결하다. (🚩 10장)
+
+```java
+  String jpql = "select m from Member m join m.team t where t.name = :teamName";
+
+  List<Member> members = entityManager.createQuery(jpql , Member.class)
+                                      .setParameter("teamName" , "teamA")
+                                      .getResultList();
+  members.forEach(System.out::println);
+```
+
+```
+Hibernate: 
+    /* select m from Member m join m.team t where t.name = :teamName */ 
+        
+        select
+            member0_.MEMBER_ID as MEMBER_I1_0_,
+            member0_.TEAM_ID as TEAM_ID3_0_,
+            member0_.USERNAME as USERNAME2_0_ 
+        from
+            MEMBER member0_ 
+        inner join
+            TEAM team1_ 
+                on member0_.TEAM_ID=team1_.TEAM_ID 
+        where
+            team1_.NAME=?
+Hibernate: 
+    select
+        team0_.TEAM_ID as TEAM_ID1_1_0_,
+        team0_.NAME as NAME2_1_0_ 
+    from
+        TEAM team0_ 
+    where
+        team0_.TEAM_ID=?
+Member{id=6, team=Team{id=5, name='teamA'}, username='a'}
+Member{id=7, team=Team{id=5, name='teamA'}, username='b'}
+```
+
+
+## **저장**
+- ✋ **JPA에서 엔티티를 저장할 때 연관된 모든 엔티티는 영속 상태여야 한다.**
+- 예를 들어 , `teamA` 객체가 영속 상태가 아니라면 , `a`,`b`는 저장되지 않는다.
+
+```java
+  Team teamA = new Team();
+  teamA.setName("teamA");
+
+  entityManager.persist(teamA);
+
+  Member a = new Member(teamA , "a");
+  Member b = new Member(teamA , "b");
+
+  entityManager.persist(a);
+  entityManager.persist(b);
+
+  transaction.commit();
+```
+
+## **연관관계 삭제**
+- `teamA`의 `Member`가 존재할 때 `teamA`를 삭제하면?
+- <span style="color:red; font-weight:bold">참조 무결성 제약 조건 위반 (Referential integrity constraint violation)</span>
+
+```java
+  Team teamA = entityManager.find(Team.class , 5L);
+  entityManager.remove(teamA);
+```
+
+- 특정 `Member`의 `Team`을 없애고 싶다면?
+
+```java
+  Member member = entityManager.find(Member.class , 6L);
+  member.setTeam(null);
+
+  // 또는
+
+  Team teamA = entityManager.find(Team.class , 8L);
+  List<Member> members = teamA.getMembers();
+
+  members.get(0).setTeam(null);
+```
+
+***
+
+# **연관관계의 주인**
+
+![](../../assets/images/jpa/relationMapping/ownerOfRelation.png)
+
+```java
+  Member member = entityManager.find(Member.class , 6L);
+  member.setTeam(null);
+
+  // 또는
+
+  Team teamA = entityManager.find(Team.class , 8L);
+  List<Member> members = teamA.getMembers();
+
+  members.get(0).setTeam(null);
+```
+
+- 이와 같이, `Member`객체와 `Team`객체에서 어디서든 `MEMBER`테이블의 `TEAM_ID`를 수정할 수 있다.
+- `MEMBER`테이블의 `TEAM_ID`는 어디서 수정을 해야할까??
+- **양방향 매핑 규칙** 📌
+  1. 객체의 두 관계중 하나를 연관관계의 주인으로 지정
+  2. **연관관계의 주인만이 외래 키를 관리 (등록 , 수정 , 삭제)**
+  3. **주인이 아닌쪽은 읽기만 가능**
+  4. 주인은 `mappedBy`속성을 사용하지 않는다.
+  5. 주인이 아니면 `mappedBy`속성으로 주인을 지정한다.
+- **외래 키가 있는 곳을 주인으로 정해라**
+
+## 역방향에서 넣으면 저장이 될까?
+
+- 아래의 코드는 `MEMBER`테이블에서 `a`의 `TEAM_ID`는 비어있다.
+- `Member`객체의 `Team`의 필드가 연관관계의 주인이기 때문에 , `Team`객체의 `members`필드는 확인하지 않는다.
+
+```java
+  Member a = new Member("a");
+  entityManager.persist(a);
+
+  Team teamA = new Team("A_TEAM");
+  teamA.getMembers().add(a);
+  entityManager.persist(teamA);
+```
+
+## 양쪽에서 다 넣는것이 👍
+
+```java
+  Team teamA = new Team("A_TEAM"); // TEAM_ID : 1
+  Team teamB = new Team("B_TEAM"); // TEAM_ID : 2
+  entityManager.persist(teamA);
+  entityManager.persist(teamB);
+
+  Member a = new Member(teamA ,"a");
+  Member b = new Member(teamA ,"b");
+  entityManager.persist(a);
+  entityManager.persist(b);
+
+  entityManager.flush();
+  entityManager.clear();
+
+  Team findTeamA = entityManager.find(Team.class , teamA.getId());
+  System.out.println(findTeamA.getMembers());
+
+  Member c = new Member("c");
+  entityManager.persist(c);
+
+  findTeamA.getMembers().get(0).setUsername("update a");
+  findTeamA.getMembers().get(0).setTeam(teamB);
+  findTeamA.getMembers().add(c); // 무시된다.
+```
+
+```
+MEMBER_ID 	USERNAME  	TEAM_ID  
+3	        update a	2
+4	        b	        1
+5	        c	        null
+```
+
+- `flush`와 `clear`를 하지 않았을 때에는 `findTeamA.getMembers()`는 **1차 캐시에만 등록되어 있기 때문에** 비어있다.
+- 결론은 **양방향 연관관계**에서는 **객체 관점에서 양쪽 방향에 모두 값을 입력해주는 것이 가장 안전**하다. 📌
+  - JPA를 사용하지 않는 순수한 객체 상태에서 심각한 문제가 발생할 수 있다.
+- 아래의 코드 처럼 양쪽 모두 관계를 설정해주는 것이 맞다.
+
+```java
+  Team teamA = new Team("A_TEAM");
+  Team teamB = new Team("B_TEAM");
+  entityManager.persist(teamA);
+  entityManager.persist(teamB);
+
+  Member a = new Member(teamA ,"a");
+  Member b = new Member(teamA ,"b");
+  entityManager.persist(a);
+  entityManager.persist(b);
+
+  teamA.getMembers().add(a);
+  teamA.getMembers().add(b);
+
+  Team findTeamA = entityManager.find(Team.class , teamA.getId());
+  System.out.println(findTeamA.getMembers());
+
+  Member c = new Member("c");
+  entityManager.persist(c);
+
+  findTeamA.getMembers().get(0).setUsername("update a");
+  findTeamA.getMembers().get(0).setTeam(teamB);
+  findTeamA.getMembers().add(c); // 무시된다.
+```
+
+### 연관관계 편의 메소드
+- 연관관계는 양쪽 다 신경써야 한다.
+- 양방향 관계를 모두 설정하도록 변경해보자
+
+```java
+  public Member(Team team, String username) {
+      removeTeam(team);
+      team.getMembers().add(this);
+      this.team = team;
+      this.username = username;
+  }
+
+  public void setTeam(Team team) {
+      removeTeam(team);
+      this.team = team;
+      team.getMembers().add(this);
+  }
+
+  public void removeTeam(Team team){
+      if(this.team != null){
+          this.team.getMembers().remove(this);
+      }
+  }
 ```
