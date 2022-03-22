@@ -361,3 +361,13 @@ public class LinkedList<E> extends AbstractSequentialList<E>
         return element;
     }
 ```
+
+## **정리** 
+
+1. **리스트**는 중간 인덱스의 추가 , 삭제 시 복사 작업이 이루어진다.
+2. 복사 작업은 `native`한 `System.arraycopy`로 이루어지며 , 해당 메서드는 일반 `loop`문 보다 훨씬 빠르다.
+3. **연결 리스트**는 `first`와 `last`로 연결되어 있다.
+4. 추가 또는 삭제의 작업은 주소 `swap`작업이 끝이지만 , 특정 인덱스에 접근하는데 시간이 걸린다.
+5. 인덱스로 접근할 수 없으니 , 특정 값 또는 인덱스의 노드를 찾을 때는 `loop`문이 사용된다.
+6. 최적화로 볼 수 있는지는 모르겠지만 인덱스와 리스트의 사이즈를 비교하여 `first`에서 찾을지 , `last`에서 찾을지 확인한다.
+7. 추가로 [**ArrayDeque가 Stack과 Queue보다 빠르다?**](https://jdalma.github.io/docs/lab/arrayDeque/)도 확인해보자
