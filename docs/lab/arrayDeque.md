@@ -26,9 +26,7 @@ parent: 👨‍🔬 Lab
 
 ### `synchronized` 남발
 
-**[synchronized](https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html)**
-
-**[synchronized 더 보기](http://tutorials.jenkov.com/java-concurrency/synchronized.html#java-concurrency-utilities)**
+- [**LAB** `synchronized` 더보기](https://jdalma.github.io/docs/lab/synchronized/)
 
 ```java
 package java.util;
