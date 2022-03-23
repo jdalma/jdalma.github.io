@@ -191,6 +191,7 @@ public class App {
 
 ### [Garbage Collector](https://d2.naver.com/helloworld/1329)
 - [Java Reference와 GC](https://d2.naver.com/helloworld/329631)
+- [GC(Garbage Collector) 종류 및 내부 원리](https://dongwooklee96.github.io/post/2021/04/04/gcgarbage-collector-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EB%82%B4%EB%B6%80-%EC%9B%90%EB%A6%AC.html)
 - 참조되지 않는 객체를 수집하고 제거한다.
 - System.gc()로 호출할 수는 있지만 실행이 보장되지는 않는다.
 
