@@ -401,9 +401,11 @@ MEMBER_ID 	USERNAME  	TEAM_ID
   findTeamA.getMembers().add(c); // 무시된다.
 ```
 
-### 연관관계 편의 메소드
-- 연관관계는 양쪽 다 신경써야 한다.
-- 양방향 관계를 모두 설정하도록 변경해보자
+- **양방향 관계를 모두 설정하도록 변경해보자**
+- 양방향 매핑시에 무한 루프를 조심하자!!
+  - ex) *toString() , lombok , JSON 생성 라이브러리*
+  - 컨트롤러에서 엔티티를 반환하지 마라!!!
+- `Setter`의 관례가 아닌 `changeTeam()`등등 메서드를 고쳐서 사용하는게 더 직관적이다.
 
 ```java
   public Member(Team team, String username) {
