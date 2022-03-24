@@ -12,6 +12,13 @@ parent: 예외 정리
 
 ---
 
+## `mysql Connection 끊어지는 문제`
+
+- `validateQuery`가 없어서 나는 문제
+- 관련 분석이 필요하다.
+- [Common DBCP 이해하기](https://d2.naver.com/helloworld/5102792)
+- [Common](https://commons.apache.org/proper/commons-dbcp/configuration.html)
+
 ## `org.apache.ibatis.binding.BindingException`
 
 ### `Invalid bound statement (not found): {classPath}.testMapper.selectAll`
