@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-03-24`
+
+## **[Common DBCP 이해하기](https://d2.naver.com/helloworld/5102792)**
+
 # `2022-03-23`
 
 ## **[JPA JPQL의 조회 동작 살펴보기](https://cheese10yun.github.io/jpa-jpql/)**
