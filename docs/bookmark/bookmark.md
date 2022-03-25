@@ -12,6 +12,11 @@ has_children: true
 {:toc}
 ---
 
+# `2022-03-25`
+
+## **[해치지 않는 웹 네트워크](https://brunch.co.kr/magazine/webnetwork)**
+## **[ORACLE Java Language and Virtual Machine Specifications](https://docs.oracle.com/javase/specs/index.html)**
+
 # `2022-03-24`
 
 ## **[Common DBCP 이해하기](https://d2.naver.com/helloworld/5102792)**
