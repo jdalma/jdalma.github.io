@@ -59,6 +59,7 @@ public OrderService orderService(){
 <div class="code-example" markdown="1">
 SingletonTest
 </div>
+
 ```java
 public class SingletonTest {
 
