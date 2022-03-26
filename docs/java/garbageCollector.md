@@ -77,8 +77,6 @@ nav_order: 2
 - 위의 절차를 확인해 보면 알겠지만 `Survivor`영역 중 하나는 반드시 비어 있는 상태로 남아 있어야한다.
 - 두 `Survivor`영역에 모두 데이터가 존재하거나 , 사용량이 0이라면 해당 시스템은 정상적인 상황이 아니다.
 
-![](../../assets/images/java/garbageCollector/minorGC.png)
-
 ### `Eden` 에서 `Survivor` 영역으로
 
 ```
