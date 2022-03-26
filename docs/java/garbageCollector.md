@@ -11,15 +11,24 @@ nav_order: 2
 {:toc}
 ---
 
+[Garbage Collection 튜닝]: https://d2.naver.com/helloworld/37111
+[Java Garbage Collection]: https://d2.naver.com/helloworld/1329
+[Java Reference와 GC]: https://d2.naver.com/helloworld/329631
+[ORACLE Java 8 Virtual Machine Specifications]: https://docs.oracle.com/javase/specs/jvms/se8/html/index.html
+[Java (JVM) Memory Model – Memory Management in Java]: https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java
+[Java GC 튜닝]: https://johngrib.github.io/wiki/java-gc-tuning/
+[Minor GC - Eden에서 Survivor 영역으로]: https://johngrib.github.io/wiki/java-gc-eden-to-survivor/
+[Java HotSpot VM Parallel Collector]: https://johngrib.github.io/wiki/java-gc-parallel-collector/
+
 - **출처**
-  - [Garbage Collection 튜닝](https://d2.naver.com/helloworld/37111)
-  - [Java Garbage Collection](https://d2.naver.com/helloworld/1329)
-  - [Java Reference와 GC](https://d2.naver.com/helloworld/329631)
-  - [ORACLE Java 8 Virtual Machine Specifications](https://docs.oracle.com/javase/specs/jvms/se8/html/index.html)
-  - [Java (JVM) Memory Model – Memory Management in Java](https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java)
-  - [Java GC 튜닝](https://johngrib.github.io/wiki/java-gc-tuning/)
-  - [Minor GC - Eden에서 Survivor 영역으로](https://johngrib.github.io/wiki/java-gc-eden-to-survivor/)
-  - [Java HotSpot VM Parallel Collector](https://johngrib.github.io/wiki/java-gc-parallel-collector/)
+  - [Garbage Collection 튜닝][Garbage Collection 튜닝]
+  - [Java Garbage Collection][Java Garbage Collection]
+  - [Java Reference와 GC][Java Reference와 GC]
+  - [ORACLE Java 8 Virtual Machine Specifications][ORACLE Java 8 Virtual Machine Specifications]
+  - [Java (JVM) Memory Model – Memory Management in Java][Java (JVM) Memory Model – Memory Management in Java]
+  - [Java GC 튜닝][Java GC 튜닝]
+  - [Minor GC - Eden에서 Survivor 영역으로][Minor GC - Eden에서 Survivor 영역으로]
+  - [Java HotSpot VM Parallel Collector][Java HotSpot VM Parallel Collector]
 - 이 글은 위의 출처에서 각 내용을 발췌하여 작성하였습니다.
 
 ***
@@ -40,7 +49,7 @@ nav_order: 2
   - **대부분의 객체는 금방 접근 불가능 상태 `unreachable`가 된다**
   - **오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재한다.**
 - 이 가정의 장점을 최대한 살리기 위해서 **HotSpot VM**에서는 크게 2개의 물리적 공간으로 나누었다.
-- 추가로 JVM은 *보다 빠른 메모리 할당을 위해 두 가지 기술을 사용한다.* [Java Garbage Collection](https://d2.naver.com/helloworld/1329)참고
+- 추가로 JVM은 *보다 빠른 메모리 할당을 위해 두 가지 기술을 사용한다.* [Java Garbage Collection]참고
 
 ![](../../assets/images/java/garbageCollector/jvmHeap.png)
 
@@ -253,3 +262,31 @@ Old
 - 참조 사슬과 무관한 객체들이 `unreachable` 객체로 **GC**대상이다.
 - 위의 참조는 모두 `java.lang.ref`패키지를 사용하지 않은 일반적인 참조이며 , 이를 흔히 **Strong Reference**라 부른다.
 
+## **Soft , Weak , Phantom Reference**
+- `java.lang.ref`는 **soft reference**와 **weak reference**, **phantom reference**를 클래스 형태로 제공한다.
+- 이 3가지 클래스에 의해 생성된 객체를 `reference object`라고 부른다.
+  - 이 `reference object`에 의해 참조된 객체는 `referent`라고 부른다.
+
+```java
+  WeakReference<Sample> wr = new WeakReference<Sample>(new Sample());  
+  Sample ex = wr.get();  
+  ...
+  ex = null;  
+```
+
+- `new WeakReference()` 생성자로 생성된 객체는 `reference object`
+- `new Sample()` 생성자로 생성된 객체는 `referent`이다.
+
+## **Reference와 Reachability**
+- 사용자 코드에서는 **GC 대상 여부**를 관여할 수 없었다.
+- 그러나 `java.lang.ref` 패키지를 이용하면 `reachable`객체들을 **strongly reachable**, **softly reachable** , **weakly reachable** , **phantomly reachable**로 더 자세히 구별하여 **GC 대상 여부**를 판별하는 부분에 **사용자 코드가 개입할 수 있게 되었다.**
+
+![](../../assets/images/java/garbageCollector/weakReference.png)
+
+- **GC**가 동작할 때 `unreachable`객체 뿐만 아니라 **`weakly reachable`객체도 가비지 객체로 간주되어 메모리에서 회수된다.**
+- `root set`으로부터 시작된 참조 사슬에 포함되어 있음에도 불구하고 **GC**가 동작할 때 회수된다.
+  - `A`객체는 **strongly reachable** 객체이다.
+
+
+- ... 여기까지 **GC 대상 여부**를 판별하는 부분에 **사용자 코드가 개입할 수 있다는 것**만 확인하자
+- 추가적인 내용은 [Java Reference와 GC][Java Reference와 GC]
