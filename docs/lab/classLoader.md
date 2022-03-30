@@ -12,3 +12,5 @@ parent: 👨‍🔬 Lab
 
 ---
 
+
+# [Loading, Linking, and Initializing](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-5.html)
