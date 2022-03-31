@@ -15,6 +15,7 @@ has_children: true
 # `2022-03-31`
 
 ## **[Naver D2 - Java의 날짜와 시간 API](https://d2.naver.com/helloworld/645609)**
+## **[회고, 똑똑하게 때와 상황에 맞게 골라하자 !](https://jiyu0719.medium.com/%ED%9A%8C%EA%B3%A0-%EB%98%91%EB%98%91%ED%95%98%EA%B2%8C-%EB%95%8C%EC%99%80-%EC%83%81%ED%99%A9%EC%97%90-%EB%A7%9E%EA%B2%8C-%EA%B3%A8%EB%9D%BC%ED%95%98%EC%9E%90-42b57ae17a4a)**
 
 # `2022-03-25`
 
