@@ -149,3 +149,16 @@ java.lang.reflect.InvocationTargetException
     return jsonObject;
   }
 ```
+
+
+```java
+    PropertyDescriptor[] pds = PropertyUtils.getPropertyDescriptors(list);
+    for(PropertyDescriptor pd : pds) {
+        System.out.println(pd.getName());
+        System.out.println(PropertyUtils.getProperty(list, pd.getName()));
+    }
+    System.out.println("------------------------------");
+    for(PropertyDescriptor pd : pds) {
+        System.out.println(pd.getReadMethod());
+    }    	            
+```
