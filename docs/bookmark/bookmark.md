@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-04-01`
+
+## **[신입으로서 임원 면접을 준비할 때](https://velog.io/@wongue_shin/신입-개발자가-1차면접-통과-이후에-준비해야할-부분)**
+
 # `2022-03-31`
 
 ## **[Naver D2 - Java의 날짜와 시간 API](https://d2.naver.com/helloworld/645609)**
