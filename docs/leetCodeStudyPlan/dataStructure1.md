@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Data Structrue I
+title: Data Structure I
 nav_order: 10
 parent: 🔥 LeetCode Study Plan
 ---
