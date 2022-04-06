@@ -128,3 +128,50 @@ class Solution {
     }
 }
 ```
+
+***
+
+## **[Majority Element](https://leetcode.com/problems/majority-element/)**
+
+### **Brute Force**
+
+```java
+class Solution {
+    public int majorityElement(int[] nums) {
+        int majorityCount = nums.length/2;
+
+        for (int num : nums) {
+            int count = 0;
+            for (int elem : nums) {
+                if (elem == num) {
+                    count += 1;
+                }
+            }
+            if (count > majorityCount) {
+                return num;
+            }
+        }
+        return -1;    
+    }
+}
+```
+
+### **Boyer-Moore Voting Algorithm** 👍
+
+```java
+class Solution {
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        Integer candidate = null;
+
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            count += (num == candidate) ? 1 : -1;
+        }
+
+        return candidate;
+    }
+}
+```
