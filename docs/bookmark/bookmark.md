@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-04-07`
+
+## **[Udacity Git Commit Message Style Guide](https://udacity.github.io/git-styleguide/)**
+
 # `2022-04-05`
 
 ## **[도움이 될수도 있는 JVM memory leak 이야기](https://techblog.woowahan.com/2628/)**
