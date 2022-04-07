@@ -15,6 +15,7 @@ has_children: true
 # `2022-04-07`
 
 ## **[Udacity Git Commit Message Style Guide](https://udacity.github.io/git-styleguide/)**
+## **[캠퍼스 핵데이 Java 코딩 컨벤션](https://naver.github.io/hackday-conventions-java)**
 
 # `2022-04-05`
 
