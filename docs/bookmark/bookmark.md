@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-04-12`
+
+## **[`@ServletComponentScan`](https://www.baeldung.com/spring-servletcomponentscan)**
+
 # `2022-04-10`
 
 ## **[클린 코더스 강의](https://www.youtube.com/watch?v=60lLSe1phks&list=PLeQ0NTYUDTmMM71Jn1scbEYdLFHz5ZqFA)**
