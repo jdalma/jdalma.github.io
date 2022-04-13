@@ -64,7 +64,6 @@ has_children: true
 
 # `2022-03-16`
 
-## **[운영체제 - 반효경 교수](http://www.kocw.net/home/search/kemView.do?kemId=1046323)**
 ## **[Spring Rest Docs](https://shirohoo.github.io/backend/test/2022-02-22-rest-docs-optimization/)**
 ## **[@Comment](https://shirohoo.github.io/diary/2022-02-16-diary-34/)**
 

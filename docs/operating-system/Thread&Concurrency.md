@@ -17,9 +17,11 @@ nav_order: 3
 # **Thread - 스레드**
 - **Light Weight Process** - 경량 프로세스
 - CPU 활용의 기본 단위
-- **스레드 ID, 프로그램 카운터, 레지스터 세트 및 스택으로 구성된다.**
+- **스레드 ID, 프로그램 카운터, 레지스터 집합 및 스택으로 구성된다.**
 
 ![](../../assets/images/operating-system/Thread/1.png)
+
+- `Thread`는 같은 **Process**에 속한 **다른 `Thread`** 와  **코드** , **데이터 섹션** 그리고 **열린 파일이나 신호와 같은 운영체제** 자원들을 공유한다.
 
 ![](../../assets/images/operating-system/Thread/2.png)
 
