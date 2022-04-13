@@ -12,6 +12,12 @@ has_children: true
 {:toc}
 ---
 
+# `2022-04-13`
+
+## **코드 리뷰 피라미드**
+
+![](../../assets/images/bookmark/codeReviewPyramid.png)
+
 # `2022-04-12`
 
 ## **[Cache 파헤치기](https://bluayer.com/55)**
