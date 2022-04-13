@@ -51,13 +51,82 @@ public class MemberController extends HttpServlet {
     ...
 ```
 
+> - `HttpServletRequest`, `HttpServletResponse`를 사용할 때 가장 중요한 점은 이 객체들이 **HTTP 요청 메시지**, **HTTP 응답 메시지**를 편리하게 사용하도록 도와주는 객체라는 점이다. 
+> - 따라서 이 기능에 대해서 깊이있는 이해를 하려면 **HTTP 스펙이 제공하는 요청, 응답 메시지 자체를 이해해야 한다.**
+
 ![](../../assets/images/spring-introduction/servlet/servletFlow.png)
 
 1. **WAS**는 **HTTP 요청 메세지를 기반으로** `Request`와 `Response` 객체를 새로 만들어 서블릿 객체를 호출한다.
 1. `/member/*` 해당 패턴과 같다면 서블릿 코드가 실행된다.
 1. **WAS**는 `Response`에 담겨있는 내용으로 **HTTP 응답 정보를 생성한다.**
 
-## **Request 와 Response는 실제로 어떻게 객체로 만들어질까??** ❓
+## **Request** `Header` , `Cookie` , `Content` 꺼내보기 
+
+```
+--- REQUEST-LINE - start ---
+request.getMethod() = GET
+request.getProtocal() = HTTP/1.1
+request.getScheme() = http
+request.getRequestURL() = http://localhost:8080/request-header
+request.getRequestURI() = /request-header
+request.getQueryString() = username=test
+request.isSecure() = false
+--- REQUEST-LINE - end ---
+
+--- Headers - start ---
+host: host
+connection: connection
+sec-ch-ua: sec-ch-ua
+sec-ch-ua-mobile: sec-ch-ua-mobile
+sec-ch-ua-platform: sec-ch-ua-platform
+upgrade-insecure-requests: upgrade-insecure-requests
+user-agent: user-agent
+accept: accept
+sec-fetch-site: sec-fetch-site
+sec-fetch-mode: sec-fetch-mode
+sec-fetch-user: sec-fetch-user
+sec-fetch-dest: sec-fetch-dest
+accept-encoding: accept-encoding
+accept-language: accept-language
+cookie: cookie
+--- Headers - end ---
+
+--- Header 편의 조회 start ---
+[Host 편의 조회]
+request.getServerName() = localhost
+request.getServerPort() = 8080
+
+[Accept-Language 편의 조회]
+locale = ko_KR
+locale = ko
+locale = en_US
+locale = en
+request.getLocale() = ko_KR
+
+[cookie 편의 조회]
+_ga: GA1.1.474794587.1646384192
+_ga_G0S23DCS1G: GS1.1.1646437723.2.0.1646437723.0
+
+[Content 편의 조회]
+request.getContentType() = null
+request.getContentLength() = -1
+request.getCharacterEncoding() = UTF-8
+--- Header 편의 조회 end ---
+
+--- 기타 조회 start ---
+[Remote 정보]
+request.getRemoteHost() = 0:0:0:0:0:0:0:1
+request.getRemoteAddr() = 0:0:0:0:0:0:0:1
+request.getRemotePort() = 63665
+
+[Local 정보]
+request.getLocalName() = localhost
+request.getLocalAddr() = 0:0:0:0:0:0:0:1
+request.getLocalPort() = 8080
+--- 기타 조회 end ---
+```
+
+## **Request 와 Response는 실제로 어떻게 객체로 만들어질까??** 🚩
 
 # **Servlet Container**
 
