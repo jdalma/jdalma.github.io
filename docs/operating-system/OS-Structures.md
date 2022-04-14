@@ -72,6 +72,8 @@ nav_order: 1
 > ✋ **C 표준 라이브러리 ➜ printF 실행**
 
 ![](../../assets/images/operating-system/OS-Structure/9.png)
+![](../../assets/images/operating-system/OS-Structure/program.png)
+
 
 ![](../../assets/images/operating-system/OS-Structure/2.png)
 
@@ -128,3 +130,18 @@ nav_order: 1
 - 단일 컴퓨터의 하드웨어를 추상화 하고 **VMM(Virtual Machine Manager)** 를 사용하여 여러 개의 운영체제를 사용할 수 있다.
 
 ![](../../assets/images/operating-system/OS-Structure/6.png)
+
+
+## **`Synchronous I/O` 동기식 입출력**
+- `I/O` 요청 후 입출력이 작업이 완료된 후에야 제어가 사용자 프로그램에 넘어간다.
+- `I/O`가 완료될 때 까지 해당 프로세스에서 CPU를 빼았고 다른 프로세스를 실행한다.
+
+## **`Asynchronous I/O` 비동기식 입출력**
+- `I/O`가 시작된 후 입출력 작업이 끝나기를 기다리지 않고 제어가 사용자 프로그램에 즉시 넘어간다.
+- 동기식 입출력과 비동기식 입출력 두 경우 모두 `I/O`의 **완료는 인터럽트로 알려준다.**
+
+## **`DMA (Direct Memory Access)`**
+- 빠른 입출력 장치를 메모리에 가까운 속도로 처리하기 위해 사용
+- `CPU`의 중재 없이 `Device Controller`가 Device의 `BufferStroage`의 내용을 메모리에 **block**단위로 직접 전송
+- 바이트 단위가 아니라 **block**단위로 인터럽트를 발생시킨다
+
