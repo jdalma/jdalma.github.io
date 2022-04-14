@@ -18,7 +18,7 @@ has_children: true
 ## **[웹 서비스 캐시 똑똑하게 다루기](https://toss.tech/article/smart-web-service-cache)**
 ## **[웹 캐시 특징](https://hahahoho5915.tistory.com/33)**
 ## **[javaguides.net](https://www.javaguides.net/)**
-## **[`RESTful API` 서버를 위협하는 한 글자, 슬래시 – CVE-2016-5007](https://netmarble.engineering/spring-security-path-matching-inconsistency-cve-2016-5007/)
+## **[`RESTful API` 서버를 위협하는 한 글자, 슬래시 – CVE-2016-5007](https://netmarble.engineering/spring-security-path-matching-inconsistency-cve-2016-5007/)**
 ## **[`@Transactional` 파헤치기](https://bluayer.com/54)**
 ## **[`<meta>` 문서 레벨 메타데이터 요소](https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta)**
 
