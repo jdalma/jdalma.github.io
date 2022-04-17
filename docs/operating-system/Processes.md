@@ -48,6 +48,7 @@ nav_order: 2
 - **Running** 
   - (시분할을 통하여) `CPU`를 점유하고 있는 상태 , 명령어들 또는 `instruction`이 실행되고 있다
 - **Blocked** (`Waiting` , `Sleep`) 
+  - 자신이 요청한 `event`가 만족되면 `Ready`로 변경된다
   - `CPU`를 주어도 당장 `instruction`을 수행할 수 없는 상태
   - **다른 프로세스의 작업** 이나 **I/O** 또는 **이벤트를 기다리고 있는 상태**
 - **Ready**
@@ -55,6 +56,12 @@ nav_order: 2
   - `CPU`를 점유할 준비가 되어있는 상태
 - **Terminated** 
   - 프로세스의 실행이 종료된 상태
+- **Suspended** (`Stopped`) 📌
+  - 외부(**Swapper**)적인 이유로 프로세스의 수행이 정지된 상태
+    - 외부에서 `resume`해 주어야 `Active`
+  - 프로세스는 통째로 디스크에 `swap out`된다
+    - 사용자가 프로그램을 일시 정지 시킨 경우 (`break key`)
+    - *메모리에 너무 많은 프로세스가 올라와 있을 때* 시스템이 여러 이유로 프로세스를 잠시 중단시킴
 
 ![](../../assets/images/operating-system/Processes/3.png)
 
@@ -117,17 +124,27 @@ nav_order: 2
 
 ### `Long-term Scheduler` : **장기 스케줄러** 또는 **Job Scheduler**
 - 시작 프로세스 중 어떤 것 들을 `Ready Queue`로 보낼지 결정
+  - *`new`* 에서 *`ready`* 넘어올 때의 **admitted** 단계
 - 프로세스에 `Memory (및 각종 자원)`를 주는 문제
 - `Degree Of Multiprogramming`을 제어
-- `Time Sharing System`에는 보통 장기 스케줄러가 없다 *무조건 `ready`*
+  - 메모리에 올라가있는 프로세스의 개수를 제어
+  - `Degree Of Multiprogramming`이 **9**라면 메모리에 올라가 있는 프로세스의 개수는 9개다
+- 요즘 시스템 `Time Sharing System`에는 **보통 장기 스케줄러가 없다** *무조건 `ready`* 📌
+  - 그렇다면 `Degree Of Multiprogramming`을 어떻게 제어할까??
+    - **아래의 `Medium-term Scheduler`가 해결해준다.**
 
 
 ### `Short-term Scheduler` : **단기 스케줄러** 또는 **CPU Scheduler**
-- 어떤 프로세스를 다음번에 `Running`시킬지 결정
+- **어떤 프로세스를 다음번에 `Running`시킬지 결정**
 - 프로세스에 **CPU**를 주는 문제
 - 충분히 빨라야 한다.
 
 ### `Medium-term Scheduler` : **중기 스케줄러** 또는 **Swapper**
+- **여유공간 마련을 위해 프로세스를 통째로 메모리에서 디스크로 쫓아냄** 📌
+- 프로세스에게서 `Memory`를 뺏는 역할
+- `Degree Of Multiprogramming`을 제어
+
+![](../../assets/images/operating-system/Processes/14.png)
 
 ## **프로세스가 새로운 프로세스를 생성할 수 있다.**
 - ex : fork()
