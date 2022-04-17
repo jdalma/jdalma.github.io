@@ -13,8 +13,8 @@ nav_order: 2
 
 # **프로세스의 이해**
 
-## **프로세스(Process)**
-- 실행 중인 프로그램을 **프로세스(Processs)** 라고 한다.
+## **프로세스 (`Process`)**
+- 실행 중인 프로그램을 **Processs** 라고 한다.
 - **단일 스레드**를 수행하는 프로그램이다. (한 번에 하나의 작업만 수행한다.)
   - ✋ **여러 스레드의 실행도 허용 한다. (챕터 4장에서 자세히 설명한다.)**
 - 프로세스들은 해당 작업을 수행하기 위해 아래와 같은 자원들이 필요하다.
@@ -43,25 +43,32 @@ nav_order: 2
 
 ## **프로세스의 생명주기**
 
-- **New** : 프로세스가 생성 중
-- **Running** : (시분할을 통하여) CPU를 점유하고 있는 상태 , 명령어들이 실행되고 있다
-- **Waiting** : 다른 프로세스의 작업 이나 I/O 또는 이벤트를 기다리고 있는 상태
-- **Ready** : (Ready Queue에 들어가) CPU를 점유할 준비가 되어있는 상태
-- **Terminated** : 프로세스의 실행이 종료된 상태
+- **New**
+  - 프로세스가 생성 중
+- **Running** 
+  - (시분할을 통하여) `CPU`를 점유하고 있는 상태 , 명령어들 또는 `instruction`이 실행되고 있다
+- **Blocked** (`Waiting` , `Sleep`) 
+  - `CPU`를 주어도 당장 `instruction`을 수행할 수 없는 상태
+  - **다른 프로세스의 작업** 이나 **I/O** 또는 **이벤트를 기다리고 있는 상태**
+- **Ready**
+  - (Ready Queue에 들어가) 메모리 등 다른 조건을 모두 만족하고 `CPU`를 기다리는 상태
+  - `CPU`를 점유할 준비가 되어있는 상태
+- **Terminated** 
+  - 프로세스의 실행이 종료된 상태
 
 ![](../../assets/images/operating-system/Processes/3.png)
 
-## **PCB (Process Control Block)** or TCB (Task Control Block)
-
-- 각 프로세스가 가져야 할 정보를 저장 해놓는 것
-  - **Process state** : 상태
-  - **Program Counter** : 메모리 주소
-  - CPU Registers
-  - CPU - Scheduling 정보
-  - 메모리 관리 정보
-  - 사용자 계정 정보
-  - I/O 상태 정보
-  - ...
+## **PCB (`Process Control Block`)** or TCB (`Task Control Block`)
+- 운영체제가 **각 프로세스를 관리하기 위해 프로세스당 유지하는 정보**
+1. **OS**가 관리상 사용하는 정보
+   - `Process State` , `Process ID`
+   - `Scheduling Information` , `Priority` 
+2. **CPU** 수행 관련 하드웨어 값 
+   - `Program Counter` , `Registers`
+3. 메모리 관련
+   - `Code` , `Data` , `Stack`의 위치 정보 
+4. 파일 관련
+   - `Open File Descriptors`
 
 ![](../../assets/images/operating-system/Processes/4.png)
 
@@ -70,8 +77,13 @@ nav_order: 2
 - **Multiprogramming**
 - **Time Sharing**
 - **Scheduling Queues**
-  - **Ready Queue**
-  - **Waiting Queue**
+  - `Job Queue`
+    - **현재 시스템내에 있는 모든 프로세스의 집합**
+  - `Ready Queue`
+    - 현재 메모리 내에 있으면서 **CPU**를 잡아서 실행되기를 기다리는 프로세스의 집합
+  - `Device Queues`
+    - `I/O device`의 처리를 기다리는 프로세스의 집합
+
 
 ![](../../assets/images/operating-system/Processes/5.png)
 
@@ -79,10 +91,12 @@ nav_order: 2
 
 ![](../../assets/images/operating-system/Processes/6.png)
 
-
 ## **Context Switch**
 
 - **PCB** 정보를 **Context (문맥)** 이라 한다.
+- **CPU**를 한 프로세스에서 다른 프로세스로 넘겨주는 과정
+
+
 > 1. **CPU 코어를 다른 프로세스로 전환한다.**
 > 2. **현재 프로세스의 상태를 저장한다.**
 > 3. **다른 프로세스의 상태를 복원한다.**
@@ -93,6 +107,27 @@ nav_order: 2
 
 ![](../../assets/images/operating-system/Processes/7.png)
 
+- `System call`이나 `Interrupt`발생 시 반드시 **Context Switch**가 일어나는 것은 아니다.
+- **사용자 프로세스가 운영 체제 커널로 넘어가는것을 Context Switch라고 말하진 않는다.**
+  - 이후에 , `CPU`가 다른 프로세스한테 넘겨주는 경우가 있다. 이 경우를 **Context Switch**라고 한다.
+
+![](../../assets/images/operating-system/Processes/13.png)
+
+## **스케줄러 (`Scheduler`)**
+
+### `Long-term Scheduler` : **장기 스케줄러** 또는 **Job Scheduler**
+- 시작 프로세스 중 어떤 것 들을 `Ready Queue`로 보낼지 결정
+- 프로세스에 `Memory (및 각종 자원)`를 주는 문제
+- `Degree Of Multiprogramming`을 제어
+- `Time Sharing System`에는 보통 장기 스케줄러가 없다 *무조건 `ready`*
+
+
+### `Short-term Scheduler` : **단기 스케줄러** 또는 **CPU Scheduler**
+- 어떤 프로세스를 다음번에 `Running`시킬지 결정
+- 프로세스에 **CPU**를 주는 문제
+- 충분히 빨라야 한다.
+
+### `Medium-term Scheduler` : **중기 스케줄러** 또는 **Swapper**
 
 ## **프로세스가 새로운 프로세스를 생성할 수 있다.**
 - ex : fork()
