@@ -147,7 +147,7 @@ nav_order: 2
 ![](../../assets/images/operating-system/Processes/14.png)
 
 ## **프로세스가 새로운 프로세스를 생성할 수 있다.**
-- ex : fork()
+- ex : `fork()`
 
 ![](../../assets/images/operating-system/Processes/8.png)
 
@@ -157,6 +157,18 @@ nav_order: 2
 - **두 가지 주소 공간 가능성**
   - 자식 프로세스는 부모 프로세스와 같은 주소 공간을 사용한다.
   - 자식 프로세스가 새로 로드된다.
+- 프로세스가 마지막 명령을 수행한 후 운영체제에 이를 알려준다 - **`exit`시스템 콜**
+  - 자식이 부모에게 `output data`를 보냄 - **`wait`시스템 콜**
+  - 프로세스의 각종 자원들이 운영체제에게 반납됨
+- 부모 프로세스가 자식의 수행을 종료시키는 경우 - **`abort`시스템 콜**
+  - 자식이 할당 자원의 한계치를 넘어설 경우
+  - 자식에게 할당된 태스크가 더 이상 필요하지 않을 경우
+  - **부모가 종료 `exit`하는 경우**
+    - 운영체제는 부모 프로세스가 종료하는 경우 자식이 더 이상 수행 되도록 두지 않는다
+    - **단계적인 종료**
+- `Copy-On-Write` 🚩
+  - 메모리 효율성을 위해 자식 프로세스의 내용이 수정되면 그 때 부모 프로세스의 공유하던 정보를 복사한다.
+
 
 ![](../../assets/images/operating-system/Processes/9.png)
 
@@ -192,9 +204,9 @@ nav_order: 2
 
 ***
 
-# **프로세스의 생성**
+# **프로세스와 관련한 시스템 콜**
 
-## **fork()**
+## create a child (copy) `fork()` 
 
 - **fork()** **System call**에 의해 새로운 프로세스가 생성된다.
 - **프로세스의 리턴 코드가 0이면 자식 프로세스 이고 , 0이 아니면 부모 프로세스이다.**
@@ -221,27 +233,7 @@ int main()
 // Hello, Process 0
 ```
 
-### **fork() 예제 1 - 부모 프로세스 `wait()`**
-
-```c
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/wait.h>
-
-int main()
-{
-    pid_t pid;
-    pid = fork();
-    if(pid > 0) wait(NULL);
-    printf("Hello , Process %d \n" , pid);
-
-    return 0;
-}
-// Hello , Process 0
-// Hello , Process 306
-```
-
-### **fork() 예제 2 - 자식 프로세스 `value += 15`**
+### **예제 1 - 자식 프로세스 `value += 15`**
 
 ```c
 #include <stdio.h>
@@ -270,7 +262,7 @@ int main()
 > ✋ **위의 value 값이 5가 나오는 이유**
 > - 자식 프로세스의 value 값이 20으로 증가하고 , 부모 프로세스의 value 값은 5 그대로 이다.
 
-### **fork() 예제 3 - 연속 fork()**
+### **예제 2 - 연속 fork()**
 
 ```c
 #include <stdio.h>
@@ -298,7 +290,7 @@ int main()
 // process
 ```
 
-### **fork() 예제 4 - `value += 5` , 연속 fork()**
+### **예제 3 - `value += 5` , 연속 fork()**
 
 ```c
 #include <stdio.h>
@@ -339,40 +331,7 @@ int main()
 // Process : 0 -> 15
 ```
 
-### **fork() 예제 5 - 자식 프로세스 `execlp("/bin/ls" , "ls" , NULL);`**
-
-```c
-#include <stdio.h>
-#include <unistd.h>
-#include <wait.h>
-
-    int value = 0;
-
-    int main()
-{
-    pid_t pid;
-    pid = fork();
-
-    if(pid == 0){ // child process
-        execlp("/bin/ls" , "ls" , NULL);
-        printf("LINE J\n");
-    }
-    else if(pid > 0){
-        wait(NULL);
-        printf("Child Complete \n");
-    }
-
-    return 0;
-}
-// a.out hello.c
-// Child Complete
-```
-
->  ✋ `printf("LINE J\n");` 는 실행되지 않는다.
-> - `execlp()` 는 해당 자식 프로세스의 주소에 ls명령어로 덮어 쓴다.
-
-
-### **fork() 예제 6 - `getpid()`**
+### **예제 4 - `getpid()`**
 
 ```c
 #include <stdio.h>
@@ -406,7 +365,7 @@ int main()
 // parent : pid1 = 705
 ```
 
-### **fork() 예제 7 - `int nums[size] = {0 , 1 , 2 , 3 , 4}`**
+### **예제 5 - `int nums[size] = {0 , 1 , 2 , 3 , 4}`**
 
 ```c
 #include <stdio.h>
@@ -450,14 +409,83 @@ int main()
 // PARENT : 4
 ```
 
+## overlay new image `execlp()`
+- 프로세스를 생성하지만 `fork()`와 달리 **완전히 새로운 프로세스를 생성한다.**
+
+### **자식 프로세스 `execlp("/bin/ls" , "ls" , NULL);`**
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <wait.h>
+
+    int value = 0;
+
+    int main()
+{
+    pid_t pid;
+    pid = fork();
+
+    if(pid == 0){ // child process
+        execlp("/bin/ls" , "ls" , NULL);
+        printf("LINE J\n");
+    }
+    else if(pid > 0){
+        wait(NULL);
+        printf("Child Complete \n");
+    }
+
+    return 0;
+}
+// a.out hello.c
+// Child Complete
+```
+
+>  ✋ `printf("LINE J\n");` 는 실행되지 않는다.
+
+## sleep until process is done `wait()`
+- `wait()`를 실행한 프로세스를 **sleep**시킨다 (`block` 상태)
+- 다른 프로세스가 종료되면 자고 있던 프로세스를 깨운다 (`ready` 상태)
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main()
+{
+    pid_t pid;
+    pid = fork();
+    if(pid > 0) wait(NULL);
+    printf("Hello , Process %d \n" , pid);
+
+    return 0;
+}
+// Hello , Process 0
+// Hello , Process 306
+```
+
+## frees all the resources , notify parent `exit()`
+- **자발적 종료**
+  1. 마지막 `statement`수행 후 `exit()`시스템 콜을 호출
+     - *프로그램에 명시적으로 적어주지 않아도 `main`함수가 리턴되는 위치에 컴파일러가 넣어줌*
+- **비자발적 종료**
+  1. 부모 프로세스가 자식 프로세스를 강제로 종료시키는 경우
+      - *자식 프로세스가 한계치를 넘는 자원을 요청하거나 , 태스크가 더 이상 필요하지 않을 떄*
+  2. 키보드로 `kill` , `break`등을 친 경우
+  3. 부모가 종료하는 경우
+      - *부모 프로세스가 종료하기 전에 자식들이 먼저 종료된다.* 
+
 ***
 
-# **프로세스간 통신 IPC (Inter-Process Communication)**
+# **독립적 프로세스 `Independant Process`**
+- 프로세스는 각자의 주소 공간을 가지고 수행되므로 원칙적으로 하나의 프로세스는 다른 프로세스의 수행에 영향을 미치지 못한다.
 
-- **프로세스가 독립적일 때**
-  - 다른 프로세스와 데이터를 공유하지 않는 경우
-- **부모와 자식 프로세스가 협력(cooperating)할 때**
-  - <span style="color:red; font-weight:bold">어떤 프로세스가 메세지와 데이터를 공유할 때 이 문제를 어떻게 해결할 것 인가?</span>
+# **협력 프로세스 `Cooperating Process`**
+- 프로세스 협력 메커니즘을 통해 하나의 프로세스가 다른 프로세스의 수행에 영향을 미칠 수 있다.
+
+# **프로세스간 협력 메커니즘 `IPC : Inter-Process Communication`**
+- <span style="color:red; font-weight:bold">어떤 프로세스가 메세지와 데이터를 공유할 때 이 문제를 어떻게 해결할 것 인가?</span>
 - 위와 같이 프로세스가 협력할 때 **IPC 메커니즘**이 필요하다.
 
 ## **IPC의 두 가지 기본 모델**
@@ -649,7 +677,7 @@ jeongdalma@DESKTOP-LBC6EVJ:~/testwsl$ ./a.out
 ```
 
 
-## Message Passing : **Pipes**
+## Message Passing : `Pipes`
 - **UNIX 시스템의 초기 IPC 메커니즘 중 하나**
 - 두 개의 프로세스가 소통하는 것
 - **Pipe 구현 시 고려해야할 사항**

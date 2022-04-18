@@ -11,6 +11,8 @@ nav_order: 1
 {:toc}
 ---
 
+![](../../assets/images/operating-system/OS-Structure/structure.png)
+
 ![](../../assets/images/operating-system/OS-Structure/7.png)
 
 
