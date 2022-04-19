@@ -30,8 +30,8 @@ public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws E
     return JSONObject.fromObject(restTemplate.postForObject(url, request, String.class));
 }
 
-@RequestMapping(value="callXerp", method=RequestMethod.POST)
-@ResponseBody // 존재 유무 예외 발생
+@RequestMapping(value="callServer", method=RequestMethod.POST)
+@ResponseBody
 public void callXerp(HttpServletRequest request, HttpServletResponse response) throws IOException {
     try {
         EgovMapForNull paramMap = StringUtil.requestToMapNoSession(request);
@@ -50,7 +50,6 @@ public void callXerp(HttpServletRequest request, HttpServletResponse response) t
 
 ```java
 // 수신 측 응답 response.getWriter().print(new JsonMsgMng().makeJsonObject(callStr));
-// content-type을 지정해주지 않았을 시 
 public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws Exception {
     try {
         LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
@@ -63,7 +62,7 @@ public static JSONObject sendPOST(String url , EgovMapForNull paramMap) throws E
 }
 // no suitable HttpMessageConverter found for response type [class net.sf.json.JSONObject] and content type [application/octet-stream] 예외 발생
 
-// content-type을 지정하지 않고 ResponseEntity<JSONObject>로 받았을 시
+// ResponseEntity<JSONObject>로 받았을 시
 public static ResponseEntity<JSONObject> sendPOST(String url , EgovMapForNull paramMap) throws Exception {
     try {
         LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
@@ -77,7 +76,7 @@ public static ResponseEntity<JSONObject> sendPOST(String url , EgovMapForNull pa
 // no suitable HttpMessageConverter found for response type [class net.sf.json.JSONObject] and content type [application/octet-stream] 예외 발생
 
 
-// content-type을 지정하지 않고 ResponseEntity<String>으로 받았을 시
+// ResponseEntity<String>으로 받았을 시
 public static ResponseEntity<String> sendPOST(String url , EgovMapForNull paramMap) throws Exception {
     try {
         LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
@@ -101,17 +100,12 @@ public static ResponseEntity<String> sendPOST(String url , EgovMapForNull paramM
 
 ```java
 
-    StringBuilder stringBuilder = new StringBuilder();
-    BufferedReader bufferedReader = null;
-    InputStream inputStream = request.getInputStream();
-    if (inputStream != null) {
-        bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-        char[] charBuffer = new char[128];
-        int bytesRead = -1;
-        while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
-            stringBuilder.append(charBuffer, 0, bytesRead);
-        }
-    }
+    ServletInputStream inputStream = request.getInputStream();
+    String messageBody = StreamUtils.copyToString(inputStream , StandardCharsets.UTF_8);
+    System.out.println("messageBody = " + messageBody);
+
+    HelloData helloData = objectMapper.readValue(messageBody , HelloData.class);
+    System.out.println(helloData);
 
 ```
 
@@ -150,11 +144,9 @@ public static ResponseEntity<String> sendPOST(String url , EgovMapForNull paramM
 - [no-suitable-httpmessageconverter-found-for-response-type](https://stackoverflow.com/questions/21854369/no-suitable-httpmessageconverter-found-for-response-type)
 - [MIME 타입](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 
-> - ✋ application/octet-stream이 뭔데?
-> - MIME의 개별 타입 중 application에 속하는 타입 , 8비트 단위의 binary data라는 뜻
-> - 이 타입은 이진 파일을 위한 기본값입니다. 
-> - 이 타입은 실제로 잘 알려지지 않은 이진 파일을 의미하므로, 브라우저는 보통 자동으로 실행하지 않거나 실행해야 할지 묻기도 합니다. 
-> - Content-Disposition 헤더가 값 attachment 와 함께 설정되었고 'Save As' 파일을 제안하는지 여부에 따라 브라우저가 그것을 다루게 됩니다.
+> - ✋ `application/octet-stream`이 뭔데?
+> - `MIME`의 개별 타입 중 `application`에 속하는 타입 , **8비트 단위의 binary data라는 뜻**
+> - 이 타입은 이진 파일을 위한 기본값 
 
 - 수정 코드
 
@@ -164,20 +156,6 @@ public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) {
         EgovMapForNull result = new EgovMapForNull();
         LinkedMultiValueMap<String, String> request = egovMapConvertToMultiValueMap(paramMap);
         ResponseEntity<String> response = restTemplate.postForEntity(url , request, String.class);
-        // header
-        // {
-        // 	Access-Control-Allow-Origin=[http://localhost:8080],
-        // 	Access-Control-Allow-Methods=[POST, PUT, GET, OPTIONS, DELETE],
-        // 	Access-Control-Max-Age=[3600],
-        // 	Access-Control-Request-Headers=[authorization, content-type],
-        // 	Access-Control-Allow-Headers=[X-Requested-With, Origin, Content-Type, Accept, x-device-user-agent, Content-Type],
-        // 	Content-Length=[4],
-        // 	Date=[Tue, 22 Feb 2022 04:32:45 GMT],
-        // 	Keep-Alive=[timeout=20],
-        // 	Connection=[keep-alive]}
-        // }
-        //  body - test
-        //  statusCode - 200
         return result;
     }
     catch(Exception e) {
@@ -186,14 +164,15 @@ public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) {
 }
 ```
 
-- **response**를 원하는 `Map` 객체 자체로 받을려고 해서 그런지... `ResponseEntity`로 감싸주니 정상으로 받았다.
+- **response**를 원하는 `Map` 객체 자체로 받을려고 해서 그런지 `ResponseEntity`로 감싸주니 정상으로 받았다.
 
 ## **그래서 이런 현상이 왜 발생했을까?**
 1. `Could not extract response: no suitable HttpMessageConverter found for response type [EgovMapForNull] and content type [application/octet-stream]`
     - 송신 측과 수신 측에 `Content-Type`을 따로 지정해주지 않았기 때문에 일단 기본 타입은 `application/octet-stream`이 맞다.
+      - *바디에 포함된 데이터가 어떤 형식인지 `Content-type`을 꼭 지정해야 한다.*
     - **수신 측에서 `Response`에 특정 상황에만 문자열을 담아주는 상황이였기 때문에 해당 문자열이 담기면 수신 측에 나는 에러였다.**
     - 해당 문제는 `ResponseEntity<String>`으로 받으니 해결되었다.
-    - `EgovMapForNull`로는 `Response`를 매핑할 수 없어서 나는 문제인 것 같다..
+    - `EgovMapForNull`로는 `Response`를 매핑할 수 없어서 나는 문제인 것 같다.
 
 ## **왜 `getParameter()`나 `getParameterValues()`로 읽을 수 없는 경우가 생겼을까?**
 - 해당 문제는 파라미터를 `String`으로 보냈었지만 `LinkedMultiValueMap`으로 변환하여 보내니 `getParameter()`나 `getParameterValues()`로 읽을 수 있었다.
@@ -221,9 +200,6 @@ public static EgovMapForNull sendPOST(String url , EgovMapForNull paramMap) {
   "data":{ "username" : "하나몬" }
 }
 ```
-
-## `Response`를 꼭 `ResponseEntity`로 감싸서 받아야하나? 🚩
-
 
 ## `ResponseErrorHandler`
 
