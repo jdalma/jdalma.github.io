@@ -25,6 +25,15 @@ nav_order: 4
 > ✋ **[CPU Burst VS I/O Burst](https://jhnyang.tistory.com/25)**
 
 # **CPU 스케줄러**
+- 프로세스에게 다음과 같은 상태 변화가 있을 때 CPU 스케줄링이 필요하다.
+  1. `Running` ➔ `Blocked` (예: **I/O**요청하는 시스템 콜)
+  2. `Running` ➔ `Ready` (예: 할당시간 만료로 **timer interrupt**)
+  3. `Blocked` ➔ `Ready` (예: **I/O**완료 후 인터럽트)
+  4. `Terminate`
+
+> - **1번 과 4번 - 선택할 수 없다 -> 비선점형**
+> - **나머지는 모두 선점형**
+
 - 메모리의 프로세스에서 프로세스 선택
 - 실행할 준비가 되어 있고 해당 프로세스에 CPU를 할당한다
 - **그러면 다음 프로세스를 어떻게 선택할 수 있을까?**
@@ -32,12 +41,12 @@ nav_order: 4
   - FIFO 대기열: 선입선출
   - 우선 순위 큐: 프로세스의 우선 순위를 어떻게 결정할 수 있을까?
 
-## **`Preemptive` 선점 vs `Non-preemptive` 비선점**
-- **`Non-preemptive` 비선점 스케줄링**
+## **`Preemptive` 선점형 vs `Non-preemptive` 비선점형**
+- **`Non-preemptive` 비선점형 스케줄링**
   - 프로세스가 CPU를 해제할 때까지 CPU를 유지한다
   - 이미 할당된 자원을 다른 프로세스가 가져갈 수 없다.
   - **덜 중요한 작업이 자원을 할당 받으면 중요한 작업이 와도 먼저 처리 될 수 없다.**
-- **`Preemptive` 선점 스케줄링**
+- **`Preemptive` 선점형 스케줄링**
   - 우선순위가 높은 프로세스를 빠르게 처리할 수 있다.
   - 어떤 프로세스가 자원을 사용하고 있을 때 우선순위가 더 높은 프로세스가 올 경우 자원을 가져갈 수 있다.
   - **빠른 응답 시간을 요구하는 시스템에서 사용**
@@ -45,20 +54,11 @@ nav_order: 4
 
 > ✋ **[선점 , 비선점 스케줄링](https://colomy.tistory.com/120)**
 
-## **CPU 스케줄링 선점 , 비선점 결정**
-1. 프로세스가 실행 중에서 대기 상태로 전환될 때
-1. 프로세스가 실행 중에서 준비 상태로 전환될 때
-1. 프로세스가 대기 상태에서 준비 상태로 전환될 때
-1. 프로세스가 종료되는 경우.
-- **1번 과 4번 - 선택할 수 없다 -> 비선점**
-- **2번 과 3번 - 선택할 수 있다 -> 선점형 또는 비선점형**
 
-## **Dispatcher 디스패처**
+## **`Dispatcher` 디스패처**
 - **CPU의 코어를 제어하는 모듈**
-- **디스패처의 기능**
-  - **한 프로세스에서 다른 프로세스로 컨텍스트 전환**
-  - 사용자 모드로 전환
-  - 사용자 프로그램을 재개하기 위해 적절한 위치로 점프
+- CPU의 제어권을 `CPU Scheduler`에 의해 선택된 프로세스에게 넘긴다
+  - `Context Switch`를 담당한다
 - **모든 컨텍스트 전환 중에 호출되기 때문에 디스패처는 가능한 빨라야 한다**
 - **디스패처 지연시간(Dispatcher Latency)은 한 프로세스를 중지하고 다른 실행을 시작하는 시간**
   - **[PCB (Process Control Block)](https://jwprogramming.tistory.com/16)** 를 저장하고 새로운 블록을 실행한다.
@@ -67,23 +67,23 @@ nav_order: 4
 
 ![](../../assets/images/operating-system/CPUScheduling/3.png)
 
-## **Scheduling Criteria 스케줄링 기준**
-- **CPU Utilization - CPU 사용률** : CPU를 최대로 사용하자.
-- **Throughput - 처리량** : 단위 시간 내에 프로세스를 최대한 빠르게 처리하자.
-- **Turnaround Time - 처리 시간** : 실행에서 종료까지의 시간을 최소화하자.
-- **📌 Waiting Time - 대기 시간** : 프로세스가 준비 대기열 Ready Queue 에서 대기하는 데 소비하는 시간을 최소화 하자
-- **Response Time - 응답 시간** : 응답을 시작하는 데 걸리는 시간
+
+## **`Scheduling Criteria` 스케줄링 성능 척도**
+- **CPU Utilization** : CPU 사용률
+- **Throughput** : 처리량 , 단위 시간 내에 처리한 프로세스의 수
+- **Turnaround Time** : **처리 시간**, 프로세스의 실행에서 종료까지의 시간
+  - 해당 프로세스의 총 `CPU burst` 시간
+- **📌 Waiting Time** : **대기 시간**, 프로세스가 준비 대기열 **Ready Queue 에서 대기하는 데 소비하는 시간**
+- **Response Time** : **응답 시간**, 응답을 시작하는 데 걸리는 시간
 
 
-## **준비 대기열 Ready Queue에 있는 어느 프로세스에게 CPU의 코어를 할당하나?**
+## **준비 대기열 `Ready Queue`에 있는 어느 프로세스에게 CPU의 코어를 할당하나?**
 
-### **FCFS(First-Come, First-Served)**
+### **`FCFS` First-Come, First-Served**
 - 선착순
 - **FIFO 대기열로 쉽게 구현**
 - **비선점형**
-- **Convoy Effect (호송 효과)**
-  - 다른 모든 프로세스는 하나의 큰 프로세스가 CPU에서 나올 때까지 기다린다.
-  - CPU 및 장치 사용률이 낮다.
+- 하나의 큰 프로세스가 CPU에서 나올 때까지 기다리는 효과를 **Convoy Effect**라고 한다.
 
 ![](../../assets/images/operating-system/CPUScheduling/4.png)
 
@@ -98,12 +98,12 @@ nav_order: 4
 - **Total Turnaround Time** : (24 + 27 + 30) = 81
 - **Average Turnaround Time** : 81/3 = 27
 
-### **SJF(Shortest Job First)**
-- 가장 짧은 작업 우선 (SRTF : 가장 짧은 남은 시간 우선)
-- CPU Burst가 가장 작은 프로세스에 할당 된다.
+### **`SJF` Shortest Job First**
+- 가장 짧은 작업 우선
+- `CPU Burst`가 가장 작은 프로세스에 할당 된다.
 - ***(이론적으로)* 최적임이 입증 되었다.**
 - **두 개 이상의 프로세스가 똑같을 시 FCFS 사용**
-- **선점형(preemptive)** 또는 **비선점형(non-preemptive)**이 될 수 있다.
+- **선점형(preemptive)** 또는 **비선점형(non-preemptive)** 이 될 수 있다.
   - **새로운 프로세스가 Ready Queue에 도착했을 때**,
   - 이전 프로세스가 새로 도착한 프로세스 보다 사용률이 낮을 때는?
   - **컨텍스트 스위칭의 비용**이 고려 유무에 따라 다르지만 **선점형**이 더 유리하다.
@@ -130,13 +130,13 @@ nav_order: 4
 
 - **<span style="color:red;">이론적으로만 Optimal(최적) 이지만  실제로 사용하는 알고리즘은 아니다.</span>**
 
-### **SRTF(Shortest-Remaining-Time-First)** - Preemptive SJF scheduling (선점형 SJF 스케줄링)
+### **`SRTF` Shortest-Remaining-Time-First** - Preemptive SJF scheduling (선점형 SJF 스케줄링)
 - **새로 도착한 프로세스의 CPU 사용률 보다 실행 중인 프로세스의 잔여 CPU 사용률이 더 높을시에는 선점 한다.**
 - 비선점형 SJF는 CPU 버스트를 완료하도록 허용한다.
 
 ![](../../assets/images/operating-system/CPUScheduling/9.png)
 
-### **RR(Round Robin)** - 시분할 시스템을 위해 설계된 선점형 스케줄링
+### **`RR` Round Robin** - 시분할 시스템을 위해 설계된 선점형 스케줄링
 - **프로세스들 사이에 우선순위를 두지 않고 , 순서대로 시간단위(Time Quantum/Slice)로 CPU를 할당하는 방식의 CPU 스케줄링 알고리즘**
 - 컴퓨터 자원을 사용할 수 있는 기회를 프로세스들에게 공정하게 부여하기 위한 한 방법
 - **평균 대기 시간이 긴 경우가 많다.**
@@ -161,7 +161,7 @@ nav_order: 4
 
 ![](../../assets/images/operating-system/CPUScheduling/11.png)
 
-## **Priority-based** - 우선순위 기반
+## **Priority-Based** - 우선순위 기반
 - **각 프로세스에는 우선순위가 존재하며 , 가장 높은 우선순위를 가진 프로세스에 할당한다.**
   - 우선순위가 같다면 `FCFS`로 스케줄링 한다.
 - `SJF`는 **우선순위 기반 스케줄링의 특별한 경우이다.**
@@ -178,7 +178,7 @@ nav_order: 4
 
 ![](../../assets/images/operating-system/CPUScheduling/13.png)
 
-### **MLQ(Multi-Level Queue)** - 다단계 대기열
+### **`MLQ` Multi-Level Queue** - 다단계 대기열
 
 - 휴대폰 게임을 하고 있다면 ,
   - 네트워크 데이터 , 사운드 , 디스플레이 , 카톡 , 전화 등등 각각 우선순위가 다 다르다
@@ -189,7 +189,7 @@ nav_order: 4
 ![](../../assets/images/operating-system/CPUScheduling/15.png)
 
 
-### **MLFQ(Multi-Level Feedback Queue)** - 다단계 피드백 대기열
+### **`MLFQ` Multi-Level Feedback Queue** - 다단계 피드백 대기열
 
 - **실전O/S**의 CPU 스케줄링 알고리즘이다. (+ Multicore)
 
