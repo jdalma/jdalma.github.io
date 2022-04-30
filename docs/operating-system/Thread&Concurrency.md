@@ -25,8 +25,13 @@ nav_order: 3
 ![](../../assets/images/operating-system/Thread/1.png)
 
 - `Thread`는 같은 **Process**에 속한 **다른 `Thread`** 와  **Code Section** , **Data Section** 그리고 **열린 파일이나 신호와 같은 운영체제 자원**들을 공유한다.
+- **Code Section** : 자신을 실행하는 코드가 저장되어 있다.
+- **Data Section** : 전역 변수와 `Static`변수가 저장 되어 있다.
+- **Stack Section** : 지역 변수 , 함수 호출 시 매개변수 , 돌아갈 주소가 저장되어 있다.
 
 ![](../../assets/images/operating-system/Thread/2.png)
+
+
 
 ## **멀티 스레드 프로그래밍 장점**
 - 다중 스레드로 구성된 태스크 구조에서는 하나의 서버 스레드가 `blocked (waiting)`상태인 동안에도 **동일한 태스크 내의 다른 스레드가 실행 `(running)`되어 빠른 처리를 할 수 있다.**
