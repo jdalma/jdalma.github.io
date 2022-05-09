@@ -12,6 +12,14 @@ has_children: true
 {:toc}
 ---
 
+# `2022-05-09`
+
+## **[ID Token and Access Token: What's the Difference?](https://auth0.com/blog/id-token-access-token-what-is-the-difference/)**
+
+# `2022-04-26`
+
+## **[Jackson Unmarshalling JSON with Unknown Properties](https://www.baeldung.com/jackson-deserialize-json-unknown-properties#3-dealing-with-unknown-fields-at-the-class-level)**
+
 # `2022-04-25`
 
 ## 밀러-라빈 , 폴라드 로 , 페르마의 소정리 SCC , 오일러 경로 테크닉
