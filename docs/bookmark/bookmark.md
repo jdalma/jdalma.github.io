@@ -106,6 +106,7 @@ has_children: true
 
 ## **[restfulapi.net](https://restfulapi.net/)**
 ## **[RESTful API Designing guidelines — The best practices 번역글](https://wayhome25.github.io/etc/2017/11/26/restful-api-designing-guidelines/)**
+## **[rest-api](https://hudi.blog/rest-api/)**
 
 # `2022-03-10`
 
