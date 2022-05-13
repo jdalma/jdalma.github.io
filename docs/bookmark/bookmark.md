@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-05-13`
+
+## **[TCP 3-Way Handshake Process](https://www.geeksforgeeks.org/tcp-3-way-handshake-process/)**
+
 # `2022-05-12`
 
 ## **[HTTP/2 훑어보고 AWS에서 적용해보기](https://fe-developers.kakaoent.com/2022/220424-http2-with-aws/)**
