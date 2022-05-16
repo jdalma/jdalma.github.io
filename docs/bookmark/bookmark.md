@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-05-16`
+
+## KMP (Failure Function 이해)
+
 # `2022-05-15`
 
 ## **[개발자가 도움이 되는 문서와 사이트를 정리하고 수집하는 데 전념하다](https://intrepidgeeks.com/)**
