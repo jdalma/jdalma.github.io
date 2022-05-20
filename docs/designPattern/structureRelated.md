@@ -23,3 +23,6 @@ nav_order: 2
 
 - **UserDetail** , **UserDetailsService** 인터페이스가 `Target`에 해당한다
 - **Account** 와 **AccountService**가 `Adaptee`에 해당한다
+- 📌
+  - 어떻게 **UserDetailsService**와 **AccountService**를 연결할 것 인가?
+  - 어떻게 **Account**와 **UserDetails**를 연결할 것인가?
