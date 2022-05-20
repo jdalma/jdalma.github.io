@@ -16,6 +16,7 @@ has_children: true
 
 ## **[DTO와 Domain Model을 분리해야 하는 이유](https://umbum.dev/1206)**
 ## **[MyBatis Cache](https://umbum.dev/1201?category=1060202)**
+## **[뒤늦게 등장한 HTTP PATCH 메소드와 스프링의 디스패처 서블릿에 미친 영향](https://mangkyu.tistory.com/225?category=761302)**
 
 # `2022-05-18`
 
