@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-05-18`
+
+## **[Retrofit2 와 Resilience4j 를 이용한 빠른 Rest API Client 구현](https://medium.com/myrealtrip-product/retrofit2-%EC%99%80-resilience4j-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B9%A0%EB%A5%B8-rest-api-client-%EA%B5%AC%ED%98%84-81c10dcfb6)**
+
 # `2022-05-16`
 
 ## KMP (Failure Function 이해)
