@@ -98,7 +98,9 @@ class Stack<E> extends Vector<E> {
     }    
 ```
 
-## **Deque**
+***
+
+# **Deque**
 
 - `List` 인터페이스와 달리 이 인터페이스는 **요소에 대한 인덱싱된 액세스를 지원하지 않는다**
 - [ArrayDeque가 LinkedList보다 나은 이유](http://daplus.net/java-arraydeque%EA%B0%80-linkedlist%EB%B3%B4%EB%8B%A4-%EB%82%98%EC%9D%80-%EC%9D%B4%EC%9C%A0/)
@@ -229,6 +231,33 @@ class Main {
 
         System.out.println("Test finished");
 
+    }
+}
+```
+
+- `addFirst(e)` : push , offerFirst;
+- `addLast(e)` : offer , offerLast , add , 
+
+```java
+private void grow(int needed) {
+    // overflow-conscious code
+    final int oldCapacity = elements.length;
+    int newCapacity;
+    // Double capacity if small; else grow by 50%
+    int jump = (oldCapacity < 64) ? (oldCapacity + 2) : (oldCapacity >> 1);
+    if (jump < needed || (newCapacity = (oldCapacity + jump)) - MAX_ARRAY_SIZE > 0)
+        newCapacity = newCapacity(needed, jump);
+
+    final Object[] es = elements = Arrays.copyOf(elements, newCapacity);
+    // Exceptionally, here tail == head needs to be disambiguated
+    if (tail < head || (tail == head && es[head] != null)) {
+        // wrap around; slide first leg forward to end of array
+        int newSpace = newCapacity - oldCapacity;
+        System.arraycopy(es, head,
+                            es, head + newSpace,
+                            oldCapacity - head);
+        for (int i = head, to = (head += newSpace); i < to; i++)
+            es[i] = null;
     }
 }
 ```
