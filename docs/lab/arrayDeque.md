@@ -162,7 +162,6 @@ class Main {
     private static final Queue list = new LinkedList();
     private static final Queue queue1 = new LinkedList();
     private static final Queue queue2 = new ArrayDeque();
-    private static final Deque deque = new ArrayDeque();
 
     private static int count = 2000000;
     public static void main(String[] args) throws IOException {
@@ -180,22 +179,6 @@ class Main {
 
         long end = System.nanoTime();
         System.out.println("Using linked list takes about:" + (end - start) / 1000000 + "ms");
-
-        System.gc();
-
-        start = System.nanoTime();
-
-        for(int i = 1 ; i <= count ; i++){
-            deque.offer(i);
-        }
-
-        for(int i = 1 ; i <= count ; i++){
-            deque.peek();
-            deque.poll();
-        }
-
-        end = System.nanoTime();
-        System.out.println("Using Deque takes about:" + (end - start) / 1000000 + "ms");
 
         System.gc();
 
@@ -235,29 +218,11 @@ class Main {
 }
 ```
 
-- `addFirst(e)` : push , offerFirst;
-- `addLast(e)` : offer , offerLast , add , 
-
-```java
-private void grow(int needed) {
-    // overflow-conscious code
-    final int oldCapacity = elements.length;
-    int newCapacity;
-    // Double capacity if small; else grow by 50%
-    int jump = (oldCapacity < 64) ? (oldCapacity + 2) : (oldCapacity >> 1);
-    if (jump < needed || (newCapacity = (oldCapacity + jump)) - MAX_ARRAY_SIZE > 0)
-        newCapacity = newCapacity(needed, jump);
-
-    final Object[] es = elements = Arrays.copyOf(elements, newCapacity);
-    // Exceptionally, here tail == head needs to be disambiguated
-    if (tail < head || (tail == head && es[head] != null)) {
-        // wrap around; slide first leg forward to end of array
-        int newSpace = newCapacity - oldCapacity;
-        System.arraycopy(es, head,
-                            es, head + newSpace,
-                            oldCapacity - head);
-        for (int i = head, to = (head += newSpace); i < to; i++)
-            es[i] = null;
-    }
-}
 ```
+Test starts
+Using linked list takes about:237ms
+Using LinkedList - Queue takes about:121ms
+Using ArrayDeque - Queue takes about:55ms
+Test finished
+```
+
