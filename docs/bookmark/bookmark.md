@@ -12,6 +12,12 @@ has_children: true
 {:toc}
 ---
 
+# `2022-05-23`
+
+## 알고리즘 문제를 풀며 **떠오르는 아이디어를 기록하자 !!!**
+## **[이분 매칭 알고리즘 (Bipartite Matching)](https://yjg-lab.tistory.com/209)**
+## **[이진 탐색, 이분 탐색(binary search) 구현시 고려할 것들](https://eine.tistory.com/entry/%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EC%9D%B4%EB%B6%84-%ED%83%90%EC%83%89binary-search-%EA%B5%AC%ED%98%84%EC%8B%9C-%EA%B3%A0%EB%A0%A4%ED%95%A0-%EA%B2%83%EB%93%A4)**
+
 # `2022-05-20`
 
 ## **[DTO와 Domain Model을 분리해야 하는 이유](https://umbum.dev/1206)**
