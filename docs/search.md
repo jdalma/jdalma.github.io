@@ -1,3 +1,11 @@
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
 [스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
 
 # [Chapter1. Servlet](https://github.com/jdalma/SpringMVC-1/pull/1)
@@ -187,7 +195,7 @@
 
 ***
 
-# Chapter4. MVC 구조 이해
+# [Chapter4. MVC 구조 이해](https://github.com/jdalma/SpringMVC-1/pull/5)
 
 ![](https://raw.githubusercontent.com/jdalma/jdalma.github.io/master/assets/images/spring-mvc/spring-mvc-structure.png)
 
@@ -332,7 +340,7 @@ protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletExcepti
 }
 ```
 
-## 핸들러 매핑과 핸들러 어댑터
+## **핸들러 매핑**과 **핸들러 어댑터**
 - 핸들러 매핑과 핸들러 어댑터가 어떤 것들이 어떻게 사용되었는지 알아보자
 
 - **HandlerMapping(핸들러 매핑)**
@@ -341,6 +349,7 @@ protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletExcepti
 
 ```
 ...
+우선 순위 (낮을수록 높다)
 0 = RequestMappingHandlerMapping : 애노테이션 기반의 컨트롤러인 @RequestMapping에서 사용
 1 = BeanNameUrlHandlerMapping : 스프링 빈의 이름으로 핸들러를 찾는다.
 ...
@@ -353,6 +362,7 @@ protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletExcepti
 
 ```
 ...
+우선 순위 (낮을수록 높다)
 0 = RequestMappingHandlerAdapter : 애노테이션 기반의 컨트롤러인 @RequestMapping에서 사용
 1 = HttpRequestHandlerAdapter : HttpRequestHandler 인터페이스 처리
 2 = SimpleControllerHandlerAdapter : Controller 인터페이스(애노테이션X, 과거에 사용) 처리
@@ -362,7 +372,7 @@ protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletExcepti
 - **핸들러 매핑도, 핸들러 어댑터도 모두 순서대로 찾고 만약 없으면 다음 순서로 넘어간다.**
 - 지금은 전혀 사용하지 않지만 , 과거에 주로 사용했던 스프링이 제공하는 간단한 컨트롤러로 핸들러 매핑과 어댑터를 이해해보자
 
-### `Controller` 인터페이스
+### `@Controller`대신 `Controller` 인터페이스
 
 - `@Controller`어노테이션과 완전히 다르다
 - `org.springframework.web.servlet.mvc.Controller`
@@ -396,7 +406,7 @@ public class OldController implements Controller {
 - HandlerAdapter = SimpleControllerHandlerAdapter
 
 
-### `HttpRequestHandler` 인터페이스
+### `@Controller`대신 `HttpRequestHandler` 인터페이스
 - **서블릿과 가장 유사한 핸들러**
 
 ```java
@@ -421,3 +431,74 @@ public class OldController implements HttpRequestHandler {
    - `HttpRequestHandlerAdapter` 는 핸들러인 `MyHttpRequestHandler` 를 내부에서 실행하고, 그 결과를 반환한다.
 - HandlerMapping = BeanNameUrlHandlerMapping
 - HandlerAdapter = HttpRequestHandlerAdapter
+
+## [**뷰 리졸버**](https://github.com/jdalma/SpringMVC-1/pull/5/commits/9055989bf941e8315cef8cc295dc675623db31a4) `InternalResourceViewResolver`
+
+```
+[application.properties]에 추가
+
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+```
+
+- 스프링 부트는 위의 속성을 사용하여 `InternalResourceViewResolver`라는 뷰 리졸버를 자동으로 등록한다
+  - *권장하지는 않지만 `/WEB-INF/views/new-form.jsp`라는 풀 경로를 주어도 동작은 한다*
+- **스프링 부트가 자동으로 등록하는 뷰 리졸버**
+  - *(실제로는 더 많지만, 중요한 부분 위주로 설명하기 위해 일부 생략)*
+
+```
+1 = BeanNameViewResolver : 빈 이름으로 뷰를 찾아서 반환한다. (예: 엑셀 파일 생성 기능에 사용)
+2 = InternalResourceViewResolver : JSP를 처리할 수 있는 뷰를 반환한다.
+```
+
+1. 핸들러 어댑터 호출
+   - 핸들러 어댑터를 통해 `new-form` 이라는 **논리 뷰 이름을 획득**한다.
+2. `ViewResolver` 호출
+   - `new-form` 이라는 뷰 이름으로 `viewResolver`를 순서대로 호출한다.
+   - **`BeanNameViewResolver` 는 `new-form` 이라는 이름의 스프링 빈으로 등록된 뷰를 찾아야 하는데 없으니**
+   - **`InternalResourceViewResolver` 가 호출된다.**
+3. `InternalResourceViewResolver`
+   - 이 뷰 리졸버는 `InternalResourceView` 를 반환한다.  
+4. 뷰 - `InternalResourceView`
+   - `InternalResourceView` 는 JSP처럼 포워드 `forward()` 를 호출해서 처리할 수 있는 경우에 사용한다. 
+5. `view.render()`
+   - `view.render()` 가 호출되고 `InternalResourceView` 는 `forward()` 를 사용해서 JSP를 실행한다.
+
+> 참고 ✋
+> - `InternalResourceViewResolver` 는 만약 **JSTL 라이브러리가 있으면 InternalResourceView 를 상속받은 JstlView 를 반환**한다. 
+> - `JstlView` 는 JSTL 태그 사용시 약간의 부가 기능이 추가된다.
+> - 다른 뷰는 실제 뷰를 렌더링하지만, *JSP의 경우 forward() 통해서 해당 JSP로 이동(실행)해야 렌더링이 된다.*
+> - **JSP를 제외한 나머지 뷰 템플릿들은 forward() 과정 없이 바로 렌더링 된다.**
+> - `Thymeleaf` 뷰 템플릿을 사용하면 `ThymeleafViewResolver` 를 등록해야 한다.
+> - *최근에는 라이브러리만 추가하면 스프링 부트가 이런 작업도 모두 자동화해준다.*
+
+## [스프링 MVC 시작하기 - `@Controller` , `@RequestMapping`](https://github.com/jdalma/SpringMVC-1/pull/5/commits/6e1bd06224f3c33080712b415ce54460e73b784b)
+
+### `@Controller`
+- 내부에 `@Component` Annotation이 있어서 컴포넌트의 스캔의 대상이 되어 빈으로 등록된다
+- **스프링 MVC에서 Annotation기반 컨트롤러로 인식한다**
+  - *`RequestMappingHandlerMapping`에서 찾아간다*
+  - 📌 **스프링 빈 중에서 `@RequestMapping` 또는 `@Controller`가 클래스 레벨에 붙어 있는 경우에 매핑 정보로 인식한다**
+
+
+```java
+public class RequestMappingHandlerMapping extends RequestMappingInfoHandlerMapping 
+                                          implements MatchableHandlerMapping, EmbeddedValueResolverAware {
+
+  ...
+
+	/**
+	 * {@inheritDoc}
+	 * <p>Expects a handler to have either a type-level @{@link Controller}
+	 * annotation or a type-level @{@link RequestMapping} annotation.
+	 */
+	@Override
+	protected boolean isHandler(Class<?> beanType) {
+		return (AnnotatedElementUtils.hasAnnotation(beanType, Controller.class) ||
+				AnnotatedElementUtils.hasAnnotation(beanType, RequestMapping.class));
+	}
+
+  ...
+
+}
+```
