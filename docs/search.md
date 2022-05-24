@@ -236,99 +236,188 @@
 2. 스프링 MVC는 `DispatcherServlet`의 부모인 `FrameworkServlet`에서 `service()`를 **오버라이드**해두었다.
 
 ```java
-	/**
-	 * Override the parent class implementation in order to intercept PATCH requests.
-	 */
-	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+/**
+  * Override the parent class implementation in order to intercept PATCH requests.
+  */
+@Override
+protected void service(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
 
-		HttpMethod httpMethod = HttpMethod.resolve(request.getMethod());
-		if (httpMethod == HttpMethod.PATCH || httpMethod == null) {
-			processRequest(request, response);
-		}
-		else {
-			super.service(request, response);
-		}
-	}
+  HttpMethod httpMethod = HttpMethod.resolve(request.getMethod());
+  if (httpMethod == HttpMethod.PATCH || httpMethod == null) {
+    processRequest(request, response);
+  }
+  else {
+    super.service(request, response);
+  }
+}
 ```
 
 3. `FrameworkServlet.service()`를 시작으로 여러 메서드가 호출되면서 **`DispatcherServlet.doDispatch()`가 호출된다**
 
 ```java
-    protected void doDispatch(HttpServletRequest request, HttpServletResponse
-    response) throws Exception {
-        HttpServletRequest processedRequest = request;
-        HandlerExecutionChain mappedHandler = null;
-        ModelAndView mv = null;
-        // 1. 핸들러 조회
-        mappedHandler = getHandler(processedRequest); if (mappedHandler == null) {
-            noHandlerFound(processedRequest, response);
-            return; 
-        }
-
-        //2.핸들러 어댑터 조회-핸들러를 처리할 수 있는 어댑터
-        HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());
-
-        // 3. 핸들러 어댑터 실행 
-        // 4. 핸들러 어댑터를 통해 핸들러 실행 
-        // 5. ModelAndView 반환 mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
-        processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);
+protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    HttpServletRequest processedRequest = request;
+    HandlerExecutionChain mappedHandler = null;
+    ModelAndView mv = null;
+    // 1. 핸들러 조회
+    mappedHandler = getHandler(processedRequest); if (mappedHandler == null) {
+        noHandlerFound(processedRequest, response);
+        return; 
     }
 
-    private void processDispatchResult(HttpServletRequest request, HttpServletResponse response, HandlerExecutionChain mappedHandler, ModelAndView mv, Exception exception) throws Exception {
-        ...
-        
-        // 뷰 렌더링 호출
-        render(mv, request, response);
-        
-        ...
-    }
+    //2.핸들러 어댑터 조회-핸들러를 처리할 수 있는 어댑터
+    HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());
 
-    protected void render(ModelAndView mv, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ...
+    // 3. 핸들러 어댑터 실행 
+    // 4. 핸들러 어댑터를 통해 핸들러 실행 
+    // 5. ModelAndView 반환 mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
+    processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);
+}
 
-        View view;
-        // 6. 뷰 리졸버를 통해서 뷰 찾기
-        // 7.View 반환
-        String viewName = mv.getViewName(); 
-        view = resolveViewName(viewName, mv.getModelInternal(), locale, request);
-        
-        // 8. 뷰 렌더링
-        view.render(mv.getModelInternal(), request, response);
+private void processDispatchResult(HttpServletRequest request, HttpServletResponse response, HandlerExecutionChain mappedHandler, ModelAndView mv, Exception exception) throws Exception {
+    ...
+    
+    // 뷰 렌더링 호출
+    render(mv, request, response);
+    
+    ...
+}
 
-        ...
-    }
+protected void render(ModelAndView mv, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    ...
+
+    View view;
+    // 6. 뷰 리졸버를 통해서 뷰 찾기
+    // 7.View 반환
+    String viewName = mv.getViewName(); 
+    view = resolveViewName(viewName, mv.getModelInternal(), locale, request);
+    
+    // 8. 뷰 렌더링
+    view.render(mv.getModelInternal(), request, response);
+
+    ...
+}
 ```
 
 - 핸들러가 없다면 !!!
 
 ```java
-    protected void noHandlerFound(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		if (pageNotFoundLogger.isWarnEnabled()) {
-			pageNotFoundLogger.warn("No mapping for " + request.getMethod() + " " + getRequestUri(request));
-		}
-		if (this.throwExceptionIfNoHandlerFound) {
-			throw new NoHandlerFoundException(request.getMethod(), getRequestUri(request),
-					new ServletServerHttpRequest(request).getHeaders());
-		}
-		else {
-			response.sendError(HttpServletResponse.SC_NOT_FOUND);
-		}
-	}
+protected void noHandlerFound(HttpServletRequest request, HttpServletResponse response) throws Exception {
+  if (pageNotFoundLogger.isWarnEnabled()) {
+    pageNotFoundLogger.warn("No mapping for " + request.getMethod() + " " + getRequestUri(request));
+  }
+  if (this.throwExceptionIfNoHandlerFound) {
+    throw new NoHandlerFoundException(request.getMethod(), getRequestUri(request),
+        new ServletServerHttpRequest(request).getHeaders());
+  }
+  else {
+    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+  }
+}
 ```
 
 - 핸들러가 있으면 `private List<HandlerAdapter> handlerAdapters`에서 **Adapter**를 찾는다
 
 ```java
-	protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletException {
-		if (this.handlerAdapters != null) {
-			for (HandlerAdapter adapter : this.handlerAdapters) {
-				if (adapter.supports(handler)) {
-					return adapter;
-				}
-			}
-		}
-		throw new ServletException("No adapter for handler [" + handler + "]: The DispatcherServlet configuration needs to include a HandlerAdapter that supports this handler");
-	}
+protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletException {
+  if (this.handlerAdapters != null) {
+    for (HandlerAdapter adapter : this.handlerAdapters) {
+      if (adapter.supports(handler)) {
+        return adapter;
+      }
+    }
+  }
+  throw new ServletException("No adapter for handler [" + handler + "]: The DispatcherServlet configuration needs to include a HandlerAdapter that supports this handler");
+}
 ```
+
+## 핸들러 매핑과 핸들러 어댑터
+- 핸들러 매핑과 핸들러 어댑터가 어떤 것들이 어떻게 사용되었는지 알아보자
+
+- **HandlerMapping(핸들러 매핑)**
+  - 핸들러 매핑에서 이 컨트롤러를 찾을 수 있어야 한다.
+  - 예) **스프링 빈의 이름으로 핸들러를 찾을 수 있는 핸들러 매핑**이 필요하다.
+
+```
+...
+0 = RequestMappingHandlerMapping : 애노테이션 기반의 컨트롤러인 @RequestMapping에서 사용
+1 = BeanNameUrlHandlerMapping : 스프링 빈의 이름으로 핸들러를 찾는다.
+...
+```
+
+
+- **HandlerAdapter(핸들러 어댑터)**
+  - 핸들러 매핑을 통해서 찾은 핸들러를 실행할 수 있는 핸들러 어댑터가 필요하다.
+  - 예) `Controller 인터페이스`를 실행할 수 있는 **핸들러 어댑터를 찾고 실행**해야 한다.
+
+```
+...
+0 = RequestMappingHandlerAdapter : 애노테이션 기반의 컨트롤러인 @RequestMapping에서 사용
+1 = HttpRequestHandlerAdapter : HttpRequestHandler 인터페이스 처리
+2 = SimpleControllerHandlerAdapter : Controller 인터페이스(애노테이션X, 과거에 사용) 처리
+...
+```
+
+- **핸들러 매핑도, 핸들러 어댑터도 모두 순서대로 찾고 만약 없으면 다음 순서로 넘어간다.**
+- 지금은 전혀 사용하지 않지만 , 과거에 주로 사용했던 스프링이 제공하는 간단한 컨트롤러로 핸들러 매핑과 어댑터를 이해해보자
+
+### `Controller` 인터페이스
+
+- `@Controller`어노테이션과 완전히 다르다
+- `org.springframework.web.servlet.mvc.Controller`
+
+```java
+@Component("/springmvc/old-controller")
+public class OldController implements Controller {
+
+    @Override
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println("OldController.handleRequest");
+        return null;
+    }
+}
+```
+
+- 위와 같이 `@Component("/springmvc/old-controller")` 라는 이름의 **스프링 빈으로 등록되었다.**
+- 핸들러 매핑과 핸들러 어댑터가 **`http://localhost:8080/springmvc/old-controller`** 로 접근하면 (빈 이름으로 접근해도) 정상 호출이 된다.
+
+
+1. **핸들러 매핑으로 핸들러 조회**
+   - `HandlerMapping` 을 순서대로 실행해서, 핸들러를 찾는다.
+   - 이 경우 빈 이름으로 핸들러를 찾아야하기 때문에 이름 그대로 빈 이름 으로 핸들러를 찾아주는 `BeanNameUrlHandlerMapping` 가 실행에 성공하고 핸들러인 `OldController` 를 반환한다.
+2. **핸들러 어댑터 조회**
+   - `HandlerAdapter` 의 `supports()` 를 순서대로 호출한다.
+   - **`SimpleControllerHandlerAdapter` 가 `Controller` 인터페이스를 지원하므로 대상이 된다.**
+3. **핸들러 어댑터 실행**
+   - 디스패처 서블릿이 조회한 `SimpleControllerHandlerAdapter` 를 실행하면서 핸들러 정보도 함께 넘겨준다.
+   - `SimpleControllerHandlerAdapter` 는 핸들러인 `OldController` 를 내부에서 실행하고, 그 결과를 반환한다.
+- HandlerMapping = BeanNameUrlHandlerMapping
+- HandlerAdapter = SimpleControllerHandlerAdapter
+
+
+### `HttpRequestHandler` 인터페이스
+- **서블릿과 가장 유사한 핸들러**
+
+```java
+@Component("/springmvc/old-controller")
+public class OldController implements HttpRequestHandler {
+
+    @Override
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("OldController.handleRequest");
+    }
+}
+```
+
+1. **핸들러 매핑으로 핸들러 조회**
+   - `HandlerMapping` 을 순서대로 실행해서, 핸들러를 찾는다.
+   - 이 경우 빈 이름으로 핸들러를 찾아야하기 때문에 이름 그대로 빈 이름으로 핸들러를 찾아주는 `BeanNameUrlHandlerMapping` 가 실행에 성공하고 핸들러인 `MyHttpRequestHandler` 를 반환한다.
+2. **핸들러 어댑터 조회**
+   - `HandlerAdapter` 의 `supports()` 를 순서대로 호출한다.
+   - `HttpRequestHandlerAdapter` 가 `HttpRequestHandler` 인터페이스를 지원하므로 대상이 된다.
+3. 핸들러 어댑터 실행
+   - 디스패처 서블릿이 조회한 `HttpRequestHandlerAdapter` 를 실행하면서 핸들러 정보도 함께 넘겨준다.
+   - `HttpRequestHandlerAdapter` 는 핸들러인 `MyHttpRequestHandler` 를 내부에서 실행하고, 그 결과를 반환한다.
+- HandlerMapping = BeanNameUrlHandlerMapping
+- HandlerAdapter = HttpRequestHandlerAdapter
