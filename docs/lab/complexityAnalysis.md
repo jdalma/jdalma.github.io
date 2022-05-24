@@ -11,14 +11,14 @@ parent: 👨‍🔬 Lab
 # **복잡도 분석** `Complexity Analysis`
 - 알고리즘의 시간 복잡도
   - *입력 크기에 따른 `단위 연산의 수행 횟수 변화`를 함수로 나타낸 것*
-  - `T(n)` : $3n^2 + 2n + 8$
+  - `T(n)` : 3n<sup>2</sup> + 2n + 8
 - 점근적 표기법 `Asymptotic Notation`
   - 시간 복잡도 함수를 **대표적인 복잡도 함수 집합의 원소로 표현하는 법**
-  - `T(n)` : $3n^2 + 2n + 8 → T(n) ∈ Θ(n^2)$
+  - `T(n)` : 3n<sup>2</sup> + 2n + 8 → `T(n)` ∈ Θ(n<sup>2</sup>)
 - **점근적 표기법의 종류**
   1. 📌 **빅오(O)** : 상한 `upper bound - worst case`
   2. **오메가(Ω)** : 하한 `lower bound`
-  3. **쎄타(Θ)** : 차수 `order` → $Θ(f(n)) = O(f(n))\;⋂\;Ω(f(n))$
+  3. **쎄타(Θ)** : 차수 `order` → `Θ(f(n)) = O(f(n)) ⋂ Ω(f(n))`
 
 ***
 
@@ -178,7 +178,7 @@ void func7(int n , int m){
 - **마스터 정리** : Master Theorem
   - 한 번만 딱 외우면 재귀 함수는 대부분 풀 수 있다!!!
   - **쉬운 경우**
-    - `팩토리얼` : $T(n) = T(n - 1) + 1 ∈ Θ(n)$
-    - `합병 정렬 (Merge Sort)` : $T(n) = 2 \times T()$
+    - `팩토리얼` : T(n) = T(n - 1) + 1 ∈ Θ(n)
+    - `합병 정렬 (Merge Sort)` : T(n) = 2 * T(n/2) + n ∈ Θ(n log <sub>2</sub> n)
 
 
