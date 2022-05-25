@@ -12,6 +12,11 @@ nav_order: 1
 {:toc}
 ---
 
+# **리눅스 시스템 콜**
+
+![](../../../assets/images/lab/linux/systemCall3.png)
+
+![](../../../assets/images/lab/linux/systemCall2.png)
 
 # **리눅스의 파일 시스템과 파일 제어**
 
@@ -30,8 +35,17 @@ nav_order: 1
 | `1`           | 표준 출력       | `STDOUT_FILENO` | `stdout` |
 | `2`           | 표준 에러       | `STDERR_FILENO` | `stderr` |
 
+![](../../../assets/images/lab/linux/from_FD_to_inode.png)
 
-### 일반(Regular) 파일
+![](../../../assets/images/lab/linux/fileKernalStructure.png)
+
+> 사용자 공간에 있는 응용 프로그램이 파일을 지정하여 열도록 요청 하면
+> 1. 커널은 파일 이름을 포함하고 있는 Directory를 연 후 
+> 2. 지정된 이름을 찾고
+> 3. 파일 이름에서 `inode`번호를 얻고
+> 4. `inode`번호에서 `inode`를 찾는다
+
+## 일반(Regular) 파일
 - 리눅스에서 일반적으로 파일이라고하면 `Regular`파일을 말한다
 - **바이트 스트림**이라 부르는 **선형 배열로 구성된 데이터 바이트를 담고 있다**
 - 바이트는 임의의 값을 가질 수 있으며 . 파일 내에서 어떤 방식으로든 구성 될 수 있다
@@ -52,7 +66,7 @@ nav_order: 1
   - 파일과 관련된 메타 데이터 (파일을 수정한 타임 스탬프 , 소유자 , 유형 , 길이 및 파일 데이터 위치 등)를 저장하지만 파일 이름은 저장하지 않는다
   - **파일에 접근하고자 할 때 운영체제는 관련된 `inode table`에서 `inode`번호를 먼저 찾는다**
 
-### Directory 와 Link
+## Directory 와 Link
 - **Directory**
   - 접근하고자 하는 파일에 대해 사용자 공간에게 이름을 제공하는데 사용
     - *사용자가 `inode`로 접근하는 번거로움과 보안상의 허점을 보완*
@@ -68,13 +82,7 @@ nav_order: 1
      - 파일 시스템을 확장하기 위하여 허용
      - **자신의 `inode`와 일정량의 데이터를 소유하고 있는데 , 링크된 파일의 절대 경로 정보를 담고 있다**
 
-> 사용자 공간에 있는 응용 프로그램이 파일을 지정하여 열도록 요청 하면
-> 1. 커널은 파일 이름을 포함하고 있는 Directory를 연 후 
-> 2. 지정된 이름을 찾고
-> 3. 파일 이름에서 `inode`번호를 얻고
-> 4. `inode`번호에서 `inode`를 찾는다
-
-### 특수 파일 (Special Files)
+## 특수 파일 (Special Files)
 1. **Block Device**
 2. **Character Device**
    - 키보드 , 모니터 디바이스 파일에서 읽고 쓰기 (읽을 데이터가 없는 경우 `EOF`를 반환)
@@ -82,6 +90,8 @@ nav_order: 1
    - `File Descriptor`를 통해서 프로세스간 통신을 위한 특수파일로 프로세스가 생성
 4. **Socket** `(Unix Domain Socket)`
    - 동일 또는 다른 머신에서 실행 중인 프로세스와의 통신을 위한 것으로 **진보된 IPC 수단**
+
+***
 
 ## `fopen` , `fwrite` , `fclose` , `fread`
 
@@ -121,18 +131,7 @@ int main(){
 	return 0;
 }
 ```
-- `type umask` -> **umask is a shell builtin**
-  - builtin된 명령어를 보고싶을 때는 `help umask`
-- `ls -al $(which gcc)` 🚩
-- `lsof -p $(pidof a.out)` 🚩 
-- `gcc 01.c -Wall`
-  - `-Wall` : `warning` 확인
-- `-rw-rw-r-- 1 educafe educafe    11 May 25 13:45 file01`
-- 파일을 생성했는데 왜 `-rw-rw-r--`로 생성될까? 
-  - `umask` **0002** **-rw-rw-r-- 1 educafe educafe     0 May 25 14:48 file02**
-  - `umask` **0022** **-rw-r--r-- 1 educafe educafe     0 May 25 14:51 file03**
-- `-rwxrwxr-x` mod -> 775
-- `-rwsr-xr-x` mod ?? 🚩 
+
 - 왜 `./a.out`으로 실행시킬까?
   - **BASH**가 `a.out`이 어디에 있는지 모른다
   - `printenv PATH` 명령어를 찾는 경로 🚩
@@ -144,9 +143,45 @@ int main(){
     - /usr/games:
     - /usr/local/games:
     - /snap/bin
+- `type umask` ➜ **umask is a shell builtin**
+  - builtin된 명령어를 보고싶을 때는 `help umask`
+- `ls -al $(which gcc)` 🚩
+- `lsof -p $(pidof a.out)` 🚩 
+- `gcc 01.c -Wall`
+  - `-Wall` : `warning` 확인
+- `-rw-rw-r-- 1 educafe educafe    11 May 25 13:45 file01`
+- 파일을 생성했는데 왜 `-rw-rw-r--`로 생성될까? 
+  - `umask` **0002** **-rw-rw-r-- 1 educafe educafe     0 May 25 14:48 file02**
+  - `umask` **0022** **-rw-r--r-- 1 educafe educafe     0 May 25 14:51 file03**
+
+### 특수 권한 ✋
+
+- `-rwxrwxr-x` mod ➜ 775
+- `-rwsr-xr-x` mod ➜ **4755**
+- `-rwxr-sr-x` mod ➜ **2755**
+- `-rwxr-xr-t` mod ➜ **1755**
+
+![](../../../assets/images/lab/linux/fileMod.png)
+
+- `setuid`
+  - 소유자만이 접근 가능한 파일을 일반 유저도 접근할 필요가 있을 때 사용한다
+  - 소유자의 권한을 잠시 빌려오는 개념이다
+  - **User 권한**의 **접근 권한 `(x)`** 자리에 `x` 대신 `s`가 들어가면 이를 **SetUID**라 칭한다
+  - `s`가 아니라 **대문자 `S`** 가 들어가면 이는 일반 권한의 `-`처럼 접근 권한이 없는 것 과 같다
+- `setgid`
+  - 소유 그룹만 접근 가능한 파일에 일반 유저로 접근이 필요할 때 사용한다
+  - **Group 권한**의 **접근 권한 `(x)`** 자리에 `x` 대신 `s`가 들어가면 이를 **SetGID**라 칭한다
+  - `s`가 아니라 **대문자 `S`** 가 들어가면 이는 일반 권한의 `-`처럼 접근 권한이 없는 것 과 같다
+- `sticky`
+  - 파일 및 디렉토리 생성은 누구나 가능하지만 , **삭제는 생성한 유저와 디렉토리 소유자만 가능하다**
+  - **일반 권한**의 **접근 권한 `(x)`** 자리에 `x` 대신 `t`가 들어가면 이를 **Sticky Bit**라 칭한다
+  - `t`가 아니라 **대문자 `T`** 가 들어가면 이는 일반 권한의 `-`처럼 접근 권한이 없는 것 과 같다
 
 
-## 직접 `SystemCall`을 불러보자 `open` , `close` , `read`
+
+
+
+## 직접 `SystemCall`을 불러보자 ➜ `open` , `close` , `read`
 
 
 ```c
@@ -237,7 +272,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-- `---------- 1 educafe educafe     0 May 25 15:48 file01` 🚩
+- `---------- 1 educafe educafe     0 May 25 15:48 file01`
 
 ```
 File mode of file01 is 100000
