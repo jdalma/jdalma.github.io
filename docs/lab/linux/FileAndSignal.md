@@ -292,7 +292,7 @@ File mode of file01 is 100000
 
 ***
 
-# **리눅스 시그널 및 동작 제어**
+# **리눅스 시그널**
 - 비동기 이벤트를 처리하기 위한 메커니즘을 제공하는 소프트웨어 인터럽트
 - **IPC**기본 형태의 하나
 - 커널에서 프로세스로 , 프로세스에서 다른 프로세스로 , 또는 프로세스에서 자체로 전송할 수 있다
@@ -301,8 +301,23 @@ File mode of file01 is 100000
   2. 커널이 시그널을 전달 할 수 있을 때 까지 저장
   3. 시그널이 전달 될 수 있을 때 커널이 적정한 방법으로 처리
 
+# **리눅스 시그널의 종류와 기본 동작**
+- `signal.h` 헤더 파일에 정의 되어 있다
+- 시그널의 종류 🚩
+  - **SIGINT** , **SIGQUIT**
+  - **SIGKILL** , **SIGTERM**
+  - **SIGCHLD**
+  - **SIGSTOP**
 
-## Signal Handler 예제
+- `trap "echo good morning" SIGINT`
+
+## Signal Handler 등록
+
+- 지정된 시그널을 수신 시 호출되는 함수를 정의 하는 것
+  - *가장 단순하고 오래된 시그널 동작 제어 방법*
+- 리눅스는 시그널 동작 제어 함수를 정의하기 위해 `typedef` , `sighandler_t`를 사용
+- **handler 함수는 반드시 `void`를 반환해야 한다**
+
 
 ```c
 #include <stdio.h>
@@ -328,3 +343,112 @@ int main(){
 }
 ```
 
+## Signal 수신 대기 - `pause()`
+- 시그널이 수신될 때 까지 프로세스의 실행을 멈춤
+- 커널은 `pause()` 시스템 콜을 수신하면 해당 프로세스를 **interruptible sleep**상태로 천이 시킨 후 **scheduler**를 통해 다른 프로세스를 실행
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <signal.h>
+
+static void handler (int signo){
+	printf ("[%d] signal is caughted\n", signo);
+	// exit (EXIT_SUCCESS);
+}
+
+int main (void){
+	char prompt[]="Waiting for a signal : ";
+	
+	// SIGTERM (15번)이 들어올 시 DEFAULT 처리
+	signal(SIGTERM, SIG_DFL);
+	
+	for(int i=1; i<31; i++){
+		if(signal(i, handler) == SIG_ERR){
+			fprintf (stderr, "Cannot handle signal=%d\n", i);
+		} else if (signal (SIGTERM, SIG_DFL) != SIG_DFL){
+			fprintf (stderr, "default action signal=%d\n", i);
+		}
+	}
+	for (;;){
+		write(1, prompt, sizeof(prompt));
+		pause ();
+	}
+	return 0;
+}
+```
+
+```
+Cannot handle signal=9
+default action signal=15
+Cannot handle signal=19
+// kill -2 $(pidof a.out)
+Waiting for a signal : [2] signal is caughted 
+//  kill -2 $(pidof a.out)
+Waiting for a signal : [2] signal is caughted
+// kill $(pidof a.out)
+Waiting for a signal : Terminated
+```
+
+## 다른 프로세스에게 시그널 전송 `kill()`
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <errno.h>
+
+
+int main(int argc, char *argv[]){
+	
+	if(argc < 3){
+		fprintf(stderr, "Usage: %s <pid_#> <sig_#>\n", argv[0]);
+		exit(1);
+	}
+	
+	if(kill(atoi(argv[1]), atoi(argv[2])) == -1){
+		if(errno == EINVAL){
+			printf("Invalid signal\n");
+		}else if(errno == EPERM){
+			printf("No Permission\n");
+		}else if(errno == ESRCH){
+			printf("No such process\n");
+		}
+	}
+	return 0;
+}
+```
+
+- 위의 `pause()`예제 코드를 실행 시키고 `pause()` 상태에서
+- 바로 위의 예제 코드를 이용하여 **signal**을 보내보자
+
+```
+./mykill 2022 3
+./mykill 2022 4
+./mykill 2022 5
+```
+
+```
+Cannot handle signal=9
+default action signal=15
+Cannot handle signal=19
+Waiting for a signal : [3] signal is caughted
+Waiting for a signal : [4] signal is caughted
+Waiting for a signal : [5] signal is caughted
+```
+
+## 시그널 집합 `Signal Set`
+- 시그널의 종류는 약 60여 개가 넘고 , 시그널을 모아서 처리할 수 있도록 시그널 집합 `sigset_t`자료형을 만들었다
+  - *`sigset_t`자료형은 비트 하나하나가 각 시그널을 의미하도록 구성한 것이다*
+- 이 `sigset_t` 자료형의 시그널을 등록 , 삭제할 수 있는 함수가 지원된다
+1. **sigemptyset(sigset_t *set)** 
+   - 시그널 집합 모두 0으로 초기화
+2. **sigaddset(sigset_t *set , int signo)**
+   - 시그널 집합에 특정 시그널 등록
+3. **sigfillset(sigset_t *set)**
+   - 시그널 집합 모두 1로 설정
+4. **sigdelset(sigset_t *set , int signo)**
+   - 시그널 집합으로부터 특정 시그널 삭제
+5. **sigismember(sigset_t *set , int signo)**
+   - 특정 시그널이 시그널 집합에 등록되어 있는지 확인
