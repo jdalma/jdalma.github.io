@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-05-27`
+
+## **[LSB와 MSB란 무엇인가?](https://blog.naver.com/ansdbtls4067/220886567257)**
+
 # `2022-05-24`
 
 ## **[주요 DBMS의 특징적인 SQL 기능 비교](https://d2.naver.com/helloworld/907716)**
