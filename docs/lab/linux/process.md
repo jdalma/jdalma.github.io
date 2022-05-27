@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Process , Thread
+title: Process , IPC
 parent: Linux Training
 grand_parent: 👨‍🔬 Lab
 nav_order: 2
@@ -157,6 +157,7 @@ Segmentation fault (core dumped)
   - *`wait()` 또는 `waitpid()`*
 - **종료된 자식이 보존한 정보를 부모에게 전달한 후에 비로소 프로세스가 공식적으로 종료되고 좀비로도 존재하지 않는다**
 
+![](../../../assets/images/lab/linux/pstree.png)
 
 ```c
 #include <stdio.h>
@@ -328,12 +329,6 @@ int main() {
   - **백그라운드 프로세스**
 - **SysV** : 더블 포킹
 
-# **Thread**
-- **프로세스 내부의 활동 단위**
-- 각 쓰레드에는 스택 , 레지스터와 같은 프로세서 상태 및 명령 포인터를 포함하는 자체 가상화 프로세서가 있다
-- **단일 쓰레드 프로세스에서 프로세스는 쓰레드이다**
-  - *즉 가상회 된 메모리 인스턴스와 가상화 된 프로세서가 하나씩 있다*
-
 ```c
 void sigHandler(int sig);
 
@@ -467,4 +462,365 @@ May 26 16:48:34 ubuntu2204 systemd[1]: Started Mydaemon testing via by systemd.
 1 S root        3340       1  0  80   0 -   693 -      16:48 ?        00:00:00 /usr/local/sbin/09.mydaemon-systemd
 ```
 
+***
 
+# **IPC `Inter Process Communication`**
+
+![](../../../assets/images/lab/linux/ipc.png)
+
+![](../../../assets/images/lab/linux/ipc2.png)
+
+![](../../../assets/images/lab/linux/pipeBuffer.png)
+
+- **데이터 전송**
+  - 데이터 전송의 핵심은 읽기와 쓰기
+
+## 파이프
+
+- **리눅스 파이프**
+
+![](../../../assets/images/lab/linux/systemCallPipe.png)
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <time.h>
+
+int main(void) {
+	int pd[2], read_fd, write_fd;
+	pid_t pid;
+	time_t timer1, timer2;
+	char tx_buf[100], rx_buf[100];
+	
+	if ( pipe(pd) == -1 ) {
+		perror("pipe");    
+		exit(1);    
+	}
+	
+	read_fd = pd[0];    
+	write_fd = pd[1];
+  
+	switch(pid=fork()) {
+		case 0: 
+			close(read_fd);
+			for(int i=0; i<11; i++){
+				// for(timer1=time(NULL); time(NULL)<timer1 + 1;)
+				// continue;
+				// strcpy(tx_buf, "\e[31mHello Parent. I am child.");
+				sprintf(tx_buf, "\e[31mHello Parent. I am child ---%d\n", i);
+				write(write_fd, tx_buf, strlen(tx_buf)+1);
+				for(timer1=time(NULL); time(NULL)<timer1 + 1;)
+				continue;
+				// read(read_fd, rx_buf, sizeof(rx_buf));
+				// printf("\e[00m--------> CHILD: %s\n", rx_buf);
+			}
+			exit(0);
+		default:   
+#if 1
+			close(write_fd);
+			for(int i=0; i<10; i++){
+				// for(timer2=time(NULL); time(NULL)<timer2 + 2;)
+					// continue;
+				// memset(&rx_buf[0], 0, sizeof(rx_buf));
+				read(read_fd, rx_buf, sizeof(rx_buf));
+				printf("\e[00mPARENT: %s\n", rx_buf);
+				// for(timer2=time(NULL); time(NULL)<timer2 + 2;)
+					// continue;
+				// strcpy(tx_buf, "\e[00mHello Child. I am Parent");
+				// sprintf(tx_buf, "\e[00mWeleome Child. I am Parent--%d\n", i);
+				// write(write_fd, tx_buf, strlen(tx_buf)+1);
+			}
+#else
+			for(int i=0; i<10; i++){
+				for(timer2=time(NULL); time(NULL)<timer2 + 2;)
+					continue;
+				strcpy(tx_buf, "\e[00mHello Child. I am Parent");
+				write(write_fd, tx_buf, strlen(tx_buf)+1);
+				read(read_fd, rx_buf, sizeof(rx_buf));
+				printf("\e[00mPARENT: %s\n", rx_buf);
+			}
+#endif
+			exit(0);
+	}
+}
+```
+
+- FIFO (Named Pipe) `mkfifo`
+
+- recv
+```c
+int main(){
+	int fd;
+	char buf[128];
+	int count = 0;
+	
+	if((access ("/tmp/myfifo", F_OK)) != 0){
+		if(mkfifo("/tmp/myfifo", S_IRUSR | S_IWUSR) == -1){
+			perror("mkfifo");
+			exit(1);
+		}
+	}
+	
+	if((fd = open("/tmp/myfifo", O_RDWR)) == -1){
+		perror("open");
+		exit(1);
+	}
+	
+	while(1){
+		memset(buf, 0, sizeof(buf));
+		read(fd, buf, sizeof(buf));
+		printf("Rx - %s\n", buf);
+		if(strstr(buf, "end")){
+			break;
+		}
+	}
+	close(fd);
+	unlink("/tmp/myfifo");
+	return 0;
+}
+```
+
+- send
+```c
+int main(){
+	int fd, i;
+	char buf[128];
+	time_t timer1;
+	
+	if((fd = open("/tmp/myfifo", O_RDWR)) == -1){
+		perror("open");
+		exit(2);
+	}
+	
+	for(i=0; i<5; i++){
+		memset(buf, 0, sizeof(buf));
+		sprintf(&buf[0], "Hello(%d)", i);
+		write(fd, &buf[0], strlen(buf)+1);
+		printf("Tx: %s\n", buf);
+		for(timer1=time(NULL); time(NULL)<timer1 + 2;)
+			continue;
+	}
+	memset(buf, 0, sizeof(buf));
+	sprintf(buf, "end");
+	write(fd, buf, strlen(buf)+1);
+	close(fd);
+	/* unlink("/tmp/mkfifo"); */
+	return 0;
+}
+```
+
+## 공유 메모리 Shared Memory
+
+
+![](../../../assets/images/lab/linux/sharedMemory.png)
+
+### System V Shared Memory
+
+![](../../../assets/images/lab/linux/systemVsharedmemory.png)
+
+
+- write
+```c
+#define  KEY_NUM     0x2222
+#define  MEM_SIZE    1024
+
+int main() {
+	int shm_id;
+	void *shm_addr, *shm_addr_dt;
+	int count;
+	
+	if((shm_id = shmget((key_t)KEY_NUM,MEM_SIZE,IPC_CREAT|0666)) == -1){
+		perror("shmget");
+		exit(1);
+	}
+	
+	printf("Please enter to attach shared memory ->\n");
+	getchar();
+	
+	
+	if((shm_addr = shmat(shm_id, NULL, 0)) == (void *)-1){
+		perror("shmat");
+		exit(1);
+	}
+	shm_addr_dt = shm_addr;
+	
+	// write(shm_id, "hello", 5);
+	
+	for(count=11; count<=15; count++){
+		sprintf((char *)shm_addr, "%d", count); 
+		printf( "Write Counter : %s\n", (char *)shm_addr);
+		shm_addr = shm_addr + sizeof(int);
+		sleep(1);
+	}
+	
+	sprintf((char *)shm_addr, "end");
+	
+	printf("Please enter to detach shared memory ->\n");
+	getchar();
+	if(shmdt(shm_addr_dt) !=0){
+		perror("shmdt");
+		exit(2);
+	}
+	
+	if(shmctl(shm_id, IPC_RMID, NULL) == -1){
+		perror("shmctl");
+		exit(2);
+	}
+	
+	return 0;
+}
+```
+
+- read
+```c
+#define  KEY_NUM     0x2222
+#define  MEM_SIZE    1024
+
+int main() {
+	int shm_id;
+	void *shm_addr, *shm_addr_dt;
+	int count=0;
+	char buf[128];
+	
+	if((shm_id = shmget((key_t)KEY_NUM,MEM_SIZE,IPC_CREAT|0666)) == -1){
+		perror("shmget");
+		exit(1);
+	}
+	
+	if((shm_addr = shmat(shm_id, NULL, 0)) == (void *)-1){
+		perror("shmat");
+		exit(1);
+	}
+	shm_addr_dt = shm_addr;
+	// read(shm_id, buf, 5);
+	// printf("%s\n", buf);
+	while(1){
+		printf("\t\e[31mRead counter %s\e[0m\n", (char *)shm_addr);
+		if(!strcmp(shm_addr, "end")){
+			break;
+		}
+		shm_addr = shm_addr + sizeof(int);
+		sleep(1);
+		if(count == 6){
+			count = 0;
+			shm_addr = shm_addr_dt;
+		}
+		count++;
+	}
+	if(shmdt(shm_addr_dt) !=0){
+		perror("shmdt");
+		exit(2);
+	}
+	return 0;
+}
+```
+
+```
+Please enter to attach shared memory ->
+
+Write Counter : 11
+Write Counter : 12
+Write Counter : 13
+Write Counter : 14
+Write Counter : 15
+Please enter to detach shared memory ->
+```
+
+```
+    ...
+    Read counter
+    Read counter
+    Read counter
+    Read counter 11
+    Read counter 12
+    Read counter 13
+    Read counter 14
+    Read counter 15
+    Read counter end
+```
+
+### POSIX 공유 메모리
+
+- write
+
+```c
+#define  MEM_SIZE    128
+
+int main() {
+	int fd;
+	void *shm_addr;
+	const char *message0= "Welcome to ";
+	const char *message1= "Linux Systems ";
+	const char *message2= "Programming!";
+	
+	//메모리 객체 생성
+	fd = shm_open("/mydata", O_RDWR | O_CREAT, 0666);
+	
+	//메모리 객체 크기 설정
+	ftruncate(fd, MEM_SIZE);
+		
+	//메모리 객체 매핑
+	shm_addr = mmap(0, MEM_SIZE, PROT_WRITE, MAP_SHARED, fd, 0);
+	printf( "Map addr is %p\n", shm_addr );
+#if 1	
+	write(fd, message0, strlen(message0));
+	write(fd, message1, strlen(message1));
+	write(fd, message2, strlen(message2));
+#else
+	memcpy(shm_addr, message0, strlen(message0));
+	shm_addr += strlen(message0);
+	sprintf(shm_addr, message1, strlen(message1));
+	shm_addr += strlen(message1);
+	memcpy(shm_addr, message2, strlen(message2));
+	shm_addr += strlen(message2);
+#endif
+	printf("Press enter when read ");
+	getchar();
+	munmap(shm_addr, MEM_SIZE);
+	shm_unlink("/mydata");
+	close(fd);
+	return 0;
+}
+```
+
+- read
+```c
+#define  MEM_SIZE    128
+
+int main() {
+	int fd;
+	void *shm_addr;
+	char buf[128];
+
+	fd = shm_open("/mydata", O_RDONLY, 0666);
+	if(fd == -1){
+		perror("shm_open");
+		exit(1);
+	}
+	
+	//메모리 객체 매핑
+	shm_addr = mmap(0, MEM_SIZE, PROT_READ, MAP_SHARED, fd, 0);
+	if(shm_addr == (void *)-1){
+		perror("mmap error");
+		return EXIT_FAILURE;
+	}
+#if 0	
+	memset(buf, 0, MEM_SIZE);
+	read(fd, buf, MEM_SIZE);
+	printf("%s\n", buf);
+#else
+	memcpy(buf, shm_addr, sizeof(buf));
+	printf("Map addr is %p\n", shm_addr);
+	printf("Read message: %s\n", buf);
+#endif
+	shm_unlink("/mydata");
+	return 0;
+}
+```
+
+### System V Message Queue
+
+![](../../../assets/images/lab/linux/systemVmessageQueue.png)

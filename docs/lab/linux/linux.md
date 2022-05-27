@@ -11,3 +11,6 @@ nav_order: 1
 1. TOC
 {:toc}
 ---
+
+# [Linux Programming](https://github.com/educafe/linux_sys_prog)
+# [Linux Network](https://github.com/educafe/linux_network_pgm)
