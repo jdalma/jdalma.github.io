@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Thread
+title: Thread Example
 parent: Linux Training
 grand_parent: 👨‍🔬 Lab
 nav_order: 3
