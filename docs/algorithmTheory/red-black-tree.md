@@ -54,7 +54,8 @@ struct RBTNode
 > - 이진 탐색 트리 삽입 연산
 > 1. 탐색 연산을 하여 데이터가 이미 존재하면 데이터를 삽입할 수 없다
 > 2. 탐색을 시작하여 탐색을 실패한 위치에 삽입한다
-> ![](../../assets/images/algorithmTheory/binarySearchTreeInsert.jpg)
+
+![](../../assets/images/algorithmTheory/binarySearchTreeInsert.jpg)
 
 1. 트리가 비었는지 확인한다.
    1. 트리가 비었다면, 검은색 루트 노드를 삽입한다.

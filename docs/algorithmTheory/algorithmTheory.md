@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 📕 정리 (+ 알고리즘 이론 , 자료구조)
+title: 📕 정리
 nav_order: 67
 has_children: true
 permalink: /docs/algorithmTheory
