@@ -1,7 +1,7 @@
 ---
 layout: default
 title: HTTP 메시지 , 메서드
-parent: HTTP웹 기본 지식
+parent: 네트워크
 nav_order: 2
 ---
 ## Table of contents

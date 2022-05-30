@@ -1,7 +1,7 @@
 ---
 layout: default
 title: HTTP 상태 코드 와 Redirection
-parent: HTTP웹 기본 지식
+parent: 네트워크
 nav_order: 3
 ---
 ## Table of contents

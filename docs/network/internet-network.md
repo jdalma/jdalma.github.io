@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 인터넷 네트워크
-parent: HTTP웹 기본 지식
+parent: 네트워크
 nav_order: 1
 ---
 ## Table of contents

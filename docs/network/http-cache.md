@@ -1,7 +1,7 @@
 ---
 layout: default
 title: HTTP 캐시와 조건부 요청
-parent: HTTP웹 기본 지식
+parent: 네트워크
 nav_order: 5
 ---
 ## Table of contents

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: HTTP 일반헤더(쿠키)
-parent: HTTP웹 기본 지식
+parent: 네트워크
 nav_order: 4
 ---
 ## Table of contents

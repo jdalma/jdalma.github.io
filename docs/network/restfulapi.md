@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RESTful API
-parent: HTTP웹 기본 지식
+parent: 네트워크
 nav_order: 6
 ---
 ## Table of contents
