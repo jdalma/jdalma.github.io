@@ -12,6 +12,9 @@ has_children: true
 {:toc}
 ---
 
+# `2022-05-30`
+## **[Optional Anti-Patterns](https://dzone.com/articles/optional-anti-patterns)**
+
 # `2022-05-27`
 
 ## **[LSB와 MSB란 무엇인가?](https://blog.naver.com/ansdbtls4067/220886567257)**
@@ -142,11 +145,6 @@ has_children: true
 
 ## **[누구나 쉽게 이해할 수 있는 Git](https://backlog.com/git-tutorial/kr/)**
 
-# `2022-03-11`
-
-## **[restfulapi.net](https://restfulapi.net/)**
-## **[RESTful API Designing guidelines — The best practices 번역글](https://wayhome25.github.io/etc/2017/11/26/restful-api-designing-guidelines/)**
-## **[rest-api](https://hudi.blog/rest-api/)**
 
 # `2022-03-10`
 
@@ -179,9 +177,6 @@ has_children: true
 ## **[ResponseEntity란 무엇인가?](https://a1010100z.tistory.com/106)**
 ### `@ControllerAdvice`
 ### `ExceptionHandler`
-
-
-## **[RestAPI 제대로 알고 사용하기](https://meetup.toast.com/posts/92)**
 
 # `2022-02-19`
 
