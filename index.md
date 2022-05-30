@@ -12,7 +12,7 @@ permalink: /
 
 # **Interest**
 
-> 🌱 I’m currently learning ...
+> 🌱  I’m currently learning ...
 > - JAVA / Spring
 > - ORM: JPA
 > - [Algorithm](https://jdalma.github.io/docs/algorithm) , DataStructure (Use JAVA language)

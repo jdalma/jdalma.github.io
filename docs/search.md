@@ -1,11 +1,3 @@
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
 [스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
 
 # [Chapter1. Servlet](https://github.com/jdalma/SpringMVC-1/pull/1)
@@ -17,7 +9,7 @@
 5. [HttpServletResponse Header , Cookie , Redirect , MessageBody 테스트](https://github.com/jdalma/SpringMVC-1/pull/1/commits/a0e20215ea0bab3c62bdfbbb2926538f5ef4b5b8)
 6. [HTTP 응답 -> HTML , JSON형식](https://github.com/jdalma/SpringMVC-1/pull/1/commits/cf0200acae0889e41afc3fe296f457cddd7e47dd)
 
-- **HTTP 요청 메세지** 로그로 확인하기
+- **HTTP 요청 메세지** 로그로 확s인하기
   - `logging.level.org.apache.coyote.http11=debug `
 - `application/json` 은 스펙상 **utf-8** 형식을 사용하도록 정의되어 있다.
 - 그래서 스펙에서 `charset=utf-8` 과 같은 추가 파라미터를 지원하지 않는다. 따라서 `application/json` 이라고만 사용해야지
@@ -472,7 +464,7 @@ spring.mvc.view.suffix=.jsp
 > - `Thymeleaf` 뷰 템플릿을 사용하면 `ThymeleafViewResolver` 를 등록해야 한다.
 > - *최근에는 라이브러리만 추가하면 스프링 부트가 이런 작업도 모두 자동화해준다.*
 
-## [스프링 MVC 시작하기 - `@Controller` , `@RequestMapping`](https://github.com/jdalma/SpringMVC-1/pull/5/commits/6e1bd06224f3c33080712b415ce54460e73b784b)
+## [Version 1. 스프링 MVC 시작하기 - `@Controller` , `@RequestMapping` 적용](https://github.com/jdalma/SpringMVC-1/pull/5/commits/6e1bd06224f3c33080712b415ce54460e73b784b)
 
 ### `@Controller`
 - 내부에 `@Component` Annotation이 있어서 컴포넌트의 스캔의 대상이 되어 빈으로 등록된다
@@ -501,4 +493,45 @@ public class RequestMappingHandlerMapping extends RequestMappingInfoHandlerMappi
   ...
 
 }
+```
+
+## [Version 2. 스프링 MVC - `@RequestMapping` 클래스 단위 → 메서드 단위](https://github.com/jdalma/SpringMVC-1/pull/5/commits/f98acf00594fcc08aa745ac8b85864addcda2d4d)
+
+- `@Controller` , `@Component` , `직접 빈으로 등록` 하는 3가지 방법 다 가능하다
+
+## [Version 3. 스프링 MVC - `Model` , `@RequestParam` , `@GetMapping` , `@PostMapping` , ViewName 직접 반환](https://github.com/jdalma/SpringMVC-1/pull/5/commits/7a2e1a4a41a57f3d0943962ac920ab8f1a689688)
+
+***
+
+# [Chapter5. 기본 기능](https://github.com/jdalma/SpringMVC-1.5/pull/1)
+
+## [로깅 간단히 알아보기](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/ec09e0a9a2c710f3a5e933d730289f376f5b7332)
+- 로그 라이브러리는 `Logback` , `Log4J` , `Log4J2` 등등 수 많은 라이브러리가 있는데, 그것을 **통합해서 인터페이스로 제공하는 것이 바로 `SLF4J` 라이브러리다**
+  - `SLF4J`는 인터페이스고, 그 구현체로 `Logback`같은 로그 라이브러리를 선택하면 된다
+- 스프링 부트 로그 레벨 설정
+  - **LEVEL** : `TRACE` > `DEBUG` > `INFO (default)` > `WARN` > `ERROR`
+- **상황에 따라 로그 레벨을 설정할 수 있다**
+- 시스템 아웃 콘솔에만 출력하는 것이 아니라, 파일이나 네트워크 등, 로그를 별도의 위치에 남길 수 있다. 
+  - *특히 파일로 남길 때는 일별, 특정 용량에 따라 **로그를 분할하는 것도 가능**하다.*
+- 로그에 대해서 더 자세한 내용은 slf4j, logback을 검색해보자. 
+  - [SLF4J](http://www.slf4j.org)
+  - [Logback](http://logback.qos.ch)
+- [스프링 부트가 제공하는 로그 기능](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-logging)
+
+```
+#global.properties
+#hello.springmvc 패키지와 그 하위 로그 레벨 설정
+logging.level.hello.springmvc=trace
+```
+
+- **아래와 같은 문자열 연산을 사용하지 말자**
+- `TRACE`가 찍힐 단계가 아니여도 해당 문자열 연산은 실행된다
+  - *CPU , 메모리 낭비*
+
+```java
+  // X
+  log.trace("trace log = " + name);
+
+  // O
+  log.trace("trace log = {}" , name);
 ```
