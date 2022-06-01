@@ -535,3 +535,59 @@ logging.level.hello.springmvc=trace
   // O
   log.trace("trace log = {}" , name);
 ```
+
+## [요청 매핑 종류]()
+
+### `@RestController`
+- `@Controller`는 반환 값이 **String**이면 뷰 이름으로 인식한다
+- `@RestController`는 반환 값으로 뷰를 찾는 것이 아니라 **HTTP 메시지 바디에 바로 입력**한다
+
+### `@RequestMapping` → `method` , `params` , `headers`
+- 대부분의 속성을 `배열[]`로 제공하므로 다중 설정이 가능하다
+  - `@RequestMapping({"/hello-basic" , "/hello-go"})`
+  - `/hello-basic/` 또는 `/hello-go/`도 가능하다
+- `method` 속성을 설정하지 않으면 **HTTP 메서드와 무관하게 호출된다** , *모두 허용*
+
+```
+  * 편리한 축약 애노테이션
+  * @GetMapping
+  * @PostMapping
+  * @PutMapping
+  * @DeleteMapping
+  * @PatchMapping
+```
+
+- `params` 속성은 **해당 쿼리 파라미터가 들어 있지 않다면 호출 자체가 되지 않는다**
+  - `@GetMapping(value = "/mapping-param", params = "mode=debug")`
+  - *쿼리 파라미터에 필수로 `mode`가 있어야 한다*
+
+```
+  * params="mode",
+  * params="!mode"
+  * params="mode=debug"
+  * params="mode!=debug" (! = )
+  * params = {"mode=debug","data=good"}
+```
+
+- `headers` 속성은 **헤더로 추가 매핑이 가능하다**
+
+```
+  *특정 헤더로 추가 매핑
+  * headers="mode"
+  * headers="!mode"
+  * headers="mode=debug"
+  * headers="mode!=debug" (! = )
+```
+
+### `@PathVariable`
+- **경로 변수와 변수명이 같으면 생략 가능**하다
+  - *쿼리 파라미터와 다르다*
+
+```java
+  @GetMapping(value = "/hello-basic4/{userId}/{userCode}")
+  public String helloBasic4(@PathVariable("userId") String data ,
+                            @PathVariable String userCode){
+      log.info("hello-basic4 userId = {} , userCode = {}" , data , userCode);
+      return data;
+  }
+```
