@@ -1,3 +1,23 @@
+---
+layout: default
+title: Spring MVC - 1
+nav_order: 1000
+---
+
+## Spring MVC - 1
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+---
+
 [스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
 ## [Spring Web MVC 공식 문서](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc)
 ## [`@Conroller` 의 사용 가능한 파라미터 목록](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments)
