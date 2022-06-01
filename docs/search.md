@@ -12,7 +12,7 @@
 ## [HttpServletResponse Header , Cookie , Redirect , MessageBody 테스트](https://github.com/jdalma/SpringMVC-1/pull/1/commits/a0e20215ea0bab3c62bdfbbb2926538f5ef4b5b8)
 ## [HTTP 응답 -> HTML , JSON형식](https://github.com/jdalma/SpringMVC-1/pull/1/commits/cf0200acae0889e41afc3fe296f457cddd7e47dd)
 
-- **HTTP 요청 메세지** 로그로 확s인하기
+- **HTTP 요청 메세지** 로그로 확인하기
   - `logging.level.org.apache.coyote.http11=debug `
 - `application/json` 은 스펙상 **utf-8** 형식을 사용하도록 정의되어 있다.
 - 그래서 스펙에서 `charset=utf-8` 과 같은 추가 파라미터를 지원하지 않는다. 따라서 `application/json` 이라고만 사용해야지
