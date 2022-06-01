@@ -13,7 +13,9 @@ has_children: true
 ---
 
 # `2022-05-30`
+
 ## **[Optional Anti-Patterns](https://dzone.com/articles/optional-anti-patterns)**
+## **[visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)**
 
 # `2022-05-27`
 
