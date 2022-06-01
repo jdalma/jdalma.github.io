@@ -1,13 +1,16 @@
 [스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+## [Spring Web MVC 공식 문서](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc)
+## [`@Conroller` 의 사용 가능한 파라미터 목록](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments)
+## [`@Conroller` 의 사용 가능한 응답 값 목록](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-return-types)
 
 # [Chapter1. Servlet](https://github.com/jdalma/SpringMVC-1/pull/1)
 
-1. [HttpServletRequest HEADER , COOKIE 등 조회하기](https://github.com/jdalma/SpringMVC-1/pull/1/commits/1ecb280a27ba0d61f6f07099d0fde30892c3f1b0)
-2. [HTTP 요청 데이터 GET 방식 쿼리 파라미터](https://github.com/jdalma/SpringMVC-1/pull/1/commits/f47791d1567e3f74b34176592ba3c2e13729b230)
-3. [HTTP 요청 데이터 POST HTML Form 방식](https://github.com/jdalma/SpringMVC-1/pull/1/commits/588c17c608c5397e8c5cd1cb950f492a95772cdb)
-4. [HTTP 요청 JSON 데이터를 Jackson을 사용하여 객체 매핑](https://github.com/jdalma/SpringMVC-1/pull/1/commits/5521a00ad93f980a7cd611760c5a6d69b95f53b4)
-5. [HttpServletResponse Header , Cookie , Redirect , MessageBody 테스트](https://github.com/jdalma/SpringMVC-1/pull/1/commits/a0e20215ea0bab3c62bdfbbb2926538f5ef4b5b8)
-6. [HTTP 응답 -> HTML , JSON형식](https://github.com/jdalma/SpringMVC-1/pull/1/commits/cf0200acae0889e41afc3fe296f457cddd7e47dd)
+## [HttpServletRequest HEADER , COOKIE 등 조회하기](https://github.com/jdalma/SpringMVC-1/pull/1/commits/1ecb280a27ba0d61f6f07099d0fde30892c3f1b0)
+## [HTTP 요청 데이터 GET 방식 쿼리 파라미터](https://github.com/jdalma/SpringMVC-1/pull/1/commits/f47791d1567e3f74b34176592ba3c2e13729b230)
+## [HTTP 요청 데이터 POST HTML Form 방식](https://github.com/jdalma/SpringMVC-1/pull/1/commits/588c17c608c5397e8c5cd1cb950f492a95772cdb)
+## [HTTP 요청 JSON 데이터를 Jackson을 사용하여 객체 매핑](https://github.com/jdalma/SpringMVC-1/pull/1/commits/5521a00ad93f980a7cd611760c5a6d69b95f53b4)
+## [HttpServletResponse Header , Cookie , Redirect , MessageBody 테스트](https://github.com/jdalma/SpringMVC-1/pull/1/commits/a0e20215ea0bab3c62bdfbbb2926538f5ef4b5b8)
+## [HTTP 응답 -> HTML , JSON형식](https://github.com/jdalma/SpringMVC-1/pull/1/commits/cf0200acae0889e41afc3fe296f457cddd7e47dd)
 
 - **HTTP 요청 메세지** 로그로 확s인하기
   - `logging.level.org.apache.coyote.http11=debug `
@@ -21,11 +24,13 @@
 
 # [Chapter2. Servlet , JSP , MVC Pattern](https://github.com/jdalma/SpringMVC-1/pull/2)
 
-1. [Member (In Memory) 도메인 및 테스트 코드 추가](https://github.com/jdalma/SpringMVC-1/pull/2/commits/a0f659ca3b26e24fc6e4c9ec46ee91835d1e371c)
-2. [gradle JSP 추가](https://github.com/jdalma/SpringMVC-1/pull/2/commits/6c9300c84fc5fdd0e113c530fa98d11d5a24c973)
-3. [Servlet으로 회원 관리](https://github.com/jdalma/SpringMVC-1/pull/2/commits/c358fd1bf0825479d9d6248749029ddddb6b8efa)
-4. [JSP로 회원 관리](https://github.com/jdalma/SpringMVC-1/pull/2/commits/313c5f90d2070fdde98ebe9d8763beebd2e2b531)
-5. [MVC 패턴으로 회원관리](https://github.com/jdalma/SpringMVC-1/pull/2/commits/68b96b4bfad2257eac741055e538cc14ffb99ecd)
+## [Member (In Memory) 도메인 및 테스트 코드 추가](https://github.com/jdalma/SpringMVC-1/pull/2/commits/a0f659ca3b26e24fc6e4c9ec46ee91835d1e371c)
+## [gradle JSP 추가](https://github.com/jdalma/SpringMVC-1/pull/2/commits/6c9300c84fc5fdd0e113c530fa98d11d5a24c973)
+## [Servlet으로 회원 관리](https://github.com/jdalma/SpringMVC-1/pull/2/commits/c358fd1bf0825479d9d6248749029ddddb6b8efa)
+## [JSP로 회원 관리](https://github.com/jdalma/SpringMVC-1/pull/2/commits/313c5f90d2070fdde98ebe9d8763beebd2e2b531)
+## [MVC 패턴으로 회원관리](https://github.com/jdalma/SpringMVC-1/pull/2/commits/68b96b4bfad2257eac741055e538cc14ffb99ecd)
+
+# Chapter2. 추가 정리
 
 ## **서블릿과JSP의 한계**
 - 서블릿으로 개발할 때는 `뷰(View)`화면을 위한 HTML을 만드는 작업이 자바 코드에 섞여서 지저분하고 복잡했다.
@@ -117,7 +122,7 @@
 
 ***
 
-# Chapter3. MVC 프레임워크 만들기
+# [Chapter3. MVC 프레임워크 만들기](https://github.com/jdalma/SpringMVC-1/pull/4)
 
 ## [Version 1. Front Controller 도입](https://github.com/jdalma/SpringMVC-1/pull/4/commits/c63752bb81e031386fd2835e12e4552e1f06f9c7)
 ![](https://raw.githubusercontent.com/jdalma/jdalma.github.io/master/assets/images/spring-mvc/mvc_v1.png)
@@ -536,13 +541,13 @@ logging.level.hello.springmvc=trace
   log.trace("trace log = {}" , name);
 ```
 
-## [요청 매핑 종류]()
+## [요청 매핑 종류](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/57752aa43c66700e12f34b9789cc30c15ee5bc15)
 
 ### `@RestController`
 - `@Controller`는 반환 값이 **String**이면 뷰 이름으로 인식한다
 - `@RestController`는 반환 값으로 뷰를 찾는 것이 아니라 **HTTP 메시지 바디에 바로 입력**한다
 
-### `@RequestMapping` → `method` , `params` , `headers`
+### `@RequestMapping` (+ `method` , `params` , `headers` , `consumes` , `Accept` , `produces`)
 - 대부분의 속성을 `배열[]`로 제공하므로 다중 설정이 가능하다
   - `@RequestMapping({"/hello-basic" , "/hello-go"})`
   - `/hello-basic/` 또는 `/hello-go/`도 가능하다
@@ -579,6 +584,34 @@ logging.level.hello.springmvc=trace
   * headers="mode!=debug" (! = )
 ```
 
+- `consumes` 속성은 **Content-Type 헤더를 기반으로 미디어 타입으로 매핑한다**
+  - *만약 맞지 않으면 HTTP **415** 상태코드(`Unsupported Media Type`)을 반환한다.*
+  - Body에 json 데이터가 들어가있으면 자동으로 `application/json` 바뀐다
+
+```
+  * Content-Type 헤더 기반 추가 매핑 Media Type * consumes="application/json"
+  * consumes="!application/json"
+  * consumes="application/*"
+  * consumes="*\/*"
+  * MediaType.APPLICATION_JSON_VALUE
+
+  consumes = "text/plain"
+  consumes = {"text/plain", "application/*"}
+  consumes = MediaType.TEXT_PLAIN_VALUE
+```
+
+- `Accept` , `produces`
+  - `Accept`는 클라이언트 입장에서 지정한 **Content-Type**만 받을 수 있다는 것을 선언한 것
+    - *아래 처럼 서버가 반환하는 `produces`가 다르기 때문에 406 에러코드 "Not Acceptable"이 반환된다*
+
+```java
+  @PostMapping(value = "/mapping-produce", produces = "text/html")
+  public String mappingProduces() {
+      log.info("mappingProduces");
+      return "ok";
+  }
+```
+
 ### `@PathVariable`
 - **경로 변수와 변수명이 같으면 생략 가능**하다
   - *쿼리 파라미터와 다르다*
@@ -591,3 +624,166 @@ logging.level.hello.springmvc=trace
       return data;
   }
 ```
+
+## [요청 매핑 예시](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/29a77da3a8890aff9f2ad3eafee4e80f0f364c19)
+
+```
+  @RequestMapping("/mapping/users")
+
+  *    회원 목록 조회: GET    
+  *    회원 등록:     POST   
+  *    회원 조회:     GET    /{userId}
+  *    회원 수정:     PATCH  /{userId}
+  *    회원 삭제:     DELETE /{userId}
+```
+
+- 아래와 같이 **요청 매핑 경로**와 **PathVariable**이 겹칠 떄는 ??
+  - `/userA`로 접근하면 어느 메소드가 호출될까?
+  - *`duplTest`가 호출된다*
+
+```java
+  @GetMapping("/{userId}")
+  public String findUser(@PathVariable String userId){
+      return "get userId = " + userId;
+  }
+
+  @GetMapping("/userA")
+  public String duplTest(){
+      return "duplTest";
+  }
+```
+
+## [스프링 컨트롤러의 다양한 파라미터의 종류 (`Request` , `Response` , `Header` , `Cookie` , `HttpMethod` ...)](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/e1fd4b32dd57599672846a3c4676adb72e8fb9ee)
+- [서블릿에서 꺼낼 때](https://github.com/jdalma/SpringMVC-1/pull/1/commits/a0e20215ea0bab3c62bdfbbb2926538f5ef4b5b8) 보다 편하게 조회할 수 있다
+
+```java
+  @RequestMapping("/headers")
+  public String headers(HttpServletRequest request ,
+                        HttpServletResponse response ,
+                        HttpMethod method ,
+                        Locale locale ,   // 우선순위가 가장 높은 언어 정보
+                        @RequestHeader MultiValueMap<String , String> headerMap , // 모든 Header의 정보를 Map으로 받는다
+                        @RequestHeader("host") String host , // 하나의 header 가져오기
+                        @CookieValue(value = "myCookie" , required = false) String cookie){
+
+      log.info("request={}", request);
+      log.info("response={}", response);
+      log.info("httpMethod={}", method);
+      log.info("locale={}", locale);
+      log.info("headerMap={}", headerMap);
+      log.info("header host={}", host);
+      log.info("myCookie={}", cookie);
+
+      return "ok";
+  }
+```
+
+- **HttpServletRequest**
+- **HttpServletResponse**
+- **HttpMethod** : HTTP 메서드를 조회한다 `org.springframework.http.HttpMethod` 
+- **Locale** : Locale 정보를 조회한다
+- **@RequestHeader MultiValueMap<String, String> headerMap**
+  - **모든 HTTP 헤더를 `MultiValueMap` 형식으로 조회**한다
+  - `map`과 유사한데, **하나의 키에 여러 값을 받을 수 있다**
+  - `HTTP header`, `HTTP 쿼리 파라미터`와 같이 **하나의 키에 여러 값을 받을 때 사용**한다.
+
+```java
+  // keyA=value1&keyA=value2
+  MultiValueMap<String, String> map = new LinkedMultiValueMap();
+  map.add("keyA", "value1");
+  map.add("keyA", "value2");
+  //[value1,value2]
+  List<String> values = map.get("keyA")
+```
+
+- **@RequestHeader("host") String host**
+  - 특정 HTTP 헤더를 조회한다
+  - 필수 값 여부: `required`
+  - 기본 값 속성: `defaultValue`
+- **@CookieValue(value = "myCookie", required = false) String cookie**
+  - 특정 쿠키를 조회한다
+  - 필수 값 여부: `required`
+  - 기본 값: `defaultValue`
+
+## HTTP 요청 파라미터 조회(+ `쿼리 파라미터` , `POST - HTML Form`)
+- 서버로 요청 데이터를 전달할 때는 주로 다음 3가지 방법을 사용한다
+
+1. **GET - 쿼리 파라미터**
+   - `/url`**?username=hello&age=20**
+   - 메시지 바디 없이 , **URL의 쿼리 파라미터에 데이터를 포함해서 전달**
+2. **POST - HTML Form**
+   - **content-type** : `application/x-www-form-urlencoded`
+   - **메시지 바디에 쿼리 파라미터 형식으로 전달**
+     - *username=hello&age=20*
+- **쿼리 파라미터** 와 **HTML Form**은 `HttpServletRequest`의 `requset.getParameter()`를 사용하면 조회할 수 있다
+- **요청 파라미터 조회**라고 한다 📌
+
+### [`@RequestParam` (required , defaultValue) , `@ResponseBody` , `MultiValueMap`](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/5f2d3cee2e7e1ff3ea2e04d517bee99e096d60c6)
+
+### [`@ModelAttribute`](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/d2e4dbeeb4d882c5cb3961588daf37eb72ce4856)
+- 스프링은 **요청 파라미터를 받아서 객체를 만들어주는 기능을 제공**한다
+
+1. `HelloData`객체를 생성한다
+2. 요청 파라미터의 이름으로 `HelloData` 객체의 프로퍼티를 찾는다
+   - 해당 파라미터의 `setter`를 호출해서 값을 입력 (바인딩) 한다
+3. 파라미터의 이름으로 `setter`가 없다면 바인딩 되지 않는다
+   - 숫자가 들어가야할 곳에 문자가 들어간다면 **Binding Exception**이 발생한다
+
+> - ✋ 
+> - `@ModelAttribute`도 생략 가능하다
+> - 그런데 `@RequestParam`도 생략할 수 있으니 혼란이 발생할 수 있다
+> - 스프링이 자동으로 처리 해준다
+>   - `String` , `int` , `Integer` 같은 단순 타입은 `@RequestParam`을 사용하며
+>   - 나머지는 `@ModelAttribute`를 사용한다 (**Argument Resolver** 타입 외 🚩)
+
+## HTTP 요청 메세지 조회(+ `단순 텍스트`)
+- **HTTP Message Body**
+   - **HTTP API에서 주로 사용 `JSON` , `XML` , `TEXT`**
+   - `POST` , `PUT` , `PATCH`
+- 요청 파라미터와 다르게 **HTTP 메시지 바디**를 통해 데이터가 직접 넘어오는 경우는 `@RequestParam` , `@ModelAttribute`를 사용할 수 없다
+  - *HTML Form 형식으로 넘어오는 경우는 요청 파라미터로 인정된다*
+
+### [단순 텍스트 `HttpEntity` , `RequestEntity` , `@RequestBody`](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/f6ccae35bcb3812b16bef5e5e84eedf7aeb99803)
+- 스프링 MVC는 컨트롤러에 아래의 파라미터를 지원한다
+- **HTTP Entity** 
+  - `HTTP Header` , `HTTP Body`정보를 편리하게 조회
+  - 메세지 바디 정보를 직접 조회 
+  - 요청 파라미터를 조회하는 기능(`@RequestParam` , `@ModelAttribute`)과 관계 없음
+  - **응답에도 사용 가능하다**
+    1. Message Body 정보 직접 설정
+    2. 헤더 정보 포함 가능
+    3. view 조회하지 않음
+- **HTTP Entity**를 상속받은 아래의 객체들도 같은 기능을 제공한다
+  - `RequestEntity`
+    - 요청에서 사용
+    - HttpMethod , URL 정보가 추가 
+  - `ResponseEntity`
+    - 응답에서 사용
+    - HTTP 상태 코드 설정 가능
+    - `return new ResponseEntity<String>("Hello World" , responseHeaders , HttpStatus.CREATED)`
+    - `return new ResponseEntity<>("ok" , HttpStatus.OK);`
+
+> - ✋ 
+> - 스프링 MVC 내부에서 **HTTP 메세지 바디**를 읽어서 문자나 객체로 변환해서 전달해주는데
+> - 이떄 **HttpMessageConverter** 🚩 라는 기능을 사용한다
+
+- 결론은 `@RequestBody`를 사용하면 **HTTP 메세지 바디**정보를 편리하게 조회할 수 있다 ⭐️
+  - *헤더 정보가 필요하다면 `HttpEntity`를 사용하거나 , `@RequestHeader`를 사용하면 된다*
+
+### [JSON `@RequestBody` , `@ResponseBody` , `ObjectMapper` , `HttpEntity`](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/275cc872333bbdf28fbe2b15b6e603ea1343fdb5)
+- `@RequestBody` 요청
+  - **JSON 요청 → HTTP 메세지 컨버터 → 객체**
+  - `@RequestBody HelloData data`
+    - `@RequestBody`에 직접 만들 객체를 지정할 수 있다
+- `@ResponseBody` 응답
+  - **객체 → HTTP 메세지 컨버터 → JSON 응답**
+
+- `HttpEntity` , `@RequestBody`를 사용하면 **HTTP 메세지 컨버터** 🚩 가 바디의 내용을 원하는 문자나 객체등으로 변환해준다
+  - 문자 뿐만 아니라 **JSON**도 **객체**로 변환해준다
+
+> - ✋
+> - `@RequestBody`는 생략이 불가능하다 (생략하면 `@ModelAttribute`가 적용됨)
+>   - HTTP 요청 시에 **content-type**이 `application/json`이어야 **JSON을 처리할 수 있는 HTTP 메세지 컨버터가 작동한다**
+> - `@ResponseBody`는 **Accept**이 `application/json`을 확인해야 한다
+
+
