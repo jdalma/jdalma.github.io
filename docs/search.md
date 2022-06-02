@@ -806,4 +806,42 @@ logging.level.hello.springmvc=trace
 >   - HTTP 요청 시에 **content-type**이 `application/json`이어야 **JSON을 처리할 수 있는 HTTP 메세지 컨버터가 작동한다**
 > - `@ResponseBody`는 **Accept**이 `application/json`을 확인해야 한다
 
+## [**HTTP 응답** - `정적 리소스` , `뷰 템플릿`](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/d76da89d88a1c0d11f404112774ba100292adf5e)
+- 스프링에서 응답 데이터를 만드는 방법 3가지
+- **정적 리소스**
+  - 브라우저에 정적인 HTML , CSS , JS를 제공할 때는 `정적 리소스`를 사용한다
+  - 스프링 부트는 클래스 패스의 다음 디렉토리에 있는 정적 리소스를 제공 
+    - `/static`
+    - `/public`
+    - `/resources`
+    - `/META-INF/resources`
+  - `/src/main/resources`는 **리소스를 보관하는 곳**이고 , 클래스 패스의 시작 경로이다
+    - *따라서 다음 디렉토리에 리소스를 넣어두면 스프링 부트가 정적 리소스로 서비스를 제공한다*
 
+```
+정적 리소스 경로 : src/main/resources/static
+다음 경로에 파일이 들어있으면 : src/main/resources/static/basic/hello-form.html
+웹 브라우저에서 다음과 같이 실행하면 된다 → http://localhost:8080/basic/hello-form.html
+```
+
+- **뷰 템플릿 사용**
+  - 브라우저에 동적인 HTML을 제공할 때는 `뷰 템플릿`을 사용한다
+  - **뷰 템플릿을 거쳐서 HTML이 생성되고 , 뷰가 응답을 만들어서 전달**
+  - **스프링 부트는 기본적으로 뷰 템플릿 경로를 `/src/main/resources/templates`로 제공한다**
+  - 뷰의 논리 이름인 `response/hello`를 반환하면 다음 경로의 뷰 템플릿이 렌더링 된다
+    - `templates/response/hello.html`
+
+```
+# 스프링 부트의 기본 값
+application.properties
+    spring.thymeleaf.prefix=classpath:/templates/
+    spring.thymeleaf.suffix=.html
+```
+
+### [**HTTP 응답** - `HTTP API` , `메시지 바디`에 직접 입력](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/88be9db8cac7a5a1b08c3b47267a379e3d297d3d)
+- HTTP API를 제공하는 경우에는 HTML이 아니라 데이터를 전달해야 하므로 , `HTTP 메시지 바디에 JSON같은 형식으로 데이터를 담아 보낸다`
+
+- `@RestController`
+  - `@Controller` 대신에 `@RestController` 애노테이션을 사용하면, 해당 컨트롤러에 모두 `@ResponseBody` 가 적용되는 효과가 있다. 
+  - 따라서 뷰 템플릿을 사용하는 것이 아니라, HTTP 메시지 바디에 직접 데이터를 입력한다. 
+  - **이름 그대로 Rest API(HTTP API)를 만들 때 사용하는 컨트롤러**이다.
