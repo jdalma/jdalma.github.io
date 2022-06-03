@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-06-03`
+
+## **[HTTP Method의 멱등성, 그리고 안전한 메서드](https://hudi.blog/http-method-idempotent/)**
+
 # `2022-05-30`
 
 ## **[Optional Anti-Patterns](https://dzone.com/articles/optional-anti-patterns)**
