@@ -68,14 +68,4 @@ public class HelloController{
 
 ## **API 방식**
 ![](../../assets/images/spring-introduction/projectBuild/7.png)
-## **`@ResponseBody`**
 
--   View를 반환하는 것이 아닌 데이터(JSON) 그 자체를 반환한다.
--   HTTP의 BODY에 문자 내용을 직접 반환
--   viewResolver 대신에 **`HttpMessageConverter`** 가 동작
--   기본 문자 처리 : **`StringHttpMessageConverter`**
--   기본 객체 처리 : **`MappingJackson2HttpMessageConverter`**
--   (객체 -> JSON으로 변환 대표적인 라이브러리 Jackson)
--   byte 처리 등등 기타 여러 HttpMessageConvert가 Default
-
->클라이언트의 HTTP Accept 헤더 와 서버의 컨트롤러 반환 타입 정보 둘을 조합해서 'HTTPMessageConvert'가 선택된다.
