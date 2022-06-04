@@ -128,7 +128,7 @@ nav_order: 6
     - `companies`의 모든 사원들 중 이름이 Digital Mckinsey인 사원들을 달라
 - **Pagination**
   - **GET** `/companies?page=3`
-
+- `https://www.inflearn.com/course/스프링-mvc-1/lecture/71157?tab=curriculum&volume=1.00`
 
 # Versioning
 - API가 여러 곳에서 사용되고 있을 때 일부 변경 사항으로 API를 업그레이드하면, 기존의 API를 사용하는 제품이나 서비스에 문제가 발생할 수 있다
