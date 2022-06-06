@@ -2,7 +2,7 @@
 layout: default
 title: Jeong-Lombok
 parent: Toy-Projects
-nav_order: 1
+nav_order: 20
 ---
 ## Table of contents
 {: .no_toc .text-delta }

@@ -12,6 +12,11 @@ has_children: true
 {:toc}
 ---
 
+# `2022-06-04`
+
+## **[TCP/IP란 무엇이며 어떤 원리로 작동하나요?](https://nordvpn.com/ko/blog/tcp-ip-protocol/)**
+## **[수리의 TCP/IP](https://www.youtube.com/watch?v=BEK354TRgZ8&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9CTech)**
+
 # `2022-06-03`
 
 ## **[HTTP Method의 멱등성, 그리고 안전한 메서드](https://hudi.blog/http-method-idempotent/)**

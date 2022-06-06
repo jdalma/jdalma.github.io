@@ -849,6 +849,8 @@ application.properties
 
 ![](../../assets/images/spring-mvc/httpMessageConverter.png)
 
+![](../../assets/images/spring-mvc/httpMessageConverter2.png)
+
 - 스프링 MVC는 다음의 경우에 **HTTP 메세지 컨버터**를 적용한다
 - HTTP 요청 : `@RequestBody` , `HttpEntity(RequestEntity)`;
 - HTTP 응답 : `@ResponseBody` , `HttpEntity(ResponseEntity)`;
@@ -887,9 +889,11 @@ application.properties
      - HTTP 요청의 `Accept` 미디어 타입을 지원하는가 ? (더 정확히는 `@RequestMapping` 의 `produces` ) 
        - *`text/plain` , `application/json` , `*/*`*
    - `canWrite()` 조건을 만족하면 `write()` 를 호출해서 HTTP 응답 메시지 바디에 데이터를 생성한다
+
 - **415 Error가 뜨는 경우**
   - 요청 **Content-Type** : `text/html`
   - 컨트롤러에서 받는 형식은 `body`를 읽어서 `helloData`객체를 생성해야 하지만 실패
+
 
 ```java
     @ResponseBody
@@ -921,3 +925,62 @@ application.properties
 -   byte 처리 등등 기타 여러 `HttpMessageConvert`가 Default
 
 > 클라이언트의 `HTTP Accept 헤더` 와 `서버의 컨트롤러 반환 타입 정보` **둘을 조합해서 `HTTPMessageConvert`가 선택된다**
+
+
+## **RequestMappingHandlerAdapter 구조**
+
+- **HTTP 메세지 컨버터**는 `@RequestMapping`을 처리하는 핸들러 어댑터인 (실제 컨트롤러를 호출) **RequestMappingHandlerAdapter (요청 매핑 핸들러 어댑터)** 와 관련이 있다
+
+![](../../assets/images/spring-mvc/httpMessageConverter2.png)
+
+- `@Controller` 기반 컨트롤러를 처리하는 **요청 매핑 핸들러 어댑터**가 바로 아래의 **Argument Resolver**를 호출해서 핸들러(컨트롤러)가 필요로하는 다양한 파라미터의 값(객체)을 생성한다
+- 이 파라미터들이 다 준비되면 컨트롤러를 호출하면서 넘겨준다
+
+### `ArgumentResolver`
+- `@Controller` 기반 컨트롤러는 매우 많은 파라미터를 사용할 수 있었다
+- `HttpServletRequest` , `Model` 은 물론 `@RequestParam` , `@ModelAttribute` 같은 어노테이션 그리고 `@RequestBody` , `HttpEntity` 같은 HTTP 메세지를 처리하는 부분 까지 매우 큰 유연함을 보여주었다
+  - *[`@Conroller` 의 사용 가능한 파라미터 목록](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments)*
+
+
+```java
+public interface HandlerMethodArgumentResolver {
+
+	boolean supportsParameter(MethodParameter parameter);
+
+	@Nullable
+	Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,
+			NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory) throws Exception;
+
+}
+```
+
+- `ArgumentResolver`의 `supportsParameter()`를 호출해서 해당 파라미터를 지원하는지 체크하고 ,
+- 지원하면 `resolveArgument()`를 호출해서 실제 객체를 생성한다
+- 이렇게 생성된 객체가 컨트롤러에 넘어가는 것
+  - *직접 이 인터페이스를 원해서 원하는 `ArgumentResolver`를 만들 수도 있다* 🚩
+- 아래의 인터페이스가 제공 되며 , **필요하면 언제든지 기능을 확장할 수 있다.**
+  - `HandlerMethodArgumentResolver`
+  - `HandlerMethodReturnValueHandler`
+  - `HttpMessageConverter`
+  - 기능 확장은`**WebMvcConfigurer 를 상속 받아서 스프링 빈으로 등록하면 된다** 
+    - *기능 확장이 필요할 때 `WebMvcConfigurer` 를 검색해보자.*
+
+> **요청의 경우** `@RequestBody` 를 처리하는 `ArgumentResolver` 가 있고, `HttpEntity` 를 처리하는 `ArgumentResolver` 가 있다.
+> 
+> - 이 `ArgumentResolver` 들이 **HTTP 메시지 컨버터를 사용해서 필요한 객체를 생성하는 것**이다.
+> 
+> **응답의 경우** `@ResponseBody` 와 `HttpEntity` 를 처리하는 **ReturnValueHandler** 가 있다.
+> 
+> - 그리고 여기에서 **HTTP 메시지 컨버터를 호출해서 응답 결과를 만든다.**
+>
+> `@RequestBody` , `@ResponseBody` 가 있으면 **RequestResponseBodyMethodProcessor**(ArgumentResolver)
+> 
+> `HttpEntity` 가 있으면 **HttpEntityMethodProcessor** (ArgumentResolver)를 사용한다
+
+### `ReturnValueHandler`
+- `HandlerMethodReturnValueHandler` 를 줄여서 `ReturnValueHandler` 라 부른다.
+  - *ArgumentResolver 와 비슷한데, 이것은 응답 값을 변환하고 처리한다.*
+- 스프링은 10여개가 넘는 ReturnValueHandler 를 지원한다. 
+  - *예) ModelAndView , @ResponseBody , HttpEntity , String*
+- [`@Conroller` 의 사용 가능한 응답 값 목록](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-return-types)
+
