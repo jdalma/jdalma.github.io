@@ -12,6 +12,10 @@ has_children: true
 {:toc}
 ---
 
+# `2022-06-08`
+
+## **[어떻게 네트워를 공부할 것인가?](https://covenant.tistory.com/222?category=773722)**
+
 # `2022-06-04`
 
 ## **[TCP/IP란 무엇이며 어떤 원리로 작동하나요?](https://nordvpn.com/ko/blog/tcp-ip-protocol/)**
