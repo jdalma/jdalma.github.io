@@ -739,6 +739,19 @@ logging.level.hello.springmvc=trace
 
 ### [`@RequestParam` (required , defaultValue) , `@ResponseBody` , `MultiValueMap`](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/5f2d3cee2e7e1ff3ea2e04d517bee99e096d60c6)
 
+```java
+@PostMapping("/add")
+public String save(@RequestParam String itemName,
+                    @RequestParam int price,
+                    @RequestParam int quantity,
+                    Model model){
+    Item item = new Item(itemName , price , quantity);
+    itemRepository.save(item);
+    model.addAttribute("item" , item);
+    return "basic/item";
+}
+```
+
 ### [`@ModelAttribute`](https://github.com/jdalma/SpringMVC-1.5/pull/1/commits/d2e4dbeeb4d882c5cb3961588daf37eb72ce4856)
 - 스프링은 **요청 파라미터를 받아서 객체를 만들어주는 기능을 제공**한다
 
@@ -754,6 +767,27 @@ logging.level.hello.springmvc=trace
 > - 스프링이 자동으로 처리 해준다
 >   - `String` , `int` , `Integer` 같은 단순 타입은 `@RequestParam`을 사용하며
 >   - 나머지는 `@ModelAttribute`를 사용한다 (**Argument Resolver** 타입 외 🚩)
+
+```java
+@PostMapping("/add")
+public String addItemV2(@ModelAttribute("item") Item item){
+    itemRepository.save(item);
+    // model.addAttribute("item" , item);
+    return "basic/item";
+}
+
+// @ModelAttribute 생략  가능
+@PostMapping("/add")
+public String addItemV2(Item item){
+    itemRepository.save(item);
+    return "basic/item";
+}
+```
+
+- `@ModelAttribute`가 자동으로 **Model에 "item" 이름으로 넣어준다**
+- 이름을 지정해주지 않는다면 클래스명을 사용한다. (맨 앞 글자만 소문자로 변경) **Item** -> **item**
+        
+
 
 ## HTTP **요청 메세지 조회**(+ 단순 텍스트)
 - **HTTP Message Body**
