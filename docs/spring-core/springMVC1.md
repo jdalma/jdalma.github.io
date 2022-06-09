@@ -1018,3 +1018,49 @@ public interface HandlerMethodArgumentResolver {
   - *예) ModelAndView , @ResponseBody , HttpEntity , String*
 - [`@Conroller` 의 사용 가능한 응답 값 목록](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-return-types)
 
+## `Redircet`
+
+```java
+  @PostMapping("/{itemId}/edit")
+  public String edit(@PathVariable long itemId , @ModelAttribute Item item , @RequestParam long id){
+      log.info("@PathVariable = {}" , itemId);
+      log.info("@RequestParam = {}" , id);
+      itemRepository.update(itemId , item);
+      return "redirect:/basic/items/{itemId}";
+  }
+```
+
+- 위와 같이 **redirect**시 `@PathVariable`의 `{itemId}`는 **재사용이 가능하다**
+
+## **PRG** `Post/Redirect/Get`
+
+![](../../assets/images/spring-mvc/prg1.png)
+
+- **웹 브라우저의 새로 고침은 마지막으로 서버에 전송한 데이터를 다시 전송한다**
+- 상품 등록 폼에서 데이터를 입력하고 저장을 선택하면 `POST /add + 상품 데이터`를 서버로 전송한다
+- **이 상태에서 새로 고침을 또 선택하면** 마지막에 전송한 `POST /add + 상품 데이터`를 **서버로 다시 전송**하게 된다
+- 상품 저장 후에 뷰 템플릿으로 이동하는 것이 아니라 , 상품 상세 화면으로 `redirect`를 사용하면 된다
+
+![](../../assets/images/spring-mvc/prg2.png)
+
+- 저장 후 `"저장 되었습니다."`라는 요구사항이 들어왔다면??
+
+### **RedirectAttributes**
+
+- **`URL 인코딩` , `PathVariable` , `쿼리 파라미터`까지 처리해준다**
+
+```java
+@PostMapping("/add")
+public String addItem(Item item , RedirectAttributes redirectAttributes){
+    Item save = itemRepository.save(item);
+    redirectAttributes.addAttribute("itemId" , save.getId());
+    redirectAttributes.addAttribute("status" , true);
+    return "redirect:/basic/items/{itemId}";
+}
+```
+
+- **redirectAttributes.addAttribute("itemId" , save.getId());**
+  - `return`에서 사용하는 `{itemId}`가 위에서 넣은 정보이다
+- **redirectAttributes.addAttribute("status" , true);**
+  - 해당 `status`는 **쿼리 파라미터로 전달된다**
+  - `http://localhost:8080/basic/items/4?status=true`
