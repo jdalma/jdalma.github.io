@@ -6,6 +6,11 @@ permalink: /docs/bookmark
 has_children: true
 ---
 
+- `2022-06-09`
+  - **[Garbage Collector의 동작 원리](https://sihyung92.oopy.io/java/garbage-collect/1)**
+  - **[Spring vs Spring Boot](https://dzone.com/articles/spring-vs-spring-boot)**
+    - [번역](https://sas-study.tistory.com/274)
+
 - `2022-06-08`
   - **[어떻게 네트워를 공부할 것인가?](https://covenant.tistory.com/222?category=773722)**
   - **[생성자 주입은 왜 권장되며 순환참조란 뭘까?](https://velog.io/@walker/Spring-%EC%99%9C-%EC%83%9D%EC%84%B1%EC%9E%90-%EC%A3%BC%EC%9E%85%EC%9D%B4-%EA%B6%8C%EC%9E%A5%EB%90%98%EB%A9%B0-%EC%88%9C%ED%99%98%EC%B0%B8%EC%A1%B0%EB%9E%80-%EB%AD%98%EA%B9%8C)**
