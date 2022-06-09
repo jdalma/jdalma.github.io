@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Red-Black Tree
-parent: 📕 정리 (+ 알고리즘 이론 , 자료구조)
+parent: 📕 정리
 nav_order: 1
 ---
 ## Table of contents
