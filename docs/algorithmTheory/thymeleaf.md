@@ -55,7 +55,7 @@ nav_order: 100
     - No-Operation: _
 ```
 
-## **text , utext**
+## [text , utext](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/a3190a395326674f67dbb5dc6ec1ab6d0e3bde22)
 - 텍스트 출력
   
 ```html
@@ -83,7 +83,61 @@ th:text 사용 <b>hello !!!!</b>
   - `th:text` → `th:utext`
   - `[[...]]` → `[(...)]`
 
+![](../../assets/images/algorithmTheory/thymeleaf/textutext.png)
+
+***
+
+## [변수 SpringEL](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/166449e9184fa4c12ddef51aa80168bf4e74ab6d)
+
+```
+Object
+${user.username} = userB
+${user['username']} = userB
+${user.getUsername()} = userB
+
+List
+${users[0].username} = userA
+${users[0]['username']} = userA
+${users[0].getUsername()} = userA
+
+Map
+${userMap['userA'].username} = userA
+${userMap['userA']['username']} = userA
+${userMap['userA'].getUsername()} = userA
+```
+
+### `th:width' 지역변수 선언
+
+- `th:width`가 선언된 **div**태그 내에서만 사용 가능하다
+
 ```html
-  <li>th:text 사용 <span th:utext="${data}"></span></li>
-  <li>컨텐츠 안에서 직접 출력하기 = [(${data})]</li>
+<div th:with="first=${users[0]}">
+    <p>처음 사람의 이름은 <span th:text="${first.username}"></span></p>
+</div>
+```
+
+***
+
+## [기본 객체들 `request` , `session`...](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/b8e16a64ac31b3ab5210ef793011669f504b10b3)
+
+```html
+<h1>식 기본 객체 (Expression Basic Objects)</h1>
+<ul>
+    <li>request = <span th:text="${#request}"></span></li>
+    <li>response = <span th:text="${#response}"></span></li>
+    <li>session = <span th:text="${#session}"></span></li>
+    <li>servletContext = <span th:text="${#servletContext}"></span></li>
+    <li>locale = <span th:text="${#locale}"></span></li>
+</ul>
+
+<h1>편의 객체</h1>
+<ul>
+    <!-- 타임리프는 쿼리 파라미터도 직접 꺼낼 수 있다 -->
+    <li>Request Parameter = <span th:text="${param.paramData}"></span></li>
+    
+    <li>session = <span th:text="${session.sessionData}"></span></li>
+
+    <!-- Spring Bean에 직접 접근 가능하다 -->
+    <li>spring bean = <span th:text="${@helloBean.hello('Spring!')}"></span></li>
+</ul>
 ```
