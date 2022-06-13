@@ -6,6 +6,9 @@ permalink: /docs/bookmark
 has_children: true
 ---
 
+- `2022-06-13`
+  - **[깃-던전 공략법](https://www.youtube.com/watch?v=dd7EPJ__hBs&list=PL1PI2d-NlJ8u7Kkb7k5bbSTuxZay62g2F)**
+
 - `2022-06-09`
   - **[Garbage Collector의 동작 원리](https://sihyung92.oopy.io/java/garbage-collect/1)**
   - **[Spring vs Spring Boot](https://dzone.com/articles/spring-vs-spring-boot)**
