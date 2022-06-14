@@ -527,3 +527,183 @@ No-Operation
 
 <span>Hello Spring !!!</span>
 ```
+
+***
+
+## [블록](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/d0ab9eecfc84228b6875465120bded176c85f797)
+- `th:block`은 HTML 태그가 아닌 타임리프의 유일한 자체 태그
+
+```html
+[HTML]
+<th:block th:each="user : ${users}"> <!-- 이 태그는 랜더링 후 사라진다 -->
+    <div>
+        사용자 이름1 <span th:text="${user.username}"></span>
+        사용자 나이1 <span th:text="${user.age}"></span>
+    </div>
+    <div>
+        요약 <span th:text="${user.username} + ' / ' + ${user.age}"></span>
+    </div>
+</th:block>
+```
+
+```html
+[소스 보기]
+  <div>
+      사용자 이름1 <span>a</span>
+      사용자 나이1 <span>10</span>
+  </div>
+  <div>
+      요약 <span>a / 10</span>
+  </div>
+
+  <div>
+      사용자 이름1 <span>b</span>
+      사용자 나이1 <span>20</span>
+  </div>
+  <div>
+      요약 <span>b / 20</span>
+  </div>
+
+  <div>
+      사용자 이름1 <span>c</span>
+      사용자 나이1 <span>30</span>
+  </div>
+  <div>
+      요약 <span>c / 30</span>
+  </div>
+```
+
+## [자바스크립트 인라인](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/2e9a77754331a177559756a0321bd66bf677cc99)
+- 타임리프는 자바스크립트에서 타임리프를 편리하게 사용할 수 있는 자바스크립트 인라인 기능을 제공한다
+- `<script th:inline="javascript">`
+
+- **텍스트 렌더링**
+  - `var username = [[${user.username}]];`
+    - 인라인 사용 전 `var username = userA`; 
+    - 인라인 사용 후 `var username = "userA"`;
+  - 인라인 사용 후 렌더링 결과를 보면 문자 타입인 경우 `"`를 포함해준다
+  - 추가로 자바스크립트에서 문제가 될 수 있는 문자가 포함되어 있으면 이스케이프 처리도 해준다. 예) `" \"`
+
+<br>
+
+- **자바스크립트 내추럴 템플릿**
+  - 타임리프는 HTML 파일을 직접 열어도 동작하는 내추럴 템플릿 기능을 제공한다
+  - 자바스크립트 인라인 기능을 사용하면 주석을 활용해서 이 기능을 사용할 수 있다.
+  -`var username2 = /*[[${user.username}]]*/ "test username";` 
+  - 인라인 사용 전 `var username2 = /*userA*/ "test username";` 
+  - 인라인 사용 후 `var username2 = "userA";`
+
+<br>
+
+- **객체**
+  - 타임리프의 자바스크립트 인라인 기능을 사용하면 객체를 JSON으로 자동으로 변환해준다
+  - `var user = [[${user}]];`
+  - 인라인 사용 전 `var user = BasicController.User(username=userA, age=10);` 
+  - 인라인 사용 후 `var user = {"username":"userA","age":10};`
+
+```javascript
+[JS]
+<!-- 자바스크립트 인라인 사용 전 -->
+<script>
+    var print = function(){
+        console.log(username + " " + age + " " + username2);
+        console.log(user);
+    }
+
+    var username = [[${user.username}]];
+    var age = [[${user.age}]];
+
+    //자바스크립트 내추럴 템플릿
+    var username2 = /*[[${user.username}]]*/ "test username";
+
+    //객체
+    var user = [[${user}]];
+
+    console.log("<자바스크립트 인라인 사용 전>");
+    print();
+    console.log("</자바스크립트 인라인 사용 전>");
+</script>
+
+<!-- 자바스크립트 인라인 사용 후 -->
+<script th:inline="javascript">
+    var username = [[${user.username}]];
+    var age = [[${user.age}]];
+
+    //자바스크립트 내추럴 템플릿
+    var username2 = /*[[${user.username}]]*/ "test username";
+
+    //객체
+    var user = [[${user}]];
+
+    console.log("<자바스크립트 인라인 사용 후>");
+    print();
+    console.log("</자바스크립트 인라인 사용 후>");
+</script>
+
+<!-- 자바스크립트 인라인 each -->
+<script th:inline="javascript">
+
+    console.log("<자바스크립트 인라인 each>");
+    [# th:each="user, stat : ${users}"]
+        var user[[${stat.count}]] = [[${user}]];
+        console.log(user);
+    [/]
+    console.log("<자바스크립트 인라인 each>");
+
+</script>
+```
+
+<br>
+
+```javascript
+[소스 보기]
+<!-- 자바스크립트 인라인 사용 전 -->
+<script>
+    var username = userA;
+    var age = 30;
+
+    //자바스크립트 내추럴 템플릿
+    var username2 = /*userA*/ "test username";
+
+    //객체
+    var user = BasicController.User(username=userA, age=30);
+
+    console.log("<자바스크립트 인라인 사용 전>");
+    console.log(username2);
+    console.log(user1);
+    console.log("</자바스크립트 인라인 사용 전>");
+</script>
+
+<!-- 자바스크립트 인라인 사용 후 -->
+<script>
+    var username = "userA";
+    var age = 30;
+
+    //자바스크립트 내추럴 템플릿
+    var username2 = "userA";
+
+    //객체
+    var user1 = {"username":"userA","age":30};
+
+    console.log("<자바스크립트 인라인 사용 후>");
+    console.log(username + " " + age + " " + username2);
+    console.log(user1);
+    console.log("</자바스크립트 인라인 사용 후>");
+</script>
+
+<!-- 자바스크립트 인라인 each -->
+<script>
+
+    console.log("<자바스크립트 인라인 each>");
+    
+        var user1 = {"username":"a","age":10};
+        console.log(user1);
+        var user2 = {"username":"b","age":20};
+        console.log(user2);
+        var user3 = {"username":"c","age":30};
+        console.log(user3);
+    
+    console.log("<자바스크립트 인라인 each>");
+
+</script>
+```
