@@ -23,7 +23,7 @@ nav_order: 100
 ```
 
 
-# 기본 기능
+# **기본 기능**
 
 ```
 - 간단한 표현
@@ -109,7 +109,7 @@ ${userMap['userA']['username']} = userA
 ${userMap['userA'].getUsername()} = userA
 ```
 
-### `th:width` 지역변수 선언
+### 지역변수 선언 `th:width`
 
 - `th:width`가 선언된 **div**태그 내에서만 사용 가능하다
 
@@ -204,7 +204,7 @@ LocalDateTime - Utils
   → param2는 바인딩 될 곳이 없어서 쿼리파라미터로 붙는다
 ```
 
-## [리터럴 Literal](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/7ff090ecbd7b621e442eba14bef0e7809182aa9a)
+## [리터럴](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/7ff090ecbd7b621e442eba14bef0e7809182aa9a)
 
 - **텍스트** : 'one text', 'Another one!' , ...
 - **숫자** : 0, 34, 3.0, 12.3,...
@@ -291,7 +291,7 @@ No-Operation
   ${nullData}?: _ = 데이터가 없습니다.
 ```
 
-## [타임리프 태그 속성 Attribute](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/8e05e82b6ca55762f100a35bb3264db235985ab5)
+## [타임리프 태그 속성](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/8e05e82b6ca55762f100a35bb3264db235985ab5)
 
 - `th:*` 속성을 지정하면 타임리프는 기존 속성을 `th:*` 로 **지정한 속성으로 대체한다**
   - 기존 속성이 없다면 새로 만든다
@@ -333,4 +333,197 @@ No-Operation
 - checked x <input type="checkbox" name="active" /><br/>
 - checked=false <input type="checkbox" name="active" checked="false" /><br/>
 
+```
+
+## [반복](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/b61da64dabe0d7acb9baf98ecbffecd0df654416)
+
+- `<tr th:each="user : ${users}">`
+  - 반복시 오른쪽 컬렉션( `${users}` )의 값을 하나씩 꺼내서 왼쪽 변수( `user` )에 담아서 태그를 반복 실행한다
+  - `th:each` 는 **List** 뿐만 아니라 **배열**, **java.util.Iterable** , **java.util.Enumeration** 을 구현한 모든 객체를 반복에 사용할 수 있다 - **Map** 도 사용할 수 있는데 이 경우 변수에 담기는 값은 `Map.Entry` 이다
+- **반복 상태 유지**
+  - `<tr th:each="user, userStat : ${users}">`
+  - 반복의 두번째 파라미터를 설정해서 **반복의 상태를 확인 할 수 있다**
+  - 두번째 파라미터는 생략 가능한데, **생략하면 지정한 변수명`( user ) + Stat`**
+    - *여기서는 `user + Stat = userStat` 이므로 생략 가능하다*
+  - `index` : 0 부터 시작
+  - `count` : 1 부터 시작
+
+```html
+[HTML]
+<h1>기본 테이블</h1>
+<table border="1">
+  <tr>
+    <th>username</th>
+    <th>age</th>
+  </tr>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.username}">username</td>
+    <td th:text="${user.age}">0</td>
+  </tr>
+</table>
+
+<h1>반복 상태 유지</h1>
+
+<table border="1">
+  <tr>
+    <th>count</th>
+    <th>username</th>
+    <th>age</th>
+    <th>etc</th>
+  </tr>
+  <tr th:each="user, userStat : ${users}">
+    <td th:text="${userStat.count}">username</td>
+    <td th:text="${user.username}">username</td>
+    <td th:text="${user.age}">0</td>
+    <td>
+      index = <span th:text="${userStat.index}"></span> <br>
+      count = <span th:text="${userStat.count}"></span> <br>
+      size = <span th:text="${userStat.size}"></span> <br>
+      even? = <span th:text="${userStat.even}"></span>  <br>
+      odd? = <span th:text="${userStat.odd}"></span>  <br>
+      first? = <span th:text="${userStat.first}"></span>  <br>
+      last? = <span th:text="${userStat.last}"></span>  <br>
+      current = <span th:text="${userStat.current}"></span> <br>
+    </td>
+  </tr>
+</table>
+```
+
+
+<h1>기본 테이블</h1>
+<table border="1">
+  <tr>
+    <th>username</th>
+    <th>age</th>
+  </tr>
+  <tr>
+    <td>a</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>b</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>c</td>
+    <td>30</td>
+  </tr>
+</table>
+
+<h1>반복 상태 유지</h1>
+
+<table border="1">
+  <tr>
+    <th>count</th>
+    <th>username</th>
+    <th>age</th>
+    <th>etc</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>a</td>
+    <td>10</td>
+    <td>
+      index = <span>0</span> <br>
+      count = <span>1</span> <br>
+      size = <span>3</span> <br>
+      even? = <span>false</span>  <br>
+      odd? = <span>true</span>  <br>
+      first? = <span>true</span>  <br>
+      last? = <span>false</span>  <br>
+      current = <span>BasicController.User(username=a, age=10)</span> <br>
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>b</td>
+    <td>20</td>
+    <td>
+      index = <span>1</span> <br>
+      count = <span>2</span> <br>
+      size = <span>3</span> <br>
+      even? = <span>true</span>  <br>
+      odd? = <span>false</span>  <br>
+      first? = <span>false</span>  <br>
+      last? = <span>false</span>  <br>
+      current = <span>BasicController.User(username=b, age=20)</span> <br>
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>c</td>
+    <td>30</td>
+    <td>
+      index = <span>2</span> <br>
+      count = <span>3</span> <br>
+      size = <span>3</span> <br>
+      even? = <span>false</span>  <br>
+      odd? = <span>true</span>  <br>
+      first? = <span>false</span>  <br>
+      last? = <span>true</span>  <br>
+      current = <span>BasicController.User(username=c, age=30)</span> <br>
+    </td>
+  </tr>
+</table>
+
+## [조건](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/a17f8a1ba14c77c4934399b65fd54d1d4a2870b2)
+
+- `th:if`, `th:unless`(if의 반대)
+  - 타임리프는 **해당 조건이 맞지 않으면 태그 자체를 렌더링하지 않는다**
+  - `<span th:text="'미성년자'" th:if="${user.age lt 20}"></span>`
+  - 만약 다음 조건이 **false** 인 경우 `<span>...<span>` 부분 자체가 렌더링 되지 않고 사라진다
+- `th:switch`
+  - `*` 은 만족하는 조건이 없을 때 사용하는 디폴트이다
+
+## [주석](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/203d391cb70a4e57885897b1da34426e75872fde)
+
+1. **표준 HTML 주석** `<!-- ... -->`
+   - 자바스크립트의 표준 HTML 주석은 **타임리프가 렌더링 하지 않고, 그대로 남겨둔다**
+2. **타임리프 파서 주석** `<!--/*--> ... <!--*/-->`
+   - 타임리프 파서 주석은 타임리프의 진짜 주석 , **렌더링에서 주석 부분을 제거한다**
+3. **타임리프 프로토타입 주석** `<!--/*/ ... /*/-->`
+   - HTML 파일을 웹 브라우저에서 그대로 열어보면 HTML 주석이기 때문에 이 부분이 웹 브라우저가 렌더링하지 않는다
+   - **HTML 파일을 그대로 열어보면 주석처리가 되지만, `타임리프를 렌더링 한 경우에만 보이는 기능`이다.**
+
+```html
+[HTML]
+<h1>예시</h1>
+<span th:text="${data}">html data</span>
+
+<h1>1. 표준 HTML 주석</h1>
+<!--
+<span th:text="${data}">html data</span>
+-->
+
+<h1>2. 타임리프 파서 주석</h1>
+<!--/* [[${data}]] */-->
+
+<!--/*-->
+<span th:text="${data}">html data</span>
+<!--*/-->
+
+<h1>3. 타임리프 프로토타입 주석</h1>
+<!--/*/
+<span th:text="${data}">html data</span>
+/*/-->
+```
+
+<br>
+
+```html
+[소스 보기]
+<h1>예시</h1>
+<span>Hello Spring !!!</span>
+
+<h1>1. 표준 HTML 주석</h1>
+<!--
+<span th:text="${data}">html data</span>
+-->
+
+<h1>2. 타임리프 파서 주석</h1>
+
+
+<h1>3. 타임리프 프로토타입 주석</h1>
+
+<span>Hello Spring !!!</span>
 ```
