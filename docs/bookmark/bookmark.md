@@ -6,11 +6,15 @@ permalink: /docs/bookmark
 has_children: true
 ---
 
+- [NEXTSTEP](https://edu.nextstep.camp/c/4YUvqn9V/)
+- [코드숨](https://www.codesoom.com/courses/spring)
+
 - `2022-06-13`
-<<<<<<< HEAD
   - **[깃-던전 공략법](https://www.youtube.com/watch?v=dd7EPJ__hBs&list=PL1PI2d-NlJ8u7Kkb7k5bbSTuxZay62g2F)**
-=======
->>>>>>> 3e34c9c (라빈카프 추가)
+  - **[우리 집에서 구글까지 가는 길](https://evan-moon.github.io/2019/06/22/my-home-to-google/)**
+  - **[쿠키와 세션 (ft. HTTP의 비연결성과 비상태성)](https://hudi.blog/cookie-and-session/)**
+  - **[교차 출처 리소스 공유 (CORS)](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS)**
+  - **[CORS가 대체 무엇일까? (feat. SOP)](https://hudi.blog/sop-and-cors/)**
 
 - `2022-06-09`
   - **[Garbage Collector의 동작 원리](https://sihyung92.oopy.io/java/garbage-collect/1)**
@@ -183,13 +187,11 @@ has_children: true
   - **[`Fail-Fast Iterator`](https://perfectacle.github.io/2021/08/14/fail-fast-iterator/)**
 
 - `2022-01-25`
-  - **[알고리즘 시간복잡도 뽀개기](https://goodgid.github.io/Algorithm-Time-Complexity-Analysis/)**
   - **[`Spring RequestContextHolder`](https://gompangs.tistory.com/entry/Spring-RequestContextHolder#%EA%B-%AC%EA%B-%--%EB%A-%--%EC%-D%--%--%EB%A-%B-%EC%-B%A-%ED%--%--%EC%A-%--%--%EB%A-%--%EC%-E%--)**
   - **[`Immutable Object`(불변객체)](https://velog.io/@conatuseus/Java-Immutable-Object%EB%B6%88%EB%B3%80%EA%B0%9D%EC%B2%B4)**
   - **[`OkHttp`로 `REST API` 호출하기](https://digitalbourgeois.tistory.com/59?category=678387)**
   - **[스프링 `RestTemplate`](https://advenoh.tistory.com/46)**
   - **[Spring WebSocket 소개](https://supawer0728.github.io/2018/03/30/spring-websocket/)**
-  - **[교차 출처 리소스 공유 (CORS)](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS)**
   - **[LeetCode 문제 추천 블로그]((https://inner-game.tistory.com/11))**
   - **[Java Code Conventions / 자바 코딩 규칙](http://kwangshin.pe.kr/blog/java-code-conventions-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99/?ckattempt=1)**
   - **[목적의식 있는 연습을 통한 효과적인 학습](https://techblog.woowahan.com/2626/)**
