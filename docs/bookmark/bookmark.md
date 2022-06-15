@@ -8,6 +8,7 @@ has_children: true
 
 - [NEXTSTEP](https://edu.nextstep.camp/c/4YUvqn9V/)
 - [코드숨](https://www.codesoom.com/courses/spring)
+- [korecruit.kr](https://korecruit.kr/)
 
 - `2022-06-13`
   - **[깃-던전 공략법](https://www.youtube.com/watch?v=dd7EPJ__hBs&list=PL1PI2d-NlJ8u7Kkb7k5bbSTuxZay62g2F)**
