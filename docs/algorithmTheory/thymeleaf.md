@@ -707,3 +707,147 @@ No-Operation
 
 </script>
 ```
+
+## [템플릿 조각](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/4f021fde5aa74df2480bc5b0b566330a9fc340c8)
+- 여러 페이지에서 함께 사용하는 영역들이 있다
+- **파라미터를 전달해서 동적으로 조각을 렌더링 할 수도 있다**
+- `th:fragment` 가 있는 태그는 **다른곳에 포함되는 코드 조각으로 이해하면 된다**
+- `th:insert` 를 사용하면 **현재 태그( div ) 내부에 추가한다**
+- `th:replace` 를 사용하면 **현재 태그( div )를 대체한다**
+- `~{...}` 를 사용하는 것이 원칙이지만 **템플릿 조각을 사용하는 코드가 단순하면 이 부분을 생략할 수 있다**
+
+
+<div class="code-example" markdown="1">
+## fragmentMain.html
+</div>
+
+```html
+<h2>부분 포함 insert</h2>
+<div th:insert="~{template/fragment/footer :: copy}"></div>
+
+<h2>부분 포함 replace</h2>
+<div th:replace="~{template/fragment/footer :: copy}"></div>
+
+<h2>부분 포함 단순 표현식</h2>
+<div th:replace="template/fragment/footer :: copy"></div>
+
+<h1>파라미터 사용</h1>
+<div th:replace="~{template/fragment/footer :: copyParam ('데이터1', '데이터2')}"></div>
+```
+
+<div class="code-example" markdown="1">
+## footer.html
+</div>
+
+```html
+<footer th:fragment="copy">
+    푸터 자리 입니다.
+</footer>
+
+<footer th:fragment="copyParam (param1, param2)">
+    <p>파라미터 자리 입니다.</p>
+    <p th:text="${param1}"></p>
+    <p th:text="${param2}"></p>
+</footer>
+```
+
+## [템플릿 레이아웃](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/6e5debc97272d6384f412d8485cf3f8ece7272f4)
+
+- **코드 조각을 레이아웃에 넘겨서 사용하는 방법**에 대해서 알아보자
+- 예를 들어서 `<head>` 에 공통으로 사용하는 **css** , **javascript** 같은 정보들이 있는데, 
+- 이러한 공통 정보들을 한 곳에 모아두고, 공통으로 사용하지만, 각 페이지마다 필요한 정보를 더 추가해서 사용하고 싶다면 다음과 같이 사용하면 된다
+- `template/layout/base :: common_header(~{::title},~{::link})` 📌
+  - `~{::title}` : 현재 페이지의 `title` 태그를 전달한다
+  - `~{::link}` : 현재 페이지의 `link` 태그를 전달한다
+
+
+<div class="code-example" markdown="1">
+## base.html 공통 (+ `title` , `link`)
+</div>
+
+```html
+<head th:fragment="common_header(title,links)">
+
+    <title th:replace="${title}">레이아웃 타이틀</title>
+
+    <!-- 공통 -->
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/awesomeapp.css}">
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}">
+    <script type="text/javascript" th:src="@{/sh/scripts/codebase.js}"></script>
+
+    <!-- 추가 -->
+    <th:block th:replace="${links}" />
+
+</head>
+```
+
+<div class="code-example" markdown="1">
+## layoutMain.html
+
+- 해당 HTML에서 **base.html을 호출할 때 `title` , `link` 태그들을 넘겨 포함시킨다**
+</div>
+
+```html
+<head th:replace="template/layout/base :: common_header(~{::title},~{::link})">
+    <title>메인 타이틀</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/themes/smoothness/jquery-ui.css}">
+</head>
+<body>
+메인 컨텐츠
+</body>
+```
+
+<br>
+
+
+- 위의 예시처럼 `<head>` 정도에만 적용하는게 아니라 `<html>` 전체에 적용할 수 있다
+
+<div class="code-example" markdown="1">
+## layoutFile.html
+</div>
+
+```html
+<html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:replace="${title}">레이아웃 타이틀</title>
+</head>
+<body>
+<h1>레이아웃 H1</h1>
+<div th:replace="${content}">
+    <p>레이아웃 컨텐츠</p>
+</div>
+<footer>
+    레이아웃 푸터
+</footer>
+</body>
+</html>
+```
+
+<div class="code-example" markdown="1">
+## layoutExtendMain.html
+
+1. `<html th:replace="~~">` 실행되며 `layoutFile.html`에 **현재 페이지의 `<title>` , `<section>`을 넘긴다**
+2. 위에서 넘긴 태그들이 `layoutFile.html`에서 변환된다
+3. 2번에서 변환된 모든 태그들이 현재 `layoutExtendMain.html`로 변환된다
+</div>
+
+```html
+<html th:replace="~{template/layoutExtend/layoutFile :: layout(~{::title}, ~{::section})}"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>메인 페이지 타이틀</title>
+</head>
+<body>
+<section>
+    <p>메인 페이지 컨텐츠</p>
+    <div>메인 페이지 포함 내용</div>
+</section>
+</body>
+</html>
+```
+
+- `layoutFile.html` 을 보면 기본 레이아웃을 가지고 있는데, `<html>` 에 `th:fragment` 속성이 정의되어 있다
+- **이 레이아웃 파일을 기본으로 하고 여기에 필요한 내용을 전달해서 부분부분 변경하는 것으로 이해하면 된다**
+- `layoutExtendMain.html` 는 현재 페이지인데, `<html>` 자체를 `th:replace` 를 사용해서 변경하는 것을 확인할 수 있다 
+  - 결국 `layoutFile.html` 에 필요한 내용을 전달하면서 **`<html>` 자체를 `layoutFile.html` 로 변경한다.**
