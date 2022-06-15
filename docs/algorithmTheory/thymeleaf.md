@@ -11,12 +11,16 @@ nav_order: 100
 {:toc}
 ---
 
-- [공식 사이트](https://www.thymeleaf.org/)
+- [공식 메뉴얼](https://www.thymeleaf.org/)
   - [기본 기능](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
   - [스프링 통합](https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html)
   - [유틸리티 객체](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#expression-utility-objects)
   - [유틸리티 객체 예시](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#appendix-b-expression-utility-objects)
   - [URL](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#link-urls)
+- 타임리프 템플릿 엔진을 스프링 빈에 등록하고, 타임리프용 뷰 리졸버를 스프링 빈으로 등록하는 방법 
+  - [the-springstandard-dialect](https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#the-springstandard-dialect)
+  - [views-and-view-resolvers](https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#views-and-view-resolvers)
+- [스프링 부트가 제공하는 타임리프 설정](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties-templating)
 
 ```html
 <html xmlns:th="http://www.thymeleaf.org">
@@ -850,3 +854,44 @@ No-Operation
 - **이 레이아웃 파일을 기본으로 하고 여기에 필요한 내용을 전달해서 부분부분 변경하는 것으로 이해하면 된다**
 - `layoutExtendMain.html` 는 현재 페이지인데, `<html>` 자체를 `th:replace` 를 사용해서 변경하는 것을 확인할 수 있다 
   - 결국 `layoutFile.html` 에 필요한 내용을 전달하면서 **`<html>` 자체를 `layoutFile.html` 로 변경한다.**
+
+
+# **스프링 통합**
+
+- **스프링 통합으로 추가되는 기능들**
+  1. 스프링의 SpringEL 문법 통합 `${@myBean.doSomething()}` 처럼 스프링 빈 호출 지원
+  2. 편리한 폼 관리를 위한 추가 속성
+     - `th:object` (기능 강화, 폼 커맨드 객체 선택) 
+     - `th:field` , `th:errors` , `th:errorclass`
+  3. 폼 컴포넌트 기능
+  4. checkbox, radio button, List 등을 편리하게 사용할 수 있는 기능 지원
+  5. 스프링의 메시지, 국제화 기능의 편리한 통합 스프링의 검증, 오류 처리 통합
+  6. 스프링의 변환 서비스 통합(ConversionService)
+
+## 입력 폼 처리
+- `th:object` : 커맨드 객체를 지정한다
+- `*{...}` : 선택 변수 식
+  - *`th:object`에서 선택한 객체에 접근한다*
+- `th:field` : HTML 태그의 **id** , **name** , **value** 속성을 자동으로 처리해준다
+  - **id** : `th:field` 에서 지정한 변수 이름과 같다 `id="itemName"` 
+  - **name** : `th:field` 에서 지정한 변수 이름과 같다 `name="itemName"` 
+  - **value** : `th:field` 에서 지정한 변수의 값을 사용한다 `value=""`
+
+
+```html
+<form action="item.html" th:action th:object="${item}" method="post">
+    <div>
+        <label for="itemName">상품명</label>
+        <input type="text" id="itemName" th:field="*{itemName}" class="form-control" placeholder="이름을 입력하세요">
+    </div>
+    <div>
+        <label for="price">가격</label>
+        <input type="text" id="price" th:field="*{price}" class="form-control" placeholder="가격을 입력하세요">
+    </div>
+    <div>
+        <label for="quantity">수량</label>
+        <input type="text" id="quantity" th:field="*{quantity}" class="form-control" placeholder="수량을 입력하세요">
+    </div>
+    ...
+</form>
+```
