@@ -22,9 +22,6 @@ nav_order: 100
 <html xmlns:th="http://www.thymeleaf.org">
 ```
 
-
-# **기본 기능**
-
 ```
 - 간단한 표현
   - 변수 표현식: ${...}
@@ -57,6 +54,8 @@ nav_order: 100
 - 특별한 토큰:
     - No-Operation: _
 ```
+
+# **기본 기능**
 
 ## [text , utext](https://github.com/jdalma/thymeleaf-basic/pull/1/commits/a3190a395326674f67dbb5dc6ec1ab6d0e3bde22)
 - 텍스트 출력
