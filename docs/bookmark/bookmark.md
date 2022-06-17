@@ -10,6 +10,10 @@ has_children: true
 - [코드숨](https://www.codesoom.com/courses/spring)
 - [korecruit.kr](https://korecruit.kr/)
 
+- `2022-06-17`
+  - **[MSA 환경에서 네트워크 예외를 잘 다루는 방법](https://tech.kakaopay.com/post/msa-transaction/)**
+  - **[TDD는 Design Acitivity이다.](https://perfectacle.github.io/2022/06/06/tdd-is-design-activity/)**
+
 - `2022-06-13`
   - **[깃-던전 공략법](https://www.youtube.com/watch?v=dd7EPJ__hBs&list=PL1PI2d-NlJ8u7Kkb7k5bbSTuxZay62g2F)**
   - **[우리 집에서 구글까지 가는 길](https://evan-moon.github.io/2019/06/22/my-home-to-google/)**
