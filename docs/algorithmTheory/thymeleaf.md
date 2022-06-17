@@ -895,3 +895,223 @@ No-Operation
     ...
 </form>
 ```
+
+## 단일 체크박스 (스프링)
+
+```html
+  <!-- single checkbox -->
+  <div>판매 여부</div>
+  <div>
+      <div class="form-check">
+          <input type="checkbox" id="open" th:field="*{open}" class="form-check-input">
+          <label for="open" class="form-check-label">판매 오픈</label>
+      </div>
+  </div>
+```
+
+- 체크 박스를 체크하면 `HTML Form`에서 **open=on** 이라는 값이 넘어간다
+- 스프링은 **on** 이라는 문자를 **true 타입으로 변환**해준다 *스프링 타입 컨버터*
+- 하지만 체크 박스를 선택하지 않으면 **open이라는 필드 자체가 넘어오지 않는다**
+
+<br>
+
+```html
+  <div class="form-check">
+      <input type="checkbox" id="open" class="form-check-input">
+      <input type="hidden" name="_open" value="on"/> <!-- 히든 필드 추가 -->
+      <label for="open" class="form-check-label">판매 오픈</label>
+  </div>
+```
+
+- **체크박스 체크 시**
+  - `open=on&_open=on` 체크 박스를 체크하면 스프링 MVC가 `open`에 값이 있는 것을 확인하고 사용한다
+  - 이 때 `_open`은 무시한다
+- **체크박스 미체크 시**
+  - 스프링  MVC가 `_open`만 있는 것을 확인하고 , `open`의 값이 체크되지 않았다고 인식한다
+  - 이 경우 서버에서 `Boolean`타입을 찍어보면 결과가 `null`이 아니라 `false`인 것을 확인할 수 있다
+    - `item.open=false`
+
+
+## 단일 체크박스 (타임리프)
+
+- 매번 히든필드를 신경쓰기 힘들다
+- 위의 기능을 타임리프에서 지원해준다
+
+```html
+  <div class="form-check">
+      <input type="checkbox" id="open" th:field="*{open}" class="form-check-input">
+      <label for="open" class="form-check-label">판매 오픈</label>
+  </div>
+```
+
+- `item.open=false`
+- 타임리프를 사용하면 **체크 박스의 히든 필드와 관련된 부분도 함께 해결해준다**
+  - *값이 있으면 태그에 `checked="checked"` 속성을 자동으로 넣어준다.*
+- HTML 생성 결과를 보면 아래와 같이 `히든 필드 부분이 자동으로 생성되어 있다`
+
+```html
+  <div class="form-check">
+      <input type="checkbox" id="open" class="form-check-input" name="open" value="true">
+      <input type="hidden" name="_open" value="on"/>
+      <label for="open" class="form-check-label">판매 오픈</label>
+  </div>
+```
+
+## `@ModelAttribute`의 특별한 사용법
+
+```java
+  @ModelAttribute("regions")
+  public Map<String, String> regions() {
+    Map<String, String> regions = new LinkedHashMap<>(); 
+    regions.put("SEOUL", "서울");
+    regions.put("BUSAN", "부산");
+    regions.put("JEJU", "제주");
+    return regions;
+  }
+
+  // 위처럼 작성하면 아래와 같다
+  model.addAttribute("regions" , regions);
+
+```
+
+- 등록 폼, 상세화면, 수정 폼에서 모두 서울, 부산, 제주라는 체크 박스를 반복해서 보여주어야 한다 
+- 이렇게 하려면 각각의 컨트롤러에서 `model.addAttribute(...)` 을 사용해서 체크 박스를 구성하는 데이터를 반복해서 넣어주어야 한다
+- `@ModelAttribute("regions")`이게 포함된 **해당 컨트롤러를 요청할 때 `regions` 에서 반환한 값이 자동으로 모델( model )에 담기게 된다** 
+  - *물론 이렇게 사용하지 않고, 각각의 컨트롤러 메서드에서 모델에 직접 데이터를 담아서 처리해도 된다.*
+- `@ModelAttribute` 는 이렇게 **컨트롤러에 있는 별도의 메서드에 적용할 수 있다**
+
+## 멀티 체크박스
+
+<div class="code-example" markdown="1">
+## 랜더링 전
+</div>
+```html
+<form action="item.html" th:action th:object="${item}" method="post">
+  ...
+  
+  <div>등록 지역</div>
+  <div th:each="region : ${regions}" class="form-check form-check-inline">
+      <input type="checkbox" th:field="*{regions}" th:value="${region.key}" class="form-check-input">
+      <label th:for="${#ids.prev('regions')}"
+              th:text="${region.value}" class="form-check-label">서울</label>
+  </div>
+</form>
+```
+
+- `th:for="${#ids.prev('regions')}"`
+- 멀티 체크박스는 같은 이름의 여러 체크박스를 만들 수 있다 
+- 그런데 문제는 이렇게 반복해서 HTML 태그를 생성할 때, **생성된 HTML 태그 속성에서 name 은 같아도 되지만, id 는 모두 달라야 한다** 
+- 따라서 타임리프는 체크박스를 `each루프` 안에서 반복해서 만들 때 **임의로 1,2,3 숫자를 뒤에 붙여준다**
+
+<div class="code-example" markdown="1">
+## 랜더링 후
+</div>
+```html
+  <div>
+      <div>등록 지역</div>
+      <div class="form-check form-check-inline">
+          <input type="checkbox" value="SEOUL" class="form-check-input" id="regions1" name="regions"><input type="hidden" name="_regions" value="on"/>
+          <label for="regions1"
+                  class="form-check-label">서울</label>
+      </div>
+      <div class="form-check form-check-inline">
+          <input type="checkbox" value="BUSAN" class="form-check-input" id="regions2" name="regions"><input type="hidden" name="_regions" value="on"/>
+          <label for="regions2"
+                  class="form-check-label">부산</label>
+      </div>
+      <div class="form-check form-check-inline">
+          <input type="checkbox" value="JEJU" class="form-check-input" id="regions3" name="regions"><input type="hidden" name="_regions" value="on"/>
+          <label for="regions3"
+                  class="form-check-label">제주</label>
+      </div>
+  </div>
+```
+
+## 라디오 버튼
+
+```java
+public enum ItemType {
+
+    BOOK("도서"), FOOD("음식"), ETC("기타");
+
+    private final String description;
+
+    ItemType(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+}
+
+@ModelAttribute("itemTypes")
+public ItemType[] itemTypes() {
+    return ItemType.values(); // 해당 enum의 모든 정보를 배열로 반환
+}
+```
+
+- **타임리프에서 ENUM 직접 접근** 
+  - `<div th:each="type : ${T(hello.itemservice.domain.item.ItemType).values()}">`
+  - 스프링EL 문법으로 `ENUM`을 직접 사용할 수 있다 
+  - `ENUM`에 `values()` 를 호출하면 해당 ENUM의 모든 정보가 배열로 반환된다
+  - *그런데 이렇게 사용하면 ENUM의 패키지 위치가 변경되거나 할때 자바 컴파일러가 타임리프까지 컴파일 오류를 잡을 수 없으므로 추천하지는 않는다*
+
+<div class="code-example" markdown="1">
+## 랜더링 전
+</div>
+```html
+<div>상품 종류</div>
+  <div th:each="type : ${itemTypes}" class="form-check form-check-inline">
+    <input type="radio" th:field="*{itemType}" th:value="${type.name()}" class="form-check-input">
+    <label th:for="${#ids.prev('itemType')}" th:text="${type.description}" class="form-check-label">
+        BOOK
+    </label>
+  </div>
+```
+
+<div class="code-example" markdown="1">
+## 랜더링 후
+</div>
+```html
+  <div>상품 종류</div>
+  <div class="form-check form-check-inline">
+      <input type="radio" value="BOOK" class="form-check-input" id="itemType1" name="itemType">
+      <label for="itemType1" class="form-check-label">도서</label>
+  </div>
+  <div class="form-check form-check-inline">
+      <input type="radio" value="FOOD" class="form-check-input" id="itemType2" name="itemType">
+      <label for="itemType2" class="form-check-label">음식</label>
+  </div>
+  <div class="form-check form-check-inline">
+      <input type="radio" value="ETC" class="form-check-input" id="itemType3" name="itemType">
+      <label for="itemType3" class="form-check-label">기타</label>
+  </div>
+```
+
+## 셀렉트 박스
+
+```java
+@ModelAttribute("deliveryCodes")
+public List<DeliveryCode> deliveryCodes() {
+    List<DeliveryCode> deliveryCodes = new ArrayList<>();
+    deliveryCodes.add(new DeliveryCode("FAST", "빠른 배송"));
+    deliveryCodes.add(new DeliveryCode("NORMAL", "일반 배송"));
+    deliveryCodes.add(new DeliveryCode("SLOW", "느린 배송"));
+    return deliveryCodes;
+}
+```
+
+<div class="code-example" markdown="1">
+## 랜더링 전
+</div>
+```html
+<div>
+  <div>배송 방식</div>
+  <select th:field="*{deliveryCode}" class="form-select">
+      <option value="">==배송 방식 선택==</option>
+      <option th:each="deliveryCode : ${deliveryCodes}" th:value="${deliveryCode.code}"
+              th:text="${deliveryCode.displayName}">FAST</option>
+  </select>
+</div>
+```
