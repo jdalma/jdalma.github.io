@@ -10,6 +10,9 @@ has_children: true
 - [코드숨](https://www.codesoom.com/courses/spring)
 - [korecruit.kr](https://korecruit.kr/)
 
+- `2022-06-19`
+  - **[Spring은 왜 memcached 대신 Redis를 선택했을까?](https://deveric.tistory.com/65)**
+
 - `2022-06-17`
   - **[MSA 환경에서 네트워크 예외를 잘 다루는 방법](https://tech.kakaopay.com/post/msa-transaction/)**
   - **[TDD는 Design Acitivity이다.](https://perfectacle.github.io/2022/06/06/tdd-is-design-activity/)**
