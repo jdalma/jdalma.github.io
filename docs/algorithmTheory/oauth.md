@@ -15,8 +15,11 @@ nav_order: 10
   - [Naver D2 - OAuth와 춤을](https://d2.naver.com/helloworld/24942)
   - [생활코딩 - OAuth](https://opentutorials.org/course/3405)
   - [OAuth란?](https://velog.io/@undefcat/OAuth-2.0-%EA%B0%84%EB%8B%A8%EC%A0%95%EB%A6%AC)
-  - [우테코 블로그 - OAuth 개념 및 동작 방식 이해하기](https://tecoble.techcourse.co.kr/post/2021-07-10-understanding-oauth/)
   - [Github Docs - OAuth 앱 승인](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps)
+  - [Github Docs - REST API 시작하기](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api)
+  - [Spring RestTemplate 요청에 "Accept:" 헤더를 설정하는 방법은 무엇입니까?](https://stackoverflow.com/questions/19238715/how-to-set-an-accept-header-on-spring-resttemplate-request)
+  - [RestTemplate 가이드](https://www.baeldung.com/rest-template)
+  - [RestTemplate 객체 생성으로 인한 성능 저하 사례](https://brocess.tistory.com/265)
 
 # OAuth란?
 - 사용자가 가입된 서비스의 `API`에 접근하기 위해서는 **사용자로부터 권한을 위임받아야 한다**
@@ -76,3 +79,5 @@ nav_order: 10
 > - [티스토리 오픈 API](https://tistory.github.io/document-tistory-apis/)
 > - [티스토리 오픈 API 앱 관리](https://www.tistory.com/guide/api/manage/list)
 > - [결과 게시글](https://write-read.tistory.com/entry/2021?category=904669)
+
+> 🙋‍♂️ [`Github AccessToken` 받아오기 예제](https://github.com/jdalma/practice/blob/master/src/main/java/info/dallog/git/GitController.java)
