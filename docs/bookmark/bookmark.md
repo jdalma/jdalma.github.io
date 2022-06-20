@@ -10,6 +10,9 @@ has_children: true
 - [코드숨](https://www.codesoom.com/courses/spring)
 - [korecruit.kr](https://korecruit.kr/)
 
+- `2022-06-20`
+  - [마이크로서비스 스타일로 만들어진 시스템을 모노리틱 스타일로 이관한 사례](https://www.slideshare.net/arawnkr/ss-224478403)
+
 - `2022-06-19`
   - **[Spring은 왜 memcached 대신 Redis를 선택했을까?](https://deveric.tistory.com/65)**
 
