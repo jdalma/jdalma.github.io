@@ -11,7 +11,9 @@ has_children: true
 - [korecruit.kr](https://korecruit.kr/)
 
 - `2022-06-20`
-  - [마이크로서비스 스타일로 만들어진 시스템을 모노리틱 스타일로 이관한 사례](https://www.slideshare.net/arawnkr/ss-224478403)
+  - **[컴퓨터가 만드는 랜덤은 정말로 랜덤할까?](https://evan-moon.github.io/2019/07/14/what-is-random/)**
+  - **[최소 값과 최대 값을 빠르게 찾을 수 있게 도와주는 힙(Heap)](https://evan-moon.github.io/2019/10/12/introduction-data-structure-heap/)**
+  - **[마이크로서비스 스타일로 만들어진 시스템을 모노리틱 스타일로 이관한 사례](https://www.slideshare.net/arawnkr/ss-224478403)**
 
 - `2022-06-19`
   - **[Spring은 왜 memcached 대신 Redis를 선택했을까?](https://deveric.tistory.com/65)**
