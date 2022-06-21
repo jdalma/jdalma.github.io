@@ -206,6 +206,93 @@ if(!errors.isEmpty()){
   - **뷰 템플릿에서 중복 처리가 많다**
   - **타입 오류 처리가 안된다** 
     - `Item` 의 `price` , `quantity` 같은 숫자 필드는 **숫자 타입에 문자가 들어오면 오류가 발생한다** 
-    - *그런데 이러한 오류는 스프링MVC에서 컨트롤러에 진입하기도 전에 예외가 발생하기 때문에, 컨트롤러가 호출되지도 않고, 400 예외가 발생하면서 오류 페이지를 띄워준다*
+    - *그런데 이러한 오류는 스프링MVC에서 컨트롤러에 진입하기도 전에 예외가 발생하기 때문에, 컨트롤러가 호출되지도 않고,* 
+    - *400 예외가 발생하면서 오류 페이지를 띄워준다*
   - 결국 문자는 바인딩이 불가능하므로 고객이 입력한 문자가 사라지게 되고, 고객은 본인이 어떤 내용을 입력해서 오류가 발생했는지 이해하기 어렵다
+
+## [Version 2. **BindingResult**](https://github.com/jdalma/spring-validation/pull/1/commits/6fe09180d3f3c0ec9b450abddc2f74c450659b60)
+
+```java
+  public interface BindingResult extends Errors
+```
+
+**스프링이 제공하는 검증 오류를 보관하는 객체이며 , `Model`에 자동 포함 된다**<br>
+검증 오류가 발생하면 여기에 보관하면 된다<br>
+`BindingResult` 가 있으면 **@ModelAttribute 에 데이터 바인딩 시 오류가 발생해도 컨트롤러가 호출된다!**<br>
+- `BindingResult` 는 검증할 대상 바로 다음에 와야한다 
+- @ModelAttribute Item item , 바로 다음에 BindingResult 가 와야 한다
+<br>
+
+**@ModelAttribute에 바인딩 시 타입 오류가 발생하면?**<br>
+  - BindingResult 가 없으면 400 오류가 발생하면서 컨트롤러가 호출되지 않고, 오류 페이지로 이동한다
+  - BindingResult 가 있으면 오류 정보( FieldError )를 BindingResult 에 담아서 컨트롤러를 정상 호출한다
+
+<br>
+
+`BindingResult`에 검증 오류를 적용하는 **3가지 방법**<br>
+  1. `@ModelAttribute` 의 객체에 타입 오류 등으로 **바인딩이 실패하는 경우 스프링이 FieldError 생성해서 BindingResult 에 넣어준다**
+  2. 개발자가 직접 넣어준다
+  3. `Validator`사용 🚩
+
+<br>
+
+- `new FieldError( {objectName} , {field} , {defaultMessage} )`
+  - **objectName** : `@ModelAttribute` 이름
+  - **field** : 오류가 발생한 필드 이름
+  - **defaultMessage** : 오류 기본 메시지
+- `new ObjectError( {objectName} , {defaultMessage} )`
+  - 특정 필드를 넘어서는 오류
+  - **objectName** : `@ModelAttribute` 의 이름
+  - **defaultMessage** : 오류 기본 메시지
+
+```java
+@PostMapping("/add")
+    public String addItemV1(@ModelAttribute Item item, BindingResult bindingResult , RedirectAttributes redirectAttributes , Model model) {
+
+        // 검증 로직
+        if(!StringUtils.hasText(item.getItemName())){
+            bindingResult.addError(new FieldError("item" , "itemName" , "상품 이름은 필수입니다."));
+        }
+
+        // 특정 필드가 아닌 복합 룰 검증
+        if(item.getPrice() != null && item.getQuantity() != null){
+            int resultPrice = item.getPrice() * item.getQuantity();
+            if(resultPrice < 10000){
+                bindingResult.addError(new ObjectError("item" , "가격 * 수량의 합 에러 : " + resultPrice));
+            }
+        }
+
+        // 검증에 실패하면 다시 입력 폼으로
+        if(bindingResult.hasErrors()){
+            log.info("bindingResult = {}" , bindingResult);
+            return "validation/v2/addForm";
+        }
+
+        // 성공 로직
+        ...
+    }
+```
+
+```html
+<div th:if="${#fields.hasGlobalErrors()}">
+  <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">글로벌 오류 메세지</p>
+</div>
+<input type="text"
+      id="itemName"
+      th:field="*{itemName}" 
+      class="form-control"
+      th:errorClass="field-error"
+      placeholder="이름을 입력하세요">
+<div class="field-error" th:errors="*{itemName}"> <!-- new FieldError로 추가한 필드 이름 -->
+  아이템 검증
+</div>
+```
+
+- `th:field`에 **필드 이름이 이미 지정되어 있다** 
+  - **BindingResult에 자신의 필드가 있다면 `field-error`를 클래스에 추가한다**
+
+- 타임리프는 스프링의 **BindingResult** 를 활용해서 편리하게 검증 오류를 표현하는 기능을 제공한다
+  1. `#fields`로 **BindingResult 가 제공하는 검증 오류에 접근할 수 있다**
+  2. `th:errors` 해당 필드에 오류가 있는 경우에 태그를 출력한다 (*th:if 편의 버전*)
+  3. `th:errorclass`는 `th:field` 에서 **지정한 필드에 오류가 있으면 class 정보를 추가한다**
 
