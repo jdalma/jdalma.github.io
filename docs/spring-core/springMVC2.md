@@ -210,7 +210,7 @@ if(!errors.isEmpty()){
     - *400 예외가 발생하면서 오류 페이지를 띄워준다*
   - 결국 문자는 바인딩이 불가능하므로 고객이 입력한 문자가 사라지게 되고, 고객은 본인이 어떤 내용을 입력해서 오류가 발생했는지 이해하기 어렵다
 
-## [Version 2. **BindingResult**](https://github.com/jdalma/spring-validation/pull/1/commits/6fe09180d3f3c0ec9b450abddc2f74c450659b60)
+## [Version 2. **BindingResult**](https://github.com/jdalma/spring-validation/pull/1/commits/6fe09180d3f3c0ec9b450abddc2f74c450659b60) , [사용자 입력 값 유지](https://github.com/jdalma/spring-validation/pull/1/commits/1362e6094d9672de4531be2c22c1a7d776d19d53)
 
 ```java
   public interface BindingResult extends Errors
@@ -236,7 +236,16 @@ if(!errors.isEmpty()){
 
 <br>
 
+- **타임리프의 사용자 입력 값 유지**
+  - `th:field="*{price}"`
+  - 정상 상황에는 모델 객체의 값을 사용하지만, 오류가 발생하면 `FieldError` 에서 보관한 값을 사용해서 값을 출력한다
+- **스프링의 바인딩 오류 처리**
+  - 타입 오류로 바인딩에 실패하면 스프링은 `FieldError` 를 생성하면서 사용자가 입력한 값을 넣어둔다 
+  - 그리고 **해당 오류를 BindingResult 에 담아서 컨트롤러를 호출한다** 
+  - 따라서 타입 오류 같은 바인딩 실패시에도 사용자의 오류 메시지를 정상 출력할 수 있다
+
 - `new FieldError( {objectName} , {field} , {defaultMessage} )`
+  - **FieldError** 는 오류 발생시 사용자 입력 값을 저장하는 기능을 제공한다
   - **objectName** : `@ModelAttribute` 이름
   - **field** : 오류가 발생한 필드 이름
   - **defaultMessage** : 오류 기본 메시지
@@ -244,6 +253,8 @@ if(!errors.isEmpty()){
   - 특정 필드를 넘어서는 오류
   - **objectName** : `@ModelAttribute` 의 이름
   - **defaultMessage** : 오류 기본 메시지
+
+
 
 ```java
 @PostMapping("/add")
@@ -296,3 +307,22 @@ if(!errors.isEmpty()){
   2. `th:errors` 해당 필드에 오류가 있는 경우에 태그를 출력한다 (*th:if 편의 버전*)
   3. `th:errorclass`는 `th:field` 에서 **지정한 필드에 오류가 있으면 class 정보를 추가한다**
 
+## 오류 코드와 메세지 처리
+
+```java
+public FieldError(String objectName, String field, String defaultMessage);
+public FieldError(String objectName, String field, @Nullable Object rejectedValue, boolean bindingFailure, @Nullable String[] codes, @Nullable Object[] arguments, @Nullable String defaultMessage)
+```
+
+- **objectName** : 오류가 발생한 객체 이름
+- **field** : 오류 필드
+- **rejectedValue** : 사용자가 입력한 값(거절된 값)
+- **bindingFailure** : 타입 오류 같은 바인딩 실패인지, 검증 실패인지 구분 값 
+- **codes** : 메시지 코드
+- **arguments** : 메시지에서 사용하는 인자
+- **defaultMessage** : 기본 오류 메시지
+
+<br>
+
+**FieldError** , **ObjectError** 의 생성자는 `errorCode` , `arguments` 를 제공한다<br>
+이것은 오류 발생시 오류 코드로 메시지를 찾기 위해 사용된다.
