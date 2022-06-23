@@ -10,6 +10,10 @@ has_children: true
 - [코드숨](https://www.codesoom.com/courses/spring)
 - [korecruit.kr](https://korecruit.kr/)
 
+- `2022-06-23`
+  - **[memcached vs redis](https://stackoverflow.com/questions/10558465/memcached-vs-redis)**
+  - **[스프링에서의 트랜잭션 관리(Spring Transactional Management)](https://sas-study.tistory.com/443)**
+
 - `2022-06-20`
   - **[컴퓨터가 만드는 랜덤은 정말로 랜덤할까?](https://evan-moon.github.io/2019/07/14/what-is-random/)**
   - **[최소 값과 최대 값을 빠르게 찾을 수 있게 도와주는 힙(Heap)](https://evan-moon.github.io/2019/10/12/introduction-data-structure-heap/)**
