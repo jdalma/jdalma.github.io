@@ -15,6 +15,7 @@ nav_order: 5
 - [NoSQL Data Modeling](https://phoenixnap.com/kb/nosql-data-modeling)
 - [NoSQL에 대해 알아보자](https://shoark7.github.io/programming/knowledge/what-is-NoSQL)
 - [What is NoSQL](https://github.com/alstjgg/cs-study/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/NoSQL%20-%202.%20What%20is%20NoSQL.md)
+- [Scale-up과 Scale-out에 대해 알아보자!](https://tecoble.techcourse.co.kr/post/2021-10-12-scale-up-scale-out/)
 
 # 용어 정리
 
