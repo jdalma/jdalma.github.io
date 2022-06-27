@@ -13,6 +13,9 @@ has_children: true
 
 <br>
 
+- `2022-06-27`
+  - **[MySQL InnoDB lock & deadlock 이해하기](https://www.letmecompile.com/mysql-innodb-lock-deadlock/)**
+
 - `2022-06-26`
   - **[List 순회 중 만난 ConcurrentModificationException과 컬렉션 불변성](https://m.blog.naver.com/tmondev/220393974518)**
   - **[토스ㅣSLASH 22 - Java Native Memory Leak 원인을 찾아서](https://www.youtube.com/watch?v=w4fWgLgop5U)**

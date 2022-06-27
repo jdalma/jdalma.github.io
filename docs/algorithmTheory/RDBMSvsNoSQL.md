@@ -112,10 +112,8 @@ nav_order: 5
   - *ACID Atomicity, Consistency, Isolation, Durability*
 <br>
 
-- **원자성** `Atomicity` : 각 Transaction은 여러 질의문으로 이루어질 수도 있는데 이런 각 transaction은 `단일 단위`여야 한다
-- **일관성** `Consistency`: Transaction은 데이터베이스의 불변값은 그대로 둔 채 한 상태를 유효한 다른 상태로 전이해야 한다
-- **독립성** `Isolation`: Transaction은 때로는 거의 동시에(Concurrently) 처리될 수 있는데 이때의 결과가 각 Transaction이 순차적으로 처리될 때의 결과와 같아야 한다
-- **지속성** `Durability`: Transaction은 한 번 처리된 뒤로는 시스템 오류 등의 이상이 있어도 그 결과가 유지되어야 한다.(즉, 처리결과가 비휘발성의 메모리에 저장되어야 한다)
+✋ [Transaction 과 ACID 란 무엇인가?](https://blog.yevgnenll.me/posts/what-is-acid-about-transaction)
+
 <br>
 
 # **NoSQL 데이터베이스** Not only SQL
