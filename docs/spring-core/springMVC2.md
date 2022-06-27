@@ -319,7 +319,10 @@ public FieldError(String objectName, String field, @Nullable Object rejectedValu
 - **rejectedValue** : 사용자가 입력한 값(거절된 값)
 - **bindingFailure** : 타입 오류 같은 바인딩 실패인지, 검증 실패인지 구분 값 
 - **codes** : 메시지 코드
+  -  `required.item.itemName` 를 사용해서 메시지 코드를 지정한다 
+  -  메시지 코드는 하나가 아니라 배열로 여러 값을 전달할 수 있는데, 순서대로 매칭해서 처음 매칭되는 메시지가 사용된다.
 - **arguments** : 메시지에서 사용하는 인자
+  - `Object[]{1000, 1000000}` 를 사용해서 코드의 {0} , {1} 로 치환할 값을 전달한다.
 - **defaultMessage** : 기본 오류 메시지
 
 <br>
