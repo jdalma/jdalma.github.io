@@ -11,8 +11,15 @@ has_children: true
 - [korecruit.kr](https://korecruit.kr/)
 - [shirohoo bookmark](https://devtools.life/bookmarks)
 
+<br>
+
 - `2022-06-26`
   - **[List 순회 중 만난 ConcurrentModificationException과 컬렉션 불변성](https://m.blog.naver.com/tmondev/220393974518)**
+  - **[토스ㅣSLASH 22 - Java Native Memory Leak 원인을 찾아서](https://www.youtube.com/watch?v=w4fWgLgop5U)**
+  - **[도커 관련 한글 문서를 정리한 깃허브](https://github.com/remotty/documents.docker.co.kr)**
+  - **[쿠버네티스 안내서](https://subicura.com/k8s/)**
+  - **[초보를 위한 도커 안내서 - 도커란 무엇인가?](https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html?utm_source=subicura.com&utm_medium=referral&utm_campaign=k8s)**
+  - **[Git 안내서](https://subicura.com/git/)**
 
 - `2022-06-24`
   - **[Java Stream API는 왜 for-loop보다 느릴까?](https://jypthemiracle.medium.com/java-stream-api%EB%8A%94-%EC%99%9C-for-loop%EB%B3%B4%EB%8B%A4-%EB%8A%90%EB%A6%B4%EA%B9%8C-50dec4b9974b)**
