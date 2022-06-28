@@ -220,7 +220,7 @@ if(!errors.isEmpty()){
 검증 오류가 발생하면 여기에 보관하면 된다<br>
 `BindingResult` 가 있으면 **@ModelAttribute 에 데이터 바인딩 시 오류가 발생해도 컨트롤러가 호출된다!**<br>
 - `BindingResult` 는 검증할 대상 바로 다음에 와야한다 
-- @ModelAttribute Item item , 바로 다음에 BindingResult 가 와야 한다
+- `@ModelAttribute Item item` , 바로 다음에 `BindingResult` 가 와야 한다
 <br>
 
 **@ModelAttribute에 바인딩 시 타입 오류가 발생하면?**<br>
@@ -307,7 +307,7 @@ if(!errors.isEmpty()){
   2. `th:errors` 해당 필드에 오류가 있는 경우에 태그를 출력한다 (*th:if 편의 버전*)
   3. `th:errorclass`는 `th:field` 에서 **지정한 필드에 오류가 있으면 class 정보를 추가한다**
 
-## 오류 코드와 메세지 처리
+## [Version 3. `FieldError()` , `ObjectError()`, error.properties 추가](https://github.com/jdalma/spring-validation/pull/1/commits/95f74ed200ae2a0b313f980f780980cc59d1d5ef)
 
 ```java
 public FieldError(String objectName, String field, String defaultMessage);
@@ -329,3 +329,136 @@ public FieldError(String objectName, String field, @Nullable Object rejectedValu
 
 **FieldError** , **ObjectError** 의 생성자는 `errorCode` , `arguments` 를 제공한다<br>
 이것은 오류 발생시 오류 코드로 메시지를 찾기 위해 사용된다.
+
+## [Version 4. `rejectValue()` , `reject()`](https://github.com/jdalma/spring-validation/pull/1/commits/b143213a6b571be979425bd3335b47b4d58f00a9)
+- `FieldError` , `ObjectError`는 작성하기 너무 번거롭다
+- 컨트롤러에서 **BindingResult 는 검증해야 할 객체인 target 바로 다음에 온다.**
+  - 따라서 BindingResult 는 이미 본인이 검증해야 할 객체인 target 을 알고 있다.
+
+```java
+  log.info("object name = {}" , bindingResult.getObjectName());
+  log.info("target name = {}" , bindingResult.getTarget());
+  
+  // object name = item
+  // target name = Item(id=null, itemName=1, price=10000, quantity=2)
+```
+
+- `rejectValue()` , `reject()`
+
+```java
+void rejectValue(@Nullable String field, String errorCode, @Nullable Object[] errorArgs, @Nullable String defaultMessage);
+
+void reject(String errorCode, @Nullable Object[] errorArgs, @Nullable String defaultMessage);
+```
+
+- **field** : 오류 필드명
+- **errorCode** : 오류 코드(이 오류 코드는 메시지에 등록된 코드가 아니다. 뒤에서 설명할 messageResolver를 위한 오류 코드이다.)
+- **errorArgs** : 오류 메시지에서 {0} 을 치환하기 위한 값 
+- **defaultMessage** : 오류 메시지를 찾을 수 없을 때 사용하는 기본 메시지
+
+```java
+// 간단한 검증은 rejectIfEmptyOrWhitespace도 가능하다
+ValidationUtils.rejectIfEmptyOrWhitespace(bindingResult , "itemName" , "required");
+
+bindingResult.rejectValue("price", "range", new Object[]{1000, 1000000}, null)
+
+bindingResult.reject("totalPriceMin" , new Object[]{10000 , resultPrice} , null);
+```
+
+## [Version 4-1. `rejectValue()` , `reject()` → **MessageCodesResolver**]
+- 메세지를 범용적으로 사용하다가, 세밀하게 작성해야 하는 경우에는 세밀한 내용이 적용되도록 메시지에 단계를 두는 방법이 좋다
+
+```
+#Level1
+required.item.itemName: 상품 이름은 필수 입니다. 
+
+#Level2
+required: 필수 값 입니다.
+```
+
+- **세밀한 메세지가 우선순위가 높으며 이런 우선순위에 따라 메세지를 반환하는 기능을 지원한다**
+- **MessageCodesResolver** 인터페이스이고 `DefaultMessageCodesResolver` 는 기본 구현체이다
+
+<br>
+
+- `DefaultMessageCodesResolver`의 기본 메세지 생성 규칙
+- **객체 오류**
+
+```
+객체 오류의 경우 다음 순서로 2가지 생성 
+1.: code + "." + object name 
+2.: code
+
+예) 오류 코드: required, object name: item 
+
+1.: required.item
+2.: required
+```
+
+```
+필드 오류의 경우 다음 순서로4가지 메시지 코드 생성
+1.: code + "." + object name + "." + field
+2.: code + "." + field
+3.: code + "." + field type
+4.: code
+
+예) 오류 코드: typeMismatch, object name "user", field "age", field type: int 
+
+1. "typeMismatch.user.age"
+2. "typeMismatch.age"
+3. "typeMismatch.int"
+4. "typeMismatch"
+```
+
+- `rejectValue()` , `reject()` 는 내부에서 **MessageCodesResolver** 를 사용한다
+- 여기에서 메시지 코드들을 생성한다
+- `FieldError` , `ObjectError` 의 생성자를 보면, **오류 코드를 하나가 아니라 여러 오류 코드를 가질 수 있다**
+- **MessageCodesResolver** 를 통해서 생성된 순서대로 오류 코드를 보관한다
+- 이 부분을 BindingResult 의 로그를 통해서 확인해보자.
+  - `codes [range.item.price, range.price, range.java.lang.Integer, range]`
+
+<br>
+
+✋ **오류 메시지 출력**<br>
+타임리프 화면을 렌더링 할 때 `th:errors` 가 실행된다<br>
+만약 이때 오류가 있다면 생성된 오류 메시지 코드를 순서대로 돌아가면서 메시지를 찾는다<br>
+그리고 없으면 디폴트 메시지를 출력한다
+
+<br>
+
+<div class="code-example" markdown="1">
+## errors.properties
+</div>
+
+```
+#==ObjectError==
+#Level1
+totalPriceMin.item=상품의 가격 * 수량의 합은 {0}원 이상이어야 합니다. 현재 값 = {1}
+
+#Level2 - 생략
+totalPriceMin=전체 가격은 {0}원 이상이어야 합니다. 현재 값 = {1}
+range.price=가격은 {0} ~ {1} 까지 허용됩니다. (레벨2)
+
+#==FieldError==
+#Level1
+required.item.itemName=상품 이름은 필수입니다.
+range.item.price=가격은 {0} ~ {1} 까지 허용합니다.
+max.item.quantity=수량은 최대 {0} 까지 허용합니다.
+
+#Level2 - 생략
+
+#Level3
+required.java.lang.String = 필수 문자입니다.
+required.java.lang.Integer = 필수 숫자입니다.
+min.java.lang.String = {0} 이상의 문자를 입력해주세요.
+min.java.lang.Integer = {0} 이상의 숫자를 입력해주세요.
+range.java.lang.String = {0} ~ {1} 까지의 문자를 입력해주세요.
+range.java.lang.Integer = {0} ~ {1} 까지의 숫자를 입력해주세요.
+max.java.lang.String = {0} 까지의 문자를 허용합니다.
+max.java.lang.Integer = {0} 까지의 숫자를 허용합니다.
+
+#Level4
+required = 필수 값 입니다.
+min= {0} 이상이어야 합니다.
+range= {0} ~ {1} 범위를 허용합니다. max= {0} 까지 허용합니다.
+```

@@ -12,12 +12,12 @@ permalink: /
 
 # **Interest**
 
-> 🌱  I’m currently learning ...
-> - JAVA / Spring
-> - ORM: JPA
-> - [Algorithm](https://jdalma.github.io/docs/algorithm) , DataStructure (Use JAVA language)
-> - Network
-> - Operating System
+> JAVA , Spring , JPA
+>
+> MySQL , Redis , AWS
+>
+> [Algorithm](https://jdalma.github.io/docs/algorithm) , DataStructure
+ 
 
 > 📖
 > - [x] 객체지향의 사실과 오해
