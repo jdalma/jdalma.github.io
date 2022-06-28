@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 복잡도 뽀개기
-nav_order: 2
+nav_order: 50
 parent: 👨‍🔬 Lab
 ---
 
