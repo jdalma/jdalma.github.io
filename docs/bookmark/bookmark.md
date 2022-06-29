@@ -13,6 +13,9 @@ has_children: true
 
 <br>
 
+- `2022-06-29`
+  - **[SPRING CLOUD GATEWAY를 이용한 API GATEWAY 구축기](https://saramin.github.io/2022-01-20-spring-cloud-gateway-api-gateway/)**
+
 - `2022-06-27`
   - **[Baeldung - Spring Pathvariable](https://www.baeldung.com/spring-pathvariable)**
   - **[Git branch ( 깃 브랜치 ) 전략을 사용해보기로 했다.](https://waterworkcode.tistory.com/entry/Git-branch-%EA%B9%83-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%A0%84%EB%9E%B5%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0%EB%A1%9C-%ED%96%88%EB%8B%A4)**
