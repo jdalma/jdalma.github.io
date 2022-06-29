@@ -365,7 +365,7 @@ bindingResult.rejectValue("price", "range", new Object[]{1000, 1000000}, null)
 bindingResult.reject("totalPriceMin" , new Object[]{10000 , resultPrice} , null);
 ```
 
-## [Version 4-1. `rejectValue()` , `reject()` → **MessageCodesResolver**]
+## [Version 4-1. `rejectValue()` , `reject()` → **MessageCodesResolver**](https://github.com/jdalma/spring-validation/pull/1/commits/a5ae6baf55dba90aaebe1b7fd37f3126d3ae07a8)
 - 메세지를 범용적으로 사용하다가, 세밀하게 작성해야 하는 경우에는 세밀한 내용이 적용되도록 메시지에 단계를 두는 방법이 좋다
 
 ```
@@ -462,3 +462,24 @@ required = 필수 값 입니다.
 min= {0} 이상이어야 합니다.
 range= {0} ~ {1} 범위를 허용합니다. max= {0} 까지 허용합니다.
 ```
+
+## [Version 5. 스프링이 직접 만든 오류 메세지 처리](https://github.com/jdalma/spring-validation/pull/1/commits/e8379c43ef39db024243eb1e6809e7ef3eed932c)
+- 스프링은 타입 오류가 발생하면 `typeMismatch` 라는 오류 코드를 사용한다. 
+- 이 오류 코드가 **MessageCodesResolver** 를 통하면서 **4가지 메시지 코드**가 생성된 것이다.
+
+1. typeMismatch.item.price 
+2. typeMismatch.price 
+3. typeMismatch.java.lang.Integer 
+4. typeMismatch
+
+<br>
+
+- 숫자 자료 필드에 문자열을 넣을 경우
+- `errors.properties`에 메세지를 추가할 경우 코드 수정없이 메세지 적용이 가능하다
+
+```
+Field error in object 'item' on field 'price': rejected value [ㅁ]; codes [typeMismatch.item.price,typeMismatch.price,typeMismatch.java.lang.Integer,typeMismatch]; 
+```
+
+## [Version 6. **implements Validator**](https://github.com/jdalma/spring-validation/pull/1/commits/290b016aeba8be25fab82cdb9ca911951d4d6cd0)
+- **복잡한 검증 로직을 별도로 분리**

@@ -15,6 +15,7 @@ has_children: true
 
 - `2022-06-29`
   - **[SPRING CLOUD GATEWAY를 이용한 API GATEWAY 구축기](https://saramin.github.io/2022-01-20-spring-cloud-gateway-api-gateway/)**
+  - **[우아한 형제들 - 우린 Git-flow를 사용하고 있어요](https://techblog.woowahan.com/2553/)**
 
 - `2022-06-27`
   - **[Baeldung - Spring Pathvariable](https://www.baeldung.com/spring-pathvariable)**
