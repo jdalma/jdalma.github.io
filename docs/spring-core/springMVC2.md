@@ -19,6 +19,13 @@ nav_order: 40
 
 ---
 
+
+# 하이버네이트 Validator 관련 링크
+- [공식 사이트](http://hibernate.org/validator/)
+- [공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
+- [검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
+
+
 # **메세지 → 국제화**
 - **HTTP `accept-language`**헤더 값을 사용하거나 , **사용자가 직접 언어를 선택하도록 하고 쿠키를 사용**해서 처리할 수 있다 
 - **상품명**이라는 이름을 **상품이름**으로 바꿔야한다면??
@@ -483,3 +490,231 @@ Field error in object 'item' on field 'price': rejected value [ㅁ]; codes [type
 
 ## [Version 6. **implements Validator**](https://github.com/jdalma/spring-validation/pull/1/commits/290b016aeba8be25fab82cdb9ca911951d4d6cd0)
 - **복잡한 검증 로직을 별도로 분리**
+- 스프링 **Validator**인터페이스를 구현하면 추가적인 도움을 받을 수 있다 (`WebDataBinder`)
+
+### [WebDataBinder](https://github.com/jdalma/spring-validation/pull/1/commits/48932a2fd84645cd11cfeea712cda0f03034bb9b)
+- **스프링의 파라미터 바인딩의 역할을 해주고 검증 기능도 내부에 포함된다**
+- `@Validated` , `@Valid` 는 검증기를 실행하라는 애노테이션이다
+- **이 애노테이션이 붙으면 앞서 WebDataBinder 에 등록한 검증기를 찾아서 실행한다.**
+  - 그런데 여러 검증기를 등록한다면 그 중에 어떤 검증기가 실행되어야 할지 구분이 필요하다. 
+  - 이때 `supports()` 가 사용된다.
+
+```java
+@InitBinder
+// 컨트롤러의 메서드가 호출 될 때 마다 @Validated , @Valid 어노테이션이 붙은 객체는 해당 검증기를 거쳐간다
+public void init(WebDataBinder dataBinder){
+    log.info("init binder = {}" , dataBinder);
+    dataBinder.addValidators(itemValidator);
+}
+```
+
+- 위와 같이 **WebDataBinder**에 `Validator`를 추가하면 해당 컨트롤러에 검증을 자동으로 적용할 수 있다
+- `Validator`를 직접 호출하는 부분이 사라지고 **검증 대상 앞에 `@Validated`를 붙여주면 된다**
+
+<br>
+
+일반적으로 컨트롤러를 만들 때 **하나의 컨트롤러는 하나의 모델 객체(Command 객체)를 사용하기 때문에 이렇게 사용해도 큰 이슈가 없습니다.**<br>
+
+하지만 여러 모델 객체를 사용하고 싶으시면 다음과 같이 적용하시면 됩니다.<br>
+
+```java
+@InitBinder("targetObject")
+public void initTargetObject(WebDataBinder webDataBinder) {
+    log.info("webDataBinder={}, target={}", webDataBinder, webDataBinder.getTarget());
+    webDataBinder.addValidators(/*TargetObject 관련 검증기*/);
+}
+```
+
+```java
+@InitBinder("sameObject")
+public void initSameObject(WebDataBinder webDataBinder) {
+    log.info("webDataBinder={}, target={}", webDataBinder, webDataBinder.getTarget());
+    webDataBinder.addValidators(/*SameObject 관련 검증기*/);
+}
+```
+
+`@InitBinder`에 지금처럼 **이름을 넣어주면 해당 모델 객체에만 영향을 줍니다.**<br>
+**반면에 이름을 넣지 않으면 모든 모델 객체에 영향을 줍니다.**<br>
+
+만약 `targetObject`는 검증기를 사용하고, `sameObject`는 검증기를 사용하고 싶지 않다면 다음과 같이 하나만 명식적으로 적용하면 됩니다.<br>
+
+```java
+@InitBinder("targetObject")
+public void initTargetObject(WebDataBinder webDataBinder) {
+    log.info("webDataBinder={}, target={}", webDataBinder, webDataBinder.getTarget());
+    webDataBinder.addValidators(/*TargetObject 관련 검증기*/);
+}
+```
+
+<br>
+
+### WebDataBinder 글로벌 설정
+
+```java
+@SpringBootApplication
+  public class ItemServiceApplication implements WebMvcConfigurer {
+    public static void main(String[] args) {
+        SpringApplication.run(ItemServiceApplication.class, args);
+    }
+    @Override
+    public Validator getValidator() {
+        return new ItemValidator();
+    }
+}
+```
+
+***
+
+# **Bean Validation**
+
+```
+implementation 'org.springframework.boot:spring-boot-starter-validation
+(jakarta.validation.api - 인터페이스)
+(hibernate.validator - 구현체)
+```
+
+<br>
+
+- **Bean Validation**은 특정한 구현체가 아니라 `Bean Validation 2.0(JSR-380)`이라는 기술 표준이다. 
+  - *검증 애노테이션과 여러 인터페이스의 모음이다.*
+  - *마치 JPA가 표준 기술이고 그 구현체로 하이버네이트가 있는 것과 같다.*
+- **Bean Validation**을 구현한 기술중에 일반적으로 사용하는 구현체는 `하이버네이트 Validator`이다. 
+  - *이름이 하이버네이트가 붙어서 그렇지 ORM과는 관련이 없다.*
+
+## [순수 BeanValidation TestCode](https://github.com/jdalma/spring-validation/pull/1/commits/7c72fc0cda6a3a14eebb99b17353a572311722b5)
+
+```java
+@Data
+public class Item {
+
+    private Long id;
+
+    @NotBlank
+    private String itemName;
+
+    @NotNull
+    @Range(min = 1000 , max = 1000000)
+    private Integer price;
+
+    @NotNull
+    @Max(9999)
+    private Integer quantity;
+  ...
+```
+
+```java
+@Test
+void beanValidation(){
+    ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+    Validator validator = factory.getValidator();
+
+    Item item = new Item();
+    item.setItemName(" ");
+    item.setPrice(0);
+    item.setQuantity(10000);
+
+    Set<ConstraintViolation<Item>> violationSet = validator.validate(item);
+    for(ConstraintViolation<Item> violation : violationSet){
+        System.out.println("violation = " + violation);
+    }
+
+// 검증 대상( item )을 직접 검증기에 넣고 그 결과를 받는다. 
+// Set 에는 ConstraintViolation 이라는 검증 오류가 담긴다. 
+// 따라서 결과가 비어있으면 검증 오류가 없는 것이다.
+}
+```
+
+
+## [스프링 MVC는 어떻게 Bean Validator를 사용?](https://github.com/jdalma/spring-validation/pull/1/commits/683e66e89aa2c58c39802fde1310e09d65bf6335)
+- 스프링 부트가 `spring-boot-starter-validation` 라이브러리를 넣으면 자동으로 **Bean Validator를 인지하고 스프링에 통합한다.**
+- 스프링 부트는 자동으로 **글로벌 Validator로 등록**한다.
+- **LocalValidatorFactoryBean 을 글로벌 Validator로 등록한다.** 
+- 이 Validator는 `@NotNull` 같은 애노테이션을 보고 검증을 수행한다. 
+- 이렇게 글로벌 Validator가 적용되어 있기 때문에, **@Valid , @Validated 만 적용하면 된다.**
+  - *검증 오류가 발생하면 `FieldError` , `ObjectError` 를 생성해서 **BindingResult** 에 담아준다.*
+
+<br>
+
+1. `@ModelAttribute` 각각의 필드에 타입 변환 시도
+   1. 성공하면 다음으로
+   2. **실패하면 typeMismatch 로 `FieldError` 추가**
+2. Validator 적용
+
+<br>
+
+**바인딩에 성공한 필드만 `Bean Validation` 적용**<br>
+`BeanValidator`는 **바인딩에 실패한 필드는 BeanValidation을 적용하지 않는다.**<br>
+*모델 객체에 바인딩 받는 값이 정상으로 들어와야 검증도 의미가 있다.*<br>
+`@ModelAttribute` 각각의 **필드 타입 변환시도 변환에 성공한 필드만 BeanValidation 적용**<br>
+예)
+- itemName 에 문자 "A" 입력 → 타입 변환 성공 → itemName 필드에 BeanValidation 적용 
+- price 에 문자 "A" 입력 → "A"를 숫자 타입 변환 시도 실패 → typeMismatch FieldError 추가
+- price 필드는 BeanValidation 적용 X
+
+## Bean Validation 에러 코드
+- **오류 코드가 애노테이션 이름으로 등록된다.** *마치 typeMismatch 와 유사하다.*
+- `NotBlank` 라는 오류 코드를 기반으로 `MessageCodesResolver` 를 통해 다양한 메시지 코드가 순서대로 생성된다.
+
+```java
+@NotBlank
+NotBlank.item.itemName 
+NotBlank.itemName 
+NotBlank.java.lang.String 
+NotBlank
+
+@Range
+Range.item.price 
+Range.price 
+Range.java.lang.Integer 
+Range
+```
+
+```
+Field error in object 'item' on field 'price': 
+  rejected value [1]; 
+  codes [Range.item.price , Range.price , Range.java.lang.Integer , Range]; 
+  arguments [org.springframework.context.support.DefaultMessageSourceResolvable: 
+  codes [item.price,price]; 
+  arguments []; 
+  default message [price],1000000,1000]; 
+  default message [1000에서 1000000 사이여야 합니다]
+```
+
+## Bean Validation 오브젝트 오류
+
+- FieldError가 아닌 해당 **오브젝트 관련 오류( ObjectError )는 어떻게 처리할 수 있을까?**
+- 다음과 같이 `@ScriptAssert()` 를 사용하면 된다.
+
+```java
+@Data
+@ScriptAssert(lang = "javascript" ,
+        script = "_this.price * _this.quantity >= 10000",
+        message = "총합이 10000원 넘게 해주세요.")
+public class Item {
+
+    private Long id;
+
+    @NotBlank
+    private String itemName;
+
+    @NotNull
+    @Range(min = 1000 , max = 1000000)
+    private Integer price;
+
+    @NotNull
+    @Max(9999)
+    private Integer quantity;
+  ...
+```
+
+- **오브젝트 오류(글로벌 오류)의 경우 `@ScriptAssert` 을 억지로 사용하는 것 보다는 다음과 같이 오브젝트 오류 관련 부분만 직접 자바 코드로 작성하는 것을 권장한다.**
+
+```java
+  if (item.getPrice() != null && item.getQuantity() != null) {
+      int resultPrice = item.getPrice() * item.getQuantity();
+      if (resultPrice < 10000) {
+          bindingResult.reject("totalPriceMin", new Object[]{10000,
+                  resultPrice}, null);
+      }
+  }
+```
