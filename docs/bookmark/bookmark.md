@@ -13,6 +13,10 @@ has_children: true
 
 <br>
 
+- `2022-06-30`
+  - **[세션 기반 인증과 토큰 기반 인증 (feat. 인증과 인가)](https://hudi.blog/session-based-auth-vs-token-based-auth/)**
+  - **[토근 기반 인증에서 bearer는 무엇일까?](https://velog.io/@cada/%ED%86%A0%EA%B7%BC-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D%EC%97%90%EC%84%9C-bearer%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)**
+
 - `2022-06-29`
   - **[SPRING CLOUD GATEWAY를 이용한 API GATEWAY 구축기](https://saramin.github.io/2022-01-20-spring-cloud-gateway-api-gateway/)**
   - **[우아한 형제들 - 우린 Git-flow를 사용하고 있어요](https://techblog.woowahan.com/2553/)**
