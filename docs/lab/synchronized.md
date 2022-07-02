@@ -1,6 +1,6 @@
 ---
 layout: default
-title: synchronized
+title: synchronized 
 nav_order: 10
 parent: 👨‍🔬 Lab
 ---

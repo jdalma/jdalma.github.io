@@ -13,6 +13,14 @@ has_children: true
 
 <br>
 
+- `2022-07-02`
+  - **[자바 Enum을 더 잘쓰기 위한 방법](https://velog.io/@nawhew/%EC%9E%90%EB%B0%94-Enum%EC%9D%84-%EB%8D%94-%EC%9E%98%EC%93%B0%EA%B8%B0-%EC%9C%84%ED%95%9C-%EB%B0%A9%EB%B2%95)**
+  - **[JPA 동시성 , OSIV](https://ojt90902.tistory.com/726)**
+  - **[JPA 잠금(Lock) 이해하기](https://reiphiel.tistory.com/entry/understanding-jpa-lock)**
+  - **[@Before vs @BeforeClass vs @BeforeEach vs @BeforeAll](https://www.baeldung.com/junit-before-beforeclass-beforeeach-beforeall)**
+  - **[강남언니 - 여러개의 DB 작업을 동시에 수행하고 결과를 합쳐서 보내줘야 할 때](https://blog.gangnamunni.com/post/Spring-Async-Hibernate-DB/)**
+  - **[Spring Transaction 사용 시 주의할 점](https://suhwan.dev/2020/01/16/spring-transaction-common-mistakes/)**
+  
 - `2022-07-01`
   - **[최근 면접을 다니면서 받았던 질문들](https://velog.io/@yukina1418/%EC%B5%9C%EA%B7%BC-%EB%A9%B4%EC%A0%91%EC%9D%84-%EB%8B%A4%EB%8B%88%EB%A9%B4%EC%84%9C-%EB%B0%9B%EC%95%98%EB%8D%98-%EC%A7%88%EB%AC%B8%EB%93%A4)**
 
