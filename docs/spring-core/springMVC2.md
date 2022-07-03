@@ -5,7 +5,6 @@ parent: 🌱 스프링
 nav_order: 40
 ---
 
-## Spring MVC - 1
 {: .no_toc }
 
 <details open markdown="block">
@@ -21,9 +20,9 @@ nav_order: 40
 
 
 # 하이버네이트 Validator 관련 링크
-- [공식 사이트](http://hibernate.org/validator/)
-- [공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
-- [검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
+## [공식 사이트](http://hibernate.org/validator/)
+## [공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
+## [📌 검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
 
 
 # **메세지 → 국제화**
@@ -314,7 +313,7 @@ if(!errors.isEmpty()){
   2. `th:errors` 해당 필드에 오류가 있는 경우에 태그를 출력한다 (*th:if 편의 버전*)
   3. `th:errorclass`는 `th:field` 에서 **지정한 필드에 오류가 있으면 class 정보를 추가한다**
 
-## [Version 3. `FieldError()` , `ObjectError()`, error.properties 추가](https://github.com/jdalma/spring-validation/pull/1/commits/95f74ed200ae2a0b313f980f780980cc59d1d5ef)
+## [Version 3. `FieldError()` , `ObjectError()`](https://github.com/jdalma/spring-validation/pull/1/commits/95f74ed200ae2a0b313f980f780980cc59d1d5ef)
 
 ```java
 public FieldError(String objectName, String field, String defaultMessage);
@@ -372,7 +371,7 @@ bindingResult.rejectValue("price", "range", new Object[]{1000, 1000000}, null)
 bindingResult.reject("totalPriceMin" , new Object[]{10000 , resultPrice} , null);
 ```
 
-## [Version 4-1. `rejectValue()` , `reject()` → **MessageCodesResolver**](https://github.com/jdalma/spring-validation/pull/1/commits/a5ae6baf55dba90aaebe1b7fd37f3126d3ae07a8)
+## [Version 4-1. `rejectValue()` , `reject()` , error.properties → **MessageCodesResolver**](https://github.com/jdalma/spring-validation/pull/1/commits/a5ae6baf55dba90aaebe1b7fd37f3126d3ae07a8)
 - 메세지를 범용적으로 사용하다가, 세밀하게 작성해야 하는 경우에는 세밀한 내용이 적용되도록 메시지에 단계를 두는 방법이 좋다
 
 ```
@@ -434,7 +433,7 @@ required: 필수 값 입니다.
 <br>
 
 <div class="code-example" markdown="1">
-## errors.properties
+**errors.properties**
 </div>
 
 ```
@@ -625,7 +624,7 @@ void beanValidation(){
 ```
 
 
-## [스프링 MVC는 어떻게 Bean Validator를 사용?](https://github.com/jdalma/spring-validation/pull/1/commits/683e66e89aa2c58c39802fde1310e09d65bf6335)
+## [스프링 MVC - Bean Validation](https://github.com/jdalma/spring-validation/pull/1/commits/683e66e89aa2c58c39802fde1310e09d65bf6335)
 - 스프링 부트가 `spring-boot-starter-validation` 라이브러리를 넣으면 자동으로 **Bean Validator를 인지하고 스프링에 통합한다.**
 - 스프링 부트는 자동으로 **글로벌 Validator로 등록**한다.
 - **LocalValidatorFactoryBean 을 글로벌 Validator로 등록한다.** 
@@ -651,7 +650,7 @@ void beanValidation(){
 - price 에 문자 "A" 입력 → "A"를 숫자 타입 변환 시도 실패 → typeMismatch FieldError 추가
 - price 필드는 BeanValidation 적용 X
 
-## Bean Validation 에러 코드
+### 에러 코드
 - **오류 코드가 애노테이션 이름으로 등록된다.** *마치 typeMismatch 와 유사하다.*
 - `NotBlank` 라는 오류 코드를 기반으로 `MessageCodesResolver` 를 통해 다양한 메시지 코드가 순서대로 생성된다.
 
@@ -680,7 +679,7 @@ Field error in object 'item' on field 'price':
   default message [1000에서 1000000 사이여야 합니다]
 ```
 
-## Bean Validation 오브젝트 오류
+### 오브젝트 오류 (`ObjectError`)
 
 - FieldError가 아닌 해당 **오브젝트 관련 오류( ObjectError )는 어떻게 처리할 수 있을까?**
 - 다음과 같이 `@ScriptAssert()` 를 사용하면 된다.
@@ -718,3 +717,109 @@ public class Item {
       }
   }
 ```
+
+### 신규와 수정의 충돌 (+ **groups** , **모델 분리**)
+
+- **id** (신규 저장 후에 저장되는 컬럼이라면) 를 `@NotNull`로 검증한다면 **신규와 수정을 구분할 수 없다**
+
+<br>
+
+**해결방법**<br>
+
+- [**groups**](https://github.com/jdalma/spring-validation/pull/1/commits/4009dbf3ba5c78aca88457778ec673796a9236d2) (복잡해서 , 실제로 잘 사용하지 않는다)
+
+```java
+@NotNull(groups = {SaveCheck.class , UpdateCheck.class})
+@Max(value = 9999 , groups = {SaveCheck.class})
+private Integer quantity;
+```
+
+<br>
+
+- [**Form 전송 객체 분리**](https://github.com/jdalma/spring-validation/pull/1/commits/e0acf628719ef96afb132f181ce5a7eb7ce9e60e)
+  - `Item`을 직접 사용하지 않고 `ItemSaveForm` , `ItemUpdateForm` 같은 폼 전송을 위한 별도의 모델 객체를 만들어서 사용한다
+  - 복잡한 폼의 데이터를 컨트롤러까지 전달할 별도의 객체를 만들어서 전달한다
+
+1. `HTML Form` ➔ `Item` ➔ `Controller` ➔ `Item` ➔ `Repository`
+   - 장점 : `Item` 도메인 객체를 컨트롤러 , 리포지토리 까지 직접 전달해서 중간에 `Item`을 만드는 과정이 없어서 간단하다
+   - 단점 : 간단한 경우에만 적용할 수 있고 , 수정 시 검증이 중복될 수 있다. `groups`를 사용해야 한다
+2. `HTML Form` ➔ `ItemSaveForm` ➔ `Controller` ➔ `Item` 생성 ➔ `Repository`
+   - 장점 : 전송하는 폼 데이터가 복잡해도 거기에 맞춘 별도의 폼 객체를 사용해서 데이터를 전달 받을 수 있다
+     - **보통 등록과 수정용으로 별도의 폼 객체를 만들기 때문에 검증이 중복되지 않는다**
+   - 단점 : 폼 데이터를 기반으로 컨트롤러에서 `Item`객체를 생성하는 변환 과정이 추가된다
+
+```java
+@PostMapping("/add")
+public String addItem(@Validated @ModelAttribute("item") ItemSaveForm form, BindingResult bindingResult , RedirectAttributes redirectAttributes , Model model) {
+  ...
+}      
+
+
+@PostMapping("/{itemId}/edit")
+public String edit(@PathVariable Long itemId, @Validated @ModelAttribute("item") ItemUpdateForm form , BindingResult bindingResult) {
+  ...
+}
+```
+
+### HTTP 메세지 컨버터 (`@RequestBody`) 검증
+- `@Valid` , `@Validated`는 **HttpMessageConverter**('@RequestBody')에도 적용할 수 있다
+
+> ✋
+> `@ModelAttribute`는 HTTP 요청 파라미터(URL , 쿼리스트링 , POST Form)을 다룰 때 사용한다
+> 
+> `@RequestBody`는 HTTP Body의 데이터를 객체로 변환할 때 사용한다 *주로 API JSON요청을 다룰 때 사용*
+
+<br>
+
+- **API의 경우 3가지 경우를 나누어 생각해야 한다.**
+  1. 성공 요청: 성공
+  2. 실패 요청: JSON을 객체로 생성하는 것 자체가 실패함 `컨트롤러 호출 조차 되지 않는다`
+  3. 검증 오류 요청: JSON을 객체로 생성하는 것은 성공했고, 검증에서 실패함
+
+<div class="code-example" markdown="1">
+**JSON을 객체로 생성하는 것은 성공했고, 검증에서 실패함**<br>
+`return bindingResult.getAllErrors();`
+</div>
+
+```json
+[
+    {
+        "codes": [
+            "Max.itemSaveForm.quantity",
+            "Max.quantity",
+            "Max.java.lang.Integer",
+            "Max"
+        ],
+        "arguments": [
+            {
+                "codes": [
+                    "itemSaveForm.quantity",
+                    "quantity"
+                ],
+                "arguments": null,
+                "defaultMessage": "quantity",
+                "code": "quantity"
+            },
+            9999
+        ],
+        "defaultMessage": "9999 이하여야 합니다",
+        "objectName": "itemSaveForm",
+        "field": "quantity",
+        "rejectedValue": 99999,
+        "bindingFailure": false,
+        "code": "Max"
+    }
+]
+```
+
+
+- **@ModelAttribute vs @RequestBody**
+HTTP 요청 파리미터를 처리하는 `@ModelAttribute` 는 각각의 필드 단위로 세밀하게 적용된다.<br>
+그래서 특정 필드에 타입이 맞지 않는 오류가 발생해도 나머지 필드는 정상 처리할 수 있었다.<br>
+**HttpMessageConverter** 는 `@ModelAttribute` 와 다르게 **각각의 필드 단위로 적용되는 것이 아니라, 전체 객체 단위로 적용된다.**<br>
+따라서 **메시지 컨버터의 작동이 성공해서 ItemSaveForm 객체를 만들어야 @Valid , @Validated 가 적용된다.**
+
+- **@ModelAttribute 는 필드 단위로 정교하게 바인딩이 적용된다.**
+  - 특정 필드가 바인딩 되지 않아도 나머지 필드는 정상 바인딩 되고, Validator를 사용한 검증도 적용할 수 있다.
+- **@RequestBody 는 HttpMessageConverter 단계에서 JSON 데이터를 객체로 변경하지 못하면 이후 단계 자체가 진행되지 않고 예외가 발생한다.**
+  - 컨트롤러도 호출되지 않고, Validator도 적용할 수 없다.
