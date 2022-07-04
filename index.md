@@ -20,7 +20,7 @@ permalink: /
 
 <br>
 
-> 📖
+<!-- > 📖
 > - 객체지향의 사실과 오해
 > - Think Data Structures
 > - 코딩 인터뷰 완전 분석
@@ -30,7 +30,7 @@ permalink: /
 > - [Clean Code](https://jdalma.github.io/docs/books/clean-code/)
 > - 토비의 스프링 3.1
 > - 자바 ORM 표준 JPA 프로그래밍
-> - 이펙티브 자바
+> - 이펙티브 자바 -->
 
 
 # **Experience**
