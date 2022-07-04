@@ -823,3 +823,11 @@ HTTP 요청 파리미터를 처리하는 `@ModelAttribute` 는 각각의 필드 
   - 특정 필드가 바인딩 되지 않아도 나머지 필드는 정상 바인딩 되고, Validator를 사용한 검증도 적용할 수 있다.
 - **@RequestBody 는 HttpMessageConverter 단계에서 JSON 데이터를 객체로 변경하지 못하면 이후 단계 자체가 진행되지 않고 예외가 발생한다.**
   - 컨트롤러도 호출되지 않고, Validator도 적용할 수 없다.
+
+***
+
+# 로그인 처리 - **쿠키**, **세션**
+
+## [회원 개발](https://github.com/jdalma/spring-login/pull/1/commits/db7086b15c95d4764f4fafe1972de8700258c087)
+## [로그인 개발](https://github.com/jdalma/spring-login/pull/1/commits/172bd844661a02c3b1dc52deac480f3026300806)
+
