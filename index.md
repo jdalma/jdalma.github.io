@@ -20,22 +20,17 @@ permalink: /
 
 <br>
 
-> MySQL , Redis , AWS
->
-> [Algorithm](https://jdalma.github.io/docs/algorithm) , DataStructure
- 
-
 > 📖
-> - [x] 객체지향의 사실과 오해
-> - [x] Think Data Structures
-> - [x] 코딩 인터뷰 완전 분석
-> - [ ] 코딩을 지탱하는 기술
-> - [ ] 함께 자라기
-> - [ ] [모던 자바 인 액션](https://jdalma.github.io/docs/books/modernJavaInAction/)
-> - [ ] [Clean Code](https://jdalma.github.io/docs/books/clean-code/)
-> - [ ] 토비의 스프링 3.1
-> - [ ] 자바 ORM 표준 JPA 프로그래밍
-> - [ ] 이펙티브 자바
+> - 객체지향의 사실과 오해
+> - Think Data Structures
+> - 코딩 인터뷰 완전 분석
+> - 코딩을 지탱하는 기술
+> - 함께 자라기
+> - [모던 자바 인 액션](https://jdalma.github.io/docs/books/modernJavaInAction/)
+> - [Clean Code](https://jdalma.github.io/docs/books/clean-code/)
+> - 토비의 스프링 3.1
+> - 자바 ORM 표준 JPA 프로그래밍
+> - 이펙티브 자바
 
 
 # **Experience**
