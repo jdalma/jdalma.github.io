@@ -15,6 +15,9 @@ has_children: true
 
 - `2022-07-03`
   - **[DB/Redis의 자료구조 - String과 Hash](https://xrabcde.github.io/redis-introduction/)**
+  - **[Naver D2 - 백엔드 개발자를 꿈꾸는 학생개발자에게](https://d2.naver.com/news/3435170)**
+  - **[SRE - #1 SRE/DEVOPS의 개념과 SRE는 무엇을하는가?](https://bcho.tistory.com/1325)**
+  - **[`번역` 웹 아키텍쳐 입문](https://blog.rhostem.com/posts/2018-07-22-web-architecture-101)**
 
 - `2022-07-02`
   - **[자바 Enum을 더 잘쓰기 위한 방법](https://velog.io/@nawhew/%EC%9E%90%EB%B0%94-Enum%EC%9D%84-%EB%8D%94-%EC%9E%98%EC%93%B0%EA%B8%B0-%EC%9C%84%ED%95%9C-%EB%B0%A9%EB%B2%95)**
