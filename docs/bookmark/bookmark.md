@@ -37,6 +37,11 @@ has_children: true
 
 ***
 
+- `2022-07-07`
+  - **[Sticky Session과 Session Clustering](https://smjeon.dev/web/sticky-session/)**
+  - **[GitFlow? 들어도 봤고, 쓰고도 있는데...](https://blog.gangnamunni.com/post/understanding_git_flow/)**
+  - **[JUnit5로 계층 구조의 테스트 코드 작성하기](https://johngrib.github.io/wiki/junit5-nested/)**
+
 - `2022-07-03`
   - **[DB/Redis의 자료구조 - String과 Hash](https://xrabcde.github.io/redis-introduction/)**
   - **[Naver D2 - 백엔드 개발자를 꿈꾸는 학생개발자에게](https://d2.naver.com/news/3435170)**

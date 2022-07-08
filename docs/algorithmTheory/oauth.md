@@ -80,4 +80,4 @@ nav_order: 10
 > - [티스토리 오픈 API 앱 관리](https://www.tistory.com/guide/api/manage/list)
 > - [결과 게시글](https://write-read.tistory.com/entry/2021?category=904669)
 
-> 🙋‍♂️ [`Github AccessToken` 받아오기 예제](https://github.com/jdalma/practice/blob/master/src/main/java/info/dallog/git/GitController.java)
+> 🙋‍♂️ [`Github AccessToken` 받아오기 예제](https://github.com/jdalma/Lab/blob/master/src/main/java/info/dallog/git/web/GitController.java)
