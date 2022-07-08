@@ -16,7 +16,6 @@ permalink: /
 - 현재까지 `JAVA 8` , `Spring` , `Mybatis` , `Mysql` , `DHTMLX` , `Jenkins`를 활용한 개발 경험을 보유하고 있습니다
 - 지금은 **Spring 생태계** , `ORM (JPA)` , `RESTful api` , `AWS`에 관심을 가지고 있습니다
 - 현재 [사내 스터디](https://github.com/jdalma/dev-study)를 만들어 새로 배운 지식들을 서로 공유하고 실무에 적용할 때 큰 즐거움을 느낍니다
-- ✅ [개인 프로젝트 Lombok 이해하기](https://jdalma.github.io/docs/toy-project/Jeong-Lombok/)
 
 <br>
 
