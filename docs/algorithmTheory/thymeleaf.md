@@ -721,7 +721,7 @@ No-Operation
 
 
 <div class="code-example" markdown="1">
-## fragmentMain.html
+**fragmentMain.html**
 </div>
 
 ```html
@@ -739,7 +739,7 @@ No-Operation
 ```
 
 <div class="code-example" markdown="1">
-## footer.html
+**footer.html**
 </div>
 
 ```html
@@ -765,7 +765,7 @@ No-Operation
 
 
 <div class="code-example" markdown="1">
-## base.html 공통 (+ `title` , `link`)
+**base.html 공통 (+ `title` , `link`)**
 </div>
 
 ```html
@@ -785,7 +785,7 @@ No-Operation
 ```
 
 <div class="code-example" markdown="1">
-## layoutMain.html
+**layoutMain.html**
 
 - 해당 HTML에서 **base.html을 호출할 때 `title` , `link` 태그들을 넘겨 포함시킨다**
 </div>
@@ -807,7 +807,7 @@ No-Operation
 - 위의 예시처럼 `<head>` 정도에만 적용하는게 아니라 `<html>` 전체에 적용할 수 있다
 
 <div class="code-example" markdown="1">
-## layoutFile.html
+**layoutFile.html**
 </div>
 
 ```html
@@ -828,7 +828,7 @@ No-Operation
 ```
 
 <div class="code-example" markdown="1">
-## layoutExtendMain.html
+**layoutExtendMain.html**
 
 1. `<html th:replace="~~">` 실행되며 `layoutFile.html`에 **현재 페이지의 `<title>` , `<section>`을 넘긴다**
 2. 위에서 넘긴 태그들이 `layoutFile.html`에서 변환된다
@@ -983,7 +983,7 @@ No-Operation
 ## 멀티 체크박스
 
 <div class="code-example" markdown="1">
-## 랜더링 전
+**랜더링 전**
 </div>
 ```html
 <form action="item.html" th:action th:object="${item}" method="post">
@@ -1004,7 +1004,7 @@ No-Operation
 - 따라서 타임리프는 체크박스를 `each루프` 안에서 반복해서 만들 때 **임의로 1,2,3 숫자를 뒤에 붙여준다**
 
 <div class="code-example" markdown="1">
-## 랜더링 후
+**랜더링 후**
 </div>
 ```html
   <div>
@@ -1058,7 +1058,7 @@ public ItemType[] itemTypes() {
   - *그런데 이렇게 사용하면 ENUM의 패키지 위치가 변경되거나 할때 자바 컴파일러가 타임리프까지 컴파일 오류를 잡을 수 없으므로 추천하지는 않는다*
 
 <div class="code-example" markdown="1">
-## 랜더링 전
+**랜더링 전**
 </div>
 ```html
 <div>상품 종류</div>
@@ -1071,7 +1071,7 @@ public ItemType[] itemTypes() {
 ```
 
 <div class="code-example" markdown="1">
-## 랜더링 후
+**랜더링 후**
 </div>
 ```html
   <div>상품 종류</div>
@@ -1103,7 +1103,7 @@ public List<DeliveryCode> deliveryCodes() {
 ```
 
 <div class="code-example" markdown="1">
-## 랜더링 전
+**랜더링 전**
 </div>
 ```html
 <div>
