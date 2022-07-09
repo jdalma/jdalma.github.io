@@ -35,8 +35,11 @@ has_children: true
    - 기술 선택을 하는 방법
    - 단위 성능에서 통합 성능까지 입체적으로 생각하는 능력
 
-***
+*** 
 
+- `2022-07-09`
+  - [코딩인터뷰 완전정복 - 자료구조 영상](https://www.youtube.com/watch?v=IhJGJG-9Dx8&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&ab_channel=HackerRank)
+  - [코딩인터뷰 완전정복 - 알고리즘 영상](https://www.youtube.com/watch?v=KEEKn7Me-ms&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL&ab_channel=HackerRank)
 - `2022-07-07`
   - **[Sticky Session과 Session Clustering](https://smjeon.dev/web/sticky-session/)**
   - **[GitFlow? 들어도 봤고, 쓰고도 있는데...](https://blog.gangnamunni.com/post/understanding_git_flow/)**
