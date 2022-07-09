@@ -865,7 +865,7 @@ HTTP 요청 파리미터를 처리하는 `@ModelAttribute` 는 각각의 필드 
 - 해커가 토큰을 털어가도 시간이 지나면 사용할 수 없도록 서버에서 해당 토큰의 만료시간을 짧게(예: 30분) 유지한다. 
 - 또는 해킹이 의심되는 경우 서버에서 해당 토큰을 강제로 제거하면 된다.
 
-## [로그인 처리 (+ 세션)]()
+## [로그인 처리 (+ 세션)](https://github.com/jdalma/spring-login/pull/1/commits/f0f8dcf12989f37c2d770d693c8504de19a1e82e)
 
 ![](../../assets/images/spring-mvc2/loginSession1.png)
 
@@ -894,3 +894,292 @@ HTTP 요청 파리미터를 처리하는 `@ModelAttribute` 는 각각의 필드 
   2. 쿠키에 보관하는 정보는 클라이언트 해킹시 털릴 가능성이 있다. ➔ **세션Id가 털려도 여기에는 중요한 정보가 없다.**
   3. 쿠키 탈취 후 사용 ➔ **해커가 토큰을 털어가도 시간이 지나면 사용할 수 없도록 서버에서 세션의 만료시간을 짧게(예: 30분) 유지한다.**
      - *또는 해킹이 의심되는 경우 서버에서 해당 세션을 강제로 제거하면 된다.*
+
+### [세션 직접 관리 해보기 (+ 테스트 코드)](https://github.com/jdalma/spring-login/pull/1/commits/50eb2ca6f6c35e8d702b99b9cf0b95a1a3b2e1ee)
+
+- **세션 생성**
+  1. `sessionId` 생성
+  2. **세션 저장소**에 `sessionId`와 보관할 값 저장
+  3. `sessionId`로 응답 쿠키를 생성해서 클라이언트에 전달
+- **세션 조회** : 클라이언트가 요청한 `sessionId` 쿠키의 값으로 **세션 저장소**에 저장된 정보 조회
+- **세션 만료** : 클라이언트가 요청한 `sessionId` 쿠키의 값으로 **세션 저장소**에 저장된 `sessionId`
+와 값 제거
+
+<br>
+
+세션은 **서버에서 데이터를 유지하는 방법일 뿐**이다<br>
+서블릿이 공식 지원하는 세션도 위에서 만든 세션과 동작 방식이 거의 같다<br> 
+
+## [로그인 처리 (+ 서블릿 `HTTPSession`)](https://github.com/jdalma/spring-login/pull/1/commits/11b1c655d1b358bea00b63fec5885ff684a7e6e5)
+- 서블릿 세션을 위해 `HttpSession`이라는 기능이 제공된다
+
+<br>
+
+**HttpSession**<br>
+- 서블릿을 통해 **Session**을 생성하면 아래와 같은 쿠키가 생성된다
+
+```
+Cookie : JSESSIONID={추정 불가능한 랜덤 값}
+```
+
+1. `request.getSession(true)` 
+   - 세션이 있으면 기존 세션을 반환한다.
+   - 세션이 없으면 새로운 세션을 생성해서 반환한다. 
+2. `request.getSession(false)`
+   - 세션이 있으면 기존 세션을 반환한다.
+   - 세션이 없으면 새로운 세션을 생성하지 않는다. 
+   - `null` 을 반환한다.
+3. `request.getSession()`
+   - 신규 세션을 생성하는 `request.getSession(true)` 와 동일하다.
+4. `session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);`
+   - 세션에 데이터를 보관하는 방법은 `request.setAttribute(..)` 와 비슷하다. 
+   - 하나의 세션에 여러 값을 저장할 수 있다.
+
+## [로그인 처리 (+ 서블릿 `HTTPSession` + `@SessionAttribute`)](https://github.com/jdalma/spring-login/pull/1/commits/789a1979f5b7cc208edc2b607676c4c32d14fac4)
+- `@SessionAttribute`
+  - 이 기능은 `Session`을 생성하지 않는다
+  
+```java
+@GetMapping("/")
+public String homeLoginV3Spring(@SessionAttribute(name = SessionConst.LOGIN_MEMBER , required = false) Member loginMember , Model model){
+    if(loginMember == null){
+        return "home";
+    }
+
+    model.addAttribute(loginMember);
+    return "loginHome";
+}
+```
+
+```
+http://localhost:8080/;jsessionid=D5F0FEBFB0EA761BA2BEE357ACED6C01
+```
+**로그인 후에 왜 위에 `jsessionid`가 붙을까?**<br>
+- 이것은 웹 브라우저가 쿠키를 지원하지 않을 때 쿠키 대신 URL을 통해서 세션을 유지하는 방법이다. 
+- 이 방법을 사용하려면 URL에 이 값을 계속 포함해서 전달해야 한다
+- 타임리프 같은 템플릿은 엔진을 통해서 링크를 걸면 `jsessionid` 를 URL에 자동으로 포함해준다. 
+- 서버 입장에서 웹 브라우저가 쿠키를 지원하는지 하지 않는지 최초에는 판단하지 못하므로, 쿠키 값도 전달하고, URL에 `jsessionid` 도 함께 전달한다.
+- URL 전달 방식을 끄고 항상 쿠키를 통해서만 세션을 유지하고 싶으면 아래의 옵션을 넣어주면 된다. 
+- 이렇게 하면 URL에 `jsessionid` 가 노출되지 않는다.
+
+<div class="code-example" markdown="1">
+**application.properties**
+</div>
+
+```
+server.servlet.session.tracking-modes=cookie
+```
+
+## [세션 타임아웃 설정](https://github.com/jdalma/spring-login/pull/1/commits/6693263f4c7f662f3f3451eb6a23aaa67cdcd0f2)
+
+- 세션은 사용자가 로그아웃을 직접 호출해서 `session.invalidate()` 가 호출 되는 경우에 삭제된다. 
+- 그런데 대부분의 사용자는 로그아웃을 선택하지 않고, 그냥 웹 브라우저를 종료한다. 
+- 문제는 HTTP가 **비 연결성(ConnectionLess)**이므로 서버 입장에서는 해당 사용자가 웹 브라우저를 종료한 것인지 아닌지를 알 수 없다
+- 무한정 보관한다면 아래와 같은 문제가 있다
+  1. 세션과 관련된 `쿠키( JSESSIONID )`를 탈취 당했을 경우 오랜 시간이 지나도 해당 쿠키로 악의적인 요청을 할 수 있다.
+  2. 세션은 기본적으로 메모리에 생성된다. 
+  3. 메모리의 크기가 무한하지 않기 때문에 꼭 필요한 경우만 생성해서 사용해야 한다. 
+  4. 10만명의 사용자가 로그인하면 10만개의 세션이 생성되는 것이다.
+
+
+```java
+  HttpSession session = request.getSession(false);
+  if(session == null){
+      return "세션이 없습니다.";
+  }
+
+  session.getAttributeNames()
+          .asIterator()
+          .forEachRemaining(name -> {
+              log.info("session name = {} , value = {}" , name , session.getAttribute(name));
+          });
+
+  log.info("sessionId = {}" , session.getId());
+  log.info("getMaxInactiveInterval = {}" , session.getMaxInactiveInterval());
+  log.info("creationTime = {}" , new Date(session.getCreationTime()));
+  log.info("lastAccessedTime = {}" , new Date(session.getLastAccessedTime()));
+  log.info("isNew = {}" , session.isNew());
+```
+
+```
+session name = loginMember , value = Member(id=3, loginId=test1, name=첫번째 사람, password=1234)
+sessionId = 00D31517FC242EA8F7F993A76788FDD4
+getMaxInactiveInterval = 1800
+creationTime = Sat Jul 09 20:17:46 KST 2022
+lastAccessedTime = Sat Jul 09 20:17:46 KST 2022
+isNew = false
+```
+
+<br>
+
+**세션의 종료 시점**
+- 사용자가 서버에 최근에 요청한 시간을 기준으로 30분 정도를 유지해주는 것이다. 
+- 이렇게 하면 사용자가 서비스를 사용하고 있으면, 세션의 생존 시간이 30분으로 계속 늘어나게 된다. 
+- 따라서 30분 마다 로그인해야 하는 번거로움이 사라진다. 
+- **`HttpSession` 은 이 방식을 사용한다.**
+- `LastAccessedTime` 이후로 **timeout** 시간이 지나면, WAS가 내부에서 해당 세션을 제거한다.
+
+
+<div class="code-example" markdown="1">
+**application.properties**
+</div>
+
+```
+server.servlet.session.timeout=60 (60초 , 기본은 1800초)
+(해당 설정 시간은 분 단위로 설정해야 한다.)
+(60초 미만이거나 , 61초 , 66초 같은 분에 떨어지지 않으면 안된다)
+```
+
+<br>
+
+**특정 세션만 설정하기**
+
+```java
+session.setMaxInactiveInterval(1800); //1800초
+```
+
+***
+
+# 로그인 처리 - **필터**
+
+- **공통관심사항** `Cross-Cutting-Concern`
+  - 로그인한 사용자만 들어가야할 화면들이 있다
+  - 하지만 URL을 직접 호출하면 접근이 가능하다
+  - 이런 경우 모든 경로에 로그인 여부를 체크하는 작업들이 필요하다
+  - 해당 작업들을 추가했다고 해도 수정할 때도 모든 부분을 수정해야 하는 상황이 생긴다
+  - 웹과 관련된 **공통 관심사**를 처리할 때는 HTTP의 헤더나 URL의 정보들이 필요한데 **서블릿 필터**나 **스프링 인터셉터**는 `HttpServletRequest`를 제공한다
+-  실무에서 **HTTP 요청시 같은 요청의 로그에 모두 같은 식별자를 자동으로 남기는 방법은 `logback mdc`로 검색해보자.**
+- 서블릿이 지원하는 수문장이다
+
+<div class="code-example" markdown="1">
+**필터 흐름**
+</div>
+
+```
+HTTP 요청 ➔ WAS ➔ 필터 ➔ 서블릿 ➔ 컨트롤러
+```
+
+- 필터는 **서블릿이 호출되기 전에 호출**된다
+- 필터는 특정 URL 패턴에 적용할 수 있다
+  - `/*`이라고 하면 모든 요청을 필터가 다 받을 수 있다
+
+<div class="code-example" markdown="1">
+**필터 제한**
+</div>
+
+```
+(로그인 사용자) HTTP 요청 ➔ WAS ➔ 필터 ➔ 디스패처 서블릿 ➔ 컨트롤러
+(비로그인 사용자) HTTP 요청 ➔ WAS ➔ 필터(적절하지 않은 요청이라 판단되면 서블릿을 호출하지 않을 수 있다)
+```
+
+<div class="code-example" markdown="1">
+**필터 체인**
+</div>
+
+```
+HTTP 요청 ➔ WAS ➔ 필터1 ➔ 필터2 ➔ 필터3 ➔ 디스패처 서블릿 ➔ 컨트롤러
+```
+
+- 중간에 필터를 자유롭게 추가할 수 있다
+  - *예) 로그를 남기는 필터를 먼저 적용하고 , 로그인 여부를 체크하는 필터를 만들 수 있다*
+
+## [**서블릿 필터**를 사용하여 요청 로그 찍어보기](https://github.com/jdalma/spring-login/pull/1/commits/b35904f72eb32ffe3f223f39c0adc012eb25684e)
+
+- 필터 인터페이스를 구현하고 등록하면 **서블릿 컨테이너가 필터를 싱글톤 객체로 생성하고, 관리한다.** 
+- `init()` : 필터 초기화 메서드, 서블릿 컨테이너가 생성될 때 호출된다.
+- `doFilter()` : 고객의 요청이 올 때 마다 해당 메서드가 호출된다. 필터의 로직을 구현하면 된다. 
+- `destroy()` : 필터 종료 메서드, 서블릿 컨테이너가 종료될 때 호출된다.
+
+> ✋ `@ServletComponentSacne` , `@WebFilter(filterName = "logFilter" , urlPatterns = "/*")`
+> 
+> 위의 어노테이션으로 필터 등록이 가능하지만 순서 조절이 안된다
+> 
+> `FilterRegistrationBean`을 사용하자
+
+## [**서블릿 필터**를 사용하여 사용자 인증 처리 하기](https://github.com/jdalma/spring-login/pull/1/commits/de56288cd9aa2a5bdd542a7bf0c7c0f967b96e94)
+
+1. `whitelist = {"/", "/members/add", "/login", "/logout","/css/*"};`
+   - 인증 필터를 적용해도 홈, 회원가입, 로그인 화면, css 같은 리소스에는 접근할 수 있어야 한다. 
+   - 이렇게 화이트 리스트 경로는 인증과 무관하게 항상 허용한다. 
+   - 화이트 리스트를 제외한 나머지 모든 경로에는 인증 체크 로직을 적용한다.
+2. `isIgnoreLoginCheckPath(requestURI)`
+   - 화이트 리스트를 제외한 모든 경우에 인증 체크 로직을 적용한다. 
+3. `httpResponse.sendRedirect("/login?redirectURL=" + requestURI);`
+   - 미인증 사용자는 로그인 화면으로 리다이렉트 한다. 
+   - 그런데 로그인 이후에 다시 홈으로 이동해버리면, 원하는 경로를 다시 찾아가야 하는 불편함이 있다. 
+   - 이러한 기능을 위해 현재 요청한 경로인 **requestURI** 를 `/login` 에 **쿼리 파라미터로 함께 전달**한다. 
+   - 물론 `/login` 컨트롤러에서 로그인 성공시 해당 경로로 이동하는 기능은 추가로 개발해야 한다.
+4. **미인증 사용자 일 떄**
+   - 이후 필터는 물론 서블릿, 컨트롤러가 더는 호출되지 않는다. 
+   - 앞서 `redirect` 를 사용했기 때문에 `redirect` 가 응답으로 적용되고 요청이 끝난다.
+
+> ✋ 필터에서 `chain.doFilter(request , response)`를 호출할 때 다른 객체로 바꿔 줄 수 있다 (*참고*)
+
+***
+
+# 로그인 처리 - **인터셉터** 📌
+- 인터셉터는 스프링 MVC가 제공하는 기술이다
+- 필터와 인터셉터는 적용되는 순서와 범위 그리고 사용방법이 다르다
+  - **그리고 필터보다 더 편리하고 , 정교한 `다양한 기능을 지원`한다**
+- **컨트롤러 호출 직전에 호출된다**
+- **URL 패턴을 매우 정밀하게 설정할 수 있다**
+
+<div class="code-example" markdown="1">
+**인터셉터 흐름**
+</div>
+
+```
+HTTP 요청 ➔ WAS ➔ 필터 ➔ 서블릿 ➔ 스프링 인터셉터 ➔ 컨트롤러
+```
+
+<div class="code-example" markdown="1">
+**인터셉터 제한**
+</div>
+
+```
+(로그인 사용자) HTTP 요청 ➔ WAS ➔ 필터 ➔ 서블릿 ➔ 스프링 인터셉터 ➔ 컨트롤러
+(비로그인 사용자) HTTP 요청 ➔ WAS ➔ 필터 ➔ 서블릿 ➔ 스프링 인터셉터 (적절하지 않은 요청이면 컨트롤러를 호출하지 않을 수 있다)
+```
+
+<div class="code-example" markdown="1">
+**인터셉터 체인**
+</div>
+
+```
+HTTP 요청 ➔ WAS ➔ 필터 ➔ 서블릿 ➔ 스프링 인터셉터1 ➔ 스프링 인터셉터2 ➔ 컨트롤러
+```
+
+```java
+public interface HandlerInterceptor {
+	default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+
+		return true;
+	}
+
+	default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
+			@Nullable ModelAndView modelAndView) throws Exception {
+	}
+
+	default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
+			@Nullable Exception ex) throws Exception {
+	}
+}
+```
+
+
+![](../../assets/images/spring-mvc2/springInterceptorFlow.png)
+
+- `preHandle` : 컨트롤러 호출 전 (핸들러 어댑터 호출 전에 호출)
+  - 응답값이 `true`이면 다음으로 진행 , `false`이면 더는 진행하지 않는다
+  - `false`인 경우 나머지 인터셉터는 물론이고 , 핸들러 어댑터도 호출되지 않는다
+- `postHandle` : 컨트롤러 호출 후
+- `afterCompletion` : 뷰가 렌더링 된 이후에 호출된다
+- 어떤 컨트롤러 `handler`가 호출되는지 **호출 정보도 받을 수 있다.** 
+- 어떤 `modelAndView` 가 반환되는지 **응답 정보도 받을 수 있다.**
+
+![](../../assets/images/spring-mvc2/springInterceptorException.png)
+
+- `postHandle` : 컨트롤러에서 예외가 발생하면 호출되지 않는다
+- `afterCompletion` : 항상 호출된다. 
+  - 이 경우 예외를 파라미터로 받아서 **어떤 에외가 발생했는지 확인할 수 있다**
