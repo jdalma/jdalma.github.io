@@ -67,6 +67,7 @@ nav_order: 2
 
 ## **PCB (`Process Control Block`)** or TCB (`Task Control Block`)
 - 운영체제가 **각 프로세스를 관리하기 위해 프로세스당 유지하는 정보**
+
 1. **OS**가 관리상 사용하는 정보
    - `Process State` , `Process ID`
    - `Scheduling Information` , `Priority` 

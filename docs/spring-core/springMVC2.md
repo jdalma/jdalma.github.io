@@ -24,6 +24,8 @@ nav_order: 40
 ## [공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
 ## [📌 검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
 
+# 스프링 인터셉터
+## [PathPattern 공식문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/util/pattern/PathPattern.html)
 
 # **메세지 → 국제화**
 - **HTTP `accept-language`**헤더 값을 사용하거나 , **사용자가 직접 언어를 선택하도록 하고 쿠키를 사용**해서 처리할 수 있다 
@@ -1123,6 +1125,8 @@ HTTP 요청 ➔ WAS ➔ 필터1 ➔ 필터2 ➔ 필터3 ➔ 디스패처 서블�
   - **그리고 필터보다 더 편리하고 , 정교한 `다양한 기능을 지원`한다**
 - **컨트롤러 호출 직전에 호출된다**
 - **URL 패턴을 매우 정밀하게 설정할 수 있다**
+- **인터셉터는 스프링 MVC 구조에 특화된 필터 기능을 제공한다고 이해하면 된다.** 
+- 스프링 MVC를 사용하고, 특별히 필터를 꼭 사용해야 하는 상황이 아니라면 인터셉터를 사용하는 것이 더 편리하다.
 
 <div class="code-example" markdown="1">
 **인터셉터 흐름**
@@ -1183,3 +1187,119 @@ public interface HandlerInterceptor {
 - `postHandle` : 컨트롤러에서 예외가 발생하면 호출되지 않는다
 - `afterCompletion` : 항상 호출된다. 
   - 이 경우 예외를 파라미터로 받아서 **어떤 에외가 발생했는지 확인할 수 있다**
+
+<div class="code-example" markdown="1">
+**인터셉터 등록**
+</div>
+
+```java
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LogInterceptor())
+                .order(1)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/css/**" , "/*.ico" , "/error");
+    }
+}
+```
+
+- **WebMvcConfigurer** 가 제공하는 `addInterceptors()` 를 사용해서 인터셉터를 등록할 수 있다.
+- `registry.addInterceptor(new LogInterceptor())` : 인터셉터를 등록한다.
+- `order(1)` : 인터셉터의 호출 순서를 지정한다. 낮을 수록 먼저 호출된다.
+- `addPathPatterns("/**")` : 인터셉터를 적용할 URL 패턴을 지정한다.
+- `excludePathPatterns("/css/**", "/*.ico", "/error")` : 인터셉터에서 제외할 패턴을 지정한다.
+
+## [**스프링 인터셉터**를 사용하여 요청 로그 찍어보기](https://github.com/jdalma/spring-login/pull/1/commits/6d648cd104a073cdff1f7d25d2af231c40e14c58)
+
+- `request.setAttribute(LOG_ID, uuid)`
+  - 서블릿 필터의 경우 지역변수로 해결이 가능하지만, 스프링 인터셉터는 호출 시점이 완전히 분리되어 있다. 
+  - 따라서 `preHandle` 에서 **지정한 값**을 `postHandle` , `afterCompletion` 에서 함께 사용하려면 어딘가에 담아두어야 한다. 
+  - `LogInterceptor` 도 **싱글톤 처럼 사용되기 때문에 맴버변수를 사용하면 위험**하다. 
+  - 따라서 request 에 담아두어 `afterCompletion` 에서 `request.getAttribute(LOG_ID)` 로 찾아서 사용한다.
+
+## [**스프링 인터셉터**를 사용하여 사용자 인증 처리하기](https://github.com/jdalma/spring-login/pull/1/commits/255269aef21cec6690cedf181666e2d25b7edcb7)
+
+- 기본적으로 모든 경로에 해당 인터셉터를 적용하되 `( /** )`
+  - 홈( `/` ), 
+  - 회원가입( `/members/add` ), 
+  - 로그인( `/login` ), 
+  - 리소스 조회( `/css/**` ), 
+  - 오류( `/error` )와 같은 부분은 로그인 체크 인터셉터를 적용하지 않는다. 
+
+***
+
+# [**ArgumentResolver 활용**](https://github.com/jdalma/spring-login/pull/1/commits/7c6146ff226e8f4afa91238b7edee0eda61484f0)
+- 로그인 컨트롤러 파라미터의 Member부분을 더 편리하게 줄여보자
+
+```java
+public String homeLoginV3Spring(@SessionAttribute(name = SessionConst.LOGIN_MEMBER , required = false) Member loginMember , Model model){
+  ...
+}
+
+// @Login 어노테이션 추가
+// Member클래스에 @Login 어노테이션이 붙언 파라미터를 처리하는 ArgumentResolver추가
+
+public String homeLoginV3ArgumentResolver(@Login Member loginMember , Model model){
+  ...
+}
+```
+
+***
+
+# 서블릿 예외 처리
+- 서블릿은 다음 2가지 방식으로 예외 처리를 지원한다
+  1. **Exception**
+  2. `response.sendError(HTTP 상태 코드 , 오류 메시지)`
+
+- **자바 직접 실행**
+  - 자바의 메인 메서드를 직접 실행하는 경우 `main`이라는 이름의 쓰레드가 시작된다
+  - 실행 도중에 예외를 잡지 못하고 처음 실행한 `main()`메서드를 넘어서 예외가 던져지면 , 예외 정보를 남기고 해당 쓰레드는 종료된다
+- **웹 어플리케이션**
+  - 사용자 요청별로 쓰레드가 할당되고 , **서블릿 컨테이너 안에서 실행된다**
+  - 애플리케이션에서 예외가 발생하는데 `try-catch`로 예외를 잡아서 처리하면 아무런 문제가 없다
+  - 그런데 만약에 **애플리케이션에서 예외를 잡지 못하고** , **서블릿 밖으로 까지 예외가 전달되면 어떻게 동작할까?**
+
+```
+WAS (여기까지 전파) ← 필터 ← 서블릿 ← 컨트롤러 (예외 발생)
+```
+
+<br>
+
+## WAS는 예외가 올라오면 어떻게 처리할까? (+ **Exception**)
+
+```java
+@Slf4j
+@Controller
+public class ServletExController {
+
+    @GetMapping("/error-ex")
+    public void errorEx(){
+        throw new RuntimeException("예외 발생 !@#");
+    }
+}
+```
+
+```
+HTTP Status 500 - Internal Server Error
+```
+
+- `Exception`의 경우 서버 내부에서 처리할 수 없는 오류가 발생한 것으로 생각해서 `HTTP 상태 코드 500`을 반환한다
+  - *무조건 500이 발생한다*
+
+## WAS는 예외가 올라오면 어떻게 처리할까? (+ `response.sendError(HTTP 상태 코드 , 오류 메시지)`)
+- 오류가 발생했을 때 **HttpServletResponse** 가 제공하는 `sendError` 라는 메서드를 사용해도 된다. 
+- 이것을 호출한다고 당장 예외가 발생하는 것은 아니지만, 서블릿 컨테이너에게 오류가 발생했다는 점을 전달할 수 있다.
+- 이 메서드를 사용하면 **HTTP 상태 코드**와 **오류 메시지**도 추가할 수 있다.
+  - *HTTP 상태 코드를 직접 전달 할 수 있다*
+- `response.sendError(HTTP 상태 코드)` 
+- `response.sendError(HTTP 상태 코드, 오류 메시지)`
+
+```
+WAS(sendError 호출 기록 확인) ← 필터 ← 서블릿 ← 인터셉터 ← 컨트롤러(response.sendError())
+```
+
+1. `response.sendError()` 를 호출하면 **response 내부에는 오류가 발생했다는 상태를 저장**해둔다. 
+2. 서블릿 컨테이너는 고객에게 응답 전에 **response** 에 `sendError()` 가 **호출되었는지 확인**한다. 
+3. 호출되었다면 **설정한 오류 코드에 맞추어 기본 오류 페이지를 보여준다.**

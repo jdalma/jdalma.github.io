@@ -37,6 +37,11 @@ has_children: true
 
 *** 
 
+- `2022-07-11`
+  - **[Java Optional 바르게 쓰기](http://homoefficio.github.io/2019/10/03/Java-Optional-%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%93%B0%EA%B8%B0/)**
+  - **[John Grib - Java Optional](https://johngrib.github.io/wiki/java-optional/)**
+  - **[Optional Anti-Patterns](https://dzone.com/articles/optional-anti-patterns)**
+
 - `2022-07-09`
   - [코딩인터뷰 완전정복 - 자료구조 영상](https://www.youtube.com/watch?v=IhJGJG-9Dx8&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&ab_channel=HackerRank)
   - [코딩인터뷰 완전정복 - 알고리즘 영상](https://www.youtube.com/watch?v=KEEKn7Me-ms&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL&ab_channel=HackerRank)
@@ -132,8 +137,7 @@ has_children: true
   - **[HTTP Method의 멱등성, 그리고 안전한 메서드](https://hudi.blog/http-method-idempotent/)**
 
 - `2022-05-30`
-  - **[Optional Anti-Patterns](https://dzone.com/articles/optional-anti-patterns)**
-  - **[visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)**
+  - **[자료구조 시각화](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)**
 
 - `2022-05-27`
   - **[LSB와 MSB란 무엇인가?](https://blog.naver.com/ansdbtls4067/220886567257)**
