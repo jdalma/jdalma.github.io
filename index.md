@@ -17,21 +17,6 @@ permalink: /
 - 지금은 **Spring 생태계** , `ORM (JPA)` , `RESTful api` , `AWS`에 관심을 가지고 있습니다
 - 현재 [사내 스터디](https://github.com/jdalma/dev-study)를 만들어 새로 배운 지식들을 서로 공유하고 실무에 적용할 때 큰 즐거움을 느낍니다
 
-<br>
-
-<!-- > 📖
-> - 객체지향의 사실과 오해
-> - Think Data Structures
-> - 코딩 인터뷰 완전 분석
-> - 코딩을 지탱하는 기술
-> - 함께 자라기
-> - [모던 자바 인 액션](https://jdalma.github.io/docs/books/modernJavaInAction/)
-> - [Clean Code](https://jdalma.github.io/docs/books/clean-code/)
-> - 토비의 스프링 3.1
-> - 자바 ORM 표준 JPA 프로그래밍
-> - 이펙티브 자바 -->
-
-
 # **Experience**
 
 ## **ERP SI `2020.04.01 ~ 현재` (2년 4개월)**

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 클린 코드
-parent: Books
+parent: 📖 Books
 nav_order: 1
 ---
 ## Table of contents

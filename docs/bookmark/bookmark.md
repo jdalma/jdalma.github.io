@@ -35,16 +35,37 @@ has_children: true
    - 기술 선택을 하는 방법
    - 단위 성능에서 통합 성능까지 입체적으로 생각하는 능력
 
+## 개발학습법
+- [프로그래밍 학습 방법](https://www.youtube.com/watch?v=Xcy2Pq6LABk)
+- [개발자가 공부로 살아남는 방법](https://evan-moon.github.io/2019/08/26/how-does-developer-study/)
+- [학습에 실패한 이야기](https://techblog.woowahan.com/2555/)
+- [나는 어떻게 공부했는가?](https://euncho.medium.com/%EB%82%98%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B3%B5%EB%B6%80%ED%96%88%EB%8A%94%EA%B0%80-709df6714c42)
+- [개발자의 평생공부](https://zdnet.co.kr/view/?no=20170616090644)
+- [프로그래머로서의 성장을 도왔던 태도들](https://ahnheejong.name/articles/becoming-better-programmer/)
+- [프레임워크 공부를 멈춰라](https://medium.com/@jongyoungpark/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EA%B3%B5%EB%B6%80%EB%A5%BC-%EB%A9%88%EC%B6%B0%EB%9D%BC-1afa37644474)
+- [개발자가 실력을 향상시킬 방법은 OO뿐이에요](https://www.youtube.com/watch?v=U0YWdnSKDfw)
+- [회사 밖에서 성장하기](https://speakerdeck.com/mingrammer/hoesa-baggeseo-seongjanghagi?slide=10)
+- [개발자는 어떻게 성장해야 할까](https://www.slideshare.net/charsyam2/how-to-become-better-engineer)
+- [어려운 것을 쉽게 배우는 방법](https://www.moreagile.net/2016/02/learning-new-stuff.html)
+- [내게 실용적이었던 프로그래밍 공부 방법들](https://velog.io/@city7310/%EB%82%B4%EA%B0%80-%EA%B3%B5%EB%B6%80%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D)
+- [더 나은 개발자가 되는 8가지 방법](https://mnpk.medium.com/%EB%B2%88%EC%97%AD-%EB%8D%94-%EB%82%98%EC%9D%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EB%90%98%EB%8A%94-8-%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95-45ea6cd70114)
+
+## 개발공부
+- [나의 온라인 컴퓨터공학 공부](https://coding-groot.tistory.com/93)
+- [컴퓨터 과학 수업](https://www.youtube.com/watch?v=tpIctyqH29Q&list=PLH2l6uzC4UEW0s7-KewFLBC1D0l6XRfye)
+- [엔지니어 대한민국](https://www.youtube.com/user/damazzang/videos)
+- [1강 ~ 6강 꼭 듣기](https://www.youtube.com/watch?v=Tq3W8UyltFs&list=PLy-g2fnSzUTAaDcLW7hpq0e8Jlt7Zfgd6)
+
 *** 
 
 - `2022-07-11`
   - **[Java Optional 바르게 쓰기](http://homoefficio.github.io/2019/10/03/Java-Optional-%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%93%B0%EA%B8%B0/)**
   - **[John Grib - Java Optional](https://johngrib.github.io/wiki/java-optional/)**
   - **[Optional Anti-Patterns](https://dzone.com/articles/optional-anti-patterns)**
+  - **[[번역] 내가 StackOverflow를 사용하는 방법](https://www.rinae.dev/posts/how-i-use-stackoverflow-kor)**
+  - **[Is Java "pass-by-reference" or "pass-by-value"?](https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value)**
+  - **[[Java] Pass By Value와 Pass By Reference의 차이 및 이해 (3/3)](https://mangkyu.tistory.com/107)**
 
-- `2022-07-09`
-  - [코딩인터뷰 완전정복 - 자료구조 영상](https://www.youtube.com/watch?v=IhJGJG-9Dx8&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&ab_channel=HackerRank)
-  - [코딩인터뷰 완전정복 - 알고리즘 영상](https://www.youtube.com/watch?v=KEEKn7Me-ms&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL&ab_channel=HackerRank)
 - `2022-07-07`
   - **[Sticky Session과 Session Clustering](https://smjeon.dev/web/sticky-session/)**
   - **[GitFlow? 들어도 봤고, 쓰고도 있는데...](https://blog.gangnamunni.com/post/understanding_git_flow/)**
@@ -146,7 +167,6 @@ has_children: true
   - **[주요 DBMS의 특징적인 SQL 기능 비교](https://d2.naver.com/helloworld/907716)**
 
 - `2022-05-23`
-  - 알고리즘 문제를 풀며 **떠오르는 아이디어를 기록하자 !!!**
   - **[이분 매칭 알고리즘 (Bipartite Matching)](https://yjg-lab.tistory.com/209)**
   - **[이진 탐색, 이분 탐색(binary search) 구현시 고려할 것들](https://eine.tistory.com/entry/%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EC%9D%B4%EB%B6%84-%ED%83%90%EC%83%89binary-search-%EA%B5%AC%ED%98%84%EC%8B%9C-%EA%B3%A0%EB%A0%A4%ED%95%A0-%EA%B2%83%EB%93%A4)**
 
@@ -157,9 +177,6 @@ has_children: true
 
 - `2022-05-18`
   - **[Retrofit2 와 Resilience4j 를 이용한 빠른 Rest API Client 구현](https://medium.com/myrealtrip-product/retrofit2-%EC%99%80-resilience4j-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B9%A0%EB%A5%B8-rest-api-client-%EA%B5%AC%ED%98%84-81c10dcfb6)**
-
-- `2022-05-16`
-  - KMP (Failure Function 이해)
 
 - `2022-05-15`
   - **[개발자가 도움이 되는 문서와 사이트를 정리하고 수집하는 데 전념하다](https://intrepidgeeks.com/)**
@@ -175,9 +192,6 @@ has_children: true
 
 - `2022-04-26`
   - **[Jackson Unmarshalling JSON with Unknown Properties](https://www.baeldung.com/jackson-deserialize-json-unknown-properties#3-dealing-with-unknown-fields-at-the-class-level)**
-
-- `2022-04-25`
-  - 밀러-라빈 , 폴라드 로 , 페르마의 소정리 SCC , 오일러 경로 테크닉
 
 - `2022-04-15`
   - **[우아한형제들 - 회원시스템 이벤트기반 아키텍처 구축하기](https://techblog.woowahan.com/7835/)**
@@ -199,9 +213,6 @@ has_children: true
 - `2022-04-12`
   - **[Cache 파헤치기](https://bluayer.com/55)**
   - **[`@ServletComponentScan`](https://www.baeldung.com/spring-servletcomponentscan)**
-
-- `2022-04-10`
-  - **[클린 코더스 강의](https://www.youtube.com/watch?v=60lLSe1phks&list=PLeQ0NTYUDTmMM71Jn1scbEYdLFHz5ZqFA)**
 
 - `2022-04-08`
   - **[nGrinder](https://giron.tistory.com/83)**
@@ -268,10 +279,6 @@ has_children: true
 
 - `2022-02-19`
   - **[Guide to hashCode() in Java](https://www.baeldung.com/java-hashcode)**
-
-
-- `2022-02-17`
-  - **[[마틴 파울러] 리팩토링의 중요성 feat.테스트 코드를 짜는 이유](https://www.youtube.com/watch?v=mNPpfB8JSIU)**
 
 - `2022-02-11`
   - **[@Transactional 사용 시 주의해야하는 8가지](https://flambeeyoga.tistory.com/entry/Transactional-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90)**
