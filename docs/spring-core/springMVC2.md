@@ -1303,3 +1303,140 @@ WAS(sendError 호출 기록 확인) ← 필터 ← 서블릿 ← 인터셉터 �
 1. `response.sendError()` 를 호출하면 **response 내부에는 오류가 발생했다는 상태를 저장**해둔다. 
 2. 서블릿 컨테이너는 고객에게 응답 전에 **response** 에 `sendError()` 가 **호출되었는지 확인**한다. 
 3. 호출되었다면 **설정한 오류 코드에 맞추어 기본 오류 페이지를 보여준다.**
+
+## [오류 화면 제공](https://github.com/jdalma/spring-exception/commit/403f94aab7dd5e4a73877e3857938d1ad583913e)
+- 과거에는 `web.xml`이라는 파일에 다음과 같이 오류 화면을 등록했다
+
+<div class="code-example" markdown="1">
+**web.xml**
+</div>
+
+```xml
+<web-app>
+      <error-page>
+        <error-code>404</error-code>
+        <location>/error-page/404.html</location>
+      </error-page>
+      <error-page>
+        <error-code>500</error-code>
+        <location>/error-page/500.html</location>
+      </error-page>
+      <error-page>
+        <exception-type>java.lang.RuntimeException</exception-type>
+        <location>/error-page/500.html</location>
+      </error-page>
+</web-app>
+```
+
+지금은 **스프링 부트를 통해서 서블릿 컨테이너를 실행**하기 때문에, 스프링 부트가 제공하는 기능을 사용해서 서블릿 오류 페이지를 등록하면 된다.<br>
+
+<div class="code-example" markdown="1">
+**WebSeverCustomizer**
+</div>
+
+```java
+@Component
+public class WebSeverCustomizer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+    @Override
+    public void customize(ConfigurableServletWebServerFactory factory) {
+        ErrorPage errorPage404 = new ErrorPage(HttpStatus.NOT_FOUND, "/error-page/400");
+        ErrorPage errorPage500 = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/error-page/500");
+        ErrorPage errorPageEx = new ErrorPage(RuntimeException.class , "/error-page/500"); 
+
+        factory.addErrorPages(errorPage404 , errorPage500 , errorPageEx);
+    }
+}
+```
+
+- WAS까지 오류가 올라오면 `/error-page/{code}`와 같은 형식으로 컨트롤러를 다시 호출한다
+- `response.sendError(404)` : **errorPage404** 호출 
+- `response.sendError(500)` : **errorPage500** 호출 
+- `RuntimeException` 또는 `그 자식 타입의 예외` : **errorPageEx** 호출
+  - *500 예외가 서버 내부에서 발생한 오류라는 뜻을 포함하고 있기 때문에 여기서는 예외가 발생한 경우도 500 오류 화면으로 처리했다.*
+
+### 오류 페이지 작동 원리
+- 서블릿은 **Exception** (예외)가 발생해서 서블릿 밖으로 전달되거나 또는 `response.sendError()`가 호출되었을 때 **설정된 오류 페이지를 찾는다**
+
+
+<div class="code-example" markdown="1">
+**Exception 발생 흐름**
+</div>
+
+```
+WAS(여기까지 전파) ← 필터 ← 서블릿 ← 인터셉터 ← 컨트롤러(예외발생)
+```
+
+<div class="code-example" markdown="1">
+**`sendError()` 흐름**
+</div>
+
+```
+WAS(sendError 호출 기록 확인) ← 필터 ← 서블릿 ← 인터셉터 ← 컨트롤러(response.sendError())
+```
+
+<br>
+
+- WAS는 **오류 페이지 정보를 확인**한다
+- 해당 오류 페이지가 지정이 되어 있다면 , 해당 오류 페이지를 출력하기 위해 **해당 경로에 맞는 URL을 재요청한다**
+  - *이때 오류 페이지 경로로 필터, 서블릿, 인터셉터, 컨트롤러가 모두 다시 호출된다.*
+
+<div class="code-example" markdown="1">
+**오류 페이지 요청 흐름**
+</div>
+
+```
+WAS `/error-page/500` 다시 요청 → 필터 → 서블릿 → 인터셉터 → 컨트롤러( {/error-page/500} ) → View
+```
+
+- **중요한 점은 웹 브라우저(클라이언트)는 서버 내부에서 이런 일이 일어나는지 전혀 모른다는 점이다.** 
+- **오직 서버 내부에서 오류 페이지를 찾기 위해 추가적인 호출을 한다.**
+
+
+### [오류가 나면 `request`에 **ERROR**정보가 담긴다](https://github.com/jdalma/spring-exception/commit/9ad1ceb1065f24b96e3446c83bc5b72d8c05c2ee)
+
+- WAS는 오류 페이지를 단순히 다시 요청만 하는 것이 아니라, 오류 정보를 `request` 의 `attribute` 에 추가해서 넘겨준다.
+- 필요하면 오류 페이지에서 이렇게 전달된 오류 정보를 사용할 수 있다.
+
+
+<div class="code-example" markdown="1">
+**런타임 예외 정보**
+</div>
+
+```
+ERROR_EXCEPTION = {}
+
+java.lang.RuntimeException: 예외 발생 !@#
+	at hello.exception.servlet.ServletExController.errorEx(ServletExController.java:18) ~[main/:na]
+  ...
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+ERROR_EXCEPTION_TYPE = class java.lang.RuntimeException
+ERROR_MESSAGE = Request processing failed; nested exception is java.lang.RuntimeException: 예외 발생 !@#
+ERROR_REQUEST_URI = /error-ex
+ERROR_SERVLET_NAME = dispatcherServlet
+ERROR_STATUS_CODE = 500
+dispatchType = ERROR
+```
+
+<div class="code-example" markdown="1">
+**404 , 500 정보**
+</div>
+
+```
+ERROR_EXCEPTION = null
+ERROR_EXCEPTION_TYPE = null
+ERROR_MESSAGE = 404 오류!!!
+ERROR_REQUEST_URI = /error-404
+ERROR_SERVLET_NAME = dispatcherServlet
+ERROR_STATUS_CODE = 404
+dispatchType = ERROR
+
+
+ERROR_EXCEPTION = null
+ERROR_EXCEPTION_TYPE = null
+ERROR_MESSAGE = 
+ERROR_REQUEST_URI = /error-500
+ERROR_SERVLET_NAME = dispatcherServlet
+ERROR_STATUS_CODE = 500
+dispatchType = ERROR
+```
