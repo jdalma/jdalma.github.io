@@ -1440,3 +1440,62 @@ ERROR_SERVLET_NAME = dispatcherServlet
 ERROR_STATUS_CODE = 500
 dispatchType = ERROR
 ```
+
+## 서블릿 예외 처리 (+ **필터** , **인터셉터**)
+- 예외 처리에 따른 **필터**와 **인터셉터** 그리고 **서블릿이 제공하는 `DispatchType`** 이해하기 
+
+```
+1. WAS(여기까지 전파) ← 필터 ← 서블릿 ← 인터셉터 ← 컨트롤러(예외발생)
+2. WAS `/error-page/500` 다시 요청 → 필터 → 서블릿 → 인터셉터 → 컨트롤러(/error- page/500) → View
+```
+- 오류 페이지를 출력하기 위해 **다시 한 번 서버 호출이 발생**한다
+- 서블릿 , 인터셉터도 모두 다시 호출된다
+- 결국 **클라이언트로 한테 받은 정상적인 요청인지 , 오류 페이지를 출력하기 위한 내부 요청인지 구분할 수 있어야한다**
+- 이런 문제를 해결하기 위해 서블릿이 `DispatchType`이라는 정보를 제공한다 
+
+### [**필터** `DispatcherType` 설정하기](https://github.com/jdalma/spring-exception/commit/c06eaddc494d5445f177265ea45de275378e47a9)
+
+<div class="code-example" markdown="1">
+**javax.servlet.DispatcherType**
+</div>
+ 
+```java
+public enum DispatcherType {
+      FORWARD,
+      INCLUDE,
+      REQUEST,
+      ASYNC,
+      ERROR
+}
+```
+
+1. **REQUEST** : 클라이언트 요청 
+2. **ERROR** : 오류 요청
+3. **FORWARD** : MVC에서 배웠던 서블릿에서 다른 서블릿이나 JSP를 호출할 때 `RequestDispatcher.forward(request, response);`
+4. **INCLUDE** : 서블릿에서 다른 서블릿이나 JSP의 결과를 포함할 때 `RequestDispatcher.include(request, response);`
+5. **ASYNC** : 서블릿 비동기 호출
+
+
+<div class="code-example" markdown="1">
+**public class WebConfig implements WebMvcConfigurer**
+</div>
+
+```java
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Bean
+    public FilterRegistrationBean logFilter(){
+        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
+        filterRegistrationBean.setFilter(new LogFilter()); // 등록할 필터를 지정한다.
+        filterRegistrationBean.setOrder(1); // 필터는 체인으로 동작한다. 따라서 순서가 필요하다. 낮을 수록 먼저 동작한다.
+        filterRegistrationBean.addUrlPatterns("/*"); // 필터를 적용할 URL 패턴을 지정한다. 한번에 여러 패턴을 지정할 수 있다.
+        filterRegistrationBean.setDispatcherTypes(DispatcherType.ERROR); // 해당 상태일 때만 필터가 적용된다
+
+        return filterRegistrationBean;
+    }
+
+}
+```
+- **setDispatcherTypes(...)**
+  - 기본 값 : `DispatcherType.REQUEST`
