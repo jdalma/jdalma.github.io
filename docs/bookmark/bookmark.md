@@ -65,6 +65,8 @@ has_children: true
   - **[[번역] 내가 StackOverflow를 사용하는 방법](https://www.rinae.dev/posts/how-i-use-stackoverflow-kor)**
   - **[Is Java "pass-by-reference" or "pass-by-value"?](https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value)**
   - **[[Java] Pass By Value와 Pass By Reference의 차이 및 이해 (3/3)](https://mangkyu.tistory.com/107)**
+  - **[HTTP/3는 왜 UDP를 선택한 것일까?](https://evan-moon.github.io/2019/10/08/what-is-http3/)**
+  - **[웹 3.0은 정말 구글의 시대를 끝낼까?](https://m.post.naver.com/viewer/postView.naver?volumeNo=34086106&memberNo=22700030)**
 
 - `2022-07-07`
   - **[Sticky Session과 Session Clustering](https://smjeon.dev/web/sticky-session/)**
