@@ -58,6 +58,11 @@ has_children: true
 
 *** 
 
+- `2022-07-13`
+  - **[Amazon - 웹 브라우저에 URL을 입력하면 어떤 일이 생기나요?](https://aws.amazon.com/ko/blogs/korea/what-happens-when-you-type-a-url-into-your-browser/)**
+  - **[여기어때 기술블로그 - 우리팀이 JDK 17을 도입한 이유](https://techblog.gccompany.co.kr/%EC%9A%B0%EB%A6%AC%ED%8C%80%EC%9D%B4-jdk-17%EC%9D%84-%EB%8F%84%EC%9E%85%ED%95%9C-%EC%9D%B4%EC%9C%A0-ced2b754cd7)**
+  - **[LINE 개발자들이 Spring 대신 Armeria를 사용하는 이유](https://engineering.linecorp.com/ko/blog/hello-armeria-bye-spring)**
+
 - `2022-07-11`
   - **[Java Optional 바르게 쓰기](http://homoefficio.github.io/2019/10/03/Java-Optional-%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%93%B0%EA%B8%B0/)**
   - **[John Grib - Java Optional](https://johngrib.github.io/wiki/java-optional/)**
