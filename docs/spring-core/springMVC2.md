@@ -67,12 +67,12 @@ public MessageSource messageSource() {
 
 ```java
 public interface MessageSource {
-	@Nullable
-	String getMessage(String code, @Nullable Object[] args, @Nullable String defaultMessage, Locale locale);
+  @Nullable
+  String getMessage(String code, @Nullable Object[] args, @Nullable String defaultMessage, Locale locale);
 
-	String getMessage(String code, @Nullable Object[] args, Locale locale) throws NoSuchMessageException;
+  String getMessage(String code, @Nullable Object[] args, Locale locale) throws NoSuchMessageException;
 
-	String getMessage(MessageSourceResolvable resolvable, Locale locale) throws NoSuchMessageException;
+  String getMessage(MessageSourceResolvable resolvable, Locale locale) throws NoSuchMessageException;
 }
 ```
 
@@ -1155,19 +1155,19 @@ HTTP 요청 ➔ WAS ➔ 필터 ➔ 서블릿 ➔ 스프링 인터셉터1 ➔ 스
 
 ```java
 public interface HandlerInterceptor {
-	default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
+  default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+      throws Exception {
 
-		return true;
-	}
+    return true;
+  }
 
-	default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
-			@Nullable ModelAndView modelAndView) throws Exception {
-	}
+  default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
+      @Nullable ModelAndView modelAndView) throws Exception {
+  }
 
-	default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
-			@Nullable Exception ex) throws Exception {
-	}
+  default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
+      @Nullable Exception ex) throws Exception {
+  }
 }
 ```
 
@@ -1406,9 +1406,9 @@ WAS `/error-page/500` 다시 요청 → 필터 → 서블릿 → 인터셉터 �
 ERROR_EXCEPTION = {}
 
 java.lang.RuntimeException: 예외 발생 !@#
-	at hello.exception.servlet.ServletExController.errorEx(ServletExController.java:18) ~[main/:na]
+  at hello.exception.servlet.ServletExController.errorEx(ServletExController.java:18) ~[main/:na]
   ...
-	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+  at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
 
 ERROR_EXCEPTION_TYPE = class java.lang.RuntimeException
 ERROR_MESSAGE = Request processing failed; nested exception is java.lang.RuntimeException: 예외 발생 !@#
@@ -1499,3 +1499,135 @@ public class WebConfig implements WebMvcConfigurer {
 ```
 - **setDispatcherTypes(...)**
   - 기본 값 : `DispatcherType.REQUEST`
+
+### [**인터셉터** `Error` 호출 막기](https://github.com/jdalma/spring-exception/commit/3b435c170c650922e4d24c1c43fb0bb64d4e6f66)
+
+- `excludePathPatterns("/css/**" , "*.ico" , "/error" , "/error-page/**");`
+  - 경로 정보로 호출 제거
+
+<div class="code-example" markdown="1">
+**public class WebConfig implements WebMvcConfigurer**
+</div>
+
+```java
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LogInterceptor())
+                .order(1)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/css/**" , "*.ico" , "/error" , "/error-page/**");
+    }
+}
+```
+
+***
+
+# 스프링 부트 오류 페이지
+- 지금까지 예외 페이지를 호출하기 위해
+  1. **WebServerCustomizer** 를 만들고
+  2. 예외 종류에 따라서 **ErrorPage** 를 추가하고
+  3. 예외 처리용 컨트롤러 **ErrorPageController** 를 만들었다
+- **스프링 부트는 위의 과정을 모두 제공한다**
+  1. **ErrorPage**를 자동으로 등록한다
+     - 이때 `/error`라는 경로로 기본 오류 페이지를 설정한다
+     - `new ErrorPage("/error")` : 상태코드와 예외를 설정하지 않으면 기본 오류 페이지로 사용된다
+     - 서블릿 밖으로 예외가 발생하거나 , `response.sendError(...)`가 호출되면 모든 오류는 `/error`를 호출하게 된다
+  2. **BasicErrorController**라는 스프링 컨트롤러를 자동으로 등록한다
+     - **ErrorPage**에서 등록한 `/error`를 매핑해서 처리하는 컨트롤러다
+- **ErrorMvcAutoConfiguration**이라는 클래스가 오류 페이지를 자동으로 등록하는 역할을 한다
+
+<br>
+
+- **확장포인트**
+  - 에러 공통 처리 컨트롤러의 기능을 변경하고 싶으면 **ErrorController 인터페이스**를 상속 받아서 구현하거나 **BasicErrorController** 상속 받아서 기능을 추가하면 된다.
+
+- **스프링 부트 오류 관련 옵션**
+
+```
+server.error.whitelabel.enabled=true : 오류 처리 화면을 못 찾을 시, 스프링 whitelabel 오류 페이지 적용
+server.error.path=/error : 오류 페이지 경로, 스프링이 자동 등록하는 서블릿 글로벌 오류 페이지 경로와 BasicErrorController 오류 컨트롤러 경로에 함께 사용된다.
+```
+
+## [`BasicErrorController` 뷰 선택 우선 순위](https://github.com/jdalma/spring-exception/commit/10db359d7f18f9163adc6b0b2557e14e6488b46e)
+
+- 해당 경로 위치에 **HTTP 상태 코드 이름의 뷰 파일**을 넣어두면 된다.
+- 뷰 템플릿이 정적 리소스보다 우선순위가 높고, 404, 500처럼 구체적인 것이 5xx처럼 덜 구체적인 것 보다 우선순위가 높다.
+- 5xx, 4xx 라고 하면 500대, 400대 오류를 처리해준다.
+
+1. 뷰템플릿 
+   - `resources/templates/error/500.html` 
+   - `resources/templates/error/5xx.html`
+2. 정적리소스(**static**,**public**) 
+   - `resources/static/error/400.html`
+   - `resources/static/error/404.html`
+   - `resources/static/error/4xx.html` 
+3. 적용 대상이 없을 때 뷰 이름(**error**)
+   - `resources/templates/error.html`
+
+## `BasicErrorController`가 제공하는 기본 정보들
+- 해당 컨트롤러는 다음 정보를 `model`에 담아서 제공한다
+
+```
+* timestamp: Fri Feb 05 00:00:00 KST 2021
+* status: 400
+* error: Bad Request
+* exception: org.springframework.validation.BindException 
+* trace: 예외 trace
+* message: Validation failed for object='data'. Error count: 1 
+* errors: Errors(BindingResult)
+* path: 클라이언트 요청 경로 (`/hello`)
+```
+
+```html
+  <ul>
+      <li th:text="|timestamp: ${timestamp}|"></li>
+      <li th:text="|path: ${path}|"></li>
+      <li th:text="|status: ${status}|"></li>
+      <li th:text="|message: ${message}|"></li>
+      <li th:text="|error: ${error}|"></li>
+      <li th:text="|exception: ${exception}|"></li>
+      <li th:text="|errors: ${errors}|"></li>
+      <li th:text="|trace: ${trace}|"></li>
+  </ul>
+```
+
+- `BasicErrorController` 오류 컨트롤러에서 다음 오류 정보를 model 에 포함할지 여부 선택할 수 있다.
+
+<div class="code-example" markdown="1">
+**application.properties**
+</div>
+```
+server.error.include-exception=false      : exception 포함 여부( true , false )
+server.error.include-message=never        : message 포함 여부 
+server.error.include-stacktrace=never     : trace 포함 여부
+server.error.include-binding-errors=never : error 포함 여부
+```
+
+- 기본 값이 `never`인 부분은 다음 3가지 옵션을 사용할 수 있다. 
+  1. `never` : 사용하지 않음
+  2. `always` :항상 사용
+  3. `on_param` : 파라미터가 있을 때 사용
+
+- `on_param`으로 설정하고 다음과 같이 HTTP 요청시 파라미터를 전달하면 해당 정보들이 model 에 담겨서 뷰 템플릿에서 출력된다.
+  - `http://localhost:8080/error-ex?message=&errors=&trace=`
+
+***
+
+# API 예외 처리
+
+- API는 각 오류 상황에 맞는 **오류 응답 스펙**을 정하고 , **JSON으로 데이터를 내려주어야 한다**
+
+
+## [API 예외 직접 처리해보기](https://github.com/jdalma/spring-exception/commit/23f696df28569c7b63140ec1f7c464c2aa87cf3d)
+
+- 요청 헤더 `Accept : application/json` 설정
+
+```
+{
+    "message": "API 예외 테스트 메세지 - RuntimeException",
+    "status": 500
+}
+```
