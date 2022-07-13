@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Redis를 사용해보자
+title: Redis를 사용해보자 🚩
 nav_order: 3
 parent: 👨‍🔬 Lab
 ---
@@ -17,6 +17,9 @@ parent: 👨‍🔬 Lab
 </details>
 
 ---
+
+- `redis`
+  - [[우아한테크세미나] 191121 우아한레디스 by 강대명님](https://www.youtube.com/watch?v=mPB2CZiAkKM)
 
 - `memcached`
   - [공식 사이트 - Simple Spring XMemcached](https://www.memcachier.com/documentation/spring-boot)

@@ -58,6 +58,11 @@ has_children: true
 
 *** 
 
+- `2022-07-13`
+  - **[Amazon - 웹 브라우저에 URL을 입력하면 어떤 일이 생기나요?](https://aws.amazon.com/ko/blogs/korea/what-happens-when-you-type-a-url-into-your-browser/)**
+  - **[여기어때 기술블로그 - 우리팀이 JDK 17을 도입한 이유](https://techblog.gccompany.co.kr/%EC%9A%B0%EB%A6%AC%ED%8C%80%EC%9D%B4-jdk-17%EC%9D%84-%EB%8F%84%EC%9E%85%ED%95%9C-%EC%9D%B4%EC%9C%A0-ced2b754cd7)**
+  - **[LINE 개발자들이 Spring 대신 Armeria를 사용하는 이유](https://engineering.linecorp.com/ko/blog/hello-armeria-bye-spring)**
+
 - `2022-07-11`
   - **[Java Optional 바르게 쓰기](http://homoefficio.github.io/2019/10/03/Java-Optional-%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%93%B0%EA%B8%B0/)**
   - **[John Grib - Java Optional](https://johngrib.github.io/wiki/java-optional/)**
@@ -65,6 +70,8 @@ has_children: true
   - **[[번역] 내가 StackOverflow를 사용하는 방법](https://www.rinae.dev/posts/how-i-use-stackoverflow-kor)**
   - **[Is Java "pass-by-reference" or "pass-by-value"?](https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value)**
   - **[[Java] Pass By Value와 Pass By Reference의 차이 및 이해 (3/3)](https://mangkyu.tistory.com/107)**
+  - **[HTTP/3는 왜 UDP를 선택한 것일까?](https://evan-moon.github.io/2019/10/08/what-is-http3/)**
+  - **[웹 3.0은 정말 구글의 시대를 끝낼까?](https://m.post.naver.com/viewer/postView.naver?volumeNo=34086106&memberNo=22700030)**
 
 - `2022-07-07`
   - **[Sticky Session과 Session Clustering](https://smjeon.dev/web/sticky-session/)**
