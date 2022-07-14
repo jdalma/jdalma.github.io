@@ -19,6 +19,7 @@ has_children: true
 - [7년 차 SI 개발자가 솔루션 회사 이직 후 2년 간 배운 것](https://ohseyong.com/?p=3123)
 - [어떻게 하면 개발을 잘할 수 있을까요?](https://www.popit.kr/%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%A9%B4-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9E%98%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/)
 - [이직에 대한 단상](https://www.popit.kr/%EC%9D%B4%EC%A7%81%EC%97%90-%EB%8C%80%ED%95%9C-%EB%8B%A8%EC%83%81/)
+- [Ep.18 회사에서 본인을 빠르게 성장시키는 방법 - People Scaling](https://www.youtube.com/watch?v=drBdnrlsq9o)
 - [Ep.36 스타트업에서 내 성장의 기회 뽕뽑기! - 자기계발편](https://www.youtube.com/watch?v=169qOPlRdP0)
 - [유능한 시니어 개발자들이 하필 '그곳'으로 이직한 이유](https://n.news.naver.com/article/092/0002262365?cds=news_my)
 
