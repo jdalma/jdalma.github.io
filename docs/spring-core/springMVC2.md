@@ -19,13 +19,10 @@ nav_order: 40
 ---
 
 
-# 하이버네이트 Validator 관련 링크
-## [공식 사이트](http://hibernate.org/validator/)
-## [공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
-## [📌 검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
-
-# 스프링 인터셉터
-## [PathPattern 공식문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/util/pattern/PathPattern.html)
+## [하이버네이트 Validator 공식 사이트](http://hibernate.org/validator/)
+## [하이버네이트 Validator 공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
+## [하이버네이트 Validator 📌 검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
+## [스프링 인터셉터 PathPattern 공식문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/util/pattern/PathPattern.html)
 
 # **메세지 → 국제화**
 - **HTTP `accept-language`**헤더 값을 사용하거나 , **사용자가 직접 언어를 선택하도록 하고 쿠키를 사용**해서 처리할 수 있다 
@@ -828,11 +825,11 @@ HTTP 요청 파리미터를 처리하는 `@ModelAttribute` 는 각각의 필드 
 
 ***
 
-# 로그인 처리 - **쿠키**, **세션**
+# **로그인 처리** - `쿠키`, `세션`
 
 ## [회원 개발](https://github.com/jdalma/spring-login/pull/1/commits/db7086b15c95d4764f4fafe1972de8700258c087)
 ## [로그인 개발](https://github.com/jdalma/spring-login/pull/1/commits/172bd844661a02c3b1dc52deac480f3026300806)
-## [로그인 처리 (+ 쿠키)](https://github.com/jdalma/spring-login/pull/1/commits/878134696e69c223c7ed56922e940a7e992bb9a4)
+## [로그인 처리 (+ `쿠키`)](https://github.com/jdalma/spring-login/pull/1/commits/878134696e69c223c7ed56922e940a7e992bb9a4)
 - [네트워크 - 쿠키](https://jdalma.github.io/docs/network/http-header/#-http-%ED%97%A4%EB%8D%94---%EC%BF%A0%ED%82%A4)
 - **서버에서 로그인에 성공하면 HTTP 응답에 쿠키를 담아서 브라우저에 전달**하자. 그러면 브라우저는 앞으로 해당 쿠키를 지속해서 보내준다.
 - **쿠키에는 영속 쿠키와 세션 쿠키가 있다.**
@@ -867,7 +864,7 @@ HTTP 요청 파리미터를 처리하는 `@ModelAttribute` 는 각각의 필드 
 - 해커가 토큰을 털어가도 시간이 지나면 사용할 수 없도록 서버에서 해당 토큰의 만료시간을 짧게(예: 30분) 유지한다. 
 - 또는 해킹이 의심되는 경우 서버에서 해당 토큰을 강제로 제거하면 된다.
 
-## [로그인 처리 (+ 세션)](https://github.com/jdalma/spring-login/pull/1/commits/f0f8dcf12989f37c2d770d693c8504de19a1e82e)
+## [로그인 처리 (+ `세션`)](https://github.com/jdalma/spring-login/pull/1/commits/f0f8dcf12989f37c2d770d693c8504de19a1e82e)
 
 ![](../../assets/images/spring-mvc2/loginSession1.png)
 
@@ -897,7 +894,7 @@ HTTP 요청 파리미터를 처리하는 `@ModelAttribute` 는 각각의 필드 
   3. 쿠키 탈취 후 사용 ➔ **해커가 토큰을 털어가도 시간이 지나면 사용할 수 없도록 서버에서 세션의 만료시간을 짧게(예: 30분) 유지한다.**
      - *또는 해킹이 의심되는 경우 서버에서 해당 세션을 강제로 제거하면 된다.*
 
-### [세션 직접 관리 해보기 (+ 테스트 코드)](https://github.com/jdalma/spring-login/pull/1/commits/50eb2ca6f6c35e8d702b99b9cf0b95a1a3b2e1ee)
+### [세션 직접 관리 해보기 (+ `테스트 코드`)](https://github.com/jdalma/spring-login/pull/1/commits/50eb2ca6f6c35e8d702b99b9cf0b95a1a3b2e1ee)
 
 - **세션 생성**
   1. `sessionId` 생성
@@ -1042,7 +1039,7 @@ session.setMaxInactiveInterval(1800); //1800초
 
 ***
 
-# 로그인 처리 - **필터**
+# **로그인 처리** - `필터`
 
 - **공통관심사항** `Cross-Cutting-Concern`
   - 로그인한 사용자만 들어가야할 화면들이 있다
@@ -1119,7 +1116,7 @@ HTTP 요청 ➔ WAS ➔ 필터1 ➔ 필터2 ➔ 필터3 ➔ 디스패처 서블�
 
 ***
 
-# 로그인 처리 - **인터셉터** 📌
+# **로그인 처리** - `인터셉터` 📌
 - 인터셉터는 스프링 MVC가 제공하는 기술이다
 - 필터와 인터셉터는 적용되는 순서와 범위 그리고 사용방법이 다르다
   - **그리고 필터보다 더 편리하고 , 정교한 `다양한 기능을 지원`한다**
@@ -1248,7 +1245,7 @@ public String homeLoginV3ArgumentResolver(@Login Member loginMember , Model mode
 
 ***
 
-# 서블릿 예외 처리
+# **서블릿 예외 처리**
 - 서블릿은 다음 2가지 방식으로 예외 처리를 지원한다
   1. **Exception**
   2. `response.sendError(HTTP 상태 코드 , 오류 메시지)`
@@ -1267,7 +1264,7 @@ WAS (여기까지 전파) ← 필터 ← 서블릿 ← 컨트롤러 (예외 발�
 
 <br>
 
-## WAS는 예외가 올라오면 어떻게 처리할까? (+ **Exception**)
+## WAS는 예외가 올라오면 어떻게 처리할까? (+ `Exception`)
 
 ```java
 @Slf4j
@@ -1441,7 +1438,7 @@ ERROR_STATUS_CODE = 500
 dispatchType = ERROR
 ```
 
-## 서블릿 예외 처리 (+ **필터** , **인터셉터**)
+## **서블릿 예외 처리** (+ `필터` , `인터셉터`)
 - 예외 처리에 따른 **필터**와 **인터셉터** 그리고 **서블릿이 제공하는 `DispatchType`** 이해하기 
 
 ```
@@ -1525,7 +1522,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 ***
 
-# 스프링 부트 오류 페이지
+# **스프링 부트 오류 페이지**
 - 지금까지 예외 페이지를 호출하기 위해
   1. **WebServerCustomizer** 를 만들고
   2. 예외 종류에 따라서 **ErrorPage** 를 추가하고
@@ -1616,7 +1613,7 @@ server.error.include-binding-errors=never : error 포함 여부
 
 ***
 
-# API 예외 처리
+# **API 예외 처리**
 
 - API는 각 오류 상황에 맞는 **오류 응답 스펙**을 정하고 , **JSON으로 데이터를 내려주어야 한다**
 
@@ -1625,9 +1622,162 @@ server.error.include-binding-errors=never : error 포함 여부
 
 - 요청 헤더 `Accept : application/json` 설정
 
+```java
+@RequestMapping(value = "/error-page/500" , produces = MediaType.APPLICATION_JSON_VALUE) // produces는 요청의 Accept를 확인
+public ResponseEntity<Map<String , Object>> errorPage500Api(HttpServletRequest request , HttpServletResponse response){
+    log.info("API errorPage 500 ");
+
+    Map<String, Object> result = new HashMap<>();
+    Exception ex = (Exception) request.getAttribute(ERROR_EXCEPTION);
+    result.put("status" , request.getAttribute(ERROR_STATUS_CODE));
+    result.put("message" , ex.getMessage());
+
+    Integer statusCode = (Integer) request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
+    return new ResponseEntity<>(result , HttpStatus.valueOf(statusCode));
+}
+```
+
 ```
 {
     "message": "API 예외 테스트 메세지 - RuntimeException",
     "status": 500
 }
 ```
+
+## 스프링 부트 기본 오류 처리 방법
+
+- 스프링 부트의 기본 설정은 오류 발생 시 `/error`를 오류 페이지로 설정한다
+- **BasicErrorController**는 이 경로를 기본으로 받는다
+  -  기본 정보들을 활용해서 **오류 API를 생성**해준다
+  - `server.error.path` 로 수정 가능
+
+<div class="code-example" markdown="1">
+**BasicErrorController**
+</div>
+
+```java
+@Controller
+@RequestMapping("${server.error.path:${error.path:/error}}")
+public class BasicErrorController extends AbstractErrorController {
+
+  @RequestMapping(produces = MediaType.TEXT_HTML_VALUE)
+  public ModelAndView errorHtml(HttpServletRequest request, HttpServletResponse response) {}
+
+  @RequestMapping
+  public ResponseEntity<Map<String, Object>> error(HttpServletRequest request) {}
+
+  ...
+}
+```
+ 
+- `/error` 동일한 경로를 처리하는 **errorHtml()** , **error()** 두 메서드를 확인할 수 있다
+- **errorHtml()**
+  - `produces = MediaType.TEXT_HTML_VALUE` : 클라이언트 요청의 **Accept 해더** 값이 `text/html` 인 경우에는 errorHtml() 을 호출해서 view를 제공한다
+- **error()**
+  - 그외 경우에 호출되고 **ResponseEntity** 로 HTTP Body에 **JSON 데이터를 반환**한다.
+
+<br>
+
+> ✋ 
+> 
+> BasicErrorController 를 확장하면 JSON 메시지도 변경할 수 있다. 
+> 
+> 그런데 API 오류는 조금 뒤에 설명할 `@ExceptionHandler` 가 제공하는 기능을 사용하는 것이 더 나은 방법이므로 
+> 
+> 지금은 BasicErrorController 를 확장해서 JSON 오류 메시지를 변경할 수 있다 정도로만 이해해두자.
+> 
+> 스프링 부트가 제공하는 BasicErrorController 는 HTML 페이지를 제공하는 경우에는 매우 편리하다. 4xx, 5xx 등등 모두 잘 처리해준다. 
+> 
+> 그런데 API 오류 처리는 다른 차원의 이야기이다. 
+> 
+> API 마다, 각각의 컨트롤러나 예외마다 서로 다른 응답 결과를 출력해야 할 수도 있다. 
+> 
+> 예를 들어서 회원과 관련된 API에서 예외가 발생할 때 응답과, 상품과 관련된 API에서 발생하는 예외에 따라 그 결과가 달라질 수 있다. 
+> 
+> 결과적으로 매우 세밀하고 복잡하다. 
+> 
+> 따라서 이 방법은 HTML 화면을 처리할 때 사용하고, **API는 오류 처리는 뒤에서 설명할 @ExceptionHandler 를 사용하자.**
+
+## [**HandlerExceptionResolver**를 사용하여 예외 제어하기](https://github.com/jdalma/spring-exception/commit/25951d224bb53d039826510b40b6a490a44ed20e)
+- **활용**
+  1. **상태 코드 변환**
+     - 예외를 `response.sendError(xxx)` 호출로 변경해서 서블릿에서 상태 코드에 따른 오류를 처리하도록 위임 
+     - 이후 WAS는 서블릿 오류 페이지를 찾아서 내부 호출, 예를 들어서 스프링부트가 기본으로설정한 `/error` 가 호출됨
+  2. **뷰 템플릿 처리**
+     - **ModelAndView** 에 값을 채워서 **예외에 따른 새로운 오류 화면 뷰 렌더링 해서 고객에게 제공**
+  3. **API 응답 처리**
+     - `response.getWriter().println("hello");` 처럼 HTTP 응답 바디에 직접 데이터를 넣어주는 것도 가능하다. 
+     - 여기에 JSON 으로 응답하면 API 응답 처리를 할 수 있다.
+
+<br>
+
+- 예) `IllegalArgumentException`을 처리하지 못 해서 컨트롤러 밖으로 넘어가는 일이 발생하면 **HTTP 상태 코드를 400으로 처리하고 싶다**
+- 오류 메시지 , 형식등을 API마다 다르게 처리하고 싶다면 어떻게 해야할까??
+
+<br>
+
+- 스프링 MVC는 컨트롤러(핸들러) 밖으로 예외가 던져진 경우 예외를 해결하고, 동작을 새로 정의할 수 있는 방법을 제공한다
+- 컨트롤러 밖으로 던져진 예외를 해결하고, 동작 방식을 변경하고 싶으면 **HandlerExceptionResolver** 를 사용하면 된다. 
+- 줄여서 **ExceptionResolver** 라 한다.
+
+![](../../assets/images/spring-mvc2/exceptionResolverBefore.png)
+
+![](../../assets/images/spring-mvc2/exceptionResolverAfter.png)
+
+<div class="code-example" markdown="1">
+**MyHandlerExceptionResolver**
+</div>
+
+```java
+@Slf4j
+public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
+
+    @Override
+    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+        try {
+            if(ex instanceof IllegalArgumentException){
+                log.info("IllegalArgumentException resolver to 400");
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST , ex.getMessage());
+                return new ModelAndView();
+            }
+        } catch (IOException e) {
+            log.error("resolver ex" , e);
+        }
+
+        return null;
+    }
+}
+```
+
+- **ExceptionResolver** 가 `ModelAndView` 를 반환하는 이유는 마치 `try`, `catch`를 하듯이 **Exception** 을 처리해서 정상 흐름 처럼 변경하는 것이 목적이다
+  - *이름 그대로 Exception 을 `Resolver(해결)`하는 것이 목적이다*
+- 여기서는 **IllegalArgumentException** 이 발생하면 `response.sendError(400)` 를 호출해서 HTTP 상태 코드를 400으로 지정하고, **빈 ModelAndView 를 반환**한다.
+- HandlerExceptionResolver 의 반환 값에 따른 **DispatcherServlet 의 동작 방식**은 다음과 같다.
+  1. **빈 ModelAndView** : `new ModelAndView()` 처럼 빈 ModelAndView 를 반환하면 **뷰를 렌더링 하지 않고, 정상 흐름으로 서블릿이 리턴된다**
+  2. **ModelAndView 지정** : ModelAndView 에 View , Model 등의 **정보를 지정해서 반환하면 뷰를 렌더링 한다**
+  3. **null**
+     - null 을 반환하면, 다음 ExceptionResolver 를 찾아서 실행한다. 
+     - 만약 처리할 수 있는 ExceptionResolver 가 없으면 예외 처리가 안되고, 기존에 발생한 예외를 서블릿 밖으로 던진다.
+
+> `response.sendError()`가 있으면 `new ModelAndView()`에 반환 화면을 지정 해놓아도 sendError를 처리한다 
+
+## [**API 예외 처리** - `HandlerExceptionResolver` 추가](https://github.com/jdalma/spring-exception/commit/d26fa34ea2ec04eed70646503b75cccf0b425aaa)
+- 예외가 발생하면 WAS까지 예외가 던져지고 , WAS에 오류 페이지 정보를 찾아서 다시 `/error`를 호출하는 과정은 생각해보면 너무 복잡하다
+  - *ExceptionResolver를 활용하면 예외가 발생했을 때 이런 복잡한 과정없이 해결할 수 있다*
+- **ExceptionResolver**를 사용하면 컨트롤러에서 예외가 발생해도 **ExceptionResolver 에서 예외를 처리해버린다**
+  - 따라서 예외가 발생해도 서블릿 컨테이너까지 *예외가 전달되지 않는다*
+  - 결과적으로 WAS 입장에서는 정상 처리가 된 것이다 
+- 이렇게 예외를 모두 처리할 수 있다는 것이 핵심이다
+- 서블릿 컨테이너까지 예외가 올라가면 복잡하고 지저분하게 추가 프로세스가 실행된다.
+- 반면에 **ExceptionResolver 를 사용하면 예외처리가 상당히 깔끔해진다**
+- 그런데 직접 ExceptionResolver 를 구현하려고 하니 상당히 복잡하다. 
+- 스프링이 제공하는 ExceptionResolver 들을 알아보자.
+
+## [**API 예외 처리** - 스프링이 제공하는 `ExceptionResolver`]()
+
+스프링 부트가 기본으로 제공하는 **ExceptionResolver** 는 다음과 같다. <br/>
+
+- `HandlerExceptionResolverComposite` 에 다음 순서로 등록
+  1. `ExceptionHandlerExceptionResolver`
+  2. `ResponseStatusExceptionResolver`
+  3. `DefaultHandlerExceptionResolver` (우선 순위가 가장 낮다)
