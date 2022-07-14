@@ -13,6 +13,15 @@ has_children: true
 
 <br>
 
+## 힘들 때 보면 좋은 글
+- [SI 개발 10년차인데 코드 좀 봐주세요](https://www.popit.kr/si-%EA%B0%9C%EB%B0%9C-10%EB%85%84%EC%B0%A8%EC%9D%B8%EB%8D%B0-%EC%BD%94%EB%93%9C-%EC%A2%80-%EB%B4%90%EC%A3%BC%EC%84%B8%EC%9A%94/)
+- [후배 개발자에게](https://brunch.co.kr/@javajigi/4)
+- [7년 차 SI 개발자가 솔루션 회사 이직 후 2년 간 배운 것](https://ohseyong.com/?p=3123)
+- [어떻게 하면 개발을 잘할 수 있을까요?](https://www.popit.kr/%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%A9%B4-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9E%98%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/)
+- [이직에 대한 단상](https://www.popit.kr/%EC%9D%B4%EC%A7%81%EC%97%90-%EB%8C%80%ED%95%9C-%EB%8B%A8%EC%83%81/)
+- [Ep.36 스타트업에서 내 성장의 기회 뽕뽑기! - 자기계발편](https://www.youtube.com/watch?v=169qOPlRdP0)
+- [유능한 시니어 개발자들이 하필 '그곳'으로 이직한 이유](https://n.news.naver.com/article/092/0002262365?cds=news_my)
+
 ## 질문 리스트
 1. `도전 정신` 또는 `주도성`을 보여줄 수 있는 사레 , `문제를 정의하고 해결한 사례` 정리해보기
    - 주도적으로 리딩했던 과제 혹은 문제 중 가장 큰 성과 ?
@@ -57,6 +66,9 @@ has_children: true
 - [1강 ~ 6강 꼭 듣기](https://www.youtube.com/watch?v=Tq3W8UyltFs&list=PLy-g2fnSzUTAaDcLW7hpq0e8Jlt7Zfgd6)
 
 *** 
+
+- `2022-07-14`
+  - **[Spring Batch 는 어떻게 Chunk 지향처리를 하고, Transaction을 언제 걸까](https://devocean.sk.com/blog/techBoardDetail.do?ID=164085)**
 
 - `2022-07-13`
   - **[Amazon - 웹 브라우저에 URL을 입력하면 어떤 일이 생기나요?](https://aws.amazon.com/ko/blogs/korea/what-happens-when-you-type-a-url-into-your-browser/)**
