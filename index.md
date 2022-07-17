@@ -14,14 +14,14 @@ permalink: /
 
 - 동작 원리와 핵심 컨셉을 학습하고 이해하기 위해 노력하고 , 지속적으로 좋은 코드를 작성하기 위해 노력하고 있는 **백엔드 개발자** 입니다
 - 현재까지 `JAVA 8` , `Spring` , `Mybatis` , `Mysql` , `Jenkins`를 활용한 개발 경험을 보유하고 있습니다
-- 지금은 `Spring 생태계` , `ORM (JPA)` , `RESTful API` , `AWS`에 관심을 가지고 있습니다
+- 지금은 `Spring 생태계` , `ORM (JPA)` , `TDD` , `RESTful API` , `AWS`에 관심을 가지고 있습니다
 - 현재 [사내 스터디](https://github.com/jdalma/dev-study)를 만들어 새로 배운 지식들을 서로 공유하고 실무에 적용할 때 큰 즐거움을 느낍니다
 
 # **Experience**
 
 ## **ERP SI `2020.04.01 ~ 현재` (2년 4개월)**
 
-- JavaScript , Java8 , 전자정부프레임워크(Spring 4) , RDB
+- Java8 , 전자정부프레임워크(Spring 4) , RDBMS , JavaScript , DHTMLX
 - **CI/CD**
   - Jenkins , SVN
 
