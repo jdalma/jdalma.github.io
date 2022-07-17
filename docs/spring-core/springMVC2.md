@@ -23,6 +23,7 @@ nav_order: 40
 ## [하이버네이트 Validator 공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
 ## [하이버네이트 Validator 📌 검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
 ## [스프링 인터셉터 PathPattern 공식문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/util/pattern/PathPattern.html)
+## [공식 문서 - 예외 @ExceptionHandler 메서드 인자](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-exceptionhandler-args)
 
 # **메세지 → 국제화**
 - **HTTP `accept-language`**헤더 값을 사용하거나 , **사용자가 직접 언어를 선택하도록 하고 쿠키를 사용**해서 처리할 수 있다 
@@ -1773,11 +1774,292 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
 - 그런데 직접 ExceptionResolver 를 구현하려고 하니 상당히 복잡하다. 
 - 스프링이 제공하는 ExceptionResolver 들을 알아보자.
 
-## [**API 예외 처리** - 스프링이 제공하는 `ExceptionResolver`]()
+## **API 예외 처리** - 스프링이 제공하는 `ExceptionResolver`
 
 스프링 부트가 기본으로 제공하는 **ExceptionResolver** 는 다음과 같다. <br/>
 
 - `HandlerExceptionResolverComposite` 에 다음 순서로 등록
   1. `ExceptionHandlerExceptionResolver`
   2. `ResponseStatusExceptionResolver`
+     - HTTP 상태 코드를 지정할 수 있다
+     - 예) `@ResponseStatus(value = HttpStatus.NOT_FOUND)`
   3. `DefaultHandlerExceptionResolver` (우선 순위가 가장 낮다)
+     - 스프링 내부 기본 예외를 처리한다
+
+### [**ExceptionHandlerExceptionResolver** - `@ExceptionHandler` ⭐️](https://github.com/jdalma/spring-exception/commit/161a8e080d5cb26f94663354fb22ef6f90306343)
+
+- **HTML 화면 오류** vs **API 오류**
+- 웹 브라우저에 HTML 화면을 제공할 때는 오류가 발생하면 `BasicErrorController` 를 사용하는게 편하다
+  - *404.html , 4xx.html , 5xx.html* 관련한 화면만 만들면 된다
+  - `BasicErrorController` 는 이런 메커니즘을 모두 구현해두었다
+- 그런데 **API는 각 시스템 마다 응답의 모양도 다르고, 스펙도 모두 다르다** 
+- 예외 상황에 단순히 오류 화면을 보여주는 것이 아니라, 예외에 따라서 각각 다른 데이터를 출력해야 할 수도 있다
+- 그리고 같은 예외라고 해도 어떤 컨트롤러에서 발생했는가에 따라서 다른 예외 응답을 내려주어야 할 수 있다
+- 한마디로 매우 세밀한 제어가 필요하다
+- `BasicErrorController` 를 사용하거나 **HandlerExceptionResolver** 를 **직접 구현하는 방식으로 API 예외를 다루기는 쉽지 않다**
+
+<br>
+
+- **API 예외처리의 어려운 점**
+  1. **HandlerExceptionResolver** 를 떠올려 보면 `ModelAndView` 를 반환해야 했다
+     - 이것은 API 응답에는 필요하지 않다
+  2. API 응답을 위해서 `HttpServletResponse` 에 직접 응답 데이터를 넣어주었다 *이것은 매우 불편하다* 
+     - *스프링 컨트롤러에 비유하면 마치 과거 서블릿을 사용하던 시절로 돌아간 것 같다*
+  3. 특정 컨트롤러에서만 발생하는 예외를 별도로 처리하기 어렵다. 
+     - *예를 들어서 회원을 처리하는 컨트롤러에서 발생하는 RuntimeException 예외와 상품을 관리하는 컨트롤러에서 발생하는 동일한 RuntimeException 예외를 서로 다른 방식으로 처리하고 싶다면 어떻게 해야할까?*
+
+- `@ExceptionHandler` 📌
+  - 스프링은 API 예외 처리 문제를 해결하기 위해 `@ExceptionHandler` 라는 애노테이션을 사용하는 매우 편리한 예외 처리 기능을 제공하는데, 
+  - 이것이 바로 **ExceptionHandlerExceptionResolver** 이다
+  - 스프링은 **ExceptionHandlerExceptionResolver** 를 **기본으로 제공**하고, 
+  - 기본으로 제공하는 **ExceptionResolver** 중에 우선순위도 가장 높다
+  - 실무에서 API 예외 처리는 대부분 이 기능을 사용한다
+
+```java
+/**
+  * @ExceptionHandler 를 사용하게 되면 해당 컨트롤러에서 발생되는 지정된 예외를 잡아 정상 흐름으로 처리하게 된다
+  * 이 때 응답은 정상 (200)으로 나가게 된다
+  *
+  * @ResponseStatus 를 추가하여 응답 코드를 설정할 수 있다
+  *
+  * 실행 흐름
+  * 1. 컨트롤러를 호출한 결과 IllegalArgumentException 예외가 컨트롤러 밖으로 던져진다.
+  * 2. 예외가 발생했으로 ExceptionResolver 가 작동한다.
+  * 3. 가장 우선순위가 높은 ExceptionHandlerExceptionResolver 가 실행된다.
+  * 4. ExceptionHandlerExceptionResolver 는 해당 컨트롤러에 IllegalArgumentException 을 처리할 수 있는 @ExceptionHandler 가 있는지 확인한다.
+  * 5. illegalExHandle() 를 실행한다.
+  * 6. @RestController 이므로 illegalExHandle() 에도 @ResponseBody 가 적용된다.
+  *    따라서 HTTP 컨버터가 사용되고, 응답이 다음과 같은 JSON으로 반환된다.
+  * 7. @ResponseStatus(HttpStatus.BAD_REQUEST) 를 지정했으므로 HTTP 상태 코드 400으로 응답한다.
+  */
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  @ExceptionHandler(IllegalArgumentException.class)
+  public ErrorResult illegalExHandler(IllegalArgumentException e){
+    log.error("[exception handler] ex" , e);
+    return new ErrorResult("BAD" , e.getMessage());
+  }
+
+
+  /**
+  * @ExceptionHandler(UserException.class)
+  *
+  * 1. @ExceptionHandler 에 예외를 지정하지 않으면 해당 메서드 파라미터 예외를 사용한다.
+  * 2. 여기서는 UserException 을 사용한다.
+  * 3. ResponseEntity 를 사용해서 HTTP 메시지 바디에 직접 응답한다. 물론 HTTP 컨버터가 사용된다.
+  * 4. ResponseEntity 를 사용하면 HTTP 응답 코드를 프로그래밍해서 동적으로 변경할 수 있다.
+  *    앞서 살펴본 @ResponseStatus 는 애노테이션이므로 HTTP 응답 코드를 동적으로 변경할 수 없다.
+  */
+  @ExceptionHandler
+  public ResponseEntity<ErrorResult> userExHandler(UserException e){
+    log.error("[exception handler] ex" , e);
+    ErrorResult errorResult = new ErrorResult("USER-EX", e.getMessage());
+    return new ResponseEntity<>(errorResult , HttpStatus.BAD_REQUEST);
+  }
+
+  /**
+  * 1. 모든 RuntimeException은 HttpStatus.INTERNAL_SERVER_ERROR로 처리된다
+  * 2. throw new RuntimeException("잘못된 사용자") 이 코드가 실행되면서 , 컨트롤러밖으로 RuntimeException 이 던져진다.
+  * 3. RuntimeException 은 Exception 의 자식 클래스이다. 따라서 이 메서드가 호출된다.
+  *    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) 로 HTTP 상태 코드를 500으로 응답한다
+  */
+  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+  @ExceptionHandler
+  public ErrorResult exHandler(Exception e){
+    log.error("[exception handler] ex" , e);
+    return new ErrorResult("Exception" , "내부 오류");
+  }
+```
+
+1. **`@ExceptionHandler` 예외 처리 방법**
+   - `@ExceptionHandler` 애노테이션을 선언하고, 해당 컨트롤러에서 처리하고 싶은 예외를 지정해주면 된다
+   - 해당 컨트롤러에서 예외가 발생하면 이 메서드가 호출된다
+     - *예외를 잡아서 HTML을 반환할 수도 있다*
+   - **참고로 지정한 예외 또는 그 예외의 자식 클래스는 모두 잡을 수 있다**
+
+2. **우선순위**
+   - 스프링의 우선순위는 **항상 자세한 것이 우선권을 가진다**
+   - 예를 들어서 부모, 자식 클래스가 있고 다음과 같이 예외가 처리된다
+   - `@ExceptionHandler` 에 **지정한 부모 클래스는 자식 클래스까지 처리할 수 있다** 
+   - 따라서 **자식예외가 발생**하면 `부모예외처리()` , `자식예외처리()` 둘다 호출 대상이 된다
+   - 그런데 둘 중 더 자세한 것이 우선권을 가지므로 `자식예외처리()` 가 호출된다
+   - 물론 **부모예외** 가 호출되면 `부모예외처리()` 만 호출 대상이 되므로 `부모예외처리()` 가 호출된다
+
+```java
+@ExceptionHandler(부모예외.class) 
+public String 부모예외처리(부모예외 e) {
+
+}
+@ExceptionHandler(자식예외.class) 
+public String 자식예외처리(자식예외 e) {
+
+}
+```
+
+3. **다양한 예외 처리**
+   - 다양한 예외를 한번에 처리할 수 있다
+
+```java
+  @ExceptionHandler({AException.class, BException.class})
+  public String ex(Exception e) {
+      log.info("exception e", e);
+  }
+```
+
+***
+
+### [**ExceptionHandlerExceptionResolver** - `@ControllerAdvice` 또는 `@RestControllerAdvice` ⭐️]()
+
+***
+
+### [**ResponseStatusExceptionResolver** - `@ResponseStatus` 가 달려있는 예외](https://github.com/jdalma/spring-exception/commit/1f53f812f0ed4ac98a7e8b260ea7e8bab60029b7)
+
+- `@ResponseStatus`는 개발자가 직접 변경할 수 없는 예외에는 적용할 수 없다
+  - *어노테이션을 직접 넣어야 하는데 , 내가 코드를 수정할 수 없는 라이브러리의 예외 코드 같은 곳에는 적용할 수 없다*
+  - 이런 경우에는 [**ResponseStatusExceptionResolver** - **ResponseStatusException** 예외] 참고
+
+<div class="code-example" markdown="1">
+**BadRequestException**
+</div>
+
+```java
+@ResponseStatus(code = HttpStatus.BAD_REQUEST , reason = "BadRequestException이 발생했다 !!!")
+public class BadRequestException extends RuntimeException{
+
+}
+```
+
+1. **BadRequestException** 예외가 컨트롤러 밖으로 넘어가면 **ResponseStatusExceptionResolver** 예외가 해당 애노테이션을 확인해서 오류 코드를 `HttpStatus.BAD_REQUEST (400)`로 변경하고, 메시지도 담는다.
+   - **BadReqeustException예외를 발생시키고 , 상태코드 BAD_REQUEST를 넣었다 (`@ResponseStatus`)**
+2. **ResponseStatusExceptionResolver** 코드를 확인해보면 결국 `response.sendError(statusCode, resolvedReason)`를 호출하는 것을 확인할 수 있다.
+   - 예외 정보 message도 같이 조회하면 **reason**의 정보를 확인할 수 있다
+3. `sendError(400)`을 호출했기 때문에 WAS에서 다시 오류 페이지( `/error` )를 내부 요청한다
+
+<div class="code-example" markdown="1">
+**Response**
+</div>
+
+```
+{
+    "timestamp": "2022-07-17T11:02:48.764+00:00",
+    "status": 400,
+    "error": "Bad Request",
+    "exception": "hello.exception.exception.BadRequestException",
+    "message": "BadRequestException이 발생했다 !!!",
+    "path": "/api/response-status-ex1"
+}
+```
+
+<br>
+
+**messages.properties**를 활용하여 **메세지 기능**을 사용할 수도 있다<br>
+
+<div class="code-example" markdown="1">
+**messages.properties**
+</div>
+```
+error.bad=잘못된 요청 오류 입니다 !!! (message.properties 활용)
+```
+
+
+<div class="code-example" markdown="1">
+**BadRequestException**
+</div>
+
+```java
+@ResponseStatus(code = HttpStatus.BAD_REQUEST , reason = "error.bad")
+public class BadRequestException extends RuntimeException{
+
+}
+```
+
+<div class="code-example" markdown="1">
+**Response**
+</div>
+
+```
+{
+    "timestamp": "2022-07-17T11:33:02.766+00:00",
+    "status": 400,
+    "error": "Bad Request",
+    "exception": "hello.exception.exception.BadRequestException",
+    "message": "잘못된 요청 오류 입니다 !!! (messages.properties 활용)",
+    "path": "/api/response-status-ex1"
+}
+```
+
+***
+
+### **ResponseStatusExceptionResolver** - **ResponseStatusException** 예외
+- `@ResponseStatus`는 개발자가 직접 변경할 수 없는 예외에는 적용할 수 없다
+  - *어노테이션을 직접 넣어야 하는데 , 내가 코드를 수정할 수 없는 라이브러리의 예외 코드 같은 곳에는 적용할 수 없다*
+  - 추가로 어노테이션을 사용하기 때문에 동적으로 변경하기는 어렵다
+  - 이 떄 **ResponseStatusException 예외**를 사용하면 된다
+
+
+```java
+@GetMapping("/api/response-status-ex2")
+public String responseStatusEx2(){
+    throw new ResponseStatusException(HttpStatus.NOT_FOUND , "throw new ResponseStatusException !!!");
+}
+```
+
+<div class="code-example" markdown="1">
+**Response**
+</div>
+
+```
+{
+    "timestamp": "2022-07-17T12:04:03.384+00:00",
+    "status": 404,
+    "error": "Not Found",
+    "exception": "org.springframework.web.server.ResponseStatusException",
+    "message": "throw new ResponseStatusException !!!",
+    "path": "/api/response-status-ex2"
+}
+```
+
+***
+
+### **DefaultHandlerExceptionResolver**
+
+- **스프링 내부에서 발생하는 스프링 예외를 해결한다** 
+- 대표적으로 파라미터 바인딩 시점에 타입이 맞지 않으면 내부에서 `TypeMismatchException` 이 발생하는데, 이 경우 예외가 발생했기 때문에 그냥 두면 서블릿 컨테이너까지 오류가 올라가고, 결과적으로 500 오류가 발생한다
+- 그런데 파라미터 바인딩은 대부분 클라이언트가 HTTP 요청 정보를 잘못 호출해서 발생하는 문제이다. 
+- HTTP 에서는 이런 경우 HTTP 상태 코드 400을 사용하도록 되어 있다. 
+- **DefaultHandlerExceptionResolver** 는 이것을 500 오류가 아니라 `HTTP 상태 코드 400 오류로 변경`한다.
+- **스프링 내부 오류를 어떻게 처리할지 수 많은 내용이 정의되어 있다.**
+  - 아래와 같은 상황이다
+  - 필요할 때 `DefaultHandlerExceptionResolver.class`를 직접 확인해보자
+
+
+<div class="code-example" markdown="1">
+**URI**
+</div>
+```
+http://localhost:8080/api/default-handler-ex?data=qqq
+```
+
+<div class="code-example" markdown="1">
+**Controller**
+</div>
+
+```java
+@GetMapping("/api/default-handler-ex")
+public String defaultException(@RequestParam Integer data){
+  return "ok";
+}
+```
+
+
+<div class="code-example" markdown="1">
+**Response**
+</div>
+```
+{
+    "timestamp": "2022-07-17T12:17:14.463+00:00",
+    "status": 400,
+    "error": "Bad Request",
+    "exception": "org.springframework.web.method.annotation.MethodArgumentTypeMismatchException",
+    "path": "/api/default-handler-ex"
+}
+```
