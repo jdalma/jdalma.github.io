@@ -24,6 +24,7 @@ nav_order: 40
 ## [하이버네이트 Validator 📌 검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
 ## [스프링 인터셉터 PathPattern 공식문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/util/pattern/PathPattern.html)
 ## [공식 문서 - 예외 @ExceptionHandler 메서드 인자](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-exceptionhandler-args)
+## [공식 문서 - @ControllerAdvice 대상 지정](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-controller-advice)
 
 # **메세지 → 국제화**
 - **HTTP `accept-language`**헤더 값을 사용하거나 , **사용자가 직접 언어를 선택하도록 하고 쿠키를 사용**해서 처리할 수 있다 
@@ -1907,7 +1908,36 @@ public String 자식예외처리(자식예외 e) {
 
 ***
 
-### [**ExceptionHandlerExceptionResolver** - `@ControllerAdvice` 또는 `@RestControllerAdvice` ⭐️]()
+### [**ExceptionHandlerExceptionResolver** - `@ControllerAdvice` 또는 `@RestControllerAdvice` ⭐️](https://github.com/jdalma/spring-exception/commit/43e884917f55e31b37509eb98f1e49703bf4ded6)
+
+- `@ExceptionHandler` 를 사용해서 예외를 깔끔하게 처리할 수 있게 되었지만, **정상 코드와 예외 처리 코드가 하나의 컨트롤러에 섞여 있다.**
+- `@ControllerAdvice` 또는 `@RestControllerAdvice` 를 사용하면 **둘을 분리할 수 있다.**
+
+<br>
+
+- `@ControllerAdvice`
+  1. @ControllerAdvice 는 대상으로 지정한 여러 컨트롤러에 `@ExceptionHandler` , `@InitBinder` **기능을 부여해주는 역할을 한다**
+  2. **@ControllerAdvice 에 대상을 지정하지 않으면 모든 컨트롤러에 적용된다. (글로벌 적용)**
+  3. @RestControllerAdvice 는 @ControllerAdvice 와 같고, @ResponseBody 가 추가되어 있다. 
+     - *@Controller , @RestController 의 차이와 같다.*
+
+- **대상 컨트롤러 지정 방법**
+
+```java
+// Target all Controllers annotated with @RestController
+@ControllerAdvice(annotations = RestController.class)
+public class ExampleAdvice1 {}
+
+// Target all Controllers within specific packages
+@ControllerAdvice("org.example.controllers")
+public class ExampleAdvice2 {}
+
+// Target all Controllers assignable to specific classes
+// 해당 클래스의 자식 클래스들도 포함된다
+@ControllerAdvice(assignableTypes = {ControllerInterface.class,
+AbstractController.class})
+public class ExampleAdvice3 {}
+```
 
 ***
 
