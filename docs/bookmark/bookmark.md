@@ -15,9 +15,7 @@ has_children: true
 
 ## 힘들 때 보면 좋은 글
 - [SI 개발 10년차인데 코드 좀 봐주세요](https://www.popit.kr/si-%EA%B0%9C%EB%B0%9C-10%EB%85%84%EC%B0%A8%EC%9D%B8%EB%8D%B0-%EC%BD%94%EB%93%9C-%EC%A2%80-%EB%B4%90%EC%A3%BC%EC%84%B8%EC%9A%94/)
-- [후배 개발자에게](https://brunch.co.kr/@javajigi/4)
 - [7년 차 SI 개발자가 솔루션 회사 이직 후 2년 간 배운 것](https://ohseyong.com/?p=3123)
-- [어떻게 하면 개발을 잘할 수 있을까요?](https://www.popit.kr/%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%A9%B4-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9E%98%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/)
 - [이직에 대한 단상](https://www.popit.kr/%EC%9D%B4%EC%A7%81%EC%97%90-%EB%8C%80%ED%95%9C-%EB%8B%A8%EC%83%81/)
 - [Ep.18 회사에서 본인을 빠르게 성장시키는 방법 - People Scaling](https://www.youtube.com/watch?v=drBdnrlsq9o)
 - [Ep.36 스타트업에서 내 성장의 기회 뽕뽑기! - 자기계발편](https://www.youtube.com/watch?v=169qOPlRdP0)
@@ -65,6 +63,8 @@ has_children: true
 - [컴퓨터 과학 수업](https://www.youtube.com/watch?v=tpIctyqH29Q&list=PLH2l6uzC4UEW0s7-KewFLBC1D0l6XRfye)
 - [엔지니어 대한민국](https://www.youtube.com/user/damazzang/videos)
 - [1강 ~ 6강 꼭 듣기](https://www.youtube.com/watch?v=Tq3W8UyltFs&list=PLy-g2fnSzUTAaDcLW7hpq0e8Jlt7Zfgd6)
+- [최근 면접을 다니면서 받았던 질문들](https://velog.io/@yukina1418/%EC%B5%9C%EA%B7%BC-%EB%A9%B4%EC%A0%91%EC%9D%84-%EB%8B%A4%EB%8B%88%EB%A9%B4%EC%84%9C-%EB%B0%9B%EC%95%98%EB%8D%98-%EC%A7%88%EB%AC%B8%EB%93%A4)
+- [⭐ 꼭 다 읽어보자](https://blog.naver.com/gngh0101/222810484797)
 
 *** 
 
@@ -108,9 +108,7 @@ has_children: true
   - **[@Before vs @BeforeClass vs @BeforeEach vs @BeforeAll](https://www.baeldung.com/junit-before-beforeclass-beforeeach-beforeall)**
   - **[강남언니 - 여러개의 DB 작업을 동시에 수행하고 결과를 합쳐서 보내줘야 할 때](https://blog.gangnamunni.com/post/Spring-Async-Hibernate-DB/)**
   - **[Spring Transaction 사용 시 주의할 점](https://suhwan.dev/2020/01/16/spring-transaction-common-mistakes/)**
-  
-- `2022-07-01`
-  - **[최근 면접을 다니면서 받았던 질문들](https://velog.io/@yukina1418/%EC%B5%9C%EA%B7%BC-%EB%A9%B4%EC%A0%91%EC%9D%84-%EB%8B%A4%EB%8B%88%EB%A9%B4%EC%84%9C-%EB%B0%9B%EC%95%98%EB%8D%98-%EC%A7%88%EB%AC%B8%EB%93%A4)**
+
 
 - `2022-06-30`
   - **[세션 기반 인증과 토큰 기반 인증 (feat. 인증과 인가)](https://hudi.blog/session-based-auth-vs-token-based-auth/)**
