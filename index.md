@@ -13,13 +13,14 @@ permalink: /
 # **Interest**
 
 - 동작 원리와 핵심 컨셉을 학습하고 이해하기 위해 노력하고 , 꾸준히 `학습` 하고 `성장`하는 **백엔드 개발자** 입니다
-- 현재까지 `JAVA 8` , `Spring` , `Mybatis` , `Mysql` 를 활용한 개발 경험을 보유하고 있습니다
+- 현재까지 **JAVA 8 / Spring** , **Mybatis** , **Mysql** 를 활용한 개발 경험을 보유하고 있습니다
 - 지금은 `______` 에 관심을 가지고 있습니다
-  1. **Spring 생태계**
-  2. **ORM (JPA)** 
-  3. **TDD** 
-  4. **RESTful API 설계** 
-  5. **AWS , Git**
+  1. `Spring 생태계`
+  2. `ORM (JPA)`
+  3. `TDD`
+  4. `RESTful API 설계`
+  5. `Git`
+  6. `AWS`
 - 현재 [사내 스터디](https://github.com/jdalma/dev-study)를 만들어 새로 배운 지식들을 서로 공유하고 실무에 적용할 때 큰 즐거움을 느낍니다
 
 # **Experience**
@@ -90,12 +91,11 @@ permalink: /
 7. **[자바(Java) `알고리즘` 문제풀이 : 코딩테스트 대비](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard)**
 
 ### 구매 예정인 책
-1. **테스트 주도 개발**
-2. **리팩토링**
-3. **오브젝트**
-4. **HTTP 완벽 가이드** vs **성공과 실패를 결정하는 1%의 네트워크 원리**
+1. **리팩토링**
+2. **오브젝트**
+3. **HTTP 완벽 가이드** vs **성공과 실패를 결정하는 1%의 네트워크 원리**
   - *[웹 프로그래머를 위한 HTTP 완벽 가이드 읽는 법](https://blog.npcode.com/2015/06/07/%EC%9B%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%9D%BD%EB%8A%94-%EB%B2%95/)*
-5. **Real MySQL**
+4. **Real MySQL**
 
 ### 구매 후 읽지 않은 책
 1. **이펙티브 자바**
@@ -108,8 +108,9 @@ permalink: /
 3. **[모던 자바 인 액션](https://jdalma.github.io/docs/books/modernJavaInAction/)**
 
 ### 읽고 있는 책
-1. **함께 자라기**
-2. **코딩을 지탱하는 기술**
+1. **테스트 주도 개발**
+2. **함께 자라기**
+3. **코딩을 지탱하는 기술**
 
 ### 다 읽은 책
 1. **객체지향의 사실과 오해**
