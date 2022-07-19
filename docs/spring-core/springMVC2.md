@@ -2154,6 +2154,7 @@ class UserData {
 <br>
 
 ## **스프링과 타입 변환** `interface Converter<S , T>`
+- `org.springframework.core.convert.converter.Converter` 인터페이스
 1. 위와 같이 타입을 변환해야 하는 경우는 상당히 많다. 
 2. 스프링이 중간에 **타입 변환기**를 사용해서 타입을 `String` → `Integer` 로 변환해주었기 때문에 개발자는 편리하게 해당 타입을 바로 받을 수 있다
 3. 앞에서는 문자를 숫자로 변경하는 예시를 들었지만, 반대로 숫자를 문자로 변경하는 것도 가능하고, Boolean 타입을 숫자로 변경하는 것도 가능하다
@@ -2181,3 +2182,66 @@ public interface Converter<S, T> {
 > PropertyEditor 는 동시성 문제가 있어서 타입을 변환할 때 마다 객체를 계속 생성해야 하는 단점이 있다. 
 > 
 > 지금은 **Converter 의 등장으로 해당 문제들이 해결되었고, 기능 확장이 필요하면 Converter 를 사용하면 된다.**
+
+### [`StringToIpPortConverter` , `IpPortToStringConverter` 직접 생성](https://github.com/jdalma/spring-typeconverter/commit/260484afd01fed0d7b3a650b48239686fba4ffa9)
+
+- 이렇게 타입 컨버터를 하나하나 직접 사용하면, 개발자가 직접 컨버팅 하는 것과 큰 차이가 없다
+- 타입 컨버터를 등록하고 관리하면서 편리하게 변환 기능을 제공하는 역할을 하는 무언가가 필요하다
+
+<br>
+
+- **스프링은 용도에 따라 다양한 방식의 타입 컨버터를 제공한다.**
+  1. `Converter` : 기본 타입 컨버터
+  2. `ConverterFactory` : 전체 클래스 계층 구조가 필요할 때 
+  3. `GenericConverter` : 정교한 구현, 대상 필드의 애노테이션 정보 사용 가능 
+  4. `ConditionalGenericConverter` : 특정 조건이 참인 경우에만 실행
+- 자세한 내용은 [공식 문서](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#core- convert)를 참고하자. 
+
+
+> ✋ 참고
+> 
+> 스프링은 문자, 숫자, 불린, Enum등 일반적인 타입에 대한 대부분의 컨버터를 기본으로 제공한다. 
+> 
+> IDE에서 `Converter` , `ConverterFactory` , `GenericConverter` 의 구현체를 찾아보면 수 많은 컨버터를 확인할 수 있다.
+
+***
+
+## **Converter 등록 , 사용**`ConversionService`
+- 이렇게 타입 컨버터를 하나하나 직접 찾아서 타입 변환에 사용하는 것은 매우 불편하다 
+- 그래서 스프링은 **개별 컨버터를 모아두고 그것들을 묶어서 편리하게 사용할 수 있는 기능**을 제공하는데, 
+- 이것이 바로 **컨버전 서비스( `ConversionService` )이다.**
+
+<div class="code-example" markdown="1">
+**ConversionServiceTest**
+</div>
+
+```java
+public class ConversionServiceTest {
+
+    @Test
+    void conversionService(){
+        // 등록
+        DefaultConversionService conversionService = new DefaultConversionService();
+        conversionService.addConverter(new StringToIntegerConverter());
+        conversionService.addConverter(new IntegerToStringConverter());
+        conversionService.addConverter(new StringToIpPortConverter());
+        conversionService.addConverter(new IpPortToStringConverter());
+
+        // 사용
+        Assertions.assertThat(conversionService.convert("10" , Integer.class)).isEqualTo(10);
+        Assertions.assertThat(conversionService.convert(10 , String.class)).isEqualTo("10");
+        Assertions.assertThat(conversionService.convert("192.168.0.1:8080" , IpPort.class)).isEqualTo(new IpPort("192.168.0.1" , 8080));
+        Assertions.assertThat(conversionService.convert(new IpPort("129.168.0.1" , 8080) , String.class)).isEqualTo("129.168.0.1:8080");
+    }
+}
+```
+
+**인터페이스 분리 원칙** `ISP(Interface Segregation Principal)` <br/>
+- **인터페이스 분리 원칙은 클라이언트가 자신이 이용하지 않는 메서드에 의존하지 않아야 한다.**
+   - `DefaultConversionService` 는 다음 두 인터페이스를 구현했다. 
+     1. `ConversionService` : 컨버터 사용에 초점 
+     2. `ConverterRegistry` : 컨버터 등록에 초점
+- 이렇게 인터페이스를 분리하면 **컨버터를 사용하는 클라이언트**와 **컨버터를 등록하고 관리하는 클라이언트**의 `관심사를 명확하게 분리`할 수 있다
+- 특히 **컨버터를 사용하는 클라이언트는 ConversionService 만 의존하면 되므로, 컨버터를 어떻게 등록하고 관리하는지는 전혀 몰라도 된다**
+- 결과적으로 컨버터를 사용하는 클라이언트는 꼭 필요한 메서드만 알게된다
+- 이렇게 **인터페이스를 분리하는 것을 ISP 라 한다**
