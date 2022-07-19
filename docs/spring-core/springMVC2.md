@@ -2204,12 +2204,28 @@ public interface Converter<S, T> {
 > 
 > IDE에서 `Converter` , `ConverterFactory` , `GenericConverter` 의 구현체를 찾아보면 수 많은 컨버터를 확인할 수 있다.
 
-***
-
-## **Converter 등록 , 사용**`ConversionService`
+### [**Converter 등록 , 사용**`ConversionService`](https://github.com/jdalma/spring-typeconverter/commit/fb665f9e4345d9773787c2299e9f394aa04520fe)
 - 이렇게 타입 컨버터를 하나하나 직접 찾아서 타입 변환에 사용하는 것은 매우 불편하다 
 - 그래서 스프링은 **개별 컨버터를 모아두고 그것들을 묶어서 편리하게 사용할 수 있는 기능**을 제공하는데, 
 - 이것이 바로 **컨버전 서비스( `ConversionService` )이다.**
+
+<div class="code-example" markdown="1">
+**WebConfig**
+</div>
+
+
+```java
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(new StringToIpPortConverter());
+        registry.addConverter(new IpPortToStringConverter());
+        registry.addConverter(new StringToIntegerConverter());
+        registry.addConverter(new IntegerToStringConverter());
+    }
+}
+```
 
 <div class="code-example" markdown="1">
 **ConversionServiceTest**
@@ -2236,6 +2252,40 @@ public class ConversionServiceTest {
 }
 ```
 
+<div class="code-example" markdown="1">
+**HelloController**
+</div>
+
+```java
+  @GetMapping("/hello-v2")
+  public String helloV2(@RequestParam Integer data){
+      log.info("data = {}" , data);
+      return "ok";
+  }
+```
+
+- `http://localhost:8080/hello-v2?data=123` 이렇게 호출한다면,
+- 위에서 내가 만들고 등록한 **StringToIntegerConverter**가 호출된다 !!!
+
+<div class="code-example" markdown="1">
+**HelloController**
+</div>
+
+```java
+  @GetMapping("/hello-v3")
+  public String helloV3(@RequestParam IpPort ipPort){
+      log.info("ipPort = {}" , ipPort);
+      return "ok";
+  }
+```
+
+- `http://localhost:8080/hello-v3?ipPort=127.0.0.1:8080` 이와 같이 호출하게 되면
+- `@RequestParam` 은 `@RequestParam` 을 처리하는 **ArgumentResolver** 인 **RequestParamMethodArgumentResolver** 에서 **ConversionService** 를 사용해서 타입을 변환한다
+- 부모 클래스와 다양한 외부 클래스를 호출하는 등 복잡한 내부 과정을 거치기 때문에 대략 이렇게 처리되는 것으로 이해해도 충분하다
+- 만약 더 깊이있게 확인하고 싶으면 **IpPortConverter 에 디버그 브레이크 포인트를 걸어서 확인해보자.**
+
+<br>
+
 **인터페이스 분리 원칙** `ISP(Interface Segregation Principal)` <br/>
 - **인터페이스 분리 원칙은 클라이언트가 자신이 이용하지 않는 메서드에 의존하지 않아야 한다.**
    - `DefaultConversionService` 는 다음 두 인터페이스를 구현했다. 
@@ -2245,3 +2295,63 @@ public class ConversionServiceTest {
 - 특히 **컨버터를 사용하는 클라이언트는 ConversionService 만 의존하면 되므로, 컨버터를 어떻게 등록하고 관리하는지는 전혀 몰라도 된다**
 - 결과적으로 컨버터를 사용하는 클라이언트는 꼭 필요한 메서드만 알게된다
 - 이렇게 **인터페이스를 분리하는 것을 ISP 라 한다**
+
+***
+
+## [**뷰 템플릿에 Converter 적용하기**](https://github.com/jdalma/spring-typeconverter/commit/8f01dee9d501e60a7dad26f2bb007f5857673466)
+- **타임리프는 렌더링 시에 컨버터를 적용해서 랜더링 하는 방법을 편리하게 지원한다**
+  - *객체를 문자로 변환하는 작업을 확인해보자*
+
+
+<div class="code-example" markdown="1">
+**ConverterController**
+</div>
+
+```java
+  @GetMapping("/converter-view")
+  public String converterView(Model model){
+      model.addAttribute("number" , 10000);
+      model.addAttribute("ipPort" , new IpPort("127.0.0.1" , 8010));
+      return "converter-view";
+  }
+```
+
+<div class="code-example" markdown="1">
+**converter-view.html**
+</div>
+
+```html
+  <li>${number}: <span th:text="${number}" ></span></li>
+  <li>${{number}}: <span th:text="${{number}}" ></span></li>
+  <li>${ipPort}: <span th:text="${ipPort}" ></span></li>
+  <li>${{ipPort}}: <span th:text="${{ipPort}}" ></span></li>
+```
+
+
+![](../../assets/images/spring-mvc2/templateConverter.png)
+
+```
+--- [nio-8080-exec-2] h.t.converter.IntegerToStringConverter   : Integer To String Converter = 10000
+--- [nio-8080-exec-2] h.t.converter.IpPortToStringConverter    : IpPort To String Converter = IpPort(ip=127.0.0.1, port=8010)
+```
+
+- 타임리프는 `${{...}}` 를 사용하면 **자동으로 컨버전 서비스를 사용해서 변환된 결과를 출력해준다** 
+- 물론 스프링과 통합 되어서 **스프링이 제공하는 컨버전 서비스를 사용하므로, 우리가 등록한 컨버터들을 사용할 수 있다**
+- **변수 표현식** : `${...}`
+- **컨버전 서비스 적용** : `${{...}}`
+
+<div class="code-example" markdown="1">
+**converter-form.html**
+</div>
+
+```html
+<form th:object="${form}" th:method="post">
+    th:field <input type="text" th:field="*{ipPort}"><br/>
+    th:value <input type="text" th:value="*{ipPort}">(보여주기 용도)<br/> <input type="submit"/>
+</form>
+```
+
+![](../../assets/images/spring-mvc2/templateFormConverter.png)
+
+- 타임리프의 `th:field` 는 앞서 설명했듯이 **id** , **name**을 출력하는 등 다양한 기능이 있는데, 
+- **여기에 컨버전 서비스도 함께 적용된다.**
