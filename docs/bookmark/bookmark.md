@@ -71,6 +71,8 @@ has_children: true
 - `2022-07-17`
   - **[자바 예외(Exception)처리에 대한 작은 생각](https://www.nextree.co.kr/p3239/)**
   - **[try-with-resources](https://ryan-han.com/post/java/try_with_resources/)**
+  - **[제발 깃허브 액션🔥 모르는 개발자 없게 해주세요 🙏](https://www.youtube.com/watch?v=iLqGzEkusIw)
+  - **[GitFlow vs Trunk-based 협업방식](https://www.youtube.com/watch?v=EV3FZ3cWBp8)**
 
 - `2022-07-14`
   - **[Spring Batch 는 어떻게 Chunk 지향처리를 하고, Transaction을 언제 걸까](https://devocean.sk.com/blog/techBoardDetail.do?ID=164085)**
