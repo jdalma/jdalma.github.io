@@ -20,6 +20,7 @@ has_children: true
 - [Ep.18 회사에서 본인을 빠르게 성장시키는 방법 - People Scaling](https://www.youtube.com/watch?v=drBdnrlsq9o)
 - [Ep.36 스타트업에서 내 성장의 기회 뽕뽑기! - 자기계발편](https://www.youtube.com/watch?v=169qOPlRdP0)
 - [유능한 시니어 개발자들이 하필 '그곳'으로 이직한 이유](https://n.news.naver.com/article/092/0002262365?cds=news_my)
+- [주니어 개발자 황준일님의 2020년 회고](https://junilhwang.github.io/TIL/Review/2020-year/end/#%E1%84%86%E1%85%A1%E1%84%86%E1%85%AE%E1%84%85%E1%85%B5%E1%84%92%E1%85%A1%E1%84%86%E1%85%A7)
 
 ## 질문 리스트
 1. `도전 정신` 또는 `주도성`을 보여줄 수 있는 사레 , `문제를 정의하고 해결한 사례` 정리해보기

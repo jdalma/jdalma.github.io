@@ -52,6 +52,7 @@ permalink: /
 - [어떻게 하면 개발을 잘할 수 있을까요?](https://www.popit.kr/%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%A9%B4-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9E%98%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/)
 - [후배 개발자에게](https://brunch.co.kr/@javajigi/4)
 - [프레임워크 공부를 멈춰라](https://medium.com/@jongyoungpark/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EA%B3%B5%EB%B6%80%EB%A5%BC-%EB%A9%88%EC%B6%B0%EB%9D%BC-1afa37644474)
+- [오픈소스에 기여하는 방법](https://opensource.guide/ko/how-to-contribute/)
 
 ### 중요 무료 강의
 1. **[CS50](https://www.boostcourse.org/cs112/joinLectures/41307)**
