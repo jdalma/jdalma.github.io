@@ -2,7 +2,7 @@
 layout: default
 title: CH 2. 동작 파라미터화
 parent: 모던 자바 인 액션
-grand_parent: Books
+grand_parent: 📖 Books
 nav_order: 2
 ---
 ## Table of contents

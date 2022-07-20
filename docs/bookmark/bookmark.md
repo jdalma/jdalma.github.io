@@ -73,6 +73,7 @@ has_children: true
   - **[try-with-resources](https://ryan-han.com/post/java/try_with_resources/)**
   - **[제발 깃허브 액션🔥 모르는 개발자 없게 해주세요 🙏](https://www.youtube.com/watch?v=iLqGzEkusIw)
   - **[GitFlow vs Trunk-based 협업방식](https://www.youtube.com/watch?v=EV3FZ3cWBp8)**
+  - **[핏펫몰 개발 스쿼드의 git 전략 연대기](https://fitpet.medium.com/%ED%95%8F%ED%8E%AB%EB%AA%B0-%EA%B0%9C%EB%B0%9C-%EC%8A%A4%EC%BF%BC%EB%93%9C%EC%9D%98-git-%EC%A0%84%EB%9E%B5-%EC%97%B0%EB%8C%80%EA%B8%B0-c46cd8ce089c)**
 
 - `2022-07-14`
   - **[Spring Batch 는 어떻게 Chunk 지향처리를 하고, Transaction을 언제 걸까](https://devocean.sk.com/blog/techBoardDetail.do?ID=164085)**

@@ -2,7 +2,7 @@
 layout: default
 title: CH 14. 자바 모듈 시스템
 parent: 모던 자바 인 액션
-grand_parent: Books
+grand_parent: 📖 Books
 nav_order: 14
 ---
 ## Table of contents

@@ -2,7 +2,7 @@
 layout: default
 title: CH 6. 스트림으로 데이터 수집
 parent: 모던 자바 인 액션
-grand_parent: Books
+grand_parent: 📖 Books
 nav_order: 6
 ---
 ## Table of contents
