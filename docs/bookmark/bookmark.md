@@ -43,6 +43,7 @@ has_children: true
    - 운영 서비스 트러블슈팅에 적극적인 태도
    - 기술 선택을 하는 방법
    - 단위 성능에서 통합 성능까지 입체적으로 생각하는 능력
+5. **[Reverse Interview](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Reverse_Interview)**
 
 ## 개발학습법
 - [프로그래밍 학습 방법](https://www.youtube.com/watch?v=Xcy2Pq6LABk)
@@ -68,6 +69,23 @@ has_children: true
 - [⭐ 꼭 다 읽어보자](https://blog.naver.com/gngh0101/222810484797)
 
 *** 
+
+- `2022-07-22`
+  - **[15 Best + Free Data Structures & Algorithms Course [2022 JULY]](https://digitaldefynd.com/best-data-structures-algorithms-tutorial-course-certification/)**
+  - **[현실적으로 머리에 많이 남는 독서법](https://www.youtube.com/watch?v=eOL0EtmSNvA)**
+  - **[코딜리티 트레이닝](https://app.codility.com/programmers/lessons/1-iterations/)**
+  - **[Top 70+ Core Java Interview Questions Answered for Freshers and Experienced in 2022](https://www.simplilearn.com/tutorials/java-tutorial/java-interview-questions)**
+  - **[질문을 잘하는 개발자](https://jbee.io/essay/good_questionor/)**
+  - **[생활코딩 - git flow model](https://www.youtube.com/watch?v=EzcF6RX8RrQ)**
+  - **[우아한 형제들 - 우린 Git-flow를 사용하고 있어요](https://techblog.woowahan.com/2553/)**
+  - **[git-flow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html)**
+  - **[이종립 - 이메일 관리 방법](https://johngrib.github.io/wiki/email-gardening/)**
+
+- `2022-07-21`
+  - **[Bitly - URL Shorter](https://bitly.com/pages/home/v2)**
+  - **[우아한테크세미나 - 우아한 CRUD](https://www.youtube.com/watch?v=cflK7FTGPlg)**
+  - **[자바 직렬화, 그것이 알고싶다. 실무편](https://techblog.woowahan.com/2551/)**
+  - **[Java Serialization 개념 정리](https://ryan-han.com/post/dev/serialization/)**
 
 - `2022-07-17`
   - **[자바 예외(Exception)처리에 대한 작은 생각](https://www.nextree.co.kr/p3239/)**
@@ -120,7 +138,6 @@ has_children: true
 
 - `2022-06-29`
   - **[SPRING CLOUD GATEWAY를 이용한 API GATEWAY 구축기](https://saramin.github.io/2022-01-20-spring-cloud-gateway-api-gateway/)**
-  - **[우아한 형제들 - 우린 Git-flow를 사용하고 있어요](https://techblog.woowahan.com/2553/)**
 
 - `2022-06-27`
   - **[Baeldung - Spring Pathvariable](https://www.baeldung.com/spring-pathvariable)**
@@ -137,7 +154,6 @@ has_children: true
 - `2022-06-24`
   - **[Java Stream API는 왜 for-loop보다 느릴까?](https://jypthemiracle.medium.com/java-stream-api%EB%8A%94-%EC%99%9C-for-loop%EB%B3%B4%EB%8B%A4-%EB%8A%90%EB%A6%B4%EA%B9%8C-50dec4b9974b)**
   - **[Generic Type erasure란 무엇일까?](https://devlog-wjdrbs96.tistory.com/263)**
-  - **[자바 직렬화, 그것이 알고싶다. 실무편](https://techblog.woowahan.com/2551/)**
 
 - `2022-06-23`
   - **[memcached vs redis](https://stackoverflow.com/questions/10558465/memcached-vs-redis)**

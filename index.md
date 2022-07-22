@@ -23,9 +23,16 @@ permalink: /
   6. `AWS`
 - 현재 [사내 스터디](https://github.com/jdalma/dev-study)를 만들어 새로 배운 지식들을 서로 공유하고 실무에 적용할 때 큰 즐거움을 느낍니다
 
+***
+
+# **Education**
+- `2022-08-01 ~ 2022-10-02` [코드숨 - 소프트웨어 개발의 지혜 스프링 편](https://www.codesoom.com/courses/spring)  ` + 개인 프로젝트 4주`
+
+***
+
 # **Experience**
 
-## **ERP SI `2020.04.01 ~ 현재` (2년 4개월)**
+## **ERP SI `2020.04.01 ~ 2022.07.31`**
 
 - Java8 , 전자정부프레임워크(Spring 4) , RDBMS , JavaScript , DHTMLX
 - **CI/CD**
@@ -48,6 +55,7 @@ permalink: /
 # **Focus** 
 *아래의 내용들을 관리할 **[Bookmark](https://github.com/jdalma/dallog)프로젝트** 개발 진행 중* <br/>
 
+- [프로그래밍, 어떻게 공부할 것인가?](https://www.youtube.com/watch?v=oFhN3EqrCwc)
 - [글쓰는 개발자가 되자.](https://www.popit.kr/%EA%B8%80%EC%93%B0%EB%8A%94-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EB%90%98%EC%9E%90/)
 - [어떻게 하면 개발을 잘할 수 있을까요?](https://www.popit.kr/%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%A9%B4-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9E%98%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/)
 - [후배 개발자에게](https://brunch.co.kr/@javajigi/4)
@@ -65,7 +73,6 @@ permalink: /
 
 ### 구매 예정인 강의
 1. **[리눅스 커맨드라인 툴 (Full ver.)](https://www.inflearn.com/course/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8-%ED%88%B4)**
-2. **[제대로 파는 Git & GitHub - by 얄코](https://www.inflearn.com/course/%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%8C%8C%EB%8A%94-%EA%B9%83)**
 
 ### 구매 후 완강하지 않은 강의
 
@@ -76,12 +83,12 @@ permalink: /
 5. **[코딩으로 학습하는 GoF의 `디자인 패턴`](https://www.inflearn.com/course/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/dashboard)**
 6. **[기출로 대비하는 개발자 전공면접 `CS` 완전정복](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%A0%84%EA%B3%B5%EB%A9%B4%EC%A0%91-cs-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5/dashboard)**
 7. **[`CS`지식의 정석](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A9%B4%EC%A0%91-cs-%ED%8A%B9%EA%B0%95/dashboard)**
+8. **[`스프링` MVC 2편 - 백엔드 웹 개발 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)** - `첨부파일 챕터 필요할 때`
 
 ### 듣고있는 강의
-1. **[`스프링` MVC 2편 - 백엔드 웹 개발 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)**
-2. **[비전공자를 위한 개발자 `취업 올인원 가이드` [통합편]](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%B7%A8%EC%97%85-%ED%86%B5%ED%95%A9%ED%8E%B8/dashboard)**
+1. **[제대로 파는 Git & GitHub - by 얄코](https://www.inflearn.com/course/%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%8C%8C%EB%8A%94-%EA%B9%83)**
+2. **[반효경 - `운영체제`](http://www.kocw.net/home/search/kemView.do?kemId=1046323)**
 3. **[그림으로 쉽게 배우는 `운영체제`](https://www.inflearn.com/course/%EB%B9%84%EC%A0%84%EA%B3%B5%EC%9E%90-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/dashboard)**
-4. **[반효경 - `운영체제`](http://www.kocw.net/home/search/kemView.do?kemId=1046323)**
 
 ### 완강한 강의
 1. **[`스프링` 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)**
@@ -91,6 +98,7 @@ permalink: /
 5. **[모든 개발자를 위한 `HTTP 웹` 기본 지식](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/dashboard)**
 6. **[더 `자바`, 코드를 조작하는 다양한 방법](https://www.inflearn.com/course/the-java-code-manipulation/dashboard)**
 7. **[자바(Java) `알고리즘` 문제풀이 : 코딩테스트 대비](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard)**
+8. **[비전공자를 위한 개발자 `취업 올인원 가이드` [통합편]](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%B7%A8%EC%97%85-%ED%86%B5%ED%95%A9%ED%8E%B8/dashboard)**
 
 ### 구매 예정인 책
 1. **리팩토링**
@@ -103,6 +111,7 @@ permalink: /
 1. **이펙티브 자바**
 2. **토비의 스프링 3.1**
 3. **자바 ORM 표준 JPA 프로그래밍**
+4. **코딩을 지탱하는 기술**
 
 ### 읽다가 멈춘 책
 1. **[Clean Code](https://jdalma.github.io/docs/books/clean-code/)**
@@ -112,7 +121,6 @@ permalink: /
 ### 읽고 있는 책
 1. **테스트 주도 개발**
 2. **함께 자라기**
-3. **코딩을 지탱하는 기술**
 
 ### 다 읽은 책
 1. **객체지향의 사실과 오해**
