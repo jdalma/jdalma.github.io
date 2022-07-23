@@ -6,6 +6,20 @@ has_children: true
 permalink: /docs/git
 ---
 
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+---
+
+
 - [제대로 파는 Git & GitHub - by 얄코](https://www.inflearn.com/course/%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%8C%8C%EB%8A%94-%EA%B9%83/dashboard)
 
 ***
@@ -88,3 +102,58 @@ logs/**/debug.log
 - `git revert --no-commit {되돌릴  커밋 해시}` : 커밋해버리지 않고 `revert`하기
   1. 원하는 다른 작업을 추가한 다음 함께 커밋
   2. 취소하려면 `git reset --hard`
+
+# `branch`
+
+![](../../assets/images/git/branch.png)
+
+<div class="code-example" markdown="1">
+**여러 브랜치의 내역 편리하게 보기**
+</div>
+
+```
+git log --all --decorate --oneline --graph
+```
+
+
+<div class="code-example" markdown="1">
+**브랜치 생성**
+</div>
+
+```
+git branch {브랜치 이름}
+```
+
+<div class="code-example" markdown="1">
+**브랜치 이동**
+checkout 명령어가 Git 2.23 버전부터 `switch`, `restore`로 분리
+</div>
+
+```
+git switch {브랜치 이름}
+```
+
+<div class="code-example" markdown="1">
+**브랜치 생성과 이동 동시에 하기**
+</div>
+
+```
+git switch -c {브랜치 이름}
+```
+
+<div class="code-example" markdown="1">
+**브랜치 삭제하기**
+</div>
+
+```
+git branch -d {브랜치 이름}
+git branch -D {브랜치 이름} #강제 삭제
+```
+
+<div class="code-example" markdown="1">
+**브랜치 이름 변경하기**
+</div>
+
+```
+git branch -m {기존 브랜치} {브랜치 변경할 이름}
+```
