@@ -21,13 +21,40 @@ permalink: /docs/git
 
 
 - [제대로 파는 Git & GitHub - by 얄코](https://www.inflearn.com/course/%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%8C%8C%EB%8A%94-%EA%B9%83/dashboard)
+- [얄코](https://www.yalco.kr/@git-github-dive/5-2/)
 
 ***
 
-# 공식 문서
+- 공식 문서
   1.  [gitignore](https://git-scm.com/docs/gitignore)
 
-# 기본 세팅
+# 깃의 3가지 공간
+
+![](../../assets/images/git/gitThreePlace.png)
+
+1. **Working directory**
+   - `untracked` : Add된 적 없는 파일, ignore 된 파일
+   - `tracked` : Add된 적 있고 변경내역이 있는 파일
+   - `git add` 명령어로 Staging area로 이동
+
+2. **Staging area**
+   - 커밋을 위한 준비 단계
+   - 예시: 작업을 위해 선택된 파일들
+   - `git commit` 명령어로 repository로 이동
+
+3. **Repository**
+   - `.git` directory라고도 불림
+   - 커밋된 상태
+
+# 파일의 삭제와 이동
+1. **git rm**
+   - 파일의 삭제가 **Stagin Area**에 있음
+2. **직접 삭제**
+   - 파일의 삭제가 **Working Directory**에 있음
+3. **git mv** 도 동일
+
+
+# 명령어
 
 <div class="code-example" markdown="1">
 **협업시 윈도우와 맥에서 엔터 방식 차이로 인한 오류를 방지합니다.**
@@ -86,11 +113,27 @@ logs/*.c
 logs/**/debug.log
 ```
 
+# `restore`
+
+<div class="code-example" markdown="1">
+파일을 **Staging Area**에서 **Working Directory**로
+</div>
+
+```
+git restore --staged {파일명}
+```
+- `--staged`를 빼면 **Working Directory**에서 제거
+
+
 # `reset` vs `revert`
 
-- `git reset --hard {돌아갈 커밋 해시}` : 원하는 시점으로 돌아간 뒤 이후 내역들을 지운다
+- `git reset --hard {돌아갈 커밋 해시}` : **원하는 시점으로 돌아간 뒤 이후 내역들을 지운다**
 - `git reset --hard` : 뒤에 커밋 해시가 없으면 마지막 커밋 상태로 이동
 - *`git reset`을 사용해서 `revert` 커밋을 날리는 것도 가능하다*
+
+1. `--soft` : **repository**에서 **staging area**로 이동
+2. `--mixed` : (default) **repository**에서 **working directory**로 이동
+3. `--hard` : 수정사항 완전히 삭제
 
 <br>
 
@@ -113,6 +156,22 @@ logs/**/debug.log
 
 ```
 git log --all --decorate --oneline --graph
+```
+
+<div class="code-example" markdown="1">
+**로컬 브랜치와 원격 브랜치 한 번에 보기**
+</div>
+
+```
+git branch -a
+```
+
+<div class="code-example" markdown="1">
+**원격 브랜치 삭제하기**
+</div>
+
+```
+git push {원격 이름} --delete {원격의 브랜치 명}
 ```
 
 
@@ -336,3 +395,61 @@ git branch -d conflict-2
 > ✋ 두 마디 짜리 `conflict-2`브랜치를 `rebase` 했는데 결과는 왜 한 마디만 추가되나요?
 > 
 > 충돌 해결 중 두 번째 것에는 `currunt` , 즉 `main`브랜치 것 (Shirley)을 채택했기 때문에 *(rebase의미가 없어졌으므로)* 커밋을 추가할 필요가 없어졌기 때문이다
+
+***
+
+# Repository 연동
+
+1. **git remote add origin {원격 저장소 주소}**
+   - 로컬의 Git저장소에 원격 저장소로의 연결 추가
+   - 원격 저장소에 이름은 흔히 `origin`사용
+2. **git branch -M main`**
+   - 기본 브랜치 명 `main` (Github 권장)
+3. **git push -u origin main**
+   - 로컬 저장소의 커밋 내역들(`main`)을 원격(`origin`) 으로 `push`
+   - `-u`또는 `--set-upstream` : 현재 브랜치와 명시된 원격 브랜치 기본 연결
+
+<br>
+
+- **git push**
+  - 이미 `git push -u origin main`으로 대상 원격 브랜치가 지정되었기 때문에 가능
+
+## `pull`할 것이 있을 때 `push`를 하면?
+- Local의 깃 저장소보다 원격 저장소보다 뒤쳐져있으면 `push`를 할 수 없다
+
+- `push` 할 것이 있을 시 `pull` 하는 **두 가지 방법**
+  1. **git pull --no-rebase** - `merge` 방식
+  2. **git pull --rebase** - `rebase` 방식
+     - pull 상의 rebase는 다름 (협업시 사용 OK)
+- 또는 **git push --force**
+
+
+## 새로운 브랜치로 `push`해보기
+
+```
+git branch {새로운 브랜치}
+git switch {새로운 브랜치}
+git push
+
+
+fatal: 현재 브랜치 {새로운 브랜치}에 업스트림 브랜치가 없습니다.
+현재 브랜치를 푸시하고 해당 리모트를 업스트림으로 지정하려면
+다음과 같이 하십시오.
+
+    git push --set-upstream origin {새로운 브랜치}
+```
+
+- `{새로운 브랜치}`를 원격 어디에 `push`해야하는지 지정해줘야함
+  - `--set-upstream` = `-u`
+
+```
+git push -u origin {새로운 브랜치}
+```
+
+## 원격의 브랜치 로컬에 적용하기
+
+1. **git fetch**
+   - 원격의 브랜치를 로컬에 가져온다
+   - `remote/origin/{원격의 새로운 브랜치}`
+2. **git switch -t origin/{원격의 새로운 브랜치}**
+   - 로컬에 원격의 새로운 브랜치를 생성하여 연결하고 `switch`한다
