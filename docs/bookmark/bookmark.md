@@ -43,7 +43,18 @@ has_children: true
    - 운영 서비스 트러블슈팅에 적극적인 태도
    - 기술 선택을 하는 방법
    - 단위 성능에서 통합 성능까지 입체적으로 생각하는 능력
-5. **[Reverse Interview](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Reverse_Interview)**
+
+## [Reverse Interview](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Reverse_Interview)**
+   - [코드 리뷰의 목적은 성장이어야 한다](https://jbee.io/essay/code-review-goal/)
+     1. **코드리뷰만으로는 제품에 대한 맥락을 전부 파악하는데에 분명 한계가 존재한다**
+     2. **우리를 당황하게 하는 버그의 대부분은 미처 파악하지 못한 런타임 환경에서 발생하곤 하며 이런 엣지 케이스는 코드 리뷰 단계에서 발견하기 어렵다.**
+     3. 코드리뷰는 병목이 일어난다!!! **main branch에 들어가는 코드는 무조건 Pull Request를 통한 리뷰를 거쳐야 한다!**
+     4. **리뷰를 받는 사람이 리뷰를 자신에 대한 비난이라고 받아들이게 되면 비극이 시작된다.**
+     5. **문제의 책임은 그저 시스템에 있다. 문제가 발생했다면 시스템을 회고하고 문제가 됐던 부분을 함께 개선하면 된다.**
+     6. 일시적으로 코드의 품질을 높이려 하지 말고, `함께 성장하기 위한 수단`으로 리뷰를 활용해보자.
+        - *리뷰를 비난이 아닌, 검사 받는 게 아닌, 책임을 지게 하는 게 아닌 서로의 성장을 위한 것이라고 생각해보자.*
+     7. **사실 코드 리뷰 문화보다 중요한 것은 테스트 문화라고 생각한다.**
+     8. **전체적인 코드 컨벤션 확립과 코드 일관성을 유지하기 위한 도구 도입하자. 불필요하고 소모적인 리뷰로 인해 시간 낭비, 리소스 낭비를 예방해야 한다.**
 
 ## 개발학습법
 - [프로그래밍 학습 방법](https://www.youtube.com/watch?v=Xcy2Pq6LABk)
