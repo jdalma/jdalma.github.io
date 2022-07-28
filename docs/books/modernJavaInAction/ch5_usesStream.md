@@ -2,7 +2,7 @@
 layout: default
 title: CH 5. 스트림 활용
 parent: 모던 자바 인 액션
-grand_parent: Books
+grand_parent: 📖 Books
 nav_order: 5
 ---
 ## Table of contents

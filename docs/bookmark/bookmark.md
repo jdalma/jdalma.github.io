@@ -81,6 +81,9 @@ has_children: true
 
 *** 
 
+- `2022-07-27`
+  - **[기계인간 종립님의 테스트 코드 기준](https://github.com/CodeSoom/spring-week3-assignment-1/pull/81)**
+
 - `2022-07-22`
   - **[15 Best + Free Data Structures & Algorithms Course [2022 JULY]](https://digitaldefynd.com/best-data-structures-algorithms-tutorial-course-certification/)**
   - **[현실적으로 머리에 많이 남는 독서법](https://www.youtube.com/watch?v=eOL0EtmSNvA)**
