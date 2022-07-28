@@ -453,3 +453,78 @@ git push -u origin {새로운 브랜치}
    - `remote/origin/{원격의 새로운 브랜치}`
 2. **git switch -t origin/{원격의 새로운 브랜치}**
    - 로컬에 원격의 새로운 브랜치를 생성하여 연결하고 `switch`한다
+
+***
+
+# `HEAD`
+
+- 현재 속한 브랜치의 가장 최신 커밋이 `HEAD`다
+- `switch`로 브랜치를 이동하면 해당 브랜치의 `HEAD`로 이동된다
+
+![](../../assets/images/git/head.png)
+
+## `HEAD`를 사용하여 `reset`하기
+
+![](../../assets/images/git/checkoutTest.png)
+
+```
+git switch delta-branch
+git reset --hard HEAD~2
+```
+
+![](../../assets/images/git/reset.png)
+
+## `checkout`으로 앞뒤 이동해보기
+
+- 시간선은 그대로 두고 그 때 파일의 상태로 돌아간다
+  - *이전의 커밋으로 이동하면 브랜치를 새로 만들어서 이동한다 (`HEAD`)*
+- 다시 다른 브랜치의 `HEAD`로 이동하려면 `git switch`를 사용하면 된다
+1. **^** 또는 **~**
+   - 갯수만큼 이전으로 이동
+   - `git checkout HEAD^^^`, `git checkout HEAD~5`
+2. 커밋 해시 이용
+   - `git checkout {커밋해시}`
+
+![](../../assets/images/git/checkout.png)
+
+- `git checkout -` : **(이동을) 한 단계 되돌리기**
+
+
+
+<div class="code-example" markdown="1">
+특정 브랜치의 이전 커밋으로 이동 `checkout`하여 그 커밋에서 브랜치를 새로 만들수도 있다 
+</div>
+
+```
+git switch beta-branch
+git checkout HEAD~
+git switch -c 'gamma-branch'
+파일 수정
+git commit -am 'gamma 1st commit'
+```
+
+![](../../assets/images/git/checkoutTest.png)
+
+***
+
+# `fetch` vs `pull`
+- `fetch` : **원격 저장소의 최신 커밋을 로컬로 가져오기만 함**
+- `pull` : **원격 저장소의 최신 커밋을 로컬로 가져와 `merge` 또는 `rebase`**
+
+<br>
+
+1. **`fetch`한 내역 적용 전 살펴보기**
+   - 원격의 main 브랜치에 커밋 추가
+   - `git checkout origin/main`으로 확인해보기
+
+![](../../assets/images/git/checkout_origin%3Amain.png)
+
+2. **원격의 변경사항 `fetch`**
+   - `git checkout origin/main`으로 확인해보기
+   - `pull`로 적용
+
+![](../../assets/images/git/fetch_pull.png)
+
+**원격의 새 브랜치 확인**<br>
+1. `git checkout origin/{브랜치명}`
+2. `git switch -t origin/{브랜치명}`
