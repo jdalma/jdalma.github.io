@@ -26,7 +26,10 @@ permalink: /docs/git
 ***
 
 - 공식 문서
-  1.  [gitignore](https://git-scm.com/docs/gitignore)
+  1. [gitignore](https://git-scm.com/docs/gitignore)
+  2. [Git cheatsheet](https://training.github.com/downloads/ko/github-git-cheat-sheet/)
+  3. [Visual Git cheatsheet](https://ndpsoftware.com/git-cheatsheet.html#loc=index;)
+  4. [Pro Git](https://git-scm.com/book/ko/v2)
 
 # 깃의 3가지 공간
 
@@ -53,15 +56,26 @@ permalink: /docs/git
    - 파일의 삭제가 **Working Directory**에 있음
 3. **git mv** 도 동일
 
+# 깃의 각종 설정
+1. `global` 설정과 `local` 설정
+   - `config`를 `--global`과 함께 지정하면 전역으로 설정된다
+2. `git config (--global) --list`
+   - `config` 조회
+3. `git config (--global) -e`
+   - 에디터에서 보기
+4. `git config --global core.editor "code --wait"`
+   - 또는 `code` 자리에 **원하는 편집 프로그램의 .exe파일 경로 연결**
+   - `--wait` : 에디터에서 수정하는 동안 CLI를 정지
+   - ✋ git commit 등의 편집도 지정된 에디터에서 열게 됨
 
-# 명령어
+# 유용한 설정
 
 <div class="code-example" markdown="1">
 **협업시 윈도우와 맥에서 엔터 방식 차이로 인한 오류를 방지합니다.**
 </div>
 
 ```
-git config --global core.autocrlf input
+git config --global core.autocrlf (윈도우: true / 맥: input)
 ```
 
 <div class="code-example" markdown="1">
@@ -71,6 +85,25 @@ git config --global core.autocrlf input
 ```
 git config --global init.defaultBranch main
 ```
+
+<div class="code-example" markdown="1">
+**`pull`기본 전략 `merge`또는 `rebase`로 설정**
+</div>
+
+```
+git config pull.rebase false
+git config pull.rebase true
+```
+
+<div class="code-example" markdown="1">
+**`push`시 로컬과 동일한 브랜치명으로**
+</div>
+
+```
+git config --global push.default current
+```
+
+# 명령어 
 
 <div class="code-example" markdown="1">
 **작업 폴더에서 해당 명령어를 치면 git이 관리하게 된다**
@@ -113,7 +146,7 @@ logs/*.c
 logs/**/debug.log
 ```
 
-# `restore`
+# **restore**
 
 <div class="code-example" markdown="1">
 파일을 **Staging Area**에서 **Working Directory**로
@@ -125,7 +158,7 @@ git restore --staged {파일명}
 - `--staged`를 빼면 **Working Directory**에서 제거
 
 
-# `reset` vs `revert`
+# **reset** vs **revert**
 
 - `git reset --hard {돌아갈 커밋 해시}` : **원하는 시점으로 돌아간 뒤 이후 내역들을 지운다**
 - `git reset --hard` : 뒤에 커밋 해시가 없으면 마지막 커밋 상태로 이동
@@ -146,7 +179,7 @@ git restore --staged {파일명}
   1. 원하는 다른 작업을 추가한 다음 함께 커밋
   2. 취소하려면 `git reset --hard`
 
-# `branch`
+# **branch**
 
 ![](../../assets/images/git/branch.png)
 
@@ -217,7 +250,7 @@ git branch -D {브랜치 이름} #강제 삭제
 git branch -m {기존 브랜치} {브랜치 변경할 이름}
 ```
 
-# `merge` vs `rebase`
+# **merge** vs **rebase**
 - `merge` : 두 브랜치를 한 커밋에 이어붙인다
   1. **브랜치 사용내역을 남길 필요가 있을 때 적합한 방식**
   2. 새로운 커밋이 생성되며 해당 커밋은 reset으로 삭제할 수 있다
@@ -291,7 +324,7 @@ git branch -d new-teams
 
 ![](../../assets/images/git/mergeAndRebaseResult.png)
 
-## `merge` 충돌 해결하기
+## **merge** 충돌 해결하기
 
 ![](../../assets/images/git/conflict.png)
 
@@ -319,7 +352,7 @@ git merge conflict-1
 
 ***
 
-## `rebase` 충돌 해결하기
+## **rebase** 충돌 해결하기
 
 ![](../../assets/images/git/rebaseConflict.png)
 
@@ -414,7 +447,7 @@ git branch -d conflict-2
 - **git push**
   - 이미 `git push -u origin main`으로 대상 원격 브랜치가 지정되었기 때문에 가능
 
-## `pull`할 것이 있을 때 `push`를 하면?
+## **pull**할 것이 있을 때 **push**를 하면?
 - Local의 깃 저장소보다 원격 저장소보다 뒤쳐져있으면 `push`를 할 수 없다
 
 - `push` 할 것이 있을 시 `pull` 하는 **두 가지 방법**
@@ -424,7 +457,7 @@ git branch -d conflict-2
 - 또는 **git push --force**
 
 
-## 새로운 브랜치로 `push`해보기
+## 새로운 브랜치로 **push**해보기
 
 ```
 git branch {새로운 브랜치}
@@ -456,14 +489,14 @@ git push -u origin {새로운 브랜치}
 
 ***
 
-# `HEAD`
+# **HEAD**
 
 - 현재 속한 브랜치의 가장 최신 커밋이 `HEAD`다
 - `switch`로 브랜치를 이동하면 해당 브랜치의 `HEAD`로 이동된다
 
 ![](../../assets/images/git/head.png)
 
-## `HEAD`를 사용하여 `reset`하기
+## **HEAD**를 사용하여 **reset**하기
 
 ![](../../assets/images/git/checkoutTest.png)
 
@@ -474,7 +507,7 @@ git reset --hard HEAD~2
 
 ![](../../assets/images/git/reset.png)
 
-## `checkout`으로 앞뒤 이동해보기
+## **checkout**으로 앞뒤 이동해보기
 
 - 시간선은 그대로 두고 그 때 파일의 상태로 돌아간다
   - *이전의 커밋으로 이동하면 브랜치를 새로 만들어서 이동한다 (`HEAD`)*
@@ -507,7 +540,7 @@ git commit -am 'gamma 1st commit'
 
 ***
 
-# `fetch` vs `pull`
+# **fetch** vs **pull**
 - `fetch` : **원격 저장소의 최신 커밋을 로컬로 가져오기만 함**
 - `pull` : **원격 저장소의 최신 커밋을 로컬로 가져와 `merge` 또는 `rebase`**
 
@@ -528,3 +561,39 @@ git commit -am 'gamma 1st commit'
 **원격의 새 브랜치 확인**<br>
 1. `git checkout origin/{브랜치명}`
 2. `git switch -t origin/{브랜치명}`
+
+***
+
+# **git help**
+
+1. `git help`
+   - 기본적인 명령어들과 설명
+2. `git help -a`
+   - Git의 모든 명령어들
+   - j로 내리기, k로 올리기, :q로 닫기
+3. `git {명령어} -h`
+   - 해당 명령어의 설명과 옵션 보기
+4. `git help {명령어}` or `git {명령어} --help`
+   - 해당 명령어의 설명과 옵션 웹사이트에서 보기
+   - 웹에서 열리지 않을 시 끝에 `-w`를 붙여 명시
+
+# 세심하게 스테이징하고 커밋하기
+
+<div class="code-example" markdown="1">
+**hunk**별 스테이징 진행
+- 옵션 설명을 보려면 `?`입력 후 엔터
+- `y` 또는 `n`로 각 헝크 선택
+</div>
+
+```
+git add -p
+```
+
+<div class="code-example" markdown="1">
+변경사항을 확인하고 커밋하기
+- `git diff --staged` + `commit` 이라고 생각하면 된다
+</div>
+
+```
+git commit -v
+```
