@@ -2,7 +2,7 @@
 layout: default
 title: 코딩을 지탱하는 기술
 parent: 📖 Books
-nav_order: 3
+nav_order: 6
 nav_exclude: true
 ---
 ## Table of contents
