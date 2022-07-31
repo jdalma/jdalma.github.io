@@ -53,7 +53,6 @@ permalink: /
 ***
 
 # **Focus** 
-~~아래의 내용들을 관리할 **[Bookmark](https://github.com/jdalma/dallog)프로젝트** 개발 진행 중~~ 코드 숨 끝나고... <br/>
 
 - [프로그래밍, 어떻게 공부할 것인가?](https://www.youtube.com/watch?v=oFhN3EqrCwc)
 - [글쓰는 개발자가 되자.](https://www.popit.kr/%EA%B8%80%EC%93%B0%EB%8A%94-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EB%90%98%EC%9E%90/)

@@ -146,6 +146,14 @@ logs/*.c
 logs/**/debug.log
 ```
 
+<div class="code-example" markdown="1">
+**커밋 메세지 수정하거나 커밋 수정사항 추가하기**
+</div>
+
+```
+git commit --amend
+```
+
 # **restore**
 
 <div class="code-example" markdown="1">
@@ -156,7 +164,6 @@ logs/**/debug.log
 git restore --staged {파일명}
 ```
 - `--staged`를 빼면 **Working Directory**에서 제거
-
 
 # **reset** vs **revert**
 
@@ -597,3 +604,25 @@ git add -p
 ```
 git commit -v
 ```
+
+# 커밋하기 애매한 것들 치워두기
+
+1. `git stash`
+   - *`git stash save`와 같음*
+   - 현재 수정 사항들을 다른 영역에 따로 저장 해준다
+   - 다른 브랜치나 다른 커밋에서 `git stash pop`을 통해 언제든 불러올 수 있다
+2. `git stash -p`
+   - **원하는 부분만 `stash`하기**
+3. `git stash -m {message}`
+4. `git stash list`
+5. `git stash apply stash@{스태시 index}`
+6. `git stash drop stash@{스태시 index}`
+7. `git stash pop`
+   - **apply** + **drop**
+8. `git stash clear`
+   - stash항목들 비우기
+9. `git stash branch {브랜치 명}`
+   - 새 브랜치를 생성하여 **pop**
+   - **충돌사항이 있는 상황 등에 유용**
+
+

@@ -81,6 +81,9 @@ has_children: true
 
 *** 
 
+- `2022-07-31`
+  - **[JUnit5로 계층 구조의 테스트 코드 작성하기](https://johngrib.github.io/wiki/junit5-nested/)**
+
 - `2022-07-27`
   - **[기계인간 종립님의 테스트 코드 기준](https://github.com/CodeSoom/spring-week3-assignment-1/pull/81)**
 
@@ -104,7 +107,7 @@ has_children: true
 - `2022-07-17`
   - **[자바 예외(Exception)처리에 대한 작은 생각](https://www.nextree.co.kr/p3239/)**
   - **[try-with-resources](https://ryan-han.com/post/java/try_with_resources/)**
-  - **[제발 깃허브 액션🔥 모르는 개발자 없게 해주세요 🙏](https://www.youtube.com/watch?v=iLqGzEkusIw)
+  - **[제발 깃허브 액션🔥 모르는 개발자 없게 해주세요 🙏](https://www.youtube.com/watch?v=iLqGzEkusIw)**
   - **[GitFlow vs Trunk-based 협업방식](https://www.youtube.com/watch?v=EV3FZ3cWBp8)**
   - **[핏펫몰 개발 스쿼드의 git 전략 연대기](https://fitpet.medium.com/%ED%95%8F%ED%8E%AB%EB%AA%B0-%EA%B0%9C%EB%B0%9C-%EC%8A%A4%EC%BF%BC%EB%93%9C%EC%9D%98-git-%EC%A0%84%EB%9E%B5-%EC%97%B0%EB%8C%80%EA%B8%B0-c46cd8ce089c)**
 
