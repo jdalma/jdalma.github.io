@@ -26,7 +26,7 @@ permalink: /
 ***
 
 # **Education**
-- `2022-08-01 ~ 2022-10-02` [코드숨 - 소프트웨어 개발의 지혜 스프링 편](https://www.codesoom.com/courses/spring)  `+ 개인 프로젝트 4주`
+- `2022-08-01 ~ 2022-10-02` [코드숨 - 소프트웨어 개발의 지혜 스프링 편](https://www.codesoom.com/courses/spring)
 
 ***
 
