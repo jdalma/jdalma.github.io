@@ -1,6 +1,6 @@
 ---
 layout: default
-title: URI의 경로를 **클래스화** 시켜보자 (+ 코드숨)
+title: URI의 경로를 클래스화 시켜보자 (+ 코드숨)
 nav_order: 60
 parent: 👨‍🔬 Lab
 ---
@@ -60,7 +60,7 @@ if("GET".equals(method)){
 <br>
 
 <div class="code-example" markdown="1">
-**Path**
+**Path**<br>
 `path[]` 인덱스로 접근하지 않고 의도가 분명한 `Task`의 필드로 접근할 수 있다
 </div>
 
@@ -108,8 +108,8 @@ public class Path {
 
 <br>
 
-> 💡 리뷰를 통한 추가 개선사항 
-> 1. `String fullPath` [리뷰](https://github.com/CodeSoom/spring-week1-assignment-1/pull/115#discussion_r936597479)
-> 2. `resourceEquals()` [리뷰](https://github.com/CodeSoom/spring-week1-assignment-1/pull/115#discussion_r936595747)
+- 💡 리뷰를 통한 추가 개선사항 
+  1. `String fullPath` [리뷰](https://github.com/CodeSoom/spring-week1-assignment-1/pull/115#discussion_r936597479)
+  2. `resourceEquals()` [리뷰](https://github.com/CodeSoom/spring-week1-assignment-1/pull/115#discussion_r936595747)
 
 
