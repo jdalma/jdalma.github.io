@@ -21,6 +21,7 @@ parent: 👨‍🔬 Lab
 - `redis`
   - [[우아한테크세미나] 191121 우아한레디스 by 강대명님](https://www.youtube.com/watch?v=mPB2CZiAkKM)
   - [Redis 기본 정리](https://brunch.co.kr/@jehovah/20)
+  - [Redis & Spring Session 연동 + Spring Session Redis](https://velog.io/@jungh00ns/Spring-Boot-Redis-Spring-Session-%EC%97%B0%EB%8F%99-Redis-%EB%A3%AC%EB%AC%B8%EC%9E%90-%ED%95%B4%EC%84%9D)
 
 - `memcached`
   - [공식 사이트 - Simple Spring XMemcached](https://www.memcachier.com/documentation/spring-boot)
