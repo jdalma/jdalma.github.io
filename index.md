@@ -15,13 +15,14 @@ permalink: /
 - 동작 원리와 핵심 컨셉을 이해하기 위해 노력하고 , 꾸준히 `학습` 하고 `성장`하는 **백엔드 개발자** 입니다
 - 현재까지 **JAVA 8 / Spring** , **Mybatis** , **Mysql** 를 활용한 개발 경험을 보유하고 있습니다
 - 지금은 `______` 에 관심을 가지고 있습니다
-  1. `Spring 생태계`
-  2. `ORM (JPA)`
+  
+  1. `OOP`
+  2. `Clean Code`
   3. `TDD`
-  4. `RESTful API 설계`
-  5. `Git`
-  6. `AWS`
-- 현재 [사내 스터디](https://github.com/jdalma/dev-study)를 만들어 새로 배운 지식들을 서로 공유하고 실무에 적용할 때 큰 즐거움을 느낍니다
+  4. `RESTful`
+  5. `Spring`
+  6. `JPA`
+  7. `Git`
 
 ***
 
