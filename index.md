@@ -82,7 +82,6 @@ permalink: /
 5. **[코딩으로 학습하는 GoF의 `디자인 패턴`](https://www.inflearn.com/course/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/dashboard)**
 6. **[기출로 대비하는 개발자 전공면접 `CS` 완전정복](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%A0%84%EA%B3%B5%EB%A9%B4%EC%A0%91-cs-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5/dashboard)**
 7. **[`CS`지식의 정석](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A9%B4%EC%A0%91-cs-%ED%8A%B9%EA%B0%95/dashboard)**
-8. **[`스프링` MVC 2편 - 백엔드 웹 개발 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)** - `첨부파일 챕터 필요할 때`
 
 ### 듣고있는 강의
 1. **[제대로 파는 Git & GitHub - by 얄코](https://www.inflearn.com/course/%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%8C%8C%EB%8A%94-%EA%B9%83)**
@@ -98,6 +97,7 @@ permalink: /
 6. **[더 `자바`, 코드를 조작하는 다양한 방법](https://www.inflearn.com/course/the-java-code-manipulation/dashboard)**
 7. **[자바(Java) `알고리즘` 문제풀이 : 코딩테스트 대비](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard)**
 8. **[비전공자를 위한 개발자 `취업 올인원 가이드` [통합편]](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%B7%A8%EC%97%85-%ED%86%B5%ED%95%A9%ED%8E%B8/dashboard)**
+9. **[`스프링` MVC 2편 - 백엔드 웹 개발 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)**
 
 ### 구매 예정인 책
 1. **리팩토링**
@@ -105,21 +105,22 @@ permalink: /
 3. **HTTP 완벽 가이드** vs **성공과 실패를 결정하는 1%의 네트워크 원리**
   - *[웹 프로그래머를 위한 HTTP 완벽 가이드 읽는 법](https://blog.npcode.com/2015/06/07/%EC%9B%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%9D%BD%EB%8A%94-%EB%B2%95/)*
 4. **Real MySQL**
+5. **가장 빨리 만나는 코어 자바 9**
 
 ### 구매 후 읽지 않은 책
 1. **이펙티브 자바**
 2. **토비의 스프링 3.1**
-3. **자바 ORM 표준 JPA 프로그래밍**
-4. **코딩을 지탱하는 기술**
 
 ### 읽다가 멈춘 책
 1. **[Clean Code](https://jdalma.github.io/docs/books/clean-code/)**
 2. **코딩 인터뷰 완전 분석**
 3. **[모던 자바 인 액션](https://jdalma.github.io/docs/books/modernJavaInAction/)**
+4. **함께 자라기**
+5. **자바 ORM 표준 JPA 프로그래밍**
 
 ### 읽고 있는 책
 1. **테스트 주도 개발**
-2. **함께 자라기**
+2. **코딩을 지탱하는 기술**
 
 ### 다 읽은 책
 1. **객체지향의 사실과 오해**
