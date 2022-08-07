@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Factory
+title: Factory (+ Pattern)
 parent: 📕 정리
 nav_order: 10
 ---
@@ -31,5 +31,10 @@ nav_order: 10
   - [`sumini.dev` Factory Pattern 개념부터 적용까지](https://sumini.dev/til/014-factory/)
   - [`culttt.com` What are Factories in Domain Driven Design?](https://www.culttt.com/2014/12/24/factories-domain-driven-design/)
   - [`refactoring.guru` Factory Method](https://refactoring.guru/design-patterns/factory-method)
+- 💡 추가로 정리가 필요한 것
+  1. 추상 팩토리 패턴 (Abstract Factory Pattern)
+  2. [빌더 패턴(Builder Pattern)](https://jdalma.github.io/docs/designPattern/objectCreationRelated/#builder-pattern)
+  3. [팩토리 메소드 패턴 (Factory Method Pattern) `진행 중`](https://jdalma.github.io/docs/designPattern/objectCreationRelated/#factory-method-pattern) 
+  4. 정적 팩토리 메서드(static factory method)
 
 
