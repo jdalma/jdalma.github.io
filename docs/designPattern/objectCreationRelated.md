@@ -388,3 +388,35 @@ public class Client {
 ```
 
 - 위와 같이 `print()`메소드 에서 `ShipFactory`를 인터페이스로 받게 작성하면 조금 더 유연하게 사용이 가능하다
+
+***
+
+## **질문**
+1. 팩토리 메소드 패턴을 적용했을 때의 장점은 ? 단점은 ?
+- 장점
+   - `"확장에 열려있고 변경에 닫혀있는 객체 지향 원칙"`을 지킨다
+   - **기존 코드를 수정하지 않고 새로운 인스턴스를 다른 과정으로 얼마든지 확장이 가능하다**
+   - 가능한 이유는 , `Product` ↔︎ `Creator` 간의 결합도를 느슨하게 가져가기 때문이다
+   - [느슨한 결합과 강한 결합 ( Loose Coupling VS Tight Coupling ) 이란?](https://hongjinhyeon.tistory.com/141)
+- 단점
+  - 각자의 역할을 나누다 보니 클래스가 늘어난다
+
+2. `"확장에 열려있고 변경에 닫혀있는 객체 지향 원칙"`을 설명하세요
+   - **OCP**
+   - **기존 코드를 수정하지 않고 새로운 인스턴스를 다른 과정으로 얼마든지 확장이 가능하다**
+
+3. 자바 8에 추가된 `default` 메소드에 대해 설명하세요
+   - interface의 기본 구현체를 만들어 놓을 수 있다
+   - *추상 클래스에서 하던 일을 인터페이스에서도 많은 일을 할 수 있다*
+
+4. 자바 9의 `private method`는 어떻게 추가가 가능한가?
+   - [Interface](https://www.notion.so/4b0cf3f6ff7549adb2951e27519fc0e6)
+
+***
+
+## 실무 적용 예시
+- **SimpleFactoryPattern** 
+  - java.util.Calendar
+  - NumberFormat
+  - BeanFactory
+    - 스프링에서 Bean을 가져오는 인스턴스가 콘크리트 클래스라고 볼 수 있다
