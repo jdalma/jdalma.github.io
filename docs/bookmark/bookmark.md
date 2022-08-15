@@ -9,7 +9,6 @@ has_children: true
 - [NEXTSTEP](https://edu.nextstep.camp/c/4YUvqn9V/)
 - [코드숨](https://www.codesoom.com/courses/spring)
 - [korecruit.kr](https://korecruit.kr/)
-- [shirohoo bookmark](https://devtools.life/bookmarks)
 
 <br>
 
@@ -81,12 +80,6 @@ has_children: true
 
 *** 
 
-- `2022-07-31`
-  - **[JUnit5로 계층 구조의 테스트 코드 작성하기](https://johngrib.github.io/wiki/junit5-nested/)**
-
-- `2022-07-27`
-  - **[기계인간 종립님의 테스트 코드 기준](https://github.com/CodeSoom/spring-week3-assignment-1/pull/81)**
-
 - `2022-07-22`
   - **[15 Best + Free Data Structures & Algorithms Course [2022 JULY]](https://digitaldefynd.com/best-data-structures-algorithms-tutorial-course-certification/)**
   - **[현실적으로 머리에 많이 남는 독서법](https://www.youtube.com/watch?v=eOL0EtmSNvA)**
@@ -132,7 +125,6 @@ has_children: true
 - `2022-07-07`
   - **[Sticky Session과 Session Clustering](https://smjeon.dev/web/sticky-session/)**
   - **[GitFlow? 들어도 봤고, 쓰고도 있는데...](https://blog.gangnamunni.com/post/understanding_git_flow/)**
-  - **[JUnit5로 계층 구조의 테스트 코드 작성하기](https://johngrib.github.io/wiki/junit5-nested/)**
 
 - `2022-07-03`
   - **[DB/Redis의 자료구조 - String과 Hash](https://xrabcde.github.io/redis-introduction/)**
