@@ -140,11 +140,6 @@ has_children: true
   - **[강남언니 - 여러개의 DB 작업을 동시에 수행하고 결과를 합쳐서 보내줘야 할 때](https://blog.gangnamunni.com/post/Spring-Async-Hibernate-DB/)**
   - **[Spring Transaction 사용 시 주의할 점](https://suhwan.dev/2020/01/16/spring-transaction-common-mistakes/)**
 
-
-- `2022-06-30`
-  - **[세션 기반 인증과 토큰 기반 인증 (feat. 인증과 인가)](https://hudi.blog/session-based-auth-vs-token-based-auth/)**
-  - **[토근 기반 인증에서 bearer는 무엇일까?](https://velog.io/@cada/%ED%86%A0%EA%B7%BC-%EA%B8%B0%EB%B0%98-%EC%9D%B8%EC%A6%9D%EC%97%90%EC%84%9C-bearer%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)**
-
 - `2022-06-29`
   - **[SPRING CLOUD GATEWAY를 이용한 API GATEWAY 구축기](https://saramin.github.io/2022-01-20-spring-cloud-gateway-api-gateway/)**
 
