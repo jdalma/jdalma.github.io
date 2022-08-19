@@ -2455,3 +2455,15 @@ public class MyNumberFormatter implements Formatter<Number> {
 - **스프링은 이런 문제를 해결하기 위해 애노테이션 기반으로 원하는 형식을 지정해서 사용할 수 있는 매우 유용한 포맷터 두 가지를 기본으로 제공한다**
 - `@NumberFormat` : **숫자 관련 형식 지정 포맷터 사용** `NumberFormatAnnotationFormatterFactory` 
 - `@DateTimeFormat` : **날짜 관련 형식 지정 포맷터 사용** `Jsr310DateTimeFormatAnnotationFormatterFactory`
+
+***
+
+# 파일 업로드
+
+- 별도의 **enctype**옵션이 없으면 `Content-Type: application/x-www-form-urlencoded` 헤더에 자동 추가한다
+- 파일은 문자가 아니라 **바이너리 데이터를 전송해야 한다**
+
+## **multipart/form-data**
+- **바디에 문자 데이터와 바이너리 데이터를 같이** 보내기 위해 `multipart/form-data`라는 전송 방식을 제공한다
+  - 다른 종류의 여러 파일과 폼의 내용을 함께 전송할 수 있다
+
