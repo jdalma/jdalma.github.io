@@ -43,7 +43,7 @@ has_children: true
    - 기술 선택을 하는 방법
    - 단위 성능에서 통합 성능까지 입체적으로 생각하는 능력
 
-## [Reverse Interview](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Reverse_Interview)**
+## [Reverse Interview](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Reverse_Interview)
    - [코드 리뷰의 목적은 성장이어야 한다](https://jbee.io/essay/code-review-goal/)
      1. **코드리뷰만으로는 제품에 대한 맥락을 전부 파악하는데에 분명 한계가 존재한다**
      2. **우리를 당황하게 하는 버그의 대부분은 미처 파악하지 못한 런타임 환경에서 발생하곤 하며 이런 엣지 케이스는 코드 리뷰 단계에서 발견하기 어렵다.**
