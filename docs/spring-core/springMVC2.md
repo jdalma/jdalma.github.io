@@ -2458,12 +2458,105 @@ public class MyNumberFormatter implements Formatter<Number> {
 
 ***
 
-# 파일 업로드
+# **파일 업로드**
 
 - 별도의 **enctype**옵션이 없으면 `Content-Type: application/x-www-form-urlencoded` 헤더에 자동 추가한다
 - 파일은 문자가 아니라 **바이너리 데이터를 전송해야 한다**
 
-## **multipart/form-data**
+<div class="code-example" markdown="1">
+**application.properties**
+</div>
+
+```
+# HTTP 요청 메세지를 확인할 수 있다
+logging.level.org.apache.coyote.http11=debug 
+
+# 업로드 사이즈 제한
+spring.servlet.multipart.max-file-size=1MB      # 파일 하나의 최대 사이즈, 기본 1MB
+spring.servlet.multipart.max-request-size=10MB  # 멀티파트 요청 하나에 여러 파일을 업로드 할 수 있는데, 그 전체 합이다. 기본 10MB
+
+# multipart끄기
+spring.servlet.multipart.enabled=false   # 서블릿 컨테이너는 멀티파트와 관련된 처리를 하지 않는다.
+```
+
+## [multipart/form-data](https://github.com/jdalma/spring-upload/commit/174a61a0bbd7452f4b41f997bda994efa8b1f35b)
+
+
 - **바디에 문자 데이터와 바이너리 데이터를 같이** 보내기 위해 `multipart/form-data`라는 전송 방식을 제공한다
   - 다른 종류의 여러 파일과 폼의 내용을 함께 전송할 수 있다
 
+<div class="code-example" markdown="1">
+**public class StandardServletMultipartResolver implements MultipartResolver**
+</div>
+
+
+```java
+Collection<Part> parts = request.getParts();
+log.info("parts = {}" , parts);
+```
+
+```
+request = org.springframework.web.multipart.support.StandardMultipartHttpServletRequest@104ca9b6
+parts = [org.apache.catalina.core.ApplicationPart@5a5f77a0, org.apache.catalina.core.ApplicationPart@5e60e833]
+```
+
+> 참고
+> - spring.servlet.multipart.enabled 옵션을 켜면 스프링의 DispatcherServlet 에서 멀티파트 리졸버( MultipartResolver )를 실행한다.
+> - 멀티파트 리졸버는 멀티파트 요청인 경우 서블릿 컨테이너가 전달하는 일반적인 HttpServletRequest 를 **MultipartHttpServletRequest** 로 변환해서 반환한다.
+> - MultipartHttpServletRequest 는 HttpServletRequest 의 자식 인터페이스이고, 멀티파트와 관련된 추가 기능을 제공한다.
+> - 스프링이 제공하는 기본 멀티파트 리졸버는 MultipartHttpServletRequest 인터페이스를 구현한 StandardMultipartHttpServletRequest 를 반환한다.
+> - 이제 컨트롤러에서 HttpServletRequest 대신에 MultipartHttpServletRequest 를 주입받을 수 있는데, 이것을 사용하면 멀티파트와 관련된 여러가지 처리를 편리하게 할 수 있다. 
+> - 그런데 이후 강의에서 설명할 MultipartFile 이라는 것을 사용하는 것이 더 편하기 때문에 MultipartHttpServletRequest 를 잘 사용하지는 않는다. 
+> - 더 자세한 내용은 **MultipartResolver** 를 검색해보자.
+
+<div class="code-example" markdown="1">
+**public class StandardServletMultipartResolver implements MultipartResolver**
+</div>
+
+```java
+  // 1. DispatcherServlet에서 Multipart를 체크하고
+  // 2. Multipart가 맞다면 new StandardMultipartHttpServletRequest(request, this.resolveLazily);
+  @Override
+  public MultipartHttpServletRequest resolveMultipart(HttpServletRequest request) throws MultipartException {
+		return new StandardMultipartHttpServletRequest(request, this.resolveLazily);
+	}
+```
+
+***
+
+## [`Part`를 직접 조작하여 실제 파일을 서버에 업로드 해보자](https://github.com/jdalma/spring-upload/commit/e215615ff956bf4ddbb27ac8f639cc9ba3c35a95)
+
+
+<div class="code-example" markdown="1">
+**application.properties**
+</div>
+
+```
+file.dir=/Users/jeonghyeonjun/Desktop/uploadPractice/
+```
+
+```java
+// Part 주요 메서드
+part.getSubmittedFileName() // 클라이언트가 전달한 파일명 
+part.getInputStream() // Part의 전송 데이터를 읽을 수 있다. 
+part.write(...) // Part를 통해 전송된 데이터를 저장할 수 있다.
+```
+
+```
+request = org.springframework.web.multipart.support.StandardMultipartHttpServletRequest@1bd31c66
+itemName = 1234
+parts = [org.apache.catalina.core.ApplicationPart@1514f16c, org.apache.catalina.core.ApplicationPart@112b7716]
+===== PART =====
+name = itemName
+header content-disposition : form-data; name="itemName"
+submitted filename = null
+size = 4
+body = 1234
+===== PART =====
+name = file
+header content-disposition : form-data; name="file"; filename="mine.jpg"
+header content-type : image/jpeg
+submitted filename = mine.jpg
+size = 18369
+파일 저장 fullPath = /Users/jeonghyeonjun/Desktop/uploadPractice/mine.jpg
+```
