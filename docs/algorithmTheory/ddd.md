@@ -22,7 +22,6 @@ nav_order: 10
 
 <br>
 
-- **Factory 패턴**과 **DDD의 Factory**에 대해 정리하자
 - 이 글은 [도메인 주도 개발 시작하기](http://www.yes24.com/Product/Goods/108431347)의 내용을 참고하여 작성하였습니다
 - 추가 참고
   - [`johngrib.github.io` Factory](https://johngrib.github.io/wiki/pattern/factory/)
