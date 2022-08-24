@@ -19,6 +19,7 @@ nav_order: 2
 
 - [`baeldung` Jackson Ignore Properties on Marshalling](https://www.baeldung.com/jackson-ignore-properties-on-serialization)
 - [`baeldung` Jackson – Decide What Fields Get Serialized/Deserialized](https://www.baeldung.com/jackson-field-serializable-deserializable-or-not)
+- [기본 생성자가 필요한 이유 (feat. Jackson ObjectMapper + Reflection)](https://da-nyee.github.io/posts/woowacourse-why-the-default-constructor-is-needed/)
 
 # **@JsonCreator** (+ @JsonProperty)
 
