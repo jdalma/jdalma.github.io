@@ -455,4 +455,4 @@ public class ItemRepository {
 
 # (변경감지) `Snap Shot` 과 `Entity`를 어떻게 비교할까 🚩
 
-# `DB Isolation Level` ? , `Read Commit` ? 🚩
+# [`DB Isolation Level` ? , `Read Commit` ?](https://jdalma.github.io/docs/algorithmTheory/dbDeadlock/)
