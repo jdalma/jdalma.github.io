@@ -2560,3 +2560,45 @@ submitted filename = mine.jpg
 size = 18369
 파일 저장 fullPath = /Users/jeonghyeonjun/Desktop/uploadPractice/mine.jpg
 ```
+
+## [Spring의 **MultipartFile** 인터페이스 사용해보기](https://github.com/jdalma/spring-upload/commit/4bcfb7562cc42b7b984e50483a377ba919406886)
+
+```java
+@PostMapping("/upload")
+public String saveFileV3(@RequestParam String itemName,
+                          @RequestParam MultipartFile file, // @ModelAttribute도 적용된다
+                          HttpServletRequest request) throws IOException {
+
+    log.info("request = {}" , request);
+    log.info("itemName = {}" , itemName);
+    log.info("multipartFile = {}" , file);
+
+    if(!file.isEmpty()){
+        String fullPath = fileDir + file.getOriginalFilename();
+        log.info("파일 저장 fullPath = {}" , fullPath);
+        file.transferTo(new File(fullPath));
+    }
+
+    return "upload-form";
+}
+
+// file.getOriginalFilename() : 업로드 파일 명 
+// file.transferTo(...) : 파일 저장
+```
+
+```
+request = org.springframework.web.multipart.support.StandardMultipartHttpServletRequest@7e6cc42c
+itemName = 1234
+multipartFile = org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@40a2d9cf
+파일 저장 fullPath = /Users/jeonghyeonjun/Desktop/uploadPractice/mine.jpg
+```
+
+## [**예제로 구현하는 파일 업로드 , 다운로드**](https://github.com/jdalma/spring-upload/commit/16605ebec1e8bd13122c7fd88135e1e6cd330330)
+
+- **요구사항**
+  1. 파라미터 한 개
+  2. 첨부파일 한 개
+  3. 이미지 파일 여러 개
+  4. 첨부파일을 업로드 다운로드
+  5. 업로드한 이미지를 웹 브라우저에서 확인할 수 있다
+
