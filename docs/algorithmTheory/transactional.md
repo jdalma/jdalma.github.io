@@ -1,6 +1,6 @@
 ---
 layout: default
-title: @Trnansactional
+title: Transactional
 parent: 📕 정리
 nav_order: 4
 ---
