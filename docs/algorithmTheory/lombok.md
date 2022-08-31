@@ -237,31 +237,7 @@ public class Test {
         private int b;
         private int c;
 
-        TestBuilder() {
-        }
-
-        public Test.TestBuilder a(int a) {
-            this.a = a;
-            return this;
-        }
-
-        public Test.TestBuilder b(int b) {
-            this.b = b;
-            return this;
-        }
-
-        public Test.TestBuilder c(int c) {
-            this.c = c;
-            return this;
-        }
-
-        public Test build() {
-            return new Test(this.a, this.b, this.c);
-        }
-
-        public String toString() {
-            return "Test.TestBuilder(a=" + this.a + ", b=" + this.b + ", c=" + this.c + ")";
-        }
+        // method ...
     }
 }
 ```
@@ -318,26 +294,7 @@ public class Test {
         private int a;
         private int b;
 
-        TestBuilder() {
-        }
-
-        public Test.TestBuilder a(int a) {
-            this.a = a;
-            return this;
-        }
-
-        public Test.TestBuilder b(int b) {
-            this.b = b;
-            return this;
-        }
-
-        public Test build() {
-            return new Test(this.a, this.b);
-        }
-
-        public String toString() {
-            return "Test.TestBuilder(a=" + this.a + ", b=" + this.b + ")";
-        }
+        // method ...
     }
 }
 ```
