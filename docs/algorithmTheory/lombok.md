@@ -156,7 +156,11 @@ public @interface Builder {
 ```
 클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.
 ```
+- [출처](https://projectlombok.org/features/Builder)
 
+<div class="code-example" markdown="1">
+**클래스에 작성**
+</div>
 
 ```java
 @Builder
@@ -185,7 +189,9 @@ public class Test {
 
 <br>
 
-- 생성자에 작성해보자
+<div class="code-example" markdown="1">
+**생성자에 작성**
+</div>
 
 ```java
 public class Test {
@@ -203,6 +209,11 @@ public class Test {
 ```
 
 - 위와 같이 사용하다가 `int d`를 추가했다고 가정해보자
+
+<div class="code-example" markdown="1">
+**생성자에 작성**<br>
+`int d`추가
+</div>
 
 ```java
 public class Test {
@@ -257,6 +268,10 @@ public class Test {
 
 - 추가한 `int d`는 **Builder**에 포함되지 않고 생성자도 직접 지정한 **private**로 지정되어 있다
 - 그리고 아래와 같이 **`@Builder`를 지정한 생성자의 필드에만 적용할 수도 있다**
+
+<div class="code-example" markdown="1">
+**특정 생성자에 작성**
+</div>
 
 ```java
 public class Test {
