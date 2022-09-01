@@ -298,3 +298,8 @@ public class Test {
     }
 }
 ```
+
+- **결론**
+  - `@Builder`는 클래스 레벨에 달면 필드가 추가될 때 자동으로 빌더에 포함되고 **default**생성자를 생성한다
+  - **default**생성자는 `@AllArgsConstructor`를 사용한 것과 같으니 지양해야 한다
+  - 생성자에 직접 달아주자
