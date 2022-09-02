@@ -12,19 +12,24 @@ nav_order: 20
 
 ---
 
-# ✋**Java11 com.sun import 문제**
+# ✋ **Java11 `com.sun.*` import 문제**
 - [JDK 9 이상 내부 API의 javac를 사용하지 못하는 이유](https://jdalma.github.io/docs/exception/Java/#jdk-11-comsun-import-%EB%AC%B8%EC%A0%9C)
 - `com.sun.*` JDK 9 이상 부터 모듈 기능이 추가 되면서 내부 라이브러리를 보호하게 되었다고한다. 메이븐 추가 설정 시 내부 라이브러리를 사용할 수 있지만 권장하지는 않는다고 한다.
 - 이러한 이유로 외부 라이브러리 [javac.jar](https://jar-download.com/artifacts/org.kohsuke.sorcerer/sorcerer-javac/0.11/source-code)를 추가하여 아래의 방법을 사용해보았지만
 - `package com.sun.tools.javac.util is declared in module jdk.compiler, which does not export it to the unnamed module` 예외는 계속 발생하였다.
 
 ## 외부 라이브러리 등록
-1. Project Structure - (Shift + Ctrl + Alt + S)
-- ![](../../assets/images/toy-project/1.png)
-1. 원하는 .jar 선택
-- ![](../../assets/images/toy-project/2.png)
-1. 프로젝트 선택
-- ![](../../assets/images/toy-project/3.png)
+- Project Structure
+
+![](../../assets/images/toy-project/1.png)
+
+- 원하는 .jar 선택
+
+![](../../assets/images/toy-project/2.png)
+
+- 프로젝트 선택
+
+![](../../assets/images/toy-project/3.png)
 
 > 🚨 **Global Libraries설정**
 > - ![](../../assets/images/toy-project/4.png)
@@ -56,11 +61,9 @@ nav_order: 20
   - 롬복은 내부 컴파일러 `com.sun.*`를 사용하여 추상구문트리를 직접 수정한다.
 - `@JeongPoetGetter`
   - **[JavaPoet](https://www.baeldung.com/java-poet)** 을 사용하여 클래스에서만 사용 가능한 어노테이션
-- ~~`@JeongEntity`~~
-  - ~~위의 `@JeongGetter`를 활용하여 롬복의 기능을 만들어보자~~
 - **JavaPoet , AnnotationProcessor , Reflection , 자바컴파일러** 의 이해를 위한 프로젝트이다.
 - 먼저 `@JeongGetter`를 통해 AST를 직접 조작하는 코드를 보자
-- JDK 8 , IntelliJ 2020.2.4
+  - JDK 8 , IntelliJ 2020.2.4
 
 📌 **[Lombok은 어떻게 동작하는걸까? (AnnotationProcessor에 대해)](https://jdalma.github.io/docs/java/Annotation%20Processor/)**
 {: .fh-default .fs-4 }
@@ -70,13 +73,16 @@ nav_order: 20
 
 ## **`com.sun.*` AST 예제**
 
-### **`@JeongGetter`**
+### **@JeongGetter**
 
-📌 **[Getter 참고](https://catch-me-java.tistory.com/49)**
-{: .fh-default .fs-4 }
-- [juejin.cn](https://juejin.cn/post/6844904082084233223#heading-1)
-
+- 참고
+  - [catch-me-java](https://catch-me-java.tistory.com/49)
+  - [juejin.cn](https://juejin.cn/post/6844904082084233223#heading-1)
 - com.sun.* 사용
+
+<div class="code-example" markdown="1">
+**public class GetterProcessor extends AbstractProcessor**
+</div>
 
 ```java
 @AutoService(Processor.class)
@@ -199,6 +205,7 @@ call process =[]
 ***
 
 ## **JavaPoet 예제**
+
 ```html
 <dependency>
    <groupId>com.squareup</groupId>
@@ -207,17 +214,25 @@ call process =[]
 </dependency>
 ```
 
-### **`@JeongPoetGetter`**
+### **@JeongPoetGetter**
 - **클래스에만 허용 하며 해당 엔티티를 상속받는다.**
 - 클래스가 아닌 곳에 작성 시 컴파일 에러
 - ![](../../assets/images/toy-project/6.png)
 - 제네릭 포함 시 `return` 클래스 에러
+
 ```java
 protected List<String> tStringList;
 protected List<Integer> tIntList;
 protected Map<String,String> tMap;
 ```
+
 - ![](../../assets/images/toy-project/7.png)
+
+<br>
+
+<div class="code-example" markdown="1">
+**public class PoetGetterProcessor extends AbstractProcessor**
+</div>
 
 ```java
 @AutoService(Processor.class)
@@ -328,17 +343,5 @@ public class PoetGetterProcessor extends AbstractProcessor {
 ```
 
 ![](../../assets/images/toy-project/8.png)
+
 - `@JeongPoetGetter` 어노테이션이 작성된 클래스를 상속 받는다.
-
-***
-
-## ~~**`@JeongEntity`**~~
-
-- `com.sun.*` JDK 자바컴파일러 내부 클래스를 사용하여 진행한다.
-- 클래스에만 작성 가능 하다.
-- **기능**
-  - Getter
-  - Setter
-  - toString
-  - equals
-  - Constructor
