@@ -56,3 +56,10 @@ nav_order: 5
   - 자기 메모리를 직접 관리하는 클래스라면 프로그래머는 항시 메모리 누수에 주의해야 한다
   - 캐시 역시 메모리 누수를 일으키는 주범이다
   - `java.lang.ref`
+
+## 09.02(금)
+- Item 8. **finalizer와 cleaner 사용을 피하라**
+  - 두 가지 객체 소멸자를 제공한다
+  - **finalizer** : `System.runFinalization()`
+  - **cleaner** : `System.gc()`
+- Item 15. **클래스와 멤버의 접근 권한을 최소화하라**
