@@ -863,6 +863,10 @@ public int fibo(int n){
 
 - **출처 [ratsgo.github.io](https://ratsgo.github.io/data%20structure&algorithm/2017/11/25/shortestpath/)**
 
+## [0-1BFS](https://justicehui.github.io/medium-algorithm/2018/08/30/01BFS/)
+- [벽 타기](https://www.acmicpc.net/problem/23563)
+- [숨바꼭질 3](https://www.acmicpc.net/problem/13549)
+
 ## 다익스트라 알고리즘
 - 그래프의 간선에 가중치를 부여돼어있을 때 , `현재 위치에서 목표 위치까지 최단 경로`는?(**단일 출발 최단경로**문제) **다익스트라 알고리즘**
 - 📌 **사이클이 있을수도 있는 가중 방향 그래프에서 두 지점간의 최단 경로를 찾는 방법이다.**
