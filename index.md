@@ -20,7 +20,12 @@ permalink: /
 - [어떻게 하면 개발을 잘할 수 있을까요?](https://www.popit.kr/%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%A9%B4-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9E%98%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/)
 - [후배 개발자에게](https://brunch.co.kr/@javajigi/4)
 - [프레임워크 공부를 멈춰라](https://medium.com/@jongyoungpark/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EA%B3%B5%EB%B6%80%EB%A5%BC-%EB%A9%88%EC%B6%B0%EB%9D%BC-1afa37644474)
-- [오픈소스에 기여하는 방법](https://opensource.guide/ko/how-to-contribute/)
+
+### 읽고 있는 책
+1. [**토비의 스프링 3.1**](https://github.com/jdalma/tobyspringin5)
+2. [**오브젝트**](https://github.com/jdalma/book-object/tree/master)
+3. **가장 면접 사례로 배우는 대규모 시스템 설계 기초**
+4. **코딩 인터뷰 완전 분석**
 
 ### 완강한 강의
 1. **[`스프링` 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)**
@@ -33,11 +38,6 @@ permalink: /
 8. **[비전공자를 위한 개발자 `취업 올인원 가이드` [통합편]](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%B7%A8%EC%97%85-%ED%86%B5%ED%95%A9%ED%8E%B8/dashboard)**
 9. **[`스프링` MVC 2편 - 백엔드 웹 개발 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)**
 
-### 읽고 있는 책
-1. **토비의 스프링 3.1**
-1. **이펙티브 자바**
-1. **오브젝트**
-
 ### 다 읽은 책
 1. **객체지향의 사실과 오해**
 1. **Think Data Structures**
@@ -47,11 +47,11 @@ permalink: /
 
 ### 읽다가 멈춘 책
 1. **[Clean Code](https://jdalma.github.io/docs/books/clean-code/)**
-2. **코딩 인터뷰 완전 분석**
-3. **[모던 자바 인 액션](https://jdalma.github.io/docs/books/modernJavaInAction/)**
-5. **자바 ORM 표준 JPA 프로그래밍**
-6. **도메인 주도 개발 시작하기**
-7. **테스트 주도 개발**
+2. **[모던 자바 인 액션](https://jdalma.github.io/docs/books/modernJavaInAction/)**
+3. **자바 ORM 표준 JPA 프로그래밍**
+4. **도메인 주도 개발 시작하기**
+5. **테스트 주도 개발**
+6. **이펙티브 자바**
 
 ### 구매 예정인 책
 1. **리팩토링**
