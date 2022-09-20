@@ -55,7 +55,6 @@ Spring Security는 Filter 체인에 단일로 설치되며 ("FilterChainProxy"),
   - WebSecurity에 대한 사용자 정의를 허용합니다. 
   - 대부분의 경우 사용자는 EnableWebSecurity를 사용하고 SecurityFilterChain 빈을 노출하는 구성을 생성합니다. 
   - **이것은 EnableWebSecurity 주석에 의해 WebSecurity에 자동으로 적용됩니다.**
-  - 지금은 `@EnableGlobalMethodSecurity(prePostEnabled = true)` 메소드에 보안을 적용하는 것이 아닌가?? 🚩
 
 <br>
 
@@ -177,9 +176,78 @@ public enum SessionCreationPolicy {
 `new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)`<br>
 - **일반 HttpStatus를 응답으로 보내는 AuthenticationEntryPoint**
 
-## **정리**
+### **정리**
 
 Spring Security는 서블릿의 필터 기능을 이용한다.<br>
 **주석 메서드**기능을 이용하거나 또는 `@EnableWebSecurity`어노테이션을 사용하여 적용한다.<br>
 Spring Security를 위한 [`Spring Docs`**FilterChainProxy**](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/FilterChainProxy.html)가 필터 체인에 합류한다.<br>
 세션과 예외 설정이 가능하다.
+
+
+***
+
+## **@PreAuthorize 및 @PostAuthorize를 사용한 액세스 제어**
+
+- [`Spring Reference` @PreAuthorize 및 @PostAuthorize를 사용한 액세스 제어](https://docs.spring.io/spring-security/reference/5.7.4/servlet/authorization/expression-based.html#_access_control_using_preauthorize_and_postauthorize)
+- [코드숨 7주차 과제](https://github.com/jdalma/spring-week7-assignment-1/blob/main/app/src/main/java/com/codesoom/assignment/security/UserAuthentication.java)
+
+<br>
+
+```java
+@PostMapping
+@ResponseStatus(HttpStatus.CREATED)
+@PreAuthorize("isAuthenticated() and hasAuthority('USER')")
+public Product create(
+        @RequestBody @Valid ProductData productData
+) {
+    return productService.createProduct(productData);
+}
+```
+
+<div class="code-example" markdown="1">
+**UserAuthentication**
+</div>
+
+```java
+public class UserAuthentication extends AbstractAuthenticationToken {
+
+    private final Long userId;
+
+    private static List<GrantedAuthority> authorities() {
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        // TODO : userId에 따라서 권한을 따로 부여
+        authorities.add(new SimpleGrantedAuthority("USER"));
+        return authorities;
+    }
+
+    public UserAuthentication(Long userId) {
+        super(authorities());
+        this.userId = userId;
+    }
+
+    @Override
+    public boolean isAuthenticated() {
+        return true;
+    }
+
+    @Override
+    public Object getCredentials() {
+        return null;
+    }
+
+    @Override
+    public Object getPrincipal() {
+        return true;
+    }
+}
+```
+
+**@EnableGlobalMethodSecurity(prePostEnabled = true)** 설정으로 인해 `@PreAuthorize` 어노테이션이 동작한다.
+- *이 설정이 메소드 주석 사용 방법 이라고 이해했다.*
+
+<br>
+
+하지만 `@PreAuthorize("isAuthenticated() and hasAuthority('USER')")` 안에 있는 메소드들은 어떻게 호출되는걸까??
+- **isAuthenticated()** : AbstractAuthenticationToken를 상속한 `UserAuthentication.isAuthenticated()`의 메소드가 사용된다.
+- **hasAuthority()** : [`Spring Reference` 표현식 기반 액세스 제어](https://docs.spring.io/spring-security/reference/6.0/servlet/authorization/expression-based.html)에서 공통으로 제공하는 내장 표현식이다.
+  - Returns `true` if the current principal has the specified authority.
