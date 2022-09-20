@@ -17,6 +17,8 @@ nav_order: 15
 
 ---
 
+# 개요
+
 ![](../../assets/images/algorithmTheory/springSecurityReview.png)
 
 - [리뷰](https://github.com/CodeSoom/spring-week7-assignment-1/pull/74#discussion_r974239683)
@@ -25,10 +27,6 @@ nav_order: 15
 이번 7주차 과제가 **Spring Security**를 적용해보는 과제였다.
 - [`Spring Guides` Securing a Web Application](https://spring.io/guides/gs/securing-web/)
 - [`Spring Guides` Spring Security Architecture](https://spring.io/guides/topicals/spring-security-architecture)
-
-```
-we take a look at the way security is applied in web applications by using filters and, more generally, by using method annotations. 
-```
 
 ```
 Spring Security는 Servlet을 기반으로 하므로 일반적으로 Filters의 역할을 먼저 살펴보는 것이 도움이 됩니다.
@@ -46,7 +44,7 @@ Spring Security는 Filter 체인에 단일로 설치되며 ("FilterChainProxy"),
 
 <br>
 
-## **필터 체인 생성 및 사용자 정의**
+# **필터 체인 생성 및 사용자 정의**
 
 지금은 **WebSecurityConfigurerAdapter** 추상화 클래스를 상속받고 `configure(HttpSecurity http)` 메소드를 구현하면 등록된다고 생각하자
 - *특정 인터페이스를 구현하거나 특정 클래스를 상속한 클래스들을 찾아 설정해주지 않을까?*
@@ -171,7 +169,7 @@ public enum SessionCreationPolicy {
 `new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)`<br>
 - **일반 HttpStatus를 응답으로 보내는 AuthenticationEntryPoint**
 
-### **정리**
+## **정리**
 
 Spring Security는 서블릿의 필터 기능을 이용한다.<br>
 **주석 메서드**기능을 이용하거나 또는 `@EnableWebSecurity`어노테이션을 사용하여 적용한다.<br>
@@ -181,7 +179,7 @@ Spring Security를 위한 [`Spring Docs`**FilterChainProxy**](https://docs.sprin
 
 ***
 
-## **@PreAuthorize 및 @PostAuthorize를 사용한 액세스 제어**
+# **@PreAuthorize 및 @PostAuthorize를 사용한 액세스 제어**
 
 - [`Spring Reference` @PreAuthorize 및 @PostAuthorize를 사용한 액세스 제어](https://docs.spring.io/spring-security/reference/5.7.4/servlet/authorization/expression-based.html#_access_control_using_preauthorize_and_postauthorize)
 - [코드숨 7주차 과제](https://github.com/jdalma/spring-week7-assignment-1/blob/main/app/src/main/java/com/codesoom/assignment/security/UserAuthentication.java)
@@ -242,7 +240,7 @@ public class UserAuthentication extends AbstractAuthenticationToken {
 
 <br>
 
-하지만 `@PreAuthorize("isAuthenticated() and hasAuthority('USER')")` 안에 있는 메소드들은 어떻게 호출되는걸까??
+하지만 `@PreAuthorize("isAuthenticated() and hasAuthority('USER')")` 안에 있는 메소드들은 어떻게 호출되는걸까?
 - **isAuthenticated()** : AbstractAuthenticationToken를 상속한 `UserAuthentication.isAuthenticated()`의 메소드가 사용된다.
 - **hasAuthority()** : [`Spring Reference` 표현식 기반 액세스 제어](https://docs.spring.io/spring-security/reference/6.0/servlet/authorization/expression-based.html)에서 공통으로 제공하는 내장 표현식이다.
   - Returns `true` if the current principal has the specified authority.
