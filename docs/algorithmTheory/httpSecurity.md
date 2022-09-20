@@ -91,21 +91,20 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter {
 - [`Spring Docs` HttpSecurity](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/config/annotation/web/builders/HttpSecurity.html)
 - 위의 문서를 참고해서 설정 부분을 해석해보자
 
-<br>
 
 ```java
 csrf().disable()
 ```
 - 기본적으로 CSRF가 활성화 되어 있지만 지금은 불필요하니 해제
 
-<br>
+***
 
 ```java
 addFilter(javax.servlet.Filter filter)
 ```
 - 스프링 시큐리티 프레임워크에 필터를 추가한다.
 
-<br>
+***
 
 ```java
 addFilterBefore(javax.servlet.Filter filter, 
@@ -118,7 +117,7 @@ addFilterBefore(authenticationErrorFilter , JwtAuthenticationFilter.class)
 - 등록한 `filter`가 실행되기 전에 먼저 실행할 `beforeFilter`필터를 등록한다.
   - 7주차 과제에서는 **JwtAuthenticationFilter**에서 토큰을 분석하기 때문에 토큰이 유효하지 않을 때 던지는 예외를 잡아 응답 상태를 커스텀 하기 위해 **authenticationErrorFilter**를 등록하였다.
 
-<br>
+***
 
 ```java
 .sessionManagement()
@@ -151,7 +150,7 @@ public enum SessionCreationPolicy {
 }
 ```
 
-<br>
+***
 
 ```java
 .exceptionHandling()
@@ -165,13 +164,9 @@ public enum SessionCreationPolicy {
   - 모든 속성에는 기본값이 있으므로 이 **SecurityConfigurer를 적용하는 것 외에는 추가 구성이 필요하지 않다.**
   - [`Spring Docs` ExceptionTranslationFilter](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/config/annotation/web/configurers/ExceptionHandlingConfigurer.html)
 
-<br>
-
 `authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))`<br>
 - **ExceptionTranslationFilter**에서 인증 체계를 시작하는 데 사용한다.
 - [`Spring Docs` Interface AuthenticationEntryPoint](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/AuthenticationEntryPoint.html)
-
-<br>
 
 `new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)`<br>
 - **일반 HttpStatus를 응답으로 보내는 AuthenticationEntryPoint**
