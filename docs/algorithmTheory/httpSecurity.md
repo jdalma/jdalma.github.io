@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Spring Http Security
+title: Spring Security
 parent: 📕 정리
 nav_order: 15
 ---
@@ -27,6 +27,7 @@ nav_order: 15
 이번 7주차 과제가 **Spring Security**를 적용해보는 과제였다.
 - [`Spring Guides` Securing a Web Application](https://spring.io/guides/gs/securing-web/)
 - [`Spring Guides` Spring Security Architecture](https://spring.io/guides/topicals/spring-security-architecture)
+- [`Spring Reference` AuthorizationFilter로 HttpServletRequests 권한 부여](https://docs.spring.io/spring-security/reference/servlet/authorization/authorize-http-requests.html)
 
 ```
 Spring Security는 Servlet을 기반으로 하므로 일반적으로 Filters의 역할을 먼저 살펴보는 것이 도움이 됩니다.
@@ -49,6 +50,7 @@ Spring Security는 Filter 체인에 단일로 설치되며 ("FilterChainProxy"),
 지금은 **WebSecurityConfigurerAdapter** 추상화 클래스를 상속받고 `configure(HttpSecurity http)` 메소드를 구현하면 등록된다고 생각하자
 - *특정 인터페이스를 구현하거나 특정 클래스를 상속한 클래스들을 찾아 설정해주지 않을까?*
 - [`Spring Docs` WebSecurityConfigurerAdapter](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.html)
+  - [`Spring Blog` Spring Security without the WebSecurityConfigurerAdapter](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter)
 - [`Spring Docs` WebSecurityConfigurer](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/config/annotation/web/WebSecurityConfigurer.html)
   - WebSecurity에 대한 사용자 정의를 허용합니다. 
   - 대부분의 경우 사용자는 EnableWebSecurity를 사용하고 SecurityFilterChain 빈을 노출하는 구성을 생성합니다. 
@@ -179,7 +181,9 @@ Spring Security를 위한 [`Spring Docs`**FilterChainProxy**](https://docs.sprin
 
 ***
 
-# **@PreAuthorize 및 @PostAuthorize를 사용한 액세스 제어**
+# [Method Security](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html)
+
+## **@PreAuthorize 및 @PostAuthorize를 사용한 액세스 제어**
 
 - [`Spring Reference` @PreAuthorize 및 @PostAuthorize를 사용한 액세스 제어](https://docs.spring.io/spring-security/reference/5.7.4/servlet/authorization/expression-based.html#_access_control_using_preauthorize_and_postauthorize)
 - [코드숨 7주차 과제](https://github.com/jdalma/spring-week7-assignment-1/blob/main/app/src/main/java/com/codesoom/assignment/security/UserAuthentication.java)
