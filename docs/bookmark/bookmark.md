@@ -77,6 +77,7 @@ has_children: true
 - [1강 ~ 6강 꼭 듣기](https://www.youtube.com/watch?v=Tq3W8UyltFs&list=PLy-g2fnSzUTAaDcLW7hpq0e8Jlt7Zfgd6)
 - [최근 면접을 다니면서 받았던 질문들](https://velog.io/@yukina1418/%EC%B5%9C%EA%B7%BC-%EB%A9%B4%EC%A0%91%EC%9D%84-%EB%8B%A4%EB%8B%88%EB%A9%B4%EC%84%9C-%EB%B0%9B%EC%95%98%EB%8D%98-%EC%A7%88%EB%AC%B8%EB%93%A4)
 - [⭐ 꼭 다 읽어보자](https://blog.naver.com/gngh0101/222810484797)
+- [이직 준비하면서 정리했던 질문들](https://github.com/JaeYeopHan/tip-archive/issues/79#issue-957494593)
 
 *** 
 
