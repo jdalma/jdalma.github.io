@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 티스토리 Open-API 사용하여 게시글 자동 수정
-parent: Toy-Projects
+parent: Toy-Project
 nav_order: 30
 ---
 ## Table of contents
