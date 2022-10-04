@@ -17,11 +17,11 @@ parent: ⏪ 회고
 
 ---
 
-# 사전과제
+# **사전과제**
 
-## [1주차 - 숫자 야구 게임](https://github.com/jdalma/java-baseball-precourse)
+## **[1주차 - 숫자 야구 게임](https://github.com/jdalma/java-baseball-precourse)**
 
-코드숨 8주차 교육과 겹쳐서 많은 시간을 투자하진 못 했지만.. 요구상하에 맞게 개발하여 제출했다. <br>
+코드숨 8주차 교육과 겹쳐서 많은 시간을 투자하진 못 했지만.. 요구사항에 맞게 개발하여 제출했다. <br>
 아래에는 제출한 과제진행 소감이다.<br>
 
 ```
@@ -41,7 +41,7 @@ parent: ⏪ 회고
   - 심판이 선수들의 숫자를 판별해줘야할까? 프로그래밍 상에서 보면 선수들이 서로 판별하면 될 것 같은데?
   - 일단 숫자 판별은 클라이언트 -> 심판 호출 -> 심판이 선수들에게 숫자를 판별하라고 메시지 전송
 
-## 1주차 - 피드백
+## **1주차 - 피드백**
 
 **TDD 원칙**<br>
 1. 실패하는 단위 테스트를 작성할 때 까지 프로덕션 코드를 작성하지 않는다.
@@ -81,4 +81,4 @@ parent: ⏪ 회고
 
 ***
 
-## [2주차 - 자동차 경주 게임](https://github.com/jdalma/java-racingcar-precourse)
+## **[2주차 - 자동차 경주 게임](https://github.com/jdalma/java-racingcar-precourse)**
