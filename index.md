@@ -24,8 +24,7 @@ permalink: /
 ### 읽고 있는 책
 1. [**토비의 스프링 3.1**](https://github.com/jdalma/tobyspringin5)
 2. [**오브젝트**](https://github.com/jdalma/book-object/tree/master)
-3. **가장 면접 사례로 배우는 대규모 시스템 설계 기초**
-4. **코딩 인터뷰 완전 분석**
+3. **코딩 인터뷰 완전 분석**
 
 ### 완강한 강의
 1. **[`스프링` 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)**
@@ -52,6 +51,7 @@ permalink: /
 4. **도메인 주도 개발 시작하기**
 5. **테스트 주도 개발**
 6. **이펙티브 자바**
+7. **가장 면접 사례로 배우는 대규모 시스템 설계 기초**
 
 ### 구매 예정인 책
 1. **리팩토링**
