@@ -137,6 +137,8 @@ has_children: true
 - **[Baeldung - Spring Pathvariable](https://www.baeldung.com/spring-pathvariable)**
 - **[SPRING CLOUD GATEWAY를 이용한 API GATEWAY 구축기](https://saramin.github.io/2022-01-20-spring-cloud-gateway-api-gateway/)**
 - **[Spring Batch 는 어떻게 Chunk 지향처리를 하고, Transaction을 언제 걸까](https://devocean.sk.com/blog/techBoardDetail.do?ID=164085)**
+- **[Spring WebClient에서 새어나가는 메모리 잡기](https://hyperconnect.github.io/2022/10/07/troubleshoot-webclient-oom.html)**
+- **[JVM + Container 환경에서 수상한 Memory 사용량 증가 현상 분석하기](https://hyperconnect.github.io/2022/07/19/suspicious-jvm-memory-in-container.html)**
 
 ## Cache
 - **[웹 서비스 캐시 똑똑하게 다루기](https://toss.tech/article/smart-web-service-cache)**
@@ -148,6 +150,7 @@ has_children: true
 - **[DTO와 Domain Model을 분리해야 하는 이유](https://umbum.dev/1206)**
 - **[마이크로서비스 스타일로 만들어진 시스템을 모노리틱 스타일로 이관한 사례](https://www.slideshare.net/arawnkr/ss-224478403)**
 - **[`번역` 웹 아키텍쳐 입문](https://blog.rhostem.com/posts/2018-07-22-web-architecture-101)**
+- **[CQRS 패턴](https://learn.microsoft.com/ko-kr/azure/architecture/patterns/cqrs)**
 
 ## TestCode
 - **[Spring Rest Docs](https://shirohoo.github.io/backend/test/2022-02-22-rest-docs-optimization/)**
