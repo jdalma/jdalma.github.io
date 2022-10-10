@@ -128,6 +128,7 @@ has_children: true
 - **[자바 직렬화, 그것이 알고싶다. 실무편](https://techblog.woowahan.com/2551/)**
 - **[Java Serialization 개념 정리](https://ryan-han.com/post/dev/serialization/)**
 - **[Top 70+ Core Java Interview Questions Answered for Freshers and Experienced in 2022](https://www.simplilearn.com/tutorials/java-tutorial/java-interview-questions)**
+- **[Java에서의 AOT vs JIT 컴파일](https://shirohoo.github.io/backend/java/2022-07-16-aot-vs-jit-in-java/)**
 
 ## Spring
 - **[@Transactional 사용 시 주의해야하는 8가지](https://flambeeyoga.tistory.com/entry/Transactional-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90)**
