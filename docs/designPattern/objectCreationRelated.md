@@ -11,7 +11,7 @@ nav_order: 1
 {:toc}
 ---
 
-# **[Singleton Pattern]()**
+# **Singleton Pattern**
 
 - **인스턴스를 오직 한 개만 제공하는 클래스**
 - `new`키워드를 사용하지 못하게 `private` 생성자를 만들고 클래스 내부에서 글로벌하게 접근 가능한 인스턴스를 만드는 메소드를 추가해야한다.
