@@ -11,6 +11,311 @@ nav_order: 1
 {:toc}
 ---
 
+# **[Singleton Pattern]()**
+
+- **인스턴스를 오직 한 개만 제공하는 클래스**
+- `new`키워드를 사용하지 못하게 `private` 생성자를 만들고 클래스 내부에서 글로벌하게 접근 가능한 인스턴스를 만드는 메소드를 추가해야한다.
+- 관련 이펙티브 자바 아이템 🚩
+  1. 아이템 3. "private 생성자나 열거 타입으로 싱글턴임을 보증하라"
+  2. 아이템 83. "지연 초기화는 신중히 사용하라"
+  3. 아이템 85. "자바 직렬화의 대안을 찾으라"
+  4. 아이템 86. "Serializable을 구현할지는 신중히 결정하라"
+
+## `private` 생성자에 `static` 메소드 방법
+
+```java
+public class Settings {
+
+    private static Settings instance;
+
+    private Settings() {
+        System.out.println("Settings 생성자 호출");
+    }
+
+    public static Settings getInstance() {
+        if (instance == null) {
+            instance = new Settings();
+            System.out.println("Settings 인스턴스 생성");
+        }
+        return instance;
+    }
+}
+
+// Settings 생성자 호출
+// Settings 인스턴스 생성
+// Settings 생성자 호출
+// Settings 인스턴스 생성
+// Settings 생성자 호출
+// Settings 인스턴스 생성
+```
+
+이 방법은 심각한 문제가 있다. <br>
+멀티스레드 환경에서는 취약하다. <br>
+  - [싱글 톤 인스턴스 생성 실패 사례](https://jdalma.github.io/docs/lab/classLoader/#%EC%9C%84%EC%9D%98-%ED%8A%B9%EC%84%B1%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8B%B1%EA%B8%80-%ED%86%A4-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%B4%EB%B3%B4%EA%B8%B0-lazyholder-)
+
+## `synchronized` 키워드 사용
+
+```java
+public class Settings1 {
+
+    private static Settings1 instance;
+
+    private Settings1() {
+        System.out.println("Settings 생성자 호출");
+    }
+
+    public static synchronized Settings1 getInstance() {
+        if (instance == null) {
+            instance = new Settings1();
+            System.out.println("Settings 인스턴스 생성");
+        }
+        return instance;
+    }
+}
+
+// Settings 생성자 호출
+// Settings 인스턴스 생성
+```
+
+동시에 `getInstance()`를 실행할 수 없긴 하지만 **동기화 처리 작업**으로 인해 성능에 불이익이 크다.<br>
+
+## 이른 초기화 `eager initialization` 사용하기
+
+```java
+public class Settings2 {
+
+    private static final Settings2 INSTANCE = new Settings2();
+
+    private Settings2() {
+        System.out.println("Settings 생성자 호출");
+    }
+
+    public static Settings2 getInstance() {
+        return INSTANCE;
+    }
+}
+
+// Settings 생성자 호출
+// Settings 인스턴스 생성
+```
+
+클래스가 로딩되는 시점에 바로 초기화 하기 때문에 멀티스레드에 안전하다.<br>
+**미리 만든다는 자체가 단점**이 될 수 있다.<br>
+- 인스턴스를 만드는 과정이 복잡하고 오래 걸리거나, 만들었는데 사용하지 않게되면 자원 낭비이기 때문이다.
+
+## `double checked locking` 사용하기
+
+```java
+public class Settings3 {
+
+    private static volatile Settings3 instance;
+
+    private Settings3() {
+        System.out.println("Settings3 생성자 호출");
+    }
+
+    public static Settings3 getInstance() {
+        if (instance == null) {
+            synchronized (Settings3.class) {
+                if (instance == null) {
+                    instance = new Settings3();
+                    System.out.println("Settings3 인스턴스 생성");
+                }
+            }
+        }
+        return instance;
+    }
+}
+
+// Settings3 생성자 호출
+// Settings3 인스턴스 생성
+```
+
+첫 번째 `if`를 통과해서 `synchronized` 블록으로 들어온다면 먼저 점유한 스레드가 생성을 끝나게 되면 다른 스레드는 내부 `if`를 통과하지 않기 때문에 안전하다.<br> 
+- [`java docs` Synchronization](https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html)
+  - [`java docs` atomic](https://docs.oracle.com/javase/tutorial/essential/concurrency/atomic.html)
+  - [`java docs` Atomic Variables](https://docs.oracle.com/javase/tutorial/essential/concurrency/atomicvars.html)
+<br>
+
+메소드 레벨에 `synchronized`를 작성하는 것보다 효율적이고, 필요할 때 인스턴스를 생성한다는 것이 장점이다.<br>
+하지만 이 기법은 **굉장히 복잡한 기법**이다.<br>
+인스턴스가 왜 `volatile` 키워드를 포함해야 하는지 이해하려면 자바 1.4이하 버전의 멀티스레드에서 메모리 관리 방법을 이해해야한다.<br>
+
+## `static inner class` 사용하기 (권장하는 방법 중의 하나)
+
+```java
+public class Settings4 {
+
+    private Settings4() {}
+
+    private static class SettingsHolder {
+        private static final Settings4 INSTANCE = new Settings4();
+    }
+
+    public static Settings4 getInstance() {
+        return SettingsHolder.INSTANCE;
+    }
+}
+```
+
+- [`Lazy Holder` 참고](https://jdalma.github.io/docs/lab/classLoader/#%EC%9C%84%EC%9D%98-%ED%8A%B9%EC%84%B1%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8B%B1%EA%B8%80-%ED%86%A4-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%B4%EB%B3%B4%EA%B8%B0-lazyholder-)
+
+### Reflection을 이용하여 싱글톤 깨트리기
+
+```java
+public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+
+    Settings4 settings4 = Settings4.getInstance();
+
+    Constructor<Settings4> declaredConstructor = Settings4.class.getDeclaredConstructor();
+    declaredConstructor.setAccessible(true);
+
+    Settings4 reflectionSettings4 = declaredConstructor.newInstance();
+
+    System.out.println(settings4 == reflectionSettings4);
+}
+```
+
+### 직렬화 & 역직렬화를 이용하여 싱글톤 깨트리기
+
+```java
+public static void main(String[] args) throws Exception {
+    Settings4 settings4 = Settings4.getInstance();
+    Settings4 deserializationSettings4 = null;
+
+    // 직렬화
+    try (ObjectOutput out = new ObjectOutputStream(new FileOutputStream("settings.obj"))) {
+        out.writeObject(settings4);
+    }
+
+    // 역직렬화
+    try (ObjectInput in = new ObjectInputStream(new FileInputStream("settings.obj"))) {
+        deserializationSettings4 = (Settings4) in.readObject();
+    }
+
+    System.out.println(settings4 == deserializationSettings4);
+}
+
+// false
+```
+
+**대응 방안**<br>
+
+```java
+public class Settings4 implements Serializable {
+
+    ...
+
+    protected Object readResolve() {
+        return getInstance();
+    }
+}
+```
+
+`Settings4` 클래스에 `readResolve()` 시그니처를 추가해 놓으면 역직렬화 할 때 해당 메소드를 사용한다.
+- 위의 코드를 실행하면 `true`가 나온다
+
+***
+
+## `enum` 사용하기
+
+```java
+public enum Settings5 {
+    INSTANCE;
+}
+```
+
+`enum`을 사용하여 INSTANCE에 속성 값을 추가하여 싱글턴을 사용한다면 Reflection에 안전하다.<br>
+아래는 `Settings5`를 바이트코드로 작성된 생성자다.
+
+```java
+private <init>(Ljava/lang/String;I)
+```
+
+그럼 Reflection을 사용하여 생성자에 문자열을 넣어주면 생성할 수 있지 않을까?
+
+```java
+public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    Settings5 settings5 = Settings5.INSTANCE;
+    Settings5 reflectionSettings5 = null;
+    Constructor<?>[] declaredConstructors = Settings5.class.getDeclaredConstructors();
+    for (Constructor<?> constructor : declaredConstructors) {
+        constructor.setAccessible(true);
+        reflectionSettings5 = (Settings5) constructor.newInstance("INSTANCE");
+    }
+
+    System.out.println(settings5 == reflectionSettings5);
+}
+```
+
+컴파일 에러는 나지 않지만, 실행하면 `Cannot reflectively create enum objects`라는 예외를 던진다.<br>
+`enum`은 **Reflection에서 `newInstance`를 사용하지 못하게 막아 놓았다.<br>
+
+```java
+    @CallerSensitive
+    @ForceInline // to ensure Reflection.getCallerClass optimization
+    public T newInstance(Object ... initargs)
+        throws InstantiationException, IllegalAccessException,
+               IllegalArgumentException, InvocationTargetException
+    {
+        if (!override) {
+            Class<?> caller = Reflection.getCallerClass();
+            checkAccess(caller, clazz, clazz, modifiers);
+        }
+        if ((clazz.getModifiers() & Modifier.ENUM) != 0)
+            throw new IllegalArgumentException("Cannot reflectively create enum objects");
+        ConstructorAccessor ca = constructorAccessor;   // read volatile
+        if (ca == null) {
+            ca = acquireConstructorAccessor();
+        }
+        @SuppressWarnings("unchecked")
+        T inst = (T) ca.newInstance(initargs);
+        return inst;
+    }
+```
+
+<br>
+
+그리고 `enum`은 직렬화 & 역직렬화에도 안전하다.<br>
+`Enum` 클래스는 `Serializable` 인터페이스를 이미 구현하고 있다.<br>
+
+```java
+public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, IOException, ClassNotFoundException {
+    Settings5 settings5 = Settings5.INSTANCE;
+    Settings5 reflectionSettings5 = null;
+
+    try (ObjectOutput out = new ObjectOutputStream(new FileOutputStream("settings.obj"))) {
+        out.writeObject(settings5);
+    }
+
+    try (ObjectInput in = new ObjectInputStream(new FileInputStream("settings.obj"))) {
+        reflectionSettings5 = (Settings5) in.readObject();
+    }
+
+    System.out.println(settings5 == reflectionSettings5);
+}
+
+// true
+```
+
+## 질문
+
+1. 자바에서 enum을 사용하지 않고 싱글톤 패턴을 구현하는 방법은?
+2. private생성자와 static메소드를 사용하는 방법의 단점은?
+3. enum을 사용해 싱글톤 패턴을 구현하는 방법의 장점과 단점은?
+   - 상속을 쓰지 못하고 미리 만들어진다는 점이 단점이다.
+4. static inner 클래스를 사용해 싱글톤 패턴을 구현하라
+
+## 자바와 스프링에서 사용되는 곳
+
+- 스프링 빈 스코프 중 싱글톤 스코프
+- 자바 `java.lang.Runtime`
+  - 자바 애플리케이션이 실행되고있는 컨텍스트 정보
+- 다른 디자인 패턴 구현체의 일부로 쓰이기도 한다
+  - 빌더, 퍼사드, 추상 팩토리 등
+
+***
+
 # **[Builder Pattern](https://github.com/jdalma/design-patterns/tree/master/src/main/java/me/whiteship/designpatterns/_01_creational_patterns/_04_builder)**
 
 - **동일한 프로세스를 거쳐 다양한 구성의 인스턴스를 만드는 방법**
