@@ -58,6 +58,7 @@ permalink: /
 2. **HTTP 완벽 가이드** vs **성공과 실패를 결정하는 1%의 네트워크 원리**
   - *[웹 프로그래머를 위한 HTTP 완벽 가이드 읽는 법](https://blog.npcode.com/2015/06/07/%EC%9B%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%9D%BD%EB%8A%94-%EB%B2%95/)*
 3. **Real MySQL**
+4. **[일상 속 사물이 알려주는 웹 API 디자인](https://product.kyobobook.co.kr/detail/S000000555532)**
 
 ### 중요 무료 강의
 1. **[CS50](https://www.boostcourse.org/cs112/joinLectures/41307)**
