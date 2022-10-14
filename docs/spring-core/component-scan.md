@@ -172,7 +172,9 @@ public class AutoAppConfig {
 ```
 
 ### 📌 컴포넌트 스캔 기본 대상
-**컴포넌트 스캔은 `@Component`뿐만 아니라 다음과 같은 내용도 추가로 대상에 포함한다.**
+**컴포넌트 스캔은 `@Component`뿐만 아니라 다음과 같은 내용도 추가로 대상에 포함한다.**<br>
+**ClassPathBeanDefinitionScanner** 클래스 경로 스캐닝을 통해 자동 감지되도록 한다. <br>
+
 - `@Component`
   - 컴포넌트 스캔에서 사용
 - `@Controller`
@@ -183,9 +185,11 @@ public class AutoAppConfig {
 - `@Repository`
   - 스프링 데이터 접근 계층으로 인식
   - **데이터 계층의 예외를 스프링 예외로 변환해준다.**
+  - `데이터 액세스 개체와 DDD 스타일 리포지토리 간의 차이점을 이해하는 데 주의를 기울여야 한다`
 - `@Configuration`
   - 스프링 설정 정보에서 사용
   - **스프링 빈이 싱글톤을 유지하도록 추가 처리를 한다.**
+  - [`Spring docs` @Configuration](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html)
 
 ![](../../assets/images/spring-core/component-scan/4.png)
 
