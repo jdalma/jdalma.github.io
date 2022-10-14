@@ -26,7 +26,7 @@ parent: 👨‍🔬 Lab
 
 ***
 
-# **`Iterator`, `Enumerator`, `Iterable`** ?
+# **Iterator, Enumerator, Iterable** ?
 
 `Iterator`의 공식 문서에 따르면 Collection Framework에서 `Enumeration`을 대체하며 두 가지의 차이점이 있다고 한다.<br>
 1. `Iterator`를 사용하면 반복하는 동안 기본 컬렉션에서 요소를 제거할 수 있다.
@@ -96,7 +96,7 @@ public static void enhancedForLoop() {
 
 ***
 
-# **ConcurrentModificationException?**
+# **ConcurrentModificationException** ?
 
 글을 보다보면 **동시성**에 관한 얘기가 나온다.<br>
 
