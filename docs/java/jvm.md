@@ -53,6 +53,8 @@ nav_order: 3
 ## **Class Loader (Sub)System**
 ![](../../assets/images/java/4.png)
 
+- [Loading, Linking, and Initializing](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-5.html)
+
 ✅**Java의 동적 클래스 로딩 기능은 Class Loader System에서 처리합니다.**
 {: .fh-default .fs-4 }
 
