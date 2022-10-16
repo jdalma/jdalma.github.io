@@ -118,7 +118,6 @@ has_children: true
 - **[Garbage Collector의 동작 원리](https://sihyung92.oopy.io/java/garbage-collect/1)**
 - **[Generic Type erasure란 무엇일까?](https://devlog-wjdrbs96.tistory.com/263)**
 - **[Java Stream API는 왜 for-loop보다 느릴까?](https://jypthemiracle.medium.com/java-stream-api%EB%8A%94-%EC%99%9C-for-loop%EB%B3%B4%EB%8B%A4-%EB%8A%90%EB%A6%B4%EA%B9%8C-50dec4b9974b)**
-- **[List 순회 중 만난 ConcurrentModificationException과 컬렉션 불변성](https://m.blog.naver.com/tmondev/220393974518)**
 - **[토스ㅣSLASH 22 - Java Native Memory Leak 원인을 찾아서](https://www.youtube.com/watch?v=w4fWgLgop5U)**
 - **[[Java] Pass By Value와 Pass By Reference의 차이 및 이해 (3/3)](https://mangkyu.tistory.com/107)**
 - **[Is Java "pass-by-reference" or "pass-by-value"?](https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value)**
@@ -130,6 +129,10 @@ has_children: true
 - **[Top 70+ Core Java Interview Questions Answered for Freshers and Experienced in 2022](https://www.simplilearn.com/tutorials/java-tutorial/java-interview-questions)**
 - **[Java에서의 AOT vs JIT 컴파일](https://shirohoo.github.io/backend/java/2022-07-16-aot-vs-jit-in-java/)**
 
+## Testing
+
+- **[usingRecursiveComparison()](https://assertj.github.io/doc/#assertj-core-recursive-comparison-strict)**
+
 ## Spring
 - **[@Transactional 사용 시 주의해야하는 8가지](https://flambeeyoga.tistory.com/entry/Transactional-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90)**
 - **[`@ServletComponentScan`](https://www.baeldung.com/spring-servletcomponentscan)**
@@ -140,6 +143,7 @@ has_children: true
 - **[Spring Batch 는 어떻게 Chunk 지향처리를 하고, Transaction을 언제 걸까](https://devocean.sk.com/blog/techBoardDetail.do?ID=164085)**
 - **[Spring WebClient에서 새어나가는 메모리 잡기](https://hyperconnect.github.io/2022/10/07/troubleshoot-webclient-oom.html)**
 - **[JVM + Container 환경에서 수상한 Memory 사용량 증가 현상 분석하기](https://hyperconnect.github.io/2022/07/19/suspicious-jvm-memory-in-container.html)**
+- **[스프링 철학이 이 문서에 설명되어 있다](https://johngrib.github.io/wiki/spring/document/overview/)**
 
 ## Cache
 - **[웹 서비스 캐시 똑똑하게 다루기](https://toss.tech/article/smart-web-service-cache)**
