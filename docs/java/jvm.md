@@ -122,6 +122,7 @@ public class App {
 -   JVM 인스턴스 내에서 로드된 Types에 대한 정보 메소드 영역이라는 메모리의 논리적 영역에 저장된다.
 -   정적 변수를 포함하여 모든 클래스 수준 데이터가 여기에 저장 된다.
 -   JVM당 하나의 메소드 영역만 있으며 공유 자원이다.
+-   [java 8 docs](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5.4)
 
 ### Heap Area(힙 영역)
 
