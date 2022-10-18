@@ -4,6 +4,7 @@ title: 스프링부트와 JPA활용
 parent: JPA
 nav_order: 1
 has_children: true
+nav_exclude: true
 ---
 ## Table of contents
 {: .no_toc .text-delta }
