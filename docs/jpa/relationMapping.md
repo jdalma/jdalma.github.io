@@ -11,6 +11,24 @@ nav_order: 15
 {:toc}
 ---
 
+# 연관관계 매핑시 고려사항 3가지
+
+1. **다중성**
+   - DB 관점에서의 다중성을 기준으로 고민하자
+2. **단방향, 양방향**
+   - DB 기준
+     - 외래 키 하나로 양쪽 조인 가능, **방향이라는 개념이 없다**
+   - 객체 기준
+     - 참조용 필드가 있는 쪽으로만 참조 가능
+     - **양방향 관계라는 말은 서로 다른 방향 관계가 두 개라는 것이다.**
+     - **객체는 가급적이면 단방향이 좋다.**
+3. **연관관계의 주인**
+   - 테이블은 **외래 키 하나**로 두 테이블이 연관관계를 맺음
+   - 객체 양방향 관계는 `A → B`, `B → A` 처럼 **참조가 2군데**
+     - 둘 중 테이블의 외래 키를 관리할 곳을 지정해야 한다.
+   - **연관관계의 주인** : 외래 키를 관리하는 참조
+   - **주인의 반대편** : 외래 키에 영향을 주지 않는다. 단순 조회만
+
 # 객체와 테이블간에 연관관계란?
 
 ![](../../assets/images/jpa/relationMapping/mappingExampleTable.png)
@@ -82,7 +100,7 @@ nav_order: 15
 
 ***
 
-# **단방향 연관관계**
+# **단방향 객체 연관관계**
 - `다대일 (N:1)`단방향 관계를 가장 먼저 이해해야 한다.
 - 회원과 팀의 관계를 통해 알아보자.
   - 회원과 팀이 있다.
@@ -93,7 +111,7 @@ nav_order: 15
 
 ***
 
-# **양방향 연관관계**
+# **양방향 객체 연관관계**
 
 ![](../../assets/images/jpa/relationMapping/bidirectionalRelation.png)
 
@@ -315,7 +333,60 @@ Member{id=7, team=Team{id=5, name='teamA'}, username='b'}
   3. **주인이 아닌쪽은 읽기만 가능**
   4. 주인은 `mappedBy`속성을 사용하지 않는다.
   5. 주인이 아니면 `mappedBy`속성으로 주인을 지정한다.
+  6. **순수한 객체관계를 고려하면 항상 양쪽 다 값을 넣어주는게 맞다**
 - **외래 키가 있는 곳을 주인으로 정해라**
+- 연관관계의 주인은 외래 키의 위치와 관련해서 정해야지 비즈니스 중요도로 접근하면 안된다.
+
+## **mappedBy** ⭐️
+
+```java
+@Entity
+public class Member {
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBER_ID")
+    private Long id;
+
+    @Column(name = "USERNAME")
+    private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+    ...
+}
+
+...
+
+@Entity
+public class Team {
+    @Id
+    @GeneratedValue
+    @Column(name = "TEAM_ID")
+    private Long id;
+
+    @Column(name = "TEAMNAME")
+    private String name;
+
+    @OneToMany(mappedBy = "team")
+    private List<Member> members = new ArrayList<>();
+    ...
+}
+```
+
+- `mappedBy`를 `"team"`으로 줄 수 있는 이유는 `Member엔티티`에서 **Team의 id를 갖는 필드변수가 team 이기 때문**이다
+- `Team`이 연관관계의 주인이 아니며, `Team`의 `members`필드는 `Member`의 `team`필드에 의해 매핑 된다고 표시하는 것이다
+- 연관관계의 주인이 아니라서 수정은 불가하고 조회만 가능하다
+- 객체간 양방향 관계로 참조해야 한다면 아래와 같이 **연관관계 편의 메소드**를 작성하자
+
+```java
+// 두 개의 객체 중 한쪽에만 아래와 같은 메소드를 사용하면 편하다
+public void addMember(Member member) {
+    this.members.add(member);
+    member.setTeam(this);
+}
+```
+
 
 ## 역방향에서 넣으면 저장이 될까?
 
@@ -457,5 +528,132 @@ MEMBER_ID 	USERNAME  	TEAM_ID
 
 ## **`N:M` @OneToOne**
 
+***
 
-  
+# **즉시 로딩과 지연 로딩**
+
+## 지연로딩 fetch = FetchType.LAZY
+
+```java
+@Entity(name = "MEMBER")
+public class Member {
+  ...
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "TEAM_ID")
+  private Team team;
+
+  ...
+}
+```
+
+```java
+Member refMember = em.find(Member.class, member.getId());
+System.out.println(emf.getPersistenceUnitUtil().isLoaded(refMember));
+Hibernate.initialize(refMember);
+
+System.out.println(refMember);
+System.out.println(refMember.getTeam());
+System.out.println(refMember.getTeam().getClass());
+```
+
+```
+Hibernate: 
+    select
+        member0_.MEMBER_ID as MEMBER_I1_0_0_,
+        member0_.city as city2_0_0_,
+        member0_.USERNAME as USERNAME3_0_0_,
+        member0_.street as street4_0_0_,
+        member0_.TEAM_ID as TEAM_ID6_0_0_,
+        member0_.zipcode as zipcode5_0_0_ 
+    from
+        MEMBER member0_ 
+    where
+        member0_.MEMBER_ID=?
+
+true
+Member{id=2, name='홍길동'}
+
+Hibernate: // getTeam()이 호출될 때 조회한다
+    select
+        team0_.TEAM_ID as TEAM_ID1_1_0_,
+        team0_.TEAMNAME as TEAMNAME2_1_0_ 
+    from
+        TEAM team0_ 
+    where
+        team0_.TEAM_ID=?
+Team{id=1, name='Team'}
+class Team$HibernateProxy$UMTk7OUY
+```
+
+- `getTeam()`으로 가져온 `Team`객체는 프록시다
+- `LAZY`로 설정되어 있다면 원본 객체랑 연결된 추가 객체들은 **프록시**로 제공된다.
+
+## 즉시로딩 
+
+```java
+@Entity(name = "MEMBER")
+public class Member {
+  ...
+
+  @ManyToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "TEAM_ID")
+  private Team team;
+
+  ...
+}
+```
+
+```java
+Member refMember = em.find(Member.class, member.getId());
+System.out.println(emf.getPersistenceUnitUtil().isLoaded(refMember));
+Hibernate.initialize(refMember);
+
+System.out.println(refMember);
+System.out.println(refMember.getTeam());
+System.out.println(refMember.getTeam().getClass());
+```
+
+```
+Hibernate: 
+    select
+        member0_.MEMBER_ID as MEMBER_I1_0_0_,
+        member0_.city as city2_0_0_,
+        member0_.USERNAME as USERNAME3_0_0_,
+        member0_.street as street4_0_0_,
+        member0_.TEAM_ID as TEAM_ID6_0_0_,
+        member0_.zipcode as zipcode5_0_0_,
+        team1_.TEAM_ID as TEAM_ID1_1_1_,
+        team1_.TEAMNAME as TEAMNAME2_1_1_ 
+    from
+        MEMBER member0_ 
+    left outer join
+        TEAM team1_ 
+            on member0_.TEAM_ID=team1_.TEAM_ID 
+    where
+        member0_.MEMBER_ID=?
+true
+Member{id=2, name='홍길동'}
+Team{id=1, name='Team'}
+class Team
+```
+
+- **한 번에 다 가져온다.**
+- `Team`객체는 프록시가 아니다
+
+## 프록시와 즉시로딩 주의 ⭐️
+
+- 가급적 **지연 로딩만 사용**
+- 즉시 로딩을 적용하면 예상하지 못한 SQL이 발생
+- 즉시 로딩은 JPQL에서 `N + 1 문제`를 일으킨다
+- `@ManyToOne`, `@OneToOne`은 기본이 **즉시 로딩**
+  - **지연 로딩**으로 설정해라
+- `@OneToMany`, `@ManyToMany`는 기본이 **지연 로딩**
+- 실무에서는 무조건 **지연 로딩**만 사용해라
+- `JPQL fetch 조인`이나 `엔티티 그래프`기능을 사용해라
+
+## **N + 1 문제** 🚩
+
+`SELECT m FROM Member m`을 JPQL로 실행하게 된다면, 조회된 `Member`의 수 만큼 `Team`을 조회하는 것
+  - **"N"** : 조회된 `Member`의 수만큼 `Team`을 다시 조회하니 N으로 부름
+  - **"1"** : 최초 `Member`를 조회할 때 
