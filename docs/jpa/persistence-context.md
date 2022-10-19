@@ -110,7 +110,7 @@ nav_order: 2
 >   - 영속성 컨텍스트에 저장되려면 객체의 `Id`필드 값은 필수이며 , 
 >   - `persist()`시점에 DB에서 `Id`필드 값을 조회하여 채워주게 된다.
 
-## 트랜잭션을 지원하는 쓰기 지연 (`transactional write-behind`)
+## 트랜잭션을 지원하는 쓰기 지연 `transactional write-behind`
 - 영속성 컨텍스트에 변경이 발생했을 때, 바로 데이터베이스로 쿼리를 보내지 않고 **SQL 쿼리를 쓰기 지연 SQL저장소에 모아뒀다가,** 
 - **영속성 컨텍스트가 `flush` 하는 시점에 모아둔 SQL 쿼리를 데이터베이스로 보내는 기능**
   - ex) **XML설정** - `<property name="hibernate.jdbc.batch_size" value="10"/>`
@@ -157,7 +157,7 @@ transaction.commit();
 - **트랜잭션 `commit()` 시**
 
 
-## 변경 감지(`Dirty Checking`)
+## 변경 감지 `Dirty Checking`
 
 ```java
         transaction.begin();
@@ -189,9 +189,37 @@ transaction.commit();
 - `SnapShot`
   - 영속성 컨텍스트 (1차 캐시)에 최초 읽어온 시점
 
+## 영속성 전이 `CASCADE`
 
-## 지연 로딩(`Lazy Loading`)
+1. **ALL : 모두 적용**
+   - 단일소유자일 떄
+   - 엔티티의 생명주기가 비슷할 때
+2. **PERSIST : 영속**
+3. **REMOVE : 삭제**
+4. MERGE : 병합
+5. REFRESH
+6. DETACH
 
+특정 엔티티를 영속 상태로 만들 때 **연관된 엔티티도 함께 영속 상태로 만들고 싶을 때**<br>
+- 부모 엔티티를 저장할 때 자식 엔티티도 함께 저장하는 것
+- **엔티티를 영속화 할 때 연관된 엔티티도 함께 영속화 하는 편리함을 제공해줄 뿐이다.**
+- *연관관계 매핑이나 즉시 로딩, 지연 로딩과 연관이 하나도 없다*
+
+- `@OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)` [예제](https://github.com/jdalma/jpa-basic/commit/9da3540fe4b3c843c77fe221826a161b98c03f33)
+
+## 고아 객체 
+
+스스로 생명주기를 관리하는 엔티티는 `em.persist()`로 영속화하고, `em.remove()`로 제거한다.
+
+- 고아 객체 제거
+- 부모 엔티티와 연관관계가 끊어진 자식 엔티티를 자동으로 삭제
+- **참조하는 곳이 하나일 때 사용해야 한다.**
+- **특정 엔티티가 개인 소유할 때 사용**
+- `@OneToOne` , `@OneToMany`만 가능
+- `CascadeType.REMOVE`처럼 동작한다
+- `orphanRemoval = true` [예제](https://github.com/jdalma/jpa-basic/commit/b1786706b5142fad8e318a7c82f0172a1fa88e9f)
+  - `cascade = CascadeType.ALL, orphanRemoval = true`로 하면 자식의 생명주기를 부모가 완전하게 관리한다
+    - `DDD`의 **Aggregate Root 개념을 구현할 때 유용하다**
 
 ***
 
@@ -449,10 +477,8 @@ public class ItemRepository {
 ![](../../assets/images/jpa/persistence-context/persistenceContext.png)
 
 
-# `JDBC BATCH SQL 기능`은 무엇일까
+# **JDBC BATCH SQL** 기능은 무엇일까 🚩
 
 - [출처 Batch Processing in JDBC by Baeldung](https://www.baeldung.com/jdbc-batch-processing)
 
-# (변경감지) `Snap Shot` 과 `Entity`를 어떻게 비교할까 🚩
-
-# [`DB Isolation Level` ? , `Read Commit` ?](https://jdalma.github.io/docs/algorithmTheory/dbDeadlock/)
+# (변경감지) **Snap Shot** 과 **Entity**를 어떻게 비교할까 🚩
