@@ -14,6 +14,7 @@ permalink: /
 
 # **Focus** 
 
+- [주니어 개발자에서 도약하기 위한 7단계](https://yozm.wishket.com/magazine/detail/1740/?utm_source=stibee&utm_medium=email&utm_campaign=newsletter_yozm&utm_content=contents)
 - [개발자를 코칭하며 배운 7 가지](https://www.popit.kr/%ea%b0%9c%eb%b0%9c%ec%9e%90%eb%a5%bc-%ec%bd%94%ec%b9%ad%ed%95%98%eb%a9%b0-%eb%b0%b0%ec%9a%b4-7-%ea%b0%80%ec%a7%80/)
 - [프로그래밍, 어떻게 공부할 것인가?](https://www.youtube.com/watch?v=oFhN3EqrCwc)
 - [글쓰는 개발자가 되자.](https://www.popit.kr/%EA%B8%80%EC%93%B0%EB%8A%94-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EB%90%98%EC%9E%90/)
