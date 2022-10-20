@@ -657,3 +657,14 @@ class Team
 `SELECT m FROM Member m`을 JPQL로 실행하게 된다면, 조회된 `Member`의 수 만큼 `Team`을 조회하는 것
   - **"N"** : 조회된 `Member`의 수만큼 `Team`을 다시 조회하니 N으로 부름
   - **"1"** : 최초 `Member`를 조회할 때 
+
+1. **Fetch Join**으로 해결
+   - `inner join`
+2. **@EntityGraph**
+   - `outer join`
+   - 중복을 제거하기 위한 자료구조를 고려해야 한다
+   - **동적으로 그래프를 구성할 수 있다**
+3. **@NamedEntityGraphs**
+   - **정적으로 엔티티에 선언하는 방법이다**
+   - 전략을 엔티티에 작성하는 것이라서 정적이다
+
