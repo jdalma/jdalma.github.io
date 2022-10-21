@@ -674,18 +674,8 @@ List<Account> findAllFetchJoinTransactionsByUserIdOrderByIdDesc(Long userId);
 
 ```
 select
-        account0_.id as id1_1_0_,
-        transactio1_.id as id1_2_1_,
-        account0_.created_at as created_2_1_0_,
-        account0_.name as name3_1_0_,
-        account0_.user_id as user_id4_1_0_,
-        transactio1_.account_id as account_6_2_1_,
-        transactio1_.amount as amount2_2_1_,
-        transactio1_.created_at as created_3_2_1_,
-        transactio1_.type as type4_2_1_,
-        transactio1_.user_id as user_id5_2_1_,
-        transactio1_.account_id as account_6_2_0__,
-        transactio1_.id as id1_2_0__ 
+        a.*,
+        t.*
     from
         accounts account0_ 
     left outer join
@@ -697,6 +687,35 @@ select
 
 
 **@NamedEntityGraphs**<br>
-- **정적으로 엔티티에 선언하는 방법이다**
-- 전략을 엔티티에 작성하는 것이라서 정적이다
 
+```java
+@Entity
+@Table(name = "accounts")
+@NamedEntityGraph(
+        name = "accountWithTransactions",
+        attributeNodes = @NamedAttributeNode("transactions")
+)
+public class Account {
+  ...
+}
+
+...
+
+@EntityGraph(value = "accountWithTransactions")
+Optional<Account> findOneByIdAndUserId(@Param("id") Long accountId, @Param("userId") Long userId);
+```
+
+```
+Hibernate: 
+    select
+        a.*,
+        t.*
+    from
+        accounts account0_ 
+    left outer join
+        transactions transactio1_ 
+            on account0_.id=transactio1_.account_id 
+    where
+        account0_.id=? 
+        and account0_.user_id=?
+```
