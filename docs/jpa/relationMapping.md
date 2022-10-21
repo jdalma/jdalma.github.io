@@ -652,19 +652,51 @@ class Team
 - 실무에서는 무조건 **지연 로딩**만 사용해라
 - `JPQL fetch 조인`이나 `엔티티 그래프`기능을 사용해라
 
-## **N + 1 문제** 🚩
+## **N + 1 문제**
 
 `SELECT m FROM Member m`을 JPQL로 실행하게 된다면, 조회된 `Member`의 수 만큼 `Team`을 조회하는 것
   - **"N"** : 조회된 `Member`의 수만큼 `Team`을 다시 조회하니 N으로 부름
   - **"1"** : 최초 `Member`를 조회할 때 
 
-1. **Fetch Join**으로 해결
-   - `inner join`
-2. **@EntityGraph**
-   - `outer join`
-   - 중복을 제거하기 위한 자료구조를 고려해야 한다
-   - **동적으로 그래프를 구성할 수 있다**
-3. **@NamedEntityGraphs**
-   - **정적으로 엔티티에 선언하는 방법이다**
-   - 전략을 엔티티에 작성하는 것이라서 정적이다
+**Fetch Join**으로 해결 <br>
+- `inner join`
+
+**@EntityGraph** <br>
+- `outer join`
+- 중복을 제거하기 위한 자료구조를 고려해야 한다
+- **동적으로 그래프를 구성할 수 있다**
+
+```java
+@EntityGraph(attributePaths = "transactions")
+@Query("select a from Account a where a.userId = :userId")
+List<Account> findAllFetchJoinTransactionsByUserIdOrderByIdDesc(Long userId);
+```
+
+```
+select
+        account0_.id as id1_1_0_,
+        transactio1_.id as id1_2_1_,
+        account0_.created_at as created_2_1_0_,
+        account0_.name as name3_1_0_,
+        account0_.user_id as user_id4_1_0_,
+        transactio1_.account_id as account_6_2_1_,
+        transactio1_.amount as amount2_2_1_,
+        transactio1_.created_at as created_3_2_1_,
+        transactio1_.type as type4_2_1_,
+        transactio1_.user_id as user_id5_2_1_,
+        transactio1_.account_id as account_6_2_0__,
+        transactio1_.id as id1_2_0__ 
+    from
+        accounts account0_ 
+    left outer join
+        transactions transactio1_ 
+            on account0_.id=transactio1_.account_id 
+    where
+        account0_.user_id=?
+```
+
+
+**@NamedEntityGraphs**<br>
+- **정적으로 엔티티에 선언하는 방법이다**
+- 전략을 엔티티에 작성하는 것이라서 정적이다
 
