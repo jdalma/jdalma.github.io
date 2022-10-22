@@ -252,3 +252,87 @@ commit;
 - 하지만 일반적인 DBMS (Database Management System)에서는 **데드락 탐지(Deadlock detection) 기능**을 제공하기때문에 데드락이 발견되면 자동으로 해소시켜준다 
   - (*실제 데드락 상황이 아닐지라도 락에 대한 대기시간이 설정된 시간을 초과하면 이것도 데드락으로 처리된다*)
 
+
+
+****
+
+1. `synchronized` 키워드를 사용하였음에도 불구하고 테스트는 실패한다
+
+```
+expected: 0L
+but was: 50L
+```
+
+- `Spring의 @Transactional`의 작동방식 때문이다
+- `@Transactional`이 선언된 `decrease()`메소드는 프록시로 실행되는데 `decrease()`메소드 자체는 동기화가 되지만 해당 메소드가 진행되고 있는 중에도 다른 스레드의 트랜잭션이 시작할 수도 있기 때문이다
+- **트랜잭션 시작** → `synchronized decrease()` → **트랜잭션 종료**
+- 트랜잭션 시작과 종료 사이에 트랜잭션이 시작되는 스레드가 갱신되기 이전의 데이터를 조회해서 감소시키기 때문에 문제다
+  - 그럼 프록시는 `synchronized`키워드를 무시하나보다
+- `@Transactional`을 제거하면 테스트를 통과한다.
+
+**문제점**<br>
+
+- 자바의 `synchronized`는 **하나의 프로세스에서만 보장된다.**
+  - 서버가 여러 대라면 근본적인 문제는 해결할 수 없다
+
+2. DB의 비관적 락을 적용하면 해결된다 `1초 184ms`
+
+```java
+select stock0_.id as id1_0_, stock0_.program_id as program_2_0_, stock0_.quantity as quantity3_0_ from stock stock0_ where stock0_.id=? for update
+```
+
+3. 엔티티에 `version`필드 `@Version`어노테이션을 추가하여 낙관적 락 사용 `4초 704ms`
+4. mysql `Named Lock`활용 40개의 커넥션, 32개의 스레드
+
+
+- **Optimistic Lock**
+  - lock 을 걸지않고 문제가 발생할 때 처리합니다.
+  - 대표적으로 `version column` 을 만들어서 해결하는 방법이 있습니다.
+  - `version`을 확인해가며 데이터를 조작한다.
+  - 충돌이 빈번하다면 비관적 락을 사용하는게 이득일 것이다.
+  - DB 작업에 실패한다면 재시도 로직을 개발자가 직접 작성해줘야 한다.
+- **Pessimistic Lock (exclusive lock)**
+  - 다른 트랜잭션이 특정 row 의 lock 을 얻는것을 방지합니다.
+  - A 트랜잭션이 끝날때까지 기다렸다가 B 트랜잭션이 lock 을 획득합니다.
+  - 특정 row 를 update 하거나 delete 할 수 있습니다.
+  - 일반 select 는 별다른 lock 이 없기때문에 조회는 가능합니다.
+  - row나 테이블 단위
+  - 충돌이 빈번하다면 **낙관적 락보다 성능이 좋을 수 있다**
+  - 하지만 별도의 락을 사용하기 때문에 성능 저하는 당연하다.
+- **Named Lock 활용하기**
+  - 이름과 함께 메타데이터 lock 을 획득합니다. 
+  - 해당 lock 은 다른세션에서 획득 및 해제가 불가능합니다.
+  - 트랜잭션이 종료될 때 락이 자동으로 풀리지 않기 때문에 별도의 명령어로 해제해주거나, 선점 시간이 끝나야 풀린다.
+  - 분산 락을 구현할 떄 쓰인다
+
+<br>
+
+- [glos_exclusive_lock](https://dev.mysql.com/doc/refman/8.0/en/glossary.html#glos_exclusive_lock)
+- [innodb-locking](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)
+- [locking-functions](https://dev.mysql.com/doc/refman/8.0/en/locking-functions.html)
+
+**Redis 이용해보기**<br>
+
+1. **Lettuce** `7초 329ms`
+  - 구현이 간단하다.
+  - `spring data redis`를 이용하면 **Lettuce**가 기본이기 때문에 별도의 라이브러리를 사용하지 않아도 된다
+  - `lock` 획득 대기 상태라면 Redis에 부하가 갈 수 있다.
+  - `setnx` 명령어를 활용하여 분산 락 구현
+  - `spin lock`
+  - Redis에 부하를 줄이기 위해 `lock`을 얻기 위한 시도는 `100ms` 텀을 두고 시도
+2. **Redisson** `1초 501ms`
+   - 락 획득 재시도를 기본으로 제공한다
+   - `pub-sub`기반 락 구현 제공
+   - 별도의 재시도 로직을 작성하지 않아도 된다
+   - 자신이 점유하고 있는 락을 해제할 때 같은 채널에 있는 스레드에게 락을 획득하라고 알린다
+   - Redis에 부하를 줄일 수 있다
+   - `lock`을 라이브러리 차원에서 제공해주기 때문에 사용법을 공부해야 한다
+3. 실무에서는 ?
+   - 재시도가 필요하지 않은 `lock`은 **Lettuce**를 활용
+   - 재시도가 필요한 경우에는 **Redisson**을 활용
+4. **Mysql**
+   - 어느 정도의 트래픽까지는 문제없이 활용이 가능하다
+   - Reids보다는 성능이 좋지 않다
+5. **Redis**
+   - 별도의 구축비용과 인프라 관리비용이 발생한다
+   - Mysql보다 성능이 좋다
