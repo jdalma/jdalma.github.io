@@ -14,13 +14,13 @@ permalink: /
 
 # **Focus** 
 
+- [주니어 개발자로서 배운 7가지 절대적인 진실](https://monicalent.com/blog/2019/06/03/absolute-truths-unlearned-as-junior-developer/)
 - [주니어 개발자에서 도약하기 위한 7단계](https://yozm.wishket.com/magazine/detail/1740/?utm_source=stibee&utm_medium=email&utm_campaign=newsletter_yozm&utm_content=contents)
 - [개발자를 코칭하며 배운 7 가지](https://www.popit.kr/%ea%b0%9c%eb%b0%9c%ec%9e%90%eb%a5%bc-%ec%bd%94%ec%b9%ad%ed%95%98%eb%a9%b0-%eb%b0%b0%ec%9a%b4-7-%ea%b0%80%ec%a7%80/)
 - [프로그래밍, 어떻게 공부할 것인가?](https://www.youtube.com/watch?v=oFhN3EqrCwc)
 - [글쓰는 개발자가 되자.](https://www.popit.kr/%EA%B8%80%EC%93%B0%EB%8A%94-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EB%90%98%EC%9E%90/)
 - [어떻게 하면 개발을 잘할 수 있을까요?](https://www.popit.kr/%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%A9%B4-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9E%98%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/)
 - [후배 개발자에게](https://brunch.co.kr/@javajigi/4)
-- [프레임워크 공부를 멈춰라](https://medium.com/@jongyoungpark/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EA%B3%B5%EB%B6%80%EB%A5%BC-%EB%A9%88%EC%B6%B0%EB%9D%BC-1afa37644474)
 
 ### 읽고 있는 책
 1. [**토비의 스프링 3.1**](https://github.com/jdalma/tobyspringin5)
@@ -60,6 +60,7 @@ permalink: /
   - *[웹 프로그래머를 위한 HTTP 완벽 가이드 읽는 법](https://blog.npcode.com/2015/06/07/%EC%9B%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%9D%BD%EB%8A%94-%EB%B2%95/)*
 3. **Real MySQL**
 4. **[일상 속 사물이 알려주는 웹 API 디자인](https://product.kyobobook.co.kr/detail/S000000555532)**
+5. **[IT 엔지니어를 위한 네트워크 입문](http://www.yes24.com/Product/Goods/93997435)**
 
 ### 중요 무료 강의
 1. **[CS50](https://www.boostcourse.org/cs112/joinLectures/41307)**
