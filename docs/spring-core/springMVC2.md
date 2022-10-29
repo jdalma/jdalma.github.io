@@ -19,14 +19,14 @@ nav_order: 40
 ---
 
 
-## [하이버네이트 Validator 공식 사이트](http://hibernate.org/validator/)
-## [하이버네이트 Validator 공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
-## [하이버네이트 Validator 📌 검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
-## [스프링 인터셉터 PathPattern 공식문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/util/pattern/PathPattern.html)
-## [공식 문서 - 예외 @ExceptionHandler 메서드 인자](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-exceptionhandler-args)
-## [공식 문서 - @ControllerAdvice 대상 지정](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-controller-advice)
-## [공식 문서 - AnnotationFormatterFactory](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#format)
-## [공식 문서 - @NumberFormat , @DateTimeFormat](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#format-CustomFormatAnnotations)
+- [하이버네이트 Validator 공식 사이트](http://hibernate.org/validator/)
+- [하이버네이트 Validator 공식 메뉴얼](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/)
+- [하이버네이트 Validator 📌 검증 애노테이션 모음](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-defineconstraints-spec)
+- [스프링 인터셉터 PathPattern 공식문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/util/pattern/PathPattern.html)
+- [공식 문서 - 예외 @ExceptionHandler 메서드 인자](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-exceptionhandler-args)
+- [공식 문서 - @ControllerAdvice 대상 지정](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-controller-advice)
+- [공식 문서 - AnnotationFormatterFactory](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#format)
+- [공식 문서 - @NumberFormat , @DateTimeFormat](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#format-CustomFormatAnnotations)
 
 # **메세지 → 국제화**
 - **HTTP `accept-language`**헤더 값을 사용하거나 , **사용자가 직접 언어를 선택하도록 하고 쿠키를 사용**해서 처리할 수 있다 
@@ -1093,7 +1093,7 @@ HTTP 요청 ➔ WAS ➔ 필터1 ➔ 필터2 ➔ 필터3 ➔ 디스패처 서블�
 - `doFilter()` : 고객의 요청이 올 때 마다 해당 메서드가 호출된다. 필터의 로직을 구현하면 된다. 
 - `destroy()` : 필터 종료 메서드, 서블릿 컨테이너가 종료될 때 호출된다.
 
-> ✋ `@ServletComponentSacne` , `@WebFilter(filterName = "logFilter" , urlPatterns = "/*")`
+> ✋ `@ServletComponentScan` , `@WebFilter(filterName = "logFilter" , urlPatterns = "/*")`
 > 
 > 위의 어노테이션으로 필터 등록이 가능하지만 순서 조절이 안된다
 > 
@@ -1228,6 +1228,20 @@ public class WebConfig implements WebMvcConfigurer {
   - 로그인( `/login` ), 
   - 리소스 조회( `/css/**` ), 
   - 오류( `/error` )와 같은 부분은 로그인 체크 인터셉터를 적용하지 않는다. 
+
+***
+
+## **인터셉터와 필터의 차이**
+
+1. Filter
+   - 서블릿에서 제공한다 (디스패처 서블릿 이전 단계에 존재한다)
+   - `ServletRequest`, `ServletResponse`를 인자로 받는다
+   - 다음 필터를 호출할 때 요청과 응답을 전달해야 하므로 인수로 받은 `ServletRequest`, `ServletResponse` 객체 자체를 조작할 수 있다
+   - 스프링과 무관하게 전역적으로 처리해야하는 작업들을 처리할 수 있다
+     - 보안 (Spring Security Filter도 이 필터에 추가되는 것이다)
+2. Interceptor
+   - `boolean`을 반환하여 다음 인터셉터나 컨트롤러를 호출할지 말지 정할 수 있다
+   - Filter와 달리 `Request`와 `Response`를 전달하지 않는다
 
 ***
 
