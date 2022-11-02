@@ -1,9 +1,8 @@
 ---
 layout: default
 title: 의존성 주입 Annotation
-nav_order: 6
-grand_parent: 🌱 스프링
-parent: 스프링 핵심 원리 이해
+parent: 🌱 스프링
+nav_order: 4
 ---
 ## Table of contents
 {: .no_toc .text-delta }
