@@ -44,6 +44,7 @@ permalink: /
 - [글쓰는 개발자가 되자.](https://www.popit.kr/%EA%B8%80%EC%93%B0%EB%8A%94-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EB%90%98%EC%9E%90/)
 - [어떻게 하면 개발을 잘할 수 있을까요?](https://www.popit.kr/%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%A9%B4-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9E%98%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/)
 - [후배 개발자에게](https://brunch.co.kr/@javajigi/4)
+- ["이 문제를 핵심 Spring Framework의 일부로 수정하는 대신 이 문제와 기타 여러 문제를 해결하는 Spring Boot라는 새 프로젝트를 시작하기로 결정했습니다."](https://github.com/spring-projects/spring-framework/issues/14521)
 
 ### 읽고 있는 책
 1. [**토비의 스프링 3.1**](https://github.com/jdalma/tobyspringin5)
@@ -84,30 +85,3 @@ permalink: /
 3. **Real MySQL**
 4. **[일상 속 사물이 알려주는 웹 API 디자인](https://product.kyobobook.co.kr/detail/S000000555532)**
 5. **[IT 엔지니어를 위한 네트워크 입문](http://www.yes24.com/Product/Goods/93997435)**
-
-### 중요 무료 강의
-1. **[CS50](https://www.boostcourse.org/cs112/joinLectures/41307)**
-2. **[승지니어 기술면접 라이브코딩 기본편](https://www.youtube.com/watch?v=Bt11jaoqt_Y&list=PL2mzT_U4XxDm7p6g1o3KeQMsyRLfzSaVW)**
-3. **[승지니어 기술면접 라이브코딩 실전편](https://www.youtube.com/watch?v=go8y4-vVg3Y&list=PL2mzT_U4XxDl8PP-jMk4rt6BPzBtS__pQ)**
-4. **[Taehoon - GC , 기본개발지식](https://www.youtube.com/c/TaehoonMoon/videos)**
-5. **[new lecture - 자바](https://www.youtube.com/user/newlec1/playlists)**
-6. **[클린 코더스 강의](https://www.youtube.com/watch?v=60lLSe1phks&list=PLeQ0NTYUDTmMM71Jn1scbEYdLFHz5ZqFA)**
-7. **[마틴 파울러 - 리팩토링의 중요성 feat.테스트 코드를 짜는 이유](https://www.youtube.com/watch?v=mNPpfB8JSIU)**
-
-### 구매 예정인 강의
-1. **[리눅스 커맨드라인 툴 (Full ver.)](https://www.inflearn.com/course/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8-%ED%88%B4)**
-
-### 구매 후 완강하지 않은 강의
-
-1. **[자바 ORM 표준 `JPA` 프로그래밍 - 기본편](https://www.inflearn.com/course/ORM-JPA-Basic/dashboard)**
-2. **[실전! 스프링 부트와 `JPA` 활용2 - API 개발과 성능 최적화](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-API%EA%B0%9C%EB%B0%9C-%EC%84%B1%EB%8A%A5%EC%B5%9C%EC%A0%81%ED%99%94/dashboard)**
-3. **[실전! 스프링 데이터 `JPA`](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-JPA-%EC%8B%A4%EC%A0%84/dashboard)**
-4. **[`스프링` 핵심 원리 - 고급편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B3%A0%EA%B8%89%ED%8E%B8/dashboard)**
-5. **[코딩으로 학습하는 GoF의 `디자인 패턴`](https://www.inflearn.com/course/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/dashboard)**
-6. **[기출로 대비하는 개발자 전공면접 `CS` 완전정복](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%A0%84%EA%B3%B5%EB%A9%B4%EC%A0%91-cs-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5/dashboard)**
-7. **[`CS`지식의 정석](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A9%B4%EC%A0%91-cs-%ED%8A%B9%EA%B0%95/dashboard)**
-
-### 듣고있는 강의
-1. **[제대로 파는 Git & GitHub - by 얄코](https://www.inflearn.com/course/%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%8C%8C%EB%8A%94-%EA%B9%83)**
-2. **[반효경 - `운영체제`](http://www.kocw.net/home/search/kemView.do?kemId=1046323)**
-3. **[그림으로 쉽게 배우는 `운영체제`](https://www.inflearn.com/course/%EB%B9%84%EC%A0%84%EA%B3%B5%EC%9E%90-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/dashboard)**
