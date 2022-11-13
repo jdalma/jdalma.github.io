@@ -48,8 +48,8 @@ permalink: /
 
 ### 읽고 있는 책
 1. [**토비의 스프링 3.1**](https://github.com/jdalma/tobyspringin5)
-2. [**오브젝트**](https://github.com/jdalma/book-object/tree/master)
-3. **코딩 인터뷰 완전 분석**
+2. **코딩 인터뷰 완전 분석**
+3. **Real MySQL** 1권
 
 ### 완강한 강의
 1. **[`스프링` 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)**
@@ -77,11 +77,11 @@ permalink: /
 5. **테스트 주도 개발**
 6. **이펙티브 자바**
 7. **가장 면접 사례로 배우는 대규모 시스템 설계 기초**
+8. [**오브젝트**](https://github.com/jdalma/book-object/tree/master)
 
 ### 구매 예정인 책
 1. **리팩토링**
 2. **HTTP 완벽 가이드** vs **성공과 실패를 결정하는 1%의 네트워크 원리**
   - *[웹 프로그래머를 위한 HTTP 완벽 가이드 읽는 법](https://blog.npcode.com/2015/06/07/%EC%9B%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%9D%BD%EB%8A%94-%EB%B2%95/)*
-3. **Real MySQL**
-4. **[일상 속 사물이 알려주는 웹 API 디자인](https://product.kyobobook.co.kr/detail/S000000555532)**
-5. **[IT 엔지니어를 위한 네트워크 입문](http://www.yes24.com/Product/Goods/93997435)**
+3. **[일상 속 사물이 알려주는 웹 API 디자인](https://product.kyobobook.co.kr/detail/S000000555532)**
+4. **[IT 엔지니어를 위한 네트워크 입문](http://www.yes24.com/Product/Goods/93997435)**
