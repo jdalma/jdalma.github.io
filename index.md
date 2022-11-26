@@ -47,9 +47,9 @@ permalink: /
 - ["이 문제를 핵심 Spring Framework의 일부로 수정하는 대신 이 문제와 기타 여러 문제를 해결하는 Spring Boot라는 새 프로젝트를 시작하기로 결정했습니다."](https://github.com/spring-projects/spring-framework/issues/14521)
 
 ### 읽고 있는 책
-1. [**토비의 스프링 3.1**](https://github.com/jdalma/tobyspringin5)
-2. **코딩 인터뷰 완전 분석**
-3. **Real MySQL** 1권
+
+1. 자바에서 코틀린으로
+1. **토비의 스프링 3.1** Vol.1
 
 ### 완강한 강의
 1. **[`스프링` 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)**
@@ -78,6 +78,9 @@ permalink: /
 6. **이펙티브 자바**
 7. **가장 면접 사례로 배우는 대규모 시스템 설계 기초**
 8. [**오브젝트**](https://github.com/jdalma/book-object/tree/master)
+9. **토비의 스프링 3.1** Vol.2
+10. **Real MySQL**
+    - 책들 중에 가장 읽고 싶은 책이지만 실무에 코틀린을 써야하므로 우선순위에 밀렸다
 
 ### 구매 예정인 책
 1. **리팩토링**
