@@ -48,19 +48,8 @@ permalink: /
 
 ### 읽고 있는 책
 
-1. 자바에서 코틀린으로
+1. 자바에서 코틀린으로 (+ 코틀린 인 액션)
 1. **토비의 스프링 3.1** Vol.1
-
-### 완강한 강의
-1. **[`스프링` 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)**
-2. **[`스프링` 핵심 원리 - 기본편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/dashboard)** 
-3. **[`스프링` MVC 1편 - 백엔드 웹 개발 핵심 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)**
-4. **[`기본편 완강 후 다시들을 예정` 실전! 스프링 부트와 `JPA` 활용1 - 웹 애플리케이션 개발](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1/dashboard)**
-5. **[모든 개발자를 위한 `HTTP 웹` 기본 지식](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/dashboard)**
-6. **[더 `자바`, 코드를 조작하는 다양한 방법](https://www.inflearn.com/course/the-java-code-manipulation/dashboard)**
-7. **[자바(Java) `알고리즘` 문제풀이 : 코딩테스트 대비](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard)**
-8. **[비전공자를 위한 개발자 `취업 올인원 가이드` [통합편]](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%B7%A8%EC%97%85-%ED%86%B5%ED%95%A9%ED%8E%B8/dashboard)**
-9. **[`스프링` MVC 2편 - 백엔드 웹 개발 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)**
 
 ### 다 읽은 책
 1. **객체지향의 사실과 오해**
@@ -82,7 +71,7 @@ permalink: /
 10. **Real MySQL**
     - 책들 중에 가장 읽고 싶은 책이지만 실무에 코틀린을 써야하므로 우선순위에 밀렸다
 
-### 구매 예정인 책
+### 구매 예정
 1. **리팩토링**
 2. **HTTP 완벽 가이드** vs **성공과 실패를 결정하는 1%의 네트워크 원리**
   - *[웹 프로그래머를 위한 HTTP 완벽 가이드 읽는 법](https://blog.npcode.com/2015/06/07/%EC%9B%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%9D%BD%EB%8A%94-%EB%B2%95/)*
