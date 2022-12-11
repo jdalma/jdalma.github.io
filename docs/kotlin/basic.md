@@ -18,10 +18,7 @@ nav_order: 1
 
 ---
 
-# TIP
-
-1. **가변 데이터 클래스를 정의하지 마라**
-   - `data class`는 **가변 데이터 클래스**를 허용하긴 하지만, `equals()`와 `hashCode()`를 구현해주기 때문에 다른 가변 일반 클래스보다 훨씬 더 조심해야 한다.
+# [학습 테스트 코드](https://github.com/jdalma/java-to-kotlin/blob/main/src/test/kotlin/LearningTest.kt)
 
 # **var** vs **val**
 
@@ -33,3 +30,9 @@ nav_order: 1
 불변 프로퍼티   
 코틀린 컴파일러가 비공개 필드, 게터를 생성한다
 
+# [**varargs** (+ Spread Operator)](https://www.baeldung.com/kotlin/varargs-spread-operator)
+
+```kotlin
+val strings = arrayOf("first" , "second", "third")
+val firstList: List<String> = mutableListOf(*strings)
+```
