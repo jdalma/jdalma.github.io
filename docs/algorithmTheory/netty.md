@@ -65,6 +65,14 @@ flowchart
 
 ***
 
+# **비동기**
+
+[👩‍💻 동기 & 비동기 / 블로킹 & 논블로킹 💯 완벽 이해하기](https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-%EB%8F%99%EA%B8%B0%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%B8%94%EB%A1%9C%ED%82%B9%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC#thankYou)  
+[`evanmoon` 동기(Synchronous)는 정확히 무엇을 의미하는걸까?](https://evan-moon.github.io/2019/09/19/sync-async-blocking-non-blocking/#%EB%8F%99%EA%B8%B0-%EB%B0%A9%EC%8B%9D--%EB%85%BC%EB%B8%94%EB%A1%9D%ED%82%B9-%EB%B0%A9%EC%8B%9D)   
+발생하는 이벤트에 대해 언제든지, 그리고 순서에 관계없이 응답할 수 있다는 것     
+
+***
+
 # 네티의 특징
 
 네티의 비동기 프로그래밍 모델은 `Future`와 `콜백`의 개념, 그리고 더 깊은 단계에서 `이벤트`를 `핸들러 메서드`로 발송하는 작업을 기반으로 작동한다.  
@@ -78,14 +86,15 @@ flowchart
 `EventLoop`자체는 한 `Channel`의 모든 입출력 이벤트를 처리하는 한 스레드에 의해 제어되며, `EventLoop`의 수명 기간동안 달라지지 않는다.  
 덕분에 `ChannelHandler`의 동기화와 관련된 모든 문제를 고려할 필요 없이, 처리할 데이터가 있을 때 실행할 올바른 논리를 제공하는데만 집중할 수 있다.  
 
+# 네티가 제공하는 전송
+
+## NIO
+## Epoll
+## OIO
+## 로컬 (Local)
+## 임베디드 (Embedded)
+
 ***
-
-
-# **비동기**
-
-[👩‍💻 동기 & 비동기 / 블로킹 & 논블로킹 💯 완벽 이해하기](https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-%EB%8F%99%EA%B8%B0%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%B8%94%EB%A1%9C%ED%82%B9%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC#thankYou)  
-[`evanmoon` 동기(Synchronous)는 정확히 무엇을 의미하는걸까?](https://evan-moon.github.io/2019/09/19/sync-async-blocking-non-blocking/#%EB%8F%99%EA%B8%B0-%EB%B0%A9%EC%8B%9D--%EB%85%BC%EB%B8%94%EB%A1%9D%ED%82%B9-%EB%B0%A9%EC%8B%9D)   
-발생하는 이벤트에 대해 언제든지, 그리고 순서에 관계없이 응답할 수 있다는 것     
 
 # **Netty의 핵심 컴포넌트**
 
