@@ -218,3 +218,7 @@ public class App {
 {: .fh-default .fs-4 }
 [더 자바, 코드를 조작하는 다양한 방법 - 인프런](https://www.inflearn.com/course/the-java-code-manipulation/dashboard)
 {: .fh-default .fs-4 }
+[`D2` JVM Internal](https://d2.naver.com/helloworld/1230)
+{: .fh-default .fs-4 }
+[JVM의 동작원리 및 기본 개념](https://steady-snail.tistory.com/67)
+{: .fh-default .fs-4 }
