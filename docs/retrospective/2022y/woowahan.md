@@ -1,8 +1,9 @@
 ---
 layout: default
 title: 우아한테크캠프 프로
-nav_order: 5
-parent: ⏪ 회고
+nav_order: 998
+parent: 2022년
+grand_parent: ⏪ 회고
 ---
 {: .no_toc }
 
