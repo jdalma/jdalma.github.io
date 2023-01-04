@@ -230,3 +230,4 @@ has_children: true
 - **[현실적으로 머리에 많이 남는 독서법](https://www.youtube.com/watch?v=eOL0EtmSNvA)**
 - **[무신사 합격 개발자 이력서 By. F-Lab](https://medium.com/f-lab-blog/2-%EB%AC%B4%EC%8B%A0%EC%82%AC-%ED%95%A9%EA%B2%A9-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%9D%B4%EB%A0%A5%EC%84%9C-by-f-lab-ab6c262da9c2)**
 - **[신입으로서 임원 면접을 준비할 때](https://velog.io/@wongue_shin/신입-개발자가-1차면접-통과-이후에-준비해야할-부분)**
+- **[종립님이 모은 링크들](https://johngrib.github.io/wiki/links/2023/)**
