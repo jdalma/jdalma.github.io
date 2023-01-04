@@ -18,8 +18,6 @@ nav_order: 1
 
 ---
 
-# [학습 테스트 코드](https://github.com/jdalma/java-to-kotlin/blob/main/src/test/kotlin/LearningTest.kt)
-
 # **var** vs **val**
 
 **var**     
