@@ -21,7 +21,8 @@ nav_order: 2
 - 해당 게시글의 대부분의 내용은 아래에서 발췌하였습니다.
   - [네티 인 액션](http://www.yes24.com/Product/Goods/25662949)  
   - [비동기 서버에서 이벤트 루프를 블록하면 안 되는 이유](https://engineering.linecorp.com/ko/blog/do-not-block-the-event-loop-part1)
-
+- 추가적으로 보면 좋은 글
+  - [`homoefficio` Blocking-NonBlocking-Synchronous-Asynchronous](https://homoefficio.github.io/2017/02/19/Blocking-NonBlocking-Synchronous-Asynchronous/)
 
 # **Java NIO**
 
