@@ -4,6 +4,7 @@ title: 스프링 입문
 nav_order: 40
 has_children: true
 permalink: /docs/spring-introduction
+nav_exclude: true
 ---
 ## Table of contents
 {: .no_toc .text-delta }

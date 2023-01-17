@@ -4,6 +4,7 @@ title: 네트워크
 nav_order: 60
 has_children: true
 permalink: /docs/network
+nav_exclude: true
 ---
 
 
