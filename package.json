@@ -1,23 +1,50 @@
 {
-  "name": "just-the-docs",
-  "version": "0.3.3",
-  "description": "A modern Jekyll theme for documentation",
-  "repository": "pmarsceill/just-the-docs",
-  "license": "MIT",
-  "bugs": "https://github.com/pmarsceill/just-the-docs/issues",
+  "name": "gatsby-starter-blog",
+  "private": true,
+  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "dependencies": {
+    "@fontsource/merriweather": "^4.5.14",
+    "@fontsource/montserrat": "^4.5.13",
+    "gatsby": "^5.4.2",
+    "gatsby-plugin-feed": "^5.4.0",
+    "gatsby-plugin-image": "^3.4.0",
+    "gatsby-plugin-manifest": "^5.4.0",
+    "gatsby-plugin-sharp": "^5.4.0",
+    "gatsby-remark-images": "^7.4.0",
+    "gatsby-remark-prismjs": "^7.4.0",
+    "gatsby-remark-responsive-iframe": "^6.4.0",
+    "gatsby-source-filesystem": "^5.4.0",
+    "gatsby-transformer-remark": "^6.4.0",
+    "gatsby-transformer-sharp": "^5.4.0",
+    "prismjs": "^1.29.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "remark-mermaidjs": "^4.1.1"
+  },
   "devDependencies": {
-    "stylelint": "^13.7.2",
-    "@primer/css": "^15.2.0",
-    "prettier": "^2.1.2",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-primer": "^9.2.1",
-    "stylelint-prettier": "^1.1.2",
-    "stylelint-selector-no-utility": "^4.0.0"
+    "prettier": "^2.8.1"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "test": "stylelint '**/*.scss'",
-    "format": "prettier --write '**/*.{scss,js,json}'",
-    "stylelint-check": "stylelint-config-prettier-check"
-  },
-  "dependencies": {}
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  }
 }
