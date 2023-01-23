@@ -1,17 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 23 Jan 2023 05:35:02 GMT</lastBuildDate><item><title><![CDATA[2022년 회고]]></title><description><![CDATA[들어가며 개발자로 지내면서 연말회고를 처음 작성하여 제목은 "202…]]></description><link>https://jdalma.github.io/2022y12m/yearend/</link><guid isPermaLink="false">https://jdalma.github.io/2022y12m/yearend/</guid><pubDate>Sat, 31 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;mermaid&quot;&gt;&lt;pre class=&quot;language-mermaid&quot;&gt;&lt;code class=&quot;language-mermaid&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;sequenceDiagram&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; C as Client Main Thread
-    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S1 as Server Request1
-    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S2 as Server Request2
-    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S3 as Server Request3
-    &lt;span class=&quot;token keyword&quot;&gt;Note over&lt;/span&gt; S1,S3&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; One Thread
-
-    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 1. Sample Future Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; sampleUnaryCall &lt;span class=&quot;token text string&quot;&gt;(10s sleep)&lt;/span&gt;
-    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 2. Sample Future Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; sampleUnaryCall
-    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S3&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 3. Hello Async Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; helloUnaryCall
-    S1&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 1. Response
-    S2&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 2. Response
-    S3&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 3. Response&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;&lt;strong&gt;들어가며&lt;/strong&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 23 Jan 2023 07:34:03 GMT</lastBuildDate><item><title><![CDATA[2022년 회고]]></title><description><![CDATA[들어가며 개발자로 지내면서 연말회고를 처음 작성하여 제목은 "202…]]></description><link>https://jdalma.github.io/2022y/yearend/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/yearend/</guid><pubDate>Sat, 31 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;&lt;strong&gt;들어가며&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;개발자로 지내면서 연말회고를 처음 작성하여 제목은 &quot;2022년 회고&quot;이지만 지금까지의 생각을 정리하는 긴 글이 될 것 같다.&lt;br&gt;
 &lt;strong&gt;잊고 싶지 않은 올해의 이벤트들과 내 심정을 기록하기 위해 작성한다&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -28,32 +15,71 @@
 &lt;li&gt;유명한 회사들의 기술 블로그&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;2021년 2월 20일&lt;/code&gt;부터 시작하여 대략 2년 정도 블로그에 글을 작성하고 있다.&lt;br&gt;
-블로그를 관리하면서 얻은 첫 번째 장점은 &lt;strong&gt;스스로에 대한 동기부여&lt;/strong&gt;이다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;../../../assets/images/retrospective/2022commit.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+블로그를 관리하면서 얻은&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;첫 번째 장점은 스스로에 대한 동기부여이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d7bf5eade433fedbaee8fd9780d6e92e/8ce52/2022commit.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 36.075949367088604%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABt0lEQVR42h3R3U+bUABAcf7/971sWbI5XxbddE6j0cX6UbS1QKki29QqadFeKFwoF6GF0rPM1/P4O1pd16jXnGiRMBQexv0Ae+LylIx5kB7PSjDOJvhK8BSP8KRPkEUkKiXJZwR5hJ9OCFVEVim0LFPEWcp4JjBHDlvuIRvePjsvx+yJE9rS4NdU5yK2OA976FOTXnyNIW9w5QP74oyf4piD4Ax75qIVRcE0l0RZwki+oMcWLb9DK+hyNRtgJQ6d2MZMHbrS5lL2MRMHI72hl1zT+d/SPrvihEc1RmtWDUVVwgpUkVNWJelCkZWKqq7IF68sl0vqpqZs5sgyZV7PYQk0UC9r8kVBWc1ZrRq0elHznAtcdY8ZObSfDbpigJP8pSts/qSPGME1F8Ki7RuYoUMntDnydfSRyVUwwIodzOkNQRmhzeIZVnrLbthiT7R4d7vOx/tNNkcHbI2PWH/c4fPdd94Pv7J2t80X7wcfvA3Wnrb5dPuN/fCUPXFKOzLxCh+tqRoceYebDN+gz0PjbYCtXPqJy2l4xVGo05p0MKWDHlkcB5ecRT0ORZvf6RAv8+lLF7lI+QclGvcdrGzY1gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2022commit&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d7bf5eade433fedbaee8fd9780d6e92e/f058b/2022commit.png&quot;
+        srcset=&quot;/static/d7bf5eade433fedbaee8fd9780d6e92e/c26ae/2022commit.png 158w,
+/static/d7bf5eade433fedbaee8fd9780d6e92e/6bdcf/2022commit.png 315w,
+/static/d7bf5eade433fedbaee8fd9780d6e92e/f058b/2022commit.png 630w,
+/static/d7bf5eade433fedbaee8fd9780d6e92e/8ce52/2022commit.png 681w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;2021,2022년 커밋 내역이다.&lt;br&gt;
 위의 모든 커밋들이 유의미한 커밋이라고 말할 수도 없고 대부분 앵무새 글(강의,책 내용 정리)들 이지만,&lt;br&gt;
 &lt;strong&gt;학습 능력을 기르고 학습 습관&lt;/strong&gt;을 잡는 것에는 큰 도움이 되었다.&lt;/p&gt;
-&lt;p&gt;두 번째 장점으로는 &lt;strong&gt;메타인지를 높일 수 있는 기회&lt;/strong&gt;이다.&lt;br&gt;
-머리에 담긴 &lt;code class=&quot;language-text&quot;&gt;파편적인 지식들을 연결시켜가며&lt;/code&gt; 글로 작성하면서 모르는 내용들이나 키워드들을 발견하게 된다.&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;두 번째 장점으로는 메타인지를 높일 수 있는 기회이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;머리에 담긴 &lt;code class=&quot;language-text&quot;&gt;파편적인 지식들을 연결시켜가며&lt;/code&gt; 글로 작성하면서 모르는 내용들이나 키워드들을 발견하게 된다.&lt;br&gt;
 그리고 작성한 게시글을 시간이 흐른뒤에 보면 내가 무엇을 알고 무엇을 모르는지 알게될 기회가 많다.&lt;br&gt;
 알고리즘 공부하면서 많이 느꼇다.&lt;/p&gt;
 &lt;p&gt;위의 장점들을 보면 블로그를 하는게 무조건 이득일 것 같지만, 단점도 존재한다.&lt;/p&gt;
-&lt;p&gt;첫 번째 단점은 &lt;strong&gt;죽은 문서&lt;/strong&gt;들이다.&lt;br&gt;
-게시글을 작성하는 재미에 빠져 학습한 내용들을 많이 작성하게 되지만, 그때만 유효하고 그 글들을 계속 관리하지 않기 때문이다.&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;첫 번째 단점은 죽은 문서들이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;게시글을 작성하는 재미에 빠져 학습한 내용들을 많이 작성하게 되지만, 그때만 유효하고 그 글들을 계속 관리하지 않기 때문이다.&lt;br&gt;
 학습 내용을 정리하여 글로 작성하면 그 내용들이 내것이 된 것 마냥 신경쓰지 않고 내버려두게 된다.&lt;br&gt;
 그렇다고 지우기에는 아까워 &lt;code class=&quot;language-text&quot;&gt;저장강박증&lt;/code&gt;이 생겼다..&lt;/p&gt;
 &lt;p&gt;이 &lt;strong&gt;죽은 문서들을 살리기 위한 노력과 시간이 추가로 필요하다.&lt;/strong&gt;&lt;br&gt;
 어떤 분들은 글들을 리팩토링하는 즐거움이 있다고 한다&lt;/p&gt;
 &lt;p&gt;종립님은 이 문제를 해결하기위해 블로그에 &lt;strong&gt;랜덤 버튼&lt;/strong&gt;을 추가하여 죽은 문서들이 없게 노력하고 계신다고 하였다.&lt;/p&gt;
-&lt;p&gt;두 번째 단점은 &lt;strong&gt;양날의 검&lt;/strong&gt;이다.&lt;br&gt;
-이력서를 작성할 때 블로그 링크를 당당하게 작성하게 되는데, 블로그가 독이 될 때도 있다.&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;두 번째 단점은 블로깅에 집중하는 경향이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이력서를 작성할 때 블로그 링크를 당당하게 작성하게 되는데, 블로그가 독이 될 때도 있다.&lt;br&gt;
 첫 번째 단점과 연관이 있는데, 학습 내용들을 확실히 이해하지 않고 넘어가거나 중요한 포인트를 간과하고 블로그에 마구마구 작성하면서 &lt;code class=&quot;language-text&quot;&gt;죽은 문서들&lt;/code&gt;은 불어난다.&lt;br&gt;
 면접관분들은 블로그를 보고 질문을 추가로 생각하게 될텐데 그 질문에 잘 대답하면 본전이고 대답을 못하게 된다면 큰 마이너스가 된다.&lt;br&gt;
 혹여나 대답을 못하게 되면 블로그의 게시글들은 신뢰가 떨어진다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;위의 문제를 해결하기 위해 &lt;code class=&quot;language-text&quot;&gt;개인 학습 공간 블로그&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;개인 기술 블로그&lt;/code&gt;를 분리할 생각이다.&lt;/strong&gt;&lt;br&gt;
 분리하면서 게시글들도 정리해야 할 것이다. (2023년 목표이다)&lt;/p&gt;
 &lt;p&gt;그럼에도 불구하고 &lt;code class=&quot;language-text&quot;&gt;죽은 문서들&lt;/code&gt;이 걱정돼서 블로그를 망설이고 있다면 &lt;strong&gt;무조건 시작하라고 할 것 이다.&lt;/strong&gt;&lt;br&gt;
-개인적으로 개발자가 가져야 할 가장 중요한 능력은 &lt;strong&gt;학습 습관&lt;/strong&gt;이라고 생각하기 때문이다.&lt;/p&gt;
+개인적으로 개발자가 가져야 할 가장 중요한 소양은 &lt;strong&gt;학습 습관&lt;/strong&gt;이라고 생각하기 때문이다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;&lt;strong&gt;알고리즘&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;이직을 고민하면서 알고리즘을 하게 되었다.&lt;/p&gt;
@@ -61,7 +87,8 @@
 &lt;li&gt;어떤 분이 &lt;code class=&quot;language-text&quot;&gt;&quot;알고리즘 한 문제에 5만원이라고 생각해라&quot;&lt;/code&gt;라고 한게 갑자기 떠올랐다&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;SI 업무에 찌들어 있을 때, 알고리즘 푸는게 재밌다라고 느꼈었다.&lt;br&gt;
-문제를 고민하고 해결하는게 진짜 개발자 같다라고 생각이 들었다. &lt;em&gt;(스스로가 멋져보이기도 했다)&lt;/em&gt;&lt;/p&gt;
+문제를 고민하고 해결하는게 진짜 개발자 같다라고 생각이 들었다.&lt;br&gt;
+&lt;em&gt;(스스로가 멋져보이기도 했다)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;처음에는 &lt;a href=&quot;https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard&quot;&gt;인프런 강의&lt;/a&gt;로 기본을 떼고 운이 좋게 &lt;a href=&quot;https://github.com/jdalma/Algorithm-Study/tree/main&quot;&gt;스터디&lt;/a&gt;에 참가하게 되었다.&lt;br&gt;
 이 스터디에 &lt;a href=&quot;https://solved.ac/profile/opera_tive&quot;&gt;알고리즘 랭커분&lt;/a&gt;이 계셨는데 엄청 큰 도움이 되었다.&lt;/p&gt;
 &lt;p&gt;단순히 알고리즘 분야를 떠나서 &lt;code class=&quot;language-text&quot;&gt;&quot;이렇게 열심히 하시는 분도 있구나&quot;&lt;/code&gt; 라는 생각에 동기부여도 많이 되었다.&lt;br&gt;
@@ -69,18 +96,14 @@
 &lt;p&gt;알고리즘이 실무의 문제를 해결할 떄 무조건 도움은 된다고 확신한다.&lt;br&gt;
 단순히 문제를 해결하기 위해 무지성으로 짜는 것이 아니라 &lt;strong&gt;시간,공간 복잡도를 고려하는 자세&lt;/strong&gt;가 생긴다.&lt;br&gt;
 최적의 답을 무조건 찾아내지 못 하더라도 (나도 시간복잡도를 확실히 모른다.) 생각하는 개발자라면 기계처럼 코드를 작성하는 것이 아니라 몇 분이라도 고민하고 작성하는것이 중요하다고 생각한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;내가 사용하는 자바의 정렬 메소드는 어떻게 정렬이 되는지?&lt;/li&gt;
-&lt;li&gt;자료구조 마다 그리고 자료구조 구현체 마다 장,단점은 무엇인지?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;내가 사용하는 자바의 정렬 메소드는 어떻게 정렬이 되는지?  
+자료구조 마다 그리고 자료구조 구현체 마다 장,단점은 무엇인지?  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;사소하지만 원리를 알게 될 학습을 할 확률이 높다고 생각한다.&lt;/p&gt;
 &lt;p&gt;이번년도 목표는 플레티넘이였지만 &lt;code class=&quot;language-text&quot;&gt;골드 1 (1541점)&lt;/code&gt; 59점을 남겨놓고 멈췄다.&lt;br&gt;
 기업용 코테 통과가 목표였는데&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;특정 깊이 이상으로 파고들기에는 가성비가 떨어진다. (시간 소모가 너무 크다)&lt;/li&gt;
-&lt;li&gt;문제해결능력보단 solved.ac 티어와 점수에 집착을 하게 된다.&lt;/li&gt;
-&lt;li&gt;백준에는 문제가 너무 많아 스스로에게 도움이 되는 문제를 구별해내지 못 한다.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;1. 특정 깊이 이상으로 파고들기에는 가성비가 떨어진다. (시간 소모가 너무 크다)
+2. 문제해결능력보단 solved.ac 티어와 점수에 집착을 하게 된다.
+3. 백준에는 문제가 너무 많아 스스로에게 도움이 되는 문제를 구별해내지 못 한다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;계획은 영어권 플랫폼이긴 하지만.. 문제가 명료하고 프리미엄 결제를 하면 여러 방법의 해설을 설명해주는 &lt;strong&gt;리트코드&lt;/strong&gt;를 활용할 생각이다.&lt;br&gt;
 &lt;em&gt;추가로 데브매칭이나 쇼미더코드 같은 이벤트에 무지성으로 참여하기&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -131,14 +154,13 @@
 &lt;li&gt;2부를 읽을 때 &lt;a href=&quot;https://www.youtube.com/watch?v=tdKFZcZSJmg&amp;#x26;ab_channel=TobyLee&quot;&gt;토비님 영상&lt;/a&gt;도 참고하자&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;맹기완 대표님이 주관하신 &lt;a href=&quot;https://github.com/jdalma/java-to-kotlin&quot;&gt;자바에서 코틀린으로 읽기모임&lt;/a&gt;&lt;/strong&gt; &lt;em&gt;진행 중&lt;/em&gt;
+&lt;li&gt;&lt;strong&gt;맹기완 대표님이 주관하신 &lt;a href=&quot;https://github.com/jdalma/java-to-kotlin&quot;&gt;자바에서 코틀린으로 읽기모임&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;코드숨 대표 윤석님 덕분에 참여하게 됐고 맹기완 대표님, 책을 번역하신 오현석님과 함께 할 수 있는 모임이다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;책을 이렇게 까지 읽을 수 있구나. 같은 책을 봐도 아는 만큼 보인다&quot;&lt;/code&gt;를 느낀 모임이다.&lt;/li&gt;
 &lt;li&gt;스스로 지식이 얕아 중요하게 보지 않고 넘기는 부분들을 깊게 얘기해주시고 토론을 하여 굉장히 재밌게 진행하고 있는 모임이다.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;재밌다고해서 안힘들진 않다&lt;/em&gt; 스터디나 읽기모임에 자주 참여하지만 이렇게 깊게 얘기하고 부담되는 모임은 처음이다.&lt;/li&gt;
 &lt;li&gt;단순히 책에 나오는 내용들만 보고 넘어가는게 아니라 &lt;strong&gt;객체지향&lt;/strong&gt;, &lt;strong&gt;함수형 프로그래밍&lt;/strong&gt;, &lt;strong&gt;값 이론&lt;/strong&gt; 등에 대한 깊은 내용들을 얘기해주셔서 감사하게 참여하고 있다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;결석없이 완주할 예정&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -251,13 +273,13 @@
 &lt;h1&gt;&lt;strong&gt;이직&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;SI 회사에서 개발자로 인정받기 위해서는 좋은 코드 보단 수행한 프로젝트의 수 였다.&lt;br&gt;
 &lt;strong&gt;냄새나는 코드들은 넘쳐나고 기술 부채는 안중에도 없고 생산성을 높일 수 있는 기술이나 툴이 있어도 그걸 적용하는 비용을 더 크게 생각&lt;/strong&gt;하여 개발자는 도태될 수 밖에 없는 환경이다.&lt;/p&gt;
-&lt;p&gt;SI 회사를 &lt;a href=&quot;https://jdalma.github.io/docs/retrospective/2022y/2022y07m/#%ED%87%B4%EC%82%AC&quot;&gt;퇴사&lt;/a&gt;하고 3달동안 하고싶은 공부를 했다.&lt;/p&gt;
+&lt;p&gt;SI 회사를 &lt;a href=&quot;https://jdalma.github.io/2022y/leave/&quot;&gt;퇴사&lt;/a&gt;하고 3달동안 하고싶은 공부를 했다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;코드숨 교육&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/docs/retrospective/2022y/woowahan/&quot;&gt;우테캠프로 사전과제&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.notion.so/25890dd589f143fd8f84600d40cee25a&quot;&gt;우테캠프로 사전과제&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;구직 활동 중에 자비스앤빌런즈 코딩 테스트,&lt;a href=&quot;https://jdalma.github.io/docs/retrospective/2022y/szs/&quot;&gt;과제&lt;/a&gt;를 통과하고 기술면접에서 떨어져 화나서 찾아보다가 지원한 회사가 지금 회사다.&lt;/p&gt;
-&lt;p&gt;더파이러츠와 지금 회사를 고민하다가 **&quot;MSA를 구축하기 위해 힘쓰고 있고 기술적 부채를 해결하기 위해 노력하고 있다&quot;**는 말을 듣고 주저없이 지금 회사를 선택했다.&lt;br&gt;
+&lt;p&gt;구직 활동 중에 자비스앤빌런즈 코딩 테스트,&lt;a href=&quot;https://www.notion.so/8eeb6d00edf74b06920a062ba9c774ef&quot;&gt;과제&lt;/a&gt;를 통과하고 기술면접에서 떨어져 화나서 찾아보다가 지원한 회사가 지금 회사다.&lt;/p&gt;
+&lt;p&gt;더파이러츠와 지금 회사를 고민하다가 &lt;strong&gt;MSA를 구축하기 위해 힘쓰고 있고 기술적 부채를 해결하기 위해 노력하고 있다&lt;/strong&gt;는 말을 듣고 주저없이 지금 회사를 선택했다.&lt;br&gt;
 &lt;em&gt;&lt;a href=&quot;https://platum.kr/archives/197188&quot;&gt;더파이러츠 시리즈 C 투자 유치&lt;/a&gt; 기사를 보고 조금 씁쓸했지만..&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;알고리즘을 열심히 준비했었는데 알고리즘을 써먹지 못하고 이직해서 조금 아쉽긴 하지만 배우고 경험할 수 있는 것들은 넘쳐난다.&lt;br&gt;
 입사한지 얼마안된 지금 느끼기엔 기술 스택은 크게 GraalVM, Java 17, Kotlin, Spring (+Gateway), Armeria, gRPC, Docker, ELK stack 들인 것 같다.&lt;br&gt;
@@ -266,9 +288,9 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;em&gt;학습하고 그 일을 하고 싶다고 강하게 어필해야지&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;입사 후에 트레이닝 프로젝트와 도메인 교육을 진행했다.&lt;br&gt;
 내가 맡은 트레이닝 프로젝트는 &lt;code class=&quot;language-text&quot;&gt;n차&lt;/code&gt;로 나뉘어 진행되고 있는데&lt;br&gt;
-&lt;strong&gt;1차&lt;/strong&gt;는 &lt;a href=&quot;https://jdalma.github.io/docs/retrospective/2022y/2022y12m/#%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%8B%9D-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-2&quot;&gt;Armeria와 gRPC로 통신하기 위한 템플릿 서버 개발&lt;/a&gt;&lt;br&gt;
-&lt;strong&gt;2차&lt;/strong&gt;는 1차에서 만든 템플릿 서버로 ES서버에 부하를 주는 검색식 검증 규칙 관리 개발이다. &lt;em&gt;진행중&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;1차 트레이닝 프로젝트는 &lt;a href=&quot;https://jdalma.github.io/docs/algorithmTheory/etc/&quot;&gt;기술적인 키워드들 (+ &lt;code class=&quot;language-text&quot;&gt;Netty&lt;/code&gt;)&lt;/a&gt;이 너무 많이 포함되어 있었어서 힘들었다.&lt;br&gt;
+&lt;strong&gt;1차&lt;/strong&gt;는 &lt;a href=&quot;https://jdalma.github.io/2022y/trainingProject/&quot;&gt;Armeria와 gRPC로 통신하기 위한 템플릿 서버 개발&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;2차&lt;/strong&gt;는 1차에서 만든 템플릿 서버로 ES서버에 부하를 주는 검색식 검증 규칙 관리 개발이다.&lt;/p&gt;
+&lt;p&gt;1차 트레이닝 프로젝트는 &lt;a href=&quot;https://www.notion.so/8eeb6d00edf74b06920a062ba9c774ef&quot;&gt;기술적인 키워드들&lt;/a&gt;이 너무 많이 포함되어 있었어서 힘들었다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;&quot;시간만 있다면 스스로 어떤 일이든 해낼 수 있다&quot;&lt;/code&gt; 라고 생각하고 있었지만 CS지식의 중요성을 깨달았다.&lt;br&gt;
 그래도 스스로 테스트 케이스를 생각하며 테스트하고 어디를 더 분석해야할지 결정하여 오랜만에 재밌게 개발한 것 같다.&lt;br&gt;
 원리를 이해하기 위한 학습을 계속 해야하고, 이번에 Armeria와 gRPC를 사용하는 만큼 비동기 프로그래밍과 HTTP/2는 확실하게 짚고가고 싶다.&lt;/p&gt;
@@ -294,8 +316,6 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;h1&gt;&lt;strong&gt;소감&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;연말회고를 처음 작성해보는데 이렇게 나열해보니 열심히 살아온 것 같기도 하다.&lt;br&gt;
 올해 목표들이 있었는데&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;이직
 &lt;ol class=&quot;contains-task-list&quot;&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 수익이 나는 서비스 회사&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; mac을 지원해주는 회사&lt;/li&gt;
@@ -303,12 +323,8 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 간식들이 구비되어 있는 회사&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 스스로 생각하는 최소한의 연봉은 주는 회사&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; B2C 서비스 회사 → &lt;code class=&quot;language-text&quot;&gt;B2B 회사&lt;/code&gt;&lt;/li&gt;
-&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; 많은 트래픽을 경험할 수 있는 회사 → &lt;code class=&quot;language-text&quot;&gt;대용량 데이터 경험 가능&lt;/code&gt;&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; 많은 트래픽을 경험할 수 있는 회사 → &lt;code class=&quot;language-text&quot;&gt;대용량 데이터 경험 가능??&lt;/code&gt;&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; AWS, 분산 DB, MSA, 메시지 큐 시스템을 경험할 수 있는 회사  → &lt;code class=&quot;language-text&quot;&gt;레거시 프로젝트 서비스 분리 작업 진행&lt;/code&gt; (&lt;a href=&quot;https://martinfowler.com/articles/microservices.html&quot;&gt;마틴 파울러의 마이크로서비스&lt;/a&gt;)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;학습
-&lt;ol class=&quot;contains-task-list&quot;&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 블로그를 꾸준히 운영하기&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 학습하는 자세 유지하기&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 다른 개발자들과 교류하기&lt;/li&gt;
@@ -317,20 +333,18 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 테스트 코드 배워보기&lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 학습에 대한 비용은 아끼지 말기&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;시간이 지나면서 점점 목표한 것들을 해내고 있다는 생각이 든다.&lt;br&gt;
 &lt;strong&gt;옛날엔 어려워 했던 것을 &lt;code class=&quot;language-text&quot;&gt;지금은 아무렇지 않게 해내게 된 것&lt;/code&gt;이 가장 많이 성장한 것 같다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1&gt;&lt;strong&gt;2023년 목표&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;2022년 연말에 새로 참여한 &lt;a href=&quot;https://terrific-bull-7be.notion.site/RealWorld-c8c7312ff2824764a2efbfa871d22c2f&quot;&gt;스터디&lt;/a&gt;가 있다.&lt;br&gt;
 회사 도메인 시험을 끝내고 참여할 생각이다.&lt;br&gt;
 해당 스터디 인원들과 &lt;strong&gt;개발 서적 읽기 모임&lt;/strong&gt;도 만들어 Real MySQL과 HTTP 완벽가이드를 읽을 생각이다.&lt;br&gt;
-같이 꾸준하게 많은 책들을 해치워 나갔으면 좋겠다.&lt;/p&gt;
-&lt;p&gt;아래는 읽어야지 생각하고 있는 책들이다.&lt;/p&gt;
+같이 꾸준하게 많은 책들을 해치워 나갔으면 좋겠다.&lt;br&gt;
+아래는 읽어야지 생각하고 있는 책들이다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;네티 인 액션 (읽는 중)&lt;/li&gt;
-&lt;li&gt;코틀린 인 액션 (읽는 중)&lt;/li&gt;
-&lt;li&gt;자바에서 코틀린으로 (읽는 중)&lt;/li&gt;
+&lt;li&gt;네티 인 액션&lt;/li&gt;
+&lt;li&gt;코틀린 인 액션&lt;/li&gt;
+&lt;li&gt;자바에서 코틀린으로&lt;/li&gt;
 &lt;li&gt;Real MySQL 1,2권&lt;/li&gt;
 &lt;li&gt;HTTP 완벽가이드&lt;/li&gt;
 &lt;li&gt;이펙티브 자바&lt;/li&gt;
@@ -357,7 +371,9 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;li&gt;개발자의 글쓰기&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;2023년 연말 회고 때 얼마나 읽었는지 확인해야지&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;2023년에 지키고 싶은 목표들&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;블로그를 꾸준히 운영하기
 &lt;ul&gt;
@@ -385,143 +401,31 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 개발자라는 직업이 매력적인 만큼 스스로 변화했다고 많이 느껴진다.&lt;br&gt;
 다른 전공자들에 비해 늦게 시작한 만큼 불안하기도 하고, 열등감도 많이 느꼈었는데 그럴수록 부족한 부분을 더 채우면 된다고 생각한다.&lt;/p&gt;
 &lt;p&gt;2023년 연말 회고를 작성할 때 이 글이 귀엽게 보일 정도로 성장했으면 좋겠다.&lt;br&gt;
-올해 고생했고 계속 나아가자&lt;/p&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://jdalma.github.io/new-beginnings/</link><guid isPermaLink="false">https://jdalma.github.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;
-&lt;h2&gt;On deer horse aboard tritely yikes and much&lt;/h2&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;This however showed weasel&lt;/li&gt;
-&lt;li&gt;Well uncritical so misled
-&lt;ul&gt;
-&lt;li&gt;this is very interesting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Goodness much until that fluid owl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
-view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
-&lt;a href=&quot;http://google.com&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.&lt;/p&gt;
-&lt;h3&gt;Overlaid the jeepers uselessly much excluding&lt;/h3&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-&lt;a href=&quot;http://google.com&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;
-&lt;h3&gt;According a funnily until pre-set or arrogant well cheerful&lt;/h3&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;So baboon this&lt;/li&gt;
-&lt;li&gt;Mounted militant weasel gregariously admonishingly straightly hey&lt;/li&gt;
-&lt;li&gt;Dear foresaw hungry and much some overhung&lt;/li&gt;
-&lt;li&gt;Rash opossum less because less some amid besides yikes jeepers frenetic
-impassive fruitlessly shut&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word &quot;and&quot; and the Little Blind Text should turn around and
-return to its own, safe country.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.&lt;/p&gt;
-&lt;h4&gt;Silent delightfully including because before one up barring chameleon&lt;/h4&gt;
-&lt;p&gt;Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.&lt;/p&gt;
-&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.&lt;/p&gt;
-&lt;h5&gt;Wherever far wow thus a squirrel raccoon jeez jaguar this from along&lt;/h5&gt;
-&lt;p&gt;She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.&lt;/p&gt;
-&lt;h6&gt;Slapped cozy a that lightheartedly and far&lt;/h6&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word &quot;and&quot; and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that "despite its name, salted duck eggs can also be made from
-chicken eggs, though the…]]></description><link>https://jdalma.github.io/my-second-post/</link><guid isPermaLink="false">https://jdalma.github.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
-&lt;p&gt;Did you know that &quot;despite its name, salted duck eggs can also be made from
-chicken eggs, though the taste and texture will be somewhat different, and the
-egg yolk will be less rich.&quot;?
-(&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Yeah, I didn&apos;t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://jdalma.github.io/hello-world/</link><guid isPermaLink="false">https://jdalma.github.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
-&lt;p&gt;I&apos;m sure I&apos;ll write a lot more interesting things in the future.&lt;/p&gt;
-&lt;p&gt;Oh, and here&apos;s a great quote from this Wikipedia on
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;A salted duck egg is a Chinese preserved food product made by soaking duck
-eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-charcoal paste. The eggs may also be sold with the salted paste removed,
-wrapped in plastic, and vacuum packed. From the salt curing process, the
-salted duck eggs have a briny aroma, a gelatin-like egg white and a
-firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
-&lt;/blockquote&gt;
+올해 고생했고 계속 나아가자&lt;/p&gt;</content:encoded></item><item><title><![CDATA[1차 트레이닝 프로젝트]]></title><description><![CDATA[으로 마이그레이션,테스트 코드 작성후에  분석 내용 최종 리뷰와 데모 개발, 시연을 마쳤다. Armeria가 요청을 어떻게 처리하는지 Armeria Thread가 어떤 기준으로 생성되고 소멸되는지 Armeria…]]></description><link>https://jdalma.github.io/2022y/trainingProject/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/trainingProject/</guid><pubDate>Thu, 15 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;kotlin&lt;/code&gt;으로 마이그레이션,테스트 코드 작성후에&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/e1596/salty_egg.jpg&quot;
+    href=&quot;/static/7c7a288db03fd99329d6920828b44833/487bb/testcode.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.31645569620254%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMB/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEEBf/aAAwDAQACEAMQAAABgik0dXC//8QAGRABAAMBAQAAAAAAAAAAAAAAAQACERIy/9oACAEBAAEFAkqW7B5Zox9t8n//xAAXEQEAAwAAAAAAAAAAAAAAAAAAERJB/9oACAEDAQE/AdVl/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEC/9oACAECAQE/AYun/8QAGxAAAQQDAAAAAAAAAAAAAAAAAAECESEiMTL/2gAIAQEABj8CvRjaHMkvIQo//8QAGxAAAwEBAAMAAAAAAAAAAAAAAREhAEGBobH/2gAIAQEAAT8hsTTH203YINmYDPHckkPzQiGHv//aAAwDAQACAAMAAAAQyC//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EBHDK6y//8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAhUf/aAAgBAgEBPxA6hNC//8QAHBABAQACAwEBAAAAAAAAAAAAAREAMSFhgUHh/9oACAEBAAE/EEbOLQ0eYOEu0eQv0RxZl4JUnWRxGhWneURhyeMTUgiXf5M//9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 168.9873417721519%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAYAAABfqvm9AAAACXBIWXMAABYlAAAWJQFJUiTwAAAEtUlEQVR42pVWiXbaSBDk/78k603WdoAcG5ssgaxtzG0ki1MSEqcQum+J2jeN401icBy9V29aDGpNd1dXK7fb7fA7F/v/c8gJbguiPsCwP8JEFCFJEnieR7/fR7PZRL1eJ1uSZKiqCsd14T6DXMMqQ1h3cVW+wdnZXygU3uLjh/f4XLpEIf8W74oFvH9XRLFYQLVSgevYcGwblmUdRM5NbDixBQ8WwgRwwx2iFHCDDEECsoMYiDPQ/tYO4foR0jQ9iBzLS5D6EP0exLmHyp2Ge9nCraDjmt+gNdwSmsMtyp016gMDCz2gfGbZgRyyDT91MQ0EDFUXdxOTMFBsWoWphaFq0zqaOfQyBs1gTndI0wxZ9j9+dKg4aI8MerhPDmz0FRsj1aYXCA8nZysLfbfLKMwnDinkoIeZFuCiuaKw/+U26I5NXPM6bu71F9MqZycGrMiAk5rIMsDyEth+AsuL4YUp/DCFGyTIKEf7vDFEUXQQuVuzBG7RwpfLKgrFAj5++IBCIY+Li094/fo13VcqFZyfn+P09AyfLi5QKpWg6zrRxDTNH5Dru21MzTEkUcZ4NIAsjiBLY8JUGmOmyljMplDkCeaKRKsyleA4DjzPe0psFneUhdjsFCyNDPzUx2yb4F7xIagBxFWI8SKAvI4wmAUE3cn2bXgoh9+qLHoc5pqPzmiL8czGZG6Dk/a0GSgWBNlEY6DjXjahGf5jhQ8S209cqJGA9shCTdji5p4R2UBjsMfviMR3J+Sx2obojg06ISPzdOUSB1XNQxQnSJKU8DP3nvCQ5XCVilgZMao9HbW+hfrQgqB66IoOWiPr5SccexwUcwJFUaBpK1iGhsVMwWKuYiqJVGV9s8ZwOMRiscByuSTKHKowVZnxkF+28fljGScnf+DNmzc4PT1FPp8nnJ2dEQf/PDlBsVjEq1ev0Gg06GHGuyfytY3XMEMdfuYiTjKEUUIdk6Q7pBke7W/qwuw4SRFFMeL4KR57WQp6GM08lDsaOMnCFbehfq73t4TGYIt/2mv6bbbxH/N4lIdMbeSl98A7G9LCJXs8d8gezxxISxeTuUMwnOi42jAeKqEAXrLpJN2JiZ5o0knZyhwzbeyMDHzpamgNDay2z+qhR4qtrn38XV+SUrMwOdFETdDJftpoR2jDwmUzxco2yHbA1kmxMmPMNiEML4PhJtBtRuqMivL9lSQHitKyKhBWXdS+1lEqXeJrtYLS5Sfc1q7Jrt1c0f1gMES1WsX5+Vvk8wWUy1+Ij/ZPEzDHOTVM9D4Ero92q4G7ThPdTht9gUen3QDP9dBpN2Hoa8jiGL27DgT+DhzHkTMmY98jx+IOUx8mltAdQFxF0OyMZEvWYhqhMz0BLzuY6zHtTZbR0RZ8pM3EY0XxSL7EhUMyxYlsZHpoj5gCbdATjb2M9XUEYfxAm2NTLxQgLX0iLpt0TLaueP2IjD5T5W+0kf17rLchEZjJ1kL3idC6FVKrJeke6cP6rHwxh4zY7eGed2z2MoIz3AoPHNztjjo5GLIU8FhsQnztadQVrEuGqkM2L1lI0gy7lzoM0wDLUMLWiqjVGJgjVhym3CynLOwXnfBRMX753bn75ccmK8p/w9kFtfiYXcMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Chinese Salty Egg&quot;
+        alt=&quot;testcode&quot;
         title=&quot;&quot;
-        src=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/828fb/salty_egg.jpg&quot;
-        srcset=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/ff44c/salty_egg.jpg 158w,
-/static/8058f3f26913fea3b6a89a73344fe94a/a6688/salty_egg.jpg 315w,
-/static/8058f3f26913fea3b6a89a73344fe94a/828fb/salty_egg.jpg 630w,
-/static/8058f3f26913fea3b6a89a73344fe94a/0ede0/salty_egg.jpg 945w,
-/static/8058f3f26913fea3b6a89a73344fe94a/3ac88/salty_egg.jpg 1260w,
-/static/8058f3f26913fea3b6a89a73344fe94a/e1596/salty_egg.jpg 2048w&quot;
+        src=&quot;/static/7c7a288db03fd99329d6920828b44833/f058b/testcode.png&quot;
+        srcset=&quot;/static/7c7a288db03fd99329d6920828b44833/c26ae/testcode.png 158w,
+/static/7c7a288db03fd99329d6920828b44833/6bdcf/testcode.png 315w,
+/static/7c7a288db03fd99329d6920828b44833/f058b/testcode.png 630w,
+/static/7c7a288db03fd99329d6920828b44833/487bb/testcode.png 698w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -529,176 +433,355 @@ firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;You can also write code blocks here!&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; saltyDuckEgg &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;chinese preserved food product&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;Number&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Title&lt;/th&gt;
-&lt;th align=&quot;right&quot;&gt;Year&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;1&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;Harry Potter and the Philosopher’s Stone&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;2001&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;2&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;Harry Potter and the Chamber of Secrets&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;2002&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;3&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;Harry Potter and the Prisoner of Azkaban&lt;/td&gt;
-&lt;td align=&quot;right&quot;&gt;2004&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;a href=&quot;https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md&quot;&gt;View raw (TEST.md)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This is a paragraph.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This is a paragraph.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Header 1&lt;/h1&gt;
-&lt;h2&gt;Header 2&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Header 1
-========
+&lt;p&gt;분석 내용 최종 리뷰와 데모 개발, 시연을 마쳤다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Armeria가 요청을 어떻게 처리하는지&lt;/li&gt;
+&lt;li&gt;Armeria Thread가 어떤 기준으로 생성되고 소멸되는지&lt;/li&gt;
+&lt;li&gt;Armeria가 논블로킹, 블로킹 처리를 어떻게 하는지&lt;/li&gt;
+&lt;li&gt;Java NIO의 Selector와 Netty의 EventLoop&lt;/li&gt;
+&lt;li&gt;gRPC(+ HTTP/2) 통신과 ProtocolBuffers를 어떻게 사용하는지&lt;/li&gt;
+&lt;li&gt;Wireshark와 Visual VM을 사용하여 패킷이나 스레드가 어떻게 처리되는지 분석&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;등등의 내용들을 배우게 되었다.&lt;br&gt;
+팀장님이 생각하셨던 것보다 흥미를 느끼신다고 하셨고 &quot;산출물이 기대했던 것 보다 잘 나왔다&quot;고 하셨지만&lt;br&gt;
+스스로 생각하기에는 완벽한 이해나 분석을 했다고 볼 수 없다고 느꼇다.&lt;br&gt;
+&lt;strong&gt;진행하면서 &lt;code class=&quot;language-text&quot;&gt;OS와 네트워크의 중요성&lt;/code&gt;을 많이 느꼈다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/90eea/flow.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABZklEQVR42kVSiYqDQAz1///MQkG6UKiw1tt6tN5z6rwlse0KAZkk75rx8P6ccxBCIAxD3G435HkOrTX2fecez2gNJwScUoDW2ISAniboeca2rpDjCC9JEgzDwIvbtnFZaxmMyj+dkGbZAbgsH34oKSGF4HmjNYy1GPse3jRNeL1eUEphXVc0TYOu67BZi6GuEf78oCsKmHHE3veoqwrLsvAMuamqivf7vkdb1/BI2eVyQVEU3IyiCL9RhCbPcQkC1GUJCAEiJstJHDMpRXK/3xm4LMtDSNPAo3zi91DbtkjTFHlRMFAShqzSGYN5WeCkRBxFeDweDEhZkwgCJtBn28L7ZkJBA5wJkZBy8z6jTOd5BpTGZgyMMYeAdzzn8xnX6/WwTMt0KeM4chasMM/ZYvd8Qir1D2jM91J257hHtQqBVUrM03Rk6Ps+siz7WiYL9B8EAYMT6USA1vKToQjwKWuP2nd+Pn+9ZmFCnAS4MQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;flow&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/f058b/flow.png&quot;
+        srcset=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/c26ae/flow.png 158w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/6bdcf/flow.png 315w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/f058b/flow.png 630w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/40601/flow.png 945w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/78612/flow.png 1260w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/90eea/flow.png 2254w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;개인적으로 위 이미지의 빨간 영역 관련해서 더 학습해야할 내용들은&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Java NIO의 Selector가 SelectionKeys를 반환하는 과정&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP Buffer에 패킷들이 다 적재되어 사용할 수 있는 상황이 되면 User영역에 옮기는 처리를 한다고 하는데 명확한 이해가 되지 않는다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Socket File Discriptor에 대한 이해&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;어떤 과정으로 Socket과 Channel이 생겨나는지&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Armeria Server Thread가 생성되는 기준에 대한 이해&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만&lt;/li&gt;
+&lt;li&gt;11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다&lt;/li&gt;
+&lt;li&gt;마지막 &lt;strong&gt;RST flag&lt;/strong&gt;를 보내면서 서버에서 Socket이 닫히고 EventLoop와 Channel이 소멸된다고 생각하고 있다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/4ef3c/packet.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.0379746835443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42i2MWVPaABhF+f/TzrTj1GKXB+2L4FahEEIIkEiAEAgRCEsSUBEF0RYo4IALpwP2zpw53/dwry+vZsmkVCRB4uQ4xK9QlEh4jUA4FNnc4dPI5v95EiIWjZOUUiiygpbOUNB0Bp7HRavFeDzGV6tXsRs11KzGaUzgV1xEUuQNsZS0cVQWEdOJjZMZhZyRp2AaWFWLWtPmxm1h6vrbYE6tsUaIaAT2BYIBkeMjmaNDmYOgxOFBgv19ceNAQCQcOiMWyZEQDdSkRS5j07ObtO0as/kcn/sww/s9Q3e6RPMW8WKN5LmDbDmodptC+5qsc4HuddFaHSq9Ia3hZIN7P8V5mDIdjVnMZ7y8vuK7nrv0Hj1KlzoRXUCxUyQsCbWe5qyRJu9lyLoqeltDcxRqfZPbRYfrmUt35nCz6HA/7NKqN/kzGuHrjUbcTsaUvTbJYomzahXFOkexLCTdQClbZCoVcnaVrF2l6DTpDO/wBn06dwPcQZ/ZZMLL0xPL5RLf5Y3D1a2DWTNIZ2UKmky+oJC3NDJFhXKjgGnnMapZitUspq3T7jZod+sbe90Gj/d9eH5mHZ910aJy5ZAqGxwlROSEiKSliRc1ojmFuKEhGhli/5FKOcqdJuue1WlyfuXycNfn8e/0bdDcC1L+cYD6bZfoJz/S9g7xzzuI/i8I234SX78jfNgm8m6LyPst4h/9lHYDmHsBzN0Apb0g45bDarlgtVrxD9+dYsEQ+j1mAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;packet&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/f058b/packet.png&quot;
+        srcset=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/c26ae/packet.png 158w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/6bdcf/packet.png 315w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/f058b/packet.png 630w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/40601/packet.png 945w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/78612/packet.png 1260w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/4ef3c/packet.png 2863w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Expect&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;mermaid&quot;&gt;&lt;pre class=&quot;language-mermaid&quot;&gt;&lt;code class=&quot;language-mermaid&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;sequenceDiagram&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; C as Client Main Thread
+    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S1 as Server Request1
+    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S2 as Server Request2
+    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S3 as Server Request3
+    &lt;span class=&quot;token keyword&quot;&gt;Note over&lt;/span&gt; S1,S3&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; One Thread
 
-Header 2
---------&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Header 1&lt;/h1&gt;
-&lt;h2&gt;Header 2&lt;/h2&gt;
-&lt;h3&gt;Header 3&lt;/h3&gt;
-&lt;h4&gt;Header 4&lt;/h4&gt;
-&lt;h5&gt;Header 5&lt;/h5&gt;
-&lt;h6&gt;Header 6&lt;/h6&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# Header 1
-## Header 2
-### Header 3
-#### Header 4
-##### Header 5
-###### Header 6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Header 1&lt;/h1&gt;
-&lt;h2&gt;Header 2&lt;/h2&gt;
-&lt;h3&gt;Header 3&lt;/h3&gt;
-&lt;h4&gt;Header 4&lt;/h4&gt;
-&lt;h5&gt;Header 5&lt;/h5&gt;
-&lt;h6&gt;Header 6&lt;/h6&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# Header 1 #
-## Header 2 ##
-### Header 3 ###
-#### Header 4 ####
-##### Header 5 #####
-###### Header 6 ######&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 1. Sample Future Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; sampleUnaryCall &lt;span class=&quot;token text string&quot;&gt;(10s sleep)&lt;/span&gt;
+    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 2. Sample Future Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; sampleUnaryCall
+    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S3&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 3. Hello Async Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; helloUnaryCall
+    S2&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 2. Response
+    S3&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 3. Response
+    S1&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 1. Response&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Real&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;mermaid&quot;&gt;&lt;pre class=&quot;language-mermaid&quot;&gt;&lt;code class=&quot;language-mermaid&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;sequenceDiagram&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; C as Client Main Thread
+    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S1 as Server Request1
+    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S2 as Server Request2
+    &lt;span class=&quot;token keyword&quot;&gt;participant&lt;/span&gt; S3 as Server Request3
+    &lt;span class=&quot;token keyword&quot;&gt;Note over&lt;/span&gt; S1,S3&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; One Thread
+
+    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 1. Sample Future Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; sampleUnaryCall &lt;span class=&quot;token text string&quot;&gt;(10s sleep)&lt;/span&gt;
+    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 2. Sample Future Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; sampleUnaryCall
+    C&lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&gt;&lt;/span&gt;+S3&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 3. Hello Async Client &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; helloUnaryCall
+    S1&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 1. Response
+    S2&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 2. Response
+    S3&lt;span class=&quot;token arrow operator&quot;&gt;--&gt;&gt;&lt;/span&gt;-C&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; 3. Response&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;클라이언트의 메인 스레드에서 다른 서비스로 요청해도 모든 요청을 처리하는 스레드는 서버 스레드 한 개이다
+&lt;ul&gt;
+&lt;li&gt;Sample, Hello 서로 다른 서비스로 요청을 보내도 요청을 처리하는 스레드는 한 개이다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;위와 같은 테스트를 클라이언트 2개에서 각각 한 번씩 보내도 똑같은 결과다
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;결국 서버에서 받는 모든 요청들은 각각의 클라이언트에 맞는 서버의 스레드들이 처리한다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;클라이언트의 메인 스레드에서 ExecutorService를 통해 자식 스레드를 여러 개를 서버에 요청 전송하여도 한 개의 서버 스레드가 처리한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 63.291139240506325%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACd0lEQVR42l2SS4tdRRRG749zJCgtSkRwKP4Bn0PBgZqoCWTiUAlGBFEyUQcRJ4IDIYg2Iemk28S093HOPa96P8+Sqntv+xh87F27qtb+dp2z+O3ufR6cPOLk3h+cLVe82nzCpfVVXt5e54XhQ47kFZ6TVzgSl3e52OXPi494sb/KpeFjXhqu8Uz/Pl+pn1nc+foWd299V3Xy7ffc/v1HvnnwCzdu/8A7d77ktePPeOv4Bm/c+5w3f/2U1+/f5O3jm7zy8DpPj+/xbPcBR/1lnure5Qv5EwutNV4Z5hBJw8BmekITW1a6YaV72qmnER2NGmiHLRs90IqBpdpwGlec+iVnYcXDsKRPkgXBQ0rUmBMIQVj1qM4ThGNqDVFHpkbjpUe0Gjs5TO+wrYOYiWPEri34yKI5HxgHR/SZ9UqhR012DmMjUhuUdmi7W6cZXMj4mHEhVc1ALHUbyN6z8CbQdSObTYOQlmwcWMM8l6PgvSPGSCpKRYlpHFkulygp616IscIIgUXfKlbrgbbtWW8kXlqwljkfgIHCds6jlMIYi5SS9XqNMaY2NNYSndsBVSvr28wuonpLGMQOeOHQV1fO7ZzGEIkxoaSi67oKLw7TwSFkmDNz+SCH3LkLhyGECi/KOVdYaSKE4PzJeXUZU/rHYbn2H5XL/wIeHKa4cxl8uAAX6Ha7ZZoEyYc9cN/9MCJ7IPt18J45532DueZl9LIvheDs9JS+74nWHkY+cObqsBzMPmBDQlmHsr7+FjbkGo2PSONwMePTXB6p1r2PzDH+D7h3ZduJ/nGH3gx0jztcO9Vomonhz1KfmP7qGc97UBLdCMZHW2Zt+BuFmtCvouSw5AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;armeriaThread&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/f058b/armeriaThread.png&quot;
+        srcset=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/c26ae/armeriaThread.png 158w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/6bdcf/armeriaThread.png 315w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/f058b/armeriaThread.png 630w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/40601/armeriaThread.png 945w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png 1161w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;궁극적으로는 Socket Programming에 대한 이해가 떨어지는 것 같다.&lt;br&gt;
+네티 인 액션을 정독할 생각이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[퇴사]]></title><description><![CDATA[동안 다니던 SI…]]></description><link>https://jdalma.github.io/2022y/leave/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/leave/</guid><pubDate>Sun, 31 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;2년 4개월&lt;/code&gt;동안 다니던 SI 회사를 퇴사하였다&lt;br&gt;
+&lt;strong&gt;수주 → 개발 → 납품&lt;/strong&gt;의 과정을 거치는수익 구조로 인해&lt;br&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;기술적 부채는 쌓여가지만 품질,기술 개선 노력 없음&lt;/li&gt;
+&lt;li&gt;주 업무는 정부과제, 공공기관 대상이였으므로 경험할 수 있는 환경이 제한적&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;생각해보면 아쉬운 점도 많다&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;사내 인트라넷이 형상관리가 안되고 있었는데 Git으로 도전해볼껄&lt;/li&gt;
+&lt;li&gt;마지막 프로젝트에서 REST API를 적용해보면서 API문서화를 적용해볼껄&lt;/li&gt;
+&lt;li&gt;사내 동료들과 책 스터디를 할껄&lt;/li&gt;
+&lt;li&gt;(코드숨 교육을 진행하면서 느낀 것이지만) TDD를 일찍 배워서 실무에 스스로 적용해볼껄&lt;/li&gt;
+&lt;li&gt;코드리뷰 문화를 사내 동료들끼리 해볼껄&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이직에 성공하게 된다면 이런 아쉬운 점이 없도록 노력해야겠다.&lt;br&gt;
+내가 개선할 수 있는 것들이 보인다면 적극적으로 나서자&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;그럼에도 불구하고 스스로 노력했던 것은&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;격주로 진행되는 사내 세미나에 교육자로 적극적으로 나선 것&lt;/li&gt;
+&lt;li&gt;사내 세미나를 계기로 17주간 사내 스터디를 운영했던 것&lt;/li&gt;
+&lt;li&gt;REST API를 도입하려 노력했던 것
+&lt;ul&gt;
+&lt;li&gt;API 문서화를 하지 못 해서 아쉽다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;고객사가 원하는 DB의 종류가 바뀌면 매번 쿼리 컨버팅을 해야했었는데 JPA를 건의했던 것
+&lt;ul&gt;
+&lt;li&gt;건의만 하고 결과물을 보여드리지 않아 적용을 못 하지 않았나 싶다&lt;/li&gt;
+&lt;li&gt;간단한 결과물을 만들어 보여드렸다면 적용할 수 있지 않았을까? 하는 생각에 제일 아쉽다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;서비스 회사에 가고 싶은 이유는 무엇일까?&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&gt; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;h2&gt;This is a header.&lt;/h2&gt;
+&lt;p&gt;처음 맡았던 프로젝트가 근태관리였다. 휴가나 출장, 근무시간에 대해 개발하였다.&lt;br&gt;
+개발을 다 끝내고 사람들이 휴가를 잘 쓰는지, 에러는 안나는지 궁금해서 다른 프로젝트 개발을 진행하면서 시간날 때 마다 로그를 확인했다.&lt;br&gt;
+내가 개발한 부분을 사람들이 사용하는 것을 보면 재밋기도하고 뿌듯했다. &lt;strong&gt;개발이 보람차다라는 것을 느꼇다.&lt;/strong&gt;&lt;br&gt;
+하지만 전 회사에서는 공공기관이 주 고객이였고, 실제 사용자들은 20명도 안됐다.&lt;br&gt;
+그러다보니 소프트웨어 품질에 관심을 가지는 사람도 없었고 내가 경험할 수 있는것도 제한적이였다.&lt;br&gt;
+옛날에 배달의 민족 영상을 본적이 있다 &lt;br&gt;
+선착순 이벤트를 진행하면 서버가 터져나가고, 서비스를 마이크로서비스로 전환하면서 겪었던 문제들을 해결하면서 팀원들과 환호하고 박수쳤다라는 내용이 있었다 &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;나도 저런 문제들을 팀원들과 해결해보고 싶다&quot;&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;&quot;좋은 아키텍처, 좋은 설계, 좋은 코드를 작성하기 위해 팀원들과 고민하고 얘기 나누고 싶다&quot;&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;&quot;SI회사에서는 저런 경험을 못하겠다.&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;This is the first list item.&lt;/li&gt;
-&lt;li&gt;This is the second list item.&lt;/li&gt;
+&lt;li&gt;좋은 품질을 만들기 위해 노력하는 회사&lt;/li&gt;
+&lt;li&gt;기술적 부채를 해결하려 노력하는 회사&lt;/li&gt;
+&lt;li&gt;개발에 욕심이 있고 인사이트를 공유할 수 있는 동료들이 있는 회사&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Here&apos;s some example code:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Markdown.generate();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&gt; ## This is a header.
-&gt; 1. This is the first list item.
-&gt; 2. This is the second list item.
-&gt;
-&gt; Here&apos;s some example code:
-&gt;
-&gt;     Markdown.generate();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Red&lt;/li&gt;
-&lt;li&gt;Green&lt;/li&gt;
-&lt;li&gt;Blue&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Red&lt;/li&gt;
-&lt;li&gt;Green&lt;/li&gt;
-&lt;li&gt;Blue&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Red&lt;/li&gt;
-&lt;li&gt;Green&lt;/li&gt;
-&lt;li&gt;Blue&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;markdown&quot;&gt;&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; Red
-&lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; Green
-&lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; Blue
-
-&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Red
-&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Green
-&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Blue
-
-&lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; Red
-&lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; Green
-&lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; Blue&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;code goes&lt;/code&gt; here in this line&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;bold&lt;/strong&gt; goes here&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;markdown&quot;&gt;&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token code-snippet code keyword&quot;&gt;`code goes`&lt;/span&gt; here in this line
-&lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token content&quot;&gt;bold&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;/span&gt; goes here&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;사용자들이 작던 말던 품질에 대해 고민하고 좋은 코드를 작성하기 위해 노력하는 서비스 회사를 가자&quot;&lt;/code&gt;라는 결론에 다다랐다.&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;이제 경험하고 싶거나 배우고 싶은 것은?&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Buy flour and salt&lt;/li&gt;
-&lt;li&gt;Mix together with water&lt;/li&gt;
-&lt;li&gt;Bake&lt;/li&gt;
+&lt;li&gt;TDD, 테스트 코드에 대해 배우고 싶다&lt;/li&gt;
+&lt;li&gt;분산환경, MSA, 메시지 큐 시스템을 경험해보고 싶다
+&lt;ul&gt;
+&lt;li&gt;마이크로서비스로 개발하면 트랜잭션은 어떻게 처리할까? 상태는 어떻게 전달할까?&lt;/li&gt;
+&lt;li&gt;이전에 분산환경을 왜 적용할까?를 먼저 고민해야한다.&lt;/li&gt;
+&lt;li&gt;생존의 의미로 접근해야한다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;캐싱 기술에 대한 공부를 하고 싶다
+&lt;ul&gt;
+&lt;li&gt;데이터를 캐싱하는 기준? 적중률? 데이터 갱신은 어떻게,언제 할까?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;분산 DB
+&lt;ul&gt;
+&lt;li&gt;읽고 쓰는 DB를 분리하던데 궁금하다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;OOP
+&lt;ul&gt;
+&lt;li&gt;객체간의 책임이나 관심사를 분리하는 방법에 대해&lt;/li&gt;
+&lt;li&gt;확장에 유연한 객체를 설계하는 방법에 대해&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;markdown&quot;&gt;&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token list punctuation&quot;&gt;1.&lt;/span&gt; Buy flour and salt
-&lt;span class=&quot;token list punctuation&quot;&gt;1.&lt;/span&gt; Mix together with water
-&lt;span class=&quot;token list punctuation&quot;&gt;1.&lt;/span&gt; Bake&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;&lt;strong&gt;코드숨&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;코드 리뷰&lt;/strong&gt; , &lt;strong&gt;TDD&lt;/strong&gt;를 경험해보고 싶어 &lt;br&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;code goes&lt;/code&gt; here in this line&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;bold&lt;/strong&gt; goes here&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NEXTSTEP&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;코드숨&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;markdown&quot;&gt;&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token list punctuation&quot;&gt;1.&lt;/span&gt; &lt;span class=&quot;token code-snippet code keyword&quot;&gt;`code goes`&lt;/span&gt; here in this line
-&lt;span class=&quot;token list punctuation&quot;&gt;1.&lt;/span&gt; &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token content&quot;&gt;bold&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;/span&gt; goes here&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Paragraph:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Code&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;!-- --&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Paragraph:
-
-    Code&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;2개를 고민하였다.&lt;br&gt;
+교육 과정에 내 모든 시간을 투자하고 싶어 퇴사 후 일정을 고려하였을 때 &lt;strong&gt;코드숨&lt;/strong&gt;이 적당했다&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;금액은 코드숨이 더 비쌋지만 , &lt;a href=&quot;https://github.com/johngrib&quot;&gt;이종립&lt;/a&gt;님이 리뷰어로 계시기도 하고 &lt;a href=&quot;https://www.youtube.com/watch?v=oFhN3EqrCwc&amp;#x26;ab_channel=%EC%BD%94%EB%94%A9%EC%9D%98%EC%8B%A0%EC%95%84%EC%83%AC&quot;&gt;아샬님의 OT 영상&lt;/a&gt;을 보고 적잖게 감명받아 신청하게 되었다
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;JVM을 공부하며 이종립님의 글들을 읽은적이 있는데 그 후로 공부할 것이 있으면 먼저 종립님 블로그를 확인한다&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;feedly에도 이종립님의 블로그를 등록해놓아서 신규 글이 작성되면 바로 보기도 한다&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
-&lt;hr&gt;
-&lt;hr&gt;
-&lt;hr&gt;
-&lt;hr&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;* * *
-
-***
-
-*****
-
-- - -
-
----------------------------------------&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This is &lt;a href=&quot;http://example.com&quot; title=&quot;Example&quot;&gt;an example&lt;/a&gt; link.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://example.com&quot;&gt;This link&lt;/a&gt; has no title attr.&lt;/p&gt;
-&lt;p&gt;This is &lt;a href=&quot;http://example.com&quot; title=&quot;Optional Title&quot;&gt;an example&lt;/a&gt; reference-style link.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This is [an example](http://example.com &quot;Example&quot;) link.
-
-[This link](http://example.com) has no title attr.
-
-This is [an example] [id] reference-style link.
-
-[id]: http://example.com &quot;Optional Title&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;em&gt;single asterisks&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;single underscores&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;double asterisks&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;double underscores&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;*single asterisks*
-
-_single underscores_
-
-**double asterisks**
-
-__double underscores__&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This paragraph has some &lt;code class=&quot;language-text&quot;&gt;code&lt;/code&gt; in it.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This paragraph has some `code` in it.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/200x50&quot; alt=&quot;Alt Text&quot; title=&quot;Image Title&quot;&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://via.placeholder.com/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
+&lt;h2&gt;&lt;strong&gt;아샬님의 OT 영상&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;인출 중심&lt;/code&gt;&lt;/strong&gt;(회상) 의 교육
+&lt;ul&gt;
+&lt;li&gt;배울려고 공부하는 것이 아니라 &lt;strong&gt;쓸려고 공부하는 것&lt;/strong&gt;이다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;목표 → 강의 → 과제&lt;/strong&gt;순으로 흘러간다&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;과제&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;코드 → 리뷰 → 풀이&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;What&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;영상 , 자료 또는 강의를 일단 한 번 본다&lt;/li&gt;
+&lt;li&gt;무슨 일이 일어났는지 &lt;strong&gt;회상&lt;/strong&gt;을 해야한다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Why&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;왜 이렇게 되지? 라는 의문을 가진다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;어떻게를 그냥 배울 수 없고 &lt;strong&gt;What&lt;/strong&gt;과 &lt;strong&gt;Why&lt;/strong&gt;를 거쳐 &lt;strong&gt;How&lt;/strong&gt;를 배우게 된다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feedback&lt;/strong&gt; , &lt;strong&gt;FeedForward&lt;/strong&gt;를 얻을 수 있다
+&lt;ol&gt;
+&lt;li&gt;결과를 통해&lt;/li&gt;
+&lt;li&gt;정보 (에러메세지)를 통해&lt;/li&gt;
+&lt;li&gt;수정을 통해&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;메타인지&lt;/strong&gt; : 내가 뭐를 알고 뭐를 모르는지
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;무의식적 무지&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;의식적 무지&lt;/code&gt; ↔︎ &lt;code class=&quot;language-text&quot;&gt;의식적 지식&lt;/code&gt; (반복)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;무의식적 지식&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span style=&quot;color:red; font-weight:bold&quot;&gt;단순 반복 금지&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Don&apos;t Study Hard&lt;/del&gt; &lt;strong&gt;Study SMART&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;2022년 7월 31일&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;코드숨 OT&lt;/code&gt; 관련 윤석님의 말씀 중 기록 해놓고 싶은 내용이 있다 &lt;br&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;완벽을 추구하지 말 것&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;실수를 두려워하지 말기&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;고통 주도 개발&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;어떻게 해야 8주 동안 슬기롭게 과정을 소화해낼 수 있을까?&lt;/strong&gt; &lt;br&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;(짜증날 정도로) &lt;strong&gt;질문 많이 하기&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;무지를 드러내기&lt;/strong&gt; 📌
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;모르는 것을 모른다고 하지 않고, 모르는 것을 그냥 모르고 지나치는 것이 더 부끄러운 것 같다.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;완벽을 추구하지 않기&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;피드포워드를 자주 받기&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;자신이 설정한 행동 목표를 실천하기 위해 함께 일하는 사람들로 부터 아이디어를 받는 것&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;다른 사람에게 지식을 전파하고 잘 받기&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;디스코드에 나눈 이야기들이나 , 이전 수강 기수들의 PR훔쳐보기&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=oFhN3EqrCwc&amp;#x26;ab_channel=%EC%BD%94%EB%94%A9%EC%9D%98%EC%8B%A0%EC%95%84%EC%83%AC&quot;&gt;아샬님의 OT 영상&lt;/a&gt;에서 시키는 대로 잘 하기&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;성장형 사고관 가지기&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/ko-kr/learn/modules/develop-growth-mindset/&quot;&gt;성장형 사고관이란?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;더 나은 방법이 존재한다는 믿음을 가질 것&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item></channel></rss>
