@@ -313,6 +313,34 @@ a:focus {
   margin: var(--spacing-0);
 }
 
+.blog-post .tags ul {
+  list-style: none;
+}
+
+.blog-post .tags ul li {
+  display: inline-block;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.blog-post .tags ul li a {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  text-decoration: none;
+  color: black;
+  font-size: 0.85rem;
+  border-width: 4px;
+  border-radius: 0.25rem;
+  background-color: #e9ddc5;
+}
+
+.blog-post .tags ul li a:hover {
+  background-color: #d6c5a3;
+}
+
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
 }

@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Jeong-Dalma`,
+    title: `코딩 주머니`,
     author: {
       name: `정현준`,
       summary: ``,
@@ -18,7 +18,7 @@ module.exports = {
     siteUrl: `https://jdalma.github.io/`,
     social: {
       github: `jdalma`,
-    },
+    }
   },
   plugins: [
     `gatsby-plugin-image`,
