@@ -58,28 +58,28 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-mermaid`,
-            options: {
-              launchOptions: {
-                executablePath: 'path/to/chrome/executable'
-              },
-              svgo: {
-                plugins: [{ name: 'removeTitle', active: false }]
-              },
-              mermaidOptions: {
-                theme: 'neutral',
-                themeCSS: '.node rect { fill: #fff; }'
-              }
-            }
-          }
-        ]
-      }
-    },    
+    // {
+    //   resolve: 'gatsby-transformer-remark',
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: `gatsby-remark-mermaid`,
+    //         options: {
+    //           launchOptions: {
+    //             executablePath: 'path/to/chrome/executable'
+    //           },
+    //           svgo: {
+    //             plugins: [{ name: 'removeTitle', active: false }]
+    //           },
+    //           mermaidOptions: {
+    //             theme: 'neutral',
+    //             themeCSS: '.node rect { fill: #fff; }'
+    //           }
+    //         }
+    //       }
+    //     ]
+    //   }
+    // },    
     {
       resolve: `gatsby-plugin-feed`,
       options: {
