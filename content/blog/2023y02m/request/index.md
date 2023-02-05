@@ -1,8 +1,9 @@
 ---
 title: BlockingIO와 NonBlockingIO
 date: "2023-02-01"
-tags: BIO와 NIO
-   - Network
+tags:
+   - Blocking
+   - NonBlocking
 ---
 
 1. [Jboss netty와 netty의 차이점은 무엇입니까?](https://stackoverflow.com/questions/42781445/difference-between-jboss-netty-and-netty)
