@@ -21,17 +21,11 @@ annotationProcessor 'org.projectlombok:lombok:1.18.16'
 
 ![](lombokReview.png)
 
-- Lombok을 사용하면 IDE Generate보다 클래스위에 어노테이션을 자동완성 해왔다
-- 생성자 어노테이션은 왜 위험할까??
-
-<br>
-
-- 이 [글](https://kwonnam.pe.kr/wiki/java/lombok/pitfall)에 따르면 **@AllArgsConstructor**, **@RequiredArgsConstructor** 클래스 필드 순서대로 생성자를 생성해준다고 한다
-  - 이 때, **생성자 어노테이션이 작성된 클래스 필드들의 순서를 수정하면 이미 사용중인 영역에 영향이 간다**
-  - 필드들의 타입이 달라서 컴파일 에러를 일으킨다면 다행이지만 , **타입이 같다면 큰 문제다**
-- 직접 확인해보자
-
-<br>
+Lombok을 사용하면 IDE Generate보다 클래스위에 어노테이션을 자동완성 해왔다  
+이 [글](https://kwonnam.pe.kr/wiki/java/lombok/pitfall)에 따르면 **@AllArgsConstructor**, **@RequiredArgsConstructor** 클래스 필드 순서대로 생성자를 생성해준다고 한다  
+이 때, **생성자 어노테이션이 작성된 클래스 필드들의 순서를 수정하면 이미 사용중인 영역에 영향이 간다**  
+필드들의 타입이 달라서 컴파일 에러를 일으킨다면 다행이지만 , **타입이 같다면 큰 문제다**  
+직접 확인해보자
 
 > **ProductData**
 
@@ -104,7 +98,7 @@ public class ProductData {
 
 - 필드의 순서에 맞게 생성자가 재정의 되었다. 꼭 필요하다면 직접 작성하자
 - 특정 롬복 어노테이션을 막고 싶다면 `lombok.(featureName).flagUsage` 옵션을 사용하자
-- [어떤 분](https://github.com/projectlombok/lombok/issues/2094#issuecomment-866351481)은 `@AllArgsConsructor`를 **"This annotation is simply a loaded gun.."**라고 말하기도 했다
+- [어떤 분](https://github.com/projectlombok/lombok/issues/2094#issuecomment-866351481)은 `@AllArgsConsructor`를 **"This annotation is simply a loaded gun.."** 라고 말하기도 했다
 
 ***
 
@@ -118,7 +112,7 @@ public class ProductData {
   - [@Builder의 동작 원리](https://velog.io/@park2348190/Lombok-Builder%EC%9D%98-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC)
   
 
-- `@Builder`를 직접 확인해보자
+**`@Builder`를 직접 확인해보자**
 
 ```java
 @Target({TYPE, METHOD, CONSTRUCTOR})
@@ -128,16 +122,18 @@ public @interface Builder {
 }
 ```
 
-- [**RetentionPolicy**](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/RetentionPolicy.html)에 따르면 **컴파일 단계에서 제거된다**
-- [**ElementType**](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html)에 따르면 **아래 위치에 선언할 수 있다**
-  1. **클래스**
-  2. 인터페이스
-  3. enum
-  4. 메서드
-  5. **생성자**
+[**RetentionPolicy**](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/RetentionPolicy.html)에 따르면 **컴파일 단계에서 제거된다**  
+[**ElementType**](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html)에 따르면 **아래 위치에 선언할 수 있다**
+1. **클래스**
+2. 인터페이스
+3. enum
+4. 메서드
+5. **생성자**
 
 ```
-클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.
+클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며  
+( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 
+이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.
 ```
 - [출처](https://projectlombok.org/features/Builder)
 
