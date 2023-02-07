@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tags-js","path":"/tags/lombok/","result":{"data":{"site":{"siteMetadata":{"title":"코딩 주머니"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/2022y/lombok/"},"frontmatter":{"title":"롬복 생성자 어노테이션 써도 될까?"}}}]}},"pageContext":{"tag":"Lombok"}},"staticQueryHashes":["3589320610"],"slicesMap":{}}
