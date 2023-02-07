@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Feb 2023 13:49:59 GMT</lastBuildDate><item><title><![CDATA[BlockingIO와 NonBlockingIO (작성중)]]></title><description><![CDATA[회사에서 1차 트레이닝 프로젝트를 진행하며 를 처음 접하게 되었다. Armeria가 빌드될 때 와 를 같이 등록하게 된다.참고 기존 REST…]]></description><link>https://jdalma.github.io/2023y02m/request/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/request/</guid><pubDate>Sun, 05 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;회사에서 &lt;a href=&quot;https://jdalma.github.io/2022y/trainingProject/&quot;&gt;1차 트레이닝 프로젝트&lt;/a&gt;를 진행하며 &lt;code class=&quot;language-text&quot;&gt;NIO&lt;/code&gt;를 처음 접하게 되었다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Feb 2023 14:13:11 GMT</lastBuildDate><item><title><![CDATA[BlockingIO와 NonBlockingIO (작성중)]]></title><description><![CDATA[회사에서 1차 트레이닝 프로젝트를 진행하며 를 처음 접하게 되었다. Armeria가 빌드될 때 와 를 같이 등록하게 된다.참고 기존 REST…]]></description><link>https://jdalma.github.io/2023y02m/request/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/request/</guid><pubDate>Sun, 05 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;회사에서 &lt;a href=&quot;https://jdalma.github.io/2022y/trainingProject/&quot;&gt;1차 트레이닝 프로젝트&lt;/a&gt;를 진행하며 &lt;code class=&quot;language-text&quot;&gt;NIO&lt;/code&gt;를 처음 접하게 되었다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Armeria가 빌드될 때 &lt;code class=&quot;language-text&quot;&gt;Netty&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;TomcatService&lt;/code&gt;를 같이 등록하게 된다.&lt;a href=&quot;https://github.com/jdalma/armeria-grpc-kotlin/blob/master/src/main/kotlin/com/example/armeriaserver/grpc/sample/ArmeriaConfig.kt#L42&quot;&gt;참고&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;기존 REST를 유지시키면서 &lt;code class=&quot;language-text&quot;&gt;gRPC&lt;/code&gt;를 통한 비동기 통신을 추가하기 위해서이다.&lt;/li&gt;
@@ -838,21 +838,11 @@ annotationProcessor &apos;org.projectlombok:lombok:1.18.16&apos;&lt;/code&gt;&lt
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Lombok을 사용하면 IDE Generate보다 클래스위에 어노테이션을 자동완성 해왔다&lt;/li&gt;
-&lt;li&gt;생성자 어노테이션은 왜 위험할까??&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;이 &lt;a href=&quot;https://kwonnam.pe.kr/wiki/java/lombok/pitfall&quot;&gt;글&lt;/a&gt;에 따르면 &lt;strong&gt;@AllArgsConstructor&lt;/strong&gt;, &lt;strong&gt;@RequiredArgsConstructor&lt;/strong&gt; 클래스 필드 순서대로 생성자를 생성해준다고 한다
-&lt;ul&gt;
-&lt;li&gt;이 때, &lt;strong&gt;생성자 어노테이션이 작성된 클래스 필드들의 순서를 수정하면 이미 사용중인 영역에 영향이 간다&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;필드들의 타입이 달라서 컴파일 에러를 일으킨다면 다행이지만 , &lt;strong&gt;타입이 같다면 큰 문제다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;직접 확인해보자&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
+&lt;p&gt;Lombok을 사용하면 IDE Generate보다 클래스위에 어노테이션을 자동완성 해왔다&lt;br&gt;
+이 &lt;a href=&quot;https://kwonnam.pe.kr/wiki/java/lombok/pitfall&quot;&gt;글&lt;/a&gt;에 따르면 &lt;strong&gt;@AllArgsConstructor&lt;/strong&gt;, &lt;strong&gt;@RequiredArgsConstructor&lt;/strong&gt; 클래스 필드 순서대로 생성자를 생성해준다고 한다&lt;br&gt;
+이 때, &lt;strong&gt;생성자 어노테이션이 작성된 클래스 필드들의 순서를 수정하면 이미 사용중인 영역에 영향이 간다&lt;/strong&gt;&lt;br&gt;
+필드들의 타입이 달라서 컴파일 에러를 일으킨다면 다행이지만 , &lt;strong&gt;타입이 같다면 큰 문제다&lt;/strong&gt;&lt;br&gt;
+직접 확인해보자&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -914,7 +904,7 @@ annotationProcessor &apos;org.projectlombok:lombok:1.18.16&apos;&lt;/code&gt;&lt
 &lt;ul&gt;
 &lt;li&gt;필드의 순서에 맞게 생성자가 재정의 되었다. 꼭 필요하다면 직접 작성하자&lt;/li&gt;
 &lt;li&gt;특정 롬복 어노테이션을 막고 싶다면 &lt;code class=&quot;language-text&quot;&gt;lombok.(featureName).flagUsage&lt;/code&gt; 옵션을 사용하자&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/projectlombok/lombok/issues/2094#issuecomment-866351481&quot;&gt;어떤 분&lt;/a&gt;은 &lt;code class=&quot;language-text&quot;&gt;@AllArgsConsructor&lt;/code&gt;를 **&quot;This annotation is simply a loaded gun..&quot;**라고 말하기도 했다&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/projectlombok/lombok/issues/2094#issuecomment-866351481&quot;&gt;어떤 분&lt;/a&gt;은 &lt;code class=&quot;language-text&quot;&gt;@AllArgsConsructor&lt;/code&gt;를 &lt;strong&gt;&quot;This annotation is simply a loaded gun..&quot;&lt;/strong&gt; 라고 말하기도 했다&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h1&gt;&lt;strong&gt;@Builder&lt;/strong&gt; 클래스에 작성하는 것과 메서드에 작성하는 것의 차이점&lt;/h1&gt;
@@ -950,26 +940,22 @@ annotationProcessor &apos;org.projectlombok:lombok:1.18.16&apos;&lt;/code&gt;&lt
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;아래의 링크를 참고하였습니다&lt;/p&gt;
+&lt;li&gt;아래의 링크를 참고하였습니다
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://johngrib.github.io/wiki/pattern/builder/#lombok-builder&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;johngrib&lt;/code&gt; Lombok @Builder&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://projectlombok.org/features/Builder&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;lombok&lt;/code&gt; @Builder&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://velog.io/@park2348190/Lombok-Builder%EC%9D%98-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC&quot;&gt;@Builder의 동작 원리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@Builder&lt;/code&gt;를 직접 확인해보자&lt;/p&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;@Builder&lt;/code&gt;를 직접 확인해보자&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@Target&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;TYPE&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;METHOD&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;CONSTRUCTOR&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token annotation punctuation&quot;&gt;@Retention&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;SOURCE&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token annotation punctuation&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Builder&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/RetentionPolicy.html&quot;&gt;&lt;strong&gt;RetentionPolicy&lt;/strong&gt;&lt;/a&gt;에 따르면 &lt;strong&gt;컴파일 단계에서 제거된다&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html&quot;&gt;&lt;strong&gt;ElementType&lt;/strong&gt;&lt;/a&gt;에 따르면 &lt;strong&gt;아래 위치에 선언할 수 있다&lt;/strong&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/RetentionPolicy.html&quot;&gt;&lt;strong&gt;RetentionPolicy&lt;/strong&gt;&lt;/a&gt;에 따르면 &lt;strong&gt;컴파일 단계에서 제거된다&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&quot;https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html&quot;&gt;&lt;strong&gt;ElementType&lt;/strong&gt;&lt;/a&gt;에 따르면 &lt;strong&gt;아래 위치에 선언할 수 있다&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;클래스&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;인터페이스&lt;/li&gt;
@@ -977,9 +963,9 @@ annotationProcessor &apos;org.projectlombok:lombok:1.18.16&apos;&lt;/code&gt;&lt
 &lt;li&gt;메서드&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;생성자&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며  
+( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 
+이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://projectlombok.org/features/Builder&quot;&gt;출처&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

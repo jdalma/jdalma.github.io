@@ -43,21 +43,11 @@ annotationProcessor 'org.projectlombok:lombok:1.18.16'</code></pre></div>
       />
   </a>
     </span></p>
-<ul>
-<li>Lombok을 사용하면 IDE Generate보다 클래스위에 어노테이션을 자동완성 해왔다</li>
-<li>생성자 어노테이션은 왜 위험할까??</li>
-</ul>
-<br>
-<ul>
-<li>이 <a href="https://kwonnam.pe.kr/wiki/java/lombok/pitfall">글</a>에 따르면 <strong>@AllArgsConstructor</strong>, <strong>@RequiredArgsConstructor</strong> 클래스 필드 순서대로 생성자를 생성해준다고 한다
-<ul>
-<li>이 때, <strong>생성자 어노테이션이 작성된 클래스 필드들의 순서를 수정하면 이미 사용중인 영역에 영향이 간다</strong></li>
-<li>필드들의 타입이 달라서 컴파일 에러를 일으킨다면 다행이지만 , <strong>타입이 같다면 큰 문제다</strong></li>
-</ul>
-</li>
-<li>직접 확인해보자</li>
-</ul>
-<br>
+<p>Lombok을 사용하면 IDE Generate보다 클래스위에 어노테이션을 자동완성 해왔다<br>
+이 <a href="https://kwonnam.pe.kr/wiki/java/lombok/pitfall">글</a>에 따르면 <strong>@AllArgsConstructor</strong>, <strong>@RequiredArgsConstructor</strong> 클래스 필드 순서대로 생성자를 생성해준다고 한다<br>
+이 때, <strong>생성자 어노테이션이 작성된 클래스 필드들의 순서를 수정하면 이미 사용중인 영역에 영향이 간다</strong><br>
+필드들의 타입이 달라서 컴파일 에러를 일으킨다면 다행이지만 , <strong>타입이 같다면 큰 문제다</strong><br>
+직접 확인해보자</p>
 <blockquote>
 <p><strong>ProductData</strong></p>
 </blockquote>
@@ -119,7 +109,7 @@ annotationProcessor 'org.projectlombok:lombok:1.18.16'</code></pre></div>
 <ul>
 <li>필드의 순서에 맞게 생성자가 재정의 되었다. 꼭 필요하다면 직접 작성하자</li>
 <li>특정 롬복 어노테이션을 막고 싶다면 <code class="language-text">lombok.(featureName).flagUsage</code> 옵션을 사용하자</li>
-<li><a href="https://github.com/projectlombok/lombok/issues/2094#issuecomment-866351481">어떤 분</a>은 <code class="language-text">@AllArgsConsructor</code>를 **"This annotation is simply a loaded gun.."**라고 말하기도 했다</li>
+<li><a href="https://github.com/projectlombok/lombok/issues/2094#issuecomment-866351481">어떤 분</a>은 <code class="language-text">@AllArgsConsructor</code>를 <strong>"This annotation is simply a loaded gun.."</strong> 라고 말하기도 했다</li>
 </ul>
 <hr>
 <h1><strong>@Builder</strong> 클래스에 작성하는 것과 메서드에 작성하는 것의 차이점</h1>
@@ -155,26 +145,22 @@ annotationProcessor 'org.projectlombok:lombok:1.18.16'</code></pre></div>
   </a>
     </span></p>
 <ul>
-<li>
-<p>아래의 링크를 참고하였습니다</p>
+<li>아래의 링크를 참고하였습니다
 <ul>
 <li><a href="https://johngrib.github.io/wiki/pattern/builder/#lombok-builder"><code class="language-text">johngrib</code> Lombok @Builder</a></li>
 <li><a href="https://projectlombok.org/features/Builder"><code class="language-text">lombok</code> @Builder</a></li>
 <li><a href="https://velog.io/@park2348190/Lombok-Builder%EC%9D%98-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC">@Builder의 동작 원리</a></li>
 </ul>
 </li>
-<li>
-<p><code class="language-text">@Builder</code>를 직접 확인해보자</p>
-</li>
 </ul>
+<p><strong><code class="language-text">@Builder</code>를 직접 확인해보자</strong></p>
 <div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token constant">TYPE</span><span class="token punctuation">,</span> <span class="token constant">METHOD</span><span class="token punctuation">,</span> <span class="token constant">CONSTRUCTOR</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token constant">SOURCE</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">Builder</span> <span class="token punctuation">{</span>
   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">}</span></code></pre></div>
-<ul>
-<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/RetentionPolicy.html"><strong>RetentionPolicy</strong></a>에 따르면 <strong>컴파일 단계에서 제거된다</strong></li>
-<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html"><strong>ElementType</strong></a>에 따르면 <strong>아래 위치에 선언할 수 있다</strong>
+<p><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/RetentionPolicy.html"><strong>RetentionPolicy</strong></a>에 따르면 <strong>컴파일 단계에서 제거된다</strong><br>
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html"><strong>ElementType</strong></a>에 따르면 <strong>아래 위치에 선언할 수 있다</strong></p>
 <ol>
 <li><strong>클래스</strong></li>
 <li>인터페이스</li>
@@ -182,9 +168,9 @@ annotationProcessor 'org.projectlombok:lombok:1.18.16'</code></pre></div>
 <li>메서드</li>
 <li><strong>생성자</strong></li>
 </ol>
-</li>
-</ul>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며  
+( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 
+이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.</code></pre></div>
 <ul>
 <li><a href="https://projectlombok.org/features/Builder">출처</a></li>
 </ul>
