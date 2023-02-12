@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Feb 2023 14:13:11 GMT</lastBuildDate><item><title><![CDATA[BlockingIO와 NonBlockingIO (작성중)]]></title><description><![CDATA[회사에서 1차 트레이닝 프로젝트를 진행하며 를 처음 접하게 되었다. Armeria가 빌드될 때 와 를 같이 등록하게 된다.참고 기존 REST…]]></description><link>https://jdalma.github.io/2023y02m/request/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/request/</guid><pubDate>Sun, 05 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;회사에서 &lt;a href=&quot;https://jdalma.github.io/2022y/trainingProject/&quot;&gt;1차 트레이닝 프로젝트&lt;/a&gt;를 진행하며 &lt;code class=&quot;language-text&quot;&gt;NIO&lt;/code&gt;를 처음 접하게 되었다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Feb 2023 07:20:02 GMT</lastBuildDate><item><title><![CDATA[코틀린 `*` 어떻게 써야할까?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y02m/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/generic/</guid><pubDate>Fri, 10 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;업무를 진행하면서 스프링과 코틀린을 사용하면서 만난 문제를 정리하려고 한다. 실제 업무와 비슷하게 다이어그램을 작성해 보았다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/45d4ac8c261809320b6ce1471e641930/b5a09/classDiagram.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 84.81012658227847%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAABxElEQVR42pWUB47CQAxF5/4HA6Egeu8dQm+CUL161hqFtrCWrEnsnz+ucev1WubzuSyXS2k0GlIoFKRUKkm73VYbPjDX61VWq5XaRqOR4srlsup4PJbFYqE4N5vNxPd9NTabTalUKlKtVqXVaslkMlEfmMvlItPpVHGDwUCJwKHD4VDt4Fy/35d0Oi35fF4ymYwCIU6lUlKr1W6ESLfbVTtYlMuLxaJmZDjHbTgxckICIeS5XE6VS5Fer6fv4CCiRNls9maDy5EKej6f9aPNZqO1QMzOSQ0NyzN2IjK/nU5+BRBC4WmEAdAwxsiCINA0w37EGcjUhNvpHF3tdDpSr9e1SURPc3a73d0lpk8RWmqQQUqNIpGIRKNRicVi2hgI9/v903caYTjcsJNoaAYEzCQF55k0HwnDmT0RmhMSz/MkmUzqWHHSWVLHF075robvCImQsaB+NImTYWeQsdOUj4SPqZuwCail+Q73Zw2Px6Pq4XDQ+hEdHT6dTmqzuf2YMgKYwtvYsDn8DHi27m+32+8JGRs6an8dCHlGaQr7zgL8i5DFj8fjuqO2q3Q7kUioksHXhJz8joiSWUR5Zwaxoez8K8IfhCEQdumKNEAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;classDiagram&quot;
+        title=&quot;&quot;
+        src=&quot;/static/45d4ac8c261809320b6ce1471e641930/f058b/classDiagram.png&quot;
+        srcset=&quot;/static/45d4ac8c261809320b6ce1471e641930/c26ae/classDiagram.png 158w,
+/static/45d4ac8c261809320b6ce1471e641930/6bdcf/classDiagram.png 315w,
+/static/45d4ac8c261809320b6ce1471e641930/f058b/classDiagram.png 630w,
+/static/45d4ac8c261809320b6ce1471e641930/40601/classDiagram.png 945w,
+/static/45d4ac8c261809320b6ce1471e641930/78612/classDiagram.png 1260w,
+/static/45d4ac8c261809320b6ce1471e641930/b5a09/classDiagram.png 1360w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;convert(List&amp;lt;Data&gt;)&lt;/code&gt;는 고정된 타입을 받아 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 반환하고, &lt;code class=&quot;language-text&quot;&gt;execute(T)&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;타입을 받아 응답으로 반환하는 것을 알 수 있다.&lt;br&gt;
+이 설계의 의도는 확장에 유연하도록 각 &lt;code class=&quot;language-text&quot;&gt;ValidationImpl&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;convert()&lt;/code&gt;를 통해 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Data&gt;&lt;/code&gt;라는 타입을 받아 &lt;strong&gt;검증할 때 사용할 데이터 타입을 직접 정의할 수 있도록 했다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;현재 꼭 지켜야할 사항은&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;strategies&lt;/code&gt;를 주입받을 떄 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt; Star-projection&lt;/strong&gt;을 사용하여 모든 구현체를 주입받아야 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;로 하지 않고 &lt;code class=&quot;language-text&quot;&gt;Any&lt;/code&gt;로 주입받으면 빈을 찾지 못한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;제네릭을 &lt;code class=&quot;language-text&quot;&gt;Any&lt;/code&gt;로 작성하여 구현체마다 직접 다운 캐스팅을 하진 않을 것이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;&lt;strong&gt;문제점&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;위의 다이어그램과 같이 &lt;code class=&quot;language-text&quot;&gt;Service&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;ValidationStrategy&lt;/code&gt; 인터페이스를 구현한 구현체를 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;ValidationStrategy&gt;&lt;/code&gt;으로 주입받아 사용하려 했다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@Service&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Service&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; strategies&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationResponse&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; strategies&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; convertData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;convertData&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// COMPILE ERROR!!!&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isNotEmpty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;T&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;param&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; T&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ValidationResponse
+
+    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queries&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; T
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token annotation builtin&quot;&gt;@Component&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; ValidationImpl1 &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;String&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;param&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ValidationResponse &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ValidationResponse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;param&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queries&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;가공 데이터&quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ValidationResponse&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; message&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Data&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;하지만 &lt;code class=&quot;language-text&quot;&gt;it.execute(convertData)&lt;/code&gt;를 호출할 때 파라미터를 넘겨보면 &lt;strong&gt;컴파일 에러&lt;/strong&gt;가 발생한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 149px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b7dfeda3242a343ad511a3be999b9f0c/d371d/nothing.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.67785234899329%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhUlEQVR42l2SWU8CQRCE+W9y39dyn2uCGE1cjgVWZRH2SfjRZb6OY4gPtdMzU91T1b2paq2m/mCgXr+vTrcrr9NRs9Wy2IG7bq+nVruttucZp9Fsily3r1SrKpZKSpGw2+30eTwaVuu1fN/XJUn0/vGh/eGg8+WizXar5fOzgtVK39ervs5nvQWB8V9eX01ULp9XqlQuW3X3UrlSMUBAAag3GsZxvOFoZOD8HqaQDwU4qNXrloRlYlbuC8WirRQnzuZytgeoYs854lL5QkGe5+l6u+kYx1osFn82ORtPJkaGt95sFEWR2T5EkfGCIFAYhvbYn0Iqz33fbNJsBsAgUNj4VQm4GwyHxqM99B8uvcWlFaQYcDaIUeRs3seoTGcyekinLXbK73PNMmpOp5O2Yajdfq84jjWZTpUkibUBe5lsVk/LpU0WN6wMhnzUUcwU8goDgDCdzeQ/PpoFpsnvQBIFSBiNx3ZPn2fzucq//54rZgrdxk2KF5mcm6ADPGePFfwvRsEfV2KV9cA2KOoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;nothing&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b7dfeda3242a343ad511a3be999b9f0c/d371d/nothing.png&quot;
+        srcset=&quot;/static/b7dfeda3242a343ad511a3be999b9f0c/d371d/nothing.png 149w&quot;
+        sizes=&quot;(max-width: 149px) 100vw, 149px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;코틀린의 &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;와 자바의 &lt;code class=&quot;language-text&quot;&gt;?&lt;/code&gt;와 같다고 생각하였지만 다르다는 것을 알 수 있다.&lt;/p&gt;
+&lt;p&gt;IDE의 여러가지 제안이 있지만 &lt;code class=&quot;language-text&quot;&gt;responses.add(it.execute(convertData as Nothing))&lt;/code&gt; 이렇게 &lt;code class=&quot;language-text&quot;&gt;Nothing&lt;/code&gt;으로 변경해라 라는 제안이 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[BlockingIO와 NonBlockingIO (작성중)]]></title><description><![CDATA[회사에서 1차 트레이닝 프로젝트를 진행하며 를 처음 접하게 되었다. Armeria가 빌드될 때 와 를 같이 등록하게 된다.참고 기존 REST…]]></description><link>https://jdalma.github.io/2023y02m/request/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/request/</guid><pubDate>Sun, 05 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;회사에서 &lt;a href=&quot;https://jdalma.github.io/2022y/trainingProject/&quot;&gt;1차 트레이닝 프로젝트&lt;/a&gt;를 진행하며 &lt;code class=&quot;language-text&quot;&gt;NIO&lt;/code&gt;를 처음 접하게 되었다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Armeria가 빌드될 때 &lt;code class=&quot;language-text&quot;&gt;Netty&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;TomcatService&lt;/code&gt;를 같이 등록하게 된다.&lt;a href=&quot;https://github.com/jdalma/armeria-grpc-kotlin/blob/master/src/main/kotlin/com/example/armeriaserver/grpc/sample/ArmeriaConfig.kt#L42&quot;&gt;참고&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;기존 REST를 유지시키면서 &lt;code class=&quot;language-text&quot;&gt;gRPC&lt;/code&gt;를 통한 비동기 통신을 추가하기 위해서이다.&lt;/li&gt;
