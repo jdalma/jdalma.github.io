@@ -136,21 +136,47 @@ fun validate(values: List<Data>) : List<ValidationResponse> {
 }
 ```
 
-[`kotlinlang` Iterable<*>.filterIsInstance()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-is-instance.html) 확장함수의 수신 객체가 `Iterable<*>`이므로 이럴 떄 타입을 확정지어줄 수 있게 제공하는 것 같다.  
+`strategies.filterIsInstance<ValidationStrategy<Any>>()`를 통해 `*`을 `Any`로 확정지어주면서 해결했다.  
+- [`kotlinlang` Iterable<*>.filterIsInstance()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-is-instance.html) 확장함수의 수신 객체가 `Iterable<*>`이므로 Star-Projections를 사용했을 때 타입을 확정지어줄 수 있게 제공하는 것 같다.  
 
-# **코틀린의 제네릭은?**
+***
+
+# **자바와 코틀린의 제네릭**
 
 문제는 해결했지만 아직 찝찝하다  
+  
+[`kotlinlang` Generics: in, out, where][1] {:target="_blank"} 을 읽고 정리해봤다.  
+  
+## **자바의 제한적 와일드카드와 코틀린의 `in`, `out`, `where`은 어떤 개념인지?**  
 
-- 자바의 제한적 와일드카드와 코틀린의 `in`, `out`, `where`
-- `Star-Projections`는 왜 `Nothing`을 기대하는지
+[invariance/non-variance 참고 `이펙티브 자바 tem 28. 배열보다는 리스트를 사용하라`](https://github.com/jdalma/footprints/blob/main/effective-java/item28_%EB%B0%B0%EC%97%B4%EB%B3%B4%EB%8B%A4%EB%8A%94%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC.md){:target="_blank"} 읽어보는게 도움이 될 것 같다.  
+요약하자면 제네릭은 반공변이기 때문에 제한적 와일드카드`? extends Object` 로 **공변을 허용한다.**  
 
+[공식 문서의 Variance](https://kotlinlang.org/docs/generics.html#variance)를 보면 `
+
+## **`Star-Projections`는 왜 `Nothing`을 기대하는지?**  
+
+제네릭으로 특정 타입으로 선언하면 
+
+```java
+public interface Collection<E> {
+    boolean addAll(Collection<? extends E> c);
+}
+void copyAll(Collection<Object> to, Collection<String> from) {
+    to.addAll(from);
+}
+```
+
+제네릭은 불공변이기 때문에 `Collection<E>`로 선언해주면 
+
+## Star-Projections
 
 
   
-[공변, 불공변 참고 `이펙티브 자바 tem 28. 배열보다는 리스트를 사용하라`](https://github.com/jdalma/footprints/blob/main/effective-java/item28_%EB%B0%B0%EC%97%B4%EB%B3%B4%EB%8B%A4%EB%8A%94%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC.md){:target="_blank"}  
+
 [`kotlinlang` Start-Projections](https://kotlinlang.org/docs/generics.html#star-projections)를 읽어보면  
 타입 인수에 대해 자바의 `?` 같은 방식으로 모든 타입을 수용하고 안전한 방식으로 사용하기 위해 Kotlin은 **스타 프로젝션**을 제공한다.  
 
 
   
+[1]: https://kotlinlang.org/docs/generics.html
