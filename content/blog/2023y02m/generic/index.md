@@ -12,7 +12,8 @@ tags:
 ![](classDiagram.png)
   
 `convert(List<Data>)`는 고정된 타입을 받아 `T`를 반환하고, `execute(T)`는 `T`타입을 받아 `ValidationResponse` 를 반환하는 것을 알 수 있다.  
-이 설계의 의도는 확장에 유연하도록 각 `ValidationImpl`은 `convert()`를 통해 `List<Data>`라는 타입을 받아 **검증할 때 사용할 데이터 타입을 직접 정의할 수 있도록 했다.**  
+이 설계의 의도는 **확장에 유연**하고 **검증하는 부분과 검증기가 필요로하는 데이터 타입을 가공하는 부분**을 나누고 싶었다.  
+각 `ValidationImpl`은 `convert()`를 통해 `List<Data>`라는 타입을 받아 **검증할 때 사용할 데이터 타입을 직접 정의할 수 있도록 했다.**  
   
 - `strategies`를 주입받을 떄 **`*` Star-projection**을 사용하여 모든 구현체를 주입받아야 한다.
   - `*`로 하지 않고 `Any`로 주입받으면 빈을 찾지 못한다.
@@ -137,7 +138,7 @@ fun validate(values: List<Data>) : List<ValidationResponse> {
 ```
 
 `strategies.filterIsInstance<ValidationStrategy<Any>>()`를 통해 `*`을 `Any`로 확정지어주면서 해결했다.  
-- [`kotlinlang` Iterable<*>.filterIsInstance()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-is-instance.html) 확장함수의 수신 객체가 `Iterable<*>`이므로 Star-Projections를 사용했을 때 타입을 확정지어줄 수 있게 제공하는 것 같다.  
+- [`kotlinlang` Iterable<*>.filterIsInstance()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-is-instance.html) 확장함수가 `Iterable<*>`이므로 Star-Projections를 사용했을 때 타입을 확정지어줄 수 있게 제공하는 것 같다.  
 
 ***
 
@@ -149,8 +150,36 @@ fun validate(values: List<Data>) : List<ValidationResponse> {
   
 ## **자바의 제한적 와일드카드와 코틀린의 `in`, `out`, `where`은 어떤 개념인지?**  
 
-[invariance/non-variance 참고 `이펙티브 자바 tem 28. 배열보다는 리스트를 사용하라`](https://github.com/jdalma/footprints/blob/main/effective-java/item28_%EB%B0%B0%EC%97%B4%EB%B3%B4%EB%8B%A4%EB%8A%94%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC.md){:target="_blank"} 읽어보는게 도움이 될 것 같다.  
-요약하자면 제네릭은 반공변이기 때문에 제한적 와일드카드`? extends Object` 로 **공변을 허용한다.**  
+```java
+Object[] objects = new Number[10];
+objects[0] = 1;
+objects[1] = 1L;
+objects[2] = 1.1234567891F;
+objects[3] = 1.1234567891;
+
+// class java.lang.Integer   : 1
+// class java.lang.Long      : 1
+// class java.lang.Float     : 1.1234568
+// class java.lang.Double    : 1.1234567891
+
+/*
+ * 공변
+ */
+Integer[] integers = {1};
+Number[] numbers = integers;
+numbers[0] = 1.23456; // 컴파일 에러는 피할 수 있지만 ArrayStoreException 런타임 예외가 발생한다.
+
+/*
+ * 반공변
+ */
+
+```
+- [invariance/non-variance 참고 `이펙티브 자바 tem 28. 배열보다는 리스트를 사용하라`](https://github.com/jdalma/footprints/blob/main/effective-java/item28_%EB%B0%B0%EC%97%B4%EB%B3%B4%EB%8B%A4%EB%8A%94%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC.md){:target="_blank"}
+
+
+
+**PECS**공식을 보면 
+자바의 제네릭은 반공변이기 때문에 제한적 와일드카드`? extends Object` 로 **공변을 허용한다.**  
 
 [공식 문서의 Variance](https://kotlinlang.org/docs/generics.html#variance)를 보면 `
 
