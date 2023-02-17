@@ -1,6 +1,6 @@
 ---
-title: 코틀린의 와일드카드?
-date: "2023-02-10"
+title: 코틀린의 와일드카드와 제네릭에 대해
+date: "2023-02-17"
 tags:
    - Kotlin
    - lab
@@ -87,9 +87,8 @@ data class Data (
 
 ## **세 번째 방법 : 타입을 명시적으로** 
 
-코틀린의 `*`와 자바의 `?`와 같다고 생각하였지만 다르다는 것을 알 수 있다. 코틀린의 `*`은 왜 `Nothing`을 기대하는지 알아보기 전에 문제를 먼저 해결해 보자.  
 `ValidationStrategy`은 **받아들이는 제네릭 파라미터와 반환하는 파라미터 타입이 같기 때문에** 한정적 와일드카드를 적용하기에는 힘들다고 판단했다.  
-이런 상황을 해결하기 위한 방법을 [이펙티브 자바 item 31 내용 중 비한정적 타입 매개변수와 비한정적 와일드카드](https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md){:target="_blank"} 에서 소개한다.    
+이런 상황을 해결하기 위한 방법을 [Effective Java Item 31 내용 중 비한정적 타입 매개변수와 비한정적 와일드카드](https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md){:target="_blank"} 에서 소개한다.    
   
 ```java
 public static void swap(List<?> list, int i, int j) {
@@ -98,10 +97,24 @@ public static void swap(List<?> list, int i, int j) {
 ```
 
 List의 타입이 `List<?>`인데, `List<?>`에는 **null**외에는 어떤 값도 넣을 수 없기 때문에 컴파일 에러가 발생한다.  
+코틀린의 `*`이 [`kotlinlang` Nothing](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing.html)을 기대하는 이유가 [`Java tutorial` Wildcards](https://docs.oracle.com/javase/tutorial/extra/generics/wildcards.html)를 확인해보면 **와일드카드를 통해 모든 타입을 적용할 수 있게 되지만 쓰는 것에 대해서는 안전하지가 않다는 것을 알 수 있다.**  
+    
 이 상황은 `ValidationStrategy`의 상황과 같다.  
 
 ```kotlin
-strategy.execute(strategy.convert(queries.toList()))
+@Service
+class Service(
+    private val strategies: List<ValidationStrategy<*>>
+) {
+    fun validate(values: List<Data>) : List<ValidationResponse> {
+        return strategies.map {
+            // execute를 하기위해 파라미터를 넘겨야 하는데 인자 타입을 알 수 없다.
+            strategy.execute(strategy.convert(queries.toList())) 
+        }.filter {
+            it.message.isNotEmpty()
+        }
+    }
+}
 ```
   
 이펙티브 자바 책에서는 아래와 같은 `helper method`에 제네릭을 작성하여 실제 타입을 알려주면서 해결하였다.  
@@ -113,8 +126,8 @@ private static <E> void swapHelper(List<E> list, int i, int j) {
 }
 ```
   
-이 문제도 아래처럼 수신 객체의 제네릭 타입을 확정지어줘 해결했다.  
-  
+적용해보자
+
 ```kotlin
 fun validate(values: List<Data>) : List<ValidationResponse> {
     return strategies.map {
@@ -142,70 +155,97 @@ fun validate(values: List<Data>) : List<ValidationResponse> {
 
 ***
 
-# **자바와 코틀린의 제네릭**
+# **코틀린의 제네릭과 한정적 와일드카드**
 
-문제는 해결했지만 아직 찝찝하다  
-  
-[`kotlinlang` Generics: in, out, where][1] {:target="_blank"} 을 읽고 정리해봤다.  
-  
-## **자바의 제한적 와일드카드와 코틀린의 `in`, `out`, `where`은 어떤 개념인지?**  
+일단 **타입 매개변수**와 **타입 인수**를 알고가자  
+매개변수는 메서드 선언에 정의한 변수이고, 인수는 메서드 호출시 넘기는 실젯값이다.
 
 ```java
-Object[] objects = new Number[10];
-objects[0] = 1;
-objects[1] = 1L;
-objects[2] = 1.1234567891F;
-objects[3] = 1.1234567891;
-
-// class java.lang.Integer   : 1
-// class java.lang.Long      : 1
-// class java.lang.Float     : 1.1234568
-// class java.lang.Double    : 1.1234567891
-
-/*
- * 공변
- */
-Integer[] integers = {1};
-Number[] numbers = integers;
-numbers[0] = 1.23456; // 컴파일 에러는 피할 수 있지만 ArrayStoreException 런타임 예외가 발생한다.
-
-/*
- * 반공변
- */
-
+class Set<T> {...}
+Set<Integer> = ...;
 ```
-- [invariance/non-variance 참고 `이펙티브 자바 tem 28. 배열보다는 리스트를 사용하라`](https://github.com/jdalma/footprints/blob/main/effective-java/item28_%EB%B0%B0%EC%97%B4%EB%B3%B4%EB%8B%A4%EB%8A%94%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC.md){:target="_blank"}
 
-
-
-**PECS**공식을 보면 
-자바의 제네릭은 반공변이기 때문에 제한적 와일드카드`? extends Object` 로 **공변을 허용한다.**  
-
-[공식 문서의 Variance](https://kotlinlang.org/docs/generics.html#variance)를 보면 `
-
-## **`Star-Projections`는 왜 `Nothing`을 기대하는지?**  
-
-제네릭으로 특정 타입으로 선언하면 
+`T`는 **타입 매개변수**가 되고, `Integer`는 **타입 인수**가 된다.  
+    
+이제 **공변 `covariance`, 반공변 `contravariant`, 무공변 `invariance`**에 대해, **코틀린의 `in`, `out`, `where`**은 어떤 개념인지 알아보자  
+  
+**변성**에 대한 이야기는 `타입 T1이 T2의 하위 타입일 때, List<T1>가 List<T2>의 타입 관계가 어떠한가?`로 시작된다.  
+  
+> [`kotlinlang` Java Generics in Kotlin](https://kotlinlang.org/docs/java-interop.html#java-generics-in-kotlin)를 확인하면  
+> `Foo<? extends Bar>` becomes `Foo<out Bar!>!`  
+> `Foo<? super Bar>` becomes `Foo<in Bar!>!` 이렇게 사용한다.  
+> `!` 는 `Bar`와 `Bar?` 둘 다 의미한다.  
 
 ```java
-public interface Collection<E> {
-    boolean addAll(Collection<? extends E> c);
+interface Step<T>
+open class Shelter
+open class Cage : Shelter()
+class Animal : Cage()
+
+fun 무공변(relation: Step<Cage>) {}
+fun 공변(relation: Step<out Cage>) {}
+fun 반공변(relation: Step<in Cage>) {}
+
+fun main() {
+    val shelter = object : Step<Shelter> {}
+    val cage = object : Step<Cage> {}
+    val animal = object : Step<Animal> {}
+
+    무공변(shelter)    // Type mismatch Compile Error !!!
+    무공변(cage)
+    무공변(animal)     // Type mismatch Compile Error !!!
+
+    공변(shelter)     // Type mismatch Compile Error !!!
+    공변(cage)
+    공변(animal)
+
+    반공변(shelter)
+    반공변(cage)
+    반공변(animal)     // Type mismatch Compile Error !!!
 }
-void copyAll(Collection<Object> to, Collection<String> from) {
-    to.addAll(from);
+```
+- [예제 참고](https://sungjk.github.io/2021/02/20/variance.html){:target="_blank"}
+- [invariance/non-variance 참고 `Effective Java Item 28. 배열보다는 리스트를 사용하라`](https://github.com/jdalma/footprints/blob/main/effective-java/item28_%EB%B0%B0%EC%97%B4%EB%B3%B4%EB%8B%A4%EB%8A%94%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC.md){:target="_blank"}
+- [PESC 공식 참고 `Effective Java Item 31. 한정적 와일드카드`](https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super)
+  
+**무공변**은 제네릭 타입 파라미터가 고정되어 있는 상황으로 **타입관계가 성립되지 않는 것**  
+**공변**은 하위 타입이 상위 타입과 관계를 성립 하는 것 **`Step<Animal>` is a `Step<Cage>`**  
+**반공변**은 공변과 반대로 **`Step<Shelter> is a Step<Cage>`**  
+  
+여기서 추가로 **PECS 공식**이 등장하는데 `producer-extends, consumer-super`를 의미한다.  
+즉, `Collection<T>`에 대해 **쓰기 작업은 `extends`**, **읽기 작업은 `super`**를 사용하라고 하는 공식이다.  
+넣을 때는 제네릭 타입 파라미터 기준 하위 타입들까지 허용하도록 하고, 꺼낼 때는 상위 타입들로 꺼낼 수 있도록 하는 것이다. [리스코프 치환 원칙](https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84_%EC%B9%98%ED%99%98_%EC%9B%90%EC%B9%99)  
+  
+![](wildcards.png)
+
+타입 인수에 대해 자바의 `?` 같은 방식으로 모든 타입을 수용하고 안전한 방식으로 사용하기 위해 Kotlin의 [`kotlinlang` Start-Projections](https://kotlinlang.org/docs/generics.html#star-projections)의 예제를 보면 이해하는데 도움이 될 것이다.  
+  
+`interface Function<in T, out U>`  
+`Function<*, String>` → `Function<in Nothing, String>`  
+`Function<Int, *>` → `Function<Int, out Any?>`  
+`Function<*, *>` → `Function<in Nothing, out Any?>`  
+  
+그렇다면 코틀린의 `where`은 무엇일까?  
+[`kotlinlang` Upper Bounds](https://kotlinlang.org/docs/generics.html#upper-bounds)를 보면 기본적으로 `<>`에 하나의 상한만 지정이 가능하지만 둘 이상의 상한이 필요한 경우 사용할 수 있다고 한다.  
+**전달된 유형은 절의 모든 조건을 동시에 만족해야한다.** 아래의 예제를 확인해보자
+  
+```kotlin
+interface Cage
+class Animal : Cage
+class Birds : Cage
+
+interface Person
+class Trainer : Cage, Person
+class Developer : Person
+
+interface WhereStep<T> where T : Cage, T : Person
+
+fun main() {
+    val animal = object : WhereStep<Animal> {}          // Type argument is not within its bounds. Compile Error !!!
+    val birds = object : WhereStep<Birds> {}            // Type argument is not within its bounds. Compile Error !!!
+    val trainer = object : WhereStep<Trainer> {}
+    val developer = object : WhereStep<Developer> {}    // Type argument is not within its bounds. Compile Error !!!
 }
 ```
 
-제네릭은 불공변이기 때문에 `Collection<E>`로 선언해주면 
-
-## Star-Projections
-
-
-  
-
-[`kotlinlang` Start-Projections](https://kotlinlang.org/docs/generics.html#star-projections)를 읽어보면  
-타입 인수에 대해 자바의 `?` 같은 방식으로 모든 타입을 수용하고 안전한 방식으로 사용하기 위해 Kotlin은 **스타 프로젝션**을 제공한다.  
-
-
-  
-[1]: https://kotlinlang.org/docs/generics.html
+`WhereStep` 인터페이스는 `Cage`와 `Person` 둘 다 만족해야 하기 때문에 `Trainer`만 구현 가능한 것을 확인할 수 있다.  
