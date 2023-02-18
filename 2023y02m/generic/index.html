@@ -223,7 +223,7 @@
 <div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
 <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span></code></pre></div>
 <p><code class="language-text">T</code>는 <strong>타입 매개변수</strong>가 되고, <code class="language-text">Integer</code>는 <strong>타입 인수</strong>가 된다.</p>
-<p>이제 **공변 <code class="language-text">covariance</code>, 반공변 <code class="language-text">contravariant</code>, 무공변 <code class="language-text">invariance</code>**에 대해, **코틀린의 <code class="language-text">in</code>, <code class="language-text">out</code>, <code class="language-text">where</code>**은 어떤 개념인지 알아보자</p>
+<p>이제 <strong>공변 <code class="language-text">covariance</code>, 반공변 <code class="language-text">contravariant</code>, 무공변 <code class="language-text">invariance</code></strong> 에 대해, <strong>코틀린의 <code class="language-text">in</code>, <code class="language-text">out</code>, <code class="language-text">where</code></strong> 은 어떤 개념인지 알아보자</p>
 <p><strong>변성</strong>에 대한 이야기는 <code class="language-text">타입 T1이 T2의 하위 타입일 때, List&lt;T1>가 List&lt;T2>의 타입 관계가 어떠한가?</code>로 시작된다.</p>
 <blockquote>
 <p><a href="https://kotlinlang.org/docs/java-interop.html#java-generics-in-kotlin"><code class="language-text">kotlinlang</code> Java Generics in Kotlin</a>를 확인하면<br>
@@ -266,7 +266,7 @@ fun <span class="token function">main</span><span class="token punctuation">(</s
 <strong>공변</strong>은 하위 타입이 상위 타입과 관계를 성립 하는 것 <strong><code class="language-text">Step&lt;Animal></code> is a <code class="language-text">Step&lt;Cage></code></strong><br>
 <strong>반공변</strong>은 공변과 반대로 <strong><code class="language-text">Step&lt;Shelter> is a Step&lt;Cage></code></strong></p>
 <p>여기서 추가로 <strong>PECS 공식</strong>이 등장하는데 <code class="language-text">producer-extends, consumer-super</code>를 의미한다.<br>
-즉, <code class="language-text">Collection&lt;T></code>에 대해 <strong>쓰기 작업은 <code class="language-text">extends</code></strong>, **읽기 작업은 <code class="language-text">super</code>**를 사용하라고 하는 공식이다.<br>
+즉, <code class="language-text">Collection&lt;T></code>에 대해 <strong>쓰기 작업은 <code class="language-text">extends</code></strong> , <strong>읽기 작업은 <code class="language-text">super</code></strong> 를 사용하라고 하는 공식이다.<br>
 넣을 때는 제네릭 타입 파라미터 기준 하위 타입들까지 허용하도록 하고, 꺼낼 때는 상위 타입들로 꺼낼 수 있도록 하는 것이다. <a href="https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84_%EC%B9%98%ED%99%98_%EC%9B%90%EC%B9%99">리스코프 치환 원칙</a></p>
 <p><span
       class="gatsby-resp-image-wrapper"
