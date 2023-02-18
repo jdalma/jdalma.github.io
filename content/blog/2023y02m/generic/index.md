@@ -169,7 +169,7 @@ Set<Integer> = ...;
 
 `T`는 **타입 매개변수**가 되고, `Integer`는 **타입 인수**가 된다.  
     
-이제 **공변 `covariance`, 반공변 `contravariant`, 무공변 `invariance`**에 대해, **코틀린의 `in`, `out`, `where`**은 어떤 개념인지 알아보자  
+이제 **공변 `covariance`, 반공변 `contravariant`, 무공변 `invariance`** 에 대해, **코틀린의 `in`, `out`, `where`** 은 어떤 개념인지 알아보자  
   
 **변성**에 대한 이야기는 `타입 T1이 T2의 하위 타입일 때, List<T1>가 List<T2>의 타입 관계가 어떠한가?`로 시작된다.  
   
@@ -215,7 +215,7 @@ fun main() {
 **반공변**은 공변과 반대로 **`Step<Shelter> is a Step<Cage>`**  
   
 여기서 추가로 **PECS 공식**이 등장하는데 `producer-extends, consumer-super`를 의미한다.  
-즉, `Collection<T>`에 대해 **쓰기 작업은 `extends`**, **읽기 작업은 `super`**를 사용하라고 하는 공식이다.  
+즉, `Collection<T>`에 대해 **쓰기 작업은 `extends`** , **읽기 작업은 `super`** 를 사용하라고 하는 공식이다.  
 넣을 때는 제네릭 타입 파라미터 기준 하위 타입들까지 허용하도록 하고, 꺼낼 때는 상위 타입들로 꺼낼 수 있도록 하는 것이다. [리스코프 치환 원칙](https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84_%EC%B9%98%ED%99%98_%EC%9B%90%EC%B9%99)  
   
 ![](wildcards.png)
