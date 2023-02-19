@@ -156,4 +156,4 @@ fun validate(values: List<Data>) : List<ValidationResponse> {
 `strategies.filterIsInstance<ValidationStrategy<Any>>()`를 통해 `*`을 `Any`로 확정지어주면서 해결했다.  
 - [`kotlinlang` Iterable<*>.filterIsInstance()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-is-instance.html) 확장함수가 `Iterable<*>`이므로 Star-Projections를 사용했을 때 타입을 확정지어줄 수 있게 제공하는 것 같다.  
   
-추가적으로 [제네릭을 정리해 보았다.](https://jdalma.github.io/2023y02m/kotlinGeneric)  
+추가적으로 [제네릭을 정리해 보았다.](https://github.com/jdalma/footprints/tree/main/%ED%95%99%EC%8A%B5/Generic.md)  
