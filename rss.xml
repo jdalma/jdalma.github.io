@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 25 Feb 2023 04:25:48 GMT</lastBuildDate><item><title><![CDATA[자바에서 코틀린으로 모임 회고]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y02m/javatokotlin/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/javatokotlin/</guid><pubDate>Fri, 24 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;업무를 진행하면서 자바와 코틀린을 선택할 수 있었다.&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 25 Feb 2023 04:36:59 GMT</lastBuildDate><item><title><![CDATA[자바에서 코틀린으로 모임 회고]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y02m/javatokotlin/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/javatokotlin/</guid><pubDate>Fri, 24 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -111,14 +111,14 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h1&gt;소감&lt;/h1&gt;
-&lt;p&gt;언어에 대한 새로운 인사이트를 얻게해주시고, 경험과 조언들을 아낌없이 쏟아내주신 스터디원 분들과 맹대표님, 오이사님 그리고 스터디에 참석할 수 있게 공유해주신 윤석님에게 감사하다.&lt;br&gt;
+&lt;p&gt;언어에 대해 새로운 인사이트를 얻게해주시고, 경험과 조언들을 아낌없이 쏟아내주신 스터디원 분들과 맹대표님, 오이사님 그리고 스터디에 참석할 수 있게 공유해주신 윤석님에게 감사하다.&lt;br&gt;
 스터디에서 주제를 공급하기보단 소비만하는 스터디원이였는데 쫓아내시지 않은것도 감사하다.&lt;/p&gt;
 &lt;p&gt;스터디를 하면서 팀원들과 코틀린에 대한 이야기를 몇번 나누었었는데, 코틀린의 기능을 제한적으로 사용할 때도 있고, 자율적으로 사용할 때도 있다.&lt;br&gt;
 코딩한다는 행위 자체가 정답이 있는 행위가 아니다. &lt;strong&gt;혼자 일하는 것이 아닌 이상 코드리뷰를 통해 회사 내의 컨벤션을 맞춰가거나 팀원들과 조율해나가야 할 것이다.&lt;/strong&gt;&lt;br&gt;
 실무에 코틀린을 사용하면서 진짜 간단한 작성도 고민을 하게 됐으며, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;이걸 이렇게 사용하면 장단점이 뭐지? 의도가 잘 드러날까?&lt;/code&gt;&lt;/strong&gt; 고민을 하는 자세가 이 모임 덕분이 아닐까 싶다.&lt;br&gt;
 &lt;em&gt;코틀린으로 개발하고 있는 나를 뒤에서 스터디원분들이 지켜보고 있는 느낌?&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;코틀린의 기본 문법도 모르고 진행하니 한 번에 계단을 5개 정도 오른 느낌이다.&lt;br&gt;
-&lt;strong&gt;1개씩 뒤로 내려가는 것은 그만큼 쉽지 않을까?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;1개씩 뒤로 내려가는 것은 그보다 쉽지 않을까?&lt;/strong&gt;&lt;br&gt;
 코틀린 인 액션을 완독하는것이 새로운 목표다.&lt;/p&gt;
 &lt;p&gt;추가로 &lt;a href=&quot;http://www.yes24.com/24/AuthorFile/Author/192002&quot;&gt;오현석&lt;/a&gt;님이 코틀린 책을 내신다고 하셨다.&lt;br&gt;
 기회가 되면 또 참여해야지&lt;/p&gt;</content:encoded></item><item><title><![CDATA[코틀린 * 사용하기]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y02m/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/generic/</guid><pubDate>Fri, 17 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링과 코틀린을 사용하면서 만난 문제를 정리하려고 한다. 실제 업무와 비슷하게 다이어그램을 작성해 보았다.&lt;/p&gt;
