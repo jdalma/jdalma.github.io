@@ -5,6 +5,7 @@ import kebabCase from "lodash.kebabcase"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import TableOfContents from "../components/toc"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -13,63 +14,67 @@ const BlogPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <div className="tags">
-          <ul>
-            {post.frontmatter.tags ? post.frontmatter.tags.map(
-              tag => (
-                <li key={kebabCase(tag)}>
-                    <Link to={`/tags/${kebabCase(tag)}`}>{kebabCase(tag)}</Link>
+      <Layout location={location} title={siteTitle}>
+            <article
+              className="blog-post"
+              itemScope
+              itemType="http://schema.org/Article"
+            >
+              <header>
+                <h1 itemProp="headline">{post.frontmatter.title}</h1>
+                <p>{post.frontmatter.date}</p>
+              </header>
+              <div className="tags">
+                <ul>
+                  {post.frontmatter.tags ? post.frontmatter.tags.map(
+                    tag => (
+                      <li key={kebabCase(tag)}>
+                          <Link to={`/tags/${kebabCase(tag)}`}>{kebabCase(tag)}</Link>
+                      </li>
+                    ))
+                  : null}
+                </ul>
+              </div>        
+              <section
+                dangerouslySetInnerHTML={{ __html: post.html }}
+                itemProp="articleBody"
+              />
+              <hr />
+              <footer>
+                <Bio />
+              </footer>
+            </article>
+            <nav className="blog-post-nav">
+              <ul
+                style={{
+                  display: `flex`,
+                  flexWrap: `wrap`,
+                  justifyContent: `space-between`,
+                  listStyle: `none`,
+                  padding: 0,
+                }}
+              >
+                <li>
+                  {previous && (
+                    <Link to={previous.fields.slug} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  )}
                 </li>
-              ))
-            : null}
-          </ul>
-        </div>        
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
+                <li>
+                  {next && (
+                    <Link to={next.fields.slug} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </nav>
+            <div class="table-of-content">
+              <TableOfContents content={post.tableOfContents}/>
+            </div>            
+      </Layout>
+      
   )
 }
 
@@ -105,6 +110,7 @@ export const pageQuery = graphql`
         description
         tags
       }
+      tableOfContents
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {

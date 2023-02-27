@@ -63,6 +63,16 @@
 
 /* HTML elements */
 
+.table-of-content ul {
+  margin-left: "0px";
+}
+.table-of-content li {
+  color: blue;
+}
+.table-of-content a {
+  decoration: none;
+}
+
 *,
 :after,
 :before {
