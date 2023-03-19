@@ -34,7 +34,10 @@ const BlogPostTemplate = ({
                     ))
                   : null}
                 </ul>
-              </div>        
+              </div>
+              <div class="table-of-content">
+                <TableOfContents content={post.tableOfContents}/>
+              </div>
               <section
                 dangerouslySetInnerHTML={{ __html: post.html }}
                 itemProp="articleBody"
@@ -70,9 +73,6 @@ const BlogPostTemplate = ({
                 </li>
               </ul>
             </nav>
-            <div class="table-of-content">
-              <TableOfContents content={post.tableOfContents}/>
-            </div>            
       </Layout>
       
   )

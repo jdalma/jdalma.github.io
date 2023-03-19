@@ -144,14 +144,14 @@ SI 업무에 찌들어 있을 때, 알고리즘 푸는게 재밌다라고 느꼈
 
 |  | 제목          | 리뷰               | 회고 |
 |:--|:-------------|:------------------|:------|
-| 1주차 | [**Java로 ToDo REST API만들기**](https://github.com/jdalma/spring-week1-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week1-assignment-1/pull/115) | [회고](https://jdalma.github.io/docs/retrospective/2022y/2022y08m/#8%EC%9B%94-%EC%B2%AB-%EC%A7%B8%EC%A3%BC-%ED%9A%8C%EA%B3%A0)  |
-| 2주차 | [**Spring Web 으로 ToDo REST API 만들기**](https://github.com/jdalma/spring-week2-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week2-assignment-1/pull/94)  | [회고](https://jdalma.github.io/docs/retrospective/2022y/2022y08m/#8%EC%9B%94-%EB%91%98-%EC%A7%B8%EC%A3%BC-%ED%9A%8C%EA%B3%A0)  |
-| 3주차 | [**Spring Mock MVC , 유닛 테스트 작성하기**](https://github.com/jdalma/spring-week3-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week3-assignment-1/pull/83) | [회고](https://jdalma.github.io/docs/retrospective/2022y/2022y08m/#8%EC%9B%94-%EC%85%8B-%EC%A7%B8%EC%A3%BC-%ED%9A%8C%EA%B3%A0---%EC%BD%94%EB%93%9C%EC%88%A8-3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0)   |
-| 4주차 | [**TDD로 `상품 도메인` 구현하기**](https://github.com/jdalma/spring-week4-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week4-assignment-1/pull/76) | [회고](https://jdalma.github.io/docs/retrospective/2022y/2022y08m/#8%EC%9B%94-%EB%84%B7-%EC%A7%B8%EC%A3%BC-%ED%9A%8C%EA%B3%A0---%EC%BD%94%EB%93%9C%EC%88%A8-4%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-%EA%B3%A0%EC%96%91%EC%9D%B4-%EC%9E%A5%EB%82%9C%EA%B0%90-%EA%B0%80%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0)|
-| 5주차 | [**TDD로 `사용자 도메인` 구현하기** (+ 유효성 검사)](https://github.com/jdalma/spring-week5-assignment-1)  | [코드 리뷰](https://github.com/CodeSoom/spring-week5-assignment-1/pull/75) | [회고](https://jdalma.github.io/docs/retrospective/2022y/2022y09m/#9%EC%9B%94-%EC%B2%AB-%EC%A7%B8%EC%A3%BC-%ED%9A%8C%EA%B3%A0---%EC%BD%94%EB%93%9C%EC%88%A8-5%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-%EA%B3%A0%EC%96%91%EC%9D%B4-%EC%9E%A5%EB%82%9C%EA%B0%90-%EA%B0%80%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0) |
-| 6주차 | [**JJWT `인증`(Authentication) 구현하기**](https://github.com/jdalma/spring-week6-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week6-assignment-1/pull/70) | [회고](https://jdalma.github.io/docs/retrospective/2022y/2022y09m/#9%EC%9B%94-%EC%85%8B-%EC%A7%B8%EC%A3%BC-%ED%9A%8C%EA%B3%A0)
-| 7주차 | [**사용자 패스워드 `암호화` 및 `인가` 처리를 Spring Security로 처리**](https://github.com/jdalma/spring-week7-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week7-assignment-1/pull/74) | [회고](https://jdalma.github.io/docs/retrospective/2022y/2022y09m/#9%EC%9B%94-%EB%84%B7-%EC%A7%B8%EC%A3%BC-%ED%9A%8C%EA%B3%A0)
-| 8주차 | [**`Spring REST Docs` 적용, `Docker`로 빌드 및 배포**](https://github.com/jdalma/spring-week8-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week8-assignment-1/pull/67) | [회고](https://jdalma.github.io/docs/retrospective/2022y/2022y10m/#10%EC%9B%94-%EC%B2%AB%EC%A7%B8-%EC%A3%BC-%ED%9A%8C%EA%B3%A0-%EC%BD%94%EB%93%9C%EC%88%A8-%EB%81%9D)
+| 1주차 | [**Java로 ToDo REST API만들기**](https://github.com/jdalma/spring-week1-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week1-assignment-1/pull/115) | [회고](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%BD%94%EB%93%9C%EC%88%A8.md#%EC%BD%94%EB%93%9C%EC%88%A8-1%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-java%EB%A1%9C-todo-rest-api%EB%A7%8C%EB%93%A4%EA%B8%B0)  |
+| 2주차 | [**Spring Web 으로 ToDo REST API 만들기**](https://github.com/jdalma/spring-week2-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week2-assignment-1/pull/94)  | [회고](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%BD%94%EB%93%9C%EC%88%A8.md#8%EC%9B%94-%EB%91%98%EC%A7%B8-%EC%A3%BC-%ED%9A%8C%EA%B3%A0-%EC%BD%94%EB%93%9C%EC%88%A8-2%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-spring-web-%EC%9C%BC%EB%A1%9C-todo-rest-api-%EB%A7%8C%EB%93%A4%EA%B8%B0)  |
+| 3주차 | [**Spring Mock MVC , 유닛 테스트 작성하기**](https://github.com/jdalma/spring-week3-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week3-assignment-1/pull/83) | [회고](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%BD%94%EB%93%9C%EC%88%A8.md#%EC%BD%94%EB%93%9C%EC%88%A8-3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-spring-mock-mvc--%EC%9C%A0%EB%8B%9B-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0)   |
+| 4주차 | [**TDD로 `상품 도메인` 구현하기**](https://github.com/jdalma/spring-week4-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week4-assignment-1/pull/76) | [회고](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%BD%94%EB%93%9C%EC%88%A8.md#%EC%BD%94%EB%93%9C%EC%88%A8-4%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-tdd%EB%A1%9C-%EC%83%81%ED%92%88-%EB%8F%84%EB%A9%94%EC%9D%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)|
+| 5주차 | [**TDD로 `사용자 도메인` 구현하기** (+ 유효성 검사)](https://github.com/jdalma/spring-week5-assignment-1)  | [코드 리뷰](https://github.com/CodeSoom/spring-week5-assignment-1/pull/75) | [회고](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%BD%94%EB%93%9C%EC%88%A8.md#%EC%BD%94%EB%93%9C%EC%88%A8-5%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-tdd%EB%A1%9C-%EC%82%AC%EC%9A%A9%EC%9E%90-%EB%8F%84%EB%A9%94%EC%9D%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0--%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC) |
+| 6주차 | [**JJWT `인증`(Authentication) 구현하기**](https://github.com/jdalma/spring-week6-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week6-assignment-1/pull/70) | [회고](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%BD%94%EB%93%9C%EC%88%A8.md#%EC%BD%94%EB%93%9C%EC%88%A8-6%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-jwt%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9D%B8%EC%A6%9D-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)
+| 7주차 | [**사용자 패스워드 `암호화` 및 `인가` 처리를 Spring Security로 처리**](https://github.com/jdalma/spring-week7-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week7-assignment-1/pull/74) | [회고](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%BD%94%EB%93%9C%EC%88%A8.md#%EC%BD%94%EB%93%9C%EC%88%A8-7%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-spring-security-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0)
+| 8주차 | [**`Spring REST Docs` 적용, `Docker`로 빌드 및 배포**](https://github.com/jdalma/spring-week8-assignment-1) | [코드 리뷰](https://github.com/CodeSoom/spring-week8-assignment-1/pull/67) | [회고](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%BD%94%EB%93%9C%EC%88%A8.md#%EC%BD%94%EB%93%9C%EC%88%A8-8%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-spring-rest-docs-%EC%A0%81%EC%9A%A9-docker%EB%A1%9C-%EB%B9%8C%EB%93%9C-%EB%B0%8F-%EB%B0%B0%ED%8F%AC)
 
 
 코드숨 교육을 들으면서 기술적인 내용만이 아니라 **개발자 커리어를 관통하는 말씀들을 많이 해주셨다.**  
@@ -173,15 +173,14 @@ SI 업무에 찌들어 있을 때, 알고리즘 푸는게 재밌다라고 느꼈
 4. 책 추천
    - [**생각하는 프로그래밍**](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966260997) `퀵 소트 알고리즘 공동 저술자`
    - [**자바 병렬 프로그래밍**](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2354267) 
-5. 알고리즘은 필요한 만큼 해라
-6. 면접은 가기 싫은 순으로 많이 봐라
+5. 면접은 가기 싫은 순으로 많이 봐라
    - **긍정적인 에너지를 보이려고 노력해라**
    - 면접에 붙다보면 자신감도 붙는다
 
 그리고 코드숨 디스코드 커뮤니티도 도움이 많이 되었다.  
 스터디 모집도 활발하고 정보 공유도 많이 해주신다.  
 퇴근하고 새벽에도 공부하시는 분들 보면 동기부여도 많이 된다.  
-
+  
 코드숨 교육은 **올해의 두 번째로 잘한 일이다.** *첫 번째는 퇴사*    
 금전적인 여유가 된다면 코드숨 교육을 **강력 추천**한다.  
 
@@ -196,25 +195,14 @@ SI 회사를 [퇴사](https://jdalma.github.io/2022y/leave/)하고 3달동안 �
 - 코드숨 교육
 - [우테캠프로 사전과제](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC%EC%BA%A0%ED%94%84%ED%94%84%EB%A1%9C_%EC%82%AC%EC%A0%84%EA%B3%BC%EC%A0%9C.md)
   
-구직 활동 중에 자비스앤빌런즈 코딩 테스트,[과제](https://github.com/jdalma/footprints/blob/main/%ED%9A%8C%EA%B3%A0/%EC%9E%90%EB%B9%84%EC%8A%A4_%EA%B3%BC%EC%A0%9C.md)를 통과하고 기술면접에서 떨어져 화나서 찾아보다가 지원한 회사가 지금 회사다.  
-  
-더파이러츠와 지금 회사를 고민하다가 **MSA를 구축하기 위해 힘쓰고 있고 기술적 부채를 해결하기 위해 노력하고 있다**는 말을 듣고 주저없이 지금 회사를 선택했다.  
-*[더파이러츠 시리즈 C 투자 유치](https://platum.kr/archives/197188) 기사를 보고 조금 씁쓸했지만..*  
-  
-알고리즘을 열심히 준비했었는데 알고리즘을 써먹지 못하고 이직해서 조금 아쉽긴 하지만 배우고 경험할 수 있는 것들은 넘쳐난다.  
-입사한지 얼마안된 지금 느끼기엔 기술 스택은 크게 GraalVM, Java 17, Kotlin, Spring (+Gateway), Armeria, gRPC, Docker, ELK stack 들인 것 같다.  
-Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8을 확실히 쓸 수 있는 사람은 몇 없기 때문에 Java 버전에 굉장히 방어적인데 17버전이라 놀랐다.  
-**버전이 높은 만큼 학습해서 적용할 기회는 더 많을 것이다.** 그리고 (인프라에 대해 잘 모르지만) **도커 스웜** ([컨테이너 오케스트레이션](https://seongjin.me/docker-swarm-introduction-nodes/)), **젠킨스**로 인프라를 구성하고 있어 관련 기술들을 학습하여 적용할 수 있는 기회도 있을 것이다.  
-*학습하고 그 일을 하고 싶다고 강하게 어필해야지*  
-  
 입사 후에 트레이닝 프로젝트와 도메인 교육을 진행했다.  
 내가 맡은 트레이닝 프로젝트는 `n차`로 나뉘어 진행되고 있는데  
 **1차**는 [Armeria와 gRPC로 통신하기 위한 템플릿 서버 개발](https://jdalma.github.io/2022y/trainingProject/)  
 **2차**는 1차에서 만든 템플릿 서버로 ES서버에 부하를 주는 검색식 검증 규칙 관리 개발이다.
   
-1차 트레이닝 프로젝트는 [기술적인 키워드들](https://github.com/jdalma/footprints/blob/main/%ED%95%99%EC%8A%B5/Armeria_gRPC.md)이 너무 많이 포함되어 있었어서 힘들었다.  
+1차 트레이닝 프로젝트는 [기술적인 키워드들](https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/Armeria_gRPC.md)이 너무 많이 포함되어 있었어서 힘들었다.  
 `"시간만 있다면 스스로 어떤 일이든 해낼 수 있다"` 라고 생각하고 있었지만 CS지식의 중요성을 깨달았다.  
-그래도 스스로 테스트 케이스를 생각하며 테스트하고 어디를 더 분석해야할지 결정하여 오랜만에 재밌게 개발한 것 같다.  
+그래도 스스로 테스트 케이스를 생각하며 테스트하고, 어디를 더 분석해야할지 결정하여 오랜만에 재밌게 개발한 것 같다.  
 원리를 이해하기 위한 학습을 계속 해야하고, 이번에 Armeria와 gRPC를 사용하는 만큼 비동기 프로그래밍과 HTTP/2는 확실하게 짚고가고 싶다.  
   
 SI 회사와 굉장히 다른 점은 
@@ -223,17 +211,7 @@ SI 회사와 굉장히 다른 점은
 3. 레거시 프로젝트에서 특정 기능을 라이브러리로 분리하면서 사소한 리팩토링을 진행했는데 **`어떻게 하면 객체지향적일까?`라고 팀원들에게 여쭤보면 진지하게 고민하시는 것**
    - SI 회사에서는 이런 내용을 고민하는 분이 없었다
 4. `분석 → 설계 → 개발`의 한 사이클을 직접 경험할 수 있다.
-
-입사하고 힘든 점은 **도메인 교육**이다. 입사할 때는 특허에 대해 무지하여 무슨 서비스일지 궁금했었다.  
-결론은 기능들이 엄청많다. 특허조사를 하기 위한 편의성 기능들과 다른 회사에서 솔루션으로 취급할 정도의 서비스들도 있다.  
-*그만큼 레거시 프로젝트는 생각보다 거대한 것 아닐까?*
-
-**특허 데이터 검색 서비스**가 메인인 만큼, 특허에 대해 잘 알아야하고 회사 서비스에 대한 이해가 높아야 한다.  
-두 개의 교육이 끝난 상태지만 마지막 관문인 **검색 서비스 활용 능력 시험**이 있다.  
-특정 조건이 주어지면 **우리 회사 서비스를 어떻게 사용해야 할지 서술**하는 것이다.  
-
-한 번에 통과하고 개발업무에 집중하고 싶다. *제발*  
-
+  
 ***
 
 # **소감**
@@ -244,18 +222,15 @@ SI 회사와 굉장히 다른 점은
 1. [x] 수익이 나는 서비스 회사
 2. [x] mac을 지원해주는 회사
 3. [x] IDE를 지원해주는 회사
-4. [x] 간식들이 구비되어 있는 회사
-5. [x] 스스로 생각하는 최소한의 연봉은 주는 회사
-6. [ ] B2C 서비스 회사 → `B2B 회사`
-7. [ ] 많은 트래픽을 경험할 수 있는 회사 → `대용량 데이터 경험 가능??`
-8. [ ] AWS, 분산 DB, MSA, 메시지 큐 시스템을 경험할 수 있는 회사  → `레거시 프로젝트 서비스 분리 작업 진행` ([마틴 파울러의 마이크로서비스](https://martinfowler.com/articles/microservices.html))
-9. [x] 블로그 꾸준히 운영하기
-10. [x] 학습하는 자세 유지하기
-11. [x] 다른 개발자들과 교류하기
-12. [x] 관심가는 스터디에 망설이지 말고 참여하기
-13. [x] 코드리뷰 받아보기
-14. [x] 테스트 코드 배워보기
-15. [x] 학습에 대한 비용은 아끼지 말기
+5. [ ] B2C 서비스 회사 → `B2B 회사`
+6. [ ] 많은 트래픽을 경험할 수 있는 회사
+7. [ ] AWS, MSA, 이벤트 주도 아키텍처 시스템을 경험할 수 있는 회사
+8. [x] 블로그 꾸준히 운영하기
+9.  [x] 학습하는 자세 유지하기
+10. [x] 다른 개발자들과 교류하기
+11. [x] 관심가는 스터디에 망설이지 말고 참여하기
+12. [x] 코드리뷰 받아보기
+13. [x] 테스트 코드 배워보기
 
 시간이 지나면서 점점 목표한 것들을 해내고 있다는 생각이 든다.  
 **옛날엔 어려워 했던 것을 `지금은 아무렇지 않게 해내게 된 것`이 가장 많이 성장한 것 같다.**  
@@ -307,14 +282,11 @@ SI 회사와 굉장히 다른 점은
 3. 다른 개발자들과 교류하기
 4. 관심가는 스터디에 참여하기
 5. 사람들 앞에서 기술 발표 해보기
-6. `400km` 뛰기
-   - 2021년 응암에 살 때는 `420km`정도 뛰었었는데.. 가디로 이사오면서 거의 안했다.
-7. [개발자, 한 달에 책 한 권 읽기](https://www.facebook.com/dev.reader) 참여하기
-
+6. [개발자, 한 달에 책 한 권 읽기](https://www.facebook.com/dev.reader) 참여하기
+  
 지금 회사에서 학습 습관을 좋게 봐주셨는데, 2차 면접에서 `"이렇게 몰두한 경험이 또 있나?"`라는 질문이 기억에 남는다.  
 개발자를 시작하기 전에 이렇게 내 모든 에너지와 시간을 쏟아부어서 열정적이게 했던 일은 없었던 것 같다.  
 개발자라는 직업이 매력적인 만큼 스스로 변화했다고 많이 느껴진다.  
-다른 전공자들에 비해 늦게 시작한 만큼 불안하기도 하고, 열등감도 많이 느꼈었는데 그럴수록 부족한 부분을 더 채우면 된다고 생각한다.  
-
+다른 전공자들에 비해 늦게 시작한 만큼 불안하기도 한데, 조급함에 무너지지 않게 스스로의 페이스를 잘 유지해야겠다.    
+  
 2023년 연말 회고를 작성할 때 이 글이 귀엽게 보일 정도로 성장했으면 좋겠다.  
-올해 고생했고 계속 나아가자  
