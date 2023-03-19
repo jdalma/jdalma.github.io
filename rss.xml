@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 Feb 2023 13:14:43 GMT</lastBuildDate><item><title><![CDATA[자바에서 코틀린으로 모임 회고]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y02m/javatokotlin/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/javatokotlin/</guid><pubDate>Fri, 24 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Mar 2023 03:56:07 GMT</lastBuildDate><item><title><![CDATA[자바에서 코틀린으로 모임 회고]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y02m/javatokotlin/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/javatokotlin/</guid><pubDate>Fri, 24 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -39,7 +39,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/jdalma/java-to-kotlin/wiki&quot;&gt;모임 내용 정리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;코틀린을 몰라도 따라갈 수 있나?&lt;/h1&gt;
+&lt;h1 id=&quot;코틀린을-몰라도-따라갈-수-있나&quot; style=&quot;position:relative;&quot;&gt;코틀린을 몰라도 따라갈 수 있나?&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9D%84-%EB%AA%B0%EB%9D%BC%EB%8F%84-%EB%94%B0%EB%9D%BC%EA%B0%88-%EC%88%98-%EC%9E%88%EB%82%98&quot; aria-label=&quot;코틀린을 몰라도 따라갈 수 있나 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://kotlinlang.org/docs/data-science-overview.html&quot;&gt;공식문서&lt;/a&gt;에서 &lt;code class=&quot;language-text&quot;&gt;&quot;Kotlin은 간결하고 읽기 쉽고 배우기 쉽습니다.&quot;&lt;/code&gt; 라고하듯이 문법을 배워서 작성하는 것은 자바를 사용했다면 코틀린 자체를 빨리 이해할 수 있는 것은 맞다.&lt;br&gt;
 하지만 &lt;strong&gt;코틀린을 코틀린답게, 객재지향 프로그래밍과 함수형 프로그래밍을 적절히 선택하여 코틀린답게 작성하는 것은 매우 어려운일이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -55,7 +55,7 @@
 이 책은 코틀린의 기능을 친절하게 설명해주는 책은 아니고 자유도가 높은 만큼 &lt;strong&gt;저자 입장에서&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;자바를 코틀린으로 전환&lt;/code&gt;하거나, &lt;code class=&quot;language-text&quot;&gt;자바와 코틀린의 기능적 차이&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;코틀린의 특정 기능을 사용하는 목적과 이유&lt;/code&gt;를 설명하려 하는 것 같다.&lt;/p&gt;
 &lt;p&gt;결론은 코틀린에 대한 이해가 깊고 함수형 프로그래밍에 대해 관심을 가지는 인원들과 같이 하는것이 아니라면 해당 책을 읽기에는 놓치는 것이 많을 것 같다.&lt;br&gt;
 혼자 책으로 공부하려 했다면 이 책보다는 &lt;a href=&quot;http://www.yes24.com/Product/Goods/55148593&quot;&gt;코틀린 인 액션&lt;/a&gt; 이나 &lt;a href=&quot;http://www.yes24.com/Product/Goods/107698728&quot;&gt;코틀린 완벽 가이드&lt;/a&gt;로 진행했을 것 같다.&lt;/p&gt;
-&lt;h1&gt;책을 읽고 얻은 것은?&lt;/h1&gt;
+&lt;h1 id=&quot;책을-읽고-얻은-것은&quot; style=&quot;position:relative;&quot;&gt;책을 읽고 얻은 것은?&lt;a href=&quot;#%EC%B1%85%EC%9D%84-%EC%9D%BD%EA%B3%A0-%EC%96%BB%EC%9D%80-%EA%B2%83%EC%9D%80&quot; aria-label=&quot;책을 읽고 얻은 것은 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;코틀린에서 널과 예외를 대처하는 자세&lt;/li&gt;
 &lt;li&gt;코틀린의 함수 타입과 개념 (고차함수, 일급함수) , 람다와 친해지기&lt;/li&gt;
@@ -72,7 +72,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;마법같은&lt;/em&gt; 코틀린 컴파일러를 통해 컴파일된 class를 자바 코드로 디컴파일해서 확인하면서 학습하는 것이 큰 도움이 되었다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;모임을 참여하고 얻은 것은?&lt;/h1&gt;
+&lt;h1 id=&quot;모임을-참여하고-얻은-것은&quot; style=&quot;position:relative;&quot;&gt;모임을 참여하고 얻은 것은?&lt;a href=&quot;#%EB%AA%A8%EC%9E%84%EC%9D%84-%EC%B0%B8%EC%97%AC%ED%95%98%EA%B3%A0-%EC%96%BB%EC%9D%80-%EA%B2%83%EC%9D%80&quot; aria-label=&quot;모임을 참여하고 얻은 것은 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;책을 이렇게 음미하면서 잘근잘근 씹어먹는 스터디는 처음이였다.&lt;br&gt;
 아마 코틀린과 함수형 프로그래밍에 능통하신 맹대표님과 책을 번역하신 오현석님, 그리고 백지훈님이 계셔서 가능하지 않았을까 싶다.&lt;br&gt;
 &lt;em&gt;세 분이 토론하면 살벌하다&lt;/em&gt;&lt;/p&gt;
@@ -81,7 +81,7 @@
 목표는 두 시간에 두 개의 장을 나가는 것이 목표였지만, 두 시간을 넘기거나 두 장을 못 나가는 경우도 허다했다.&lt;br&gt;
 그만큼 토론에 진심인 분들을 보며 &lt;code class=&quot;language-text&quot;&gt;&quot;책을 이렇게 까지 읽을 수 있구나, 이 주제로 이 정도의 얘기를 할 수 있구나&quot;&lt;/code&gt;를 느꼈다.&lt;br&gt;
 &lt;em&gt;해당 토론에서 튀어나오는 키워드들만 주워 먹기도 벅찼다.&lt;/em&gt;&lt;/p&gt;
-&lt;h1&gt;핵심&lt;/h1&gt;
+&lt;h1 id=&quot;핵심&quot; style=&quot;position:relative;&quot;&gt;핵심&lt;a href=&quot;#%ED%95%B5%EC%8B%AC&quot; aria-label=&quot;핵심 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;책을 다 읽고나니 스터디 초중반에 말씀해주셨던 아래의 내용이 책을 관통하는 내용이였다는 것을 알 수 있었다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;코틀린은 &lt;code class=&quot;language-text&quot;&gt;가변성&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;OOP&lt;/code&gt;를 바탕에 깔고 있는 언어이기 때문에 아에 가변성을 쓰지 않을 이유는 없다&lt;/p&gt;
@@ -110,7 +110,7 @@
 &lt;li&gt;&lt;a href=&quot;https://www.rocketpunch.com/@hikamaeng&quot;&gt;맹기완&lt;/a&gt; 대표&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h1&gt;소감&lt;/h1&gt;
+&lt;h1 id=&quot;소감&quot; style=&quot;position:relative;&quot;&gt;소감&lt;a href=&quot;#%EC%86%8C%EA%B0%90&quot; aria-label=&quot;소감 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;언어에 대해 새로운 인사이트를 얻게해주시고, 경험과 조언들을 아낌없이 쏟아내주신 스터디원 분들과 맹대표님, 오이사님 그리고 스터디에 참석할 수 있게 공유해주신 윤석님에게 감사하다.&lt;br&gt;
 스터디에서 주제를 공급하기보단 소비만하는 스터디원이였는데 쫓아내시지 않은것도 감사하다.&lt;/p&gt;
 &lt;p&gt;스터디를 하면서 팀원들과 코틀린에 대한 이야기를 몇번 나누었었는데, 코틀린의 기능을 제한적으로 사용할 때도 있고, 자율적으로 사용할 때도 있다.&lt;br&gt;
@@ -121,228 +121,11 @@
 &lt;strong&gt;1개씩 뒤로 내려가는 것은 그보다 쉽지 않을까?&lt;/strong&gt;&lt;br&gt;
 코틀린 인 액션을 완독하는것이 새로운 목표다.&lt;/p&gt;
 &lt;p&gt;추가로 &lt;a href=&quot;http://www.yes24.com/24/AuthorFile/Author/192002&quot;&gt;오현석&lt;/a&gt;님이 코틀린 책을 내신다고 하셨다.&lt;br&gt;
-기회가 되면 또 참여해야지&lt;/p&gt;</content:encoded></item><item><title><![CDATA[코틀린 * 사용하기]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y02m/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2023y02m/generic/</guid><pubDate>Fri, 17 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링과 코틀린을 사용하면서 만난 문제를 정리하려고 한다. 실제 업무와 비슷하게 다이어그램을 작성해 보았다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/45d4ac8c261809320b6ce1471e641930/b5a09/classDiagram.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 84.81012658227847%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAABxElEQVR42pWUB47CQAxF5/4HA6Egeu8dQm+CUL161hqFtrCWrEnsnz+ucev1WubzuSyXS2k0GlIoFKRUKkm73VYbPjDX61VWq5XaRqOR4srlsup4PJbFYqE4N5vNxPd9NTabTalUKlKtVqXVaslkMlEfmMvlItPpVHGDwUCJwKHD4VDt4Fy/35d0Oi35fF4ymYwCIU6lUlKr1W6ESLfbVTtYlMuLxaJmZDjHbTgxckICIeS5XE6VS5Fer6fv4CCiRNls9maDy5EKej6f9aPNZqO1QMzOSQ0NyzN2IjK/nU5+BRBC4WmEAdAwxsiCINA0w37EGcjUhNvpHF3tdDpSr9e1SURPc3a73d0lpk8RWmqQQUqNIpGIRKNRicVi2hgI9/v903caYTjcsJNoaAYEzCQF55k0HwnDmT0RmhMSz/MkmUzqWHHSWVLHF075robvCImQsaB+NImTYWeQsdOUj4SPqZuwCail+Q73Zw2Px6Pq4XDQ+hEdHT6dTmqzuf2YMgKYwtvYsDn8DHi27m+32+8JGRs6an8dCHlGaQr7zgL8i5DFj8fjuqO2q3Q7kUioksHXhJz8joiSWUR5Zwaxoez8K8IfhCEQdumKNEAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;classDiagram&quot;
-        title=&quot;&quot;
-        src=&quot;/static/45d4ac8c261809320b6ce1471e641930/f058b/classDiagram.png&quot;
-        srcset=&quot;/static/45d4ac8c261809320b6ce1471e641930/c26ae/classDiagram.png 158w,
-/static/45d4ac8c261809320b6ce1471e641930/6bdcf/classDiagram.png 315w,
-/static/45d4ac8c261809320b6ce1471e641930/f058b/classDiagram.png 630w,
-/static/45d4ac8c261809320b6ce1471e641930/40601/classDiagram.png 945w,
-/static/45d4ac8c261809320b6ce1471e641930/78612/classDiagram.png 1260w,
-/static/45d4ac8c261809320b6ce1471e641930/b5a09/classDiagram.png 1360w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;convert(List&amp;lt;Data&gt;)&lt;/code&gt;는 고정된 타입을 받아 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 반환하고, &lt;code class=&quot;language-text&quot;&gt;execute(T)&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;타입을 받아 &lt;code class=&quot;language-text&quot;&gt;ValidationResponse&lt;/code&gt; 를 반환하는 것을 알 수 있다.&lt;br&gt;
-이 설계의 의도는 &lt;strong&gt;확장에 유연&lt;/strong&gt;하고 &lt;strong&gt;검증하는 부분과 검증기가 필요로하는 데이터 타입을 가공하는 부분&lt;/strong&gt;을 나누고 싶었다.&lt;br&gt;
-각 &lt;code class=&quot;language-text&quot;&gt;ValidationImpl&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;convert()&lt;/code&gt;를 통해 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Data&gt;&lt;/code&gt;라는 타입을 받아 &lt;strong&gt;검증할 때 사용할 데이터 타입을 직접 정의할 수 있도록 했다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;strategies&lt;/code&gt;를 주입받을 떄 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt; Star-projection&lt;/strong&gt;을 사용하여 모든 구현체를 주입받아야 한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;로 하지 않고 &lt;code class=&quot;language-text&quot;&gt;Any&lt;/code&gt;로 주입받으면 빈을 찾지 못한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ValidationStrategy&lt;/code&gt;의 제네릭을 &lt;code class=&quot;language-text&quot;&gt;Any&lt;/code&gt;로 작성하여 구현체마다 직접 다운 캐스팅을 하진 않을 것이다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;strong&gt;문제점&lt;/strong&gt;&lt;/h1&gt;
-&lt;p&gt;위의 다이어그램과 같이 &lt;code class=&quot;language-text&quot;&gt;Service&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;ValidationStrategy&lt;/code&gt; 인터페이스를 구현한 구현체를 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;ValidationStrategy&gt;&lt;/code&gt;으로 주입받아 사용하려 했다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@Service&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Service&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; strategies&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationResponse&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; strategies&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; convertData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-            it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;convertData&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// COMPILE ERROR!!!&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isNotEmpty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;T&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;param&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; T&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ValidationResponse
-
-    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queries&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; T
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token annotation builtin&quot;&gt;@Component&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; ValidationImpl1 &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;String&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;param&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ValidationResponse &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ValidationResponse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;param&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queries&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;가공 데이터&quot;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ValidationResponse&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; message&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Data&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;하지만 &lt;code class=&quot;language-text&quot;&gt;it.execute(convertData)&lt;/code&gt;를 호출할 때 파라미터를 넘겨보면 &lt;strong&gt;컴파일 에러&lt;/strong&gt;가 발생한다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 607px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/e918075f454f827cc1745a42fb02da99/ef9e5/nothing.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 35.44303797468354%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABfUlEQVR42kXR6Y6iQBSGYe9mGpCliqWgaNxaRRZBZZR26Taduf9reCfgJPPjyVfnz3eSOhPpWoTCIZCSMPCxB0ISq4j3LEMnIUII4jhGpymJfkclmiTNUHGM41pY1n8TyzKRzpREWiS+YK4S5pFinfqEKiYMI5JYoXVKmmpE4OO4DrY9sDFNA8N4MQ2DifRcLMcj8j3WM021WdJWC7b5glX+wWyVkmqFTjN0qvETRaQVUko8IfD9gCCMxpS+z8S2p9iezyoLWWQJgZqxXM757M887lc+rz3d+UxRlay3OfmuYLsryIuCfLd7ZVGwK0vWmw8mpmViTl2E56CGbUKhwpDb/cbz54fz5cL385vj6URZV1T7+p/9S12P6rZls90ymdoWlu1gmNb4D29vv3Bcl/P1wf35h66/0vU3qkNH1Z5emgN1s6dqmnEumwP7tmU9FA6XMU2T4Tjj2zAQQlKerhTdF8Whp+weVIPfX688Xmjadiyuujvlsac5HMfCvzNS8j0K6+qJAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;nothing&quot;
-        title=&quot;&quot;
-        src=&quot;/static/e918075f454f827cc1745a42fb02da99/ef9e5/nothing.png&quot;
-        srcset=&quot;/static/e918075f454f827cc1745a42fb02da99/c26ae/nothing.png 158w,
-/static/e918075f454f827cc1745a42fb02da99/6bdcf/nothing.png 315w,
-/static/e918075f454f827cc1745a42fb02da99/ef9e5/nothing.png 607w&quot;
-        sizes=&quot;(max-width: 607px) 100vw, 607px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이 에러를 보고 고민했을 때 아래와 같은 방법들이 떠올랐다.&lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;첫 번째 방법 : 리플렉션&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;직접 해보진 않았지만&lt;/em&gt; 리플렉션을 사용하여 주입받은 &lt;code class=&quot;language-text&quot;&gt;ValidationStrategy.execute()&lt;/code&gt;의 타입 파라미터와 메소드를 조회화여, 찾은 타입 파라미터로 캐스팅하거나 찾은 메소드로 &lt;code class=&quot;language-text&quot;&gt;invoke&lt;/code&gt;하는 방법&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;코드 복잡성이 높아진다.&lt;/li&gt;
-&lt;li&gt;가독성이 급격히 떨어진다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;개인적으로는 리플렉션 같은 메타 프로그래밍을 선호하지 않는다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;strong&gt;두 번째 방법 : 파라미터 추상화&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/2fcdac3d96b2ef72a3ab2399d37172be/27f8b/abstracParameter.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 71.51898734177216%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABgklEQVR42o2T6Y7CMAyE8/7vhfiDAHHTcpT7LEe5Ki6vPktG3apdNpJVx5lMJuPUvd9veT6fGq/XS5hbjfnlcpHtdiubzUZzaqwlcRbM3fV61Q2Hw0Hm87nU63VptVqa7/d7Jbrf7xphGCpuMpkortlsymKxUNx6vZbb7SbudDpJu91WEoK8VqvpBt/3lRhlx+NRCbJw/X5flsulIM6dz2fxPE+63a5+e72eBEGgeafT0TqHEuTUsnAcDpczLwgGG1Fjw+rpHAxYBr6a/05SgwWkR1Gk3ziO9WSC3NbwC2x6/FJoCthEMzB7OBxKoVCQYrGoV9ztdh+/THUyXPI6Roia6XQqs9lMRqORjMdjGQwGSr5arfSwNOFHYVKuLfA0yuWylEolqVar2slGo6G1SqWizeHaaV9zCR+PhyogeDKo4q3anGaA+UqY1VWMt+tbJ7OwuQqTjcF8/MI/3h05f0aef38qpDH2Z/BoyfERP1n7l8IkCBUos+5yZX4xAh/zCH8AG9Yv94cxxtIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;abstracParameter&quot;
-        title=&quot;&quot;
-        src=&quot;/static/2fcdac3d96b2ef72a3ab2399d37172be/f058b/abstracParameter.png&quot;
-        srcset=&quot;/static/2fcdac3d96b2ef72a3ab2399d37172be/c26ae/abstracParameter.png 158w,
-/static/2fcdac3d96b2ef72a3ab2399d37172be/6bdcf/abstracParameter.png 315w,
-/static/2fcdac3d96b2ef72a3ab2399d37172be/f058b/abstracParameter.png 630w,
-/static/2fcdac3d96b2ef72a3ab2399d37172be/40601/abstracParameter.png 945w,
-/static/2fcdac3d96b2ef72a3ab2399d37172be/78612/abstracParameter.png 1260w,
-/static/2fcdac3d96b2ef72a3ab2399d37172be/27f8b/abstracParameter.png 1730w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;좋은 방법이긴 하지만 &lt;a href=&quot;https://github.com/jdalma/java-to-kotlin#15%EC%9E%A5-%EC%BA%A1%EC%8A%90%ED%99%94%ED%95%9C-%EC%BB%AC%EB%A0%89%EC%85%98%EC%97%90%EC%84%9C-%ED%83%80%EC%9E%85-%EB%B3%84%EB%AA%85%EC%9C%BC%EB%A1%9C&quot;&gt;자바에서 코틀린으로 15장. 캡슐화한 컬렉션에서 타입 별명으로&lt;/a&gt;을 보면 자료구조를 클래스로 캡슐화하게 되면 &lt;strong&gt;코틀린 표준 라이브러리가 제공하는 기능을 사용하기에는 불편하기 때문에 제외하였다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;세 번째 방법 : 타입을 명시적으로&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ValidationStrategy&lt;/code&gt;은 &lt;strong&gt;받아들이는 제네릭 파라미터와 반환하는 파라미터 타입이 같기 때문에&lt;/strong&gt; 한정적 와일드카드를 적용하기에는 힘들다고 판단했다.&lt;br&gt;
-이런 상황을 해결하기 위한 방법을 &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md&quot;&gt;Effective Java Item 31 내용 중 비한정적 타입 매개변수와 비한정적 와일드카드&lt;/a&gt;에서 소개한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; j&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;j&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;List의 타입이 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;?&gt;&lt;/code&gt;인데, &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;?&gt;&lt;/code&gt;에는 &lt;strong&gt;null&lt;/strong&gt;외에는 어떤 값도 넣을 수 없기 때문에 컴파일 에러가 발생한다.&lt;br&gt;
-코틀린의 &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;이 &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;kotlinlang&lt;/code&gt; Nothing&lt;/a&gt;을 기대하는 이유가 &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/extra/generics/wildcards.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Java tutorial&lt;/code&gt; Wildcards&lt;/a&gt;를 확인해보면 &lt;strong&gt;와일드카드를 통해 모든 타입을 적용할 수 있게 되지만 쓰는 것에 대해서는 안전하지가 않다는 것을 알 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;이 상황은 &lt;code class=&quot;language-text&quot;&gt;ValidationStrategy&lt;/code&gt;의 상황과 같다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@Service&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Service&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; strategies&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationResponse&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; strategies&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token comment&quot;&gt;// execute를 하기위해 파라미터를 넘겨야 하는데 인자 타입을 알 수 없다.&lt;/span&gt;
-            strategy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;strategy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queries&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isNotEmpty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이펙티브 자바 책에서는 아래와 같은 &lt;code class=&quot;language-text&quot;&gt;helper method&lt;/code&gt;에 제네릭을 작성하여 실제 타입을 알려주면서 해결하였다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 와일드카드 타입을 실제 타입으로 바꿔주는 private 도우미 메서드&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;swapHelper&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; j&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;j &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;&lt;strong&gt;타입을 명시적으로&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;위의 &lt;code class=&quot;language-text&quot;&gt;helper method&lt;/code&gt;를 참고하여 아래와 같이 작성해보았다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationResponse&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; strategies&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        it &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Any&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-        it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isNotEmpty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 또는&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Data&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationResponse&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; strategies&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;filterIsInstance&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ValidationStrategy&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Any&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isNotEmpty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;strategies.filterIsInstance&amp;lt;ValidationStrategy&amp;lt;Any&gt;&gt;()&lt;/code&gt;를 통해 &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;Any&lt;/code&gt;로 확정지어주면서 해결했다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-is-instance.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;kotlinlang&lt;/code&gt; Iterable&amp;#x3C;*&gt;.filterIsInstance()&lt;/a&gt; 확장함수가 &lt;code class=&quot;language-text&quot;&gt;Iterable&amp;lt;*&gt;&lt;/code&gt;이므로 Star-Projections를 사용했을 때 타입을 확정지어줄 수 있게 제공하는 것 같다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;추가적으로 &lt;a href=&quot;https://github.com/jdalma/footprints/tree/main/%ED%95%99%EC%8A%B5/Generic.md&quot;&gt;제네릭을 정리해 보았다.&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2022년 회고]]></title><description><![CDATA[들어가며 개발자로 지내면서 연말회고를 처음 작성하여 제목은 "202…]]></description><link>https://jdalma.github.io/2022y/yearend/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/yearend/</guid><pubDate>Sat, 31 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;&lt;strong&gt;들어가며&lt;/strong&gt;&lt;/h1&gt;
+기회가 되면 또 참여해야지&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2022년 회고]]></title><description><![CDATA[들어가며 개발자로 지내면서 연말회고를 처음 작성하여 제목은 "202…]]></description><link>https://jdalma.github.io/2022y/yearend/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/yearend/</guid><pubDate>Sat, 31 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가며&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;들어가며&lt;/strong&gt;&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot; aria-label=&quot;들어가며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;개발자로 지내면서 연말회고를 처음 작성하여 제목은 &quot;2022년 회고&quot;이지만 지금까지의 생각을 정리하는 긴 글이 될 것 같다.&lt;br&gt;
 &lt;strong&gt;잊고 싶지 않은 올해의 이벤트들과 내 심정을 기록하기 위해 작성한다&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;블로그&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;블로그&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;블로그&lt;/strong&gt;&lt;a href=&quot;#%EB%B8%94%EB%A1%9C%EA%B7%B8&quot; aria-label=&quot;블로그 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;블로그를 시작하게 된 계기는&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;스스로에 대한 동기부여&lt;/strong&gt;&lt;/li&gt;
@@ -420,7 +203,7 @@
 &lt;p&gt;그럼에도 불구하고 &lt;code class=&quot;language-text&quot;&gt;죽은 문서들&lt;/code&gt;이 걱정돼서 블로그를 망설이고 있다면 &lt;strong&gt;무조건 시작하라고 할 것 이다.&lt;/strong&gt;&lt;br&gt;
 개인적으로 개발자가 가져야 할 가장 중요한 소양은 &lt;strong&gt;학습 습관&lt;/strong&gt;이라고 생각하기 때문이다.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;알고리즘&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;알고리즘&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;알고리즘&lt;/strong&gt;&lt;a href=&quot;#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98&quot; aria-label=&quot;알고리즘 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;이직을 고민하면서 알고리즘을 하게 되었다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;어떤 분이 &lt;code class=&quot;language-text&quot;&gt;&quot;알고리즘 한 문제에 5만원이라고 생각해라&quot;&lt;/code&gt;라고 한게 갑자기 떠올랐다&lt;/li&gt;
@@ -446,7 +229,7 @@
 &lt;p&gt;계획은 영어권 플랫폼이긴 하지만.. 문제가 명료하고 프리미엄 결제를 하면 여러 방법의 해설을 설명해주는 &lt;strong&gt;리트코드&lt;/strong&gt;를 활용할 생각이다.&lt;br&gt;
 &lt;em&gt;추가로 데브매칭이나 쇼미더코드 같은 이벤트에 무지성으로 참여하기&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;스터디와 읽기모임&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;스터디와-읽기모임&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;스터디와 읽기모임&lt;/strong&gt;&lt;a href=&quot;#%EC%8A%A4%ED%84%B0%EB%94%94%EC%99%80-%EC%9D%BD%EA%B8%B0%EB%AA%A8%EC%9E%84&quot; aria-label=&quot;스터디와 읽기모임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;1년 전만해도 &lt;code class=&quot;language-text&quot;&gt;&quot;모르는 사람과 스터디나 모임을 어떻게 하지..&quot;&lt;/code&gt;라는 걱정을 했지만 지금은 새로운 개발자들과 모이는 것이 재밌다.&lt;br&gt;
 &lt;strong&gt;다양한 생각과 의견을 나누고 조언을 듣거나 학습 습관들을 보고 배울 수 있기 때문이다.&lt;/strong&gt;&lt;br&gt;
 그래서 올해는 온라인 스터디나 모임을 찾으려고 부단히 노력한 것 같다.&lt;/p&gt;
@@ -504,7 +287,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;코드숨&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;코드숨&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코드숨&lt;/strong&gt;&lt;a href=&quot;#%EC%BD%94%EB%93%9C%EC%88%A8&quot; aria-label=&quot;코드숨 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;코드 리뷰&lt;/strong&gt;를 경험하고, &lt;strong&gt;테스트 코드&lt;/strong&gt;를 배우고 싶어서 관심갖게된 교육이다.&lt;br&gt;
 금액 때문에 고민을 잠깐 했지만 &lt;code class=&quot;language-text&quot;&gt;종립님&lt;/code&gt;이 직접 리뷰를 해주시는 것을 보고 바로 참여했다.&lt;/p&gt;
 &lt;table&gt;
@@ -609,7 +392,7 @@
 &lt;p&gt;코드숨 교육은 &lt;strong&gt;올해의 두 번째로 잘한 일이다.&lt;/strong&gt; &lt;em&gt;첫 번째는 퇴사&lt;/em&gt;&lt;br&gt;
 금전적인 여유가 된다면 코드숨 교육을 &lt;strong&gt;강력 추천&lt;/strong&gt;한다.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;이직&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;이직&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이직&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%EC%A7%81&quot; aria-label=&quot;이직 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;SI 회사에서 개발자로 인정받기 위해서는 좋은 코드 보단 수행한 프로젝트의 수 였다.&lt;br&gt;
 &lt;strong&gt;냄새나는 코드들은 넘쳐나고 기술 부채는 안중에도 없고 생산성을 높일 수 있는 기술이나 툴이 있어도 그걸 적용하는 비용을 더 크게 생각&lt;/strong&gt;하여 개발자는 도태될 수 밖에 없는 환경이다.&lt;/p&gt;
 &lt;p&gt;SI 회사를 &lt;a href=&quot;https://jdalma.github.io/2022y/leave/&quot;&gt;퇴사&lt;/a&gt;하고 3달동안 하고싶은 공부를 했다.&lt;/p&gt;
@@ -652,7 +435,7 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 특정 조건이 주어지면 &lt;strong&gt;우리 회사 서비스를 어떻게 사용해야 할지 서술&lt;/strong&gt;하는 것이다.&lt;/p&gt;
 &lt;p&gt;한 번에 통과하고 개발업무에 집중하고 싶다. &lt;em&gt;제발&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;소감&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;소감&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;소감&lt;/strong&gt;&lt;a href=&quot;#%EC%86%8C%EA%B0%90&quot; aria-label=&quot;소감 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;연말회고를 처음 작성해보는데 이렇게 나열해보니 열심히 살아온 것 같기도 하다.&lt;br&gt;
 올해 목표들이 있었는데&lt;/p&gt;
 &lt;ol class=&quot;contains-task-list&quot;&gt;
@@ -674,7 +457,7 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;/ol&gt;
 &lt;p&gt;시간이 지나면서 점점 목표한 것들을 해내고 있다는 생각이 든다.&lt;br&gt;
 &lt;strong&gt;옛날엔 어려워 했던 것을 &lt;code class=&quot;language-text&quot;&gt;지금은 아무렇지 않게 해내게 된 것&lt;/code&gt;이 가장 많이 성장한 것 같다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;strong&gt;2023년 목표&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;2023년-목표&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;2023년 목표&lt;/strong&gt;&lt;a href=&quot;#2023%EB%85%84-%EB%AA%A9%ED%91%9C&quot; aria-label=&quot;2023년 목표 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;2022년 연말에 새로 참여한 &lt;a href=&quot;https://terrific-bull-7be.notion.site/RealWorld-c8c7312ff2824764a2efbfa871d22c2f&quot;&gt;스터디&lt;/a&gt;가 있다.&lt;br&gt;
 회사 도메인 시험을 끝내고 참여할 생각이다.&lt;br&gt;
 해당 스터디 인원들과 &lt;strong&gt;개발 서적 읽기 모임&lt;/strong&gt;도 만들어 Real MySQL과 HTTP 완벽가이드를 읽을 생각이다.&lt;br&gt;
@@ -959,7 +742,7 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;Iterator, Enumerator, Iterable&lt;/strong&gt; ?&lt;/h1&gt;
+&lt;h1 id=&quot;Iterator-Enumerator-Iterable-&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Iterator, Enumerator, Iterable&lt;/strong&gt; ?&lt;a href=&quot;#Iterator-Enumerator-Iterable-&quot; aria-label=&quot;Iterator Enumerator Iterable  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;의 공식 문서에 따르면 Collection Framework에서 &lt;code class=&quot;language-text&quot;&gt;Enumeration&lt;/code&gt;을 대체하며 두 가지의 차이점이 있다고 한다.&lt;br&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 사용하면 반복하는 동안 기본 컬렉션에서 요소를 제거할 수 있다.&lt;/li&gt;
@@ -1017,7 +800,7 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;p&gt;디컴파일된 부분을 보면 &lt;code class=&quot;language-text&quot;&gt;ArrayList&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 생성하여 작성하지도 않은 &lt;code class=&quot;language-text&quot;&gt;while&lt;/code&gt;문으로 반복된다.&lt;br&gt;
 &lt;strong&gt;For-Each Loop&lt;/strong&gt;는 각 자료구조에 구현된 &lt;code class=&quot;language-text&quot;&gt;iterator()&lt;/code&gt;를 호출하여 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 사용한다라고 볼 수 있다.&lt;br&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;ConcurrentModificationException&lt;/strong&gt; ?&lt;/h1&gt;
+&lt;h1 id=&quot;ConcurrentModificationException-&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;ConcurrentModificationException&lt;/strong&gt; ?&lt;a href=&quot;#ConcurrentModificationException-&quot; aria-label=&quot;ConcurrentModificationException  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;글을 보다보면 &lt;strong&gt;동시성&lt;/strong&gt;에 관한 얘기가 나온다.&lt;br&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;enhancedForLoop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;A&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;B&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;C&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;D&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;E&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -1118,7 +901,7 @@ Java 버전에 대한 개인적인 생각은 Java 8을 쓴다고 해도 Java 8�
 &lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;compileOnly &apos;org.projectlombok:lombok:1.18.16&apos;
 annotationProcessor &apos;org.projectlombok:lombok:1.18.16&apos;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;&lt;strong&gt;@AllArgsConstructor&lt;/strong&gt;, &lt;strong&gt;@RequiredArgsConstructor&lt;/strong&gt; 사용금지&lt;/h1&gt;
+&lt;h1 id=&quot;AllArgsConstructor-RequiredArgsConstructor-사용금지&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;@AllArgsConstructor&lt;/strong&gt;, &lt;strong&gt;@RequiredArgsConstructor&lt;/strong&gt; 사용금지&lt;a href=&quot;#AllArgsConstructor-RequiredArgsConstructor-%EC%82%AC%EC%9A%A9%EA%B8%88%EC%A7%80&quot; aria-label=&quot;AllArgsConstructor RequiredArgsConstructor 사용금지 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -1219,7 +1002,7 @@ annotationProcessor &apos;org.projectlombok:lombok:1.18.16&apos;&lt;/code&gt;&lt
 &lt;li&gt;&lt;a href=&quot;https://github.com/projectlombok/lombok/issues/2094#issuecomment-866351481&quot;&gt;어떤 분&lt;/a&gt;은 &lt;code class=&quot;language-text&quot;&gt;@AllArgsConsructor&lt;/code&gt;를 &lt;strong&gt;&quot;This annotation is simply a loaded gun..&quot;&lt;/strong&gt; 라고 말하기도 했다&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;@Builder&lt;/strong&gt; 클래스에 작성하는 것과 메서드에 작성하는 것의 차이점&lt;/h1&gt;
+&lt;h1 id=&quot;Builder-클래스에-작성하는-것과-메서드에-작성하는-것의-차이점&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;@Builder&lt;/strong&gt; 클래스에 작성하는 것과 메서드에 작성하는 것의 차이점&lt;a href=&quot;#Builder-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%97%90-%EC%9E%91%EC%84%B1%ED%95%98%EB%8A%94-%EA%B2%83%EA%B3%BC-%EB%A9%94%EC%84%9C%EB%93%9C%EC%97%90-%EC%9E%91%EC%84%B1%ED%95%98%EB%8A%94-%EA%B2%83%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90&quot; aria-label=&quot;Builder 클래스에 작성하는 것과 메서드에 작성하는 것의 차이점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -1424,13 +1207,13 @@ annotationProcessor &apos;org.projectlombok:lombok:1.18.16&apos;&lt;/code&gt;&lt
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;&lt;strong&gt;클래스 로딩&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;클래스-로딩&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;클래스 로딩&lt;/strong&gt;&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A1%9C%EB%94%A9&quot; aria-label=&quot;클래스 로딩 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;클래스 로더가 &lt;code class=&quot;language-text&quot;&gt;.class&lt;/code&gt;파일을 찾고 &lt;strong&gt;JVM&lt;/strong&gt; 메모리에 올리는 작업을 의미한다.&lt;/li&gt;
 &lt;li&gt;⭐️ &lt;strong&gt;JVM&lt;/strong&gt;은 실행될 때 모든 클래스를 메모리에 올려 놓지 않는다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;필요할 때 마다 클래스를 메모리에 올려&lt;/strong&gt; 효율적으로 관리하기 위함이다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;&lt;strong&gt;그럼 언제 클래스를 로딩할까?&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;그럼-언제-클래스를-로딩할까&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;그럼 언제 클래스를 로딩할까?&lt;/strong&gt;&lt;a href=&quot;#%EA%B7%B8%EB%9F%BC-%EC%96%B8%EC%A0%9C-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EB%A1%9C%EB%94%A9%ED%95%A0%EA%B9%8C&quot; aria-label=&quot;그럼 언제 클래스를 로딩할까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -2097,7 +1880,7 @@ annotationProcessor &apos;org.projectlombok:lombok:1.18.16&apos;&lt;/code&gt;&lt
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;클래스 초기화&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;Initialization&lt;/code&gt; 단계&lt;/h1&gt;
+&lt;h1 id=&quot;클래스-초기화-Initialization-단계&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;클래스 초기화&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;Initialization&lt;/code&gt; 단계&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%B4%88%EA%B8%B0%ED%99%94-Initialization-%EB%8B%A8%EA%B3%84&quot; aria-label=&quot;클래스 초기화 Initialization 단계 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;클래스 초기화는 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt;블록과 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt;멤버 변수의 값을 할당하는 것을 의미&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/specs/jls/se17/html/jls-12.html#jls-12.4&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Initialization of Classes and Interfaces&lt;/code&gt; 공식 문서&lt;/a&gt;&lt;/li&gt;
@@ -2291,7 +2074,7 @@ B : 0
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1&gt;&lt;strong&gt;코드숨&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;코드숨&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코드숨&lt;/strong&gt;&lt;a href=&quot;#%EC%BD%94%EB%93%9C%EC%88%A8&quot; aria-label=&quot;코드숨 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;코드 리뷰&lt;/strong&gt; , &lt;strong&gt;TDD&lt;/strong&gt;를 경험해보고 싶어 &lt;br&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;NEXTSTEP&lt;/strong&gt;&lt;/li&gt;
