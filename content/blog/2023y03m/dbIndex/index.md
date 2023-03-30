@@ -26,7 +26,7 @@ tags:
 `FIRST_TABLE`의 `SECOND_COL`은 **bigint**  
 `SECOND_TABLE`의 `SECOND_COL`은 **varchar**이며, 인덱스를 지정한 것을 볼 수 있다.  
 - `FIRST_TABLE`에 2건, `SECOND_TABLE`에 20건이 있으며, 두 테이블의 관계는 **1(bigint):N(varchar)** 이다.
-- 기대하는 결과는 `SECOND_TABLE`의 **탐색 row수는 10건이 나와야한다.**
+- 기대하는 결과는 `SECOND_TABLE`의 **탐색 row수가 10건이 나와야한다.**
 
 ```sql
 explain
@@ -36,7 +36,7 @@ from FIRST_TABLE FIR inner join
 on FIR.SECOND_COL = SEC.SECOND_COL
 where FIR.FIRST_COL = 1
 
-# 조인 순서를 바꿔도 결과는 동일하게 10건을 모두 검색한다.
+# 조인 순서를 바꿔도 결과는 동일하게 20건을 모두 검색한다.
 EXPLAIN
 select COUNT(*)
 from SECOND_TABLE SEC inner join
