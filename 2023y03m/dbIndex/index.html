@@ -162,7 +162,7 @@
 <code class="language-text">SECOND_TABLE</code>의 <code class="language-text">SECOND_COL</code>은 <strong>varchar</strong>이며, 인덱스를 지정한 것을 볼 수 있다.</p>
 <ul>
 <li><code class="language-text">FIRST_TABLE</code>에 2건, <code class="language-text">SECOND_TABLE</code>에 20건이 있으며, 두 테이블의 관계는 <strong>1(bigint):N(varchar)</strong> 이다.</li>
-<li>기대하는 결과는 <code class="language-text">SECOND_TABLE</code>의 <strong>탐색 row수는 10건이 나와야한다.</strong></li>
+<li>기대하는 결과는 <code class="language-text">SECOND_TABLE</code>의 <strong>탐색 row수가 10건이 나와야한다.</strong></li>
 </ul>
 <deckgo-highlight-code language="sql"  >
           <code slot="code">explain
@@ -172,7 +172,7 @@ from FIRST_TABLE FIR inner join
 on FIR.SECOND_COL = SEC.SECOND_COL
 where FIR.FIRST_COL = 1
 
-# 조인 순서를 바꿔도 결과는 동일하게 10건을 모두 검색한다.
+# 조인 순서를 바꿔도 결과는 동일하게 20건을 모두 검색한다.
 EXPLAIN
 select COUNT(*)
 from SECOND_TABLE SEC inner join
@@ -431,4 +431,4 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
           >
             window.___chunkMapping="{\"app\":[\"/app-71402f1aea7d6ebd2e36.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-f63ebe80d576481c21f4.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-3a6e11e20f41e64c4544.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-c1b909bdfa0fe486a1da.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-b1deb8b1c9b25117833c.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-db8b79e23c25da7f50b7.js\"],\"component---src-templates-tags-js\":[\"/component---src-templates-tags-js-51f85f72dbdef0c44a54.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="f7c2cae464ceaf12cf3f";</script><script src="/webpack-runtime-24f4ef9c9b795f07ef2a.js" async></script><script src="/framework-0ff3ad83d0d20e5cd061.js" async></script><script src="/app-71402f1aea7d6ebd2e36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="81382e4037ce3efc6842";</script><script src="/webpack-runtime-24f4ef9c9b795f07ef2a.js" async></script><script src="/framework-0ff3ad83d0d20e5cd061.js" async></script><script src="/app-71402f1aea7d6ebd2e36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
