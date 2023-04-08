@@ -71,7 +71,7 @@ Postman의 테스트 스크립트를 이용하여 JSON파일로 만들고, 해�
 
 ![](folderStructure.png)
 
-```sh
+```bash
 npm install -g newman
 npm install -g newman-reporter-htmlextra
 
