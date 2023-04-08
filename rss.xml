@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Apr 2023 14:18:50 GMT</lastBuildDate><item><title><![CDATA[타입이 서로 다른 컬럼을 조인한다면?]]></title><description><![CDATA[서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.  EXPLAIN 출력 형식 문제 분석  FIR.FIRST_COL FIR.SECOND_COL SEC.FIRST_COL SEC.SECOND_COL 1 20230330 1 2023033…]]></description><link>https://jdalma.github.io/2023y03m/dbIndex/</link><guid isPermaLink="false">https://jdalma.github.io/2023y03m/dbIndex/</guid><pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Apr 2023 14:19:19 GMT</lastBuildDate><item><title><![CDATA[타입이 서로 다른 컬럼을 조인한다면?]]></title><description><![CDATA[서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.  EXPLAIN 출력 형식 문제 분석  FIR.FIRST_COL FIR.SECOND_COL SEC.FIRST_COL SEC.SECOND_COL 1 20230330 1 2023033…]]></description><link>https://jdalma.github.io/2023y03m/dbIndex/</link><guid isPermaLink="false">https://jdalma.github.io/2023y03m/dbIndex/</guid><pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.&lt;br&gt;
 &lt;a href=&quot;https://dev.mysql.com/doc/refman/5.7/en/explain-output.html#explain-join-types&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;mysql docs&lt;/code&gt; EXPLAIN 출력 형식&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -523,6 +523,51 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;li&gt;gRPC는 JSON으로 export되지 않는다.&lt;/li&gt;
 &lt;li&gt;JSON 파일을 어떻게 관리할지 구상하여야 한다.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h4 id=&quot;로컬에서-Postman-CLI-사용해보기&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;로컬에서 Postman CLI 사용해보기&lt;/strong&gt;&lt;a href=&quot;#%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-Postman-CLI-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;로컬에서 Postman CLI 사용해보기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 552px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5bab68a1377714583a83d3f7d384bacd/08c0b/folderStructure.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.86075949367089%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACD0lEQVR42nWSDW+bMBCG+f+/aNMmTZq0tjTLUtolgSQEYr6SNhAoDWBD/EyQdmrX7qRHZ599p9fnM2bfrlmOLHbXJsHFJcV0ihaCzvc5+ZsP8DkFIacbC51mUFfoLIOqojdD5Sn76onZ0uHOmZGWOS0g6ZCc3qP7OLT7LRQ5ejJBf/0CQpwLWmbK3c0e6yrAGsW4s4LEb4nWkshT71lLYtEhJgea9DgU0Tyb1hi/nCNfp4JgE1EUR1qlqStF9T+OCqkU27Dl8XAup0/PaDDyvSQpn1i5LnN7ThRH5EWOavtE+R4p6bTkIZE8FS/a9F+dxm7bcLs9sFyuyLKMsiyp6hql1IdIqehOisO+xR5rpiYsJpr5CLzpULBGZAVCBNi2TZJsUaodEht5VvSappG0Xa9QcXjQnDpoKo1sGDDS+wY7zfE2G6w7i3ib8JDuqWVNoxrqf5ENrW64jxXl4fVzzxifYhvz/jdmOMLKpgO3hzleGwz4XTjg9bQBayXwO8FN7pJXzdsW9p+yKLcEImaxcIjjhCiKiOOYMDz7IAgG38eDIBz6rJUmUTtidhS6JOVAQUlNg1F2jxz3Geulh+u4LGYLXGfFeuHirzycqcPKXg1nvReeoJ/8rM3xdcgFY670hM98RxBjWM2ceTbjh29iBmMuNyMuNteY4Zir4Oew73lZ9/ecfMWNmpHrR95ONvwBn5yIbr1mjOIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;folderStructure&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5bab68a1377714583a83d3f7d384bacd/08c0b/folderStructure.png&quot;
+        srcset=&quot;/static/5bab68a1377714583a83d3f7d384bacd/c26ae/folderStructure.png 158w,
+/static/5bab68a1377714583a83d3f7d384bacd/6bdcf/folderStructure.png 315w,
+/static/5bab68a1377714583a83d3f7d384bacd/08c0b/folderStructure.png 552w&quot;
+        sizes=&quot;(max-width: 552px) 100vw, 552px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sh&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;npm install -g newman
+npm install -g newman-reporter-htmlextra
+
+for collection in ~/Desktop/newman/test/*/*.json
+do
+   echo $collection
+   newman run $collection 
+      -e ~/Desktop/newman/environment/dev1.json # 환경변수 설정
+      -r htmlextra # report로 htmlextra 사용
+      --reporter-htmlextra-export ~/Desktop/newman/report/&amp;quot;$(date &amp;#39;+%Y-%m-%d_%H-%M-%S&amp;#39;)&amp;quot;_$(basename &amp;quot;$collection&amp;quot; .json)&amp;#39;_report&amp;#39;.html 
+      # report 경로 셜정 [TIMESTAMP_파일이름_report.html]
+done&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;브랜치&quot; style=&quot;position:relative;&quot;&gt;브랜치&lt;a href=&quot;#%EB%B8%8C%EB%9E%9C%EC%B9%98&quot; aria-label=&quot;브랜치 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
