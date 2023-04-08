@@ -67,6 +67,25 @@ Postman의 테스트 스크립트를 이용하여 JSON파일로 만들고, 해�
 2. gRPC는 JSON으로 export되지 않는다.
 3. JSON 파일을 어떻게 관리할지 구상하여야 한다.
 
+#### **로컬에서 Postman CLI 사용해보기**
+
+![](folderStructure.png)
+
+```sh
+npm install -g newman
+npm install -g newman-reporter-htmlextra
+
+for collection in ~/Desktop/newman/test/*/*.json
+do
+   echo $collection
+   newman run $collection 
+      -e ~/Desktop/newman/environment/dev1.json # 환경변수 설정
+      -r htmlextra # report로 htmlextra 사용
+      --reporter-htmlextra-export ~/Desktop/newman/report/"$(date '+%Y-%m-%d_%H-%M-%S')"_$(basename "$collection" .json)'_report'.html 
+      # report 경로 셜정 [TIMESTAMP_파일이름_report.html]
+done
+```
+
 ***
 
 # 브랜치
