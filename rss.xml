@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Apr 2023 14:19:19 GMT</lastBuildDate><item><title><![CDATA[타입이 서로 다른 컬럼을 조인한다면?]]></title><description><![CDATA[서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.  EXPLAIN 출력 형식 문제 분석  FIR.FIRST_COL FIR.SECOND_COL SEC.FIRST_COL SEC.SECOND_COL 1 20230330 1 2023033…]]></description><link>https://jdalma.github.io/2023y03m/dbIndex/</link><guid isPermaLink="false">https://jdalma.github.io/2023y03m/dbIndex/</guid><pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Apr 2023 14:42:42 GMT</lastBuildDate><item><title><![CDATA[타입이 서로 다른 컬럼을 조인한다면?]]></title><description><![CDATA[서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.  EXPLAIN 출력 형식 문제 분석  FIR.FIRST_COL FIR.SECOND_COL SEC.FIRST_COL SEC.SECOND_COL 1 20230330 1 2023033…]]></description><link>https://jdalma.github.io/2023y03m/dbIndex/</link><guid isPermaLink="false">https://jdalma.github.io/2023y03m/dbIndex/</guid><pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.&lt;br&gt;
 &lt;a href=&quot;https://dev.mysql.com/doc/refman/5.7/en/explain-output.html#explain-join-types&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;mysql docs&lt;/code&gt; EXPLAIN 출력 형식&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -554,7 +554,7 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sh&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;bash&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;npm install -g newman
 npm install -g newman-reporter-htmlextra
 
