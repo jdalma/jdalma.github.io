@@ -21,7 +21,7 @@ tags:
 코틀린의 함수는 어떻게 자바로 작성되는지 확인해보자.(`@Metadata`는 제외)  
   
 # 코틀린의 람다 함수와 익명 함수
-
+  
 ```
 // 코틀린
 class KotlinFunction {
@@ -66,10 +66,10 @@ public static final void main() {
     function.getTwiceAnonymousFunction().invoke(10);
 }
 ```
-
+  
 자바 코드를 확인해보면 `Function1` 타입 내부 필드로 정의되며, 클라이언트 측 코드는 `invoke()`를 통해 실행한다.  
 `Function1`타입은 `Functions.kt`에 정의된 PECS규칙을 지키는 **SAM 인터페이스**다.  
-
+  
 ```
 public interface Function0<out R> : Function<R> {
     /** Invokes the function. */
@@ -94,10 +94,9 @@ public interface Function22<in P1, in P2, in P3, in P4, in P5, in P6, in P7, in 
     public operator fun invoke(p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8, p9: P9, p10: P10, p11: P11, p12: P12, p13: P13, p14: P14, p15: P15, p16: P16, p17: P17, p18: P18, p19: P19, p20: P20, p21: P21, p22: P22): R
 }
 ```
-
+  
 결국은 아래의 자바 예제와 같이 **코틀린도 자바의 SAM 인터페이스를 미리 정의해놓고 이 인터페이스를 구현하는 익명 함수인 것으로 보인다.**  
-
-
+  
 ```java
 @FunctionalInterface
 public interface Twice {
@@ -117,14 +116,14 @@ public static void main(String[] args) {
     twiceAnonymousFunction.invoke(10);
 }
 ```
-
+  
 그렇다면 일급 시민과 고차 함수가 포함된 클로저를 작성해 확인해보자.
 
 # (+) 인자가 22개를 초과하면 어떻게 될까?
 
 코틀린의 `Functions.kt`에는 22개 인자까지만 명시되어 있었다.  
 22개를 초과하면 어떻게 될까?  
-
+  
 ```
 val argumentOver : (
         Int, Int, Int, Int, Int, Int, Int, Int, Int, Int,
@@ -156,7 +155,7 @@ public interface FunctionN<out R> : kotlin.Function<R>, kotlin.jvm.internal.Func
     public abstract operator fun invoke(vararg args: kotlin.Any?): R
 }
 ```
-
+  
 그냥 인자를 가변 배열로 받는 `FunctionN`을 사용한다.
 
 # 코틀린의 클로저
@@ -230,11 +229,11 @@ public final class KotlinFunctionKt {
    }
 }
 ```
-
+  
 자바 코드로 디컴파일한 `memoryClosure()` 메소드를 보면 람다 외부로 지정된 `memory` 변수 참조를 유지하기 위해 `Ref` 클래스로 선언한 것을 제외하곤 큰 차이점은 없다.  
 위의 클로저 함수를 자바로 작성해보자.  
 - `MemoryClousre` 함수형 인터페이스의 구현을 통해 `ClousreFunction`을 반환
-
+  
 ```java
 @FunctionalInterface
 public interface MemoryClosure {
@@ -279,7 +278,7 @@ public class Program {
     }
 }
 ```
-
+  
 위와 같이 자바에서도 코틀린에서 작성한 예제와 같이 똑같은 기능을 할 수 있다.  
 
 # 결론
