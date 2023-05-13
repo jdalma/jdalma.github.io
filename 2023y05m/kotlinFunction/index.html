@@ -138,6 +138,18 @@ public interface Function22&lt;in P1, in P2, in P3, in P4, in P5, in P6, in P7, 
     public operator fun invoke(p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8, p9: P9, p10: P10, p11: P11, p12: P12, p13: P13, p14: P14, p15: P15, p16: P16, p17: P17, p18: P18, p19: P19, p20: P20, p21: P21, p22: P22): R
 }</code>
         </deckgo-highlight-code>
+<p>각 <code class="language-text">interface</code>들이 추가로 상속 받고 있는 <code class="language-text">Function&lt;out R></code>은 코틀린 패키지에 정의된 인터페이스다.<br>
+<strong>반환 타입의 공변을 지정하기 위해 선언한 인터페이스 인 것 같다.</strong></p>
+<deckgo-highlight-code   >
+          <code slot="code">package kotlin
+
+/**
+ * Represents a value of a functional type, such as a lambda, an anonymous function or a function reference.
+ *
+ * @param R return type of the function.
+ */
+public interface Function&lt;out R&gt;</code>
+        </deckgo-highlight-code>
 <p>결국은 아래의 자바 예제와 같이 <strong>코틀린도 자바의 SAM 인터페이스를 미리 정의해놓고 이 인터페이스를 구현하는 익명 함수인 것으로 보인다.</strong></p>
 <deckgo-highlight-code language="java"  >
           <code slot="code">@FunctionalInterface
