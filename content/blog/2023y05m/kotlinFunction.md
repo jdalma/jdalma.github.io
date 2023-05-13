@@ -95,6 +95,20 @@ public interface Function22<in P1, in P2, in P3, in P4, in P5, in P6, in P7, in 
 }
 ```
   
+각 `interface`들이 추가로 상속 받고 있는 `Function<out R>`은 코틀린 패키지에 정의된 인터페이스다.  
+**반환 타입의 공변을 지정하기 위해 선언한 인터페이스 인 것 같다.**  
+  
+```
+package kotlin
+
+/**
+ * Represents a value of a functional type, such as a lambda, an anonymous function or a function reference.
+ *
+ * @param R return type of the function.
+ */
+public interface Function<out R>
+```
+  
 결국은 아래의 자바 예제와 같이 **코틀린도 자바의 SAM 인터페이스를 미리 정의해놓고 이 인터페이스를 구현하는 익명 함수인 것으로 보인다.**  
   
 ```java
