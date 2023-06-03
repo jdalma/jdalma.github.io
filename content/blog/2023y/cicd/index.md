@@ -52,7 +52,7 @@ tags:
   
 **인프라 기준 통합 테스트** 구축을 위한 통합 테스트를 실행하고, 테스트 케이스를 관리하는 여러 방법을 찾아보자.
 
-### CASE 1. Jenkins + Postman (+ newman)
+### Jenkins + Postman (+ newman)
 
 Postman의 테스트 스크립트를 이용하여 JSON파일로 만들고, 해당 JSON파일을 프로젝트 내에 위치시키고 Jenkins에서 newman을 실행시켜 보았다.  
 테스트를 위해 `test`와 `build` 단계는 빼고, 테스트 케이스를 실행하기 위한 테스트만 진행해 보았다.  
@@ -65,7 +65,6 @@ Postman의 테스트 스크립트를 이용하여 JSON파일로 만들고, 해�
 **단점**
 1. Postman script에 대한 학습이 조금 필요하다.
 2. gRPC는 JSON으로 export되지 않는다.
-3. JSON 파일을 어떻게 관리할지 구상하여야 한다.
 
 #### **로컬에서 Postman CLI 사용해보기**
 
@@ -77,25 +76,8 @@ npm install -g newman-reporter-htmlextra
 
 for collection in ~/Desktop/newman/test/*/*.json
 do
-   echo $collection
-   newman run $collection 
-      -e ~/Desktop/newman/environment/dev1.json # 환경변수 설정
-      -r htmlextra # report로 htmlextra 사용
-      --reporter-htmlextra-export ~/Desktop/newman/report/"$(date '+%Y-%m-%d_%H-%M-%S')"_$(basename "$collection" .json)'_report'.html 
-      # report 경로 셜정 [TIMESTAMP_파일이름_report.html]
+  echo $collection
+  newman run $collection -e ~/Desktop/newman/environment/dev1.json -r htmlextra --reporter-htmlextra-export ~/Desktop/newman/report/"$(date '+%Y-%m-%d_%H-%M-%S')"_$(basename "$collection" .json)'_report'.html
 done
+
 ```
-
-***
-
-# 브랜치
-
-![](branch.png)
-
-한 서비스에 `main`을 제외한 브랜치는 총 9개가 있고, 테스트 서버도 브랜치에 맞게 9개가 있다.  
-**각 브랜치마다 다른 테스트 서버에 다른 이미지가 배포된다.**  
-서로 다른 이미지를 배포하는 것이 **지속적인 통합/지속적인 배포**라는 의미가 맞을까?  
-- [`화해 기술 블로그` 브랜치 전략 수립을 위한 전문가의 조언들](https://blog.hwahae.co.kr/all/tech/9507)
-  - Git-flow
-  - Github-flow
-  - Gitlab-flow
