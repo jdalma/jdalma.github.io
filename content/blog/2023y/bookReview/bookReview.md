@@ -5,7 +5,7 @@ tags:
    - 서평
 ---
 
-# 1. 자바에서 코틀린으로
+# ✅ 자바에서 코틀린으로 
 
 업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.  
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.  
@@ -104,8 +104,13 @@ tags:
   
 추가로 [오현석](http://www.yes24.com/24/AuthorFile/Author/192002)님이 코틀린 핵심 프로그래밍 책을 내신다고 하셨다.  
 
+# RealMySQL 1권
 
-# 2. 한 권으로 읽는 컴퓨터 구조와 프로그래밍
+[정리](https://github.com/jdalma/footprints/tree/main/real-mysql)를 하면서 읽었다.  
+
+
+
+# ✅ 한 권으로 읽는 컴퓨터 구조와 프로그래밍
 
 간략하게 [정리](https://github.com/jdalma/footprints/tree/main/%ED%95%9C%20%EA%B6%8C%EC%9C%BC%EB%A1%9C%20%EC%9D%BD%EB%8A%94%20%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)하면서 읽었다.  
   
@@ -120,7 +125,7 @@ tags:
   
 **개인적인 생각으로는 중반부터는 빠르게 훑는 편이 좋을 것 같고 컴퓨터 구조와 프로그래밍이라는 학문을 `시작`하는 책이라고 생각한다.**  
 
-# 3. [토비의 스프링 부트 - 이해와 원리](https://www.inflearn.com/course/%ED%86%A0%EB%B9%84-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-%EC%9D%B4%ED%95%B4%EC%99%80%EC%9B%90%EB%A6%AC/dashboard)
+# ✅ [토비의 스프링 부트 - 이해와 원리](https://www.inflearn.com/course/%ED%86%A0%EB%B9%84-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-%EC%9D%B4%ED%95%B4%EC%99%80%EC%9B%90%EB%A6%AC/dashboard)
 
 큰 맥락으로 보면 `@SpringBootApplication` 어노테이션이 제공해주는 마법같은 일들을 알려주는 강의이다.  
 - 스프링 부트가 스프링을 어떻게 잘 사용하고 있는지 
@@ -133,7 +138,7 @@ tags:
   
 처음 접한다면 모르는 기술적인 단어들이 많이 나와서 스프링과 자바에 익숙하지 않다면 힘들수도 있을 것 같긴 하지만  
 **스프링 부트의 컨셉과 구성 정보를 관리하는 구조에 대해 알 수 있어 굉장히 좋은 강의였다.**  
-  
+
 # 4. 내 생에 단 한 번
 
 동욱님의 [나를 위해 남을 도와주기](https://jojoldu.tistory.com/715?category=689637) 게시글에서 `내 생에 단 한 번` 책의 내용중 한 챕터로 예를 들어주셨는데 책의 내용이 너무 마음에 들어 바로 구매하고 읽어보았다.  
@@ -208,5 +213,32 @@ tags:
 
 </details>
 
-# 5. 데브옵스 핸드북
+# HTTP 완벽 가이드
 
+해당 책의 스터디는 [이슈 기반](https://github.com/SeolYoungKim/http-definitive-guide-study/issues?q=is%3Aissue+is%3Aclosed)으로 진행되었다.  
+대략적인 [정리](https://github.com/jdalma/footprints/tree/main/HTTP%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C)를 하면서 읽었다.  
+  
+책이 `2002년`에 출간되었고, 번역본은 `2013년`에 출간된 만큼 요즘이랑 비교하면서 읽기에는 무리가 있다.  
+하지만 많은 사람들이 추천하는 이유가 있다.  
+  
+전반적인 네트워크 지식을 익힐 수 있고, `HTTP`가 진화하면서 기존 근간 기술들은 변하지 않기 때문에 읽을 가치는 충분하다.  
+
+1. TCP 커넥션에 대한 개념
+2. 프록시, 게이트웨이, 터널에 대한 이해
+3. HTTP 헤더에 대한 이해
+4. I/O 아키텍처에 대해 얕게..
+  
+위의 내용이 대표적으로 생각나는 것 같다.  
+혼자서 읽었으면 진작에 포기했을 것 같은데 다른 분들과 같이 질문을 준비하고 토론을 하면서 읽으니 잘 버틴 것 같다.  
+  
+**코틀린 스터디로 인해 13장까지 읽고 도중 하차하여 14,15,18,20장만 추후에 읽어야 겠다.**  
+
+# 데브옵스 핸드북
+
+# 코틀린 핵심 프로그래밍
+
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&show_text=true&width=500" width="500" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+오현석님이 **코틀린 핵심 프로그래밍**이 출간되어 맹대표님 스터디에 참여하면서 읽게 되었다.  
+
+# 알고리즘 개정 4판
