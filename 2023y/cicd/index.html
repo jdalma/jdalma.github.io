@@ -64,7 +64,7 @@
 <p><a href="#%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B8%B0%EC%A4%80-%ED%86%B5%ED%95%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8">인프라 기준 통합 테스트</a></p>
 <ul>
 <li>
-<p><a href="#case-1-jenkins--postman--newman">CASE 1. Jenkins + Postman (+ newman)</a></p>
+<p><a href="#jenkins--postman--newman">Jenkins + Postman (+ newman)</a></p>
 <ul>
 <li><a href="#%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-postman-cli-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0"><strong>로컬에서 Postman CLI 사용해보기</strong></a></li>
 </ul>
@@ -72,9 +72,6 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98">브랜치</a></p>
 </li>
 </ul></div></div><section itemProp="articleBody"><h1 id="AS-IS" style="position:relative;">AS-IS<a href="#AS-IS" aria-label="AS IS permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p><span
@@ -204,7 +201,7 @@
 <p><strong>서비스 기준 통합 테스트에 비해 개발 비용은 낮을 것으로 예상되며, mock을 사용하지 않는 만큼 테스트에 대한 신뢰는 올라가지만, 개인적인 작업 환경을 구축하기는 힘들다.</strong></p>
 </blockquote>
 <p><strong>인프라 기준 통합 테스트</strong> 구축을 위한 통합 테스트를 실행하고, 테스트 케이스를 관리하는 여러 방법을 찾아보자.</p>
-<h3>CASE 1. Jenkins + Postman (+ newman)</h3>
+<h3>Jenkins + Postman (+ newman)</h3>
 <p>Postman의 테스트 스크립트를 이용하여 JSON파일로 만들고, 해당 JSON파일을 프로젝트 내에 위치시키고 Jenkins에서 newman을 실행시켜 보았다.<br>
 테스트를 위해 <code class="language-text">test</code>와 <code class="language-text">build</code> 단계는 빼고, 테스트 케이스를 실행하기 위한 테스트만 진행해 보았다.</p>
 <p><span
@@ -247,7 +244,6 @@
 <ol>
 <li>Postman script에 대한 학습이 조금 필요하다.</li>
 <li>gRPC는 JSON으로 export되지 않는다.</li>
-<li>JSON 파일을 어떻게 관리할지 구상하여야 한다.</li>
 </ol>
 <h4 id="로컬에서-Postman-CLI-사용해보기" style="position:relative;"><strong>로컬에서 Postman CLI 사용해보기</strong><a href="#%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-Postman-CLI-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0" aria-label="로컬에서 Postman CLI 사용해보기 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <p><span
@@ -286,60 +282,11 @@ npm install -g newman-reporter-htmlextra
 
 for collection in ~/Desktop/newman/test/*/*.json
 do
-   echo $collection
-   newman run $collection 
-      -e ~/Desktop/newman/environment/dev1.json # 환경변수 설정
-      -r htmlextra # report로 htmlextra 사용
-      --reporter-htmlextra-export ~/Desktop/newman/report/&quot;$(date &#39;+%Y-%m-%d_%H-%M-%S&#39;)&quot;_$(basename &quot;$collection&quot; .json)&#39;_report&#39;.html 
-      # report 경로 셜정 [TIMESTAMP_파일이름_report.html]
-done</code>
-        </deckgo-highlight-code>
-<hr>
-<h1 id="브랜치" style="position:relative;">브랜치<a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98" aria-label="브랜치 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/fccaed3cf5a1476e9d8b5d3515f78c4d/7388e/branch.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 59.49367088607595%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB3UlEQVR42m2Tu3KbQBSGedDUeQzXSZMHyDiNmxQpXKZxCruWM5alRBICJHMRiJsAL/fLnzlHWYwyYWaHw7Ln2/8/Z1cBgFu/wbVTU4hhGHjImJ6u62DoGh7nz/COPoR4xXq9xs/nJdI0g+ce8Pg0h6obUCjhs1Pj48sZKJ8pGG2DeSBwaxeo2p6n7o8l7tyc47Dq8M0qYEQZFMikvkMY+Ijj+EIhp/c1PqglrnZvG75fDfh6PMcPpwHvfgNZUUGRySLPoes6XNdF0zRvKhnY4oed4csmRlvm6KsSN1qC72YCNCXUWODTrxhh+nq2LBOjKGKF0/pBQgEkBwtdf7bcJBHKNB7dpQeTQ6X/u6Cua1iWBd/3LxRKaCYEXiwbRVHw1ME7coP6rkNeFDAdB1VVQVkulzBNk5UFQXChUALbtsVut8N2u4Vt20jTFIZhYL/fs4CyLHkdAz3PgxCCFdJi+paqp0ACEJBcEJDqTXMEzPOc15J6RXaNII7jMPDfcyiBqqqymyRJGEiDgKR0tVqxi7HLBKSmnE6ni7M4BW42m1GhpmkjkPJoEyrXCJRNoWNDN+N/QBqkkDaVNSRH9F/eKGVqj2ogCzxtCqmn+s1mM4ZQzamZi8UCYRiO6uj9BxEgkczNnFvsAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="branch"
-        title=""
-        src="/static/fccaed3cf5a1476e9d8b5d3515f78c4d/f058b/branch.png"
-        srcset="/static/fccaed3cf5a1476e9d8b5d3515f78c4d/c26ae/branch.png 158w,
-/static/fccaed3cf5a1476e9d8b5d3515f78c4d/6bdcf/branch.png 315w,
-/static/fccaed3cf5a1476e9d8b5d3515f78c4d/f058b/branch.png 630w,
-/static/fccaed3cf5a1476e9d8b5d3515f78c4d/40601/branch.png 945w,
-/static/fccaed3cf5a1476e9d8b5d3515f78c4d/7388e/branch.png 1104w"
-        sizes="(max-width: 630px) 100vw, 630px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></p>
-<p>한 서비스에 <code class="language-text">main</code>을 제외한 브랜치는 총 9개가 있고, 테스트 서버도 브랜치에 맞게 9개가 있다.<br>
-<strong>각 브랜치마다 다른 테스트 서버에 다른 이미지가 배포된다.</strong><br>
-서로 다른 이미지를 배포하는 것이 <strong>지속적인 통합/지속적인 배포</strong>라는 의미가 맞을까?</p>
-<ul>
-<li><a href="https://blog.hwahae.co.kr/all/tech/9507"><code class="language-text">화해 기술 블로그</code> 브랜치 전략 수립을 위한 전문가의 조언들</a>
-<ul>
-<li>Git-flow</li>
-<li>Github-flow</li>
-<li>Gitlab-flow</li>
-</ul>
-</li>
-</ul></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2022y/yearend/">← <!-- -->2022년 회고</a></li><li><a rel="next" href="/2023y/dbIndex/">타입이 서로 다른 컬럼을 조인한다면?<!-- --> →</a></li></ul></nav></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2023y/cicd/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+  echo $collection
+  newman run $collection -e ~/Desktop/newman/environment/dev1.json -r htmlextra --reporter-htmlextra-export ~/Desktop/newman/report/&quot;$(date &#39;+%Y-%m-%d_%H-%M-%S&#39;)&quot;_$(basename &quot;$collection&quot; .json)&#39;_report&#39;.html
+done
+</code>
+        </deckgo-highlight-code></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2022y/yearend/">← <!-- -->2022년 회고</a></li><li><a rel="next" href="/2023y/dbIndex/">타입이 서로 다른 컬럼을 조인한다면?<!-- --> →</a></li></ul></nav></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2023y/cicd/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
