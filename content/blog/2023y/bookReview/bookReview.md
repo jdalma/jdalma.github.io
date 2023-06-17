@@ -121,9 +121,10 @@ tags:
 고민조차 할 수 없었던 이야기들이 나온다. 예를 들어 `실제로 비트는 어떻게 저장되나?` 와 같은 고민이다.  
 
 중반에서 후반까지는 좋은 내용도 많지만 갑자기 이런 내용이 왜 나오지? 하는 내용들이 있다.  
-저자 말대로 넓고 얕은 내용을 설명하지만 특정 내용은 기반지식이 없으면 이해조차 할 수 없는 챕터도 존재했다.  
+저자 말대로 넓고 얕은 내용을 설명하여 관심있는 주제는 얕아서 문제고 특정 내용은 기반지식이 없으면 이해조차 할 수 없는 챕터도 있었다.  
   
-**개인적인 생각으로는 중반부터는 빠르게 훑는 편이 좋을 것 같고 컴퓨터 구조와 프로그래밍이라는 학문을 `시작`하는 책이라고 생각한다.**  
+컴퓨터 구조 책을 처음으로 다 읽어봐서 뿌듯하다
+**각 잡고 읽는 책이기 보다는 출퇴근할 떄 가볍게 읽어도 될, 컴퓨터 구조라는 학문을 시작하는 책이라고 생각한다.**  
 
 # ✅ [토비의 스프링 부트 - 이해와 원리](https://www.inflearn.com/course/%ED%86%A0%EB%B9%84-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-%EC%9D%B4%ED%95%B4%EC%99%80%EC%9B%90%EB%A6%AC/dashboard)
 
@@ -231,7 +232,7 @@ tags:
 위의 내용이 대표적으로 생각나는 것 같다.  
 혼자서 읽었으면 진작에 포기했을 것 같은데 다른 분들과 같이 질문을 준비하고 토론을 하면서 읽으니 잘 버틴 것 같다.  
   
-**코틀린 스터디로 인해 13장까지 읽고 도중 하차하여 14,15,18,20장만 추후에 읽어야 겠다.**  
+**코틀린 스터디로 인해 13장까지 읽고 도중 하차하여 14,15,18,20장만 추후에 읽어야겠다.**  
 
 # 데브옵스 핸드북
 
@@ -239,6 +240,6 @@ tags:
 
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&show_text=true&width=500" width="500" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
-오현석님이 **코틀린 핵심 프로그래밍**이 출간되어 맹대표님 스터디에 참여하면서 읽게 되었다.  
+오현석님의 **코틀린 핵심 프로그래밍**이 출간되어 맹대표님 스터디에 참여하면서 읽게 되었다.   
 
 # 알고리즘 개정 4판
