@@ -1,4 +1,272 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 17 Jun 2023 16:07:27 GMT</lastBuildDate><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;-자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;✅ 자바에서 코틀린으로&lt;a href=&quot;#-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot; 자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 Jun 2023 14:59:21 GMT</lastBuildDate><item><title><![CDATA[Armeria로 gRPC 통신하기]]></title><description><![CDATA[코드는 여기에 gRPC 통신 종류 Async는 비동기-논블로킹 통신, Future는 동기-논블로킹 통신 SampleCallBiStream 양방향 스트림 통신 Future Stub (not support) Blocking Stub (not support…]]></description><link>https://jdalma.github.io/2022y/trainingProject/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/trainingProject/</guid><pubDate>Thu, 29 Jun 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;코드는 &lt;a href=&quot;https://github.com/jdalma/armeria-grpc-kotlin/tree/master&quot;&gt;여기에&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;gRPC-통신-종류&quot; style=&quot;position:relative;&quot;&gt;gRPC 통신 종류&lt;a href=&quot;#gRPC-%ED%86%B5%EC%8B%A0-%EC%A2%85%EB%A5%98&quot; aria-label=&quot;gRPC 통신 종류 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Async는 비동기-논블로킹 통신, Future는 동기-논블로킹 통신&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;SampleCallBiStream&lt;/strong&gt; 양방향 스트림 통신&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Future Stub (not support)&lt;/li&gt;
+&lt;li&gt;Blocking Stub (not support)&lt;/li&gt;
+&lt;li&gt;기본(Async) Stub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;SampleCallServerStream&lt;/strong&gt; 서버 → 클라이언트 스트림 통신&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Future Stub (not support)&lt;/li&gt;
+&lt;li&gt;Blocking Stub&lt;/li&gt;
+&lt;li&gt;기본(Async) Stub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;SampleCallClientStream&lt;/strong&gt; 클라이언트 → 서버 스트림 통신&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Future Stub (not support)&lt;/li&gt;
+&lt;li&gt;Blocking Stub (not support)&lt;/li&gt;
+&lt;li&gt;기본(Async) Stub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;SampleUnaryCall&lt;/strong&gt; 단일 요청, 단일 응답&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Future Stub&lt;/li&gt;
+&lt;li&gt;Blocking Stub&lt;/li&gt;
+&lt;li&gt;기본(Async) Stub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;Armeria의-Server-Thread는-어떻게-처리될까&quot; style=&quot;position:relative;&quot;&gt;Armeria의 Server Thread는 어떻게 처리될까?&lt;a href=&quot;#Armeria%EC%9D%98-Server-Thread%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%B2%98%EB%A6%AC%EB%90%A0%EA%B9%8C&quot; aria-label=&quot;Armeria의 Server Thread는 어떻게 처리될까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/90eea/flow.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABZklEQVR42kVSiYqDQAz1///MQkG6UKiw1tt6tN5z6rwlse0KAZkk75rx8P6ccxBCIAxD3G435HkOrTX2fecez2gNJwScUoDW2ISAniboeca2rpDjCC9JEgzDwIvbtnFZaxmMyj+dkGbZAbgsH34oKSGF4HmjNYy1GPse3jRNeL1eUEphXVc0TYOu67BZi6GuEf78oCsKmHHE3veoqwrLsvAMuamqivf7vkdb1/BI2eVyQVEU3IyiCL9RhCbPcQkC1GUJCAEiJstJHDMpRXK/3xm4LMtDSNPAo3zi91DbtkjTFHlRMFAShqzSGYN5WeCkRBxFeDweDEhZkwgCJtBn28L7ZkJBA5wJkZBy8z6jTOd5BpTGZgyMMYeAdzzn8xnX6/WwTMt0KeM4chasMM/ZYvd8Qir1D2jM91J257hHtQqBVUrM03Rk6Ps+siz7WiYL9B8EAYMT6USA1vKToQjwKWuP2nd+Pn+9ZmFCnAS4MQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;flow&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/f058b/flow.png&quot;
+        srcset=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/c26ae/flow.png 158w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/6bdcf/flow.png 315w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/f058b/flow.png 630w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/40601/flow.png 945w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/78612/flow.png 1260w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/90eea/flow.png 2254w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Armeria가 요청을 어떻게 처리하는지&lt;/li&gt;
+&lt;li&gt;Armeria Thread가 어떤 기준으로 생성되고 소멸되는지&lt;/li&gt;
+&lt;li&gt;Armeria가 논블로킹, 블로킹 처리를 어떻게 하는지&lt;/li&gt;
+&lt;li&gt;Java NIO의 Selector와 Netty의 EventLoop&lt;/li&gt;
+&lt;li&gt;gRPC(+ HTTP/2) 통신과 ProtocolBuffers를 어떻게 사용하는지&lt;/li&gt;
+&lt;li&gt;Wireshark와 Visual VM을 사용하여 패킷이나 스레드가 어떻게 처리되는지 분석&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;등등의 내용들을 배우게 되었다.&lt;br&gt;
+스스로 생각하기에는 완벽한 이해나 분석을 했다고 볼 수 없다고 느꼇다.&lt;br&gt;
+&lt;strong&gt;진행하면서 &lt;code class=&quot;language-text&quot;&gt;OS와 네트워크의 중요성&lt;/code&gt;을 많이 느꼈다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/4ef3c/packet.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.0379746835443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42i2MWVPaABhF+f/TzrTj1GKXB+2L4FahEEIIkEiAEAgRCEsSUBEF0RYo4IALpwP2zpw53/dwry+vZsmkVCRB4uQ4xK9QlEh4jUA4FNnc4dPI5v95EiIWjZOUUiiygpbOUNB0Bp7HRavFeDzGV6tXsRs11KzGaUzgV1xEUuQNsZS0cVQWEdOJjZMZhZyRp2AaWFWLWtPmxm1h6vrbYE6tsUaIaAT2BYIBkeMjmaNDmYOgxOFBgv19ceNAQCQcOiMWyZEQDdSkRS5j07ObtO0as/kcn/sww/s9Q3e6RPMW8WKN5LmDbDmodptC+5qsc4HuddFaHSq9Ia3hZIN7P8V5mDIdjVnMZ7y8vuK7nrv0Hj1KlzoRXUCxUyQsCbWe5qyRJu9lyLoqeltDcxRqfZPbRYfrmUt35nCz6HA/7NKqN/kzGuHrjUbcTsaUvTbJYomzahXFOkexLCTdQClbZCoVcnaVrF2l6DTpDO/wBn06dwPcQZ/ZZMLL0xPL5RLf5Y3D1a2DWTNIZ2UKmky+oJC3NDJFhXKjgGnnMapZitUspq3T7jZod+sbe90Gj/d9eH5mHZ910aJy5ZAqGxwlROSEiKSliRc1ojmFuKEhGhli/5FKOcqdJuue1WlyfuXycNfn8e/0bdDcC1L+cYD6bZfoJz/S9g7xzzuI/i8I234SX78jfNgm8m6LyPst4h/9lHYDmHsBzN0Apb0g45bDarlgtVrxD9+dYsEQ+j1mAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;packet&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/f058b/packet.png&quot;
+        srcset=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/c26ae/packet.png 158w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/6bdcf/packet.png 315w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/f058b/packet.png 630w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/40601/packet.png 945w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/78612/packet.png 1260w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/4ef3c/packet.png 2863w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Java NIO의 Selector가 SelectionKeys를 반환하는 과정&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP Buffer에 패킷들이 다 적재되어 사용할 수 있는 상황이 되면 User영역에 옮기는 처리를 한다고 하는데 명확한 이해가 되지 않는다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Socket File Discriptor에 대한 이해&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;어떤 과정으로 Socket과 Channel이 생겨나는지&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Armeria Server Thread가 생성되는 기준에 대한 이해&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만&lt;/li&gt;
+&lt;li&gt;11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다&lt;/li&gt;
+&lt;li&gt;마지막 &lt;strong&gt;RST flag&lt;/strong&gt;를 보내면서 서버에서 Socket이 닫히고 EventLoop와 Channel이 소멸된다고 이해했다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/03f8e242df029769652d8a7aa43df5f7/705cc/expect.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABjUlEQVR42l1S23LrIAzM/zRIQlxsnMTGzqVtzv9/z56R4mY6fdgBgbRawR5aG0AcIJEhkRAlIEb6s2ew7Gd7LMLvGr+T1/5AbAfikChe8BsihECWHHEMAZZ/DARiATGDiEBkDaMLO1hRKhkxKYiP4B1EH2+YkrmvWNaOuS+4PR74/H5i6a+4b1fUoYIl4CByRMqKNg1Y1xm9X9D7jNttxfXasW2Ln0/nE2JkqApyUQxtREriqGOFqj2DEwakkjCMFW0sGMfiBPf7Fff7hsfjiufzE9//nn6Xc0StGblmMH34NJrUm8mPwlyyE5aiKCWh1uSF83x2Ql+/vrzB6TSiTc0VW47B9qbcCa2DzV+H4vItwVYb4XKZHK1VfytT4SPWjDoOnqOR0E4TNO2EYoRj9SRPUMY0DViWi/+yxedzQ9/W972RlqHsMb3JzWZum6i646UsZ/WxXWkStwpHRaDgngtEbhNmcqv8WMh/OWqEpuywvck22FNYR0uSqMil7H5lRE1IubhvOVrTV2yN/wO6PkFDlJqN3gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;expect&quot;
+        title=&quot;&quot;
+        src=&quot;/static/03f8e242df029769652d8a7aa43df5f7/f058b/expect.png&quot;
+        srcset=&quot;/static/03f8e242df029769652d8a7aa43df5f7/c26ae/expect.png 158w,
+/static/03f8e242df029769652d8a7aa43df5f7/6bdcf/expect.png 315w,
+/static/03f8e242df029769652d8a7aa43df5f7/f058b/expect.png 630w,
+/static/03f8e242df029769652d8a7aa43df5f7/40601/expect.png 945w,
+/static/03f8e242df029769652d8a7aa43df5f7/705cc/expect.png 1071w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1a839906e933a6d47cb6711d8d54e93c/77672/real.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfElEQVR42mVS7XKcQAzjgY61veZrF1ggl0tIOtP2/V9GGRuOpNMfHp1B2JJPVc49AtVexAEiAcz1idbXYAkXR4T8+TefHEM4+up4ISBmsAgkkg/7WYHCwSFGIEIdgmMgRh1q7yVG1ESo/KPI0K4F2za6/VeBbhhSwvpyx7wULNuG/fMX7o8H5lJQ1tXL5lRPi23XYp4z1rVgWSaUMmLbjt9LGZHH5BxVRtMI+jSgbSOaJnrf9Z27uQYOOSHnAXbTeR7xeNzx/v6KfX/Dx/6GP39/4+W+oW3EK43Zv2M+XGij/w7shv7cKI6mMKUepUyu9NUWfOzY1hldp5iW4mhcw2PBT4VpcDtPS9OUkVKHaUreRxVoq2C6Ob9P6UqEpcBOcCm0aORpvBRa2XPrzb6dwW6b8nAttBPFSIgSHIcxHwP5jIW2LSSaEnaCnmgKVCNSzoiq/k+yMDhGx2cvqj6nMt8sEXzmkJ82zrKtljXLnXGIyUucK2fgTYAiMOMLpgVBRHFYfuwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;real&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1a839906e933a6d47cb6711d8d54e93c/f058b/real.png&quot;
+        srcset=&quot;/static/1a839906e933a6d47cb6711d8d54e93c/c26ae/real.png 158w,
+/static/1a839906e933a6d47cb6711d8d54e93c/6bdcf/real.png 315w,
+/static/1a839906e933a6d47cb6711d8d54e93c/f058b/real.png 630w,
+/static/1a839906e933a6d47cb6711d8d54e93c/40601/real.png 945w,
+/static/1a839906e933a6d47cb6711d8d54e93c/77672/real.png 1060w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;클라이언트의 메인 스레드에서 다른 서비스로 요청해도 모든 요청을 처리하는 스레드는 서버 스레드 한 개이다
+&lt;ul&gt;
+&lt;li&gt;Sample, Hello 서로 다른 서비스로 요청을 보내도 요청을 처리하는 스레드는 한 개이다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;위와 같은 테스트를 클라이언트 2개에서 각각 한 번씩 보내도 똑같은 결과다
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;결국 서버에서 받는 모든 요청들은 각 클라이언트의 소켓에 맞는 서버의 스레드들이 처리한다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;클라이언트의 메인 스레드에서 ExecutorService를 통해 자식 스레드를 여러 개를 서버에 요청 전송하여도 한 개의 서버 스레드가 처리한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 63.291139240506325%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACd0lEQVR42l2SS4tdRRRG749zJCgtSkRwKP4Bn0PBgZqoCWTiUAlGBFEyUQcRJ4IDIYg2Iemk28S093HOPa96P8+Sqntv+xh87F27qtb+dp2z+O3ufR6cPOLk3h+cLVe82nzCpfVVXt5e54XhQ47kFZ6TVzgSl3e52OXPi494sb/KpeFjXhqu8Uz/Pl+pn1nc+foWd299V3Xy7ffc/v1HvnnwCzdu/8A7d77ktePPeOv4Bm/c+5w3f/2U1+/f5O3jm7zy8DpPj+/xbPcBR/1lnure5Qv5EwutNV4Z5hBJw8BmekITW1a6YaV72qmnER2NGmiHLRs90IqBpdpwGlec+iVnYcXDsKRPkgXBQ0rUmBMIQVj1qM4ThGNqDVFHpkbjpUe0Gjs5TO+wrYOYiWPEri34yKI5HxgHR/SZ9UqhR012DmMjUhuUdmi7W6cZXMj4mHEhVc1ALHUbyN6z8CbQdSObTYOQlmwcWMM8l6PgvSPGSCpKRYlpHFkulygp616IscIIgUXfKlbrgbbtWW8kXlqwljkfgIHCds6jlMIYi5SS9XqNMaY2NNYSndsBVSvr28wuonpLGMQOeOHQV1fO7ZzGEIkxoaSi67oKLw7TwSFkmDNz+SCH3LkLhyGECi/KOVdYaSKE4PzJeXUZU/rHYbn2H5XL/wIeHKa4cxl8uAAX6Ha7ZZoEyYc9cN/9MCJ7IPt18J45532DueZl9LIvheDs9JS+74nWHkY+cObqsBzMPmBDQlmHsr7+FjbkGo2PSONwMePTXB6p1r2PzDH+D7h3ZduJ/nGH3gx0jztcO9Vomonhz1KfmP7qGc97UBLdCMZHW2Zt+BuFmtCvouSw5AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;armeriaThread&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/f058b/armeriaThread.png&quot;
+        srcset=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/c26ae/armeriaThread.png 158w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/6bdcf/armeriaThread.png 315w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/f058b/armeriaThread.png 630w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/40601/armeriaThread.png 945w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png 1161w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;이벤트-루프에서-오래-걸리는-작업은-어떻게-처리하지&quot; style=&quot;position:relative;&quot;&gt;이벤트 루프에서 오래 걸리는 작업은 어떻게 처리하지?&lt;a href=&quot;#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%97%90%EC%84%9C-%EC%98%A4%EB%9E%98-%EA%B1%B8%EB%A6%AC%EB%8A%94-%EC%9E%91%EC%97%85%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%B2%98%EB%A6%AC%ED%95%98%EC%A7%80&quot; aria-label=&quot;이벤트 루프에서 오래 걸리는 작업은 어떻게 처리하지 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/561da/blockingTaskExecutor.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 34.177215189873415%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVR42pWR3WrDMAyF/RxrkyWxHNuRf5t2aXYz2Pu/0xm2s8Jgg+7iQxISEudIpLziY//EFndIw5Dz8oOJDKSUmBVViAikuaKMe8wpzehHBRHiive3O1YfMVsHvQQYjjAcjjzALB7Guorl1p+tP+YaZXY2DkIbxnbd4YxHNxK6geqlykA49VPl5eDUy1Z346PXaLVgjsh5Q/AryLgqpVwrcgrnV/kH9GstzgMhXjb4fKsx5Bt8usKnGzissC5VeZNankKUrYYTrMtY/OXIU42kHSbFTy+rC4tXlhO0bWaXjxUvvmUUT//DF2hDynZ6gjGTAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;blockingTaskExecutor&quot;
+        title=&quot;&quot;
+        src=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/f058b/blockingTaskExecutor.png&quot;
+        srcset=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/c26ae/blockingTaskExecutor.png 158w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/6bdcf/blockingTaskExecutor.png 315w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/f058b/blockingTaskExecutor.png 630w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/40601/blockingTaskExecutor.png 945w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/561da/blockingTaskExecutor.png 969w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;// BlockingTaskExecutor 설명 작성하기&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;-자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;✅ 자바에서 코틀린으로&lt;a href=&quot;#-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot; 자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
@@ -1480,216 +1748,7 @@ done
 개발자를 시작하기 전에 이렇게 내 모든 에너지와 시간을 쏟아부어서 열정적이게 했던 일은 없었던 것 같다.&lt;br&gt;
 개발자라는 직업이 매력적인 만큼 스스로 변화했다고 많이 느껴진다.&lt;br&gt;
 다른 전공자들에 비해 늦게 시작한 만큼 불안하기도 한데, 조급함에 무너지지 않게 스스로의 페이스를 잘 유지해야겠다.&lt;/p&gt;
-&lt;p&gt;2023년 연말 회고를 작성할 때 이 글이 귀엽게 보일 정도로 성장했으면 좋겠다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[1차 트레이닝 프로젝트]]></title><description><![CDATA[으로 마이그레이션,테스트 코드 작성후에  분석 내용 최종 리뷰와 데모 개발, 시연을 마쳤다. Armeria가 요청을 어떻게 처리하는지 Armeria Thread가 어떤 기준으로 생성되고 소멸되는지 Armeria…]]></description><link>https://jdalma.github.io/2022y/trainingProject/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/trainingProject/</guid><pubDate>Thu, 15 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;kotlin&lt;/code&gt;으로 마이그레이션,테스트 코드 작성후에&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/7c7a288db03fd99329d6920828b44833/487bb/testcode.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 168.9873417721519%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAYAAABfqvm9AAAACXBIWXMAABYlAAAWJQFJUiTwAAAEtUlEQVR42pVWiXbaSBDk/78k603WdoAcG5ssgaxtzG0ki1MSEqcQum+J2jeN401icBy9V29aDGpNd1dXK7fb7fA7F/v/c8gJbguiPsCwP8JEFCFJEnieR7/fR7PZRL1eJ1uSZKiqCsd14T6DXMMqQ1h3cVW+wdnZXygU3uLjh/f4XLpEIf8W74oFvH9XRLFYQLVSgevYcGwblmUdRM5NbDixBQ8WwgRwwx2iFHCDDEECsoMYiDPQ/tYO4foR0jQ9iBzLS5D6EP0exLmHyp2Ge9nCraDjmt+gNdwSmsMtyp016gMDCz2gfGbZgRyyDT91MQ0EDFUXdxOTMFBsWoWphaFq0zqaOfQyBs1gTndI0wxZ9j9+dKg4aI8MerhPDmz0FRsj1aYXCA8nZysLfbfLKMwnDinkoIeZFuCiuaKw/+U26I5NXPM6bu71F9MqZycGrMiAk5rIMsDyEth+AsuL4YUp/DCFGyTIKEf7vDFEUXQQuVuzBG7RwpfLKgrFAj5++IBCIY+Li094/fo13VcqFZyfn+P09AyfLi5QKpWg6zrRxDTNH5Dru21MzTEkUcZ4NIAsjiBLY8JUGmOmyljMplDkCeaKRKsyleA4DjzPe0psFneUhdjsFCyNDPzUx2yb4F7xIagBxFWI8SKAvI4wmAUE3cn2bXgoh9+qLHoc5pqPzmiL8czGZG6Dk/a0GSgWBNlEY6DjXjahGf5jhQ8S209cqJGA9shCTdji5p4R2UBjsMfviMR3J+Sx2obojg06ISPzdOUSB1XNQxQnSJKU8DP3nvCQ5XCVilgZMao9HbW+hfrQgqB66IoOWiPr5SccexwUcwJFUaBpK1iGhsVMwWKuYiqJVGV9s8ZwOMRiscByuSTKHKowVZnxkF+28fljGScnf+DNmzc4PT1FPp8nnJ2dEQf/PDlBsVjEq1ev0Gg06GHGuyfytY3XMEMdfuYiTjKEUUIdk6Q7pBke7W/qwuw4SRFFMeL4KR57WQp6GM08lDsaOMnCFbehfq73t4TGYIt/2mv6bbbxH/N4lIdMbeSl98A7G9LCJXs8d8gezxxISxeTuUMwnOi42jAeKqEAXrLpJN2JiZ5o0knZyhwzbeyMDHzpamgNDay2z+qhR4qtrn38XV+SUrMwOdFETdDJftpoR2jDwmUzxco2yHbA1kmxMmPMNiEML4PhJtBtRuqMivL9lSQHitKyKhBWXdS+1lEqXeJrtYLS5Sfc1q7Jrt1c0f1gMES1WsX5+Vvk8wWUy1+Ij/ZPEzDHOTVM9D4Ero92q4G7ThPdTht9gUen3QDP9dBpN2Hoa8jiGL27DgT+DhzHkTMmY98jx+IOUx8mltAdQFxF0OyMZEvWYhqhMz0BLzuY6zHtTZbR0RZ8pM3EY0XxSL7EhUMyxYlsZHpoj5gCbdATjb2M9XUEYfxAm2NTLxQgLX0iLpt0TLaueP2IjD5T5W+0kf17rLchEZjJ1kL3idC6FVKrJeke6cP6rHwxh4zY7eGed2z2MoIz3AoPHNztjjo5GLIU8FhsQnztadQVrEuGqkM2L1lI0gy7lzoM0wDLUMLWiqjVGJgjVhym3CynLOwXnfBRMX753bn75ccmK8p/w9kFtfiYXcMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;testcode&quot;
-        title=&quot;&quot;
-        src=&quot;/static/7c7a288db03fd99329d6920828b44833/f058b/testcode.png&quot;
-        srcset=&quot;/static/7c7a288db03fd99329d6920828b44833/c26ae/testcode.png 158w,
-/static/7c7a288db03fd99329d6920828b44833/6bdcf/testcode.png 315w,
-/static/7c7a288db03fd99329d6920828b44833/f058b/testcode.png 630w,
-/static/7c7a288db03fd99329d6920828b44833/487bb/testcode.png 698w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;분석 내용 최종 리뷰와 데모 개발, 시연을 마쳤다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Armeria가 요청을 어떻게 처리하는지&lt;/li&gt;
-&lt;li&gt;Armeria Thread가 어떤 기준으로 생성되고 소멸되는지&lt;/li&gt;
-&lt;li&gt;Armeria가 논블로킹, 블로킹 처리를 어떻게 하는지&lt;/li&gt;
-&lt;li&gt;Java NIO의 Selector와 Netty의 EventLoop&lt;/li&gt;
-&lt;li&gt;gRPC(+ HTTP/2) 통신과 ProtocolBuffers를 어떻게 사용하는지&lt;/li&gt;
-&lt;li&gt;Wireshark와 Visual VM을 사용하여 패킷이나 스레드가 어떻게 처리되는지 분석&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;등등의 내용들을 배우게 되었다.&lt;br&gt;
-팀장님이 생각하셨던 것보다 흥미를 느끼신다고 하셨고 &quot;산출물이 기대했던 것 보다 잘 나왔다&quot;고 하셨지만&lt;br&gt;
-스스로 생각하기에는 완벽한 이해나 분석을 했다고 볼 수 없다고 느꼇다.&lt;br&gt;
-&lt;strong&gt;진행하면서 &lt;code class=&quot;language-text&quot;&gt;OS와 네트워크의 중요성&lt;/code&gt;을 많이 느꼈다&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/90eea/flow.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABZklEQVR42kVSiYqDQAz1///MQkG6UKiw1tt6tN5z6rwlse0KAZkk75rx8P6ccxBCIAxD3G435HkOrTX2fecez2gNJwScUoDW2ISAniboeca2rpDjCC9JEgzDwIvbtnFZaxmMyj+dkGbZAbgsH34oKSGF4HmjNYy1GPse3jRNeL1eUEphXVc0TYOu67BZi6GuEf78oCsKmHHE3veoqwrLsvAMuamqivf7vkdb1/BI2eVyQVEU3IyiCL9RhCbPcQkC1GUJCAEiJstJHDMpRXK/3xm4LMtDSNPAo3zi91DbtkjTFHlRMFAShqzSGYN5WeCkRBxFeDweDEhZkwgCJtBn28L7ZkJBA5wJkZBy8z6jTOd5BpTGZgyMMYeAdzzn8xnX6/WwTMt0KeM4chasMM/ZYvd8Qir1D2jM91J257hHtQqBVUrM03Rk6Ps+siz7WiYL9B8EAYMT6USA1vKToQjwKWuP2nd+Pn+9ZmFCnAS4MQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;flow&quot;
-        title=&quot;&quot;
-        src=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/f058b/flow.png&quot;
-        srcset=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/c26ae/flow.png 158w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/6bdcf/flow.png 315w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/f058b/flow.png 630w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/40601/flow.png 945w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/78612/flow.png 1260w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/90eea/flow.png 2254w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;개인적으로 위 이미지의 빨간 영역 관련해서 더 학습해야할 내용들은&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Java NIO의 Selector가 SelectionKeys를 반환하는 과정&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;TCP Buffer에 패킷들이 다 적재되어 사용할 수 있는 상황이 되면 User영역에 옮기는 처리를 한다고 하는데 명확한 이해가 되지 않는다&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Socket File Discriptor에 대한 이해&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;어떤 과정으로 Socket과 Channel이 생겨나는지&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Armeria Server Thread가 생성되는 기준에 대한 이해&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만&lt;/li&gt;
-&lt;li&gt;11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다&lt;/li&gt;
-&lt;li&gt;마지막 &lt;strong&gt;RST flag&lt;/strong&gt;를 보내면서 서버에서 Socket이 닫히고 EventLoop와 Channel이 소멸된다고 생각하고 있다&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/4ef3c/packet.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 43.0379746835443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42i2MWVPaABhF+f/TzrTj1GKXB+2L4FahEEIIkEiAEAgRCEsSUBEF0RYo4IALpwP2zpw53/dwry+vZsmkVCRB4uQ4xK9QlEh4jUA4FNnc4dPI5v95EiIWjZOUUiiygpbOUNB0Bp7HRavFeDzGV6tXsRs11KzGaUzgV1xEUuQNsZS0cVQWEdOJjZMZhZyRp2AaWFWLWtPmxm1h6vrbYE6tsUaIaAT2BYIBkeMjmaNDmYOgxOFBgv19ceNAQCQcOiMWyZEQDdSkRS5j07ObtO0as/kcn/sww/s9Q3e6RPMW8WKN5LmDbDmodptC+5qsc4HuddFaHSq9Ia3hZIN7P8V5mDIdjVnMZ7y8vuK7nrv0Hj1KlzoRXUCxUyQsCbWe5qyRJu9lyLoqeltDcxRqfZPbRYfrmUt35nCz6HA/7NKqN/kzGuHrjUbcTsaUvTbJYomzahXFOkexLCTdQClbZCoVcnaVrF2l6DTpDO/wBn06dwPcQZ/ZZMLL0xPL5RLf5Y3D1a2DWTNIZ2UKmky+oJC3NDJFhXKjgGnnMapZitUspq3T7jZod+sbe90Gj/d9eH5mHZ910aJy5ZAqGxwlROSEiKSliRc1ojmFuKEhGhli/5FKOcqdJuue1WlyfuXycNfn8e/0bdDcC1L+cYD6bZfoJz/S9g7xzzuI/i8I234SX78jfNgm8m6LyPst4h/9lHYDmHsBzN0Apb0g45bDarlgtVrxD9+dYsEQ+j1mAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;packet&quot;
-        title=&quot;&quot;
-        src=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/f058b/packet.png&quot;
-        srcset=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/c26ae/packet.png 158w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/6bdcf/packet.png 315w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/f058b/packet.png 630w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/40601/packet.png 945w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/78612/packet.png 1260w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/4ef3c/packet.png 2863w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Expect&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;mermaid&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;sequenceDiagram
-    participant C as Client Main Thread
-    participant S1 as Server Request1
-    participant S2 as Server Request2
-    participant S3 as Server Request3
-    Note over S1,S3: One Thread
-
-    C-&amp;gt;&amp;gt;+S1: 1. Sample Future Client : sampleUnaryCall (10s sleep)
-    C-&amp;gt;&amp;gt;+S2: 2. Sample Future Client : sampleUnaryCall
-    C-&amp;gt;&amp;gt;+S3: 3. Hello Async Client : helloUnaryCall
-    S2--&amp;gt;&amp;gt;-C: 2. Response
-    S3--&amp;gt;&amp;gt;-C: 3. Response
-    S1--&amp;gt;&amp;gt;-C: 1. Response&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;strong&gt;Real&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;mermaid&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;sequenceDiagram
-    participant C as Client Main Thread
-    participant S1 as Server Request1
-    participant S2 as Server Request2
-    participant S3 as Server Request3
-    Note over S1,S3: One Thread
-
-    C-&amp;gt;&amp;gt;+S1: 1. Sample Future Client : sampleUnaryCall (10s sleep)
-    C-&amp;gt;&amp;gt;+S2: 2. Sample Future Client : sampleUnaryCall
-    C-&amp;gt;&amp;gt;+S3: 3. Hello Async Client : helloUnaryCall
-    S1--&amp;gt;&amp;gt;-C: 1. Response
-    S2--&amp;gt;&amp;gt;-C: 2. Response
-    S3--&amp;gt;&amp;gt;-C: 3. Response&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;ol&gt;
-&lt;li&gt;클라이언트의 메인 스레드에서 다른 서비스로 요청해도 모든 요청을 처리하는 스레드는 서버 스레드 한 개이다
-&lt;ul&gt;
-&lt;li&gt;Sample, Hello 서로 다른 서비스로 요청을 보내도 요청을 처리하는 스레드는 한 개이다&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;위와 같은 테스트를 클라이언트 2개에서 각각 한 번씩 보내도 똑같은 결과다
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;결국 서버에서 받는 모든 요청들은 각각의 클라이언트에 맞는 서버의 스레드들이 처리한다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;클라이언트의 메인 스레드에서 ExecutorService를 통해 자식 스레드를 여러 개를 서버에 요청 전송하여도 한 개의 서버 스레드가 처리한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 63.291139240506325%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACd0lEQVR42l2SS4tdRRRG749zJCgtSkRwKP4Bn0PBgZqoCWTiUAlGBFEyUQcRJ4IDIYg2Iemk28S093HOPa96P8+Sqntv+xh87F27qtb+dp2z+O3ufR6cPOLk3h+cLVe82nzCpfVVXt5e54XhQ47kFZ6TVzgSl3e52OXPi494sb/KpeFjXhqu8Uz/Pl+pn1nc+foWd299V3Xy7ffc/v1HvnnwCzdu/8A7d77ktePPeOv4Bm/c+5w3f/2U1+/f5O3jm7zy8DpPj+/xbPcBR/1lnure5Qv5EwutNV4Z5hBJw8BmekITW1a6YaV72qmnER2NGmiHLRs90IqBpdpwGlec+iVnYcXDsKRPkgXBQ0rUmBMIQVj1qM4ThGNqDVFHpkbjpUe0Gjs5TO+wrYOYiWPEri34yKI5HxgHR/SZ9UqhR012DmMjUhuUdmi7W6cZXMj4mHEhVc1ALHUbyN6z8CbQdSObTYOQlmwcWMM8l6PgvSPGSCpKRYlpHFkulygp616IscIIgUXfKlbrgbbtWW8kXlqwljkfgIHCds6jlMIYi5SS9XqNMaY2NNYSndsBVSvr28wuonpLGMQOeOHQV1fO7ZzGEIkxoaSi67oKLw7TwSFkmDNz+SCH3LkLhyGECi/KOVdYaSKE4PzJeXUZU/rHYbn2H5XL/wIeHKa4cxl8uAAX6Ha7ZZoEyYc9cN/9MCJ7IPt18J45532DueZl9LIvheDs9JS+74nWHkY+cObqsBzMPmBDQlmHsr7+FjbkGo2PSONwMePTXB6p1r2PzDH+D7h3ZduJ/nGH3gx0jztcO9Vomonhz1KfmP7qGc97UBLdCMZHW2Zt+BuFmtCvouSw5AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;armeriaThread&quot;
-        title=&quot;&quot;
-        src=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/f058b/armeriaThread.png&quot;
-        srcset=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/c26ae/armeriaThread.png 158w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/6bdcf/armeriaThread.png 315w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/f058b/armeriaThread.png 630w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/40601/armeriaThread.png 945w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png 1161w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;궁극적으로는 Socket Programming에 대한 이해가 떨어지는 것 같다.&lt;br&gt;
-네티 인 액션을 정독할 생각이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Iterator?Enumerator?Iterable?]]></title><description><![CDATA[해당 글은 백준 - 키로거문제를 풀며 로 풀면 시간초과가 났었는데 를 사용하여 해결하였었다. (으로도 풀 수 있다)
+&lt;p&gt;2023년 연말 회고를 작성할 때 이 글이 귀엽게 보일 정도로 성장했으면 좋겠다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Iterator?Enumerator?Iterable?]]></title><description><![CDATA[해당 글은 백준 - 키로거문제를 풀며 로 풀면 시간초과가 났었는데 를 사용하여 해결하였었다. (으로도 풀 수 있다)
 이 문제를 계기로 와 를 정리해보려 한다. 참고 링크  Iterator  Enumeration  difference-between…]]></description><link>https://jdalma.github.io/2022y/iterator/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/iterator/</guid><pubDate>Tue, 15 Nov 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;해당 글은 &lt;a href=&quot;https://github.com/PowerAlgorithm/Algorithm-Study/blob/main/%5BWeek5%20-%20Data%20Structure%5D/%EC%A0%95%ED%98%84%EC%A4%80/C_5397.java&quot;&gt;백준 - 키로거&lt;/a&gt;문제를 풀며 &lt;code class=&quot;language-text&quot;&gt;LinkedList&lt;/code&gt;로 풀면 시간초과가 났었는데 &lt;code class=&quot;language-text&quot;&gt;ListIterator&lt;/code&gt;를 사용하여 해결하였었다. (&lt;code class=&quot;language-text&quot;&gt;Stack&lt;/code&gt;으로도 풀 수 있다)&lt;br&gt;
 이 문제를 계기로 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Enumerator&lt;/code&gt;를 정리해보려 한다.&lt;br&gt;&lt;/p&gt;
 &lt;hr&gt;
