@@ -1,72 +1,75 @@
 ---
-title: Armeria로 gRPC 통신하기
-date: "2023-06-29"
+title: 1차 트레이닝 프로젝트
+date: "2022-12-15"
 tags:
    - Armeria
    - gRPC
    - HTTP/2
 ---
 
-코드는 [여기에](https://github.com/jdalma/armeria-grpc-kotlin/tree/master)
+이번에 진행하게된 1차 트레이닝 프로젝트에서 기대하는 영향은 기존에 존재하던 REST API를 그대로 유지하면서 gRPC 통신을 같이 사용할 수 있을지 확인하고, Stream 통신을 테스트해보는 것이다.  
+- REST API와 RPC 통신을 한 포트로 처리할 수 있는 Armeria를 사용한다.
+- protocol buffer를 통해 기존 JSON보다 데이터 사이즈를 줄일 수 있을 것이다.
+  
+# Armeria와 Tomcat을 한 개의 포트로?
+
+Armeria에서는 [`javadoc` HttpService](https://javadoc.io/doc/com.linecorp.armeria/armeria-javadoc/latest/com/linecorp/armeria/server/HttpService.html)로 Tomcat, gRPC 들을 추상화 해놓았다.  
+Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가시키기만 하면 된다.  
+
+![](flow.png)
+
+Netty의 `EventLoop`가 client로부터 오는 모든 요청을 다 받는다.  
+모든 요청에는 `ServiceRequestContext`가 포함되어 있으며, 이 컨텍스트 내부에서 `RoutingContext`가 **요청을 처리하는 데 사용할 수 있는 서비스를 찾는 데 필요한 매개변수를 보유**하고 있다.  
+  
+> EventLoopGroup - 여러 개의 EventLoop (+ EventQueue) - 여러 개의 Channel  
+> EventLoop는 변경되지 않는 하나의 Thread로 움직이며,  
+> 작업 (Runnable 또는 Callable)을 EventLoop 구현으로 직접 제출해 즉시 또는 예약 실행할 수 있다.  
+> 구성과 사용 가능한 코어에 따라서는 리소스 활용을 최적화하기 위해 여러 EventLoop가 생성되고,  
+> 여러 Channel에 서비스를 제공하기 위해 단일 EventLoop가 할당되는 경우도 있다.  
+> - **네티인액션**
 
 # gRPC 통신 종류
 
 > Async는 비동기-논블로킹 통신, Future는 동기-논블로킹 통신
 
-**SampleCallBiStream** 양방향 스트림 통신
-- Future Stub (not support)
-- Blocking Stub (not support)
-- 기본(Async) Stub
+- **UnaryCall** 단일 요청, 단일 응답 
+  - Future Stub
+  - Blocking Stub
+  - 기본(Async) Stub
 
-**SampleCallServerStream** 서버 → 클라이언트 스트림 통신
-- Future Stub (not support)
-- Blocking Stub
-- 기본(Async) Stub
+- **ServerStream** 서버 → 클라이언트 스트림 통신
+  - Future Stub (not support)
+  - Blocking Stub
+  - 기본(Async) Stub
 
-**SampleCallClientStream** 클라이언트 → 서버 스트림 통신
-- Future Stub (not support)
-- Blocking Stub (not support)
-- 기본(Async) Stub
+- **ClientStream** 클라이언트 → 서버 스트림 통신
+  - Future Stub (not support)
+  - Blocking Stub (not support)
+  - 기본(Async) Stub
 
-**SampleUnaryCall** 단일 요청, 단일 응답 
-- Future Stub
-- Blocking Stub
-- 기본(Async) Stub
+- **BiStream** 양방향 스트림 통신
+  - Future Stub (not support)
+  - Blocking Stub (not support)
+  - 기본(Async) Stub
 
 # Armeria의 Server Thread는 어떻게 처리될까?
-
-![](flow.png)
-
-1. Armeria가 요청을 어떻게 처리하는지
-2. Armeria Thread가 어떤 기준으로 생성되고 소멸되는지
-3. Armeria가 논블로킹, 블로킹 처리를 어떻게 하는지
-4. Java NIO의 Selector와 Netty의 EventLoop
-5. gRPC(+ HTTP/2) 통신과 ProtocolBuffers를 어떻게 사용하는지
-6. Wireshark와 Visual VM을 사용하여 패킷이나 스레드가 어떻게 처리되는지 분석
-
-등등의 내용들을 배우게 되었다.  
-스스로 생각하기에는 완벽한 이해나 분석을 했다고 볼 수 없다고 느꼇다.  
-**진행하면서 `OS와 네트워크의 중요성`을 많이 느꼈다**
-
-![](packet.png)
-
-1. **Java NIO의 Selector가 SelectionKeys를 반환하는 과정**
-   - TCP Buffer에 패킷들이 다 적재되어 사용할 수 있는 상황이 되면 User영역에 옮기는 처리를 한다고 하는데 명확한 이해가 되지 않는다
-2. **Socket File Discriptor에 대한 이해**
-   - 어떤 과정으로 Socket과 Channel이 생겨나는지
-3. **Armeria Server Thread가 생성되는 기준에 대한 이해**
-   - 한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만
-   - 11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다
-   - 마지막 **RST flag**를 보내면서 서버에서 Socket이 닫히고 EventLoop와 Channel이 소멸된다고 이해했다.
 
 ![](expect.png)
 ![](real.png)
 
 1. 클라이언트의 메인 스레드에서 다른 서비스로 요청해도 모든 요청을 처리하는 스레드는 서버 스레드 한 개이다
    - Sample, Hello 서로 다른 서비스로 요청을 보내도 요청을 처리하는 스레드는 한 개이다
-2. 위와 같은 테스트를 클라이언트 2개에서 각각 한 번씩 보내도 똑같은 결과다
+2. 위와 같은 테스트를 두 개의 클라이언트에서 각각 한 번씩 보내도 똑같은 결과다
    - **결국 서버에서 받는 모든 요청들은 각 클라이언트의 소켓에 맞는 서버의 스레드들이 처리한다**
-3. 클라이언트의 메인 스레드에서 ExecutorService를 통해 자식 스레드를 여러 개를 서버에 요청 전송하여도 한 개의 서버 스레드가 처리한다.
+3. 한 개의 클라이언트의 메인 스레드에서 자식 스레드 여러 개를 서버에 요청 전송하여도 한 개의 서버 스레드가 처리한다.
+
+![](packet.png)
+
+**Armeria Server Thread가 생성되는 기준에 대한 이해**
+- 한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만
+- 11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다
+- [`GOAWAY` 프레임](https://datatracker.ietf.org/doc/html/rfc7540#section-6.8)을 통해 서로 데이터를 다 보냈다는 확인을 한다.
+- 마지막 **RST flag**를 보내면서 서버에서 Socket이 닫히고 TCP 커넥션을 끊는다고 이해했다.
 
 ![](armeriaThread.png)
 
@@ -75,3 +78,19 @@ tags:
 ![](blockingTaskExecutor.png)
 
 // BlockingTaskExecutor 설명 작성하기
+
+# 소감과 무지 목록
+  
+proto를 작성해서 generate된 stub들을 이용하여 client ↔︎ server 스트림 통신을 테스트해보는 간단한 테스트 코드를 작성해보았다.  
+그리고 새로운 서비스를 개발할 때 다른 팀원들이 템플릿처럼 사용할 수 있도록 회사 레포에 등록해두었다.  
+기존 서비스들에 적용하기에는 큰 도전일 것으로 예상된다.  
+이 기술들을 한 번에 적용하기 보다는 [JSON을 proto로 바꿔보는 단계](https://spring.io/blog/2015/03/22/using-google-protocol-buffers-with-spring-mvc-based-rest-services)를 밟는것도 좋을 것 같다.    
+  
+해당 프로젝트에는 처음 접하는 기술적인 키워드들이 많이 포함되어 있었고, 네트워크 지식이 부족하다고 느꼈다.  
+- 추가적으로 정리한 내용은 [여기](https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/Armeria_gRPC.md)에서 볼 수 있다.
+  
+**무지 목록**    
+1. Netty에 대한 이해
+2. TCP 소켓 프로그래밍에 대한 이해
+3. HTTP/2에 대한 이해
+4. Armeria 아키텍처
