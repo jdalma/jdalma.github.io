@@ -16,6 +16,12 @@ tags:
 Armeria에서는 [`javadoc` HttpService](https://javadoc.io/doc/com.linecorp.armeria/armeria-javadoc/latest/com/linecorp/armeria/server/HttpService.html)로 Tomcat, gRPC 들을 추상화 해놓았다.  
 Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가시키기만 하면 된다.  
 
+> ✋  
+> Tomcat 포트를 직접 지정해주고 해당 포트로 REST 요청을 보내게되면 Armeria를 거치지 않고 바로 TomcatWebServer가 처리한다.  
+> Tomcat 포트를 `-1`로 지정하고 Armeria 포트만 지정해주면 Armeria가 REST 요청과 gRPC 요청 둘 다 처리하게 된다.  
+> REST 요청과 gRPC 요청을 구분하는 방법이 궁금해서 조사한 결과는 EventLoop에서 반환되는 `selectedKeys` 타입부터 서로 달랐다.  
+> Tomcat 포트를 막고 Armeria만 실행시켜도 Socket이 2개가 열리는 것으로 추정된다.
+
 ![](flow.png)
 
 Netty의 `EventLoop`가 client로부터 오는 모든 요청을 다 받는다.  
@@ -27,7 +33,6 @@ Netty의 `EventLoop`가 client로부터 오는 모든 요청을 다 받는다.
 
 ![](blockNonBlockThread.png)
   
-> EventLoopGroup - 여러 개의 EventLoop (+ EventQueue) - 여러 개의 Channel  
 > EventLoop는 변경되지 않는 하나의 Thread로 움직이며,  
 > 작업 (Runnable 또는 Callable)을 EventLoop 구현으로 직접 제출해 즉시 또는 예약 실행할 수 있다.  
 > 구성과 사용 가능한 코어에 따라서는 리소스 활용을 최적화하기 위해 여러 EventLoop가 생성되고,  
