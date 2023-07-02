@@ -19,7 +19,13 @@ Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가�
 ![](flow.png)
 
 Netty의 `EventLoop`가 client로부터 오는 모든 요청을 다 받는다.  
-모든 요청에는 `ServiceRequestContext`가 포함되어 있으며, 이 컨텍스트 내부에서 `RoutingContext`가 **요청을 처리하는 데 사용할 수 있는 서비스를 찾는 데 필요한 매개변수를 보유**하고 있다.  
+1. **gRPC는 NonBlocking으로 처리**
+2. **REST는 Tomcat이 Blocking으로 처리**
+   - 서블릿 스레드는 Armeria의 `BlockingTaskExecutor`이다
+   - `EventLoop`가 해당 request를 처리하라는 작업을 `BlockingTaskExecutor`에게 위임
+   - `BlockingTaskExecutor`에서 어댑터를 이용해 서블릿 컨테이너를 호출
+
+![](blockNonBlockThread.png)
   
 > EventLoopGroup - 여러 개의 EventLoop (+ EventQueue) - 여러 개의 Channel  
 > EventLoop는 변경되지 않는 하나의 Thread로 움직이며,  
@@ -63,21 +69,22 @@ Netty의 `EventLoop`가 client로부터 오는 모든 요청을 다 받는다.
    - **결국 서버에서 받는 모든 요청들은 각 클라이언트의 소켓에 맞는 서버의 스레드들이 처리한다**
 3. 한 개의 클라이언트의 메인 스레드에서 자식 스레드 여러 개를 서버에 요청 전송하여도 한 개의 서버 스레드가 처리한다.
 
+> 위와 같은 결과가 나오는 이유를 이해하려면 이벤트 루프, 멀티플렉싱에 대한 이해가 필요하다.  
+> [EventLoop와 멀티플렉싱에 대해 정리한 글](https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%89%EC%8B%B1.md)을 참고하자
+
+EventLoop는 단일 스레드로 요청과 응답을 처리하므로 해당 스레드를 블록하면 EventLoop 자체를 블록하는 것과 같다.  
+
+![](blockingTaskExecutor.png)
+
 ![](packet.png)
 
-**Armeria Server Thread가 생성되는 기준에 대한 이해**
+**Event Loop가 처리하는 기준**
 - 한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만
 - 11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다
 - [`GOAWAY` 프레임](https://datatracker.ietf.org/doc/html/rfc7540#section-6.8)을 통해 서로 데이터를 다 보냈다는 확인을 한다.
 - 마지막 **RST flag**를 보내면서 서버에서 Socket이 닫히고 TCP 커넥션을 끊는다고 이해했다.
 
 ![](armeriaThread.png)
-
-# 이벤트 루프에서 오래 걸리는 작업은 어떻게 처리하지?
-
-![](blockingTaskExecutor.png)
-
-// BlockingTaskExecutor 설명 작성하기
 
 # 소감과 무지 목록
   
@@ -87,7 +94,7 @@ proto를 작성해서 generate된 stub들을 이용하여 client ↔︎ server �
 이 기술들을 한 번에 적용하기 보다는 [JSON을 proto로 바꿔보는 단계](https://spring.io/blog/2015/03/22/using-google-protocol-buffers-with-spring-mvc-based-rest-services)를 밟는것도 좋을 것 같다.    
   
 해당 프로젝트에는 처음 접하는 기술적인 키워드들이 많이 포함되어 있었고, 네트워크 지식이 부족하다고 느꼈다.  
-- 추가적으로 정리한 내용은 [여기](https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/Armeria_gRPC.md)에서 볼 수 있다.
+- 추가적으로 정리한 내용은 [Armeria와 gRPC 정리](https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/Armeria_gRPC.md)에서 볼 수 있다.
   
 **무지 목록**    
 1. Netty에 대한 이해
