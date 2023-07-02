@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 01 Jul 2023 08:54:33 GMT</lastBuildDate><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;-자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;✅ 자바에서 코틀린으로&lt;a href=&quot;#-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot; 자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 02 Jul 2023 10:49:46 GMT</lastBuildDate><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;-자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;✅ 자바에서 코틀린으로&lt;a href=&quot;#-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot; 자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
@@ -1521,8 +1521,47 @@ Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가�
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Netty의 &lt;code class=&quot;language-text&quot;&gt;EventLoop&lt;/code&gt;가 client로부터 오는 모든 요청을 다 받는다.&lt;br&gt;
-모든 요청에는 &lt;code class=&quot;language-text&quot;&gt;ServiceRequestContext&lt;/code&gt;가 포함되어 있으며, 이 컨텍스트 내부에서 &lt;code class=&quot;language-text&quot;&gt;RoutingContext&lt;/code&gt;가 &lt;strong&gt;요청을 처리하는 데 사용할 수 있는 서비스를 찾는 데 필요한 매개변수를 보유&lt;/strong&gt;하고 있다.&lt;/p&gt;
+&lt;p&gt;Netty의 &lt;code class=&quot;language-text&quot;&gt;EventLoop&lt;/code&gt;가 client로부터 오는 모든 요청을 다 받는다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;gRPC는 NonBlocking으로 처리&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;REST는 Tomcat이 Blocking으로 처리&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;서블릿 스레드는 Armeria의 &lt;code class=&quot;language-text&quot;&gt;BlockingTaskExecutor&lt;/code&gt;이다&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;EventLoop&lt;/code&gt;가 해당 request를 처리하라는 작업을 &lt;code class=&quot;language-text&quot;&gt;BlockingTaskExecutor&lt;/code&gt;에게 위임&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;BlockingTaskExecutor&lt;/code&gt;에서 어댑터를 이용해 서블릿 컨테이너를 호출&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 448px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8943dd5097e3110b3ec831856ba0d15c/33b38/blockNonBlockThread.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 29.11392405063291%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIUlEQVR42j2R226DMBBE+ZwqbdpIfW2TEPAdGwyEkAC59v9/YardljxYa61nx+PjxAgBXZRQpsD3ZgepHa9cGuxyBaEsV+MC90mXCY00kwhVA1/W0Naz7nW5QuKUgg01ihCxSQUPksj5CG0D95XxKGPLezKZzWPToQg1pC7Y8H31iaRvOxzHG8bpjjJ26E8XjOcHjsOV98N0R9dPmC4/OI1XjOc7+tMZsTlgujwwTDd0/Yi2G7BJJRIr/xP6iO3uLyEloUrPc77i51OlHiXJhOHEtqhY0+yPrFm8fSDReQ7tSuYwM5yZkIgG1tvsyY4uJaYzO2JZtwc+e1ksyVBA2QBjPb7WKYRyzI645NLyEJlQj5KRQZopZkmpKUBV75+f8gtb2eD3ofA1IQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;blockNonBlockThread&quot;
+        title=&quot;&quot;
+        src=&quot;/static/8943dd5097e3110b3ec831856ba0d15c/33b38/blockNonBlockThread.png&quot;
+        srcset=&quot;/static/8943dd5097e3110b3ec831856ba0d15c/c26ae/blockNonBlockThread.png 158w,
+/static/8943dd5097e3110b3ec831856ba0d15c/6bdcf/blockNonBlockThread.png 315w,
+/static/8943dd5097e3110b3ec831856ba0d15c/33b38/blockNonBlockThread.png 448w&quot;
+        sizes=&quot;(max-width: 448px) 100vw, 448px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;EventLoopGroup - 여러 개의 EventLoop (+ EventQueue) - 여러 개의 Channel&lt;br&gt;
 EventLoop는 변경되지 않는 하나의 Thread로 움직이며,&lt;br&gt;
@@ -1649,6 +1688,43 @@ EventLoop는 변경되지 않는 하나의 Thread로 움직이며,&lt;br&gt;
 &lt;/li&gt;
 &lt;li&gt;한 개의 클라이언트의 메인 스레드에서 자식 스레드 여러 개를 서버에 요청 전송하여도 한 개의 서버 스레드가 처리한다.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;위와 같은 결과가 나오는 이유를 이해하려면 이벤트 루프, 멀티플렉싱에 대한 이해가 필요하다.&lt;br&gt;
+&lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%89%EC%8B%B1.md&quot;&gt;EventLoop와 멀티플렉싱에 대해 정리한 글&lt;/a&gt;을 참고하자&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;EventLoop는 단일 스레드로 요청과 응답을 처리하므로 해당 스레드를 블록하면 EventLoop 자체를 블록하는 것과 같다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/561da/blockingTaskExecutor.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 34.177215189873415%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVR42pWR3WrDMAyF/RxrkyWxHNuRf5t2aXYz2Pu/0xm2s8Jgg+7iQxISEudIpLziY//EFndIw5Dz8oOJDKSUmBVViAikuaKMe8wpzehHBRHiive3O1YfMVsHvQQYjjAcjjzALB7Guorl1p+tP+YaZXY2DkIbxnbd4YxHNxK6geqlykA49VPl5eDUy1Z346PXaLVgjsh5Q/AryLgqpVwrcgrnV/kH9GstzgMhXjb4fKsx5Bt8usKnGzissC5VeZNankKUrYYTrMtY/OXIU42kHSbFTy+rC4tXlhO0bWaXjxUvvmUUT//DF2hDynZ6gjGTAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;blockingTaskExecutor&quot;
+        title=&quot;&quot;
+        src=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/f058b/blockingTaskExecutor.png&quot;
+        srcset=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/c26ae/blockingTaskExecutor.png 158w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/6bdcf/blockingTaskExecutor.png 315w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/f058b/blockingTaskExecutor.png 630w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/40601/blockingTaskExecutor.png 945w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/561da/blockingTaskExecutor.png 969w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -1682,7 +1758,7 @@ EventLoop는 변경되지 않는 하나의 Thread로 움직이며,&lt;br&gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Armeria Server Thread가 생성되는 기준에 대한 이해&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Event Loop가 처리하는 기준&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만&lt;/li&gt;
 &lt;li&gt;11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다&lt;/li&gt;
@@ -1721,40 +1797,6 @@ EventLoop는 변경되지 않는 하나의 Thread로 움직이며,&lt;br&gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&quot;이벤트-루프에서-오래-걸리는-작업은-어떻게-처리하지&quot; style=&quot;position:relative;&quot;&gt;이벤트 루프에서 오래 걸리는 작업은 어떻게 처리하지?&lt;a href=&quot;#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%97%90%EC%84%9C-%EC%98%A4%EB%9E%98-%EA%B1%B8%EB%A6%AC%EB%8A%94-%EC%9E%91%EC%97%85%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%B2%98%EB%A6%AC%ED%95%98%EC%A7%80&quot; aria-label=&quot;이벤트 루프에서 오래 걸리는 작업은 어떻게 처리하지 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/561da/blockingTaskExecutor.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 34.177215189873415%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVR42pWR3WrDMAyF/RxrkyWxHNuRf5t2aXYz2Pu/0xm2s8Jgg+7iQxISEudIpLziY//EFndIw5Dz8oOJDKSUmBVViAikuaKMe8wpzehHBRHiive3O1YfMVsHvQQYjjAcjjzALB7Guorl1p+tP+YaZXY2DkIbxnbd4YxHNxK6geqlykA49VPl5eDUy1Z346PXaLVgjsh5Q/AryLgqpVwrcgrnV/kH9GstzgMhXjb4fKsx5Bt8usKnGzissC5VeZNankKUrYYTrMtY/OXIU42kHSbFTy+rC4tXlhO0bWaXjxUvvmUUT//DF2hDynZ6gjGTAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;blockingTaskExecutor&quot;
-        title=&quot;&quot;
-        src=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/f058b/blockingTaskExecutor.png&quot;
-        srcset=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/c26ae/blockingTaskExecutor.png 158w,
-/static/084f82f52f6b152b7a175bdb3bc733ab/6bdcf/blockingTaskExecutor.png 315w,
-/static/084f82f52f6b152b7a175bdb3bc733ab/f058b/blockingTaskExecutor.png 630w,
-/static/084f82f52f6b152b7a175bdb3bc733ab/40601/blockingTaskExecutor.png 945w,
-/static/084f82f52f6b152b7a175bdb3bc733ab/561da/blockingTaskExecutor.png 969w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;// BlockingTaskExecutor 설명 작성하기&lt;/p&gt;
 &lt;h1 id=&quot;소감과-무지-목록&quot; style=&quot;position:relative;&quot;&gt;소감과 무지 목록&lt;a href=&quot;#%EC%86%8C%EA%B0%90%EA%B3%BC-%EB%AC%B4%EC%A7%80-%EB%AA%A9%EB%A1%9D&quot; aria-label=&quot;소감과 무지 목록 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;proto를 작성해서 generate된 stub들을 이용하여 client ↔︎ server 스트림 통신을 테스트해보는 간단한 테스트 코드를 작성해보았다.&lt;br&gt;
 그리고 새로운 서비스를 개발할 때 다른 팀원들이 템플릿처럼 사용할 수 있도록 회사 레포에 등록해두었다.&lt;br&gt;
@@ -1762,7 +1804,7 @@ EventLoop는 변경되지 않는 하나의 Thread로 움직이며,&lt;br&gt;
 이 기술들을 한 번에 적용하기 보다는 &lt;a href=&quot;https://spring.io/blog/2015/03/22/using-google-protocol-buffers-with-spring-mvc-based-rest-services&quot;&gt;JSON을 proto로 바꿔보는 단계&lt;/a&gt;를 밟는것도 좋을 것 같다.&lt;/p&gt;
 &lt;p&gt;해당 프로젝트에는 처음 접하는 기술적인 키워드들이 많이 포함되어 있었고, 네트워크 지식이 부족하다고 느꼈다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;추가적으로 정리한 내용은 &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/Armeria_gRPC.md&quot;&gt;여기&lt;/a&gt;에서 볼 수 있다.&lt;/li&gt;
+&lt;li&gt;추가적으로 정리한 내용은 &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/Armeria_gRPC.md&quot;&gt;Armeria와 gRPC 정리&lt;/a&gt;에서 볼 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;무지 목록&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
