@@ -63,6 +63,13 @@
 <h1 id="Armeria와-Tomcat을-한-개의-포트로" style="position:relative;">Armeria와 Tomcat을 한 개의 포트로?<a href="#Armeria%EC%99%80-Tomcat%EC%9D%84-%ED%95%9C-%EA%B0%9C%EC%9D%98-%ED%8F%AC%ED%8A%B8%EB%A1%9C" aria-label="Armeria와 Tomcat을 한 개의 포트로 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>Armeria에서는 <a href="https://javadoc.io/doc/com.linecorp.armeria/armeria-javadoc/latest/com/linecorp/armeria/server/HttpService.html"><code class="language-text">javadoc</code> HttpService</a>로 Tomcat, gRPC 들을 추상화 해놓았다.<br>
 Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가시키기만 하면 된다.</p>
+<blockquote>
+<p>✋<br>
+Tomcat 포트를 직접 지정해주고 해당 포트로 REST 요청을 보내게되면 Armeria를 거치지 않고 바로 TomcatWebServer가 처리한다.<br>
+Tomcat 포트를 <code class="language-text">-1</code>로 지정하고 Armeria 포트만 지정해주면 Armeria가 REST 요청과 gRPC 요청 둘 다 처리하게 된다.<br>
+REST 요청과 gRPC 요청을 구분하는 방법이 궁금해서 조사한 결과는 EventLoop에서 반환되는 <code class="language-text">selectedKeys</code> 타입부터 서로 달랐다.<br>
+Tomcat 포트를 막고 Armeria만 실행시켜도 Socket이 2개가 열리는 것으로 추정된다.</p>
+</blockquote>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
@@ -138,8 +145,7 @@ Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가�
   </a>
     </span></p>
 <blockquote>
-<p>EventLoopGroup - 여러 개의 EventLoop (+ EventQueue) - 여러 개의 Channel<br>
-EventLoop는 변경되지 않는 하나의 Thread로 움직이며,<br>
+<p>EventLoop는 변경되지 않는 하나의 Thread로 움직이며,<br>
 작업 (Runnable 또는 Callable)을 EventLoop 구현으로 직접 제출해 즉시 또는 예약 실행할 수 있다.<br>
 구성과 사용 가능한 코어에 따라서는 리소스 활용을 최적화하기 위해 여러 EventLoop가 생성되고,<br>
 여러 Channel에 서비스를 제공하기 위해 단일 EventLoop가 할당되는 경우도 있다.</p>
