@@ -19,8 +19,7 @@ Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가�
 > ✋  
 > Tomcat 포트를 직접 지정해주고 해당 포트로 REST 요청을 보내게되면 Armeria를 거치지 않고 바로 TomcatWebServer가 처리한다.  
 > Tomcat 포트를 `-1`로 지정하고 Armeria 포트만 지정해주면 Armeria가 REST 요청과 gRPC 요청 둘 다 처리하게 된다.  
-> REST 요청과 gRPC 요청을 구분하는 방법이 궁금해서 조사한 결과는 EventLoop에서 반환되는 `selectedKeys` 타입부터 서로 달랐다.  
-> Tomcat 포트를 막고 Armeria만 실행시켜도 Socket이 2개가 열리는 것으로 추정된다.
+> 개인적인 궁금증으로는 REST 요청과 gRPC 요청을 어떤 기준으로 요청을 구분하는지 알아내고 싶었지만, 조사해보아도 알아내지 못 했다 ㅠ
 
 ![](flow.png)
 
