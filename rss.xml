@@ -1,4 +1,241 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 04 Jul 2023 13:31:40 GMT</lastBuildDate><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 10 Jul 2023 15:02:30 GMT</lastBuildDate><item><title><![CDATA[요청이 Controller에 도달하기까지]]></title><description><![CDATA[org.springframework.boot 3.0.3 org.apache.tomcat.embed:tomcat-embed-core 10.1.5  이미지 출처 Spring이 Request…]]></description><link>https://jdalma.github.io/2023y/springRequest/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/springRequest/</guid><pubDate>Sat, 08 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;org.springframework.boot 3.0.3&lt;/li&gt;
+&lt;li&gt;org.apache.tomcat.embed:tomcat-embed-core 10.1.5&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/84fb6a4a4df70b9484b8333c80d362d4/74d4a/architecture.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.848101265822784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNUlEQVR42k2Q2U6DQAAA+f+f8MnExEfTRKM28ehlW0uBFlZgoYgth5SFPWCXLWtqYuJkMh8wmvpHL7g6yY4SXqMTb1Un8q89q2rJOce0Y43qpJLyXCEV7zQhJBc9oUrwviUsOiB9409XwI3yAgsicJzHr7MX01m7gYNoVZRlWZcVK3GDtLmRAbdMkx4de4TYxy6PshoC054t1wvPGI/mT4Pl+3Azed6OHvzQs0BsBt56r1t7U7u60TMQKmCp7FB8Yw/CyIXJ40VwfenfDvX7O388IPEkCXdFkoZB7IDUcN03MNOhrgkheilPnCvZHY8kx6LEPHNXRwdEFnRDA34usnjqw60f2p7tbGFkGObK1+3U1s6f+r9fhNXVr1hUuCWkbRmhpKIYNQS1FDFaMVI3tKIUMYJ+AJlDRhz/lI4IAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;architecture&quot;
+        title=&quot;&quot;
+        src=&quot;/static/84fb6a4a4df70b9484b8333c80d362d4/f058b/architecture.png&quot;
+        srcset=&quot;/static/84fb6a4a4df70b9484b8333c80d362d4/c26ae/architecture.png 158w,
+/static/84fb6a4a4df70b9484b8333c80d362d4/6bdcf/architecture.png 315w,
+/static/84fb6a4a4df70b9484b8333c80d362d4/f058b/architecture.png 630w,
+/static/84fb6a4a4df70b9484b8333c80d362d4/40601/architecture.png 945w,
+/static/84fb6a4a4df70b9484b8333c80d362d4/78612/architecture.png 1260w,
+/static/84fb6a4a4df70b9484b8333c80d362d4/74d4a/architecture.png 2422w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://unluckyjung.github.io/spring/2022/03/12/Spring-Filter-vs-Interceptor/&quot;&gt;이미지 출처&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Spring이 Request를 처리하는 과정이 대충 &lt;code class=&quot;language-text&quot;&gt;HTTP 요청 ➔ WAS ➔ 필터 ➔ 서블릿 ➔ 스프링 인터셉터 ➔ 컨트롤러&lt;/code&gt; 이렇다 라는 것은 말하기 쉽지만 상세하게 설명하지 못하는 것 같아 직접 디버깅하며 조사해보려한다.&lt;/p&gt;
+&lt;h1 id=&quot;Tomcat-NIO&quot; style=&quot;position:relative;&quot;&gt;Tomcat NIO&lt;a href=&quot;#Tomcat-NIO&quot; aria-label=&quot;Tomcat NIO permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;Filter&quot; style=&quot;position:relative;&quot;&gt;Filter&lt;a href=&quot;#Filter&quot; aria-label=&quot;Filter permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 392px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bc4f11064fd3f7d8df25e92066d739de/0acb4/servletFilter.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 199.36708860759492%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAAACXBIWXMAAAsTAAALEwEAmpwYAAADf0lEQVR42qWWSU9jMRCE3/+/8wuQOHFhCyA4IAIRO4QsJGHf9z1AWHv0tVTBMSR5M2PJeo7tlLu7qttOLGhfX1/eae/v7/b8/GwfHx/N9ZeXF2s0Gj/2hi1pB3h9fW2vr69WqVRsenraZmZm/ICrqys7Oztr7k8NeHh46H1ubs4GBgZsbGzMjo6OrFgs2s7Oju/5/Pz8AZrEJ2hDvV63g4MDu729dcDNzU27uLiw4+PjZhhSWUgjTgDyJW7j4+N2cnLiceU3h2hvRwu1eHNzYw8PD/67Wq1aX1+fDQ4OOtjb25utr697PFMDYgENUvL5vHdA7u/vfZ5D8CA1IEzS9/b2rL+/3yYmJmx4eNjW1tYcaGFhwZ6entoDit0whrBZKpWcUcCwEmL4Mg8x4f/03+Q3puK2v7/v8evWwEqUAXd3dx4jdX4TS1ycnJy03d1dHzMX76VLSoliBmu4SocMjTt1DEFKl5eXtrW19Q2ITMKGNEI3OKBTe3x89Ji3AIZptLi4aENDQ+5qJpNxyYyOjnrGoEe+khCNMUS1AIbk4Arx4os8sBArEDudMQaoMdcCSAyIBZvCjbE+w8Y+EQFJhULhG5AiMDs7a/Pz815d6IhXY/0mp3/bNzU1ZeVyuVXYuCV2IQWrqXuMcZ09vb29XtIYSw3q8qytsIlJzL4KRldhK3U4BWsI+urqqp2enjop/EanWAwoY5EVF+YkLqpkApuXl5fdbckJAlgDXIeQEDFpLYCcrktI9W5jY8OWlpa8SMQCh92ugHERgD3KF8BxBqlutgXEDTruid2wSQFoFmtFWltA4kXcuIwgBDchgovp/Pzctre3/W6RpJR+bQFFCvFjTIyw6L9IkZuao0LncjmPJSD/TIrmKKykG7kq5rXeFRALeILIJVxUWkGEKg3hYEysOwLyZSPBhkHyli+xApwiwoGsK9YdAbEMAFmgBxPW0QGStBj/FSlq5PTKyoqTgpTCgpFK2OH7T5lCveOSR4+6jFKxDCCilUtYEGYHa+Q1nrCG2LtmCjEDgHiSFQASfOZ4H+K+XmFh+frxttGkNpF2PT09LXMcwLzun45vG7EMc7hM8HnL4CZzuMecWKb6pGI5fKTD6sjIiF9KfMM13t61Wq27DnnC6X3NI4kKwxyuImw6rmez2SZgePUm8Z2ANMhbLik6sgm/6rwmEH5s4R/xygB2NTBBUgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;servletFilter&quot;
+        title=&quot;&quot;
+        src=&quot;/static/bc4f11064fd3f7d8df25e92066d739de/0acb4/servletFilter.png&quot;
+        srcset=&quot;/static/bc4f11064fd3f7d8df25e92066d739de/c26ae/servletFilter.png 158w,
+/static/bc4f11064fd3f7d8df25e92066d739de/6bdcf/servletFilter.png 315w,
+/static/bc4f11064fd3f7d8df25e92066d739de/0acb4/servletFilter.png 392w&quot;
+        sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/cd/A97329_03/web.902/a95878/filters.htm&quot;&gt;이미지 출처&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-Chain-Of-Responsibility-%ED%8C%A8%ED%84%B4-%EC%99%84%EB%B2%BD-%EB%A7%88%EC%8A%A4%ED%84%B0%ED%95%98%EA%B8%B0&quot;&gt;책임 연쇄 패턴&lt;/a&gt;의 좋은 예이다.&lt;br&gt;
+다음 3가지 메소드를 구현해야 한다.&lt;/p&gt;
+&lt;p&gt;서블릿 컨테이너는 필터를 인스턴스화한 후 &lt;code class=&quot;language-text&quot;&gt;init()&lt;/code&gt;을 정확히 한 번 호출한다. (기본 구현은 NO-OP이다.)&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;doFilter()&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;urlPatterns&lt;/code&gt;에 맞는 모든 HTTP 요청이 &lt;strong&gt;디스패처 서블릿으로 전달되기 전에 웹 컨테이너에 의해 실행되는 메소드이다.&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;destory()&lt;/code&gt;는 Filter 인스턴스를 오프로드할 때 호출되며 수명주기동안 한 번만 호출된다. 실제로 언제 호출되는지는 확인해볼 수 없었지만, 해당 필터로 열린 자원들을 해제 작업을 하는 단계로 예상된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class SuccessFilter : Filter {
+
+    private val logger = SuccessFilter::class.logger()
+
+    override fun init(filterConfig: FilterConfig?) {
+        logger.info(&amp;quot;success filter - init(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
+    }
+
+    override fun doFilter(request: ServletRequest?, response: ServletResponse?, chain: FilterChain?) {
+        logger.info(&amp;quot;success filter - doFilter(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
+        chain?.doFilter(request, response)
+    }
+
+    override fun destroy() {
+        logger.info(&amp;quot;success filter - destroy(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
+    }
+}
+
+class ExceptionFilter : Filter {
+
+    private val logger = ExceptionFilter::class.logger()
+
+    override fun init(filterConfig: FilterConfig?) {
+        logger.info(&amp;quot;exception filter - init(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
+    }
+
+    override fun doFilter(request: ServletRequest?, response: ServletResponse?, chain: FilterChain?) {
+        logger.info(&amp;quot;exception filter - doFilter(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
+        throw FilterException(&amp;quot;FilterException 발생!!!&amp;quot;)
+    }
+
+    override fun destroy() {
+        logger.info(&amp;quot;exception filter - destroy(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
+    }
+}
+
+@Bean
+fun addSuccessFilter(): FilterRegistrationBean&amp;lt;Filter&amp;gt; {
+    return FilterRegistrationBean&amp;lt;Filter&amp;gt;(SuccessFilter()).apply {
+        this.addUrlPatterns(&amp;quot;/adviceTest&amp;quot;)
+    }
+}
+
+@Bean
+fun addExceptionFilter(): FilterRegistrationBean&amp;lt;Filter&amp;gt; {
+    return FilterRegistrationBean&amp;lt;Filter&amp;gt;(ExceptionFilter()).apply {
+        this.addUrlPatterns(&amp;quot;/adviceTest&amp;quot;)
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2&gt;Filter에서 예외가 발생하면?&lt;/h2&gt;
+&lt;deckgo-highlight-code   &gt;
+          &lt;code slot=&quot;code&quot;&gt;doFilter:39, ExceptionFilter (example.adviceTest)                               (5) 다섯 번째 CustomFilter
+internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
+doFilter:158, ApplicationFilterChain (org.apache.catalina.core)
+doFilter:21, SuccessFilter (example.adviceTest)                                 (4) 네 번째 CustomFilter
+internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
+doFilter:158, ApplicationFilterChain (org.apache.catalina.core)
+doFilterInternal:100, RequestContextFilter (org.springframework.web.filter)     (3) 세 번째 Filter
+doFilter:116, OncePerRequestFilter (org.springframework.web.filter)
+internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
+doFilter:158, ApplicationFilterChain (org.apache.catalina.core)
+doFilterInternal:93, FormContentFilter (org.springframework.web.filter)         (2) 두 번째 Filter
+doFilter:116, OncePerRequestFilter (org.springframework.web.filter)
+internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
+doFilter:158, ApplicationFilterChain (org.apache.catalina.core)
+doFilterInternal:201, CharacterEncodingFilter (org.springframework.web.filter)  (1) 첫 번째 Filter
+doFilter:116, OncePerRequestFilter (org.springframework.web.filter)
+internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
+doFilter:158, ApplicationFilterChain (org.apache.catalina.core)                 (0) FilterChain
+invoke:177, StandardWrapperValve (org.apache.catalina.core)                     (0.1)
+invoke:97, StandardContextValve (org.apache.catalina.core)
+invoke:542, AuthenticatorBase (org.apache.catalina.authenticator)
+invoke:119, StandardHostValve (org.apache.catalina.core)
+invoke:92, ErrorReportValve (org.apache.catalina.valves)
+invoke:78, StandardEngineValve (org.apache.catalina.core)
+service:357, CoyoteAdapter (org.apache.catalina.connector)
+service:400, Http11Processor (org.apache.coyote.http11)
+process:65, AbstractProcessorLight (org.apache.coyote)
+process:859, AbstractProtocol$ConnectionHandler (org.apache.coyote)
+doRun:1734, NioEndpoint$SocketProcessor (org.apache.tomcat.util.net)
+run:52, SocketProcessorBase (org.apache.tomcat.util.net)
+runWorker:1191, ThreadPoolExecutor (org.apache.tomcat.util.threads)
+run:659, ThreadPoolExecutor$Worker (org.apache.tomcat.util.threads)
+run:61, TaskThread$WrappingRunnable (org.apache.tomcat.util.threads)
+run:833, Thread (java.lang)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;결론적으로는 &lt;a href=&quot;https://www.theserverside.com/definition/embedded-Tomcat&quot;&gt;스프링 부트에서 톰캣이 내장&lt;/a&gt;되면서 Filter에서 예외가 나면 ControllerAdvice에서 잡아줄 수 있지 않을까 잠깐 생각했지만, 콜스택 &lt;code class=&quot;language-text&quot;&gt;(0.1)&lt;/code&gt;에서 예외를 처리한다. (이전에 호출되었던 Filter에게도 전파된다.)&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;try {
+    ...
+} ... {
+
+} catch (Throwable e) {
+    ExceptionUtils.handleThrowable(e);
+    container.getLogger().error(sm.getString(
+            &amp;quot;standardWrapper.serviceException&amp;quot;, wrapper.getName(),
+            context.getName()), e);
+    throwable = e;
+    exception(request, response, e); // ServletException을 처리한다.
+} finally {
+    ...    
+}
+
+private void exception(
+    Request request, 
+    Response response,
+    Throwable exception
+) {
+    request.setAttribute(RequestDispatcher.ERROR_EXCEPTION, exception);
+    response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+    response.setError();
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ApplicationFilterChain&lt;/code&gt;에서 Filter를 어떻게 호출할까?&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7accddca36298af11d64169554cf6f6e/cd78c/filterChain.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.21518987341772%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwElEQVR42pWPWQ7CMBBDcx2WNs3aNJQuQNOFcv/jGM1A+UJCfDw5TmYsR2jr0bYdQmygjGdyZZFJ/ZO8MB/dEJlU8D7A+AjjAsrqjDTdMc4P1luaWYdxYdK08l1/TbjcRlyHiX13GaBtCZFLjdIHWB9hffUOXDEtD4zzymFb4OZJ66bnANqhIlJZ7I8SonAlzk0H5SrsM8XfpaENGv7mjXudiUI77A45DlkBYWKN1LfoThF1PEHbwI//QM0ojBo+ASA1pIAp/T4MAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;filterChain&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7accddca36298af11d64169554cf6f6e/f058b/filterChain.png&quot;
+        srcset=&quot;/static/7accddca36298af11d64169554cf6f6e/c26ae/filterChain.png 158w,
+/static/7accddca36298af11d64169554cf6f6e/6bdcf/filterChain.png 315w,
+/static/7accddca36298af11d64169554cf6f6e/f058b/filterChain.png 630w,
+/static/7accddca36298af11d64169554cf6f6e/40601/filterChain.png 945w,
+/static/7accddca36298af11d64169554cf6f6e/cd78c/filterChain.png 1236w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;위의 이미지를 보면 &lt;code class=&quot;language-text&quot;&gt;ApplicationFilterChain&lt;/code&gt;은 등록된 Filter들을 내부 필드 &lt;code class=&quot;language-text&quot;&gt;ApplicationFilterConfig[]&lt;/code&gt; 배열로 참조하고 있다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;public void doFilter(ServletRequest request, ServletResponse response,FilterChain chain)&lt;/code&gt; 파라미터에 &lt;code class=&quot;language-text&quot;&gt;FilterChain&lt;/code&gt;을 전달하고 있다. (ApplicationFilterChaindms FilterChain를 구현하고 있다.)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;// ApplicationFilterChain 시각화하기&lt;/p&gt;
+&lt;h1 id=&quot;DispatcherServlet&quot; style=&quot;position:relative;&quot;&gt;DispatcherServlet&lt;a href=&quot;#DispatcherServlet&quot; aria-label=&quot;DispatcherServlet permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;Interceptor&quot; style=&quot;position:relative;&quot;&gt;Interceptor&lt;a href=&quot;#Interceptor&quot; aria-label=&quot;Interceptor permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2&gt;Interceptor에서 예외가 발생하면?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/jdalma/footprints/blob/main/spring/imgs/spring-mvc2/springInterceptorException.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
@@ -259,11 +496,90 @@
 혼자서 읽었으면 진작에 포기했을 것 같은데 다른 분들과 같이 질문을 준비하고 토론을 하면서 읽으니 잘 버틴 것 같다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;코틀린 스터디로 인해 13장까지 읽고 도중 하차하여 14,15,18,20장만 추후에 읽어야겠다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;데브옵스-핸드북&quot; style=&quot;position:relative;&quot;&gt;데브옵스 핸드북&lt;a href=&quot;#%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4-%ED%95%B8%EB%93%9C%EB%B6%81&quot; aria-label=&quot;데브옵스 핸드북 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;회사에서 &lt;a href=&quot;https://jdalma.github.io/2023y/cicd/&quot;&gt;혼자 진행하는 개선 작업&lt;/a&gt;을 하면서 데브옵스에 모르는 것이 많아 윤석님에게 추천 받았다.&lt;br&gt;
+(경험이 아직 부족해서 공감가는 내용이 많지 않았지만) 인상깊은 내용들도 많고, 실제 기업의 개선 사례도 설명해줘서 재밌었다.&lt;br&gt;
+주니어가 읽어도 좋지만 리드급이 읽으면 더 좋을 것 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;기술 부채를 해결하지 않는 조직은 일상 업무에서의 문제가 해결되지 않은 채로 작업을 하다가 부담이 가중돼 더 이상 새로운 작업을 완료할 수 없게 된다. &lt;strong&gt;즉, 기술 부채의 현재 이자만 상환하게 된다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;스페셜리스트보단 제네럴리스트가 되어라.&lt;/li&gt;
+&lt;li&gt;팀 규모를 작게 유지하라 (피자 두 판의 법칙)&lt;/li&gt;
+&lt;li&gt;&quot;자동화 테스팅 없이 코드를 작성하는 경우, 코드를 테스트하기 위해서는 더 많은 시간과 비용이 소비된다.&quot;&lt;/li&gt;
+&lt;li&gt;블루/그린 배포&lt;/li&gt;
+&lt;li&gt;교살자 애플리케이션 패턴 적용에 대한 사례&lt;/li&gt;
+&lt;li&gt;텔레메트리 중요성&lt;/li&gt;
+&lt;li&gt;넷플릭스의 카오스 몽키&lt;/li&gt;
+&lt;li&gt;비난 없는 포스트모템을 진행하고, 문서화하도록 하여 공유하라&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/%ED%85%8C%EC%8A%A4%ED%8A%B8.md&quot;&gt;테스트 코드에 대해&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;핵심은 문제를 빠르게 발견하고 수정하도록 빠른 피드백을 받을 수 있는 (기술적,인적) 환경을 만드는 것이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;코틀린-핵심-프로그래밍&quot; style=&quot;position:relative;&quot;&gt;코틀린 핵심 프로그래밍&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%ED%95%B5%EC%8B%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot; aria-label=&quot;코틀린 핵심 프로그래밍 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 26%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
 &lt;p&gt;오현석님의 &lt;strong&gt;코틀린 핵심 프로그래밍&lt;/strong&gt;이 출간되어 맹대표님 스터디에 참여하면서 읽게 되었다.&lt;/p&gt;
 &lt;h1 id=&quot;알고리즘-개정-4판&quot; style=&quot;position:relative;&quot;&gt;알고리즘 개정 4판&lt;a href=&quot;#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%A0%95-4%ED%8C%90&quot; aria-label=&quot;알고리즘 개정 4판 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;데일-카네기의-자기관리론&quot; style=&quot;position:relative;&quot;&gt;데일 카네기의 자기관리론&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC-%EC%B9%B4%EB%84%A4%EA%B8%B0%EC%9D%98-%EC%9E%90%EA%B8%B0%EA%B4%80%EB%A6%AC%EB%A1%A0&quot; aria-label=&quot;데일 카네기의 자기관리론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;중요한 일을 앞두고 스트레스를 많이 받았다.&lt;br&gt;
+준비해야 할 일을 하지 못하고 걱정과 잡생각만 하면서 계획조차 세우지 못했다.&lt;br&gt;
+윤석님이 정신적으로 힘들어하는 나를 보고 &quot;데일 카네기의 자기관리론&quot; 책을 빌려주셨다.&lt;br&gt;
+1장부터 나에게 너무 와닿아 재밌게 읽고 있다.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;인상 깊은 문구&lt;/summary&gt;
+&lt;h2&gt;걱정에 대해 알아야 할 기본 사실&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;첫 번째. 오늘에 충실하라&lt;/strong&gt;&lt;br&gt;
+모든 지적 능력과 정열을 다 동원해서 오늘 해야 할 일을 오늘 가장 잘하는 데 집중하는 것이 내일을 가장 잘 준비하는 길이다.&lt;br&gt;
+&apos;오늘만의 구획&apos;을 만들어라.&lt;br&gt;
+살아가는 단계마다 버튼을 눌러서 강철문이 과거, 즉 이제는 죽어버린 지난날을 격리하는 소리를 들으십시오.&lt;br&gt;
+또 다른 버튼을 눌러서 금속 막벽으로 미래, 즉 아직 태어나지 않은 내일을 격리하십시오.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;삶을 모래시계라고 생각하게나, 위에는 수천 개의 모래알이 있지만 그 모래알들은 천천히, 그리고 일정하게 잘록한 부분을 통과하지&quot;&lt;br&gt;
+&quot;아침에 일과를 시작할 때 우리가 그날 해야하는 것으로 보이는 일이 수백 개나 되지.&quot;&lt;br&gt;
+&quot;하지만 모래시계에서 모래알이 좁은 구멍을 지나가듯이. 한 번에 하나씩, 천천히, 그리고 일정하게 일을 처리하지 않으면 우리는 스스로의 육체적 혹은 정신적 상태를 무너뜨리게 되어 있어&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;우리가 살 수 있는 유일한 시간을 사는 것으로, 지금부터 잠자리에 드는 시간까지 사는 것으로 만족하기로 하자.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;자신의 짐이 아무리 무겁더라도 밤이 올 떄 까지라면 누구나 견딜 수 있다.&quot;&lt;br&gt;
+&quot;자기가 해야 할 일이 아무리 힘들더라도 하루동안이라면 누구나 할 수 있다.&quot;&lt;br&gt;
+&quot;해가 떨어질 때까지라면 누구나 달콤하게, 참을성 있게, 사랑스럽게, 순수하게 살 수 있다.&quot;&lt;br&gt;
+&lt;strong&gt;&quot;이것이 삶이 실제로 의미하는 전부이다.&quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;아래의 질문에 대답해보자.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;미래에 대한 걱정으로, 혹은 &apos;눈앞에 있는 장미보다 지평선 너머 어딘가에 있는 마법의 장미 정원&apos;을 고대하며 오늘을 사는 걸 미루는 경향이 있지는 않은가?&lt;/li&gt;
+&lt;li&gt;가끔 과거에 일어난 일, 이제는 지나버리고 어쩔 수 없는 일에 대해 후회하느라 괴로워한 적이 있는가?&lt;/li&gt;
+&lt;li&gt;아침에 일어나면서 오늘 하루 24시간을 최대한 활용할 결심을 하는가?&lt;/li&gt;
+&lt;li&gt;&apos;오늘 충실하게 생활&apos;함으로써 인생을 더 밀도 있게 살 수 있는가?&lt;/li&gt;
+&lt;li&gt;언제부터 이렇게 할 수 있는가? 다음 주? 내일? 오늘?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;두 번째. 걱정스런 상황을 해결하는 마법의 공식&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;사실을 직시해라. 걱정을 집어치워라. 해결하기 위해 행동하라&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1단계. 스스로에게 &lt;code class=&quot;language-text&quot;&gt;&quot;일어날 수 있는 최악은 어떤 것인가?&quot;&lt;/code&gt; 물어보라.&lt;br&gt;
+2단계. 필요한 경우 최악을 받아들일 준비를 하라.&lt;br&gt;
+3단계. 침착하게 최악의 상황을 개선하기 위해 노력하라.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;세 번째. 걱정이 미치는 효과&lt;/strong&gt;&lt;br&gt;
+걱정을 할 경우 얼마나 큰 건강상의 대가를 치러야하는지 기억하라&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;걱정에 대처할 줄 모르는 사업가는 오래 살지 못한다.&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;걱정-분석의-기본-테크닉&quot; style=&quot;position:relative;&quot;&gt;걱정 분석의 기본 테크닉&lt;a href=&quot;#%EA%B1%B1%EC%A0%95-%EB%B6%84%EC%84%9D%EC%9D%98-%EA%B8%B0%EB%B3%B8-%ED%85%8C%ED%81%AC%EB%8B%89&quot; aria-label=&quot;걱정 분석의 기본 테크닉 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;사실을 확인하라. 세성 걱정 가운데 절반은 무엇을 근거로 결정을 내려야 할지 충분히 알지도 못한 채 결정을 내리려고 하는 사람들이 만든 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1단계. 내가 걱정하고 있는 것을 정확하게 적는다.&lt;br&gt;
+2단계. 그것에 대해 내가 할 수 있는 것을 적는다.&lt;br&gt;
+3단계. 어떻게 할지 결정한다.&lt;br&gt;
+4단계. 결정을 즉작적으로 실행에 옮긴다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;일단 결정이 내려지고 실행할 일만 남아 있다면, 결과에 대한 책임감과 관심은 조금도 남김없이 엊어버려라.&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;걱정하는-습관을-없애는-방법&quot; style=&quot;position:relative;&quot;&gt;걱정하는 습관을 없애는 방법&lt;a href=&quot;#%EA%B1%B1%EC%A0%95%ED%95%98%EB%8A%94-%EC%8A%B5%EA%B4%80%EC%9D%84-%EC%97%86%EC%95%A0%EB%8A%94-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;걱정하는 습관을 없애는 방법 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;바쁘게 움직여라. 걱정하는 사람이 절망의 늪에 빠지지 않으려면 행동에 몰두해야만 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;비참해지게 되는 비결은 자신이 행복한지 아닌지 고민할 여유를 가지는 것이다.&quot;&lt;br&gt;
+우리들은 &apos;인간&apos;에게 닥쳐오는 보기 드물 정도로 심한 폭풍우나 혹은 번개와 같은 자연재해는 잘 견뎌내고도 조그만 딱정벌레, 손가락으로도 간단히 죽일 수 있을 정도로 아주 조그만 &apos;걱정&apos;이라는 딱정벌레에 우리 마음을 잠식당하고 있지 않은가?&lt;br&gt;
+우리가 무시하고 잊어버려야 할 만한 사소한 일이 우리 속을 뒤집어 놓도록 놔두지 말라.&lt;br&gt;
+&quot;인생은 사소한 일에 신경 쓰기에는 너무나 짧다.&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/details&gt;
 &lt;h1 id=&quot;이너게임&quot; style=&quot;position:relative;&quot;&gt;이너게임&lt;a href=&quot;#%EC%9D%B4%EB%84%88%EA%B2%8C%EC%9E%84&quot; aria-label=&quot;이너게임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[코틀린의 함수는 어떻게 구현될까?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/kotlinFunction/kotlinFunction/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/kotlinFunction/kotlinFunction/</guid><pubDate>Fri, 12 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;의문&quot; style=&quot;position:relative;&quot;&gt;의문&lt;a href=&quot;#%EC%9D%98%EB%AC%B8&quot; aria-label=&quot;의문 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 26%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
 &lt;p&gt;이 글을 쓰게된 계기는 위의 스터디를 진행하면서 &lt;code class=&quot;language-text&quot;&gt;자바의 함수 개념과 코틀린의 함수 개념은 완전히 다르다.&lt;/code&gt;라는 얘기가 나왔다.&lt;br&gt;
