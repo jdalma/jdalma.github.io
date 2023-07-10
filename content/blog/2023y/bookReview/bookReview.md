@@ -104,9 +104,13 @@ tags:
   
 추가로 [오현석](http://www.yes24.com/24/AuthorFile/Author/192002)님이 코틀린 핵심 프로그래밍 책을 내신다고 하셨다.  
 
-# RealMySQL 1권
+***
+
+# RealMySQL 1권 ~ing
 
 [정리](https://github.com/jdalma/footprints/tree/main/real-mysql)를 하면서 읽고있다.  
+
+***
 
 # 한 권으로 읽는 컴퓨터 구조와 프로그래밍
 
@@ -137,6 +141,8 @@ tags:
   
 처음 접한다면 모르는 기술적인 단어들이 많이 나와서 스프링과 자바에 익숙하지 않다면 힘들수도 있을 것 같긴 하지만  
 **스프링 부트의 컨셉과 구성 정보를 관리하는 구조에 대해 알 수 있어 굉장히 좋은 강의였다.**  
+
+***
 
 # 내 생에 단 한 번
 
@@ -212,6 +218,8 @@ tags:
 
 </details>
 
+***
+
 # HTTP 완벽 가이드
 
 해당 책의 스터디는 [이슈 기반](https://github.com/SeolYoungKim/http-definitive-guide-study/issues?q=is%3Aissue+is%3Aclosed)으로 진행되었다.  
@@ -231,6 +239,8 @@ tags:
 혼자서 읽었으면 진작에 포기했을 것 같은데 다른 분들과 같이 질문을 준비하고 토론을 하면서 읽으니 잘 버틴 것 같다.  
   
 **코틀린 스터디로 인해 13장까지 읽고 도중 하차하여 14,15,18,20장만 추후에 읽어야겠다.**  
+
+***
 
 # 데브옵스 핸드북
 
@@ -252,13 +262,21 @@ tags:
   
 **핵심은 문제를 빠르게 발견하고 수정하도록 빠른 피드백을 받을 수 있는 (기술적,인적) 환경을 만드는 것이다.**  
 
-# 코틀린 핵심 프로그래밍
+***
+
+# 코틀린 핵심 프로그래밍 ~ing
 
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&show_text=true&width=500" width="500" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
 오현석님의 **코틀린 핵심 프로그래밍**이 출간되어 맹대표님 스터디에 참여하면서 읽게 되었다.   
 
+***
+
 # 알고리즘 개정 4판
+
+코딩테스트 통과를 위한 알고리즘 공부는 문제에서 힌트를 얻거나 어떤 알고리즘을 쓸지 (대충) 시간복잡도를 고민해보는 정도에 그쳤다.  
+
+***
 
 # 데일 카네기의 자기관리론
 
@@ -309,7 +327,7 @@ tags:
 
 > "걱정에 대처할 줄 모르는 사업가는 오래 살지 못한다."  
  
-# 걱정 분석의 기본 테크닉
+## 걱정 분석의 기본 테크닉
 
 **사실을 확인하라. 세성 걱정 가운데 절반은 무엇을 근거로 결정을 내려야 할지 충분히 알지도 못한 채 결정을 내리려고 하는 사람들이 만든 것이다.**  
   
@@ -320,7 +338,7 @@ tags:
 
 > "일단 결정이 내려지고 실행할 일만 남아 있다면, 결과에 대한 책임감과 관심은 조금도 남김없이 엊어버려라."
 
-# 걱정하는 습관을 없애는 방법
+## 걱정하는 습관을 없애는 방법
 
 **바쁘게 움직여라. 걱정하는 사람이 절망의 늪에 빠지지 않으려면 행동에 몰두해야만 한다.**  
 
@@ -330,5 +348,7 @@ tags:
 > "인생은 사소한 일에 신경 쓰기에는 너무나 짧다."
 
 </details>
+
+***
 
 # 이너게임
