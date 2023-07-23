@@ -20,4 +20,4 @@ tags:
 
 ***
 
-![](recoverErroStatus.png)
+![](recoverErrorStatus.png)
