@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tags-js","path":"/tags/replication/","result":{"data":{"site":{"siteMetadata":{"title":"코딩 주머니"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/2023y/mysqlReplication/"},"frontmatter":{"title":"MySQL RW 분리하기"}}}]}},"pageContext":{"tag":"Replication"}},"staticQueryHashes":["3589320610"],"slicesMap":{}}

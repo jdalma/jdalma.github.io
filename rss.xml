@@ -1,4 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 18 Jul 2023 13:05:13 GMT</lastBuildDate><item><title><![CDATA[요청이 Controller에 도달하기까지]]></title><description><![CDATA[org.springframework.boot 3.0.3 org.apache.tomcat.embed:tomcat-embed-core 10.1.5  이미지 출처 Spring이 Request…]]></description><link>https://jdalma.github.io/2023y/springRequest/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/springRequest/</guid><pubDate>Sat, 08 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Jul 2023 15:59:52 GMT</lastBuildDate><item><title><![CDATA[MySQL RW 분리하기]]></title><link>https://jdalma.github.io/2023y/mysqlReplication/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/mysqlReplication/</guid><pubDate>Mon, 24 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/625499e24753f4504dbdafa704c8d8bb/d7ab4/structure.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8ElEQVR42nWSzW7TUBCF8xJIrNiwQ2LBgh1LnoEdz8KCBRIvUkGBBSqoC9ggIopo2rpNcdw4cUjaxPm1XTu+sXM9H7qOW6pKjDSaq9GZc2fmTI1bJvIvXvlaF2Xuzfsj7j9+zr1Hz3j5eqfMaa0RkWts7f9kcpUti4xtvfvF3YdPufPgCS9evS1zRaFLjPGS0BQWRVGySFGU7w2ZsM6FtYa8qun2Ej7sNNn+aGGdzkrCPBPWa0qssesO5dboKhWWCahwhVqkpAoKpSHNQGkkzkmDFUptsCqFJIbadDqhYVkQhQTWEf39BmuvR3q52RtnNlgNEI0MLxieWhzXXVxrAZOhaa1qRvDaUHNaLb7v7dH5Uefzp29s1ds0d7+g/RAJA2Q0QuYLCs8D36elhNHIRuURkqTIaoWupnJtoWb2Zizuuuzs1tk+6HOy+xV98BtZqc26lwkShTDokbbbZM4JdGzEfGLmjGOjNx3H7NCIYhjDgEVjn97PPfKuh5otwWnByGfZcWkfHGI3FqhRBHEEUczg5BB736N/GoOa4jqVyqXCNwQxTadBBvMJXAxYjcd4lxHhxCG7gTxPFJNpjyj0IZnhtipCqY6vPKEqpilk5qgzYdkZ0G2ekZ8dk5/7ZOdj9HBC3/nD3G6iu23yWUQQwF9lpPBJt3PNeAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;structure&quot;
+        title=&quot;&quot;
+        src=&quot;/static/625499e24753f4504dbdafa704c8d8bb/f058b/structure.png&quot;
+        srcset=&quot;/static/625499e24753f4504dbdafa704c8d8bb/c26ae/structure.png 158w,
+/static/625499e24753f4504dbdafa704c8d8bb/6bdcf/structure.png 315w,
+/static/625499e24753f4504dbdafa704c8d8bb/f058b/structure.png 630w,
+/static/625499e24753f4504dbdafa704c8d8bb/40601/structure.png 945w,
+/static/625499e24753f4504dbdafa704c8d8bb/d7ab4/structure.png 1014w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2a57c58307e6513ae6d5cd7da5859f98/76823/beforeErrorStatus.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 86.70886075949367%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADaElEQVR42m2T20scdxTH928oUukFStOQaKPxktW4q/G2XTe6trEQoX3tswir8TnQ10IpfbKktK40tbWl/QcCKRQCabDpQ9FdY+reZu9z29mZvc5+yv5G4wUPnDm/85s5H75zfufnarVatK1arfLVl18QCoVYXV1laWmJlZUV1u7dY21tjeXlZcLhTba3fyEUWhHffP71OvfXN9iN7guGbdu4joEt26ZiatRqNSyrIrxarXHaalWLqmW0S4W3ahZ21XTqxaN1AmzT0/kiZrlMuaRR0hRMQxNrTSmiqzJKLkUmcYBeTGPpBRHVbIKmbTvQ80Bd0zAMg7z0H3npkIpeoFaW0QsSWjpKWc2jFTOUtQJWScZQchhqQdReCCwUCpimSUmThTpHoYpZUjF0BflIYUnOUDFkoVDJxmk0GqL+bA9bLSzLolKpUK3VRf8q57xaKdOsmTSO3K5b2I3qmT6fAV7kzjvnl8plk5SUIZ3JIkkZDhMpYvEUiUSSWDxBOp3BdQw7bcd5s9kUp96oN0S+vf07vX1e/DMLzM4vEvDN45sKMj4ZxDM6wyeffuYovEhV28yywcuXMfYO6iLfCP/Iax2XGLgxjm9mgcDkLEMDo7zf6+Gdd6/jD3zsKORkkhxlto2qyBymc8RyabRMROyHN7fofOMKE1NB/IEFJqbnuen1c2NokqvdQ8wGF3G1b8h+JMrzfytIaRNVLZJMpdBUlUq9gVo2sC35lcI33+5m+oOPmJ27K6Jn1M/wyLQA3p676yiMaSWwJCKRXSRJ4rzZR1FRVHZ3IxwexonHkyJGoy+I7h+wtxcVueunn3/jQXiLX7d+YHPzITs7z9F17RzSaUf7OhZlmWJRJp8vkM7kyOby5HIF4e21q3/wFoPucbp6PHR0Xubx4z+p1+skkylyGYlINEUs6WC/33jI1W43U74P8c3cwTceYMzrZ2jEh3dsBvfwFK6ePi+e6x6G+710vtXFo0d/ODNnGLyQsqSyMfR8TOytf/MdHa+/Jwp9/jsEJm7jHhiju2eEK11uuq/dxPX0rx2ePfubnZ1/ePLkKbKsnIxNw0Y3VGxLeQVsn/Lk9LwA3poKMuL1M+ieoG9gjGu9ntNjc3awT89jo+msH3wb5tLlfnHCc8FFMTresQDDIz7aresfHOd/9mph+b2h8lUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;beforeErrorStatus&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2a57c58307e6513ae6d5cd7da5859f98/f058b/beforeErrorStatus.png&quot;
+        srcset=&quot;/static/2a57c58307e6513ae6d5cd7da5859f98/c26ae/beforeErrorStatus.png 158w,
+/static/2a57c58307e6513ae6d5cd7da5859f98/6bdcf/beforeErrorStatus.png 315w,
+/static/2a57c58307e6513ae6d5cd7da5859f98/f058b/beforeErrorStatus.png 630w,
+/static/2a57c58307e6513ae6d5cd7da5859f98/40601/beforeErrorStatus.png 945w,
+/static/2a57c58307e6513ae6d5cd7da5859f98/76823/beforeErrorStatus.png 1038w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b6b48b66a87b94a079750675d465e650/7ef4c/afterErrorStatus.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.632911392405056%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJklEQVR42l2Sy2sUQRDG948QPAhCUAQPXhQxCEExJyU30WM8SUAvGhFfaNSTf4YgQYV4EA0ECRgSCZiVIEYiEfPah7MzOzM7j55XT8/8ZGbixtjQXUXR9dVXVV+Nf06e58VbOJBlVTCVmOsb6I3fhIZBd3WN1q9twm4Xr9lGhSF5PxdqSRyTpinZTqDEYvfmWUYqBMowkL5PYlkoyyQpfM/nf0I1y7TodDQ2NzdoNhvYRgfnxwru96+4P1dRKq0+u85upm1jtJpMT79l9sMMiwtzRGFQMfQ8l5XlOvMfZ1n8NEd77Ru9z/OYczPY9YU+IJ5bjiHfwUzCAL29jdFp0dWapDL+C+jhOQ6REIjCt22k5yBMHd/UyfMM3/dpb6yXLGSS4Dg9iryiWJrEe1tWWUYUR/iBQAQBBeO25hImxQwrPoHw6WqbRJ6FsDUco4FndVCRS+zbe+ZYQ0pk0ZXKy2pmz0U3NJRM+ouSUhLHqtxYnqkytrS0zLXr49x/8JS7dx5xc/wet24/pBZtbdF48oyt55P4oSBV1X7Nrk69/gVN0wgTiWUKVKrQCumYDpOTU+zbf5hTg8OcPjHEwMAxDh05Ti3zBRgdolYT13EJAp9er2CdE8cRcRzz4uUUExOPef3qDWlWsX7/bpqTg8NcvDTK+ZHLDJ25wNlzI9SopFwepRS6ZWMYWqm/MpZlXBkd4+CBo1wdu9HXqpQpnucjRFBa1/VK+wfV5dbOHsMUMAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;afterErrorStatus&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b6b48b66a87b94a079750675d465e650/f058b/afterErrorStatus.png&quot;
+        srcset=&quot;/static/b6b48b66a87b94a079750675d465e650/c26ae/afterErrorStatus.png 158w,
+/static/b6b48b66a87b94a079750675d465e650/6bdcf/afterErrorStatus.png 315w,
+/static/b6b48b66a87b94a079750675d465e650/f058b/afterErrorStatus.png 630w,
+/static/b6b48b66a87b94a079750675d465e650/40601/afterErrorStatus.png 945w,
+/static/b6b48b66a87b94a079750675d465e650/78612/afterErrorStatus.png 1260w,
+/static/b6b48b66a87b94a079750675d465e650/7ef4c/afterErrorStatus.png 1748w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;recoverErroStatus.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[요청이 Controller에 도달하기까지]]></title><description><![CDATA[org.springframework.boot 3.0.3 org.apache.tomcat.embed:tomcat-embed-core 10.1.5  이미지 출처 Spring이 Request…]]></description><link>https://jdalma.github.io/2023y/springRequest/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/springRequest/</guid><pubDate>Sat, 08 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;org.springframework.boot 3.0.3&lt;/li&gt;
 &lt;li&gt;org.apache.tomcat.embed:tomcat-embed-core 10.1.5&lt;/li&gt;
 &lt;/ul&gt;
@@ -386,7 +486,7 @@ private void exception(
 &lt;h1 id=&quot;내-생에-단-한-번&quot; style=&quot;position:relative;&quot;&gt;내 생에 단 한 번&lt;a href=&quot;#%EB%82%B4-%EC%83%9D%EC%97%90-%EB%8B%A8-%ED%95%9C-%EB%B2%88&quot; aria-label=&quot;내 생에 단 한 번 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;동욱님의 &lt;a href=&quot;https://jojoldu.tistory.com/715?category=689637&quot;&gt;나를 위해 남을 도와주기&lt;/a&gt; 게시글에서 &lt;code class=&quot;language-text&quot;&gt;내 생에 단 한 번&lt;/code&gt; 책의 내용중 한 챕터로 예를 들어주셨는데 책의 내용이 너무 마음에 들어 바로 구매하고 읽어보았다.&lt;/p&gt;
 &lt;details&gt;
-&lt;summary&gt;인상 깊은 문구&lt;/summary&gt;
+&lt;summary&gt;내용&lt;/summary&gt;
 &lt;!-- summary 아래 한칸 공백 두어야함 --&gt;
 &lt;blockquote&gt;
 &lt;p&gt;남들은 멀쩡히 잘도 걸어다니는데 왜 하필이면 나만 목발에 의지해야 하고,&lt;br&gt;
@@ -529,10 +629,21 @@ private void exception(
 &lt;h1 id=&quot;데일-카네기의-자기관리론&quot; style=&quot;position:relative;&quot;&gt;데일 카네기의 자기관리론&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC-%EC%B9%B4%EB%84%A4%EA%B8%B0%EC%9D%98-%EC%9E%90%EA%B8%B0%EA%B4%80%EB%A6%AC%EB%A1%A0&quot; aria-label=&quot;데일 카네기의 자기관리론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;중요한 일을 앞두고 스트레스를 많이 받았다.&lt;br&gt;
 준비해야 할 일을 하지 못하고 걱정과 잡생각만 하면서 계획조차 세우지 못했다.&lt;br&gt;
-윤석님이 정신적으로 힘들어하는 나를 보고 &quot;데일 카네기의 자기관리론&quot; 책을 빌려주셨다.&lt;br&gt;
-1장부터 나에게 너무 와닿아 재밌게 읽고 있다.&lt;/p&gt;
+윤석님이 정신적으로 힘들어하는 나를 보고 &quot;데일 카네기의 자기관리론&quot; 책을 빌려주셨다.&lt;/p&gt;
+&lt;p&gt;데일 카네기는 &quot;인간관계론&quot;으로 처음 알게 됐다. &quot;인간관계론&quot;이나 &quot;자기관리론&quot;이나 뭔가 엄청 대단한 정보를 전달해주기 보다는 읽으면 당연한 것이라고 생각하지만 평소에 놓치고 있는 것들, 깊게 생각하지 않은 것들을 상기시켜주는 내용이라고 느꼈다.&lt;br&gt;
+1장을 읽고 공감을 하나도 하지 못한다면 &quot;당연하고 진부한 이야기들을 왜 말하지?&quot;라고 생각할 수 있다.&lt;br&gt;
+책에서도 말하지만 위와 같은 생각이 든다면 책을 다 읽게 되더라도 얻는 것은 없으니 책을 쓰레기통에 버리라고 한다.&lt;br&gt;
+난 엄청 재밌게 읽은 것 같다. 출퇴근 시간에 책 읽을 생각에 조금 신난 적도 있다.&lt;br&gt;
+&lt;strong&gt;평소에 걱정이나 불안을 달고 살거나, 과거나 미래에 집착하고 있다면 이 책을 읽으라고 추천하고 싶다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;아래는 가장 인상 깊은 내용이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;그 어떤 일이라 해도 그 사람이 무한한 열정을 가진 일이기만 하면 그는 성공할 수 있다.&quot;&lt;br&gt;
+&quot;자신의 일에서 보수 이외에 다른 아무런 보람도 얻지 못하는 사람이 가장 불쌍한 사람이라고 생각합니다.&quot;&lt;br&gt;
+&lt;strong&gt;&quot;자신의 천직을 찾아낸 사람은 축복 받은 사람이다. 더 이상의 축복은 바라지 마라&quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;개발을 시작하게 된 것이 나에게 축복이지 않을까? 평소에 좋아하던 것들을 버리고 이렇게 매진할 수 있다니 나도 축복받은 것이지 않을까?라고 생각했다.&lt;/p&gt;
 &lt;details&gt;
-&lt;summary&gt;인상 깊은 문구&lt;/summary&gt;
+&lt;summary&gt;내용&lt;/summary&gt;
 &lt;h2&gt;걱정에 대해 알아야 할 기본 사실&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;첫 번째. 오늘에 충실하라&lt;/strong&gt;&lt;br&gt;
 모든 지적 능력과 정열을 다 동원해서 오늘 해야 할 일을 오늘 가장 잘하는 데 집중하는 것이 내일을 가장 잘 준비하는 길이다.&lt;br&gt;
@@ -655,13 +766,16 @@ private void exception(
 비판이 정당한지 칭찬이 정당한지는 신경도 쓰지 않는다.&lt;br&gt;
 인간은 논리적인 존재가 아니다. 인간은 감정적인 존재이다. 인간의 논리란 깊고 캄캄하며 폭풍이 몰차이는 감정이라는 바다 한가운데서 이리저리 흔들리는 작은 카누에 불과하다.&lt;br&gt;
 누군가 나를 비판한다면 방어하려고 애쓰지 말자. 겸손하면서 재치있는 방법을 쓰자.&lt;/p&gt;
-&lt;h2&gt;걱정과 피로를 막고 활력과 의욕을 고취시키는 6가지 방법&lt;/h2&gt;
+&lt;h2&gt;걱정과 피로를 막고 활력과 의욕을 고취시키는 방법&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;&quot;휴식을 자주 취하라. 여러분의 심장이 그렇듯이 지치기 전에 휴식을 취하라.&quot;&lt;/li&gt;
-&lt;li&gt;&quot;정신병리학자들의 말에 따르면 대부분의 피로는 우리의 정신적, 감정적 태도에서 생긴다. 우리가 피로해지는 것은 우리의 감정들이 육체에 신경성 긴장 상태를 유발하기 때문이다. 걱정과 긴장, 감정적 동요가 피로를 유발하는 3대 요인이다.&quot;&lt;/li&gt;
-&lt;li&gt;&quot;&quot;&lt;/li&gt;
+&lt;li&gt;&quot;긴장을 풀고 일하는 법을 배워라.&quot;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&quot;정신병리학자들의 말에 따르면 대부분의 피로는 우리의 정신적, 감정적 태도에서 생긴다. 우리가 피로해지는 것은 우리의 감정들이 육체에 신경성 긴장 상태를 유발하기 때문이다. 걱정과 긴장, 감정적 동요가 피로를 유발하는 3대 요인이다.&quot;&lt;br&gt;
+3. &quot;우리의 삶은 우리가 생각하는대로 만들어진다.&quot;&lt;br&gt;
+4. &quot;걱정과 피로를 막기위해 일에 열정을 쏟아라.&quot;&lt;br&gt;
+5. &quot;수면 부족보다 불면증에 대한 걱정이 더 나쁜 영향을 미친다.&quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/details&gt;
 &lt;hr&gt;
