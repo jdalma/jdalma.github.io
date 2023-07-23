@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Jul 2023 16:03:57 GMT</lastBuildDate><item><title><![CDATA[MySQL RW 분리하기]]></title><description><![CDATA[테스트]]></description><link>https://jdalma.github.io/2023y/mysqlReplication/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/mysqlReplication/</guid><pubDate>Mon, 24 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;테스트&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Jul 2023 16:06:29 GMT</lastBuildDate><item><title><![CDATA[MySQL RW 분리하기]]></title><description><![CDATA[테스트]]></description><link>https://jdalma.github.io/2023y/mysqlReplication/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/mysqlReplication/</guid><pubDate>Mon, 24 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;테스트&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -99,7 +99,37 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;recoverErroStatus.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[요청이 Controller에 도달하기까지]]></title><description><![CDATA[org.springframework.boot 3.0.3 org.apache.tomcat.embed:tomcat-embed-core 10.1.5  이미지 출처 Spring이 Request…]]></description><link>https://jdalma.github.io/2023y/springRequest/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/springRequest/</guid><pubDate>Sat, 08 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d04257b968359383e520fc0e1a61a36e/146da/recoverErrorStatus.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 71.51898734177216%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVR42o2Ta0sUURzG93NEEBWEFl4yuuimUFoKmVAv+poh+cIk01T6AGLkJUx32t2538+cmXFnfnHOrrK+iR54+J9zZuY5z/8yDYAyF0RemyCMMC1L07YdZJ6TSUWJlJI8L8jz/j7L+mdS5pRlqWSo65qGWqiPOpZNoV4WCVLExKGPSCKyNEJmKWkS45ktXNNAJh6lCBGhQ2i1KMv8umBRFPi+j5QZnmngmH/IkoBCRKSRp4VSlYHTxrcM0sBChLaOkduhLIrrgioN13XJsgy7fYZn/UFELjLxEbFPaBvEtnLXwumckyjByNFi6rI8l/Sqil6vd11QRZkJnaJIE0QaI5KYNEkQIkVGNiK0qPMILlLqIqZMXYahBauq0oW9uLgYsKdZDvYKpmny7dsue3vf2dnZY2Njk88bX9jc3Obr1g7b23tsbe3SUGJVVVPXXNWhHmx81+bouIUXwOrqOrfujPPw0RxzL94wO7tIc3qeyalZfTY+2WRsotl32Ed1JaSgunrWtehYHbI05OPqOjdujmqBhcV3LM0vMzf1nPtj04yMPuHeyGMt2vh1csjhUYo7KIXqtmEY2GaXTpRy1j0HHFY/KcERmrNLzL9a0S7nXi4z3XylLxmbmGH0wVMahmXRbnc5Ommxv79PEAR6jK4wML22ts7tuxO8XFjhzdsPLC69Z6b5mmczC1pQuVOxcWB65P4xqXvGj59HehYvGzWsqiZA/T2+HxCGEUEY4jgulu3oqOi63nAN+1Dpqo4qJElM4AsywX+jUemuVpqXUDPZahm0jXN+nTqcGpV2qVxfToFif0KuszE8JsPrPBMcdD08+4Qy+q1L2X9W/9PhX/oS4pBM3ipjAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;recoverErrorStatus&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d04257b968359383e520fc0e1a61a36e/f058b/recoverErrorStatus.png&quot;
+        srcset=&quot;/static/d04257b968359383e520fc0e1a61a36e/c26ae/recoverErrorStatus.png 158w,
+/static/d04257b968359383e520fc0e1a61a36e/6bdcf/recoverErrorStatus.png 315w,
+/static/d04257b968359383e520fc0e1a61a36e/f058b/recoverErrorStatus.png 630w,
+/static/d04257b968359383e520fc0e1a61a36e/146da/recoverErrorStatus.png 943w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[요청이 Controller에 도달하기까지]]></title><description><![CDATA[org.springframework.boot 3.0.3 org.apache.tomcat.embed:tomcat-embed-core 10.1.5  이미지 출처 Spring이 Request…]]></description><link>https://jdalma.github.io/2023y/springRequest/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/springRequest/</guid><pubDate>Sat, 08 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;org.springframework.boot 3.0.3&lt;/li&gt;
 &lt;li&gt;org.apache.tomcat.embed:tomcat-embed-core 10.1.5&lt;/li&gt;
 &lt;/ul&gt;
