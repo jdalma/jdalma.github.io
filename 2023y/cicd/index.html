@@ -201,7 +201,7 @@
 <p><strong>서비스 기준 통합 테스트에 비해 개발 비용은 낮을 것으로 예상되며, mock을 사용하지 않는 만큼 테스트에 대한 신뢰는 올라가지만, 개인적인 작업 환경을 구축하기는 힘들다.</strong></p>
 </blockquote>
 <p><strong>인프라 기준 통합 테스트</strong> 구축을 위한 통합 테스트를 실행하고, 테스트 케이스를 관리하는 여러 방법을 찾아보자.</p>
-<h3>Jenkins + Postman (+ newman)</h3>
+<h3 id="jenkins--postman--newman" style="position:relative;">Jenkins + Postman (+ newman)<a href="#jenkins--postman--newman" aria-label="jenkins  postman  newman permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>Postman의 테스트 스크립트를 이용하여 JSON파일로 만들고, 해당 JSON파일을 프로젝트 내에 위치시키고 Jenkins에서 newman을 실행시켜 보았다.<br>
 테스트를 위해 <code class="language-text">test</code>와 <code class="language-text">build</code> 단계는 빼고, 테스트 케이스를 실행하기 위한 테스트만 진행해 보았다.</p>
 <p><span
@@ -245,7 +245,7 @@
 <li>Postman script에 대한 학습이 조금 필요하다.</li>
 <li>gRPC는 JSON으로 export되지 않는다.</li>
 </ol>
-<h4><strong>로컬에서 Postman CLI 사용해보기</strong></h4>
+<h4 id="로컬에서-postman-cli-사용해보기" style="position:relative;"><strong>로컬에서 Postman CLI 사용해보기</strong><a href="#%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-postman-cli-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0" aria-label="로컬에서 postman cli 사용해보기 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 552px; "
@@ -290,6 +290,6 @@ done
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-684ca264e61d0573cb0e.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-f63ebe80d576481c21f4.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-3a6e11e20f41e64c4544.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-c1b909bdfa0fe486a1da.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-b1deb8b1c9b25117833c.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-aaa80877eb0db5b3e867.js\"],\"component---src-templates-tags-js\":[\"/component---src-templates-tags-js-51f85f72dbdef0c44a54.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-5a3f808e3394aa52db27.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-f63ebe80d576481c21f4.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-3a6e11e20f41e64c4544.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-c1b909bdfa0fe486a1da.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-b1deb8b1c9b25117833c.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-aaa80877eb0db5b3e867.js\"],\"component---src-templates-tags-js\":[\"/component---src-templates-tags-js-51f85f72dbdef0c44a54.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="db774d969064d8531a4c";</script><script src="/webpack-runtime-9558454e0e04be85f319.js" async></script><script src="/framework-0ff3ad83d0d20e5cd061.js" async></script><script src="/app-684ca264e61d0573cb0e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="96b2962fdf1629998854";</script><script src="/webpack-runtime-9558454e0e04be85f319.js" async></script><script src="/framework-0ff3ad83d0d20e5cd061.js" async></script><script src="/app-5a3f808e3394aa52db27.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -1,372 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 03 Aug 2023 12:46:05 GMT</lastBuildDate><item><title><![CDATA[MySQL RW 분리하기]]></title><description><![CDATA[테스트]]></description><link>https://jdalma.github.io/2023y/mysqlReplication/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/mysqlReplication/</guid><pubDate>Mon, 24 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;테스트&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/625499e24753f4504dbdafa704c8d8bb/d7ab4/structure.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8ElEQVR42nWSzW7TUBCF8xJIrNiwQ2LBgh1LnoEdz8KCBRIvUkGBBSqoC9ggIopo2rpNcdw4cUjaxPm1XTu+sXM9H7qOW6pKjDSaq9GZc2fmTI1bJvIvXvlaF2Xuzfsj7j9+zr1Hz3j5eqfMaa0RkWts7f9kcpUti4xtvfvF3YdPufPgCS9evS1zRaFLjPGS0BQWRVGySFGU7w2ZsM6FtYa8qun2Ej7sNNn+aGGdzkrCPBPWa0qssesO5dboKhWWCahwhVqkpAoKpSHNQGkkzkmDFUptsCqFJIbadDqhYVkQhQTWEf39BmuvR3q52RtnNlgNEI0MLxieWhzXXVxrAZOhaa1qRvDaUHNaLb7v7dH5Uefzp29s1ds0d7+g/RAJA2Q0QuYLCs8D36elhNHIRuURkqTIaoWupnJtoWb2Zizuuuzs1tk+6HOy+xV98BtZqc26lwkShTDokbbbZM4JdGzEfGLmjGOjNx3H7NCIYhjDgEVjn97PPfKuh5otwWnByGfZcWkfHGI3FqhRBHEEUczg5BB736N/GoOa4jqVyqXCNwQxTadBBvMJXAxYjcd4lxHhxCG7gTxPFJNpjyj0IZnhtipCqY6vPKEqpilk5qgzYdkZ0G2ekZ8dk5/7ZOdj9HBC3/nD3G6iu23yWUQQwF9lpPBJt3PNeAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;structure&quot;
-        title=&quot;&quot;
-        src=&quot;/static/625499e24753f4504dbdafa704c8d8bb/f058b/structure.png&quot;
-        srcset=&quot;/static/625499e24753f4504dbdafa704c8d8bb/c26ae/structure.png 158w,
-/static/625499e24753f4504dbdafa704c8d8bb/6bdcf/structure.png 315w,
-/static/625499e24753f4504dbdafa704c8d8bb/f058b/structure.png 630w,
-/static/625499e24753f4504dbdafa704c8d8bb/40601/structure.png 945w,
-/static/625499e24753f4504dbdafa704c8d8bb/d7ab4/structure.png 1014w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/2a57c58307e6513ae6d5cd7da5859f98/76823/beforeErrorStatus.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 86.70886075949367%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADaElEQVR42m2T20scdxTH928oUukFStOQaKPxktW4q/G2XTe6trEQoX3tswir8TnQ10IpfbKktK40tbWl/QcCKRQCabDpQ9FdY+reZu9z29mZvc5+yv5G4wUPnDm/85s5H75zfufnarVatK1arfLVl18QCoVYXV1laWmJlZUV1u7dY21tjeXlZcLhTba3fyEUWhHffP71OvfXN9iN7guGbdu4joEt26ZiatRqNSyrIrxarXHaalWLqmW0S4W3ahZ21XTqxaN1AmzT0/kiZrlMuaRR0hRMQxNrTSmiqzJKLkUmcYBeTGPpBRHVbIKmbTvQ80Bd0zAMg7z0H3npkIpeoFaW0QsSWjpKWc2jFTOUtQJWScZQchhqQdReCCwUCpimSUmThTpHoYpZUjF0BflIYUnOUDFkoVDJxmk0GqL+bA9bLSzLolKpUK3VRf8q57xaKdOsmTSO3K5b2I3qmT6fAV7kzjvnl8plk5SUIZ3JIkkZDhMpYvEUiUSSWDxBOp3BdQw7bcd5s9kUp96oN0S+vf07vX1e/DMLzM4vEvDN45sKMj4ZxDM6wyeffuYovEhV28yywcuXMfYO6iLfCP/Iax2XGLgxjm9mgcDkLEMDo7zf6+Gdd6/jD3zsKORkkhxlto2qyBymc8RyabRMROyHN7fofOMKE1NB/IEFJqbnuen1c2NokqvdQ8wGF3G1b8h+JMrzfytIaRNVLZJMpdBUlUq9gVo2sC35lcI33+5m+oOPmJ27K6Jn1M/wyLQA3p676yiMaSWwJCKRXSRJ4rzZR1FRVHZ3IxwexonHkyJGoy+I7h+wtxcVueunn3/jQXiLX7d+YHPzITs7z9F17RzSaUf7OhZlmWJRJp8vkM7kyOby5HIF4e21q3/wFoPucbp6PHR0Xubx4z+p1+skkylyGYlINEUs6WC/33jI1W43U74P8c3cwTceYMzrZ2jEh3dsBvfwFK6ePi+e6x6G+710vtXFo0d/ODNnGLyQsqSyMfR8TOytf/MdHa+/Jwp9/jsEJm7jHhiju2eEK11uuq/dxPX0rx2ePfubnZ1/ePLkKbKsnIxNw0Y3VGxLeQVsn/Lk9LwA3poKMuL1M+ieoG9gjGu9ntNjc3awT89jo+msH3wb5tLlfnHCc8FFMTresQDDIz7aresfHOd/9mph+b2h8lUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;beforeErrorStatus&quot;
-        title=&quot;&quot;
-        src=&quot;/static/2a57c58307e6513ae6d5cd7da5859f98/f058b/beforeErrorStatus.png&quot;
-        srcset=&quot;/static/2a57c58307e6513ae6d5cd7da5859f98/c26ae/beforeErrorStatus.png 158w,
-/static/2a57c58307e6513ae6d5cd7da5859f98/6bdcf/beforeErrorStatus.png 315w,
-/static/2a57c58307e6513ae6d5cd7da5859f98/f058b/beforeErrorStatus.png 630w,
-/static/2a57c58307e6513ae6d5cd7da5859f98/40601/beforeErrorStatus.png 945w,
-/static/2a57c58307e6513ae6d5cd7da5859f98/76823/beforeErrorStatus.png 1038w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/b6b48b66a87b94a079750675d465e650/7ef4c/afterErrorStatus.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 50.632911392405056%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJklEQVR42l2Sy2sUQRDG948QPAhCUAQPXhQxCEExJyU30WM8SUAvGhFfaNSTf4YgQYV4EA0ECRgSCZiVIEYiEfPah7MzOzM7j55XT8/8ZGbixtjQXUXR9dVXVV+Nf06e58VbOJBlVTCVmOsb6I3fhIZBd3WN1q9twm4Xr9lGhSF5PxdqSRyTpinZTqDEYvfmWUYqBMowkL5PYlkoyyQpfM/nf0I1y7TodDQ2NzdoNhvYRgfnxwru96+4P1dRKq0+u85upm1jtJpMT79l9sMMiwtzRGFQMfQ8l5XlOvMfZ1n8NEd77Ru9z/OYczPY9YU+IJ5bjiHfwUzCAL29jdFp0dWapDL+C+jhOQ6REIjCt22k5yBMHd/UyfMM3/dpb6yXLGSS4Dg9iryiWJrEe1tWWUYUR/iBQAQBBeO25hImxQwrPoHw6WqbRJ6FsDUco4FndVCRS+zbe+ZYQ0pk0ZXKy2pmz0U3NJRM+ouSUhLHqtxYnqkytrS0zLXr49x/8JS7dx5xc/wet24/pBZtbdF48oyt55P4oSBV1X7Nrk69/gVN0wgTiWUKVKrQCumYDpOTU+zbf5hTg8OcPjHEwMAxDh05Ti3zBRgdolYT13EJAp9er2CdE8cRcRzz4uUUExOPef3qDWlWsX7/bpqTg8NcvDTK+ZHLDJ25wNlzI9SopFwepRS6ZWMYWqm/MpZlXBkd4+CBo1wdu9HXqpQpnucjRFBa1/VK+wfV5dbOHsMUMAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;afterErrorStatus&quot;
-        title=&quot;&quot;
-        src=&quot;/static/b6b48b66a87b94a079750675d465e650/f058b/afterErrorStatus.png&quot;
-        srcset=&quot;/static/b6b48b66a87b94a079750675d465e650/c26ae/afterErrorStatus.png 158w,
-/static/b6b48b66a87b94a079750675d465e650/6bdcf/afterErrorStatus.png 315w,
-/static/b6b48b66a87b94a079750675d465e650/f058b/afterErrorStatus.png 630w,
-/static/b6b48b66a87b94a079750675d465e650/40601/afterErrorStatus.png 945w,
-/static/b6b48b66a87b94a079750675d465e650/78612/afterErrorStatus.png 1260w,
-/static/b6b48b66a87b94a079750675d465e650/7ef4c/afterErrorStatus.png 1748w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/d04257b968359383e520fc0e1a61a36e/146da/recoverErrorStatus.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 71.51898734177216%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVR42o2Ta0sUURzG93NEEBWEFl4yuuimUFoKmVAv+poh+cIk01T6AGLkJUx32t2538+cmXFnfnHOrrK+iR54+J9zZuY5z/8yDYAyF0RemyCMMC1L07YdZJ6TSUWJlJI8L8jz/j7L+mdS5pRlqWSo65qGWqiPOpZNoV4WCVLExKGPSCKyNEJmKWkS45ktXNNAJh6lCBGhQ2i1KMv8umBRFPi+j5QZnmngmH/IkoBCRKSRp4VSlYHTxrcM0sBChLaOkduhLIrrgioN13XJsgy7fYZn/UFELjLxEbFPaBvEtnLXwumckyjByNFi6rI8l/Sqil6vd11QRZkJnaJIE0QaI5KYNEkQIkVGNiK0qPMILlLqIqZMXYahBauq0oW9uLgYsKdZDvYKpmny7dsue3vf2dnZY2Njk88bX9jc3Obr1g7b23tsbe3SUGJVVVPXXNWhHmx81+bouIUXwOrqOrfujPPw0RxzL94wO7tIc3qeyalZfTY+2WRsotl32Ed1JaSgunrWtehYHbI05OPqOjdujmqBhcV3LM0vMzf1nPtj04yMPuHeyGMt2vh1csjhUYo7KIXqtmEY2GaXTpRy1j0HHFY/KcERmrNLzL9a0S7nXi4z3XylLxmbmGH0wVMahmXRbnc5Ommxv79PEAR6jK4wML22ts7tuxO8XFjhzdsPLC69Z6b5mmczC1pQuVOxcWB65P4xqXvGj59HehYvGzWsqiZA/T2+HxCGEUEY4jgulu3oqOi63nAN+1Dpqo4qJElM4AsywX+jUemuVpqXUDPZahm0jXN+nTqcGpV2qVxfToFif0KuszE8JsPrPBMcdD08+4Qy+q1L2X9W/9PhX/oS4pBM3ipjAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;recoverErrorStatus&quot;
-        title=&quot;&quot;
-        src=&quot;/static/d04257b968359383e520fc0e1a61a36e/f058b/recoverErrorStatus.png&quot;
-        srcset=&quot;/static/d04257b968359383e520fc0e1a61a36e/c26ae/recoverErrorStatus.png 158w,
-/static/d04257b968359383e520fc0e1a61a36e/6bdcf/recoverErrorStatus.png 315w,
-/static/d04257b968359383e520fc0e1a61a36e/f058b/recoverErrorStatus.png 630w,
-/static/d04257b968359383e520fc0e1a61a36e/146da/recoverErrorStatus.png 943w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[요청이 Controller에 도달하기까지]]></title><description><![CDATA[org.springframework.boot 3.0.3 org.apache.tomcat.embed:tomcat-embed-core 10.1.5  이미지 출처 Spring이 Request…]]></description><link>https://jdalma.github.io/2023y/springRequest/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/springRequest/</guid><pubDate>Sat, 08 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
-&lt;li&gt;org.springframework.boot 3.0.3&lt;/li&gt;
-&lt;li&gt;org.apache.tomcat.embed:tomcat-embed-core 10.1.5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/84fb6a4a4df70b9484b8333c80d362d4/74d4a/architecture.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 27.848101265822784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNUlEQVR42k2Q2U6DQAAA+f+f8MnExEfTRKM28ehlW0uBFlZgoYgth5SFPWCXLWtqYuJkMh8wmvpHL7g6yY4SXqMTb1Un8q89q2rJOce0Y43qpJLyXCEV7zQhJBc9oUrwviUsOiB9409XwI3yAgsicJzHr7MX01m7gYNoVZRlWZcVK3GDtLmRAbdMkx4de4TYxy6PshoC054t1wvPGI/mT4Pl+3Azed6OHvzQs0BsBt56r1t7U7u60TMQKmCp7FB8Yw/CyIXJ40VwfenfDvX7O388IPEkCXdFkoZB7IDUcN03MNOhrgkheilPnCvZHY8kx6LEPHNXRwdEFnRDA34usnjqw60f2p7tbGFkGObK1+3U1s6f+r9fhNXVr1hUuCWkbRmhpKIYNQS1FDFaMVI3tKIUMYJ+AJlDRhz/lI4IAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;architecture&quot;
-        title=&quot;&quot;
-        src=&quot;/static/84fb6a4a4df70b9484b8333c80d362d4/f058b/architecture.png&quot;
-        srcset=&quot;/static/84fb6a4a4df70b9484b8333c80d362d4/c26ae/architecture.png 158w,
-/static/84fb6a4a4df70b9484b8333c80d362d4/6bdcf/architecture.png 315w,
-/static/84fb6a4a4df70b9484b8333c80d362d4/f058b/architecture.png 630w,
-/static/84fb6a4a4df70b9484b8333c80d362d4/40601/architecture.png 945w,
-/static/84fb6a4a4df70b9484b8333c80d362d4/78612/architecture.png 1260w,
-/static/84fb6a4a4df70b9484b8333c80d362d4/74d4a/architecture.png 2422w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://unluckyjung.github.io/spring/2022/03/12/Spring-Filter-vs-Interceptor/&quot;&gt;이미지 출처&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Spring이 Request를 처리하는 과정이 대충 &lt;code class=&quot;language-text&quot;&gt;HTTP 요청 ➔ WAS ➔ 필터 ➔ 서블릿 ➔ 스프링 인터셉터 ➔ 컨트롤러&lt;/code&gt; 이렇다 라는 것은 말하기 쉽지만 상세하게 설명하지 못하는 것 같아 직접 디버깅하며 조사해보려한다.&lt;/p&gt;
-&lt;h1 id=&quot;tomcat-nio&quot; style=&quot;position:relative;&quot;&gt;Tomcat NIO&lt;a href=&quot;#tomcat-nio&quot; aria-label=&quot;tomcat nio permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;filter&quot; style=&quot;position:relative;&quot;&gt;Filter&lt;a href=&quot;#filter&quot; aria-label=&quot;filter permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 392px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/bc4f11064fd3f7d8df25e92066d739de/0acb4/servletFilter.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 199.36708860759492%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAAACXBIWXMAAAsTAAALEwEAmpwYAAADf0lEQVR42qWWSU9jMRCE3/+/8wuQOHFhCyA4IAIRO4QsJGHf9z1AWHv0tVTBMSR5M2PJeo7tlLu7qttOLGhfX1/eae/v7/b8/GwfHx/N9ZeXF2s0Gj/2hi1pB3h9fW2vr69WqVRsenraZmZm/ICrqys7Oztr7k8NeHh46H1ubs4GBgZsbGzMjo6OrFgs2s7Oju/5/Pz8AZrEJ2hDvV63g4MDu729dcDNzU27uLiw4+PjZhhSWUgjTgDyJW7j4+N2cnLiceU3h2hvRwu1eHNzYw8PD/67Wq1aX1+fDQ4OOtjb25utr697PFMDYgENUvL5vHdA7u/vfZ5D8CA1IEzS9/b2rL+/3yYmJmx4eNjW1tYcaGFhwZ6entoDit0whrBZKpWcUcCwEmL4Mg8x4f/03+Q3puK2v7/v8evWwEqUAXd3dx4jdX4TS1ycnJy03d1dHzMX76VLSoliBmu4SocMjTt1DEFKl5eXtrW19Q2ITMKGNEI3OKBTe3x89Ji3AIZptLi4aENDQ+5qJpNxyYyOjnrGoEe+khCNMUS1AIbk4Arx4os8sBArEDudMQaoMdcCSAyIBZvCjbE+w8Y+EQFJhULhG5AiMDs7a/Pz815d6IhXY/0mp3/bNzU1ZeVyuVXYuCV2IQWrqXuMcZ09vb29XtIYSw3q8qytsIlJzL4KRldhK3U4BWsI+urqqp2enjop/EanWAwoY5EVF+YkLqpkApuXl5fdbckJAlgDXIeQEDFpLYCcrktI9W5jY8OWlpa8SMQCh92ugHERgD3KF8BxBqlutgXEDTruid2wSQFoFmtFWltA4kXcuIwgBDchgovp/Pzctre3/W6RpJR+bQFFCvFjTIyw6L9IkZuao0LncjmPJSD/TIrmKKykG7kq5rXeFRALeILIJVxUWkGEKg3hYEysOwLyZSPBhkHyli+xApwiwoGsK9YdAbEMAFmgBxPW0QGStBj/FSlq5PTKyoqTgpTCgpFK2OH7T5lCveOSR4+6jFKxDCCilUtYEGYHa+Q1nrCG2LtmCjEDgHiSFQASfOZ4H+K+XmFh+frxttGkNpF2PT09LXMcwLzun45vG7EMc7hM8HnL4CZzuMecWKb6pGI5fKTD6sjIiF9KfMM13t61Wq27DnnC6X3NI4kKwxyuImw6rmez2SZgePUm8Z2ANMhbLik6sgm/6rwmEH5s4R/xygB2NTBBUgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;servletFilter&quot;
-        title=&quot;&quot;
-        src=&quot;/static/bc4f11064fd3f7d8df25e92066d739de/0acb4/servletFilter.png&quot;
-        srcset=&quot;/static/bc4f11064fd3f7d8df25e92066d739de/c26ae/servletFilter.png 158w,
-/static/bc4f11064fd3f7d8df25e92066d739de/6bdcf/servletFilter.png 315w,
-/static/bc4f11064fd3f7d8df25e92066d739de/0acb4/servletFilter.png 392w&quot;
-        sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/cd/A97329_03/web.902/a95878/filters.htm&quot;&gt;이미지 출처&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-Chain-Of-Responsibility-%ED%8C%A8%ED%84%B4-%EC%99%84%EB%B2%BD-%EB%A7%88%EC%8A%A4%ED%84%B0%ED%95%98%EA%B8%B0&quot;&gt;책임 연쇄 패턴&lt;/a&gt;의 좋은 예이다.&lt;br&gt;
-다음 3가지 메소드를 구현해야 한다.&lt;/p&gt;
-&lt;p&gt;서블릿 컨테이너는 필터를 인스턴스화한 후 &lt;code class=&quot;language-text&quot;&gt;init()&lt;/code&gt;을 정확히 한 번 호출한다. (기본 구현은 NO-OP이다.)&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;doFilter()&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;urlPatterns&lt;/code&gt;에 맞는 모든 HTTP 요청이 &lt;strong&gt;디스패처 서블릿으로 전달되기 전에 웹 컨테이너에 의해 실행되는 메소드이다.&lt;/strong&gt;&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;destory()&lt;/code&gt;는 Filter 인스턴스를 오프로드할 때 호출되며 수명주기동안 한 번만 호출된다. 실제로 언제 호출되는지는 확인해볼 수 없었지만, 해당 필터로 열린 자원들을 해제 작업을 하는 단계로 예상된다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;class SuccessFilter : Filter {
-
-    private val logger = SuccessFilter::class.logger()
-
-    override fun init(filterConfig: FilterConfig?) {
-        logger.info(&amp;quot;success filter - init(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
-    }
-
-    override fun doFilter(request: ServletRequest?, response: ServletResponse?, chain: FilterChain?) {
-        logger.info(&amp;quot;success filter - doFilter(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
-        chain?.doFilter(request, response)
-    }
-
-    override fun destroy() {
-        logger.info(&amp;quot;success filter - destroy(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
-    }
-}
-
-class ExceptionFilter : Filter {
-
-    private val logger = ExceptionFilter::class.logger()
-
-    override fun init(filterConfig: FilterConfig?) {
-        logger.info(&amp;quot;exception filter - init(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
-    }
-
-    override fun doFilter(request: ServletRequest?, response: ServletResponse?, chain: FilterChain?) {
-        logger.info(&amp;quot;exception filter - doFilter(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
-        throw FilterException(&amp;quot;FilterException 발생!!!&amp;quot;)
-    }
-
-    override fun destroy() {
-        logger.info(&amp;quot;exception filter - destroy(), hashcode: ${System.identityHashCode(this)}&amp;quot;)
-    }
-}
-
-@Bean
-fun addSuccessFilter(): FilterRegistrationBean&amp;lt;Filter&amp;gt; {
-    return FilterRegistrationBean&amp;lt;Filter&amp;gt;(SuccessFilter()).apply {
-        this.addUrlPatterns(&amp;quot;/adviceTest&amp;quot;)
-    }
-}
-
-@Bean
-fun addExceptionFilter(): FilterRegistrationBean&amp;lt;Filter&amp;gt; {
-    return FilterRegistrationBean&amp;lt;Filter&amp;gt;(ExceptionFilter()).apply {
-        this.addUrlPatterns(&amp;quot;/adviceTest&amp;quot;)
-    }
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;h2 id=&quot;filter에서-예외가-발생하면&quot; style=&quot;position:relative;&quot;&gt;Filter에서 예외가 발생하면?&lt;a href=&quot;#filter%EC%97%90%EC%84%9C-%EC%98%88%EC%99%B8%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%A9%B4&quot; aria-label=&quot;filter에서 예외가 발생하면 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code   &gt;
-          &lt;code slot=&quot;code&quot;&gt;doFilter:39, ExceptionFilter (example.adviceTest)                               (5) 다섯 번째 CustomFilter
-internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
-doFilter:158, ApplicationFilterChain (org.apache.catalina.core)
-doFilter:21, SuccessFilter (example.adviceTest)                                 (4) 네 번째 CustomFilter
-internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
-doFilter:158, ApplicationFilterChain (org.apache.catalina.core)
-doFilterInternal:100, RequestContextFilter (org.springframework.web.filter)     (3) 세 번째 Filter
-doFilter:116, OncePerRequestFilter (org.springframework.web.filter)
-internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
-doFilter:158, ApplicationFilterChain (org.apache.catalina.core)
-doFilterInternal:93, FormContentFilter (org.springframework.web.filter)         (2) 두 번째 Filter
-doFilter:116, OncePerRequestFilter (org.springframework.web.filter)
-internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
-doFilter:158, ApplicationFilterChain (org.apache.catalina.core)
-doFilterInternal:201, CharacterEncodingFilter (org.springframework.web.filter)  (1) 첫 번째 Filter
-doFilter:116, OncePerRequestFilter (org.springframework.web.filter)
-internalDoFilter:185, ApplicationFilterChain (org.apache.catalina.core)
-doFilter:158, ApplicationFilterChain (org.apache.catalina.core)                 (0) FilterChain
-invoke:177, StandardWrapperValve (org.apache.catalina.core)                     (0.1)
-invoke:97, StandardContextValve (org.apache.catalina.core)
-invoke:542, AuthenticatorBase (org.apache.catalina.authenticator)
-invoke:119, StandardHostValve (org.apache.catalina.core)
-invoke:92, ErrorReportValve (org.apache.catalina.valves)
-invoke:78, StandardEngineValve (org.apache.catalina.core)
-service:357, CoyoteAdapter (org.apache.catalina.connector)
-service:400, Http11Processor (org.apache.coyote.http11)
-process:65, AbstractProcessorLight (org.apache.coyote)
-process:859, AbstractProtocol$ConnectionHandler (org.apache.coyote)
-doRun:1734, NioEndpoint$SocketProcessor (org.apache.tomcat.util.net)
-run:52, SocketProcessorBase (org.apache.tomcat.util.net)
-runWorker:1191, ThreadPoolExecutor (org.apache.tomcat.util.threads)
-run:659, ThreadPoolExecutor$Worker (org.apache.tomcat.util.threads)
-run:61, TaskThread$WrappingRunnable (org.apache.tomcat.util.threads)
-run:833, Thread (java.lang)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;결론적으로는 &lt;a href=&quot;https://www.theserverside.com/definition/embedded-Tomcat&quot;&gt;스프링 부트에서 톰캣이 내장&lt;/a&gt;되면서 Filter에서 예외가 나면 ControllerAdvice에서 잡아줄 수 있지 않을까 잠깐 생각했지만, 콜스택 &lt;code class=&quot;language-text&quot;&gt;(0.1)&lt;/code&gt;에서 예외를 처리한다. (이전에 호출되었던 Filter에게도 전파된다.)&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;try {
-    ...
-} ... {
-
-} catch (Throwable e) {
-    ExceptionUtils.handleThrowable(e);
-    container.getLogger().error(sm.getString(
-            &amp;quot;standardWrapper.serviceException&amp;quot;, wrapper.getName(),
-            context.getName()), e);
-    throwable = e;
-    exception(request, response, e); // ServletException을 처리한다.
-} finally {
-    ...    
-}
-
-private void exception(
-    Request request, 
-    Response response,
-    Throwable exception
-) {
-    request.setAttribute(RequestDispatcher.ERROR_EXCEPTION, exception);
-    response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-    response.setError();
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ApplicationFilterChain&lt;/code&gt;에서 Filter를 어떻게 호출할까?&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/7accddca36298af11d64169554cf6f6e/cd78c/filterChain.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 27.21518987341772%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwElEQVR42pWPWQ7CMBBDcx2WNs3aNJQuQNOFcv/jGM1A+UJCfDw5TmYsR2jr0bYdQmygjGdyZZFJ/ZO8MB/dEJlU8D7A+AjjAsrqjDTdMc4P1luaWYdxYdK08l1/TbjcRlyHiX13GaBtCZFLjdIHWB9hffUOXDEtD4zzymFb4OZJ66bnANqhIlJZ7I8SonAlzk0H5SrsM8XfpaENGv7mjXudiUI77A45DlkBYWKN1LfoThF1PEHbwI//QM0ojBo+ASA1pIAp/T4MAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;filterChain&quot;
-        title=&quot;&quot;
-        src=&quot;/static/7accddca36298af11d64169554cf6f6e/f058b/filterChain.png&quot;
-        srcset=&quot;/static/7accddca36298af11d64169554cf6f6e/c26ae/filterChain.png 158w,
-/static/7accddca36298af11d64169554cf6f6e/6bdcf/filterChain.png 315w,
-/static/7accddca36298af11d64169554cf6f6e/f058b/filterChain.png 630w,
-/static/7accddca36298af11d64169554cf6f6e/40601/filterChain.png 945w,
-/static/7accddca36298af11d64169554cf6f6e/cd78c/filterChain.png 1236w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;위의 이미지를 보면 &lt;code class=&quot;language-text&quot;&gt;ApplicationFilterChain&lt;/code&gt;은 등록된 Filter들을 내부 필드 &lt;code class=&quot;language-text&quot;&gt;ApplicationFilterConfig[]&lt;/code&gt; 배열로 참조하고 있다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;public void doFilter(ServletRequest request, ServletResponse response,FilterChain chain)&lt;/code&gt; 파라미터에 &lt;code class=&quot;language-text&quot;&gt;FilterChain&lt;/code&gt;을 전달하고 있다. (ApplicationFilterChaindms FilterChain를 구현하고 있다.)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;// ApplicationFilterChain 시각화하기&lt;/p&gt;
-&lt;h1 id=&quot;dispatcherservlet&quot; style=&quot;position:relative;&quot;&gt;DispatcherServlet&lt;a href=&quot;#dispatcherservlet&quot; aria-label=&quot;dispatcherservlet permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;interceptor&quot; style=&quot;position:relative;&quot;&gt;Interceptor&lt;a href=&quot;#interceptor&quot; aria-label=&quot;interceptor permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id=&quot;interceptor에서-예외가-발생하면&quot; style=&quot;position:relative;&quot;&gt;Interceptor에서 예외가 발생하면?&lt;a href=&quot;#interceptor%EC%97%90%EC%84%9C-%EC%98%88%EC%99%B8%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%A9%B4&quot; aria-label=&quot;interceptor에서 예외가 발생하면 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/jdalma/footprints/blob/main/spring/imgs/spring-mvc2/springInterceptorException.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Aug 2023 13:41:26 GMT</lastBuildDate><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
@@ -553,10 +185,14 @@ private void exception(
 &lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 26%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
 &lt;p&gt;오현석님의 &lt;strong&gt;코틀린 핵심 프로그래밍&lt;/strong&gt;이 출간되어 맹대표님 스터디에 참여하면서 읽게 되었다.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;알고리즘-개정-4판&quot; style=&quot;position:relative;&quot;&gt;알고리즘 개정 4판&lt;a href=&quot;#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%A0%95-4%ED%8C%90&quot; aria-label=&quot;알고리즘 개정 4판 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;알고리즘-개정-4판-ing&quot; style=&quot;position:relative;&quot;&gt;알고리즘 개정 4판 ~ing&lt;a href=&quot;#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%A0%95-4%ED%8C%90-ing&quot; aria-label=&quot;알고리즘 개정 4판 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;코딩테스트 통과를 위한 알고리즘 공부는 문제에서 힌트를 얻거나 어떤 알고리즘을 쓸지 (대충) 시간복잡도를 고민해보는 정도에 그쳤다.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;내-생에-단-한-번&quot; style=&quot;position:relative;&quot;&gt;내 생에 단 한 번&lt;a href=&quot;#%EB%82%B4-%EC%83%9D%EC%97%90-%EB%8B%A8-%ED%95%9C-%EB%B2%88&quot; aria-label=&quot;내 생에 단 한 번 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;디자인-패턴의-아름다움-ing&quot; style=&quot;position:relative;&quot;&gt;디자인 패턴의 아름다움 ~ing&lt;a href=&quot;#%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4%EC%9D%98-%EC%95%84%EB%A6%84%EB%8B%A4%EC%9B%80-ing&quot; aria-label=&quot;디자인 패턴의 아름다움 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 50.4%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid01GvYG7STwJ5eTt3PPuQfFtfXxJkZbXF9HKs3QrCMo9EnYh2iLbymbQ1wESD3FviLl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;기술-서적-외&quot; style=&quot;position:relative;&quot;&gt;기술 서적 외&lt;a href=&quot;#%EA%B8%B0%EC%88%A0-%EC%84%9C%EC%A0%81-%EC%99%B8&quot; aria-label=&quot;기술 서적 외 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;내-생에-단-한-번&quot; style=&quot;position:relative;&quot;&gt;내 생에 단 한 번&lt;a href=&quot;#%EB%82%B4-%EC%83%9D%EC%97%90-%EB%8B%A8-%ED%95%9C-%EB%B2%88&quot; aria-label=&quot;내 생에 단 한 번 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;동욱님의 &lt;a href=&quot;https://jojoldu.tistory.com/715?category=689637&quot;&gt;나를 위해 남을 도와주기&lt;/a&gt; 게시글에서 &lt;code class=&quot;language-text&quot;&gt;내 생에 단 한 번&lt;/code&gt; 책의 내용중 한 챕터로 예를 들어주셨는데 책의 내용이 너무 마음에 들어 바로 구매하고 읽어보았다.&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;내용&lt;/summary&gt;
@@ -657,7 +293,7 @@ private void exception(
 &lt;/blockquote&gt;
 &lt;/details&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;데일-카네기의-자기관리론&quot; style=&quot;position:relative;&quot;&gt;데일 카네기의 자기관리론&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC-%EC%B9%B4%EB%84%A4%EA%B8%B0%EC%9D%98-%EC%9E%90%EA%B8%B0%EA%B4%80%EB%A6%AC%EB%A1%A0&quot; aria-label=&quot;데일 카네기의 자기관리론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;데일-카네기의-자기관리론&quot; style=&quot;position:relative;&quot;&gt;데일 카네기의 자기관리론&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC-%EC%B9%B4%EB%84%A4%EA%B8%B0%EC%9D%98-%EC%9E%90%EA%B8%B0%EA%B4%80%EB%A6%AC%EB%A1%A0&quot; aria-label=&quot;데일 카네기의 자기관리론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;중요한 일을 앞두고 스트레스를 많이 받았다.&lt;br&gt;
 준비해야 할 일을 하지 못하고 걱정과 잡생각만 하면서 계획조차 세우지 못했다.&lt;/p&gt;
 &lt;p&gt;데일 카네기는 &quot;인간관계론&quot;으로 처음 알게 됐다. &quot;인간관계론&quot;이나 &quot;자기관리론&quot;이나 뭔가 엄청 대단한 정보를 전달해주기 보다는 읽으면 당연한 것이라고 생각하지만 평소에 놓치고 있는 것들, 깊게 생각하지 않은 것들을 상기시켜주는 내용이라고 느꼈다.&lt;br&gt;
@@ -808,13 +444,13 @@ private void exception(
 &lt;/blockquote&gt;
 &lt;/details&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;이너게임&quot; style=&quot;position:relative;&quot;&gt;이너게임&lt;a href=&quot;#%EC%9D%B4%EB%84%88%EA%B2%8C%EC%9E%84&quot; aria-label=&quot;이너게임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;이너게임&quot; style=&quot;position:relative;&quot;&gt;이너게임&lt;a href=&quot;#%EC%9D%B4%EB%84%88%EA%B2%8C%EC%9E%84&quot; aria-label=&quot;이너게임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;이너게임에 대한 나의 연구를 한마디로 요약한다면 ‘사람을 좀 더 효과적으로 변화시킬 수 있는 방법을 발견했다’는 것이다.&lt;br&gt;
 이너게임의 원리는 테니스에서 포핸드, 백핸드, 또는 서브를 어떻게 바꿀 것인가를 연구하면서 발견되었지만, 이 원리는 테니스 외의 다른 여러 분야에 응용될 수 있다.&lt;br&gt;
 이 책은 우리가 일하는 방법을 어떻게 바꿀 것인가에 대한 것이다. 달리 표현한다면, 일이 우리를 위해 존재하게 만드는 방법에 관한 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Timothy_Gallwey&quot;&gt;Timothy Gallwey&lt;/a&gt;는 테니스를 코칭하면서 터득한 코칭의 기술, 집중에 대한 방법과 일터에서는 즐거움 속에서 배우고 성장하며 성과를 내는 방법,  비평가적 인지에 대해 설명한다.&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Timothy_Gallwey&quot;&gt;Timothy Gallwey&lt;/a&gt;는 테니스를 코칭하면서 터득한 코칭의 기술, 집중에 대한 방법과 일터에서 즐거움 속에서 배우고 성장하며 성과를 내는 방법, 비평가적 인지에 대해 설명한다.&lt;br&gt;
 일반적으로 코칭을 한다는 것은 훈련생은 코치에게 고민을 전달하고 코치는 고민을 해결하기 위해 훈련생을 모델링하며 훈련생은 코치에게 평가를 받는다.&lt;br&gt;
 하지만 저자는 이런 코칭보다는 훈련생이 게임에 집중하고 비평가적 인지를 하도록 유도하며 훈련생이 스스로 상황을 주도하도록 만드는 것이 더욱 효과가 좋다는 것을 깨닫는다.&lt;br&gt;
 그렇다고 이 규칙이 테니스에만 적용되는 것이 아니다. 개개인의 일상과 업무 속에서도 적용할 수 있다.&lt;br&gt;
@@ -830,12 +466,13 @@ private void exception(
 &lt;li&gt;기동성&lt;/li&gt;
 &lt;li&gt;집중&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;대체-뭐가-문제야&quot; style=&quot;position:relative;&quot;&gt;대체 뭐가 문제야?&lt;a href=&quot;#%EB%8C%80%EC%B2%B4-%EB%AD%90%EA%B0%80-%EB%AC%B8%EC%A0%9C%EC%95%BC&quot; aria-label=&quot;대체 뭐가 문제야 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3H4umWD5bwI&amp;#x26;t=9s&amp;#x26;ab_channel=EO%EC%9D%B4%EC%98%A4&quot;&gt;우아한 형제들 김범준 대표의 EO 영상&lt;/a&gt;에서 나오는 엘리베이터 이야기가 (이 책을 인용했는지는 모르지만)이 책에서도 등장한다.&lt;br&gt;
+&lt;h2 id=&quot;대체-뭐가-문제야&quot; style=&quot;position:relative;&quot;&gt;대체 뭐가 문제야?&lt;a href=&quot;#%EB%8C%80%EC%B2%B4-%EB%AD%90%EA%B0%80-%EB%AC%B8%EC%A0%9C%EC%95%BC&quot; aria-label=&quot;대체 뭐가 문제야 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3H4umWD5bwI&amp;#x26;t=9s&amp;#x26;ab_channel=EO%EC%9D%B4%EC%98%A4&quot;&gt;우아한 형제들 김범준 대표의 EO 영상&lt;/a&gt;에서 나오는 엘리베이터 이야기가 (이 책을 인용했는지는 모르지만)이 책에서 등장한다.&lt;br&gt;
 이 책은 개인이 문제를 인식할 떄 놓치고 실수하는 것에 대해 설명한다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;엘리베이터 사례&lt;/li&gt;
 &lt;li&gt;입찰 사례&lt;/li&gt;
+&lt;li&gt;사용자와 발명자간의 관점 차이&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[코틀린의 함수는 어떻게 구현될까?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/kotlinFunction/kotlinFunction/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/kotlinFunction/kotlinFunction/</guid><pubDate>Fri, 12 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;의문&quot; style=&quot;position:relative;&quot;&gt;의문&lt;a href=&quot;#%EC%9D%98%EB%AC%B8&quot; aria-label=&quot;의문 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 26%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
 &lt;p&gt;이 글을 쓰게된 계기는 위의 스터디를 진행하면서 &lt;code class=&quot;language-text&quot;&gt;자바의 함수 개념과 코틀린의 함수 개념은 완전히 다르다.&lt;/code&gt;라는 얘기가 나왔다.&lt;br&gt;
@@ -1318,7 +955,7 @@ chatGPT에 따르면&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/blog-archive/mysql-explain-analyze/&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dev mysql&lt;/code&gt; EXPLAIN ANALYZE&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;1(bigint):N(varchar) &lt;strong&gt;Join 순서 상관 없음&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;1bigintnvarchar-join-순서-상관-없음&quot; style=&quot;position:relative;&quot;&gt;1(bigint):N(varchar) &lt;strong&gt;Join 순서 상관 없음&lt;/strong&gt;&lt;a href=&quot;#1bigintnvarchar-join-%EC%88%9C%EC%84%9C-%EC%83%81%EA%B4%80-%EC%97%86%EC%9D%8C&quot; aria-label=&quot;1bigintnvarchar join 순서 상관 없음 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1364,7 +1001,7 @@ chatGPT에 따르면&lt;/p&gt;
 &lt;li&gt;cost 합 = 1.55&lt;/li&gt;
 &lt;li&gt;첫 번째 행을 가져오는 시간 합 = 0.655&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;1(varchar):N(bigint) &lt;strong&gt;FIRST_TABLE FIR inner join SECOND_TABLE SEC&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;1varcharnbigint-first_table-fir-inner-join-second_table-sec&quot; style=&quot;position:relative;&quot;&gt;1(varchar):N(bigint) &lt;strong&gt;FIRST_TABLE FIR inner join SECOND_TABLE SEC&lt;/strong&gt;&lt;a href=&quot;#1varcharnbigint-first_table-fir-inner-join-second_table-sec&quot; aria-label=&quot;1varcharnbigint first_table fir inner join second_table sec permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1410,7 +1047,7 @@ chatGPT에 따르면&lt;/p&gt;
 &lt;li&gt;cost 합 = 6.43&lt;/li&gt;
 &lt;li&gt;첫 번째 행을 가져오는 시간 합 = 0.52&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;1(varchar):N(bigint) &lt;strong&gt;SECOND_TABLE SEC inner join FIRST_TABLE FIR&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;1varcharnbigint-second_table-sec-inner-join-first_table-fir&quot; style=&quot;position:relative;&quot;&gt;1(varchar):N(bigint) &lt;strong&gt;SECOND_TABLE SEC inner join FIRST_TABLE FIR&lt;/strong&gt;&lt;a href=&quot;#1varcharnbigint-second_table-sec-inner-join-first_table-fir&quot; aria-label=&quot;1varcharnbigint second_table sec inner join first_table fir permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1588,7 +1225,7 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;p&gt;&lt;strong&gt;서비스 기준 통합 테스트에 비해 개발 비용은 낮을 것으로 예상되며, mock을 사용하지 않는 만큼 테스트에 대한 신뢰는 올라가지만, 개인적인 작업 환경을 구축하기는 힘들다.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;인프라 기준 통합 테스트&lt;/strong&gt; 구축을 위한 통합 테스트를 실행하고, 테스트 케이스를 관리하는 여러 방법을 찾아보자.&lt;/p&gt;
-&lt;h3&gt;Jenkins + Postman (+ newman)&lt;/h3&gt;
+&lt;h3 id=&quot;jenkins--postman--newman&quot; style=&quot;position:relative;&quot;&gt;Jenkins + Postman (+ newman)&lt;a href=&quot;#jenkins--postman--newman&quot; aria-label=&quot;jenkins  postman  newman permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Postman의 테스트 스크립트를 이용하여 JSON파일로 만들고, 해당 JSON파일을 프로젝트 내에 위치시키고 Jenkins에서 newman을 실행시켜 보았다.&lt;br&gt;
 테스트를 위해 &lt;code class=&quot;language-text&quot;&gt;test&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;build&lt;/code&gt; 단계는 빼고, 테스트 케이스를 실행하기 위한 테스트만 진행해 보았다.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -1632,7 +1269,7 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;li&gt;Postman script에 대한 학습이 조금 필요하다.&lt;/li&gt;
 &lt;li&gt;gRPC는 JSON으로 export되지 않는다.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4&gt;&lt;strong&gt;로컬에서 Postman CLI 사용해보기&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;로컬에서-postman-cli-사용해보기&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;로컬에서 Postman CLI 사용해보기&lt;/strong&gt;&lt;a href=&quot;#%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-postman-cli-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;로컬에서 postman cli 사용해보기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 552px; &quot;
@@ -3720,7 +3357,7 @@ class SingleTon {
 &lt;blockquote&gt;
 &lt;p&gt;✋ 위의 &lt;strong&gt;클래스 로드 시점과 같다.&lt;/strong&gt; 클래스가 로드되면 초기화도 바로 진행된다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3&gt;부모클래스는 자식클래스보다 먼저 초기화된다.&lt;/h3&gt;
+&lt;h3 id=&quot;부모클래스는-자식클래스보다-먼저-초기화된다&quot; style=&quot;position:relative;&quot;&gt;부모클래스는 자식클래스보다 먼저 초기화된다.&lt;a href=&quot;#%EB%B6%80%EB%AA%A8%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%9E%90%EC%8B%9D%ED%81%B4%EB%9E%98%EC%8A%A4%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%EC%B4%88%EA%B8%B0%ED%99%94%EB%90%9C%EB%8B%A4&quot; aria-label=&quot;부모클래스는 자식클래스보다 먼저 초기화된다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Super {
     static { System.out.println(&amp;quot;Super Init&amp;quot;); }
@@ -3742,7 +3379,7 @@ class Main {
           &lt;code slot=&quot;code&quot;&gt;Super Init
 Two Init&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;h3&gt;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다.&lt;/h3&gt;
+&lt;h3 id=&quot;부모-인터페이스는-자식-인터페이스가-호출하여도-초기화-하지-않는다&quot; style=&quot;position:relative;&quot;&gt;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다.&lt;a href=&quot;#%EB%B6%80%EB%AA%A8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%8A%94-%EC%9E%90%EC%8B%9D-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B0%80-%ED%98%B8%EC%B6%9C%ED%95%98%EC%97%AC%EB%8F%84-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface A {
     int A = 1;

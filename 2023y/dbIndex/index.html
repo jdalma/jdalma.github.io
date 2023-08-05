@@ -283,7 +283,7 @@ chatGPT에 따르면</p>
 <ul>
 <li><a href="https://dev.mysql.com/blog-archive/mysql-explain-analyze/"><code class="language-text">dev mysql</code> EXPLAIN ANALYZE</a></li>
 </ul>
-<h4>1(bigint):N(varchar) <strong>Join 순서 상관 없음</strong></h4>
+<h4 id="1bigintnvarchar-join-순서-상관-없음" style="position:relative;">1(bigint):N(varchar) <strong>Join 순서 상관 없음</strong><a href="#1bigintnvarchar-join-%EC%88%9C%EC%84%9C-%EC%83%81%EA%B4%80-%EC%97%86%EC%9D%8C" aria-label="1bigintnvarchar join 순서 상관 없음 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <table>
 <thead>
 <tr>
@@ -329,7 +329,7 @@ chatGPT에 따르면</p>
 <li>cost 합 = 1.55</li>
 <li>첫 번째 행을 가져오는 시간 합 = 0.655</li>
 </ul>
-<h4>1(varchar):N(bigint) <strong>FIRST_TABLE FIR inner join SECOND_TABLE SEC</strong></h4>
+<h4 id="1varcharnbigint-first_table-fir-inner-join-second_table-sec" style="position:relative;">1(varchar):N(bigint) <strong>FIRST_TABLE FIR inner join SECOND_TABLE SEC</strong><a href="#1varcharnbigint-first_table-fir-inner-join-second_table-sec" aria-label="1varcharnbigint first_table fir inner join second_table sec permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <table>
 <thead>
 <tr>
@@ -375,7 +375,7 @@ chatGPT에 따르면</p>
 <li>cost 합 = 6.43</li>
 <li>첫 번째 행을 가져오는 시간 합 = 0.52</li>
 </ul>
-<h4>1(varchar):N(bigint) <strong>SECOND_TABLE SEC inner join FIRST_TABLE FIR</strong></h4>
+<h4 id="1varcharnbigint-second_table-sec-inner-join-first_table-fir" style="position:relative;">1(varchar):N(bigint) <strong>SECOND_TABLE SEC inner join FIRST_TABLE FIR</strong><a href="#1varcharnbigint-second_table-sec-inner-join-first_table-fir" aria-label="1varcharnbigint second_table sec inner join first_table fir permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <table>
 <thead>
 <tr>
@@ -429,6 +429,6 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-684ca264e61d0573cb0e.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-f63ebe80d576481c21f4.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-3a6e11e20f41e64c4544.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-c1b909bdfa0fe486a1da.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-b1deb8b1c9b25117833c.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-aaa80877eb0db5b3e867.js\"],\"component---src-templates-tags-js\":[\"/component---src-templates-tags-js-51f85f72dbdef0c44a54.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-5a3f808e3394aa52db27.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-f63ebe80d576481c21f4.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-3a6e11e20f41e64c4544.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-c1b909bdfa0fe486a1da.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-b1deb8b1c9b25117833c.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-aaa80877eb0db5b3e867.js\"],\"component---src-templates-tags-js\":[\"/component---src-templates-tags-js-51f85f72dbdef0c44a54.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="db774d969064d8531a4c";</script><script src="/webpack-runtime-9558454e0e04be85f319.js" async></script><script src="/framework-0ff3ad83d0d20e5cd061.js" async></script><script src="/app-684ca264e61d0573cb0e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="96b2962fdf1629998854";</script><script src="/webpack-runtime-9558454e0e04be85f319.js" async></script><script src="/framework-0ff3ad83d0d20e5cd061.js" async></script><script src="/app-5a3f808e3394aa52db27.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
