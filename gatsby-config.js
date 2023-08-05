@@ -63,8 +63,7 @@ module.exports = {
               className: `custom-class`,
               maintainCase: false,
               removeAccents: false,
-              isIconAfterHeader: true,
-              elements: [`h1`, `h2`],
+              isIconAfterHeader: true
             },
           },
           `gatsby-remark-prismjs`,
