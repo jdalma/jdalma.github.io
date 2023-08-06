@@ -206,6 +206,10 @@ tags:
 
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid01GvYG7STwJ5eTt3PPuQfFtfXxJkZbXF9HKs3QrCMo9EnYh2iLbymbQ1wESD3FviLl&show_text=true&width=500" width="500" height="252" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
+> 고품질 코드를 작성하는 것에 초점을 맞춰 다섯 가지 관련 주제인  
+> 객체지향 프로그래밍 패러다임, 설계 원칙, 코딩 규칙, 리팩터링 기술, 디자인 패턴을 모두 포괄적으로 설명한다.  
+> "이런 디자인 패턴이 생겨난 이유는 무엇인가?", "어떤 종류의 프로그래밍 문제를 해결하는데 사용되는가?", "적용시 장단점은 무엇인가?"와 같은 질문을 이해하고 적용할 수 있도록 안내한다.
+
 ***
 
 # 기술 서적 외
