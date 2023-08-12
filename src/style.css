@@ -368,3 +368,8 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #e71313 !important;
+}
