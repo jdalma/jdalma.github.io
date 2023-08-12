@@ -1,4 +1,439 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 06 Aug 2023 13:07:02 GMT</lastBuildDate><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 12 Aug 2023 16:30:21 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[들어가기전에 "소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다." "코드를 완벽하게 이해하기 위해 필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다. 디자인 패턴의 아름다움…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
+&quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;디자인 패턴의 아름다움 1장&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;작성되어 있는 코드를 분석하다보면 나에게 생소한 디자인 패턴이 적용되어 있거나, 연속된 추상화 등등 이해가 힘들 때 &lt;code class=&quot;language-text&quot;&gt;&quot;내가 이런 복잡한 비즈니스를 많이 접해보지 못하고 기술적인 소양이 낮아서 그런건가?&quot;&lt;/code&gt;라는 생각을 한적이 있다.&lt;br&gt;
+&lt;strong&gt;좋은 코드를 보고 그 원리를 분석하여 내 것으로 만들고 싶어도 기술의 이해가 없다면 본질을 이해하지 못해 작성자의 의도를 파악할 수 없을 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;하지만 내가 좋은 코드를 보고 좋은 코드라고 판단할 수 있을까?&lt;br&gt;
+내가 좋은 코드를 좋은 코드라고 판단하지 못하고, 좋은 코드를 작성하지 못하는 이유는 &lt;strong&gt;어떤 코드가 고품질의 코드인지 알지 못하기 때문이다.&lt;/strong&gt;&lt;br&gt;
+아래와 같은 질문을 어느정도로 생각하나?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;계층화와 하위 모듈화 방법은 무엇인가?&lt;/li&gt;
+&lt;li&gt;클래스를 어떻게 나누는 것이 좋은가?&lt;/li&gt;
+&lt;li&gt;각 클래스에는 어떤 책임과 역할이 있는가?&lt;/li&gt;
+&lt;li&gt;클래스 간의 상호 작용을 설계하는 방법, 메시지는 무엇인가?&lt;/li&gt;
+&lt;li&gt;상속을 사용하는 것이 옳은가?&lt;/li&gt;
+&lt;li&gt;인터페이스나 추상 클래스를 사용하는 것이 옳은가?&lt;/li&gt;
+&lt;li&gt;상속과 합성 중 뭐가 옳은가?&lt;/li&gt;
+&lt;li&gt;결합도가 높은 코드와 낮은 코드는 무엇인가?&lt;/li&gt;
+&lt;li&gt;디커플링을 달성하는 방법은 무엇인가?&lt;/li&gt;
+&lt;li&gt;싱글턴 패턴이나 정적 메서드를 사용하는 것이 옳은가?&lt;/li&gt;
+&lt;li&gt;객체를 생성할 때 팩터리 패턴을 사용하는 것이 옳은가?&lt;/li&gt;
+&lt;li&gt;가독성을 유지하면서 확장성을 향상하기 위해 디자인 패턴을 도입하는 방법은 무엇인가?&lt;/li&gt;
+&lt;li&gt;어떤 종류의 코드가 확장과 유지관리에 용이한가?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;컴퓨터가 이해할 수 있는 코드는 바보라도 작성할 수 있다. 훌륭한 프로그래머는 사람이 이해할 수 있는 코드를 작성한다.&quot; - 마틴 파울러&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;위에서 말하는 좋은 코드, 고품질 코드를 작성하기 위한 방법들에 대해 알아보자.&lt;br&gt;
+대부분의 내용은 아래의 책과 영상을 참고하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.yes24.com/Product/Goods/77125987&quot;&gt;모던 자바 인 액션&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000202093794&quot;&gt;디자인 패턴의 아름다움&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=UwAoUshVpgM&amp;#x26;ab_channel=SpringCampbyKSUG&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;KSUG&lt;/code&gt; 대규모 엔터프라이즈 시스템 개선 경험기 - 1부 -&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=u_y6UGzOPUk&amp;#x26;ab_channel=SpringCampbyKSUG&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;KSUG&lt;/code&gt; 대규모 엔터프라이즈 시스템 개선 경험기 - 2부 -&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;객체지향-프로그래밍&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;객체지향 프로그래밍&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot; aria-label=&quot;객체지향 프로그래밍 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;객체지향 프로그래밍의 프로그래밍 단위는 &lt;strong&gt;클래스&lt;/strong&gt;또는 &lt;strong&gt;객체&lt;/strong&gt;이고,&lt;br&gt;
+절차지향 프로그래밍의 프로그래밍 단위는 &lt;strong&gt;함수&lt;/strong&gt;이며,&lt;br&gt;
+함수형 프로그래밍의 프로그래밍 단위는 &lt;strong&gt;스테이트리스 함수&lt;/strong&gt;이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;객체지향 프로그래밍은 &lt;code class=&quot;language-text&quot;&gt;클래스의 관점&lt;/code&gt;에서 생각해야 한다.&lt;br&gt;
+처음부터 복잡한 프로세스를 메서드로 분해하는 대신 &lt;strong&gt;어떻게 비즈니스 모델링을 할지 먼저 생각한 후 요구 사항을 클래스로 구성하고 클래스 간의 상호 작용을 설정&lt;/strong&gt;한다.&lt;br&gt;
+객체지향 프로그래밍을 이해하기 위해서는 &lt;strong&gt;캡슐화&lt;/strong&gt;, &lt;strong&gt;추상화&lt;/strong&gt;, &lt;strong&gt;상속&lt;/strong&gt;, &lt;strong&gt;다형성&lt;/strong&gt;을 이해해야 한다.&lt;/p&gt;
+&lt;h3&gt;캡슐화&lt;/h3&gt;
+&lt;p&gt;정보 은닉 또는 데이터 접근 보호라고도 하는데, &lt;strong&gt;접근 가능한 인터페이스를 제한하여 클래스가 제공하는 메서드를 통해서만 내부 정보나 데이터에 대한 외부 접근을 허가하는 것을 뜻 한다.&lt;/strong&gt;&lt;br&gt;
+예를 들어, 객체 생성 시 값이 결정되며 그 이후로 재할당되어서는 안되는 속성을 지키거나 속성을 수정하는 비즈니스 세부 정보를 지킬 수 있다.&lt;/p&gt;
+&lt;p&gt;클래스의 속성에 대한 접근을 제한하지 않으면 모든 코드가 클래스의 속성에 접근하고 값을 변경할 수 있게 된다.&lt;br&gt;
+얼핏 이것이 더 유연하게 느껴지지만, &lt;strong&gt;과도한 유연성은 제어할 수 없음을 의미하고 수정 로직이 코드의 모든 곳에 흩어져 가독성과 유지 관리 용이성에 문제를 끼친다.&lt;/strong&gt;&lt;br&gt;
+그리고 클래스는 필요한 작업만 노출하는 제한된 메서드를 제공하여 클래스의 사용성을 향상 시킬 수 있다.&lt;/p&gt;
+&lt;h3&gt;추상화&lt;/h3&gt;  
+&lt;p&gt;&lt;strong&gt;메서드의 내부 구현을 숨기는 것을 의미한다.&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;함수&lt;/code&gt; 그 자체가 구현을 숨기는 추상화에 해당한다.&lt;br&gt;
+따라서 클래스를 사용할 때 기능의 구현 방식에 대해 고민하지 않고, &lt;strong&gt;메서드가 제공하는 기능에만 집중할 수 있다.&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;함수&lt;/code&gt;라는 문법을 통해 구현되기 때문에 &lt;strong&gt;실제로 코드의 구현 내용은 그 자체로 추상화되는 함수의 내부에 포함된다.&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;규칙과 구현의 분리&lt;/strong&gt;를 준수하여 코드의 결합 정도를 줄이고 코드의 확장성을 향상 시킬 수 있다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;객체 지향과 도메인 주도 설계는 소프트웨어 설계에 &lt;strong&gt;일관성과 맥락&lt;/strong&gt;을 부여한다.&lt;br&gt;
+&lt;strong&gt;일관성과 맥락&lt;/strong&gt;은 추상화의 기본 재료이며, 추상화로부터 얻은 &lt;strong&gt;모델&lt;/strong&gt;은 주요 관심사이다.&lt;br&gt;
+모델은 소프트웨어에 &lt;strong&gt;단순함&lt;/strong&gt;을 부여한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;상속&lt;/h3&gt;  
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;고양이는 포유류의 일종이다.&lt;/code&gt;처럼 클래스 사이의 &lt;code class=&quot;language-text&quot;&gt;is-a&lt;/code&gt;관계를 나타내는 데 사용된다.&lt;br&gt;
+상속은 이해하기도 쉬우며 동일한 코드의 중복을 막아낼 수 있다.&lt;br&gt;
+하지만 과도하게 사용할 경우, 상속 계층 구조가 너무 깊고 복잡하면 코드의 가독성과 유지 관리성이 급격하게 떨어지므로 유의해야 한다.&lt;/p&gt;
+&lt;h3&gt;다형성&lt;/h3&gt;
+&lt;p&gt;특정한 함수 구현을 수정해야 하는 경우 새 하위 클래스를 구현하여 기존 함수를 재정의할 수 있으며, 상위 클래스를 하위 클래스로 대체할 수 있다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;수정에 대해 폐쇄적이고 확장에 대해 개방적&lt;/code&gt;이라는 설계 원칙을 준수할 수 있으며, &lt;strong&gt;동일한 논리(같은 타입)를 재사용할 수 있어 코드의 재사용성을 향상 시킬 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;다형성의 특성을 구현하기 위해&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;상속과 메서드 재정의를 하는 방식&lt;/li&gt;
+&lt;li&gt;인터페이스를 사용하여 합성하는 방식&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Collection Framework의 &lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;을 통해 인터페이스를 사용하여 합성하는 방식을 확인해보자.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterable.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 70.88607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVR42o1T6Y6bMBjMU4TLJyYESJbLHOE0d7LZSn3/t+nHNlpV2/7opxH6jGfweGwOhNrfgAl3PV8WMkkzKYsky/3gDV7+zTx8G1NmI8TeonC+q2me78+Hmtc4zf5L/Foc25bJMOPUgYYQyv9Je4kpF0x8whbCO83Pfnssj8fHx8eP9f3ZrksQBVTYO8ERQH6JwSelgjsOyCgThO0fOnv+2Qu84BpmsedfXS/g4gRTAGY7XDgggf4AmzEMgigzLWIhCq9Mi+o61gwEMBGBpw6NiREGDgWORSkMQXiARdTUNk3bjFMiM0irqPK2b3s1qmFUUMPY90Ol1OUaZaXsVANTZdc7J+9wOnu3umhUU3bdNYoR5rFMiqosy6pqum75WdXt7VbndQMHFqVR1d3aSaVlJRz3ZRuCRYQYFt79I3LUTN2yTexY3NeRo1n8eDR0A+smNhFGjJkm2W1/nq2A7hqF09qDyWmexmEc13vR9pfgMiz9MC0T1DiNy3rrlXv29vC+jgpT++z7WZFB1cOzrJXMi7ckdV0vzVOoW7fUwyPLi0jmzsn9dkkYIkzTkaaBI9ew9jwhWEQ4JAwwTGJRT9MtACYM8ClmAiESlq26b2BtXbZp3cq+59yBqdemML1m1fD+vszztj3GbcubhvzeM8bMvcSRzJJEwp8QJ/ISxpSJP24rOwVhuBPSVOZw1SF4Qu1fp5mGyVobSkIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;iterable&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterable.png&quot;
+        srcset=&quot;/static/4ae735127e3532ec667aba4cbba3554b/c26ae/iterable.png 158w,
+/static/4ae735127e3532ec667aba4cbba3554b/6bdcf/iterable.png 315w,
+/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterable.png 630w,
+/static/4ae735127e3532ec667aba4cbba3554b/40601/iterable.png 945w,
+/static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterable.png 1086w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public static void main(String[] args) {
+    List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;&amp;gt;();
+    Set&amp;lt;String&amp;gt; set = new HashSet&amp;lt;&amp;gt;();
+
+    System.out.println(list);
+    System.out.println(set);
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;이렇게 Collection 하위 타입을 출력하게 되면 아래 코드의 구현체에 구현되어 있는 &lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;을 반환받아 출력받게 된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public abstract class AbstractCollection&amp;lt;E&amp;gt; implements Collection&amp;lt;E&amp;gt; {
+    public String toString() {
+        Iterator&amp;lt;E&amp;gt; it = iterator();
+        // ...
+    }
+}
+
+public class ArrayList&amp;lt;E&amp;gt; extends AbstractList&amp;lt;E&amp;gt;
+        implements List&amp;lt;E&amp;gt;, RandomAccess, Cloneable, java.io.Serializable
+{
+    public Iterator&amp;lt;E&amp;gt; iterator() {
+        return new Itr();
+    }
+    // ...
+}
+
+public class HashSet&amp;lt;E&amp;gt; extends AbstractSet&amp;lt;E&amp;gt;
+    implements Set&amp;lt;E&amp;gt;, Cloneable, java.io.Serializable
+{
+    public Iterator&amp;lt;E&amp;gt; iterator() {
+        return map.keySet().iterator();
+    }
+    // ...
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h1 id=&quot;추상-클래스와-인터페이스-상속과-합성&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;추상 클래스와 인터페이스, 상속과 합성&lt;/strong&gt;&lt;a href=&quot;#%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%83%81%EC%86%8D%EA%B3%BC-%ED%95%A9%EC%84%B1&quot; aria-label=&quot;추상 클래스와 인터페이스 상속과 합성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;개발하면서 추상화를 고민할 때 추상 클래스를 쓸지, 인터페이스를 쓸지 잠깐 고민하게 된다.&lt;br&gt;
+하지만 항상 인터페이스를 쓰게 되는데 그 이유는&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;인터페이스도 구현 메서드를 가질 수 있다.&lt;/li&gt;
+&lt;li&gt;다중 상속이 안되니 정말 강한 관계라고 의도를 표현해야 할 상황인지 판단하지 못 하는 경우가 많다.&lt;/li&gt;
+&lt;li&gt;상태가 필요한 경우에는 상수 모듈로 관리하거나 외부에서 전략을 주입받을 수 있다.&lt;/li&gt;
+&lt;li&gt;추상 클래스는 부모 클래스를 같이 초기화해야 한다.&lt;/li&gt;
+&lt;li&gt;상속 단계가 깊어지는 것이 부담스럽다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;항상 추상 클래스를 배제하였지만, &apos;디자인 패턴의 아름다움&apos;을 읽고 생각이 조금 바뀌게 되어 정리하려 한다.&lt;/p&gt;
+&lt;p&gt;클래스 상속의 관점에서 &lt;strong&gt;추상 클래스는 상향식 설계 방식&lt;/strong&gt;이며 &lt;code class=&quot;language-text&quot;&gt;is-a&lt;/code&gt; 관계를 나타낸다.&lt;br&gt;
+&lt;strong&gt;인터페이스는 반대로 하향식 설계 방식&lt;/strong&gt;이며 깊어지지 않고 넓어진다. 그리고 프로토콜 또는 규약의 집합으로 사용자에게 제공되는 &lt;strong&gt;기능의 목록&lt;/strong&gt;이다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;has-a&lt;/code&gt;(또는 &lt;code class=&quot;language-text&quot;&gt;can-do&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;behave like&lt;/code&gt;) 관계를 나타낸다.&lt;/p&gt;
+&lt;h3&gt;추상 클래스&lt;/h3&gt;  
+&lt;ol&gt;
+&lt;li&gt;인스턴스화할 수 없다.&lt;/li&gt;
+&lt;li&gt;인스턴스 변수와 구현 메서드를 포함할 수 있다.&lt;/li&gt;
+&lt;li&gt;하위 클래스는 추상 클래스의 모든 추상 메서드를 구현해야 한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;타입 계층 구조를 제공한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 559px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d0059197ae31797013808436478bfa80/a65ce/abstract.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.59493670886076%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVR42pVSi3LaMBD0//9VHzNliAMYuxRMCMGhhGJj49hYkvXYniTy6mSSqWZ2ZN2dVufdC/DBkr1B1yp0Z422kRBM47MVvBc0xu9lwfD9W4zhcI6vXyJkd+Wb/H8Raq1wzDnuVgzZmmNzy7H/zaGUpLz5jNA8Q0oJxjoIwdELDcENegJntPcWwuXt/vreC6HrxsCQPFJq0ku4b9vEv408xSwYI025hL/v4QhtMokzjK6XuA5TXJFegx8JosmaTHmrKes0wqsU49GNqw/DBQaDhDDDfld7QpIKq/QRi3mFZVrTXjrcUMz+7mvCc6ux+HVCamsXtaufzwo61zjsuSeUvXTit7VBXSmcyh7nhhzOSavuotOFUHCN4iDQ1NqhLISrPVKtHStHKARpZrwASinY85NRigzS+mX2rMNSeR1snHN2+QNF+vt4EE1W9LJyh59JhjhaE5EnmCUbxNO1M4newjhcoshbl9ttK8pvL50rqtugPnEE49E9OesZppMdxuN72ImwjSXxHtNoR6/DGTQc3GL/cHa126whwtzJYc2KJg/0GENQHjQRGCe8/a4KP29aGdKRzgQpjUOZG6edXY+VxpHq7T07p8UfGrlG4y/9ep5IyaY04gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;abstract&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d0059197ae31797013808436478bfa80/a65ce/abstract.png&quot;
+        srcset=&quot;/static/d0059197ae31797013808436478bfa80/c26ae/abstract.png 158w,
+/static/d0059197ae31797013808436478bfa80/6bdcf/abstract.png 315w,
+/static/d0059197ae31797013808436478bfa80/a65ce/abstract.png 559w&quot;
+        sizes=&quot;(max-width: 559px) 100vw, 559px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;추상 클래스를 사용하는 위의 다이어그램에서 만약 &lt;code class=&quot;language-text&quot;&gt;노래 부를 수 있는&lt;/code&gt; 타입을 추가해야한다면 어떻게 해야할까?&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/64093f70a8db0a86766c6d02caa8a4a7/d9b5d/abstract2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 26.58227848101266%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVR42n2P4W7DIAyE8/4PuCaNqm5romohlUoggMFwc1A69U9mCQEfd/bR4KByLiglIxLj0s8YBy20gJnxXzXvF+aMEAjO+WrcVkqM1bIw/mNEBO+D7LEOPmyoJoeuVbheHmIshyl+7iv684y+m2Ftqqzs8iZSkukkDw7LEhB8hjUJxjjhQZJQbU4hwb90etdJM7N4uNVXXYwJzTgYdKcJ507VqdZEfF2fknSSBArtSYkp4vtTmJy3VJt+0RHDTdcfVfYxYbxp/ALSrYLYUwOjFwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;abstract2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/64093f70a8db0a86766c6d02caa8a4a7/f058b/abstract2.png&quot;
+        srcset=&quot;/static/64093f70a8db0a86766c6d02caa8a4a7/c26ae/abstract2.png 158w,
+/static/64093f70a8db0a86766c6d02caa8a4a7/6bdcf/abstract2.png 315w,
+/static/64093f70a8db0a86766c6d02caa8a4a7/f058b/abstract2.png 630w,
+/static/64093f70a8db0a86766c6d02caa8a4a7/40601/abstract2.png 945w,
+/static/64093f70a8db0a86766c6d02caa8a4a7/d9b5d/abstract2.png 1224w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이와 같이 경우의 수는 2의 제곱으로 늘어나 복잡도가 기하급수적으로 높아진다.&lt;br&gt;
+이 문제는 &lt;strong&gt;인터페이스의 &lt;code class=&quot;language-text&quot;&gt;합성&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;인터페이스&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;위임&lt;/code&gt;을 사용하는게 적절하다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/748b0/interface.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 98.73417721518987%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADEklEQVR42nVUiXajSAz0/3/XTF4yscfOrOMDHF/c92HAmKu2uhmIvcnyXj8aWi2VSiVNTOMCVXHlss0C4uk6PDxt0yHwGuxUj3YOTscUadziu2diGBl+/nzD09MSjl3+j0PAtkq8vm7x48cci8UBaSItvzr03RbrlYP3pQXf+T5qU3dEXxFdiOU/BrZrH3HUfY9wpwRQNp40FvseYfcF4eEjwfz3CR+7CBs6PB2i0fbefuJ7BY0cppvB1CNUVfUlalGU0M4RDnuXdhc4VkbEMa7X61eEbdvyQn8g9ueziTS9jAYielmWyPMr6rr5z/UOSXKBZbmPDpvm0zCJM1yLcvwWTsS5eN+nN7zLspJ3hn+9w7aRldVOEbkk6RsNUdinLpwJm7quHwtFDNo5ppQseUfZWihyOiyKG0zTkcTv1QS/Z0dMfx3IUY/SMFxSkNPGfUi5uoHcp5hNj1wHzGc6kbaYCMi+HxIFDdSIoo1xPKREK4UG34skx74XElU7clfdOhbpgg0VYhgFFCWCKLBMuf2bsm1dZLqqYiL0i78c1mPq96LXdZvBfdrqlNEZOtNPkxsmEn5VjyRvNio8LxirLs4GG/GEYSKrmue5/A6CCNvt7rMoQ/QBief5JLcYDYb//b5CFMXSyaiKJEU4fBPTZDgorw18t0FGCVpmjre5KqsYhhwMfst0agau76p9L5+7Thn2ZdFB1xry2LIoOZ6ftpREzM4ATKNFHPYFiYKak6clxw17WuMcOMO1rzznGQNP7mWwmB85TRb48+eA9/czXl5WUDmyPA9E2Dt07IaBa64bFuzt6esHzqeCQRu2bv3ocL2yMZspXCqniob5fI/XXxu8PK+Jqm9PQ8/w9naUduu1jt2uv/PyvMJmZWIyyKC8dkwhYDQhHY8RhfYA14GkIYl62RhawUw0dkZIuXh8B/Bcgbwj982nw1vZsUv2mE4VLJc6VmsLtsNC+XTqfqYc+CX2Hy40LaKgUwZOEcfkjxyLdZdyRw4yHPceEWWyrz234iCl9oIOefY4FOS7w8NMFDr8F3FD+hr9f1tHAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;interface&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/f058b/interface.png&quot;
+        srcset=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/c26ae/interface.png 158w,
+/static/9a91643c6697ee1dfaf23315b405e49b/6bdcf/interface.png 315w,
+/static/9a91643c6697ee1dfaf23315b405e49b/f058b/interface.png 630w,
+/static/9a91643c6697ee1dfaf23315b405e49b/748b0/interface.png 868w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;interface Flyable { fun fly() }
+interface Tweetable { fun tweet() }
+
+class FlyAbility : Flyable { override fun fly() = TODO(&amp;quot;do fly&amp;quot;) }
+class TweetAbility : Tweetable { override fun tweet() = TODO(&amp;quot;do tweet&amp;quot;) }
+
+class Pigeon() : Flyable, Tweetable {
+    private val flyAbility = FlyAbility()       // 합성
+    private val tweetAbility = TweetAbility()   // 합성
+
+    override fun fly() = flyAbility.fly()       // 위임
+    override fun tweet() = tweetAbility.tweet() // 위임
+}
+
+class Penguin() : Tweetable {
+    private val tweetAbility = TweetAbility()   // 합성
+
+    override fun tweet() = tweetAbility.tweet() // 위임
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;이론적으로는 &lt;code class=&quot;language-text&quot;&gt;is-a&lt;/code&gt;관계는 합성과 인터페이스의 &lt;code class=&quot;language-text&quot;&gt;has-a&lt;/code&gt;관계로 대체될 수 있고,&lt;br&gt;
+다형성은 인터페이스를 사용하여 달성할 수 있으며,&lt;br&gt;
+코드 재사용은 합성과 위임으로 대체할 수 있다.&lt;/p&gt;
+&lt;p&gt;그럼 어떤 경우에 상속이 사용되면 좋을까? &lt;strong&gt;타입 계층 구조가 필요할 때 이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;interface Flyable { fun fly() }
+interface Tweetable { fun tweet() }
+
+abstract class Bird (val name: String) : Flyable, Tweetable
+
+class Pigeon() : Bird(&amp;quot;비둘기&amp;quot;) {
+    override fun fly() = TODO()
+    override fun tweet() = TODO()
+}
+
+class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
+    override fun fly() = throw OperationNotSupportedException()
+    override fun tweet() = TODO()
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;인터페이스로 행위를 일반화하고, 추상 클래스로 계층 구조를 나누었고, 구현 계층에서 행위를 구현하였다.&lt;br&gt;
+계층 구조를 만들게 되면&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;인지적인 카테고리를 제공한다.&lt;/li&gt;
+&lt;li&gt;특정 계층의 타입에만 해당 기능을 제공할 수 있다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;저런 구조는 인터페이스로도 가능하지 않나?&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;추상 계층의 내부 속성만 각 구현 계층으로 내리면 인터페이스로도 가능하지 않나?&quot;&lt;/code&gt;&lt;br&gt;
+맞는 말이다.&lt;/p&gt;
+&lt;p&gt;인터페이스에서 기본 메서드와 속성을 정의할 수 있긴 하지만(재차 강조하지만) 인터페이스의 본래 속성은 &lt;strong&gt;프로토콜 또는 규약의 집합으로, 사용자에게 제공되는 기능의 목록&lt;/strong&gt;이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.oracle.com/java/technologies/javase/8-whats-new.html&quot;&gt;What&apos;s New in JDK 8&lt;/a&gt;에서 인터페이스의 기본 메서드를 설명한다.&lt;br&gt;
+&quot;Default methods enable new functionality to be added to the interfaces of libraries and ensure binary compatibility with code written for older versions of those interfaces.&quot;&lt;br&gt;
+&lt;strong&gt;&quot;기본 메서드를 사용하면 새 기능을 라이브러리 인터페이스에 추가할 수 있고 해당 인터페이스의 이전 버전용으로 작성된 코드와의 이진 호환성을 보장할 수 있습니다.&quot;&lt;/strong&gt; 라고 설명한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;내가 느끼기엔 &quot;자 인터페이스에 기본 메서드로 구현 메서드를 작성할 수 있으니 적극 활용하세요.&quot;라는 느낌이 아니라 기존에 인터페이스로 개발된 곳을 어쩔 수 없이 API를 수정해야 한다면 기본 메서드를 &lt;strong&gt;고려&lt;/strong&gt;해보라고 느껴진다.&lt;br&gt;
+&lt;strong&gt;인터페이스 정의는 구현 세부 정보를 노출하지 않고, 구체적인 수행 방법이 아닌, 어떤 작업을 수행하는지만 고려해야 하기 때문이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;getter와-setter-남용&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Getter와 Setter 남용&lt;/strong&gt;&lt;a href=&quot;#getter%EC%99%80-setter-%EB%82%A8%EC%9A%A9&quot; aria-label=&quot;getter와 setter 남용 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;객체지향 프로그래밍 언어를 사용하여 모든 코드를 클래스에 넣기만 하면 그것이 바로 객체지향 프로그래밍이라고 생각하지만 절차지향 프로그래밍 스타일로 작성한 경우가 대부분일 것이다.&lt;br&gt;
+예를 들어, 많은 비즈니스 로직을 &lt;code class=&quot;language-text&quot;&gt;Service&lt;/code&gt; 계층에 몰아넣고 객체지향이다 라고 말하는 것과 같이 말이다.&lt;br&gt;
+대부분의 백엔드 개발자들은 (표현 계층, 논리 계층, 데이터 계층) MVC 아키텍처에 익숙하여 &lt;strong&gt;빈약한 도메인 모델&lt;/strong&gt;을 의식하지 못하며 개발한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/24d4fc16bd45ff5d24a15feaad7571d2/a3ebb/domainModel.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/klEQVR42iWS+0/TZxjFv8mS7cf9Fe4vMFvUZMsSl2VZ5i1j8zapS0ARxUthA4qdtqKICG51EkWUyq0IpRSERaAXarm1pdIWLXQtKxS1K7cW0GUo/fi2/HBy3vPmzclznvdIKxEX0cAgi2EHsdAw0Sk7C9MjaY4G7MSCQyTmxthYfEZyZQpWAyRTWBGIT5JMTG7qxFT6jbQy6+SpzYDT3MrEcBdhr4lZn4m5ZxaC7sc4TA8JuXtZj3mZdP6Fb6gTr70D/2g3L/0DhD39uAf0zPjMJJeeIyWEocPShqW7gb72WkzG+1geNTDQ04TL2k5/p1awnrfzEwz16hjp02HueoBZ3KeG8A4asQrtd/RAynA+7MJs7WZgsBer5RE2ez+ZJ1Vs2XqQz77YzafbtpNzNAPifv7718P6kp95t5G4Q8e6iMzq3/A6mI6ejvwyOEpjWzONeh0NLY2or15l21cHkD7+nA8++gRJ+pC9334JCT+L08PEI2N4e27j1P7G6oyDd2Kq9ZiPdwsTm4avgg6a9ZuGrfV3OXwok4p798i/oGLXvj0ckB1BnpPBxoKPNfE5b8Quwz1anpeeI3ango2oh+SyP72/FEuRqSHqmrRoW+qpKb/B7q+/4XrtHRRFMlTqPMp+V5N/fA//R8dZDo+wJBAR+wvUXCei+5PXIdEC0ZS1mVHWpu1IAY9FRK2nWXcfTWUpR3/KQGdoQlWSw8UrSspuqCk8sS9tlog4iYuYcWGwKKa1GTQ4HtcRFD8dcnUSMmuR3LYOCuTHURblofg1F3nuEUoKTyHPk1EoP4b8TBaXFLm8EBWZnTAzI/DPeJ/QNkwtGrrqrjE7+QS/oZZAyy2kkb5mFPnZXD6fh6r4JFcunKVUnC8rz1B+8RznC45Re/MS+vo/OLz/O7Jk3/PL6Z8pEMjOzED24y5ysg7yw84d3FUVILmsrfiGjYzbDaLg7YxZ29JFTXFKewY7ROGNdD+spqqsCM01BdVVSqorldRoVAJqblaUUFVejKFRw3tclqDT7tAnIgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;domainModel&quot;
+        title=&quot;&quot;
+        src=&quot;/static/24d4fc16bd45ff5d24a15feaad7571d2/f058b/domainModel.png&quot;
+        srcset=&quot;/static/24d4fc16bd45ff5d24a15feaad7571d2/c26ae/domainModel.png 158w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/6bdcf/domainModel.png 315w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/f058b/domainModel.png 630w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/40601/domainModel.png 945w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/78612/domainModel.png 1260w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/a3ebb/domainModel.png 1333w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=u_y6UGzOPUk&amp;#x26;ab_channel=SpringCampbyKSUG&quot;&gt;이미지 출처 &lt;code class=&quot;language-text&quot;&gt;KSUG&lt;/code&gt; 대규모 엔터프라이즈 시스템 개선 경험기 - 2부 -&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;풍부한 도메인 모델&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Service 클래스는 저장소 계층과 통신하여 도메인 모델을 만들어낸다.&lt;/li&gt;
+&lt;li&gt;Service 클래스는 여러 도메인 모델의 비즈니스 논리를 결합한다.&lt;/li&gt;
+&lt;li&gt;Service 클래스는 기능과 무관한 타 시스템과의 상호 작용을 담당한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;풍부한 도메인 모델&lt;/strong&gt;은 데이터와 비즈니스 논리가 하나의 클래스에 포함되며 전형적인 객체지향 프로그래밍에 속한다.&lt;br&gt;
+즉, &lt;code class=&quot;language-text&quot;&gt;Service&lt;/code&gt;에 비즈니스 로직을 작성하는 것이 아니라 각 &lt;code class=&quot;language-text&quot;&gt;도메인 모델&lt;/code&gt;에 책임을 부여하는 것이다.&lt;br&gt;
+이에 기반한 &lt;strong&gt;DDD&lt;/strong&gt; 개발방식은 &lt;strong&gt;비즈니스 시스템을 분리하고, 비즈니스 모듈을 분할하고, 비즈니스 도메인 모델과 상호 작용을 정의하는 방법을 설계할 때 사용된다.&lt;/strong&gt;&lt;br&gt;
+DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리적인 도메인 설계를 얻을 수 없기 때문에 DDD의 개념을 공부하고 익히는 것이 아니라 &lt;strong&gt;비즈니스에 친숙해지는 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;그리고 많은 백엔드 개발자들은 &lt;code class=&quot;language-text&quot;&gt;Setter&lt;/code&gt;는 열심히 막으려 하지만 &lt;code class=&quot;language-text&quot;&gt;Getter&lt;/code&gt;는 합리화한다. (나도 그렇다.)&lt;br&gt;
+도메인 모델의 속성이 객체일 때 클라이언트 코드가 참조한다면 신경써야할 것이 많다.&lt;br&gt;
+예를 들어, &lt;code class=&quot;language-text&quot;&gt;Getter&lt;/code&gt;를 통해 컬렉션 내에있는 객체를 수정한다면? 수정할 수 없는 불변 컬렉션이였지만 가변 컬렉션으로 캐스팅하여 수정한다면?&lt;br&gt;
+&lt;strong&gt;객체 전파&lt;/strong&gt;, &lt;strong&gt;방어적 복사&lt;/strong&gt;, &lt;strong&gt;앨리어싱 에러&lt;/strong&gt;들도 고려해야 한다.&lt;/p&gt;
+&lt;p&gt;시스템이 복잡할수록 코드 재사용성과 유지 관리 용이성에 대한 요구 사항은 점점 높아지기 때문에 초기 설계에 더 많은 시간과 에너지를 투자하여 &lt;strong&gt;풍부한 도메인 모델에 기반한 DDD 개발 방식에 익숙해져야 할 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;결론&lt;/strong&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h3&gt;합성을 사용할지 상속을 사용할지?&lt;/h3&gt;  
+&lt;p&gt;합성을 더 많이 사용하고 상속을 덜 사용하도록 권장하지만, 언제나 합성이 옳은것도 아니고 상속이 항상 쓸모없는 것도 아니다.&lt;br&gt;
+클래스 간의 상속 구조가 안정적이어서 쉽게 변경되지 않고 상속 단계가 2단계 이하로 비교적 얕아 상속 관계가 복잡하지 않다면 과감하게 &lt;strong&gt;상속&lt;/strong&gt;을 사용할 수 있다.&lt;br&gt;
+또한, 콘크리트 클래스의 특정 함수를 재정의하려 할 때도 &lt;strong&gt;상속&lt;/strong&gt;을 사용할 수 있다.
+반대로 시스템이 불안정하고 상속 계층이 깊고 복잡하면 &lt;strong&gt;합성&lt;/strong&gt;을 사용해야 한다.&lt;/p&gt;
+&lt;h3&gt;객체지향 프로그래밍? 풍부한 도메인 모델?&lt;/h3&gt;  
+&lt;p&gt;항상 객체지향 프로그래밍이 옳지만은 않다.&lt;br&gt;
+요구사항이 간단하고 전체적인 작업 흐름이 가지를 뻗어나가지 않고 고정된 형태를 띄는 경우에는 절차지향 프로그래밍이 적절할 수 있다.&lt;br&gt;
+그리고 개발하는 시스템의 비즈니스가 비교적 단순할때는 굳이 복잡한 풍부한 도메인 모델을 설계하기 보다는 빈약한 도메인 모델이 더 적합하다.&lt;br&gt;
+하지만 복잡한 시스템일때 많은 개발자들이 풍부한 도메인 모델을 쉽게 적용할 수 있진 않을 것이다.&lt;br&gt;
+&lt;strong&gt;풍부한 도메인 모델은 설계하기가 훨씬 까다롭고, 빈약한 도메인 모델을 기반으로 하는 전통적인 개발 방식은 수년 동안 사용되어 왔고 대부분의 개발자에게 단단하게 박혀 있기 때문에 쉽게 적용하기에는 힘들 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;결국엔?&lt;/h3&gt;  
+&lt;p&gt;기술이나 방법론에는 정답이 없다.&lt;br&gt;
+내가 처해있는 상황을 철저하게 분석하고 어떤 방법이 더 옳은지 판단하여 최선의 방법을 선택해야 한다.&lt;br&gt;
+그리고 이런 내용을 배웠다고 해서 팀내 컨벤션을 고려하지 않고 팀원들과 충분한 협의 없의는 적용해서는 안될 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ce4f3f438ac81f9d228ccb0542043a0d/9b379/repeat.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/klEQVR42m2STUiTcRzHn2e2Nr1EUWCXiA5LRocdhA7lYYfqkr1AeAiqHTQTbdZGL0NaS+cs3XIzmiskdS8u19rStRxq1qEEkWGj1wVBGUgOkijKqPDTs8egoB2+/OAP38//y/f3EwRBoJBEUZRni+kgcd9Z+p1G/K5G/NL02evosh2lt90ovTfSJ+l29xmMht15j2T+D/YXeD/iYDEb5efcCCyMk3saZm7az4d0kM/PB/kxm2BpPgXvEgQ85rxHlICiDFiWgEIhysoDxwIXyEmAbOoKiy8jzNzzMJP08PXZTb69GOTX6yiZpJsv0kcDbhPC5hUCepXIVslcWbaBLdpNVJRrKV23WgZODzkhl+Juv41X4156nCYclho8zfWMhVpZehMjnezk45OQXI2wam0p6zdq0Go07NuuQ79Nx86KcnRla1ArBabiHcxLCRM3zjMZdxK9asFrPcbjmFNO+SkTIuA+TXbCx51rFgSFUoVCXUKRSk2xWoVqpRK1NEuKi+SEU/F2OZnTWstkrIOJgVYehu3wPkFmpItLTTX0uczwdohg58nlpRSS4s9SHkXa+C5157U34DpXy4Owg9FgM7e8FmzmI3gdx1lIB2B2mMDlE4WB4j9nc/HUIVK9Vnra6jFU7aLBsAdT9X6qKvUcPrCD7pY6ubvh602Yq/fyG67XXUiEDBTdAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;repeat&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ce4f3f438ac81f9d228ccb0542043a0d/f058b/repeat.png&quot;
+        srcset=&quot;/static/ce4f3f438ac81f9d228ccb0542043a0d/c26ae/repeat.png 158w,
+/static/ce4f3f438ac81f9d228ccb0542043a0d/6bdcf/repeat.png 315w,
+/static/ce4f3f438ac81f9d228ccb0542043a0d/f058b/repeat.png 630w,
+/static/ce4f3f438ac81f9d228ccb0542043a0d/40601/repeat.png 945w,
+/static/ce4f3f438ac81f9d228ccb0542043a0d/9b379/repeat.png 951w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=UwAoUshVpgM&amp;#x26;ab_channel=SpringCampbyKSUG&quot;&gt;이미지 출처 &lt;code class=&quot;language-text&quot;&gt;KSUG&lt;/code&gt; 대규모 엔터프라이즈 시스템 개선 경험기 - 1부 -&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;중복 코드를 추상화하여 끄집어내는 것은 &lt;strong&gt;DRY(Don&apos;t Repeat Yourself)&lt;/strong&gt; 를 사용하는 좋은 출발점이지만, 그것이 전부는 아닙니다.&quot;&lt;br&gt;
+&quot;여러분이 중복 코드를 피하려고 하는 것은 사실 각 &lt;strong&gt;기능과 요구사항을 한 번만 구현&lt;/strong&gt; 하려고 노력하는 것입니다.&quot;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Object Oriented Analysis &amp;#x26; Design&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;중복된 코드에 매몰되지 말고 API에 집중해서 API의 책임이 중복되지 않게 꾸준히 신경써야 하며, 고품질 코드에 대한 책임과 끈기를 가져야 할 것이다.&lt;br&gt;
+그리고 스스로의 안목을 키우기 위해 꾸준한 학습은 필수이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
@@ -459,18 +894,19 @@
 일반적으로 코칭을 한다는 것은 훈련생은 코치에게 고민을 전달하고 코치는 고민을 해결하기 위해 훈련생을 모델링하며 훈련생은 코치에게 평가를 받는다.&lt;br&gt;
 하지만 저자는 이런 코칭보다는 훈련생이 게임에 집중하고 비평가적 인지를 하도록 유도하며 훈련생이 스스로 상황을 주도하도록 만드는 것이 더욱 효과가 좋다는 것을 깨닫는다.&lt;br&gt;
 그렇다고 이 규칙이 테니스에만 적용되는 것이 아니다. 개개인의 일상과 업무 속에서도 적용할 수 있다.&lt;br&gt;
-간략하게 정리하면 &lt;strong&gt;내부에서 일어나는 셀프1과 셀프2의 싸움에서 셀프1을 무시하고 셀프2에만 집중하여 비평가적 인지를 유지해야 한다는 것&lt;/strong&gt;이다.&lt;/p&gt;
-&lt;p&gt;책에서 읽은 내용을 일상생활, 업무속에 적용하려 할 때 굉장히 어렵다라고 느꼈다.&lt;br&gt;
-나는 대부분의 시간을 스스로를 평가하고, 내면적인 장애를 제거하기 위한 노력을 해본 경험이 없기 때문이다.&lt;br&gt;
-하지만 스스로 평가를 내리는 습관을 &lt;strong&gt;인지&lt;/strong&gt;하는 것이 비평가적 인지를 갖추는 첫 걸음일 것이다.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.facebook.com/hika00/posts/7116315028383895?ref=embed_post&quot;&gt;이 글&lt;/a&gt;에서 교수가 한 학생을 코치하는 내용을 보면 이너게임에서 말하는 코칭과 유사하다는 것을 알 수 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;셀프1과 셀프2&lt;/li&gt;
+간략하게 정리하면 &lt;strong&gt;내부에서 일어나는 셀프1과 셀프2의 싸움에서 셀프1을 무시하고 셀프2에만 집중하여 비평가적 인지를 유지해야 한다는 것&lt;/strong&gt;이다.&lt;br&gt;
+셀프1은 스스로를 책망하고 평가하는 자아, 셀프2는 &lt;code class=&quot;language-text&quot;&gt;나&lt;/code&gt;자신이다.&lt;br&gt;
+(스스로를 평가하거나 책망하지 않고)시간 가는 줄 모르고 무엇인가에 빠져 있는 상태를 셀프2 포커스라고 한다.&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;비평가적 인지&lt;/li&gt;
-&lt;li&gt;순응&lt;/li&gt;
-&lt;li&gt;기동성&lt;/li&gt;
-&lt;li&gt;집중&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;셀프2에 대한 신뢰&lt;/li&gt;
+&lt;li&gt;학습자 스스로의 선택&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.facebook.com/hika00/posts/7116315028383895?ref=embed_post&quot;&gt;이 글&lt;/a&gt;에서 교수가 한 학생을 코치하는 내용을 보면 이너게임에서 말하는 코칭과 유사하다는 것을 알 수 있다.&lt;/p&gt;
+&lt;p&gt;책에서 읽은 내용을 일상생활, 업무속에 적용하려 할 때 굉장히 어렵다라고 느꼈다.&lt;br&gt;
+나는 매순간을 스스로를 평가하고 책망하였었다는걸 알 수 있었다.&lt;br&gt;
+하지만 스스로 평가를 내리는 습관을 &lt;strong&gt;인지&lt;/strong&gt;하는 것이 비평가적 인지를 갖추는 첫 걸음이라고 한다.&lt;/p&gt;
+&lt;p&gt;스스로가 항상 부족하고 멍청하다고 책망하고 평가하여, 해야하는 일에 대해 집중을 하지 못하고 계획조차 세우지 못한 경험이 있다면 이 책을 추천해주고 싶다.&lt;/p&gt;
 &lt;h2 id=&quot;대체-뭐가-문제야&quot; style=&quot;position:relative;&quot;&gt;대체 뭐가 문제야?&lt;a href=&quot;#%EB%8C%80%EC%B2%B4-%EB%AD%90%EA%B0%80-%EB%AC%B8%EC%A0%9C%EC%95%BC&quot; aria-label=&quot;대체 뭐가 문제야 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3H4umWD5bwI&amp;#x26;t=9s&amp;#x26;ab_channel=EO%EC%9D%B4%EC%98%A4&quot;&gt;우아한 형제들 김범준 대표의 EO 영상&lt;/a&gt;에서 나오는 엘리베이터 이야기가 (이 책을 인용했는지는 모르지만)이 책에서 등장한다.&lt;br&gt;
 이 책은 개인이 문제를 인식할 떄 놓치고 실수하는 것에 대해 설명한다.&lt;/p&gt;
@@ -491,7 +927,7 @@
 한 마디로, &lt;strong&gt;함수를 변수 취급할 수 있고, 함수 내에서 함수를 반환하는 것이 가능하다는 것이다.&lt;/strong&gt;&lt;br&gt;
 코틀린의 함수는 어떻게 자바로 작성되는지 확인해보자.(&lt;code class=&quot;language-text&quot;&gt;@Metadata&lt;/code&gt;는 제외)&lt;/p&gt;
 &lt;h1 id=&quot;코틀린의-람다-함수와-익명-함수&quot; style=&quot;position:relative;&quot;&gt;코틀린의 람다 함수와 익명 함수&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9D%98-%EB%9E%8C%EB%8B%A4-%ED%95%A8%EC%88%98%EC%99%80-%EC%9D%B5%EB%AA%85-%ED%95%A8%EC%88%98&quot; aria-label=&quot;코틀린의 람다 함수와 익명 함수 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// 코틀린
 class KotlinFunction {
     val twiceLambda : (Int) -&amp;gt; Int = { it * 2 }
@@ -504,7 +940,7 @@ fun main() {
     function.twiceAnonymousFunction(10)
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// 자바
 public final class KotlinFunction {
    @NotNull
@@ -536,7 +972,7 @@ public static final void main() {
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;자바 코드를 확인해보면 &lt;code class=&quot;language-text&quot;&gt;Function1&lt;/code&gt; 타입 내부 필드로 정의되며, 클라이언트 측 코드는 &lt;code class=&quot;language-text&quot;&gt;invoke()&lt;/code&gt;를 통해 실행한다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;Function1&lt;/code&gt;타입은 &lt;code class=&quot;language-text&quot;&gt;Functions.kt&lt;/code&gt;에 정의된 PECS규칙을 지키는 &lt;strong&gt;SAM 인터페이스&lt;/strong&gt;다.&lt;/p&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public interface Function0&amp;lt;out R&amp;gt; : Function&amp;lt;R&amp;gt; {
     /** Invokes the function. */
     public operator fun invoke(): R
@@ -562,7 +998,7 @@ public interface Function22&amp;lt;in P1, in P2, in P3, in P4, in P5, in P6, in 
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;각 &lt;code class=&quot;language-text&quot;&gt;interface&lt;/code&gt;들이 추가로 상속 받고 있는 &lt;code class=&quot;language-text&quot;&gt;Function&amp;lt;out R&gt;&lt;/code&gt;은 코틀린 패키지에 정의된 인터페이스다.&lt;br&gt;
 &lt;strong&gt;반환 타입의 공변을 지정하기 위해 선언한 인터페이스 인 것 같다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;package kotlin
 
 /**
@@ -573,7 +1009,7 @@ public interface Function22&amp;lt;in P1, in P2, in P3, in P4, in P5, in P6, in 
 public interface Function&amp;lt;out R&amp;gt;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;결국은 아래의 자바 예제와 같이 &lt;strong&gt;코틀린도 자바의 SAM 인터페이스를 미리 정의해놓고 이 인터페이스를 구현하는 익명 함수인 것으로 보인다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@FunctionalInterface
 public interface Twice {
     int invoke(int value);
@@ -596,7 +1032,7 @@ public static void main(String[] args) {
 &lt;h1 id=&quot;-인자가-22개를-초과하면-어떻게-될까&quot; style=&quot;position:relative;&quot;&gt;(+) 인자가 22개를 초과하면 어떻게 될까?&lt;a href=&quot;#-%EC%9D%B8%EC%9E%90%EA%B0%80-22%EA%B0%9C%EB%A5%BC-%EC%B4%88%EA%B3%BC%ED%95%98%EB%A9%B4-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%90%A0%EA%B9%8C&quot; aria-label=&quot; 인자가 22개를 초과하면 어떻게 될까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;코틀린의 &lt;code class=&quot;language-text&quot;&gt;Functions.kt&lt;/code&gt;에는 22개 인자까지만 명시되어 있었다.&lt;br&gt;
 22개를 초과하면 어떻게 될까?&lt;/p&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;val argumentOver : (
         Int, Int, Int, Int, Int, Int, Int, Int, Int, Int,
         Int, Int, Int, Int, Int, Int, Int, Int, Int, Int,
@@ -604,7 +1040,7 @@ public static void main(String[] args) {
     ) -&amp;gt; Int =
         { i: Int, ... i22: Int -&amp;gt; 1 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public final class KotlinFunction {
    @NotNull
    private final FunctionN argumentOver;
@@ -633,7 +1069,7 @@ public interface FunctionN&amp;lt;out R&amp;gt; : kotlin.Function&amp;lt;R&amp;g
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;0이면 기억된 값을 반환&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;0이 아니면 기억된 값을 반환하고, 그 값을 저장&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// 코틀린
 class KotlinFunction {
     fun memoryClosure(param: Int) : (Int) -&amp;gt; Int {
@@ -656,7 +1092,7 @@ fun main() {
     println(closure(0))
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// 자바
 public final class KotlinFunction {
    @NotNull
@@ -702,7 +1138,7 @@ public final class KotlinFunctionKt {
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;MemoryClousre&lt;/code&gt; 함수형 인터페이스의 구현을 통해 &lt;code class=&quot;language-text&quot;&gt;ClousreFunction&lt;/code&gt;을 반환&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@FunctionalInterface
 public interface MemoryClosure {
     ClosureFunction invoke(int value);
@@ -768,7 +1204,7 @@ public class Program {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 31.645569620253163%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWUlEQVR42nXRXW/SYADF8X6YOenzlLYiUOkbfaAvUEILfaEszGnUJcsWJ5rpvZ/8r3beeOHFLznJOXdHG5oW0zDAjxQqzph5PirJCNWS0XiMLg10KRmNJzhhSKCWRMuk54VRvw0ixevpFMM00ebWkE/rhIe25vvba+73JU/XJx72JQd3SiYvScULTr7D7W7D+arj6/HwvKl2nLsDd+WWm3DGG2uIVo0kP8uIc9vwZbflW1NxGys+KI/3c5dCXLAVFzytHH40BY+7gs/Fhvs86/t3gcPN3OVx4aFMgTYZ21R7n3xTsF7lPW/mEvoBgethSYElJF3jcOhqqvpI3XTEcUoYhCi1QEWKOE6w7VdoQkguX0oGgwG6EAx0HSHlP3RhULcu+2NLc/pI2V6xLmuiOCVZb56tcizbRpNSYhgSKQ3+5P/JsglpviLLCxZJRppv8cN5L/jL/H3KL8Yj063ICzP3AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 31.645569620253163%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYklEQVR42m2RW5OTQBCF+TG7VsIQQN2ETbgMkBAImCUCiaxm1+s+aCw3lrdnf/lnb/TRh6+6a6bnVJ8zxshx8HREkKSkWc40CKUW6HTB0/GYobIEJf3kNBfJebzISIRAJyQyG8YpF57HyLYxYsfmwyrjsGv5eXPD4XnN9/0rDk3NC39Coc7JzXP2gcfdpuJ43fO1351mPjebU/9xs+ZWT7l0RhjNE8XvOuG47TjKxbeu4S5LeJcEvNUzrtQZa/OMH4XHr67mfnPFl7riU1XwRvu8Dj1uY5/7eUBimxjjC5e2CaiqmnJVsSpKgumMSKxHvo8jdh3Tou8u2fUdbXtN1/UsFkuiMCJN56RiOZMIXPcxhpKMHg0Ug+GAoakEE1NEHlDW32qKYLed0fRbtvv31LuXrOpWslyyLJ+RySIPOK6LYckDy7L+ISLq/+T5hLwshJq5fF5ergmjWNBEWqrW2I7NH1oc1D0sd6iaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -841,7 +1277,7 @@ public class Program {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;FIRST_TABLE&lt;/code&gt;에 2건, &lt;code class=&quot;language-text&quot;&gt;SECOND_TABLE&lt;/code&gt;에 20건이 있으며, 두 테이블의 관계는 &lt;strong&gt;1(bigint):N(varchar)&lt;/strong&gt; 이다.&lt;/li&gt;
 &lt;li&gt;기대하는 결과는 &lt;code class=&quot;language-text&quot;&gt;SECOND_TABLE&lt;/code&gt;의 &lt;strong&gt;탐색 row수가 10건이 나와야한다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;explain
 select COUNT(*)
 from FIRST_TABLE FIR inner join
@@ -997,7 +1433,7 @@ chatGPT에 따르면&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-&amp;gt; Aggregate: count(0)  (cost=0.65 rows=1) (actual time=0.338..0.340 rows=1 loops=1)
     -&amp;gt; Filter: (SEC.SECOND_COL = &amp;#39;20230330&amp;#39;)  (cost=0.45 rows=2) (actual time=0.178..0.296 rows=10 loops=1)
         -&amp;gt; Covering index scan on SEC using SECOND_COL_INDEX  (cost=0.45 rows=20) (actual time=0.139..0.216 rows=20 loops=1)&lt;/code&gt;
@@ -1043,7 +1479,7 @@ chatGPT에 따르면&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-&amp;gt; Aggregate: count(0)  (cost=2.81 rows=1) (actual time=0.264..0.265 rows=1 loops=1)
     -&amp;gt; Filter: (&amp;#39;20230330&amp;#39; = SEC.SECOND_COL)  (cost=1.81 rows=10) (actual time=0.138..0.224 rows=10 loops=1)
         -&amp;gt; Covering index lookup on SEC using SECOND_COL_INDEX (SECOND_COL=&amp;#39;20230330&amp;#39;)  (cost=1.81 rows=10) (actual time=0.118..0.182 rows=10 loops=1)&lt;/code&gt;
@@ -1089,7 +1525,7 @@ chatGPT에 따르면&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-&amp;gt; Aggregate: count(0)  (cost=0.45 rows=1) (actual time=0.518..0.521 rows=1 loops=1)
     -&amp;gt; Filter: (SEC.SECOND_COL = &amp;#39;20230330&amp;#39;)  (cost=0.35 rows=1) (actual time=0.282..0.404 rows=10 loops=1)
         -&amp;gt; Covering index lookup on SEC using SECOND_COL_INDEX (SECOND_COL=&amp;#39;20230330&amp;#39;)  (cost=0.35 rows=1) (actual time=0.210..0.295 rows=10 loops=1)&lt;/code&gt;
@@ -1136,7 +1572,7 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 36.075949367088604%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABt0lEQVR42h3R3U+bUABAcf7/971sWbI5XxbddE6j0cX6UbS1QKki29QqadFeKFwoF6GF0rPM1/P4O1pd16jXnGiRMBQexv0Ae+LylIx5kB7PSjDOJvhK8BSP8KRPkEUkKiXJZwR5hJ9OCFVEVim0LFPEWcp4JjBHDlvuIRvePjsvx+yJE9rS4NdU5yK2OA976FOTXnyNIW9w5QP74oyf4piD4Ax75qIVRcE0l0RZwki+oMcWLb9DK+hyNRtgJQ6d2MZMHbrS5lL2MRMHI72hl1zT+d/SPrvihEc1RmtWDUVVwgpUkVNWJelCkZWKqq7IF68sl0vqpqZs5sgyZV7PYQk0UC9r8kVBWc1ZrRq0elHznAtcdY8ZObSfDbpigJP8pSts/qSPGME1F8Ki7RuYoUMntDnydfSRyVUwwIodzOkNQRmhzeIZVnrLbthiT7R4d7vOx/tNNkcHbI2PWH/c4fPdd94Pv7J2t80X7wcfvA3Wnrb5dPuN/fCUPXFKOzLxCh+tqRoceYebDN+gz0PjbYCtXPqJy2l4xVGo05p0MKWDHlkcB5ecRT0ORZvf6RAv8+lLF7lI+QclGvcdrGzY1gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 36.075949367088604%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABuklEQVR42iWRS3PSABSF8//3bnRc1HbjiLZWa5m2A7Y0PBMI5TWWNwRJQl4kgRAS+Exxde6duWfmnO8KcRzjbwLMvcNQmyD1myjLLmNnzsCesvA1VG+Zqs7YmjGxVXTfxPFdnMBFDyzm7hLDX+HFAYLn+Vi+w9zTkGdtLnt3fJnccv03xy/tN6It8bASKVp1CkYNcSVTs1rIdouePSCrFfih5cjqBZR1F2G7DVkFNqbnMLOXJ2NeLZPXK1TXTep2h7KlILttKnaTsp3OTue015wXKo5CyW3wU8szDlSE4/HIJtrypm/VN/sQZ+exDn2iOCKINieNkohNEmKGLuF+R5IkxIeEXfL/ZrPfkhwThDhKWAQaXX+AvGrzvJAoa03azh8qukLPHSHpLxQ1mYJaQzZalFYK92oRcSZTNdIWVvvk1UMTYW2tqacVbow8N2nsd50LPvYzZGZZLtUHLkbXnL1+4/3oM+evV5xPv/NhmuHT+Iqz7ldujceU9SOiKTPdLhAO8YG23U+TDJFS0AVDSjk2UPwuDbfDo1Hl3iiSX5bTR3QQU8Y5vcSTKXGnP9NbD5l4Cxp2Fydy+Qccx/cZIaSPWQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1199,14 +1635,14 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;p&gt;알고리즘이 실무의 문제를 해결할 떄 무조건 도움은 된다고 확신한다.&lt;br&gt;
 단순히 문제를 해결하기 위해 무지성으로 짜는 것이 아니라 &lt;strong&gt;시간,공간 복잡도를 고려하는 자세&lt;/strong&gt;가 생긴다.&lt;br&gt;
 최적의 답을 무조건 찾아내지 못 하더라도 (나도 시간복잡도를 확실히 모른다.) 생각하는 개발자라면 기계처럼 코드를 작성하는 것이 아니라 몇 분이라도 고민하고 작성하는것이 중요하다고 생각한다.&lt;/p&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;내가 사용하는 자바의 정렬 메소드는 어떻게 정렬이 되는지?  
 자료구조 마다 그리고 자료구조 구현체 마다 장,단점은 무엇인지?  &lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;사소하지만 원리를 알게 될 학습을 할 확률이 높다고 생각한다.&lt;/p&gt;
 &lt;p&gt;이번년도 목표는 플레티넘이였지만 &lt;code class=&quot;language-text&quot;&gt;골드 1 (1541점)&lt;/code&gt; 59점을 남겨놓고 멈췄다.&lt;br&gt;
 기업용 코테 통과가 목표였는데&lt;/p&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;1. 특정 깊이 이상으로 파고들기에는 가성비가 떨어진다. (시간 소모가 너무 크다)
 2. 문제해결능력보단 solved.ac 티어와 점수에 집착을 하게 된다.
 3. 백준에는 문제가 너무 많아 스스로에게 도움이 되는 문제를 구별해내지 못 한다.&lt;/code&gt;
@@ -1510,7 +1946,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABZklEQVR42kVSiYqDQAz1///MQkG6UKiw1tt6tN5z6rwlse0KAZkk75rx8P6ccxBCIAxD3G435HkOrTX2fecez2gNJwScUoDW2ISAniboeca2rpDjCC9JEgzDwIvbtnFZaxmMyj+dkGbZAbgsH34oKSGF4HmjNYy1GPse3jRNeL1eUEphXVc0TYOu67BZi6GuEf78oCsKmHHE3veoqwrLsvAMuamqivf7vkdb1/BI2eVyQVEU3IyiCL9RhCbPcQkC1GUJCAEiJstJHDMpRXK/3xm4LMtDSNPAo3zi91DbtkjTFHlRMFAShqzSGYN5WeCkRBxFeDweDEhZkwgCJtBn28L7ZkJBA5wJkZBy8z6jTOd5BpTGZgyMMYeAdzzn8xnX6/WwTMt0KeM4chasMM/ZYvd8Qir1D2jM91J257hHtQqBVUrM03Rk6Ps+siz7WiYL9B8EAYMT6USA1vKToQjwKWuP2nd+Pn+9ZmFCnAS4MQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABZ0lEQVR42j1Si27CMBDr//8ZQ0yIISGKBm2hlL6Avt/17ACrdMql8fnsSyzwm+dZC+q6hm3b2O/38H0fXddhGAbM02TOZ+7npsHctuAhRuL7okDHGKsKzfMJy3VdPB4PTCwax/E/RNay8Gu5hHc+vwhZiDd5S+KGhCMbDsT2fY/sfodVEHRnouKKXaIoQpIkBvgMQ9jbLRKq7bMMExuHtxtK4oSRm4B7CVLExFtSttlsjMUgCHA8HvHLiLj/Wa8RcGUn5HlurLqOY5oK7zAXseqMEIal+TlvUBzHONOewOH1CvdwMCpn2inK0hA6bCaVPs+l8MbcOZ1w5T5lvaV5aGYNZ6JPitXE/OOMoJz2RWgugnnP+AhIqfB7tcJut3tZVnHG+Sg0B8/zcLlcjMU0Tc1sRW4IqfRz4yPXhmeKio1rCipZY2a4WCwMiTqK8EQLytecoezry3XDekJ6OiTGJ/jPrHoZRYE/1OVhZDum0IYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1554,7 +1990,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 29.11392405063291%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIUlEQVR42j2R226DMBBE+ZwqbdpIfW2TEPAdGwyEkAC59v9/YardljxYa61nx+PjxAgBXZRQpsD3ZgepHa9cGuxyBaEsV+MC90mXCY00kwhVA1/W0Naz7nW5QuKUgg01ihCxSQUPksj5CG0D95XxKGPLezKZzWPToQg1pC7Y8H31iaRvOxzHG8bpjjJ26E8XjOcHjsOV98N0R9dPmC4/OI1XjOc7+tMZsTlgujwwTDd0/Yi2G7BJJRIr/xP6iO3uLyEloUrPc77i51OlHiXJhOHEtqhY0+yPrFm8fSDReQ7tSuYwM5yZkIgG1tvsyY4uJaYzO2JZtwc+e1ksyVBA2QBjPb7WKYRyzI645NLyEJlQj5KRQZopZkmpKUBV75+f8gtb2eD3ofA1IQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 29.11392405063291%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABG0lEQVR42j1R7XKCMBDkcTq2ts70d6sYQgKB8C0iglp9/1fY3p2lPzK3bG43O0uQag2blbBpju+dQmwdTJJBmxRKW5oO+8ggzQrh+SidIFQGRdUiL2rR8v7reoPAGQvna7nY7TUSVxBukPmKsJfJgrLuCNfwZSs7sc1QNb3sLgHeN58Ihq7HMN1wnn9IdMDxdCF8x+l8xTBehO+HCfP1QdwN0+VO/ExmR8IPjNPzvutHChQjSGMjCTlJqGJ5nZPw5GQurxDFiUxOzJXwd1F1xJWULkd7GIRbvX0gsFEkHSYux9d2L4KlEz6Mt2EkkzsNlZZOfdkQ5wXXbS+GL6s1G2qYtJDXF0PGSy+Mn8m9iNjgadj+JeQuD/8/5RcCG+GpqeQkfQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1632,7 +2068,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABjUlEQVR42l1S23LrIAzM/zRIQlxsnMTGzqVtzv9/z56R4mY6fdgBgbRawR5aG0AcIJEhkRAlIEb6s2ew7Gd7LMLvGr+T1/5AbAfikChe8BsihECWHHEMAZZ/DARiATGDiEBkDaMLO1hRKhkxKYiP4B1EH2+YkrmvWNaOuS+4PR74/H5i6a+4b1fUoYIl4CByRMqKNg1Y1xm9X9D7jNttxfXasW2Ln0/nE2JkqApyUQxtREriqGOFqj2DEwakkjCMFW0sGMfiBPf7Fff7hsfjiufzE9//nn6Xc0StGblmMH34NJrUm8mPwlyyE5aiKCWh1uSF83x2Ql+/vrzB6TSiTc0VW47B9qbcCa2DzV+H4vItwVYb4XKZHK1VfytT4SPWjDoOnqOR0E4TNO2EYoRj9SRPUMY0DViWi/+yxedzQ9/W972RlqHsMb3JzWZum6i646UsZ/WxXWkStwpHRaDgngtEbhNmcqv8WMh/OWqEpuywvck22FNYR0uSqMil7H5lRE1IubhvOVrTV2yN/wO6PkFDlJqN3gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlUlEQVR42mVSWXbjMAzzfRpb1Oo1XpOmTe5/HhSkJ7O8+cCzRNEgSKLqhw5OGngvhCOa/yCMv+HDv2f/9xtRNY4X8SQVBuU3SWByCCRjMc3x3qNuaite143lO3F8O9+VQ8+VssacEGJg4AL3C03zcX4Jrb5s24l1wf3xwOP5wrytmNcV63FDaYsVr7zUiClCW9+3Bet6JWbcbjuOY8O+L4ZxGk11jIKcA7q+Q0qeELRdS0HaXY1KSJhyZLCg7ws6fjcSf34euN8P+z6fX/h+vfiWkVNAKQmpZHbwQVUXBAp6z/8kZIJW0cqlREPij/M8kfCGZZnw+P6yAuPYYRh7U6wKMzGo+uj/KCxU1bb5TCCptqWY5wHX62DKZ85OVWhOaU8BMTobwzCOPJNQjPBi7Wob52YFA+e5LFcj0Ng09diO3QjexXQJduZ76Vv7z1puXE0/BXhuWYPvoWsBPeuw1Q4S1AW1bdzs471ZyKltRMw6zrYctUW1TSLxOQcdg8JMLWrswCLFfKoIgUuxu7d7jJFOyUb+A0WpQjpfCD9CAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1664,7 +2100,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfElEQVR42mVS7XKcQAzjgY61veZrF1ggl0tIOtP2/V9GGRuOpNMfHp1B2JJPVc49AtVexAEiAcz1idbXYAkXR4T8+TefHEM4+up4ISBmsAgkkg/7WYHCwSFGIEIdgmMgRh1q7yVG1ESo/KPI0K4F2za6/VeBbhhSwvpyx7wULNuG/fMX7o8H5lJQ1tXL5lRPi23XYp4z1rVgWSaUMmLbjt9LGZHH5BxVRtMI+jSgbSOaJnrf9Z27uQYOOSHnAXbTeR7xeNzx/v6KfX/Dx/6GP39/4+W+oW3EK43Zv2M+XGij/w7shv7cKI6mMKUepUyu9NUWfOzY1hldp5iW4mhcw2PBT4VpcDtPS9OUkVKHaUreRxVoq2C6Ob9P6UqEpcBOcCm0aORpvBRa2XPrzb6dwW6b8nAttBPFSIgSHIcxHwP5jIW2LSSaEnaCnmgKVCNSzoiq/k+yMDhGx2cvqj6nMt8sEXzmkJ82zrKtljXLnXGIyUucK2fgTYAiMOMLpgVBRHFYfuwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbElEQVR42nVSW3KDMAzkQAVLfoAxr5BASyYfbe9/GFWSA6Wd9mPH2rG8WskqUopkoDqA+BcMGVMq0BoC5pVwyT9zPgtJAkQCQL60mvBbsDJGcwyAxmXFxQ0oL/m9cGsd3wEVImAdkq9rrQRQHm4AXg4eU0uX242GaaRpnun+eNCyrjSMmU/zhc2IoLooKTSBxiHRPHPC1NM4dkcs6LqWQu3JO6AQLMU2Mncae2+pjo12o4LiomUHXRcVIvb6eqNtW+l+f1N8fL7TdbmqgKDtEr/LbwUueJ11sc9JKuzJNVcW0ZQadSdOl3Wh7b5pLPfSetN4jeVMffp2KIj8294jOW5JzoHbb9uGek4ULnN2wakbyW+4o/MHyox/CKa+e84DdSaWk89OL/PEY4lacG9ZcnZE4VmQdwwM+RC4YnZ4hnyY808B79Wp/CY6dougXE50XnUKXRXeP+Cd+n8P897lXcwGkGNEm+9Ains9vwBJh0JZg038fgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1714,7 +2150,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 34.177215189873415%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVR42pWR3WrDMAyF/RxrkyWxHNuRf5t2aXYz2Pu/0xm2s8Jgg+7iQxISEudIpLziY//EFndIw5Dz8oOJDKSUmBVViAikuaKMe8wpzehHBRHiive3O1YfMVsHvQQYjjAcjjzALB7Guorl1p+tP+YaZXY2DkIbxnbd4YxHNxK6geqlykA49VPl5eDUy1Z346PXaLVgjsh5Q/AryLgqpVwrcgrnV/kH9GstzgMhXjb4fKsx5Bt8usKnGzissC5VeZNankKUrYYTrMtY/OXIU42kHSbFTy+rC4tXlhO0bWaXjxUvvmUUT//DF2hDynZ6gjGTAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 34.177215189873415%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVR42pWRSW7DMAxFdY7WQ2IN1izbQpw6qwK9/5l+KSnu2l08EBxA8pNsWTO+jx98pQNcOwhlIeaCq0xSQ3CBWTZk4Z1TJoCrViu1xzgpsJQyXvuBHBKUDdAu/THbWK1xFLe+YlyE8S1XbGOpvjIebDYOz8cLwUT0k8RwFxjvsjIQ3cjxWRgmfAy8+t04Vf+ke+cLzNEG2/ZEDBmSJsjZt2k6kIxAxQL97Tqsv0mkTA23HUtpvO6Iy6NaHzPJWUlKpFvaS7Ce1jVugQ0bXNxqg4KmmKBtuSqPuQ4rdzqPWh5QGrQ78X9JPSX/AkqfyygqbdphAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1746,7 +2182,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 43.0379746835443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42i2MWVPaABhF+f/TzrTj1GKXB+2L4FahEEIIkEiAEAgRCEsSUBEF0RYo4IALpwP2zpw53/dwry+vZsmkVCRB4uQ4xK9QlEh4jUA4FNnc4dPI5v95EiIWjZOUUiiygpbOUNB0Bp7HRavFeDzGV6tXsRs11KzGaUzgV1xEUuQNsZS0cVQWEdOJjZMZhZyRp2AaWFWLWtPmxm1h6vrbYE6tsUaIaAT2BYIBkeMjmaNDmYOgxOFBgv19ceNAQCQcOiMWyZEQDdSkRS5j07ObtO0as/kcn/sww/s9Q3e6RPMW8WKN5LmDbDmodptC+5qsc4HuddFaHSq9Ia3hZIN7P8V5mDIdjVnMZ7y8vuK7nrv0Hj1KlzoRXUCxUyQsCbWe5qyRJu9lyLoqeltDcxRqfZPbRYfrmUt35nCz6HA/7NKqN/kzGuHrjUbcTsaUvTbJYomzahXFOkexLCTdQClbZCoVcnaVrF2l6DTpDO/wBn06dwPcQZ/ZZMLL0xPL5RLf5Y3D1a2DWTNIZ2UKmky+oJC3NDJFhXKjgGnnMapZitUspq3T7jZod+sbe90Gj/d9eH5mHZ910aJy5ZAqGxwlROSEiKSliRc1ojmFuKEhGhli/5FKOcqdJuue1WlyfuXycNfn8e/0bdDcC1L+cYD6bZfoJz/S9g7xzzuI/i8I234SX78jfNgm8m6LyPst4h/9lHYDmHsBzN0Apb0g45bDarlgtVrxD9+dYsEQ+j1mAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 43.0379746835443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42jWRW1PaUBSF8/+nfXDaUVvbh9qXUsRaL0BIuCQQEohAguGWcBNUKNQBLzii1a8Hpj0z66x19sxas/c+kpXNY6R1lLjCwf4hJ0fRNaLHMY4PT4SOcfSPD34cEY8mSCtp9JSGkclRzBcYd9r0/Rbz+RzJq59Rb9bQTYOfsghRZBQthaolkdPKWseSCRIZVbBMOqdh2hZ2+RT3zKEmvFeBT6VQYH5zg2TpHlbWQz4xCH2LEw7J7EdSRCJJwmGVyF6SkKjtCb3i48Oc6NIkKdtkU47w1rmoNenWPRaLBVLw+5729YKCPyRqOSilGik3IOn66PUOxe6QvN+n0Blg+D2qF1Nak9s1gukdvvDfzuYsRdiflxekwX3AxUOHUr9ItBgXIRlUR0VvZMg2M1jtHGagi2BDBGp44wqjxy7DRVsg4Oqxx3QyoNVoMpvNkC7FNRKzO+0OqVKJ3JmH7lbRHRelaKNVXFGrYoqRzJpHSSy/N5nQGY/oTsYEgu9v5jwtH1kul0j9S5/zK5+yZ5PJJ8WvJbGKGpYrOippOA2bcr3AqWeusdLdYZP2oE5n0BDc4GE6gudnXgHJ7ftUzwPSjk1ETZBSZVRDI1HKEzU1lNM8sm0Qt3OCc6hlk0q3hdvzcXqCz9tc/xrxcHfH6kjl3e9UvobJfvpCbHMbdfMDia2PJLZ3iG2J985nYhubnLx5R/Tte5SNbcq7IVa+/5i3Al6fluvAv/O6Y4OsC0+WAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1786,7 +2222,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 63.291139240506325%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACd0lEQVR42l2SS4tdRRRG749zJCgtSkRwKP4Bn0PBgZqoCWTiUAlGBFEyUQcRJ4IDIYg2Iemk28S093HOPa96P8+Sqntv+xh87F27qtb+dp2z+O3ufR6cPOLk3h+cLVe82nzCpfVVXt5e54XhQ47kFZ6TVzgSl3e52OXPi494sb/KpeFjXhqu8Uz/Pl+pn1nc+foWd299V3Xy7ffc/v1HvnnwCzdu/8A7d77ktePPeOv4Bm/c+5w3f/2U1+/f5O3jm7zy8DpPj+/xbPcBR/1lnure5Qv5EwutNV4Z5hBJw8BmekITW1a6YaV72qmnER2NGmiHLRs90IqBpdpwGlec+iVnYcXDsKRPkgXBQ0rUmBMIQVj1qM4ThGNqDVFHpkbjpUe0Gjs5TO+wrYOYiWPEri34yKI5HxgHR/SZ9UqhR012DmMjUhuUdmi7W6cZXMj4mHEhVc1ALHUbyN6z8CbQdSObTYOQlmwcWMM8l6PgvSPGSCpKRYlpHFkulygp616IscIIgUXfKlbrgbbtWW8kXlqwljkfgIHCds6jlMIYi5SS9XqNMaY2NNYSndsBVSvr28wuonpLGMQOeOHQV1fO7ZzGEIkxoaSi67oKLw7TwSFkmDNz+SCH3LkLhyGECi/KOVdYaSKE4PzJeXUZU/rHYbn2H5XL/wIeHKa4cxl8uAAX6Ha7ZZoEyYc9cN/9MCJ7IPt18J45532DueZl9LIvheDs9JS+74nWHkY+cObqsBzMPmBDQlmHsr7+FjbkGo2PSONwMePTXB6p1r2PzDH+D7h3ZduJ/nGH3gx0jztcO9Vomonhz1KfmP7qGc97UBLdCMZHW2Zt+BuFmtCvouSw5AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 63.291139240506325%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeElEQVR42nVSy2oUQRTtj3MnSkSJuHAn+AE+l4ILMREj6MalEgyCEOLCBwTduBAEH5CoSZxEyTg909PPqn7Uo7uPp2okKsSGy7l1u+rUOfdW8OnLFna297D9dQ97YYjz0X3Mh0s4O72HU9ktzJWLOCGJYgFzkrlYJC7gpLiN0+kS5rMlnMnu4Fh6E0/Ktwjer67h89pzfHn6AtvPXmJ94zVWd95hef0Vrn14jAubD3FlcxmXth7h8scHuEi8urGCc4O7OFrcwPGEF2WLOJJcx4p8g6CuahhGb1q0WYao2EdkY4RVxMgwFSkmjMjleUzMEYkMo3KCQRtioEPsmhDfzAhZKxFAKcBawBhiCwgBE6YoEw0jFIqpu9CgiCoo6dYl6kKhThlx48/o3KCZ1IA2CKJhjjxTsLrDOKxQ5xW6pkGtLGTVoKw0qkb7ddsBynTQtvOo6Mp91tWVoUsS6togSWkjmkJQQVdTMQn7vvebteZldNBSSdu26BhFkWM0GqEspa/5/1TnXAbJVCIcsz9xhvFEQgtKV47Q83GPmRErKq1ot24gpcR4PGZes07rFGB/ty4oSailpk2DMm1gMvkPodbaq1DKofVqXJRlhSROPPmBQkuF/mTXo+/YCLjcNUQfWHYKXe6i4z9L664mhMRwOERDlS2ba3nGK8Rh31+EM4Ude8gh0JahEkfsaoIvIo5j9lSgO1B4KKH6o1DPyHu6QD9z0rpnxqUk4e7uAGmawrKPfiiH8fVUqDT71CgflmQNn4jDms9DcjDKvT+q7niJq7uh/ZewmRbIfiSoJjkSoooLj3XE+n7KeoHiZ8ZIAU6+igTy7zH6usEviGfRJsFy3hEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1850,7 +2286,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;p&gt;추가로 &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/technotes/guides/language/foreach.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;java 8 docs&lt;/code&gt; Iterable For-Each Loop&lt;/a&gt;를 확인해보자&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public interface Collection&amp;lt;E&amp;gt; extends Iterable&amp;lt;E&amp;gt;
 
 ...
@@ -1866,7 +2302,7 @@ public interface Iterable&amp;lt;T&amp;gt; {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 제공한다.&lt;/li&gt;
 &lt;li&gt;아래는 &lt;code class=&quot;language-text&quot;&gt;List&lt;/code&gt;의 구현체인 &lt;code class=&quot;language-text&quot;&gt;ArrayList&lt;/code&gt;를 &lt;strong&gt;For-Each&lt;/strong&gt;로 작성한 것이다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public static void enhancedForLoop() {
     List&amp;lt;String&amp;gt; test = new ArrayList&amp;lt;&amp;gt;(Arrays.asList(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;E&amp;quot;));
     for (String e : test) {
@@ -1898,7 +2334,7 @@ public static void enhancedForLoop() {
 &lt;hr&gt;
 &lt;h1 id=&quot;concurrentmodificationexception-&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;ConcurrentModificationException&lt;/strong&gt; ?&lt;a href=&quot;#concurrentmodificationexception-&quot; aria-label=&quot;concurrentmodificationexception  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;글을 보다보면 &lt;strong&gt;동시성&lt;/strong&gt;에 관한 얘기가 나온다.&lt;br&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public static void enhancedForLoop() {
     List&amp;lt;String&amp;gt; test = new ArrayList&amp;lt;&amp;gt;(Arrays.asList(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;E&amp;quot;));
     for (String e : test) {
@@ -1936,7 +2372,7 @@ public static void enhancedForLoop() {
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;private void fastRemove(int index) {
     modCount++;
     int numMoved = size - index - 1;
@@ -1951,7 +2387,7 @@ public static void enhancedForLoop() {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;System.arraycopy&lt;/code&gt;를 통해 삭제 인덱스 기준으로 복사한다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;br&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt; public Iterator&amp;lt;E&amp;gt; iterator() {
         return new Itr();
 }
@@ -1999,7 +2435,7 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 구현하지 않고 &lt;code class=&quot;language-text&quot;&gt;operator&lt;/code&gt;만 작성했을 때&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;이 두 가지를 테스트해보았다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class IterableTest: BehaviorSpec ({
 
     val size = 5
@@ -2101,7 +2537,7 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;compileOnly &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;
 annotationProcessor &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
@@ -2119,7 +2555,7 @@ annotationProcessor &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;&lt;/code&
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAv0lEQVR42n3HyU7DMAAA0fz/zyGhlgMHSJrQ2vFGTO14iTsoAXHkMHqa7szAU37lxfc8S8lJC85aMKwK2Qxi+z/ZLPLhfmyW7hYVeyo6TAiYGPA1s1IpbJTDSqaQ/yyk3/cl4Mud0FZiS3TB37n0I+9vPeM4MU0fOOvQSqNmjVIarQx+8VjrcG7h0y14/4U1jmEYuQwj16sghkgHYJ1DaYOQEiFntDGH+8t5Pso5s6Z0lFIml0LKmVorW9uO3/0GgX8xK8yzK7sAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwklEQVR42k3PQXPCIBQE4Pz/P+dMR3voRTFp5QEBJQkSAllf0LEevll2Dww0Bwjs5h98e4EvRdgbiQM7RwNVLGRmnPQ6U/n37A5qde+tkcHgctfQwaEPAZb5lHAvCxZkpJeZ26fI65ZDmqqQI0KJaMZhhDi1OB4F2rZD1/3CWQeje2htam78zcPyfnU35jH4sXYhWpzZ5U9imgKadV1hHV/Q9yBSIKWeZ05JVJOUxry9OkbEOFeJ+7YtC/8j59pLKXgAsNsxbk8q8XoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2145,7 +2581,7 @@ annotationProcessor &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;&lt;/code&
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@AllArgsConstructor
 public class ProductData {
     private Long id;
@@ -2158,7 +2594,7 @@ public class ProductData {
 &lt;blockquote&gt;
 &lt;p&gt;컴파일된 클래스를 디컴파일한 &lt;strong&gt;ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class ProductData {
     private Long id;
     private String name;
@@ -2178,7 +2614,7 @@ public class ProductData {
 &lt;blockquote&gt;
 &lt;p&gt;필드들의 순서가 섞인 &lt;strong&gt;ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@AllArgsConstructor
 public class ProductData {
     private Long id;
@@ -2191,7 +2627,7 @@ public class ProductData {
 &lt;blockquote&gt;
 &lt;p&gt;컴파일된 클래스를 디컴파일한 &lt;strong&gt;순서가 섞인 ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class ProductData {
     private Long id;
     private String imageUrl;
@@ -2228,7 +2664,7 @@ public class ProductData {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 39.87341772151899%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXklEQVR42n2ObY+UMBSF+f9/y+gXY2J0J1l0h5cBSmlpyzAUFmboY4A1GxP1Jk9Oe3pzTqNLJznrklwLylZxrmtSWZNLQd4IElGQ1RWlluhbj7oNuMnTz+NfiT4T8/H+na8+prorYpXwZDO+qZiT+cl5LHjxF5Kx4IcvefY16SKpUDtlOKjCcY+eSPmyxJyGMzpYLkNJeitI+pJsEDsyGBQOhUVjabC7d/h2pwkbhqjrOrRusdbRXXuu/cAaAuu6vusaCNs5HPqbbaxz6LZlHCeWZSGa55mqEgghcM4hG0WjNG1rMMbQtluZ3UuVNujW7AGbp5SmadT+ZozFe0+0tVwHj3Ed07zw4H3Cm67A4+2HG48/lINtL4QjcJCSrqroZYN4jnF5Tl8UDGW5672/snrPOgz/4cZjmo7AvEvIXYq8Vnw6fSARMVJn1DpDqBTjFe7VYF9b3D+wk+Y29/wCGU5hB3MSw7oAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 39.87341772151899%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWUlEQVR42n2SfY+UMBCH+f5fS3N/aWK808jpLgsLpS+Uty2grPA4sJ7ZSy42efJrZ6Yzk2mjrDUcqpzUleSV41BqEq1JjSKzJYnKOemC3GmqcMGFgWYa6OfpTaIPPPN+fuRTiFGzJbZHnuqUzzbmi//OYTzzY8g4ij4POfEgRWaNwlK8QfREwsdZLocDbq3JQkFyyXfSQXEKCr14CW2EGidYiTOr39lsG2a9EXVdh3MVvm5o+57uEljXlWVZX+lr+LfqpsVVnnGcmOcr0fxrplAKpUoacWpjsdZRSZD3XrSilmJO1FZ+t7/YrHMYa3dfXdcMw0i0Vell0F6STZL8uixsDdyzbGzdrvcKv7f9i/8ve8KgDW2h6I1BfYtps4z+nBOKQvTMVUaxjAPLEG6EjbvzbruwTNMtYdolpM0R0xc8fH0nXyVGV6lwonQJfpQn+Vn9l3pyXOaeP7c5YXpu8znfAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2256,7 +2692,7 @@ public class ProductData {
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;@Builder&lt;/code&gt;를 직접 확인해보자&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@Target({TYPE, METHOD, CONSTRUCTOR})
 @Retention(SOURCE)
 public @interface Builder {
@@ -2272,7 +2708,7 @@ public @interface Builder {
 &lt;li&gt;메서드&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;생성자&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며  
 ( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 
 이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.&lt;/code&gt;
@@ -2283,7 +2719,7 @@ public @interface Builder {
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;클래스에 작성&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@Builder
 public class Test {
     private int a;
@@ -2312,7 +2748,7 @@ public class Test {
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;생성자에 작성&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class Test {
     private int a;
     private int b;
@@ -2332,7 +2768,7 @@ public class Test {
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;생성자에 작성&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;int d&lt;/code&gt;추가&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class Test {
     private int a;
     private int b;
@@ -2365,7 +2801,7 @@ public class Test {
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;특정 생성자에 작성&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class Test {
     private int a;
     private int b;
@@ -2451,7 +2887,7 @@ public class Test {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 28.48101265822785%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABg0lEQVR42j3Oy2oTYQCG4bkGty5L06SZSZ3M+fjPzD+ZU2ZSUw+Luq0r9yJY0hYiIt6A0Ao1NYIIXXgVrrV7vZNXEsTFy7d7+BRdH2Ps7mC/eIdYfsN9+YHg9JpwsSJa3PzbFfHyK87JBX3DwXRSBkOHXt+kv2//b29goUSixgsLtJGH42SEUUUQFvjBhIMHAa4rsewU0xKYRoimeRhWgkinqCOf3T1zC23aoEokKlwvx7AzZHlENz9mNn9G+/AYxy+Q5ZwobUnkjDhtGVsJsjiknj7GcDIGqstQc7fY5rHih9UW2+8dIDxBnTfUsqbKSgzVJPETfDMgsiMiP0Mfx8SiIcla5OSQVHZkeYfj5agjD0Ub6ej9Id7zc+rlmunZFd2bG2ZvvyBfX1KdX5OfXpGffUKcLBh5EVY2oaofbdGmfYLlZNiuRDdilF5vB/3+PZL332lu/5Bd/mCy+knx+RflpvUd1fqO5vY30auPqCJESwRlecS0e4rMZwRhiR8WuH7OX6dQ4QnGfHDhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 28.48101265822785%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABhElEQVR42lWRu24TQRhG9xloKQHHju114t317uz9MvZevN4IcylCCzT0SIiACUqEkHgApMgSwTFFijS8BDWXGt7kMNkGURx9oynO/80/2v7YwLxzC/vZe6LTS8Tzj3hH5wSvN4SrjcrP7Tk6ucR5/Jae4WDaCb2+Q6dr0t2d/IcWRhWun6PrAttJ8cMC35/hKfb2PByRMVECy4qxjIDhUGBOEqJkzmDkttKdnvVPGEQlwp1iTFJksaRZHioesbh7iO3NkPmSMKmJZaNygWElyNkB5fy+apqyO3DoqyHXsk7XQvP8Qsky+jsjYhFTyYoqKylSdT+0iN0Y1/QI7YDQTRkbEZF6VZzWZNMDUrlQNNhCMtBdNF0fM+71EU+PqU621Ks1zekFzbsvyJdnlMefkK/WyDfnRE9WjESIlU4pq3skWU1VP8BSTW0na4dpnc5t9m/eIPnwlfnVH7Kzb8w238kvflBsf5Jvf7U5v/pN8GLNMPYVMblaT908bFt6Qd7+w/Xq/gI1LeGgOVxMWQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2471,7 +2907,7 @@ public class Test {
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;testcase-0--아무것도-호출하지-않음&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 0 :&lt;/code&gt; 아무것도 호출하지 않음&lt;a href=&quot;#testcase-0--%EC%95%84%EB%AC%B4%EA%B2%83%EB%8F%84-%ED%98%B8%EC%B6%9C%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%8C&quot; aria-label=&quot;testcase 0  아무것도 호출하지 않음 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
 
@@ -2508,7 +2944,7 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 17.088607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAv0lEQVR42h2OzU7CQBgA+zYGwagkYoFtt9tuv+5PU7oF9SaGVyB65NXH0MMkc5pMJl3CykgjI22X8P0Hof/EykBVJ77PhtttTZoM+S6gTUCVDlU4Cu3RVWC7b3lZFzws3shcOGHtQFt7rPFIE5AmYuVA202EeCAdB3wcETfR+QkfTohLaBPZKWGT13Nw+bQlK1SNiV90lz/c5ZfmfMX9XLHuyF4JqvRoM6BNT1n5OVLVd7+fCc+visdVPrNYvvMP8W9swznVF2IAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 17.088607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAwklEQVR42h2Oy26CUBRF+ZwG27RqUsUCcuE+uA9FBNtZTdtPME1n/vrqhcEe7J2cs1ai2x5pTjT6hGrP2HDBHd6RuqOqez6vgvt9TT/UZG+OvXDkZTunrKbu4655WRU8pK8krRtR6oiqLVJYdOPR0qMiREeACx3nocP5qQ8YG6F+ZBLZi8AuN2yyhuW6ZPGUkZR5jQgfmJ8/2u9f5PWG/bqh7EhemGgyWRzn48moqgOiOcxmu1zzvCxIH7fx2ZZ0seEfEOFtDf+khhYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2532,7 +2968,7 @@ class Single{
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;클래스만 로딩 되었고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스는 로딩되지 않음&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;testcase-1--인스턴스-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 1 :&lt;/code&gt; 인스턴스 생성&lt;a href=&quot;#testcase-1--%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;testcase 1  인스턴스 생성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         Single single = new Single();
@@ -2569,7 +3005,7 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 17.088607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAw0lEQVR42h3Oy07CQBiAUd7GYCV4Q6hl2k7n8k9pOymVgJC4wZ01caPP/xl4gZMzcdJTxyNWtrgwEJodYbOjsh3a9OwPwvhd0MZAoSPGRcqqRZuOQjfk5YZlapk/rLmZLphI/UZ/ONN2e3TucaYh+IiELU4GYt/y+6c4fxry8gK1VDZesTTzPL9onhblFUxmKROlLKY74j9+8KcR8/6FnEasDKzzy0rookWC5zUTMiWooiZTgTRz3D8qbu9WJLMV02TJPypSbN+Pb/vUAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 17.088607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAwUlEQVR42h2OTU/DQAxE83OAClFApTTkO9v1psluUyjQgMSB3iAHLv39DzeHkeWx5o0jKz1NGDDuGaty7atqT2UCZd3zfhDGscAHR14GjFW/8nrzurdkxYbH2HBzm3Bx9UDkNnt2h2+68EaZC+u6xWlI3I61vLDtO06nlOOx1nA3gc5lZ1icWBbLivtFocCU2XVMlKUG4wfk6w/7OVIPP8jH7/RxkjmKSvBbgzSiAJm8NG+muXqyzO8yBa0mXc6W/ANI620iw9Yb8QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2593,7 +3029,7 @@ class Single{
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;이 실행되고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행되었다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;testcase-2--final키워드가-없는-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 2 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 없는 정적 변수 호출&lt;a href=&quot;#testcase-2--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%97%86%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 2  final키워드가 없는 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         System.out.println(Single.a);
@@ -2630,7 +3066,7 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABBUlEQVR42j3P3U6CAABAYZ6mma5W5kJQkAL5dyJDE9MoDeyPlqgr86KLtq5749NmrYtv5/oIbbNLp59gmAG60cFyQmwnRDd8WlqX8Vhjvarh+Tpyw0U7c1FbDk3V3lXVXORGm6Oqwl6phmB5fXqXczpRgu1f4HbjHcuLMN0hgzigWBuMJj66FWHYIbr1q6l5SIrDiahzWFU5OFYQRtmS7O2Lm+d34mnOJFtwfb8myTeMHzakxZLP75Ti45FoWjBMC+L5isHtgmj6Qi/JCZOc4OoJf3SHINcVFLuPkW6xsi36bIM5e+XcDKhLOnXZRJR8pIZHU7FQVOd/WfpbLVdE9isipfIpP+18md9hN95mAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABEElEQVR42h3Pa0+CABTGcb5NZZelXRASvCByE0OSFI1kmtgsXcPY1Np603rdN/6HvTh7ds529uwn6IZHJ4jZZ1PvYFo+pn2HprtU6x4PUZ0su6LtNpErNrWGjVq1UFSTas3+H7nSolhSODi8RDCdAH80x+2NMd0+thfi3A4x8rvhDLgPPdJMZxi5aEYPPS/UDJ+m6aPU20iKxYWocVaqclpUEUbzd5LND5PVjnCyIkpS4kVGvNwSLXbM1mu+fxPSrxeCScogWRPmP/2nNN/f8MdL/HhF9/GV9vAZQS6rqFaAPvvAnH+iTbcY0w2NVpeypFGWW4iSm7McKjlzz1Vz5p4s3eic59TCiUjhWOSocM0fMtOaQ4I8t+UAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2655,7 +3091,7 @@ class Single{
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;public static int a&lt;/code&gt;변수가 출력 되었다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;testcase-3--final키워드가-있는-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 3 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 있는 정적 변수 호출&lt;a href=&quot;#testcase-3--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 3  final키워드가 있는 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         System.out.println(Single.b);
@@ -2692,7 +3128,7 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 17.72151898734177%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA/ElEQVR42k2Ka0+CYACF+TF8dGlTLJGLF1DcEJOUWFPfQKGbFWl9sGmaf/xp0dr68Oyc5+xI/bGgbXu02i5Ob0iv59PpXmDZLmbDYx5rHL9OiKI6StXGMLrohoOqWtS1DprewTAcaqpFRTGRvCDmD/86ZXA1z7t7OWMQRPjhjGAywQ+nuXvjG/ojkfPzsd2QpjNCt4acmy6SWG4Q6Svibs0kyRC3K8TDO9HLFvH0gXjeEmcH4myfb3G2I3k7sFj/+nS5IUjWjBcrRnGGVLOGNO+PtNNPGskOM93TCh+p11oUSyrlsk6lYlCtNvL8j6KYnJ5qFApnyHIJWS7yDQ7EnEsAU1cpAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 17.72151898734177%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABA0lEQVR42i2PXU+CAABF+TH6aDPDmICg8hE2kYmKuVI+VKxp5Udry2Xm/OEndD3cnd2z+3KFdj/CtD0Ms4XT9Gne+9w5HUzLpVb3mExUTscrkljhVrLQdQdNc5AVC7VqU9VstMzJsolY1hG8QUL7P/5jivcw5ezc7hgviPGHY4LR04VekO36MW4vzBjS6obY7pBGs49m+VR0FyFafhHO10TPW0azVcYN0eKTeLUnfN0Rve1J1scsB+L3b5LMpx9HZtvfSx8vdwxmW4Lpht5kjVCxOjReThjzA/X0Bz09YAwXqLJB8VpBvKlSLmtIUi2jjihql2tnnnuppFIoSOTzRXK5In9dOpzF0eDCNwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2716,7 +3152,7 @@ class Single{
 &lt;li&gt;⭐️ &lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;클래스가 실행되고 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행되지 않았지만 &lt;code class=&quot;language-text&quot;&gt;public static final int b&lt;/code&gt;가 출력되었다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;testcase-4--final키워드가-없는-정적-메서드-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 4 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 없는 정적 메서드 호출&lt;a href=&quot;#testcase-4--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%97%86%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 4  final키워드가 없는 정적 메서드 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         Single.test();
@@ -2753,7 +3189,7 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 21.51898734177215%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABAUlEQVR42h3PyU7CUABAUb5HRBIDCnSEDq990ELL0JoAlVGNgAEhYDRuXbj1f69JF2dxl7fgioh2PKZlhzhuF0/2c7YTYrZ6JInF5VwhSU0aio/RlKi6h2b4OcOUKJqgUjW5Kt5TcP0+nf4UEaSI9gg/TPGDBFcOsL0BYRTzshFMMpm348XYIsYSEYYVUNc8qjWb8q1BsaxQGM13ZG9fPMy3ufF6T/b8Trb9YLr5ZLY78fO35Pv3ieHiQLI6kK6PJMsDw8We+HGXi7It3ckrBU2zaMoR7vyMXF1wZifc2RHRSfM1VZc01C6q3sNsdXJNK8jppuSuZlEqK1zfNCiW6vwD1VeaWB0eOoIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 21.51898734177215%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABCUlEQVR42h2Py07CUBRF+z0GwURBhba0tKW3D0opCMUEKQgSDbUhIEKicerAof+7vDJY2WcPTrKX0nZ7hMmElhPhuDGe30dInHaE2YoZpTaHw5VMg7rqY5g+mi7Qmx6axDADVM2lWjM4K12juPI57E8RUYobDvG6Y7z/OxjgiAHdXsLLWjDJglN3RB9bJFhyiGFF1DVB9damctmkVFFRRvOCrPhkPM+5l0yeNmTPO7L8yDT/YFbs+f5d8PWzYrjYMlpuSVe7U94tNiTZK8msoDfN6T6sUXTNwgyGuI/v+Msj7dle8obbSaWSQNV9qRrLjDFaoVzVwbSjE02pW7uxKF+onFcalMp1/gAY9JrIUg8CmwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2774,7 +3210,7 @@ class Single{
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;testcase-5--final키워드가-있는-정적-메서드-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 5 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 있는 정적 메서드 호출&lt;a href=&quot;#testcase-5--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 5  final키워드가 있는 정적 메서드 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         Single.test();
@@ -2811,7 +3247,7 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 19.62025316455696%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABCElEQVR42iXIW0+CAABAYf5M2uolkqupoIAB3kVrsCCsOZlaugwv5XrosT99WvZ09h3B9QO8bohld3CaPVx3gOcNsew2NbNLGJoc9iWCwEDVXMy6R7XmUqnenmqY/5YVk4tLFcHvRwyTOf4wxutFtIOETpDw91v9mCC8Y7O7ZbZo47Tusb0xtj/G9kaYzgDdaKFWPETVQlQshHD6Rro6Ek6WjOOMJNvwOM9JXz6IFwee11u+fpbk3yvC2TtRlhMv9kTZ9uTR05pgsiJIX+knSwRNLlPpPGBPjzjTT4x0h53mGI02klRDkk0kqYmsNNG0BppuUS7b6LqFota5Em8onpcoFK85K4j8AnsCmhbcpmBcAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 19.62025316455696%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABC0lEQVR42h2Q21KCYBSFeZpypm48IEIqUKCAMhpYDpgM2uQpJjoomR0uuu2hv/66+GbtvWbN7FlbcrwQdxBhWT52Z4jjBrgCy+6jGwPi2ORtXyUMdZSGg2F6tHWXZqsr1BEZj1bbQa6bnJwqSL1hTJBs8IIEbxDTDxP8kZiF37ucEkZjtvsuy0wc7I2xvCtswZ8adoCm91FaLmXFoiKQosUzaf5BNM+4TtYkqxfSTUH6cGB6f+D2qeDrJ2P3nRMtd0xWhfD3TNaF2LeM5o+CnHCWM0wyJLWu0fRvsBafdO7eMdJXrNkO49ynVmsjyyY1uSsqdWioF6gC7cxG1SzxApNyuUmpVOXouPLPL7HNmnJWeIlCAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2832,7 +3268,7 @@ class Single{
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;testcase-6--정적-내부-클래스의-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 6 :&lt;/code&gt; 정적 내부 클래스의 정적 변수 호출&lt;a href=&quot;#testcase-6--%EC%A0%95%EC%A0%81-%EB%82%B4%EB%B6%80-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 6  정적 내부 클래스의 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         System.out.println(Single.INNER_INSTANCE.INSTANCE);
@@ -2869,7 +3305,7 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 22.78481012658228%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABO0lEQVR42j2Q2UrDYBSE8zouxbpgaWPSJP2T9E/aLF1d6lLTVqEU27ohLkVBxBsVvPRhP0kQL4YzczgMM0epek2EE+LKBilPp3AiLBFk2nZTne5b1MMuXq2FX+/g1dr/SO8LRcHSSgHFj3tUnAjDkAg7QP6ZVuw6hhWSJCqLxTpxw2Bjy6Oo+mi6RNVcNL2KXpbohswM8xsait/oEXQTor0BQaePLZs4solwY1wvTRURN+v4QcjBoaR35FD1QspWQNmqUSjZbG5brK6pLOeKKOf370xevpg8f3J298bx+Jb+5I6Ti0dOZ0/0pwv60xeS+QOv30M+fs5I5jd0htfsjq5oJTPagzmd4WXGFdMOMdsj3P0x9v4YcTDB7Y6yv2iGn6WoOCGmCClpcQZTRFkDUwSouiS/qZPL72T4BdlawckYpVN+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 22.78481012658228%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABOklEQVR42h2Q2UrDUBRF8z1OOIElNm3SZk5N0qRpnLGkE1TFqijO4oOCDyr46McuT/KwWJd7z91sjuL6PUw7xvFSvKAnTrCcmLYV4voptpvKe0o5F0Y5wU5GJ+zjdzI59wnE5f+aarGwVEMJkkO56GIYPpYdVqGuhJaBRjuiGNZ5fVknSXQ2Nn3UeoDW9NnWHLFHQ/dpCjXVZG29gdKRwCgv6O4NxQNsaeIIlptU3oliumkorWIOjnwOjx3cIEZvhzRbHbak2eZWi+XVOosrKsr04ZOztx/hm8n9ByezWwbndwwunijmz+IX4Y3h5SPvv2O+/qZyviEf3bA7uSYrLukPhdEVvWKO0rIjWtkEd3+GtX+KeXCOm4+rNWh6ULVolzNWjKp1hQTDjDEdWZMZst3wWN1osrKmVfwDT43CUDp8lXkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2903,7 +3339,7 @@ class Single{
 &lt;li&gt;결과를 보면 10개의 스레드가 동시에 클래스 로딩을 시도해도 클래스 로딩은 한번만 수행되고, 그때 한번 초기화를 수행한다.&lt;/li&gt;
 &lt;li&gt;이후 인스턴스를 10개 생성한다&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String args[]) {
         // 1. 스레드 풀 생성
@@ -2945,7 +3381,7 @@ class Single {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 37.34177215189873%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABi0lEQVR42nXRS28SYRTG8fkwar0lJo4pF4eZ950ZGBCltm6UNlUXXhZKHCqkuyYaE3Wo0oKWaJFK27i1UBdGaxOhsDMaF9J+mb9hMDTeFr+c85xneRTTTJJIXcK0zyGNOJaZRI9EEYaDMOLoEZsr0yo3rqlIIQmMSsIh0xcKSp96UuPoEZWDB06gXM3d59aDMq73grtPa+SLK8yWVpldrJMrvia/UONh/Tne+jNyxWVcr8rMk1dk56tkC1V/9nOf6y2juAt17r15T3n7O5X2Lkuff+xrDZS2dyl92mOp1aPS7lFp/Ue7h5LxXjK3usnihy+Ut75R+vj1L+WtgX91f1LuFFeYW3vHo7dtvGZ3X6OD19j53cYvjR0eD/cOhWaH+c0uhWYX5eL1LBNTN9FORxEigdF/hO4g7RTCHvPJ6HksZwIzNo7ljGPHLwxzv9NEktFwDDVgoWhhgR4dw57KkLjsYqVvY01mcFJpIpEYmh5HNxJI8yyGODMkZNK/B0IWx44HOTSiMnL4FD8Bg09X7gM6ZywAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 37.34177215189873%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABh0lEQVR42nWSTU8TURSG588IVVmQMElbZNq5M1P7AWkVNprW0LgAF4BpGypLgokJKcVCa4AoUFtj2AKyMEBMoIA7IS74+DMPp9OaVBIWT973vefk3MU5mm0NEou/xHLiKDNCMweMEGYwIkQJBhzSozrjYzqWUni9in6/Jdiu+n0Kvc/g0UOdrge9aK/z75n4UCFT+Mz0xyr5pa/MlOtCjXypxrulKvP1FQrfP0leJ7OwTm5xk1xxg2zTi7p5cUNqX9CyyzXmtn5S+fWXtcY1q8dXrBxdurj++FJqN5SFZv7Xs9q4y7Vb06Zk6mx9j+X9P1QOL+7hvE0rlw/+951omVKV2W97zG83WNj9LZy1OaWwc9Km0wu7nf6UovQXf5y5qr0YyzH86g0DA7IIM0bQjBKQhahQHDP0TEhgPX2OExnGDrdwoiPY7aykx1BDeJ+E6fPaaEa/IiiPTuotsXQWJzmJnZoikkhiBMJC1P3EsodEY5hqsKXNa5Ar8PkdHvf46PLodHt0bgFRGlisGZAtggAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -2986,7 +3422,7 @@ class Single {
 &lt;ul&gt;
 &lt;li&gt;&lt;span style=&quot;color:red; font-weight:bold&quot;&gt;실패 사례&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String args[]) {
         ExecutorService service = Executors.newCachedThreadPool();
@@ -3030,7 +3466,7 @@ class SingleTon {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 51.26582278481012%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABqklEQVR42qWSa0sbURCG9x8V+q1idYtICGZbwVZqmlJFcGvVKI1UxGvTxFijxpqkAa3XeGlsKRqV3KMB7RfBxBj7d56yJ2vwDuKHh5l3zuFlzsyRlPom3lr7aHP6sLT38rKxA7Nq442gG3PLR+qbu1FtKoFgLe7AK+reqZga3vPC0orSoKKYVRFrLR+QujwLDK3s4vqTwRM94vt+Af/eqU5B1wUCmTyzhzlmDk7wpfMCrx5LOpVH6pycZ2ApzOfVCGNbB3iTOaYTx0wnspeJZ5mK5fgWz14/u4Bkdc/Sv7CJfS2KO3yoG9582Zsscqdh58Sc6PDLzxjj238vGWr5fSkaLm5hXz/v8ORhhtbxH/qTI7i1GYp5HetzvEr29lq8iFjKYHAH5+80k5Ej/Jl/+DNnRfYK+EobPxX5rXpf+xFnSG0OH5+8QXo8cwzPhHCtbONY3MS5HGZkPcboRhJXKCH4+itV0qMbCZFrNU071qIML+8glZXJyNUKBnUQY+sQpnY71eoAxpZ+DMpryiuNPJVrqHhWg1ylIFc9F1HTGpUiN/Gk3MCjxxX8B4YMNzw4ak8EAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 51.26582278481012%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABi0lEQVR42q2SW0sCcRDF9xsFvXVXouymFJGEJhQ97GYXu0gRmIplWZZWqwnZTS3LCkpLtHZNheylhyyrr3P672omFBHhw48zMwzDcGYohXIAGp0Bw1YXNCOz6BkYg5qegprRi6joSSgH9aD1DDyBTtg9SnT3M5CrGHT2DUFBVECuotGl0YKacO7DfBSF7SINZ/wRW6k3wmue5Gsx9qRz2HnIwpt5hjuZg+vupYRcgRdQ4449GH0RWIJx2MP3YPksNrmnH9m4zYqwJBb6WP4pD/cFNbbqheEgDMvxDVavHuBKPBea/0dxw/mT2/IM1Dl2MVfODXVrO2TgJfEwRjzM/OrhX6DGyZVNgWtYz5NwxMiV0+9wE0Ql13UnS8nlNfW9lv+EN1DC/02zAcys78K8HcLS4TUWfJew+iNYJL7aTnkshThRV84TotpOuYLyWD5LiPlC8AZmfxRUdY0E0iY5ZIwRbVoTOkYtaKaNaKUNaJH3oq6hDXWSdtRLOyBpVBQR8s+aoFW1MlRUNuADLHE4MbgVDjcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -3057,7 +3493,7 @@ class SingleTon {
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -3103,7 +3539,7 @@ class SingleTon {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 25.316455696202528%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABPklEQVR42iWP21KCUABF+Zh67TKTgQTIATyikChimIaSll2m1OkyNSPW1B/03Bf0lauJHtbs29NWGn6X7umMeHyL9OMSP0g4jgYl7c6AmuiQTwXvH4eMMpeKFmA7IY7XLtUS/7l6JFGEEyCbMY3ghLqMkDLCsnwsq0Gt1sS2m5imTxi6jEY2SeIgpYMQdQyjgWlKDEOiaoK9PR0lzq5JL1b0pwuyu1fGi4LJckO+2pAvCyaLNflyzfj+jXRe8Pl1xfdPxsPHivj8mXT+SDp/YnD1zPDmBSWMM8L4DL/VK+/93WyFfdrdEcfJmKg/oZ1M6JzkJMMZ8WBKN53SG16Uvnc6K/dmNMR0IxS1omOIFt7lhvq8wLsssGdr3LMVtgg4qNgcqg5a1UM/qlPVPVTNRdX+OrfkoFJjZ1dna3ufXyGfwqBawGB6AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 25.316455696202528%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABOElEQVR42jWQ2U7CYBBG+zB665LIvrU/paVAF0qBQkNZRIjEBbcYYyHiG3jtG/iSx98mXpycbyaTSWYUs+nTHS3pxRsMy8eQtdUOsN0Q2wtxuiGq8JgtBB+HHFGskym0Zc9G6I50h5rWTl0oGyhCtOWiHmZngGG4KbVak2rVRFUtVM2S2aLT0YkijSCoY5oCIRqUyyaVipGSzwvOzkoofnxNuNzSX9wxuXkjvkuYbXeSPbP7hKms59uE+HbPcJ3w+bXm+yfm8fCAP39huHqSPBOuX4g2ryi2P+EPq9XD8UbyzBEte4DrRzjBFLc/S+0N5wTjJX64oDtcpLk3ukztyBnLHVPRPZRctkRZa6GvdhirBP0qQb18pz55QJO/yWRVcvKcQlGnWGqkzhfqKf/5IlPj5LTI0fE5v3Rfwwxfxio0AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -3150,7 +3586,7 @@ class SingleTon {
 &lt;p&gt;✋ 위의 &lt;strong&gt;클래스 로드 시점과 같다.&lt;/strong&gt; 클래스가 로드되면 초기화도 바로 진행된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;부모클래스는-자식클래스보다-먼저-초기화된다&quot; style=&quot;position:relative;&quot;&gt;부모클래스는 자식클래스보다 먼저 초기화된다.&lt;a href=&quot;#%EB%B6%80%EB%AA%A8%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%9E%90%EC%8B%9D%ED%81%B4%EB%9E%98%EC%8A%A4%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%EC%B4%88%EA%B8%B0%ED%99%94%EB%90%9C%EB%8B%A4&quot; aria-label=&quot;부모클래스는 자식클래스보다 먼저 초기화된다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Super {
     static { System.out.println(&amp;quot;Super Init&amp;quot;); }
 }
@@ -3167,12 +3603,12 @@ class Main {
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;Super Init
 Two Init&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h3 id=&quot;부모-인터페이스는-자식-인터페이스가-호출하여도-초기화-하지-않는다&quot; style=&quot;position:relative;&quot;&gt;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다.&lt;a href=&quot;#%EB%B6%80%EB%AA%A8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%8A%94-%EC%9E%90%EC%8B%9D-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B0%80-%ED%98%B8%EC%B6%9C%ED%95%98%EC%97%AC%EB%8F%84-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface A {
     int A = 1;
     int AA = Main.out(&amp;quot;AA&amp;quot;, 2);
@@ -3197,7 +3633,7 @@ class Main {
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;B.A : 1
 B = 3
 BB = 4
@@ -3207,7 +3643,7 @@ CC = 6
 C.C : 5&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h2 id=&quot;초기화-진행-순서&quot; style=&quot;position:relative;&quot;&gt;초기화 진행 순서&lt;a href=&quot;#%EC%B4%88%EA%B8%B0%ED%99%94-%EC%A7%84%ED%96%89-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;초기화 진행 순서 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args) {
         new Single();
@@ -3245,7 +3681,7 @@ class Temp {
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code   &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;A : 0
 B : 0
 1. 정적 블록
