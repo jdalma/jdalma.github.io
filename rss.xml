@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 12 Aug 2023 16:30:21 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[들어가기전에 "소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다." "코드를 완벽하게 이해하기 위해 필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다. 디자인 패턴의 아름다움…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Aug 2023 07:18:13 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
-&quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;디자인 패턴의 아름다움 1장&lt;/li&gt;
-&lt;/ul&gt;
+&quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
+디자인 패턴의 아름다움 1장&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;작성되어 있는 코드를 분석하다보면 나에게 생소한 디자인 패턴이 적용되어 있거나, 연속된 추상화 등등 이해가 힘들 때 &lt;code class=&quot;language-text&quot;&gt;&quot;내가 이런 복잡한 비즈니스를 많이 접해보지 못하고 기술적인 소양이 낮아서 그런건가?&quot;&lt;/code&gt;라는 생각을 한적이 있다.&lt;br&gt;
 &lt;strong&gt;좋은 코드를 보고 그 원리를 분석하여 내 것으로 만들고 싶어도 기술의 이해가 없다면 본질을 이해하지 못해 작성자의 의도를 파악할 수 없을 것이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;하지만 내가 좋은 코드를 보고 좋은 코드라고 판단할 수 있을까?&lt;br&gt;
-내가 좋은 코드를 좋은 코드라고 판단하지 못하고, 좋은 코드를 작성하지 못하는 이유는 &lt;strong&gt;어떤 코드가 고품질의 코드인지 알지 못하기 때문이다.&lt;/strong&gt;&lt;br&gt;
+좋은 코드라고 판단하지 못하고, 좋은 코드를 작성하지 못하는 이유는 &lt;strong&gt;어떤 코드가 고품질의 코드인지 알지 못하기 때문이다.&lt;/strong&gt;&lt;br&gt;
 아래와 같은 질문을 어느정도로 생각하나?&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;계층화와 하위 모듈화 방법은 무엇인가?&lt;/li&gt;
@@ -30,12 +28,13 @@
 &lt;p&gt;&quot;컴퓨터가 이해할 수 있는 코드는 바보라도 작성할 수 있다. 훌륭한 프로그래머는 사람이 이해할 수 있는 코드를 작성한다.&quot; - 마틴 파울러&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;위에서 말하는 좋은 코드, 고품질 코드를 작성하기 위한 방법들에 대해 알아보자.&lt;br&gt;
-대부분의 내용은 아래의 책과 영상을 참고하였다.&lt;/p&gt;
+대부분의 내용은 아래의 책과 영상, 글을 참고하였다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.yes24.com/Product/Goods/77125987&quot;&gt;모던 자바 인 액션&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000202093794&quot;&gt;디자인 패턴의 아름다움&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=UwAoUshVpgM&amp;#x26;ab_channel=SpringCampbyKSUG&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;KSUG&lt;/code&gt; 대규모 엔터프라이즈 시스템 개선 경험기 - 1부 -&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=u_y6UGzOPUk&amp;#x26;ab_channel=SpringCampbyKSUG&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;KSUG&lt;/code&gt; 대규모 엔터프라이즈 시스템 개선 경험기 - 2부 -&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://softwareengineering.stackexchange.com/questions/418912/why-were-default-methods-introduced-to-java&quot;&gt;Why were default methods introduced to Java?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;객체지향-프로그래밍&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;객체지향 프로그래밍&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot; aria-label=&quot;객체지향 프로그래밍 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -48,14 +47,15 @@
 객체지향 프로그래밍을 이해하기 위해서는 &lt;strong&gt;캡슐화&lt;/strong&gt;, &lt;strong&gt;추상화&lt;/strong&gt;, &lt;strong&gt;상속&lt;/strong&gt;, &lt;strong&gt;다형성&lt;/strong&gt;을 이해해야 한다.&lt;/p&gt;
 &lt;h3&gt;캡슐화&lt;/h3&gt;
 &lt;p&gt;정보 은닉 또는 데이터 접근 보호라고도 하는데, &lt;strong&gt;접근 가능한 인터페이스를 제한하여 클래스가 제공하는 메서드를 통해서만 내부 정보나 데이터에 대한 외부 접근을 허가하는 것을 뜻 한다.&lt;/strong&gt;&lt;br&gt;
-예를 들어, 객체 생성 시 값이 결정되며 그 이후로 재할당되어서는 안되는 속성을 지키거나 속성을 수정하는 비즈니스 세부 정보를 지킬 수 있다.&lt;/p&gt;
+객체 생성 시 값이 결정되며 불변 속성을 지키거나 어쩔 수 없이 속성을 수정해야 한다면 비즈니스 세부 정보를 지킬 수 있다.&lt;br&gt;
+Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.&lt;/p&gt;
 &lt;p&gt;클래스의 속성에 대한 접근을 제한하지 않으면 모든 코드가 클래스의 속성에 접근하고 값을 변경할 수 있게 된다.&lt;br&gt;
 얼핏 이것이 더 유연하게 느껴지지만, &lt;strong&gt;과도한 유연성은 제어할 수 없음을 의미하고 수정 로직이 코드의 모든 곳에 흩어져 가독성과 유지 관리 용이성에 문제를 끼친다.&lt;/strong&gt;&lt;br&gt;
 그리고 클래스는 필요한 작업만 노출하는 제한된 메서드를 제공하여 클래스의 사용성을 향상 시킬 수 있다.&lt;/p&gt;
 &lt;h3&gt;추상화&lt;/h3&gt;  
 &lt;p&gt;&lt;strong&gt;메서드의 내부 구현을 숨기는 것을 의미한다.&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;함수&lt;/code&gt; 그 자체가 구현을 숨기는 추상화에 해당한다.&lt;br&gt;
 따라서 클래스를 사용할 때 기능의 구현 방식에 대해 고민하지 않고, &lt;strong&gt;메서드가 제공하는 기능에만 집중할 수 있다.&lt;/strong&gt;&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;함수&lt;/code&gt;라는 문법을 통해 구현되기 때문에 &lt;strong&gt;실제로 코드의 구현 내용은 그 자체로 추상화되는 함수의 내부에 포함된다.&lt;/strong&gt;&lt;br&gt;
+함수라는 문법을 통해 구현되기 때문에 &lt;strong&gt;실제로 코드의 구현 내용은 그 자체로 추상화되는 함수의 내부에 포함된다.&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;규칙과 구현의 분리&lt;/strong&gt;를 준수하여 코드의 결합 정도를 줄이고 코드의 확장성을 향상 시킬 수 있다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;객체 지향과 도메인 주도 설계는 소프트웨어 설계에 &lt;strong&gt;일관성과 맥락&lt;/strong&gt;을 부여한다.&lt;br&gt;
@@ -67,8 +67,9 @@
 상속은 이해하기도 쉬우며 동일한 코드의 중복을 막아낼 수 있다.&lt;br&gt;
 하지만 과도하게 사용할 경우, 상속 계층 구조가 너무 깊고 복잡하면 코드의 가독성과 유지 관리성이 급격하게 떨어지므로 유의해야 한다.&lt;/p&gt;
 &lt;h3&gt;다형성&lt;/h3&gt;
-&lt;p&gt;특정한 함수 구현을 수정해야 하는 경우 새 하위 클래스를 구현하여 기존 함수를 재정의할 수 있으며, 상위 클래스를 하위 클래스로 대체할 수 있다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;수정에 대해 폐쇄적이고 확장에 대해 개방적&lt;/code&gt;이라는 설계 원칙을 준수할 수 있으며, &lt;strong&gt;동일한 논리(같은 타입)를 재사용할 수 있어 코드의 재사용성을 향상 시킬 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;여러가지 형태를 갖는 성질을 말하며 &lt;code class=&quot;language-text&quot;&gt;수정에 대해 폐쇄적이고 확장에 대해 개방적&lt;/code&gt;이라는 설계 원칙을 준수할 수 있다.&lt;br&gt;
+&lt;strong&gt;동일한 논리(같은 타입)를 재사용할 수 있어 코드의 재사용성을 향상 시킬 수 있다.&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;동적 디스패치&lt;/code&gt;를 통한 런타임 시점에 결정되는 행위를 다형성이라고 생각한다.&lt;/p&gt;
 &lt;p&gt;다형성의 특성을 구현하기 위해&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;상속과 메서드 재정의를 하는 방식&lt;/li&gt;
@@ -81,7 +82,7 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterable.png&quot;
+    href=&quot;/static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterableDiagram.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -92,14 +93,14 @@
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;iterable&quot;
+        alt=&quot;iterableDiagram&quot;
         title=&quot;&quot;
-        src=&quot;/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterable.png&quot;
-        srcset=&quot;/static/4ae735127e3532ec667aba4cbba3554b/c26ae/iterable.png 158w,
-/static/4ae735127e3532ec667aba4cbba3554b/6bdcf/iterable.png 315w,
-/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterable.png 630w,
-/static/4ae735127e3532ec667aba4cbba3554b/40601/iterable.png 945w,
-/static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterable.png 1086w&quot;
+        src=&quot;/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterableDiagram.png&quot;
+        srcset=&quot;/static/4ae735127e3532ec667aba4cbba3554b/c26ae/iterableDiagram.png 158w,
+/static/4ae735127e3532ec667aba4cbba3554b/6bdcf/iterableDiagram.png 315w,
+/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterableDiagram.png 630w,
+/static/4ae735127e3532ec667aba4cbba3554b/40601/iterableDiagram.png 945w,
+/static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterableDiagram.png 1086w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -235,7 +236,7 @@ public class HashSet&amp;lt;E&amp;gt; extends AbstractSet&amp;lt;E&amp;gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/748b0/interface.png&quot;
+    href=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/748b0/useInterface.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -246,13 +247,13 @@ public class HashSet&amp;lt;E&amp;gt; extends AbstractSet&amp;lt;E&amp;gt;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;interface&quot;
+        alt=&quot;useInterface&quot;
         title=&quot;&quot;
-        src=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/f058b/interface.png&quot;
-        srcset=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/c26ae/interface.png 158w,
-/static/9a91643c6697ee1dfaf23315b405e49b/6bdcf/interface.png 315w,
-/static/9a91643c6697ee1dfaf23315b405e49b/f058b/interface.png 630w,
-/static/9a91643c6697ee1dfaf23315b405e49b/748b0/interface.png 868w&quot;
+        src=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/f058b/useInterface.png&quot;
+        srcset=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/c26ae/useInterface.png 158w,
+/static/9a91643c6697ee1dfaf23315b405e49b/6bdcf/useInterface.png 315w,
+/static/9a91643c6697ee1dfaf23315b405e49b/f058b/useInterface.png 630w,
+/static/9a91643c6697ee1dfaf23315b405e49b/748b0/useInterface.png 868w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -315,7 +316,7 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
 &quot;Default methods enable new functionality to be added to the interfaces of libraries and ensure binary compatibility with code written for older versions of those interfaces.&quot;&lt;br&gt;
 &lt;strong&gt;&quot;기본 메서드를 사용하면 새 기능을 라이브러리 인터페이스에 추가할 수 있고 해당 인터페이스의 이전 버전용으로 작성된 코드와의 이진 호환성을 보장할 수 있습니다.&quot;&lt;/strong&gt; 라고 설명한다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;내가 느끼기엔 &quot;자 인터페이스에 기본 메서드로 구현 메서드를 작성할 수 있으니 적극 활용하세요.&quot;라는 느낌이 아니라 기존에 인터페이스로 개발된 곳을 어쩔 수 없이 API를 수정해야 한다면 기본 메서드를 &lt;strong&gt;고려&lt;/strong&gt;해보라고 느껴진다.&lt;br&gt;
+&lt;p&gt;&quot;자 인터페이스에 기본 메서드로 구현 메서드를 작성할 수 있으니 적극 활용하세요.&quot;라는것이 아니라 기존에 인터페이스로 개발된 곳은 기본 메서드가 없으면 인터페이스에 새 메서드를 추가하고 이전 버전과의 호환성을 유지할 수 없기 때문이다.&lt;br&gt;
 &lt;strong&gt;인터페이스 정의는 구현 세부 정보를 노출하지 않고, 구체적인 수행 방법이 아닌, 어떤 작업을 수행하는지만 고려해야 하기 때문이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;getter와-setter-남용&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Getter와 Setter 남용&lt;/strong&gt;&lt;a href=&quot;#getter%EC%99%80-setter-%EB%82%A8%EC%9A%A9&quot; aria-label=&quot;getter와 setter 남용 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;객체지향 프로그래밍 언어를 사용하여 모든 코드를 클래스에 넣기만 하면 그것이 바로 객체지향 프로그래밍이라고 생각하지만 절차지향 프로그래밍 스타일로 작성한 경우가 대부분일 것이다.&lt;br&gt;
@@ -376,7 +377,8 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 &lt;p&gt;시스템이 복잡할수록 코드 재사용성과 유지 관리 용이성에 대한 요구 사항은 점점 높아지기 때문에 초기 설계에 더 많은 시간과 에너지를 투자하여 &lt;strong&gt;풍부한 도메인 모델에 기반한 DDD 개발 방식에 익숙해져야 할 것이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;결론&lt;/strong&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h3&gt;합성을 사용할지 상속을 사용할지?&lt;/h3&gt;  
-&lt;p&gt;합성을 더 많이 사용하고 상속을 덜 사용하도록 권장하지만, 언제나 합성이 옳은것도 아니고 상속이 항상 쓸모없는 것도 아니다.&lt;br&gt;
+&lt;p&gt;인터페이스에 기본 메서드가 추가되고 정적 변수를 추가할 수 있게 되면서 추상 클래스의 대부분의 기능을 따라할 수 있게 됐다.&lt;br&gt;
+합성을 더 많이 사용하고 상속을 덜 사용하도록 권장하지만, 언제나 합성이 옳은것도 아니고 상속이 항상 쓸모없는 것도 아니다.&lt;br&gt;
 클래스 간의 상속 구조가 안정적이어서 쉽게 변경되지 않고 상속 단계가 2단계 이하로 비교적 얕아 상속 관계가 복잡하지 않다면 과감하게 &lt;strong&gt;상속&lt;/strong&gt;을 사용할 수 있다.&lt;br&gt;
 또한, 콘크리트 클래스의 특정 함수를 재정의하려 할 때도 &lt;strong&gt;상속&lt;/strong&gt;을 사용할 수 있다.
 반대로 시스템이 불안정하고 상속 계층이 깊고 복잡하면 &lt;strong&gt;합성&lt;/strong&gt;을 사용해야 한다.&lt;/p&gt;
@@ -389,7 +391,7 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 &lt;h3&gt;결국엔?&lt;/h3&gt;  
 &lt;p&gt;기술이나 방법론에는 정답이 없다.&lt;br&gt;
 내가 처해있는 상황을 철저하게 분석하고 어떤 방법이 더 옳은지 판단하여 최선의 방법을 선택해야 한다.&lt;br&gt;
-그리고 이런 내용을 배웠다고 해서 팀내 컨벤션을 고려하지 않고 팀원들과 충분한 협의 없의는 적용해서는 안될 것이다.&lt;/p&gt;
+그리고 이런 내용을 배웠다고 해서 팀내 컨벤션을 고려하지 않고 팀원들과 충분한 협의 없의는 강요해서는 안될 것이다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
