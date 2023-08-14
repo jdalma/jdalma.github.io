@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Aug 2023 15:27:18 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 14 Aug 2023 13:15:42 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
@@ -7,7 +7,7 @@
 &lt;p&gt;작성되어 있는 코드를 분석하다보면 나에게 생소한 디자인 패턴이 적용되어 있거나, 연속된 추상화 등등 이해가 힘들 때 &lt;code class=&quot;language-text&quot;&gt;&quot;내가 이런 복잡한 비즈니스를 많이 접해보지 못하고 기술적인 소양이 낮아서 그런건가?&quot;&lt;/code&gt;라는 생각을 한적이 있다.&lt;br&gt;
 &lt;strong&gt;좋은 코드를 보고 그 원리를 분석하여 내 것으로 만들고 싶어도 기술의 이해가 없다면 본질을 이해하지 못해 작성자의 의도를 파악할 수 없을 것이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;하지만 내가 좋은 코드를 보고 좋은 코드라고 판단할 수 있을까?&lt;br&gt;
-좋은 코드라고 판단하지 못하고, 좋은 코드를 작성하지 못하는 이유는 &lt;strong&gt;어떤 코드가 고품질의 코드인지 알지 못하기 때문이다.&lt;/strong&gt;&lt;br&gt;
+좋은 코드를 판단하지 못하고, 좋은 코드를 작성하지 못하는 이유는 &lt;strong&gt;어떤 코드가 고품질의 코드인지 알지 못하기 때문이다.&lt;/strong&gt;&lt;br&gt;
 아래와 같은 질문을 어느정도로 생각하나?&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;계층화와 하위 모듈화 방법은 무엇인가?&lt;/li&gt;
@@ -444,7 +444,7 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 &lt;li&gt;자바의 불변 컬렉션&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
@@ -489,16 +489,12 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 &lt;h3&gt;코틀린을 몰라도 따라갈 수 있나?&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://kotlinlang.org/docs/data-science-overview.html&quot;&gt;공식문서&lt;/a&gt;에서 &lt;code class=&quot;language-text&quot;&gt;&quot;Kotlin은 간결하고 읽기 쉽고 배우기 쉽습니다.&quot;&lt;/code&gt; 라고하듯이 문법을 배워서 작성하는 것은 자바를 사용했다면 코틀린 자체를 빨리 이해할 수 있는 것은 맞다.&lt;br&gt;
 하지만 &lt;strong&gt;코틀린을 코틀린답게, 객재지향 프로그래밍과 함수형 프로그래밍을 적절히 선택하여 코틀린답게 작성하는 것은 매우 어려운일이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;맹기완 대표님이 스터디를 끝내며 하신 말씀이 &lt;code class=&quot;language-text&quot;&gt;&quot;이 책은 코틀린을 공부하기 보다는 함수형 프로그래밍을 찍어먹는 것 같다.&quot;&lt;/code&gt;라고 하셨다.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;함수형 프로그래밍의 &lt;code class=&quot;language-text&quot;&gt;ㅎ&lt;/code&gt;도 모르는 입장에서&lt;/em&gt; 코틀린의 문법과 코틀린이 해결하려는 문제를 동시에 이해하기는 힘들었다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://overreacted.io/ko/algebraic-effects-for-the-rest-of-us/&quot;&gt;대수적 효과&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://overcurried.com/3%EB%B6%84%20%EB%AA%A8%EB%82%98%EB%93%9C/&quot;&gt;모나드&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;em&gt;함수형 프로그래밍의 &lt;code class=&quot;language-text&quot;&gt;ㅎ&lt;/code&gt;도 모르는 입장에서&lt;/em&gt; 코틀린의 문법과 코틀린이 해결하려는 문제를 동시에 이해하기는 힘들었다.&lt;br&gt;
-&lt;em&gt;문법적인 부분에서 막히면 공식문서나 코틀린 인 액션을 뒤져보면서 야생형으로 읽은 것 같다.&lt;/em&gt;&lt;br&gt;
-딱딱한 자바만 사용하다가 코틀린을 만나면서 자바에 비해 문제를 해결하는 문법적인 방법이 많다는 것을 느꼈다.
+&lt;p&gt;딱딱한 자바만 사용하다가 코틀린을 만나면서 자바에 비해 문제를 해결하는 문법적인 방법이 많다는 것을 느꼈다.&lt;br&gt;
 이 책은 코틀린의 기능을 친절하게 설명해주는 책은 아니고 자유도가 높은 만큼 &lt;strong&gt;저자 입장에서&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;자바를 코틀린으로 전환&lt;/code&gt;하거나, &lt;code class=&quot;language-text&quot;&gt;자바와 코틀린의 기능적 차이&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;코틀린의 특정 기능을 사용하는 목적과 이유&lt;/code&gt;를 설명하려 하는 것 같다.&lt;/p&gt;
 &lt;p&gt;결론은 코틀린에 대한 이해가 깊고 함수형 프로그래밍에 대해 관심을 가지는 인원들과 같이 하는것이 아니라면 해당 책을 읽기에는 놓치는 것이 많을 것 같다.&lt;br&gt;
 혼자 책으로 공부하려 했다면 이 책보다는 &lt;a href=&quot;http://www.yes24.com/Product/Goods/55148593&quot;&gt;코틀린 인 액션&lt;/a&gt; 이나 &lt;a href=&quot;http://www.yes24.com/Product/Goods/107698728&quot;&gt;코틀린 완벽 가이드&lt;/a&gt;로 진행했을 것 같다.&lt;/p&gt;
@@ -901,23 +897,28 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 이너게임의 원리는 테니스에서 포핸드, 백핸드, 또는 서브를 어떻게 바꿀 것인가를 연구하면서 발견되었지만, 이 원리는 테니스 외의 다른 여러 분야에 응용될 수 있다.&lt;br&gt;
 이 책은 우리가 일하는 방법을 어떻게 바꿀 것인가에 대한 것이다. 달리 표현한다면, 일이 우리를 위해 존재하게 만드는 방법에 관한 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Timothy_Gallwey&quot;&gt;Timothy Gallwey&lt;/a&gt;는 테니스를 코칭하면서 터득한 코칭의 기술, 집중에 대한 방법과 일터에서 즐거움 속에서 배우고 성장하며 성과를 내는 방법, 비평가적 인지에 대해 설명한다.&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Timothy_Gallwey&quot;&gt;Timothy Gallwey&lt;/a&gt;는 테니스를 코칭하면서 터득한 코칭의 기술, 집중에 대한 방법과 일터에서 즐거움을 느끼고, 그 즐거움 속에서 배우고 성장하며 성과를 내는 방법, 비평가적 인지에 대해 설명한다.&lt;br&gt;
 일반적으로 코칭을 한다는 것은 훈련생은 코치에게 고민을 전달하고 코치는 고민을 해결하기 위해 훈련생을 모델링하며 훈련생은 코치에게 평가를 받는다.&lt;br&gt;
 하지만 저자는 이런 코칭보다는 훈련생이 게임에 집중하고 비평가적 인지를 하도록 유도하며 훈련생이 스스로 상황을 주도하도록 만드는 것이 더욱 효과가 좋다는 것을 깨닫는다.&lt;br&gt;
 그렇다고 이 규칙이 테니스에만 적용되는 것이 아니다. 개개인의 일상과 업무 속에서도 적용할 수 있다.&lt;br&gt;
 간략하게 정리하면 &lt;strong&gt;내부에서 일어나는 셀프1과 셀프2의 싸움에서 셀프1을 무시하고 셀프2에만 집중하여 비평가적 인지를 유지해야 한다는 것&lt;/strong&gt;이다.&lt;br&gt;
-셀프1은 스스로를 책망하고 평가하는 자아, 셀프2는 &lt;code class=&quot;language-text&quot;&gt;나&lt;/code&gt;자신이다.&lt;br&gt;
-(스스로를 평가하거나 책망하지 않고)시간 가는 줄 모르고 무엇인가에 빠져 있는 상태를 셀프2 포커스라고 한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;비평가적 인지&lt;/li&gt;
-&lt;li&gt;셀프2에 대한 신뢰&lt;/li&gt;
-&lt;li&gt;학습자 스스로의 선택&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.facebook.com/hika00/posts/7116315028383895?ref=embed_post&quot;&gt;이 글&lt;/a&gt;에서 교수가 한 학생을 코치하는 내용을 보면 이너게임에서 말하는 코칭과 유사하다는 것을 알 수 있다.&lt;/p&gt;
-&lt;p&gt;책에서 읽은 내용을 일상생활, 업무속에 적용하려 할 때 굉장히 어렵다라고 느꼈다.&lt;br&gt;
+셀프1과 셀프2에 대한 정의는 책 전반적으로 많이 설명되는데&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;셀프1 : 지시하고 평가하는 쪽, 타인이 나에게 요구하는 우선순위, 타인에게 인정받으려 하는 욕구&lt;/li&gt;
+&lt;li&gt;셀프2 : 자신의 실체, 자신의 내면에 존재하는 본질적인 우선순위,&lt;/li&gt;
+&lt;li&gt;비평가적 인지 : 어떤 현상을 평가하지 말고 자신과 자신의 행동을 있는 그대로 느끼고 받아들이는 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.facebook.com/hika00/posts/7116315028383895?ref=embed_post&quot;&gt;이 글&lt;/a&gt;에서 교수가 한 학생을 코치하는 내용을 보면 이너게임에서 말하는 코칭과 유사하다는 것을 알 수 있다.&lt;br&gt;
+책에서 읽은 내용을 일상생활, 업무속에 적용하려 할 때 굉장히 어렵다라고 느꼈다.&lt;br&gt;
 나는 매순간을 스스로를 평가하고 책망하였었다는걸 알 수 있었다.&lt;br&gt;
 하지만 스스로 평가를 내리는 습관을 &lt;strong&gt;인지&lt;/strong&gt;하는 것이 비평가적 인지를 갖추는 첫 걸음이라고 한다.&lt;/p&gt;
-&lt;p&gt;스스로가 항상 부족하고 멍청하다고 책망하고 평가하여, 해야하는 일에 대해 집중을 하지 못하고 계획조차 세우지 못한 경험이 있다면 이 책을 추천해주고 싶다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;스스로가 항상 부족하고 멍청하다고 책망하고 평가하여 해야하는 일에 대해 집중을 하지 못하고 계획조차 세우지 못한 경험&lt;/li&gt;
+&lt;li&gt;일에 집중하기도 힘들고 재미를 느끼기 힘들었던 경험&lt;/li&gt;
+&lt;li&gt;일에서 얻을 수 있는 것은 오로지 성과(급여)라고 생각하는 사람&lt;/li&gt;
+&lt;li&gt;몰입을 경험하고 싶은 사람&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위의 사항에 해당한다면 이 책을 추천해주고 싶다.&lt;/p&gt;
 &lt;h2 id=&quot;대체-뭐가-문제야&quot; style=&quot;position:relative;&quot;&gt;대체 뭐가 문제야?&lt;a href=&quot;#%EB%8C%80%EC%B2%B4-%EB%AD%90%EA%B0%80-%EB%AC%B8%EC%A0%9C%EC%95%BC&quot; aria-label=&quot;대체 뭐가 문제야 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3H4umWD5bwI&amp;#x26;t=9s&amp;#x26;ab_channel=EO%EC%9D%B4%EC%98%A4&quot;&gt;우아한 형제들 김범준 대표의 EO 영상&lt;/a&gt;에서 나오는 엘리베이터 이야기가 (이 책을 인용했는지는 모르지만)이 책에서 등장한다.&lt;br&gt;
 이 책은 개인이 문제를 인식할 떄 놓치고 실수하는 것에 대해 설명한다.&lt;/p&gt;
@@ -1637,15 +1638,13 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;li&gt;어떤 분이 &lt;code class=&quot;language-text&quot;&gt;&quot;알고리즘 한 문제에 5만원이라고 생각해라&quot;&lt;/code&gt;라고 한게 갑자기 떠올랐다&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;SI 업무에 찌들어 있을 때, 알고리즘 푸는게 재밌다라고 느꼈었다.&lt;br&gt;
-문제를 고민하고 해결하는게 진짜 개발자 같다라고 생각이 들었다.&lt;br&gt;
-&lt;em&gt;(스스로가 멋져보이기도 했다)&lt;/em&gt;&lt;/p&gt;
+문제를 고민하고 해결하는게 진짜 개발자 같다라고 생각이 들었다.&lt;/p&gt;
 &lt;p&gt;처음에는 &lt;a href=&quot;https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard&quot;&gt;인프런 강의&lt;/a&gt;로 기본을 떼고 운이 좋게 &lt;a href=&quot;https://github.com/jdalma/Algorithm-Study/tree/main&quot;&gt;스터디&lt;/a&gt;에 참가하게 되었다.&lt;br&gt;
-이 스터디에 &lt;a href=&quot;https://solved.ac/profile/opera_tive&quot;&gt;알고리즘 랭커분&lt;/a&gt;이 계셨는데 엄청 큰 도움이 되었다.&lt;/p&gt;
-&lt;p&gt;단순히 알고리즘 분야를 떠나서 &lt;code class=&quot;language-text&quot;&gt;&quot;이렇게 열심히 하시는 분도 있구나&quot;&lt;/code&gt; 라는 생각에 동기부여도 많이 되었다.&lt;br&gt;
-세그먼트 트리 주제로 교육을 한 번 해주셨는데 절대 잊을 수가 없다..&lt;/p&gt;
+이 스터디에 &lt;a href=&quot;https://solved.ac/profile/opera_tive&quot;&gt;알고리즘 랭커분&lt;/a&gt;이 계셨는데 엄청 큰 도움이 되었다.&lt;br&gt;
+단순히 알고리즘 분야를 떠나서 &lt;code class=&quot;language-text&quot;&gt;&quot;이렇게 열심히 하시는 분도 있구나&quot;&lt;/code&gt; 라는 생각에 동기부여도 많이 되었다.&lt;/p&gt;
 &lt;p&gt;알고리즘이 실무의 문제를 해결할 떄 무조건 도움은 된다고 확신한다.&lt;br&gt;
 단순히 문제를 해결하기 위해 무지성으로 짜는 것이 아니라 &lt;strong&gt;시간,공간 복잡도를 고려하는 자세&lt;/strong&gt;가 생긴다.&lt;br&gt;
-최적의 답을 무조건 찾아내지 못 하더라도 (나도 시간복잡도를 확실히 모른다.) 생각하는 개발자라면 기계처럼 코드를 작성하는 것이 아니라 몇 분이라도 고민하고 작성하는것이 중요하다고 생각한다.&lt;/p&gt;
+최적의 답을 무조건 찾아내지 못 하더라도 (나는 시간복잡도를 확실히 모른다.) 생각하는 개발자라면 기계처럼 코드를 작성하는 것이 아니라 몇 분이라도 고민하고 작성하는것이 중요하다고 생각한다.&lt;/p&gt;
 &lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;내가 사용하는 자바의 정렬 메소드는 어떻게 정렬이 되는지?  
 자료구조 마다 그리고 자료구조 구현체 마다 장,단점은 무엇인지?  &lt;/code&gt;
@@ -1653,11 +1652,11 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;p&gt;사소하지만 원리를 알게 될 학습을 할 확률이 높다고 생각한다.&lt;/p&gt;
 &lt;p&gt;이번년도 목표는 플레티넘이였지만 &lt;code class=&quot;language-text&quot;&gt;골드 1 (1541점)&lt;/code&gt; 59점을 남겨놓고 멈췄다.&lt;br&gt;
 기업용 코테 통과가 목표였는데&lt;/p&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;1. 특정 깊이 이상으로 파고들기에는 가성비가 떨어진다. (시간 소모가 너무 크다)
-2. 문제해결능력보단 solved.ac 티어와 점수에 집착을 하게 된다.
-3. 백준에는 문제가 너무 많아 스스로에게 도움이 되는 문제를 구별해내지 못 한다.&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
+&lt;ol&gt;
+&lt;li&gt;특정 깊이 이상으로 파고들기에는 가성비가 떨어진다. (시간 소모가 너무 크다)&lt;/li&gt;
+&lt;li&gt;문제해결능력보단 solved.ac 티어와 점수에 집착을 하게 된다.&lt;/li&gt;
+&lt;li&gt;백준에는 문제가 너무 많아 스스로에게 도움이 되는 문제를 구별해내지 못 한다.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;계획은 영어권 플랫폼이긴 하지만.. 문제가 명료하고 프리미엄 결제를 하면 여러 방법의 해설을 설명해주는 &lt;strong&gt;리트코드&lt;/strong&gt;를 활용할 생각이다.&lt;br&gt;
 &lt;em&gt;추가로 데브매칭이나 쇼미더코드 같은 이벤트에 무지성으로 참여하기&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -1713,8 +1712,8 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;li&gt;코드숨 대표 윤석님 덕분에 참여하게 됐고 맹기완 대표님, 책을 번역하신 오현석님과 함께 할 수 있는 모임이다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;책을 이렇게 까지 읽을 수 있구나. 같은 책을 봐도 아는 만큼 보인다&quot;&lt;/code&gt;를 느낀 모임이다.&lt;/li&gt;
 &lt;li&gt;스스로 지식이 얕아 중요하게 보지 않고 넘기는 부분들을 깊게 얘기해주시고 토론을 하여 굉장히 재밌게 진행하고 있는 모임이다.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;재밌다고해서 안힘들진 않다&lt;/em&gt; 스터디나 읽기모임에 자주 참여하지만 이렇게 깊게 얘기하고 부담되는 모임은 처음이다.&lt;/li&gt;
-&lt;li&gt;단순히 책에 나오는 내용들만 보고 넘어가는게 아니라 &lt;strong&gt;객체지향&lt;/strong&gt;, &lt;strong&gt;함수형 프로그래밍&lt;/strong&gt;, &lt;strong&gt;값 이론&lt;/strong&gt; 등에 대한 깊은 내용들을 얘기해주셔서 감사하게 참여하고 있다.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;재밌다고해서 마냥 쉽진 않았다&lt;/em&gt; 스터디나 읽기모임에 자주 참여하지만 이렇게 깊게 얘기하고 부담되는 모임은 처음이다.&lt;/li&gt;
+&lt;li&gt;단순히 책에 나오는 내용들만 보고 넘어가는게 아니라 &lt;strong&gt;객체지향&lt;/strong&gt;, &lt;strong&gt;함수형 프로그래밍&lt;/strong&gt;, &lt;strong&gt;값 이론&lt;/strong&gt; 등에 대한 내용들을 얘기해주셔서 재밌게 완독했다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -1789,7 +1788,7 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 레퍼런스 문서를 토대로 실천하는 활동이기도 하다는 점을 곱씹어보세요.&lt;br&gt;
 공식 문서의 힘을 끌어다 내 코드에 연결할 수 있다고 생각해 보세요.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;살면서 종립님을 직접 뵐 기회가 있을까 싶었는데, 코드숨 공부방에 직접 오셔서 강연까지 해주셨다.&lt;/p&gt;
+&lt;p&gt;살면서 종립님을 직접 뵐 기회가 있을까 싶었는데, 코드숨 사무실에 직접 오셔서 강연까지 해주셨다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;자주 사용하는 것을 자세하게 들여다 봐라.
 &lt;ul&gt;
@@ -1871,11 +1870,6 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;p&gt;시간이 지나면서 점점 목표한 것들을 해내고 있다는 생각이 든다.&lt;br&gt;
 &lt;strong&gt;옛날엔 어려워 했던 것을 &lt;code class=&quot;language-text&quot;&gt;지금은 아무렇지 않게 해내게 된 것&lt;/code&gt;이 가장 많이 성장한 것 같다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;2023년-목표&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;2023년 목표&lt;/strong&gt;&lt;a href=&quot;#2023%EB%85%84-%EB%AA%A9%ED%91%9C&quot; aria-label=&quot;2023년 목표 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;2022년 연말에 새로 참여한 &lt;a href=&quot;https://terrific-bull-7be.notion.site/RealWorld-c8c7312ff2824764a2efbfa871d22c2f&quot;&gt;스터디&lt;/a&gt;가 있다.&lt;br&gt;
-회사 도메인 시험을 끝내고 참여할 생각이다.&lt;br&gt;
-해당 스터디 인원들과 &lt;strong&gt;개발 서적 읽기 모임&lt;/strong&gt;도 만들어 Real MySQL과 HTTP 완벽가이드를 읽을 생각이다.&lt;br&gt;
-같이 꾸준하게 많은 책들을 해치워 나갔으면 좋겠다.&lt;br&gt;
-아래는 읽어야지 생각하고 있는 책들이다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;네티 인 액션&lt;/li&gt;
 &lt;li&gt;코틀린 인 액션&lt;/li&gt;
@@ -1906,9 +1900,7 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;li&gt;개발자의 글쓰기&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;2023년 연말 회고 때 얼마나 읽었는지 확인해야지&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;2023년에 지키고 싶은 목표들&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3&gt;**2023년에 지키고 싶은 목표들**&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;블로그 꾸준히 운영하기
 &lt;ul&gt;
