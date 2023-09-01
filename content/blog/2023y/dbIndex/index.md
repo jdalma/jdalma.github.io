@@ -90,7 +90,7 @@ chatGPT에 따르면
 `EXPLAIN`과 `EXPLAIN ANALYZE` 비교  
 - [`dev mysql` EXPLAIN ANALYZE](https://dev.mysql.com/blog-archive/mysql-explain-analyze/)
 
-#### 1(bigint):N(varchar) **Join 순서 상관 없음**
+<h3>1(bigint):N(varchar) Join 순서 상관 없음</h3>
 
 
 |[type]|[possible_keys]|[key]|[key_len]|[ref]|[rows]|[filtered]|[Extra]|
@@ -107,8 +107,7 @@ chatGPT에 따르면
 - cost 합 = 1.55
 - 첫 번째 행을 가져오는 시간 합 = 0.655
 
-
-#### 1(varchar):N(bigint) **FIRST_TABLE FIR inner join SECOND_TABLE SEC**
+<h3>1(varchar):N(bigint) FIRST_TABLE FIR inner join SECOND_TABLE SEC</h3>
 
 |[type]|[possible_keys]|[key]|[key_len]|[ref]|[rows]|[filtered]|[Extra]|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -124,7 +123,7 @@ chatGPT에 따르면
 - cost 합 = 6.43
 - 첫 번째 행을 가져오는 시간 합 = 0.52
 
-#### 1(varchar):N(bigint) **SECOND_TABLE SEC inner join FIRST_TABLE FIR**
+<h3>1(varchar):N(bigint) SECOND_TABLE SEC inner join FIRST_TABLE FIR</h3>
 
 |[type]|[possible_keys]|[key]|[key_len]|[ref]|[rows]|[filtered]|[Extra]|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
