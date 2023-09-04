@@ -152,7 +152,7 @@ Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.</p>
 <h3>다형성</h3>
 <p>여러가지 형태를 갖는 성질을 말하며 <code class="language-text">수정에 대해 폐쇄적이고 확장에 대해 개방적</code>이라는 설계 원칙을 준수할 수 있다.<br>
 <strong>동일한 논리(같은 타입)를 재사용할 수 있어 코드의 재사용성을 향상 시킬 수 있다.</strong><br>
-<code class="language-text">동적 디스패치</code>를 통한 런타임 시점에 결정되는 행위를 다형성이라고 생각한다.</p>
+<code class="language-text">동적 디스패치</code>를 통한 런타임 시점에 결정되는 행위를 다형성이라고 생각할 수 있다.</p>
 <p>다형성의 특성을 구현하기 위해</p>
 <ol>
 <li>상속과 메서드 재정의를 하는 방식</li>
@@ -161,7 +161,7 @@ Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.</p>
 <p>Collection Framework의 <code class="language-text">Iterable</code>을 통해 인터페이스를 사용하여 합성하는 방식을 확인해보자.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
     >
       <a
     class="gatsby-resp-image-link"
@@ -172,19 +172,18 @@ Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.</p>
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 70.88607594936708%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVR42o1T6Y6bMBjMU4TLJyYESJbLHOE0d7LZSn3/t+nHNlpV2/7opxH6jGfweGwOhNrfgAl3PV8WMkkzKYsky/3gDV7+zTx8G1NmI8TeonC+q2me78+Hmtc4zf5L/Foc25bJMOPUgYYQyv9Je4kpF0x8whbCO83Pfnssj8fHx8eP9f3ZrksQBVTYO8ERQH6JwSelgjsOyCgThO0fOnv+2Qu84BpmsedfXS/g4gRTAGY7XDgggf4AmzEMgigzLWIhCq9Mi+o61gwEMBGBpw6NiREGDgWORSkMQXiARdTUNk3bjFMiM0irqPK2b3s1qmFUUMPY90Ol1OUaZaXsVANTZdc7J+9wOnu3umhUU3bdNYoR5rFMiqosy6pqum75WdXt7VbndQMHFqVR1d3aSaVlJRz3ZRuCRYQYFt79I3LUTN2yTexY3NeRo1n8eDR0A+smNhFGjJkm2W1/nq2A7hqF09qDyWmexmEc13vR9pfgMiz9MC0T1DiNy3rrlXv29vC+jgpT++z7WZFB1cOzrJXMi7ckdV0vzVOoW7fUwyPLi0jmzsn9dkkYIkzTkaaBI9ew9jwhWEQ4JAwwTGJRT9MtACYM8ClmAiESlq26b2BtXbZp3cq+59yBqdemML1m1fD+vszztj3GbcubhvzeM8bMvcSRzJJEwp8QJ/ISxpSJP24rOwVhuBPSVOZw1SF4Qu1fp5mGyVobSkIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    style="padding-bottom: 70.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVR42o1T6Y6bMBjMU4TLJyYESJbLHOE0d7LZSn3/t+nHNlpV2/7opxH6jGfweGwOhNrfgAl3PV8WMkkzKYsky/3gDV7+zTx8G1NmI8TeonC+q2me78+Hmtc4zf5L/Foc25bJMOPUgYYQyv9Je4kpF0x8whbCO83Pfnssj8fHx8eP9f3ZrksQBVTYO8ERQH6JwSelgjsOyCgThO0fOnv+2Qu84BpmsedfXS/g4gRTAGY7XDgggf4AmzEMgigzLWIhCq9Mi+o61gwEMBGBpw6NiREGDgWORSkMQXiARdTUNk3bjFMiM0irqPK2b3s1qmFUUMPY90Ol1OUaZaXsVANTZdc7J+9wOnu3umhUU3bdNYoR5rFMiqosy6pqum75WdXt7VbndQMHFqVR1d3aSaVlJRz3ZRuCRYQYFt79I3LUTN2yTexY3NeRo1n8eDR0A+smNhFGjJkm2W1/nq2A7hqF09qDyWmexmEc13vR9pfgMiz9MC0T1DiNy3rrlXv29vC+jgpT++z7WZFB1cOzrJXMi7ckdV0vzVOoW7fUwyPLi0jmzsn9dkkYIkzTkaaBI9ew9jwhWEQ4JAwwTGJRT9MtACYM8ClmAiESlq26b2BtXbZp3cq+59yBqdemML1m1fD+vszztj3GbcubhvzeM8bMvcSRzJJEwp8QJ/ISxpSJP24rOwVhuBPSVOZw1SF4Qu1fp5mGyVobSkIAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="iterableDiagram"
         title=""
-        src="/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterableDiagram.png"
-        srcset="/static/4ae735127e3532ec667aba4cbba3554b/c26ae/iterableDiagram.png 158w,
-/static/4ae735127e3532ec667aba4cbba3554b/6bdcf/iterableDiagram.png 315w,
-/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterableDiagram.png 630w,
-/static/4ae735127e3532ec667aba4cbba3554b/40601/iterableDiagram.png 945w,
+        src="/static/4ae735127e3532ec667aba4cbba3554b/1cfc2/iterableDiagram.png"
+        srcset="/static/4ae735127e3532ec667aba4cbba3554b/3684f/iterableDiagram.png 225w,
+/static/4ae735127e3532ec667aba4cbba3554b/fc2a6/iterableDiagram.png 450w,
+/static/4ae735127e3532ec667aba4cbba3554b/1cfc2/iterableDiagram.png 900w,
 /static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterableDiagram.png 1086w"
-        sizes="(max-width: 630px) 100vw, 630px"
+        sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
@@ -233,7 +232,7 @@ public class HashSet&lt;E&gt; extends AbstractSet&lt;E&gt;
 대부분의 백엔드 개발자들은 (표현 계층, 논리 계층, 데이터 계층) MVC 아키텍처에 익숙하여 <strong>빈약한 도메인 모델</strong>을 의식하지 못하며 개발한다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
     >
       <a
     class="gatsby-resp-image-link"
@@ -244,20 +243,18 @@ public class HashSet&lt;E&gt; extends AbstractSet&lt;E&gt;
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/klEQVR42iWS+0/TZxjFv8mS7cf9Fe4vMFvUZMsSl2VZ5i1j8zapS0ARxUthA4qdtqKICG51EkWUyq0IpRSERaAXarm1pdIWLXQtKxS1K7cW0GUo/fi2/HBy3vPmzclznvdIKxEX0cAgi2EHsdAw0Sk7C9MjaY4G7MSCQyTmxthYfEZyZQpWAyRTWBGIT5JMTG7qxFT6jbQy6+SpzYDT3MrEcBdhr4lZn4m5ZxaC7sc4TA8JuXtZj3mZdP6Fb6gTr70D/2g3L/0DhD39uAf0zPjMJJeeIyWEocPShqW7gb72WkzG+1geNTDQ04TL2k5/p1awnrfzEwz16hjp02HueoBZ3KeG8A4asQrtd/RAynA+7MJs7WZgsBer5RE2ez+ZJ1Vs2XqQz77YzafbtpNzNAPifv7718P6kp95t5G4Q8e6iMzq3/A6mI6ejvwyOEpjWzONeh0NLY2or15l21cHkD7+nA8++gRJ+pC9334JCT+L08PEI2N4e27j1P7G6oyDd2Kq9ZiPdwsTm4avgg6a9ZuGrfV3OXwok4p798i/oGLXvj0ckB1BnpPBxoKPNfE5b8Quwz1anpeeI3ango2oh+SyP72/FEuRqSHqmrRoW+qpKb/B7q+/4XrtHRRFMlTqPMp+V5N/fA//R8dZDo+wJBAR+wvUXCei+5PXIdEC0ZS1mVHWpu1IAY9FRK2nWXcfTWUpR3/KQGdoQlWSw8UrSspuqCk8sS9tlog4iYuYcWGwKKa1GTQ4HtcRFD8dcnUSMmuR3LYOCuTHURblofg1F3nuEUoKTyHPk1EoP4b8TBaXFLm8EBWZnTAzI/DPeJ/QNkwtGrrqrjE7+QS/oZZAyy2kkb5mFPnZXD6fh6r4JFcunKVUnC8rz1B+8RznC45Re/MS+vo/OLz/O7Jk3/PL6Z8pEMjOzED24y5ysg7yw84d3FUVILmsrfiGjYzbDaLg7YxZ29JFTXFKewY7ROGNdD+spqqsCM01BdVVSqorldRoVAJqblaUUFVejKFRw3tclqDT7tAnIgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    style="padding-bottom: 54.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/klEQVR42iWS+0/TZxjFv8mS7cf9Fe4vMFvUZMsSl2VZ5i1j8zapS0ARxUthA4qdtqKICG51EkWUyq0IpRSERaAXarm1pdIWLXQtKxS1K7cW0GUo/fi2/HBy3vPmzclznvdIKxEX0cAgi2EHsdAw0Sk7C9MjaY4G7MSCQyTmxthYfEZyZQpWAyRTWBGIT5JMTG7qxFT6jbQy6+SpzYDT3MrEcBdhr4lZn4m5ZxaC7sc4TA8JuXtZj3mZdP6Fb6gTr70D/2g3L/0DhD39uAf0zPjMJJeeIyWEocPShqW7gb72WkzG+1geNTDQ04TL2k5/p1awnrfzEwz16hjp02HueoBZ3KeG8A4asQrtd/RAynA+7MJs7WZgsBer5RE2ez+ZJ1Vs2XqQz77YzafbtpNzNAPifv7718P6kp95t5G4Q8e6iMzq3/A6mI6ejvwyOEpjWzONeh0NLY2or15l21cHkD7+nA8++gRJ+pC9334JCT+L08PEI2N4e27j1P7G6oyDd2Kq9ZiPdwsTm4avgg6a9ZuGrfV3OXwok4p798i/oGLXvj0ckB1BnpPBxoKPNfE5b8Quwz1anpeeI3ango2oh+SyP72/FEuRqSHqmrRoW+qpKb/B7q+/4XrtHRRFMlTqPMp+V5N/fA//R8dZDo+wJBAR+wvUXCei+5PXIdEC0ZS1mVHWpu1IAY9FRK2nWXcfTWUpR3/KQGdoQlWSw8UrSspuqCk8sS9tlog4iYuYcWGwKKa1GTQ4HtcRFD8dcnUSMmuR3LYOCuTHURblofg1F3nuEUoKTyHPk1EoP4b8TBaXFLm8EBWZnTAzI/DPeJ/QNkwtGrrqrjE7+QS/oZZAyy2kkb5mFPnZXD6fh6r4JFcunKVUnC8rz1B+8RznC45Re/MS+vo/OLz/O7Jk3/PL6Z8pEMjOzED24y5ysg7yw84d3FUVILmsrfiGjYzbDaLg7YxZ29JFTXFKewY7ROGNdD+spqqsCM01BdVVSqorldRoVAJqblaUUFVejKFRw3tclqDT7tAnIgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="domainModel"
         title=""
-        src="/static/24d4fc16bd45ff5d24a15feaad7571d2/f058b/domainModel.png"
-        srcset="/static/24d4fc16bd45ff5d24a15feaad7571d2/c26ae/domainModel.png 158w,
-/static/24d4fc16bd45ff5d24a15feaad7571d2/6bdcf/domainModel.png 315w,
-/static/24d4fc16bd45ff5d24a15feaad7571d2/f058b/domainModel.png 630w,
-/static/24d4fc16bd45ff5d24a15feaad7571d2/40601/domainModel.png 945w,
-/static/24d4fc16bd45ff5d24a15feaad7571d2/78612/domainModel.png 1260w,
+        src="/static/24d4fc16bd45ff5d24a15feaad7571d2/1cfc2/domainModel.png"
+        srcset="/static/24d4fc16bd45ff5d24a15feaad7571d2/3684f/domainModel.png 225w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/fc2a6/domainModel.png 450w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/1cfc2/domainModel.png 900w,
 /static/24d4fc16bd45ff5d24a15feaad7571d2/a3ebb/domainModel.png 1333w"
-        sizes="(max-width: 630px) 100vw, 630px"
+        sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
@@ -325,15 +322,15 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 57.59493670886076%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVR42pVSi3LaMBD0//9VHzNliAMYuxRMCMGhhGJj49hYkvXYniTy6mSSqWZ2ZN2dVufdC/DBkr1B1yp0Z422kRBM47MVvBc0xu9lwfD9W4zhcI6vXyJkd+Wb/H8Raq1wzDnuVgzZmmNzy7H/zaGUpLz5jNA8Q0oJxjoIwdELDcENegJntPcWwuXt/vreC6HrxsCQPFJq0ku4b9vEv408xSwYI025hL/v4QhtMokzjK6XuA5TXJFegx8JosmaTHmrKes0wqsU49GNqw/DBQaDhDDDfld7QpIKq/QRi3mFZVrTXjrcUMz+7mvCc6ux+HVCamsXtaufzwo61zjsuSeUvXTit7VBXSmcyh7nhhzOSavuotOFUHCN4iDQ1NqhLISrPVKtHStHKARpZrwASinY85NRigzS+mX2rMNSeR1snHN2+QNF+vt4EE1W9LJyh59JhjhaE5EnmCUbxNO1M4newjhcoshbl9ttK8pvL50rqtugPnEE49E9OesZppMdxuN72ImwjSXxHtNoR6/DGTQc3GL/cHa126whwtzJYc2KJg/0GENQHjQRGCe8/a4KP29aGdKRzgQpjUOZG6edXY+VxpHq7T07p8UfGrlG4y/9ep5IyaY04gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    style="padding-bottom: 57.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVR42pVSi3LaMBD0//9VHzNliAMYuxRMCMGhhGJj49hYkvXYniTy6mSSqWZ2ZN2dVufdC/DBkr1B1yp0Z422kRBM47MVvBc0xu9lwfD9W4zhcI6vXyJkd+Wb/H8Raq1wzDnuVgzZmmNzy7H/zaGUpLz5jNA8Q0oJxjoIwdELDcENegJntPcWwuXt/vreC6HrxsCQPFJq0ku4b9vEv408xSwYI025hL/v4QhtMokzjK6XuA5TXJFegx8JosmaTHmrKes0wqsU49GNqw/DBQaDhDDDfld7QpIKq/QRi3mFZVrTXjrcUMz+7mvCc6ux+HVCamsXtaufzwo61zjsuSeUvXTit7VBXSmcyh7nhhzOSavuotOFUHCN4iDQ1NqhLISrPVKtHStHKARpZrwASinY85NRigzS+mX2rMNSeR1snHN2+QNF+vt4EE1W9LJyh59JhjhaE5EnmCUbxNO1M4newjhcoshbl9ttK8pvL50rqtugPnEE49E9OesZppMdxuN72ImwjSXxHtNoR6/DGTQc3GL/cHa126whwtzJYc2KJg/0GENQHjQRGCe8/a4KP29aGdKRzgQpjUOZG6edXY+VxpHq7T07p8UfGrlG4y/9ep5IyaY04gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="abstract"
         title=""
         src="/static/d0059197ae31797013808436478bfa80/a65ce/abstract.png"
-        srcset="/static/d0059197ae31797013808436478bfa80/c26ae/abstract.png 158w,
-/static/d0059197ae31797013808436478bfa80/6bdcf/abstract.png 315w,
+        srcset="/static/d0059197ae31797013808436478bfa80/3684f/abstract.png 225w,
+/static/d0059197ae31797013808436478bfa80/fc2a6/abstract.png 450w,
 /static/d0059197ae31797013808436478bfa80/a65ce/abstract.png 559w"
         sizes="(max-width: 559px) 100vw, 559px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
@@ -345,7 +342,7 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 <p>추상 클래스를 사용하는 위의 다이어그램에서 만약 <code class="language-text">노래 부를 수 있는</code> 타입을 추가해야한다면 어떻게 해야할까?</p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
     >
       <a
     class="gatsby-resp-image-link"
@@ -356,19 +353,18 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 26.58227848101266%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVR42n2P4W7DIAyE8/4PuCaNqm5romohlUoggMFwc1A69U9mCQEfd/bR4KByLiglIxLj0s8YBy20gJnxXzXvF+aMEAjO+WrcVkqM1bIw/mNEBO+D7LEOPmyoJoeuVbheHmIshyl+7iv684y+m2Ftqqzs8iZSkukkDw7LEhB8hjUJxjjhQZJQbU4hwb90etdJM7N4uNVXXYwJzTgYdKcJ507VqdZEfF2fknSSBArtSYkp4vtTmJy3VJt+0RHDTdcfVfYxYbxp/ALSrYLYUwOjFwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    style="padding-bottom: 26.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVR42n2P4W7DIAyE8/4PuCaNqm5romohlUoggMFwc1A69U9mCQEfd/bR4KByLiglIxLj0s8YBy20gJnxXzXvF+aMEAjO+WrcVkqM1bIw/mNEBO+D7LEOPmyoJoeuVbheHmIshyl+7iv684y+m2Ftqqzs8iZSkukkDw7LEhB8hjUJxjjhQZJQbU4hwb90etdJM7N4uNVXXYwJzTgYdKcJ507VqdZEfF2fknSSBArtSYkp4vtTmJy3VJt+0RHDTdcfVfYxYbxp/ALSrYLYUwOjFwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="abstract2"
         title=""
-        src="/static/64093f70a8db0a86766c6d02caa8a4a7/f058b/abstract2.png"
-        srcset="/static/64093f70a8db0a86766c6d02caa8a4a7/c26ae/abstract2.png 158w,
-/static/64093f70a8db0a86766c6d02caa8a4a7/6bdcf/abstract2.png 315w,
-/static/64093f70a8db0a86766c6d02caa8a4a7/f058b/abstract2.png 630w,
-/static/64093f70a8db0a86766c6d02caa8a4a7/40601/abstract2.png 945w,
+        src="/static/64093f70a8db0a86766c6d02caa8a4a7/1cfc2/abstract2.png"
+        srcset="/static/64093f70a8db0a86766c6d02caa8a4a7/3684f/abstract2.png 225w,
+/static/64093f70a8db0a86766c6d02caa8a4a7/fc2a6/abstract2.png 450w,
+/static/64093f70a8db0a86766c6d02caa8a4a7/1cfc2/abstract2.png 900w,
 /static/64093f70a8db0a86766c6d02caa8a4a7/d9b5d/abstract2.png 1224w"
-        sizes="(max-width: 630px) 100vw, 630px"
+        sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
@@ -379,7 +375,7 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 이 문제는 <strong>인터페이스의 <code class="language-text">합성</code>, <code class="language-text">인터페이스</code>, <code class="language-text">위임</code>을 사용하는게 적절하다.</strong></p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 868px; "
     >
       <a
     class="gatsby-resp-image-link"
@@ -390,18 +386,17 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 98.73417721518987%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADEklEQVR42nVUiXajSAz0/3/XTF4yscfOrOMDHF/c92HAmKu2uhmIvcnyXj8aWi2VSiVNTOMCVXHlss0C4uk6PDxt0yHwGuxUj3YOTscUadziu2diGBl+/nzD09MSjl3+j0PAtkq8vm7x48cci8UBaSItvzr03RbrlYP3pQXf+T5qU3dEXxFdiOU/BrZrH3HUfY9wpwRQNp40FvseYfcF4eEjwfz3CR+7CBs6PB2i0fbefuJ7BY0cppvB1CNUVfUlalGU0M4RDnuXdhc4VkbEMa7X61eEbdvyQn8g9ueziTS9jAYielmWyPMr6rr5z/UOSXKBZbmPDpvm0zCJM1yLcvwWTsS5eN+nN7zLspJ3hn+9w7aRldVOEbkk6RsNUdinLpwJm7quHwtFDNo5ppQseUfZWihyOiyKG0zTkcTv1QS/Z0dMfx3IUY/SMFxSkNPGfUi5uoHcp5hNj1wHzGc6kbaYCMi+HxIFDdSIoo1xPKREK4UG34skx74XElU7clfdOhbpgg0VYhgFFCWCKLBMuf2bsm1dZLqqYiL0i78c1mPq96LXdZvBfdrqlNEZOtNPkxsmEn5VjyRvNio8LxirLs4GG/GEYSKrmue5/A6CCNvt7rMoQ/QBief5JLcYDYb//b5CFMXSyaiKJEU4fBPTZDgorw18t0FGCVpmjre5KqsYhhwMfst0agau76p9L5+7Thn2ZdFB1xry2LIoOZ6ftpREzM4ATKNFHPYFiYKak6clxw17WuMcOMO1rzznGQNP7mWwmB85TRb48+eA9/czXl5WUDmyPA9E2Dt07IaBa64bFuzt6esHzqeCQRu2bv3ocL2yMZspXCqniob5fI/XXxu8PK+Jqm9PQ8/w9naUduu1jt2uv/PyvMJmZWIyyKC8dkwhYDQhHY8RhfYA14GkIYl62RhawUw0dkZIuXh8B/Bcgbwj982nw1vZsUv2mE4VLJc6VmsLtsNC+XTqfqYc+CX2Hy40LaKgUwZOEcfkjxyLdZdyRw4yHPceEWWyrz234iCl9oIOefY4FOS7w8NMFDr8F3FD+hr9f1tHAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    style="padding-bottom: 98.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADEklEQVR42nVUiXajSAz0/3/XTF4yscfOrOMDHF/c92HAmKu2uhmIvcnyXj8aWi2VSiVNTOMCVXHlss0C4uk6PDxt0yHwGuxUj3YOTscUadziu2diGBl+/nzD09MSjl3+j0PAtkq8vm7x48cci8UBaSItvzr03RbrlYP3pQXf+T5qU3dEXxFdiOU/BrZrH3HUfY9wpwRQNp40FvseYfcF4eEjwfz3CR+7CBs6PB2i0fbefuJ7BY0cppvB1CNUVfUlalGU0M4RDnuXdhc4VkbEMa7X61eEbdvyQn8g9ueziTS9jAYielmWyPMr6rr5z/UOSXKBZbmPDpvm0zCJM1yLcvwWTsS5eN+nN7zLspJ3hn+9w7aRldVOEbkk6RsNUdinLpwJm7quHwtFDNo5ppQseUfZWihyOiyKG0zTkcTv1QS/Z0dMfx3IUY/SMFxSkNPGfUi5uoHcp5hNj1wHzGc6kbaYCMi+HxIFDdSIoo1xPKREK4UG34skx74XElU7clfdOhbpgg0VYhgFFCWCKLBMuf2bsm1dZLqqYiL0i78c1mPq96LXdZvBfdrqlNEZOtNPkxsmEn5VjyRvNio8LxirLs4GG/GEYSKrmue5/A6CCNvt7rMoQ/QBief5JLcYDYb//b5CFMXSyaiKJEU4fBPTZDgorw18t0FGCVpmjre5KqsYhhwMfst0agau76p9L5+7Thn2ZdFB1xry2LIoOZ6ftpREzM4ATKNFHPYFiYKak6clxw17WuMcOMO1rzznGQNP7mWwmB85TRb48+eA9/czXl5WUDmyPA9E2Dt07IaBa64bFuzt6esHzqeCQRu2bv3ocL2yMZspXCqniob5fI/XXxu8PK+Jqm9PQ8/w9naUduu1jt2uv/PyvMJmZWIyyKC8dkwhYDQhHY8RhfYA14GkIYl62RhawUw0dkZIuXh8B/Bcgbwj982nw1vZsUv2mE4VLJc6VmsLtsNC+XTqfqYc+CX2Hy40LaKgUwZOEcfkjxyLdZdyRw4yHPceEWWyrz234iCl9oIOefY4FOS7w8NMFDr8F3FD+hr9f1tHAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="useInterface"
         title=""
-        src="/static/9a91643c6697ee1dfaf23315b405e49b/f058b/useInterface.png"
-        srcset="/static/9a91643c6697ee1dfaf23315b405e49b/c26ae/useInterface.png 158w,
-/static/9a91643c6697ee1dfaf23315b405e49b/6bdcf/useInterface.png 315w,
-/static/9a91643c6697ee1dfaf23315b405e49b/f058b/useInterface.png 630w,
+        src="/static/9a91643c6697ee1dfaf23315b405e49b/748b0/useInterface.png"
+        srcset="/static/9a91643c6697ee1dfaf23315b405e49b/3684f/useInterface.png 225w,
+/static/9a91643c6697ee1dfaf23315b405e49b/fc2a6/useInterface.png 450w,
 /static/9a91643c6697ee1dfaf23315b405e49b/748b0/useInterface.png 868w"
-        sizes="(max-width: 630px) 100vw, 630px"
+        sizes="(max-width: 868px) 100vw, 868px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
@@ -532,7 +527,7 @@ class Penguin() : Bird(&quot;펭귄&quot;) {
 <strong>기존 Alert 도메인의 check 함수 수정은 불가피할 것이다.</strong></p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
     >
       <a
     class="gatsby-resp-image-link"
@@ -543,20 +538,19 @@ class Penguin() : Bird(&quot;펭귄&quot;) {
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 65.82278481012659%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACLklEQVR42m1TiXKqQBD0///qlXl5hwdG7sMEURREEBACJkKnXdCYVLZqapfZoenpHgZt2+K6qtcGaXJGnrUIgwLbTY599Cqe00ODumpEXXFskcRv8JaRiPU6wYHvlcwP7gHztEEQtPD9Go+PCobDJ0wmDnNnhCGB8gtgi/2uxdKtMPwl42Go4veDCve5wj5svgIeswaHGHCcPYEszGYL/HmU4b5kZHph1jHcrAvohs+6QERZAjHfS5Me8IqZJu/QlRCWGUGZ+5CfVgi3JyR7YEfmx7wD9Fc5RiOTYYhwnAiWxda9rGfYA+bZmcxs/B9pGI0NTKc2FNWDafEjdkTAd1EXbCtI0kLUzmbPUBQPk7GDjV98BUwPZKjuYOo77gEWdgxV2YhQ5htk6fuN4QVIkhxo2hqy7MIwtpQMX1vOCChNl5hOFvj318B4bGM8suB5R7r6qeFqWWA6dkWtqUeQJi5zvSlN0+BqTBIfKXjC1muOwSsZ1WRdoSzocpAjy8rbeNVVixOjKru9yM8894C3Oawq3D/fr8tH67q+z3yLbg12HGCTI2Do1GL+Ao0mqBT5qtfFeUPv7lXFFWFSryJvf8QdbP0SGkdlPltxTNZil6Ye5/Es6uPozPwWM+qlyBuhlyoH1Lv9sRMyPFHYGLaVQNd2sM2YDkf8G06iIArfYGixyBtaRHYR6yLm616Kb4BxVENnO12rtF9f8byiQVVv1IkAl/uuXV3zGJ/33wE/AK0D0Z35NXr7AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    style="padding-bottom: 65.77777777777779%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACLklEQVR42m1TiXKqQBD0///qlXl5hwdG7sMEURREEBACJkKnXdCYVLZqapfZoenpHgZt2+K6qtcGaXJGnrUIgwLbTY599Cqe00ODumpEXXFskcRv8JaRiPU6wYHvlcwP7gHztEEQtPD9Go+PCobDJ0wmDnNnhCGB8gtgi/2uxdKtMPwl42Go4veDCve5wj5svgIeswaHGHCcPYEszGYL/HmU4b5kZHph1jHcrAvohs+6QERZAjHfS5Me8IqZJu/QlRCWGUGZ+5CfVgi3JyR7YEfmx7wD9Fc5RiOTYYhwnAiWxda9rGfYA+bZmcxs/B9pGI0NTKc2FNWDafEjdkTAd1EXbCtI0kLUzmbPUBQPk7GDjV98BUwPZKjuYOo77gEWdgxV2YhQ5htk6fuN4QVIkhxo2hqy7MIwtpQMX1vOCChNl5hOFvj318B4bGM8suB5R7r6qeFqWWA6dkWtqUeQJi5zvSlN0+BqTBIfKXjC1muOwSsZ1WRdoSzocpAjy8rbeNVVixOjKru9yM8894C3Oawq3D/fr8tH67q+z3yLbg12HGCTI2Do1GL+Ao0mqBT5qtfFeUPv7lXFFWFSryJvf8QdbP0SGkdlPltxTNZil6Ye5/Es6uPozPwWM+qlyBuhlyoH1Lv9sRMyPFHYGLaVQNd2sM2YDkf8G06iIArfYGixyBtaRHYR6yLm616Kb4BxVENnO12rtF9f8byiQVVv1IkAl/uuXV3zGJ/33wE/AK0D0Z35NXr7AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="alertHandler"
         title=""
-        src="/static/fba97e4708d704952ba10568613a14c0/f058b/alertHandler.png"
-        srcset="/static/fba97e4708d704952ba10568613a14c0/c26ae/alertHandler.png 158w,
-/static/fba97e4708d704952ba10568613a14c0/6bdcf/alertHandler.png 315w,
-/static/fba97e4708d704952ba10568613a14c0/f058b/alertHandler.png 630w,
-/static/fba97e4708d704952ba10568613a14c0/40601/alertHandler.png 945w,
-/static/fba97e4708d704952ba10568613a14c0/78612/alertHandler.png 1260w,
+        src="/static/fba97e4708d704952ba10568613a14c0/1cfc2/alertHandler.png"
+        srcset="/static/fba97e4708d704952ba10568613a14c0/3684f/alertHandler.png 225w,
+/static/fba97e4708d704952ba10568613a14c0/fc2a6/alertHandler.png 450w,
+/static/fba97e4708d704952ba10568613a14c0/1cfc2/alertHandler.png 900w,
+/static/fba97e4708d704952ba10568613a14c0/21482/alertHandler.png 1350w,
 /static/fba97e4708d704952ba10568613a14c0/17d12/alertHandler.png 1666w"
-        sizes="(max-width: 630px) 100vw, 630px"
+        sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
@@ -570,6 +564,11 @@ class Penguin() : Bird(&quot;펭귄&quot;) {
 <li><code class="language-text">AlertHandler</code>의 추상화를 통해 알림 기능을 사용하는 클라이언트에서는 <code class="language-text">AlertHandler</code>의 API 목록에만 의존하면 된다.</li>
 <li>기존 <code class="language-text">check()</code> 함수의 파라미터를 <code class="language-text">ApiStatInfo</code>로 묶어버려서 시그니처(파라미터) 수정에 유연해졌다.</li>
 </ul>
+<blockquote>
+<p>분기문은 도메인 그 자체라서 제거 자체가 불가능하다.<br>
+도메인 기능의 일반화(추상화)를 통해 변화율이 다른 것을 찾아내서 외부로 밀어낼 수 있다.<br>
+계속 외부로 밀어내어 의존성 주입을 받는 것이 최선이다.</p>
+</blockquote>
 <h3>코드를 수정하는 것은 개방 폐쇄 원칙을 위반하는 것일까?</h3>
 <p>코드를 변경할 때 그 결과를 <strong>확장</strong>으로 보아야 하는지, <strong>수정</strong>으로 보아야 하는지 명확하게 구분하기 어렵기 때문에 개방 폐쇄 원칙을 이해하기가 어렵다.<br>
 <code class="language-text">TimeoutAlertHandler</code> 구현 클래스가 추가된다면 이것은 <strong>확장</strong>이라고 판단할 수 있지만, <code class="language-text">ApiStatInfo</code>에 새 속성과 메서드를 추가하는것은 확장일까, 수정일까?</p>
@@ -578,7 +577,7 @@ class Penguin() : Bird(&quot;펭귄&quot;) {
 <blockquote>
 <p>"개방 폐쇄 원칙의 기본적인 목적을 다시 떠올려보면, 코드의 수정이 기존에 작성되었던 코드와 단위 테스트를 깨뜨리지 않는 한, 이는 개방 폐쇄 원칙을 위반하지 않는다고 판단해도 무방하다."</p>
 </blockquote>
-<p>핵심은 우리는 수정을 아예 안 하는 것이 아니라 <code class="language-text">수정을 가능한 한 상위 수준의 코드에서 진행</code>하고, 코드의 핵심 부분이나 복잡한 부분, 공통 코드나 기반 코드가 <code class="language-text">개방 폐쇄 원칙을 충족하는 방향으로 노력해야 한다.</code></p>
+<p>핵심은 우리는 수정을 아예 안 하는 것이 아니라 <strong>수정을 가능한 한 상위 수준의 코드에서 진행</strong> 하고, 코드의 핵심 부분이나 복잡한 부분, 공통 코드나 기반 코드가 <strong>개방 폐쇄 원칙을 충족하는 방향으로 노력해야 한다.</strong></p>
 <hr>
 <h1 id="리스코프-치환-원칙" style="position:relative;"><strong>리스코프 치환 원칙</strong><a href="#%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84-%EC%B9%98%ED%99%98-%EC%9B%90%EC%B9%99" aria-label="리스코프 치환 원칙 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p><strong>만약 <code class="language-text">S</code>가 <code class="language-text">T</code>의 하위 유형인 경우, <code class="language-text">T</code> 유형의 객체는 프로그램을 중단하지 않고도 <code class="language-text">S</code>유형의 객체로 대체될 수 있다.</strong><br>
@@ -768,7 +767,7 @@ fun count(dataSet: Collection&lt;Long&gt;) : Statistics {
 아래와 같은 Concrete 클래스 3개가 있다고 가정해보자.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
     >
       <a
     class="gatsby-resp-image-link"
@@ -779,20 +778,19 @@ fun count(dataSet: Collection&lt;Long&gt;) : Statistics {
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 27.848101265822784%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABM0lEQVR42kWQ6ZKCMBCEef8ns1QUuSK6oFwBw+Wx4O4K6R0Sq/yRqlQ6X/dMG20LMD+HtQ1xCAo0NdA/JMaXREv3PO+x3YTYWREKuncNMI4Sj7tEUwF7ptlgr1mD+SU9nOB7HBuTwF2KWgyQExB+XckohuNksKwz6RGOQaMM2+YPnsuV7rm5Yu1dBmO5ZLCdGD7jyLKBzhO36wtSArYdY20GcN0UUdTStAN4/qPCxOUbiwVTfxgrwPmANB1grNYBTXXC+XxF1wENrTSvM0OOncA0D/CpEiFGpdeV1oTosVq92fjDGuY6IjBDkgyUChRc0oQTJoJ8ryTDEMdDg5KPuJSSdK1V4omZdZ0cSdy/2QmG75HZnNDq9ErowmcoPNaq7Eq8VOFKv2jDrv2l7mb2Rn1+2H8crrwEj0iG1gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    style="padding-bottom: 27.555555555555557%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABM0lEQVR42kWQ6ZKCMBCEef8ns1QUuSK6oFwBw+Wx4O4K6R0Sq/yRqlQ6X/dMG20LMD+HtQ1xCAo0NdA/JMaXREv3PO+x3YTYWREKuncNMI4Sj7tEUwF7ptlgr1mD+SU9nOB7HBuTwF2KWgyQExB+XckohuNksKwz6RGOQaMM2+YPnsuV7rm5Yu1dBmO5ZLCdGD7jyLKBzhO36wtSArYdY20GcN0UUdTStAN4/qPCxOUbiwVTfxgrwPmANB1grNYBTXXC+XxF1wENrTSvM0OOncA0D/CpEiFGpdeV1oTosVq92fjDGuY6IjBDkgyUChRc0oQTJoJ8ryTDEMdDg5KPuJSSdK1V4omZdZ0cSdy/2QmG75HZnNDq9ErowmcoPNaq7Eq8VOFKv2jDrv2l7mb2Rn1+2H8crrwEj0iG1gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="isp1"
         title=""
-        src="/static/9c4b5a57d86ae68ee4eed88ec47a1999/f058b/isp1.png"
-        srcset="/static/9c4b5a57d86ae68ee4eed88ec47a1999/c26ae/isp1.png 158w,
-/static/9c4b5a57d86ae68ee4eed88ec47a1999/6bdcf/isp1.png 315w,
-/static/9c4b5a57d86ae68ee4eed88ec47a1999/f058b/isp1.png 630w,
-/static/9c4b5a57d86ae68ee4eed88ec47a1999/40601/isp1.png 945w,
-/static/9c4b5a57d86ae68ee4eed88ec47a1999/78612/isp1.png 1260w,
+        src="/static/9c4b5a57d86ae68ee4eed88ec47a1999/1cfc2/isp1.png"
+        srcset="/static/9c4b5a57d86ae68ee4eed88ec47a1999/3684f/isp1.png 225w,
+/static/9c4b5a57d86ae68ee4eed88ec47a1999/fc2a6/isp1.png 450w,
+/static/9c4b5a57d86ae68ee4eed88ec47a1999/1cfc2/isp1.png 900w,
+/static/9c4b5a57d86ae68ee4eed88ec47a1999/21482/isp1.png 1350w,
 /static/9c4b5a57d86ae68ee4eed88ec47a1999/17d12/isp1.png 1666w"
-        sizes="(max-width: 630px) 100vw, 630px"
+        sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
@@ -814,43 +812,89 @@ fun count(dataSet: Collection&lt;Long&gt;) : Statistics {
 아마 기존 자바의 가변 콜렉션 타입 계층에 포함시키기 위해 어쩔 수 없는 선택이지 않았을까 싶다.</p>
 <deckgo-highlight-code language="java" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">static abstract class AbstractImmutableCollection&lt;E&gt; extends AbstractCollection&lt;E&gt; {
-        // all mutating methods throw UnsupportedOperationException
-        @Override public boolean add(E e) { throw uoe(); }
-        @Override public boolean addAll(Collection&lt;? extends E&gt; c) { throw uoe(); }
-        @Override public void    clear() { throw uoe(); }
-        @Override public boolean remove(Object o) { throw uoe(); }
-        @Override public boolean removeAll(Collection&lt;?&gt; c) { throw uoe(); }
-        @Override public boolean removeIf(Predicate&lt;? super E&gt; filter) { throw uoe(); }
-        @Override public boolean retainAll(Collection&lt;?&gt; c) { throw uoe(); }
-    }</code>
+    // all mutating methods throw UnsupportedOperationException
+    @Override public boolean add(E e) { throw uoe(); }
+    @Override public boolean addAll(Collection&lt;? extends E&gt; c) { throw uoe(); }
+    @Override public void    clear() { throw uoe(); }
+    @Override public boolean remove(Object o) { throw uoe(); }
+    @Override public boolean removeAll(Collection&lt;?&gt; c) { throw uoe(); }
+    @Override public boolean removeIf(Predicate&lt;? super E&gt; filter) { throw uoe(); }
+    @Override public boolean retainAll(Collection&lt;?&gt; c) { throw uoe(); }
+}</code>
         </deckgo-highlight-code>
 <hr>
 <h1 id="의존-역전-원칙" style="position:relative;"><strong>의존 역전 원칙</strong><a href="#%EC%9D%98%EC%A1%B4-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99" aria-label="의존 역전 원칙 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<blockquote>
+<p>프레임워크는 객체를 조합하고 전체 실행 흐름을 관리하기 위한 확장 가능한 코드 <strong>골격</strong> 을 제공한다.<br>
+<strong>호출자 (상위 모듈)</strong> 는 <strong>수신자 (하위 모듈)</strong> 에 의존하지 않아야 하며, 추상화에 의존해야만 한다.<br>
+또한 추상화가 세부 사항에 의존하는 것이 아니라, 세부 사항이 추상화에 의존해야 한다.</p>
+</blockquote>
 <p>아래의 질문에 대해 생각해보자.</p>
 <ol>
-<li><strong>의존 역전</strong>이 뜻하는 것은 어떤 대상 사이의 역전인가? 그리고 어떤 의존이 역전되는 것인가? 그리고 여기서 말하는 <strong>역전</strong>은 무엇을 의미하는가?</li>
-<li>종종 <strong>제어 반전</strong>과 <strong>의존성 주입</strong>이라는 두 가지 다른 개념을 접할 수 있는데, 이 개념은 <strong>의존 역전</strong>과 같은 개념에 속하는가? 만약 그렇지 않다면 그 차이는 무엇인가?</li>
-<li>Spring 프레임워크의 IoC는 2번의 세 가지 개념과 어떤 관련이 있는가?</li>
+<li><strong>의존 역전</strong>이 뜻하는 것은 어떤 대상 사이의 역전인가? 그리고 어떤 의존이 역전되는 것인가? 그리고 여기서 말하는 <strong>역전</strong>은 무엇을 의미하는가?
+<ul>
+<li>대상은 호출자와 수신자로 구분할 수 있고, 역전이 되는 대상은 <strong>프레임워크를 사용하기 전에 직접 작성했던 전체 프로그램 흐름의 실행을 제어하는 코드다.</strong></li>
+<li>프레임워크를 사용한 후 전체 프로그램의 실행 흐름은 프레임워크에 의해 <strong>제어</strong> 되고, 흐름의 제어는 <strong>프로그래머에서 프레임워크로 역전되는 것</strong> 이다.</li>
+</ul>
+</li>
+<li>종종 <strong>제어 반전</strong>과 <strong>의존성 주입</strong>이라는 두 가지 다른 개념을 접할 수 있는데, 이 개념은 <strong>의존 역전</strong>과 같은 개념에 속하는가? 만약 그렇지 않다면 그 차이는 무엇인가?
+<ul>
+<li><strong>제어 반전</strong> 은 특정한 기술이 아니라 일반적으로 프레임워크를 사용할 때 만나게 되는 보편적인 설계 사상에 가깝다.</li>
+<li><strong>의존성 주입</strong> 은 특정한 프로그래밍 기술이다. 객체 생성 예약어를 사용하여 클래스 내부에 종속되는 클래스의 객체를 생성하는 대신, <strong>외부에서 종속 클래스의 객체를 생성한 후 생성자 또는 함수의 매개변수 등을 통해 클래스에 주입하는 것을 의미한다.</strong></li>
+</ul>
+</li>
+<li>Spring 프레임워크의 IoC는 2번의 세 가지 개념과 어떤 관련이 있는가?
+<ul>
+<li>Spring과 같은 의존성 주입 프레임워크를 사용하면 생성해야 하는 모든 클래스 객체와 클래스 간의 의존성을 간단히 구성할 수 있으며, 프레임워크가 자동으로 객체를 생성하고, 객체의 라이프 사이클을 관리하고, 의존성 주입을 할 수 있다.</li>
+</ul>
+</li>
 </ol>
-<h3>제어 반전</h3>
-<h3>이 원칙들을 지켜내기만 하면 좋은 코드인가?</h3>
-<p>단일책임원칙을 평가하기 위한 명확하고 정량화할 수 있는 표준은 존재하지 않으며 과도하게 너무 세분화하여 설계할 필요도 없다.<br>
-단일 책임을 갖는 인터페이스를 여러 개 갖는 구체 클래스는 단일책임이라고 말할 수 있을까? 합성으로 여러 인터페이스를 구현하는 것이 아니라 위임으로 해결해야 하지 않을까?<br>
-처음에는 현재의 비즈니스 요구사항을 충족하기 위해 다른 사람이 볼때는 납득할 수 없는 형태의 클래스를 작성할 수도 있지만, 사업이 발전하면서 기능이 점점 추가되고, 코드가 더 복잡해지면서 어느 기준을 넘길 때 점진적 추상화를 진행할 수 있을 것이다.<br>
-코드의 변경 가능한 부분과 변경할 수 없는 부분을 잘 식별해야 한다.<br>
-변화율이 서로 다른 기능,함수를 구분하여 분리하고 그 기능,함수에 필요한 속성을 캡슐화하고 상위 시스템에서 사용되는 변경되지 않을 추상 인터페이스를 제공해야 한다.</p>
-<p>코드의 확장성은 코드의 품질을 판단하는 중요한 기준이다.
-하지만 확장성은 가독성을 떨어뜨릴 수 있기 때문에 '공짜'는 아니다.<br>
-확장성이 더 중요한 일부 시나리오에서는 코드의 가동성을 희생할 가치가 있다.</p>
+<h3>모듈간 의존 역전이 필요한 경우</h3>
+<deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">// 수정 전
+// moduleA
+class Runner(val func: Func1) {
+  fun exec() {...}
+}
+
+// moduleB
+class Func1
+fun main() {
+  Runner(Func1()).exec()
+}
+
+// 수정 후
+// moduleA
+class Runner(val func: Func) {
+  fun exec() {..}
+}
+interface Func
+
+// moduleB
+class Func1:Func
+
+fun main() {
+  Runner(Func1()).exec()
+}</code>
+        </deckgo-highlight-code>
+<p>수정 전에는 <code class="language-text">moduleA</code>가 <code class="language-text">moduleB</code>의 <code class="language-text">Func1</code>을 직접 의존하고 있어 <code class="language-text">Func1</code>의 수정 사항에 <code class="language-text">Runner</code>가 변경될 확률이 굉장히 높다.<br>
+수정 후에는 <code class="language-text">moduleA</code>가 <code class="language-text">Func1</code>이 구현하고 있는 <code class="language-text">Func Interface</code>를 의존하게 되면서 외부로 드러난 API 목록에만 집중할 수 있게 되었다.</p>
 <hr>
 <h1 id="결론" style="position:relative;"><strong>결론</strong><a href="#%EA%B2%B0%EB%A1%A0" aria-label="결론 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
-<h3>결국엔?</h3>  
-<p>기술이나 방법론에는 정답이 없다.<br>
+<p><strong>기술이나 설계방법론에는 정답이 없다.</strong><br>
 내가 처해있는 상황을 철저하게 분석하고 어떤 방법이 더 옳은지 판단하여 최선의 방법을 선택해야 한다.<br>
-그리고 이런 내용을 배웠다고 해서 팀내 컨벤션을 고려하지 않고 팀원들과 충분한 협의 없의  안될 것이다.</p>
+코드의 확장성은 코드의 품질을 판단하는 중요한 기준이다. 하지만 확장성은 가독성을 떨어뜨릴 수 있기 때문에 <code class="language-text">공짜</code>는 아니다.<br>
+확장성이 더 중요한 일부 시나리오에서는 코드의 가독성을 희생할 가치가 있다.</p>
+<h3>위의 원칙들을 지켜내기만 하면 좋은 코드인가?</h3>
+<p>위에서 설명한 <strong>SOLID와 확장성, 코드의 품질을 판단하는 기준은 사람마다 다 제각각이다.</strong><br>
+단일책임원칙을 평가하기 위한 명확하고 정량화할 수 있는 표준은 존재하지 않으며 과도하게 너무 세분화하여 설계할 필요도 없다.<br>
+단일 책임을 갖는 인터페이스를 여러 개 갖는 구체 클래스는 단일책임이라고 말할 수 있을까? 합성으로 여러 인터페이스를 구현하는 것이 아니라 위임으로 해결해야 하지 않을까?<br>
+처음에는 현재의 비즈니스 요구사항을 충족하기 위해 다른 사람이 볼때는 납득할 수 없는 형태의 클래스를 작성할 수도 있지만, <strong>사업이 발전하면서 기능이 점점 추가되고, 코드가 더 복잡해지면서 어느 기준을 넘길 때 점진적 추상화를 진행할 수 있을 것이다.</strong><br>
+코드의 변경 가능한 부분과 변경할 수 없는 부분을 잘 식별해야 한다.<br>
+<strong>변화율이 서로 다른 기능, 함수를 구분하여 분리하고 그 기능, 함수에 필요한 속성을 캡슐화하고 상위 시스템에서 사용되는 변경되지 않을 추상 인터페이스를 제공해야 한다.</strong></p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
     >
       <a
     class="gatsby-resp-image-link"
@@ -861,19 +905,18 @@ fun count(dataSet: Collection&lt;Long&gt;) : Statistics {
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/klEQVR42m2STUiTcRzHn2e2Nr1EUWCXiA5LRocdhA7lYYfqkr1AeAiqHTQTbdZGL0NaS+cs3XIzmiskdS8u19rStRxq1qEEkWGj1wVBGUgOkijKqPDTs8egoB2+/OAP38//y/f3EwRBoJBEUZRni+kgcd9Z+p1G/K5G/NL02evosh2lt90ovTfSJ+l29xmMht15j2T+D/YXeD/iYDEb5efcCCyMk3saZm7az4d0kM/PB/kxm2BpPgXvEgQ85rxHlICiDFiWgEIhysoDxwIXyEmAbOoKiy8jzNzzMJP08PXZTb69GOTX6yiZpJsv0kcDbhPC5hUCepXIVslcWbaBLdpNVJRrKV23WgZODzkhl+Juv41X4156nCYclho8zfWMhVpZehMjnezk45OQXI2wam0p6zdq0Go07NuuQ79Nx86KcnRla1ArBabiHcxLCRM3zjMZdxK9asFrPcbjmFNO+SkTIuA+TXbCx51rFgSFUoVCXUKRSk2xWoVqpRK1NEuKi+SEU/F2OZnTWstkrIOJgVYehu3wPkFmpItLTTX0uczwdohg58nlpRSS4s9SHkXa+C5157U34DpXy4Owg9FgM7e8FmzmI3gdx1lIB2B2mMDlE4WB4j9nc/HUIVK9Vnra6jFU7aLBsAdT9X6qKvUcPrCD7pY6ubvh602Yq/fyG67XXUiEDBTdAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    style="padding-bottom: 41.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/klEQVR42m2STUiTcRzHn2e2Nr1EUWCXiA5LRocdhA7lYYfqkr1AeAiqHTQTbdZGL0NaS+cs3XIzmiskdS8u19rStRxq1qEEkWGj1wVBGUgOkijKqPDTs8egoB2+/OAP38//y/f3EwRBoJBEUZRni+kgcd9Z+p1G/K5G/NL02evosh2lt90ovTfSJ+l29xmMht15j2T+D/YXeD/iYDEb5efcCCyMk3saZm7az4d0kM/PB/kxm2BpPgXvEgQ85rxHlICiDFiWgEIhysoDxwIXyEmAbOoKiy8jzNzzMJP08PXZTb69GOTX6yiZpJsv0kcDbhPC5hUCepXIVslcWbaBLdpNVJRrKV23WgZODzkhl+Juv41X4156nCYclho8zfWMhVpZehMjnezk45OQXI2wam0p6zdq0Go07NuuQ79Nx86KcnRla1ArBabiHcxLCRM3zjMZdxK9asFrPcbjmFNO+SkTIuA+TXbCx51rFgSFUoVCXUKRSk2xWoVqpRK1NEuKi+SEU/F2OZnTWstkrIOJgVYehu3wPkFmpItLTTX0uczwdohg58nlpRSS4s9SHkXa+C5157U34DpXy4Owg9FgM7e8FmzmI3gdx1lIB2B2mMDlE4WB4j9nc/HUIVK9Vnra6jFU7aLBsAdT9X6qKvUcPrCD7pY6ubvh602Yq/fyG67XXUiEDBTdAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="repeat"
         title=""
-        src="/static/ce4f3f438ac81f9d228ccb0542043a0d/f058b/repeat.png"
-        srcset="/static/ce4f3f438ac81f9d228ccb0542043a0d/c26ae/repeat.png 158w,
-/static/ce4f3f438ac81f9d228ccb0542043a0d/6bdcf/repeat.png 315w,
-/static/ce4f3f438ac81f9d228ccb0542043a0d/f058b/repeat.png 630w,
-/static/ce4f3f438ac81f9d228ccb0542043a0d/40601/repeat.png 945w,
+        src="/static/ce4f3f438ac81f9d228ccb0542043a0d/1cfc2/repeat.png"
+        srcset="/static/ce4f3f438ac81f9d228ccb0542043a0d/3684f/repeat.png 225w,
+/static/ce4f3f438ac81f9d228ccb0542043a0d/fc2a6/repeat.png 450w,
+/static/ce4f3f438ac81f9d228ccb0542043a0d/1cfc2/repeat.png 900w,
 /static/ce4f3f438ac81f9d228ccb0542043a0d/9b379/repeat.png 951w"
-        sizes="(max-width: 630px) 100vw, 630px"
+        sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
@@ -883,11 +926,12 @@ fun count(dataSet: Collection&lt;Long&gt;) : Statistics {
 <ul>
 <li><a href="https://www.youtube.com/watch?v=UwAoUshVpgM&#x26;ab_channel=SpringCampbyKSUG">이미지 출처</a></li>
 </ul>
-<p>중복된 코드에 매몰되지 말고 API에 집중해서 API의 책임이 중복되지 않게 꾸준히 신경써야 하며, 고품질 코드에 대한 책임과 끈기를 가져야 할 것이다.<br>
-그리고 스스로의 안목을 키우기 위해 꾸준한 학습은 필수이다.</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2023y/bookReview/bookReview/">← <!-- -->2023년 책,강의 서평</a></li><li></li></ul></nav></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2023y/oop/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>중복된 코드에 매몰되지 말고 API에 집중해서 API의 책임이 중복되지 않게 꾸준히 신경써야 하며, 고품질 코드에 대한 <code class="language-text">책임</code>과 <code class="language-text">끈기</code>를 가져야 할 것이다.<br>
+좋은 코드, 고품질 코드에 대해 스스로의 주관을 가져야 한다.<br>
+내가 이렇게 작성한 이유를 상대방에게 설명하거나 설득시킬 수 있는 능력과 스스로의 안목을 키우기 위해 꾸준한 노력이 필요하다.</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2023y/bookReview/bookReview/">← <!-- -->2023년 책,강의 서평</a></li><li></li></ul></nav></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2023y/oop/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e4a725b324e034d91ac0.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-f63ebe80d576481c21f4.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-3a6e11e20f41e64c4544.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-8c1367f6e2440fb6c274.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-b1deb8b1c9b25117833c.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-683384a4c00f3207a098.js\"],\"component---src-templates-tags-js\":[\"/component---src-templates-tags-js-51f85f72dbdef0c44a54.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-0d2ecc6e0b6e4b4ead11.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-f63ebe80d576481c21f4.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-3a6e11e20f41e64c4544.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-8c1367f6e2440fb6c274.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-b1deb8b1c9b25117833c.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-683384a4c00f3207a098.js\"],\"component---src-templates-tags-js\":[\"/component---src-templates-tags-js-51f85f72dbdef0c44a54.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="0a864a4a607bd00d9b15";</script><script src="/webpack-runtime-09c104d6b0f567bbe1f1.js" async></script><script src="/framework-195f9a31e5a4e6cebf51.js" async></script><script src="/app-e4a725b324e034d91ac0.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="7dbcd74863a2c93b18ad";</script><script src="/webpack-runtime-09c104d6b0f567bbe1f1.js" async></script><script src="/framework-195f9a31e5a4e6cebf51.js" async></script><script src="/app-0d2ecc6e0b6e4b4ead11.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 01 Sep 2023 15:23:15 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 04 Sep 2023 15:40:28 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
@@ -69,7 +69,7 @@ Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.&lt;/p&gt;
 &lt;h3&gt;다형성&lt;/h3&gt;
 &lt;p&gt;여러가지 형태를 갖는 성질을 말하며 &lt;code class=&quot;language-text&quot;&gt;수정에 대해 폐쇄적이고 확장에 대해 개방적&lt;/code&gt;이라는 설계 원칙을 준수할 수 있다.&lt;br&gt;
 &lt;strong&gt;동일한 논리(같은 타입)를 재사용할 수 있어 코드의 재사용성을 향상 시킬 수 있다.&lt;/strong&gt;&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;동적 디스패치&lt;/code&gt;를 통한 런타임 시점에 결정되는 행위를 다형성이라고 생각한다.&lt;/p&gt;
+&lt;code class=&quot;language-text&quot;&gt;동적 디스패치&lt;/code&gt;를 통한 런타임 시점에 결정되는 행위를 다형성이라고 생각할 수 있다.&lt;/p&gt;
 &lt;p&gt;다형성의 특성을 구현하기 위해&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;상속과 메서드 재정의를 하는 방식&lt;/li&gt;
@@ -78,7 +78,7 @@ Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.&lt;/p&gt;
 &lt;p&gt;Collection Framework의 &lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;을 통해 인터페이스를 사용하여 합성하는 방식을 확인해보자.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -89,19 +89,18 @@ Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.&lt;/p&gt;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 70.88607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVR42o1T6Y6bMBjMU4TLJyYESJbLHOE0d7LZSn3/t+nHNlpV2/7opxH6jGfweGwOhNrfgAl3PV8WMkkzKYsky/3gDV7+zTx8G1NmI8TeonC+q2me78+Hmtc4zf5L/Foc25bJMOPUgYYQyv9Je4kpF0x8whbCO83Pfnssj8fHx8eP9f3ZrksQBVTYO8ERQH6JwSelgjsOyCgThO0fOnv+2Qu84BpmsedfXS/g4gRTAGY7XDgggf4AmzEMgigzLWIhCq9Mi+o61gwEMBGBpw6NiREGDgWORSkMQXiARdTUNk3bjFMiM0irqPK2b3s1qmFUUMPY90Ol1OUaZaXsVANTZdc7J+9wOnu3umhUU3bdNYoR5rFMiqosy6pqum75WdXt7VbndQMHFqVR1d3aSaVlJRz3ZRuCRYQYFt79I3LUTN2yTexY3NeRo1n8eDR0A+smNhFGjJkm2W1/nq2A7hqF09qDyWmexmEc13vR9pfgMiz9MC0T1DiNy3rrlXv29vC+jgpT++z7WZFB1cOzrJXMi7ckdV0vzVOoW7fUwyPLi0jmzsn9dkkYIkzTkaaBI9ew9jwhWEQ4JAwwTGJRT9MtACYM8ClmAiESlq26b2BtXbZp3cq+59yBqdemML1m1fD+vszztj3GbcubhvzeM8bMvcSRzJJEwp8QJ/ISxpSJP24rOwVhuBPSVOZw1SF4Qu1fp5mGyVobSkIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 70.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVR42o1T6Y6bMBjMU4TLJyYESJbLHOE0d7LZSn3/t+nHNlpV2/7opxH6jGfweGwOhNrfgAl3PV8WMkkzKYsky/3gDV7+zTx8G1NmI8TeonC+q2me78+Hmtc4zf5L/Foc25bJMOPUgYYQyv9Je4kpF0x8whbCO83Pfnssj8fHx8eP9f3ZrksQBVTYO8ERQH6JwSelgjsOyCgThO0fOnv+2Qu84BpmsedfXS/g4gRTAGY7XDgggf4AmzEMgigzLWIhCq9Mi+o61gwEMBGBpw6NiREGDgWORSkMQXiARdTUNk3bjFMiM0irqPK2b3s1qmFUUMPY90Ol1OUaZaXsVANTZdc7J+9wOnu3umhUU3bdNYoR5rFMiqosy6pqum75WdXt7VbndQMHFqVR1d3aSaVlJRz3ZRuCRYQYFt79I3LUTN2yTexY3NeRo1n8eDR0A+smNhFGjJkm2W1/nq2A7hqF09qDyWmexmEc13vR9pfgMiz9MC0T1DiNy3rrlXv29vC+jgpT++z7WZFB1cOzrJXMi7ckdV0vzVOoW7fUwyPLi0jmzsn9dkkYIkzTkaaBI9ew9jwhWEQ4JAwwTGJRT9MtACYM8ClmAiESlq26b2BtXbZp3cq+59yBqdemML1m1fD+vszztj3GbcubhvzeM8bMvcSRzJJEwp8QJ/ISxpSJP24rOwVhuBPSVOZw1SF4Qu1fp5mGyVobSkIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;iterableDiagram&quot;
         title=&quot;&quot;
-        src=&quot;/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterableDiagram.png&quot;
-        srcset=&quot;/static/4ae735127e3532ec667aba4cbba3554b/c26ae/iterableDiagram.png 158w,
-/static/4ae735127e3532ec667aba4cbba3554b/6bdcf/iterableDiagram.png 315w,
-/static/4ae735127e3532ec667aba4cbba3554b/f058b/iterableDiagram.png 630w,
-/static/4ae735127e3532ec667aba4cbba3554b/40601/iterableDiagram.png 945w,
+        src=&quot;/static/4ae735127e3532ec667aba4cbba3554b/1cfc2/iterableDiagram.png&quot;
+        srcset=&quot;/static/4ae735127e3532ec667aba4cbba3554b/3684f/iterableDiagram.png 225w,
+/static/4ae735127e3532ec667aba4cbba3554b/fc2a6/iterableDiagram.png 450w,
+/static/4ae735127e3532ec667aba4cbba3554b/1cfc2/iterableDiagram.png 900w,
 /static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterableDiagram.png 1086w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -150,7 +149,7 @@ public class HashSet&amp;lt;E&amp;gt; extends AbstractSet&amp;lt;E&amp;gt;
 대부분의 백엔드 개발자들은 (표현 계층, 논리 계층, 데이터 계층) MVC 아키텍처에 익숙하여 &lt;strong&gt;빈약한 도메인 모델&lt;/strong&gt;을 의식하지 못하며 개발한다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -161,20 +160,18 @@ public class HashSet&amp;lt;E&amp;gt; extends AbstractSet&amp;lt;E&amp;gt;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/klEQVR42iWS+0/TZxjFv8mS7cf9Fe4vMFvUZMsSl2VZ5i1j8zapS0ARxUthA4qdtqKICG51EkWUyq0IpRSERaAXarm1pdIWLXQtKxS1K7cW0GUo/fi2/HBy3vPmzclznvdIKxEX0cAgi2EHsdAw0Sk7C9MjaY4G7MSCQyTmxthYfEZyZQpWAyRTWBGIT5JMTG7qxFT6jbQy6+SpzYDT3MrEcBdhr4lZn4m5ZxaC7sc4TA8JuXtZj3mZdP6Fb6gTr70D/2g3L/0DhD39uAf0zPjMJJeeIyWEocPShqW7gb72WkzG+1geNTDQ04TL2k5/p1awnrfzEwz16hjp02HueoBZ3KeG8A4asQrtd/RAynA+7MJs7WZgsBer5RE2ez+ZJ1Vs2XqQz77YzafbtpNzNAPifv7718P6kp95t5G4Q8e6iMzq3/A6mI6ejvwyOEpjWzONeh0NLY2or15l21cHkD7+nA8++gRJ+pC9334JCT+L08PEI2N4e27j1P7G6oyDd2Kq9ZiPdwsTm4avgg6a9ZuGrfV3OXwok4p798i/oGLXvj0ckB1BnpPBxoKPNfE5b8Quwz1anpeeI3ango2oh+SyP72/FEuRqSHqmrRoW+qpKb/B7q+/4XrtHRRFMlTqPMp+V5N/fA//R8dZDo+wJBAR+wvUXCei+5PXIdEC0ZS1mVHWpu1IAY9FRK2nWXcfTWUpR3/KQGdoQlWSw8UrSspuqCk8sS9tlog4iYuYcWGwKKa1GTQ4HtcRFD8dcnUSMmuR3LYOCuTHURblofg1F3nuEUoKTyHPk1EoP4b8TBaXFLm8EBWZnTAzI/DPeJ/QNkwtGrrqrjE7+QS/oZZAyy2kkb5mFPnZXD6fh6r4JFcunKVUnC8rz1B+8RznC45Re/MS+vo/OLz/O7Jk3/PL6Z8pEMjOzED24y5ysg7yw84d3FUVILmsrfiGjYzbDaLg7YxZ29JFTXFKewY7ROGNdD+spqqsCM01BdVVSqorldRoVAJqblaUUFVejKFRw3tclqDT7tAnIgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 54.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/klEQVR42iWS+0/TZxjFv8mS7cf9Fe4vMFvUZMsSl2VZ5i1j8zapS0ARxUthA4qdtqKICG51EkWUyq0IpRSERaAXarm1pdIWLXQtKxS1K7cW0GUo/fi2/HBy3vPmzclznvdIKxEX0cAgi2EHsdAw0Sk7C9MjaY4G7MSCQyTmxthYfEZyZQpWAyRTWBGIT5JMTG7qxFT6jbQy6+SpzYDT3MrEcBdhr4lZn4m5ZxaC7sc4TA8JuXtZj3mZdP6Fb6gTr70D/2g3L/0DhD39uAf0zPjMJJeeIyWEocPShqW7gb72WkzG+1geNTDQ04TL2k5/p1awnrfzEwz16hjp02HueoBZ3KeG8A4asQrtd/RAynA+7MJs7WZgsBer5RE2ez+ZJ1Vs2XqQz77YzafbtpNzNAPifv7718P6kp95t5G4Q8e6iMzq3/A6mI6ejvwyOEpjWzONeh0NLY2or15l21cHkD7+nA8++gRJ+pC9334JCT+L08PEI2N4e27j1P7G6oyDd2Kq9ZiPdwsTm4avgg6a9ZuGrfV3OXwok4p798i/oGLXvj0ckB1BnpPBxoKPNfE5b8Quwz1anpeeI3ango2oh+SyP72/FEuRqSHqmrRoW+qpKb/B7q+/4XrtHRRFMlTqPMp+V5N/fA//R8dZDo+wJBAR+wvUXCei+5PXIdEC0ZS1mVHWpu1IAY9FRK2nWXcfTWUpR3/KQGdoQlWSw8UrSspuqCk8sS9tlog4iYuYcWGwKKa1GTQ4HtcRFD8dcnUSMmuR3LYOCuTHURblofg1F3nuEUoKTyHPk1EoP4b8TBaXFLm8EBWZnTAzI/DPeJ/QNkwtGrrqrjE7+QS/oZZAyy2kkb5mFPnZXD6fh6r4JFcunKVUnC8rz1B+8RznC45Re/MS+vo/OLz/O7Jk3/PL6Z8pEMjOzED24y5ysg7yw84d3FUVILmsrfiGjYzbDaLg7YxZ29JFTXFKewY7ROGNdD+spqqsCM01BdVVSqorldRoVAJqblaUUFVejKFRw3tclqDT7tAnIgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;domainModel&quot;
         title=&quot;&quot;
-        src=&quot;/static/24d4fc16bd45ff5d24a15feaad7571d2/f058b/domainModel.png&quot;
-        srcset=&quot;/static/24d4fc16bd45ff5d24a15feaad7571d2/c26ae/domainModel.png 158w,
-/static/24d4fc16bd45ff5d24a15feaad7571d2/6bdcf/domainModel.png 315w,
-/static/24d4fc16bd45ff5d24a15feaad7571d2/f058b/domainModel.png 630w,
-/static/24d4fc16bd45ff5d24a15feaad7571d2/40601/domainModel.png 945w,
-/static/24d4fc16bd45ff5d24a15feaad7571d2/78612/domainModel.png 1260w,
+        src=&quot;/static/24d4fc16bd45ff5d24a15feaad7571d2/1cfc2/domainModel.png&quot;
+        srcset=&quot;/static/24d4fc16bd45ff5d24a15feaad7571d2/3684f/domainModel.png 225w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/fc2a6/domainModel.png 450w,
+/static/24d4fc16bd45ff5d24a15feaad7571d2/1cfc2/domainModel.png 900w,
 /static/24d4fc16bd45ff5d24a15feaad7571d2/a3ebb/domainModel.png 1333w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -242,15 +239,15 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.59493670886076%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVR42pVSi3LaMBD0//9VHzNliAMYuxRMCMGhhGJj49hYkvXYniTy6mSSqWZ2ZN2dVufdC/DBkr1B1yp0Z422kRBM47MVvBc0xu9lwfD9W4zhcI6vXyJkd+Wb/H8Raq1wzDnuVgzZmmNzy7H/zaGUpLz5jNA8Q0oJxjoIwdELDcENegJntPcWwuXt/vreC6HrxsCQPFJq0ku4b9vEv408xSwYI025hL/v4QhtMokzjK6XuA5TXJFegx8JosmaTHmrKes0wqsU49GNqw/DBQaDhDDDfld7QpIKq/QRi3mFZVrTXjrcUMz+7mvCc6ux+HVCamsXtaufzwo61zjsuSeUvXTit7VBXSmcyh7nhhzOSavuotOFUHCN4iDQ1NqhLISrPVKtHStHKARpZrwASinY85NRigzS+mX2rMNSeR1snHN2+QNF+vt4EE1W9LJyh59JhjhaE5EnmCUbxNO1M4newjhcoshbl9ttK8pvL50rqtugPnEE49E9OesZppMdxuN72ImwjSXxHtNoR6/DGTQc3GL/cHa126whwtzJYc2KJg/0GENQHjQRGCe8/a4KP29aGdKRzgQpjUOZG6edXY+VxpHq7T07p8UfGrlG4y/9ep5IyaY04gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 57.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVR42pVSi3LaMBD0//9VHzNliAMYuxRMCMGhhGJj49hYkvXYniTy6mSSqWZ2ZN2dVufdC/DBkr1B1yp0Z422kRBM47MVvBc0xu9lwfD9W4zhcI6vXyJkd+Wb/H8Raq1wzDnuVgzZmmNzy7H/zaGUpLz5jNA8Q0oJxjoIwdELDcENegJntPcWwuXt/vreC6HrxsCQPFJq0ku4b9vEv408xSwYI025hL/v4QhtMokzjK6XuA5TXJFegx8JosmaTHmrKes0wqsU49GNqw/DBQaDhDDDfld7QpIKq/QRi3mFZVrTXjrcUMz+7mvCc6ux+HVCamsXtaufzwo61zjsuSeUvXTit7VBXSmcyh7nhhzOSavuotOFUHCN4iDQ1NqhLISrPVKtHStHKARpZrwASinY85NRigzS+mX2rMNSeR1snHN2+QNF+vt4EE1W9LJyh59JhjhaE5EnmCUbxNO1M4newjhcoshbl9ttK8pvL50rqtugPnEE49E9OesZppMdxuN72ImwjSXxHtNoR6/DGTQc3GL/cHa126whwtzJYc2KJg/0GENQHjQRGCe8/a4KP29aGdKRzgQpjUOZG6edXY+VxpHq7T07p8UfGrlG4y/9ep5IyaY04gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;abstract&quot;
         title=&quot;&quot;
         src=&quot;/static/d0059197ae31797013808436478bfa80/a65ce/abstract.png&quot;
-        srcset=&quot;/static/d0059197ae31797013808436478bfa80/c26ae/abstract.png 158w,
-/static/d0059197ae31797013808436478bfa80/6bdcf/abstract.png 315w,
+        srcset=&quot;/static/d0059197ae31797013808436478bfa80/3684f/abstract.png 225w,
+/static/d0059197ae31797013808436478bfa80/fc2a6/abstract.png 450w,
 /static/d0059197ae31797013808436478bfa80/a65ce/abstract.png 559w&quot;
         sizes=&quot;(max-width: 559px) 100vw, 559px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
@@ -262,7 +259,7 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 &lt;p&gt;추상 클래스를 사용하는 위의 다이어그램에서 만약 &lt;code class=&quot;language-text&quot;&gt;노래 부를 수 있는&lt;/code&gt; 타입을 추가해야한다면 어떻게 해야할까?&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -273,19 +270,18 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 26.58227848101266%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVR42n2P4W7DIAyE8/4PuCaNqm5romohlUoggMFwc1A69U9mCQEfd/bR4KByLiglIxLj0s8YBy20gJnxXzXvF+aMEAjO+WrcVkqM1bIw/mNEBO+D7LEOPmyoJoeuVbheHmIshyl+7iv684y+m2Ftqqzs8iZSkukkDw7LEhB8hjUJxjjhQZJQbU4hwb90etdJM7N4uNVXXYwJzTgYdKcJ507VqdZEfF2fknSSBArtSYkp4vtTmJy3VJt+0RHDTdcfVfYxYbxp/ALSrYLYUwOjFwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 26.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVR42n2P4W7DIAyE8/4PuCaNqm5romohlUoggMFwc1A69U9mCQEfd/bR4KByLiglIxLj0s8YBy20gJnxXzXvF+aMEAjO+WrcVkqM1bIw/mNEBO+D7LEOPmyoJoeuVbheHmIshyl+7iv684y+m2Ftqqzs8iZSkukkDw7LEhB8hjUJxjjhQZJQbU4hwb90etdJM7N4uNVXXYwJzTgYdKcJ507VqdZEfF2fknSSBArtSYkp4vtTmJy3VJt+0RHDTdcfVfYxYbxp/ALSrYLYUwOjFwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;abstract2&quot;
         title=&quot;&quot;
-        src=&quot;/static/64093f70a8db0a86766c6d02caa8a4a7/f058b/abstract2.png&quot;
-        srcset=&quot;/static/64093f70a8db0a86766c6d02caa8a4a7/c26ae/abstract2.png 158w,
-/static/64093f70a8db0a86766c6d02caa8a4a7/6bdcf/abstract2.png 315w,
-/static/64093f70a8db0a86766c6d02caa8a4a7/f058b/abstract2.png 630w,
-/static/64093f70a8db0a86766c6d02caa8a4a7/40601/abstract2.png 945w,
+        src=&quot;/static/64093f70a8db0a86766c6d02caa8a4a7/1cfc2/abstract2.png&quot;
+        srcset=&quot;/static/64093f70a8db0a86766c6d02caa8a4a7/3684f/abstract2.png 225w,
+/static/64093f70a8db0a86766c6d02caa8a4a7/fc2a6/abstract2.png 450w,
+/static/64093f70a8db0a86766c6d02caa8a4a7/1cfc2/abstract2.png 900w,
 /static/64093f70a8db0a86766c6d02caa8a4a7/d9b5d/abstract2.png 1224w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -296,7 +292,7 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 이 문제는 &lt;strong&gt;인터페이스의 &lt;code class=&quot;language-text&quot;&gt;합성&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;인터페이스&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;위임&lt;/code&gt;을 사용하는게 적절하다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 868px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -307,18 +303,17 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 98.73417721518987%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADEklEQVR42nVUiXajSAz0/3/XTF4yscfOrOMDHF/c92HAmKu2uhmIvcnyXj8aWi2VSiVNTOMCVXHlss0C4uk6PDxt0yHwGuxUj3YOTscUadziu2diGBl+/nzD09MSjl3+j0PAtkq8vm7x48cci8UBaSItvzr03RbrlYP3pQXf+T5qU3dEXxFdiOU/BrZrH3HUfY9wpwRQNp40FvseYfcF4eEjwfz3CR+7CBs6PB2i0fbefuJ7BY0cppvB1CNUVfUlalGU0M4RDnuXdhc4VkbEMa7X61eEbdvyQn8g9ueziTS9jAYielmWyPMr6rr5z/UOSXKBZbmPDpvm0zCJM1yLcvwWTsS5eN+nN7zLspJ3hn+9w7aRldVOEbkk6RsNUdinLpwJm7quHwtFDNo5ppQseUfZWihyOiyKG0zTkcTv1QS/Z0dMfx3IUY/SMFxSkNPGfUi5uoHcp5hNj1wHzGc6kbaYCMi+HxIFDdSIoo1xPKREK4UG34skx74XElU7clfdOhbpgg0VYhgFFCWCKLBMuf2bsm1dZLqqYiL0i78c1mPq96LXdZvBfdrqlNEZOtNPkxsmEn5VjyRvNio8LxirLs4GG/GEYSKrmue5/A6CCNvt7rMoQ/QBief5JLcYDYb//b5CFMXSyaiKJEU4fBPTZDgorw18t0FGCVpmjre5KqsYhhwMfst0agau76p9L5+7Thn2ZdFB1xry2LIoOZ6ftpREzM4ATKNFHPYFiYKak6clxw17WuMcOMO1rzznGQNP7mWwmB85TRb48+eA9/czXl5WUDmyPA9E2Dt07IaBa64bFuzt6esHzqeCQRu2bv3ocL2yMZspXCqniob5fI/XXxu8PK+Jqm9PQ8/w9naUduu1jt2uv/PyvMJmZWIyyKC8dkwhYDQhHY8RhfYA14GkIYl62RhawUw0dkZIuXh8B/Bcgbwj982nw1vZsUv2mE4VLJc6VmsLtsNC+XTqfqYc+CX2Hy40LaKgUwZOEcfkjxyLdZdyRw4yHPceEWWyrz234iCl9oIOefY4FOS7w8NMFDr8F3FD+hr9f1tHAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 98.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADEklEQVR42nVUiXajSAz0/3/XTF4yscfOrOMDHF/c92HAmKu2uhmIvcnyXj8aWi2VSiVNTOMCVXHlss0C4uk6PDxt0yHwGuxUj3YOTscUadziu2diGBl+/nzD09MSjl3+j0PAtkq8vm7x48cci8UBaSItvzr03RbrlYP3pQXf+T5qU3dEXxFdiOU/BrZrH3HUfY9wpwRQNp40FvseYfcF4eEjwfz3CR+7CBs6PB2i0fbefuJ7BY0cppvB1CNUVfUlalGU0M4RDnuXdhc4VkbEMa7X61eEbdvyQn8g9ueziTS9jAYielmWyPMr6rr5z/UOSXKBZbmPDpvm0zCJM1yLcvwWTsS5eN+nN7zLspJ3hn+9w7aRldVOEbkk6RsNUdinLpwJm7quHwtFDNo5ppQseUfZWihyOiyKG0zTkcTv1QS/Z0dMfx3IUY/SMFxSkNPGfUi5uoHcp5hNj1wHzGc6kbaYCMi+HxIFDdSIoo1xPKREK4UG34skx74XElU7clfdOhbpgg0VYhgFFCWCKLBMuf2bsm1dZLqqYiL0i78c1mPq96LXdZvBfdrqlNEZOtNPkxsmEn5VjyRvNio8LxirLs4GG/GEYSKrmue5/A6CCNvt7rMoQ/QBief5JLcYDYb//b5CFMXSyaiKJEU4fBPTZDgorw18t0FGCVpmjre5KqsYhhwMfst0agau76p9L5+7Thn2ZdFB1xry2LIoOZ6ftpREzM4ATKNFHPYFiYKak6clxw17WuMcOMO1rzznGQNP7mWwmB85TRb48+eA9/czXl5WUDmyPA9E2Dt07IaBa64bFuzt6esHzqeCQRu2bv3ocL2yMZspXCqniob5fI/XXxu8PK+Jqm9PQ8/w9naUduu1jt2uv/PyvMJmZWIyyKC8dkwhYDQhHY8RhfYA14GkIYl62RhawUw0dkZIuXh8B/Bcgbwj982nw1vZsUv2mE4VLJc6VmsLtsNC+XTqfqYc+CX2Hy40LaKgUwZOEcfkjxyLdZdyRw4yHPceEWWyrz234iCl9oIOefY4FOS7w8NMFDr8F3FD+hr9f1tHAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;useInterface&quot;
         title=&quot;&quot;
-        src=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/f058b/useInterface.png&quot;
-        srcset=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/c26ae/useInterface.png 158w,
-/static/9a91643c6697ee1dfaf23315b405e49b/6bdcf/useInterface.png 315w,
-/static/9a91643c6697ee1dfaf23315b405e49b/f058b/useInterface.png 630w,
+        src=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/748b0/useInterface.png&quot;
+        srcset=&quot;/static/9a91643c6697ee1dfaf23315b405e49b/3684f/useInterface.png 225w,
+/static/9a91643c6697ee1dfaf23315b405e49b/fc2a6/useInterface.png 450w,
 /static/9a91643c6697ee1dfaf23315b405e49b/748b0/useInterface.png 868w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 868px) 100vw, 868px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -449,7 +444,7 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
 &lt;strong&gt;기존 Alert 도메인의 check 함수 수정은 불가피할 것이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -460,20 +455,19 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 65.82278481012659%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACLklEQVR42m1TiXKqQBD0///qlXl5hwdG7sMEURREEBACJkKnXdCYVLZqapfZoenpHgZt2+K6qtcGaXJGnrUIgwLbTY599Cqe00ODumpEXXFskcRv8JaRiPU6wYHvlcwP7gHztEEQtPD9Go+PCobDJ0wmDnNnhCGB8gtgi/2uxdKtMPwl42Go4veDCve5wj5svgIeswaHGHCcPYEszGYL/HmU4b5kZHph1jHcrAvohs+6QERZAjHfS5Me8IqZJu/QlRCWGUGZ+5CfVgi3JyR7YEfmx7wD9Fc5RiOTYYhwnAiWxda9rGfYA+bZmcxs/B9pGI0NTKc2FNWDafEjdkTAd1EXbCtI0kLUzmbPUBQPk7GDjV98BUwPZKjuYOo77gEWdgxV2YhQ5htk6fuN4QVIkhxo2hqy7MIwtpQMX1vOCChNl5hOFvj318B4bGM8suB5R7r6qeFqWWA6dkWtqUeQJi5zvSlN0+BqTBIfKXjC1muOwSsZ1WRdoSzocpAjy8rbeNVVixOjKru9yM8894C3Oawq3D/fr8tH67q+z3yLbg12HGCTI2Do1GL+Ao0mqBT5qtfFeUPv7lXFFWFSryJvf8QdbP0SGkdlPltxTNZil6Ye5/Es6uPozPwWM+qlyBuhlyoH1Lv9sRMyPFHYGLaVQNd2sM2YDkf8G06iIArfYGixyBtaRHYR6yLm616Kb4BxVENnO12rtF9f8byiQVVv1IkAl/uuXV3zGJ/33wE/AK0D0Z35NXr7AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 65.77777777777779%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACLklEQVR42m1TiXKqQBD0///qlXl5hwdG7sMEURREEBACJkKnXdCYVLZqapfZoenpHgZt2+K6qtcGaXJGnrUIgwLbTY599Cqe00ODumpEXXFskcRv8JaRiPU6wYHvlcwP7gHztEEQtPD9Go+PCobDJ0wmDnNnhCGB8gtgi/2uxdKtMPwl42Go4veDCve5wj5svgIeswaHGHCcPYEszGYL/HmU4b5kZHph1jHcrAvohs+6QERZAjHfS5Me8IqZJu/QlRCWGUGZ+5CfVgi3JyR7YEfmx7wD9Fc5RiOTYYhwnAiWxda9rGfYA+bZmcxs/B9pGI0NTKc2FNWDafEjdkTAd1EXbCtI0kLUzmbPUBQPk7GDjV98BUwPZKjuYOo77gEWdgxV2YhQ5htk6fuN4QVIkhxo2hqy7MIwtpQMX1vOCChNl5hOFvj318B4bGM8suB5R7r6qeFqWWA6dkWtqUeQJi5zvSlN0+BqTBIfKXjC1muOwSsZ1WRdoSzocpAjy8rbeNVVixOjKru9yM8894C3Oawq3D/fr8tH67q+z3yLbg12HGCTI2Do1GL+Ao0mqBT5qtfFeUPv7lXFFWFSryJvf8QdbP0SGkdlPltxTNZil6Ye5/Es6uPozPwWM+qlyBuhlyoH1Lv9sRMyPFHYGLaVQNd2sM2YDkf8G06iIArfYGixyBtaRHYR6yLm616Kb4BxVENnO12rtF9f8byiQVVv1IkAl/uuXV3zGJ/33wE/AK0D0Z35NXr7AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;alertHandler&quot;
         title=&quot;&quot;
-        src=&quot;/static/fba97e4708d704952ba10568613a14c0/f058b/alertHandler.png&quot;
-        srcset=&quot;/static/fba97e4708d704952ba10568613a14c0/c26ae/alertHandler.png 158w,
-/static/fba97e4708d704952ba10568613a14c0/6bdcf/alertHandler.png 315w,
-/static/fba97e4708d704952ba10568613a14c0/f058b/alertHandler.png 630w,
-/static/fba97e4708d704952ba10568613a14c0/40601/alertHandler.png 945w,
-/static/fba97e4708d704952ba10568613a14c0/78612/alertHandler.png 1260w,
+        src=&quot;/static/fba97e4708d704952ba10568613a14c0/1cfc2/alertHandler.png&quot;
+        srcset=&quot;/static/fba97e4708d704952ba10568613a14c0/3684f/alertHandler.png 225w,
+/static/fba97e4708d704952ba10568613a14c0/fc2a6/alertHandler.png 450w,
+/static/fba97e4708d704952ba10568613a14c0/1cfc2/alertHandler.png 900w,
+/static/fba97e4708d704952ba10568613a14c0/21482/alertHandler.png 1350w,
 /static/fba97e4708d704952ba10568613a14c0/17d12/alertHandler.png 1666w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -487,6 +481,11 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;AlertHandler&lt;/code&gt;의 추상화를 통해 알림 기능을 사용하는 클라이언트에서는 &lt;code class=&quot;language-text&quot;&gt;AlertHandler&lt;/code&gt;의 API 목록에만 의존하면 된다.&lt;/li&gt;
 &lt;li&gt;기존 &lt;code class=&quot;language-text&quot;&gt;check()&lt;/code&gt; 함수의 파라미터를 &lt;code class=&quot;language-text&quot;&gt;ApiStatInfo&lt;/code&gt;로 묶어버려서 시그니처(파라미터) 수정에 유연해졌다.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;분기문은 도메인 그 자체라서 제거 자체가 불가능하다.&lt;br&gt;
+도메인 기능의 일반화(추상화)를 통해 변화율이 다른 것을 찾아내서 외부로 밀어낼 수 있다.&lt;br&gt;
+계속 외부로 밀어내어 의존성 주입을 받는 것이 최선이다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3&gt;코드를 수정하는 것은 개방 폐쇄 원칙을 위반하는 것일까?&lt;/h3&gt;
 &lt;p&gt;코드를 변경할 때 그 결과를 &lt;strong&gt;확장&lt;/strong&gt;으로 보아야 하는지, &lt;strong&gt;수정&lt;/strong&gt;으로 보아야 하는지 명확하게 구분하기 어렵기 때문에 개방 폐쇄 원칙을 이해하기가 어렵다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;TimeoutAlertHandler&lt;/code&gt; 구현 클래스가 추가된다면 이것은 &lt;strong&gt;확장&lt;/strong&gt;이라고 판단할 수 있지만, &lt;code class=&quot;language-text&quot;&gt;ApiStatInfo&lt;/code&gt;에 새 속성과 메서드를 추가하는것은 확장일까, 수정일까?&lt;/p&gt;
@@ -495,7 +494,7 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
 &lt;blockquote&gt;
 &lt;p&gt;&quot;개방 폐쇄 원칙의 기본적인 목적을 다시 떠올려보면, 코드의 수정이 기존에 작성되었던 코드와 단위 테스트를 깨뜨리지 않는 한, 이는 개방 폐쇄 원칙을 위반하지 않는다고 판단해도 무방하다.&quot;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;핵심은 우리는 수정을 아예 안 하는 것이 아니라 &lt;code class=&quot;language-text&quot;&gt;수정을 가능한 한 상위 수준의 코드에서 진행&lt;/code&gt;하고, 코드의 핵심 부분이나 복잡한 부분, 공통 코드나 기반 코드가 &lt;code class=&quot;language-text&quot;&gt;개방 폐쇄 원칙을 충족하는 방향으로 노력해야 한다.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;핵심은 우리는 수정을 아예 안 하는 것이 아니라 &lt;strong&gt;수정을 가능한 한 상위 수준의 코드에서 진행&lt;/strong&gt; 하고, 코드의 핵심 부분이나 복잡한 부분, 공통 코드나 기반 코드가 &lt;strong&gt;개방 폐쇄 원칙을 충족하는 방향으로 노력해야 한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;리스코프-치환-원칙&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;리스코프 치환 원칙&lt;/strong&gt;&lt;a href=&quot;#%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84-%EC%B9%98%ED%99%98-%EC%9B%90%EC%B9%99&quot; aria-label=&quot;리스코프 치환 원칙 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;만약 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;의 하위 유형인 경우, &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 유형의 객체는 프로그램을 중단하지 않고도 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt;유형의 객체로 대체될 수 있다.&lt;/strong&gt;&lt;br&gt;
@@ -685,7 +684,7 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
 아래와 같은 Concrete 클래스 3개가 있다고 가정해보자.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -696,20 +695,19 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 27.848101265822784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABM0lEQVR42kWQ6ZKCMBCEef8ns1QUuSK6oFwBw+Wx4O4K6R0Sq/yRqlQ6X/dMG20LMD+HtQ1xCAo0NdA/JMaXREv3PO+x3YTYWREKuncNMI4Sj7tEUwF7ptlgr1mD+SU9nOB7HBuTwF2KWgyQExB+XckohuNksKwz6RGOQaMM2+YPnsuV7rm5Yu1dBmO5ZLCdGD7jyLKBzhO36wtSArYdY20GcN0UUdTStAN4/qPCxOUbiwVTfxgrwPmANB1grNYBTXXC+XxF1wENrTSvM0OOncA0D/CpEiFGpdeV1oTosVq92fjDGuY6IjBDkgyUChRc0oQTJoJ8ryTDEMdDg5KPuJSSdK1V4omZdZ0cSdy/2QmG75HZnNDq9ErowmcoPNaq7Eq8VOFKv2jDrv2l7mb2Rn1+2H8crrwEj0iG1gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 27.555555555555557%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABM0lEQVR42kWQ6ZKCMBCEef8ns1QUuSK6oFwBw+Wx4O4K6R0Sq/yRqlQ6X/dMG20LMD+HtQ1xCAo0NdA/JMaXREv3PO+x3YTYWREKuncNMI4Sj7tEUwF7ptlgr1mD+SU9nOB7HBuTwF2KWgyQExB+XckohuNksKwz6RGOQaMM2+YPnsuV7rm5Yu1dBmO5ZLCdGD7jyLKBzhO36wtSArYdY20GcN0UUdTStAN4/qPCxOUbiwVTfxgrwPmANB1grNYBTXXC+XxF1wENrTSvM0OOncA0D/CpEiFGpdeV1oTosVq92fjDGuY6IjBDkgyUChRc0oQTJoJ8ryTDEMdDg5KPuJSSdK1V4omZdZ0cSdy/2QmG75HZnNDq9ErowmcoPNaq7Eq8VOFKv2jDrv2l7mb2Rn1+2H8crrwEj0iG1gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;isp1&quot;
         title=&quot;&quot;
-        src=&quot;/static/9c4b5a57d86ae68ee4eed88ec47a1999/f058b/isp1.png&quot;
-        srcset=&quot;/static/9c4b5a57d86ae68ee4eed88ec47a1999/c26ae/isp1.png 158w,
-/static/9c4b5a57d86ae68ee4eed88ec47a1999/6bdcf/isp1.png 315w,
-/static/9c4b5a57d86ae68ee4eed88ec47a1999/f058b/isp1.png 630w,
-/static/9c4b5a57d86ae68ee4eed88ec47a1999/40601/isp1.png 945w,
-/static/9c4b5a57d86ae68ee4eed88ec47a1999/78612/isp1.png 1260w,
+        src=&quot;/static/9c4b5a57d86ae68ee4eed88ec47a1999/1cfc2/isp1.png&quot;
+        srcset=&quot;/static/9c4b5a57d86ae68ee4eed88ec47a1999/3684f/isp1.png 225w,
+/static/9c4b5a57d86ae68ee4eed88ec47a1999/fc2a6/isp1.png 450w,
+/static/9c4b5a57d86ae68ee4eed88ec47a1999/1cfc2/isp1.png 900w,
+/static/9c4b5a57d86ae68ee4eed88ec47a1999/21482/isp1.png 1350w,
 /static/9c4b5a57d86ae68ee4eed88ec47a1999/17d12/isp1.png 1666w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -731,43 +729,89 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
 아마 기존 자바의 가변 콜렉션 타입 계층에 포함시키기 위해 어쩔 수 없는 선택이지 않았을까 싶다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;static abstract class AbstractImmutableCollection&amp;lt;E&amp;gt; extends AbstractCollection&amp;lt;E&amp;gt; {
-        // all mutating methods throw UnsupportedOperationException
-        @Override public boolean add(E e) { throw uoe(); }
-        @Override public boolean addAll(Collection&amp;lt;? extends E&amp;gt; c) { throw uoe(); }
-        @Override public void    clear() { throw uoe(); }
-        @Override public boolean remove(Object o) { throw uoe(); }
-        @Override public boolean removeAll(Collection&amp;lt;?&amp;gt; c) { throw uoe(); }
-        @Override public boolean removeIf(Predicate&amp;lt;? super E&amp;gt; filter) { throw uoe(); }
-        @Override public boolean retainAll(Collection&amp;lt;?&amp;gt; c) { throw uoe(); }
-    }&lt;/code&gt;
+    // all mutating methods throw UnsupportedOperationException
+    @Override public boolean add(E e) { throw uoe(); }
+    @Override public boolean addAll(Collection&amp;lt;? extends E&amp;gt; c) { throw uoe(); }
+    @Override public void    clear() { throw uoe(); }
+    @Override public boolean remove(Object o) { throw uoe(); }
+    @Override public boolean removeAll(Collection&amp;lt;?&amp;gt; c) { throw uoe(); }
+    @Override public boolean removeIf(Predicate&amp;lt;? super E&amp;gt; filter) { throw uoe(); }
+    @Override public boolean retainAll(Collection&amp;lt;?&amp;gt; c) { throw uoe(); }
+}&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;의존-역전-원칙&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;의존 역전 원칙&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%98%EC%A1%B4-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99&quot; aria-label=&quot;의존 역전 원칙 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;프레임워크는 객체를 조합하고 전체 실행 흐름을 관리하기 위한 확장 가능한 코드 &lt;strong&gt;골격&lt;/strong&gt; 을 제공한다.&lt;br&gt;
+&lt;strong&gt;호출자 (상위 모듈)&lt;/strong&gt; 는 &lt;strong&gt;수신자 (하위 모듈)&lt;/strong&gt; 에 의존하지 않아야 하며, 추상화에 의존해야만 한다.&lt;br&gt;
+또한 추상화가 세부 사항에 의존하는 것이 아니라, 세부 사항이 추상화에 의존해야 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;아래의 질문에 대해 생각해보자.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;의존 역전&lt;/strong&gt;이 뜻하는 것은 어떤 대상 사이의 역전인가? 그리고 어떤 의존이 역전되는 것인가? 그리고 여기서 말하는 &lt;strong&gt;역전&lt;/strong&gt;은 무엇을 의미하는가?&lt;/li&gt;
-&lt;li&gt;종종 &lt;strong&gt;제어 반전&lt;/strong&gt;과 &lt;strong&gt;의존성 주입&lt;/strong&gt;이라는 두 가지 다른 개념을 접할 수 있는데, 이 개념은 &lt;strong&gt;의존 역전&lt;/strong&gt;과 같은 개념에 속하는가? 만약 그렇지 않다면 그 차이는 무엇인가?&lt;/li&gt;
-&lt;li&gt;Spring 프레임워크의 IoC는 2번의 세 가지 개념과 어떤 관련이 있는가?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;의존 역전&lt;/strong&gt;이 뜻하는 것은 어떤 대상 사이의 역전인가? 그리고 어떤 의존이 역전되는 것인가? 그리고 여기서 말하는 &lt;strong&gt;역전&lt;/strong&gt;은 무엇을 의미하는가?
+&lt;ul&gt;
+&lt;li&gt;대상은 호출자와 수신자로 구분할 수 있고, 역전이 되는 대상은 &lt;strong&gt;프레임워크를 사용하기 전에 직접 작성했던 전체 프로그램 흐름의 실행을 제어하는 코드다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;프레임워크를 사용한 후 전체 프로그램의 실행 흐름은 프레임워크에 의해 &lt;strong&gt;제어&lt;/strong&gt; 되고, 흐름의 제어는 &lt;strong&gt;프로그래머에서 프레임워크로 역전되는 것&lt;/strong&gt; 이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;종종 &lt;strong&gt;제어 반전&lt;/strong&gt;과 &lt;strong&gt;의존성 주입&lt;/strong&gt;이라는 두 가지 다른 개념을 접할 수 있는데, 이 개념은 &lt;strong&gt;의존 역전&lt;/strong&gt;과 같은 개념에 속하는가? 만약 그렇지 않다면 그 차이는 무엇인가?
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;제어 반전&lt;/strong&gt; 은 특정한 기술이 아니라 일반적으로 프레임워크를 사용할 때 만나게 되는 보편적인 설계 사상에 가깝다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;의존성 주입&lt;/strong&gt; 은 특정한 프로그래밍 기술이다. 객체 생성 예약어를 사용하여 클래스 내부에 종속되는 클래스의 객체를 생성하는 대신, &lt;strong&gt;외부에서 종속 클래스의 객체를 생성한 후 생성자 또는 함수의 매개변수 등을 통해 클래스에 주입하는 것을 의미한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring 프레임워크의 IoC는 2번의 세 가지 개념과 어떤 관련이 있는가?
+&lt;ul&gt;
+&lt;li&gt;Spring과 같은 의존성 주입 프레임워크를 사용하면 생성해야 하는 모든 클래스 객체와 클래스 간의 의존성을 간단히 구성할 수 있으며, 프레임워크가 자동으로 객체를 생성하고, 객체의 라이프 사이클을 관리하고, 의존성 주입을 할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;제어 반전&lt;/h3&gt;
-&lt;h3&gt;이 원칙들을 지켜내기만 하면 좋은 코드인가?&lt;/h3&gt;
-&lt;p&gt;단일책임원칙을 평가하기 위한 명확하고 정량화할 수 있는 표준은 존재하지 않으며 과도하게 너무 세분화하여 설계할 필요도 없다.&lt;br&gt;
-단일 책임을 갖는 인터페이스를 여러 개 갖는 구체 클래스는 단일책임이라고 말할 수 있을까? 합성으로 여러 인터페이스를 구현하는 것이 아니라 위임으로 해결해야 하지 않을까?&lt;br&gt;
-처음에는 현재의 비즈니스 요구사항을 충족하기 위해 다른 사람이 볼때는 납득할 수 없는 형태의 클래스를 작성할 수도 있지만, 사업이 발전하면서 기능이 점점 추가되고, 코드가 더 복잡해지면서 어느 기준을 넘길 때 점진적 추상화를 진행할 수 있을 것이다.&lt;br&gt;
-코드의 변경 가능한 부분과 변경할 수 없는 부분을 잘 식별해야 한다.&lt;br&gt;
-변화율이 서로 다른 기능,함수를 구분하여 분리하고 그 기능,함수에 필요한 속성을 캡슐화하고 상위 시스템에서 사용되는 변경되지 않을 추상 인터페이스를 제공해야 한다.&lt;/p&gt;
-&lt;p&gt;코드의 확장성은 코드의 품질을 판단하는 중요한 기준이다.
-하지만 확장성은 가독성을 떨어뜨릴 수 있기 때문에 &apos;공짜&apos;는 아니다.&lt;br&gt;
-확장성이 더 중요한 일부 시나리오에서는 코드의 가동성을 희생할 가치가 있다.&lt;/p&gt;
+&lt;h3&gt;모듈간 의존 역전이 필요한 경우&lt;/h3&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// 수정 전
+// moduleA
+class Runner(val func: Func1) {
+  fun exec() {...}
+}
+
+// moduleB
+class Func1
+fun main() {
+  Runner(Func1()).exec()
+}
+
+// 수정 후
+// moduleA
+class Runner(val func: Func) {
+  fun exec() {..}
+}
+interface Func
+
+// moduleB
+class Func1:Func
+
+fun main() {
+  Runner(Func1()).exec()
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;수정 전에는 &lt;code class=&quot;language-text&quot;&gt;moduleA&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;moduleB&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;Func1&lt;/code&gt;을 직접 의존하고 있어 &lt;code class=&quot;language-text&quot;&gt;Func1&lt;/code&gt;의 수정 사항에 &lt;code class=&quot;language-text&quot;&gt;Runner&lt;/code&gt;가 변경될 확률이 굉장히 높다.&lt;br&gt;
+수정 후에는 &lt;code class=&quot;language-text&quot;&gt;moduleA&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Func1&lt;/code&gt;이 구현하고 있는 &lt;code class=&quot;language-text&quot;&gt;Func Interface&lt;/code&gt;를 의존하게 되면서 외부로 드러난 API 목록에만 집중할 수 있게 되었다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;결론&lt;/strong&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h3&gt;결국엔?&lt;/h3&gt;  
-&lt;p&gt;기술이나 방법론에는 정답이 없다.&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;기술이나 설계방법론에는 정답이 없다.&lt;/strong&gt;&lt;br&gt;
 내가 처해있는 상황을 철저하게 분석하고 어떤 방법이 더 옳은지 판단하여 최선의 방법을 선택해야 한다.&lt;br&gt;
-그리고 이런 내용을 배웠다고 해서 팀내 컨벤션을 고려하지 않고 팀원들과 충분한 협의 없의  안될 것이다.&lt;/p&gt;
+코드의 확장성은 코드의 품질을 판단하는 중요한 기준이다. 하지만 확장성은 가독성을 떨어뜨릴 수 있기 때문에 &lt;code class=&quot;language-text&quot;&gt;공짜&lt;/code&gt;는 아니다.&lt;br&gt;
+확장성이 더 중요한 일부 시나리오에서는 코드의 가독성을 희생할 가치가 있다.&lt;/p&gt;
+&lt;h3&gt;위의 원칙들을 지켜내기만 하면 좋은 코드인가?&lt;/h3&gt;
+&lt;p&gt;위에서 설명한 &lt;strong&gt;SOLID와 확장성, 코드의 품질을 판단하는 기준은 사람마다 다 제각각이다.&lt;/strong&gt;&lt;br&gt;
+단일책임원칙을 평가하기 위한 명확하고 정량화할 수 있는 표준은 존재하지 않으며 과도하게 너무 세분화하여 설계할 필요도 없다.&lt;br&gt;
+단일 책임을 갖는 인터페이스를 여러 개 갖는 구체 클래스는 단일책임이라고 말할 수 있을까? 합성으로 여러 인터페이스를 구현하는 것이 아니라 위임으로 해결해야 하지 않을까?&lt;br&gt;
+처음에는 현재의 비즈니스 요구사항을 충족하기 위해 다른 사람이 볼때는 납득할 수 없는 형태의 클래스를 작성할 수도 있지만, &lt;strong&gt;사업이 발전하면서 기능이 점점 추가되고, 코드가 더 복잡해지면서 어느 기준을 넘길 때 점진적 추상화를 진행할 수 있을 것이다.&lt;/strong&gt;&lt;br&gt;
+코드의 변경 가능한 부분과 변경할 수 없는 부분을 잘 식별해야 한다.&lt;br&gt;
+&lt;strong&gt;변화율이 서로 다른 기능, 함수를 구분하여 분리하고 그 기능, 함수에 필요한 속성을 캡슐화하고 상위 시스템에서 사용되는 변경되지 않을 추상 인터페이스를 제공해야 한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -778,19 +822,18 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/klEQVR42m2STUiTcRzHn2e2Nr1EUWCXiA5LRocdhA7lYYfqkr1AeAiqHTQTbdZGL0NaS+cs3XIzmiskdS8u19rStRxq1qEEkWGj1wVBGUgOkijKqPDTs8egoB2+/OAP38//y/f3EwRBoJBEUZRni+kgcd9Z+p1G/K5G/NL02evosh2lt90ovTfSJ+l29xmMht15j2T+D/YXeD/iYDEb5efcCCyMk3saZm7az4d0kM/PB/kxm2BpPgXvEgQ85rxHlICiDFiWgEIhysoDxwIXyEmAbOoKiy8jzNzzMJP08PXZTb69GOTX6yiZpJsv0kcDbhPC5hUCepXIVslcWbaBLdpNVJRrKV23WgZODzkhl+Juv41X4156nCYclho8zfWMhVpZehMjnezk45OQXI2wam0p6zdq0Go07NuuQ79Nx86KcnRla1ArBabiHcxLCRM3zjMZdxK9asFrPcbjmFNO+SkTIuA+TXbCx51rFgSFUoVCXUKRSk2xWoVqpRK1NEuKi+SEU/F2OZnTWstkrIOJgVYehu3wPkFmpItLTTX0uczwdohg58nlpRSS4s9SHkXa+C5157U34DpXy4Owg9FgM7e8FmzmI3gdx1lIB2B2mMDlE4WB4j9nc/HUIVK9Vnra6jFU7aLBsAdT9X6qKvUcPrCD7pY6ubvh602Yq/fyG67XXUiEDBTdAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 41.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/klEQVR42m2STUiTcRzHn2e2Nr1EUWCXiA5LRocdhA7lYYfqkr1AeAiqHTQTbdZGL0NaS+cs3XIzmiskdS8u19rStRxq1qEEkWGj1wVBGUgOkijKqPDTs8egoB2+/OAP38//y/f3EwRBoJBEUZRni+kgcd9Z+p1G/K5G/NL02evosh2lt90ovTfSJ+l29xmMht15j2T+D/YXeD/iYDEb5efcCCyMk3saZm7az4d0kM/PB/kxm2BpPgXvEgQ85rxHlICiDFiWgEIhysoDxwIXyEmAbOoKiy8jzNzzMJP08PXZTb69GOTX6yiZpJsv0kcDbhPC5hUCepXIVslcWbaBLdpNVJRrKV23WgZODzkhl+Juv41X4156nCYclho8zfWMhVpZehMjnezk45OQXI2wam0p6zdq0Go07NuuQ79Nx86KcnRla1ArBabiHcxLCRM3zjMZdxK9asFrPcbjmFNO+SkTIuA+TXbCx51rFgSFUoVCXUKRSk2xWoVqpRK1NEuKi+SEU/F2OZnTWstkrIOJgVYehu3wPkFmpItLTTX0uczwdohg58nlpRSS4s9SHkXa+C5157U34DpXy4Owg9FgM7e8FmzmI3gdx1lIB2B2mMDlE4WB4j9nc/HUIVK9Vnra6jFU7aLBsAdT9X6qKvUcPrCD7pY6ubvh602Yq/fyG67XXUiEDBTdAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;repeat&quot;
         title=&quot;&quot;
-        src=&quot;/static/ce4f3f438ac81f9d228ccb0542043a0d/f058b/repeat.png&quot;
-        srcset=&quot;/static/ce4f3f438ac81f9d228ccb0542043a0d/c26ae/repeat.png 158w,
-/static/ce4f3f438ac81f9d228ccb0542043a0d/6bdcf/repeat.png 315w,
-/static/ce4f3f438ac81f9d228ccb0542043a0d/f058b/repeat.png 630w,
-/static/ce4f3f438ac81f9d228ccb0542043a0d/40601/repeat.png 945w,
+        src=&quot;/static/ce4f3f438ac81f9d228ccb0542043a0d/1cfc2/repeat.png&quot;
+        srcset=&quot;/static/ce4f3f438ac81f9d228ccb0542043a0d/3684f/repeat.png 225w,
+/static/ce4f3f438ac81f9d228ccb0542043a0d/fc2a6/repeat.png 450w,
+/static/ce4f3f438ac81f9d228ccb0542043a0d/1cfc2/repeat.png 900w,
 /static/ce4f3f438ac81f9d228ccb0542043a0d/9b379/repeat.png 951w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -800,14 +843,15 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=UwAoUshVpgM&amp;#x26;ab_channel=SpringCampbyKSUG&quot;&gt;이미지 출처&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;중복된 코드에 매몰되지 말고 API에 집중해서 API의 책임이 중복되지 않게 꾸준히 신경써야 하며, 고품질 코드에 대한 책임과 끈기를 가져야 할 것이다.&lt;br&gt;
-그리고 스스로의 안목을 키우기 위해 꾸준한 학습은 필수이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;중복된 코드에 매몰되지 말고 API에 집중해서 API의 책임이 중복되지 않게 꾸준히 신경써야 하며, 고품질 코드에 대한 &lt;code class=&quot;language-text&quot;&gt;책임&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;끈기&lt;/code&gt;를 가져야 할 것이다.&lt;br&gt;
+좋은 코드, 고품질 코드에 대해 스스로의 주관을 가져야 한다.&lt;br&gt;
+내가 이렇게 작성한 이유를 상대방에게 설명하거나 설득시킬 수 있는 능력과 스스로의 안목을 키우기 위해 꾸준한 노력이 필요하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;자바에서-코틀린으로&quot; style=&quot;position:relative;&quot;&gt;자바에서 코틀린으로&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot; aria-label=&quot;자바에서 코틀린으로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;업무를 진행하면서 자바와 코틀린 중에 선택할 수 있었다.&lt;br&gt;
 새로 개발하는 작업들은 모두 코틀린을 지향하고 있기도 하고, 이 기회에 코틀린을 써보고 싶어 코틀린을 선택했다.&lt;/p&gt;
 &lt;p&gt;시기적절하게 코드숨 커뮤니티에서 스터디 모집 공지가 올라왔다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -818,19 +862,18 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 84.17721518987341%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAARABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHhRZkDIUH/xAAZEAACAwEAAAAAAAAAAAAAAAAAARARMUH/2gAIAQEAAQUC0oYi3HI//8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFRABAQAAAAAAAAAAAAAAAAAAMEH/2gAIAQEABj8Cg//EAB4QAAIBAwUAAAAAAAAAAAAAAAABERAhMUFhcYGR/9oACAEBAAE/IZelOh8PCxk4sbA3LwLOv//aAAwDAQACAAMAAAAQFx9B/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxAf/8QAHhAAAgICAgMAAAAAAAAAAAAAAREAITFhEEFRcaH/2gAIAQEAAT8QzWgAEFxCp29QBQgK8KW6bcV0mYAHU+jn/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 84.44444444444446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAARABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHhRZkDIUH/xAAZEAACAwEAAAAAAAAAAAAAAAAAARARMUH/2gAIAQEAAQUC0oYi3HI//8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFRABAQAAAAAAAAAAAAAAAAAAMEH/2gAIAQEABj8Cg//EAB4QAAIBAwUAAAAAAAAAAAAAAAABERAhMUFhcYGR/9oACAEBAAE/IZelOh8PCxk4sbA3LwLOv//aAAwDAQACAAMAAAAQFx9B/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxAf/8QAHhAAAgICAgMAAAAAAAAAAAAAAREAITFhEEFRcaH/2gAIAQEAAT8QzWgAEFxCp29QBQgK8KW6bcV0mYAHU+jn/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;study&quot;
         title=&quot;&quot;
-        src=&quot;/static/373060fa3b201a3b8fe80fda2f915b61/828fb/study.jpg&quot;
-        srcset=&quot;/static/373060fa3b201a3b8fe80fda2f915b61/ff44c/study.jpg 158w,
-/static/373060fa3b201a3b8fe80fda2f915b61/a6688/study.jpg 315w,
-/static/373060fa3b201a3b8fe80fda2f915b61/828fb/study.jpg 630w,
-/static/373060fa3b201a3b8fe80fda2f915b61/0ede0/study.jpg 945w,
+        src=&quot;/static/373060fa3b201a3b8fe80fda2f915b61/8e1fc/study.jpg&quot;
+        srcset=&quot;/static/373060fa3b201a3b8fe80fda2f915b61/863e1/study.jpg 225w,
+/static/373060fa3b201a3b8fe80fda2f915b61/20e5d/study.jpg 450w,
+/static/373060fa3b201a3b8fe80fda2f915b61/8e1fc/study.jpg 900w,
 /static/373060fa3b201a3b8fe80fda2f915b61/ad68d/study.jpg 1170w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -932,6 +975,7 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
 저자 말대로 넓고 얕은 내용을 설명하여 관심있는 주제는 얕아서 문제고 특정 내용은 기반지식이 없으면 이해조차 할 수 없는 챕터도 있었다.&lt;/p&gt;
 &lt;p&gt;그래고 컴퓨터 구조 책을 처음으로 다 읽어봐서 뿌듯하다&lt;br&gt;
 &lt;strong&gt;각 잡고 읽는 책이기 보다는 출퇴근할 떄 가볍게 읽어도 될, 컴퓨터 구조라는 학문을 시작하는 책이라고 생각한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&quot;토비의-스프링-부트---이해와-원리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://www.inflearn.com/course/%ED%86%A0%EB%B9%84-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-%EC%9D%B4%ED%95%B4%EC%99%80%EC%9B%90%EB%A6%AC/dashboard&quot;&gt;토비의 스프링 부트 - 이해와 원리&lt;/a&gt;&lt;a href=&quot;#%ED%86%A0%EB%B9%84%EC%9D%98-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8---%EC%9D%B4%ED%95%B4%EC%99%80-%EC%9B%90%EB%A6%AC&quot; aria-label=&quot;토비의 스프링 부트   이해와 원리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;큰 맥락으로 보면 &lt;code class=&quot;language-text&quot;&gt;@SpringBootApplication&lt;/code&gt; 어노테이션이 제공해주는 마법같은 일들을 알려주는 강의이다.&lt;/p&gt;
 &lt;ul&gt;
@@ -988,129 +1032,84 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
 &lt;p&gt;코틀린 책을 이제 두 권 읽어보았는데, 코틀린의 &lt;code class=&quot;language-text&quot;&gt;ㅋ&lt;/code&gt;정도 알게된 느낌이다.&lt;br&gt;
 자바보다는 문법적으로 편하기도 하고, 인스턴스로 매번 할당받아서 호출하는 방법보다 코틀린의 스코프 함수를 통해 컨텍스트 영역을 표현할 수 있다는 것이 좋다.&lt;br&gt;
 그리고 &lt;code class=&quot;language-text&quot;&gt;Stream&lt;/code&gt;을 펼치지 않고도 함수형 연산이 바로 가능하다는 것과 코틀린에서 제공하는 공통 메서드들은 대부분 람다를 파라미터로 받기 때문에 호출하는 쪽에서 실행 함수를 정해줄 수 있어서 좋다.&lt;/p&gt;
-&lt;p&gt;이 책을 읽을 때 처음에는 &lt;code class=&quot;language-text&quot;&gt;&quot;어? 입문서인가?&quot;&lt;/code&gt; 했는데 조금만 뒤로 가면 매운 맛이 난다. (저자 피셜 입문서는 아니라고 한다.)&lt;br&gt;
+&lt;p&gt;이 책을 읽을 때 처음에는 &lt;code class=&quot;language-text&quot;&gt;&quot;입문서인가?&quot;&lt;/code&gt; 했는데 뒤로 갈수록 매운 맛이 난다. (저자 피셜 입문서는 아니라고 한다.)&lt;br&gt;
 코틀린의 Sequence와 Stream, Coroutine에 대해 설명하진 않지만 &lt;strong&gt;제네릭스&lt;/strong&gt;와 &lt;strong&gt;컬렉션 함수&lt;/strong&gt; 에 대한 내용이 자세하여 읽을 이유는 충분하다.&lt;br&gt;
-그리고 &lt;a href=&quot;https://github.com/jdalma/kotlin-playground/blob/main/%EC%BD%94%ED%95%B5%ED%94%84_%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md&quot;&gt;연습문제&lt;/a&gt;도 제공한다. (해설은 없다.)&lt;/p&gt;
+그리고 &lt;a href=&quot;https://github.com/jdalma/kotlin-playground/blob/main/%EC%BD%94%ED%95%B5%ED%94%84_%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md&quot;&gt;연습문제&lt;/a&gt;도 제공한다. (해설은 없다.)&lt;br&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=J2wTJPybBfA&amp;#x26;ab_channel=%EC%BD%94%EB%93%9C%EC%8A%A4%ED%94%BC%EC%B8%A0&quot;&gt;맹대표님의 영상&lt;/a&gt;도 참고하면 좋을 듯 하다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;알고리즘-개정-4판-ing&quot; style=&quot;position:relative;&quot;&gt;알고리즘 개정 4판 ~ing&lt;a href=&quot;#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%A0%95-4%ED%8C%90-ing&quot; aria-label=&quot;알고리즘 개정 4판 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;코딩테스트 통과를 위한 알고리즘 공부는 문제에서 힌트를 얻거나 어떤 알고리즘을 쓸지 (대충) 시간복잡도를 고민해보는 정도에 그쳤다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;디자인-패턴의-아름다움-ing&quot; style=&quot;position:relative;&quot;&gt;디자인 패턴의 아름다움 ~ing&lt;a href=&quot;#%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4%EC%9D%98-%EC%95%84%EB%A6%84%EB%8B%A4%EC%9B%80-ing&quot; aria-label=&quot;디자인 패턴의 아름다움 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 50.4%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid01GvYG7STwJ5eTt3PPuQfFtfXxJkZbXF9HKs3QrCMo9EnYh2iLbymbQ1wESD3FviLl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
+&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 26%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid01GvYG7STwJ5eTt3PPuQfFtfXxJkZbXF9HKs3QrCMo9EnYh2iLbymbQ1wESD3FviLl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
 &lt;p&gt;고품질 코드를 작성하는 것에 초점을 맞춰 다섯 가지 관련 주제인 &lt;strong&gt;객체지향 프로그래밍 패러다임&lt;/strong&gt;, &lt;strong&gt;설계 원칙&lt;/strong&gt;, &lt;strong&gt;코딩 규칙&lt;/strong&gt;, &lt;strong&gt;리팩터링 기술&lt;/strong&gt;, &lt;strong&gt;디자인 패턴&lt;/strong&gt;을 모두 포괄적으로 설명한다.&lt;br&gt;
-&quot;이런 디자인 패턴이 생겨난 이유는 무엇인가?&quot;, &quot;어떤 종류의 프로그래밍 문제를 해결하는데 사용되는가?&quot;, &quot;적용시 장단점은 무엇인가?&quot;와 같은 질문을 이해하고 적용할 수 있도록 안내한다.&lt;/p&gt;
+&lt;code class=&quot;language-text&quot;&gt;&quot;이런 디자인 패턴이 생겨난 이유는 무엇인가?&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;어떤 종류의 프로그래밍 문제를 해결하는데 사용되는가?&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;적용시 장단점은 무엇인가?&quot;&lt;/code&gt;와 같은 질문을 이해하고 적용할 수 있도록 안내한다.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;도메인-주도-설계란-무엇인가&quot; style=&quot;position:relative;&quot;&gt;도메인 주도 설계란 무엇인가?&lt;a href=&quot;#%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EC%84%A4%EA%B3%84%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&quot; aria-label=&quot;도메인 주도 설계란 무엇인가 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;도메인-주도-설계란-무엇인가-ing&quot; style=&quot;position:relative;&quot;&gt;도메인 주도 설계란 무엇인가? ~ing&lt;a href=&quot;#%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EC%84%A4%EA%B3%84%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-ing&quot; aria-label=&quot;도메인 주도 설계란 무엇인가 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;도메인 주도 설계에 대해 공부하기전에 읽어보기를 추천받았다.&lt;br&gt;
 DDD를 이루는 개념과 원리를 공부하기 보다는 실무 도메인(문제를 해결하려는 영역)에 대한 이해를 강조한다.&lt;br&gt;
 (디자인 패턴의 아름다움에서도 DDD를 공부하는 것 보다 문제를 해결하려는 영역에 대한 이해가 중요하다고 강조했다.)&lt;/p&gt;
 &lt;p&gt;서로 다른 의미로 단어를 사용하는 상황을 방지하기 위해 도메인 분석을 통해 유비쿼터스 언어로 소통해야 한다.&lt;br&gt;
 해당 유비쿼터스 언어는 개발자가 구현하는 소프트웨어에도 녹아있어야 한다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;엔티티&lt;/strong&gt;, &lt;strong&gt;값 객체&lt;/strong&gt;, &lt;strong&gt;도메인&lt;/strong&gt;, &lt;strong&gt;모델&lt;/strong&gt;, &lt;strong&gt;서비스&lt;/strong&gt;, &lt;strong&gt;모듈&lt;/strong&gt;, &lt;strong&gt;집합&lt;/strong&gt;에 대해 정의를 내려주며 서로 다른 책임을 가지고 있다면 레이어를 침범해서는 안된다.&lt;br&gt;
-&lt;a href=&quot;&quot;&gt;디자인 패턴의 아름다움 스터디&lt;/a&gt;에서 팩토리 패턴을 강조하셨었는데 &lt;strong&gt;Aggregate&lt;/strong&gt;를 생성할 때 팩토리 패턴을 적극적으로 활용해야 한다고 설명한다.&lt;br&gt;
+디자인 패턴의 아름다움 스터디에서 팩토리 패턴이 강조되었었는데 &lt;strong&gt;Aggregate&lt;/strong&gt;를 생성할 때 팩토리 패턴을 적극적으로 활용해야 한다고 설명한다.&lt;br&gt;
 객체 생성 로직을 클라이언트에게 숨겨 외부에서는 접근하지 못하게 캡슐화하고 클라이언트가 참조를 얻고 싶다면 방어적 복사를 통해 객체를 전달한다.&lt;/p&gt;
 &lt;hr&gt;
+&lt;h1 id=&quot;모던-자바-인-액션-ing&quot; style=&quot;position:relative;&quot;&gt;모던 자바 인 액션 ~ing&lt;a href=&quot;#%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94-%EC%9D%B8-%EC%95%A1%EC%85%98-ing&quot; aria-label=&quot;모던 자바 인 액션 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;hr&gt;
 &lt;h1 id=&quot;기술-서적-외&quot; style=&quot;position:relative;&quot;&gt;기술 서적 외&lt;a href=&quot;#%EA%B8%B0%EC%88%A0-%EC%84%9C%EC%A0%81-%EC%99%B8&quot; aria-label=&quot;기술 서적 외 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id=&quot;내-생에-단-한-번&quot; style=&quot;position:relative;&quot;&gt;내 생에 단 한 번&lt;a href=&quot;#%EB%82%B4-%EC%83%9D%EC%97%90-%EB%8B%A8-%ED%95%9C-%EB%B2%88&quot; aria-label=&quot;내 생에 단 한 번 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;동욱님의 &lt;a href=&quot;https://jojoldu.tistory.com/715?category=689637&quot;&gt;나를 위해 남을 도와주기&lt;/a&gt; 게시글에서 &lt;code class=&quot;language-text&quot;&gt;내 생에 단 한 번&lt;/code&gt; 책의 내용중 한 챕터로 예를 들어주셨는데 책의 내용이 너무 마음에 들어 바로 구매하고 읽어보았다.&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;내용&lt;/summary&gt;
-&lt;!-- summary 아래 한칸 공백 두어야함 --&gt;
+&lt;h2 id=&quot;대체-뭐가-문제야&quot; style=&quot;position:relative;&quot;&gt;대체 뭐가 문제야?&lt;a href=&quot;#%EB%8C%80%EC%B2%B4-%EB%AD%90%EA%B0%80-%EB%AC%B8%EC%A0%9C%EC%95%BC&quot; aria-label=&quot;대체 뭐가 문제야 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;남들은 멀쩡히 잘도 걸어다니는데 왜 하필이면 나만 목발에 의지해야 하고,&lt;br&gt;
-어떤 사람은 펜만 잡으면 멋진 글이 술술 잘도 나오는데 왜 하필이면 나만 이 짤막한 글 하나 쓰면서도 머리를 벽에 박아야 하는가.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;하필이면&quot;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&quot;문제란 바라는 것과 인식하는 것 간의 차이다.&quot;&lt;br&gt;
+&quot;우리는 문제를 해결하려고만 하지 문제의 본질과 문제를 해결했을 때 생길 수 있는 다른 문제들에 대해서 생각하지 않는다&quot;&lt;br&gt;
+&quot;문제를 정확한 정의를 내렸다고 결고 확신하지 말라. 그러나 그것을 얻기 위한 노력은 계속해야 한다.&quot;&lt;br&gt;
+&lt;strong&gt;&quot;문제를 이해할 때, 잘못될 수 있는 경우를 적어도 세 가지 이상 생각해 내지 못한다면 당신은 문제를 이해하지 못한 것이다.&quot;&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;나는 문제를 정의하는데 시간을 보내기보다는 거의 성급하게 해결안을 찾는 것에 매달린다.&lt;br&gt;
+해결안을 찾는 도중에 발생하는 문제들에 대해 몰두하게 되어 본질적인 문제를 잊기도 한다.&lt;/p&gt;
+&lt;p&gt;이 책은 &lt;code class=&quot;language-text&quot;&gt;무엇이 문제인가&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;그것은 어떤 문제인가&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;누구의 문제인가&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;문제는 어디에서 비롯되는가&lt;/code&gt;를 설명한다.&lt;br&gt;
+문제를 인식하고 그 문제를 해결하기 위한 방법이 낳는 다른 문제들에 대한 인식, 내가 세운 이 해결책이 진짜 문제를 해결하는 것인지, 내가 인식하지 못한 문제들이 더 존재하는지, 내가 세운 해결책이 도덕성과 관련있는지에 대해 사례를 통해 설명한다.&lt;/p&gt;
+&lt;p&gt;책의 내용 중 엘리베이터 얘기가 인상 깊은데, 문제를 건의한 사람이 제안한 문제 해결책 중에서 말도 안되는 &lt;strong&gt;&quot;옆 건물의 엘리베이터 시간을 훔치자&quot;&lt;/strong&gt; 라는 제안을 한다.&lt;br&gt;
+이 말도 안되는 제안은 (마지막 즈음에 밝혀지지만) 옆 건물 주인도 바라던 것이였다. 회사에서 이런 비슷한 경험이 있는데 나는 실없는 해결책인 줄 알았지만 그런 것도 한 방법이라고 얘기를 해주셨다.&lt;br&gt;
+&lt;strong&gt;&quot;유머감각이 없는 사람의 문제를 해결하려고 노력하지 말라.&quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3H4umWD5bwI&amp;#x26;t=9s&amp;#x26;ab_channel=EO%EC%9D%B4%EC%98%A4&quot;&gt;우아한 형제들 김범준 대표의 EO 영상&lt;/a&gt;에서 나오는 엘리베이터 이야기가 (이 책을 인용했는지는 모르지만)이 책에서 등장한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;문제를 &lt;code class=&quot;language-text&quot;&gt;단수에서 복수로 보는 사고의 전환&lt;/code&gt;이 필요하고, 문제를 해결하며 &lt;code class=&quot;language-text&quot;&gt;되돌아보는 자세&lt;/code&gt;가 필요하다.&lt;br&gt;
+이 책에서 세상에는 두 종류의 사람, &lt;strong&gt;일을 하는 사람&lt;/strong&gt;과 &lt;strong&gt;할 일을 만드는 사람&lt;/strong&gt;이 있다고 한다.&lt;br&gt;
+할 일을 만드는 사람이 되지 않아야지&lt;/p&gt;
+&lt;p&gt;책이 얇고 읽기 쉬워서 &lt;strong&gt;문제 해결에 대한 고민&lt;/strong&gt;을 한 경험이 있다면 읽을 이유는 충분하다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;이너게임&quot; style=&quot;position:relative;&quot;&gt;이너게임&lt;a href=&quot;#%EC%9D%B4%EB%84%88%EA%B2%8C%EC%9E%84&quot; aria-label=&quot;이너게임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;태어남은 하나의 약속이다.&lt;br&gt;
-나무로 태어남은 한여름에 힘껏 물오른 가지로 푸르름을 뽐내리라는 약속이고,&lt;br&gt;
-꽃으로 태어남은 흐드러지게 활짝 피어 그 화려함으로 이 세상에 아름다움을 더하리라는 약속이고,&lt;br&gt;
-짐승으로 태어남은 그 우직한 본능으로 생명의 규율을 지키리라는 약속이다.&lt;br&gt;
-...&lt;br&gt;
-다른 생명과 달리 우리의 태어남은 생각하고 이해하고 사랑할 수 있는 기회의 약속이다.&lt;br&gt;
-미움 끝에 용서할 줄 알고, 비판 끝에 이해할 줄 알며, 절시 끝에 사랑할 줄 아는 기적을 만드는 일이다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;약속&quot;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;이너게임에 대한 나의 연구를 한마디로 요약한다면 ‘사람을 좀 더 효과적으로 변화시킬 수 있는 방법을 발견했다’는 것이다.&lt;br&gt;
+이너게임의 원리는 테니스에서 포핸드, 백핸드, 또는 서브를 어떻게 바꿀 것인가를 연구하면서 발견되었지만, 이 원리는 테니스 외의 다른 여러 분야에 응용될 수 있다.&lt;br&gt;
+이 책은 우리가 일하는 방법을 어떻게 바꿀 것인가에 대한 것이다. 달리 표현한다면, 일이 우리를 위해 존재하게 만드는 방법에 관한 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;사랑받는다는 것은 &quot;진짜&quot;가 될 수 있는 귀중한 기회이다.&lt;br&gt;
-모난 마음은 동그랗게,&lt;br&gt;
-잘 깨지는 마음은 부드럽게,&lt;br&gt;
-너무 비싸서 오만한 마음은 겸손하게 누그러뜨릴 때에야 비로소 &quot;진짜&quot;가 되는 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Timothy_Gallwey&quot;&gt;Timothy Gallwey&lt;/a&gt;는 테니스를 코칭하면서 터득한 코칭의 기술, 집중에 대한 방법과 일터에서 즐거움을 느끼고, 그 즐거움 속에서 배우고 성장하며 성과를 내는 방법, 비평가적 인지에 대해 설명한다.&lt;br&gt;
+일반적으로 코칭을 한다는 것은 훈련생은 코치에게 고민을 전달하고 코치는 고민을 해결하기 위해 훈련생을 모델링하며 훈련생은 코치에게 평가를 받는다.&lt;br&gt;
+이런 코칭의 단점이 클라이언트는 자신의 문제를 해결하지 못 하는 이유 또는 발생한 이유 등에 집중하여 방어적으로 문제에 접근한다.&lt;br&gt;
+이로 인해 클라이언트는 자신의 문제에 대한 인지 수준을 높이지 못한다는 것이다.&lt;br&gt;
+이때 코치는 클라이언트가 비평가적 인지를 하도록 유도하며 클라이언트가 스스로 상황을 주도하도록 만들고 인지 수준을 더욱 높이도록 가이드 하는 것이 코칭 효과가 좋다는 것을 깨닫는다.&lt;br&gt;
+그렇다고 이 규칙이 테니스에만 적용되는 것이 아니다. 개개인의 일상과 업무 속에서도 적용할 수 있다.&lt;br&gt;
+&lt;a href=&quot;https://www.facebook.com/hika00/posts/7116315028383895?ref=embed_post&quot;&gt;이 글&lt;/a&gt;에서 교수가 한 학생을 코치하는 내용을 보면 이너게임에서 말하는 코칭과 유사하다는 것을 알 수 있다.&lt;/p&gt;
+&lt;p&gt;간략하게 정리하면 &lt;strong&gt;내부에서 일어나는 셀프1과 셀프2의 싸움에서 셀프1을 무시하고 셀프2에만 집중하여 비평가적 인지를 유지해야 한다는 것&lt;/strong&gt;이다.&lt;br&gt;
+셀프1과 셀프2에 대한 정의는 책 전반적으로 많이 설명되는데&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&quot;&apos;진짜&apos;가 되는 길&quot;&lt;/li&gt;
+&lt;li&gt;셀프1 : 지시하고 평가하는 쪽, 타인이 나에게 요구하는 우선순위, 타인에게 인정받으려 하는 욕구&lt;/li&gt;
+&lt;li&gt;셀프2 : 자신의 실체, 자신의 내면에 존재하는 본질적인 우선순위,&lt;/li&gt;
+&lt;li&gt;비평가적 인지 : 어떤 현상을 평가하지 말고 자신과 자신의 행동을 있는 그대로 느끼고 받아들이는 것&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;영겁의 시간 속에 비하면 우리 한평생 칠, 팔십 정도는 눈 깜짝할 순간이다.&lt;br&gt;
-좋은 마음으로 좋은 말만하고 살아도 아까운 세월인데,&lt;br&gt;
-우리는 타고난 재주로 이리저리 시간 쪼개어&lt;br&gt;
-미워할 시간, 시기할 시간, 불신할 시간, 아픔 줄 시간을 따로 마련하면서 산다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;은하수와 개미마음&quot;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;작품에 작중 인물이 그저 &apos;남&apos;이고 &apos;남의 일&apos;이라고 단정해 버리면,&lt;br&gt;
-&apos;나&apos;와 &apos;남&apos; 사이에 공존하는 인간의 보편적 성향을 공부하는 문학은 애당초 의미를 잃는다.&lt;br&gt;
-...&lt;br&gt;
-가끔 누군가 내게 행한 일이 너무나 말도 안 되고 화가나서 견딜 수 없을 때가 있다.&lt;br&gt;
-며칠 동안 가슴앓이하다가도 문득 &quot;만약 내가 그 사람 입장이었다면 나라도 그럴 수 있었을지 모르겠다.&quot;는 생각이 들 때가 있다.&lt;br&gt;
-&quot;오죽하면 그랬을까&quot;라는 동정심이 생기는 것이다.&lt;br&gt;
-&apos;남&apos;의 마음을 &apos;나&apos;의 마음으로 헤아릴 때 생기는 기적이다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;나와 남&quot;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;우리에게 주어지는 선택은 단 두 가지 뿐이다.&lt;br&gt;
-완전히 좌절하고 삶을 포기하거나, 아니면 그 상황을 또 다른 시작의 계기로 삼는 일이다.&lt;br&gt;
-그리고 최후의 승리는 두 번째 길을 택하는 자에게 돌아간다고 나는 확신한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;막다른 골목&quot;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;이 눈먼 소년처럼 도움을 필요로 하는 사람이 있으면 모두 자기 시간을 쪼개 그를 도와야 할 겁니다.&lt;br&gt;
-그러면 남을 돕고, 남을 위해 나의 작은 것을 희생할 수 있는 배려하는 마음을 배울 수 있다고 생각합니다.&lt;br&gt;
-...&lt;br&gt;
-남을 돕고 함께 나눌 줄 모르는 나라라면, 그런 나라에서 사느니 차라리 죽는게 나을지도 모릅니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;눈먼 소년이 어떻게 돕는가?&quot;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;살아가면서 누군가를 미워할 때 그를 &apos;용서해야 할 이유&apos;보다는 &apos;용서하지 못할 이유&apos;를 먼저 찾고,&lt;br&gt;
-누군가를 비난하면서 그를 &apos;좋아해야 할 이유&apos;보다는 &apos;좋아하지 못할 이유&apos;를 먼저 찾고,&lt;br&gt;
-마음의 문을 꽁꽁 닫아건 채 누군가를 &apos;사랑해야 할 이유&apos;보다는 &apos;사랑하지 못할 이유&apos;를 먼저 찾지는 않았는지&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;못 줄 이유&quot;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;어쩌면 우리 삶 자체가 시험인지 모른다.&lt;br&gt;
-우리 모두 삶이라는 시험지를 앞에 두고 정답을 찾으려 애쓴다.&lt;br&gt;
-그것은 용기의 시험이고, 인내와 사랑의 시험이다.&lt;br&gt;
-그리고 어떻게 시험을 보고 얼마만큼의 성적을 내는가는 우리들의 몫이다.&lt;br&gt;
-...&lt;br&gt;
-우리에게 인생의 시험을 주는이가 그 누구든, 어떤 문제를 내더라도 절대로 우리가 실패하기를 원치 않는다고 생각한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;실패없는 시험&quot;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;일상생활 속에서 여러 사람을 만나면서 내가 정말로 그 사람 자체의 됨됨이만으로 그 사람을 평가했던가?&lt;br&gt;
-그의 배경이나 그가 속한 집단에 대한 일반적 평판만으로 그를 섣불리 판단하거나 질시하는 일은 없었던가?&lt;br&gt;
-그가 사는 방법을 나의 틀에 맞춰 그를 비판하거나 도외시하는 일은 없었던가?&lt;br&gt;
-우리들은 종종 다른 사람들을 편의상 한 집단으로 분류해 놓고 단정적으로 판단하는 경향이 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&quot;연주야!&quot;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/details&gt;
+&lt;p&gt;책에서 읽은 내용을 일상생활, 업무속에 적용하려 할 때 굉장히 어렵다라고 느꼈다.&lt;br&gt;
+나는 매순간을 스스로를 평가하고 책망하였었다는걸 알 수 있었다.&lt;br&gt;
+하지만 스스로 평가를 내리는 습관을 &lt;strong&gt;인지&lt;/strong&gt;하는 것이 비평가적 인지를 갖추는 첫 걸음이라고 한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;스스로가 항상 부족하고 멍청하다고 책망하고 평가하여 해야하는 일에 대해 집중을 하지 못하고 계획조차 세우지 못한 경험&lt;/li&gt;
+&lt;li&gt;일에 집중하기도 힘들고 재미를 느끼기 힘들었던 경험&lt;/li&gt;
+&lt;li&gt;일에서 얻을 수 있는 것은 오로지 성과(급여)라고 생각하는 사람&lt;/li&gt;
+&lt;li&gt;몰입을 경험하고 싶은 사람&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위의 사항에 해당한다면 이 책을 추천해주고 싶다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;데일-카네기의-자기관리론&quot; style=&quot;position:relative;&quot;&gt;데일 카네기의 자기관리론&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC-%EC%B9%B4%EB%84%A4%EA%B8%B0%EC%9D%98-%EC%9E%90%EA%B8%B0%EA%B4%80%EB%A6%AC%EB%A1%A0&quot; aria-label=&quot;데일 카네기의 자기관리론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;중요한 일을 앞두고 스트레스를 많이 받았다.&lt;br&gt;
@@ -1263,64 +1262,113 @@ DDD를 이루는 개념과 원리를 공부하기 보다는 실무 도메인(문
 &lt;/blockquote&gt;
 &lt;/details&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;이너게임&quot; style=&quot;position:relative;&quot;&gt;이너게임&lt;a href=&quot;#%EC%9D%B4%EB%84%88%EA%B2%8C%EC%9E%84&quot; aria-label=&quot;이너게임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;내-생에-단-한-번&quot; style=&quot;position:relative;&quot;&gt;내 생에 단 한 번&lt;a href=&quot;#%EB%82%B4-%EC%83%9D%EC%97%90-%EB%8B%A8-%ED%95%9C-%EB%B2%88&quot; aria-label=&quot;내 생에 단 한 번 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;동욱님의 &lt;a href=&quot;https://jojoldu.tistory.com/715?category=689637&quot;&gt;나를 위해 남을 도와주기&lt;/a&gt; 게시글에서 &lt;code class=&quot;language-text&quot;&gt;내 생에 단 한 번&lt;/code&gt; 책의 내용중 한 챕터로 예를 들어주셨는데 책의 내용이 너무 마음에 들어 바로 구매하고 읽어보았다.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;내용&lt;/summary&gt;
+&lt;!-- summary 아래 한칸 공백 두어야함 --&gt;
 &lt;blockquote&gt;
-&lt;p&gt;이너게임에 대한 나의 연구를 한마디로 요약한다면 ‘사람을 좀 더 효과적으로 변화시킬 수 있는 방법을 발견했다’는 것이다.&lt;br&gt;
-이너게임의 원리는 테니스에서 포핸드, 백핸드, 또는 서브를 어떻게 바꿀 것인가를 연구하면서 발견되었지만, 이 원리는 테니스 외의 다른 여러 분야에 응용될 수 있다.&lt;br&gt;
-이 책은 우리가 일하는 방법을 어떻게 바꿀 것인가에 대한 것이다. 달리 표현한다면, 일이 우리를 위해 존재하게 만드는 방법에 관한 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Timothy_Gallwey&quot;&gt;Timothy Gallwey&lt;/a&gt;는 테니스를 코칭하면서 터득한 코칭의 기술, 집중에 대한 방법과 일터에서 즐거움을 느끼고, 그 즐거움 속에서 배우고 성장하며 성과를 내는 방법, 비평가적 인지에 대해 설명한다.&lt;br&gt;
-일반적으로 코칭을 한다는 것은 훈련생은 코치에게 고민을 전달하고 코치는 고민을 해결하기 위해 훈련생을 모델링하며 훈련생은 코치에게 평가를 받는다.&lt;br&gt;
-이런 코칭의 단점이 클라이언트는 자신의 문제를 해결하지 못 하는 이유 또는 발생한 이유 등에 집중하여 방어적으로 문제에 접근한다.&lt;br&gt;
-이로 인해 클라이언트는 자신의 문제에 대한 인지 수준을 높이지 못한다는 것이다.&lt;br&gt;
-이때 코치는 클라이언트가 비평가적 인지를 하도록 유도하며 클라이언트가 스스로 상황을 주도하도록 만들고 인지 수준을 더욱 높이도록 가이드 하는 것이 코칭 효과가 좋다는 것을 깨닫는다.&lt;br&gt;
-그렇다고 이 규칙이 테니스에만 적용되는 것이 아니다. 개개인의 일상과 업무 속에서도 적용할 수 있다.&lt;br&gt;
-&lt;a href=&quot;https://www.facebook.com/hika00/posts/7116315028383895?ref=embed_post&quot;&gt;이 글&lt;/a&gt;에서 교수가 한 학생을 코치하는 내용을 보면 이너게임에서 말하는 코칭과 유사하다는 것을 알 수 있다.&lt;/p&gt;
-&lt;p&gt;간략하게 정리하면 &lt;strong&gt;내부에서 일어나는 셀프1과 셀프2의 싸움에서 셀프1을 무시하고 셀프2에만 집중하여 비평가적 인지를 유지해야 한다는 것&lt;/strong&gt;이다.&lt;br&gt;
-셀프1과 셀프2에 대한 정의는 책 전반적으로 많이 설명되는데&lt;/p&gt;
+&lt;p&gt;남들은 멀쩡히 잘도 걸어다니는데 왜 하필이면 나만 목발에 의지해야 하고,&lt;br&gt;
+어떤 사람은 펜만 잡으면 멋진 글이 술술 잘도 나오는데 왜 하필이면 나만 이 짤막한 글 하나 쓰면서도 머리를 벽에 박아야 하는가.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;셀프1 : 지시하고 평가하는 쪽, 타인이 나에게 요구하는 우선순위, 타인에게 인정받으려 하는 욕구&lt;/li&gt;
-&lt;li&gt;셀프2 : 자신의 실체, 자신의 내면에 존재하는 본질적인 우선순위,&lt;/li&gt;
-&lt;li&gt;비평가적 인지 : 어떤 현상을 평가하지 말고 자신과 자신의 행동을 있는 그대로 느끼고 받아들이는 것&lt;/li&gt;
+&lt;li&gt;&quot;하필이면&quot;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;책에서 읽은 내용을 일상생활, 업무속에 적용하려 할 때 굉장히 어렵다라고 느꼈다.&lt;br&gt;
-나는 매순간을 스스로를 평가하고 책망하였었다는걸 알 수 있었다.&lt;br&gt;
-하지만 스스로 평가를 내리는 습관을 &lt;strong&gt;인지&lt;/strong&gt;하는 것이 비평가적 인지를 갖추는 첫 걸음이라고 한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;스스로가 항상 부족하고 멍청하다고 책망하고 평가하여 해야하는 일에 대해 집중을 하지 못하고 계획조차 세우지 못한 경험&lt;/li&gt;
-&lt;li&gt;일에 집중하기도 힘들고 재미를 느끼기 힘들었던 경험&lt;/li&gt;
-&lt;li&gt;일에서 얻을 수 있는 것은 오로지 성과(급여)라고 생각하는 사람&lt;/li&gt;
-&lt;li&gt;몰입을 경험하고 싶은 사람&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;위의 사항에 해당한다면 이 책을 추천해주고 싶다.&lt;/p&gt;
-&lt;h2 id=&quot;대체-뭐가-문제야&quot; style=&quot;position:relative;&quot;&gt;대체 뭐가 문제야?&lt;a href=&quot;#%EB%8C%80%EC%B2%B4-%EB%AD%90%EA%B0%80-%EB%AC%B8%EC%A0%9C%EC%95%BC&quot; aria-label=&quot;대체 뭐가 문제야 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&quot;문제란 바라는 것과 인식하는 것 간의 차이다.&quot;&lt;br&gt;
-&quot;우리는 문제를 해결하려고만 하지 문제의 본질과 문제를 해결했을 때 생길 수 있는 다른 문제들에 대해서 생각하지 않는다&quot;&lt;br&gt;
-&quot;문제를 정확한 정의를 내렸다고 결고 확신하지 말라. 그러나 그것을 얻기 위한 노력은 계속해야 한다.&quot;&lt;br&gt;
-&lt;strong&gt;&quot;문제를 이해할 때, 잘못될 수 있는 경우를 적어도 세 가지 이상 생각해 내지 못한다면 당신은 문제를 이해하지 못한 것이다.&quot;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;나는 문제를 정의하는데 시간을 보내기보다는 거의 성급하게 해결안을 찾는 것에 매달린다.&lt;br&gt;
-해결안을 찾는 도중에 발생하는 문제들에 대해 몰두하게 되어 본질적인 문제를 잊기도 한다.&lt;/p&gt;
-&lt;p&gt;이 책은 &lt;code class=&quot;language-text&quot;&gt;무엇이 문제인가&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;그것은 어떤 문제인가&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;누구의 문제인가&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;문제는 어디에서 비롯되는가&lt;/code&gt;를 설명한다.&lt;br&gt;
-문제를 인식하고 그 문제를 해결하기 위한 방법이 낳는 다른 문제들에 대한 인식, 내가 세운 이 해결책이 진짜 문제를 해결하는 것인지, 내가 인식하지 못한 문제들이 더 존재하는지, 내가 세운 해결책이 도덕성과 관련있는지에 대해 사례를 통해 설명한다.&lt;/p&gt;
-&lt;p&gt;책의 내용 중 엘리베이터 얘기가 인상 깊은데, 문제를 건의한 사람이 제안한 문제 해결책 중에서 말도 안되는 &lt;strong&gt;&quot;옆 건물의 엘리베이터 시간을 훔치자&quot;&lt;/strong&gt; 라는 제안을 한다.&lt;br&gt;
-이 말도 안되는 제안은 (마지막 즈음에 밝혀지지만) 옆 건물 주인도 바라던 것이였다. 회사에서 이런 비슷한 경험이 있는데 나는 실없는 해결책인 줄 알았지만 그런 것도 한 방법이라고 얘기를 해주셨다.&lt;br&gt;
-&lt;strong&gt;&quot;유머감각이 없는 사람의 문제를 해결하려고 노력하지 말라.&quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;태어남은 하나의 약속이다.&lt;br&gt;
+나무로 태어남은 한여름에 힘껏 물오른 가지로 푸르름을 뽐내리라는 약속이고,&lt;br&gt;
+꽃으로 태어남은 흐드러지게 활짝 피어 그 화려함으로 이 세상에 아름다움을 더하리라는 약속이고,&lt;br&gt;
+짐승으로 태어남은 그 우직한 본능으로 생명의 규율을 지키리라는 약속이다.&lt;br&gt;
+...&lt;br&gt;
+다른 생명과 달리 우리의 태어남은 생각하고 이해하고 사랑할 수 있는 기회의 약속이다.&lt;br&gt;
+미움 끝에 용서할 줄 알고, 비판 끝에 이해할 줄 알며, 절시 끝에 사랑할 줄 아는 기적을 만드는 일이다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3H4umWD5bwI&amp;#x26;t=9s&amp;#x26;ab_channel=EO%EC%9D%B4%EC%98%A4&quot;&gt;우아한 형제들 김범준 대표의 EO 영상&lt;/a&gt;에서 나오는 엘리베이터 이야기가 (이 책을 인용했는지는 모르지만)이 책에서 등장한다.&lt;/li&gt;
+&lt;li&gt;&quot;약속&quot;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;문제를 &lt;code class=&quot;language-text&quot;&gt;단수에서 복수로 보는 사고의 전환&lt;/code&gt;이 필요하고, 문제를 해결하며 &lt;code class=&quot;language-text&quot;&gt;되돌아보는 자세&lt;/code&gt;가 필요하다.&lt;br&gt;
-이 책에서 세상에는 두 종류의 사람, &lt;strong&gt;일을 하는 사람&lt;/strong&gt;과 &lt;strong&gt;할 일을 만드는 사람&lt;/strong&gt;이 있다고 한다.&lt;br&gt;
-할 일을 만드는 사람이 되지 않아야지&lt;/p&gt;
-&lt;p&gt;책이 얇고 읽기 쉬워서 &lt;strong&gt;문제 해결에 대한 고민&lt;/strong&gt;을 한 경험이 있다면 안읽을 이유가 없다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[타입이 서로 다른 컬럼을 조인한다면?]]></title><description><![CDATA[서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.  EXPLAIN 출력 형식 문제 분석  FIR.FIRST_COL FIR.SECOND_COL SEC.FIRST_COL SEC.SECOND_COL 1 20230330 1 2023033…]]></description><link>https://jdalma.github.io/2023y/dbIndex/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/dbIndex/</guid><pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;사랑받는다는 것은 &quot;진짜&quot;가 될 수 있는 귀중한 기회이다.&lt;br&gt;
+모난 마음은 동그랗게,&lt;br&gt;
+잘 깨지는 마음은 부드럽게,&lt;br&gt;
+너무 비싸서 오만한 마음은 겸손하게 누그러뜨릴 때에야 비로소 &quot;진짜&quot;가 되는 것이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&quot;&apos;진짜&apos;가 되는 길&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;영겁의 시간 속에 비하면 우리 한평생 칠, 팔십 정도는 눈 깜짝할 순간이다.&lt;br&gt;
+좋은 마음으로 좋은 말만하고 살아도 아까운 세월인데,&lt;br&gt;
+우리는 타고난 재주로 이리저리 시간 쪼개어&lt;br&gt;
+미워할 시간, 시기할 시간, 불신할 시간, 아픔 줄 시간을 따로 마련하면서 산다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&quot;은하수와 개미마음&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;작품에 작중 인물이 그저 &apos;남&apos;이고 &apos;남의 일&apos;이라고 단정해 버리면,&lt;br&gt;
+&apos;나&apos;와 &apos;남&apos; 사이에 공존하는 인간의 보편적 성향을 공부하는 문학은 애당초 의미를 잃는다.&lt;br&gt;
+...&lt;br&gt;
+가끔 누군가 내게 행한 일이 너무나 말도 안 되고 화가나서 견딜 수 없을 때가 있다.&lt;br&gt;
+며칠 동안 가슴앓이하다가도 문득 &quot;만약 내가 그 사람 입장이었다면 나라도 그럴 수 있었을지 모르겠다.&quot;는 생각이 들 때가 있다.&lt;br&gt;
+&quot;오죽하면 그랬을까&quot;라는 동정심이 생기는 것이다.&lt;br&gt;
+&apos;남&apos;의 마음을 &apos;나&apos;의 마음으로 헤아릴 때 생기는 기적이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&quot;나와 남&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;우리에게 주어지는 선택은 단 두 가지 뿐이다.&lt;br&gt;
+완전히 좌절하고 삶을 포기하거나, 아니면 그 상황을 또 다른 시작의 계기로 삼는 일이다.&lt;br&gt;
+그리고 최후의 승리는 두 번째 길을 택하는 자에게 돌아간다고 나는 확신한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&quot;막다른 골목&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이 눈먼 소년처럼 도움을 필요로 하는 사람이 있으면 모두 자기 시간을 쪼개 그를 도와야 할 겁니다.&lt;br&gt;
+그러면 남을 돕고, 남을 위해 나의 작은 것을 희생할 수 있는 배려하는 마음을 배울 수 있다고 생각합니다.&lt;br&gt;
+...&lt;br&gt;
+남을 돕고 함께 나눌 줄 모르는 나라라면, 그런 나라에서 사느니 차라리 죽는게 나을지도 모릅니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&quot;눈먼 소년이 어떻게 돕는가?&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;살아가면서 누군가를 미워할 때 그를 &apos;용서해야 할 이유&apos;보다는 &apos;용서하지 못할 이유&apos;를 먼저 찾고,&lt;br&gt;
+누군가를 비난하면서 그를 &apos;좋아해야 할 이유&apos;보다는 &apos;좋아하지 못할 이유&apos;를 먼저 찾고,&lt;br&gt;
+마음의 문을 꽁꽁 닫아건 채 누군가를 &apos;사랑해야 할 이유&apos;보다는 &apos;사랑하지 못할 이유&apos;를 먼저 찾지는 않았는지&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&quot;못 줄 이유&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;어쩌면 우리 삶 자체가 시험인지 모른다.&lt;br&gt;
+우리 모두 삶이라는 시험지를 앞에 두고 정답을 찾으려 애쓴다.&lt;br&gt;
+그것은 용기의 시험이고, 인내와 사랑의 시험이다.&lt;br&gt;
+그리고 어떻게 시험을 보고 얼마만큼의 성적을 내는가는 우리들의 몫이다.&lt;br&gt;
+...&lt;br&gt;
+우리에게 인생의 시험을 주는이가 그 누구든, 어떤 문제를 내더라도 절대로 우리가 실패하기를 원치 않는다고 생각한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&quot;실패없는 시험&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;일상생활 속에서 여러 사람을 만나면서 내가 정말로 그 사람 자체의 됨됨이만으로 그 사람을 평가했던가?&lt;br&gt;
+그의 배경이나 그가 속한 집단에 대한 일반적 평판만으로 그를 섣불리 판단하거나 질시하는 일은 없었던가?&lt;br&gt;
+그가 사는 방법을 나의 틀에 맞춰 그를 비판하거나 도외시하는 일은 없었던가?&lt;br&gt;
+우리들은 종종 다른 사람들을 편의상 한 집단으로 분류해 놓고 단정적으로 판단하는 경향이 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&quot;연주야!&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/details&gt;</content:encoded></item><item><title><![CDATA[타입이 서로 다른 컬럼을 조인한다면?]]></title><description><![CDATA[서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.  EXPLAIN 출력 형식 문제 분석  FIR.FIRST_COL FIR.SECOND_COL SEC.FIRST_COL SEC.SECOND_COL 1 20230330 1 2023033…]]></description><link>https://jdalma.github.io/2023y/dbIndex/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/dbIndex/</guid><pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;서비스에 장애를 일으킨 이유를 재현해보고 정리하기 위해 작성한다.&lt;br&gt;
 &lt;a href=&quot;https://dev.mysql.com/doc/refman/5.7/en/explain-output.html#explain-join-types&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;mysql docs&lt;/code&gt; EXPLAIN 출력 형식&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;문제-분석&quot; style=&quot;position:relative;&quot;&gt;문제 분석&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B6%84%EC%84%9D&quot; aria-label=&quot;문제 분석 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 664px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1331,18 +1379,17 @@ DDD를 이루는 개념과 원리를 공부하기 보다는 실무 도메인(문
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 31.645569620253163%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYklEQVR42m2RW5OTQBCF+TG7VsIQQN2ETbgMkBAImCUCiaxm1+s+aCw3lrdnf/lnb/TRh6+6a6bnVJ8zxshx8HREkKSkWc40CKUW6HTB0/GYobIEJf3kNBfJebzISIRAJyQyG8YpF57HyLYxYsfmwyrjsGv5eXPD4XnN9/0rDk3NC39Coc7JzXP2gcfdpuJ43fO1351mPjebU/9xs+ZWT7l0RhjNE8XvOuG47TjKxbeu4S5LeJcEvNUzrtQZa/OMH4XHr67mfnPFl7riU1XwRvu8Dj1uY5/7eUBimxjjC5e2CaiqmnJVsSpKgumMSKxHvo8jdh3Tou8u2fUdbXtN1/UsFkuiMCJN56RiOZMIXPcxhpKMHg0Ug+GAoakEE1NEHlDW32qKYLed0fRbtvv31LuXrOpWslyyLJ+RySIPOK6LYckDy7L+ISLq/+T5hLwshJq5fF5ergmjWNBEWqrW2I7NH1oc1D0sd6iaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 31.555555555555554%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYklEQVR42m2RW5OTQBCF+TG7VsIQQN2ETbgMkBAImCUCiaxm1+s+aCw3lrdnf/lnb/TRh6+6a6bnVJ8zxshx8HREkKSkWc40CKUW6HTB0/GYobIEJf3kNBfJebzISIRAJyQyG8YpF57HyLYxYsfmwyrjsGv5eXPD4XnN9/0rDk3NC39Coc7JzXP2gcfdpuJ43fO1351mPjebU/9xs+ZWT7l0RhjNE8XvOuG47TjKxbeu4S5LeJcEvNUzrtQZa/OMH4XHr67mfnPFl7riU1XwRvu8Dj1uY5/7eUBimxjjC5e2CaiqmnJVsSpKgumMSKxHvo8jdh3Tou8u2fUdbXtN1/UsFkuiMCJN56RiOZMIXPcxhpKMHg0Ug+GAoakEE1NEHlDW32qKYLed0fRbtvv31LuXrOpWslyyLJ+RySIPOK6LYckDy7L+ISLq/+T5hLwshJq5fF5ergmjWNBEWqrW2I7NH1oc1D0sd6iaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;case1&quot;
         title=&quot;&quot;
-        src=&quot;/static/8ecfaea75db744b61b40da9bff8ae5a5/f058b/case1.png&quot;
-        srcset=&quot;/static/8ecfaea75db744b61b40da9bff8ae5a5/c26ae/case1.png 158w,
-/static/8ecfaea75db744b61b40da9bff8ae5a5/6bdcf/case1.png 315w,
-/static/8ecfaea75db744b61b40da9bff8ae5a5/f058b/case1.png 630w,
+        src=&quot;/static/8ecfaea75db744b61b40da9bff8ae5a5/31493/case1.png&quot;
+        srcset=&quot;/static/8ecfaea75db744b61b40da9bff8ae5a5/3684f/case1.png 225w,
+/static/8ecfaea75db744b61b40da9bff8ae5a5/fc2a6/case1.png 450w,
 /static/8ecfaea75db744b61b40da9bff8ae5a5/31493/case1.png 664w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 664px) 100vw, 664px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -1688,7 +1735,7 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 681px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1699,18 +1746,17 @@ MySQL의 내부 최적화를 통해 결과가 바뀌는 것이 아닐까 싶다.
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 36.075949367088604%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABuklEQVR42iWRS3PSABSF8//3bnRc1HbjiLZWa5m2A7Y0PBMI5TWWNwRJQl4kgRAS+Exxde6duWfmnO8KcRzjbwLMvcNQmyD1myjLLmNnzsCesvA1VG+Zqs7YmjGxVXTfxPFdnMBFDyzm7hLDX+HFAYLn+Vi+w9zTkGdtLnt3fJnccv03xy/tN6It8bASKVp1CkYNcSVTs1rIdouePSCrFfih5cjqBZR1F2G7DVkFNqbnMLOXJ2NeLZPXK1TXTep2h7KlILttKnaTsp3OTue015wXKo5CyW3wU8szDlSE4/HIJtrypm/VN/sQZ+exDn2iOCKINieNkohNEmKGLuF+R5IkxIeEXfL/ZrPfkhwThDhKWAQaXX+AvGrzvJAoa03azh8qukLPHSHpLxQ1mYJaQzZalFYK92oRcSZTNdIWVvvk1UMTYW2tqacVbow8N2nsd50LPvYzZGZZLtUHLkbXnL1+4/3oM+evV5xPv/NhmuHT+Iqz7ldujceU9SOiKTPdLhAO8YG23U+TDJFS0AVDSjk2UPwuDbfDo1Hl3iiSX5bTR3QQU8Y5vcSTKXGnP9NbD5l4Cxp2Fydy+Qccx/cZIaSPWQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 36%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABuklEQVR42iWRS3PSABSF8//3bnRc1HbjiLZWa5m2A7Y0PBMI5TWWNwRJQl4kgRAS+Exxde6duWfmnO8KcRzjbwLMvcNQmyD1myjLLmNnzsCesvA1VG+Zqs7YmjGxVXTfxPFdnMBFDyzm7hLDX+HFAYLn+Vi+w9zTkGdtLnt3fJnccv03xy/tN6It8bASKVp1CkYNcSVTs1rIdouePSCrFfih5cjqBZR1F2G7DVkFNqbnMLOXJ2NeLZPXK1TXTep2h7KlILttKnaTsp3OTue015wXKo5CyW3wU8szDlSE4/HIJtrypm/VN/sQZ+exDn2iOCKINieNkohNEmKGLuF+R5IkxIeEXfL/ZrPfkhwThDhKWAQaXX+AvGrzvJAoa03azh8qukLPHSHpLxQ1mYJaQzZalFYK92oRcSZTNdIWVvvk1UMTYW2tqacVbow8N2nsd50LPvYzZGZZLtUHLkbXnL1+4/3oM+evV5xPv/NhmuHT+Iqz7ldujceU9SOiKTPdLhAO8YG23U+TDJFS0AVDSjk2UPwuDbfDo1Hl3iiSX5bTR3QQU8Y5vcSTKXGnP9NbD5l4Cxp2Fydy+Qccx/cZIaSPWQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;2022commit&quot;
         title=&quot;&quot;
-        src=&quot;/static/d7bf5eade433fedbaee8fd9780d6e92e/f058b/2022commit.png&quot;
-        srcset=&quot;/static/d7bf5eade433fedbaee8fd9780d6e92e/c26ae/2022commit.png 158w,
-/static/d7bf5eade433fedbaee8fd9780d6e92e/6bdcf/2022commit.png 315w,
-/static/d7bf5eade433fedbaee8fd9780d6e92e/f058b/2022commit.png 630w,
+        src=&quot;/static/d7bf5eade433fedbaee8fd9780d6e92e/8ce52/2022commit.png&quot;
+        srcset=&quot;/static/d7bf5eade433fedbaee8fd9780d6e92e/3684f/2022commit.png 225w,
+/static/d7bf5eade433fedbaee8fd9780d6e92e/fc2a6/2022commit.png 450w,
 /static/d7bf5eade433fedbaee8fd9780d6e92e/8ce52/2022commit.png 681w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 681px) 100vw, 681px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2053,7 +2099,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2064,20 +2110,20 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 41.77215189873418%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABZ0lEQVR42j1Si27CMBDr//8ZQ0yIISGKBm2hlL6Avt/17ACrdMql8fnsSyzwm+dZC+q6hm3b2O/38H0fXddhGAbM02TOZ+7npsHctuAhRuL7okDHGKsKzfMJy3VdPB4PTCwax/E/RNay8Gu5hHc+vwhZiDd5S+KGhCMbDsT2fY/sfodVEHRnouKKXaIoQpIkBvgMQ9jbLRKq7bMMExuHtxtK4oSRm4B7CVLExFtSttlsjMUgCHA8HvHLiLj/Wa8RcGUn5HlurLqOY5oK7zAXseqMEIal+TlvUBzHONOewOH1CvdwMCpn2inK0hA6bCaVPs+l8MbcOZ1w5T5lvaV5aGYNZ6JPitXE/OOMoJz2RWgugnnP+AhIqfB7tcJut3tZVnHG+Sg0B8/zcLlcjMU0Tc1sRW4IqfRz4yPXhmeKio1rCipZY2a4WCwMiTqK8EQLytecoezry3XDekJ6OiTGJ/jPrHoZRYE/1OVhZDum0IYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 42.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABZ0lEQVR42j1Si27CMBDr//8ZQ0yIISGKBm2hlL6Avt/17ACrdMql8fnsSyzwm+dZC+q6hm3b2O/38H0fXddhGAbM02TOZ+7npsHctuAhRuL7okDHGKsKzfMJy3VdPB4PTCwax/E/RNay8Gu5hHc+vwhZiDd5S+KGhCMbDsT2fY/sfodVEHRnouKKXaIoQpIkBvgMQ9jbLRKq7bMMExuHtxtK4oSRm4B7CVLExFtSttlsjMUgCHA8HvHLiLj/Wa8RcGUn5HlurLqOY5oK7zAXseqMEIal+TlvUBzHONOewOH1CvdwMCpn2inK0hA6bCaVPs+l8MbcOZ1w5T5lvaV5aGYNZ6JPitXE/OOMoJz2RWgugnnP+AhIqfB7tcJut3tZVnHG+Sg0B8/zcLlcjMU0Tc1sRW4IqfRz4yPXhmeKio1rCipZY2a4WCwMiTqK8EQLytecoezry3XDekJ6OiTGJ/jPrHoZRYE/1OVhZDum0IYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;flow&quot;
         title=&quot;&quot;
-        src=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/f058b/flow.png&quot;
-        srcset=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/c26ae/flow.png 158w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/6bdcf/flow.png 315w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/f058b/flow.png 630w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/40601/flow.png 945w,
-/static/ebff249f14a266fa7fbdc0f601d37a08/78612/flow.png 1260w,
+        src=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/1cfc2/flow.png&quot;
+        srcset=&quot;/static/ebff249f14a266fa7fbdc0f601d37a08/3684f/flow.png 225w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/fc2a6/flow.png 450w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/1cfc2/flow.png 900w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/21482/flow.png 1350w,
+/static/ebff249f14a266fa7fbdc0f601d37a08/d61c2/flow.png 1800w,
 /static/ebff249f14a266fa7fbdc0f601d37a08/90eea/flow.png 2254w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2108,15 +2154,14 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 29.11392405063291%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABG0lEQVR42j1R7XKCMBDkcTq2ts70d6sYQgKB8C0iglp9/1fY3p2lPzK3bG43O0uQag2blbBpju+dQmwdTJJBmxRKW5oO+8ggzQrh+SidIFQGRdUiL2rR8v7reoPAGQvna7nY7TUSVxBukPmKsJfJgrLuCNfwZSs7sc1QNb3sLgHeN58Ihq7HMN1wnn9IdMDxdCF8x+l8xTBehO+HCfP1QdwN0+VO/ExmR8IPjNPzvutHChQjSGMjCTlJqGJ5nZPw5GQurxDFiUxOzJXwd1F1xJWULkd7GIRbvX0gsFEkHSYux9d2L4KlEz6Mt2EkkzsNlZZOfdkQ5wXXbS+GL6s1G2qYtJDXF0PGSy+Mn8m9iNjgadj+JeQuD/8/5RcCG+GpqeQkfQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 29.333333333333332%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABG0lEQVR42j1R7XKCMBDkcTq2ts70d6sYQgKB8C0iglp9/1fY3p2lPzK3bG43O0uQag2blbBpju+dQmwdTJJBmxRKW5oO+8ggzQrh+SidIFQGRdUiL2rR8v7reoPAGQvna7nY7TUSVxBukPmKsJfJgrLuCNfwZSs7sc1QNb3sLgHeN58Ihq7HMN1wnn9IdMDxdCF8x+l8xTBehO+HCfP1QdwN0+VO/ExmR8IPjNPzvutHChQjSGMjCTlJqGJ5nZPw5GQurxDFiUxOzJXwd1F1xJWULkd7GIRbvX0gsFEkHSYux9d2L4KlEz6Mt2EkkzsNlZZOfdkQ5wXXbS+GL6s1G2qYtJDXF0PGSy+Mn8m9iNjgadj+JeQuD/8/5RcCG+GpqeQkfQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;blockNonBlockThread&quot;
         title=&quot;&quot;
         src=&quot;/static/8943dd5097e3110b3ec831856ba0d15c/33b38/blockNonBlockThread.png&quot;
-        srcset=&quot;/static/8943dd5097e3110b3ec831856ba0d15c/c26ae/blockNonBlockThread.png 158w,
-/static/8943dd5097e3110b3ec831856ba0d15c/6bdcf/blockNonBlockThread.png 315w,
+        srcset=&quot;/static/8943dd5097e3110b3ec831856ba0d15c/3684f/blockNonBlockThread.png 225w,
 /static/8943dd5097e3110b3ec831856ba0d15c/33b38/blockNonBlockThread.png 448w&quot;
         sizes=&quot;(max-width: 448px) 100vw, 448px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
@@ -2175,7 +2220,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;h1 id=&quot;armeria의-server-thread는-어떻게-처리될까&quot; style=&quot;position:relative;&quot;&gt;Armeria의 Server Thread는 어떻게 처리될까?&lt;a href=&quot;#armeria%EC%9D%98-server-thread%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%B2%98%EB%A6%AC%EB%90%A0%EA%B9%8C&quot; aria-label=&quot;armeria의 server thread는 어떻게 처리될까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2186,19 +2231,18 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlUlEQVR42mVSWXbjMAzzfRpb1Oo1XpOmTe5/HhSkJ7O8+cCzRNEgSKLqhw5OGngvhCOa/yCMv+HDv2f/9xtRNY4X8SQVBuU3SWByCCRjMc3x3qNuaite143lO3F8O9+VQ8+VssacEGJg4AL3C03zcX4Jrb5s24l1wf3xwOP5wrytmNcV63FDaYsVr7zUiClCW9+3Bet6JWbcbjuOY8O+L4ZxGk11jIKcA7q+Q0qeELRdS0HaXY1KSJhyZLCg7ws6fjcSf34euN8P+z6fX/h+vfiWkVNAKQmpZHbwQVUXBAp6z/8kZIJW0cqlREPij/M8kfCGZZnw+P6yAuPYYRh7U6wKMzGo+uj/KCxU1bb5TCCptqWY5wHX62DKZ85OVWhOaU8BMTobwzCOPJNQjPBi7Wob52YFA+e5LFcj0Ng09diO3QjexXQJduZ76Vv7z1puXE0/BXhuWYPvoWsBPeuw1Q4S1AW1bdzs471ZyKltRMw6zrYctUW1TSLxOQcdg8JMLWrswCLFfKoIgUuxu7d7jJFOyUb+A0WpQjpfCD9CAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 48.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlUlEQVR42mVSWXbjMAzzfRpb1Oo1XpOmTe5/HhSkJ7O8+cCzRNEgSKLqhw5OGngvhCOa/yCMv+HDv2f/9xtRNY4X8SQVBuU3SWByCCRjMc3x3qNuaite143lO3F8O9+VQ8+VssacEGJg4AL3C03zcX4Jrb5s24l1wf3xwOP5wrytmNcV63FDaYsVr7zUiClCW9+3Bet6JWbcbjuOY8O+L4ZxGk11jIKcA7q+Q0qeELRdS0HaXY1KSJhyZLCg7ws6fjcSf34euN8P+z6fX/h+vfiWkVNAKQmpZHbwQVUXBAp6z/8kZIJW0cqlREPij/M8kfCGZZnw+P6yAuPYYRh7U6wKMzGo+uj/KCxU1bb5TCCptqWY5wHX62DKZ85OVWhOaU8BMTobwzCOPJNQjPBi7Wob52YFA+e5LFcj0Ng09diO3QjexXQJduZ76Vv7z1puXE0/BXhuWYPvoWsBPeuw1Q4S1AW1bdzs471ZyKltRMw6zrYctUW1TSLxOQcdg8JMLWrswCLFfKoIgUuxu7d7jJFOyUb+A0WpQjpfCD9CAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;expect&quot;
         title=&quot;&quot;
-        src=&quot;/static/03f8e242df029769652d8a7aa43df5f7/f058b/expect.png&quot;
-        srcset=&quot;/static/03f8e242df029769652d8a7aa43df5f7/c26ae/expect.png 158w,
-/static/03f8e242df029769652d8a7aa43df5f7/6bdcf/expect.png 315w,
-/static/03f8e242df029769652d8a7aa43df5f7/f058b/expect.png 630w,
-/static/03f8e242df029769652d8a7aa43df5f7/40601/expect.png 945w,
+        src=&quot;/static/03f8e242df029769652d8a7aa43df5f7/1cfc2/expect.png&quot;
+        srcset=&quot;/static/03f8e242df029769652d8a7aa43df5f7/3684f/expect.png 225w,
+/static/03f8e242df029769652d8a7aa43df5f7/fc2a6/expect.png 450w,
+/static/03f8e242df029769652d8a7aa43df5f7/1cfc2/expect.png 900w,
 /static/03f8e242df029769652d8a7aa43df5f7/705cc/expect.png 1071w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2207,7 +2251,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
     &lt;/span&gt;
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2218,19 +2262,18 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 48.734177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbElEQVR42nVSW3KDMAzkQAVLfoAxr5BASyYfbe9/GFWSA6Wd9mPH2rG8WskqUopkoDqA+BcMGVMq0BoC5pVwyT9zPgtJAkQCQL60mvBbsDJGcwyAxmXFxQ0oL/m9cGsd3wEVImAdkq9rrQRQHm4AXg4eU0uX242GaaRpnun+eNCyrjSMmU/zhc2IoLooKTSBxiHRPHPC1NM4dkcs6LqWQu3JO6AQLMU2Mncae2+pjo12o4LiomUHXRcVIvb6eqNtW+l+f1N8fL7TdbmqgKDtEr/LbwUueJ11sc9JKuzJNVcW0ZQadSdOl3Wh7b5pLPfSetN4jeVMffp2KIj8294jOW5JzoHbb9uGek4ULnN2wakbyW+4o/MHyox/CKa+e84DdSaWk89OL/PEY4lacG9ZcnZE4VmQdwwM+RC4YnZ4hnyY808B79Wp/CY6dougXE50XnUKXRXeP+Cd+n8P897lXcwGkGNEm+9Ains9vwBJh0JZg038fgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 48.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbElEQVR42nVSW3KDMAzkQAVLfoAxr5BASyYfbe9/GFWSA6Wd9mPH2rG8WskqUopkoDqA+BcMGVMq0BoC5pVwyT9zPgtJAkQCQL60mvBbsDJGcwyAxmXFxQ0oL/m9cGsd3wEVImAdkq9rrQRQHm4AXg4eU0uX242GaaRpnun+eNCyrjSMmU/zhc2IoLooKTSBxiHRPHPC1NM4dkcs6LqWQu3JO6AQLMU2Mncae2+pjo12o4LiomUHXRcVIvb6eqNtW+l+f1N8fL7TdbmqgKDtEr/LbwUueJ11sc9JKuzJNVcW0ZQadSdOl3Wh7b5pLPfSetN4jeVMffp2KIj8294jOW5JzoHbb9uGek4ULnN2wakbyW+4o/MHyox/CKa+e84DdSaWk89OL/PEY4lacG9ZcnZE4VmQdwwM+RC4YnZ4hnyY808B79Wp/CY6dougXE50XnUKXRXeP+Cd+n8P897lXcwGkGNEm+9Ains9vwBJh0JZg038fgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;real&quot;
         title=&quot;&quot;
-        src=&quot;/static/1a839906e933a6d47cb6711d8d54e93c/f058b/real.png&quot;
-        srcset=&quot;/static/1a839906e933a6d47cb6711d8d54e93c/c26ae/real.png 158w,
-/static/1a839906e933a6d47cb6711d8d54e93c/6bdcf/real.png 315w,
-/static/1a839906e933a6d47cb6711d8d54e93c/f058b/real.png 630w,
-/static/1a839906e933a6d47cb6711d8d54e93c/40601/real.png 945w,
+        src=&quot;/static/1a839906e933a6d47cb6711d8d54e93c/1cfc2/real.png&quot;
+        srcset=&quot;/static/1a839906e933a6d47cb6711d8d54e93c/3684f/real.png 225w,
+/static/1a839906e933a6d47cb6711d8d54e93c/fc2a6/real.png 450w,
+/static/1a839906e933a6d47cb6711d8d54e93c/1cfc2/real.png 900w,
 /static/1a839906e933a6d47cb6711d8d54e93c/77672/real.png 1060w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2257,7 +2300,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;p&gt;EventLoop는 단일 스레드로 요청과 응답을 처리하므로 해당 스레드를 블록하면 EventLoop 자체를 블록하는 것과 같다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2268,19 +2311,18 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 34.177215189873415%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVR42pWRSW7DMAxFdY7WQ2IN1izbQpw6qwK9/5l+KSnu2l08EBxA8pNsWTO+jx98pQNcOwhlIeaCq0xSQ3CBWTZk4Z1TJoCrViu1xzgpsJQyXvuBHBKUDdAu/THbWK1xFLe+YlyE8S1XbGOpvjIebDYOz8cLwUT0k8RwFxjvsjIQ3cjxWRgmfAy8+t04Vf+ke+cLzNEG2/ZEDBmSJsjZt2k6kIxAxQL97Tqsv0mkTA23HUtpvO6Iy6NaHzPJWUlKpFvaS7Ce1jVugQ0bXNxqg4KmmKBtuSqPuQ4rdzqPWh5QGrQ78X9JPSX/AkqfyygqbdphAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 34.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVR42pWRSW7DMAxFdY7WQ2IN1izbQpw6qwK9/5l+KSnu2l08EBxA8pNsWTO+jx98pQNcOwhlIeaCq0xSQ3CBWTZk4Z1TJoCrViu1xzgpsJQyXvuBHBKUDdAu/THbWK1xFLe+YlyE8S1XbGOpvjIebDYOz8cLwUT0k8RwFxjvsjIQ3cjxWRgmfAy8+t04Vf+ke+cLzNEG2/ZEDBmSJsjZt2k6kIxAxQL97Tqsv0mkTA23HUtpvO6Iy6NaHzPJWUlKpFvaS7Ce1jVugQ0bXNxqg4KmmKBtuSqPuQ4rdzqPWh5QGrQ78X9JPSX/AkqfyygqbdphAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;blockingTaskExecutor&quot;
         title=&quot;&quot;
-        src=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/f058b/blockingTaskExecutor.png&quot;
-        srcset=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/c26ae/blockingTaskExecutor.png 158w,
-/static/084f82f52f6b152b7a175bdb3bc733ab/6bdcf/blockingTaskExecutor.png 315w,
-/static/084f82f52f6b152b7a175bdb3bc733ab/f058b/blockingTaskExecutor.png 630w,
-/static/084f82f52f6b152b7a175bdb3bc733ab/40601/blockingTaskExecutor.png 945w,
+        src=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/1cfc2/blockingTaskExecutor.png&quot;
+        srcset=&quot;/static/084f82f52f6b152b7a175bdb3bc733ab/3684f/blockingTaskExecutor.png 225w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/fc2a6/blockingTaskExecutor.png 450w,
+/static/084f82f52f6b152b7a175bdb3bc733ab/1cfc2/blockingTaskExecutor.png 900w,
 /static/084f82f52f6b152b7a175bdb3bc733ab/561da/blockingTaskExecutor.png 969w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2289,7 +2331,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2300,20 +2342,20 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 43.0379746835443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42jWRW1PaUBSF8/+nfXDaUVvbh9qXUsRaL0BIuCQQEohAguGWcBNUKNQBLzii1a8Hpj0z66x19sxas/c+kpXNY6R1lLjCwf4hJ0fRNaLHMY4PT4SOcfSPD34cEY8mSCtp9JSGkclRzBcYd9r0/Rbz+RzJq59Rb9bQTYOfsghRZBQthaolkdPKWseSCRIZVbBMOqdh2hZ2+RT3zKEmvFeBT6VQYH5zg2TpHlbWQz4xCH2LEw7J7EdSRCJJwmGVyF6SkKjtCb3i48Oc6NIkKdtkU47w1rmoNenWPRaLBVLw+5729YKCPyRqOSilGik3IOn66PUOxe6QvN+n0Blg+D2qF1Nak9s1gukdvvDfzuYsRdiflxekwX3AxUOHUr9ItBgXIRlUR0VvZMg2M1jtHGagi2BDBGp44wqjxy7DRVsg4Oqxx3QyoNVoMpvNkC7FNRKzO+0OqVKJ3JmH7lbRHRelaKNVXFGrYoqRzJpHSSy/N5nQGY/oTsYEgu9v5jwtH1kul0j9S5/zK5+yZ5PJJ8WvJbGKGpYrOippOA2bcr3AqWeusdLdYZP2oE5n0BDc4GE6gudnXgHJ7ftUzwPSjk1ETZBSZVRDI1HKEzU1lNM8sm0Qt3OCc6hlk0q3hdvzcXqCz9tc/xrxcHfH6kjl3e9UvobJfvpCbHMbdfMDia2PJLZ3iG2J985nYhubnLx5R/Tte5SNbcq7IVa+/5i3Al6fluvAv/O6Y4OsC0+WAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 42.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42jWRW1PaUBSF8/+nfXDaUVvbh9qXUsRaL0BIuCQQEohAguGWcBNUKNQBLzii1a8Hpj0z66x19sxas/c+kpXNY6R1lLjCwf4hJ0fRNaLHMY4PT4SOcfSPD34cEY8mSCtp9JSGkclRzBcYd9r0/Rbz+RzJq59Rb9bQTYOfsghRZBQthaolkdPKWseSCRIZVbBMOqdh2hZ2+RT3zKEmvFeBT6VQYH5zg2TpHlbWQz4xCH2LEw7J7EdSRCJJwmGVyF6SkKjtCb3i48Oc6NIkKdtkU47w1rmoNenWPRaLBVLw+5729YKCPyRqOSilGik3IOn66PUOxe6QvN+n0Blg+D2qF1Nak9s1gukdvvDfzuYsRdiflxekwX3AxUOHUr9ItBgXIRlUR0VvZMg2M1jtHGagi2BDBGp44wqjxy7DRVsg4Oqxx3QyoNVoMpvNkC7FNRKzO+0OqVKJ3JmH7lbRHRelaKNVXFGrYoqRzJpHSSy/N5nQGY/oTsYEgu9v5jwtH1kul0j9S5/zK5+yZ5PJJ8WvJbGKGpYrOippOA2bcr3AqWeusdLdYZP2oE5n0BDc4GE6gudnXgHJ7ftUzwPSjk1ETZBSZVRDI1HKEzU1lNM8sm0Qt3OCc6hlk0q3hdvzcXqCz9tc/xrxcHfH6kjl3e9UvobJfvpCbHMbdfMDia2PJLZ3iG2J985nYhubnLx5R/Tte5SNbcq7IVa+/5i3Al6fluvAv/O6Y4OsC0+WAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;packet&quot;
         title=&quot;&quot;
-        src=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/f058b/packet.png&quot;
-        srcset=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/c26ae/packet.png 158w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/6bdcf/packet.png 315w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/f058b/packet.png 630w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/40601/packet.png 945w,
-/static/0000c7780b5d9a5ecc10f5a4a85f67c7/78612/packet.png 1260w,
+        src=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/1cfc2/packet.png&quot;
+        srcset=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/3684f/packet.png 225w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/fc2a6/packet.png 450w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/1cfc2/packet.png 900w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/21482/packet.png 1350w,
+/static/0000c7780b5d9a5ecc10f5a4a85f67c7/d61c2/packet.png 1800w,
 /static/0000c7780b5d9a5ecc10f5a4a85f67c7/4ef3c/packet.png 2863w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2329,7 +2371,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2340,19 +2382,18 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 63.291139240506325%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeElEQVR42nVSy2oUQRTtj3MnSkSJuHAn+AE+l4ILMREj6MalEgyCEOLCBwTduBAEH5CoSZxEyTg909PPqn7Uo7uPp2okKsSGy7l1u+rUOfdW8OnLFna297D9dQ97YYjz0X3Mh0s4O72HU9ktzJWLOCGJYgFzkrlYJC7gpLiN0+kS5rMlnMnu4Fh6E0/Ktwjer67h89pzfHn6AtvPXmJ94zVWd95hef0Vrn14jAubD3FlcxmXth7h8scHuEi8urGCc4O7OFrcwPGEF2WLOJJcx4p8g6CuahhGb1q0WYao2EdkY4RVxMgwFSkmjMjleUzMEYkMo3KCQRtioEPsmhDfzAhZKxFAKcBawBhiCwgBE6YoEw0jFIqpu9CgiCoo6dYl6kKhThlx48/o3KCZ1IA2CKJhjjxTsLrDOKxQ5xW6pkGtLGTVoKw0qkb7ddsBynTQtvOo6Mp91tWVoUsS6togSWkjmkJQQVdTMQn7vvebteZldNBSSdu26BhFkWM0GqEspa/5/1TnXAbJVCIcsz9xhvFEQgtKV47Q83GPmRErKq1ot24gpcR4PGZes07rFGB/ty4oSailpk2DMm1gMvkPodbaq1DKofVqXJRlhSROPPmBQkuF/mTXo+/YCLjcNUQfWHYKXe6i4z9L664mhMRwOERDlS2ba3nGK8Rh31+EM4Ude8gh0JahEkfsaoIvIo5j9lSgO1B4KKH6o1DPyHu6QD9z0rpnxqUk4e7uAGmawrKPfiiH8fVUqDT71CgflmQNn4jDms9DcjDKvT+q7niJq7uh/ZewmRbIfiSoJjkSoooLj3XE+n7KeoHiZ8ZIAU6+igTy7zH6usEviGfRJsFy3hEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 63.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeElEQVR42nVSy2oUQRTtj3MnSkSJuHAn+AE+l4ILMREj6MalEgyCEOLCBwTduBAEH5CoSZxEyTg909PPqn7Uo7uPp2okKsSGy7l1u+rUOfdW8OnLFna297D9dQ97YYjz0X3Mh0s4O72HU9ktzJWLOCGJYgFzkrlYJC7gpLiN0+kS5rMlnMnu4Fh6E0/Ktwjer67h89pzfHn6AtvPXmJ94zVWd95hef0Vrn14jAubD3FlcxmXth7h8scHuEi8urGCc4O7OFrcwPGEF2WLOJJcx4p8g6CuahhGb1q0WYao2EdkY4RVxMgwFSkmjMjleUzMEYkMo3KCQRtioEPsmhDfzAhZKxFAKcBawBhiCwgBE6YoEw0jFIqpu9CgiCoo6dYl6kKhThlx48/o3KCZ1IA2CKJhjjxTsLrDOKxQ5xW6pkGtLGTVoKw0qkb7ddsBynTQtvOo6Mp91tWVoUsS6togSWkjmkJQQVdTMQn7vvebteZldNBSSdu26BhFkWM0GqEspa/5/1TnXAbJVCIcsz9xhvFEQgtKV47Q83GPmRErKq1ot24gpcR4PGZes07rFGB/ty4oSailpk2DMm1gMvkPodbaq1DKofVqXJRlhSROPPmBQkuF/mTXo+/YCLjcNUQfWHYKXe6i4z9L664mhMRwOERDlS2ba3nGK8Rh31+EM4Ude8gh0JahEkfsaoIvIo5j9lSgO1B4KKH6o1DPyHu6QD9z0rpnxqUk4e7uAGmawrKPfiiH8fVUqDT71CgflmQNn4jDms9DcjDKvT+q7niJq7uh/ZewmRbIfiSoJjkSoooLj3XE+n7KeoHiZ8ZIAU6+igTy7zH6usEviGfRJsFy3hEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;armeriaThread&quot;
         title=&quot;&quot;
-        src=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/f058b/armeriaThread.png&quot;
-        srcset=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/c26ae/armeriaThread.png 158w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/6bdcf/armeriaThread.png 315w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/f058b/armeriaThread.png 630w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/40601/armeriaThread.png 945w,
+        src=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/1cfc2/armeriaThread.png&quot;
+        srcset=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/3684f/armeriaThread.png 225w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/fc2a6/armeriaThread.png 450w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/1cfc2/armeriaThread.png 900w,
 /static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png 1161w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2662,7 +2703,7 @@ annotationProcessor &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;&lt;/code&
 &lt;h1 id=&quot;allargsconstructor-requiredargsconstructor-사용금지&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;@AllArgsConstructor&lt;/strong&gt;, &lt;strong&gt;@RequiredArgsConstructor&lt;/strong&gt; 사용금지&lt;a href=&quot;#allargsconstructor-requiredargsconstructor-%EC%82%AC%EC%9A%A9%EA%B8%88%EC%A7%80&quot; aria-label=&quot;allargsconstructor requiredargsconstructor 사용금지 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 790px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2673,18 +2714,17 @@ annotationProcessor &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;&lt;/code&
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwklEQVR42k3PQXPCIBQE4Pz/P+dMR3voRTFp5QEBJQkSAllf0LEevll2Dww0Bwjs5h98e4EvRdgbiQM7RwNVLGRmnPQ6U/n37A5qde+tkcHgctfQwaEPAZb5lHAvCxZkpJeZ26fI65ZDmqqQI0KJaMZhhDi1OB4F2rZD1/3CWQeje2htam78zcPyfnU35jH4sXYhWpzZ5U9imgKadV1hHV/Q9yBSIKWeZ05JVJOUxry9OkbEOFeJ+7YtC/8j59pLKXgAsNsxbk8q8XoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 20.444444444444446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwklEQVR42k3PQXPCIBQE4Pz/P+dMR3voRTFp5QEBJQkSAllf0LEevll2Dww0Bwjs5h98e4EvRdgbiQM7RwNVLGRmnPQ6U/n37A5qde+tkcHgctfQwaEPAZb5lHAvCxZkpJeZ26fI65ZDmqqQI0KJaMZhhDi1OB4F2rZD1/3CWQeje2htam78zcPyfnU35jH4sXYhWpzZ5U9imgKadV1hHV/Q9yBSIKWeZ05JVJOUxry9OkbEOFeJ+7YtC/8j59pLKXgAsNsxbk8q8XoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;lombokReview&quot;
         title=&quot;&quot;
-        src=&quot;/static/4371b407df47a5a536719cf992851623/f058b/lombokReview.png&quot;
-        srcset=&quot;/static/4371b407df47a5a536719cf992851623/c26ae/lombokReview.png 158w,
-/static/4371b407df47a5a536719cf992851623/6bdcf/lombokReview.png 315w,
-/static/4371b407df47a5a536719cf992851623/f058b/lombokReview.png 630w,
+        src=&quot;/static/4371b407df47a5a536719cf992851623/2e237/lombokReview.png&quot;
+        srcset=&quot;/static/4371b407df47a5a536719cf992851623/3684f/lombokReview.png 225w,
+/static/4371b407df47a5a536719cf992851623/fc2a6/lombokReview.png 450w,
 /static/4371b407df47a5a536719cf992851623/2e237/lombokReview.png 790w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 790px) 100vw, 790px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2771,7 +2811,7 @@ public class ProductData {
 &lt;h1 id=&quot;builder-클래스에-작성하는-것과-메서드에-작성하는-것의-차이점&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;@Builder&lt;/strong&gt; 클래스에 작성하는 것과 메서드에 작성하는 것의 차이점&lt;a href=&quot;#builder-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%97%90-%EC%9E%91%EC%84%B1%ED%95%98%EB%8A%94-%EA%B2%83%EA%B3%BC-%EB%A9%94%EC%84%9C%EB%93%9C%EC%97%90-%EC%9E%91%EC%84%B1%ED%95%98%EB%8A%94-%EA%B2%83%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90&quot; aria-label=&quot;builder 클래스에 작성하는 것과 메서드에 작성하는 것의 차이점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 793px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2782,18 +2822,17 @@ public class ProductData {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 39.87341772151899%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWUlEQVR42n2SfY+UMBCH+f5fS3N/aWK808jpLgsLpS+Uty2grPA4sJ7ZSy42efJrZ6Yzk2mjrDUcqpzUleSV41BqEq1JjSKzJYnKOemC3GmqcMGFgWYa6OfpTaIPPPN+fuRTiFGzJbZHnuqUzzbmi//OYTzzY8g4ij4POfEgRWaNwlK8QfREwsdZLocDbq3JQkFyyXfSQXEKCr14CW2EGidYiTOr39lsG2a9EXVdh3MVvm5o+57uEljXlWVZX+lr+LfqpsVVnnGcmOcr0fxrplAKpUoacWpjsdZRSZD3XrSilmJO1FZ+t7/YrHMYa3dfXdcMw0i0Vell0F6STZL8uixsDdyzbGzdrvcKv7f9i/8ve8KgDW2h6I1BfYtps4z+nBOKQvTMVUaxjAPLEG6EjbvzbruwTNMtYdolpM0R0xc8fH0nXyVGV6lwonQJfpQn+Vn9l3pyXOaeP7c5YXpu8znfAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWUlEQVR42n2SfY+UMBCH+f5fS3N/aWK808jpLgsLpS+Uty2grPA4sJ7ZSy42efJrZ6Yzk2mjrDUcqpzUleSV41BqEq1JjSKzJYnKOemC3GmqcMGFgWYa6OfpTaIPPPN+fuRTiFGzJbZHnuqUzzbmi//OYTzzY8g4ij4POfEgRWaNwlK8QfREwsdZLocDbq3JQkFyyXfSQXEKCr14CW2EGidYiTOr39lsG2a9EXVdh3MVvm5o+57uEljXlWVZX+lr+LfqpsVVnnGcmOcr0fxrplAKpUoacWpjsdZRSZD3XrSilmJO1FZ+t7/YrHMYa3dfXdcMw0i0Vell0F6STZL8uixsDdyzbGzdrvcKv7f9i/8ve8KgDW2h6I1BfYtps4z+nBOKQvTMVUaxjAPLEG6EjbvzbruwTNMtYdolpM0R0xc8fH0nXyVGV6lwonQJfpQn+Vn9l3pyXOaeP7c5YXpu8znfAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;builderReview&quot;
         title=&quot;&quot;
-        src=&quot;/static/a5c4c57f4d2203812b111c3ebea5dcd7/f058b/builderReview.png&quot;
-        srcset=&quot;/static/a5c4c57f4d2203812b111c3ebea5dcd7/c26ae/builderReview.png 158w,
-/static/a5c4c57f4d2203812b111c3ebea5dcd7/6bdcf/builderReview.png 315w,
-/static/a5c4c57f4d2203812b111c3ebea5dcd7/f058b/builderReview.png 630w,
+        src=&quot;/static/a5c4c57f4d2203812b111c3ebea5dcd7/73fd0/builderReview.png&quot;
+        srcset=&quot;/static/a5c4c57f4d2203812b111c3ebea5dcd7/3684f/builderReview.png 225w,
+/static/a5c4c57f4d2203812b111c3ebea5dcd7/fc2a6/builderReview.png 450w,
 /static/a5c4c57f4d2203812b111c3ebea5dcd7/73fd0/builderReview.png 793w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 793px) 100vw, 793px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -2994,7 +3033,7 @@ public class Test {
 &lt;h1 id=&quot;그럼-언제-클래스를-로딩할까&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;그럼 언제 클래스를 로딩할까?&lt;/strong&gt;&lt;a href=&quot;#%EA%B7%B8%EB%9F%BC-%EC%96%B8%EC%A0%9C-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EB%A1%9C%EB%94%A9%ED%95%A0%EA%B9%8C&quot; aria-label=&quot;그럼 언제 클래스를 로딩할까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3005,19 +3044,18 @@ public class Test {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 28.48101265822785%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABhElEQVR42lWRu24TQRhG9xloKQHHju114t317uz9MvZevN4IcylCCzT0SIiACUqEkHgApMgSwTFFijS8BDWXGt7kMNkGURx9oynO/80/2v7YwLxzC/vZe6LTS8Tzj3hH5wSvN4SrjcrP7Tk6ucR5/Jae4WDaCb2+Q6dr0t2d/IcWRhWun6PrAttJ8cMC35/hKfb2PByRMVECy4qxjIDhUGBOEqJkzmDkttKdnvVPGEQlwp1iTFJksaRZHioesbh7iO3NkPmSMKmJZaNygWElyNkB5fy+apqyO3DoqyHXsk7XQvP8Qsky+jsjYhFTyYoqKylSdT+0iN0Y1/QI7YDQTRkbEZF6VZzWZNMDUrlQNNhCMtBdNF0fM+71EU+PqU621Ks1zekFzbsvyJdnlMefkK/WyDfnRE9WjESIlU4pq3skWU1VP8BSTW0na4dpnc5t9m/eIPnwlfnVH7Kzb8w238kvflBsf5Jvf7U5v/pN8GLNMPYVMblaT908bFt6Qd7+w/Xq/gI1LeGgOVxMWQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 28.444444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABhElEQVR42lWRu24TQRhG9xloKQHHju114t317uz9MvZevN4IcylCCzT0SIiACUqEkHgApMgSwTFFijS8BDWXGt7kMNkGURx9oynO/80/2v7YwLxzC/vZe6LTS8Tzj3hH5wSvN4SrjcrP7Tk6ucR5/Jae4WDaCb2+Q6dr0t2d/IcWRhWun6PrAttJ8cMC35/hKfb2PByRMVECy4qxjIDhUGBOEqJkzmDkttKdnvVPGEQlwp1iTFJksaRZHioesbh7iO3NkPmSMKmJZaNygWElyNkB5fy+apqyO3DoqyHXsk7XQvP8Qsky+jsjYhFTyYoqKylSdT+0iN0Y1/QI7YDQTRkbEZF6VZzWZNMDUrlQNNhCMtBdNF0fM+71EU+PqU621Ks1zekFzbsvyJdnlMefkK/WyDfnRE9WjESIlU4pq3skWU1VP8BSTW0na4dpnc5t9m/eIPnwlfnVH7Kzb8w238kvflBsf5Jvf7U5v/pN8GLNMPYVMblaT908bFt6Qd7+w/Xq/gI1LeGgOVxMWQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;verbose&quot;
         title=&quot;&quot;
-        src=&quot;/static/a4fcdeba5a2eed89220d7aa71bad6770/f058b/verbose.png&quot;
-        srcset=&quot;/static/a4fcdeba5a2eed89220d7aa71bad6770/c26ae/verbose.png 158w,
-/static/a4fcdeba5a2eed89220d7aa71bad6770/6bdcf/verbose.png 315w,
-/static/a4fcdeba5a2eed89220d7aa71bad6770/f058b/verbose.png 630w,
-/static/a4fcdeba5a2eed89220d7aa71bad6770/40601/verbose.png 945w,
+        src=&quot;/static/a4fcdeba5a2eed89220d7aa71bad6770/1cfc2/verbose.png&quot;
+        srcset=&quot;/static/a4fcdeba5a2eed89220d7aa71bad6770/3684f/verbose.png 225w,
+/static/a4fcdeba5a2eed89220d7aa71bad6770/fc2a6/verbose.png 450w,
+/static/a4fcdeba5a2eed89220d7aa71bad6770/1cfc2/verbose.png 900w,
 /static/a4fcdeba5a2eed89220d7aa71bad6770/18539/verbose.png 1074w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3051,7 +3089,7 @@ class Single{
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3062,20 +3100,20 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 17.088607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAwklEQVR42h2Oy26CUBRF+ZwG27RqUsUCcuE+uA9FBNtZTdtPME1n/vrqhcEe7J2cs1ai2x5pTjT6hGrP2HDBHd6RuqOqez6vgvt9TT/UZG+OvXDkZTunrKbu4655WRU8pK8krRtR6oiqLVJYdOPR0qMiREeACx3nocP5qQ8YG6F+ZBLZi8AuN2yyhuW6ZPGUkZR5jQgfmJ8/2u9f5PWG/bqh7EhemGgyWRzn48moqgOiOcxmu1zzvCxIH7fx2ZZ0seEfEOFtDf+khhYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 16.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAwklEQVR42h2Oy26CUBRF+ZwG27RqUsUCcuE+uA9FBNtZTdtPME1n/vrqhcEe7J2cs1ai2x5pTjT6hGrP2HDBHd6RuqOqez6vgvt9TT/UZG+OvXDkZTunrKbu4655WRU8pK8krRtR6oiqLVJYdOPR0qMiREeACx3nocP5qQ8YG6F+ZBLZi8AuN2yyhuW6ZPGUkZR5jQgfmJ8/2u9f5PWG/bqh7EhemGgyWRzn48moqgOiOcxmu1zzvCxIH7fx2ZZ0seEfEOFtDf+khhYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;testcase0&quot;
         title=&quot;&quot;
-        src=&quot;/static/bdf3bfdda4a9819ca023b15c241665b7/f058b/testcase0.png&quot;
-        srcset=&quot;/static/bdf3bfdda4a9819ca023b15c241665b7/c26ae/testcase0.png 158w,
-/static/bdf3bfdda4a9819ca023b15c241665b7/6bdcf/testcase0.png 315w,
-/static/bdf3bfdda4a9819ca023b15c241665b7/f058b/testcase0.png 630w,
-/static/bdf3bfdda4a9819ca023b15c241665b7/40601/testcase0.png 945w,
-/static/bdf3bfdda4a9819ca023b15c241665b7/78612/testcase0.png 1260w,
+        src=&quot;/static/bdf3bfdda4a9819ca023b15c241665b7/1cfc2/testcase0.png&quot;
+        srcset=&quot;/static/bdf3bfdda4a9819ca023b15c241665b7/3684f/testcase0.png 225w,
+/static/bdf3bfdda4a9819ca023b15c241665b7/fc2a6/testcase0.png 450w,
+/static/bdf3bfdda4a9819ca023b15c241665b7/1cfc2/testcase0.png 900w,
+/static/bdf3bfdda4a9819ca023b15c241665b7/21482/testcase0.png 1350w,
+/static/bdf3bfdda4a9819ca023b15c241665b7/d61c2/testcase0.png 1800w,
 /static/bdf3bfdda4a9819ca023b15c241665b7/081ff/testcase0.png 2182w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3112,7 +3150,7 @@ class Single{
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3123,20 +3161,20 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 17.088607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAwUlEQVR42h2OTU/DQAxE83OAClFApTTkO9v1psluUyjQgMSB3iAHLv39DzeHkeWx5o0jKz1NGDDuGaty7atqT2UCZd3zfhDGscAHR14GjFW/8nrzurdkxYbH2HBzm3Bx9UDkNnt2h2+68EaZC+u6xWlI3I61vLDtO06nlOOx1nA3gc5lZ1icWBbLivtFocCU2XVMlKUG4wfk6w/7OVIPP8jH7/RxkjmKSvBbgzSiAJm8NG+muXqyzO8yBa0mXc6W/ANI620iw9Yb8QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 17.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAwUlEQVR42h2OTU/DQAxE83OAClFApTTkO9v1psluUyjQgMSB3iAHLv39DzeHkeWx5o0jKz1NGDDuGaty7atqT2UCZd3zfhDGscAHR14GjFW/8nrzurdkxYbH2HBzm3Bx9UDkNnt2h2+68EaZC+u6xWlI3I61vLDtO06nlOOx1nA3gc5lZ1icWBbLivtFocCU2XVMlKUG4wfk6w/7OVIPP8jH7/RxkjmKSvBbgzSiAJm8NG+muXqyzO8yBa0mXc6W/ANI620iw9Yb8QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;testcase1&quot;
         title=&quot;&quot;
-        src=&quot;/static/3a1b8b3bba692c32b535d0883b0287fb/f058b/testcase1.png&quot;
-        srcset=&quot;/static/3a1b8b3bba692c32b535d0883b0287fb/c26ae/testcase1.png 158w,
-/static/3a1b8b3bba692c32b535d0883b0287fb/6bdcf/testcase1.png 315w,
-/static/3a1b8b3bba692c32b535d0883b0287fb/f058b/testcase1.png 630w,
-/static/3a1b8b3bba692c32b535d0883b0287fb/40601/testcase1.png 945w,
-/static/3a1b8b3bba692c32b535d0883b0287fb/78612/testcase1.png 1260w,
+        src=&quot;/static/3a1b8b3bba692c32b535d0883b0287fb/1cfc2/testcase1.png&quot;
+        srcset=&quot;/static/3a1b8b3bba692c32b535d0883b0287fb/3684f/testcase1.png 225w,
+/static/3a1b8b3bba692c32b535d0883b0287fb/fc2a6/testcase1.png 450w,
+/static/3a1b8b3bba692c32b535d0883b0287fb/1cfc2/testcase1.png 900w,
+/static/3a1b8b3bba692c32b535d0883b0287fb/21482/testcase1.png 1350w,
+/static/3a1b8b3bba692c32b535d0883b0287fb/d61c2/testcase1.png 1800w,
 /static/3a1b8b3bba692c32b535d0883b0287fb/081ff/testcase1.png 2182w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3173,7 +3211,7 @@ class Single{
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3184,20 +3222,20 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABEElEQVR42h3Pa0+CABTGcb5NZZelXRASvCByE0OSFI1kmtgsXcPY1Np603rdN/6HvTh7ds529uwn6IZHJ4jZZ1PvYFo+pn2HprtU6x4PUZ0su6LtNpErNrWGjVq1UFSTas3+H7nSolhSODi8RDCdAH80x+2NMd0+thfi3A4x8rvhDLgPPdJMZxi5aEYPPS/UDJ+m6aPU20iKxYWocVaqclpUEUbzd5LND5PVjnCyIkpS4kVGvNwSLXbM1mu+fxPSrxeCScogWRPmP/2nNN/f8MdL/HhF9/GV9vAZQS6rqFaAPvvAnH+iTbcY0w2NVpeypFGWW4iSm7McKjlzz1Vz5p4s3eic59TCiUjhWOSocM0fMtOaQ4I8t+UAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 20.444444444444446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABEElEQVR42h3Pa0+CABTGcb5NZZelXRASvCByE0OSFI1kmtgsXcPY1Np603rdN/6HvTh7ds529uwn6IZHJ4jZZ1PvYFo+pn2HprtU6x4PUZ0su6LtNpErNrWGjVq1UFSTas3+H7nSolhSODi8RDCdAH80x+2NMd0+thfi3A4x8rvhDLgPPdJMZxi5aEYPPS/UDJ+m6aPU20iKxYWocVaqclpUEUbzd5LND5PVjnCyIkpS4kVGvNwSLXbM1mu+fxPSrxeCScogWRPmP/2nNN/f8MdL/HhF9/GV9vAZQS6rqFaAPvvAnH+iTbcY0w2NVpeypFGWW4iSm7McKjlzz1Vz5p4s3eic59TCiUjhWOSocM0fMtOaQ4I8t+UAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;testcase2&quot;
         title=&quot;&quot;
-        src=&quot;/static/d8080e57c19618ff4ab1ca07d13dc442/f058b/testcase2.png&quot;
-        srcset=&quot;/static/d8080e57c19618ff4ab1ca07d13dc442/c26ae/testcase2.png 158w,
-/static/d8080e57c19618ff4ab1ca07d13dc442/6bdcf/testcase2.png 315w,
-/static/d8080e57c19618ff4ab1ca07d13dc442/f058b/testcase2.png 630w,
-/static/d8080e57c19618ff4ab1ca07d13dc442/40601/testcase2.png 945w,
-/static/d8080e57c19618ff4ab1ca07d13dc442/78612/testcase2.png 1260w,
+        src=&quot;/static/d8080e57c19618ff4ab1ca07d13dc442/1cfc2/testcase2.png&quot;
+        srcset=&quot;/static/d8080e57c19618ff4ab1ca07d13dc442/3684f/testcase2.png 225w,
+/static/d8080e57c19618ff4ab1ca07d13dc442/fc2a6/testcase2.png 450w,
+/static/d8080e57c19618ff4ab1ca07d13dc442/1cfc2/testcase2.png 900w,
+/static/d8080e57c19618ff4ab1ca07d13dc442/21482/testcase2.png 1350w,
+/static/d8080e57c19618ff4ab1ca07d13dc442/d61c2/testcase2.png 1800w,
 /static/d8080e57c19618ff4ab1ca07d13dc442/5b2ff/testcase2.png 2190w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3235,7 +3273,7 @@ class Single{
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3246,20 +3284,20 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 17.72151898734177%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABA0lEQVR42i2PXU+CAABF+TH6aDPDmICg8hE2kYmKuVI+VKxp5Udry2Xm/OEndD3cnd2z+3KFdj/CtD0Ms4XT9Gne+9w5HUzLpVb3mExUTscrkljhVrLQdQdNc5AVC7VqU9VstMzJsolY1hG8QUL7P/5jivcw5ezc7hgviPGHY4LR04VekO36MW4vzBjS6obY7pBGs49m+VR0FyFafhHO10TPW0azVcYN0eKTeLUnfN0Rve1J1scsB+L3b5LMpx9HZtvfSx8vdwxmW4Lpht5kjVCxOjReThjzA/X0Bz09YAwXqLJB8VpBvKlSLmtIUi2jjihql2tnnnuppFIoSOTzRXK5In9dOpzF0eDCNwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 17.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABA0lEQVR42i2PXU+CAABF+TH6aDPDmICg8hE2kYmKuVI+VKxp5Udry2Xm/OEndD3cnd2z+3KFdj/CtD0Ms4XT9Gne+9w5HUzLpVb3mExUTscrkljhVrLQdQdNc5AVC7VqU9VstMzJsolY1hG8QUL7P/5jivcw5ezc7hgviPGHY4LR04VekO36MW4vzBjS6obY7pBGs49m+VR0FyFafhHO10TPW0azVcYN0eKTeLUnfN0Rve1J1scsB+L3b5LMpx9HZtvfSx8vdwxmW4Lpht5kjVCxOjReThjzA/X0Bz09YAwXqLJB8VpBvKlSLmtIUi2jjihql2tnnnuppFIoSOTzRXK5In9dOpzF0eDCNwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;testcase3&quot;
         title=&quot;&quot;
-        src=&quot;/static/5db52770c2a7cc56719ff19cdb1853de/f058b/testcase3.png&quot;
-        srcset=&quot;/static/5db52770c2a7cc56719ff19cdb1853de/c26ae/testcase3.png 158w,
-/static/5db52770c2a7cc56719ff19cdb1853de/6bdcf/testcase3.png 315w,
-/static/5db52770c2a7cc56719ff19cdb1853de/f058b/testcase3.png 630w,
-/static/5db52770c2a7cc56719ff19cdb1853de/40601/testcase3.png 945w,
-/static/5db52770c2a7cc56719ff19cdb1853de/78612/testcase3.png 1260w,
+        src=&quot;/static/5db52770c2a7cc56719ff19cdb1853de/1cfc2/testcase3.png&quot;
+        srcset=&quot;/static/5db52770c2a7cc56719ff19cdb1853de/3684f/testcase3.png 225w,
+/static/5db52770c2a7cc56719ff19cdb1853de/fc2a6/testcase3.png 450w,
+/static/5db52770c2a7cc56719ff19cdb1853de/1cfc2/testcase3.png 900w,
+/static/5db52770c2a7cc56719ff19cdb1853de/21482/testcase3.png 1350w,
+/static/5db52770c2a7cc56719ff19cdb1853de/d61c2/testcase3.png 1800w,
 /static/5db52770c2a7cc56719ff19cdb1853de/d5f92/testcase3.png 2150w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3296,7 +3334,7 @@ class Single{
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3307,20 +3345,20 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 21.51898734177215%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABCUlEQVR42h2Py07CUBRF+z0GwURBhba0tKW3D0opCMUEKQgSDbUhIEKicerAof+7vDJY2WcPTrKX0nZ7hMmElhPhuDGe30dInHaE2YoZpTaHw5VMg7rqY5g+mi7Qmx6axDADVM2lWjM4K12juPI57E8RUYobDvG6Y7z/OxjgiAHdXsLLWjDJglN3RB9bJFhyiGFF1DVB9damctmkVFFRRvOCrPhkPM+5l0yeNmTPO7L8yDT/YFbs+f5d8PWzYrjYMlpuSVe7U94tNiTZK8msoDfN6T6sUXTNwgyGuI/v+Msj7dle8obbSaWSQNV9qRrLjDFaoVzVwbSjE02pW7uxKF+onFcalMp1/gAY9JrIUg8CmwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 21.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABCUlEQVR42h2Py07CUBRF+z0GwURBhba0tKW3D0opCMUEKQgSDbUhIEKicerAof+7vDJY2WcPTrKX0nZ7hMmElhPhuDGe30dInHaE2YoZpTaHw5VMg7rqY5g+mi7Qmx6axDADVM2lWjM4K12juPI57E8RUYobDvG6Y7z/OxjgiAHdXsLLWjDJglN3RB9bJFhyiGFF1DVB9damctmkVFFRRvOCrPhkPM+5l0yeNmTPO7L8yDT/YFbs+f5d8PWzYrjYMlpuSVe7U94tNiTZK8msoDfN6T6sUXTNwgyGuI/v+Msj7dle8obbSaWSQNV9qRrLjDFaoVzVwbSjE02pW7uxKF+onFcalMp1/gAY9JrIUg8CmwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;testcase4&quot;
         title=&quot;&quot;
-        src=&quot;/static/f94a50ca0017a0e3aebcb53177f0c86e/f058b/testcase4.png&quot;
-        srcset=&quot;/static/f94a50ca0017a0e3aebcb53177f0c86e/c26ae/testcase4.png 158w,
-/static/f94a50ca0017a0e3aebcb53177f0c86e/6bdcf/testcase4.png 315w,
-/static/f94a50ca0017a0e3aebcb53177f0c86e/f058b/testcase4.png 630w,
-/static/f94a50ca0017a0e3aebcb53177f0c86e/40601/testcase4.png 945w,
-/static/f94a50ca0017a0e3aebcb53177f0c86e/78612/testcase4.png 1260w,
+        src=&quot;/static/f94a50ca0017a0e3aebcb53177f0c86e/1cfc2/testcase4.png&quot;
+        srcset=&quot;/static/f94a50ca0017a0e3aebcb53177f0c86e/3684f/testcase4.png 225w,
+/static/f94a50ca0017a0e3aebcb53177f0c86e/fc2a6/testcase4.png 450w,
+/static/f94a50ca0017a0e3aebcb53177f0c86e/1cfc2/testcase4.png 900w,
+/static/f94a50ca0017a0e3aebcb53177f0c86e/21482/testcase4.png 1350w,
+/static/f94a50ca0017a0e3aebcb53177f0c86e/d61c2/testcase4.png 1800w,
 /static/f94a50ca0017a0e3aebcb53177f0c86e/88745/testcase4.png 2148w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3354,7 +3392,7 @@ class Single{
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3365,20 +3403,20 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 19.62025316455696%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABC0lEQVR42h2Q21KCYBSFeZpypm48IEIqUKCAMhpYDpgM2uQpJjoomR0uuu2hv/66+GbtvWbN7FlbcrwQdxBhWT52Z4jjBrgCy+6jGwPi2ORtXyUMdZSGg2F6tHWXZqsr1BEZj1bbQa6bnJwqSL1hTJBs8IIEbxDTDxP8kZiF37ucEkZjtvsuy0wc7I2xvCtswZ8adoCm91FaLmXFoiKQosUzaf5BNM+4TtYkqxfSTUH6cGB6f+D2qeDrJ2P3nRMtd0xWhfD3TNaF2LeM5o+CnHCWM0wyJLWu0fRvsBafdO7eMdJXrNkO49ynVmsjyyY1uSsqdWioF6gC7cxG1SzxApNyuUmpVOXouPLPL7HNmnJWeIlCAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 19.555555555555557%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABC0lEQVR42h2Q21KCYBSFeZpypm48IEIqUKCAMhpYDpgM2uQpJjoomR0uuu2hv/66+GbtvWbN7FlbcrwQdxBhWT52Z4jjBrgCy+6jGwPi2ORtXyUMdZSGg2F6tHWXZqsr1BEZj1bbQa6bnJwqSL1hTJBs8IIEbxDTDxP8kZiF37ucEkZjtvsuy0wc7I2xvCtswZ8adoCm91FaLmXFoiKQosUzaf5BNM+4TtYkqxfSTUH6cGB6f+D2qeDrJ2P3nRMtd0xWhfD3TNaF2LeM5o+CnHCWM0wyJLWu0fRvsBafdO7eMdJXrNkO49ynVmsjyyY1uSsqdWioF6gC7cxG1SzxApNyuUmpVOXouPLPL7HNmnJWeIlCAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;testcase5&quot;
         title=&quot;&quot;
-        src=&quot;/static/5d49b6d122cb7bc2df8426e2f9031ac9/f058b/testcase5.png&quot;
-        srcset=&quot;/static/5d49b6d122cb7bc2df8426e2f9031ac9/c26ae/testcase5.png 158w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/6bdcf/testcase5.png 315w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/f058b/testcase5.png 630w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/40601/testcase5.png 945w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/78612/testcase5.png 1260w,
+        src=&quot;/static/5d49b6d122cb7bc2df8426e2f9031ac9/1cfc2/testcase5.png&quot;
+        srcset=&quot;/static/5d49b6d122cb7bc2df8426e2f9031ac9/3684f/testcase5.png 225w,
+/static/5d49b6d122cb7bc2df8426e2f9031ac9/fc2a6/testcase5.png 450w,
+/static/5d49b6d122cb7bc2df8426e2f9031ac9/1cfc2/testcase5.png 900w,
+/static/5d49b6d122cb7bc2df8426e2f9031ac9/21482/testcase5.png 1350w,
+/static/5d49b6d122cb7bc2df8426e2f9031ac9/d61c2/testcase5.png 1800w,
 /static/5d49b6d122cb7bc2df8426e2f9031ac9/b3608/testcase5.png 2160w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3412,7 +3450,7 @@ class Single{
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3423,20 +3461,20 @@ class Single{
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 22.78481012658228%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABOklEQVR42h2Q2UrDUBRF8z1OOIElNm3SZk5N0qRpnLGkE1TFqijO4oOCDyr46McuT/KwWJd7z91sjuL6PUw7xvFSvKAnTrCcmLYV4voptpvKe0o5F0Y5wU5GJ+zjdzI59wnE5f+aarGwVEMJkkO56GIYPpYdVqGuhJaBRjuiGNZ5fVknSXQ2Nn3UeoDW9NnWHLFHQ/dpCjXVZG29gdKRwCgv6O4NxQNsaeIIlptU3oliumkorWIOjnwOjx3cIEZvhzRbHbak2eZWi+XVOosrKsr04ZOztx/hm8n9ByezWwbndwwunijmz+IX4Y3h5SPvv2O+/qZyviEf3bA7uSYrLukPhdEVvWKO0rIjWtkEd3+GtX+KeXCOm4+rNWh6ULVolzNWjKp1hQTDjDEdWZMZst3wWN1osrKmVfwDT43CUDp8lXkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 23.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABOklEQVR42h2Q2UrDUBRF8z1OOIElNm3SZk5N0qRpnLGkE1TFqijO4oOCDyr46McuT/KwWJd7z91sjuL6PUw7xvFSvKAnTrCcmLYV4voptpvKe0o5F0Y5wU5GJ+zjdzI59wnE5f+aarGwVEMJkkO56GIYPpYdVqGuhJaBRjuiGNZ5fVknSXQ2Nn3UeoDW9NnWHLFHQ/dpCjXVZG29gdKRwCgv6O4NxQNsaeIIlptU3oliumkorWIOjnwOjx3cIEZvhzRbHbak2eZWi+XVOosrKsr04ZOztx/hm8n9ByezWwbndwwunijmz+IX4Y3h5SPvv2O+/qZyviEf3bA7uSYrLukPhdEVvWKO0rIjWtkEd3+GtX+KeXCOm4+rNWh6ULVolzNWjKp1hQTDjDEdWZMZst3wWN1osrKmVfwDT43CUDp8lXkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;testcase6&quot;
         title=&quot;&quot;
-        src=&quot;/static/bfdb12020b0af7e13cbca5f3cd517ece/f058b/testcase6.png&quot;
-        srcset=&quot;/static/bfdb12020b0af7e13cbca5f3cd517ece/c26ae/testcase6.png 158w,
-/static/bfdb12020b0af7e13cbca5f3cd517ece/6bdcf/testcase6.png 315w,
-/static/bfdb12020b0af7e13cbca5f3cd517ece/f058b/testcase6.png 630w,
-/static/bfdb12020b0af7e13cbca5f3cd517ece/40601/testcase6.png 945w,
-/static/bfdb12020b0af7e13cbca5f3cd517ece/78612/testcase6.png 1260w,
+        src=&quot;/static/bfdb12020b0af7e13cbca5f3cd517ece/1cfc2/testcase6.png&quot;
+        srcset=&quot;/static/bfdb12020b0af7e13cbca5f3cd517ece/3684f/testcase6.png 225w,
+/static/bfdb12020b0af7e13cbca5f3cd517ece/fc2a6/testcase6.png 450w,
+/static/bfdb12020b0af7e13cbca5f3cd517ece/1cfc2/testcase6.png 900w,
+/static/bfdb12020b0af7e13cbca5f3cd517ece/21482/testcase6.png 1350w,
+/static/bfdb12020b0af7e13cbca5f3cd517ece/d61c2/testcase6.png 1800w,
 /static/bfdb12020b0af7e13cbca5f3cd517ece/39f45/testcase6.png 2184w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3488,7 +3526,7 @@ class Single {
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3499,20 +3537,20 @@ class Single {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 37.34177215189873%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABh0lEQVR42nWSTU8TURSG588IVVmQMElbZNq5M1P7AWkVNprW0LgAF4BpGypLgokJKcVCa4AoUFtj2AKyMEBMoIA7IS74+DMPp9OaVBIWT973vefk3MU5mm0NEou/xHLiKDNCMweMEGYwIkQJBhzSozrjYzqWUni9in6/Jdiu+n0Kvc/g0UOdrge9aK/z75n4UCFT+Mz0xyr5pa/MlOtCjXypxrulKvP1FQrfP0leJ7OwTm5xk1xxg2zTi7p5cUNqX9CyyzXmtn5S+fWXtcY1q8dXrBxdurj++FJqN5SFZv7Xs9q4y7Vb06Zk6mx9j+X9P1QOL+7hvE0rlw/+951omVKV2W97zG83WNj9LZy1OaWwc9Km0wu7nf6UovQXf5y5qr0YyzH86g0DA7IIM0bQjBKQhahQHDP0TEhgPX2OExnGDrdwoiPY7aykx1BDeJ+E6fPaaEa/IiiPTuotsXQWJzmJnZoikkhiBMJC1P3EsodEY5hqsKXNa5Ar8PkdHvf46PLodHt0bgFRGlisGZAtggAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 37.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABh0lEQVR42nWSTU8TURSG588IVVmQMElbZNq5M1P7AWkVNprW0LgAF4BpGypLgokJKcVCa4AoUFtj2AKyMEBMoIA7IS74+DMPp9OaVBIWT973vefk3MU5mm0NEou/xHLiKDNCMweMEGYwIkQJBhzSozrjYzqWUni9in6/Jdiu+n0Kvc/g0UOdrge9aK/z75n4UCFT+Mz0xyr5pa/MlOtCjXypxrulKvP1FQrfP0leJ7OwTm5xk1xxg2zTi7p5cUNqX9CyyzXmtn5S+fWXtcY1q8dXrBxdurj++FJqN5SFZv7Xs9q4y7Vb06Zk6mx9j+X9P1QOL+7hvE0rlw/+951omVKV2W97zG83WNj9LZy1OaWwc9Km0wu7nf6UovQXf5y5qr0YyzH86g0DA7IIM0bQjBKQhahQHDP0TEhgPX2OExnGDrdwoiPY7aykx1BDeJ+E6fPaaEa/IiiPTuotsXQWJzmJnZoikkhiBMJC1P3EsodEY5hqsKXNa5Ar8PkdHvf46PLodHt0bgFRGlisGZAtggAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;multiThreadTest&quot;
         title=&quot;&quot;
-        src=&quot;/static/3ec6d66c8fada88fb205319edcdafb48/f058b/multiThreadTest.png&quot;
-        srcset=&quot;/static/3ec6d66c8fada88fb205319edcdafb48/c26ae/multiThreadTest.png 158w,
-/static/3ec6d66c8fada88fb205319edcdafb48/6bdcf/multiThreadTest.png 315w,
-/static/3ec6d66c8fada88fb205319edcdafb48/f058b/multiThreadTest.png 630w,
-/static/3ec6d66c8fada88fb205319edcdafb48/40601/multiThreadTest.png 945w,
-/static/3ec6d66c8fada88fb205319edcdafb48/78612/multiThreadTest.png 1260w,
+        src=&quot;/static/3ec6d66c8fada88fb205319edcdafb48/1cfc2/multiThreadTest.png&quot;
+        srcset=&quot;/static/3ec6d66c8fada88fb205319edcdafb48/3684f/multiThreadTest.png 225w,
+/static/3ec6d66c8fada88fb205319edcdafb48/fc2a6/multiThreadTest.png 450w,
+/static/3ec6d66c8fada88fb205319edcdafb48/1cfc2/multiThreadTest.png 900w,
+/static/3ec6d66c8fada88fb205319edcdafb48/21482/multiThreadTest.png 1350w,
+/static/3ec6d66c8fada88fb205319edcdafb48/d61c2/multiThreadTest.png 1800w,
 /static/3ec6d66c8fada88fb205319edcdafb48/8079d/multiThreadTest.png 2100w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3573,7 +3611,7 @@ class SingleTon {
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3584,20 +3622,20 @@ class SingleTon {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 51.26582278481012%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABi0lEQVR42q2SW0sCcRDF9xsFvXVXouymFJGEJhQ97GYXu0gRmIplWZZWqwnZTS3LCkpLtHZNheylhyyrr3P672omFBHhw48zMwzDcGYohXIAGp0Bw1YXNCOz6BkYg5qegprRi6joSSgH9aD1DDyBTtg9SnT3M5CrGHT2DUFBVECuotGl0YKacO7DfBSF7SINZ/wRW6k3wmue5Gsx9qRz2HnIwpt5hjuZg+vupYRcgRdQ4449GH0RWIJx2MP3YPksNrmnH9m4zYqwJBb6WP4pD/cFNbbqheEgDMvxDVavHuBKPBea/0dxw/mT2/IM1Dl2MVfODXVrO2TgJfEwRjzM/OrhX6DGyZVNgWtYz5NwxMiV0+9wE0Ql13UnS8nlNfW9lv+EN1DC/02zAcys78K8HcLS4TUWfJew+iNYJL7aTnkshThRV84TotpOuYLyWD5LiPlC8AZmfxRUdY0E0iY5ZIwRbVoTOkYtaKaNaKUNaJH3oq6hDXWSdtRLOyBpVBQR8s+aoFW1MlRUNuADLHE4MbgVDjcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 51.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABi0lEQVR42q2SW0sCcRDF9xsFvXVXouymFJGEJhQ97GYXu0gRmIplWZZWqwnZTS3LCkpLtHZNheylhyyrr3P672omFBHhw48zMwzDcGYohXIAGp0Bw1YXNCOz6BkYg5qegprRi6joSSgH9aD1DDyBTtg9SnT3M5CrGHT2DUFBVECuotGl0YKacO7DfBSF7SINZ/wRW6k3wmue5Gsx9qRz2HnIwpt5hjuZg+vupYRcgRdQ4449GH0RWIJx2MP3YPksNrmnH9m4zYqwJBb6WP4pD/cFNbbqheEgDMvxDVavHuBKPBea/0dxw/mT2/IM1Dl2MVfODXVrO2TgJfEwRjzM/OrhX6DGyZVNgWtYz5NwxMiV0+9wE0Ql13UnS8nlNfW9lv+EN1DC/02zAcys78K8HcLS4TUWfJew+iNYJL7aTnkshThRV84TotpOuYLyWD5LiPlC8AZmfxRUdY0E0iY5ZIwRbVoTOkYtaKaNaKUNaJH3oq6hDXWSdtRLOyBpVBQR8s+aoFW1MlRUNuADLHE4MbgVDjcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;singleTonTest&quot;
         title=&quot;&quot;
-        src=&quot;/static/519be24ccfb27aade292a7dc6a936141/f058b/singleTonTest.png&quot;
-        srcset=&quot;/static/519be24ccfb27aade292a7dc6a936141/c26ae/singleTonTest.png 158w,
-/static/519be24ccfb27aade292a7dc6a936141/6bdcf/singleTonTest.png 315w,
-/static/519be24ccfb27aade292a7dc6a936141/f058b/singleTonTest.png 630w,
-/static/519be24ccfb27aade292a7dc6a936141/40601/singleTonTest.png 945w,
-/static/519be24ccfb27aade292a7dc6a936141/78612/singleTonTest.png 1260w,
+        src=&quot;/static/519be24ccfb27aade292a7dc6a936141/1cfc2/singleTonTest.png&quot;
+        srcset=&quot;/static/519be24ccfb27aade292a7dc6a936141/3684f/singleTonTest.png 225w,
+/static/519be24ccfb27aade292a7dc6a936141/fc2a6/singleTonTest.png 450w,
+/static/519be24ccfb27aade292a7dc6a936141/1cfc2/singleTonTest.png 900w,
+/static/519be24ccfb27aade292a7dc6a936141/21482/singleTonTest.png 1350w,
+/static/519be24ccfb27aade292a7dc6a936141/d61c2/singleTonTest.png 1800w,
 /static/519be24ccfb27aade292a7dc6a936141/71ba4/singleTonTest.png 1870w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -3646,7 +3684,7 @@ class SingleTon {
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -3657,20 +3695,20 @@ class SingleTon {
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 25.316455696202528%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABOElEQVR42jWQ2U7CYBBG+zB665LIvrU/paVAF0qBQkNZRIjEBbcYYyHiG3jtG/iSx98mXpycbyaTSWYUs+nTHS3pxRsMy8eQtdUOsN0Q2wtxuiGq8JgtBB+HHFGskym0Zc9G6I50h5rWTl0oGyhCtOWiHmZngGG4KbVak2rVRFUtVM2S2aLT0YkijSCoY5oCIRqUyyaVipGSzwvOzkoofnxNuNzSX9wxuXkjvkuYbXeSPbP7hKms59uE+HbPcJ3w+bXm+yfm8fCAP39huHqSPBOuX4g2ryi2P+EPq9XD8UbyzBEte4DrRzjBFLc/S+0N5wTjJX64oDtcpLk3ukztyBnLHVPRPZRctkRZa6GvdhirBP0qQb18pz55QJO/yWRVcvKcQlGnWGqkzhfqKf/5IlPj5LTI0fE5v3Rfwwxfxio0AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 25.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABOElEQVR42jWQ2U7CYBBG+zB665LIvrU/paVAF0qBQkNZRIjEBbcYYyHiG3jtG/iSx98mXpycbyaTSWYUs+nTHS3pxRsMy8eQtdUOsN0Q2wtxuiGq8JgtBB+HHFGskym0Zc9G6I50h5rWTl0oGyhCtOWiHmZngGG4KbVak2rVRFUtVM2S2aLT0YkijSCoY5oCIRqUyyaVipGSzwvOzkoofnxNuNzSX9wxuXkjvkuYbXeSPbP7hKms59uE+HbPcJ3w+bXm+yfm8fCAP39huHqSPBOuX4g2ryi2P+EPq9XD8UbyzBEte4DrRzjBFLc/S+0N5wTjJX64oDtcpLk3ukztyBnLHVPRPZRctkRZa6GvdhirBP0qQb18pz55QJO/yWRVcvKcQlGnWGqkzhfqKf/5IlPj5LTI0fE5v3Rfwwxfxio0AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;lazyHolderTest&quot;
         title=&quot;&quot;
-        src=&quot;/static/a3bbc0aa34767cff59e4f60964ef8c92/f058b/lazyHolderTest.png&quot;
-        srcset=&quot;/static/a3bbc0aa34767cff59e4f60964ef8c92/c26ae/lazyHolderTest.png 158w,
-/static/a3bbc0aa34767cff59e4f60964ef8c92/6bdcf/lazyHolderTest.png 315w,
-/static/a3bbc0aa34767cff59e4f60964ef8c92/f058b/lazyHolderTest.png 630w,
-/static/a3bbc0aa34767cff59e4f60964ef8c92/40601/lazyHolderTest.png 945w,
-/static/a3bbc0aa34767cff59e4f60964ef8c92/78612/lazyHolderTest.png 1260w,
+        src=&quot;/static/a3bbc0aa34767cff59e4f60964ef8c92/1cfc2/lazyHolderTest.png&quot;
+        srcset=&quot;/static/a3bbc0aa34767cff59e4f60964ef8c92/3684f/lazyHolderTest.png 225w,
+/static/a3bbc0aa34767cff59e4f60964ef8c92/fc2a6/lazyHolderTest.png 450w,
+/static/a3bbc0aa34767cff59e4f60964ef8c92/1cfc2/lazyHolderTest.png 900w,
+/static/a3bbc0aa34767cff59e4f60964ef8c92/21482/lazyHolderTest.png 1350w,
+/static/a3bbc0aa34767cff59e4f60964ef8c92/d61c2/lazyHolderTest.png 1800w,
 /static/a3bbc0aa34767cff59e4f60964ef8c92/093ec/lazyHolderTest.png 1930w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
