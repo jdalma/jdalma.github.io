@@ -189,20 +189,16 @@ tags:
 
 # 코틀린 핵심 프로그래밍 ~ing
 
-<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&show_text=true&width=500" width="500" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&show_text=true&width=500" width="500" height="110" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
 오현석님의 **코틀린 핵심 프로그래밍**이 출간되어 맹대표님 스터디에 참여하면서 읽게 되었다.  
 모임 내용을 정리하고 책에 나오는 내용들을 테스트 코드로 [직접 작성](https://github.com/jdalma/kotlin-playground)해보면서 읽었다.  
 그리고 [이론적인 내용도 정리](https://github.com/jdalma/footprints/tree/main/%EC%BD%94%ED%8B%80%EB%A6%B0)해보았다.  
   
-코틀린 책을 이제 두 권 읽어보았는데, 코틀린의 `ㅋ`정도 알게된 느낌이다.  
-자바보다는 문법적으로 편하기도 하고, 인스턴스로 매번 할당받아서 호출하는 방법보다 코틀린의 스코프 함수를 통해 컨텍스트 영역을 표현할 수 있다는 것이 좋다.  
-그리고 `Stream`을 펼치지 않고도 함수형 연산이 바로 가능하다는 것과 코틀린에서 제공하는 공통 메서드들은 대부분 람다를 파라미터로 받기 때문에 호출하는 쪽에서 실행 함수를 정해줄 수 있어서 좋다.  
-  
 이 책을 읽을 때 처음에는 `"입문서인가?"` 했는데 뒤로 갈수록 매운 맛이 난다. (저자 피셜 입문서는 아니라고 한다.)  
 코틀린의 Sequence와 Stream, Coroutine에 대해 설명하진 않지만 **제네릭스**와 **컬렉션 함수** 에 대한 내용이 자세하여 읽을 이유는 충분하다.  
 그리고 [연습문제](https://github.com/jdalma/kotlin-playground/blob/main/%EC%BD%94%ED%95%B5%ED%94%84_%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)도 제공한다. (해설은 없다.)  
-[맹대표님의 영상](https://www.youtube.com/watch?v=J2wTJPybBfA&ab_channel=%EC%BD%94%EB%93%9C%EC%8A%A4%ED%94%BC%EC%B8%A0)도 참고하면 좋을 듯 하다.  
+이 [영상](https://www.youtube.com/watch?v=J2wTJPybBfA&ab_channel=%EC%BD%94%EB%93%9C%EC%8A%A4%ED%94%BC%EC%B8%A0)도 참고하면 좋을 듯 하다.  
 
 ***
 
@@ -212,12 +208,40 @@ tags:
 
 ***
 
-# 디자인 패턴의 아름다움 ~ing
+# 디자인 패턴의 아름다움
 
-<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid01GvYG7STwJ5eTt3PPuQfFtfXxJkZbXF9HKs3QrCMo9EnYh2iLbymbQ1wESD3FviLl&show_text=true&width=500" width="500" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid01GvYG7STwJ5eTt3PPuQfFtfXxJkZbXF9HKs3QrCMo9EnYh2iLbymbQ1wESD3FviLl&show_text=true&width=500" width="500" height="110" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
 고품질 코드를 작성하는 것에 초점을 맞춰 다섯 가지 관련 주제인 **객체지향 프로그래밍 패러다임**, **설계 원칙**, **코딩 규칙**, **리팩터링 기술**, **디자인 패턴**을 모두 포괄적으로 설명한다.  
 `"이런 디자인 패턴이 생겨난 이유는 무엇인가?"`, `"어떤 종류의 프로그래밍 문제를 해결하는데 사용되는가?"`, `"적용시 장단점은 무엇인가?"`와 같은 질문을 이해하고 적용할 수 있도록 안내한다.  
+  
+나는 디자인 패턴 책으로 유명한 [GoF의 디자인 패턴](https://www.yes24.com/Product/Goods/17525598) 과 [헤드퍼스트의 디자인 패턴](https://www.yes24.com/Product/Goods/108192370) 책을 읽지 않아 차이점을 알순 없지만 이 책을 읽으면서 좋았던 점은 SOLID 원칙에 대한 자세한 내용과 패턴에서 소개하는 예제들이 좋았다.
+
+1. **리스코프 치환 원칙**을 지키기 위한 자세한 설명
+2. 팩토리 패턴에서 **BeanFactory** 예제
+3. 프록시 패턴에서 **자바의 동적 프록시** 예제
+4. 데코레이터 패턴에서 **JavaIO 라이브러리** 예제
+5. 옵저버 패턴의 **비동기식 비차단 옵저버 패턴**과 **EventBus** 예제
+6. 템플릿 메서드 패턴에서 **InputStream 클래스** 예제
+7. 템플릿 메서드 콜백 패턴에서 **JdbcTemplate** 예제
+8. 책임 연쇄 패턴에서 **스프링의 필터와 인터셉터** 그리고 **MyBatis의 인터셉터** 예제
+
+패턴을 배우는 동시에 우리가 자주 사용하지만 따로 시간을 내지 않으면 내부 원리는 알기 힘든 기능들에 대해 예제를 작성해줘서 더 재밌었던 것 같다.  
+그리고 비슷한 패턴간의 차이점이나 해당 패턴을 사용했을 때 생기는 문제점과 극복할 수 있는 방법들도 중간중간 소개를 해줘서 좋았다.  
+  
+스터디를 통해 경험이 많은 사람들의 이야기를 들으면서 읽은 탓에 더 좋은 느낌을 받은것도 있다.  
+(디자인 패턴 책은 이번이 처음이지만) 디자인 패턴 자체가 가독성을 지키면서 확장에 유연한 코드를 작성하기 위한 **컨셉** 이라고 생각한다.  
+각 패턴들에 매몰되어 패턴 자체를 외워가면서 학습하는 것이 아니라 **어떤 문제를 `어떻게` 해결하는지 에 대해 전체적인 그림을 이해하는 것** 이 중요하다고 느꼈다.  
+`"이 패턴을 써볼까?"`라고 먼저 사용할 패턴을 정하고 설계하는 것 보다 `"이 문제는 이 패턴의 장점을 활용하면 이렇게 해결할 수 있겠는데?"`라고 생각하는게 더 유연한 설계를 하는 방법이라고 생각한다.  
+  
+**이 책은 자바와 스프링에 대해 친숙하고 다양한 예제들을 접하고 싶다면 해당 책을 추천하고 싶다.**   
+  
+이 책을 읽으면서 정리한 내용들이다.  
+1. [좋은 코드, 고품질 코드란?](https://jdalma.github.io/2023y/oop/)
+2. [객체 생성 관련 패턴](https://github.com/jdalma/footprints/blob/main/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1_%EA%B4%80%EB%A0%A8.md)
+3. [구조 관련 패턴](https://github.com/jdalma/footprints/blob/main/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/%EA%B5%AC%EC%A1%B0_%EA%B4%80%EB%A0%A8.md)
+4. [행동 관련 패턴](https://github.com/jdalma/footprints/blob/main/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/%ED%96%89%EB%8F%99_%EA%B4%80%EB%A0%A8.md)
+이제 [디자인 패턴에 뛰어들기](https://refactoring.guru/ko/design-patterns/book)를 읽으면서 예제를 더 업데이트할 생각이다.  
 
 ***
 
@@ -240,9 +264,7 @@ DDD를 이루는 개념과 원리를 공부하기 보다는 실무 도메인(문
 
 ***
 
-# 기술 서적 외
-
-## 대체 뭐가 문제야?
+# 대체 뭐가 문제야?
 
 > "문제란 바라는 것과 인식하는 것 간의 차이다."  
 > "우리는 문제를 해결하려고만 하지 문제의 본질과 문제를 해결했을 때 생길 수 있는 다른 문제들에 대해서 생각하지 않는다"  
@@ -268,7 +290,7 @@ DDD를 이루는 개념과 원리를 공부하기 보다는 실무 도메인(문
 
 ***
 
-## 이너게임
+# 이너게임
 
 > 이너게임에 대한 나의 연구를 한마디로 요약한다면 ‘사람을 좀 더 효과적으로 변화시킬 수 있는 방법을 발견했다’는 것이다.  
 > 이너게임의 원리는 테니스에서 포핸드, 백핸드, 또는 서브를 어떻게 바꿀 것인가를 연구하면서 발견되었지만, 이 원리는 테니스 외의 다른 여러 분야에 응용될 수 있다.  
@@ -301,7 +323,7 @@ DDD를 이루는 개념과 원리를 공부하기 보다는 실무 도메인(문
 
 ***
 
-## 데일 카네기의 자기관리론
+# 데일 카네기의 자기관리론
 
 중요한 일을 앞두고 스트레스를 많이 받았다.  
 준비해야 할 일을 하지 못하고 걱정과 잡생각만 하면서 계획조차 세우지 못했다.  
@@ -464,7 +486,7 @@ DDD를 이루는 개념과 원리를 공부하기 보다는 실무 도메인(문
 
 ***
 
-## 내 생에 단 한 번
+# 내 생에 단 한 번
 
 동욱님의 [나를 위해 남을 도와주기](https://jojoldu.tistory.com/715?category=689637) 게시글에서 `내 생에 단 한 번` 책의 내용중 한 챕터로 예를 들어주셨는데 책의 내용이 너무 마음에 들어 바로 구매하고 읽어보았다.  
 
