@@ -132,38 +132,19 @@ public static void enhancedForLoop() {
 <strong>For-Each Loop</strong>는 각 자료구조에 구현된 <code class="language-text">iterator()</code>를 호출하여 <code class="language-text">Iterator</code>를 사용한다라고 볼 수 있다.<br></p>
 <hr>
 <h1 id="concurrentmodificationexception-" style="position:relative;"><strong>ConcurrentModificationException</strong> ?<a href="#concurrentmodificationexception-" aria-label="concurrentmodificationexception  permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
-<p>글을 보다보면 <strong>동시성</strong>에 관한 얘기가 나온다.<br></p>
 <deckgo-highlight-code language="java" terminal="carbon" theme="one-dark" line-numbers="true"  >
-          <code slot="code">public static void enhancedForLoop() {
-    List&lt;String&gt; test = new ArrayList&lt;&gt;(Arrays.asList(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;));
-    for (String e : test) {
-        if (e.equals(&quot;B&quot;)) {
-            test.remove(e);
-            continue;
-        }
-        System.out.println(e);
-    }
-}
-
-...
-
-// 디컴파일
-public static void enhancedForLoop() {
-    List&lt;String&gt; test = new ArrayList(Arrays.asList(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;));
-    Iterator var1 = test.iterator();
-
-    while(var1.hasNext()) {
-        String e = (String)var1.next();
-        if (e.equals(&quot;B&quot;)) {
-            test.remove(e);
-        } else {
-            System.out.println(e);
-        }
-    }
-
+          <code slot="code">public static void main(String[] args) {
+    List&lt;String&gt; chars = new ArrayList&lt;&gt;();
+    chars.add(&quot;A&quot;);
+    chars.add(&quot;B&quot;);
+    chars.add(&quot;C&quot;);
+    Iterator&lt;String&gt; iterator = chars.iterator();
+    iterator.next();
+    chars.remove(&quot;A&quot;);
+    iterator.next(); // ConcurrentModificationException !!!
 }</code>
         </deckgo-highlight-code>
-<p>위와 같이 작성하면 <code class="language-text">Exception in thread "main" java.util.ConcurrentModificationException</code>예외를 던진다.<br></p>
+<p>위와 같이 작성하면 <strong>java.util.ConcurrentModificationException</strong>예외를 던진다.<br></p>
 <ul>
 <li><code class="language-text">ArrayList</code>의 <code class="language-text">iterator()</code>,<code class="language-text">remove(Object o)</code>를 확인해보자
 <ul>
@@ -187,14 +168,25 @@ public static void enhancedForLoop() {
 </ol>
 <br>
 <deckgo-highlight-code language="java" terminal="carbon" theme="one-dark" line-numbers="true"  >
-          <code slot="code"> public Iterator&lt;E&gt; iterator() {
+          <code slot="code">public Iterator&lt;E&gt; iterator() {
         return new Itr();
 }
 private class Itr implements Iterator&lt;E&gt; {
     int cursor;       // index of next element to return
     int lastRet = -1; // index of last element returned; -1 if no such
     int expectedModCount = modCount;
-    ...
+    
+    public E next() {
+        checkForComodification();
+        int i = cursor;
+        if (i &gt;= size)
+            throw new NoSuchElementException();
+        Object[] elementData = ArrayList.this.elementData;
+        if (i &gt;= elementData.length)
+            throw new ConcurrentModificationException();
+        cursor = i + 1;
+        return (E) elementData[lastRet = i];
+    }
 
     public void remove() {
         if (lastRet &lt; 0)
@@ -219,16 +211,26 @@ private class Itr implements Iterator&lt;E&gt; {
         </deckgo-highlight-code>
 <ol>
 <li><code class="language-text">ArrayList</code>의 inner class인 <code class="language-text">Itr</code>을 생성한다.</li>
-<li><code class="language-text">Itr</code>의 내부 필드인 <code class="language-text">int expectedModCount = modCount;</code>를 확인할 수 있다.</li>
-<li><code class="language-text">remove()</code>에서 <code class="language-text">checkForComodification</code>를 통해 <strong><code class="language-text">Itr</code>을 생성했을 때의 <code class="language-text">expectedModCount</code></strong> 와 <strong><code class="language-text">ArrayList</code>의 <code class="language-text">modCount</code></strong> 는 다르게 되므로 해당 예외를 던지게 된다.</li>
+<li>컬렉션이 요소를 추가하는 함수나 삭제하는 함수를 호출할 때마다 조작 횟수를 기억하는 <code class="language-text">modCount</code>를 보유하고 있다.</li>
+<li><code class="language-text">Iterator</code>가 생성될 때 <code class="language-text">expectedModCount</code>에 <code class="language-text">modCount</code>를 대입한다.</li>
+<li><code class="language-text">remove()</code>에서 <code class="language-text">checkForComodification</code>를 통해 <strong><code class="language-text">Iterator</code>의 <code class="language-text">expectedModCount</code></strong> 와 <strong><code class="language-text">ArrayList</code>의 <code class="language-text">modCount</code></strong> 는 다르게 되므로 해당 예외를 던지게 된다.</li>
 </ol>
-<br>
-<p>중요한 점은</p>
-<ol>
-<li>위와 같은 방식을 <strong>Fail Fast</strong>라고 한다.</li>
-<li>하지만 <code class="language-text">iterator</code>의 구현체마다 다르다는 것</li>
-</ol>
-<p>코틀린에서는</p>
+<deckgo-highlight-code language="java" terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">public static void main(String[] args) {
+    List&lt;String&gt; chars = new ArrayList&lt;&gt;();
+    chars.add(&quot;A&quot;);
+    chars.add(&quot;B&quot;);
+    chars.add(&quot;C&quot;);
+    Iterator&lt;String&gt; iterator = chars.iterator();
+    iterator.next();
+    iterator.remove();
+    iterator.remove(); // IllegalStateException !!!
+}</code>
+        </deckgo-highlight-code>
+<p><code class="language-text">Iterator</code>의 <code class="language-text">remove()</code>를 사용할 때도 지켜야할 규칙이 있다.<br>
+위의 <code class="language-text">Itr</code> 구현 클래스를 보면 <code class="language-text">next()</code>가 호출될 때 마다 <code class="language-text">lastRet</code>을 <code class="language-text">cursor</code>로 업데이트하고, <code class="language-text">remove()</code>가 호출될 때 마다 <code class="language-text">lastRet</code>을 <code class="language-text">-1</code>로 업데이트 하기 때문에 <strong>한 번의 next() 호출당 remove() 호출이 두 번 이상 존재하면 오류가 발생한다.</strong></p>
+<p><strong>반복자 클래스는 요소를 추가하는 메서드는 제공하지 않는다. 결국 반복자의 주요 기능은 <code class="language-text">순회</code>이며, 요소를 추가하는 작업은 반복자에 적절하지 않다는 것을 유의하자.</strong></p>
+<h3>코틀린에서 Iterable과 Iterator를 구현해보기</h3>
 <ol>
 <li><code class="language-text">Iterable</code>과 <code class="language-text">Iterator</code>를 구현했을 때</li>
 <li><code class="language-text">Iterable</code>과 <code class="language-text">Iterator</code>를 구현하지 않고 <code class="language-text">operator</code>만 작성했을 때</li>
@@ -261,10 +263,6 @@ private class Itr implements Iterator&lt;E&gt; {
                 var test = 0
                 for (i in iterable) { test += i }
 
-                /**
-                 * iterable을 통해 for문을 실행하면 내부 iterator의 number 상태가 변경되어있을 줄 알았지만, 0 그대로다.
-                 * iterable의 for문을 사용해도 내부 iterator는 일회용으로 사용되는 것 같다.
-                 */
                 test shouldBeEqual sum
                 iterable.iterator().next() shouldBeEqual 0
 
@@ -288,7 +286,7 @@ private class Itr implements Iterator&lt;E&gt; {
                 test2 shouldBeEqual sum
             }
 
-            then(&quot;Iterable만 sum()이 존재한다.&quot;) {
+            then(&quot;Iterable에만 sum()이 존재한다.&quot;) {
                 val iterable = ImplementIterable(size)
 
                 iterable.sum() shouldBeEqual sum

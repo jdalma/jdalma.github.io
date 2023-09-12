@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 12 Sep 2023 13:31:52 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 12 Sep 2023 14:19:54 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
@@ -2524,38 +2524,19 @@ public static void enhancedForLoop() {
 &lt;strong&gt;For-Each Loop&lt;/strong&gt;는 각 자료구조에 구현된 &lt;code class=&quot;language-text&quot;&gt;iterator()&lt;/code&gt;를 호출하여 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 사용한다라고 볼 수 있다.&lt;br&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;concurrentmodificationexception-&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;ConcurrentModificationException&lt;/strong&gt; ?&lt;a href=&quot;#concurrentmodificationexception-&quot; aria-label=&quot;concurrentmodificationexception  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;글을 보다보면 &lt;strong&gt;동시성&lt;/strong&gt;에 관한 얘기가 나온다.&lt;br&gt;&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;public static void enhancedForLoop() {
-    List&amp;lt;String&amp;gt; test = new ArrayList&amp;lt;&amp;gt;(Arrays.asList(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;E&amp;quot;));
-    for (String e : test) {
-        if (e.equals(&amp;quot;B&amp;quot;)) {
-            test.remove(e);
-            continue;
-        }
-        System.out.println(e);
-    }
-}
-
-...
-
-// 디컴파일
-public static void enhancedForLoop() {
-    List&amp;lt;String&amp;gt; test = new ArrayList(Arrays.asList(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;E&amp;quot;));
-    Iterator var1 = test.iterator();
-
-    while(var1.hasNext()) {
-        String e = (String)var1.next();
-        if (e.equals(&amp;quot;B&amp;quot;)) {
-            test.remove(e);
-        } else {
-            System.out.println(e);
-        }
-    }
-
+          &lt;code slot=&quot;code&quot;&gt;public static void main(String[] args) {
+    List&amp;lt;String&amp;gt; chars = new ArrayList&amp;lt;&amp;gt;();
+    chars.add(&amp;quot;A&amp;quot;);
+    chars.add(&amp;quot;B&amp;quot;);
+    chars.add(&amp;quot;C&amp;quot;);
+    Iterator&amp;lt;String&amp;gt; iterator = chars.iterator();
+    iterator.next();
+    chars.remove(&amp;quot;A&amp;quot;);
+    iterator.next(); // ConcurrentModificationException !!!
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위와 같이 작성하면 &lt;code class=&quot;language-text&quot;&gt;Exception in thread &quot;main&quot; java.util.ConcurrentModificationException&lt;/code&gt;예외를 던진다.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;위와 같이 작성하면 &lt;strong&gt;java.util.ConcurrentModificationException&lt;/strong&gt;예외를 던진다.&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ArrayList&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;iterator()&lt;/code&gt;,&lt;code class=&quot;language-text&quot;&gt;remove(Object o)&lt;/code&gt;를 확인해보자
 &lt;ul&gt;
@@ -2579,14 +2560,25 @@ public static void enhancedForLoop() {
 &lt;/ol&gt;
 &lt;br&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt; public Iterator&amp;lt;E&amp;gt; iterator() {
+          &lt;code slot=&quot;code&quot;&gt;public Iterator&amp;lt;E&amp;gt; iterator() {
         return new Itr();
 }
 private class Itr implements Iterator&amp;lt;E&amp;gt; {
     int cursor;       // index of next element to return
     int lastRet = -1; // index of last element returned; -1 if no such
     int expectedModCount = modCount;
-    ...
+    
+    public E next() {
+        checkForComodification();
+        int i = cursor;
+        if (i &amp;gt;= size)
+            throw new NoSuchElementException();
+        Object[] elementData = ArrayList.this.elementData;
+        if (i &amp;gt;= elementData.length)
+            throw new ConcurrentModificationException();
+        cursor = i + 1;
+        return (E) elementData[lastRet = i];
+    }
 
     public void remove() {
         if (lastRet &amp;lt; 0)
@@ -2611,16 +2603,26 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
         &lt;/deckgo-highlight-code&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ArrayList&lt;/code&gt;의 inner class인 &lt;code class=&quot;language-text&quot;&gt;Itr&lt;/code&gt;을 생성한다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Itr&lt;/code&gt;의 내부 필드인 &lt;code class=&quot;language-text&quot;&gt;int expectedModCount = modCount;&lt;/code&gt;를 확인할 수 있다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;remove()&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;checkForComodification&lt;/code&gt;를 통해 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Itr&lt;/code&gt;을 생성했을 때의 &lt;code class=&quot;language-text&quot;&gt;expectedModCount&lt;/code&gt;&lt;/strong&gt; 와 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;ArrayList&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;&lt;/strong&gt; 는 다르게 되므로 해당 예외를 던지게 된다.&lt;/li&gt;
+&lt;li&gt;컬렉션이 요소를 추가하는 함수나 삭제하는 함수를 호출할 때마다 조작 횟수를 기억하는 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;를 보유하고 있다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;가 생성될 때 &lt;code class=&quot;language-text&quot;&gt;expectedModCount&lt;/code&gt;에 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;를 대입한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;remove()&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;checkForComodification&lt;/code&gt;를 통해 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;expectedModCount&lt;/code&gt;&lt;/strong&gt; 와 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;ArrayList&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;&lt;/strong&gt; 는 다르게 되므로 해당 예외를 던지게 된다.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;br&gt;
-&lt;p&gt;중요한 점은&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;위와 같은 방식을 &lt;strong&gt;Fail Fast&lt;/strong&gt;라고 한다.&lt;/li&gt;
-&lt;li&gt;하지만 &lt;code class=&quot;language-text&quot;&gt;iterator&lt;/code&gt;의 구현체마다 다르다는 것&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;코틀린에서는&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public static void main(String[] args) {
+    List&amp;lt;String&amp;gt; chars = new ArrayList&amp;lt;&amp;gt;();
+    chars.add(&amp;quot;A&amp;quot;);
+    chars.add(&amp;quot;B&amp;quot;);
+    chars.add(&amp;quot;C&amp;quot;);
+    Iterator&amp;lt;String&amp;gt; iterator = chars.iterator();
+    iterator.next();
+    iterator.remove();
+    iterator.remove(); // IllegalStateException !!!
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;remove()&lt;/code&gt;를 사용할 때도 지켜야할 규칙이 있다.&lt;br&gt;
+위의 &lt;code class=&quot;language-text&quot;&gt;Itr&lt;/code&gt; 구현 클래스를 보면 &lt;code class=&quot;language-text&quot;&gt;next()&lt;/code&gt;가 호출될 때 마다 &lt;code class=&quot;language-text&quot;&gt;lastRet&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;cursor&lt;/code&gt;로 업데이트하고, &lt;code class=&quot;language-text&quot;&gt;remove()&lt;/code&gt;가 호출될 때 마다 &lt;code class=&quot;language-text&quot;&gt;lastRet&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 업데이트 하기 때문에 &lt;strong&gt;한 번의 next() 호출당 remove() 호출이 두 번 이상 존재하면 오류가 발생한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;반복자 클래스는 요소를 추가하는 메서드는 제공하지 않는다. 결국 반복자의 주요 기능은 &lt;code class=&quot;language-text&quot;&gt;순회&lt;/code&gt;이며, 요소를 추가하는 작업은 반복자에 적절하지 않다는 것을 유의하자.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;코틀린에서 Iterable과 Iterator를 구현해보기&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 구현했을 때&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 구현하지 않고 &lt;code class=&quot;language-text&quot;&gt;operator&lt;/code&gt;만 작성했을 때&lt;/li&gt;
@@ -2653,10 +2655,6 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
                 var test = 0
                 for (i in iterable) { test += i }
 
-                /**
-                 * iterable을 통해 for문을 실행하면 내부 iterator의 number 상태가 변경되어있을 줄 알았지만, 0 그대로다.
-                 * iterable의 for문을 사용해도 내부 iterator는 일회용으로 사용되는 것 같다.
-                 */
                 test shouldBeEqual sum
                 iterable.iterator().next() shouldBeEqual 0
 
@@ -2680,7 +2678,7 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
                 test2 shouldBeEqual sum
             }
 
-            then(&amp;quot;Iterable만 sum()이 존재한다.&amp;quot;) {
+            then(&amp;quot;Iterable에만 sum()이 존재한다.&amp;quot;) {
                 val iterable = ImplementIterable(size)
 
                 iterable.sum() shouldBeEqual sum
