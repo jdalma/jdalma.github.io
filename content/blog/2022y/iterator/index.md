@@ -92,40 +92,20 @@ public static void enhancedForLoop() {
 
 # **ConcurrentModificationException** ?
 
-글을 보다보면 **동시성**에 관한 얘기가 나온다.<br>
-
 ```java
-public static void enhancedForLoop() {
-    List<String> test = new ArrayList<>(Arrays.asList("A", "B", "C", "D", "E"));
-    for (String e : test) {
-        if (e.equals("B")) {
-            test.remove(e);
-            continue;
-        }
-        System.out.println(e);
-    }
-}
-
-...
-
-// 디컴파일
-public static void enhancedForLoop() {
-    List<String> test = new ArrayList(Arrays.asList("A", "B", "C", "D", "E"));
-    Iterator var1 = test.iterator();
-
-    while(var1.hasNext()) {
-        String e = (String)var1.next();
-        if (e.equals("B")) {
-            test.remove(e);
-        } else {
-            System.out.println(e);
-        }
-    }
-
+public static void main(String[] args) {
+    List<String> chars = new ArrayList<>();
+    chars.add("A");
+    chars.add("B");
+    chars.add("C");
+    Iterator<String> iterator = chars.iterator();
+    iterator.next();
+    chars.remove("A");
+    iterator.next(); // ConcurrentModificationException !!!
 }
 ```
 
-위와 같이 작성하면 `Exception in thread "main" java.util.ConcurrentModificationException`예외를 던진다.<br>
+위와 같이 작성하면 **java.util.ConcurrentModificationException**예외를 던진다.<br>
 - `ArrayList`의 `iterator()`,`remove(Object o)`를 확인해보자
   - `remove()`에서 `fastRemove()`를 호출한다.
 
@@ -147,14 +127,25 @@ private void fastRemove(int index) {
 
 
 ```java
- public Iterator<E> iterator() {
+public Iterator<E> iterator() {
         return new Itr();
 }
 private class Itr implements Iterator<E> {
     int cursor;       // index of next element to return
     int lastRet = -1; // index of last element returned; -1 if no such
     int expectedModCount = modCount;
-    ...
+    
+    public E next() {
+        checkForComodification();
+        int i = cursor;
+        if (i >= size)
+            throw new NoSuchElementException();
+        Object[] elementData = ArrayList.this.elementData;
+        if (i >= elementData.length)
+            throw new ConcurrentModificationException();
+        cursor = i + 1;
+        return (E) elementData[lastRet = i];
+    }
 
     public void remove() {
         if (lastRet < 0)
@@ -179,16 +170,31 @@ private class Itr implements Iterator<E> {
 ```
 
 1. `ArrayList`의 inner class인 `Itr`을 생성한다.
-2. `Itr`의 내부 필드인 `int expectedModCount = modCount;`를 확인할 수 있다.
-3. `remove()`에서 `checkForComodification`를 통해 **`Itr`을 생성했을 때의 `expectedModCount`** 와 **`ArrayList`의 `modCount`** 는 다르게 되므로 해당 예외를 던지게 된다. 
-
-<br>
-
-중요한 점은
-1. 위와 같은 방식을 **Fail Fast**라고 한다.
-2. 하지만 `iterator`의 구현체마다 다르다는 것
+2. 컬렉션이 요소를 추가하는 함수나 삭제하는 함수를 호출할 때마다 조작 횟수를 기억하는 `modCount`를 보유하고 있다.
+3. `Iterator`가 생성될 때 `expectedModCount`에 `modCount`를 대입한다.
+4. `remove()`에서 `checkForComodification`를 통해 **`Iterator`의 `expectedModCount`** 와 **`ArrayList`의 `modCount`** 는 다르게 되므로 해당 예외를 던지게 된다. 
   
-코틀린에서는 
+```java
+public static void main(String[] args) {
+    List<String> chars = new ArrayList<>();
+    chars.add("A");
+    chars.add("B");
+    chars.add("C");
+    Iterator<String> iterator = chars.iterator();
+    iterator.next();
+    iterator.remove();
+    iterator.remove(); // IllegalStateException !!!
+}
+```
+
+`Iterator`의 `remove()`를 사용할 때도 지켜야할 규칙이 있다.  
+위의 `Itr` 구현 클래스를 보면 `next()`가 호출될 때 마다 `lastRet`을 `cursor`로 업데이트하고, `remove()`가 호출될 때 마다 `lastRet`을 `-1`로 업데이트 하기 때문에 **한 번의 next() 호출당 remove() 호출이 두 번 이상 존재하면 오류가 발생한다.**  
+  
+**반복자 클래스는 요소를 추가하는 메서드는 제공하지 않는다. 결국 반복자의 주요 기능은 `순회`이며, 요소를 추가하는 작업은 반복자에 적절하지 않다는 것을 유의하자.**  
+
+
+<h3>코틀린에서 Iterable과 Iterator를 구현해보기</h3>
+
 1. `Iterable`과 `Iterator`를 구현했을 때
 2. `Iterable`과 `Iterator`를 구현하지 않고 `operator`만 작성했을 때
 
@@ -221,10 +227,6 @@ class IterableTest: BehaviorSpec ({
                 var test = 0
                 for (i in iterable) { test += i }
 
-                /**
-                 * iterable을 통해 for문을 실행하면 내부 iterator의 number 상태가 변경되어있을 줄 알았지만, 0 그대로다.
-                 * iterable의 for문을 사용해도 내부 iterator는 일회용으로 사용되는 것 같다.
-                 */
                 test shouldBeEqual sum
                 iterable.iterator().next() shouldBeEqual 0
 
@@ -248,7 +250,7 @@ class IterableTest: BehaviorSpec ({
                 test2 shouldBeEqual sum
             }
 
-            then("Iterable만 sum()이 존재한다.") {
+            then("Iterable에만 sum()이 존재한다.") {
                 val iterable = ImplementIterable(size)
 
                 iterable.sum() shouldBeEqual sum
