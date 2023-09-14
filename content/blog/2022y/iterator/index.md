@@ -192,6 +192,26 @@ public static void main(String[] args) {
   
 **반복자 클래스는 요소를 추가하는 메서드는 제공하지 않는다. 결국 반복자의 주요 기능은 `순회`이며, 요소를 추가하는 작업은 반복자에 적절하지 않다는 것을 유의하자.**  
 
+<h3>Iterator 두 개를 만든 아래의 실행 결과는?<h3>
+
+```java
+public static void main(String[] args) {
+    List<String> chars = new ArrayList<>();
+    chars.add("A");
+    chars.add("B");
+    chars.add("C");
+    Iterator<String> iterator1 = chars.iterator();
+    Iterator<String> iterator2 = chars.iterator();
+    iterator1.next();
+    iterator1.remove();
+    iterator2.next(); // 실행 결과는???
+}
+```
+
+**ConcurrentModificationException** 예외가 발생한다.  
+그 이유는 최초 `modCount`는 4이지만, `iterator1.remove()`에서 `ArraysList.this.remove(lastRet)`을 통해, ArraysList 내부 속성의 `modCount`는 4로 증가되기 때문에 `iterator2`의 `expectedModCount`와 틀리게된다.
+
+<h3>스냅숏 기능을 지원하는 반복자</h3>
 
 <h3>코틀린에서 Iterable과 Iterator를 구현해보기</h3>
 
