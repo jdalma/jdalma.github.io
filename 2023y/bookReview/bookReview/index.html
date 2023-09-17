@@ -441,9 +441,19 @@ DDD는 팀 전체가 함께하는 거대한 작업이라는 것을 잊지 말아
 </blockquote>
 <p>이 책은 도메인 주도 설계라는 주제의 기초를 요약한 소개서이다.<br>
 도메인 전문가에게 도메인 지식을 끌어내어 아키텍트가 설계하고, 그 설계한 내용에 따라 개발자가 구현을 해나가는 흐름에 있어, <strong>정확한 도메인 모델링을 어떻게 하고, 그 모델을 코드로 어떻게 변환할 것인가?</strong> 가 주제이다.</p>
-<p><strong>엔티티</strong>, <strong>값 객체</strong>, <strong>도메인</strong>, <strong>모델</strong>, <strong>서비스</strong>, <strong>모듈</strong>, <strong>집합</strong>에 대해 정의를 내려주며 서로 다른 책임을 가지고 있다면 레이어를 침범해서는 안된다.<br>
-디자인 패턴의 아름다움 스터디에서 팩토리 패턴이 강조되었었는데 <strong>Aggregate</strong>를 생성할 때 팩토리 패턴을 적극적으로 활용해야 한다고 설명한다.<br>
-객체 생성 로직을 클라이언트에게 숨겨 외부에서는 접근하지 못하게 캡슐화하고 클라이언트가 참조를 얻고 싶다면 방어적 복사를 통해 객체를 전달한다.</p>
+<p><strong>엔티티</strong>, <strong>값 객체</strong>, <strong>도메인</strong>, <strong>모델</strong>, <strong>서비스</strong>, <strong>모듈</strong>, <strong>집합</strong>, <strong>리포지토리</strong> 등 이 용어에 대해 설명하며 DDD를 전체적으로 (추상적이지만) 훑어준다고 생각하면 좋다.<br>
+처음 DDD를 읽을 때 낯선 용어 때문에 힘들었는데, 대략적으로 각 책임들을 설명해줘서 좋았다.</p>
+<ul>
+<li>대략적으로 <a href="https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/DDD.md">정리</a>했다.</li>
+</ul>
+<p>처음부터 완벽한 모델링은 존재할 수 없으니 때때로 도메인에 대한 새로운 통찰이 생기고 모델간의 관계가 발견될 때, 리팩터링을 통해 설계에 반영되어야 한다고 강조한다.</p>
+<blockquote>
+<p>"개발자들에게 도메인의 비즈니스 로직은 지루하고 보상이 없는 것일 수 있지만 도메인의 비즈니스 로직은 도메인의 심장이다."<br>
+"만약 핵심 비즈니스 로직이 제 역할을 하지 못한다면, 멋진 기술적 부가 기능은 모두 <strong>무용지물</strong>이 된다."<br>
+"정교한 도메인 모델과 핵심 도메인은 단번에 만들어지지 않는다. 핵심이 한층 명확하게 통합되기 위해서 정제와 <strong>지속적인 리팩터링</strong>이 필요하다."</p>
+</blockquote>
+<p>실제로 기술에만 집중했었던 것 같아서 위의 내용을 읽고 뜨끔했었다..<br>
+DDD에 관심을 가지고 있다면 웜업 느낌으로 가볍게 읽을 수 있을 것 같아 추천하고 싶다.</p>
 <hr>
 <h1 id="모던-자바-인-액션-ing" style="position:relative;"><strong>모던 자바 인 액션</strong> ~ing<a href="#%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94-%EC%9D%B8-%EC%95%A1%EC%85%98-ing" aria-label="모던 자바 인 액션 ing permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <hr>
