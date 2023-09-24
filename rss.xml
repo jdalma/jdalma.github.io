@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 20 Sep 2023 14:06:38 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Sep 2023 13:24:44 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
@@ -1246,6 +1246,8 @@ DDD에 관심을 가지고 있다면 웜업 느낌으로 가볍게 읽을 수 �
 업무에 대한 일정을 변경하기에는 힘들다. 품질이나 양을 협의하기가 쉽다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;프로그래머의-뇌-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;프로그래머의 뇌&lt;/strong&gt; ~ing&lt;a href=&quot;#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%9D%98-%EB%87%8C-ing&quot; aria-label=&quot;프로그래머의 뇌 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;코틀린-함수형-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코틀린 함수형 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;코틀린 함수형 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;대체-뭐가-문제야&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;대체 뭐가 문제야?&lt;/strong&gt;&lt;a href=&quot;#%EB%8C%80%EC%B2%B4-%EB%AD%90%EA%B0%80-%EB%AC%B8%EC%A0%9C%EC%95%BC&quot; aria-label=&quot;대체 뭐가 문제야 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -2795,7 +2797,6 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;strong&gt;ConcurrentModificationException&lt;/strong&gt; 예외가 발생한다.&lt;br&gt;
 그 이유는 최초 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;는 4이지만, &lt;code class=&quot;language-text&quot;&gt;iterator1.remove()&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;ArraysList.this.remove(lastRet)&lt;/code&gt;을 통해, ArraysList 내부 속성의 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;는 4로 증가되기 때문에 &lt;code class=&quot;language-text&quot;&gt;iterator2&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;expectedModCount&lt;/code&gt;와 틀리게된다.&lt;/p&gt;
-&lt;h3&gt;스냅숏 기능을 지원하는 반복자&lt;/h3&gt;
 &lt;h3&gt;코틀린에서 Iterable과 Iterator를 구현해보기&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 구현했을 때&lt;/li&gt;
@@ -4151,11 +4152,8 @@ B : 0
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;목표 → 강의 → 과제&lt;/strong&gt;순으로 흘러간다&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;과제&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;과제&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;코드 → 리뷰 → 풀이&lt;/code&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;코드 → 리뷰 → 풀이&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;What&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;영상 , 자료 또는 강의를 일단 한 번 본다&lt;/li&gt;
@@ -4169,24 +4167,24 @@ B : 0
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;How&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;어떻게를 그냥 배울 수 없고 &lt;strong&gt;What&lt;/strong&gt;과 &lt;strong&gt;Why&lt;/strong&gt;를 거쳐 &lt;strong&gt;How&lt;/strong&gt;를 배우게 된다&lt;/li&gt;
+&lt;li&gt;어떻게를 그냥 배울 수 없고 &lt;strong&gt;What&lt;/strong&gt;과 &lt;strong&gt;Why&lt;/strong&gt;를 거쳐 &lt;strong&gt;How&lt;/strong&gt;를 배우게 된다~&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Feedback&lt;/strong&gt; , &lt;strong&gt;FeedForward&lt;/strong&gt;를 얻을 수 있다
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;결과를 통해&lt;/li&gt;
 &lt;li&gt;정보 (에러메세지)를 통해&lt;/li&gt;
 &lt;li&gt;수정을 통해&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;메타인지&lt;/strong&gt; : 내가 뭐를 알고 뭐를 모르는지
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;무의식적 무지&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;의식적 무지&lt;/code&gt; ↔︎ &lt;code class=&quot;language-text&quot;&gt;의식적 지식&lt;/code&gt; (반복)&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;무의식적 지식&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;span style=&quot;color:red; font-weight:bold&quot;&gt;단순 반복 금지&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;del&gt;Don&apos;t Study Hard&lt;/del&gt; &lt;strong&gt;Study SMART&lt;/strong&gt;&lt;/li&gt;

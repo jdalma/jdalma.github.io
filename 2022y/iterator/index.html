@@ -246,7 +246,6 @@ private class Itr implements Iterator&lt;E&gt; {
         </deckgo-highlight-code>
 <p><strong>ConcurrentModificationException</strong> 예외가 발생한다.<br>
 그 이유는 최초 <code class="language-text">modCount</code>는 4이지만, <code class="language-text">iterator1.remove()</code>에서 <code class="language-text">ArraysList.this.remove(lastRet)</code>을 통해, ArraysList 내부 속성의 <code class="language-text">modCount</code>는 4로 증가되기 때문에 <code class="language-text">iterator2</code>의 <code class="language-text">expectedModCount</code>와 틀리게된다.</p>
-<h3>스냅숏 기능을 지원하는 반복자</h3>
 <h3>코틀린에서 Iterable과 Iterator를 구현해보기</h3>
 <ol>
 <li><code class="language-text">Iterable</code>과 <code class="language-text">Iterator</code>를 구현했을 때</li>
