@@ -211,8 +211,6 @@ public static void main(String[] args) {
 **ConcurrentModificationException** 예외가 발생한다.  
 그 이유는 최초 `modCount`는 4이지만, `iterator1.remove()`에서 `ArraysList.this.remove(lastRet)`을 통해, ArraysList 내부 속성의 `modCount`는 4로 증가되기 때문에 `iterator2`의 `expectedModCount`와 틀리게된다.
 
-<h3>스냅숏 기능을 지원하는 반복자</h3>
-
 <h3>코틀린에서 Iterable과 Iterator를 구현해보기</h3>
 
 1. `Iterable`과 `Iterator`를 구현했을 때
