@@ -209,7 +209,54 @@ public static void main(String[] args) {
 ```
 
 **ConcurrentModificationException** 예외가 발생한다.  
-그 이유는 최초 `modCount`는 4이지만, `iterator1.remove()`에서 `ArraysList.this.remove(lastRet)`을 통해, ArraysList 내부 속성의 `modCount`는 4로 증가되기 때문에 `iterator2`의 `expectedModCount`와 틀리게된다.
+그 이유는 최초 `modCount`는 4이지만, `iterator1.remove()`에서 `ArraysList.this.remove(lastRet)`을 통해, ArraysList 내부 속성의 `modCount`는 4로 증가되기 때문에 `iterator2`의 `expectedModCount`와 틀리게된다.  
+
+<h3>이 경우에는 removeIf와 replaceAll로 대체할 수 있다.<h3>  
+
+꼭 내부 컬렉션을 직접 조작하고 싶다면 아래의 방법을 사용할 수 있다.
+  
+```java
+private List<Dish> menu;
+
+@BeforeEach
+void setUp() {
+    menu = new ArrayList<>(){{
+        this.add(new Dish("pork", false, 800, Dish.Type.MEAT));
+        this.add(new Dish("beef", false, 700, Dish.Type.MEAT));
+        this.add(new Dish("chicken", false, 400, Dish.Type.MEAT));
+        this.add(new Dish("french fries", true, 530, Dish.Type.OTHER));
+        this.add(new Dish("rice", true, 350, Dish.Type.OTHER));
+        this.add(new Dish("season fruit", true, 120, Dish.Type.OTHER));
+        this.add(new Dish("pizza", true, 550, Dish.Type.OTHER));
+        this.add(new Dish("prawns", false, 300, Dish.Type.FISH));
+        this.add(new Dish("salmon", false, 450, Dish.Type.FISH));
+    }};
+}
+
+@Test
+void removeIf() {
+    Assertions.assertThat(menu.size()).isEqualTo(9);
+
+    menu.removeIf(Dish::vegetarian);
+    Assertions.assertThat(menu.size()).isEqualTo(5);
+}
+
+@Test
+void replaceAll() {
+    List<Dish> before = menu.stream().filter(dish -> dish.calories() <= 490).toList();
+    Assertions.assertThat(before.size()).isEqualTo(5);
+
+    menu.replaceAll(dish -> {
+        if (dish.calories() > 500) {
+            return new Dish(dish.name(), dish.vegetarian(), 490, dish.type());
+        }
+        return dish;
+    });
+
+    List<Dish> after = menu.stream().filter(dish -> dish.calories() <= 490).toList();
+    Assertions.assertThat(after.size()).isEqualTo(9);
+}
+```
 
 <h3>코틀린에서 Iterable과 Iterator를 구현해보기</h3>
 
