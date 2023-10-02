@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Sep 2023 13:24:44 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 02 Oct 2023 09:48:59 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
@@ -1244,10 +1244,17 @@ DDD에 관심을 가지고 있다면 웜업 느낌으로 가볍게 읽을 수 �
 &quot;칸반의 목적은 문제를 수면위로 끌어올리는 것이다.&quot;&lt;br&gt;
 &quot;칸반은 현재 업무량을 무시하고 업무를 밀어 넣는 대신, 업무를 할 수 있을 때 작업자가 업무를 끌어오는 시각적 당김(풀) 시스템이며 제약조건을 기반으로 한다.&quot;&lt;br&gt;
 업무에 대한 일정을 변경하기에는 힘들다. 품질이나 양을 협의하기가 쉽다.&lt;/p&gt;
+&lt;p&gt;시각-공간 학습자, 다섯 도둑, 린 칸반 흐름&lt;br&gt;
+좋은 시각화? &lt;strong&gt;분산 인지&lt;/strong&gt;
+&quot;내가 뭘 빠뜨리지 않았나?&quot;, &quot;이런것도 해야 되는데&quot; 라는 생각이 들지 않도록 어딘가에 기록을 해야한다.&lt;br&gt;
+현재 진행하는 한 가지의 일에만 집중할 수 있도록 한다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;프로그래머의-뇌-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;프로그래머의 뇌&lt;/strong&gt; ~ing&lt;a href=&quot;#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%9D%98-%EB%87%8C-ing&quot; aria-label=&quot;프로그래머의 뇌 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;코틀린-함수형-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코틀린 함수형 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;코틀린 함수형 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;함수형 프로그래밍은 불변성, 함수의 순수성, 함수 조합을 올바르고 예측 가능한 프로그램을 구축하는 수단으로 사용한다.&lt;br&gt;
+이 책은 함수 합성과 대수적 설계라는 기본 개념을 자세히 설명하고, 그 후 함수형 패턴과 데이터 타입을 밑바닥부터 어떻게 구현하는지 보여주는 연습문제와 예제를 통해 함수형 프로그래밍을 연습하고 배우도록 도와준다.&lt;br&gt;
+오류 쳐리와 같은 일반적인 시나리오에서 시작해 스트리밍 같은 더 복잡한 경우에 이르도록, 이 책은 함수형 프로그래머의 배움을 보완해주고 핵심 함수형 추상화와 패턴을 배우기 위한 근본적인 접근 방식을 제공한다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;대체-뭐가-문제야&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;대체 뭐가 문제야?&lt;/strong&gt;&lt;a href=&quot;#%EB%8C%80%EC%B2%B4-%EB%AD%90%EA%B0%80-%EB%AC%B8%EC%A0%9C%EC%95%BC&quot; aria-label=&quot;대체 뭐가 문제야 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -2797,6 +2804,50 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;strong&gt;ConcurrentModificationException&lt;/strong&gt; 예외가 발생한다.&lt;br&gt;
 그 이유는 최초 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;는 4이지만, &lt;code class=&quot;language-text&quot;&gt;iterator1.remove()&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;ArraysList.this.remove(lastRet)&lt;/code&gt;을 통해, ArraysList 내부 속성의 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;는 4로 증가되기 때문에 &lt;code class=&quot;language-text&quot;&gt;iterator2&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;expectedModCount&lt;/code&gt;와 틀리게된다.&lt;/p&gt;
+&lt;h3&gt;이 경우에는 removeIf와 replaceAll로 대체할 수 있다.&lt;h3&gt;  
+&lt;p&gt;꼭 내부 컬렉션을 직접 조작하고 싶다면 아래의 방법을 사용할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;private List&amp;lt;Dish&amp;gt; menu;
+
+@BeforeEach
+void setUp() {
+    menu = new ArrayList&amp;lt;&amp;gt;(){{
+        this.add(new Dish(&amp;quot;pork&amp;quot;, false, 800, Dish.Type.MEAT));
+        this.add(new Dish(&amp;quot;beef&amp;quot;, false, 700, Dish.Type.MEAT));
+        this.add(new Dish(&amp;quot;chicken&amp;quot;, false, 400, Dish.Type.MEAT));
+        this.add(new Dish(&amp;quot;french fries&amp;quot;, true, 530, Dish.Type.OTHER));
+        this.add(new Dish(&amp;quot;rice&amp;quot;, true, 350, Dish.Type.OTHER));
+        this.add(new Dish(&amp;quot;season fruit&amp;quot;, true, 120, Dish.Type.OTHER));
+        this.add(new Dish(&amp;quot;pizza&amp;quot;, true, 550, Dish.Type.OTHER));
+        this.add(new Dish(&amp;quot;prawns&amp;quot;, false, 300, Dish.Type.FISH));
+        this.add(new Dish(&amp;quot;salmon&amp;quot;, false, 450, Dish.Type.FISH));
+    }};
+}
+
+@Test
+void removeIf() {
+    Assertions.assertThat(menu.size()).isEqualTo(9);
+
+    menu.removeIf(Dish::vegetarian);
+    Assertions.assertThat(menu.size()).isEqualTo(5);
+}
+
+@Test
+void replaceAll() {
+    List&amp;lt;Dish&amp;gt; before = menu.stream().filter(dish -&amp;gt; dish.calories() &amp;lt;= 490).toList();
+    Assertions.assertThat(before.size()).isEqualTo(5);
+
+    menu.replaceAll(dish -&amp;gt; {
+        if (dish.calories() &amp;gt; 500) {
+            return new Dish(dish.name(), dish.vegetarian(), 490, dish.type());
+        }
+        return dish;
+    });
+
+    List&amp;lt;Dish&amp;gt; after = menu.stream().filter(dish -&amp;gt; dish.calories() &amp;lt;= 490).toList();
+    Assertions.assertThat(after.size()).isEqualTo(9);
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
 &lt;h3&gt;코틀린에서 Iterable과 Iterator를 구현해보기&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 구현했을 때&lt;/li&gt;

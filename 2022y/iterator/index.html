@@ -246,6 +246,50 @@ private class Itr implements Iterator&lt;E&gt; {
         </deckgo-highlight-code>
 <p><strong>ConcurrentModificationException</strong> 예외가 발생한다.<br>
 그 이유는 최초 <code class="language-text">modCount</code>는 4이지만, <code class="language-text">iterator1.remove()</code>에서 <code class="language-text">ArraysList.this.remove(lastRet)</code>을 통해, ArraysList 내부 속성의 <code class="language-text">modCount</code>는 4로 증가되기 때문에 <code class="language-text">iterator2</code>의 <code class="language-text">expectedModCount</code>와 틀리게된다.</p>
+<h3>이 경우에는 removeIf와 replaceAll로 대체할 수 있다.<h3>  
+<p>꼭 내부 컬렉션을 직접 조작하고 싶다면 아래의 방법을 사용할 수 있다.</p>
+<deckgo-highlight-code language="java" terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">private List&lt;Dish&gt; menu;
+
+@BeforeEach
+void setUp() {
+    menu = new ArrayList&lt;&gt;(){{
+        this.add(new Dish(&quot;pork&quot;, false, 800, Dish.Type.MEAT));
+        this.add(new Dish(&quot;beef&quot;, false, 700, Dish.Type.MEAT));
+        this.add(new Dish(&quot;chicken&quot;, false, 400, Dish.Type.MEAT));
+        this.add(new Dish(&quot;french fries&quot;, true, 530, Dish.Type.OTHER));
+        this.add(new Dish(&quot;rice&quot;, true, 350, Dish.Type.OTHER));
+        this.add(new Dish(&quot;season fruit&quot;, true, 120, Dish.Type.OTHER));
+        this.add(new Dish(&quot;pizza&quot;, true, 550, Dish.Type.OTHER));
+        this.add(new Dish(&quot;prawns&quot;, false, 300, Dish.Type.FISH));
+        this.add(new Dish(&quot;salmon&quot;, false, 450, Dish.Type.FISH));
+    }};
+}
+
+@Test
+void removeIf() {
+    Assertions.assertThat(menu.size()).isEqualTo(9);
+
+    menu.removeIf(Dish::vegetarian);
+    Assertions.assertThat(menu.size()).isEqualTo(5);
+}
+
+@Test
+void replaceAll() {
+    List&lt;Dish&gt; before = menu.stream().filter(dish -&gt; dish.calories() &lt;= 490).toList();
+    Assertions.assertThat(before.size()).isEqualTo(5);
+
+    menu.replaceAll(dish -&gt; {
+        if (dish.calories() &gt; 500) {
+            return new Dish(dish.name(), dish.vegetarian(), 490, dish.type());
+        }
+        return dish;
+    });
+
+    List&lt;Dish&gt; after = menu.stream().filter(dish -&gt; dish.calories() &lt;= 490).toList();
+    Assertions.assertThat(after.size()).isEqualTo(9);
+}</code>
+        </deckgo-highlight-code>
 <h3>코틀린에서 Iterable과 Iterator를 구현해보기</h3>
 <ol>
 <li><code class="language-text">Iterable</code>과 <code class="language-text">Iterator</code>를 구현했을 때</li>
