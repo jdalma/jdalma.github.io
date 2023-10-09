@@ -196,9 +196,9 @@ tags:
 그리고 [이론적인 내용도 정리](https://github.com/jdalma/footprints/tree/main/%EC%BD%94%ED%8B%80%EB%A6%B0)해보았다.  
   
 이 책을 읽을 때 처음에는 `"입문서인가?"` 했는데 뒤로 갈수록 매운 맛이 난다. (저자 피셜 입문서는 아니라고 한다.)  
-코틀린의 Sequence와 Stream, Coroutine에 대해 설명하진 않지만 **제네릭스**와 **컬렉션 함수** 에 대한 내용이 자세하여 읽을 이유는 충분하다.  
-그리고 [연습문제](https://github.com/jdalma/kotlin-playground/blob/main/%EC%BD%94%ED%95%B5%ED%94%84_%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)도 제공한다. (해설은 없다.)  
-이 [영상](https://www.youtube.com/watch?v=J2wTJPybBfA&ab_channel=%EC%BD%94%EB%93%9C%EC%8A%A4%ED%94%BC%EC%B8%A0)도 참고하면 좋을 듯 하다.  
+코틀린 인 액션에서는 짧은 설명으로 넘어가는 주제들 중 이 책에서는 자세하게 설명하는 내용도 있어서 코틀린 인 액션과 같이 읽는 것도 좋지 않을까 싶다.  
+그리고 코틀린의 Sequence와 Stream, Coroutine에 대해 설명하진 않지만 **제네릭스**와 **컬렉션 함수** 에 대한 내용이 자세하여 읽을 이유는 충분하다.  
+해설은 없지만 [연습문제](https://github.com/jdalma/kotlin-playground/blob/main/%EC%BD%94%ED%95%B5%ED%94%84_%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)도 제공한다.  
 
 ***
 
