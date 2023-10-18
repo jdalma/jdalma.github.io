@@ -23,6 +23,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     {
+        resolve: `gatsby-plugin-gtag`,
+        options: {
+            trackingId: `G-G0S23DCS1G`,
+            head: true,
+        },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
