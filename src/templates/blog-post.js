@@ -6,6 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import TableOfContents from "../components/toc"
+import Utterances from "../components/utterances"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -73,8 +74,8 @@ const BlogPostTemplate = ({
                 </li>
               </ul>
             </nav>
+            <Utterances repo='jdalma/jdalma.github.io' theme='github-light'/>
       </Layout>
-      
   )
 }
 
