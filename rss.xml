@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Nov 2023 12:57:43 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Nov 2023 14:31:55 GMT</lastBuildDate><item><title><![CDATA[NEXTSTEP 클린코드 with Kotlin 후기]]></title><description><![CDATA[TDD, 클린 코드 with Kotlin…]]></description><link>https://jdalma.github.io/2023y/kotlinCleanCode/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/kotlinCleanCode/</guid><pubDate>Sun, 10 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;tdd-클린-코드-with-kotlin&quot; style=&quot;position:relative;&quot;&gt;TDD, 클린 코드 with Kotlin&lt;a href=&quot;#tdd-%ED%81%B4%EB%A6%B0-%EC%BD%94%EB%93%9C-with-kotlin&quot; aria-label=&quot;tdd 클린 코드 with kotlin permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;객체지향 프로그래밍 언어를 사용하여 모든 코드를 클래스에 넣기만 하면 그것이 바로 객체지향 프로그래밍이라고 생각하지만 절차지향 프로그래밍 스타일로 작성한 경우가 대부분일 것이다.&quot;&lt;br&gt;
+디자인 패턴의 아름다움에서&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Controller,Service, 영속성 계층을 제외하고 도메인 클래스들을 최대 몇 개까지 나눠본 적이 있는지 생각해보면 Service들을 조립해서 사용하려고 하지 클래스들한테 책임을 준 적이 있었나 싶다.&lt;br&gt;
+대부분 Service를 분리하며 책임을 잘 나눴다고 스스로 합리화를 해왔던 것 같기도하다.&lt;/p&gt;
+&lt;h2 id=&quot;1주차&quot; style=&quot;position:relative;&quot;&gt;1주차&lt;a href=&quot;#1%EC%A3%BC%EC%B0%A8&quot; aria-label=&quot;1주차 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;응집도가 높고 견고한 클래스에는 적은 수의 메서드와 상대적으로 더 많은 수의 생성자가 존재한다.&lt;br&gt;
+생성자의 주된 임무는 제공된 인자를 사용해서 캡슐화된 프로퍼티를 초기화하는 것이고, 메서드의 수가 많을수록 SRP을 위반할 확률이 높지만 생성자는 많을수록 클라이언트가 유연하게 사용할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1주차는 5단계로 이루어져 있었다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1단계&lt;/strong&gt;: 환경 세팅&lt;br&gt;
+&lt;strong&gt;2단계&lt;/strong&gt;: &lt;a href=&quot;https://github.com/next-step/kotlin-racingcar/pull/1315&quot;&gt;문자열 계산기&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;3단계&lt;/strong&gt;: &lt;a href=&quot;https://github.com/next-step/kotlin-racingcar/pull/1381&quot;&gt;자동차 경주 구현&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;4단계&lt;/strong&gt;: &lt;a href=&quot;https://github.com/next-step/kotlin-racingcar/pull/1440&quot;&gt;자동차 경주 우승자 기능 추가&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;5단계&lt;/strong&gt;: &lt;a href=&quot;https://github.com/next-step/kotlin-racingcar/pull/1473&quot;&gt;자동차 경주 리팩토링&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;자동차 경주는 우테캠 프리코스에서 한 번 해본 경험도 있었고 기능 자체는 간단하지만 여전히 책임을 나누는 것이 쉽지 않았다.&lt;br&gt;
+그리고 코틀린을 코틀린스럽게 작성하는 것에 익숙하지 않다는 것을 느꼈다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;3단계&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d6e13609130319cdba415623b94b5f35/63908/racingCarInit.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlUlEQVR42oWS626cMBCFeY7d5WJzW1hYwgLhYm62AQNOyG6SX63U93+MTDZVVbVSa32y5sfMOccjK5eipNPSUU4YD5LUdf2qZQ0TlI9lVSdZUbW87lmSPmYFKfup5xNlQ9120UOiVHQcXn+0y9as8qEkvh+WVBC+tnQkTZ+TftnexHJtOk6FnLdv43pbnja53fKyVgxkm7ZvWS7Ctqah3V7b7VVNRwhZ/ikAzmF0OoWeF0APxhbGtqohA1mAoukYmUeYhLumIxsFH0WaFY7r8+VlWK/TvAB3kTQvSoiTZjm6SyiagXVka7pl2l7FFsJly0SS5Y7jz9fvVL6LRc7yOQjjmgn29D6sL8M0u15wUA1FVY0vDgd9t1P3Bx2ZjnM8uUff8wPb8W3Hw6ajGyYAUb8K3cAQWQmjOHks4JCmKSoSX5IwSoZ1mxd59ALQgngAbAG4F/gXSlW38voGKyVtf44u4TnWQf5zHzY4/N76Nwo4Cvm83V4ZG6L4AsE+5X9a4f8MJ3ndjJJ0Q9Mx+Crwwj+y/WP4A/QMblLkjM7cAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;racingCarInit&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d6e13609130319cdba415623b94b5f35/1cfc2/racingCarInit.png&quot;
+        srcset=&quot;/static/d6e13609130319cdba415623b94b5f35/3684f/racingCarInit.png 225w,
+/static/d6e13609130319cdba415623b94b5f35/fc2a6/racingCarInit.png 450w,
+/static/d6e13609130319cdba415623b94b5f35/1cfc2/racingCarInit.png 900w,
+/static/d6e13609130319cdba415623b94b5f35/21482/racingCarInit.png 1350w,
+/static/d6e13609130319cdba415623b94b5f35/d61c2/racingCarInit.png 1800w,
+/static/d6e13609130319cdba415623b94b5f35/63908/racingCarInit.png 2410w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;5단계&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/91b1079b44ceaac4371eace9d0cfa0b4/cb88c/racingCar.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 77.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEUlEQVR42pVT2ZKbMBDkNzY292VsYw4JCWTA4IP7MOvd8lv+/zMyxqlNKg+uTdWUHkT3qKen4TwcZsfL8VzaO3fJS6KkCOJ3i9s6XhRnJIpX1nYmq/9BxmQf7VPG4iCgurHiBfk1Abo/60Huh3tR9sN0G6cPeHyxFPmXZAA8C2RyK83QNUMzLE03ZUVTVQNOUVR4XlryDwRoWc5QuBFE1XZ818MooIa55pr+vemvWX7ML23Rf9bDrerGKIpRCFac2D5xEGKHfH/IaJJatlO1Y9lOzTDhgHJhlHqY+pgQdkBhQvcpYcnORTs/cANmu8i0trZPLNt1UKBbG0oZCSIUhNZmx8FuJFmD0zTX683O97HjeIZhwXigVhRlWVZ0fWWYFjgCGLBqwYuAh3E4SXkwN7ZXjvf6eq+athuvh/y0FGRFNfKyPfX3crjVbVfWzaWskkMGj2n6Cr5y0ODHQtSMdXgoWFZEcZpkR4Tp29sSQDhK0f6EaIJJ6GESUAYTfS2Mg92apgWqnm7Pt8rWwXGawQ0vSIIgzc7LXxv6E5JzMxXtte3HuhvAwOdKYHbKYlUzH5l55EH9Jx6/ydXwXveT6yEQCQW9Vd3My+5Udds57a/imZd9UdX5qQhIiANirbeKZhT1UFSd7XjQ60Xauer2M+8+yvGzv75348TidCZ878egWUWSM9hDKAtZDOl7LfVv8i/J7aL+UZ8+2QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;racingCar&quot;
+        title=&quot;&quot;
+        src=&quot;/static/91b1079b44ceaac4371eace9d0cfa0b4/1cfc2/racingCar.png&quot;
+        srcset=&quot;/static/91b1079b44ceaac4371eace9d0cfa0b4/3684f/racingCar.png 225w,
+/static/91b1079b44ceaac4371eace9d0cfa0b4/fc2a6/racingCar.png 450w,
+/static/91b1079b44ceaac4371eace9d0cfa0b4/1cfc2/racingCar.png 900w,
+/static/91b1079b44ceaac4371eace9d0cfa0b4/21482/racingCar.png 1350w,
+/static/91b1079b44ceaac4371eace9d0cfa0b4/d61c2/racingCar.png 1800w,
+/static/91b1079b44ceaac4371eace9d0cfa0b4/cb88c/racingCar.png 2728w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;(5단계 까지 기능이 추가되긴 했지만) 다이어그램을 보면 네이밍과 책임이 더 분리된 것을 확인할 수 있다.&lt;br&gt;
+이번 과제를 진행하면서 느낀점은 아래와 같다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;계층간 &quot;결과 객체&quot;인 DTO를 추가하여 결합도를 낮출 수 있었다.&lt;/li&gt;
+&lt;li&gt;비즈니스 로직과 IO 로직이 혼재해있었는데, 중간 DTO를 추가하니 책임과 역할이 더 잘 보였다.&lt;/li&gt;
+&lt;li&gt;DIP를 잘 지켜내면 작성하면 테스트가 쉽다.&lt;/li&gt;
+&lt;li&gt;랜덤 기능과 같이 테스트가 불가능한 기능은 최대한 외부로 밀어내라. 또한 추상화를 통해 가짜 객체를 통해 테스트 할 수도 있다.&lt;/li&gt;
+&lt;li&gt;백킹 필드를 고려해라.&lt;/li&gt;
+&lt;li&gt;예측하지 못하거나, 비정상적인 오류인 경우에는 예외로 처리하지만 그 외는 null로 표현할 수 있도록 해라.&lt;/li&gt;
+&lt;li&gt;&quot;You Aren&apos;t Gonna Need It&quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이제 2주차 부터 TDD를 진행하기 위해서는 &lt;strong&gt;요구 사항 분석 및 설계&lt;/strong&gt; 가 필수이다.&lt;br&gt;
+과제를 진행하면서 README에 &lt;strong&gt;구현할 기능 목록을 작성하여&lt;/strong&gt; 해당 기능들을 한 개씩 TDD로 진행해봐야겠다.&lt;br&gt;
+구현할 기능 목록을 작성하고 고민되는 지점을 시각화하는 것 자체가 이미 훈련이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
