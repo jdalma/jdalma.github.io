@@ -5,21 +5,39 @@ tags:
    - 서평
 ---
 
-# **모던 자바 인 액션** ~ing
+# **모던 자바 인 액션**
 
+- 08월 21일 1주차: 책 알아보기
+- 08월 28일 2주차: 1장 ~ 2장 - **동작 파라미터화** 
+- 09월 04일 3주차: 3장 - [**람다 표현식, 메서드 참조, 형식 검사와 추론**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/LambdaExpression.md)
+- 09월 18일 4주차: 4장 ~ 5장 - [**스트림 활용**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/Stream.md)
+- 09월 25일 5주차: 6장 ~ 7장 - [**스트림으로 데이터 수집**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/Stream%EC%9C%BC%EB%A1%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%88%98%EC%A7%91.md), [**Collector**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/Collector.md), [**Spliterator**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/ForkJoin%20Framework.md#spliterator-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4)
+- 10월 02일 6주차: 8장 ~ 9장 - [**컬렉션 API 개선**](https://github.com/jdalma/kotlin-playground/blob/main/src/test/java/Collection.java), **람다를 활용한 디자인 패턴**
+- 10월 09일 7주차: 10장 ~ 12장 - **자바 DSL**, [**Optional**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/Optional.md), [**새로운 날짜와 시간 API**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/%EC%83%88%EB%A1%9C%EC%9A%B4%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%8B%9C%EA%B0%84%20API.md)
+- 10월 16일 8주차: 13장 ~ 14장 - [**디폴트 메서드**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/DefaultMethod.md), [**자바 모듈 시스템**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/ModuleSystem.md)
+- 10월 23일 9주차: 15장 ~ 16장 - [**Future와 CompletableFuture**](https://github.com/jdalma/footprints/blob/main/%EC%9E%90%EB%B0%94/CompletableFuture.md), [**CompletableFuture 예제**](https://github.com/jdalma/kotlin-playground/blob/main/src/test/java/reactive/shop/AsyncShop.java)
+- 10월 30일 10주차: 17장 - [**Flow 예제**](https://github.com/jdalma/kotlin-playground/tree/main/src/test/java/reactive/temperature)
+- 11월 06일 11주차: 18장 ~ 19장 - **함수형 프로그래밍, 영속 자료구조, 패턴 매칭 등**
+- 11월 13일 12주차: 20장 ~ 21장 - **자바와 스칼라 비교**
 
+2년전에 이 책으로 스터디를 진행하다가 도중에 탈주하였다가 이번에 다시 읽게 되었다.  
+  
+위의 학습 내용을 적어놓은 것처럼 자바에 대해 굉장히 심도 깊은 내용들을 설명한다.  
+Stream과 Optional에 대해 익숙하겠지만 **Collector** 와 **Spliterator** , **CompletableFuture** 그리고 **Flow API** 와 같이 관심 가지지 않으면 알 수 없는 것들을 이 책은 예제와 함께 설명한다.  
+  
+그리고 부록의 내용도 굉장히 좋다.  
+**한 스트림에서 여러 결과를 얻는 방법** 과 **익명 함수 대신 람다를 써야하는 이유** 를 설명한다.  
+- 부록 C : [스트림에 여러 연산 병렬로 실행하기 (정리하기!)]()
+- 부록 D : 람다와 JVM 바이트코드
+  
+2년동안 앞부분 조금만 읽고 책의 내용을 다 아는것 마냥 `"스트림에 대해 설명하는 책이겠지"` 라고 대충 생각하며 펼쳐보지 않았었는데, 왜 이제야 읽기 시작했는지 후회할 정도로 좋은 책이였다.  
+개인적으로는 토비의 스프링 다음으로 좋은 책이라고 생각한다.  
+  
+자바 개발자라면 꼭 읽으라고 강력 추천하고 싶다.  
 
 ***
 
-# **코틀린 함수형 프로그래밍** ~ing
-
-> 함수형 프로그래밍은 불변성, 함수의 순수성, 함수 조합을 올바르고 예측 가능한 프로그램을 구축하는 수단으로 사용한다.  
-> 이 책은 함수 합성과 대수적 설계라는 기본 개념을 자세히 설명하고, 그 후 함수형 패턴과 데이터 타입을 밑바닥부터 어떻게 구현하는지 보여주는 연습문제와 예제를 통해 함수형 프로그래밍을 연습하고 배우도록 도와준다.  
-> 오류 쳐리와 같은 일반적인 시나리오에서 시작해 스트리밍 같은 더 복잡한 경우에 이르도록, 이 책은 함수형 프로그래머의 배움을 보완해주고 핵심 함수형 추상화와 패턴을 배우기 위한 근본적인 접근 방식을 제공한다.
-
-***
-
-# **코틀린 핵심 프로그래밍** ~ing
+# **코틀린 핵심 프로그래밍**
 
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhika00%2Fposts%2Fpfbid036LeauGbWWn1uW14Qtpengk6tjQDCiYijFMJj2iSZ7tSG5Ls1PzofQ281gcU7BvDLl&show_text=true&width=500" width="500" height="110" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
