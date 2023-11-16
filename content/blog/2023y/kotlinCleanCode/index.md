@@ -1,5 +1,5 @@
 ---
-title: NEXTSTEP 클린코드 with Kotlin 후기
+title: NEXTSTEP 클린코드 with Kotlin 후기 (작성 중)
 date: "2023-12-10"
 tags:
    - oop
@@ -12,9 +12,6 @@ tags:
 
 > "객체지향 프로그래밍 언어를 사용하여 모든 코드를 Service 클래스에 몰아 넣고 객체지향 프로그래밍이라고 생각하지만 절차지향 프로그래밍 스타일로 작성한 경우가 대부분일 것이다."  
 > 디자인 패턴의 아름다움에서
-
-Controller, Service, 영속성 계층을 제외하고 도메인 클래스들 분리해서 책임을 준 적이 없는 것 같다.  
-괴물 Service들을 주입받아서 사용하거나 Facade를 사용하는 정도 밖에 안되었던 것 같다.  
 
 
 ## 1주차
@@ -50,7 +47,19 @@ Controller, Service, 영속성 계층을 제외하고 도메인 클래스들 분
 5. 백킹 필드를 고려해라.
 6. 예측하지 못하거나, 비정상적인 오류인 경우에는 예외로 처리하지만 그 외는 null로 표현할 수 있도록 해라.
 7. "You Aren't Gonna Need It"
-  
+8. data class는 equals와 hashCode, copy가 필요하다면 사용하는 것이다. 기능이 있다고 이상하게 생각하지마라
+
 이제 2주차 부터 TDD를 진행하기 위해서는 **요구 사항 분석 및 설계** 가 필수이다.  
 과제를 진행하면서 README에 **구현할 기능 목록을 작성하여** 해당 기능들을 한 개씩 TDD로 진행해봐야겠다.  
 구현할 기능 목록을 작성하고 고민되는 지점을 시각화하는 것 자체가 이미 훈련이다.  
+
+## 2주차
+
+10. JvmInline과 value class
+12. 리스코프 치환 원칙을 위반한 예제
+13. 상속이 문제가 아니라 상속을 잘 활용하는 것이 문제다.
+14. 코틀린에서 Int와 Integer를 처리하는 방법과 Int의 캐싱 범위 예제
+15. 백킹 프로퍼티를 활용한 방어적 복사
+16. [좋은 객체의 7가지 덕목](https://codingnuri.com/seven-virtues-of-good-object/)
+17. [우아한객체지향 by 우아한형제들 개발실장 조영호](https://www.youtube.com/watch?v=dJ5C4qRqAgA&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC)
+18. [Spring Batch를 더 우아하게 사용하기 - Spring Batch Plus](https://d2.naver.com/helloworld/9879422)
