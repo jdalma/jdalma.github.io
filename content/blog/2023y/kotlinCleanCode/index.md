@@ -198,12 +198,23 @@ value class LottoNumber private constructor(
 4. 상속이 문제가 아니라 **상속을 잘 활용하는 것이 문제** 다.
 5. 코틀린에서 Int와 Integer를 처리하는 방법과 Int의 캐싱 범위
 6. 백킹 프로퍼티를 활용한 방어적 복사
-7. [우아한객체지향 by 조영호](https://www.youtube.com/watch?v=dJ5C4qRqAgA&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC)
-8. [Spring Batch를 더 우아하게 사용하기 - Spring Batch Plus](https://d2.naver.com/helloworld/9879422)
-9. [type safe builders](https://kotlinlang.org/docs/type-safe-builders.html)
+7. `List(size: Int, init: (index: Int) -> T)` 같은 가짜 생성자나 생성자를 여러 개 선언하는 것은 클래스를 유연하게 사용할 수 있도록 도와준다.
+8. `by` 키워드를 통해 다른 클래스의 기능을 편리하게 위임할 수 있는 장점이 있지만 모든 기능이 열리는 단점도 있다.
+9. [우아한객체지향 by 조영호](https://www.youtube.com/watch?v=dJ5C4qRqAgA&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC)
+10. [Spring Batch를 더 우아하게 사용하기 - Spring Batch Plus](https://d2.naver.com/helloworld/9879422)
+11. [type safe builders](https://kotlinlang.org/docs/type-safe-builders.html)
 
+## 블랙잭
 
-### 좋은 객체의 7가지 덕목
+1. 수신 객체 지정 람다를 이용한 Kotlin DSL
+2. Builder들의 책임과 비즈니스 로직에서 사용할 값 객체의 책임
+   1. 마지막 주차 1단계 예제에서 PersonBuilder 내부 필드를 한 번에 초기화 하는 것이였는데 Skill과 Language 빌더들이 너무 더럽다고 느꼈지만 제이슨님은 PersonBuilder 자체가 더러움을 책임지는 객체라고 생각하셨다.
+   2. 비즈니스 로직에서 관심가지는 것은 값 객체에 대한 정보이기 때문에 각 data class들이 불변 필드들을 가지고 있는것에 만족하셨다.
+1. 모든 플레이어들이 카드를 요청하여 받는 부분에서 `출력 → 입력 → 카드 배분 → 출력` 흐름을 따르는 부분이 입출력 로직과 비즈니스 로직을 문맥에 맞게 넘나들도록 해야하기 때문에 힘들었다.
+   1. 딜러가 추가되면서 카드 배분 받는 로직은 달라지지만 출력되는 부분은 같은 게임 플레이어로 인식해야하는 점
+   2. 핵심은 딜러가 추가되면서 기존 플레이어와 중복되는 코드를 어떻게 제거할 것인가? abstract class? interface? sealed class? sealed interface? 이 방법들의 차이는 무엇이고 어떤 기준으로 사용하는가?
+
+# 좋은 객체의 7가지 덕목
 
 > 이따금 클래스를 “객체 템플릿”으로 부르는 것(예를 들면 위키피디아에서 그렇게 하고 있다)을 듣곤 한다.  
 > 이 같은 정의는 정확하지 않은데, 이 정의에 따르면 클래스는 수동적인 위치에 있기 때문이다.  
@@ -239,10 +250,3 @@ value class LottoNumber private constructor(
    - 상속받아 기능을 추가하려 하지말고 데코레이터 패턴을 통해 해당 객체를 주입받아 위임할 생각을 해라
    - 다른 작업자에게 템플릿처럼 확장하기 쉬운 포인트를 제공하고 싶거나 내가 개발한 부분을 오염시키지 않길 원한다면 `abstract`를 적절히 사용하라
    - 추상 클래스로 템플릿 메서드 패턴을 적용하여 구현할 수 있는 지점을 제한해라
-
-## 블랙잭
-
-1. 수신 객체 지정 람다를 이용한 Kotlin DSL
-11. Builder들의 책임과 비즈니스 로직에서 사용할 값 객체의 책임
-   1. 마지막 주차 1단계 예제에서 PersonBuilder 내부 필드를 한 번에 초기화 하는 것이였는데 Skill과 Language 빌더들이 너무 더럽다고 느꼈지만 제이슨님은 PersonBuilder 자체가 더러움을 책임지는 객체라고 생각하셨다.
-   2. 비즈니스 로직에서 관심가지는 것은 값 객체에 대한 정보이기 때문에 각 data class들이 불변 필드들을 가지고 있는것에 만족하셨다.
