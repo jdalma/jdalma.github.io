@@ -75,6 +75,7 @@
 <li><a href="#%EC%9E%90%EB%8F%99%EC%B0%A8-%EA%B2%BD%EC%A3%BC">자동차 경주</a></li>
 <li><a href="#%EB%A1%9C%EB%98%90">로또</a></li>
 <li><a href="#%EB%B8%94%EB%9E%99%EC%9E%AD">블랙잭</a></li>
+<li><a href="#%EC%A7%80%EB%A2%B0%EC%B0%BE%EA%B8%B0">지뢰찾기</a></li>
 </ul>
 </li>
 <li>
@@ -411,6 +412,24 @@ value class LottoNumber private constructor(
 </ol>
 </li>
 </ol>
+<h2 id="지뢰찾기" style="position:relative;">지뢰찾기<a href="#%EC%A7%80%EB%A2%B0%EC%B0%BE%EA%B8%B0" aria-label="지뢰찾기 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<ul>
+<li>게임판을 렌더링할 때 초기에는 기본 셀은 <code class="language-text">C</code>, 지뢰는 <code class="language-text">*</code>로 표현했다. 그 다음 요구사항은 지뢰 주변을 1씩 증가시키는 것이였기 때문에 2차원 배열의 타입이 <code class="language-text">Char</code> → <code class="language-text">Int</code>로 변경되어야 했다.</li>
+</ul>
+<deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">class MinesweeperBoard(
+    private val gameBoard: GameBoard&lt;Int&gt;,
+    private val mines: Mines
+) {
+    fun calculateAdjacentMineCounts() = mines.increaseNearCellNumbers(gameBoard)
+}
+</code>
+        </deckgo-highlight-code>
+<ul>
+<li>하지만 이렇게 되면 <code class="language-text">Mines</code> 내부에서 지뢰 주변의 셀을 1씩 증가시키기 때문에 <code class="language-text">Mines</code>가 <code class="language-text">GameBoard</code>의 구현체 타입에 대해 자세하게 알아야 하는 문제가 있다.</li>
+<li><code class="language-text">Mines</code>는 <code class="language-text">Position</code>의 집합일 뿐이고 지뢰 주변을 표시하는 책임은 <code class="language-text">GameBoard</code>에게 있다고 판단했다.</li>
+<li>그리고 특정 셀 주변 8방향을 계산해주는 책임은 <code class="language-text">BoardDimensions</code>에서 <code class="language-text">Position</code>으로 옮겼다. 잘 옮긴듯</li>
+</ul>
 <h1 id="좋은-객체의-7가지-덕목" style="position:relative;">좋은 객체의 7가지 덕목<a href="#%EC%A2%8B%EC%9D%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-7%EA%B0%80%EC%A7%80-%EB%8D%95%EB%AA%A9" aria-label="좋은 객체의 7가지 덕목 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <blockquote>
 <p>이따금 클래스를 “객체 템플릿”으로 부르는 것(예를 들면 위키피디아에서 그렇게 하고 있다)을 듣곤 한다.<br>
