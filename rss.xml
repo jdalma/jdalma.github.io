@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Dec 2023 15:42:04 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[코틀린 코루틴 ~ing 엘라스틱서치 바이블 ~ing 네티 인 액션 예정 자바 네트워크 프로그래밍 예정 오브젝트 예정 이펙티브 코틀린 예정 이펙티브 자바 예정 Real My SQL 1권 예정 Real My SQL…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;코틀린-코루틴-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코틀린 코루틴&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4-ing&quot; aria-label=&quot;코틀린 코루틴 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Dec 2023 13:52:33 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[코틀린 코루틴 ~ing 엘라스틱서치 바이블 ~ing 네티 인 액션 예정 자바 네트워크 프로그래밍 예정 오브젝트 예정 이펙티브 코틀린 예정 이펙티브 자바 예정 Real My SQL 1권 예정 Real My SQL…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;코틀린-코루틴-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코틀린 코루틴&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4-ing&quot; aria-label=&quot;코틀린 코루틴 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;엘라스틱서치-바이블-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94-ing&quot; aria-label=&quot;엘라스틱서치 바이블 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;네티-인-액션-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;네티 인 액션&lt;/strong&gt; 예정&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%98%88%EC%A0%95&quot; aria-label=&quot;네티 인 액션 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;자바-네트워크-프로그래밍-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%98%88%EC%A0%95&quot; aria-label=&quot;자바 네트워크 프로그래밍 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -11,7 +11,15 @@
 &lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘레강트-오브젝트&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘레강트 오브젝트&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%A0%88%EA%B0%95%ED%8A%B8-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot; aria-label=&quot;엘레강트 오브젝트 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;넥스트 스텝의 클린코드를 진행하면서 해당 책의 내용이 많이 인용되기에 윤석님에게 빌려 읽어봤다. (절판이라서 구매할 수 없음)&lt;br&gt;
 절차지향적으로 컴퓨터를 위해 코드를 작성하는 것을 멀리하고 &lt;strong&gt;유지보수성&lt;/strong&gt; 을 위해 지켜야 할 규칙들을 설명한다.&lt;/p&gt;
-&lt;p&gt;공감하는것은 체크로 표시해보았다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이따금 클래스를 “객체 템플릿”으로 부르는 것(예를 들면 위키피디아에서 그렇게 하고 있다)을 듣곤 한다.&lt;br&gt;
+이 같은 정의는 정확하지 않은데, 이 정의에 따르면 클래스는 수동적인 위치에 있기 때문이다.&lt;br&gt;
+이 정의는 누군가가 템플릿을 가지고 그것을 사용해 객체를 만들어낸다고 가정한다. 그럴 수도 있지만 엄밀히 말하자면 개념적으로 틀린 말이다.&lt;br&gt;
+생성된 객체는 스스로 동작한다. 자신을 누가 만들었고 클래스에 형제 자매가 얼마나 더 있는지 알아서는 안 된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;클래스와 객체를 이야기할 때 &quot;붕어빵&quot;과 &quot;붕어빵을 찍어낼 수 있는 틀&quot; 정도로 설명하는데, 객체지향 프로그래밍에서 클래스와 객체는 더 많은 의미가 담겨있는 것 같다.&lt;br&gt;
+&lt;a href=&quot;https://codingnuri.com/seven-virtues-of-good-object/&quot;&gt;이 글&lt;/a&gt;에서 설명하는 객체는 현실 세계의 객체를 대표해야 한다고 한다.&lt;br&gt;
+공감하는것은 체크로 표시해보았다.&lt;/p&gt;
 &lt;ol class=&quot;contains-task-list&quot;&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; &lt;strong&gt;-er로 끝나는 이름을 사용하지 마라&lt;/strong&gt;
 &lt;ul&gt;
@@ -66,7 +74,6 @@
 &lt;li&gt;&lt;strong&gt;식별자 가변성&lt;/strong&gt; 문제가 없고 &lt;strong&gt;실패 원자성&lt;/strong&gt; 이 지켜지며, &lt;strong&gt;시간적 결합&lt;/strong&gt; 을 제거할 수 있다.&lt;/li&gt;
 &lt;li&gt;그리고 &lt;strong&gt;사이드 이펙트&lt;/strong&gt; 가 존재할 수 없게 되며, &lt;strong&gt;스레드에 안전&lt;/strong&gt; 하다.&lt;/li&gt;
 &lt;li&gt;상수 객체와 불변 객체를 혼용해서 표현하곤 하는데, 상수 객체는 불변 객체의 특별한 경우일 뿐이다.&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; &lt;strong&gt;모의 객체 대신 페이크 객체를 사용해라&lt;/strong&gt;
@@ -1323,7 +1330,7 @@ value class LottoNumber private constructor(
 &lt;li&gt;리스코프 치환 원칙을 위반한 예제&lt;/li&gt;
 &lt;li&gt;상속이 문제가 아니라 &lt;strong&gt;상속을 잘 활용하는 것이 문제&lt;/strong&gt; 다.&lt;/li&gt;
 &lt;li&gt;코틀린에서 Int와 Integer를 처리하는 방법과 Int의 캐싱 범위&lt;/li&gt;
-&lt;li&gt;백킹 프로퍼티를 활용한 방어적 복사&lt;/li&gt;
+&lt;li&gt;백킹 프로퍼티를 활용하여 객체 내부에서는 Mutable하게 외부로는 Immutable하게 사용하고, 방어적 복사를 적용할 수 있다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;List(size: Int, init: (index: Int) -&gt; T)&lt;/code&gt; 같은 가짜 생성자나 생성자를 여러 개 선언하는 것은 클래스를 유연하게 사용할 수 있도록 도와준다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;by&lt;/code&gt; 키워드를 통해 다른 클래스의 기능을 편리하게 위임할 수 있는 장점이 있지만 모든 기능이 열리는 단점도 있다.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=dJ5C4qRqAgA&amp;#x26;ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC&quot;&gt;우아한객체지향 by 조영호&lt;/a&gt;&lt;/li&gt;
@@ -1345,10 +1352,22 @@ value class LottoNumber private constructor(
 &lt;li&gt;핵심은 딜러가 추가되면서 기존 플레이어와 중복되는 코드를 어떻게 제거할 것인가? abstract class? interface? sealed class? sealed interface? 이 방법들의 차이는 무엇이고 어떤 기준으로 사용하는가?&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
+&lt;li&gt;게임 내 규칙을 객체로 추상화하는법
+&lt;ol&gt;
+&lt;li&gt;힛(Hit): 처음 2장의 상태에서 카드를 더 뽑는 것&lt;/li&gt;
+&lt;li&gt;스테이(Stay): 카드를 더 뽑지 않고 차례를 마치는 것&lt;/li&gt;
+&lt;li&gt;블랙잭(Blackjack): 처음 두 장의 카드 합이 21인 경우, 베팅 금액의 1.5배&lt;/li&gt;
+&lt;li&gt;버스트(Bust): 카드 총합이 21을 넘는 경우. 배당금을 잃는다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;지뢰찾기&quot; style=&quot;position:relative;&quot;&gt;지뢰찾기&lt;a href=&quot;#%EC%A7%80%EB%A2%B0%EC%B0%BE%EA%B8%B0&quot; aria-label=&quot;지뢰찾기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;게임판을 렌더링할 때 초기에는 기본 셀은 &lt;code class=&quot;language-text&quot;&gt;C&lt;/code&gt;, 지뢰는 &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;로 표현했다. 그 다음 요구사항은 지뢰 주변을 1씩 증가시키는 것이였기 때문에 2차원 배열의 타입이 &lt;code class=&quot;language-text&quot;&gt;Char&lt;/code&gt; → &lt;code class=&quot;language-text&quot;&gt;Int&lt;/code&gt;로 변경되어야 했다.&lt;/li&gt;
+&lt;li&gt;GameBoardRenderer는 GameBoard를 생성하는 책임을 가지고 있게하여 렌더링 전략 인터페이스는 필요없어짐을 느꼈다&lt;/li&gt;
+&lt;li&gt;하지만 MinesweeperBoardRenderer를 추가하면서 Renderer를 추상화해야할까 고민했다. 그냥 콘크리트 클래스를 상속받을까? 아니면 인터페이스를 추가해서 수평적인 확장을 하도록할까?&lt;/li&gt;
+&lt;li&gt;MinesweeperBoard는 기본 게임판과 다른 렌더링 과정을 거쳐야해서 필요한 정보들을 상태로 갸지고 있게 하도록 하기 위해 인터페이스를 선택함&lt;/li&gt;
+&lt;li&gt;콘크리트 클래스로 사용했&lt;/li&gt;
+&lt;li&gt;클래스를 정의할 때 필요한 정보를 상태로 가지게할지 인자로 넘겨 사용할지 고민되었다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class MinesweeperBoard(
@@ -1356,69 +1375,13 @@ value class LottoNumber private constructor(
     private val mines: Mines
 ) {
     fun calculateAdjacentMineCounts() = mines.increaseNearCellNumbers(gameBoard)
-}
-&lt;/code&gt;
+}&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;ul&gt;
 &lt;li&gt;하지만 이렇게 되면 &lt;code class=&quot;language-text&quot;&gt;Mines&lt;/code&gt; 내부에서 지뢰 주변의 셀을 1씩 증가시키기 때문에 &lt;code class=&quot;language-text&quot;&gt;Mines&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;GameBoard&lt;/code&gt;의 구현체 타입에 대해 자세하게 알아야 하는 문제가 있다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Mines&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Position&lt;/code&gt;의 집합일 뿐이고 지뢰 주변을 표시하는 책임은 &lt;code class=&quot;language-text&quot;&gt;GameBoard&lt;/code&gt;에게 있다고 판단했다.&lt;/li&gt;
 &lt;li&gt;그리고 특정 셀 주변 8방향을 계산해주는 책임은 &lt;code class=&quot;language-text&quot;&gt;BoardDimensions&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;Position&lt;/code&gt;으로 옮겼다. 잘 옮긴듯&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;좋은-객체의-7가지-덕목&quot; style=&quot;position:relative;&quot;&gt;좋은 객체의 7가지 덕목&lt;a href=&quot;#%EC%A2%8B%EC%9D%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-7%EA%B0%80%EC%A7%80-%EB%8D%95%EB%AA%A9&quot; aria-label=&quot;좋은 객체의 7가지 덕목 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;이따금 클래스를 “객체 템플릿”으로 부르는 것(예를 들면 위키피디아에서 그렇게 하고 있다)을 듣곤 한다.&lt;br&gt;
-이 같은 정의는 정확하지 않은데, 이 정의에 따르면 클래스는 수동적인 위치에 있기 때문이다.&lt;br&gt;
-이 정의는 누군가가 템플릿을 가지고 그것을 사용해 객체를 만들어낸다고 가정한다. 그럴 수도 있지만 엄밀히 말하자면 개념적으로 틀린 말이다.
-한번 생성된 객체는 스스로 동작한다. 자신을 누가 만들었고 클래스에 형제 자매가 얼마나 더 있는지 알아서는 안 된다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;클래스와 객체를 이야기할 때 &quot;붕어빵&quot;과 &quot;붕어빵을 찍어낼 수 있는 틀&quot; 정도로 설명하는데, 객체지향 프로그래밍에서 클래스와 객체는 더 많은 의미가 담겨있는 것 같다.&lt;br&gt;
-&lt;a href=&quot;https://codingnuri.com/seven-virtues-of-good-object/&quot;&gt;이 글&lt;/a&gt;에서 설명하는 객체는 현실 세계의 객체를 대표해야 한다고 한다.&lt;br&gt;
-개인적으로 소프트웨어의 객체가 현실 세계의 객체를 모두 대표할 수 없다라고 생각한다. 그렇다고 해서 이 연관지으려는 노력이 쓸모 없다는 것은 아니고 노력은 해야하지만 유연하게 생각해야 하지 않을까 생각한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;객체는 &lt;strong&gt;주체적&lt;/strong&gt; 이어야 한다.&lt;/li&gt;
-&lt;li&gt;객체 내에 존재하는 기능들은 모두 &lt;strong&gt;계약&lt;/strong&gt; 에 따라 동작해야 한다.
-&lt;ul&gt;
-&lt;li&gt;여기서 말하는 계약은 인터페이스나 추상 클래스에 선언된 기능들을 구현하는 것이다.&lt;/li&gt;
-&lt;li&gt;계약되지 않은 기능을 구현한다면 단위 테스트에서 모킹하는 것이 불가능하고, 데코레이션을 통해 확장하는 것이 불가능하기 때문이다.&lt;/li&gt;
-&lt;li&gt;하지만 모든 기능을 명시하기에는 더 번잡해질 수 있다. 이런 계약을 명시하는 것의 이점은 기능 목록을 통해 객체의 행위를 유추할 수 있다는 점이다.&lt;/li&gt;
-&lt;li&gt;이 이점을 명심하고 팀 내의 기준이 필요하다. 기능 목록을 모두 선언해놓아도 구현체가 괴물이 된다면 아무 의미 없다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;좋은 객체는 언제나 고유하기 위해 무언가를 &lt;strong&gt;캡슐화&lt;/strong&gt; 해야 한다.
-&lt;ul&gt;
-&lt;li&gt;하지만 정적 메서드만 담긴 유틸리티 클래스는 클래스의 이점을 아무것도 갖고 있지 않으며 클래스라고 부를 수 조차 없다.&lt;/li&gt;
-&lt;li&gt;유틸리티 클래스는 단순히 객체 패러다임을 엉터리로 남용하는 것에 불과하다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;객체는 &lt;strong&gt;객체의 전 생명주기에 걸쳐 상태가 변하지 않은 채&lt;/strong&gt; 로 머물러야 한다.
-&lt;ul&gt;
-&lt;li&gt;불변성이 모든 메서드가 언제나 동일한 값을 반환한다는 것을 의미하지는 않는다.&lt;/li&gt;
-&lt;li&gt;하지만 자신의 내부 상태는 절대 변경하지 않는다.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.yegor256.com/2015/12/08/temporal-coupling-between-method-calls.html&quot;&gt;Temporal Coupling Between Method Calls&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.yegor256.com/2014/05/13/why-null-is-bad.html&quot;&gt;Why NULL is Bad?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.yegor256.com/2014/11/07/how-immutability-helps.html&quot;&gt;How Immutability Helps&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html&quot;&gt;Objects Should Be Immutable&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;클래스에 정적 멤버가 존재하는 경우에는 객체지향 패러다임에 완전히 반한다.
-&lt;ul&gt;
-&lt;li&gt;OOP의 위력은 복잡한 문제를 여러 부분으로 분해하여 각 책임을 객체에 할당하여 특정 과업을 수행하도록 하는 것인데, 정적 멤버는 다른 클래스와의 상호작용을 고립시킬 수 없기 때문이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;이름은 그것이 무엇인지를 말해야 하고, 무슨 일을 하는지 말해서는 안된다. 일반적으로 &lt;code class=&quot;language-text&quot;&gt;-er&lt;/code&gt;로 끝나는 이름은 피하라
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.yegor256.com/2015/03/09/objects-end-with-er.html&quot;&gt;Don&apos;t Create Objects That End With -ER&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;좋은 객체는 &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt; 이나 &lt;code class=&quot;language-text&quot;&gt;abstract&lt;/code&gt; 클래스에서 온다.
-&lt;ul&gt;
-&lt;li&gt;누군가가 내가 작성한 클래스를 상속받아 리스코프 치환 원칙을 위반하는 경우를 막기위해 &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;을 적절히 사용하라&lt;/li&gt;
-&lt;li&gt;상속받아 기능을 추가하려 하지말고 데코레이터 패턴을 통해 해당 객체를 주입받아 위임할 생각을 해라&lt;/li&gt;
-&lt;li&gt;다른 작업자에게 템플릿처럼 확장하기 쉬운 포인트를 제공하고 싶거나 내가 개발한 부분을 오염시키지 않길 원한다면 &lt;code class=&quot;language-text&quot;&gt;abstract&lt;/code&gt;를 적절히 사용하라&lt;/li&gt;
-&lt;li&gt;추상 클래스로 템플릿 메서드 패턴을 적용하여 구현할 수 있는 지점을 제한해라&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;

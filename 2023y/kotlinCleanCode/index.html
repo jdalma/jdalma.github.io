@@ -78,9 +78,6 @@
 <li><a href="#%EC%A7%80%EB%A2%B0%EC%B0%BE%EA%B8%B0">지뢰찾기</a></li>
 </ul>
 </li>
-<li>
-<p><a href="#%EC%A2%8B%EC%9D%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-7%EA%B0%80%EC%A7%80-%EB%8D%95%EB%AA%A9">좋은 객체의 7가지 덕목</a></p>
-</li>
 </ul></div></div></div></div></div><section itemProp="articleBody"><h1 id="tdd-클린-코드-with-kotlin" style="position:relative;">TDD, 클린 코드 with Kotlin<a href="#tdd-%ED%81%B4%EB%A6%B0-%EC%BD%94%EB%93%9C-with-kotlin" aria-label="tdd 클린 코드 with kotlin permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <blockquote>
 <p>"객체지향 프로그래밍 언어를 사용하여 모든 코드를 Service 클래스에 몰아 넣고 객체지향 프로그래밍이라고 생각하지만 절차지향 프로그래밍 스타일로 작성한 경우가 대부분일 것이다."<br>
@@ -389,7 +386,7 @@ value class LottoNumber private constructor(
 <li>리스코프 치환 원칙을 위반한 예제</li>
 <li>상속이 문제가 아니라 <strong>상속을 잘 활용하는 것이 문제</strong> 다.</li>
 <li>코틀린에서 Int와 Integer를 처리하는 방법과 Int의 캐싱 범위</li>
-<li>백킹 프로퍼티를 활용한 방어적 복사</li>
+<li>백킹 프로퍼티를 활용하여 객체 내부에서는 Mutable하게 외부로는 Immutable하게 사용하고, 방어적 복사를 적용할 수 있다.</li>
 <li><code class="language-text">List(size: Int, init: (index: Int) -> T)</code> 같은 가짜 생성자나 생성자를 여러 개 선언하는 것은 클래스를 유연하게 사용할 수 있도록 도와준다.</li>
 <li><code class="language-text">by</code> 키워드를 통해 다른 클래스의 기능을 편리하게 위임할 수 있는 장점이 있지만 모든 기능이 열리는 단점도 있다.</li>
 <li><a href="https://www.youtube.com/watch?v=dJ5C4qRqAgA&#x26;ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC">우아한객체지향 by 조영호</a></li>
@@ -411,10 +408,22 @@ value class LottoNumber private constructor(
 <li>핵심은 딜러가 추가되면서 기존 플레이어와 중복되는 코드를 어떻게 제거할 것인가? abstract class? interface? sealed class? sealed interface? 이 방법들의 차이는 무엇이고 어떤 기준으로 사용하는가?</li>
 </ol>
 </li>
+<li>게임 내 규칙을 객체로 추상화하는법
+<ol>
+<li>힛(Hit): 처음 2장의 상태에서 카드를 더 뽑는 것</li>
+<li>스테이(Stay): 카드를 더 뽑지 않고 차례를 마치는 것</li>
+<li>블랙잭(Blackjack): 처음 두 장의 카드 합이 21인 경우, 베팅 금액의 1.5배</li>
+<li>버스트(Bust): 카드 총합이 21을 넘는 경우. 배당금을 잃는다.</li>
+</ol>
+</li>
 </ol>
 <h2 id="지뢰찾기" style="position:relative;">지뢰찾기<a href="#%EC%A7%80%EB%A2%B0%EC%B0%BE%EA%B8%B0" aria-label="지뢰찾기 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <ul>
-<li>게임판을 렌더링할 때 초기에는 기본 셀은 <code class="language-text">C</code>, 지뢰는 <code class="language-text">*</code>로 표현했다. 그 다음 요구사항은 지뢰 주변을 1씩 증가시키는 것이였기 때문에 2차원 배열의 타입이 <code class="language-text">Char</code> → <code class="language-text">Int</code>로 변경되어야 했다.</li>
+<li>GameBoardRenderer는 GameBoard를 생성하는 책임을 가지고 있게하여 렌더링 전략 인터페이스는 필요없어짐을 느꼈다</li>
+<li>하지만 MinesweeperBoardRenderer를 추가하면서 Renderer를 추상화해야할까 고민했다. 그냥 콘크리트 클래스를 상속받을까? 아니면 인터페이스를 추가해서 수평적인 확장을 하도록할까?</li>
+<li>MinesweeperBoard는 기본 게임판과 다른 렌더링 과정을 거쳐야해서 필요한 정보들을 상태로 갸지고 있게 하도록 하기 위해 인터페이스를 선택함</li>
+<li>콘크리트 클래스로 사용했</li>
+<li>클래스를 정의할 때 필요한 정보를 상태로 가지게할지 인자로 넘겨 사용할지 고민되었다.</li>
 </ul>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">class MinesweeperBoard(
@@ -422,69 +431,13 @@ value class LottoNumber private constructor(
     private val mines: Mines
 ) {
     fun calculateAdjacentMineCounts() = mines.increaseNearCellNumbers(gameBoard)
-}
-</code>
+}</code>
         </deckgo-highlight-code>
 <ul>
 <li>하지만 이렇게 되면 <code class="language-text">Mines</code> 내부에서 지뢰 주변의 셀을 1씩 증가시키기 때문에 <code class="language-text">Mines</code>가 <code class="language-text">GameBoard</code>의 구현체 타입에 대해 자세하게 알아야 하는 문제가 있다.</li>
 <li><code class="language-text">Mines</code>는 <code class="language-text">Position</code>의 집합일 뿐이고 지뢰 주변을 표시하는 책임은 <code class="language-text">GameBoard</code>에게 있다고 판단했다.</li>
 <li>그리고 특정 셀 주변 8방향을 계산해주는 책임은 <code class="language-text">BoardDimensions</code>에서 <code class="language-text">Position</code>으로 옮겼다. 잘 옮긴듯</li>
-</ul>
-<h1 id="좋은-객체의-7가지-덕목" style="position:relative;">좋은 객체의 7가지 덕목<a href="#%EC%A2%8B%EC%9D%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-7%EA%B0%80%EC%A7%80-%EB%8D%95%EB%AA%A9" aria-label="좋은 객체의 7가지 덕목 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
-<blockquote>
-<p>이따금 클래스를 “객체 템플릿”으로 부르는 것(예를 들면 위키피디아에서 그렇게 하고 있다)을 듣곤 한다.<br>
-이 같은 정의는 정확하지 않은데, 이 정의에 따르면 클래스는 수동적인 위치에 있기 때문이다.<br>
-이 정의는 누군가가 템플릿을 가지고 그것을 사용해 객체를 만들어낸다고 가정한다. 그럴 수도 있지만 엄밀히 말하자면 개념적으로 틀린 말이다.
-한번 생성된 객체는 스스로 동작한다. 자신을 누가 만들었고 클래스에 형제 자매가 얼마나 더 있는지 알아서는 안 된다.</p>
-</blockquote>
-<p>클래스와 객체를 이야기할 때 "붕어빵"과 "붕어빵을 찍어낼 수 있는 틀" 정도로 설명하는데, 객체지향 프로그래밍에서 클래스와 객체는 더 많은 의미가 담겨있는 것 같다.<br>
-<a href="https://codingnuri.com/seven-virtues-of-good-object/">이 글</a>에서 설명하는 객체는 현실 세계의 객체를 대표해야 한다고 한다.<br>
-개인적으로 소프트웨어의 객체가 현실 세계의 객체를 모두 대표할 수 없다라고 생각한다. 그렇다고 해서 이 연관지으려는 노력이 쓸모 없다는 것은 아니고 노력은 해야하지만 유연하게 생각해야 하지 않을까 생각한다.</p>
-<ol>
-<li>객체는 <strong>주체적</strong> 이어야 한다.</li>
-<li>객체 내에 존재하는 기능들은 모두 <strong>계약</strong> 에 따라 동작해야 한다.
-<ul>
-<li>여기서 말하는 계약은 인터페이스나 추상 클래스에 선언된 기능들을 구현하는 것이다.</li>
-<li>계약되지 않은 기능을 구현한다면 단위 테스트에서 모킹하는 것이 불가능하고, 데코레이션을 통해 확장하는 것이 불가능하기 때문이다.</li>
-<li>하지만 모든 기능을 명시하기에는 더 번잡해질 수 있다. 이런 계약을 명시하는 것의 이점은 기능 목록을 통해 객체의 행위를 유추할 수 있다는 점이다.</li>
-<li>이 이점을 명심하고 팀 내의 기준이 필요하다. 기능 목록을 모두 선언해놓아도 구현체가 괴물이 된다면 아무 의미 없다.</li>
-</ul>
-</li>
-<li>좋은 객체는 언제나 고유하기 위해 무언가를 <strong>캡슐화</strong> 해야 한다.
-<ul>
-<li>하지만 정적 메서드만 담긴 유틸리티 클래스는 클래스의 이점을 아무것도 갖고 있지 않으며 클래스라고 부를 수 조차 없다.</li>
-<li>유틸리티 클래스는 단순히 객체 패러다임을 엉터리로 남용하는 것에 불과하다.</li>
-</ul>
-</li>
-<li>객체는 <strong>객체의 전 생명주기에 걸쳐 상태가 변하지 않은 채</strong> 로 머물러야 한다.
-<ul>
-<li>불변성이 모든 메서드가 언제나 동일한 값을 반환한다는 것을 의미하지는 않는다.</li>
-<li>하지만 자신의 내부 상태는 절대 변경하지 않는다.</li>
-<li><a href="https://www.yegor256.com/2015/12/08/temporal-coupling-between-method-calls.html">Temporal Coupling Between Method Calls</a></li>
-<li><a href="https://www.yegor256.com/2014/05/13/why-null-is-bad.html">Why NULL is Bad?</a></li>
-<li><a href="https://www.yegor256.com/2014/11/07/how-immutability-helps.html">How Immutability Helps</a></li>
-<li><a href="https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html">Objects Should Be Immutable</a></li>
-</ul>
-</li>
-<li>클래스에 정적 멤버가 존재하는 경우에는 객체지향 패러다임에 완전히 반한다.
-<ul>
-<li>OOP의 위력은 복잡한 문제를 여러 부분으로 분해하여 각 책임을 객체에 할당하여 특정 과업을 수행하도록 하는 것인데, 정적 멤버는 다른 클래스와의 상호작용을 고립시킬 수 없기 때문이다.</li>
-</ul>
-</li>
-<li>이름은 그것이 무엇인지를 말해야 하고, 무슨 일을 하는지 말해서는 안된다. 일반적으로 <code class="language-text">-er</code>로 끝나는 이름은 피하라
-<ul>
-<li><a href="https://www.yegor256.com/2015/03/09/objects-end-with-er.html">Don't Create Objects That End With -ER</a></li>
-</ul>
-</li>
-<li>좋은 객체는 <code class="language-text">final</code> 이나 <code class="language-text">abstract</code> 클래스에서 온다.
-<ul>
-<li>누군가가 내가 작성한 클래스를 상속받아 리스코프 치환 원칙을 위반하는 경우를 막기위해 <code class="language-text">final</code>을 적절히 사용하라</li>
-<li>상속받아 기능을 추가하려 하지말고 데코레이터 패턴을 통해 해당 객체를 주입받아 위임할 생각을 해라</li>
-<li>다른 작업자에게 템플릿처럼 확장하기 쉬운 포인트를 제공하고 싶거나 내가 개발한 부분을 오염시키지 않길 원한다면 <code class="language-text">abstract</code>를 적절히 사용하라</li>
-<li>추상 클래스로 템플릿 메서드 패턴을 적용하여 구현할 수 있는 지점을 제한해라</li>
-</ul>
-</li>
-</ol></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2023y/oop/">← <!-- -->좋은 코드, 고품질 코드란?</a></li><li><a rel="next" href="/2023y/bookReview/bookReview/">2023년 책,강의 서평<!-- --> →</a></li></ul></nav><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2023y/kotlinCleanCode/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2023y/oop/">← <!-- -->좋은 코드, 고품질 코드란?</a></li><li><a rel="next" href="/2023y/bookReview/bookReview/">2023년 책,강의 서평<!-- --> →</a></li></ul></nav><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2023y/kotlinCleanCode/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
