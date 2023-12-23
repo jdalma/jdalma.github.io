@@ -72,7 +72,7 @@ OOP에 대한 감을 잡기가 힘들다.. 이 책임은 누구한테 주고 협
 
 ## 로또
 
-2주차는 4단계로 이루어져 있다.  
+이번 미션은 4단계로 이루어져 있다.  
 
 **1단계**: 문자열 덧셈 계산기  
 **2단계**: 로또(자동) [리뷰](https://github.com/next-step/kotlin-lotto/pull/845)  
@@ -122,6 +122,7 @@ StringSpliterator를 유틸리티로 사용하였는데 유틸리티 클래스�
 
 ```kotlin
 typealias MatchedPredicate = (LottoWinningResult) -> Boolean
+
 enum class LottoRank(val prize: Int, val matchedPredicate: MatchedPredicate ) {
    FIRST(2_000_000_000) { it.matchCount == 6 },
    SECOND(30_000_000) { it.matchCount == 5 && it.isBonus == true }, 
@@ -178,15 +179,16 @@ Lotto(
 value class LottoNumber private constructor(
     private val number: Int
 ) {
-    companion object {
-        private val LOTTO_NUMBER_RANGE = IntRange(1, 45)
-        private val LOTTO_NUMBERS: Map<Int, LottoNumber> = LOTTO_NUMBER_RANGE.associateWith(::LottoNumber)
+   companion object {
+      private val LOTTO_NUMBER_RANGE = IntRange(1, 45)
+      private val LOTTO_NUMBERS: Map<Int, LottoNumber> = LOTTO_NUMBER_RANGE.associateWith(::LottoNumber)
 
-        fun from(value: Int): LottoNumber = LOTTO_NUMBERS[value] ?: throw IllegalArgumentException("[입력:$value] 1에서 45사이의 정수만 허용됩니다.")
-        
-        fun random() : LottoNumber = from(LOTTO_NUMBER_RANGE.random())
-    }
-    ...
+      fun from(value: Int): LottoNumber = LOTTO_NUMBERS[value] 
+         ?: throw IllegalArgumentException("[입력:$value] 1에서 45사이의 정수만 허용됩니다.")
+
+      fun random() : LottoNumber = from(LOTTO_NUMBER_RANGE.random())
+   }
+   ...
 }
 ```
 
@@ -206,19 +208,135 @@ value class LottoNumber private constructor(
 
 ## 블랙잭
 
+**1단계**: 코틀린 DSL [리뷰](https://github.com/next-step/kotlin-blackjack/pull/592)  
+**2단계**: 블랙잭 [리뷰](https://github.com/next-step/kotlin-blackjack/pull/620)  
+**3단계**: 블랙잭(딜러 역할 추가) [리뷰](https://github.com/next-step/kotlin-blackjack/pull/635)  
+**4단계**: 블랙잭(베팅 기능 추가) [리뷰](https://github.com/next-step/kotlin-blackjack/pull/660)  
+**5단계**: 상태 추상화 [코드](https://github.com/jdalma/kotlin-blackjack/tree/refactor/src/main/kotlin/blackjack/state)  
+  
+
+이번 미션의 핵심은 블랙잭 게임을 진행하는 동안 **게임 상태를 어떻게 객체지향적으로 설계하는 것** 이다.  
+일단 내가 설계한 흐름을 보면
+
+![](blackjack.png)
+
+![](blackjack2.png)
+
+**1번 블랙잭 게임 준비** 는 카드 셔플 전략과 셔플 전략을 사용하여 카드를 분배하는 딜러, 딜러를 가지는 블랙잭 게임과 게임 플레이어들을 생성하는 책임들을 가진다. 생성한 블랙잭 게임을 통해 게임을 진행한다.  
+**2번 블랙잭 게임 진행** 은 딜러와 입출력 전략을 받아 뷰와 도메인을 연결해주는 역할과 게임을 진행하는 역할을 동시에 가진다.  
+**3번 게임 진행 중** 은 플레이어가 카드를 계속 받는지에 대한 입력을 꼬리 재귀를 통해 공유되는 문맥(스택)의 정보를 최소화하고 반복적으로 받도록 하였다.  
+**4번과 5번에서 게임이 끝난 참가자들을 승패, 수익률을 계산** 한다.  
+  
+플레이어가 **게임 진행 중인 상태** 는 GameParticipant 추상 클래스를 구현하는 Player와 Dealer로 표현하였고,  
+**게임이 끝난 상태** 를 GameParticipants 클래스로 표현하였고,  
+**게임 결과를 계산한 상태** 를 GameParticipantPlayerResult 클래스로 표현하였다.  
+그리고 게임 결과를 계산할 때 점수 비교는 아래와 같이 분기문으로 해결하였다.  
+
+```kotlin
+class GameParticipantDealer(
+   name: String = NAME,
+   cards: List<Card> = emptyList(),
+   betAmount: Int = 0
+) : GameParticipant(name, cards, betAmount) {
+
+   fun compareScore(player: GameParticipantPlayer): MatchResult {
+      val playerScore = player.getScore()
+      val dealerScore = this.getScore()
+      return if (player.isBust || this.isBlackjack()) MatchResult.LOSS
+      else if (player.isBlackjack()) MatchResult.BLACKJACK
+      else if (this.isBust) MatchResult.WIN
+      else if (dealerScore < playerScore) MatchResult.WIN
+      else if (playerScore < dealerScore) MatchResult.LOSS
+      else MatchResult.DRAW
+   }
+
+   ...
+}
+```
+
+위에서 나열한 상태와 점수 비교를 **객체지향의 다형성을 통하여 해결할 수 있는 방법이 이번 과제의 핵심이다.**  
+하지만 분기문이 항상 나쁘다고 봐야할지는 생각해봐야 할 문제다.  
+  
+> **Q** 게임 결과를 판단할 때 조건문의 순서에 많이 의존되는데.. 다른 작업자가 볼때 이 의도를 파악하기 힘들 것 같다고 생각됐습니다.  
+> 테스트 코드로 설명을 대체할 수 있을 것 같기도 한데 설계의 방법으로 순서에 대한 강조를 어떻게 표현할 수 있을까요??  
+> **A** 순서에 관해서는 저도 고민을 많이 해봤는데 블랙잭의 승패를 정하는 룰 자체가 이미 너무 길기 때문에 이를 다른 방식으로 표현하거나 쪼개서 표현하는 것 자체가 더 알아보기 어려운 것 같더라구요.  
+>  순서가 존재 + 두 객체를 비교하는 경우에는 그냥 한 메서드에 로직을 쭉 나열하는 것보다 알기 쉬운 방법이 없더라구요
+
+리뷰어님의 의견에 동의하기도 한다. 항상 디자인 패턴과 추상화가 옳다고 말할 수 있는지는 모르겠다.  
+하지만 학습에 중점을 두어야하니 **상태를 다형성으로 해결하는 방법을 알아보자**  
+  
+<h3>객체지향의 다형성을 이용해 조건문 줄이기</h3>
+
+기존에는 상태가 서로 다른 클래스로 표현되며 점수 비교는 여러 분기문으로 작성되어 있었다.  
+
+![](./statePattern.png)
+
+**게임 내 규칙을 객체로 추상화** 하였다.  
+
+```kotlin
+interface State {
+   fun draw(card: PlayingCard): State
+   fun stay(): State
+   fun profit(money: Int): Double
+}
+
+abstract class Finished : State {
+
+   protected abstract val rate: Double
+
+   override fun draw(card: PlayingCard): State {
+      throw IllegalStateException()
+   }
+
+   override fun stay(): State {
+      throw IllegalStateException()
+   }
+
+   override fun profit(money: Int): Double = money * rate
+}
+
+abstract class Started : State {
+
+   override fun profit(money: Int): Double {
+      throw IllegalStateException()
+   }
+}
+```
+
+클라이언트는 블랙잭 게임 상태의 자세한 구현을 전혀 알 필요가 없다.  
+클라이언트는 사용자가 `draw`나 `stay`를 선택하기만 하면 내부에서 상태는 자동으로 계산된다.  
+상태 전이표(행에서 열로 전이)는 아래와 같다.  
+  
+||Start|Hit|Stay|Blackjack|Bust|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Start|-|O|X|O|X
+|Hit|X|-|O|X|O|X|
+|Stay|X|X|-|X|X|
+|Blackjack|X|X|X|-|X|
+|Bust|X|X|X|X|-|
+  
+1. 시작(Start): 카드 2장을 받고 있는 상태 (2장을 다 받으면 다음 상태로 바로 전이한다.)
+1. 힛(Hit): 처음 2장의 상태에서 카드를 더 뽑는 것
+2. 스테이(Stay): 카드를 더 뽑지 않고 차례를 마치는 것
+3. 블랙잭(Blackjack): 처음 두 장의 카드 합이 21인 경우, 베팅 금액의 1.5배
+4. 버스트(Bust): 카드 총합이 21을 넘는 경우. 배당금을 잃는다.
+  
+`Started` 추상 클래스를 구현하는 Start와 Hit는 수익률을 계산할 수 없는 **게임 진행 중인 상태** 를 표현한다.  
+`Finished` 추상 클래스를 구현하는 Stay와 Bust, Blackjack은 카드를 더 받거나 받지않는다는 선택을 할 수 없는 상태이다. **게임이 끝난 상태** 를 표현한다.  
+이 두 개의 추상 클래스를 아우르는 `State` 인터페이스가 해당 타입들을 추상화하였다.  
+  
+이 구현에서 두 개의 디자인 패턴이 활용되었는데 내부에서 상태를 변경하는 **상태 패턴** 과 `draw`,`stay`,`profit`에 대한 중복되는 처리를 **템플릿 메서드 패턴** 으로 해결하였다.  
+  
+<h3>그 외</h3>
+
 1. 수신 객체 지정 람다를 이용한 Kotlin DSL
 2. Builder들의 책임과 비즈니스 로직에서 사용할 값 객체의 책임
-   1. 마지막 주차 1단계 예제에서 PersonBuilder 내부 필드를 한 번에 초기화 하는 것이였는데 Skill과 Language 빌더들이 너무 더럽다고 느꼈지만 제이슨님은 PersonBuilder 자체가 더러움을 책임지는 객체라고 생각하셨다.
-   2. 비즈니스 로직에서 관심가지는 것은 값 객체에 대한 정보이기 때문에 각 data class들이 불변 필드들을 가지고 있는것에 만족하셨다.
-1. 모든 플레이어들이 카드를 요청하여 받는 부분에서 `출력 → 입력 → 카드 배분 → 출력` 흐름을 따르는 부분이 입출력 로직과 비즈니스 로직을 문맥에 맞게 넘나들도록 해야하기 때문에 힘들었다.
+   1. 1단계 예제에서 PersonBuilder 내부 필드를 한 번에 초기화 하는 것이였는데 Skill과 Language 빌더들이 너무 더럽다고 느꼈지만 제이슨님은 PersonBuilder 자체가 더러움을 책임지는 객체라고 생각하셨다.
+   2. 비즈니스 로직에서 관심가지는 것은 값 객체에 대한 정보(프로퍼티)이기 때문에 각 data class들이 불변 필드들을 가질 수 있도록 각 Builder이 가변 필드들을 소유하는것은 문제가 안된다.
+3. 모든 플레이어들이 카드를 요청하여 받는 부분에서 `출력 → 입력 → 카드 배분 → 출력` 흐름을 따르는 부분이 입출력 로직과 비즈니스 로직을 문맥에 맞게 넘나들도록 해야하기 때문에 힘들었다.
    1. 딜러가 추가되면서 카드 배분 받는 로직은 달라지지만 출력되는 부분은 같은 게임 플레이어로 인식해야하는 점
    2. 핵심은 딜러가 추가되면서 기존 플레이어와 중복되는 코드를 어떻게 제거할 것인가? abstract class? interface? sealed class? sealed interface? 이 방법들의 차이는 무엇이고 어떤 기준으로 사용하는가?
-2. 게임 내 규칙을 객체로 추상화하는법
-   1. 힛(Hit): 처음 2장의 상태에서 카드를 더 뽑는 것
-   2. 스테이(Stay): 카드를 더 뽑지 않고 차례를 마치는 것
-   3. 블랙잭(Blackjack): 처음 두 장의 카드 합이 21인 경우, 베팅 금액의 1.5배
-   4. 버스트(Bust): 카드 총합이 21을 넘는 경우. 배당금을 잃는다.
-
+   3. sealed class와 interface는 내부 라이브러리를 개발하는 상황과 같이 확장을 제한할 떄는 유용하지만 일반적인 상황에서는 유의미한가 싶다. [참고](https://kotlinlang.org/docs/sealed-classes.html)
 
 ## 지뢰찾기
 
