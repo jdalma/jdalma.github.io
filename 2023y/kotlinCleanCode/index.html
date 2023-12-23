@@ -199,7 +199,7 @@
 "생성자의 주된 임무는 제공된 인자를 사용해서 캡슐화된 프로퍼티를 초기화하는 것이고, 메서드의 수가 많을수록 SRP을 위반할 확률이 높지만 생성자는 많을수록 클라이언트가 유연하게 사용할 수 있다."</p>
 </blockquote>
 <h2 id="로또" style="position:relative;">로또<a href="#%EB%A1%9C%EB%98%90" aria-label="로또 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
-<p>2주차는 4단계로 이루어져 있다.</p>
+<p>이번 미션은 4단계로 이루어져 있다.</p>
 <p><strong>1단계</strong>: 문자열 덧셈 계산기<br>
 <strong>2단계</strong>: 로또(자동) <a href="https://github.com/next-step/kotlin-lotto/pull/845">리뷰</a><br>
 <strong>3단계</strong>: 로또(2등) <a href="https://github.com/next-step/kotlin-lotto/pull/900">리뷰</a><br>
@@ -300,6 +300,7 @@
 <p><code class="language-text">LottoRank</code>의 하위 속성들이 직접 당첨이 되었는지 각자 확인하도록 책임을 전가해야 했다. 이 생각을 하지 못한 이유가 열거타입과 하위 속성을 분리해서 생각해본적이 없었기 때문이다.</p>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">typealias MatchedPredicate = (LottoWinningResult) -&gt; Boolean
+
 enum class LottoRank(val prize: Int, val matchedPredicate: MatchedPredicate ) {
    FIRST(2_000_000_000) { it.matchCount == 6 },
    SECOND(30_000_000) { it.matchCount == 5 &amp;&amp; it.isBonus == true }, 
@@ -368,15 +369,16 @@ Lotto(
 value class LottoNumber private constructor(
     private val number: Int
 ) {
-    companion object {
-        private val LOTTO_NUMBER_RANGE = IntRange(1, 45)
-        private val LOTTO_NUMBERS: Map&lt;Int, LottoNumber&gt; = LOTTO_NUMBER_RANGE.associateWith(::LottoNumber)
+   companion object {
+      private val LOTTO_NUMBER_RANGE = IntRange(1, 45)
+      private val LOTTO_NUMBERS: Map&lt;Int, LottoNumber&gt; = LOTTO_NUMBER_RANGE.associateWith(::LottoNumber)
 
-        fun from(value: Int): LottoNumber = LOTTO_NUMBERS[value] ?: throw IllegalArgumentException(&quot;[입력:$value] 1에서 45사이의 정수만 허용됩니다.&quot;)
-        
-        fun random() : LottoNumber = from(LOTTO_NUMBER_RANGE.random())
-    }
-    ...
+      fun from(value: Int): LottoNumber = LOTTO_NUMBERS[value] 
+         ?: throw IllegalArgumentException(&quot;[입력:$value] 1에서 45사이의 정수만 허용됩니다.&quot;)
+
+      fun random() : LottoNumber = from(LOTTO_NUMBER_RANGE.random())
+   }
+   ...
 }</code>
         </deckgo-highlight-code>
 <h3>그 외</h3>
@@ -394,26 +396,260 @@ value class LottoNumber private constructor(
 <li><a href="https://kotlinlang.org/docs/type-safe-builders.html">type safe builders</a></li>
 </ol>
 <h2 id="블랙잭" style="position:relative;">블랙잭<a href="#%EB%B8%94%EB%9E%99%EC%9E%AD" aria-label="블랙잭 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p><strong>1단계</strong>: 코틀린 DSL <a href="https://github.com/next-step/kotlin-blackjack/pull/592">리뷰</a><br>
+<strong>2단계</strong>: 블랙잭 <a href="https://github.com/next-step/kotlin-blackjack/pull/620">리뷰</a><br>
+<strong>3단계</strong>: 블랙잭(딜러 역할 추가) <a href="https://github.com/next-step/kotlin-blackjack/pull/635">리뷰</a><br>
+<strong>4단계</strong>: 블랙잭(베팅 기능 추가) <a href="https://github.com/next-step/kotlin-blackjack/pull/660">리뷰</a><br>
+<strong>5단계</strong>: 상태 추상화 <a href="https://github.com/jdalma/kotlin-blackjack/tree/refactor/src/main/kotlin/blackjack/state">코드</a></p>
+<p>이번 미션의 핵심은 블랙잭 게임을 진행하는 동안 <strong>게임 상태를 어떻게 객체지향적으로 설계하는 것</strong> 이다.<br>
+일단 내가 설계한 흐름을 보면</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1e3edb0e371e6de04e4e28ba045bd793/9bbea/blackjack.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACnUlEQVR42m1T2ZaiUAz0M+yWfVOQRQQBF1A2UbR1znTPy/z/f9QUHGd5mIccuLk3lUolmUiyBpE2k3V+dQzn0SQVsmbieqrxOF9Q7g5IwwjlIUe13SNdhbD5Zi0pWMkqtHcBQRhjIjBYo8MWFWiChBkfSYpBIygBs3CDKM7gBmsczg9UH59oLj12RQmFb31ZgUMM/TegzwyxoqLWdbSeh63nY0mfS8DBIkGEyEQig1UmMCwHhrngvzFWNpVISNFhEtAfARkkqgaMxRLbQ4E9yzEYqAzMCZJKMlSVASOQDZ2mqCY0fT4CywQziPEH0ONBoHlBhOP5hryqcaJm2twZGRS2Q1+Hormgpn+T7RGsExQdyz/3aK83NFUDayb+C6jDsmyEUYpsk+EWhsh0A7Eso1cpvL+G5/gIHBeBtcA2SlA1d5THBnV+RLs/YC68AFeGOQLGboC2uaK/3PE8n9E3LZ7MnKosR5ThihLmZJEKAhySmFPDwa+8CVBZ7nQ6w2oArNL9iByzm9XtB5rbd1xvD3S0e39Hblo4Ll3cgwAP38PZD5CycQvDIhETQRAiSbdY2EuEY1Mo+MDQZCM86uYtnDG7QZ+t6ah5bouhtAodZ/BRlvg6nhDzjUqmeXVFe/uGhNp6q+ilIcX3VjGKtkfVdrAIMsyjwrthzgJjjnBuY88GtZaF0jRRU9uScmVkH7s+HBI7bdK/gA6d6T5Htj1wJEzMBBkyhz3jfcWS2l2OngzveYEqSRExwSnJ0O0L9PkJ3XaHn3WNicMteSOgQVYhH8S7HcJNAtsL4C49LHknD0M9MObADzb8a685HbZFHVaXzYm4mpOIJZlkk3grXDhbz+sHPvsez+6Kr+6CgFq9D+v42vn/mUS9p+/iuHq/AAJ+js8tBR/rAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="blackjack"
+        title=""
+        src="/static/1e3edb0e371e6de04e4e28ba045bd793/1cfc2/blackjack.png"
+        srcset="/static/1e3edb0e371e6de04e4e28ba045bd793/3684f/blackjack.png 225w,
+/static/1e3edb0e371e6de04e4e28ba045bd793/fc2a6/blackjack.png 450w,
+/static/1e3edb0e371e6de04e4e28ba045bd793/1cfc2/blackjack.png 900w,
+/static/1e3edb0e371e6de04e4e28ba045bd793/21482/blackjack.png 1350w,
+/static/1e3edb0e371e6de04e4e28ba045bd793/d61c2/blackjack.png 1800w,
+/static/1e3edb0e371e6de04e4e28ba045bd793/9bbea/blackjack.png 3329w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 751px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2cbeaa3c7764406368d3ecb7c57e39cc/c483d/blackjack2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 28.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABG0lEQVR42oVR23KDIBT0//+tzTRqMo13QQVBUWMkNZ1uDySvnTKzs3C4nN0lyPICWZ6jrCrUjIExTszBOMeyLLjfLbbN4nu/AvjBfyOQskevFLQeoJT20FrDGAM9uJqCkAq3uYO1N2rwRQ024rtna62v3Wj+eDwQlGVF6mokSQrOGxRFifwFpzLNclR1jZq3+LykSNIMH8fQ7w/DSBgwmifv+44gPp1xocdO5zOOxwhhGCOMYrh6FJ/w9n7wey6KpmnRdQIVCeiE8A5k3/u5Y/9gQgrKmuFCnR06ikD22kOQXbdWdHGaJsr0CkPsYSaM40jqDGbKWlFM67oicLaatiVbzw9xGU7TTIeNv+CsaKoJKV9Za2yU21+f8gs+UcHXFWaJagAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="blackjack2"
+        title=""
+        src="/static/2cbeaa3c7764406368d3ecb7c57e39cc/c483d/blackjack2.png"
+        srcset="/static/2cbeaa3c7764406368d3ecb7c57e39cc/3684f/blackjack2.png 225w,
+/static/2cbeaa3c7764406368d3ecb7c57e39cc/fc2a6/blackjack2.png 450w,
+/static/2cbeaa3c7764406368d3ecb7c57e39cc/c483d/blackjack2.png 751w"
+        sizes="(max-width: 751px) 100vw, 751px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><strong>1번 블랙잭 게임 준비</strong> 는 카드 셔플 전략과 셔플 전략을 사용하여 카드를 분배하는 딜러, 딜러를 가지는 블랙잭 게임과 게임 플레이어들을 생성하는 책임들을 가진다. 생성한 블랙잭 게임을 통해 게임을 진행한다.<br>
+<strong>2번 블랙잭 게임 진행</strong> 은 딜러와 입출력 전략을 받아 뷰와 도메인을 연결해주는 역할과 게임을 진행하는 역할을 동시에 가진다.<br>
+<strong>3번 게임 진행 중</strong> 은 플레이어가 카드를 계속 받는지에 대한 입력을 꼬리 재귀를 통해 공유되는 문맥(스택)의 정보를 최소화하고 반복적으로 받도록 하였다.<br>
+<strong>4번과 5번에서 게임이 끝난 참가자들을 승패, 수익률을 계산</strong> 한다.</p>
+<p>플레이어가 <strong>게임 진행 중인 상태</strong> 는 GameParticipant 추상 클래스를 구현하는 Player와 Dealer로 표현하였고,<br>
+<strong>게임이 끝난 상태</strong> 를 GameParticipants 클래스로 표현하였고,<br>
+<strong>게임 결과를 계산한 상태</strong> 를 GameParticipantPlayerResult 클래스로 표현하였다.<br>
+그리고 게임 결과를 계산할 때 점수 비교는 아래와 같이 분기문으로 해결하였다.</p>
+<deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">class GameParticipantDealer(
+   name: String = NAME,
+   cards: List&lt;Card&gt; = emptyList(),
+   betAmount: Int = 0
+) : GameParticipant(name, cards, betAmount) {
+
+   fun compareScore(player: GameParticipantPlayer): MatchResult {
+      val playerScore = player.getScore()
+      val dealerScore = this.getScore()
+      return if (player.isBust || this.isBlackjack()) MatchResult.LOSS
+      else if (player.isBlackjack()) MatchResult.BLACKJACK
+      else if (this.isBust) MatchResult.WIN
+      else if (dealerScore &lt; playerScore) MatchResult.WIN
+      else if (playerScore &lt; dealerScore) MatchResult.LOSS
+      else MatchResult.DRAW
+   }
+
+   ...
+}</code>
+        </deckgo-highlight-code>
+<p>위에서 나열한 상태와 점수 비교를 <strong>객체지향의 다형성을 통하여 해결할 수 있는 방법이 이번 과제의 핵심이다.</strong><br>
+하지만 분기문이 항상 나쁘다고 봐야할지는 생각해봐야 할 문제다.</p>
+<blockquote>
+<p><strong>Q</strong> 게임 결과를 판단할 때 조건문의 순서에 많이 의존되는데.. 다른 작업자가 볼때 이 의도를 파악하기 힘들 것 같다고 생각됐습니다.<br>
+테스트 코드로 설명을 대체할 수 있을 것 같기도 한데 설계의 방법으로 순서에 대한 강조를 어떻게 표현할 수 있을까요??<br>
+<strong>A</strong> 순서에 관해서는 저도 고민을 많이 해봤는데 블랙잭의 승패를 정하는 룰 자체가 이미 너무 길기 때문에 이를 다른 방식으로 표현하거나 쪼개서 표현하는 것 자체가 더 알아보기 어려운 것 같더라구요.<br>
+순서가 존재 + 두 객체를 비교하는 경우에는 그냥 한 메서드에 로직을 쭉 나열하는 것보다 알기 쉬운 방법이 없더라구요</p>
+</blockquote>
+<p>리뷰어님의 의견에 동의하기도 한다. 항상 디자인 패턴과 추상화가 옳다고 말할 수 있는지는 모르겠다.<br>
+하지만 학습에 중점을 두어야하니 <strong>상태를 다형성으로 해결하는 방법을 알아보자</strong></p>
+<h3>객체지향의 다형성을 이용해 조건문 줄이기</h3>
+<p>기존에는 상태가 서로 다른 클래스로 표현되며 점수 비교는 여러 분기문으로 작성되어 있었다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d7769b287cd7cce58011cef606fd3c26/bb072/statePattern.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 138.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAIAAADuuAg3AAAACXBIWXMAAAsTAAALEwEAmpwYAAADvUlEQVR42oVVh5baSBDc7zDKCWWEECItCOWIhIiLfX7+/7+4EvIm1ud7rx+I0dT0dFVX80TRHIKkWF6QdM3QRqORNR6NxpqmD2WVpLh+wx/jqf8iSEY3xmGS+c2uObRte0yybLl6xvr/gRmeICjDmlXXH0n7T1bsgjhtDqcgSgcETTP838B4TZKMZthBXq2TXZCk7mIZJfny2SNIFm//C/+EagmCGZA0QTEkzdKoXR0yvIAHiuGwgvVvA5ogaex8BEuSbDj2ZOpM3ZlljTleJEkWPIni0LQs05m4s/nUnVuWLcvaI9iezNLjodgfTufrrtkrqgGSECNrmlR1VO+yoiiqXZoX8+Xqgb8nZ76prr+2u1tS1HFWKJqJ6w0GpDXdlNefUXMrqm59f7x4fgj+el1/gxmWU+2NbLi4v6aP+lWaZhfrqDi9BPW1qI/rLais58s1MjOswPLSG2EMzas8GkQ3RUlRNEMcqhTFrr34cLkmxSHKd14Q5lWz9nwgZUXXDQsPd6kolhU1mhviN8D9kXjmBcGwXHO8kGQVJzruYmxPKZq9B8fdk7+DIaYgyhTNM9yQE1VOUElGZKQRLZoUK3UrosrwMtmdzrKc+ADmREl23NUmzKIoWj2vFUWdPwd+3P2EkmBkHRZhFKZpFgShquoPYCXI9vH+XO3P0Ma0nHR/jZtz3Z7Wngdd8uOLX1/z5hzGiTGyH8BqWrVle0nLQ5xlY3tWHS95fcmqGmzNltv2egurW7I7Xm7fHXf+CYya7am73fiuu3Sm86GswVib9dadLy3bUTXTdWeOM7cmAC7RTp8zizJ4Hio6J0h9J4AYTuiEgMLokG+vJvs2oLDyiW2Wk3oPYbcEzVVNVg1VN83RWFF1TItOpNc9H9mWGUZAHlgCL3DqeOIGYbSNq6SsfB/shhNniuTY8+ZQ+JlleIXmZcjIS90VWEEhGcFdReXLz7h5yYoqzkvMhsVqjduiPT6COUjfHcHitjxKRfEDgpouvOJ0y5tT3R6iNEfY09kfM8t9SyJ6nnrr4SzYG/p1Vnl9i8+/gYGUZVUDUWPX2/rQBc0EIYj7ubwg36lh32um7gxDFdgNSZ69IMrKqDwkaRpGSZJmGCa9mQ1zjEZ8B9OchOQIUAXaYAM/a9Ljj2R3SssK1ZZ1u1htOtl5ibtb4sPofZ9sv9nyojJtb1lzadojwH4Y247b90zv5E9D/y1AxmBABXmTX36Vh+/H86U9X8umBfjrDH/6Oo1Rj6zin8eCB7swLHNki0Pl6+j9F9ZqJUV94GWEAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="statePattern"
+        title=""
+        src="/static/d7769b287cd7cce58011cef606fd3c26/1cfc2/statePattern.png"
+        srcset="/static/d7769b287cd7cce58011cef606fd3c26/3684f/statePattern.png 225w,
+/static/d7769b287cd7cce58011cef606fd3c26/fc2a6/statePattern.png 450w,
+/static/d7769b287cd7cce58011cef606fd3c26/1cfc2/statePattern.png 900w,
+/static/d7769b287cd7cce58011cef606fd3c26/bb072/statePattern.png 1318w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><strong>게임 내 규칙을 객체로 추상화</strong> 하였다.</p>
+<deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">interface State {
+   fun draw(card: PlayingCard): State
+   fun stay(): State
+   fun profit(money: Int): Double
+}
+
+abstract class Finished : State {
+
+   protected abstract val rate: Double
+
+   override fun draw(card: PlayingCard): State {
+      throw IllegalStateException()
+   }
+
+   override fun stay(): State {
+      throw IllegalStateException()
+   }
+
+   override fun profit(money: Int): Double = money * rate
+}
+
+abstract class Started : State {
+
+   override fun profit(money: Int): Double {
+      throw IllegalStateException()
+   }
+}</code>
+        </deckgo-highlight-code>
+<p>클라이언트는 블랙잭 게임 상태의 자세한 구현을 전혀 알 필요가 없다.<br>
+클라이언트는 사용자가 <code class="language-text">draw</code>나 <code class="language-text">stay</code>를 선택하기만 하면 내부에서 상태는 자동으로 계산된다.<br>
+상태 전이표(행에서 열로 전이)는 아래와 같다.</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Start</th>
+<th align="center">Hit</th>
+<th align="center">Stay</th>
+<th align="center">Blackjack</th>
+<th align="center">Bust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Start</td>
+<td align="center">-</td>
+<td align="center">O</td>
+<td align="center">X</td>
+<td align="center">O</td>
+<td align="center">X</td>
+</tr>
+<tr>
+<td align="center">Hit</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">O</td>
+<td align="center">X</td>
+<td align="center">O</td>
+</tr>
+<tr>
+<td align="center">Stay</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">X</td>
+</tr>
+<tr>
+<td align="center">Blackjack</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">X</td>
+</tr>
+<tr>
+<td align="center">Bust</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>시작(Start): 카드 2장을 받고 있는 상태 (2장을 다 받으면 다음 상태로 바로 전이한다.)</li>
+<li>힛(Hit): 처음 2장의 상태에서 카드를 더 뽑는 것</li>
+<li>스테이(Stay): 카드를 더 뽑지 않고 차례를 마치는 것</li>
+<li>블랙잭(Blackjack): 처음 두 장의 카드 합이 21인 경우, 베팅 금액의 1.5배</li>
+<li>버스트(Bust): 카드 총합이 21을 넘는 경우. 배당금을 잃는다.</li>
+</ol>
+<p><code class="language-text">Started</code> 추상 클래스를 구현하는 Start와 Hit는 수익률을 계산할 수 없는 <strong>게임 진행 중인 상태</strong> 를 표현한다.<br>
+<code class="language-text">Finished</code> 추상 클래스를 구현하는 Stay와 Bust, Blackjack은 카드를 더 받거나 받지않는다는 선택을 할 수 없는 상태이다. <strong>게임이 끝난 상태</strong> 를 표현한다.<br>
+이 두 개의 추상 클래스를 아우르는 <code class="language-text">State</code> 인터페이스가 해당 타입들을 추상화하였다.</p>
+<p>이 구현에서 두 개의 디자인 패턴이 활용되었는데 내부에서 상태를 변경하는 <strong>상태 패턴</strong> 과 <code class="language-text">draw</code>,<code class="language-text">stay</code>,<code class="language-text">profit</code>에 대한 중복되는 처리를 <strong>템플릿 메서드 패턴</strong> 으로 해결하였다.</p>
+<h3>그 외</h3>
 <ol>
 <li>수신 객체 지정 람다를 이용한 Kotlin DSL</li>
 <li>Builder들의 책임과 비즈니스 로직에서 사용할 값 객체의 책임
 <ol>
-<li>마지막 주차 1단계 예제에서 PersonBuilder 내부 필드를 한 번에 초기화 하는 것이였는데 Skill과 Language 빌더들이 너무 더럽다고 느꼈지만 제이슨님은 PersonBuilder 자체가 더러움을 책임지는 객체라고 생각하셨다.</li>
-<li>비즈니스 로직에서 관심가지는 것은 값 객체에 대한 정보이기 때문에 각 data class들이 불변 필드들을 가지고 있는것에 만족하셨다.</li>
+<li>1단계 예제에서 PersonBuilder 내부 필드를 한 번에 초기화 하는 것이였는데 Skill과 Language 빌더들이 너무 더럽다고 느꼈지만 제이슨님은 PersonBuilder 자체가 더러움을 책임지는 객체라고 생각하셨다.</li>
+<li>비즈니스 로직에서 관심가지는 것은 값 객체에 대한 정보(프로퍼티)이기 때문에 각 data class들이 불변 필드들을 가질 수 있도록 각 Builder이 가변 필드들을 소유하는것은 문제가 안된다.</li>
 </ol>
 </li>
 <li>모든 플레이어들이 카드를 요청하여 받는 부분에서 <code class="language-text">출력 → 입력 → 카드 배분 → 출력</code> 흐름을 따르는 부분이 입출력 로직과 비즈니스 로직을 문맥에 맞게 넘나들도록 해야하기 때문에 힘들었다.
 <ol>
 <li>딜러가 추가되면서 카드 배분 받는 로직은 달라지지만 출력되는 부분은 같은 게임 플레이어로 인식해야하는 점</li>
 <li>핵심은 딜러가 추가되면서 기존 플레이어와 중복되는 코드를 어떻게 제거할 것인가? abstract class? interface? sealed class? sealed interface? 이 방법들의 차이는 무엇이고 어떤 기준으로 사용하는가?</li>
-</ol>
-</li>
-<li>게임 내 규칙을 객체로 추상화하는법
-<ol>
-<li>힛(Hit): 처음 2장의 상태에서 카드를 더 뽑는 것</li>
-<li>스테이(Stay): 카드를 더 뽑지 않고 차례를 마치는 것</li>
-<li>블랙잭(Blackjack): 처음 두 장의 카드 합이 21인 경우, 베팅 금액의 1.5배</li>
-<li>버스트(Bust): 카드 총합이 21을 넘는 경우. 배당금을 잃는다.</li>
+<li>sealed class와 interface는 내부 라이브러리를 개발하는 상황과 같이 확장을 제한할 떄는 유용하지만 일반적인 상황에서는 유의미한가 싶다. <a href="https://kotlinlang.org/docs/sealed-classes.html">참고</a></li>
 </ol>
 </li>
 </ol>
