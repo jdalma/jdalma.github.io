@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 30 Dec 2023 08:47:58 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[코틀린 코루틴 ~ing 엘라스틱서치 바이블 ~ing HTTP/2 인 액션 ~ing 실용주의 프로그래머 ~ing 네티 인 액션 예정 자바 네트워크 프로그래밍 예정 오브젝트 예정 이펙티브 코틀린 예정 이펙티브 자바 예정 Real My SQL…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;코틀린-코루틴-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코틀린 코루틴&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4-ing&quot; aria-label=&quot;코틀린 코루틴 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 31 Dec 2023 14:52:48 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[코틀린 코루틴 ~ing 엘라스틱서치 바이블 ~ing HTTP/2 인 액션 ~ing 실용주의 프로그래머 ~ing 네티 인 액션 예정 자바 네트워크 프로그래밍 예정 오브젝트 예정 이펙티브 코틀린 예정 이펙티브 자바 예정 Real My SQL…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;코틀린-코루틴-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코틀린 코루틴&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4-ing&quot; aria-label=&quot;코틀린 코루틴 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;엘라스틱서치-바이블-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94-ing&quot; aria-label=&quot;엘라스틱서치 바이블 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;http2-인-액션-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;HTTP/2 인 액션&lt;/strong&gt; ~ing&lt;a href=&quot;#http2-%EC%9D%B8-%EC%95%A1%EC%85%98-ing&quot; aria-label=&quot;http2 인 액션 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;실용주의-프로그래머-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;실용주의 프로그래머&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%8B%A4%EC%9A%A9%EC%A3%BC%EC%9D%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8-ing&quot; aria-label=&quot;실용주의 프로그래머 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -1016,7 +1016,235 @@ DDD에 관심을 가지고 있다면 웜업 느낌으로 가볍게 읽을 수 �
 &lt;li&gt;&quot;연주야!&quot;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;/details&gt;</content:encoded></item><item><title><![CDATA[NEXTSTEP 클린코드 with Kotlin 회고(작성 중)]]></title><description><![CDATA[TDD, 클린 코드 with Kotlin 이 교육은 코틀린과 클린코드(OOP, 컨벤션), TDD를 가르쳐준다. 하지만 나는 코틀린과 클린코드만 배우기에도 벅차다고 생각하여 TDD…]]></description><link>https://jdalma.github.io/2023y/kotlinCleanCode/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/kotlinCleanCode/</guid><pubDate>Sun, 10 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;tdd-클린-코드-with-kotlin&quot; style=&quot;position:relative;&quot;&gt;TDD, 클린 코드 with Kotlin&lt;a href=&quot;#tdd-%ED%81%B4%EB%A6%B0-%EC%BD%94%EB%93%9C-with-kotlin&quot; aria-label=&quot;tdd 클린 코드 with kotlin permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/details&gt;</content:encoded></item><item><title><![CDATA[2023년 회고]]></title><description><![CDATA[들어가며 벌써 2023년이 끝난다. 2022년 회고에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다. 많은 일들이 있었는데 찬찬히 정리해보자. 회사 적응기 2년 반정도 SI…]]></description><link>https://jdalma.github.io/2023y/retrospect/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/retrospect/</guid><pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가며&quot; style=&quot;position:relative;&quot;&gt;들어가며&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot; aria-label=&quot;들어가며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;벌써 2023년이 끝난다. &lt;a href=&quot;https://jdalma.github.io/2022y/yearend&quot;&gt;2022년 회고&lt;/a&gt;에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다.&lt;br&gt;
+많은 일들이 있었는데 찬찬히 정리해보자.&lt;/p&gt;
+&lt;h1 id=&quot;회사-적응기&quot; style=&quot;position:relative;&quot;&gt;회사 적응기&lt;a href=&quot;#%ED%9A%8C%EC%82%AC-%EC%A0%81%EC%9D%91%EA%B8%B0&quot; aria-label=&quot;회사 적응기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;2년 반정도 SI 회사에서 근무한 습관은 금방 털어내고 회사에 금방 적응할 줄 알았지만, 쉽지 않았다. 가장 힘들었던 점은 &lt;code class=&quot;language-text&quot;&gt;일을 진행하면서 고민해야하는 범위&lt;/code&gt;이다.&lt;br&gt;
+SI회사에서 업무를 진행할 때는 RFP가 존재하고, 요구사항을 충족시키기 위한 기술도 정해져있기 때문에 문제를 해결해야 할 영역이 매우 작았다.&lt;br&gt;
+되돌아보면 대부분 코드레벨의 구현 수준을 고민했었다. Java 8을 쓰니 Stream이나 Optional을 써볼까? 추상화는 어떻게 할까? SP를 애플리케이션 레벨로 어떻게 옮길까? 와 같은 고민들이다.&lt;/p&gt;
+&lt;p&gt;현재 재직중인 회사는 &lt;code class=&quot;language-text&quot;&gt;분석 → 설계 → 개발&lt;/code&gt;의 사이클을 거치면서 &lt;strong&gt;목표와 문제만 주어지고 문제를 해결하고 목표에 도달할 수 있는 많은 방법들을 프로젝트의 실무자들이 결정하여 주도한다.&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;문제를 해결하기 위한 방법들을 다각도로 고민하여, 프로젝트의 이해관계자들을 설득하여 일을 진행하는 것&lt;/strong&gt; 이 핵심이다.&lt;br&gt;
+(개발자는 코딩하는 시간이 대부분이라고 생각했었는데 실제로 개발하는 시간은 10~20% 밖에 되지 않았다.)&lt;/p&gt;
+&lt;p&gt;올해 진행한 프로젝트는 5,6개 정도 되는데, 어떤 프로젝트는 수동적으로 답을 얻으러 다녔고 어떤 프로젝트는 능동적으로 진행하는 스스로를 볼 수 있었다.&lt;br&gt;
+내가 업무를 처리하는 자세가 다른 이유는 &lt;code class=&quot;language-text&quot;&gt;업무에 흥미가 있냐 없냐&lt;/code&gt;로 나뉘었다.&lt;br&gt;
+어떤 문제를 기술적으로 해결할 떄는 흥미를 느꼈고, 비즈니스적으로 해결할 때는 흥미를 느끼지 못했다.&lt;/p&gt;
+&lt;p&gt;진행하고 있는 프로젝트가 어떤 문제를 해결하려 하는지, 사용자에게 어떤 편의를 제공하는지, 기존에는 어떤 불편함이 있었는지 등을 공감하려 하지 않았었다.&lt;br&gt;
+사용하는 기술이나 개발 방법에만 관심을 두고 비즈니스에 공감하려 하지 않아 설계 단계에서 분석으로 또는 개발 단계에서 설계 단계로 다시 돌아가는 경우도 있었다.&lt;br&gt;
+그러면서 일정은 늦어지고 팀장님과 마찰은 잦았다.&lt;/p&gt;
+&lt;p&gt;SI에서 묻은 때를 벗기려 스스로의 습관이나 생각을 고치려고 노력을 많이 했다.(하고 있다.)&lt;br&gt;
+이때 책에서 많은 영감을 얻으려 노력했고 피드백을 적극 수용하려 노력했다. 그리고 팀장님이 많은 면담을 통해 개발 흐름에 녹아들 수 있도록 많이 도와주셨다.&lt;br&gt;
+개인의 노력과 팀장님의 노력으로 연말 프로젝트 회고를 통해 처음 절반 프로젝트는 대실패였지만 뒤의 절반은 좋은 평가를 받았기에 어느 정도 개선된 것을 몸소 느꼈다.&lt;br&gt;
+하지만 좋은 평가를 받은 프로젝트들은 R&amp;#x26;D 성향이 강했다. 간헐적으로 응답이 엄청 느리게 반환되는 문제를 분석하거나 특정 API의 개선 지점을 찾는 것과 같이 말이다.&lt;/p&gt;
+&lt;p&gt;이제 프론트 팀, 데이터 팀, QA 팀, 기획 팀과 같이 협업을 진행해야는 프로젝트를 더 많이 진행할텐데, 올해는 능동적인 개발자가 되는것이 목표였다면 내년에는 &lt;strong&gt;소프트 스킬&lt;/strong&gt; 을 향상시키는 것이 목표이다.&lt;/p&gt;
+&lt;h1 id=&quot;건강과-운동&quot; style=&quot;position:relative;&quot;&gt;건강과 운동&lt;a href=&quot;#%EA%B1%B4%EA%B0%95%EA%B3%BC-%EC%9A%B4%EB%8F%99&quot; aria-label=&quot;건강과 운동 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;5월달에 건강상의 문제로 3주 휴직 기간을 가졌다. (지금은 건강하다.)&lt;br&gt;
+부작용으로 재입원도 하면서 대부분의 사람들은 경험하지 않을 경험을 하니 당시에는 슬럼프도 왔었다.&lt;br&gt;
+다 접고 쉬고 싶다는 생각이 들었지만 이 슬럼프를 잘 넘기면서 조금 더 성장하지 않았나? 생각한다.&lt;/p&gt;
+&lt;p&gt;나에게 이런 일이 생긴것은 굉장히 슬프지만 이 일이 나에게 긍정적인 효과를 끼치도록 만들려면 &lt;strong&gt;내가 어떤 행동으로 어떤 결과를 만드냐&lt;/strong&gt; 에 달려있다.&lt;br&gt;
+스스로 불행하다고 생각하면서 퇴사하고 건강을 챙기지 않으면 이 일은 내 생에 최악의 일이였겠지만 런닝도 다시 시작하고 금연 중이다.&lt;br&gt;
+처음에는 &lt;code class=&quot;language-text&quot;&gt;내가 뭘 잘못했지?&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;나에게 이런 일이 왜 생기지?&lt;/code&gt; 라는 생각에 많이 슬펐지만 지금은 &lt;strong&gt;내 인생에 좋은 반환점으로 삼으려 노력 중이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;올해 5월부터 런닝을 다시 시작하면서 10km 완주가 목표였었는데 총 4번의 10km 마라톤에 참가하여 완주했다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1d2fd8d00104a1a2ad7a4cb7fd80e59a/19cd3/running.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 32.44444444444445%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABj0lEQVR42m2PzU4TcRTF/wtLaQJrTEPiwi2gJJhgfBjWGpX4AMWQEE3YARtfQBMJRhZAI9FIpCzYIJnaqQKdr84wU2lpGTrT0vn42U5i3HiSk3vPybk39wrNKVM6k7ho1rCaMq3OBQOYpoGiqkmfz+fJZDJMj99hduo+MxOTpG+lWX2zjN5QkE9UGtcGauMIUbDeIVsFar8VftS+UWtrKKbL7oHEp/1jZKPJ1tYOo6MjZB+MkX2Y5fajMVIjaRZWnlD2v1C1JKzGKUf2LmJbWUOyv2KeqxROP6DXyxQrLfaOdfa+a5SqbTY2PiKEYGhqiNS9FMN304l+8WqOw6v3mHaFknZAobKOKNuH2HWDqqOjOkVOqgatdoeO5+J718nLxaLE/PN5FnOL5F7nWHq5xNPHz9j8/BbHP+OyWceo/8K8/IkIg4jeTYDn+cmwVLGRNQfr3ELVddp9PwxD/ocojBJ6vkcQBIRBiIjjvhmF9Hq9JDS4zvU6dLtdrlyXm74fRVGyNKn97KD/qyEmjv/xD2tfjluo9YebAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;running&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1d2fd8d00104a1a2ad7a4cb7fd80e59a/1cfc2/running.png&quot;
+        srcset=&quot;/static/1d2fd8d00104a1a2ad7a4cb7fd80e59a/3684f/running.png 225w,
+/static/1d2fd8d00104a1a2ad7a4cb7fd80e59a/fc2a6/running.png 450w,
+/static/1d2fd8d00104a1a2ad7a4cb7fd80e59a/1cfc2/running.png 900w,
+/static/1d2fd8d00104a1a2ad7a4cb7fd80e59a/21482/running.png 1350w,
+/static/1d2fd8d00104a1a2ad7a4cb7fd80e59a/d61c2/running.png 1800w,
+/static/1d2fd8d00104a1a2ad7a4cb7fd80e59a/19cd3/running.png 3129w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;그리고 5월 ~ 12월까지 대략 350km 정도 달린 것 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5월: 35.56km&lt;/li&gt;
+&lt;li&gt;6월: 30.18km&lt;/li&gt;
+&lt;li&gt;7월: 45.63km&lt;/li&gt;
+&lt;li&gt;8월: 33.65km&lt;/li&gt;
+&lt;li&gt;9월: 61.11km&lt;/li&gt;
+&lt;li&gt;10월: 62.78km&lt;/li&gt;
+&lt;li&gt;11월: 35.72km&lt;/li&gt;
+&lt;li&gt;12월: 55.59km&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;스트레스 받을 때나 주말 아침에 달리고 오면 기분이 상쾌함을 느낀다. 몸은 힘들지만 에너지가 더 채워지는 느낌을 받는 것을 보면 나랑 잘 맞는 것 같다.&lt;br&gt;
+내년 목표가 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;10km에 대략 1시간 ~ 1시간 10분 정도 나오는데 50분대로 줄이기&lt;/li&gt;
+&lt;li&gt;평소에는 5km만 달리는데 10km로 늘리기&lt;/li&gt;
+&lt;li&gt;하프 마라톤&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;내년 회고에는 하프 마라톤 기록을 포함시키는 것이 목표다.&lt;/p&gt;
+&lt;h1 id=&quot;책-읽기와-스터디&quot; style=&quot;position:relative;&quot;&gt;책 읽기와 스터디&lt;a href=&quot;#%EC%B1%85-%EC%9D%BD%EA%B8%B0%EC%99%80-%EC%8A%A4%ED%84%B0%EB%94%94&quot; aria-label=&quot;책 읽기와 스터디 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;올해는 살면서 가장 많은 책을 읽은 해이다. 내적, 외적 동기부여가 골고루 갖춰진 환경이였어서 읽다보니 이렇게 된 것 같다.&lt;br&gt;
+(책을 많이 읽었다고 해서 꼭 성장했다고 볼 순 없지만) &lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/&quot;&gt;총 18권의 책과 2편의 강의&lt;/a&gt;를 보았다.&lt;br&gt;
+개발 관련은 10권, 개발 외적으로는 8권을 읽었다.&lt;/p&gt;
+&lt;p&gt;개발 관련 책은 대부분 &lt;a href=&quot;https://www.codesoom.com/&quot;&gt;코드숨&lt;/a&gt; 스터디에서 읽었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94-%EC%9D%B8-%EC%95%A1%EC%85%98&quot;&gt;모던 자바 인 액션&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%BD%94%ED%8B%80%EB%A6%B0-%ED%95%B5%EC%8B%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot;&gt;코틀린 핵심 프로그래밍&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4%EC%9D%98-%EC%95%84%EB%A6%84%EB%8B%A4%EC%9B%80&quot;&gt;디자인패턴의 아름다움&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-%EC%BD%94%ED%8B%80%EB%A6%B0%EC%9C%BC%EB%A1%9C&quot;&gt;자바에서 코틀린으로&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%A0%95-4%ED%8C%90&quot;&gt;알고리즘 개정 4판&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%97%85%EB%AC%B4-%EC%8B%9C%EA%B0%81%ED%99%94&quot;&gt;업무 시각화&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%ED%95%9C-%EA%B6%8C%EC%9C%BC%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EC%BB%B4%ED%93%A8%ED%84%B0-%EA%B5%AC%EC%A1%B0%EC%99%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot;&gt;한 권으로 읽는 컴퓨터 구조와 프로그래밍&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C&quot;&gt;HTTP 완벽 가이드&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;개발과 무관한 책은 출퇴근 시간에 읽었다.&lt;br&gt;
+출근에는 잠을 덜 깨서, 퇴근에는 진이 다 빠져서 출퇴근 시간에 책을 읽는 자체가 처음엔 힘들었다.&lt;br&gt;
+진짜 읽고 싶은 책(어떤 책이든 상관없이 습관을 들이는 목적으로)만 골라서 그 환경에 책을 읽는 습관을 들이니 이제 어떤 책을 읽을지 고민할 정도로 수월해졌다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y00tvum7g1I&amp;#x26;list=LL&amp;#x26;index=61&amp;#x26;ab_channel=%ED%95%9C%EB%88%88%EC%97%90%EB%B3%B4%EB%8A%94%EC%84%B8%EC%83%81%E2%80%93Kurzgesagt&quot;&gt;인생을 바꾸는 법 - 한 걸음씩 나아가기&lt;/a&gt; 이 영상이 루틴과 습관, 트리거에 대한 이해에 도움이 되었다.&lt;/p&gt;
+&lt;p&gt;내년에는 20권 정도 읽었으면 좋겠다.&lt;/p&gt;
+&lt;h1 id=&quot;사내-스터디&quot; style=&quot;position:relative;&quot;&gt;사내 스터디&lt;a href=&quot;#%EC%82%AC%EB%82%B4-%EC%8A%A4%ED%84%B0%EB%94%94&quot; aria-label=&quot;사내 스터디 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;지금 회사의 메인 스트림은 특허 검색 서비스이며 해당 서비스에 엘라스틱서치를 사용하고 있다.&lt;br&gt;
+(백엔드의 입장으로서는 Query DSL을 만드는 것이 다 이지만) 개발팀 회의를 진행할 때 마다 클러스터, 노드, 샤드, 인덱스, 형태소 분석기 등 모르는 용어들이 많아 데이터팀의 공유 사항을 이해하기가 힘들었다.&lt;br&gt;
+그리고 키바나를 사용하거나 Query DSL을 작성할 때 매번 구글링하면서 스스로가 너무 답답했다.&lt;/p&gt;
+&lt;p&gt;이 이유로 &lt;a href=&quot;https://www.yes24.com/Product/Goods/119719070&quot;&gt;엘라스틱서치 바이블&lt;/a&gt; 스터디를 만들었다.&lt;br&gt;
+이제 절반정도 도달했고 1월 말에 스터디가 끝날 예정이다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e1b748dae2f9d896bbf7c6755f14a3dc/ae2f8/elasticStudy.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAArElEQVR42o2QCwuDMAyE/f+/ckNtq9a39qXtLRFlg21g4SPtkRzpZc4FtN0E3fZQVYPVODi/fUN982qxEFznxWJaDNU3PJvte4TWA4qyJMOaRAM+KaWfxHjW83692ceHgIyFvp8glMIwjAgkcsM/U3yCUwMbR4Rt4w0TfXmEVBWkrNBoDWPtYRyvTW6wR96QDD3lo+oOj7zEMxcohIKkLIWqj0wsZXeH1fojwxdxzoXfccYtoQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;elasticStudy&quot;
+        title=&quot;&quot;
+        src=&quot;/static/e1b748dae2f9d896bbf7c6755f14a3dc/1cfc2/elasticStudy.png&quot;
+        srcset=&quot;/static/e1b748dae2f9d896bbf7c6755f14a3dc/3684f/elasticStudy.png 225w,
+/static/e1b748dae2f9d896bbf7c6755f14a3dc/fc2a6/elasticStudy.png 450w,
+/static/e1b748dae2f9d896bbf7c6755f14a3dc/1cfc2/elasticStudy.png 900w,
+/static/e1b748dae2f9d896bbf7c6755f14a3dc/21482/elasticStudy.png 1350w,
+/static/e1b748dae2f9d896bbf7c6755f14a3dc/d61c2/elasticStudy.png 1800w,
+/static/e1b748dae2f9d896bbf7c6755f14a3dc/ae2f8/elasticStudy.png 2496w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;절반정도 읽었는데 굉장히 만족중이다. 데이터팀의 회의 내용을 이제 이해할 수 있게 되었고 학습하면서 실무에 어떻게 적용되어 있는지 비교할 수 있으니 이해가 더 잘되는 것 같다.&lt;br&gt;
+다른 팀원들도 적극적으로 잘 참여해주셔서 재밌게 진행 중이다.&lt;br&gt;
+(회사가 재미없었는데 사내 스터디 덕분에 활기를 찾은 느낌이다.)&lt;/p&gt;
+&lt;p&gt;이번 스터디를 잘 마무리하고 다음 스터디도 꾸준히 진행하고 싶다.&lt;/p&gt;
+&lt;h1 id=&quot;칸반&quot; style=&quot;position:relative;&quot;&gt;칸반&lt;a href=&quot;#%EC%B9%B8%EB%B0%98&quot; aria-label=&quot;칸반 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.yes24.com/Product/Goods/86627323?pid=123487&amp;#x26;cosemkid=go15803705973738109&amp;#x26;gad_source=1&amp;#x26;gclid=Cj0KCQiAv8SsBhC7ARIsALIkVT0tW1ZLWdfN7eGtAMkonCv92sKwKsSeSWkBgyT5x7g7HH8lVc5dyXYaAr_dEALw_wcB&quot;&gt;업무 시각화&lt;/a&gt;를 읽고 TODO 목록을 칸반으로 관리해보고 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2b3c89d38108da3b9870fb872f313c1b/afa26/todo.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABdElEQVR42m2S227DIBBE/f/f17f2oW2c+IIxGAO+AJ4OJHVSqSshIxjO7s660pPGxBVjxHEc5wohIIYIbRXcYpFiglIjnLOYZ1O+ObJuNqbsU0qohJT4+vokdCqHBw/Jw2b5gJvLIDDwQT7vuhaDEATOT+C2YB5qBBaUUkSllELbNgUYwqNKCp3owRJRiwmtNDkTBOHGPBI/dHFfobsPajpCAyrDdpvmBmvts0J+F9XhYFY3NdgWg5gOyGGAYeIMSw9dDCtM/w7vfDmvRq3Q9T32fT+BOazq6VuEz0A/FaDW+pk4+8LYtx1mVMXLg5pK0ujccjbce5+lRWhUS0EoValxPE1/HVzxkIVM3TeCM8X7ShNUXy4FuixLAWapFdfioeAQRg7uP+C95QVT84bd2zvQcYL3oWj64M6WA/c5BIczyuFPm68R9g1K1Od95fkL3G5X3K51GY4cJbZ1pWd30/u+gyTw/Dfp6+/KFa/UCjGUfb7/ARZruzaooj6jAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;todo&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2b3c89d38108da3b9870fb872f313c1b/1cfc2/todo.png&quot;
+        srcset=&quot;/static/2b3c89d38108da3b9870fb872f313c1b/3684f/todo.png 225w,
+/static/2b3c89d38108da3b9870fb872f313c1b/fc2a6/todo.png 450w,
+/static/2b3c89d38108da3b9870fb872f313c1b/1cfc2/todo.png 900w,
+/static/2b3c89d38108da3b9870fb872f313c1b/afa26/todo.png 1258w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이전에는 온전히 기억력으로만 관리하던 것을 시각화하니 기억에 대한 부담이 덜하고 새로운 것을 추가해야 할 때 우선순위를 비교해볼 수 있고 어떤 것이 더 중요한지 고민하는것이 편하다.&lt;br&gt;
+그리고 완료 상태로 넘어갈 때 뿌듯함을 계속 느낄 수 있는 것도 장점이다.&lt;/p&gt;
+&lt;p&gt;내년 회고를 작성할 때까지 꾸준히 사용하는 것이 목표다.&lt;/p&gt;
+&lt;h1 id=&quot;느낀점&quot; style=&quot;position:relative;&quot;&gt;느낀점&lt;a href=&quot;#%EB%8A%90%EB%82%80%EC%A0%90&quot; aria-label=&quot;느낀점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;SI 회사를 퇴사하고 서비스 회사를 1년 다니면서 느낀 점은 &lt;code class=&quot;language-text&quot;&gt;이제 진짜 개발자다워 지는 것 같다.&lt;/code&gt; 이다.&lt;br&gt;
+문제를 해결하기 위해 여러 기술들을 고민하고 클러스터를 직접 구성하여 운영하면서 발생하는 문제들을 해결하기 위해 여러 방안들을 고민하는 것들이 새로웠다.&lt;br&gt;
+그만큼 많은 기술들이 사용되고 있고 배워야 할 기술들은 산더미이다.&lt;br&gt;
+단순히 코더처럼 일하는 것이 아니라 문제를 해결하기 위한 여러 방안들을 모색하고 타협점을 찾아 결정하는 것 그리고 (쉽진 않지만) 누군가를 설득하고 일의 진행 순서와 우선순위를 스스로 결정하여 진행하는 것이 재밌다고 느꼈다.&lt;br&gt;
+이제 공부 주제의 우선순위도 실무에 맞닿아 있는 것들을 위주로 학습하려고 한다.&lt;/p&gt;
+&lt;p&gt;그리고 오프라인 마라톤 대회에 참여하면서 느낀 점이 있다.&lt;br&gt;
+출발 초반에 다른 사람들이 내 앞으로 추월하는 것을 보기 힘들어 스스로의 페이스를 유지하기가 힘들었다.&lt;br&gt;
+주변 사람들이 빠르게 뛰니 나도 덩달아 &lt;code class=&quot;language-text&quot;&gt;빨리 뛰어야 하나?&lt;/code&gt; 라는 생각에 페이스를 잃은 경우가 있다.&lt;br&gt;
+하지만 &lt;code class=&quot;language-text&quot;&gt;와 저 속도로 뛴다고?&lt;/code&gt;하는 사람들 &lt;code class=&quot;language-text&quot;&gt;2/3&lt;/code&gt; 정도는 결국 따라 잡는다. 앞에서 걷고 있는 경우가 대부분이기 때문이다.&lt;br&gt;
+나머지 &lt;code class=&quot;language-text&quot;&gt;1/3&lt;/code&gt; 은 진짜 끝까지 일정한 속도로 뛰는 그 사람들의 페이스였다.&lt;/p&gt;
+&lt;p&gt;주변 사람들의 속도에 연연하지 말고 나만의 페이스로 주변 경치도 보면서 꾸준히 뛰는 것이 정답이다.&lt;br&gt;
+&lt;strong&gt;경치나 아름다운 길을 돌아보지 않고 앞만 보고 달리는 사람, 목적에 심취하여 과정에서 달콤함을 찾지 못하는 사람이 되지 않도록 해야한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;마치 날씨가 너무 좋은 날 경치가 아름다운 길을 돌아보지 않고 바삐 지나치는 것이 그 시간에 대한 모욕인 것 처럼,&lt;br&gt;
+기껏 수능 시험을 얼마나 잘 보았나, 혹은 얼마나 명문 대학에 입학했는가 정도라면 그것은 그보다 흥미로운 지적 체험이 없었다는 자기 고백일 뿐이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;공부란 무엇인가?&lt;/strong&gt; &quot;낙화암에서 떨어진다고 모두 꽃은 아니다&quot; (에필로그 중에서)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;마무리&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;2022년 회고에 작성했던 올해 목표들이다.&lt;/p&gt;
+&lt;ul class=&quot;contains-task-list&quot;&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 블로그 꾸준히 운영하기, 학습 블로그와 기술 블로그 분리하기&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 학습하는 자세 유지하기&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; 인프런 사놓은 강의 보기
+&lt;ul&gt;
+&lt;li&gt;2편 밖에 못 봤으니.. 이루지 못 했다고 보자&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 책 10권 읽기&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 다른 개발자들과 교류하기
+&lt;ul&gt;
+&lt;li&gt;넥스트스텝 코틀린 교육의 오프라인 모임에 참석 그리고 코드숨 연말 회고에 참석&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 관심가는 스터디에 참여하기&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; 사람들 앞에서 기술 발표 해보기&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; 개발자, 한 달에 책 한 권 읽기 참여하기&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2024년 목표&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;하프 마라톤 완주하기&lt;/li&gt;
+&lt;li&gt;책 20권 읽기&lt;/li&gt;
+&lt;li&gt;인프런 강의 5편 이상 보기&lt;/li&gt;
+&lt;li&gt;사람들 앞에서 기술 발표 해보기&lt;/li&gt;
+&lt;li&gt;도전을 두려워 하지말기&lt;/li&gt;
+&lt;li&gt;(간단한) 서비스 만들기&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NEXTSTEP 클린코드 with Kotlin 회고(작성 중)]]></title><description><![CDATA[TDD, 클린 코드 with Kotlin 이 교육은 코틀린과 클린코드(OOP, 컨벤션), TDD를 가르쳐준다. 하지만 나는 코틀린과 클린코드만 배우기에도 벅차다고 생각하여 TDD…]]></description><link>https://jdalma.github.io/2023y/kotlinCleanCode/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/kotlinCleanCode/</guid><pubDate>Sun, 10 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;tdd-클린-코드-with-kotlin&quot; style=&quot;position:relative;&quot;&gt;TDD, 클린 코드 with Kotlin&lt;a href=&quot;#tdd-%ED%81%B4%EB%A6%B0-%EC%BD%94%EB%93%9C-with-kotlin&quot; aria-label=&quot;tdd 클린 코드 with kotlin permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;이 교육은 코틀린과 클린코드(OOP, 컨벤션), TDD를 가르쳐준다.&lt;br&gt;
 하지만 나는 코틀린과 클린코드만 배우기에도 벅차다고 생각하여 TDD는 신경쓰지 않았다 ㅎㅎ&lt;/p&gt;
 &lt;p&gt;스스로 &lt;code class=&quot;language-text&quot;&gt;&quot;OOP가 무엇인지 대충 알고있다&quot;&lt;/code&gt; 라는 생각을 가지고 있었는데 &lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%97%98%EB%A0%88%EA%B0%95%ED%8A%B8-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot;&gt;엘레강트 오브젝트&lt;/a&gt;를 같이 읽으면서 교육을 진행하다보니 OOP에 대해 굉장히 무지했다는 것을 깨닫았다. (&lt;a href=&quot;https://namu.wiki/w/%EB%8D%94%EB%8B%9D%20%ED%81%AC%EB%A3%A8%EA%B1%B0%20%ED%9A%A8%EA%B3%BC#s-2&quot;&gt;더닝 크루거&lt;/a&gt;가 떠올랐다.)&lt;/p&gt;
@@ -1317,7 +1545,7 @@ Lotto(
 나는 &lt;code class=&quot;language-text&quot;&gt;&quot;한 개의 로또 라인이 여러 개로 이루어져 한 개의 로또를 구성한다&quot;&lt;/code&gt;라는 것이고, 리뷰어님은 &lt;code class=&quot;language-text&quot;&gt;&quot;한 개의 로또가 여러 로또를 구성한다.&quot;&lt;/code&gt; 라는 것이다.&lt;br&gt;
 나름 이유를 대자면 실제로 한 개의 로또에 5개까지 구매할 수 있으니 여기서는 5개라는 제한이 없고 그냥 &lt;code class=&quot;language-text&quot;&gt;&quot;복수의 LottoLine은 5개를 초과하여도 Lotto를 구성한다&quot;&lt;/code&gt;라는 생각이였다.&lt;/p&gt;
 &lt;p&gt;하지만 이렇게보니 리뷰어님의 제안이 더 이해하기 쉬운 것 같다.&lt;/p&gt;
-&lt;h3&gt;로또 번호 일급 객체 캐싱&lt;/h3&gt;
+&lt;h3&gt;플라이웨이트 패턴&lt;/h3&gt;
 &lt;p&gt;로또를 구매할 때 마다 항상 새로운 &lt;code class=&quot;language-text&quot;&gt;LottoNumber&lt;/code&gt;를 생성하였다.&lt;br&gt;
 하지만 피드백을 통해 모든 로또는 똑같은 &lt;code class=&quot;language-text&quot;&gt;LottoNumber&lt;/code&gt;를 보유하도록 미리 초기화를 해놓았다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
@@ -1337,6 +1565,7 @@ value class LottoNumber private constructor(
    ...
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;일급 객체인 로또 번호를 &lt;a href=&quot;https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-Flyweight-%ED%8C%A8%ED%84%B4-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90&quot;&gt;플라이웨이트 패턴&lt;/a&gt;을 적용하여 재활용을 통한 메모리 사용을 최적화할 수 있다.&lt;/p&gt;
 &lt;h3&gt;그 외&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://inpa.tistory.com/entry/CS-%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB-%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4first-class-object&quot;&gt;일급 객체&lt;/a&gt;와 추상화 사이에서의 고민&lt;/li&gt;
@@ -1629,6 +1858,13 @@ abstract class Started : State {
 &lt;li&gt;하지만 이렇게 되면 &lt;code class=&quot;language-text&quot;&gt;Mines&lt;/code&gt; 내부에서 지뢰 주변의 셀을 1씩 증가시키기 때문에 &lt;code class=&quot;language-text&quot;&gt;Mines&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;GameBoard&lt;/code&gt;의 구현체 타입에 대해 자세하게 알아야 하는 문제가 있다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Mines&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Position&lt;/code&gt;의 집합일 뿐이고 지뢰 주변을 표시하는 책임은 &lt;code class=&quot;language-text&quot;&gt;GameBoard&lt;/code&gt;에게 있다고 판단했다.&lt;/li&gt;
 &lt;li&gt;그리고 특정 셀 주변 8방향을 계산해주는 책임은 &lt;code class=&quot;language-text&quot;&gt;BoardDimensions&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;Position&lt;/code&gt;으로 옮겼다. 잘 옮긴듯&lt;/li&gt;
+&lt;li&gt;책임이 너무 많다고 인지할 수 있는 힌트들
+&lt;ul&gt;
+&lt;li&gt;상수의 개수&lt;/li&gt;
+&lt;li&gt;파라미터의 개수&lt;/li&gt;
+&lt;li&gt;프로퍼티의 개수&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
@@ -2013,6 +2249,10 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
 클래스 간의 상속 구조가 안정적이어서 쉽게 변경되지 않고 상속 단계가 2단계 이하로 비교적 얕아 상속 관계가 복잡하지 않다면 과감하게 &lt;strong&gt;상속&lt;/strong&gt;을 사용할 수 있다.&lt;br&gt;
 또한, 콘크리트 클래스의 특정 함수를 재정의하거나 (얕은)타입 계층 구조가 필요하다면 &lt;strong&gt;상속&lt;/strong&gt;을 사용할 수 있다.&lt;br&gt;
 반대로 시스템이 불안정하고 타입 계층이 깊고 복잡하면 &lt;strong&gt;합성&lt;/strong&gt;을 사용해야 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;상속&lt;/strong&gt;은 반드시 하위 클래스가 상위 클래스의 &quot;진짜&quot; 하위 타입인 상황에서만 쓰여야 하며 클래스 B가 클래스 A와 is-a 관계일 때만 사용해야 한다. &quot;B가 정말 A인가?&quot;&lt;br&gt;
+그리고 클래스의 행동을 확장하는 것이 아니라 &lt;strong&gt;정제&lt;/strong&gt; 할 때다.&lt;br&gt;
+&lt;strong&gt;확장(합성)&lt;/strong&gt; 이란 새로운 행동을 덧붙여 기존의 행동을 부분적으로 보완하는 것을 의미하고, &lt;strong&gt;정제(상속)&lt;/strong&gt; 란 부분적으로 불완전한 행동을 완전하게 만드는 것을 의미한다.&lt;/p&gt;
+&lt;p&gt;항상 상속을 배제하고 합성을 사용하려 하지마라. 상속 자체가 문제가 아니라 잘 적용하는 것이 문제다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;단일-책임-원칙&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;단일 책임 원칙&lt;/strong&gt;&lt;a href=&quot;#%EB%8B%A8%EC%9D%BC-%EC%B1%85%EC%9E%84-%EC%9B%90%EC%B9%99&quot; aria-label=&quot;단일 책임 원칙 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;클래스와 모듈은 &lt;strong&gt;하나의 책임 또는 기능만을 가지고 있어야 한다&lt;/strong&gt;는 설계 원칙이다.&lt;br&gt;
