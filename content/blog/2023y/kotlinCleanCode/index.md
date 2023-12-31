@@ -190,7 +190,7 @@ Lotto(
   
 하지만 이렇게보니 리뷰어님의 제안이 더 이해하기 쉬운 것 같다.  
 
-<h3>로또 번호 일급 객체 캐싱</h3>
+<h3>플라이웨이트 패턴</h3>
 
 로또를 구매할 때 마다 항상 새로운 `LottoNumber`를 생성하였다.  
 하지만 피드백을 통해 모든 로또는 똑같은 `LottoNumber`를 보유하도록 미리 초기화를 해놓았다.  
@@ -212,6 +212,8 @@ value class LottoNumber private constructor(
    ...
 }
 ```
+
+일급 객체인 로또 번호를 [플라이웨이트 패턴](https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-Flyweight-%ED%8C%A8%ED%84%B4-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90)을 적용하여 재활용을 통한 메모리 사용을 최적화할 수 있다.  
 
 <h3>그 외</h3>
 
@@ -379,3 +381,7 @@ class MinesweeperBoard(
 - 하지만 이렇게 되면 `Mines` 내부에서 지뢰 주변의 셀을 1씩 증가시키기 때문에 `Mines`가 `GameBoard`의 구현체 타입에 대해 자세하게 알아야 하는 문제가 있다. 
 - `Mines`는 `Position`의 집합일 뿐이고 지뢰 주변을 표시하는 책임은 `GameBoard`에게 있다고 판단했다.
 - 그리고 특정 셀 주변 8방향을 계산해주는 책임은 `BoardDimensions`에서 `Position`으로 옮겼다. 잘 옮긴듯
+- 책임이 너무 많다고 인지할 수 있는 힌트들
+  - 상수의 개수
+  - 파라미터의 개수
+  - 프로퍼티의 개수
