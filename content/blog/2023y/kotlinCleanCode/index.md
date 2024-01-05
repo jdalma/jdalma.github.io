@@ -1,5 +1,5 @@
 ---
-title: NEXTSTEP 클린코드 with Kotlin 회고(작성 중)
+title: NEXTSTEP 클린코드 with Kotlin 회고
 date: "2023-12-10"
 tags:
    - oop
@@ -40,6 +40,7 @@ tags:
 하지만 **단순히 돌아가는 구현과 OOP를 고민하며 구현하는 것은 하늘과 땅 차이다.**  
 만약 스스로를 한계로 몰아넣어 고통을 즐기면서 OOP를 맛보고 싶고 퇴근 후 매일 2,3시간씩 머리를 쥐어짜보고 싶다면 추천해주고 싶다.  
   
+***
 
 # 자동차 경주
   
@@ -90,6 +91,8 @@ tags:
   
 > "응집도가 높고 견고한 클래스에는 적은 수의 메서드와 상대적으로 더 많은 수의 생성자가 존재한다."  
 > "생성자의 주된 임무는 제공된 인자를 사용해서 캡슐화된 프로퍼티를 초기화하는 것이고, 메서드의 수가 많을수록 SRP을 위반할 확률이 높지만 생성자는 많을수록 클라이언트가 유연하게 사용할 수 있다."  
+
+***
 
 # 로또
 
@@ -229,6 +232,8 @@ value class LottoNumber private constructor(
 10. [Spring Batch를 더 우아하게 사용하기 - Spring Batch Plus](https://d2.naver.com/helloworld/9879422)
 11. [type safe builders](https://kotlinlang.org/docs/type-safe-builders.html)
 
+***
+
 # 블랙잭
 
 **1단계**: 코틀린 DSL [리뷰](https://github.com/next-step/kotlin-blackjack/pull/592)  
@@ -237,7 +242,6 @@ value class LottoNumber private constructor(
 **4단계**: 블랙잭(베팅 기능 추가) [리뷰](https://github.com/next-step/kotlin-blackjack/pull/660)  
 **5단계**: 상태 추상화 [코드](https://github.com/jdalma/kotlin-blackjack/tree/refactor/src/main/kotlin/blackjack/state)  
   
-
 이번 미션의 핵심은 블랙잭 게임을 진행하는 동안 **게임 상태를 어떻게 객체지향적으로 설계하는 것** 이다.  
 일단 내가 설계한 흐름을 보면
 
@@ -361,27 +365,104 @@ abstract class Started : State {
    - 핵심은 딜러가 추가되면서 기존 플레이어와 중복되는 코드를 어떻게 제거할 것인가? abstract class? interface? sealed class? sealed interface? 이 방법들의 차이는 무엇이고 어떤 기준으로 사용하는가?
    - sealed class와 interface는 내부 라이브러리를 개발하는 상황과 같이 확장을 제한할 떄는 유용하지만 일반적인 상황에서는 유의미한가 싶다. [참고](https://kotlinlang.org/docs/sealed-classes.html)
 
+***
+
 # 지뢰찾기
 
-- GameBoardRenderer는 GameBoard를 생성하는 책임을 가지고 있게하여 렌더링 전략 인터페이스는 필요없어짐을 느꼈다
-- 하지만 MinesweeperBoardRenderer를 추가하면서 Renderer를 추상화해야할까 고민했다. 그냥 콘크리트 클래스를 상속받을까? 아니면 인터페이스를 추가해서 수평적인 확장을 하도록할까?
-- MinesweeperBoard는 기본 게임판과 다른 렌더링 과정을 거쳐야해서 필요한 정보들을 상태로 갸지고 있게 하도록 하기 위해 인터페이스를 선택함
-- 콘크리트 클래스로 사용했
-- 클래스를 정의할 때 필요한 정보를 상태로 가지게할지 인자로 넘겨 사용할지 고민되었다.
+**1단계**: 지뢰 찾기 (그리기) [리뷰](https://github.com/next-step/kotlin-minesweeper/pull/367)  
+**2단계**: 지뢰 찾기 (지뢰 개수) [리뷰](https://github.com/next-step/kotlin-minesweeper/pull/378)  
+**3단계**: 지뢰 찾기 (게임 실행) [리뷰](https://github.com/next-step/kotlin-minesweeper/pull/396)  
+**4단계**: 지뢰 찾기 (리팩터링) [리뷰](https://github.com/next-step/kotlin-minesweeper/pull/419)  
+  
+![](./minesweeper.png)
 
-```kotlin
-class MinesweeperBoard(
-    private val gameBoard: GameBoard<Int>,
-    private val mines: Mines
-) {
-    fun calculateAdjacentMineCounts() = mines.increaseNearCellNumbers(gameBoard)
-}
+**1. 게임 준비** 단계에서는 게임판 높이와 너비, 지뢰 생성 전략, 게임에 사용되는 게임판 생성 전략, IO 전략을 준비한다.  
+**2. 게임판 생성** 게임을 진행하는 동안 사용자 게임판과 관리자 게임판을 관리하는 책임을 가진 `PlayingGameBoard`을 생성한다.  
+**3. 게임 진행** 게임에 사용될 게임판인 `PlayingGameBoard`와 플레이어 IO를 책임지는 `ViewStrategy`를 보유하는 `MinesweeperGame`을 통해 게임을 진행한다.  
+처음에는 컨트롤러 역할을하는 Game 클래스가 게임판을 준비하고 플레이어 IO와 게임 진행을 하는 책임을 모두 가지고 있었다.  
+해당 의존성을 아래처럼 분리했다.  
+
+```
+                                          ➚ DefaultGameBoard extends GameBoard
+Game → MinesweeperGame → PlayingGameBoard
+                                          ➘ MinesweeperGameBoard extends GameBoard
 ```
 
-- 하지만 이렇게 되면 `Mines` 내부에서 지뢰 주변의 셀을 1씩 증가시키기 때문에 `Mines`가 `GameBoard`의 구현체 타입에 대해 자세하게 알아야 하는 문제가 있다. 
-- `Mines`는 `Position`의 집합일 뿐이고 지뢰 주변을 표시하는 책임은 `GameBoard`에게 있다고 판단했다.
-- 그리고 특정 셀 주변 8방향을 계산해주는 책임은 `BoardDimensions`에서 `Position`으로 옮겼다. 잘 옮긴듯
-- 책임이 너무 많다고 인지할 수 있는 힌트들
-  - 상수의 개수
-  - 파라미터의 개수
-  - 프로퍼티의 개수
+다이어그램을 통해 알 수 있듯이 책임 사이사이에 구현체에 직접 의존하지 않고 인터페이스에 의존하도록 노력했다.  
+게임을 진행하는동안 플레이어의 입출력을 담당할 로직도 `MinesweeperGame`에 `ViewStrategy`를 주입하여 결합도를 낮추려 노력하였다.  
+지뢰 위치를 기억하는 관리자 게임판과 플레이어가 사용하는 게임판을 같은 타입으로 구분하기 위해 추상 클래스 `GameBoard` 추가하였다.  
+  
+미션을 진행하면서 엘레강스 오브젝트의 [퍼블릭 상수를 사용하지 마라](https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%97%98%EB%A0%88%EA%B0%95%ED%8A%B8-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8)가 떠올랐다.  
+책임이 너무 많다고 인지할 수 있는 힌트 3가지가 있다는 것을 느꼈다.  
+- 상수의 개수
+- 파라미터의 개수
+- 프로퍼티의 개수
+
+상수를 private으로 선언하지 못하거나 한 클래스에 private 상수가 많은것도 힌트라고 보인다.
+
+<h3>지뢰 주변 셀들 값 증가시키기</h3>
+
+플레이어가 특정 셀을 열었을 때 해당 셀의 주변 8방향 셀 주변에 지뢰가 없다면 연쇄적으로 셀을 열어야 할 필요가 있었다.  
+그래서 지뢰찾기 게임판을 생성할 때 지뢰 주변의 셀들을 1씩 증가시켜서 게임판을 생성하는 관리자 게임판 Render가 있다.  
+이때 기준 셀의 주변 8방향 셀의 위치를 반환하는 기능을 **게임판의 높이와 너비를 가지는 `BoardElement`** 에 구현할지, **셀의 위치를 가지는 `Position`** 에 구현할지 고민했다.  
+  
+`BoardElement`는 게임판의 높이와 너비를 이미 가지고 있기 때문에 IndexOutOfBounds 예외를 피할 수 있다.  
+하지만 문맥상 `Position` 클래스가 맞는 것 같아 `Position`에 구현했다.  
+
+```kotlin
+class MinesweeperBoardRender(
+    private val mines: Set<Position>
+): BoardRenderStrategy {
+
+    override fun invoke(boardElement: BoardElement): GameBoard {
+        val board = List(boardElement.width) { col ->
+            List(boardElement.height) { row ->
+                makeCell(col, row, INIT_CELL_NUMBER)
+            }
+        }
+
+        mineMarking(board, boardElement)
+        return MinesweeperGameBoard(board)
+    }
+
+    private fun makeCell(col: Int, row: Int, value: Char): Cell {
+        val position = Position(col, row)
+        val type = if (mines.contains(position)) CellType.MINE else CellType.NORMAL
+        return Cell(position, type, value)
+    }
+
+    private fun mineMarking(board: List<List<Cell>>, boardElement: BoardElement) {
+        mines.forEach { mine ->
+            mine.nearPositions(boardElement)
+                .forEach { if (!board[it.col][it.row].isMine()) board[it.col][it.row].increaseValue() }
+        }
+    }
+    ...
+}
+
+data class Position(
+    val col: Int,
+    val row: Int
+) {
+    constructor(col: String, row: String): this(col.toInt() - 1, row.toInt() - 1)
+    operator fun plus(other: Position) = Position(this.col + other.col, this.row + other.row)
+
+    fun nearPositions(boardElement: BoardElement): List<Position> =
+        NEAR_POSITIONS.map { this + it }
+            .filter { !boardElement.isOutOfRange(it) }
+
+    companion object {
+        private val NEAR_POSITIONS = arrayOf(
+            Position(0, -1),
+            Position(1, -1),
+            Position(1, 0),
+            Position(1, 1),
+            Position(0, 1),
+            Position(-1, 1),
+            Position(-1, 0),
+            Position(-1, -1)
+        )
+    }
+}
+```
+  
