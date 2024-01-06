@@ -102,11 +102,40 @@
 </blockquote>
 <p>이번 교육과 엘레강트 오브젝트 책을 통해 OOP에 대한 주관적인 기준이 생겼고 OOP에 대한 무지함을 깨닫았으며, 본격적인 OOP를 공부할 준비가 된 것 같다는 느낌이 든다.<br>
 완벽한 설계는 없으니 완벽하게 구현하려 욕심부리지말고 스스로 정도를 정해가면서 꾸준한 리팩토링을 통해 개선해나가는 것이 효과적이다라는 것을 느꼈다.</p>
-<p>개발하다보면 다른 사람이 작성한 코드를 보고 평가하면서 오만한 자세를 가지기 쉬운데 겸손해지는 빠른 방법은 이런 교육을 듣는것이지 않을까 싶다.<br>
-이 교육은 금액도 꽤 나가는데 미션이 힘든만큼 완주하지 못하는 교육생들도 많다. 매일 퇴근하고 2,3시간씩 주말엔 5,6시간씩 고통주도개발을 맛보고 싶으신 분에게 추천한다.</p>
+<p>개발하다보면 다른 사람이 작성한 코드를 보고 평가하면서 오만한 자세를 가지기 쉬운데 겸손해지는 빠른 방법은 이런 교육을 통해 리뷰를 받아보는것이지 않을까 싶다.<br>
+이 교육은 금액도 꽤 나가는데 미션이 힘든만큼 완주하지 못하는 교육생들도 많다. 이번 기수 교육생이 총 66명인데, 지뢰찾기 게임까지 완료한 사람이 20명도 안돼 보인다.<br>
+매일 퇴근하고 2,3시간씩 주말엔 5,6시간씩 고통주도개발을 통해 코틀린과 클린코드를 맛보고 싶으신 분에게 추천한다.</p>
 <hr>
 <h1 id="자동차-경주" style="position:relative;">자동차 경주<a href="#%EC%9E%90%EB%8F%99%EC%B0%A8-%EA%B2%BD%EC%A3%BC" aria-label="자동차 경주 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
-<p>자동차 경주 미션은 5단계로 이루어져 있다.</p>
+<deckgo-highlight-code  terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).
+pobi,crong,honux
+시도할 횟수는 몇 회인가요?
+5
+
+실행 결과
+pobi : -
+crong : -
+honux : -
+
+pobi : --
+crong : -
+honux : --
+
+pobi : ---
+crong : --
+honux : ---
+
+pobi : ----
+crong : ---
+honux : ----
+
+pobi : -----
+crong : ----
+honux : -----
+
+pobi, honux가 최종 우승했습니다.</code>
+        </deckgo-highlight-code>
 <p><strong>1단계</strong>: 환경 세팅<br>
 <strong>2단계</strong>: 문자열 계산기 <a href="https://github.com/next-step/kotlin-racingcar/pull/1315">리뷰</a><br>
 <strong>3단계</strong>: 자동차 경주 구현 <a href="https://github.com/next-step/kotlin-racingcar/pull/1381">리뷰</a><br>
@@ -223,6 +252,15 @@
 <strong>3단계</strong>: 로또(2등) <a href="https://github.com/next-step/kotlin-lotto/pull/900">리뷰</a><br>
 <strong>4단계</strong>: 로또(수동) <a href="https://github.com/next-step/kotlin-racingcar/pull/1440">리뷰</a></p>
 <h3>문자열 덧셈 계산기</h3>
+<ol class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> 쉼표 또는 콜론을 구분자로 가지는 문자열을 입력하는 경우 구분자를 기준으로 분리하여 숫자들의 합을 반환
+<ol class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> 공백이라면 0을 반환한다.</li>
+</ol>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 문자열 앞부분의 "//"와 "\n" 사이에 위치하는 문자를 커스텀 구분자로 사용한다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 문자열 계산기에 숫자 이외의 값 또는 음수가 입력된 경우 "런타임 예외"를 던진다.</li>
+</ol>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
@@ -264,6 +302,104 @@
 </ol>
 <p>StringSpliterator를 유틸리티로 사용하였는데 유틸리티 클래스는 유익하지 않으니 문자열 계산기에 검증기와 같이 주입하는 것도 괜찮을 것 같다.</p>
 <h3>로또</h3>
+<deckgo-highlight-code  terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">구입금액을 입력해 주세요.
+14000
+
+수동으로 구매할 로또 수를 입력해 주세요.
+3
+
+수동으로 구매할 번호를 입력해 주세요.
+8, 21, 23, 41, 42, 43
+3, 5, 11, 16, 32, 38
+7, 11, 16, 35, 36, 44
+
+수동으로 3장, 자동으로 11개를 구매했습니다.
+[8, 21, 23, 41, 42, 43]
+[3, 5, 11, 16, 32, 38]
+[7, 11, 16, 35, 36, 44]
+[1, 8, 11, 31, 41, 42]
+[13, 14, 16, 38, 42, 45]
+[7, 11, 30, 40, 42, 43]
+[2, 13, 22, 32, 38, 45]
+[23, 25, 33, 36, 39, 41]
+[1, 3, 5, 14, 22, 45]
+[5, 9, 38, 41, 43, 44]
+[2, 8, 9, 18, 19, 21]
+[13, 14, 18, 21, 23, 35]
+[17, 21, 29, 37, 42, 45]
+[3, 8, 27, 30, 35, 44]
+
+지난 주 당첨 번호를 입력해 주세요.
+1, 2, 3, 4, 5, 6
+보너스 볼을 입력해 주세요.
+7
+
+당첨 통계
+---------
+3개 일치 (5000원)- 1개
+4개 일치 (50000원)- 0개
+5개 일치 (1500000원)- 0개
+5개 일치, 보너스 볼 일치(30000000원) - 0개
+6개 일치 (2000000000원)- 0개
+총 수익률은 0.35입니다.(기준이 1이기 때문에 결과적으로 손해라는 의미임)</code>
+        </deckgo-highlight-code>
+<h3>로또 구현 목록</h3>
+<ol class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> 구입금액을 입력 받는다.
+<ul>
+<li>정수만 입력 가능하다.</li>
+<li>잘못된 입력 또는 천원 단위가 아니라면 IllegalArgumentException을 던진다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 구입금액의 1000원 단위로 로또를 구매한다.
+<ul>
+<li>로또 번호는 1부터 45까지 존재한다.</li>
+<li>6개의 번호를 선택하여 1개의 로또를 구매한다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 구매한 로또를 출력한다.
+<ul>
+<li>"[%d, %d, ..]" 형식으로 출력한다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 지난 주 담청 번호를 입력 받는다.
+<ul>
+<li>"%d, %d, %d" 형식으로 입력한다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 입력 받은 당첨 번호 기준으로 당첨 금액과 당첨된 로또의 개수를 출력한다.
+<ul>
+<li>
+<deckgo-highlight-code  terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">3개 일치 (5000원)- 1개
+4개 일치 (50000원)- 0개
+5개 일치 (1500000원)- 0개
+6개 일치 (2000000000원)- 0개</code>
+        </deckgo-highlight-code>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 수익률을 계산하여 출력한다.
+<ul>
+<li><code class="language-text">총 수익률은 0.35입니다.(기준이 1이기 때문에 결과적으로 손해라는 의미임)</code></li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 보너스 볼을 입력받는다.
+<ul>
+<li>정수 한 자리</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 당첨 결과에서 보너스 볼에 대한 결과도 출력한다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 수동으로 구매할 로또 수를 입력 받는다.
+<ul>
+<li>수동으로 구매할 로또 수는 입력 받은 구입 금액을 넘을 수 없다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 수동으로 구매할 수만큼 로또 번호를 입력 받는다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 로또를 자동과 수동을 구분해서 구매한다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 로또 결과를 자동과 수동을 구분하여 출력하고 수익률을 함께 계산한다.</li>
+</ol>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
@@ -416,6 +552,72 @@ value class LottoNumber private constructor(
 </ol>
 <hr>
 <h1 id="블랙잭" style="position:relative;">블랙잭<a href="#%EB%B8%94%EB%9E%99%EC%9E%AD" aria-label="블랙잭 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<deckgo-highlight-code  terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">게임에 참여할 사람의 이름을 입력하세요.(쉼표 기준으로 분리)
+pobi,jason
+
+pobi의 배팅 금액은?
+10000
+
+jason의 배팅 금액은?
+20000
+
+딜러와 pobi, jason에게 2장의 나누었습니다.
+딜러: 3다이아몬드
+pobi카드: 2하트, 8스페이드
+jason카드: 7클로버, K스페이드
+
+pobi는 한장의 카드를 더 받겠습니까?(예는 y, 아니오는 n)
+y
+pobi카드: 2하트, 8스페이드, A클로버
+pobi는 한장의 카드를 더 받겠습니까?(예는 y, 아니오는 n)
+n
+jason은 한장의 카드를 더 받겠습니까?(예는 y, 아니오는 n)
+n
+jason카드: 7클로버, K스페이드
+
+딜러는 16이하라 한장의 카드를 더 받았습니다.
+
+딜러 카드: 3다이아몬드, 9클로버, 8다이아몬드 - 결과: 20
+pobi카드: 2하트, 8스페이드, A클로버 - 결과: 21
+jason카드: 7클로버, K스페이드 - 결과: 17
+
+## 최종 수익
+딜러: 10000
+pobi: 10000 
+jason: -20000</code>
+        </deckgo-highlight-code>
+<h3>블랙잭 구현 목록</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> 게임에 참여할 사람의 이름을 입력받는다.
+<ul>
+<li>쉼표 기준으로 분리한다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 플레이어에게 각각 2장의 카드를 나눠준다.
+<ul>
+<li>플레이어들에게 나눠준 카드를 <code class="language-text">{이름} 카드: {카드}, {카드}, ...</code> 형식으로 출력한다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 각 플레이어들은 가진 카드의 합이 21을 초과하지 않는다면 카드를 계속 뽑을 수 있다.
+<ul>
+<li>카드를 뽑는다면 결과를 <code class="language-text">{이름} 카드: {카드}, {카드}, ...</code> 형식으로 출력한다.</li>
+<li>카드를 뽑는 순서는 앞의 사용자가 끝나야 다음 사용자가 뽑을 수 있다.</li>
+<li>21이 초과한 상태에서 뽑는다면 다음 사용자로 넘어가도록 할 것이다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 사용자들이 모든 결정을 하였다면 결과를 출력한다.
+<ul>
+<li><code class="language-text">{이름} 카드: {카드}, {카드}, ... - 결과: {합계}</code> 형식으로 출력한다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 딜러도 게임에 참여하며 딜러의 점수가 16이하이면 한 장의 카드를 추가로 받는다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 딜러가 21을 초과하면 플레이어가 가지고 있는 패에 상관없이 승리한다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 게임을 완료한 후 각 플레이어별로 승패를 출력한다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 게임 참가자들의 베팅 금액을 입력받는다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 블랙잭이라면 배팅 금액의 1.5배를 받고 나머지는 승패에 따라 수익을 계산한다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 최종 수익에서 베팅 결과를 출력한다.</li>
+</ul>
 <p><strong>1단계</strong>: 코틀린 DSL <a href="https://github.com/next-step/kotlin-blackjack/pull/592">리뷰</a><br>
 <strong>2단계</strong>: 블랙잭 <a href="https://github.com/next-step/kotlin-blackjack/pull/620">리뷰</a><br>
 <strong>3단계</strong>: 블랙잭(딜러 역할 추가) <a href="https://github.com/next-step/kotlin-blackjack/pull/635">리뷰</a><br>
@@ -675,6 +877,55 @@ abstract class Started : State {
 </ol>
 <hr>
 <h1 id="지뢰찾기" style="position:relative;">지뢰찾기<a href="#%EC%A7%80%EB%A2%B0%EC%B0%BE%EA%B8%B0" aria-label="지뢰찾기 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<deckgo-highlight-code  terminal="carbon" theme="one-dark" line-numbers="true"  >
+          <code slot="code">높이를 입력하세요.
+10
+
+너비를 입력하세요.
+10
+
+지뢰는 몇 개인가요?
+10
+
+지뢰찾기 게임 시작
+open: 1, 1
+0 1 C C C C C C C C
+0 1 C C C C C C C C
+0 1 C C C C C C C C
+1 1 C C C C C C C C
+C C C C C C C C C C
+C C C C C C C C C C
+C C C C C C C C C C
+C C C C C C C C C C
+C C C C C C C C C C
+C C C C C C C C C C
+
+open: 4, 1
+Lose Game.</code>
+        </deckgo-highlight-code>
+<h3>지뢰찾기 구현 목록</h3>
+<ol class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> 게임판의 높이와 너비, 지뢰 개수를 입력받는다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 게임판을 만든다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 입력받은 지뢰 개수만큼 지뢰를 생성하며 위치는 랜덤이다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 지뢰찾기 게임판을 만든다.
+<ul>
+<li>지뢰 주변의 셀 숫자를 증가시킨다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 셀 위치를 반복적으로 입력 받는다.
+<ul>
+<li>입력받은 위치는 <code class="language-text">,</code>로 구분되어야 하고 2개의 정수이어야 하며 높이와 너비를 초과해서는 안된다.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 입력받은 위치의 셀을 연다.
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> 주변에 지뢰가 존재하지 않는 셀(0인 셀)이라면 반복해서 주변의 셀을 연다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 주변에 지뢰가 존재하는 셀이라면 선택한 셀만 열린다.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> 선텍한 셀이 지뢰라면 게임은 끝난다.</li>
+</ul>
+</li>
+</ol>
 <p><strong>1단계</strong>: 지뢰 찾기 (그리기) <a href="https://github.com/next-step/kotlin-minesweeper/pull/367">리뷰</a><br>
 <strong>2단계</strong>: 지뢰 찾기 (지뢰 개수) <a href="https://github.com/next-step/kotlin-minesweeper/pull/378">리뷰</a><br>
 <strong>3단계</strong>: 지뢰 찾기 (게임 실행) <a href="https://github.com/next-step/kotlin-minesweeper/pull/396">리뷰</a><br>
