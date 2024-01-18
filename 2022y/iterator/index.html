@@ -248,7 +248,7 @@ private class Itr implements Iterator&lt;E&gt; {
 <p><code class="language-text">Iterator</code>의 <code class="language-text">remove()</code>를 사용할 때도 지켜야할 규칙이 있다.<br>
 위의 <code class="language-text">Itr</code> 구현 클래스를 보면 <code class="language-text">next()</code>가 호출될 때 마다 <code class="language-text">lastRet</code>을 <code class="language-text">cursor</code>로 업데이트하고, <code class="language-text">remove()</code>가 호출될 때 마다 <code class="language-text">lastRet</code>을 <code class="language-text">-1</code>로 업데이트 하기 때문에 <strong>한 번의 next() 호출당 remove() 호출이 두 번 이상 존재하면 오류가 발생한다.</strong></p>
 <p><strong>반복자 클래스는 요소를 추가하는 메서드는 제공하지 않는다. 결국 반복자의 주요 기능은 <code class="language-text">순회</code>이며, 요소를 추가하는 작업은 반복자에 적절하지 않다는 것을 유의하자.</strong></p>
-<h3>Iterator 두 개를 만든 아래의 실행 결과는?<h3>
+<h3>Iterator 두 개를 만든 아래의 실행 결과는?</h3>
 <deckgo-highlight-code language="java" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">public static void main(String[] args) {
     List&lt;String&gt; chars = new ArrayList&lt;&gt;();
@@ -264,7 +264,7 @@ private class Itr implements Iterator&lt;E&gt; {
         </deckgo-highlight-code>
 <p><strong>ConcurrentModificationException</strong> 예외가 발생한다.<br>
 그 이유는 최초 <code class="language-text">modCount</code>는 4이지만, <code class="language-text">iterator1.remove()</code>에서 <code class="language-text">ArraysList.this.remove(lastRet)</code>을 통해, ArraysList 내부 속성의 <code class="language-text">modCount</code>는 4로 증가되기 때문에 <code class="language-text">iterator2</code>의 <code class="language-text">expectedModCount</code>와 틀리게된다.</p>
-<h3>이 경우에는 removeIf와 replaceAll로 대체할 수 있다.<h3>  
+<h3>이 경우에는 removeIf와 replaceAll로 대체할 수 있다.</h3>  
 <p>꼭 내부 컬렉션을 직접 조작하고 싶다면 아래의 방법을 사용할 수 있다.</p>
 <deckgo-highlight-code language="java" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">private List&lt;Dish&gt; menu;
