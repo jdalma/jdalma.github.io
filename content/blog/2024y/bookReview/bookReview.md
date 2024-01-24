@@ -64,7 +64,7 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 위의 경험 때문에 [코드숨 스터디](https://www.codesoom.com/courses/soomtudy) 모집을 보고 바로 참가했다.  
   
 HTTP/2가 개선되긴 했지만 HTTP/1.1과 비교해서 **명확하게 어떤 부분이 개선되었는지** , 스트림에 대해서는 들어봤는데 **명확하게 어떤 방식으로 통신이 이루어지는지** 알지 못했다.  
-이 책은 HTTP/2 뿐만이 아니라 HTTP/1.1, HTTPS, TCP에 대해서도 설명해주어서 가려운 부분을 시원하게 다 긁어준다.  
+이 책은 HTTP/2 뿐만이 아니라 HTTP/1.0, HTTP/1.1, HTTPS, TCP, QUIC에 대해서도 설명해주어서 가려웠던 부분을 시원하게 다 긁어준다.  
 
 1. HTTP/1.1까지의 문제점과 한계
 2. HTTP/2 개념과 프레임, 단일 연결 다중 요청
@@ -72,11 +72,13 @@ HTTP/2가 개선되긴 했지만 HTTP/1.1과 비교해서 **명확하게 어떤 
 4. HTTP/2 스트림, 흐름 제어, 스트림 우선순위
 5. QUIC과 HTTP/3를 설명하기 위한 TCP의 비효율성과 UDP를 선택한 이유
 
-이번 책으로 인해서 HTTP/2가 **어떤 문제를 어떻게 해결하는지, 한계는 무엇인지를 쉽게 이해할 수 있었다.**  
+이번 책으로 인해서 HTTP/2가 **어떤 문제를 어떻게 해결하는지, 한계는 무엇인지를 이해할 수 있었다.**  
   
 스터디에서 [매 챕터마다 문제를 제공](https://github.com/CodeSoom/http2-in-action)해줘서 [문제를 풀면서 학습](https://github.com/jdalma/footprints/blob/main/%EC%8A%A4%ED%84%B0%EB%94%94/HTTP2%EC%9D%B8%EC%95%A1%EC%85%98.md)할 수 있었어서 좋았다.  
-많은 회사에서 HTTP/2를 적용한 통신 방법을 채택하는 시기이기도 하고 네트워크 변화의 흐름에 대해 이해하기 위해서는 꼭 읽어야 할 책이라고 생각된다.  
-
+네트워크 내용이 너무 방대해서 항상 네트워크 책을 읽을 때 마다 힘들었는데, 이번 책은 HTTP 프로토콜에 대해 집중적으로 설명해줘서 다른 책에 비해 덜 힘들었던 것 같다.  
+  
+요즘 많은 회사에서 HTTP/2를 적용한 통신 방법을 채택하고 있고 전반적인 네트워크 변화의 흐름에 대해 이해하기 위해서는 정말 좋은 책이라고 생각한다.  
+  
 - [gRPC를 사용하는 기업들](https://www.codenary.co.kr/techstack/detail/grpc)
 - [Armeria로 Reactive Streams와 놀자!](https://engineering.linecorp.com/ko/blog/reactive-streams-with-armeria-1)
 - [뱅크샐러드 프로덕션 환경에서 사용하는 golang과 gRPC](https://blog.banksalad.com/tech/production-ready-grpc-in-golang/)
