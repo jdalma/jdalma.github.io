@@ -1,11 +1,11 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react";
 import { Link, graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import TableOfContents from "../components/toc"
+import TOC from "../components/toc";
 import Utterances from "../components/utterances"
 
 const BlogPostTemplate = ({
@@ -13,7 +13,24 @@ const BlogPostTemplate = ({
   location,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
-
+  const [tocHighlight, setTocHighlight] = useState(undefined);
+  useEffect(() => {
+    window.addEventListener("scroll", onScrollHandler);
+    return () => window.removeEventListener("scroll", onScrollHandler); //메모리 누수 방지
+  }, []);
+  const onScrollHandler = e => {
+    const currentOffsetY = window.pageYOffset;
+    const headerElements = document.querySelectorAll(".anchor-header");
+    for (const item of headerElements) {
+      const { top } = item.getBoundingClientRect();
+      const elemTop = top + currentOffsetY;
+      const lastItem = headerElements[headerElements.length - 1];
+      if (elemTop <= currentOffsetY) {
+        //현재 아이템의 높이와 페이지 크기를 합친 것보다  현재 높이가 크면 props로 보내준다.
+        setTocHighlight(item.href.split(window.location.origin)[1]);
+      }
+    }
+  };
   return (
       <Layout location={location} title={siteTitle}>
             <article
@@ -35,9 +52,6 @@ const BlogPostTemplate = ({
                     ))
                   : null}
                 </ul>
-              </div>
-              <div class="table-of-content">
-                <TableOfContents content={post.tableOfContents}/>
               </div>
               <section
                 dangerouslySetInnerHTML={{ __html: post.html }}
@@ -74,6 +88,7 @@ const BlogPostTemplate = ({
                 </li>
               </ul>
             </nav>
+            <TOC post={post} headerUrl={tocHighlight}/>
             <Utterances repo='jdalma/jdalma.github.io' theme='github-light'/>
       </Layout>
   )

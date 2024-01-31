@@ -1,0 +1,15 @@
+:root {
+    --black: #1b1b1b;
+    --gray: #636363;
+    --lgray: #838383;
+    --dgray: #2c2d31;
+    --white: #ecedf1;
+    --lwhite: #f2f3f7;
+}
+
+.blog-post-tablecontent {
+    position: absolute;
+    height: 99999px;
+    top: 0;
+    right: 0px;
+}

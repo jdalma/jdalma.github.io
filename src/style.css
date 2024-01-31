@@ -65,12 +65,11 @@
 
 .table-of-content ul {
   margin-left: "0px";
+  list-style: none;
+  padding: 0;
 }
 .table-of-content li {
   color: blue;
-}
-.table-of-content a {
-  decoration: none;
 }
 
 *,
