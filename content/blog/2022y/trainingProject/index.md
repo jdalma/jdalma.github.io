@@ -1,5 +1,5 @@
 ---
-title: 1차 트레이닝 프로젝트
+title: Armeria + gRPC 사용해보기
 date: "2022-12-15"
 tags:
    - Armeria
@@ -7,7 +7,7 @@ tags:
    - HTTP/2
 ---
 
-이번에 진행하게된 1차 트레이닝 프로젝트에서 기대하는 영향은 기존에 존재하던 REST API를 그대로 유지하면서 gRPC 통신을 같이 사용할 수 있을지 확인하고, Stream 통신을 테스트해보는 것이다.  
+기존에 존재하던 REST API를 그대로 유지하면서 gRPC 통신을 같이 사용할 수 있을지 확인하고, Stream 통신을 테스트해보는 것이다.  
 - REST API와 RPC 통신을 한 포트로 처리할 수 있는 Armeria를 사용한다.
 - protocol buffer를 통해 기존 JSON보다 데이터 사이즈를 줄일 수 있을 것이다.
   
@@ -16,10 +16,41 @@ tags:
 Armeria에서는 [`javadoc` HttpService](https://javadoc.io/doc/com.linecorp.armeria/armeria-javadoc/latest/com/linecorp/armeria/server/HttpService.html)로 Tomcat, gRPC 들을 추상화 해놓았다.  
 Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가시키기만 하면 된다.  
 
+```kotlin
+@Configuration
+class ArmeriaConfig{
+
+    @Bean
+    fun armeriaServerConfigurator(
+      context: ServletWebServerApplicationContext, 
+      services: List<BindableService>
+    ): ArmeriaServerConfigurator {
+        val grpcService: GrpcService =
+            GrpcService.builder().apply {
+                this.addServices(services)
+            }.build()
+
+        val container = context.webServer as TomcatWebServer
+        container.start()
+
+        return ArmeriaServerConfigurator { builder ->
+
+            // tomcatService 바인딩
+            builder.serviceUnder("/",  TomcatService.of(container.tomcat))
+
+            // stub 구현체 등록
+            builder.service(grpcService)
+
+            // Armeria Service 문서 활성화
+            builder.serviceUnder("/docs", DocService())
+        }
+    }
+}
+```
+
 > ✋  
 > Tomcat 포트를 직접 지정해주고 해당 포트로 REST 요청을 보내게되면 Armeria를 거치지 않고 바로 TomcatWebServer가 처리한다.  
 > Tomcat 포트를 `-1`로 지정하고 Armeria 포트만 지정해주면 Armeria가 REST 요청과 gRPC 요청 둘 다 처리하게 된다.  
-> 개인적인 궁금증으로는 REST 요청과 gRPC 요청을 어떤 기준으로 요청을 구분하는지 알아내고 싶었지만, 조사해보아도 알아내지 못 했다 ㅠ
 
 ![](flow.png)
 
@@ -48,18 +79,18 @@ Netty의 `EventLoop`가 client로부터 오는 모든 요청을 다 받는다.
   - 기본(Async) Stub
 
 - **ServerStream** 서버 → 클라이언트 스트림 통신
-  - Future Stub (not support)
+  - `not support` Future Stub 
   - Blocking Stub
   - 기본(Async) Stub
 
 - **ClientStream** 클라이언트 → 서버 스트림 통신
-  - Future Stub (not support)
-  - Blocking Stub (not support)
+  - `not support` Future Stub
+  - `not support` Blocking Stub
   - 기본(Async) Stub
 
 - **BiStream** 양방향 스트림 통신
-  - Future Stub (not support)
-  - Blocking Stub (not support)
+  - `not support` Future Stub
+  - `not support` Blocking Stub
   - 기본(Async) Stub
 
 # Armeria의 Server Thread는 어떻게 처리될까?
@@ -82,13 +113,18 @@ EventLoop는 단일 스레드로 요청과 응답을 처리하므로 해당 스�
 
 ![](packet.png)
 
+1. **SETTINGS 프레임** 을 통해 초기 흐름 제어 창 크기와 최대 동시 스트림 수를 전송한다.
+2. **WINDOW_UPDATE 프레임** 을 통해 수신자를 압도하지 않도록 전송하는 데이터의 양을 조절하기 위해 창 크기를 업데이트한다.
+3. **HEADERS 프레임** 으로 HTTP/2 요청을 전송하고 **DATA 프레임** 으로 응답을 받는다.
+4. 응답이 처리되고 클라이언트가 더 이상의 데이터를 기다리지 않으면 클라이언트는 **GOAWAY 프레임** 을 보내 연결을 종료한다.
+  
+![](armeriaThread.png)
+
 **Event Loop가 처리하는 기준**
 - 한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만
 - 11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다
 - [`GOAWAY` 프레임](https://datatracker.ietf.org/doc/html/rfc7540#section-6.8)을 통해 서로 데이터를 다 보냈다는 확인을 한다.
-- 마지막 **RST flag**를 보내면서 서버에서 Socket이 닫히고 TCP 커넥션을 끊는다고 이해했다.
-
-![](armeriaThread.png)
+- 마지막 **RST flag**를 보내면서 서버에서 Socket이 닫히고 TCP 커넥션을 끊는다.
 
 # 소감과 무지 목록
   
