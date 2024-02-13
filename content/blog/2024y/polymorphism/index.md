@@ -14,9 +14,93 @@ tags:
 
 대해 알아보자. 자연스럽게 타입 검사기와 더 친해질 수 있을 것이다.  
 (예제 코드는 기본적으로 코틀린을 사용하지만 코틀린에 제공되지 않는 기능들은 첫 줄에 사용한 언어를 표시해놓았다.)  
-  
 
-# 집합론적 타입
+# 다형성
+
+다형성은 프로그램의 **한 개체**가 여러 타입에 속하도록 만드는 것이다.  
+개체는 값, 함수, 클래스, 메서드 등 여러 가지가 될 수 있다.  
+  
+하나의 값이 여러 타입에 속할 수도 있고, 한 함수를 여러 타입의 함수로 사용할 수도 있는 것이다.  
+**다형성은 거의 모든 정적 타입 언어에서만 발견할 수 있는 매우 널리 사용되는 개념이다.**  
+`"어떤 개체에 다형성을 부여하는지"` , `"어떻게 다형성을 부여하는지"` 를 이해하는 것이 중요하다.  
+
+## 서브타입에 의한 다형성
+
+이 주제는 객체를 다룰 때 유용하며 **서브타입** 이라는 개념을 통해 다형성을 실현한다.    
+서브타입은 타입 사이의 관계이며, `"A는 B이다."` 라는 설명이 올바르다면 `A는 B의 서브타입` , `B는 A의 슈퍼타입`이다.  
+반대로 `"B는 A이다."`는 성립하지 않는다.    
+  
+A는 B의 서브타입일 때 B 타입의 부품을 A 타입의 부품으로도 간주할 수 있게 하는 기능이 서브타입에 의한 다형성이다.  
+즉, **슈퍼타입이 요구되는 자리에 서브타입이 위치하더라도 타입 검사기가 문제삼지 않는다는 것이다.**  
+타입 검사기가 객체 타입의 서브타입 관계를 판단할 때 **이름에 의한 서브타입**과 **구조에 의한 서브타입**이 존재한다.  
+  
+### 이름에 의한 서브타입
+
+![](./subtype.png)
+
+클래스의 이름과 클래스 사이의 상속 관계만 고려한다.
+  
+```kotlin
+open class Person(val name: String)
+class Marathoner(name: String): Person(name)
+```
+```kotlin
+fun run(person: Person) {
+    TODO()
+}
+
+run(Person(...))
+run(Marathoner(...))
+```
+```kotlin
+fun run(marathoner: Marathoner) {
+    TODO()
+}
+
+run(Person(name))       // 컴파일 에러
+run(Marathoner(name))
+```
+  
+### 구조에 의한 서브타입
+
+![](./subtype2.png)
+
+만약 Person과 Marathoner라는 콘크리트 클래스가 서로 관계가 맺어져 있지 않고 다른 라이브러리에 존재한다고 가정하면 함수를 같이 사용할 수 없게된다.  
+이 문제를 **구조를 드러내는 타입**을 사용하여 `"A가 B에 정의된 필드와 메서드를 모두 정의한다면 A는 B의 서브타입이다."` 라는 규칙을 적용하게 하여 해결할 수 있다.  
+  
+```kotlin
+// scala
+class Person(val name: String) {
+  def greeting(word: String): Unit = {
+    println(word)
+  }
+}
+class Marathoner(val name: String, val awards: List[String]) {
+  def greeting(word: String): Unit = {
+    println(word)
+  }
+}
+
+// 필드 구조를 드러내어 다형성을 해결
+def run(person: { val name: String }): Unit = {
+   // person.name
+}
+
+run(new Person(name))
+run(new Marathoner(name, null))
+
+// 메서드 구조를 드러내어 다형성을 해결
+def _greeting(person: { def greeting(word: String): Unit }, word: String): Unit = {
+   person.greeting(word)
+}
+
+_greeting(new Person(name), "hello")
+_greeting(new Marathoner(name, null), "hi")
+```
+
+언어가 구조에 의한 서브타입을 제공하면 추상 메서드를 대체할 수 있기 때문에 추상 메서드의 필요성이 줄어든다.  
+
+### 집합론적 서브타입
 
 > 타입은 프로그램에 존재하는 값들을 그 능력에 따라 분류한 것이다. 여기서 값은 변수에 저장되거나 함수에서 반환될 수 있는 모든 것들을 말한다.
 
@@ -124,118 +208,97 @@ function getName(person: Trainer & Developer): String {
 }
 ```
 
-# 다형성
-
-다형성은 프로그램의 **한 개체**가 여러 타입에 속하도록 만드는 것이다.  
-개체는 값, 함수, 클래스, 메서드 등 여러 가지가 될 수 있다.  
-  
-하나의 값이 여러 타입에 속할 수도 있고, 한 함수를 여러 타입의 함수로 사용할 수도 있는 것이다.  
-**다형성은 거의 모든 정적 타입 언어에서만 발견할 수 있는 매우 널리 사용되는 개념이다.**  
-`"어떤 개체에 다형성을 부여하는지"` , `"어떻게 다형성을 부여하는지"` 를 이해하는 것이 중요하다.  
-
-## 서브타입에 의한 다형성
-
-이 주제는 객체를 다룰 때 유용하며 **서브타입** 이라는 개념을 통해 다형성을 실현한다.    
-서브타입은 타입 사이의 관계이며, `"A는 B이다."` 라는 설명이 올바르다면 `A는 B의 서브타입` , `B는 A의 슈퍼타입`이다.  
-반대로 `"B는 A이다."`는 성립하지 않는다.    
-  
-A는 B의 서브타입일 때 B 타입의 부품을 A 타입의 부품으로도 간주할 수 있게 하는 기능이 서브타입에 의한 다형성이다.  
-즉, **슈퍼타입이 요구되는 자리에 서브타입이 위치하더라도 타입 검사기가 문제삼지 않는다는 것이다.**  
-타입 검사기가 객체 타입의 서브타입 관계를 판단할 때 **이름에 의한 서브타입**과 **구조에 의한 서브타입**이 존재한다.  
-  
-### 이름에 의한 서브타입
-
-![](./subtype.png)
-
-클래스의 이름과 클래스 사이의 상속 관계만 고려한다.
-  
-```kotlin
-open class Person(val name: String)
-class Marathoner(name: String): Person(name)
-```
-```kotlin
-fun run(person: Person) {
-    TODO()
-}
-
-run(Person(...))
-run(Marathoner(...))
-```
-```kotlin
-fun run(marathoner: Marathoner) {
-    TODO()
-}
-
-run(Person(name))       // 컴파일 에러
-run(Marathoner(name))
-```
-  
-### 구조에 의한 서브타입
-
-![](./subtype2.png)
-
-만약 Person과 Marathoner라는 콘크리트 클래스가 서로 관계가 맺어져 있지 않고 다른 라이브러리에 존재한다고 가정하면 위의 `run` 함수를 같이 사용할 수 없게된다.  
-이 문제를 **구조를 드러내는 타입**을 사용하여 `"A가 B에 정의된 필드와 메서드를 모두 정의한다면 A는 B의 서브타입이다."` 라는 규칙을 적용하게 하여 해결할 수 있다.  
-  
-```kotlin
-// scala
-class Person(val name: String) {
-  def greeting(word: String): Unit = {
-    println(word)
-  }
-}
-class Marathoner(val name: String, val awards: List[String]) {
-  def greeting(word: String): Unit = {
-    println(word)
-  }
-}
-
-// 필드 구조를 드러내어 다형성을 해결
-def run(person: { val name: String }): Unit = {
-   // person.name
-}
-
-run(new Person(name))
-run(new Marathoner(name, null))
-
-// 메서드 구조를 드러내어 다형성을 해결
-def _greeting(person: { def greeting(word: String): Unit }, word: String): Unit = {
-   person.greeting(word)
-}
-
-_greeting(new Person(name), "hello")
-_greeting(new Marathoner(name, null), "hi")
-```
-
-언어가 구조에 의한 서브타입을 제공하면 추상 메서드를 대체할 수 있기 때문에 추상 메서드의 필요성이 줄어든다.  
-
 ### 함수와 서브타입
 
 언어가 함수를 값으로 사용할 수 있는 일급 함수를 지원하고 객체와 서브타입에 의한 다형성이 존재하면 **함수 타입 사이의 서브타입 관계를 따질 필요가 생긴다.**  
-위에서 배운 `"A는 B이다."`에 입각하면 `(Marathoner) -> Marathoner`는 `(Marathoner) -> Person`의 서브타입이다.  
-그리고 A가 B의 서브타입일 때 `C → A`가 `C → B`의 서브타입이다.  
   
 ```kotlin
-open class Person(val name: String)
-class Marathoner(name: String): Person(name)
+open class Person
+class Marathoner : Person()
 
-val subToSub : (Marathoner) -> Marathoner = { it }
-val subToSuper : (Marathoner) -> Person = { it }
-val superToSuper : (Person) -> Person = { it }
-val superToSub : (Person) -> Marathoner = { Marathoner(it.name) }
+val selectBySupertype: (Person) -> Marathoner = TODO()
+val selectBySubtype: (Marathoner) -> Marathoner = TODO()
+
+fun select(selector: (Marathoner) -> Person) {
+   val person = selector(Marathoner())
+   TODO()
+}
+
+@Test
+fun call() {
+   select(selectBySupertype)
+   select(selectBySubtype)
+}
 ```
 
+이전에 배운 `"A는 B이다."`에 입각하여 위의 예제를 보면 `(Person) -> Boolean`은 `(Marathoner) -> Boolean`의 서브타입이다.  
+**"사람을 인자로 받을 수 있는 함수는 마라토너를 인자로 받을 수 있는 함수다."** 가 성립되기 때문이다.  
+  
+하지만 그 반대인 `(Marathoner) -> Boolean`은 `(Person) -> Boolean`의 서브타입이 아니다.  
+**"마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다."** 가 성립되지 않기 때문이다.  
+  
 ![](./functionSubtype.png)
   
-이때까지 배운 다형성의 서브타입으로 이해하면 `superToSuper` 와 `superToSub`는 타입 검사기를 통과하지 않아야 하지만 통과한다.  
-`(Person) -> Person` 과 `(Person) -> Marathoner`가 `(Marathoner) -> Person`의 서브타입인지를 이해하려면 **"적어도 사람을 인자로 받을 수 있는 함수는 학생을 인자로 받을 수 있는 함수다."**
+| 람다 \ 함수 인자 | selectSuperToSuper | selectSubToSuper | selectSuperToSub | selectSubToSub |
+| :----- | :-----: | :-: | :-: | :-: |
+| `(Sub) -> Sub`       | ❌ | O | ❌ | O |
+| `(Sub) -> Super`     | ❌ | O | ❌ | ❌ |
+| `(Super) -> Super`   | O  | O | ❌ | ❌ |
+| `(Super) -> Sub`     | O  | O | O | O |
 
-***
+즉, A가 B의 서브타입일 떄 `B -> C`가 `A -> C`의 서브타입이며 그 반대는 성립하지 않는다.  
+따라서 **함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다.**  
+결과 타입의 서브타입 관계가 유지된다는 사실은 나름 직관적인것에 비해, 매개변수 타입의 서브타입 관계가 뒤집히는게 이상할 수 있지만 논리적으로 타당하다.  
+  
+`selectSubToSuper`의 함수는 4가지의 람다를 모두 허용하는 이유가 **"함수 타입은 매개변수 타입의 서브타입 관계를 뒤집고 결과 타입의 서브타입 관계는 유지하기 때문이다."** ⭐️  
 
-1. 매개변수에 의한 다형성
-2. 제네릭
-3. 오버로딩에 의한 다형성
-4. 오버라이딩에 의한 다형성
+## 매개변수에 의한 다형성
+
+매개변수에 의한 다형성은 **타입 매개변수를 통해 다형성을 만드는 기능으로, 제네릭스라고도 부른다.**  
+
+```kotlin
+fun <T> choose(v1: T, v2: T): T {
+   println(v1)
+   println(v2)
+   return if(readln() == "Y") v1 else v2
+}
+```
+
+`T`를 매개변수 타입 표시와 결과 타입 표시에 사용했다. 이와 같이 한 개 이상의 타입 매개변수를 가지는 함수를 **제네릭 함수** 라고 부른다.  
+타입 매개변수를 추가할 수 있는 곳은 함수뿐이 아니라 타입에 타입 매개변수를 추가하여 **제네릭 타입** 을 지정할 수 있고,  
+타입 매개변수를 가진 클래스를 정의하여 **제네릭 클래스** 도 만들 수 있다.  
+  
+하지만 제네릭 `T`가 아무 타입이나 될 수 있기 때문에 특정 타입에서 제공하는 기능을 사용할 수 없다.  
+**타입 매개변수로 지정된 타입은 함수 또는 클래스 안에서 특정 능력이 필요한 자리에 사용된다면 제네릭으로 선언할 필요가 없다.**  
+  
+### 무엇이든 타입
+
+```kotlin
+fun <T> first(list: List<T>): T = list.first()
+fun <T> last(list: List<T>): T = list.last()
+
+fun <T> compute(selector: (List<T>) -> T) {
+   selector(listOf(1,2,3))
+   selector(listOf("A","B","C"))
+}
+
+@Test
+fun task() {
+   compute<Int>(::first)
+   compute<String>(::last)
+}
+```
+
+`simulate` 함수 안에서 selector의 타입이 2가지가 동시에 존재하기 때문에 컴파일 에러가 발생한다.  
+타입 검사기가 `simulate`의 `T`가 무엇인지 알 수 없는 이와 같은 상황을 해결할 수 있는 방법은 무엇일까?  
+(simulate에 list를 파라미터로 추가하면 되지만.. 2가지 타입이 동시에 존재하는 상황에 집중해보자)  
+  
+이때 **무엇이든 타입** 을 사용할 수 있다.  
+
+
+1. 제네릭
+2. 오버로딩에 의한 다형성
+3. 오버라이딩에 의한 다형성
 
 
 
