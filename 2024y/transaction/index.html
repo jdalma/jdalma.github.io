@@ -274,7 +274,7 @@ update employees SET last_name = &#39;Updated Doe&#39; where first_name = &#39;J
 update employees SET last_name = &#39;Updated Jane&#39; where first_name = &#39;Jane&#39;;
 -- 트랜잭션 A의 UPDATE문을 기다린다.</code>
         </deckgo-highlight-code>
-<p>위와 같이 UPDATE문을 작성하면 1건만 레코드 락이 걸려야하겠지만 아래와 같이 모든 레코드를 잠그게 된다.</p>
+<p>위와 같이 UPDATE문을 작성하면 10건만 레코드 락이 걸려야하겠지만 아래와 같이 모든 레코드를 잠그게 된다.</p>
 <deckgo-highlight-code  terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
 +-------------+------------+-----------+-----------+-------------+------------------------+
