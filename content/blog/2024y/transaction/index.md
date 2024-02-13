@@ -211,7 +211,7 @@ update employees SET last_name = 'Updated Jane' where first_name = 'Jane';
 -- 트랜잭션 A의 UPDATE문을 기다린다.
 ```
 
-위와 같이 UPDATE문을 작성하면 1건만 레코드 락이 걸려야하겠지만 아래와 같이 모든 레코드를 잠그게 된다.  
+위와 같이 UPDATE문을 작성하면 10건만 레코드 락이 걸려야하겠지만 아래와 같이 모든 레코드를 잠그게 된다.  
 
 ```
 SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
