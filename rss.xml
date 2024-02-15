@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 13 Feb 2024 16:05:56 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 15 Feb 2024 15:14:52 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 06일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -78,8 +78,6 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;li&gt;&lt;a href=&quot;https://blog.banksalad.com/tech/production-ready-grpc-in-golang/&quot;&gt;뱅크샐러드 프로덕션 환경에서 사용하는 golang과 gRPC&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://story.cookapps.com/articles/187&quot;&gt;쿡앱스는 gRPC를 어떻게 사용하나요?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;자바-네트워크-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;자바 네트워크 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;real-my-sql-1권-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt; ~ing&lt;a href=&quot;#real-my-sql-1%EA%B6%8C-ing&quot; aria-label=&quot;real my sql 1권 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;타입으로-견고하게-다형성으로-유연하게&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;타입으로 견고하게 다형성으로 유연하게&lt;/strong&gt;&lt;a href=&quot;#%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EA%B2%AC%EA%B3%A0%ED%95%98%EA%B2%8C-%EB%8B%A4%ED%98%95%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EC%97%B0%ED%95%98%EA%B2%8C&quot; aria-label=&quot;타입으로 견고하게 다형성으로 유연하게 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;1월 19일 부터 2월 11일까지&lt;/code&gt;&lt;/p&gt;
@@ -89,9 +87,8 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 그리고 작은 프로그램, 타입에 대한 이해 수준이 낮게 요구될 때에는 동적 타입 언어가 더 유리하다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;정적 타입 언어가 유용하지만 &lt;strong&gt;타입 검사기가 &lt;code class=&quot;language-text&quot;&gt;거부&lt;/code&gt;라고 오판하는 경우가 반드시 존재한다.&lt;/strong&gt;&lt;br&gt;
-개발자들은 타입 검사기의 오판을 줄이고 정적 언어를 잘 사용하기 위해 여러 경우에 대한 다형성,가변성에 대한 이해와 타입 검사기와 친해지도록 노력하여야 한다.&lt;br&gt;
-이 책이 그 노력에 대해 도움을 준다.&lt;/p&gt;
-&lt;p&gt;와닿았던 부분은 제네릭 가변성에 대한 이해가 없을 때 이게 왜 안되는지 몰랐던 부분들을 깨닫게 도와줬다. &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super&quot;&gt;PECS : producer-extends, consumer-super&lt;/a&gt;를 외워서 사용했는데 왜 저렇게 제한해야 하는지 더 깊은 이해를 할 수 있도록 도와주었다.&lt;/p&gt;
+개발자들은 타입 검사기의 오판을 줄이고 정적 언어를 잘 사용하기 위해 여러 경우에 대한 다형성,가변성에 대한 이해와 타입 검사기와 친해지도록 노력해야 한다.&lt;/p&gt;
+&lt;p&gt;제일 와닿았던 부분은 제네릭 가변성에 대한 이해가 없을 때 이게 왜 안되는지 몰랐던 부분들을 깨닫게 도와줬다. &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super&quot;&gt;PECS : producer-extends, consumer-super&lt;/a&gt;를 외워서 사용했는데 왜 저렇게 제한해야 하는지 더 깊은 이해를 할 수 있도록 도와주었다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;서브타입에 의한 다형성
 &lt;ol&gt;
@@ -100,8 +97,16 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;li&gt;추상 메서드가 필요한 이유&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
+&lt;li&gt;매개변수에 의한 다형성
+&lt;ol&gt;
+&lt;li&gt;제네릭 함수, 타입&lt;/li&gt;
+&lt;li&gt;무엇이든, 무엇인가 타입&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;나는 주로 자바와 코틀린을 사용하기 때문에 책의 초반에 나오는 내용들을 따라가기가 쉬웠다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;자바-네트워크-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;자바 네트워크 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;real-my-sql-1권-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt; ~ing&lt;a href=&quot;#real-my-sql-1%EA%B6%8C-ing&quot; aria-label=&quot;real my sql 1권 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;코틀린-코루틴-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코틀린 코루틴&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4-ing&quot; aria-label=&quot;코틀린 코루틴 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;real-my-sql-2권-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 2권&lt;/strong&gt; 예정&lt;a href=&quot;#real-my-sql-2%EA%B6%8C-%EC%98%88%EC%A0%95&quot; aria-label=&quot;real my sql 2권 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;네티-인-액션-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;네티 인 액션&lt;/strong&gt; 예정&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%98%88%EC%A0%95&quot; aria-label=&quot;네티 인 액션 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -699,7 +704,7 @@ commit;
 &lt;li&gt;하지만 동일한 row에 &lt;strong&gt;Row-Level Lock&lt;/strong&gt;의 실제 lock (&lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt;)을 획득하는 과정에서 동시 접근을 막거나 허용하는 제어를 하게 된다&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;LOCK TABLES&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;ALTER TABLE&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;DROP TABLE&lt;/code&gt;이 실행될 때는 &lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt;를 모두 &lt;strong&gt;block&lt;/strong&gt;하는 &lt;strong&gt;Table-Level Lock&lt;/strong&gt;이 걸린다 (즉 , &lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt; lock을 획득하려는 트랜잭션은 대기상태로 빠진다)&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[다형성과 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/polymorphism/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/polymorphism/</guid><pubDate>Sun, 11 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
-&lt;p&gt;이 글의 내용은 &lt;a href=&quot;https://www.yes24.com/Product/Goods/122890814&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt; 책을 참고하여 작성하였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.yes24.com/Product/Goods/122890814&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt; 책을 정리한 내용입니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;이 글을 통해&lt;/p&gt;
 &lt;ol&gt;
@@ -760,7 +765,7 @@ class Marathoner(name: String): Person(name)&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun run(person: Person) {
-    TODO()
+    ..
 }
 
 run(Person(...))
@@ -768,7 +773,7 @@ run(Marathoner(...))&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun run(marathoner: Marathoner) {
-    TODO()
+    ..
 }
 
 run(Person(name))       // 컴파일 에러
@@ -806,7 +811,8 @@ run(Marathoner(name))&lt;/code&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;만약 Person과 Marathoner라는 콘크리트 클래스가 서로 관계가 맺어져 있지 않고 다른 라이브러리에 존재한다고 가정하면 함수를 같이 사용할 수 없게된다.&lt;br&gt;
-이 문제를 &lt;strong&gt;구조를 드러내는 타입&lt;/strong&gt;을 사용하여 &lt;code class=&quot;language-text&quot;&gt;&quot;A가 B에 정의된 필드와 메서드를 모두 정의한다면 A는 B의 서브타입이다.&quot;&lt;/code&gt; 라는 규칙을 적용하게 하여 해결할 수 있다.&lt;/p&gt;
+이 문제를 &lt;strong&gt;구조를 드러내는 타입&lt;/strong&gt;을 사용하여 &lt;code class=&quot;language-text&quot;&gt;&quot;A가 B에 정의된 필드와 메서드를 모두 정의한다면 A는 B의 서브타입이다.&quot;&lt;/code&gt; 라는 규칙을 적용하게 하여 해결할 수 있다.&lt;br&gt;
+언어가 구조에 의한 서브타입을 제공하면 추상 메서드를 대체할 수 있기 때문에 추상 메서드의 필요성이 줄어든다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// scala
 class Person(val name: String) {
@@ -836,7 +842,6 @@ def _greeting(person: { def greeting(word: String): Unit }, word: String): Unit 
 _greeting(new Person(name), &amp;quot;hello&amp;quot;)
 _greeting(new Marathoner(name, null), &amp;quot;hi&amp;quot;)&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;언어가 구조에 의한 서브타입을 제공하면 추상 메서드를 대체할 수 있기 때문에 추상 메서드의 필요성이 줄어든다.&lt;/p&gt;
 &lt;h3 id=&quot;집합론적-서브타입&quot; style=&quot;position:relative;&quot;&gt;집합론적 서브타입&lt;a href=&quot;#%EC%A7%91%ED%95%A9%EB%A1%A0%EC%A0%81-%EC%84%9C%EB%B8%8C%ED%83%80%EC%9E%85&quot; aria-label=&quot;집합론적 서브타입 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;타입은 프로그램에 존재하는 값들을 그 능력에 따라 분류한 것이다. 여기서 값은 변수에 저장되거나 함수에서 반환될 수 있는 모든 것들을 말한다.&lt;/p&gt;
@@ -960,12 +965,12 @@ function getName(person: Trainer &amp;amp; Developer): String {
           &lt;code slot=&quot;code&quot;&gt;open class Person
 class Marathoner : Person()
 
-val selectBySupertype: (Person) -&amp;gt; Marathoner = TODO()
-val selectBySubtype: (Marathoner) -&amp;gt; Marathoner = TODO()
+val selectBySupertype: (Person) -&amp;gt; Marathoner = ..
+val selectBySubtype: (Marathoner) -&amp;gt; Marathoner = ..
 
 fun select(selector: (Marathoner) -&amp;gt; Person) {
    val person = selector(Marathoner())
-   TODO()
+   ..
 }
 
 @Test
@@ -1073,8 +1078,8 @@ fun call() {
 fun &amp;lt;T&amp;gt; last(list: List&amp;lt;T&amp;gt;): T = list.last()
 
 fun &amp;lt;T&amp;gt; compute(selector: (List&amp;lt;T&amp;gt;) -&amp;gt; T) {
-   selector(listOf(1,2,3))
-   selector(listOf(&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;))
+   selector(listOf(1,2,3))          // 컴파일 에러
+   selector(listOf(&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;))    // 컴파일 에러
 }
 
 @Test
@@ -1086,9 +1091,135 @@ fun task() {
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;simulate&lt;/code&gt; 함수 안에서 selector의 타입이 2가지가 동시에 존재하기 때문에 컴파일 에러가 발생한다.&lt;br&gt;
 타입 검사기가 &lt;code class=&quot;language-text&quot;&gt;simulate&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;가 무엇인지 알 수 없는 이와 같은 상황을 해결할 수 있는 방법은 무엇일까?&lt;br&gt;
 (simulate에 list를 파라미터로 추가하면 되지만.. 2가지 타입이 동시에 존재하는 상황에 집중해보자)&lt;/p&gt;
-&lt;p&gt;이때 &lt;strong&gt;무엇이든 타입&lt;/strong&gt; 을 사용할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;haskell&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# haskell
+compute :: (forall a.[a] -&amp;gt; a) -&amp;gt; ()
+compute selector = 
+    let number = selector [1, 2, 3] in
+    let char = selector [&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;] in&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;이때 하스켈의 &lt;code class=&quot;language-text&quot;&gt;forall&lt;/code&gt; 키워드인 &lt;strong&gt;무엇이든 타입&lt;/strong&gt; 을 사용할 수 있다.&lt;br&gt;
+&lt;strong&gt;제네릭 함수를 바로 인자로 넘길 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;무엇인가-타입&quot; style=&quot;position:relative;&quot;&gt;무엇인가 타입&lt;a href=&quot;#%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-%ED%83%80%EC%9E%85&quot; aria-label=&quot;무엇인가 타입 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class TimeStamper{
+    fun Init(): Int = 0
+    fun next(t: Int) = t + 1;
+    fun compare(o1: Int, o2: Int) = o1 - o2
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;내가 라이브러리 개발자라고 가정해보자
+(위의 클래스는 문제가 많지만 상황을 설명하기 위해 어쩔 수 없이 사용해야 한다고 생각해보자.)&lt;/p&gt;
+&lt;p&gt;만약 TimeStamper의 반환 타입을 String으로 바꿔야 한다면 라이브러리 사용자는 내부 필드의 타입까지 모두 알고있기 때문에 라이브러리 수정으로 인한 파급력이 클 수 있다.&lt;br&gt;
+이때 &lt;strong&gt;무엇인가 타입&lt;/strong&gt; 을 활용하면 라이브러리 사용자에게 TimeStamper의 타입이 되는 &lt;code class=&quot;language-text&quot;&gt;무엇인가&lt;/code&gt;가 있다는 사실은 알지만, 그 타입을 특정하여 사용할 수 없도록 할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;exists T.{ T init(); T next(T t); T compare(T o1, T o2); } create() {
+    return TimeStamper()
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;이렇게 &lt;code class=&quot;language-text&quot;&gt;exists T.A&lt;/code&gt; 형태로 생긴 타입이 무엇인가 타입이며, &lt;strong&gt;T는 타입 매개변수, A는 타입을 의미한다.&lt;/strong&gt; 여기서 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;가 무엇인지는 알 수 없다.&lt;br&gt;
+그저 &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt; 함수 반환 값의 타입이 &lt;code class=&quot;language-text&quot;&gt;{ T init(); T next(T t); T compare(T o1, T o2); } 구조이다.&lt;/code&gt; 라는 사실이 되도록 만드는 T가 존재한다는 사실만 알려줄 뿐이다.&lt;br&gt;
+&lt;strong&gt;라이브러리 사용자는 타입에 의존하는 것이 아니라 구조에 의존하도록 의도하여 행동이 제약된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;실제로 &lt;code class=&quot;language-text&quot;&gt;exists T.A&lt;/code&gt; 키워드가 존재하는 것은 아니고 언어마다 이 타입을 지원하는 방법이 다르기 때문에 따로 확인이 필요할 것이다.&lt;br&gt;
+이런 문제를 해결하기 위해 이런 방법을 지원하는 언어들이 있다고 기억하면 좋을것이다. (하스켈, 오캐멀 참고)&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d19f33a8a6125d3ff62d9a6554c20c01/fcda8/forallExist.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABv0lEQVR42pWTXW/aMBSG+f//Zfe7m7hYaaWIScAgEUWUQQqjofkOSZz42XG8qAy6qbPsyD4fr98353jA9YgieH6G11e7zDmKIU7kfIJQbGFofVV1kz7IsoxYkiqlSPZ7ksOBpnPp7vv46OIuxkwmjuRbgOxcEAtg7vucy5I4jkmShDzPGXiex3A45Gm7ZXp/z4PsXwJhQouuQ9KfM9JgSXycU0dPYi6ZLxZ8vbtjIrE7yXMch9FohOu6DDouWls+wlYXZ9komQm6OlHHi45VWxxRwRTOIr2MrAYj/VpyB6atPJ2mAlhAIwm6kVlSxR4I0yZaU6dbG5f4aFXKfwwNG/TFGtgIC4gA0jGsLUORV7/M4LCiDVfUuS+FkAuLk41/j+EtYGH3ukZnP1DeUGS2tPsl6uCI3OQt21T6w4DGXJ5QKwGUsrebKer47bej/SBDKcofgCK/8r6gHj5Rf/8ssvfyN5r/YCi9JM305pW+ZDaH1RK2O9j59tI+568M+2Ea1wS1IqlpbFK/jO3Sbi6Xhv43YM/SgJplnqA0LvIiur1hHATWF0W8N24Be/lmzEXueAzymthsYL22hbuOuwD8BSTK8KWw9ipsAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;forallExist&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d19f33a8a6125d3ff62d9a6554c20c01/fcda8/forallExist.png&quot;
+        srcset=&quot;/static/d19f33a8a6125d3ff62d9a6554c20c01/3684f/forallExist.png 225w,
+/static/d19f33a8a6125d3ff62d9a6554c20c01/fc2a6/forallExist.png 450w,
+/static/d19f33a8a6125d3ff62d9a6554c20c01/fcda8/forallExist.png 590w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;무엇인가 타입의 값은 만들기 쉽지만 사용하기 어렵고, 무엇이든 타입의 값은 만들기는 어려워도 사용하기는 쉽다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;두-다형성의-만남&quot; style=&quot;position:relative;&quot;&gt;두 다형성의 만남&lt;a href=&quot;#%EB%91%90-%EB%8B%A4%ED%98%95%EC%84%B1%EC%9D%98-%EB%A7%8C%EB%82%A8&quot; aria-label=&quot;두 다형성의 만남 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;전통적으로 서브타입에 의한 다형성은 객체 지향 언어가 지원하고, 매개변수에 의한 다형성은 함수형 언어가 지원했다.&lt;br&gt;
+요즘은 한 언어가 &lt;strong&gt;두 종류의 다형성을 지원한다.&lt;/strong&gt;&lt;br&gt;
+서로 다른 특징을 가진 두 개의 다형성이 유용한 기능들이 탄생한다.&lt;/p&gt;
+&lt;h2 id=&quot;제네릭-클래스와-상속&quot; style=&quot;position:relative;&quot;&gt;제네릭 클래스와 상속&lt;a href=&quot;#%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%83%81%EC%86%8D&quot; aria-label=&quot;제네릭 클래스와 상속 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;알다시피 어떤 클래스를 상속해 새로운 클래스를 정의하면 기존 클래스에 정의된 필드와 메서드가 새 클래스에도 자동으로 정의된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract class List&amp;lt;T&amp;gt; {
+    abstract fun get(index: Int): T
+}
+class ArrayList&amp;lt;T&amp;gt;: List&amp;lt;T&amp;gt;() {
+    override fun get(index: Int): T = ..
+}
+class AnotherList: List&amp;lt;Boolean&amp;gt;() {
+    override fun get(index: Int): Boolean = ..
+}
+
+val stringList = ArrayList&amp;lt;String&amp;gt;()
+val intList = ArrayList&amp;lt;Int&amp;gt;()
+val anotherList = AnotherList()
+
+fun &amp;lt;T&amp;gt; findFirst(list: List&amp;lt;T&amp;gt;): T = ..
+fun isExist(list: List&amp;lt;Boolean&amp;gt;): Boolean = ..
+
+@Test
+fun name2() {
+    findFirst(stringList)
+    findFirst(intList)
+    findFirst(anotherList)
+
+    isExist(stringList)     // 컴파일 에러
+    isExist(intList)        // 컴파일 에러
+    isExist(anotherList)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;기존의 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;를 구현하는 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;&lt;/code&gt; 와 다르게 &lt;strong&gt;특정 타입의 List에 대한 서브타입&lt;/strong&gt; 을 추가해야하는 경우이다.&lt;br&gt;
+제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 &lt;code class=&quot;language-text&quot;&gt;C&amp;lt;T&gt; extends D&amp;lt;T&gt;&lt;/code&gt;라면 &lt;code class=&quot;language-text&quot;&gt;C&amp;lt;A&gt;&lt;/code&gt;는 &lt;strong&gt;타입 &lt;code class=&quot;language-text&quot;&gt;D&lt;/code&gt;에 등장하는 모든 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;로 바꿔서 만든 타입의 서브타입&lt;/strong&gt; 이라고 정리할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;타입-매개변수-제한&quot; style=&quot;position:relative;&quot;&gt;타입 매개변수 제한&lt;a href=&quot;#%ED%83%80%EC%9E%85-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%9C%ED%95%9C&quot; aria-label=&quot;타입 매개변수 제한 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;제네릭 함수를 정의한다는 것은 여러 타입으로 사용될 수 있는 함수를 만드는 일이니, &lt;strong&gt;인자로 주어질 값이 특별한 능력을 가진다고 가정할 수 없다.&lt;/strong&gt;&lt;br&gt;
+반대로 인자가 특별한 능력을 가져야만 한다면 그 함수는 제네릭 함수일 필요가 없다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Person(private val age: Int): Comparable&amp;lt;Person&amp;gt;{
+    override fun compareTo(other: Person): Int = compareValuesBy(this, other, Person::age)
+}
+class Marathoner(age: Int): Person(age)
+
+fun elder(person: Person, other: Person): Person =
+    if(person &amp;gt; other) person else other
+
+val person: Person = elder(person1, person2)
+val marathoner: Marathoner = elder(marathoner1, marathoner1)    // 컴파일 에러&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;elder&lt;/code&gt;의 파라미터는 서브타입에 의한 다형성으로 컴파일을 통과하지만 반환 타입이 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;이기 때문에 컴파일 에러가 발생한다.&lt;br&gt;
+실제로 반환 타입인 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;의 서브타입이 아니기 때문이다.&lt;/p&gt;
+&lt;p&gt;이때 제네릭 함수를 적용하려 할 수 있다. 하지만 제네릭 타입은 모든 타입을 수용하기 때문에 &lt;code class=&quot;language-text&quot;&gt;&gt;&lt;/code&gt; 연산 같은 특별한 능력을 사용할 수 없다.&lt;br&gt;
+이때 &lt;strong&gt;타입 매개변수 제한의 상한(upper bound)&lt;/strong&gt; 을 지정하여 &lt;strong&gt;&quot;T가 최대 Person 타입까지 커질 수 있다.&quot;&lt;/strong&gt; 라는 의미를 부여할 수 있다.&lt;br&gt;
+즉, &lt;strong&gt;T가 Person의 &lt;code class=&quot;language-text&quot;&gt;서브타입&lt;/code&gt;이다.&lt;/strong&gt; (제네릭 함수뿐 아니라 제네릭 클래스도 마찬가지다.)&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T: Person&amp;gt; elder(person: T, other: T): T =
+    if(person &amp;gt; other) person else other
+
+val person: Person = elder&amp;lt;Person&amp;gt;(person1, person2)
+val marathoner: Marathoner = elder&amp;lt;Marathoner&amp;gt;(marathoner1, marathoner1)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
 &lt;ol&gt;
-&lt;li&gt;제네릭&lt;/li&gt;
 &lt;li&gt;오버로딩에 의한 다형성&lt;/li&gt;
 &lt;li&gt;오버라이딩에 의한 다형성&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[2023년 회고]]></title><description><![CDATA[들어가며 벌써 2023년이 끝난다. 2022년 회고에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다. 많은 일들이 있었는데 찬찬히 정리해보자. 회사 적응기 2년 반정도 SI…]]></description><link>https://jdalma.github.io/2023y/retrospect/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/retrospect/</guid><pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가며&quot; style=&quot;position:relative;&quot;&gt;들어가며&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot; aria-label=&quot;들어가며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
