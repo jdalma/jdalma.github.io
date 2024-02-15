@@ -5,7 +5,7 @@ tags:
    - 다형성
 ---
 
-> 이 글의 내용은 [타입으로 견고하게 다형성으로 유연하게](https://www.yes24.com/Product/Goods/122890814) 책을 참고하여 작성하였습니다.  
+> [타입으로 견고하게 다형성으로 유연하게](https://www.yes24.com/Product/Goods/122890814) 책을 정리한 내용입니다.
 
 이 글을 통해 
 1. **타입**
@@ -46,7 +46,7 @@ class Marathoner(name: String): Person(name)
 ```
 ```kotlin
 fun run(person: Person) {
-    TODO()
+    ..
 }
 
 run(Person(...))
@@ -54,7 +54,7 @@ run(Marathoner(...))
 ```
 ```kotlin
 fun run(marathoner: Marathoner) {
-    TODO()
+    ..
 }
 
 run(Person(name))       // 컴파일 에러
@@ -67,6 +67,7 @@ run(Marathoner(name))
 
 만약 Person과 Marathoner라는 콘크리트 클래스가 서로 관계가 맺어져 있지 않고 다른 라이브러리에 존재한다고 가정하면 함수를 같이 사용할 수 없게된다.  
 이 문제를 **구조를 드러내는 타입**을 사용하여 `"A가 B에 정의된 필드와 메서드를 모두 정의한다면 A는 B의 서브타입이다."` 라는 규칙을 적용하게 하여 해결할 수 있다.  
+언어가 구조에 의한 서브타입을 제공하면 추상 메서드를 대체할 수 있기 때문에 추상 메서드의 필요성이 줄어든다.  
   
 ```kotlin
 // scala
@@ -97,8 +98,6 @@ def _greeting(person: { def greeting(word: String): Unit }, word: String): Unit 
 _greeting(new Person(name), "hello")
 _greeting(new Marathoner(name, null), "hi")
 ```
-
-언어가 구조에 의한 서브타입을 제공하면 추상 메서드를 대체할 수 있기 때문에 추상 메서드의 필요성이 줄어든다.  
 
 ### 집합론적 서브타입
 
@@ -216,12 +215,12 @@ function getName(person: Trainer & Developer): String {
 open class Person
 class Marathoner : Person()
 
-val selectBySupertype: (Person) -> Marathoner = TODO()
-val selectBySubtype: (Marathoner) -> Marathoner = TODO()
+val selectBySupertype: (Person) -> Marathoner = ..
+val selectBySubtype: (Marathoner) -> Marathoner = ..
 
 fun select(selector: (Marathoner) -> Person) {
    val person = selector(Marathoner())
-   TODO()
+   ..
 }
 
 @Test
@@ -278,8 +277,8 @@ fun <T> first(list: List<T>): T = list.first()
 fun <T> last(list: List<T>): T = list.last()
 
 fun <T> compute(selector: (List<T>) -> T) {
-   selector(listOf(1,2,3))
-   selector(listOf("A","B","C"))
+   selector(listOf(1,2,3))          // 컴파일 에러
+   selector(listOf("A","B","C"))    // 컴파일 에러
 }
 
 @Test
@@ -293,12 +292,131 @@ fun task() {
 타입 검사기가 `simulate`의 `T`가 무엇인지 알 수 없는 이와 같은 상황을 해결할 수 있는 방법은 무엇일까?  
 (simulate에 list를 파라미터로 추가하면 되지만.. 2가지 타입이 동시에 존재하는 상황에 집중해보자)  
   
-이때 **무엇이든 타입** 을 사용할 수 있다.  
+```haskell
+# haskell
+compute :: (forall a.[a] -> a) -> ()
+compute selector = 
+    let number = selector [1, 2, 3] in
+    let char = selector ["A", "B", "C"] in
+```
+
+이때 하스켈의 `forall` 키워드인 **무엇이든 타입** 을 사용할 수 있다.  
+**제네릭 함수를 바로 인자로 넘길 수 있다.**
+
+### 무엇인가 타입
+
+```kotlin
+class TimeStamper{
+    fun Init(): Int = 0
+    fun next(t: Int) = t + 1;
+    fun compare(o1: Int, o2: Int) = o1 - o2
+}
+```
+
+내가 라이브러리 개발자라고 가정해보자
+(위의 클래스는 문제가 많지만 상황을 설명하기 위해 어쩔 수 없이 사용해야 한다고 생각해보자.)  
+  
+만약 TimeStamper의 반환 타입을 String으로 바꿔야 한다면 라이브러리 사용자는 내부 필드의 타입까지 모두 알고있기 때문에 라이브러리 수정으로 인한 파급력이 클 수 있다.  
+이때 **무엇인가 타입** 을 활용하면 라이브러리 사용자에게 TimeStamper의 타입이 되는 `무엇인가`가 있다는 사실은 알지만, 그 타입을 특정하여 사용할 수 없도록 할 수 있다.  
+  
+```kotlin
+exists T.{ T init(); T next(T t); T compare(T o1, T o2); } create() {
+    return TimeStamper()
+}
+```
+
+이렇게 `exists T.A` 형태로 생긴 타입이 무엇인가 타입이며, **T는 타입 매개변수, A는 타입을 의미한다.** 여기서 `T`가 무엇인지는 알 수 없다.  
+그저 `create` 함수 반환 값의 타입이 `{ T init(); T next(T t); T compare(T o1, T o2); } 구조이다.` 라는 사실이 되도록 만드는 T가 존재한다는 사실만 알려줄 뿐이다.  
+**라이브러리 사용자는 타입에 의존하는 것이 아니라 구조에 의존하도록 의도하여 행동이 제약된다.**  
+  
+실제로 `exists T.A` 키워드가 존재하는 것은 아니고 언어마다 이 타입을 지원하는 방법이 다르기 때문에 따로 확인이 필요할 것이다.  
+이런 문제를 해결하기 위해 이런 방법을 지원하는 언어들이 있다고 기억하면 좋을것이다. (하스켈, 오캐멀 참고)  
+  
+![](./forallExist.png)
+  
+> 무엇인가 타입의 값은 만들기 쉽지만 사용하기 어렵고, 무엇이든 타입의 값은 만들기는 어려워도 사용하기는 쉽다.
+
+# 두 다형성의 만남
+
+전통적으로 서브타입에 의한 다형성은 객체 지향 언어가 지원하고, 매개변수에 의한 다형성은 함수형 언어가 지원했다.  
+요즘은 한 언어가 **두 종류의 다형성을 지원한다.**  
+서로 다른 특징을 가진 두 개의 다형성이 유용한 기능들이 탄생한다.  
+
+## 제네릭 클래스와 상속
+
+알다시피 어떤 클래스를 상속해 새로운 클래스를 정의하면 기존 클래스에 정의된 필드와 메서드가 새 클래스에도 자동으로 정의된다.  
+
+```kotlin
+abstract class List<T> {
+    abstract fun get(index: Int): T
+}
+class ArrayList<T>: List<T>() {
+    override fun get(index: Int): T = ..
+}
+class AnotherList: List<Boolean>() {
+    override fun get(index: Int): Boolean = ..
+}
+
+val stringList = ArrayList<String>()
+val intList = ArrayList<Int>()
+val anotherList = AnotherList()
+
+fun <T> findFirst(list: List<T>): T = ..
+fun isExist(list: List<Boolean>): Boolean = ..
+
+@Test
+fun name2() {
+    findFirst(stringList)
+    findFirst(intList)
+    findFirst(anotherList)
+
+    isExist(stringList)     // 컴파일 에러
+    isExist(intList)        // 컴파일 에러
+    isExist(anotherList)
+}
+```
+  
+기존의 `List<T>`를 구현하는 `ArrayList<T>` 와 다르게 **특정 타입의 List에 대한 서브타입** 을 추가해야하는 경우이다.  
+제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 `C<T> extends D<T>`라면 `C<A>`는 **타입 `D`에 등장하는 모든 `T`를 `A`로 바꿔서 만든 타입의 서브타입** 이라고 정리할 수 있다.  
+
+## 타입 매개변수 제한
+
+제네릭 함수를 정의한다는 것은 여러 타입으로 사용될 수 있는 함수를 만드는 일이니, **인자로 주어질 값이 특별한 능력을 가진다고 가정할 수 없다.**  
+반대로 인자가 특별한 능력을 가져야만 한다면 그 함수는 제네릭 함수일 필요가 없다.  
+  
+```kotlin
+open class Person(private val age: Int): Comparable<Person>{
+    override fun compareTo(other: Person): Int = compareValuesBy(this, other, Person::age)
+}
+class Marathoner(age: Int): Person(age)
+
+fun elder(person: Person, other: Person): Person =
+    if(person > other) person else other
+
+val person: Person = elder(person1, person2)
+val marathoner: Marathoner = elder(marathoner1, marathoner1)    // 컴파일 에러
+```
+  
+`elder`의 파라미터는 서브타입에 의한 다형성으로 컴파일을 통과하지만 반환 타입이 `Marathoner`이기 때문에 컴파일 에러가 발생한다.  
+실제로 반환 타입인 `Person`은 `Marathoner`의 서브타입이 아니기 때문이다.  
+  
+이때 제네릭 함수를 적용하려 할 수 있다. 하지만 제네릭 타입은 모든 타입을 수용하기 때문에 `>` 연산 같은 특별한 능력을 사용할 수 없다.  
+이때 **타입 매개변수 제한의 상한(upper bound)** 을 지정하여 **"T가 최대 Person 타입까지 커질 수 있다."** 라는 의미를 부여할 수 있다.  
+즉, **T가 Person의 `서브타입`이다.** (제네릭 함수뿐 아니라 제네릭 클래스도 마찬가지다.)
 
 
-1. 제네릭
-2. 오버로딩에 의한 다형성
-3. 오버라이딩에 의한 다형성
+```kotlin
+fun <T: Person> elder(person: T, other: T): T =
+    if(person > other) person else other
+
+val person: Person = elder<Person>(person1, person2)
+val marathoner: Marathoner = elder<Marathoner>(marathoner1, marathoner1)
+```
+  
+
+
+1. 오버로딩에 의한 다형성
+2. 오버라이딩에 의한 다형성
 
 
 
