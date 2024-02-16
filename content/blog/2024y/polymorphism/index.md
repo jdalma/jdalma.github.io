@@ -5,7 +5,7 @@ tags:
    - 다형성
 ---
 
-> [타입으로 견고하게 다형성으로 유연하게](https://www.yes24.com/Product/Goods/122890814) 책을 정리한 내용입니다.
+> 대부분의 내용은 [타입으로 견고하게 다형성으로 유연하게](https://www.yes24.com/Product/Goods/122890814) 책을 정리한 내용입니다.
 
 이 글을 통해 
 1. **타입**
@@ -13,7 +13,6 @@ tags:
 3. **제네릭 가변성**
 
 대해 알아보자. 자연스럽게 타입 검사기와 더 친해질 수 있을 것이다.  
-(예제 코드는 기본적으로 코틀린을 사용하지만 코틀린에 제공되지 않는 기능들은 첫 줄에 사용한 언어를 표시해놓았다.)  
 
 # 다형성
 
@@ -183,7 +182,7 @@ write("abcd")
 
 ![](./intersection.png)
 
-다중 상속을 다룰 때 유용하다. 위의 그림과 같이 어떤 함수를 `Trainer`와 `Developer`를 동시에 인자로 받도록 지정하고 싶을 때 편리하게 사용할 수 있다.  
+다중 상속 또는 구현을 다룰 때 유용하다. 위의 그림과 같이 어떤 함수를 `Trainer`와 `Developer`를 동시에 인자로 받도록 지정하고 싶을 때 편리하게 사용할 수 있다.  
 
 ```typescript
 // typescript
@@ -413,6 +412,57 @@ val person: Person = elder<Person>(person1, person2)
 val marathoner: Marathoner = elder<Marathoner>(marathoner1, marathoner1)
 ```
   
+기본적으로 `<>`에 하나의 상한만 지정이 가능하지만 둘 이상의 상한이 필요한 경우 `where`을 사용할 수 있다. [`kotlinlang` Upper Bounds](https://kotlinlang.org/docs/generics.html#upper-bounds)  
+**전달된 유형은 절의 모든 조건을 동시에 만족해야한다.** 아래의 예제를 확인해보자.  
+  
+```kotlin
+interface Person
+interface Marathoner
+
+class Trainer: Person, Marathoner
+class Developer: Person, Marathoner
+
+interface Intersection<T> where T : Person, T : Marathoner
+
+fun main() {
+    val person = object : Intersection<Person> {}           // Type argument is not within its bounds. Compile Error !!!
+    val marathoner = object : Intersection<Marathoner> {}   // Type argument is not within its bounds. Compile Error !!!
+    val trainer = object : Intersection<Trainer> {}
+    val developer = object : Intersection<Developer> {}
+}
+```
+
+`Intersection` 인터페이스를 구현하는 타입은 `Person`와 `Marathoner` 둘 다 만족해야 한다.  
+   
+아래는 함수의 인자를 동시에 제한하여 **`CharSequence`와 `Comparable`을 구현하는 타입만 받을 수 있는 함수**이다.  
+
+```kotlin
+fun <T> copyWhenGenerator(list: List<T>, threshold: T): List<String>
+    where T: CharSequence, T: Comparable<T> {
+        return list.filter {
+            it > threshold
+        }.map { it.toString() }
+    }
+
+describe("copyWhenGenerator 함수는") {
+    val param1: Pair<List<String>, String> = listOf("a", "b", "c", "d") to "b"
+    val param2: Pair<List<StringBuilder>, StringBuilder> = listOf(
+        StringBuilder("A"),
+        StringBuilder("B"),
+        StringBuilder("C")
+    ) to StringBuilder("B")
+
+    context("threshold 보다 큰 값만 반환한다.") {
+
+        copyWhenGenerator(param1.first, param1.second) shouldBe listOf("c" , "d")
+        copyWhenGenerator(param2.first, param2.second) shouldBe listOf("C")
+    }
+}
+```
+
+## 재귀적 타입 매개변수 제한
+
+타입 매개변수가 자기 자신을 제한하는 데 사용될 수 있다. 이를 **재귀적 타입 매개변수 제한** 이라고 부른다.  
 
 
 1. 오버로딩에 의한 다형성
