@@ -48,8 +48,8 @@ fun run(person: Person) {
     ..
 }
 
-run(Person(...))
-run(Marathoner(...))
+run(Person(..))
+run(Marathoner(..))
 ```
 ```kotlin
 fun run(marathoner: Marathoner) {
@@ -167,10 +167,10 @@ fun assertEqualsYesOrThrowException(num1: Int, num2: Int) : String =
 function write(data: string | number): void {
     if (typeof data === "string") {
         let str: string = data;
-        // ...
+        ..
     } else {
         let num: number = data;
-        // ...
+        ..
     }
 }
 
@@ -183,6 +183,7 @@ write("abcd")
 ![](./intersection.png)
 
 다중 상속 또는 구현을 다룰 때 유용하다. 위의 그림과 같이 어떤 함수를 `Trainer`와 `Developer`를 동시에 인자로 받도록 지정하고 싶을 때 편리하게 사용할 수 있다.  
+(코틀린에서도 `where` 키워드를 이용하여 상한을 동시에 지정할 수 있다. ["타입 매개변수 제한"](https://jdalma.github.io/2024y/polymorphism/#%ED%83%80%EC%9E%85-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%9C%ED%95%9C) 내용에서 설명한다.)  
 
 ```typescript
 // typescript
@@ -411,6 +412,7 @@ fun <T: Person> elder(person: T, other: T): T =
 val person: Person = elder<Person>(person1, person2)
 val marathoner: Marathoner = elder<Marathoner>(marathoner1, marathoner1)
 ```
+위와 같이 상한을 `<T: Person>`으로 지정하여 반환 타입으로 `Marathoner`를 받을 수 있고, 특별한 `>` 연산을 사용할 수 있게 되었다.  
   
 기본적으로 `<>`에 하나의 상한만 지정이 가능하지만 둘 이상의 상한이 필요한 경우 `where`을 사용할 수 있다. [`kotlinlang` Upper Bounds](https://kotlinlang.org/docs/generics.html#upper-bounds)  
 **전달된 유형은 절의 모든 조건을 동시에 만족해야한다.** 아래의 예제를 확인해보자.  
@@ -462,11 +464,379 @@ describe("copyWhenGenerator 함수는") {
 
 ## 재귀적 타입 매개변수 제한
 
-타입 매개변수가 자기 자신을 제한하는 데 사용될 수 있다. 이를 **재귀적 타입 매개변수 제한** 이라고 부른다.  
+타입 매개변수가 자기 자신을 상한으로 하는 타입 매개변수를 **재귀적 타입 매개변수 제한** 이라고 부른다.  
+정렬하는 코드를 예제로 보자.  
 
+```kotlin
+abstract class Comparable<T> {
+    abstract fun gt(that: T): Boolean
+}
+class Person(private val age: Int): Comparable<Person>(){
+    override fun gt(that: Person): Boolean = this.age > that.age
+}
 
-1. 오버로딩에 의한 다형성
-2. 오버라이딩에 의한 다형성
+fun <T: Comparable<T>> sort(list: List<T>) {
+    list.forEachIndexed { index, element ->
+        var min = index
+        for (innerIndex in index + 1 until list.size) {
+            if (element.gt(list[innerIndex])) {
+                min = innerIndex
+            }
+        }
+        // index와 min의 원소를 교체
+    }
+}
+
+sort(listOf(Person(10), Person(5)))
+```
+
+객체를 정렬 가능한 객체로 구현할 때 접하는 익숙한 코드이다.  
+어떤 리스트를 정렬하려면 그 리스트를 구성하는 값들이 서로 비교 가능해야 하기 때문에  
+- **Comparable 추상 클래스는 자신과 동일한 타입의 다른 객체와 비교할 수 있는 클래스이다.**
+- **Comparable 추상 클래스는 자신의 타입 매개변수 T를 자신의 상한으로 지정하고 있다.**
+- **T가 Comparable\<T\>의 서브타입일 때 T 타입의 값을 T 타입의 값과 비교할 수 있다**
+
+이 규칙을 모두 만족하므로 `sort` 함수는 컴파일된다.  
+Comparable의 gt 메서드가 (`that: T`) 자기 자신과 같은 타입의 매개변수를 참조하는 것과 `sort` 함수가 요구하는 `<T: Comparable<T>>` 제네릭이 **재귀적 타입 매개변수 제한** 이다.  
+
+## 가변성
+
+**지금까지 제네릭 함수를 정의할 때는 대개 매개변수 타입과 결과 타입의 관계를 유지해야 한다는 명확한 목표가 있었다.**  
+아래의 `choose`와 `elder` 같이 받은 타입을 그대로 반환해야 하는 함수 **매개변수에 의한 다형성이 반드시 필요했다.**  
+
+```kotlin
+fun <T> choose(v1: T, v2: T): T = if ( .. ) v1 else v2
+fun <T: Person> elder(person: T, other: T): T = if( .. ) person else other
+```
+
+반면 그냥 Person 객체를 인자로 받아 소비만하는 `run`과 같은 함수는 **서브타입에 의한 다형성이면 충분하다.**  
+
+```kotlin
+fun run(person: Person) {
+    person.age ..
+}
+```
+
+`Marathoner`는 `Person`의 서브타입이 맞지만, **`List<Marathoner>`는 `List<Person>`의 서브타입이 아니기 때문에 `List<Marathoner>`와 `List<Person>` 타입의 리스트를 모두 사용하기 위한 함수는 `averageAge`함수처럼 제네릭 함수로 정의하고 타입 매개변수 제한을 사용하였다.**  
+
+```kotlin
+fun <T: Person> averageAge(people: List<T>): Int = ..
+```
+
+하지만 이 방법대로라면 아래와 같은 귀찮은 점이 있다.  
+
+1. **`List<A>` 타입의 인자를 받는 함수를 정의할 때 마다 매개변수 타입을 `List<A>`로 하는 대신, 상한이 `A`인 타입 매개변수 `T`를 정의하고 매개변수 타입을 `List<T>`로 해야 한다.**
+2. **제네릭 타입의 값을 인자로 받는 모든 함수를 동일하게 제네릭 함수로 만들어야 한다.**  
+  
+> 그럼 그냥 `Marathoner`가 `Person`의 서브타입인 것처럼 `List<Marathoner>`도 `List<Person>`의 서브타입이면 안 될까?  
+    
+즉, **"B가 A의 서브타입일 때 `List<B>`가 `List<A>`의 서브타입이도 될까?"**  
+`List<Marathoner>`가 `List<Person>`의 서브타입이 된다고 가정하고 ReadOnlyList와 ReadWriteList의 예제를 보자.  
+  
+```kotlin
+open class Person(val age: Int)
+class Marathoner(age: Int) : Person(age)
+
+// 가지고 있는 원소들을 알려줄 뿐, 원소를 추가하거나 제거할 수 없는 리스트다.  
+abstract class ReadOnlyList<T> {
+    abstract fun get(index: Int): T
+}
+
+// [1]
+val marathoners: ReadOnlyList<Marathoner> = ..
+val people: ReadOnlyList<Person> = marathoners
+val person = people.get(0)
+person.age ..
+```
+
+`[1]`의 상황을 보면 `Marathoner`의 객체들로 구성된 List이지만 `people`에 대입이 가능하고, `people`에서 꺼낸 원소는 `Person` 타입으로 사용할 수 있다.  
+런타임에는 `Marathoner` 객체이지만 타입 검사기가 알 수 있는 타입은 `Person`이다.  
+하지만 이 상황은 문제가 되지 않는다. Marathoner는 이미 Person의 서브타입이므로 **Marathoner 객체를 Person 객체처럼 사용해도 문제 없다.**  
+즉, **ReadOnlyList\<Marathoner\> 를 ReadOnlyList\<Person\> 로 취급함으로써 일어날 수 있는 일은 Person 객체를 기대한 곳에서 Marathoner 객체가 나오는 것 뿐이다.**  
+  
+```kotlin
+// 가지고 있는 원소들을 알려주고 새 원소를 추가할 수 있다.
+abstract class ReadWriteList<T> {
+    abstract fun get(index: Int): T
+    abstract fun add(element: T)
+}
+
+// [2]
+val marathoners: ReadWriteList<Marathoner> = ..
+val people: ReadWriteList<Person> = marathoners
+people.add(Person(..))
+
+val marathoner: Marathoner = marathoners.get(0)
+```
+
+`[2]`의 상황을 보면 `Marathoner`의 객체들로 구성된 List를 `people`에 대입하고, `people`에 `Person`을 추가할 때 **Marathoner와 Person이 같은 리스트를 나태나는 문제가 발생한다.**  
+`people`에 Marathoner 객체와 Person 객체가 동시에 존재할 수 있게 되면서 **`marathoners`에 Person 객체가 추가되게 되었다.**  
+타입 검사기는 `marathoners`에서 꺼낸 원소의 타입은 `Marathoner`라고 믿고있지만 실제로는 `Person` 객체가 반환될 수 있기 때문에 **타입 안전성을 깨트리는 큰 문제다.**  
+  
+즉, B가 A의 서브타입일 때  
+`ReadOnlyList<B>`는 `ReadOnlyList<A>`의 서브타입이 가능하지만,  
+`ReadWriteList<B>`는 `ReadWriteList<A>`의 서브타입이 불가능하다는 것이다.  
+  
+> 원소 읽기만 허용하면 `List<B>`는 `List<A>`의 서브타입이 될 수 있지만, 원소 쓰기를 허용하면 서브타입이 될 수 없다.
+  
+이 내용들로 알 수 있는 사실은 **"어떤 제네릭 타입은 타입 인자의 서브타입 관계를 보존하지만, 어떤 제네릭 타입은 그렇지 않다."** 라는 것이다.  
+그러므로 제네릭 타입과 타입 인자 사이의 관계를 분류할 수 있다. 이 분류를 **가변성** 이라고 부른다.  
+  
+**가변성은 제네릭 타입과 타입 인자 사이의 관계를 뜻하며, 제네릭 타입 사이의 서브타입 관계를 추가로 정의하는 기능이다.**  
+(하나의 제네릭 타입에서 타입 인자만 다르게 하여 얻은 타입들 사이의 서브타입 관계를 만든다.)  
+  
+<h3>공변</h3>
+
+제네릭 타입이 타인 인자의 서브타입 관계를 보존하는 것이며, **타입 인자가 `A`에서 서브타입인 `B`로 변할 때 `List<A>` 역시 `List<B>`로 변한다고 말할 수 있다.**  
+그래서 "제네릭 타입이 타입 인자와 함께 변한다"는 뜻을 담아, 이런 가변성을 **공변 (convariance)** 라고 부른다.  
+
+<h3>불변</h3>
+
+제네릭 타입이 타입 인자의 서브타입 관계를 무시하는 것이며, **`B`가 `A`의 서브타입이더라도 `List<B>`와 `List<A>`는 아무런 관계가 없는 것이다.**  
+서로 다른 타입인 것이다. 따라서 "타입 인자가 서브타입으로 변해도 제네릭 타입은 서브타입으로 안 변한다"는 뜻을 담아, 이런 가변성을 **불변 (invariance)** 이라 부른다.  
+
+<h3>반변</h3>
+
+여러 번 사용했지만 제네릭 타입이라고 표현하지 않았던 **함수 타입** 이다.  
+**"함수 타입은 매개변수 타입의 서브타입 관계를 뒤집고 결과 타입의 서브타입 관계를 유지한다."**  
+즉, 함수 타입과 결과 타입 사이의 관계는 공변이다. 한편 함수 타입과 매개변수 타입 사이의 관계는 공변도 불변도 아니다.  
+여기서 세 번째 가변성이 등장한다.  
+  
+세 번째 가변성은 **제네릭 타입이 타입 인자의 서브타입 관계를 뒤집는 것이다.**  
+결과 타입을 `C`로 고정할 때 `B`가 `A`의 서브타입이면 `B -> C`는 `A -> C`의 **슈퍼 타입이다.**  
+타입 인자가 `A`에서 서브타입인 `B`로 변할 때 `A -> C`는 타입 인자와는 반대 반향으로 움직여 슈퍼 타입인 `B -> C`로 변한다고도 할 수 있다.  
+
+![](./variance.png)
+
+즉, `ReadOnlyList`는 원소 타입에 대해 **공변** 이며, `ReadWriteList`는 **불변** 이다.  
+마지막으로 함수 타입은 매개변수 타입에 대해서는 **반변** 이고, 결과 타입에 대해서는 **공변** 이다.  
+  
+<h3>각 제네릭 타입의 가변성을 결정하는 일반적인 방법</h3>
+
+논의를 간단하게 만들기 위해 타입 매개변수가 하나뿐인 제네릭 타입만 고려한다.  
+제네릭 타임의 이름은 `G`, 타입 매개변수의 이름은 `T`라고 하자.  
+
+> `G`가 `T`를 출력에만 사용하면 **공변** , 입력에만 사용하면 **반변** , 출력과 입력 모두에 사용하면 **불변** 이다.
+
+| `G`에 해당하는 타입 | `T`를 출력에 사용 | `T`를 입력에 사용 | **가변성** |
+| :---: | :---: | :---: | :---: |
+| ReadOnlyList\<T\> | O | X | **공변** |
+| ReadWriteList\<T\> | O | O | **불변** |
+| Int -> T | O | X | **공변** |
+| T -> Int | X | O | **반변** |
+
+즉, **타입 매개변수를 출력에만 사용하는지, 입력에만 사용하는지, 둘 모두에 사용하는지 보면 가변성을 판단할 수 있다.**  
+타입 매개변수를 사용한 곳에 따라 달라진다는 것이다.  
+  
+### 정의할 때 가변성 지정하기
+
+가변성은 각 제네릭 타입의 고유한 속성이다. 따라서 **제네릭 타입을 정의할 때 가변성을 지정하는게 가장 직관적이다.**  
+개발자는 제네릭 타입의 각 매개변수에 가변성을 표시함으로써 공변, 반변, 불변 중 하나를 고를 수 있다.  
+
+<h3>불변</h3>
+
+```kotlin
+abstract class List<T> {
+    abstract fun length(): Int
+    abstract fun get(index: Int): T
+    abstract fun add(element: T)
+}
+```
+
+<h3>공변</h3>
+
+```kotlin
+abstract class ReadOnlyList<out T> {
+    abstract fun get(index: Int): T
+}
+
+val marathoners: ReadOnlyList<Marathoner> = ..
+val people: ReadOnlyList<Person> = marathoners
+val person = people.get(0)
+
+fun averageAge(people: ReadOnlyList<Person>): Int = ..
+
+averageAge(marathoners)
+averageAge(people)
+```
+
+`ReadOnlyList<out T>`는 해당 타입 매개변수가 출력에만 사용됨을 뜻하며 원소를 추가할 수 없는 대신 공변인 리스트를 정의할 수 있다.  
+`T`를 출력에만 사용한다고 했으니, `T`를 메서드 결과 타입으로 사용할 수 있는 있어도 매개변수 타입으로 사용할 수는 없다.  
+`ReadOnlyList`는 **공변이므로 타입 인자의 서브타입 관계를 보존한다.**  
+  
+이제 `averageAge` 함수를 제네릭 함수로 만들지 않고 타입 매개변수 제한없이 사용할 수 있다.  
+
+![](./genericOut.png)
+
+```kotlin
+abstract class ReadOnlyList<T> {
+    abstract fun get(index: Int): T
+}
+```
+
+위와 같이 선언된 List는 원소를 추가할 수도 없는 주제에 불변이기까지 한 불편한 리스트일 뿐이다.  
+`T`를 입력에 사용하는 메서드를 추가하려고 계획 중인 게 아니라면, 굳이 이런 리스트를 정의할 필요는 없다.  
+  
+<h3>반변</h3>
+
+```kotlin
+abstract class Map<in K, V> {
+    abstract fun size(): Int
+    abstract fun get(key: K): V
+    abstract fun add(key: K, value: V)
+}
+```
+
+타입 매개변수를 반변으로 만들고 싶을 때는 `in`을 붙여 **그 타입 매개변수를 입력에만 사용한다는 뜻이다.**  
+`abstract fun getKey(value: V): K` 이 메서드는 컴파일 에러를 발생시킨다.  
+  
+`Map<in K, V>` 클래스는 두 개의 타입 매개변수를 가지며, `in`으로 가변성이 지정된 `K`는 `get()`과 `add()`에서 입력으로만 사용되었기 때문에 **반변** 으로 정의해도 타입 검사기가 문제 삼지 않는다.  
+반면 `V`는 `get()`에서는 출력, `add()`에서는 입력으로 사용되었기 때문에 **반드시 불변이어야 한다.**  
+
+열쇠 타입에 대해 반변이므로 `B`가 `A`의 서브타입일 때 `Map<A, V>`가 `Map<B, V>`의 서브타입이다.  
+예를 들면 `Map<Person, Int>`가 `Map<Marathoner, Int>`의 서브타입이다.  
+
+```kotlin
+val personKey: Map<Person, Int> = ..
+personKey.add(Person(10), 1)
+personKey.add(Marathoner(10), 1)
+
+val marathonerKey: Map<Marathoner, Int> = ..
+marathonerKey.add(Person(10), 1)        // 컴파일 에러
+marathonerKey.add(Marathoner(10), 1)
+```
+
+![](./genericIn.png)
+
+**정의할 때 가변성을 지정하는 방법은 이해하기 쉬운 대신 클래스를 정의할 때 큰 제약이 생긴다는 문제가 있다.**  
+타입을 공변으로 만든다면 타입 매개변수를 입력에 사용하는 절반을 모두 포기해야 하고, 반변으로 만든나면 나머지 절반을 포기해야 한다.  
+그러니 공변이나 반변을 선택하면 **반쪽짜리 클래스를 만들 수 밖에 없는 것이다.**  
+함수형 프로그래밍에서는 대부분의 경우 수정할 수 없는 자료구조만 사용해 프로그램을 작성하기 때문에 함수형 언어에서는 이 단점이 상대적으로 덜 드러난다.  
+  
+> 서브타입 관계를 추가하는 대신 기능이 빠진 타입을 만들거나, 기능을 다 갖춘 타입을 만드는 대신 서브타입 관계를 포기하거나, 개발자는 반드시 이 둘 중 하나를 골라야 한다.
+  
+### 사용할 때 가변성 지정하기
+
+제네릭 타입을 사용할 때 가변성을 지정하는 경우, 제네릭 타입을 정의할 때는 가변성을 지정할 수 없다.  
+**모든 제네릭 타입은 불변으로 정의되며 타입 매개변수를 아무 데서나 사용할 수 있다.**  
+
+```kotlin
+abstract class ReadWriteList<T> {
+    abstract fun length(): Int
+    abstract fun get(index: Int): T
+    abstract fun add(element: T)
+}
+```
+
+```kotlin
+val onlyReadPeople: ReadWriteList<out Person> = ..
+val size = onlyReadPeople.length()
+val person: Person = onlyReadPeople.get(0)
+onlyReadPeople.add(Person(10)) // 컴파일 에러
+```
+
+`onlyReadPeople`은 출력 기능만 사용할 수 있고, 원소 타입이 매개변수 타입으로 사용되지 않는 메서드만 사용할 수 있다는 뜻이다.  
+그리고 **"A를 출력과 입력에 모두 사용할 수 있는 불변 `List<A>`는 A를 출력에 사용할 수 있는 리스트다."** 가 사실이기 때문에 `List<A>`는 `List<out A>`의 서브타입이다.  
+`ReadWriteList<T>`는 불변이지만 `ReadWriteList<out Person>`는 공변이다. 따라서 **`B`가 `A`의 서브타입일 때 `List<out B>`는 `List<out A>`의 서브타입이다.**  
+
+```kotlin
+fun averageAge(people: ReadWriteList<out Person>): Int {
+    people.get(0)
+    people.add(Person(10)) // 컴파일 에러
+}
+
+val onlyReadPeople: ReadWriteList<out Person> = ..
+averageAge(onlyReadPeople)
+
+val onlyReadMarathoners: ReadWriteList<out Marathoner> = ..
+averageAge(onlyReadMarathoners)
+
+val readWriteMarathoner: ReadWriteList<Marathoner> = ..
+averageAge(readWriteMarathoner)
+```
+
+![](./chainingOut.png)
+
+`averageAge()` 함수와 같이 새로운 `<out Person>` 타입을 통해 함수 내부에서는 출력의 용도로만 사용하겠다고 선언하여 공변으로 지정하여 사용할 수 있다.  
+  
+`ReadWriteList<in A>` 역시 `ReadWriteList<A>`와 비슷하게 `A` 타입의 원소들로 구성된 리스트를 나타내지만 **입력 기능만 사용할 수 있다는 차이가 있다.**  
+정확히 말하면 **메서드 중 원소 타입이 결과 타입으로 사용되지 않는 메서드만 사용할 수 있다.**  
+
+```kotlin
+val readWritePeople: ReadWriteList<in Person> = TODO()
+val people: Any? = readWritePeople.get(0)
+readWritePeople.add(Person(10))
+readWritePeople.add(Marathoner(10))
+
+val readWriteMarathoners: ReadWriteList<in Marathoner> = TODO()
+val marathoner: Any? = readWriteMarathoners.get(0)
+readWriteMarathoners.add(Marathoner(10))
+```
+
+**"A를 출력과 입력에 모두 사용할 수 있는 불변 `List<A>`는 A를 입력에 사용할 수 있는 리스트다."** 가 사실이기 때문에 `List<A>`는 `List<in A>`의 서브타입이다.  
+따라서 **`B`가 `A`의 서브타입일 때 `List<in A>`는 `List<in B>`의 서브타입이다.**  
+
+![](./chainingIn.png)
+
+```kotlin
+fun addPerson(people: ReadWriteList<in Person>) {
+    people.add(Person(..))
+    people.add(Marathoner(..))
+}
+
+val readWritePeople1: ReadWriteList<in Person> = ..
+val readWritePeople2: ReadWriteList<Person> = ..
+addPerson(readWritePeople1)
+addPerson(readWritePeople2)
+
+val readWriteMarathoners1: ReadWriteList<in Marathoner> = ..
+val readWriteMarathoners2: ReadWriteList<Marathoner> = ..
+addPerson(readWriteMarathoners1)    // 컴파일 에러
+addPerson(readWriteMarathoners2)    // 컴파일 에러
+```
+
+`addPerson` 함수는 `ReadWriteList<in Person>` 반변으로 지정되어 있기 때문에 `ReadWriteList<Marathoner>`는 `Person`의 서브타입이긴 하지만 `addPerson`의 인자로 사용될 수 없다.  
+  
+```kotlin
+fun addMarathoner(people: ReadWriteList<in Marathoner>) {
+    people.add(Person(..))      // 컴파일 에러
+    people.add(Marathoner(..))
+}
+
+val readWritePeople1: ReadWriteList<in Person> = ..
+val readWritePeople2: ReadWriteList<Person> = ..
+addMarathoner(readWritePeople1)
+addMarathoner(readWritePeople2)
+
+val readWriteMarathoners1: ReadWriteList<in Marathoner> = ..
+val readWriteMarathoners2: ReadWriteList<Marathoner> = ..
+addMarathoner(readWriteMarathoners1)
+addMarathoner(readWriteMarathoners2)
+```
+
+`ReadWriteList<in Marathoner>` 반변으로 지정하면 `List<Person>`은 `List<in Marathoner>`의 서브타입이기 때문에 `addMarathoner` 함수 호출이 다 가능해진다.  
+`List<in Marathoner>`에는 `Marathoner`가 보장되어야 하기 때문에 더 작은 의미를 가지는 `Person`을 직접 추가하지는 못한다.  
+이는 **Person 리스트에 Marathoner 객체를 추가해도 괜찮고 Marathoner 리스트에 Person 객체를 추가하지 못한다는 직관과 일치한다.**  
+  
+추가적으로 자바에서는 `out` 대신 `? extends`, `in` 대신 `? super`를 사용하여 공변과 반변을 나타낸다.  
+`G<? extends A>`와 `G<? super A>` 형태의 타입은 만들 수 있지만, `G<A extends ?>`나 `G<A super B>` 등 여타 형태의 타입은 만들 수 없다.  
+그러니 `? extends`와 `? super`에서 `?`와 `extends/super`를 **분리하여 생각하지 말고 하나의 키워드로 바라보는 것이 좋다.**  
+
+# 오버로딩에 의한 다형성
+
+한 함수가 여러 타입의 인자를 받아야 할 때 사용할 수 있다.  
+같은 이름의 함수들을 매개변수 타입을 서로 다르게 하여 여러 개 정의하는 것이다.  
+함수 오버로딩도 다형성을 만들어내는 방법 중 한 가지다.  
+
+```kotlin
+fun aging(person: Person) = Person(person.age + 1)
+fun aging(marathoner: Marathoner) = Marathoner(marathoner.age + 1)
+```
+
+`aging` 두 함수 중에 어느 것을 호출할지는 언어 수준에서 자동으로 결정된다.  
+함수 선택의 가장 기본적인 규칙은 **인자의 타입에 맞는 함수를 고른다.**  
+  
+오버로딩은 어려운 개념이 아니다. 하지만 오버로딩에 의한 다형성을 서브타입에 의한 다형성이나 매개변수에 의한 다형성과 함께 사용하면 더 많은 개념이 등장한다.  
 
 
 
