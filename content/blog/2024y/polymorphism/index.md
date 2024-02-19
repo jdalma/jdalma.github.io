@@ -837,12 +837,71 @@ fun aging(marathoner: Marathoner) = Marathoner(marathoner.age + 1)
 함수 선택의 가장 기본적인 규칙은 **인자의 타입에 맞는 함수를 고른다.**  
   
 오버로딩은 어려운 개념이 아니다. 하지만 오버로딩에 의한 다형성을 서브타입에 의한 다형성이나 매개변수에 의한 다형성과 함께 사용하면 더 많은 개념이 등장한다.  
+  
+예제는 정수를 관리하는 `Numbers` 클래스와 양수의 인덱스를 따로 가지는 `PositiveNumbers` 클래스가 있다고 가정하자.  
+  
+```kotlin
+open class Numbers(val elements: List<Int>)
+class PositiveNumbers(elements: List<Int>): Numbers(elements) {
+    val positiveNumberIndexes: List<Int> = elements.mapIndexedNotNull { .. }
+}
 
+fun positiveNumberSum(numbers: Numbers): Int = ..
+fun positiveNumberSum(numbers: PositiveNumbers): Int = ..
 
+val elements = listOf(1, -1, 0, 3, 5)
+positiveNumberSum(Numbers(elements))
+positiveNumberSum(PositiveNumbers(elements))
 
+val numbers: Numbers = PositiveNumbers(elements)
+positiveNumberSum(numbers)    // 정적 선택 (static dispatch)
+```
+  
+오버로딩된 양수의 사이즈를 반환하는 `positiveNumberCount()` 함수를 확인할 수 있다.  
+  
+> 1. **인자의 타입에 맞는 함수를 고른다.**
+> 2. **인자의 타입에 가장 특화된 함수를 고른다.**
+> 3. **함수를 고를 때는 인자의 정적 타입만 고려한다.**
+  
+한 함수가 다른 하나보다 `"더 특화되었다."`는 말은 한 함수의 매개변수 타입이 다른 함수의 매개변수 타입의 서브타입이라는 뜻이다.  
+매개변수가 여러 개라면 순서대로 각 매개변수 타입이 서브타입 관계에 있는지 확인하여 가장 정확한 함수를 선택한다.    
+  
+그리고 함수 선택 시 정적 타입에 대한 이해가 없다면 버그를 발생시키기 쉽다.  
+`B`가 `A`의 서브타입일 때 **`A`를 위한 함수가 이미 있다면 `B`를 위한 같은 이름의 함수를 추가로 정의하는 일을 가급적 피하는 것이 버그를 방지하는 간단한 방법이다.**  
+즉, 함수 오버로딩은 서로 완전히 다른 타입들의 값을 인자로 받는 함수를 정의하는 용도로 사용하는 게 좋다.  
+굳이 함수 오버로딩에 서브타입에 의한 다형성을 활용하여 복잡한 상황을 만들지 말고 이럴 떄는 **메서드 오버로딩을 활용하는 것이 좋다.**  
+  
+# 오버라이딩에 의한 다형성
 
+메서드 오버라이딩은 클래스를 상속해서 자식 클래스에 메서드를 새로 정의할 때 메서드의 이름과 매개변수 타입을 부모 클래스에 정의되어 있는 메서드와 똑같게 정의하여 **자식 클래스에 특화된 방법을 정의하는 좋은 방법이다.**  
+양수의 개수를 반환하는 `Numbers`의 `length()`함수를 최적화한 `PositiveNumbers`가 있다고 가정하자.  
+  
+```kotlin
+open class Numbers(val elements: List<Int>) {
+    open fun length(): Int = ..
+}
+class PositiveNumbers(elements: List<Int>): Numbers(elements) {
+    val positiveNumberIndexes: List<Int> = ..
 
+    override fun length(): Int = ..
+}
 
+val elements = listOf(1,2,3,4)
+val numbers: Numbers = Numbers(elements)
+numbers.length()
 
+val positiveNumbers: PositiveNumbers = PositiveNumbers(elements)
+positiveNumbers.length()
 
+val numbers2: Numbers = PositiveNumbers(elements)
+numbers2.length()   // 동적 선택 (dynamic dispatch)
+```
+
+오버로딩과 다르게 **오버라이딩은 동적 타입에 대해 더 특화된 메서드가 선택되기 때문에, 정적 타입에 상관없이 언제나 그 특화된 동작이 사용되도록 만들 수 있다.**  
+즉, 함수 선택은 인자의 정적 타입만 고려하지만 메서드 선택은 인자의 정적 타입도 고려하고 **수신자(메서드를 호출하는 객체)의 동적 타입도 고려된다는 것이다.**  
+
+> 1. **인자의 타입에 맞는 메서드를 고른다.**
+> 2. **인자의 타입에 가장 특화된 메서드를 고른다.**
+> 3. **메서드를 고를 때는 인자의 정적 타입을 고려한다.**
+> 4. **메서드를 고를 때는 수신자의 동적 타입도 고려한다.**
 
