@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Feb 2024 14:50:30 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 19 Feb 2024 14:13:13 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 06일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1749,7 +1749,71 @@ fun aging(marathoner: Marathoner) = Marathoner(marathoner.age + 1)&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aging&lt;/code&gt; 두 함수 중에 어느 것을 호출할지는 언어 수준에서 자동으로 결정된다.&lt;br&gt;
 함수 선택의 가장 기본적인 규칙은 &lt;strong&gt;인자의 타입에 맞는 함수를 고른다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;오버로딩은 어려운 개념이 아니다. 하지만 오버로딩에 의한 다형성을 서브타입에 의한 다형성이나 매개변수에 의한 다형성과 함께 사용하면 더 많은 개념이 등장한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 회고]]></title><description><![CDATA[들어가며 벌써 2023년이 끝난다. 2022년 회고에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다. 많은 일들이 있었는데 찬찬히 정리해보자. 회사 적응기 2년 반정도 SI…]]></description><link>https://jdalma.github.io/2023y/retrospect/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/retrospect/</guid><pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가며&quot; style=&quot;position:relative;&quot;&gt;들어가며&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot; aria-label=&quot;들어가며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;오버로딩은 어려운 개념이 아니다. 하지만 오버로딩에 의한 다형성을 서브타입에 의한 다형성이나 매개변수에 의한 다형성과 함께 사용하면 더 많은 개념이 등장한다.&lt;/p&gt;
+&lt;p&gt;예제는 정수를 관리하는 &lt;code class=&quot;language-text&quot;&gt;Numbers&lt;/code&gt; 클래스와 양수의 인덱스를 따로 가지는 &lt;code class=&quot;language-text&quot;&gt;PositiveNumbers&lt;/code&gt; 클래스가 있다고 가정하자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;)
+class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
+    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = elements.mapIndexedNotNull { .. }
+}
+
+fun positiveNumberSum(numbers: Numbers): Int = ..
+fun positiveNumberSum(numbers: PositiveNumbers): Int = ..
+
+val elements = listOf(1, -1, 0, 3, 5)
+positiveNumberSum(Numbers(elements))
+positiveNumberSum(PositiveNumbers(elements))
+
+val numbers: Numbers = PositiveNumbers(elements)
+positiveNumberSum(numbers)    // 정적 선택 (static dispatch)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;오버로딩된 양수의 사이즈를 반환하는 &lt;code class=&quot;language-text&quot;&gt;positiveNumberCount()&lt;/code&gt; 함수를 확인할 수 있다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;인자의 타입에 맞는 함수를 고른다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인자의 타입에 가장 특화된 함수를 고른다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;함수를 고를 때는 인자의 정적 타입만 고려한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;한 함수가 다른 하나보다 &lt;code class=&quot;language-text&quot;&gt;&quot;더 특화되었다.&quot;&lt;/code&gt;는 말은 한 함수의 매개변수 타입이 다른 함수의 매개변수 타입의 서브타입이라는 뜻이다.&lt;br&gt;
+매개변수가 여러 개라면 순서대로 각 매개변수 타입이 서브타입 관계에 있는지 확인하여 가장 정확한 함수를 선택한다.&lt;/p&gt;
+&lt;p&gt;그리고 함수 선택 시 정적 타입에 대한 이해가 없다면 버그를 발생시키기 쉽다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;를 위한 함수가 이미 있다면 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;를 위한 같은 이름의 함수를 추가로 정의하는 일을 가급적 피하는 것이 버그를 방지하는 간단한 방법이다.&lt;/strong&gt;&lt;br&gt;
+즉, 함수 오버로딩은 서로 완전히 다른 타입들의 값을 인자로 받는 함수를 정의하는 용도로 사용하는 게 좋다.&lt;br&gt;
+굳이 함수 오버로딩에 서브타입에 의한 다형성을 활용하여 복잡한 상황을 만들지 말고 이럴 떄는 &lt;strong&gt;메서드 오버로딩을 활용하는 것이 좋다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;오버라이딩에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;오버라이딩에 의한 다형성&lt;a href=&quot;#%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;오버라이딩에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;메서드 오버라이딩은 클래스를 상속해서 자식 클래스에 메서드를 새로 정의할 때 메서드의 이름과 매개변수 타입을 부모 클래스에 정의되어 있는 메서드와 똑같게 정의하여 &lt;strong&gt;자식 클래스에 특화된 방법을 정의하는 좋은 방법이다.&lt;/strong&gt;&lt;br&gt;
+양수의 개수를 반환하는 &lt;code class=&quot;language-text&quot;&gt;Numbers&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;length()&lt;/code&gt;함수를 최적화한 &lt;code class=&quot;language-text&quot;&gt;PositiveNumbers&lt;/code&gt;가 있다고 가정하자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;) {
+    open fun length(): Int = ..
+}
+class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
+    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = ..
+
+    override fun length(): Int = ..
+}
+
+val elements = listOf(1,2,3,4)
+val numbers: Numbers = Numbers(elements)
+numbers.length()
+
+val positiveNumbers: PositiveNumbers = PositiveNumbers(elements)
+positiveNumbers.length()
+
+val numbers2: Numbers = PositiveNumbers(elements)
+numbers2.length()   // 동적 선택 (dynamic dispatch)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;오버로딩과 다르게 &lt;strong&gt;오버라이딩은 동적 타입에 대해 더 특화된 메서드가 선택되기 때문에, 정적 타입에 상관없이 언제나 그 특화된 동작이 사용되도록 만들 수 있다.&lt;/strong&gt;&lt;br&gt;
+즉, 함수 선택은 인자의 정적 타입만 고려하지만 메서드 선택은 인자의 정적 타입도 고려하고 &lt;strong&gt;수신자(메서드를 호출하는 객체)의 동적 타입도 고려된다는 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;인자의 타입에 맞는 메서드를 고른다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인자의 타입에 가장 특화된 메서드를 고른다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;메서드를 고를 때는 인자의 정적 타입을 고려한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;메서드를 고를 때는 수신자의 동적 타입도 고려한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[2023년 회고]]></title><description><![CDATA[들어가며 벌써 2023년이 끝난다. 2022년 회고에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다. 많은 일들이 있었는데 찬찬히 정리해보자. 회사 적응기 2년 반정도 SI…]]></description><link>https://jdalma.github.io/2023y/retrospect/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/retrospect/</guid><pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가며&quot; style=&quot;position:relative;&quot;&gt;들어가며&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot; aria-label=&quot;들어가며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;벌써 2023년이 끝난다. &lt;a href=&quot;https://jdalma.github.io/2022y/yearend&quot;&gt;2022년 회고&lt;/a&gt;에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다.&lt;br&gt;
 많은 일들이 있었는데 찬찬히 정리해보자.&lt;/p&gt;
 &lt;hr&gt;
