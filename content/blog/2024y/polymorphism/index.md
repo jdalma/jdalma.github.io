@@ -58,7 +58,7 @@ fun run(marathoner: Marathoner) {
     ..
 }
 
-run(Person(name))       // 컴파일 에러
+run(Person(name))   "컴파일 에러"
 run(Marathoner(name))
 ```
   
@@ -83,15 +83,15 @@ class Marathoner(val name: String, val awards: List[String]) {
   }
 }
 
-// 필드 구조를 드러내어 다형성을 해결
+"필드 구조를 드러내어 다형성을 해결"
 def run(person: { val name: String }): Unit = {
-   // person.name
+    person.name
 }
 
 run(new Person(name))
 run(new Marathoner(name, null))
 
-// 메서드 구조를 드러내어 다형성을 해결
+"메서드 구조를 드러내어 다형성을 해결"
 def _greeting(person: { def greeting(word: String): Unit }, word: String): Unit = {
    person.greeting(word)
 }
@@ -122,7 +122,7 @@ fun error() {
 }
 
 fun assertEquals(num1: Int, num2: Int) : Boolean = 
-   if (num1 == num2) true else error() // 컴파일 에러
+   if (num1 == num2) true else error() "컴파일 에러"
 ```
 
 위의 `assertEquals`는 정상적인 경우 `true`를 반환하므로 `Boolean`을 반환하는 것이 합당해 보일 수 있지만 컴파일 에러가 발생한다.  
@@ -136,7 +136,7 @@ fun assertEquals(num1: Int, num2: Int) : Boolean =
     if (num1 == num2) true else error()
 
 fun assertEqualsYesOrThrowException(num1: Int, num2: Int) : String = 
-    if (num1 == num2) "Y" else error()    // 컴파일 에러
+    if (num1 == num2) "Y" else error() "컴파일 에러"
 ```
 
 `error()` 함수를 `Boolean`을 반환하도록 수정하면 컴파일을 완료할 수 있다.  
@@ -165,7 +165,7 @@ fun assertEqualsYesOrThrowException(num1: Int, num2: Int) : String =
 한 함수가 받는 인자 타입이 여러 가지가 되어야 하는 경우 유용하게 사용할 수 있는 타입이다.  
 
 ```typescript
-// typescript
+"typescript"
 function write(data: string | number): void {
     if (typeof data === "string") {
         let str: string = data;
@@ -188,7 +188,7 @@ write("abcd")
 (코틀린에서도 `where` 키워드를 이용하여 상한을 동시에 지정할 수 있다. ["타입 매개변수 제한"](https://jdalma.github.io/2024y/polymorphism/#%ED%83%80%EC%9E%85-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%9C%ED%95%9C) 내용에서 설명한다.)  
 
 ```typescript
-// typescript
+"typescript"
 interface Person {
   name: string;
 }
@@ -279,8 +279,8 @@ fun <T> first(list: List<T>): T = list.first()
 fun <T> last(list: List<T>): T = list.last()
 
 fun <T> compute(selector: (List<T>) -> T) {
-   selector(listOf(1,2,3))          // 컴파일 에러
-   selector(listOf("A","B","C"))    // 컴파일 에러
+   selector(listOf(1,2,3))          "컴파일 에러"
+   selector(listOf("A","B","C"))    "컴파일 에러"
 }
 
 @Test
@@ -372,8 +372,8 @@ fun name2() {
     findFirst(intList)
     findFirst(anotherList)
 
-    isExist(stringList)     // 컴파일 에러
-    isExist(intList)        // 컴파일 에러
+    isExist(stringList)     "컴파일 에러"
+    isExist(intList)        "컴파일 에러"
     isExist(anotherList)
 }
 ```
@@ -396,7 +396,7 @@ fun elder(person: Person, other: Person): Person =
     if(person > other) person else other
 
 val person: Person = elder(person1, person2)
-val marathoner: Marathoner = elder(marathoner1, marathoner1)    // 컴파일 에러
+val marathoner: Marathoner = elder(marathoner1, marathoner1)    "컴파일 에러"
 ```
   
 `elder`의 파라미터는 서브타입에 의한 다형성으로 컴파일을 통과하지만 반환 타입이 `Marathoner`이기 때문에 컴파일 에러가 발생한다.  
@@ -429,8 +429,8 @@ class Developer: Person, Marathoner
 interface Intersection<T> where T : Person, T : Marathoner
 
 fun main() {
-    val person = object : Intersection<Person> {}           // Type argument is not within its bounds. Compile Error !!!
-    val marathoner = object : Intersection<Marathoner> {}   // Type argument is not within its bounds. Compile Error !!!
+    val person = object : Intersection<Person> {}           "Type argument is not within its bounds. Compile Error !!!"
+    val marathoner = object : Intersection<Marathoner> {}   "Type argument is not within its bounds. Compile Error !!!"
     val trainer = object : Intersection<Trainer> {}
     val developer = object : Intersection<Developer> {}
 }
@@ -485,7 +485,7 @@ fun <T: Comparable<T>> sort(list: List<T>) {
                 min = innerIndex
             }
         }
-        // index와 min의 원소를 교체
+        "index와 min의 원소를 교체"
     }
 }
 
@@ -539,12 +539,12 @@ fun <T: Person> averageAge(people: List<T>): Int = ..
 open class Person(val age: Int)
 class Marathoner(age: Int) : Person(age)
 
-// 가지고 있는 원소들을 알려줄 뿐, 원소를 추가하거나 제거할 수 없는 리스트다.  
+"가지고 있는 원소들을 알려줄 뿐, 원소를 추가하거나 제거할 수 없는 리스트다."
 abstract class ReadOnlyList<T> {
     abstract fun get(index: Int): T
 }
 
-// [1]
+"[1]"
 val marathoners: ReadOnlyList<Marathoner> = ..
 val people: ReadOnlyList<Person> = marathoners
 val person = people.get(0)
@@ -557,13 +557,13 @@ person.age ..
 즉, **ReadOnlyList\<Marathoner\> 를 ReadOnlyList\<Person\> 로 취급함으로써 일어날 수 있는 일은 Person 객체를 기대한 곳에서 Marathoner 객체가 나오는 것 뿐이다.**  
   
 ```kotlin
-// 가지고 있는 원소들을 알려주고 새 원소를 추가할 수 있다.
+"가지고 있는 원소들을 알려주고 새 원소를 추가할 수 있다."
 abstract class ReadWriteList<T> {
     abstract fun get(index: Int): T
     abstract fun add(element: T)
 }
 
-// [2]
+"[2]"
 val marathoners: ReadWriteList<Marathoner> = ..
 val people: ReadWriteList<Person> = marathoners
 people.add(Person(..))
@@ -704,7 +704,7 @@ personKey.add(Person(10), 1)
 personKey.add(Marathoner(10), 1)
 
 val marathonerKey: Map<Marathoner, Int> = ..
-marathonerKey.add(Person(10), 1)        // 컴파일 에러
+marathonerKey.add(Person(10), 1)        "컴파일 에러"
 marathonerKey.add(Marathoner(10), 1)
 ```
 
@@ -734,7 +734,7 @@ abstract class ReadWriteList<T> {
 val onlyReadPeople: ReadWriteList<out Person> = ..
 val size = onlyReadPeople.length()
 val person: Person = onlyReadPeople.get(0)
-onlyReadPeople.add(Person(10)) // 컴파일 에러
+onlyReadPeople.add(Person(10)) "컴파일 에러"
 ```
 
 `onlyReadPeople`은 출력 기능만 사용할 수 있고, 원소 타입이 매개변수 타입으로 사용되지 않는 메서드만 사용할 수 있다는 뜻이다.  
@@ -744,7 +744,7 @@ onlyReadPeople.add(Person(10)) // 컴파일 에러
 ```kotlin
 fun averageAge(people: ReadWriteList<out Person>): Int {
     people.get(0)
-    people.add(Person(10)) // 컴파일 에러
+    people.add(Person(10)) "컴파일 에러"
 }
 
 val onlyReadPeople: ReadWriteList<out Person> = ..
@@ -765,12 +765,12 @@ averageAge(readWriteMarathoner)
 정확히 말하면 **메서드 중 원소 타입이 결과 타입으로 사용되지 않는 메서드만 사용할 수 있다.**  
 
 ```kotlin
-val readWritePeople: ReadWriteList<in Person> = TODO()
+val readWritePeople: ReadWriteList<in Person> = ..
 val people: Any? = readWritePeople.get(0)
 readWritePeople.add(Person(10))
 readWritePeople.add(Marathoner(10))
 
-val readWriteMarathoners: ReadWriteList<in Marathoner> = TODO()
+val readWriteMarathoners: ReadWriteList<in Marathoner> = ..
 val marathoner: Any? = readWriteMarathoners.get(0)
 readWriteMarathoners.add(Marathoner(10))
 ```
@@ -793,15 +793,15 @@ addPerson(readWritePeople2)
 
 val readWriteMarathoners1: ReadWriteList<in Marathoner> = ..
 val readWriteMarathoners2: ReadWriteList<Marathoner> = ..
-addPerson(readWriteMarathoners1)    // 컴파일 에러
-addPerson(readWriteMarathoners2)    // 컴파일 에러
+addPerson(readWriteMarathoners1)    "컴파일 에러"
+addPerson(readWriteMarathoners2)    "컴파일 에러"
 ```
 
 `addPerson` 함수는 `ReadWriteList<in Person>` 반변으로 지정되어 있기 때문에 `ReadWriteList<Marathoner>`는 `Person`의 서브타입이긴 하지만 `addPerson`의 인자로 사용될 수 없다.  
   
 ```kotlin
 fun addMarathoner(people: ReadWriteList<in Marathoner>) {
-    people.add(Person(..))      // 컴파일 에러
+    people.add(Person(..))      "컴파일 에러"
     people.add(Marathoner(..))
 }
 
@@ -856,7 +856,7 @@ positiveNumberSum(Numbers(elements))
 positiveNumberSum(PositiveNumbers(elements))
 
 val numbers: Numbers = PositiveNumbers(elements)
-positiveNumberSum(numbers)    // 정적 선택 (static dispatch)
+positiveNumberSum(numbers)    "정적 선택 (static dispatch)"
 ```
   
 오버로딩된 양수의 사이즈를 반환하는 `positiveNumberCount()` 함수를 확인할 수 있다.  
@@ -896,7 +896,7 @@ val positiveNumbers: PositiveNumbers = PositiveNumbers(elements)
 positiveNumbers.length()
 
 val numbers2: Numbers = PositiveNumbers(elements)
-numbers2.length()   // 동적 선택 (dynamic dispatch)
+numbers2.length()   "동적 선택 (dynamic dispatch)"
 ```
 
 오버로딩과 다르게 **오버라이딩은 동적 타입에 대해 더 특화된 메서드가 선택되기 때문에, 정적 타입에 상관없이 언제나 그 특화된 동작이 사용되도록 만들 수 있다.**  
