@@ -105,11 +105,12 @@ HTTP/2가 개선되긴 했지만 HTTP/1.1과 비교해서 **명확하게 어떤 
 4. **제네릭 가변성** 
 5. **PECS를 지켜야하는 이유**
 6. 타입 클래스, 카인드
-    
+  
+내용들을 [정리](https://jdalma.github.io/2024y/polymorphism/)해 보았다.  
 제일 와닿았던 부분은 제네릭 가변성에 대한 이해가 없을 때 이게 왜 안되는지 몰랐던 부분들을 깨닫게 도와줬다.  
 [PECS : producer-extends, consumer-super](https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super)를 외워서 사용했는데 왜 저렇게 제한해야 하는지 더 깊은 이해를 할 수 있도록 도와주었다.    
   
-이 책을 읽으면서 안다고 착각했던 부분들이 많았다는 것을 깨닫았다. 정적 타입 언어에 대한 이해를 한층 더 높여준 책이다.  
+이 책을 읽으면서 안다고 착각했던 부분들이 많았다는 것을 깨달았다. 정적 타입 언어에 대한 이해를 한층 더 높여준 책이다.  
 개발하면서 타입 검사기가 거부하는 상황이 발생하면 IDE의 도움을 받아 어영부영 넘어간 경험 또는 제네릭이나 제네릭을 통한 타입 매개변수 제한을 사용할 때 타입 검사기가 왜 거부하는지 이해하지 못 했던 경험이 있다면 이 책은 큰 도움이 될 것이다.  
 
 # **프레임** ~ing
