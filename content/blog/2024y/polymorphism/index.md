@@ -1,18 +1,20 @@
 ---
 title: 다형성과 가변성에 대해
-date: "2024-02-11"
+date: "2024-02-20"
 tags:
-   - 다형성
+   - polymorphism
 ---
 
-> 대부분의 내용은 [타입으로 견고하게 다형성으로 유연하게](https://www.yes24.com/Product/Goods/122890814) 책을 정리한 내용입니다.
+> [타입으로 견고하게 다형성으로 유연하게](https://www.yes24.com/Product/Goods/122890814) 책을 정리한 내용입니다.
 
-이 글을 통해 
-1. **타입**
-2. 여러 종류의 **다형성**과 **가변성**
-3. **제네릭 가변성**
+개발하면서 타입 검사기가 거부하는 상황이 발생하면 IDE의 도움을 받아 어영부영 넘어간 경험 또는 제네릭이나 제네릭을 통한 타입 매개변수 제한을 사용할 때 타입 검사기가 왜 거부하는지 이해하지 못 했던 경험, 조금 더 유연한 개발을 하고 싶다면 이 책은 큰 도움이 될 것이다.  
+이 글을 통해 아래의 내용을 학습할 수 있다.  
 
-대해 알아보자. 자연스럽게 타입 검사기와 더 친해질 수 있을 것이다.  
+1. **여러 종류의 다형성**
+2. (JVM 언어에서는 지원하지 않는) **다른 언어의 기능**
+3. **최대, 최소 타입**
+4. **제네릭 가변성** 
+5. **PECS를 지켜야하는 이유**
 
 # 다형성
 
@@ -905,3 +907,100 @@ numbers2.length()   // 동적 선택 (dynamic dispatch)
 > 3. **메서드를 고를 때는 인자의 정적 타입을 고려한다.**
 > 4. **메서드를 고를 때는 수신자의 동적 타입도 고려한다.**
 
+<h3>메서드 선택의 한계</h3>
+
+메서드 선택은 수신자의 동적 타입을 고려하기 때문에 특화된 동작을 선택할 수 있긴 하지만 인자의 동적 타입은 고려하지 않기에 한계가 있다.  
+두 개의 정수 리스트를 합산하여 결과 리스트를 반환하는 `add()`메서드를 최대한 최적화하기 위해 아래와 같은 두 개의 메서드가 있다고 가정해보자.  
+(이런 양방향 의존성을 가지는 경우는 가능한 없어야 하지만 인자의 동적 타입을 고려하지않는 상황을 이해하기 위함이다.)
+
+```kotlin
+open class Numbers(val elements: List<Int>) {
+    open fun length(): Int = ..
+    open fun add(that: Numbers): Numbers = ..
+    open fun add(that: PositiveNumbers): Numbers = ..
+}
+class PositiveNumbers(elements: List<Int>): Numbers(elements) {
+    val positiveNumberIndexes: List<Int> = ..
+
+    override fun length(): Int = ..
+    override fun add(that: Numbers): PositiveNumbers = ..
+    override fun add(that: PositiveNumbers): PositiveNumbers = ..
+}
+
+val numbers: Numbers = Numbers(..)
+val dynamicNumber: Numbers = PositiveNumbers(..)
+val positiveNumbers: PositiveNumbers = PositiveNumbers(..)
+
+val receiveNumbers: Numbers = Numbers(..)
+receiveNumbers.add(dynamicNumber)
+"expect: Numbers.add(PositiveNumbers), real: Numbers.add(Numbers)"
+
+val receiveDynamicNumbers: Numbers = PositiveNumbers(..)
+receiveDynamicNumbers.add(dynamicNumber)
+"expect: PositiveNumbers.add(PositiveNumbers), real: PositiveNumbers.add(Numbers)"
+
+val receivePositiveNumbers: PositiveNumbers = PositiveNumbers(..)
+receivePositiveNumbers.add(dynamicNumber)
+"expect: PositiveNumbers.add(PositiveNumbers), real: PositiveNumbers.add(Numbers)"
+```
+
+(`dynamic`은 정적 타입과 동적 타입이 서로 다른 의미이며, `receive`는 수신 객체를 의미한다.)  
+인자의 동적 타입은 고려하지 않기 때문에 위와 같이 기대하는 메서드가 호출되지 않는다.  
+언어 수준에서 도와주지 않기 때문에 개발자가 코드를 잘 작성해야 한다.  
+  
+기본 전략은 **메서드 안에서 수신자와 인자의 위치를 바꾸어 다시 한번 메서드를 호출하는 것이다.**  
+
+```kotlin
+open class Numbers(val elements: List<Int>) {
+    open fun length(): Int = ..
+    open fun add(that: Numbers): Numbers = that._add(this)
+    open fun _add(that: Numbers): Numbers = ..
+    open fun _add(that: PositiveNumbers): Numbers = ..
+}
+class PositiveNumbers(elements: List<Int>): Numbers(elements) {
+    val positiveNumberIndexes: List<Int> = ..
+
+    override fun length(): Int = ..
+    override fun add(that: Numbers): PositiveNumbers = that._add(this)
+    override fun _add(that: Numbers): PositiveNumbers = ..
+    override fun _add(that: PositiveNumbers): PositiveNumbers = ..
+}
+
+val numbers: Numbers = Numbers(..)
+val dynamicNumber: Numbers = PositiveNumbers(..)
+val positiveNumbers: PositiveNumbers = PositiveNumbers(..)
+
+val receiveNumbers: Numbers = Numbers(..)
+receiveNumbers.add(dynamicNumber)
+"expect: Numbers.add(PositiveNumbers), real: PositiveNumbers.add(Numbers)"
+
+val receiveDynamicNumbers: Numbers = PositiveNumbers(..)
+receiveDynamicNumbers.add(dynamicNumber)
+"expect: PositiveNumbers.add(PositiveNumbers), real: PositiveNumbers.add(PositiveNumbers)"
+
+val receivePositiveNumbers: PositiveNumbers = PositiveNumbers(..)
+receivePositiveNumbers.add(dynamicNumber)
+"expect: PositiveNumbers.add(PositiveNumbers), real: PositiveNumbers.add(PositiveNumbers)"
+```
+
+클라이언트에게 불필요한 `_add` 함수가 노출되고 다른 개발자가 보기에는 난해할 수 있다.  
+하지만 백킹 메서드 `_add`를 사용하여 `add()`의 인자의 동적 메서드를 선택하도록 하여 기대한대로 호출되는 것을 알 수 있다.  
+  
+추가로 **자식 클래스에 있는 메서드의 결과 타입이 부모 클래스에 있는 메서드의 결과 타입의 서브타입이어야 한다.**    
+오버라이딩된 자식 메서드의 결과 타입이 부모 메서드의 결과 타입에 반하는 아래와 같은 상황은 런타임에 문제가 발생할 수 있어 타입 검사기가 허용하지 않는다.  
+이때까지의 내용을 읽었다면 왜 허용하지 않는지 이해할 수 있을것이다.  
+
+```kotlin
+open class Numbers(val elements: List<Int>) {
+    open fun add(that: PositiveNumbers): PositiveNumbers = ..
+}
+class PositiveNumbers(elements: List<Int>): Numbers(elements) {
+    val positiveNumberIndexes: List<Int> = ..
+
+    override fun add(that: PositiveNumbers): Numbers = ..
+}
+
+val dynamicNumbers: Numbers = PositiveNumbers(..)
+val positiveNumbers: PositiveNumbers = PositiveNumbers(..)
+dynamicNumbers.add(positiveNumbers).positiveNumberIndexes
+```
