@@ -132,12 +132,13 @@ DDL은 단일 스레드로 작동한다.
 
 MySQL에서 제공하는 잠금과는 별개로 스토리지 엔진 내부에서 레코드 기반의 잠금 방식을 제공하며, 잠금 정보가 상당히 작은 공간으로 관리되기 때문에 락이 페이지 락으로, 또는 테이블 락으로 레벨업되는 경우(락 에스컬레이션)는 없다.  
 InnoDB는 **레코드 기반의 잠금 방식 덕분에 MyISAM보다는 훨씬 뛰어난 동시성 처리를 제공할 수 있다.**  
+**Inno DB내부에서는 여러 트랜잭션들이 경합하고 있는 상황에서 최대한의 성능을 위해서 `여러 방식의 다양한 락(Lock)을 조합`해서 사용하고 있다** [InnoDB Locking](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)  
   
 ![](./innodbLock.png)
 
 레코드 수준 잠금은 레코드 각각에 잠금이 걸리므로 테이블 수준의 잠금보다는 조금 더 복잡하다.
 
-## 레코드 락
+## Record Locks
 
 레코드 자체만을 잠그는 것을 의미하며, InnoDB 스토리지 엔진은 **레코드 자체가 아니라 인덱스의 레코드를 잠근다는 점이다.**  
 인덱스가 하나도 없는 테이블이더라도 내부적으로 자동 생성된 클러스터 인덱스를 이용해 잠금을 설정한다.  
@@ -235,18 +236,18 @@ SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FRO
 +-------------+------------+-----------+-----------+-------------+------------------------+
 ```
 
-## 갭 락
+## Gap Locks
 
 갭 락은 레코드 자체가 아니라 **레코드와 바로 인접한 레코드 사이의 간격만을 잠그는 것을 의미한다.**  
 갭 락의 역할은 **레코드와 레코드 사이의 간격에 새로운 레코드가 생성되는 것을 제어하는 것** 이며, 넥스트 키 락의 일부로 자주 사용된다.  
 
-## 넥스트 키 락
+## Next Key Locks
 
 레코드 락과 갭 락을 합쳐 놓은 형태의 잠금이며, **갭 락이나 넥스트 키 락은 바이너리 로그에 기록되는 쿼리가 레플리카 서버에서 실행될 때 소스 서버에서 만들어 낸 결과와 동일한 결과를 만들어내도록 보장하는 것이 주 목적이다.**  
 하지만 의외로 넥스트 키 락과 갭 락으로 인해 데드락이 발생하거나 다른 트랜잭션을 기다리게 만드는 일이 자주 발생하기 때문에 해당 락은 줄이는 것이 좋다.  
 그래서 MySQL 8.0에서는 ROW 포맷의 바이너리 로그가 기본 설정으로 변경됐다. 바이너리 로그 포맷 관련 내용은 [Setting The Binary Log Format](https://dev.mysql.com/doc/refman/8.0/en/binary-log-setting.html) 참고하자.
 
-## 자동 증가 락
+## Auto Increment Locks
 
 자동 증가하는 숫자 값을 추출(채번)하기 위해 AUTO_INCREMENT라는 컬럼 속성을 제공한다.  
 **해당 컬럼이 존재하는 테이블에 여러 레코드가 동시에 INSERT 되는 경우, 저장되는 각 레코드는 중복되지 않고 저장된 순서대로 증가하는 일련번호 값을 가져야하기 때문에 내부적으로 Auto increment lock 이라고 하는 테이블 수준의 잠금을 사용한다.**  
@@ -256,6 +257,92 @@ SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FRO
   
 위의 설명은 MySQL 5.0이하 버전에서 사용하던 방식이고 `innodb_autoinc_lock_mode`라는 시스템 변수를 이용해 자동 증가 락의 작동 방식을 변경할 수 있다.  
 자세한 내용은 [AUTO_INCREMENT Handling in InnoDB](https://dev.mysql.com/doc/refman/8.0/en/innodb-auto-increment-handling.html)을 참고하자.  
+
+## Shared and Exclusive Locks
+
+InnoDB는 공유(`S`) 잠금과 독점(`X`) 잠금의 두 가지 잠금 유형이 있는 행 수준 잠금을 구현한다.  
+사용자가 필요에 따라 명시적으로 `locking read`를 할 수 있도록 두가지 쿼리를 제공한다.  
+
+<h3>SELECT ... LOCK IN SHARE MODE</h3>
+
+한 트랜잭션에서 읽어간 데이터를 **다른 트랜잭션에서 배타적으로 수정하기 위해 락을 획득하려 할때 기다리게 한다. `S`**  
+두 개의 세션에서 특정 레코드에 대한 `S` 락을 동시에 가질 수 있다. (Shared Lock이 걸려있는 동안 다른 트랜잭션이 해당 row에 대해 `X` lock 획득은 불가능하지만 `S` lock 획득은 가능)  
+
+```sql
+-- <트랜잭션 A>
+select * from employees where id = 10 for share;
+-- 1 row in set (0.00 sec)
+
+-- <트랜잭션 B>
+select * from employees where id = 10 for share;
+-- 1 row in set (0.00 sec)
+
+SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IS            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | S,REC_NOT_GAP | GRANTED     | 10        |
+| employees   | NULL       | TABLE     | IS            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | S,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+```
+
+MySQL 8.0 부터는 기존 *LOCK IN SHARE MODE* 대신 `FOR SHARE`라고 간략하게 적어줘도 된다.  *(하위 호환성을 위해 기존 구문도 문제 없이 실행됨)*  
+
+<h3>SELECT ... FOR UPDATE</h3>
+
+한 트랜잭션에서 읽어간 데이터를 **다른 트랜잭션에서 배타적으로 읽거나, 수정하기 위해 락을 획득하려할 때 기다리게 한다. `X`**  
+`exclusive lock`이 걸려있으면 다른 트랜잭션이 해당 row에 대해 `X` , `S` lock을 모두 획득하지 못하고 대기해야 한다.  
+
+```sql
+-- <트랜잭션 A>
+select * from employees where id = 10 for update;
+-- 1 row in set (0.00 sec)
+
+-- <트랜잭션 B>
+SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+
+select * from employees where id = 10 for update;
+-- 대기
+```
+
+## Intention Locks
+
+행 잠금과 테이블 잠금이 공존할 수 있는 다중 세분성 잠금을 지원한다.  
+
+- intention shared lock (`IS`) : 트랜잭션이 테이블의 개별 행에 공유 잠금을 설정하려고 함을 나타낸다.
+- intention exclusive lock (`IX`) : 트랜잭션이 테이블의 개별 행에 독점 잠금을 설정하려고 함을 나타낸다.
+
+예를 들어 `SELECT ... FOR SHARE`는 IS 잠금을 설정하고 `SELECT ... FOR UPDATE`는 IX 잠금을 설정합니다.
+
+```
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IS            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | S,REC_NOT_GAP | GRANTED     | 9         |
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+```
+
+|    | **X** | **IX** | **S** | **IS** |
+|----|----|----|---|----|
+| **X**  | Conflict | Conflict | Conflict | Conflict |
+| **IX** | Conflict | Compatible | Conflict | Compatible |
+| **S**  | Conflict | Conflict | Compatible | Compatible |
+| **IS** | Conflict | Compatible | Compatible | Compatible |
+
+Intention Lock은 전체 테이블 요청(예: `LOCK TABLES ... WRITE`)을 제외하고는 아무것도 차단하지 않으며, 주요 목적은 **누군가 행을 잠그고 있거나 테이블의 행을 잠그려고 한다는 것을 표시하는 것이다.**  
+하지만 동일한 레코드에 Row-Level Lock의 실제 잠금(`S` 또는 `X`)을 획득하는 과정에서 동시 접근을 막거나 허용하는 제어를 하게 된다.  
+`LOCK TABLES` , `ALTER TABLE` , `DROP TABLE`이 실행될 때는 `IS` , `IX`를 모두 **block**하는 **Table-Level Lock**이 걸린다 (즉 , `IS` 또는 `IX` lock을 획득하려는 트랜잭션은 대기상태로 빠진다)  
 
 # DB 트랜잭션 격리 수준
 
@@ -379,85 +466,109 @@ select * from bookmark;
 
 ![](./phantomRead.png)
 
-**다른 트랜잭션에서 수행한 변경 작업에 의해 레코드가 보였다가 안보였다가 하는 현상을 `PHANTOM READ(PHANTOM ROW)`**
+**다른 트랜잭션에서 수행한 변경 작업에 의해 레코드가 보였다가 안보였다가 하는 현상을 `PHANTOM READ(PHANTOM ROW)`** 라고한다.  
 
 ```sql
-set transaction_isolation = 'REPEATABLE-READ';
-SHOW VARIABLES LIKE '%isolation';
+CREATE TABLE employees (
+    id int NOT NULL,
+    first_name varchar(255) DEFAULT NULL,
+    last_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY idx_first_name (first_name)
+) ENGINE=InnoDB;
+
++----+------------+-----------+
+| id | first_name | last_name |
++----+------------+-----------+
+|  1 | John       | Doe1      |
+|  2 | John       | Doe2      |
+|  3 | John       | Doe3      |
+|  4 | John       | Doe4      |
+|  5 | Jane       | Ann1      |
+|  6 | Jane       | Ann2      |
+|  7 | Jane       | Ann3      |
+|  8 | Jack       | Tim1      |
+|  9 | Jack       | Tim2      |
+| 10 | Jack       | Tim3      |
++----+------------+-----------+
+```
+
+위의 테이블로 테스트를 해보자.
+
+
+```sql
+-- <트랜잭션 A>
+set transaction_isolation = 'READ-COMMITTED';
+set autocommit=false;
+
+select * from employees where id >= 8 for update;
+-- 3 rows in set (0.01 sec)
 
 -- <트랜잭션 B>
-start transaction;
-select * from bookmark where ... for update;
+set transaction_isolation = 'READ-COMMITTED';
+set autocommit=false;
+
+SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 8         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 9         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+
+insert into employees(id, first_name, last_name) values (11, 'Test', 'Test1' );
+commit;
+-- Query OK, 1 row affected (0.03 sec)
 -- </트랜잭션 B>
 
 -- <트랜잭션 A>
-start transaction;
-
-insert into bookmark(id , create_timestamp , name , star , domain , path) values(10 , NOW() , '스프링' , 1 , 'docs.spring.io' , 'break');
-
-commit;
--- </트랜잭션 A>
-
--- <트랜잭션 B>
-select * from bookmark for where ... update;
-commit;
--- </트랜잭션 B>
+select * from employees where id >= 8 for update;
+-- 4 rows in set (0.00 sec)
 ```
 
-`트랜잭션 B`의 `첫 번째 SELECT FOR UPDATE`와 `두 번째 SELECT FOR UPDATE`의 결과가 서로 다르다.  
+`트랜잭션 A`의 `첫 번째 SELECT FOR UPDATE`와 `두 번째 SELECT FOR UPDATE`의 결과가 서로 다르다.  
 **`SELECT ... FOR UPDATE`, `SELECT ... LOCK IN SHARE MODE`는 레코드에 쓰기 잠금을 걸어야 하는데, 언두 레코드에는 잠금을 걸 수 없기 때문에 조회되는 레코드는 언두 영역의 변경 전 데이터를 가져오는 것이 아니라 현재 레코드의 값을 가져오게 되는 것이다.**  
+격리 수준을 REPETABLE-READ로 올려보고 테스트하면 아래와 같이 해결된다.  
 
-> 하지만 InnoDB 스토리지 엔진에서는 **갭 락**과 **넥스트 키 락** 덕분에 `PHANTOM READ`문제가 발생하지는 않는다.
+```sql
+-- <트랜잭션 B>
+set transaction_isolation = 'REPEATABLE-READ';
+set autocommit=false;
+select * from employees where id >= 8 for update;
+-- 3 rows in set (0.00 sec)
+
+-- <트랜잭션 A>
+set transaction_isolation = 'REPEATABLE-READ';
+set autocommit=false;
+
+SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+---------------+-------------+------------------------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA              |
++-------------+------------+-----------+---------------+-------------+------------------------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL                   |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 8                      |
+| employees   | PRIMARY    | RECORD    | X             | GRANTED     | supremum pseudo-record |
+| employees   | PRIMARY    | RECORD    | X             | GRANTED     | 9                      |
+| employees   | PRIMARY    | RECORD    | X             | GRANTED     | 10                     |
++-------------+------------+-----------+---------------+-------------+------------------------+
+
+insert into employees(id, first_name, last_name) values (11, 'Test', 'Test1' );
+-- 트랜잭션 B의 상한 락으로 인해 무한 대기
+
+insert into employees(id, first_name, last_name) values (0, 'Test', 'Test1' );
+-- 8 이후의 레코드에만 락이 걸려있기 때문에 id가 0인 레코드는 삽입이 바로 가능하다.
+```
+  
+> InnoDB 스토리지 엔진에서는 레크도 락과 갭 락을 결합한 **넥스트 키 락** 덕분에 `PHANTOM READ`문제가 발생하지 않는다.  
+> 즉, 한 세션이 인덱스의 `R`레코드 에 공유 또는 독점 잠금을 설정한 경우, **다른 세션은 인덱스 순서에서 `R`레코드 바로 앞에 새 인덱스 레코드를 삽입할 수 없다.**  
+
+`select .. where id >= 8 for update;` 쿼리로 인해 `supremum pseudo-record` 락이 발생하였으며 `id`가 8 이후의 레코드에 대해서는 삽입을 할 수 없다.  
+즉, **테이블에 존재하지 않는 항목을 '잠금'할 수 있다.**  
 
 ## SERIALIZABLE
 
 가장 단순한 격리 수준이면서 동시에 가장 엄격한 격리 수준이다.  
 그만큼 동시 처리 성능도 다른 격리 수준에 비해 떨어진다.  
 위에서 말했던 **Non-Locking consistent read (잠금이 필요 없는 일관된 읽기)**를 지키지 않으며, **읽기 작업도 공유 잠금(읽기 잠금)을 획득해야만 하며, 동시에 다른 트랜잭션은 접근하지 못한다.**  
-
-# Locking Read
-
-**MySQL InnoDB 엔진**은 사용자가 필요에 따라 명시적으로 `locking read`를 할 수 있도록 두가지 쿼리를 제공한다
-
-<h3>SELECT ... LOCK IN SHARE MODE</h3>
-
-한 트랜잭션에서 읽어간 데이터를 **다른 트랜잭션에서 배타적으로 수정하기 위해 락을 획득하려 할때** (읽어가는 것은 허용)
-
-<h3>SELECT ... FOR UPDATE</h3>
-
-한 트랜잭션에서 읽어간 데이터를 **다른 트랜잭션에서 배타적으로 읽거나, 수정하기 위해 락을 획득하려할 때 기다리게 한다**
-
-> MySQL 8.0 부터는 기존 *LOCK IN SHARE MODE* 대신 `FOR SHARE`라고 간략하게 적어줘도 된다.  *(하위 호환성을 위해 기존 구문도 문제 없이 실행됨)*
-
-## MySQL InnoDB 락의 종류
-
-**Inno DB내부에서는 경우 여러 트랜잭션들이 경합하고 있는 상황에서 최대한의 성능을 위해서 `여러 방식의 다양한 락(Lock)을 조합`해서 사용하고 있다**
-
-<h3>Shared Lock (S)</h3> 
-
-- **Row-Level Lock**
-- `SELECT` 위한 **Read Lock**
-- **Shared Lock**이 걸려있는 동안 다른 트랜잭션이 해당 row에 대해 `X` lock 획득 (`exclusive write`)은 불가능하지만 `S` lock 획득 (`shared read`)은 가능
-- 한 row에 대해 **여러 트랜잭션이 동시에 `S` lock 획득이 가능**
-
-
-<h3>Exclusive Lock (X)</h3>
-
-- **Row-Level Lock**
-- `UPDATE` , `DELETE` 위한 **Write Lock**
-- `exclusive lock`이 걸려있으면 다른 트랜잭션이 해당 row에 대해 `X` , `S` lock을 모두 획득하지 못하고 대기해야 한다
-
-
-<h3>Intention Lock (I)</h3>
-
-- **Table-Level Lock**
-- 테이블안의 row에 대해 `Row-Level Lock`을 걸 것이라는 의도를 알려주기 위해 미리 **Table-Level Lock**을 거는 것
-- `SELECT ... LOCK IN SHARE MODE`이 실행되면,
-  - **Intention Shared Lock** (`IS`)이 테이블에 걸림
-  - 그 후 row-level에 `S` lock이 걸림
-- `SELECT ... FOR UPDATE` , `INSERT` , `DELETE` , `UPDATE`가 실행되면,
-  - **Intention Exclusive Lock** (`IX`)이 테이블에 걸림
-  - 그 후 row-level에 `X` lock이 걸림
-- `IS` , `IX` lock은 여러 트랜잭션에서 동시에 접근이 가능하다 (*서로 block하지 않는다*)
-- 하지만 동일한 row에 **Row-Level Lock**의 실제 lock (`S` 또는 `X`)을 획득하는 과정에서 동시 접근을 막거나 허용하는 제어를 하게 된다
-- `LOCK TABLES` , `ALTER TABLE` , `DROP TABLE`이 실행될 때는 `IS` , `IX`를 모두 **block**하는 **Table-Level Lock**이 걸린다 (즉 , `IS` 또는 `IX` lock을 획득하려는 트랜잭션은 대기상태로 빠진다)
