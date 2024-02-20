@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 19 Feb 2024 14:13:13 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 20 Feb 2024 15:03:01 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 06일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -80,33 +80,29 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;/ul&gt;
 &lt;h1 id=&quot;타입으로-견고하게-다형성으로-유연하게&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;타입으로 견고하게 다형성으로 유연하게&lt;/strong&gt;&lt;a href=&quot;#%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EA%B2%AC%EA%B3%A0%ED%95%98%EA%B2%8C-%EB%8B%A4%ED%98%95%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EC%97%B0%ED%95%98%EA%B2%8C&quot; aria-label=&quot;타입으로 견고하게 다형성으로 유연하게 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;1월 19일 부터 2월 11일까지&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;1월 19일 부터 2월 20일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;정적 타입 언어는 타입 검사기를 통하여 생산성을 높이기도 좋고, 불필요한 실행 중 검사를 없앨 수 있어서 프로그램이 좋은 성능을 내는데 유리하고 큰 프로그램을 만들 때 타입 검사기의 위력은 강력하다.&lt;br&gt;
-그리고 작은 프로그램, 타입에 대한 이해 수준이 낮게 요구될 때에는 동적 타입 언어가 더 유리하다.&lt;/p&gt;
+타입 검사기가 거부하는 코드를 줄이고 정적 언어를 잘 사용하기 위해 여러 경우에 대한 다형성,가변성에 대한 이해와 타입 검사기와 친해지도록 노력해야 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;정적 타입 언어가 유용하지만 &lt;strong&gt;타입 검사기가 &lt;code class=&quot;language-text&quot;&gt;거부&lt;/code&gt;라고 오판하는 경우가 반드시 존재한다.&lt;/strong&gt;&lt;br&gt;
-개발자들은 타입 검사기의 오판을 줄이고 정적 언어를 잘 사용하기 위해 여러 경우에 대한 다형성,가변성에 대한 이해와 타입 검사기와 친해지도록 노력해야 한다.&lt;/p&gt;
-&lt;p&gt;제일 와닿았던 부분은 제네릭 가변성에 대한 이해가 없을 때 이게 왜 안되는지 몰랐던 부분들을 깨닫게 도와줬다. &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super&quot;&gt;PECS : producer-extends, consumer-super&lt;/a&gt;를 외워서 사용했는데 왜 저렇게 제한해야 하는지 더 깊은 이해를 할 수 있도록 도와주었다.&lt;/p&gt;
+&lt;p&gt;이 책을 통해 아래의 내용을 학습할 수 있다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;서브타입에 의한 다형성
-&lt;ol&gt;
-&lt;li&gt;이름에 의한 서브타입&lt;/li&gt;
-&lt;li&gt;구조에 의한 서브타입&lt;/li&gt;
-&lt;li&gt;추상 메서드가 필요한 이유&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;여러 종류의 다형성&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;(JVM 언어에서는 지원하지 않는) &lt;strong&gt;다른 언어의 기능&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;최대, 최소 타입&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;제네릭 가변성&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PECS를 지켜야하는 이유&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;타입 클래스, 카인드&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;매개변수에 의한 다형성
-&lt;ol&gt;
-&lt;li&gt;제네릭 함수, 타입&lt;/li&gt;
-&lt;li&gt;무엇이든, 무엇인가 타입&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;자바-네트워크-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;자바 네트워크 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;제일 와닿았던 부분은 제네릭 가변성에 대한 이해가 없을 때 이게 왜 안되는지 몰랐던 부분들을 깨닫게 도와줬다.&lt;br&gt;
+&lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super&quot;&gt;PECS : producer-extends, consumer-super&lt;/a&gt;를 외워서 사용했는데 왜 저렇게 제한해야 하는지 더 깊은 이해를 할 수 있도록 도와주었다.&lt;/p&gt;
+&lt;p&gt;이 책을 읽으면서 안다고 착각했던 부분들이 많았다는 것을 깨닫았다. 정적 타입 언어에 대한 이해를 한층 더 높여준 책이다.&lt;br&gt;
+개발하면서 타입 검사기가 거부하는 상황이 발생하면 IDE의 도움을 받아 어영부영 넘어간 경험 또는 제네릭이나 제네릭을 통한 타입 매개변수 제한을 사용할 때 타입 검사기가 왜 거부하는지 이해하지 못 했던 경험이 있다면 이 책은 큰 도움이 될 것이다.&lt;/p&gt;
+&lt;h1 id=&quot;프레임-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;프레임&lt;/strong&gt; ~ing&lt;a href=&quot;#%ED%94%84%EB%A0%88%EC%9E%84-ing&quot; aria-label=&quot;프레임 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;real-my-sql-1권-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt; ~ing&lt;a href=&quot;#real-my-sql-1%EA%B6%8C-ing&quot; aria-label=&quot;real my sql 1권 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;oauth2-인-액션-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;OAuth2 인 액션&lt;/strong&gt; ~ing&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-ing&quot; aria-label=&quot;oauth2 인 액션 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;자바-네트워크-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;자바 네트워크 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;코틀린-코루틴-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;코틀린 코루틴&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4-ing&quot; aria-label=&quot;코틀린 코루틴 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;real-my-sql-2권-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 2권&lt;/strong&gt; 예정&lt;a href=&quot;#real-my-sql-2%EA%B6%8C-%EC%98%88%EC%A0%95&quot; aria-label=&quot;real my sql 2권 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;네티-인-액션-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;네티 인 액션&lt;/strong&gt; 예정&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%98%88%EC%A0%95&quot; aria-label=&quot;네티 인 액션 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -114,605 +110,18 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;h1 id=&quot;이펙티브-코틀린-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 코틀린 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 자바 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt; 예정&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4-%EC%98%88%EC%A0%95&quot; aria-label=&quot;개발자를 위한 레디스 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[트랜잭션과 잠금]]></title><description><![CDATA[InnoDB Locking Dirty read, Non-repeatable read, and Phantom read 트랜잭션 트랜잭션은 작업의 완전성을 보장 (COMMIT, ROLLBACK…]]></description><link>https://jdalma.github.io/2024y/transaction/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/transaction/</guid><pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html&quot;&gt;InnoDB Locking&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://jennyttt.medium.com/dirty-read-non-repeatable-read-and-phantom-read-bd75dd69d03a&quot;&gt;Dirty read, Non-repeatable read, and Phantom read&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;트랜잭션&quot; style=&quot;position:relative;&quot;&gt;트랜잭션&lt;a href=&quot;#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98&quot; aria-label=&quot;트랜잭션 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;트랜잭션은 &lt;strong&gt;작업의 완전성을 보장 (COMMIT, ROLLBACK)&lt;/strong&gt; 해주는 것이다.&lt;br&gt;
-즉 논리적인 작업 셋을 모두 완벽하게 처리하거나 처리하지 못할 경우에는 원 상태로 복구해서 작업의 일부만 적용되는 현상(Partial update)이 발생하지 않게 만들어주는 기능이다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;트랜잭션&lt;/strong&gt; : 데이터의 정합성을 보장하기 위한 기능&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;잠금&lt;/strong&gt; : 동시성을 제어하기 위한 기능&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;격리 수준&lt;/strong&gt; : 하나의 트랜잭션 내에서 또는 여러 트랜잭션 간의 작업 내용을 어떻게 공유하고 차단할 것인지 결정하는 레벨&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;이 트랜잭션은 개발자에게 엄청난 혜택을 주지만 주의해야 할 점이 있다.&lt;br&gt;
-&lt;strong&gt;트랜잭션 또한 DBMS의 커넥션과 동일하게 꼭 필요한 최소한의 코드에만 적용하도록 신경써야 한다.&lt;/strong&gt;&lt;br&gt;
-(&lt;a href=&quot;https://www.youtube.com/watch?v=xc0tnJVGQEw&amp;#x26;ab_channel=%EC%B5%9C%EB%B2%94%EA%B7%A0&quot;&gt;최범균님이 DB 커넥션 풀 부족 장애&lt;/a&gt; 트러블 슈팅 내용을 업로드하셨는데 이 영상을 보는것도 좋다.)&lt;br&gt;
-트랜잭션 내에 외부 네트워크 통신과 같은 작업을 최대한 제거해야 한다.&lt;/p&gt;
-&lt;h1 id=&quot;mysql-엔진의-잠금&quot; style=&quot;position:relative;&quot;&gt;MySQL 엔진의 잠금&lt;a href=&quot;#mysql-%EC%97%94%EC%A7%84%EC%9D%98-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;mysql 엔진의 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;MySQL에서 사용되는 잠금은 크게 &lt;strong&gt;MySQL 엔진&lt;/strong&gt; 레벨과 &lt;strong&gt;스토리지 엔진&lt;/strong&gt; 레벨로 나눌 수 있다.&lt;br&gt;
-MySQL 엔진 레벨의 잠금은 모든 스토리지 엔진에 영향을 미치지만, 스토리지 엔진 레벨의 잠금은 스토리지 엔진 간 상호 영향을 미치지 않는다.&lt;/p&gt;
-&lt;p&gt;MySQL 엔진&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;테이블 데이터 동기화를 위한 &lt;strong&gt;테이블 락&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;테이블의 구조를 잠그는 &lt;strong&gt;메타데이터 락&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;사용자의 필요에 맞게 사용할 수 있는 &lt;strong&gt;네임드 락&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;글로벌-락&quot; style=&quot;position:relative;&quot;&gt;글로벌 락&lt;a href=&quot;#%EA%B8%80%EB%A1%9C%EB%B2%8C-%EB%9D%BD&quot; aria-label=&quot;글로벌 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;글로벌 락은 &lt;code class=&quot;language-text&quot;&gt;FLUSH TABLES WITH READ LOCK&lt;/code&gt; 명령으로 획득할 수 있으며, 가장 범위가 큰 잠금이다.&lt;br&gt;
-한 세션에서 글로벌 락을 획득하면 다른 세션에서 &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt;를 제외한 대부분의 DDL, DML은 글로벌 락이 해제될 때까지 대기 상태로 기다린다.&lt;br&gt;
-대표적으로 여러 데이터베이스, 테이블 대상으로 일관된 백업을 받기 위해 사용할 수 있다.&lt;/p&gt;
-&lt;p&gt;이 글로벌 락보다 조금 더 가벼운 백업 락이 도입됐다.&lt;br&gt;
-특정 세션에서 백업 락을 획득하면 모든 세션에서 테이블의 스키마나 사용자의 인증 관련 정보를 변경할 수 없게된다.&lt;br&gt;
-하지만 일반적인 테이블의 데이터 번경은 허용된다. 백업 락을 잡고 백업 진행 중에 DDL이 유입되면 백업은 실패한다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;LOCK INSTANCE FOR BACKUP&lt;/code&gt; 명령으로 백업 락을 획득하고 &lt;code class=&quot;language-text&quot;&gt;UNLOCK INSTANCE&lt;/code&gt; 명령으로 락을 반납한다.&lt;/p&gt;
-&lt;h2 id=&quot;테이블-락&quot; style=&quot;position:relative;&quot;&gt;테이블 락&lt;a href=&quot;#%ED%85%8C%EC%9D%B4%EB%B8%94-%EB%9D%BD&quot; aria-label=&quot;테이블 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;개별 테이블 단위로 설정되는 잠금이며, 명시적 또는 묵시적으로 특정 테이블의 락을 획득할 수 있다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;LOCK TABLES table_name [ READ | WRITE ]&lt;/code&gt; 명령으로 락을 획득하고 &lt;code class=&quot;language-text&quot;&gt;UNLOCK TABLES&lt;/code&gt; 명령으로 락을 반납한다.&lt;br&gt;
-InnoDB 테이블의 경우 &lt;strong&gt;스토리지 엔진 차원에서 레코드 기반의 잠금&lt;/strong&gt; 을 제공하기 때문에 단순 데이터 변경 쿼리로 인해 묵시적인 테이블 락이 설정되지는 않으며 스키마를 변경하는 쿼리(DDL)의 경우에만 영향을 미친다.&lt;/p&gt;
-&lt;h2 id=&quot;네임드-락&quot; style=&quot;position:relative;&quot;&gt;네임드 락&lt;a href=&quot;#%EB%84%A4%EC%9E%84%EB%93%9C-%EB%9D%BD&quot; aria-label=&quot;네임드 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;GET_LOCK()&lt;/code&gt; 함수를 이용해 임의의 문자열에 대해 잠금을 설정할 수 있다.&lt;br&gt;
-이 잠금의 특징은 잠금 대상이 테이블이나 레코드 또는 AUTO_INCREMENT와 같은 데이터베이스 객체가 아니라는 것이다.&lt;br&gt;
-&lt;strong&gt;단순히 사용자가 지정한 문자열에 대해 획득하고 반납하는 잠금&lt;/strong&gt; 이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잰셕 A&amp;gt;
-select GET_LOCK(&amp;#39;test1&amp;#39;, -1);
-+-----------------------+
-| GET_LOCK(&amp;#39;test1&amp;#39;, -1) |
-+-----------------------+
-|                     1 |
-+-----------------------+
-1 row in set (0.01 sec)
-
--- &amp;lt;트랜잰셕 B&amp;gt;
-select GET_LOCK(&amp;#39;test1&amp;#39;, -1);
--- 무한 대기 중
-
--- &amp;lt;트랜잰셕 A&amp;gt;
-select RELEASE_LOCK(&amp;#39;test1&amp;#39;);
--- &amp;lt;/트랜잰셕 A&amp;gt;
-
--- &amp;lt;트랜잰셕 B&amp;gt;
-+-----------------------+
-| GET_LOCK(&amp;#39;test1&amp;#39;, -1) |
-+-----------------------+
-|                     1 |
-+-----------------------+
-&amp;quot;1 row in set (2 min 47.74 sec)&amp;quot;
--- &amp;lt;/트랜잰셕 B&amp;gt;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;h2 id=&quot;메타데이터-락&quot; style=&quot;position:relative;&quot;&gt;메타데이터 락&lt;a href=&quot;#%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%9D%BD&quot; aria-label=&quot;메타데이터 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;데이터베이스 객체 (대표적으로 테이블이나 뷰 등)의 이름이나 구조를 변경하는 경우에 획득하는 잠금이다.&lt;br&gt;
-&lt;strong&gt;메타데이터 락은 명시적으로 획득하거나 해제할 수 있는 락은 아니고 테이블을 수정할 때 자동으로 획득하는 잠금이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잰셕 A&amp;gt;
-set autocommit = FALSE;
-
-select * from MEMBER;
-+----+----------+
-| id | name     |
-+----+----------+
-|  1 | primary1 |
-|  2 | primary2 |
-|  3 | primary3 |
-|  4 | primary4 |
-+----+----------+
-
-rename table member TO updated_member;
-&amp;quot;Query OK, 0 rows affected (0.05 sec)&amp;quot;
-
--- &amp;lt;트랜잰셕 B&amp;gt;
-select * from member;
-&amp;quot;ERROR 1146 (42S02): Table &amp;#39;test.member&amp;#39; doesn&amp;#39;t exist&amp;quot;
-
-select * from updated_member;
-+----+----------+
-| id | name     |
-+----+----------+
-|  1 | primary1 |
-|  2 | primary2 |
-|  3 | primary3 |
-|  4 | primary4 |
-+----+----------+
-
--- &amp;lt;/트랜잰셕 A&amp;gt;
--- &amp;lt;/트랜잰셕 B&amp;gt;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위의 예시와 같이 트랜잭션 A에서 발생한 DDL은 트랜잭션과 무관하게 실행 즉시 커밋되며 롤백할 수 없다.&lt;br&gt;
-&quot;일부&quot; DDL 명령(ALTER TABLE)에 대해서만 트랜잭션을 지원하지만 이것도 사용자가 명시적으로 트랜잭션을 제어할 수 있는 것은 아니고 내부적으로 실패하면 롤백한다.&lt;br&gt;
-DDL은 단일 스레드로 작동한다.&lt;/p&gt;
-&lt;h1 id=&quot;innodb-스토리지-엔진-잠금&quot; style=&quot;position:relative;&quot;&gt;InnoDB 스토리지 엔진 잠금&lt;a href=&quot;#innodb-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%97%94%EC%A7%84-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;innodb 스토리지 엔진 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;MySQL에서 제공하는 잠금과는 별개로 스토리지 엔진 내부에서 레코드 기반의 잠금 방식을 제공하며, 잠금 정보가 상당히 작은 공간으로 관리되기 때문에 락이 페이지 락으로, 또는 테이블 락으로 레벨업되는 경우(락 에스컬레이션)는 없다.&lt;br&gt;
-InnoDB는 &lt;strong&gt;레코드 기반의 잠금 방식 덕분에 MyISAM보다는 훨씬 뛰어난 동시성 처리를 제공할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 858px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/3134361084ee2563db7e0742903d1942/42d54/innodbLock.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 74.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYUlEQVR42p2U6Y6CQBCEef9Hg8g/MBKjqCjIoeCFB9Cbr7OT7LqHsztJ0TBH9VE9OPI+hmFQW9e1Ik1TRdM0am2H80xYFIVUVSWz2UziOFZC3/d1PssydWb2WhFyaLlcynw+VyRJooSHw0HKspTdbiePx8OecL/fS9/3cjweNRoGDpizTtmQYU1aWEDK0+lU1wxeEnZdpxFcr1eJokhWq5VMJhMF0bmu+2uanwghW6/XstlsFNQNYiIj0tvtJmEYqtLU8VXqDhs4RATn81mVxQmECMA6hIjDN86s2sbUkINEPB6PJQgCjXo0Gsn9fv9/HyIGKUK23W41QhtBviU0fYYFzC8Wi7+1zXOE9CKRAWqJ2hB+bJ2f8IWQ+tF31A/w7nme/V1G0bZtVWkU5HqRIr2IQPQhTljn9oDT6SSXy0UtnQGY57zDI89zTQ2LGKRqROFHwTeOTL+yZvYCRGSNcr0BVniISkararwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;innodbLock&quot;
-        title=&quot;&quot;
-        src=&quot;/static/3134361084ee2563db7e0742903d1942/42d54/innodbLock.png&quot;
-        srcset=&quot;/static/3134361084ee2563db7e0742903d1942/3684f/innodbLock.png 225w,
-/static/3134361084ee2563db7e0742903d1942/fc2a6/innodbLock.png 450w,
-/static/3134361084ee2563db7e0742903d1942/42d54/innodbLock.png 858w&quot;
-        sizes=&quot;(max-width: 858px) 100vw, 858px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;레코드 수준 잠금은 레코드 각각에 잠금이 걸리므로 테이블 수준의 잠금보다는 조금 더 복잡하다.&lt;/p&gt;
-&lt;h2 id=&quot;레코드-락&quot; style=&quot;position:relative;&quot;&gt;레코드 락&lt;a href=&quot;#%EB%A0%88%EC%BD%94%EB%93%9C-%EB%9D%BD&quot; aria-label=&quot;레코드 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;레코드 자체만을 잠그는 것을 의미하며, InnoDB 스토리지 엔진은 &lt;strong&gt;레코드 자체가 아니라 인덱스의 레코드를 잠근다는 점이다.&lt;/strong&gt;&lt;br&gt;
-인덱스가 하나도 없는 테이블이더라도 내부적으로 자동 생성된 클러스터 인덱스를 이용해 잠금을 설정한다.&lt;/p&gt;
-&lt;p&gt;InnoDB에서는 대부분 보조 인덱스를 이용한 변경 작업은 넥스트 키 락 또는 갭 락을 사용하지만 &lt;strong&gt;프라이머리 키 또는 유니크 인덱스에 의한 변경 작업에서는 갭에 대해서는 잠그지 않고 레코드 자체에 대해서만 락을 건다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;레코드를 잠그는 것과 인덱스를 잠그는 것은 중요한 차이를 만들어낸다.&lt;br&gt;
-즉, &lt;strong&gt;변경해야 할 레코드를 찾기 위해 검색한 인덱스의 레코드를 모두 락을 걸어야 한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE employees (
-    id int NOT NULL AUTO_INCREMENT,
-    first_name varchar(255) DEFAULT NULL,
-    last_name varchar(255) DEFAULT NULL,
-    PRIMARY KEY (id),
-    KEY idx_first_name (first_name)
-) ENGINE=InnoDB
-
-+----+------------+----------------+
-| id | first_name | last_name      |
-+----+------------+----------------+
-|  1 | John       | Doe1           |
-|  2 | John       | Doe2           |
-|  3 | John       | Doe3           |
-|  4 | John       | Doe4           |
-|  5 | John       | Doe5           |
-|  6 | John       | Doe6           |
-|  7 | John       | Doe7           |
-|  8 | John       | Doe8           |
-|  9 | John       | Doe9           |
-| 10 | John       | Doe10          |
-| 11 | Jane       | Ann1           |
-| 12 | Jane       | Ann2           |
-+----+------------+----------------+&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;update employees SET last_name = &amp;#39;Updated Jane4&amp;#39; where first_name = &amp;#39;Jane&amp;#39; and last_name = &amp;#39;Ann1&amp;#39;;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;+-------------+----------------+-----------+---------------+-------------+------------+
-| OBJECT_NAME | INDEX_NAME     | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA  |
-+-------------+----------------+-----------+---------------+-------------+------------+
-| employees   | NULL           | TABLE     | IX            | GRANTED     | NULL       |
-| employees   | idx_first_name | RECORD    | X             | GRANTED     | &amp;#39;Jane&amp;#39;, 11 |
-| employees   | idx_first_name | RECORD    | X             | GRANTED     | &amp;#39;Jane&amp;#39;, 12 |
-| employees   | PRIMARY        | RECORD    | X,REC_NOT_GAP | GRANTED     | 11         |
-| employees   | PRIMARY        | RECORD    | X,REC_NOT_GAP | GRANTED     | 12         |
-| employees   | idx_first_name | RECORD    | X,GAP         | GRANTED     | &amp;#39;John&amp;#39;, 1  |
-+-------------+----------------+-----------+---------------+-------------+------------+
-
-IX : Intentional Exclusive, 특정 레코드에 대해 쓰기 잠금을 가지고 있음
-REC_NOT_GAP : 갭 락이 포함되지 않음 순수 레코드에 대한 잠금&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;Jane에 대해서 UPDATE를 실행하면 위와 같이 잠금이 활성화된다.&lt;br&gt;
-&lt;strong&gt;UPDATE시 where 절에 index 컬럼으로 특정 지으면 해당 index에 해당하는 레코드들이 락이 걸리고 update에 해당하는 레코드와 동일한 보조 인덱스의 값들을 가지는 로우들도 모두 락이 걸린다.&lt;/strong&gt;&lt;br&gt;
-테이블에 인덱스가 없으면 모든 행들이 락이 걸리며, where 절에 포함된 최소한의 범위로 락을 잡으려고 한다.&lt;br&gt;
-클러스터 인덱스와 보조 인덱스를 같이 where 절에 추가한다면 클러스터 인덱스 기준으로 락을 건다.&lt;br&gt;
-&lt;a href=&quot;https://stackoverflow.com/questions/60007863/why-does-innodb-block-more-records-in-case-of-a-secondary-index&quot;&gt;보조 인덱스의 경우 InnoDB가 더 많은 레코드를 차단하는 이유는 무엇입니까?&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;하지만 조금 의아한 점은 아래의 SQL은 모든 레코드를 잠근다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
-update employees SET last_name = &amp;#39;Updated Doe&amp;#39; where first_name = &amp;#39;John&amp;#39; and last_name = &amp;#39;Doe1&amp;#39;;
-
--- &amp;lt;트랜잭션 B&amp;gt;
-update employees SET last_name = &amp;#39;Updated Jane&amp;#39; where first_name = &amp;#39;Jane&amp;#39;;
--- 트랜잭션 A의 UPDATE문을 기다린다.&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위와 같이 UPDATE문을 작성하면 10건만 레코드 락이 걸려야하겠지만 아래와 같이 모든 레코드를 잠그게 된다.&lt;/p&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
-+-------------+------------+-----------+-----------+-------------+------------------------+
-| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE | LOCK_STATUS | LOCK_DATA              |
-+-------------+------------+-----------+-----------+-------------+------------------------+
-| employees   | NULL       | TABLE     | IX        | GRANTED     | NULL                   |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | supremum pseudo-record |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 11                     |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 12                     |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 1                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 2                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 3                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 4                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 5                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 6                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 7                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 8                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 9                      |
-| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 10                     |
-+-------------+------------+-----------+-----------+-------------+------------------------+&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;h2 id=&quot;갭-락&quot; style=&quot;position:relative;&quot;&gt;갭 락&lt;a href=&quot;#%EA%B0%AD-%EB%9D%BD&quot; aria-label=&quot;갭 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;갭 락은 레코드 자체가 아니라 &lt;strong&gt;레코드와 바로 인접한 레코드 사이의 간격만을 잠그는 것을 의미한다.&lt;/strong&gt;&lt;br&gt;
-갭 락의 역할은 &lt;strong&gt;레코드와 레코드 사이의 간격에 새로운 레코드가 생성되는 것을 제어하는 것&lt;/strong&gt; 이며, 넥스트 키 락의 일부로 자주 사용된다.&lt;/p&gt;
-&lt;h2 id=&quot;넥스트-키-락&quot; style=&quot;position:relative;&quot;&gt;넥스트 키 락&lt;a href=&quot;#%EB%84%A5%EC%8A%A4%ED%8A%B8-%ED%82%A4-%EB%9D%BD&quot; aria-label=&quot;넥스트 키 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;레코드 락과 갭 락을 합쳐 놓은 형태의 잠금이며, &lt;strong&gt;갭 락이나 넥스트 키 락은 바이너리 로그에 기록되는 쿼리가 레플리카 서버에서 실행될 때 소스 서버에서 만들어 낸 결과와 동일한 결과를 만들어내도록 보장하는 것이 주 목적이다.&lt;/strong&gt;&lt;br&gt;
-하지만 의외로 넥스트 키 락과 갭 락으로 인해 데드락이 발생하거나 다른 트랜잭션을 기다리게 만드는 일이 자주 발생하기 때문에 해당 락은 줄이는 것이 좋다.&lt;br&gt;
-그래서 MySQL 8.0에서는 ROW 포맷의 바이너리 로그가 기본 설정으로 변경됐다. 바이너리 로그 포맷 관련 내용은 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/binary-log-setting.html&quot;&gt;Setting The Binary Log Format&lt;/a&gt; 참고하자.&lt;/p&gt;
-&lt;h2 id=&quot;자동-증가-락&quot; style=&quot;position:relative;&quot;&gt;자동 증가 락&lt;a href=&quot;#%EC%9E%90%EB%8F%99-%EC%A6%9D%EA%B0%80-%EB%9D%BD&quot; aria-label=&quot;자동 증가 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;자동 증가하는 숫자 값을 추출(채번)하기 위해 AUTO_INCREMENT라는 컬럼 속성을 제공한다.&lt;br&gt;
-&lt;strong&gt;해당 컬럼이 존재하는 테이블에 여러 레코드가 동시에 INSERT 되는 경우, 저장되는 각 레코드는 중복되지 않고 저장된 순서대로 증가하는 일련번호 값을 가져야하기 때문에 내부적으로 Auto increment lock 이라고 하는 테이블 수준의 잠금을 사용한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;새로운 레코드를 저장하는 쿼리에서만 필요하며, UPDATE나 DELETE의 쿼리에서는 잠금이 실행되지 않는다.&lt;br&gt;
-&lt;strong&gt;이 락은 트랜잭션과 관계없이 INSERT나 REPLACE 문장에서 AUTO_INCREMENT 값을 가져오는 순간만 락이 걸렸다가 즉시 해제된다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;위의 설명은 MySQL 5.0이하 버전에서 사용하던 방식이고 &lt;code class=&quot;language-text&quot;&gt;innodb_autoinc_lock_mode&lt;/code&gt;라는 시스템 변수를 이용해 자동 증가 락의 작동 방식을 변경할 수 있다.&lt;br&gt;
-자세한 내용은 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-auto-increment-handling.html&quot;&gt;AUTO_INCREMENT Handling in InnoDB&lt;/a&gt;을 참고하자.&lt;/p&gt;
-&lt;h1 id=&quot;db-트랜잭션-격리-수준&quot; style=&quot;position:relative;&quot;&gt;DB 트랜잭션 격리 수준&lt;a href=&quot;#db-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80&quot; aria-label=&quot;db 트랜잭션 격리 수준 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;여러 트랜잭션이 동시에 처리될 때 &lt;strong&gt;특정 트랜잭션이 다른 트랜잭션에서 변경하거나 조회하는 데이터를 볼 수 있게 허용할지 말지를 결정하는 것이다.&lt;/strong&gt;&lt;br&gt;
-Thread에서 공유 자원에 동시 접근을 제한하기 위해 &lt;strong&gt;Lock&lt;/strong&gt;을 걸듯이 DB에서도 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Transaction&lt;/code&gt;간에 같은 동일한 데이터에 대한 동시 접근을 제한&lt;/strong&gt;하기 위하여 &lt;strong&gt;Lock&lt;/strong&gt;을 설정할 수 있다&lt;br&gt;
-&lt;em&gt;&lt;code class=&quot;language-text&quot;&gt;Lock&lt;/code&gt;을 건다는 것은 동시처리량이 줄어든다는 의미이기 때문에 과도하게 사용하면 성능에 문제가 생길 수 있다&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;가장 낮은 &lt;strong&gt;레벨 0&lt;/strong&gt;의 경우 &lt;code class=&quot;language-text&quot;&gt;Lock&lt;/code&gt;이 걸리지 않기 때문에 속도는 매우 빠르나 동시 접근을 허용하기 때문에 데이터 정합성에 문제가 생길 수 있다&lt;br&gt;
-가장 높은 &lt;strong&gt;레벨 3&lt;/strong&gt;의 경우 완전히 &lt;code class=&quot;language-text&quot;&gt;Lock&lt;/code&gt;을 걸어 동시 접근을 차단하고 순차적으로 처리하기 때문에 정합성은 완벽하지만 동시에 처리할 수 있는 양이 적어 속도가 매우 느리다&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Isolation Level&lt;/strong&gt;&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Dirty Read&lt;/strong&gt;&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Nonrepeatable Read&lt;/strong&gt;&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Phantom Read&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;레벨0&lt;/code&gt; &lt;strong&gt;Read Uncommited&lt;/strong&gt; 커밋되지 않은 읽기&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;레벨1&lt;/code&gt; &lt;strong&gt;Read Committed&lt;/strong&gt;	커밋된 읽기&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;레벨2&lt;/code&gt; &lt;strong&gt;Repeatable Read&lt;/strong&gt; 반복 가능한 읽기&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;발생  &lt;code class=&quot;language-text&quot;&gt;InnoDB는 발생 X&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;레벨3&lt;/code&gt; &lt;strong&gt;Serializable&lt;/strong&gt;	직렬화 가능&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&quot;read-uncommited&quot; style=&quot;position:relative;&quot;&gt;READ-UNCOMMITED&lt;a href=&quot;#read-uncommited&quot; aria-label=&quot;read uncommited permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 631px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/eca1145dc503fac3b82564f1a99d645e/4597d/readUncommitted.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 100.8888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACHUlEQVR42pVUx6oqURD0s3WjGxeCfoArQV0pGEBFxY0LEQMIKhgwgznnrPVuHd4Z1OvFsWEYZk53dXV1n9Zcr1csFgssl0us12vx3u12+GS32034MlbGbbdbaBhcrVbRbDbF4WazQa/X+wh4Op1Qq9VQqVQUEt1uF5rj8YhcLodsNovBYIDJZIJ2u60E3u/3Xw/tfD6LuHQ6LeLG4zFarRY0pE70fr8vmJbLZVECjXLw/NEkIN8scTabiRhWRxyNdOAh2bEUZr9cLiB7gksp6MMkj0Y/MpRJFEAGMtsjC4JYrVYYjUZYLBaYzWZEIpEnHyaXmj8BMvtoNMJ8PhdMyY7M3G43HA4HvF4vXC4XEonEEyAZUq63gMxEUJZAdhTabrfDZrMJQKfTqR6QAK8lsyGlUkl0slAoIJ/Piwq+BpTCD4dDmEwmaLVaGAwG6PV6hMPhp3GiNB8B5ahQQ4/HA5/Ph2g0ikAggGQyKaThGecuk8mg0+moK3m1WglAPmTm9/sRj8cxnU6F1nwTTDXgO5N3VjawXq+j0WioAzwcDojFYoIZGYZCIVGm1Jl+vAhv5/BdUyg2h1qn0ylNCQaD380htw5ZEJxPKpVCsVgUm4TbhWW+Xr0/u8xBlteJLGUSjg+7yibwnyrAd3dZjRHwWcOfmbv+3yxcP2RGJ7KUm+dxZb0a/+33e+VbbGxmmP4sBOpEjfjNJctvlvmN/QNAjOeYLcH0YgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;readUncommitted&quot;
-        title=&quot;&quot;
-        src=&quot;/static/eca1145dc503fac3b82564f1a99d645e/4597d/readUncommitted.png&quot;
-        srcset=&quot;/static/eca1145dc503fac3b82564f1a99d645e/3684f/readUncommitted.png 225w,
-/static/eca1145dc503fac3b82564f1a99d645e/fc2a6/readUncommitted.png 450w,
-/static/eca1145dc503fac3b82564f1a99d645e/4597d/readUncommitted.png 631w&quot;
-        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;각 트랜잭션에서의 변경 내용이 &lt;code class=&quot;language-text&quot;&gt;COMMIT&lt;/code&gt;이나 &lt;code class=&quot;language-text&quot;&gt;ROLLBACK&lt;/code&gt;여부에 상관없이 다른 트랜잭션에서 보여지게 된다&lt;/strong&gt;&lt;br&gt;
-RDBMS 표준 에서는 트랜잭션의 격리 수준으로 인정하지 않을 정도로 문제가 많으며 &lt;code class=&quot;language-text&quot;&gt;Dirty Read&lt;/code&gt;가 허용되는 격리 수준이다&lt;/p&gt;
-&lt;h3 id=&quot;dirty-read-문제&quot; style=&quot;position:relative;&quot;&gt;Dirty Read 문제&lt;a href=&quot;#dirty-read-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;dirty read 문제 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;한 트랜잭션에서 처리한 작업이 완료되지 않았음에도 불구하고 다른 트랜잭션에서 볼 수 있게 되는 현상&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;set autocommit = FALSE;
-
-set transaction_isolation = &amp;#39;READ-UNCOMMITTED&amp;#39;;
-SHOW VARIABLES LIKE &amp;#39;%isolation&amp;#39;;
-
--- &amp;lt;트랜잰셕 A&amp;gt;
-start transaction;
-
-update bookmark set name = &amp;#39;탈출&amp;#39; where id = &amp;#39;1&amp;#39;;
--- &amp;lt;/트랜잰셕 A&amp;gt;
-
--- &amp;lt;트랜잭션 B&amp;gt; Dirty Read 발생
-select * from bookmark;
--- &amp;lt;/트랜잭션 B&amp;gt;
-
--- &amp;lt;트랜잭션 A&amp;gt;
-rollback;
--- &amp;lt;/트랜잭션 A&amp;gt;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;A 트랜잭션&lt;/code&gt;의 작업단위를 최종적으로 끝내지않아도 다른 트랜잭션들도 해당 변경사항에 대해 노출된다.&lt;/p&gt;
-&lt;h2 id=&quot;read-committed&quot; style=&quot;position:relative;&quot;&gt;READ-COMMITTED&lt;a href=&quot;#read-committed&quot; aria-label=&quot;read committed permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 685px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/2f449257e0b0d29202b5990ecb45571d/8ce22/readCommitted.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 101.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACbUlEQVR42pVUuapiQRD1P40EEwNjNRZMTQQDEzXQ5BkIgo+noIiIqKgouO/7vu/Lq5lT0Jf79A4z01Dcpvv2qXNOVbfqfD7Tbrejw+HAsd/v6fl8khiYy+P7+1vaOx6P/L/8q1osFlQsFmm5XNJ2u6XNZkPj8ZgPyA+/jvv9ToPBgEqlEq3XayY1Go1INZ1OKRKJULvdptlsxmACEKNer1MqleKkuVxO2gPbarVK8XichsMhn221WqQCTWQol8u8AaZCMvYsFgvp9XoyGo1kMBjI7XZLyaBotVoxy8lkwupUQhYWrtfrD6mQlUgkmAXY5PN5ZiGG+A+sH48Hz1WCDdjVajVmhc3b7cYJut0uB1RAFlgIIPGFd0jOgGIRgGCBgwBCxU+nE6/DRzDrdDpcTQGmyFAsomLNZpNQJATYYM1qtZLJZCKz2czx8fEhSYYKMFMEVPIQreDz+RgkHA6T3++naDTKTJEQnZFOp6nRaEhnfgAK34SP8AsgXq+XAoEAz9FisAV7CFQaHotaSICQCc9QyUwmw1nhYzabpa+vLwoGgxSLxbgXX4vyR8mXy4VNRwAcHmq1WlKr1aTT6Uij0bCnYAMlCKjq9XrvDOUeyhsXtwSB5k0mk9yT8A4gCMhFMRU9fC2K0sBjAom4ISga3gK0lCIgJCsBiJ7EvjzZXz18ZQh/PB4P+2az2chut1MoFHprbNwURUA8DGAkgPEFoMPhIJfLRU6nkz4/P/+NIQyuVCqcDU0rHtxCocCthHVczfl8/gaIbngDBDP5Sy0OCGDsw8fXThDPnFSUxe+MyArJeAgwR1v0+3224H/HL46t2QW8QSnKAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;readCommitted&quot;
-        title=&quot;&quot;
-        src=&quot;/static/2f449257e0b0d29202b5990ecb45571d/8ce22/readCommitted.png&quot;
-        srcset=&quot;/static/2f449257e0b0d29202b5990ecb45571d/3684f/readCommitted.png 225w,
-/static/2f449257e0b0d29202b5990ecb45571d/fc2a6/readCommitted.png 450w,
-/static/2f449257e0b0d29202b5990ecb45571d/8ce22/readCommitted.png 685w&quot;
-        sizes=&quot;(max-width: 685px) 100vw, 685px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;온라인 서비스에서 가장 많이 선택되는 격리수준&lt;/strong&gt; &lt;em&gt;오라클 DBMS에서 기본적으로 사용되고 있다&lt;/em&gt;&lt;br&gt;
-&lt;strong&gt;Undo 영역&lt;/strong&gt;을 통해서 데이터를 가져오기 때문에 Dirty Read는 발생하지 않지만 , &lt;code class=&quot;language-text&quot;&gt;NON_REPEATABLE READ&lt;/code&gt; 문제가 발생한다&lt;/p&gt;
-&lt;h3 id=&quot;non-repeatable-read-문제&quot; style=&quot;position:relative;&quot;&gt;NON-REPEATABLE READ 문제&lt;a href=&quot;#non-repeatable-read-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;non repeatable read 문제 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 837px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/d3e28c67b919bed963714cc9d885eefe/ddc81/nonRepetableRead.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 93.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAACEElEQVR42o1UyaoqUQzsz3YjgiC4cSHoF4iCbnQjLgS3giK6UBHneZ7nue6tQBp99PN6IJzudLpSqeQc4/l84vF4iN3vd9xuN9D312IM41//47PBl0ajgXa7jfV6jfl8jsViYf6kydQ0GZ87nQ6q1SpWq5XYZDKBwQ/5fB65XA7j8RiDwUB2BfzEsFQqIZvNYjQaCVi/34fBD/v9XrJ1u11hSfpcl8sFhUIB6XRafiwWizgej2aZjCWRWq2GzWYj8YayoGO73ZrlcJGt0+mEzWaD3W6Hy+VCq9USsOv1ivP5LKxYrrI2AZmNoK+lkjmZsTTVuVKpSIk0VlUul980t2SoPrJYLpfybbfbSdLpdCpl09dqtpDJZDAcDr8DVB1Zmo4I9WUiGn1kZ8mQDOr1ugAzkIv6uN1uOBwO0c/r9b7ppbJYakhA6sFGqJ5MEAgEEAqFEA6HEY1G39h8BGS5zWbTFJygfCdIIpFAMplEKpWSxF8D9no9YcAAlk3tdCatBvsjoFVTGByLxRAMBhGJRBCPx99i2DCeKlZjCahzqIM9m83g8/ng8XikIX6/X+aSfo4KTxZnlKP1FcPT6SSNUm3ZMIIcDgdpGIedc0j/nwz1puEQU0uWR9P5053s/juH/3bwm0W2r0fWuP92kRkoLHfeh2rsHncy+3SNvRKQC3bzC8aOUkPdmYCMmZ3lfbt+ACnyo1llYM13AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;nonRepetableRead&quot;
-        title=&quot;&quot;
-        src=&quot;/static/d3e28c67b919bed963714cc9d885eefe/ddc81/nonRepetableRead.png&quot;
-        srcset=&quot;/static/d3e28c67b919bed963714cc9d885eefe/3684f/nonRepetableRead.png 225w,
-/static/d3e28c67b919bed963714cc9d885eefe/fc2a6/nonRepetableRead.png 450w,
-/static/d3e28c67b919bed963714cc9d885eefe/ddc81/nonRepetableRead.png 837w&quot;
-        sizes=&quot;(max-width: 837px) 100vw, 837px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;동일한 SELECT 쿼리를 실행했을 때 항상 같은 결과를 보장해야 한다는 &lt;code class=&quot;language-text&quot;&gt;&quot;REPEATABLE READ&quot;&lt;/code&gt; 정합성에 어긋난다&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;set autocommit = FALSE;
-
-set transaction_isolation = &amp;#39;READ-COMMITTED&amp;#39;;
-SHOW VARIABLES LIKE &amp;#39;%isolation&amp;#39;;
-
--- &amp;lt;트랜잭션 A&amp;gt;
-start transaction;
-
-select * from bookmark;
--- &amp;lt;/트랜잭션 A&amp;gt;
-
--- &amp;lt;트랜잭션 B&amp;gt;
-start transaction;
-
-update bookmark set name = &amp;#39;탈출&amp;#39; where id = &amp;#39;1&amp;#39;;
-
-COMMIT;
--- &amp;lt;/트랜잭션 B&amp;gt;
-
--- &amp;lt;트랜잭션 A&amp;gt; NON-REPEATABLE READ 문제 발생
-select * from bookmark;
--- &amp;lt;/트랜잭션 A&amp;gt;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;트랜잭션 A&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;첫 번째 SELECT&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;두 번째 SELECT&lt;/code&gt;의 결과가 서로 달라 &lt;strong&gt;하나의 트랜잭션 내에서 항상 똑같은 결과를 가져와야 하는 &lt;code class=&quot;language-text&quot;&gt;REPEATABLE-READ&lt;/code&gt;가 보장되지 않는 것이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;일반적인 웹 프로그램에서는 크게 문제되지 않을 수 있지만, &lt;strong&gt;하나의 트랜잭션에서 동일 데이터를 여러 번 읽고 변경하는 작업이 금전적인 처리와 연결되면 문제가 될 수도 있다.&lt;/strong&gt;&lt;br&gt;
-예를 들어, 다른 트랜잭션에서 입금과 출금 처리가 계속 진행될 때 다른 트랜잭션에서 오늘 입금된 금액의 총합을 조회한다고 가정해보면&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;REPEATABLE-READ&lt;/code&gt;가 보장되지 않기 때문에 총합을 계산하는 &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt;쿼리는 실행될 때 마다 다른 결과를 가져올 것이다.&lt;/p&gt;
+&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[다형성과 가변성에 대해]]></title><description><![CDATA[타입으로 견고하게 다형성으로 유연하게 책을 정리한 내용입니다. 개발하면서 타입 검사기가 거부하는 상황이 발생하면 IDE…]]></description><link>https://jdalma.github.io/2024y/polymorphism/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/polymorphism/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.yes24.com/Product/Goods/122890814&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt; 책을 정리한 내용입니다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;중요한 것은 사용 중인 트랜잭션의 격리 수준에 의해 실행하는 SQL문장이 어떤 결과를 가져오게 되는지를 정확히 예측할 수 있어야 한다는 것이다.&lt;/strong&gt;&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;READ-COMMITTED&lt;/code&gt;에서는 트랜잭션 외부에서 실행되는 &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt;문과 내부에서 실행되는 것과 차이가 없다.&lt;br&gt;
-하지만 &lt;code class=&quot;language-text&quot;&gt;REPEATABLE-READ&lt;/code&gt; 트랜잭션 내부에서는 온종일 동일한 결과가 반환된기 때문에 큰 차이가 있다.&lt;/p&gt;
-&lt;h2 id=&quot;repeatable-read&quot; style=&quot;position:relative;&quot;&gt;REPEATABLE-READ&lt;a href=&quot;#repeatable-read&quot; aria-label=&quot;repeatable read permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 781px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/4f84513a095fd89c8cd9933700e4c0d0/7fee5/repeatableRead.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 111.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsTAAALEwEAmpwYAAACjElEQVR42o1VWWsyQRD07wpC3kV/gEFBouKzEUENGA+UBEEJ8YAIQl48olE8Erzv+0h/qYaW9YuJDjQ7uztbU9XVPavabDY0Go1oNpvRdDql+XxOyvH19XWI/8dqtTr6drFYkAo32WyWPj8/+SWuu92OP9jv9xwCKPcyxuMxZTIZarVaDNhsNkmFCQDz+Tx9fHxQvV4/YgNwqBBg2QjPer0eJZNJKhQKDMaAsqjT6fAikYkRiUTIaDSSwWDgq8lkooeHB36P9f1+n2U2Gg2Wj3EA7Ha7tN1uj5hBzuPjI93d3VEwGKRAIEAvLy80mUxoMBiwzEqlwiHfHgEKQwwsQI4gC5La7TavQb7ADPLe39+pXC7T29vbaUAlw9/GcrlkZsPhkHMO6QAWMgdA7Aw2YAXnAZ7L5cjv95PP56NQKMTyS6XSUTlJ/n/kEO7CaQFFeL1eslgsbAbi+vqagZUl9SsgnKpWqwyIwAZPT08UDofJ7XYz0P39PRt1EUMxRXZGOYAlclWr1bjgMVd20p+AYAUQ5A2uIvlOp5N0Oh1ptVrS6/U8RwmJ5LMMwQBSwQbsotEouVwucjgc5PF4eINEInGZZJQApIkpKF5pO4QSQNnbfzKUOpSFKBOz2UxWq5Vubm7IbrdTLBY7gF4MKJ2STqfZ3dvbW65FyH5+fubUSN0Wi0WuzbOdguKGSXAV5YQU4B5HHFoP7xEwD224Xq/PHw5wHIzi8TjLT6VS9Pr6epB61mUlIIxAl2g0GlKr1XR1dcVzm83Gm4ElehhVgQPiRy+fOhzwkbiPUsIc6yAT8iUtAD1IBghu5J+AOQISTv1HTg3pMAbELp3vsw6Otb6vyIece5IXSFT+rE6FjH9aoWvXquU5PAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;repeatableRead&quot;
-        title=&quot;&quot;
-        src=&quot;/static/4f84513a095fd89c8cd9933700e4c0d0/7fee5/repeatableRead.png&quot;
-        srcset=&quot;/static/4f84513a095fd89c8cd9933700e4c0d0/3684f/repeatableRead.png 225w,
-/static/4f84513a095fd89c8cd9933700e4c0d0/fc2a6/repeatableRead.png 450w,
-/static/4f84513a095fd89c8cd9933700e4c0d0/7fee5/repeatableRead.png 781w&quot;
-        sizes=&quot;(max-width: 781px) 100vw, 781px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;MySQL의 InnoDB 스토리지 엔진에서 기본적으로 사용되는 격리 수준&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;&quot;NON-REPEATABLE READ&quot;&lt;/code&gt; 부정합이 발생하지 않는다&lt;br&gt;
-&lt;strong&gt;InnoDB 스토리지 엔진&lt;/strong&gt;은 트랜잭션이 &lt;code class=&quot;language-text&quot;&gt;ROLLBACK&lt;/code&gt;될 가능성에 대비해 &lt;strong&gt;변경되기 전 레코드를 언두(Undo) 영역에 백업해두고 실제 레코드 값을 변경한다&lt;/strong&gt;&lt;br&gt;
-이러한 변경 방식을 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-multi-versioning.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;MVCC(Multi Version Concurrency Control)&lt;/code&gt;&lt;/a&gt;이라고 한다&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;✋ &lt;code class=&quot;language-text&quot;&gt;MVCC(Multi Version Concurrency Control)&lt;/code&gt; - &lt;strong&gt;잠금을 사용하지 않는 일관된 읽기를 제공&lt;/strong&gt;&lt;br&gt;
-MVCC는 다중 버전 병행수행 제어의 약자로 DBMS에서는 쓰기(Write) 세션이 읽기(Read) 세션을 블로킹하지 않고,&lt;br&gt;
-읽기 세션이 쓰기 세션을 블로킹하지 않게 서로 다른 세션이 동일한 데이터에 접근했을 때 각 세션마다 스냅샷 이미지를 보장해주는 메커니즘이며 하나의 레코드에 대해 여러 개의 버전이 동시에 관리된다는 의미다.&lt;br&gt;
-변경되기 이전의 내용을 보관하고 있는 언두 영역의 데이터를 반환하는 과정을 DBMS에서는 &lt;strong&gt;MVCC&lt;/strong&gt;라고 표현한다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;COMMIT&lt;/code&gt;명령을 실행한다면 현재 시점의 상태를 영구적인 데이터로 만들어버리지만, (COMMIT이 된다고 항상 바로 삭제되지 않고, 해당 언두 영역을 필요로 하지 않는 트랜잭션이 더는 없을 때 삭제한다.)&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;ROLLBACK&lt;/code&gt;을 실행한다면 &lt;strong&gt;언두 영역에 있는 백업된 데이터를 InnoDB 버퍼 풀로 다시 복구하고, 언두 영역의 내용을 삭제해 버린다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;REPEATABLE READ&lt;/strong&gt;는 이 &lt;code class=&quot;language-text&quot;&gt;MVCC&lt;/code&gt;를 위해 &lt;strong&gt;언두 영역에 백업된 이전 데이터를 통해 동일한 트랜잭션 내에서는 동일한 결과를 보여줄 수 있도록 보장한다&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;모든 InnoDB의 트랜잭션은 고유한 트랜잭션 번호(순차적으로 증가하는 값)를 가지며&lt;/strong&gt;, 언두 영역에 백업된 모든 레코드에는 변경을 발생시킨 트랜잭션의 번호가 포함되어 있다&lt;br&gt;
-&lt;strong&gt;REPEATABLE READ 격리 수준&lt;/strong&gt;에서는 &lt;code class=&quot;language-text&quot;&gt;MVCC&lt;/code&gt;를 보장하기 위해 실행중인 트랜잭션 가운데 가장 오래된 트랜잭션 번호보다 트랜잭션 번호가 앞선 언두 영역의 데이터는 삭제할 수 없다&lt;/p&gt;
-&lt;h3 id=&quot;phantom-read-문제&quot; style=&quot;position:relative;&quot;&gt;PHANTOM READ 문제&lt;a href=&quot;#phantom-read-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;phantom read 문제 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 851px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/db48263d3b0bb69d05bbbcd0e708b275/0fcea/phantomRead.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 100.8888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACP0lEQVR42o2UyW4qQQxF+XIiFkEsWMCCP4A1sGUDEpMAiSEBITET5nmeB793SqoWgUBiyerqrqpr+/q6TYfDQabTqaxWK8Ov16v8xTg7m81kvV7LcrmU3W4nJhaRSEQajYbabLfbcjwe1QWAnzn29fUlsVhMxuOxDIdD6XQ6YgK1Wq1KqVSSXq8no9Ho1wxPp5Nst1sV/PPzU2q1mnS7XVksFmLSlwHSmWkjGEGIPBgMFDWUh/OdisiMtTYDcDKZfANk7fF45O3tTbnZbBaLxaLogTuo6vf78vHxobLTFBmA8ECDtLGGikKhINFoVPL5vORyOSkWi0YzKLnZbKoKHjIE8DZDvsPVfD5XFwDZ7/fqHN8AImC5XJZWq/WYITzQNS5A7mazEa/XK3a7XZxOpzgcDnG5XCpL7HK5GNTA40OGREmn0yoyUev1uiQSCQkGg+L3+yUQCChnT2eDnc9n1dAHQAimNMimQZSVzWZVE3w+n9JbOBz+Vt5LQNKGaPQFV5SCxuLxuGpKMplU4LcdfQmo9YbW9DjRlN/sKeB9l1/Z7fgR9Cmg1qG+AA3wiCNgZIJ8/lTyfYas3W63WK1Wsdlsyt/f3yUUCimOAYYeuv7j6P0EyMFKpaLkw0WcvxIZoQT2MpmM0u+DsDl0O3oA8kMAIJVKqUus0Sk/DRqHVqGCbw+ApH/fVaYBjjjDk33K1SXrstGwUTLRFv9FTETK0E8tH568M4rPTI+hAqRMZhdBMyVE5R3nHdf7z/7it/YP0Nzpl5TRk9gAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;phantomRead&quot;
-        title=&quot;&quot;
-        src=&quot;/static/db48263d3b0bb69d05bbbcd0e708b275/0fcea/phantomRead.png&quot;
-        srcset=&quot;/static/db48263d3b0bb69d05bbbcd0e708b275/3684f/phantomRead.png 225w,
-/static/db48263d3b0bb69d05bbbcd0e708b275/fc2a6/phantomRead.png 450w,
-/static/db48263d3b0bb69d05bbbcd0e708b275/0fcea/phantomRead.png 851w&quot;
-        sizes=&quot;(max-width: 851px) 100vw, 851px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;다른 트랜잭션에서 수행한 변경 작업에 의해 레코드가 보였다가 안보였다가 하는 현상을 &lt;code class=&quot;language-text&quot;&gt;PHANTOM READ(PHANTOM ROW)&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;set transaction_isolation = &amp;#39;REPEATABLE-READ&amp;#39;;
-SHOW VARIABLES LIKE &amp;#39;%isolation&amp;#39;;
-
--- &amp;lt;트랜잭션 B&amp;gt;
-start transaction;
-select * from bookmark where ... for update;
--- &amp;lt;/트랜잭션 B&amp;gt;
-
--- &amp;lt;트랜잭션 A&amp;gt;
-start transaction;
-
-insert into bookmark(id , create_timestamp , name , star , domain , path) values(10 , NOW() , &amp;#39;스프링&amp;#39; , 1 , &amp;#39;docs.spring.io&amp;#39; , &amp;#39;break&amp;#39;);
-
-commit;
--- &amp;lt;/트랜잭션 A&amp;gt;
-
--- &amp;lt;트랜잭션 B&amp;gt;
-select * from bookmark for where ... update;
-commit;
--- &amp;lt;/트랜잭션 B&amp;gt;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;트랜잭션 B&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;첫 번째 SELECT FOR UPDATE&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;두 번째 SELECT FOR UPDATE&lt;/code&gt;의 결과가 서로 다르다.&lt;br&gt;
-&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;SELECT ... FOR UPDATE&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;SELECT ... LOCK IN SHARE MODE&lt;/code&gt;는 레코드에 쓰기 잠금을 걸어야 하는데, 언두 레코드에는 잠금을 걸 수 없기 때문에 조회되는 레코드는 언두 영역의 변경 전 데이터를 가져오는 것이 아니라 현재 레코드의 값을 가져오게 되는 것이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;하지만 InnoDB 스토리지 엔진에서는 &lt;strong&gt;갭 락&lt;/strong&gt;과 &lt;strong&gt;넥스트 키 락&lt;/strong&gt; 덕분에 &lt;code class=&quot;language-text&quot;&gt;PHANTOM READ&lt;/code&gt;문제가 발생하지는 않는다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;serializable&quot; style=&quot;position:relative;&quot;&gt;SERIALIZABLE&lt;a href=&quot;#serializable&quot; aria-label=&quot;serializable permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;가장 단순한 격리 수준이면서 동시에 가장 엄격한 격리 수준이다.&lt;br&gt;
-그만큼 동시 처리 성능도 다른 격리 수준에 비해 떨어진다.&lt;br&gt;
-위에서 말했던 **Non-Locking consistent read (잠금이 필요 없는 일관된 읽기)**를 지키지 않으며, &lt;strong&gt;읽기 작업도 공유 잠금(읽기 잠금)을 획득해야만 하며, 동시에 다른 트랜잭션은 접근하지 못한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;locking-read&quot; style=&quot;position:relative;&quot;&gt;Locking Read&lt;a href=&quot;#locking-read&quot; aria-label=&quot;locking read permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;MySQL InnoDB 엔진&lt;/strong&gt;은 사용자가 필요에 따라 명시적으로 &lt;code class=&quot;language-text&quot;&gt;locking read&lt;/code&gt;를 할 수 있도록 두가지 쿼리를 제공한다&lt;/p&gt;
-&lt;h3&gt;SELECT ... LOCK IN SHARE MODE&lt;/h3&gt;
-&lt;p&gt;한 트랜잭션에서 읽어간 데이터를 &lt;strong&gt;다른 트랜잭션에서 배타적으로 수정하기 위해 락을 획득하려 할때&lt;/strong&gt; (읽어가는 것은 허용)&lt;/p&gt;
-&lt;h3&gt;SELECT ... FOR UPDATE&lt;/h3&gt;
-&lt;p&gt;한 트랜잭션에서 읽어간 데이터를 &lt;strong&gt;다른 트랜잭션에서 배타적으로 읽거나, 수정하기 위해 락을 획득하려할 때 기다리게 한다&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;MySQL 8.0 부터는 기존 &lt;em&gt;LOCK IN SHARE MODE&lt;/em&gt; 대신 &lt;code class=&quot;language-text&quot;&gt;FOR SHARE&lt;/code&gt;라고 간략하게 적어줘도 된다.  &lt;em&gt;(하위 호환성을 위해 기존 구문도 문제 없이 실행됨)&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;mysql-innodb-락의-종류&quot; style=&quot;position:relative;&quot;&gt;MySQL InnoDB 락의 종류&lt;a href=&quot;#mysql-innodb-%EB%9D%BD%EC%9D%98-%EC%A2%85%EB%A5%98&quot; aria-label=&quot;mysql innodb 락의 종류 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Inno DB내부에서는 경우 여러 트랜잭션들이 경합하고 있는 상황에서 최대한의 성능을 위해서 &lt;code class=&quot;language-text&quot;&gt;여러 방식의 다양한 락(Lock)을 조합&lt;/code&gt;해서 사용하고 있다&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;Shared Lock (S)&lt;/h3&gt; 
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Row-Level Lock&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt; 위한 &lt;strong&gt;Read Lock&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Shared Lock&lt;/strong&gt;이 걸려있는 동안 다른 트랜잭션이 해당 row에 대해 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt; lock 획득 (&lt;code class=&quot;language-text&quot;&gt;exclusive write&lt;/code&gt;)은 불가능하지만 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; lock 획득 (&lt;code class=&quot;language-text&quot;&gt;shared read&lt;/code&gt;)은 가능&lt;/li&gt;
-&lt;li&gt;한 row에 대해 &lt;strong&gt;여러 트랜잭션이 동시에 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; lock 획득이 가능&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Exclusive Lock (X)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Row-Level Lock&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;UPDATE&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;DELETE&lt;/code&gt; 위한 &lt;strong&gt;Write Lock&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;exclusive lock&lt;/code&gt;이 걸려있으면 다른 트랜잭션이 해당 row에 대해 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; lock을 모두 획득하지 못하고 대기해야 한다&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Intention Lock (I)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Table-Level Lock&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;테이블안의 row에 대해 &lt;code class=&quot;language-text&quot;&gt;Row-Level Lock&lt;/code&gt;을 걸 것이라는 의도를 알려주기 위해 미리 &lt;strong&gt;Table-Level Lock&lt;/strong&gt;을 거는 것&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;SELECT ... LOCK IN SHARE MODE&lt;/code&gt;이 실행되면,
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Intention Shared Lock&lt;/strong&gt; (&lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt;)이 테이블에 걸림&lt;/li&gt;
-&lt;li&gt;그 후 row-level에 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; lock이 걸림&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;SELECT ... FOR UPDATE&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;INSERT&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;DELETE&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;UPDATE&lt;/code&gt;가 실행되면,
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Intention Exclusive Lock&lt;/strong&gt; (&lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt;)이 테이블에 걸림&lt;/li&gt;
-&lt;li&gt;그 후 row-level에 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt; lock이 걸림&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt; lock은 여러 트랜잭션에서 동시에 접근이 가능하다 (&lt;em&gt;서로 block하지 않는다&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;하지만 동일한 row에 &lt;strong&gt;Row-Level Lock&lt;/strong&gt;의 실제 lock (&lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt;)을 획득하는 과정에서 동시 접근을 막거나 허용하는 제어를 하게 된다&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;LOCK TABLES&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;ALTER TABLE&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;DROP TABLE&lt;/code&gt;이 실행될 때는 &lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt;를 모두 &lt;strong&gt;block&lt;/strong&gt;하는 &lt;strong&gt;Table-Level Lock&lt;/strong&gt;이 걸린다 (즉 , &lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt; lock을 획득하려는 트랜잭션은 대기상태로 빠진다)&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[다형성과 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/polymorphism/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/polymorphism/</guid><pubDate>Sun, 11 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
-&lt;p&gt;대부분의 내용은 &lt;a href=&quot;https://www.yes24.com/Product/Goods/122890814&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt; 책을 정리한 내용입니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;이 글을 통해&lt;/p&gt;
+&lt;p&gt;개발하면서 타입 검사기가 거부하는 상황이 발생하면 IDE의 도움을 받아 어영부영 넘어간 경험 또는 제네릭이나 제네릭을 통한 타입 매개변수 제한을 사용할 때 타입 검사기가 왜 거부하는지 이해하지 못 했던 경험, 조금 더 유연한 개발을 하고 싶다면 이 책은 큰 도움이 될 것이다.&lt;br&gt;
+이 글을 통해 아래의 내용을 학습할 수 있다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;타입&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;여러 종류의 &lt;strong&gt;다형성&lt;/strong&gt;과 &lt;strong&gt;가변성&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;여러 종류의 다형성&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;(JVM 언어에서는 지원하지 않는) &lt;strong&gt;다른 언어의 기능&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;최대, 최소 타입&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;제네릭 가변성&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PECS를 지켜야하는 이유&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;대해 알아보자. 자연스럽게 타입 검사기와 더 친해질 수 있을 것이다.&lt;/p&gt;
 &lt;h1 id=&quot;다형성&quot; style=&quot;position:relative;&quot;&gt;다형성&lt;a href=&quot;#%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;다형성은 프로그램의 &lt;strong&gt;한 개체&lt;/strong&gt;가 여러 타입에 속하도록 만드는 것이다.&lt;br&gt;
 개체는 값, 함수, 클래스, 메서드 등 여러 가지가 될 수 있다.&lt;/p&gt;
@@ -1813,7 +1222,815 @@ numbers2.length()   // 동적 선택 (dynamic dispatch)&lt;/code&gt;
 &lt;li&gt;&lt;strong&gt;메서드를 고를 때는 인자의 정적 타입을 고려한다.&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;메서드를 고를 때는 수신자의 동적 타입도 고려한다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[2023년 회고]]></title><description><![CDATA[들어가며 벌써 2023년이 끝난다. 2022년 회고에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다. 많은 일들이 있었는데 찬찬히 정리해보자. 회사 적응기 2년 반정도 SI…]]></description><link>https://jdalma.github.io/2023y/retrospect/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/retrospect/</guid><pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가며&quot; style=&quot;position:relative;&quot;&gt;들어가며&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot; aria-label=&quot;들어가며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;메서드 선택의 한계&lt;/h3&gt;
+&lt;p&gt;메서드 선택은 수신자의 동적 타입을 고려하기 때문에 특화된 동작을 선택할 수 있긴 하지만 인자의 동적 타입은 고려하지 않기에 한계가 있다.&lt;br&gt;
+두 개의 정수 리스트를 합산하여 결과 리스트를 반환하는 &lt;code class=&quot;language-text&quot;&gt;add()&lt;/code&gt;메서드를 최대한 최적화하기 위해 아래와 같은 두 개의 메서드가 있다고 가정해보자.&lt;br&gt;
+(이런 양방향 의존성을 가지는 경우는 가능한 없어야 하지만 인자의 동적 타입을 고려하지않는 상황을 이해하기 위함이다.)&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;) {
+    open fun length(): Int = ..
+    open fun add(that: Numbers): Numbers = ..
+    open fun add(that: PositiveNumbers): Numbers = ..
+}
+class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
+    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = ..
+
+    override fun length(): Int = ..
+    override fun add(that: Numbers): PositiveNumbers = ..
+    override fun add(that: PositiveNumbers): PositiveNumbers = ..
+}
+
+val numbers: Numbers = Numbers(..)
+val dynamicNumber: Numbers = PositiveNumbers(..)
+val positiveNumbers: PositiveNumbers = PositiveNumbers(..)
+
+val receiveNumbers: Numbers = Numbers(..)
+receiveNumbers.add(dynamicNumber)
+&amp;quot;expect: Numbers.add(PositiveNumbers), real: Numbers.add(Numbers)&amp;quot;
+
+val receiveDynamicNumbers: Numbers = PositiveNumbers(..)
+receiveDynamicNumbers.add(dynamicNumber)
+&amp;quot;expect: PositiveNumbers.add(PositiveNumbers), real: PositiveNumbers.add(Numbers)&amp;quot;
+
+val receivePositiveNumbers: PositiveNumbers = PositiveNumbers(..)
+receivePositiveNumbers.add(dynamicNumber)
+&amp;quot;expect: PositiveNumbers.add(PositiveNumbers), real: PositiveNumbers.add(Numbers)&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;(&lt;code class=&quot;language-text&quot;&gt;dynamic&lt;/code&gt;은 정적 타입과 동적 타입이 서로 다른 의미이며, &lt;code class=&quot;language-text&quot;&gt;receive&lt;/code&gt;는 수신 객체를 의미한다.)&lt;br&gt;
+인자의 동적 타입은 고려하지 않기 때문에 위와 같이 기대하는 메서드가 호출되지 않는다.&lt;br&gt;
+언어 수준에서 도와주지 않기 때문에 개발자가 코드를 잘 작성해야 한다.&lt;/p&gt;
+&lt;p&gt;기본 전략은 &lt;strong&gt;메서드 안에서 수신자와 인자의 위치를 바꾸어 다시 한번 메서드를 호출하는 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;) {
+    open fun length(): Int = ..
+    open fun add(that: Numbers): Numbers = that._add(this)
+    open fun _add(that: Numbers): Numbers = ..
+    open fun _add(that: PositiveNumbers): Numbers = ..
+}
+class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
+    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = ..
+
+    override fun length(): Int = ..
+    override fun add(that: Numbers): PositiveNumbers = that._add(this)
+    override fun _add(that: Numbers): PositiveNumbers = ..
+    override fun _add(that: PositiveNumbers): PositiveNumbers = ..
+}
+
+val numbers: Numbers = Numbers(..)
+val dynamicNumber: Numbers = PositiveNumbers(..)
+val positiveNumbers: PositiveNumbers = PositiveNumbers(..)
+
+val receiveNumbers: Numbers = Numbers(..)
+receiveNumbers.add(dynamicNumber)
+&amp;quot;expect: Numbers.add(PositiveNumbers), real: PositiveNumbers.add(Numbers)&amp;quot;
+
+val receiveDynamicNumbers: Numbers = PositiveNumbers(..)
+receiveDynamicNumbers.add(dynamicNumber)
+&amp;quot;expect: PositiveNumbers.add(PositiveNumbers), real: PositiveNumbers.add(PositiveNumbers)&amp;quot;
+
+val receivePositiveNumbers: PositiveNumbers = PositiveNumbers(..)
+receivePositiveNumbers.add(dynamicNumber)
+&amp;quot;expect: PositiveNumbers.add(PositiveNumbers), real: PositiveNumbers.add(PositiveNumbers)&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;클라이언트에게 불필요한 &lt;code class=&quot;language-text&quot;&gt;_add&lt;/code&gt; 함수가 노출되고 다른 개발자가 보기에는 난해할 수 있다.&lt;br&gt;
+하지만 백킹 메서드 &lt;code class=&quot;language-text&quot;&gt;_add&lt;/code&gt;를 사용하여 &lt;code class=&quot;language-text&quot;&gt;add()&lt;/code&gt;의 인자의 동적 메서드를 선택하도록 하여 기대한대로 호출되는 것을 알 수 있다.&lt;/p&gt;
+&lt;p&gt;추가로 &lt;strong&gt;자식 클래스에 있는 메서드의 결과 타입이 부모 클래스에 있는 메서드의 결과 타입의 서브타입이어야 한다.&lt;/strong&gt;&lt;br&gt;
+오버라이딩된 자식 메서드의 결과 타입이 부모 메서드의 결과 타입에 반하는 아래와 같은 상황은 런타임에 문제가 발생할 수 있어 타입 검사기가 허용하지 않는다.&lt;br&gt;
+이때까지의 내용을 읽었다면 왜 허용하지 않는지 이해할 수 있을것이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;) {
+    open fun add(that: PositiveNumbers): PositiveNumbers = ..
+}
+class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
+    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = ..
+
+    override fun add(that: PositiveNumbers): Numbers = ..
+}
+
+val dynamicNumbers: Numbers = PositiveNumbers(..)
+val positiveNumbers: PositiveNumbers = PositiveNumbers(..)
+dynamicNumbers.add(positiveNumbers).positiveNumberIndexes&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[트랜잭션과 잠금]]></title><description><![CDATA[InnoDB Locking Dirty read, Non-repeatable read, and Phantom read 트랜잭션 트랜잭션은 작업의 완전성을 보장 (COMMIT, ROLLBACK…]]></description><link>https://jdalma.github.io/2024y/transaction/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/transaction/</guid><pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html&quot;&gt;InnoDB Locking&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://jennyttt.medium.com/dirty-read-non-repeatable-read-and-phantom-read-bd75dd69d03a&quot;&gt;Dirty read, Non-repeatable read, and Phantom read&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;트랜잭션&quot; style=&quot;position:relative;&quot;&gt;트랜잭션&lt;a href=&quot;#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98&quot; aria-label=&quot;트랜잭션 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;트랜잭션은 &lt;strong&gt;작업의 완전성을 보장 (COMMIT, ROLLBACK)&lt;/strong&gt; 해주는 것이다.&lt;br&gt;
+즉 논리적인 작업 셋을 모두 완벽하게 처리하거나 처리하지 못할 경우에는 원 상태로 복구해서 작업의 일부만 적용되는 현상(Partial update)이 발생하지 않게 만들어주는 기능이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;트랜잭션&lt;/strong&gt; : 데이터의 정합성을 보장하기 위한 기능&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;잠금&lt;/strong&gt; : 동시성을 제어하기 위한 기능&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;격리 수준&lt;/strong&gt; : 하나의 트랜잭션 내에서 또는 여러 트랜잭션 간의 작업 내용을 어떻게 공유하고 차단할 것인지 결정하는 레벨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 트랜잭션은 개발자에게 엄청난 혜택을 주지만 주의해야 할 점이 있다.&lt;br&gt;
+&lt;strong&gt;트랜잭션 또한 DBMS의 커넥션과 동일하게 꼭 필요한 최소한의 코드에만 적용하도록 신경써야 한다.&lt;/strong&gt;&lt;br&gt;
+(&lt;a href=&quot;https://www.youtube.com/watch?v=xc0tnJVGQEw&amp;#x26;ab_channel=%EC%B5%9C%EB%B2%94%EA%B7%A0&quot;&gt;최범균님이 DB 커넥션 풀 부족 장애&lt;/a&gt; 트러블 슈팅 내용을 업로드하셨는데 이 영상을 보는것도 좋다.)&lt;br&gt;
+트랜잭션 내에 외부 네트워크 통신과 같은 작업을 최대한 제거해야 한다.&lt;/p&gt;
+&lt;h1 id=&quot;mysql-엔진의-잠금&quot; style=&quot;position:relative;&quot;&gt;MySQL 엔진의 잠금&lt;a href=&quot;#mysql-%EC%97%94%EC%A7%84%EC%9D%98-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;mysql 엔진의 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;MySQL에서 사용되는 잠금은 크게 &lt;strong&gt;MySQL 엔진&lt;/strong&gt; 레벨과 &lt;strong&gt;스토리지 엔진&lt;/strong&gt; 레벨로 나눌 수 있다.&lt;br&gt;
+MySQL 엔진 레벨의 잠금은 모든 스토리지 엔진에 영향을 미치지만, 스토리지 엔진 레벨의 잠금은 스토리지 엔진 간 상호 영향을 미치지 않는다.&lt;/p&gt;
+&lt;p&gt;MySQL 엔진&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;테이블 데이터 동기화를 위한 &lt;strong&gt;테이블 락&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;테이블의 구조를 잠그는 &lt;strong&gt;메타데이터 락&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;사용자의 필요에 맞게 사용할 수 있는 &lt;strong&gt;네임드 락&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;글로벌-락&quot; style=&quot;position:relative;&quot;&gt;글로벌 락&lt;a href=&quot;#%EA%B8%80%EB%A1%9C%EB%B2%8C-%EB%9D%BD&quot; aria-label=&quot;글로벌 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;글로벌 락은 &lt;code class=&quot;language-text&quot;&gt;FLUSH TABLES WITH READ LOCK&lt;/code&gt; 명령으로 획득할 수 있으며, 가장 범위가 큰 잠금이다.&lt;br&gt;
+한 세션에서 글로벌 락을 획득하면 다른 세션에서 &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt;를 제외한 대부분의 DDL, DML은 글로벌 락이 해제될 때까지 대기 상태로 기다린다.&lt;br&gt;
+대표적으로 여러 데이터베이스, 테이블 대상으로 일관된 백업을 받기 위해 사용할 수 있다.&lt;/p&gt;
+&lt;p&gt;이 글로벌 락보다 조금 더 가벼운 백업 락이 도입됐다.&lt;br&gt;
+특정 세션에서 백업 락을 획득하면 모든 세션에서 테이블의 스키마나 사용자의 인증 관련 정보를 변경할 수 없게된다.&lt;br&gt;
+하지만 일반적인 테이블의 데이터 번경은 허용된다. 백업 락을 잡고 백업 진행 중에 DDL이 유입되면 백업은 실패한다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;LOCK INSTANCE FOR BACKUP&lt;/code&gt; 명령으로 백업 락을 획득하고 &lt;code class=&quot;language-text&quot;&gt;UNLOCK INSTANCE&lt;/code&gt; 명령으로 락을 반납한다.&lt;/p&gt;
+&lt;h2 id=&quot;테이블-락&quot; style=&quot;position:relative;&quot;&gt;테이블 락&lt;a href=&quot;#%ED%85%8C%EC%9D%B4%EB%B8%94-%EB%9D%BD&quot; aria-label=&quot;테이블 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;개별 테이블 단위로 설정되는 잠금이며, 명시적 또는 묵시적으로 특정 테이블의 락을 획득할 수 있다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;LOCK TABLES table_name [ READ | WRITE ]&lt;/code&gt; 명령으로 락을 획득하고 &lt;code class=&quot;language-text&quot;&gt;UNLOCK TABLES&lt;/code&gt; 명령으로 락을 반납한다.&lt;br&gt;
+InnoDB 테이블의 경우 &lt;strong&gt;스토리지 엔진 차원에서 레코드 기반의 잠금&lt;/strong&gt; 을 제공하기 때문에 단순 데이터 변경 쿼리로 인해 묵시적인 테이블 락이 설정되지는 않으며 스키마를 변경하는 쿼리(DDL)의 경우에만 영향을 미친다.&lt;/p&gt;
+&lt;h2 id=&quot;네임드-락&quot; style=&quot;position:relative;&quot;&gt;네임드 락&lt;a href=&quot;#%EB%84%A4%EC%9E%84%EB%93%9C-%EB%9D%BD&quot; aria-label=&quot;네임드 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;GET_LOCK()&lt;/code&gt; 함수를 이용해 임의의 문자열에 대해 잠금을 설정할 수 있다.&lt;br&gt;
+이 잠금의 특징은 잠금 대상이 테이블이나 레코드 또는 AUTO_INCREMENT와 같은 데이터베이스 객체가 아니라는 것이다.&lt;br&gt;
+&lt;strong&gt;단순히 사용자가 지정한 문자열에 대해 획득하고 반납하는 잠금&lt;/strong&gt; 이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잰셕 A&amp;gt;
+select GET_LOCK(&amp;#39;test1&amp;#39;, -1);
++-----------------------+
+| GET_LOCK(&amp;#39;test1&amp;#39;, -1) |
++-----------------------+
+|                     1 |
++-----------------------+
+1 row in set (0.01 sec)
+
+-- &amp;lt;트랜잰셕 B&amp;gt;
+select GET_LOCK(&amp;#39;test1&amp;#39;, -1);
+-- 무한 대기 중
+
+-- &amp;lt;트랜잰셕 A&amp;gt;
+select RELEASE_LOCK(&amp;#39;test1&amp;#39;);
+-- &amp;lt;/트랜잰셕 A&amp;gt;
+
+-- &amp;lt;트랜잰셕 B&amp;gt;
++-----------------------+
+| GET_LOCK(&amp;#39;test1&amp;#39;, -1) |
++-----------------------+
+|                     1 |
++-----------------------+
+&amp;quot;1 row in set (2 min 47.74 sec)&amp;quot;
+-- &amp;lt;/트랜잰셕 B&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;메타데이터-락&quot; style=&quot;position:relative;&quot;&gt;메타데이터 락&lt;a href=&quot;#%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%9D%BD&quot; aria-label=&quot;메타데이터 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;데이터베이스 객체 (대표적으로 테이블이나 뷰 등)의 이름이나 구조를 변경하는 경우에 획득하는 잠금이다.&lt;br&gt;
+&lt;strong&gt;메타데이터 락은 명시적으로 획득하거나 해제할 수 있는 락은 아니고 테이블을 수정할 때 자동으로 획득하는 잠금이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잰셕 A&amp;gt;
+set autocommit = FALSE;
+
+select * from MEMBER;
++----+----------+
+| id | name     |
++----+----------+
+|  1 | primary1 |
+|  2 | primary2 |
+|  3 | primary3 |
+|  4 | primary4 |
++----+----------+
+
+rename table member TO updated_member;
+&amp;quot;Query OK, 0 rows affected (0.05 sec)&amp;quot;
+
+-- &amp;lt;트랜잰셕 B&amp;gt;
+select * from member;
+&amp;quot;ERROR 1146 (42S02): Table &amp;#39;test.member&amp;#39; doesn&amp;#39;t exist&amp;quot;
+
+select * from updated_member;
++----+----------+
+| id | name     |
++----+----------+
+|  1 | primary1 |
+|  2 | primary2 |
+|  3 | primary3 |
+|  4 | primary4 |
++----+----------+
+
+-- &amp;lt;/트랜잰셕 A&amp;gt;
+-- &amp;lt;/트랜잰셕 B&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위의 예시와 같이 트랜잭션 A에서 발생한 DDL은 트랜잭션과 무관하게 실행 즉시 커밋되며 롤백할 수 없다.&lt;br&gt;
+&quot;일부&quot; DDL 명령(ALTER TABLE)에 대해서만 트랜잭션을 지원하지만 이것도 사용자가 명시적으로 트랜잭션을 제어할 수 있는 것은 아니고 내부적으로 실패하면 롤백한다.&lt;br&gt;
+DDL은 단일 스레드로 작동한다.&lt;/p&gt;
+&lt;h1 id=&quot;innodb-스토리지-엔진-잠금&quot; style=&quot;position:relative;&quot;&gt;InnoDB 스토리지 엔진 잠금&lt;a href=&quot;#innodb-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%97%94%EC%A7%84-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;innodb 스토리지 엔진 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;MySQL에서 제공하는 잠금과는 별개로 스토리지 엔진 내부에서 레코드 기반의 잠금 방식을 제공하며, 잠금 정보가 상당히 작은 공간으로 관리되기 때문에 락이 페이지 락으로, 또는 테이블 락으로 레벨업되는 경우(락 에스컬레이션)는 없다.&lt;br&gt;
+InnoDB는 &lt;strong&gt;레코드 기반의 잠금 방식 덕분에 MyISAM보다는 훨씬 뛰어난 동시성 처리를 제공할 수 있다.&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Inno DB내부에서는 여러 트랜잭션들이 경합하고 있는 상황에서 최대한의 성능을 위해서 &lt;code class=&quot;language-text&quot;&gt;여러 방식의 다양한 락(Lock)을 조합&lt;/code&gt;해서 사용하고 있다&lt;/strong&gt; &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html&quot;&gt;InnoDB Locking&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 858px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3134361084ee2563db7e0742903d1942/42d54/innodbLock.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 74.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYUlEQVR42p2U6Y6CQBCEef9Hg8g/MBKjqCjIoeCFB9Cbr7OT7LqHsztJ0TBH9VE9OPI+hmFQW9e1Ik1TRdM0am2H80xYFIVUVSWz2UziOFZC3/d1PssydWb2WhFyaLlcynw+VyRJooSHw0HKspTdbiePx8OecL/fS9/3cjweNRoGDpizTtmQYU1aWEDK0+lU1wxeEnZdpxFcr1eJokhWq5VMJhMF0bmu+2uanwghW6/XstlsFNQNYiIj0tvtJmEYqtLU8VXqDhs4RATn81mVxQmECMA6hIjDN86s2sbUkINEPB6PJQgCjXo0Gsn9fv9/HyIGKUK23W41QhtBviU0fYYFzC8Wi7+1zXOE9CKRAWqJ2hB+bJ2f8IWQ+tF31A/w7nme/V1G0bZtVWkU5HqRIr2IQPQhTljn9oDT6SSXy0UtnQGY57zDI89zTQ2LGKRqROFHwTeOTL+yZvYCRGSNcr0BVniISkararwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;innodbLock&quot;
+        title=&quot;&quot;
+        src=&quot;/static/3134361084ee2563db7e0742903d1942/42d54/innodbLock.png&quot;
+        srcset=&quot;/static/3134361084ee2563db7e0742903d1942/3684f/innodbLock.png 225w,
+/static/3134361084ee2563db7e0742903d1942/fc2a6/innodbLock.png 450w,
+/static/3134361084ee2563db7e0742903d1942/42d54/innodbLock.png 858w&quot;
+        sizes=&quot;(max-width: 858px) 100vw, 858px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;레코드 수준 잠금은 레코드 각각에 잠금이 걸리므로 테이블 수준의 잠금보다는 조금 더 복잡하다.&lt;/p&gt;
+&lt;h2 id=&quot;record-locks&quot; style=&quot;position:relative;&quot;&gt;Record Locks&lt;a href=&quot;#record-locks&quot; aria-label=&quot;record locks permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;레코드 자체만을 잠그는 것을 의미하며, InnoDB 스토리지 엔진은 &lt;strong&gt;레코드 자체가 아니라 인덱스의 레코드를 잠근다는 점이다.&lt;/strong&gt;&lt;br&gt;
+인덱스가 하나도 없는 테이블이더라도 내부적으로 자동 생성된 클러스터 인덱스를 이용해 잠금을 설정한다.&lt;/p&gt;
+&lt;p&gt;InnoDB에서는 대부분 보조 인덱스를 이용한 변경 작업은 넥스트 키 락 또는 갭 락을 사용하지만 &lt;strong&gt;프라이머리 키 또는 유니크 인덱스에 의한 변경 작업에서는 갭에 대해서는 잠그지 않고 레코드 자체에 대해서만 락을 건다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;레코드를 잠그는 것과 인덱스를 잠그는 것은 중요한 차이를 만들어낸다.&lt;br&gt;
+즉, &lt;strong&gt;변경해야 할 레코드를 찾기 위해 검색한 인덱스의 레코드를 모두 락을 걸어야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE employees (
+    id int NOT NULL AUTO_INCREMENT,
+    first_name varchar(255) DEFAULT NULL,
+    last_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY idx_first_name (first_name)
+) ENGINE=InnoDB
+
++----+------------+----------------+
+| id | first_name | last_name      |
++----+------------+----------------+
+|  1 | John       | Doe1           |
+|  2 | John       | Doe2           |
+|  3 | John       | Doe3           |
+|  4 | John       | Doe4           |
+|  5 | John       | Doe5           |
+|  6 | John       | Doe6           |
+|  7 | John       | Doe7           |
+|  8 | John       | Doe8           |
+|  9 | John       | Doe9           |
+| 10 | John       | Doe10          |
+| 11 | Jane       | Ann1           |
+| 12 | Jane       | Ann2           |
++----+------------+----------------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;update employees SET last_name = &amp;#39;Updated Jane4&amp;#39; where first_name = &amp;#39;Jane&amp;#39; and last_name = &amp;#39;Ann1&amp;#39;;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+-------------+----------------+-----------+---------------+-------------+------------+
+| OBJECT_NAME | INDEX_NAME     | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA  |
++-------------+----------------+-----------+---------------+-------------+------------+
+| employees   | NULL           | TABLE     | IX            | GRANTED     | NULL       |
+| employees   | idx_first_name | RECORD    | X             | GRANTED     | &amp;#39;Jane&amp;#39;, 11 |
+| employees   | idx_first_name | RECORD    | X             | GRANTED     | &amp;#39;Jane&amp;#39;, 12 |
+| employees   | PRIMARY        | RECORD    | X,REC_NOT_GAP | GRANTED     | 11         |
+| employees   | PRIMARY        | RECORD    | X,REC_NOT_GAP | GRANTED     | 12         |
+| employees   | idx_first_name | RECORD    | X,GAP         | GRANTED     | &amp;#39;John&amp;#39;, 1  |
++-------------+----------------+-----------+---------------+-------------+------------+
+
+IX : Intentional Exclusive, 특정 레코드에 대해 쓰기 잠금을 가지고 있음
+REC_NOT_GAP : 갭 락이 포함되지 않음 순수 레코드에 대한 잠금&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Jane에 대해서 UPDATE를 실행하면 위와 같이 잠금이 활성화된다.&lt;br&gt;
+&lt;strong&gt;UPDATE시 where 절에 index 컬럼으로 특정 지으면 해당 index에 해당하는 레코드들이 락이 걸리고 update에 해당하는 레코드와 동일한 보조 인덱스의 값들을 가지는 로우들도 모두 락이 걸린다.&lt;/strong&gt;&lt;br&gt;
+테이블에 인덱스가 없으면 모든 행들이 락이 걸리며, where 절에 포함된 최소한의 범위로 락을 잡으려고 한다.&lt;br&gt;
+클러스터 인덱스와 보조 인덱스를 같이 where 절에 추가한다면 클러스터 인덱스 기준으로 락을 건다.&lt;br&gt;
+&lt;a href=&quot;https://stackoverflow.com/questions/60007863/why-does-innodb-block-more-records-in-case-of-a-secondary-index&quot;&gt;보조 인덱스의 경우 InnoDB가 더 많은 레코드를 차단하는 이유는 무엇입니까?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;하지만 조금 의아한 점은 아래의 SQL은 모든 레코드를 잠근다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
+update employees SET last_name = &amp;#39;Updated Doe&amp;#39; where first_name = &amp;#39;John&amp;#39; and last_name = &amp;#39;Doe1&amp;#39;;
+
+-- &amp;lt;트랜잭션 B&amp;gt;
+update employees SET last_name = &amp;#39;Updated Jane&amp;#39; where first_name = &amp;#39;Jane&amp;#39;;
+-- 트랜잭션 A의 UPDATE문을 기다린다.&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위와 같이 UPDATE문을 작성하면 10건만 레코드 락이 걸려야하겠지만 아래와 같이 모든 레코드를 잠그게 된다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+-----------+-------------+------------------------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE | LOCK_STATUS | LOCK_DATA              |
++-------------+------------+-----------+-----------+-------------+------------------------+
+| employees   | NULL       | TABLE     | IX        | GRANTED     | NULL                   |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | supremum pseudo-record |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 11                     |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 12                     |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 1                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 2                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 3                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 4                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 5                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 6                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 7                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 8                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 9                      |
+| employees   | PRIMARY    | RECORD    | X         | GRANTED     | 10                     |
++-------------+------------+-----------+-----------+-------------+------------------------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;gap-locks&quot; style=&quot;position:relative;&quot;&gt;Gap Locks&lt;a href=&quot;#gap-locks&quot; aria-label=&quot;gap locks permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;갭 락은 레코드 자체가 아니라 &lt;strong&gt;레코드와 바로 인접한 레코드 사이의 간격만을 잠그는 것을 의미한다.&lt;/strong&gt;&lt;br&gt;
+갭 락의 역할은 &lt;strong&gt;레코드와 레코드 사이의 간격에 새로운 레코드가 생성되는 것을 제어하는 것&lt;/strong&gt; 이며, 넥스트 키 락의 일부로 자주 사용된다.&lt;/p&gt;
+&lt;h2 id=&quot;next-key-locks&quot; style=&quot;position:relative;&quot;&gt;Next Key Locks&lt;a href=&quot;#next-key-locks&quot; aria-label=&quot;next key locks permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;레코드 락과 갭 락을 합쳐 놓은 형태의 잠금이며, &lt;strong&gt;갭 락이나 넥스트 키 락은 바이너리 로그에 기록되는 쿼리가 레플리카 서버에서 실행될 때 소스 서버에서 만들어 낸 결과와 동일한 결과를 만들어내도록 보장하는 것이 주 목적이다.&lt;/strong&gt;&lt;br&gt;
+하지만 의외로 넥스트 키 락과 갭 락으로 인해 데드락이 발생하거나 다른 트랜잭션을 기다리게 만드는 일이 자주 발생하기 때문에 해당 락은 줄이는 것이 좋다.&lt;br&gt;
+그래서 MySQL 8.0에서는 ROW 포맷의 바이너리 로그가 기본 설정으로 변경됐다. 바이너리 로그 포맷 관련 내용은 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/binary-log-setting.html&quot;&gt;Setting The Binary Log Format&lt;/a&gt; 참고하자.&lt;/p&gt;
+&lt;h2 id=&quot;auto-increment-locks&quot; style=&quot;position:relative;&quot;&gt;Auto Increment Locks&lt;a href=&quot;#auto-increment-locks&quot; aria-label=&quot;auto increment locks permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;자동 증가하는 숫자 값을 추출(채번)하기 위해 AUTO_INCREMENT라는 컬럼 속성을 제공한다.&lt;br&gt;
+&lt;strong&gt;해당 컬럼이 존재하는 테이블에 여러 레코드가 동시에 INSERT 되는 경우, 저장되는 각 레코드는 중복되지 않고 저장된 순서대로 증가하는 일련번호 값을 가져야하기 때문에 내부적으로 Auto increment lock 이라고 하는 테이블 수준의 잠금을 사용한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;새로운 레코드를 저장하는 쿼리에서만 필요하며, UPDATE나 DELETE의 쿼리에서는 잠금이 실행되지 않는다.&lt;br&gt;
+&lt;strong&gt;이 락은 트랜잭션과 관계없이 INSERT나 REPLACE 문장에서 AUTO_INCREMENT 값을 가져오는 순간만 락이 걸렸다가 즉시 해제된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;위의 설명은 MySQL 5.0이하 버전에서 사용하던 방식이고 &lt;code class=&quot;language-text&quot;&gt;innodb_autoinc_lock_mode&lt;/code&gt;라는 시스템 변수를 이용해 자동 증가 락의 작동 방식을 변경할 수 있다.&lt;br&gt;
+자세한 내용은 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-auto-increment-handling.html&quot;&gt;AUTO_INCREMENT Handling in InnoDB&lt;/a&gt;을 참고하자.&lt;/p&gt;
+&lt;h2 id=&quot;shared-and-exclusive-locks&quot; style=&quot;position:relative;&quot;&gt;Shared and Exclusive Locks&lt;a href=&quot;#shared-and-exclusive-locks&quot; aria-label=&quot;shared and exclusive locks permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;InnoDB는 공유(&lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt;) 잠금과 독점(&lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt;) 잠금의 두 가지 잠금 유형이 있는 행 수준 잠금을 구현한다.&lt;br&gt;
+사용자가 필요에 따라 명시적으로 &lt;code class=&quot;language-text&quot;&gt;locking read&lt;/code&gt;를 할 수 있도록 두가지 쿼리를 제공한다.&lt;/p&gt;
+&lt;h3&gt;SELECT ... LOCK IN SHARE MODE&lt;/h3&gt;
+&lt;p&gt;한 트랜잭션에서 읽어간 데이터를 &lt;strong&gt;다른 트랜잭션에서 배타적으로 수정하기 위해 락을 획득하려 할때 기다리게 한다. &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+두 개의 세션에서 특정 레코드에 대한 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; 락을 동시에 가질 수 있다. (Shared Lock이 걸려있는 동안 다른 트랜잭션이 해당 row에 대해 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt; lock 획득은 불가능하지만 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; lock 획득은 가능)&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
+select * from employees where id = 10 for share;
+-- 1 row in set (0.00 sec)
+
+-- &amp;lt;트랜잭션 B&amp;gt;
+select * from employees where id = 10 for share;
+-- 1 row in set (0.00 sec)
+
+SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IS            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | S,REC_NOT_GAP | GRANTED     | 10        |
+| employees   | NULL       | TABLE     | IS            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | S,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;MySQL 8.0 부터는 기존 &lt;em&gt;LOCK IN SHARE MODE&lt;/em&gt; 대신 &lt;code class=&quot;language-text&quot;&gt;FOR SHARE&lt;/code&gt;라고 간략하게 적어줘도 된다.  &lt;em&gt;(하위 호환성을 위해 기존 구문도 문제 없이 실행됨)&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;SELECT ... FOR UPDATE&lt;/h3&gt;
+&lt;p&gt;한 트랜잭션에서 읽어간 데이터를 &lt;strong&gt;다른 트랜잭션에서 배타적으로 읽거나, 수정하기 위해 락을 획득하려할 때 기다리게 한다. &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;exclusive lock&lt;/code&gt;이 걸려있으면 다른 트랜잭션이 해당 row에 대해 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; lock을 모두 획득하지 못하고 대기해야 한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
+select * from employees where id = 10 for update;
+-- 1 row in set (0.00 sec)
+
+-- &amp;lt;트랜잭션 B&amp;gt;
+SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+
+select * from employees where id = 10 for update;
+-- 대기&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;intention-locks&quot; style=&quot;position:relative;&quot;&gt;Intention Locks&lt;a href=&quot;#intention-locks&quot; aria-label=&quot;intention locks permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;행 잠금과 테이블 잠금이 공존할 수 있는 다중 세분성 잠금을 지원한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;intention shared lock (&lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt;) : 트랜잭션이 테이블의 개별 행에 공유 잠금을 설정하려고 함을 나타낸다.&lt;/li&gt;
+&lt;li&gt;intention exclusive lock (&lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt;) : 트랜잭션이 테이블의 개별 행에 독점 잠금을 설정하려고 함을 나타낸다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;예를 들어 &lt;code class=&quot;language-text&quot;&gt;SELECT ... FOR SHARE&lt;/code&gt;는 IS 잠금을 설정하고 &lt;code class=&quot;language-text&quot;&gt;SELECT ... FOR UPDATE&lt;/code&gt;는 IX 잠금을 설정합니다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IS            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | S,REC_NOT_GAP | GRANTED     | 9         |
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;IX&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;S&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;IS&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;IX&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;td&gt;Compatible&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;td&gt;Compatible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;S&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;td&gt;Compatible&lt;/td&gt;
+&lt;td&gt;Compatible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;IS&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Conflict&lt;/td&gt;
+&lt;td&gt;Compatible&lt;/td&gt;
+&lt;td&gt;Compatible&lt;/td&gt;
+&lt;td&gt;Compatible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Intention Lock은 전체 테이블 요청(예: &lt;code class=&quot;language-text&quot;&gt;LOCK TABLES ... WRITE&lt;/code&gt;)을 제외하고는 아무것도 차단하지 않으며, 주요 목적은 &lt;strong&gt;누군가 행을 잠그고 있거나 테이블의 행을 잠그려고 한다는 것을 표시하는 것이다.&lt;/strong&gt;&lt;br&gt;
+하지만 동일한 레코드에 Row-Level Lock의 실제 잠금(&lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt;)을 획득하는 과정에서 동시 접근을 막거나 허용하는 제어를 하게 된다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;LOCK TABLES&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;ALTER TABLE&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;DROP TABLE&lt;/code&gt;이 실행될 때는 &lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt;를 모두 &lt;strong&gt;block&lt;/strong&gt;하는 &lt;strong&gt;Table-Level Lock&lt;/strong&gt;이 걸린다 (즉 , &lt;code class=&quot;language-text&quot;&gt;IS&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt; lock을 획득하려는 트랜잭션은 대기상태로 빠진다)&lt;/p&gt;
+&lt;h1 id=&quot;db-트랜잭션-격리-수준&quot; style=&quot;position:relative;&quot;&gt;DB 트랜잭션 격리 수준&lt;a href=&quot;#db-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80&quot; aria-label=&quot;db 트랜잭션 격리 수준 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;여러 트랜잭션이 동시에 처리될 때 &lt;strong&gt;특정 트랜잭션이 다른 트랜잭션에서 변경하거나 조회하는 데이터를 볼 수 있게 허용할지 말지를 결정하는 것이다.&lt;/strong&gt;&lt;br&gt;
+Thread에서 공유 자원에 동시 접근을 제한하기 위해 &lt;strong&gt;Lock&lt;/strong&gt;을 걸듯이 DB에서도 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Transaction&lt;/code&gt;간에 같은 동일한 데이터에 대한 동시 접근을 제한&lt;/strong&gt;하기 위하여 &lt;strong&gt;Lock&lt;/strong&gt;을 설정할 수 있다&lt;br&gt;
+&lt;em&gt;&lt;code class=&quot;language-text&quot;&gt;Lock&lt;/code&gt;을 건다는 것은 동시처리량이 줄어든다는 의미이기 때문에 과도하게 사용하면 성능에 문제가 생길 수 있다&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;가장 낮은 &lt;strong&gt;레벨 0&lt;/strong&gt;의 경우 &lt;code class=&quot;language-text&quot;&gt;Lock&lt;/code&gt;이 걸리지 않기 때문에 속도는 매우 빠르나 동시 접근을 허용하기 때문에 데이터 정합성에 문제가 생길 수 있다&lt;br&gt;
+가장 높은 &lt;strong&gt;레벨 3&lt;/strong&gt;의 경우 완전히 &lt;code class=&quot;language-text&quot;&gt;Lock&lt;/code&gt;을 걸어 동시 접근을 차단하고 순차적으로 처리하기 때문에 정합성은 완벽하지만 동시에 처리할 수 있는 양이 적어 속도가 매우 느리다&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Isolation Level&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Dirty Read&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Nonrepeatable Read&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Phantom Read&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;레벨0&lt;/code&gt; &lt;strong&gt;Read Uncommited&lt;/strong&gt; 커밋되지 않은 읽기&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;레벨1&lt;/code&gt; &lt;strong&gt;Read Committed&lt;/strong&gt;	커밋된 읽기&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;발생&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;레벨2&lt;/code&gt; &lt;strong&gt;Repeatable Read&lt;/strong&gt; 반복 가능한 읽기&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;발생  &lt;code class=&quot;language-text&quot;&gt;InnoDB는 발생 X&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;레벨3&lt;/code&gt; &lt;strong&gt;Serializable&lt;/strong&gt;	직렬화 가능&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;read-uncommited&quot; style=&quot;position:relative;&quot;&gt;READ-UNCOMMITED&lt;a href=&quot;#read-uncommited&quot; aria-label=&quot;read uncommited permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 631px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/eca1145dc503fac3b82564f1a99d645e/4597d/readUncommitted.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100.8888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACHUlEQVR42pVUx6oqURD0s3WjGxeCfoArQV0pGEBFxY0LEQMIKhgwgznnrPVuHd4Z1OvFsWEYZk53dXV1n9Zcr1csFgssl0us12vx3u12+GS32034MlbGbbdbaBhcrVbRbDbF4WazQa/X+wh4Op1Qq9VQqVQUEt1uF5rj8YhcLodsNovBYIDJZIJ2u60E3u/3Xw/tfD6LuHQ6LeLG4zFarRY0pE70fr8vmJbLZVECjXLw/NEkIN8scTabiRhWRxyNdOAh2bEUZr9cLiB7gksp6MMkj0Y/MpRJFEAGMtsjC4JYrVYYjUZYLBaYzWZEIpEnHyaXmj8BMvtoNMJ8PhdMyY7M3G43HA4HvF4vXC4XEonEEyAZUq63gMxEUJZAdhTabrfDZrMJQKfTqR6QAK8lsyGlUkl0slAoIJ/Piwq+BpTCD4dDmEwmaLVaGAwG6PV6hMPhp3GiNB8B5ahQQ4/HA5/Ph2g0ikAggGQyKaThGecuk8mg0+moK3m1WglAPmTm9/sRj8cxnU6F1nwTTDXgO5N3VjawXq+j0WioAzwcDojFYoIZGYZCIVGm1Jl+vAhv5/BdUyg2h1qn0ylNCQaD380htw5ZEJxPKpVCsVgUm4TbhWW+Xr0/u8xBlteJLGUSjg+7yibwnyrAd3dZjRHwWcOfmbv+3yxcP2RGJ7KUm+dxZb0a/+33e+VbbGxmmP4sBOpEjfjNJctvlvmN/QNAjOeYLcH0YgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;readUncommitted&quot;
+        title=&quot;&quot;
+        src=&quot;/static/eca1145dc503fac3b82564f1a99d645e/4597d/readUncommitted.png&quot;
+        srcset=&quot;/static/eca1145dc503fac3b82564f1a99d645e/3684f/readUncommitted.png 225w,
+/static/eca1145dc503fac3b82564f1a99d645e/fc2a6/readUncommitted.png 450w,
+/static/eca1145dc503fac3b82564f1a99d645e/4597d/readUncommitted.png 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;각 트랜잭션에서의 변경 내용이 &lt;code class=&quot;language-text&quot;&gt;COMMIT&lt;/code&gt;이나 &lt;code class=&quot;language-text&quot;&gt;ROLLBACK&lt;/code&gt;여부에 상관없이 다른 트랜잭션에서 보여지게 된다&lt;/strong&gt;&lt;br&gt;
+RDBMS 표준 에서는 트랜잭션의 격리 수준으로 인정하지 않을 정도로 문제가 많으며 &lt;code class=&quot;language-text&quot;&gt;Dirty Read&lt;/code&gt;가 허용되는 격리 수준이다&lt;/p&gt;
+&lt;h3 id=&quot;dirty-read-문제&quot; style=&quot;position:relative;&quot;&gt;Dirty Read 문제&lt;a href=&quot;#dirty-read-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;dirty read 문제 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;한 트랜잭션에서 처리한 작업이 완료되지 않았음에도 불구하고 다른 트랜잭션에서 볼 수 있게 되는 현상&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;set autocommit = FALSE;
+
+set transaction_isolation = &amp;#39;READ-UNCOMMITTED&amp;#39;;
+SHOW VARIABLES LIKE &amp;#39;%isolation&amp;#39;;
+
+-- &amp;lt;트랜잰셕 A&amp;gt;
+start transaction;
+
+update bookmark set name = &amp;#39;탈출&amp;#39; where id = &amp;#39;1&amp;#39;;
+-- &amp;lt;/트랜잰셕 A&amp;gt;
+
+-- &amp;lt;트랜잭션 B&amp;gt; Dirty Read 발생
+select * from bookmark;
+-- &amp;lt;/트랜잭션 B&amp;gt;
+
+-- &amp;lt;트랜잭션 A&amp;gt;
+rollback;
+-- &amp;lt;/트랜잭션 A&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;A 트랜잭션&lt;/code&gt;의 작업단위를 최종적으로 끝내지않아도 다른 트랜잭션들도 해당 변경사항에 대해 노출된다.&lt;/p&gt;
+&lt;h2 id=&quot;read-committed&quot; style=&quot;position:relative;&quot;&gt;READ-COMMITTED&lt;a href=&quot;#read-committed&quot; aria-label=&quot;read committed permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 685px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2f449257e0b0d29202b5990ecb45571d/8ce22/readCommitted.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 101.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACbUlEQVR42pVUuapiQRD1P40EEwNjNRZMTQQDEzXQ5BkIgo+noIiIqKgouO/7vu/Lq5lT0Jf79A4z01Dcpvv2qXNOVbfqfD7Tbrejw+HAsd/v6fl8khiYy+P7+1vaOx6P/L/8q1osFlQsFmm5XNJ2u6XNZkPj8ZgPyA+/jvv9ToPBgEqlEq3XayY1Go1INZ1OKRKJULvdptlsxmACEKNer1MqleKkuVxO2gPbarVK8XichsMhn221WqQCTWQol8u8AaZCMvYsFgvp9XoyGo1kMBjI7XZLyaBotVoxy8lkwupUQhYWrtfrD6mQlUgkmAXY5PN5ZiGG+A+sH48Hz1WCDdjVajVmhc3b7cYJut0uB1RAFlgIIPGFd0jOgGIRgGCBgwBCxU+nE6/DRzDrdDpcTQGmyFAsomLNZpNQJATYYM1qtZLJZCKz2czx8fEhSYYKMFMEVPIQreDz+RgkHA6T3++naDTKTJEQnZFOp6nRaEhnfgAK34SP8AsgXq+XAoEAz9FisAV7CFQaHotaSICQCc9QyUwmw1nhYzabpa+vLwoGgxSLxbgXX4vyR8mXy4VNRwAcHmq1WlKr1aTT6Uij0bCnYAMlCKjq9XrvDOUeyhsXtwSB5k0mk9yT8A4gCMhFMRU9fC2K0sBjAom4ISga3gK0lCIgJCsBiJ7EvjzZXz18ZQh/PB4P+2az2chut1MoFHprbNwURUA8DGAkgPEFoMPhIJfLRU6nkz4/P/+NIQyuVCqcDU0rHtxCocCthHVczfl8/gaIbngDBDP5Sy0OCGDsw8fXThDPnFSUxe+MyArJeAgwR1v0+3224H/HL46t2QW8QSnKAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;readCommitted&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2f449257e0b0d29202b5990ecb45571d/8ce22/readCommitted.png&quot;
+        srcset=&quot;/static/2f449257e0b0d29202b5990ecb45571d/3684f/readCommitted.png 225w,
+/static/2f449257e0b0d29202b5990ecb45571d/fc2a6/readCommitted.png 450w,
+/static/2f449257e0b0d29202b5990ecb45571d/8ce22/readCommitted.png 685w&quot;
+        sizes=&quot;(max-width: 685px) 100vw, 685px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;온라인 서비스에서 가장 많이 선택되는 격리수준&lt;/strong&gt; &lt;em&gt;오라클 DBMS에서 기본적으로 사용되고 있다&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Undo 영역&lt;/strong&gt;을 통해서 데이터를 가져오기 때문에 Dirty Read는 발생하지 않지만 , &lt;code class=&quot;language-text&quot;&gt;NON_REPEATABLE READ&lt;/code&gt; 문제가 발생한다&lt;/p&gt;
+&lt;h3 id=&quot;non-repeatable-read-문제&quot; style=&quot;position:relative;&quot;&gt;NON-REPEATABLE READ 문제&lt;a href=&quot;#non-repeatable-read-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;non repeatable read 문제 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 837px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d3e28c67b919bed963714cc9d885eefe/ddc81/nonRepetableRead.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 93.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAACEElEQVR42o1UyaoqUQzsz3YjgiC4cSHoF4iCbnQjLgS3giK6UBHneZ7nue6tQBp99PN6IJzudLpSqeQc4/l84vF4iN3vd9xuN9D312IM41//47PBl0ajgXa7jfV6jfl8jsViYf6kydQ0GZ87nQ6q1SpWq5XYZDKBwQ/5fB65XA7j8RiDwUB2BfzEsFQqIZvNYjQaCVi/34fBD/v9XrJ1u11hSfpcl8sFhUIB6XRafiwWizgej2aZjCWRWq2GzWYj8YayoGO73ZrlcJGt0+mEzWaD3W6Hy+VCq9USsOv1ivP5LKxYrrI2AZmNoK+lkjmZsTTVuVKpSIk0VlUul980t2SoPrJYLpfybbfbSdLpdCpl09dqtpDJZDAcDr8DVB1Zmo4I9WUiGn1kZ8mQDOr1ugAzkIv6uN1uOBwO0c/r9b7ppbJYakhA6sFGqJ5MEAgEEAqFEA6HEY1G39h8BGS5zWbTFJygfCdIIpFAMplEKpWSxF8D9no9YcAAlk3tdCatBvsjoFVTGByLxRAMBhGJRBCPx99i2DCeKlZjCahzqIM9m83g8/ng8XikIX6/X+aSfo4KTxZnlKP1FcPT6SSNUm3ZMIIcDgdpGIedc0j/nwz1puEQU0uWR9P5053s/juH/3bwm0W2r0fWuP92kRkoLHfeh2rsHncy+3SNvRKQC3bzC8aOUkPdmYCMmZ3lfbt+ACnyo1llYM13AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;nonRepetableRead&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d3e28c67b919bed963714cc9d885eefe/ddc81/nonRepetableRead.png&quot;
+        srcset=&quot;/static/d3e28c67b919bed963714cc9d885eefe/3684f/nonRepetableRead.png 225w,
+/static/d3e28c67b919bed963714cc9d885eefe/fc2a6/nonRepetableRead.png 450w,
+/static/d3e28c67b919bed963714cc9d885eefe/ddc81/nonRepetableRead.png 837w&quot;
+        sizes=&quot;(max-width: 837px) 100vw, 837px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;동일한 SELECT 쿼리를 실행했을 때 항상 같은 결과를 보장해야 한다는 &lt;code class=&quot;language-text&quot;&gt;&quot;REPEATABLE READ&quot;&lt;/code&gt; 정합성에 어긋난다&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;set autocommit = FALSE;
+
+set transaction_isolation = &amp;#39;READ-COMMITTED&amp;#39;;
+SHOW VARIABLES LIKE &amp;#39;%isolation&amp;#39;;
+
+-- &amp;lt;트랜잭션 A&amp;gt;
+start transaction;
+
+select * from bookmark;
+-- &amp;lt;/트랜잭션 A&amp;gt;
+
+-- &amp;lt;트랜잭션 B&amp;gt;
+start transaction;
+
+update bookmark set name = &amp;#39;탈출&amp;#39; where id = &amp;#39;1&amp;#39;;
+
+COMMIT;
+-- &amp;lt;/트랜잭션 B&amp;gt;
+
+-- &amp;lt;트랜잭션 A&amp;gt; NON-REPEATABLE READ 문제 발생
+select * from bookmark;
+-- &amp;lt;/트랜잭션 A&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;트랜잭션 A&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;첫 번째 SELECT&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;두 번째 SELECT&lt;/code&gt;의 결과가 서로 달라 &lt;strong&gt;하나의 트랜잭션 내에서 항상 똑같은 결과를 가져와야 하는 &lt;code class=&quot;language-text&quot;&gt;REPEATABLE-READ&lt;/code&gt;가 보장되지 않는 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;일반적인 웹 프로그램에서는 크게 문제되지 않을 수 있지만, &lt;strong&gt;하나의 트랜잭션에서 동일 데이터를 여러 번 읽고 변경하는 작업이 금전적인 처리와 연결되면 문제가 될 수도 있다.&lt;/strong&gt;&lt;br&gt;
+예를 들어, 다른 트랜잭션에서 입금과 출금 처리가 계속 진행될 때 다른 트랜잭션에서 오늘 입금된 금액의 총합을 조회한다고 가정해보면&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;REPEATABLE-READ&lt;/code&gt;가 보장되지 않기 때문에 총합을 계산하는 &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt;쿼리는 실행될 때 마다 다른 결과를 가져올 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;중요한 것은 사용 중인 트랜잭션의 격리 수준에 의해 실행하는 SQL문장이 어떤 결과를 가져오게 되는지를 정확히 예측할 수 있어야 한다는 것이다.&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;READ-COMMITTED&lt;/code&gt;에서는 트랜잭션 외부에서 실행되는 &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt;문과 내부에서 실행되는 것과 차이가 없다.&lt;br&gt;
+하지만 &lt;code class=&quot;language-text&quot;&gt;REPEATABLE-READ&lt;/code&gt; 트랜잭션 내부에서는 온종일 동일한 결과가 반환된기 때문에 큰 차이가 있다.&lt;/p&gt;
+&lt;h2 id=&quot;repeatable-read&quot; style=&quot;position:relative;&quot;&gt;REPEATABLE-READ&lt;a href=&quot;#repeatable-read&quot; aria-label=&quot;repeatable read permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 781px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4f84513a095fd89c8cd9933700e4c0d0/7fee5/repeatableRead.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 111.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsTAAALEwEAmpwYAAACjElEQVR42o1VWWsyQRD07wpC3kV/gEFBouKzEUENGA+UBEEJ8YAIQl48olE8Erzv+0h/qYaW9YuJDjQ7uztbU9XVPavabDY0Go1oNpvRdDql+XxOyvH19XWI/8dqtTr6drFYkAo32WyWPj8/+SWuu92OP9jv9xwCKPcyxuMxZTIZarVaDNhsNkmFCQDz+Tx9fHxQvV4/YgNwqBBg2QjPer0eJZNJKhQKDMaAsqjT6fAikYkRiUTIaDSSwWDgq8lkooeHB36P9f1+n2U2Gg2Wj3EA7Ha7tN1uj5hBzuPjI93d3VEwGKRAIEAvLy80mUxoMBiwzEqlwiHfHgEKQwwsQI4gC5La7TavQb7ADPLe39+pXC7T29vbaUAlw9/GcrlkZsPhkHMO6QAWMgdA7Aw2YAXnAZ7L5cjv95PP56NQKMTyS6XSUTlJ/n/kEO7CaQFFeL1eslgsbAbi+vqagZUl9SsgnKpWqwyIwAZPT08UDofJ7XYz0P39PRt1EUMxRXZGOYAlclWr1bjgMVd20p+AYAUQ5A2uIvlOp5N0Oh1ptVrS6/U8RwmJ5LMMwQBSwQbsotEouVwucjgc5PF4eINEInGZZJQApIkpKF5pO4QSQNnbfzKUOpSFKBOz2UxWq5Vubm7IbrdTLBY7gF4MKJ2STqfZ3dvbW65FyH5+fubUSN0Wi0WuzbOdguKGSXAV5YQU4B5HHFoP7xEwD224Xq/PHw5wHIzi8TjLT6VS9Pr6epB61mUlIIxAl2g0GlKr1XR1dcVzm83Gm4ElehhVgQPiRy+fOhzwkbiPUsIc6yAT8iUtAD1IBghu5J+AOQISTv1HTg3pMAbELp3vsw6Otb6vyIece5IXSFT+rE6FjH9aoWvXquU5PAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;repeatableRead&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4f84513a095fd89c8cd9933700e4c0d0/7fee5/repeatableRead.png&quot;
+        srcset=&quot;/static/4f84513a095fd89c8cd9933700e4c0d0/3684f/repeatableRead.png 225w,
+/static/4f84513a095fd89c8cd9933700e4c0d0/fc2a6/repeatableRead.png 450w,
+/static/4f84513a095fd89c8cd9933700e4c0d0/7fee5/repeatableRead.png 781w&quot;
+        sizes=&quot;(max-width: 781px) 100vw, 781px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MySQL의 InnoDB 스토리지 엔진에서 기본적으로 사용되는 격리 수준&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;&quot;NON-REPEATABLE READ&quot;&lt;/code&gt; 부정합이 발생하지 않는다&lt;br&gt;
+&lt;strong&gt;InnoDB 스토리지 엔진&lt;/strong&gt;은 트랜잭션이 &lt;code class=&quot;language-text&quot;&gt;ROLLBACK&lt;/code&gt;될 가능성에 대비해 &lt;strong&gt;변경되기 전 레코드를 언두(Undo) 영역에 백업해두고 실제 레코드 값을 변경한다&lt;/strong&gt;&lt;br&gt;
+이러한 변경 방식을 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-multi-versioning.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;MVCC(Multi Version Concurrency Control)&lt;/code&gt;&lt;/a&gt;이라고 한다&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✋ &lt;code class=&quot;language-text&quot;&gt;MVCC(Multi Version Concurrency Control)&lt;/code&gt; - &lt;strong&gt;잠금을 사용하지 않는 일관된 읽기를 제공&lt;/strong&gt;&lt;br&gt;
+MVCC는 다중 버전 병행수행 제어의 약자로 DBMS에서는 쓰기(Write) 세션이 읽기(Read) 세션을 블로킹하지 않고,&lt;br&gt;
+읽기 세션이 쓰기 세션을 블로킹하지 않게 서로 다른 세션이 동일한 데이터에 접근했을 때 각 세션마다 스냅샷 이미지를 보장해주는 메커니즘이며 하나의 레코드에 대해 여러 개의 버전이 동시에 관리된다는 의미다.&lt;br&gt;
+변경되기 이전의 내용을 보관하고 있는 언두 영역의 데이터를 반환하는 과정을 DBMS에서는 &lt;strong&gt;MVCC&lt;/strong&gt;라고 표현한다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;COMMIT&lt;/code&gt;명령을 실행한다면 현재 시점의 상태를 영구적인 데이터로 만들어버리지만, (COMMIT이 된다고 항상 바로 삭제되지 않고, 해당 언두 영역을 필요로 하지 않는 트랜잭션이 더는 없을 때 삭제한다.)&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;ROLLBACK&lt;/code&gt;을 실행한다면 &lt;strong&gt;언두 영역에 있는 백업된 데이터를 InnoDB 버퍼 풀로 다시 복구하고, 언두 영역의 내용을 삭제해 버린다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;REPEATABLE READ&lt;/strong&gt;는 이 &lt;code class=&quot;language-text&quot;&gt;MVCC&lt;/code&gt;를 위해 &lt;strong&gt;언두 영역에 백업된 이전 데이터를 통해 동일한 트랜잭션 내에서는 동일한 결과를 보여줄 수 있도록 보장한다&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;모든 InnoDB의 트랜잭션은 고유한 트랜잭션 번호(순차적으로 증가하는 값)를 가지며&lt;/strong&gt;, 언두 영역에 백업된 모든 레코드에는 변경을 발생시킨 트랜잭션의 번호가 포함되어 있다&lt;br&gt;
+&lt;strong&gt;REPEATABLE READ 격리 수준&lt;/strong&gt;에서는 &lt;code class=&quot;language-text&quot;&gt;MVCC&lt;/code&gt;를 보장하기 위해 실행중인 트랜잭션 가운데 가장 오래된 트랜잭션 번호보다 트랜잭션 번호가 앞선 언두 영역의 데이터는 삭제할 수 없다&lt;/p&gt;
+&lt;h3 id=&quot;phantom-read-문제&quot; style=&quot;position:relative;&quot;&gt;PHANTOM READ 문제&lt;a href=&quot;#phantom-read-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;phantom read 문제 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 851px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/db48263d3b0bb69d05bbbcd0e708b275/0fcea/phantomRead.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100.8888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACP0lEQVR42o2UyW4qQQxF+XIiFkEsWMCCP4A1sGUDEpMAiSEBITET5nmeB793SqoWgUBiyerqrqpr+/q6TYfDQabTqaxWK8Ov16v8xTg7m81kvV7LcrmU3W4nJhaRSEQajYbabLfbcjwe1QWAnzn29fUlsVhMxuOxDIdD6XQ6YgK1Wq1KqVSSXq8no9Ho1wxPp5Nst1sV/PPzU2q1mnS7XVksFmLSlwHSmWkjGEGIPBgMFDWUh/OdisiMtTYDcDKZfANk7fF45O3tTbnZbBaLxaLogTuo6vf78vHxobLTFBmA8ECDtLGGikKhINFoVPL5vORyOSkWi0YzKLnZbKoKHjIE8DZDvsPVfD5XFwDZ7/fqHN8AImC5XJZWq/WYITzQNS5A7mazEa/XK3a7XZxOpzgcDnG5XCpL7HK5GNTA40OGREmn0yoyUev1uiQSCQkGg+L3+yUQCChnT2eDnc9n1dAHQAimNMimQZSVzWZVE3w+n9JbOBz+Vt5LQNKGaPQFV5SCxuLxuGpKMplU4LcdfQmo9YbW9DjRlN/sKeB9l1/Z7fgR9Cmg1qG+AA3wiCNgZIJ8/lTyfYas3W63WK1Wsdlsyt/f3yUUCimOAYYeuv7j6P0EyMFKpaLkw0WcvxIZoQT2MpmM0u+DsDl0O3oA8kMAIJVKqUus0Sk/DRqHVqGCbw+ApH/fVaYBjjjDk33K1SXrstGwUTLRFv9FTETK0E8tH568M4rPTI+hAqRMZhdBMyVE5R3nHdf7z/7it/YP0Nzpl5TRk9gAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;phantomRead&quot;
+        title=&quot;&quot;
+        src=&quot;/static/db48263d3b0bb69d05bbbcd0e708b275/0fcea/phantomRead.png&quot;
+        srcset=&quot;/static/db48263d3b0bb69d05bbbcd0e708b275/3684f/phantomRead.png 225w,
+/static/db48263d3b0bb69d05bbbcd0e708b275/fc2a6/phantomRead.png 450w,
+/static/db48263d3b0bb69d05bbbcd0e708b275/0fcea/phantomRead.png 851w&quot;
+        sizes=&quot;(max-width: 851px) 100vw, 851px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;다른 트랜잭션에서 수행한 변경 작업에 의해 레코드가 보였다가 안보였다가 하는 현상을 &lt;code class=&quot;language-text&quot;&gt;PHANTOM READ(PHANTOM ROW)&lt;/code&gt;&lt;/strong&gt; 라고한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE employees (
+    id int NOT NULL,
+    first_name varchar(255) DEFAULT NULL,
+    last_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY idx_first_name (first_name)
+) ENGINE=InnoDB;
+
++----+------------+-----------+
+| id | first_name | last_name |
++----+------------+-----------+
+|  1 | John       | Doe1      |
+|  2 | John       | Doe2      |
+|  3 | John       | Doe3      |
+|  4 | John       | Doe4      |
+|  5 | Jane       | Ann1      |
+|  6 | Jane       | Ann2      |
+|  7 | Jane       | Ann3      |
+|  8 | Jack       | Tim1      |
+|  9 | Jack       | Tim2      |
+| 10 | Jack       | Tim3      |
++----+------------+-----------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위의 테이블로 테스트를 해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
+set transaction_isolation = &amp;#39;READ-COMMITTED&amp;#39;;
+set autocommit=false;
+
+select * from employees where id &amp;gt;= 8 for update;
+-- 3 rows in set (0.01 sec)
+
+-- &amp;lt;트랜잭션 B&amp;gt;
+set transaction_isolation = &amp;#39;READ-COMMITTED&amp;#39;;
+set autocommit=false;
+
+SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 8         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 9         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+
+insert into employees(id, first_name, last_name) values (11, &amp;#39;Test&amp;#39;, &amp;#39;Test1&amp;#39; );
+commit;
+-- Query OK, 1 row affected (0.03 sec)
+-- &amp;lt;/트랜잭션 B&amp;gt;
+
+-- &amp;lt;트랜잭션 A&amp;gt;
+select * from employees where id &amp;gt;= 8 for update;
+-- 4 rows in set (0.00 sec)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;트랜잭션 A&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;첫 번째 SELECT FOR UPDATE&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;두 번째 SELECT FOR UPDATE&lt;/code&gt;의 결과가 서로 다르다.&lt;br&gt;
+&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;SELECT ... FOR UPDATE&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;SELECT ... LOCK IN SHARE MODE&lt;/code&gt;는 레코드에 쓰기 잠금을 걸어야 하는데, 언두 레코드에는 잠금을 걸 수 없기 때문에 조회되는 레코드는 언두 영역의 변경 전 데이터를 가져오는 것이 아니라 현재 레코드의 값을 가져오게 되는 것이다.&lt;/strong&gt;&lt;br&gt;
+격리 수준을 REPETABLE-READ로 올려보고 테스트하면 아래와 같이 해결된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 B&amp;gt;
+set transaction_isolation = &amp;#39;REPEATABLE-READ&amp;#39;;
+set autocommit=false;
+select * from employees where id &amp;gt;= 8 for update;
+-- 3 rows in set (0.00 sec)
+
+-- &amp;lt;트랜잭션 A&amp;gt;
+set transaction_isolation = &amp;#39;REPEATABLE-READ&amp;#39;;
+set autocommit=false;
+
+SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
++-------------+------------+-----------+---------------+-------------+------------------------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA              |
++-------------+------------+-----------+---------------+-------------+------------------------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL                   |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 8                      |
+| employees   | PRIMARY    | RECORD    | X             | GRANTED     | supremum pseudo-record |
+| employees   | PRIMARY    | RECORD    | X             | GRANTED     | 9                      |
+| employees   | PRIMARY    | RECORD    | X             | GRANTED     | 10                     |
++-------------+------------+-----------+---------------+-------------+------------------------+
+
+insert into employees(id, first_name, last_name) values (11, &amp;#39;Test&amp;#39;, &amp;#39;Test1&amp;#39; );
+-- 트랜잭션 B의 상한 락으로 인해 무한 대기
+
+insert into employees(id, first_name, last_name) values (0, &amp;#39;Test&amp;#39;, &amp;#39;Test1&amp;#39; );
+-- 8 이후의 레코드에만 락이 걸려있기 때문에 id가 0인 레코드는 삽입이 바로 가능하다.&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;blockquote&gt;
+&lt;p&gt;InnoDB 스토리지 엔진에서는 레크도 락과 갭 락을 결합한 &lt;strong&gt;넥스트 키 락&lt;/strong&gt; 덕분에 &lt;code class=&quot;language-text&quot;&gt;PHANTOM READ&lt;/code&gt;문제가 발생하지 않는다.&lt;br&gt;
+즉, 한 세션이 인덱스의 &lt;code class=&quot;language-text&quot;&gt;R&lt;/code&gt;레코드 에 공유 또는 독점 잠금을 설정한 경우, &lt;strong&gt;다른 세션은 인덱스 순서에서 &lt;code class=&quot;language-text&quot;&gt;R&lt;/code&gt;레코드 바로 앞에 새 인덱스 레코드를 삽입할 수 없다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;select .. where id &gt;= 8 for update;&lt;/code&gt; 쿼리로 인해 &lt;code class=&quot;language-text&quot;&gt;supremum pseudo-record&lt;/code&gt; 락이 발생하였으며 &lt;code class=&quot;language-text&quot;&gt;id&lt;/code&gt;가 8 이후의 레코드에 대해서는 삽입을 할 수 없다.&lt;br&gt;
+즉, &lt;strong&gt;테이블에 존재하지 않는 항목을 &apos;잠금&apos;할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;serializable&quot; style=&quot;position:relative;&quot;&gt;SERIALIZABLE&lt;a href=&quot;#serializable&quot; aria-label=&quot;serializable permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;가장 단순한 격리 수준이면서 동시에 가장 엄격한 격리 수준이다.&lt;br&gt;
+그만큼 동시 처리 성능도 다른 격리 수준에 비해 떨어진다.&lt;br&gt;
+위에서 말했던 **Non-Locking consistent read (잠금이 필요 없는 일관된 읽기)**를 지키지 않으며, &lt;strong&gt;읽기 작업도 공유 잠금(읽기 잠금)을 획득해야만 하며, 동시에 다른 트랜잭션은 접근하지 못한다.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 회고]]></title><description><![CDATA[들어가며 벌써 2023년이 끝난다. 2022년 회고에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다. 많은 일들이 있었는데 찬찬히 정리해보자. 회사 적응기 2년 반정도 SI…]]></description><link>https://jdalma.github.io/2023y/retrospect/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/retrospect/</guid><pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가며&quot; style=&quot;position:relative;&quot;&gt;들어가며&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot; aria-label=&quot;들어가며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;벌써 2023년이 끝난다. &lt;a href=&quot;https://jdalma.github.io/2022y/yearend&quot;&gt;2022년 회고&lt;/a&gt;에 이어 2023년 회고, 두 번째 회고를 작성해보려 한다.&lt;br&gt;
 많은 일들이 있었는데 찬찬히 정리해보자.&lt;/p&gt;
 &lt;hr&gt;
