@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 20 Feb 2024 15:16:16 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 21 Feb 2024 14:59:10 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 06일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다.&lt;br&gt;
 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다.&lt;/p&gt;
@@ -31,7 +31,7 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 이 책으로 진행한 스터디 덕분에 실무 환경에서 모르고 넘어갔던 부분들을 배울 수 있었고 백엔드만의 영역이 아니라 데이터 팀의 영역에 대한 시야도 넓어진 느낌이다.&lt;/p&gt;
 &lt;h1 id=&quot;실용주의-프로그래머&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;실용주의 프로그래머&lt;/strong&gt;&lt;a href=&quot;#%EC%8B%A4%EC%9A%A9%EC%A3%BC%EC%9D%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8&quot; aria-label=&quot;실용주의 프로그래머 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 08일부터 01월 18일까지&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 8일부터 01월 18일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;처음엔 3,4주면 다 읽을 줄 알았는데 6주가 걸렸다. 너무 기대해서 그런지 지루한 느낌이 있었다.&lt;br&gt;
 이 책을 기술책이라고 단정짓기는 힘들고 &lt;strong&gt;개발자라는 직업의 장인 정신에 대한 이야기&lt;/strong&gt; 를 한다고 느꼈다.&lt;br&gt;
@@ -100,7 +100,77 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super&quot;&gt;PECS : producer-extends, consumer-super&lt;/a&gt;를 외워서 사용했는데 왜 저렇게 제한해야 하는지 더 깊은 이해를 할 수 있도록 도와주었다.&lt;/p&gt;
 &lt;p&gt;이 책을 읽으면서 안다고 착각했던 부분들이 많았다는 것을 깨달았다. 정적 타입 언어에 대한 이해를 한층 더 높여준 책이다.&lt;br&gt;
 개발하면서 타입 검사기가 거부하는 상황이 발생하면 IDE의 도움을 받아 어영부영 넘어간 경험 또는 제네릭이나 제네릭을 통한 타입 매개변수 제한을 사용할 때 타입 검사기가 왜 거부하는지 이해하지 못 했던 경험이 있다면 이 책은 큰 도움이 될 것이다.&lt;/p&gt;
-&lt;h1 id=&quot;프레임-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;프레임&lt;/strong&gt; ~ing&lt;a href=&quot;#%ED%94%84%EB%A0%88%EC%9E%84-ing&quot; aria-label=&quot;프레임 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;프레임&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;프레임&lt;/strong&gt;&lt;a href=&quot;#%ED%94%84%EB%A0%88%EC%9E%84&quot; aria-label=&quot;프레임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;2월 12일 부터 2월 21일까지&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;책을 추천받아 읽어보았다. 아마 현재를 만족하지 못하고 불평만 하며 가지지 않은 것에 대한 욕심만 높아 스트레스를 받는 나를 보고 추천해준 것 아닐까 싶다.&lt;br&gt;
+책 이름을 보고 따분한 자기계발서로 예상할 수 있지만 연구 결과에 기반한 심리학 내용을 전개하여 흥미롭게 읽었다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;프레임&lt;/strong&gt;은 &quot;세상을 바라보는 마음의 창&quot;이다. 어떤 문제를 바라보는 관점, 세상을 향한 마인드셋, 세상에 대한 온유, 사람들에 대한 고정관념등이 모두 프레임의 범주에 포함되는 말이다.&lt;br&gt;
+마음을 비춰보는 창으로서의 프레임은 특정한 방향으로 세상을 보도록 이끄는 조력자의 역할을 하지만, 동시에 우리가 보는 세상을 제한하는 검열관의 역할도 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;프레임&lt;/strong&gt;은 우리가 지각하고 생각하는 과정을 선택적으로 제약하고, 궁극적으로는 지각과 생각의 결과를 결정한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;프레임&lt;/strong&gt;은 다양한 형태를 지닌다. 우리의 가정, 전제, 기준, 고정관념, 은유, 단어, 질문, 경험의 순서, 맥락 등이 프레임의 대표적인 형태다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이 &lt;strong&gt;프레임&lt;/strong&gt; 에 대한 특성과 연구 결과들을 설명한다.&lt;br&gt;
+그중에 인상깊은 연구들이 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;동메달이 은메달보다 행복한 이유&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;이미지 투사&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;타인을 평가하는 기준은 자기 자신을 평가할 때도 그 기준을 중요하게 생각한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;행동의 원인은 사람인가? 상황인가?&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;나치의 반인륜적인 악행을 행한 사람들을 &quot;소수의 악인, 소수의 사이코패스가 저지른 악행&quot; 이라는 &lt;strong&gt;사람 프레임&lt;/strong&gt; 으로 보지 않는 것&lt;/li&gt;
+&lt;li&gt;악이 사람이 아니라 상황에 의해 유발된다는 &lt;strong&gt;상황 프레임&lt;/strong&gt; 으로 보는 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;위의 연구에 힘을 싣는 &lt;strong&gt;권위에 대한 위험한 복종 연구&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;지시자, 교사, 학생 3명의 인원 중 교사만 실험 대상이다.&lt;/li&gt;
+&lt;li&gt;지시자는 교사에게 학생이 오답을 말하면 전기가 통하는 스위치를 누르도록 지시&lt;/li&gt;
+&lt;li&gt;학생이 고의로 오답을 선택하게 하여 전기 충격을 15V에서 450V 까지 단계적으로 올렸다.&lt;/li&gt;
+&lt;li&gt;마지막 수준까지 전기 충격을 가할 사람의 수는 극소수라고 생각했지만 67%에 해당하는 사람이 끝까지 복종&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;방관자 효과&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;살인 사건에 최소한 49명의 목격자가 있었지만 경찰에 즉각적으로 알라지 않고 서로 떠넘김으로써 골든타임을 놓쳐 사망한 사건&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;군중의 힘&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;고층 빌딩에 뛰어내려 자살하려는 긴박한 상황에 군중들이 오히려 자살을 부추기는 상황&lt;/li&gt;
+&lt;li&gt;개인이 군중이라는 상황 속에서 자아 실종 현상을 심리학에서 &quot;몰아&quot; 라고 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;가장 긴 선을 고르세요.&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;8명 중 1명을 속이는 실험, 8명 중 7명은 가장 긴 선을 선택하라는 질문에 동일하게 잘못된 답을 선택&lt;/li&gt;
+&lt;li&gt;그 중 실험 대상인 1명은 처음엔 맞는 답을 선택하였지만 시간이 지날수록 7명이 선택한 잘못된 답을 선택한다.&lt;/li&gt;
+&lt;li&gt;하지만 7명의 동조자 중 1명이라도 정상적인 답을 선택하면 정답률이 100%에 가깝게 회복된 것&lt;/li&gt;
+&lt;li&gt;조금 다르게 7명의 동조자 중 1명이 다수가 선택한 오답이 아닌 다른 답을 선택하여도 정답률이 상승한 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;집단의 다양성을 보장하여 우리 모두의 소신을 이끌어내야한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;매몰 비용&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;할인할 때 3000원 주고 스파게티를 사서 집에왔지만 친구가 온다하여 다시 사러 갔을 때는 6000원 주고 스파게티를 사왔다.&lt;/li&gt;
+&lt;li&gt;친구가 못 온다고 하였을 때, 두 개의 스파게티 중 많은 사람들이 비싼 스파게티를 선택하는 것&lt;/li&gt;
+&lt;li&gt;아깝다는 이유만으로 제값에 산 걸 먹어야만 된다고 생각하는 &lt;strong&gt;손실에 대한 원초적 거부&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;책이 나를 설명한다고 느낄 정도로 읽으면서 뜨끔한 적이 많았다.&lt;br&gt;
+그리고 읽으면서 &lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%9C%A0%EC%97%B0%ED%95%A8%EC%9D%98-%ED%9E%98&quot;&gt;유연함의 힘&lt;/a&gt;이 떠올랐다. 유연함의 힘은 커리어, 회사생활에 대한 내용이였다면 이 책은 삶에 대한 내용을 설명한다고 느꼈다.&lt;/p&gt;
+&lt;p&gt;다 읽고 나서 달라진 점은 내가 가진 마음의 한계를 지각한다는 것이다. 아무렇지 않게 결정했던 내 생각들이 어떤 이유로 이렇게 결정했는지 고민해보는 능력이 생긴 것이 놀랍다.&lt;br&gt;
+심리학에 흥미가 있는 사람이라면 추천해주고 싶다.&lt;/p&gt;
 &lt;h1 id=&quot;real-my-sql-1권-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt; ~ing&lt;a href=&quot;#real-my-sql-1%EA%B6%8C-ing&quot; aria-label=&quot;real my sql 1권 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;oauth2-인-액션-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;OAuth2 인 액션&lt;/strong&gt; ~ing&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-ing&quot; aria-label=&quot;oauth2 인 액션 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;자바-네트워크-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;자바 네트워크 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -518,18 +588,18 @@ compute selector =
     fun compare(o1: Int, o2: Int) = o1 - o2
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;내가 라이브러리 개발자라고 가정해보자
-(위의 클래스는 문제가 많지만 상황을 설명하기 위해 어쩔 수 없이 사용해야 한다고 생각해보자.)&lt;/p&gt;
-&lt;p&gt;만약 TimeStamper의 반환 타입을 String으로 바꿔야 한다면 라이브러리 사용자는 내부 필드의 타입까지 모두 알고있기 때문에 라이브러리 수정으로 인한 파급력이 클 수 있다.&lt;br&gt;
+&lt;p&gt;내가 라이브러리 개발자라고 가정해보자&lt;br&gt;
+만약 TimeStamper의 반환 타입을 String으로 바꿔야 한다면 라이브러리 사용자는 메서드의 반환 타입을 모두 알고있기 때문에 라이브러리 수정으로 인한 파급력이 클 수 있다.&lt;br&gt;
 이때 &lt;strong&gt;무엇인가 타입&lt;/strong&gt; 을 활용하면 라이브러리 사용자에게 TimeStamper의 타입이 되는 &lt;code class=&quot;language-text&quot;&gt;무엇인가&lt;/code&gt;가 있다는 사실은 알지만, 그 타입을 특정하여 사용할 수 없도록 할 수 있다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;exists T.{ T init(); T next(T t); T compare(T o1, T o2); } create() {
     return TimeStamper()
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;이렇게 &lt;code class=&quot;language-text&quot;&gt;exists T.A&lt;/code&gt; 형태로 생긴 타입이 무엇인가 타입이며, &lt;strong&gt;T는 타입 매개변수, A는 타입을 의미한다.&lt;/strong&gt; 여기서 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;가 무엇인지는 알 수 없다.&lt;br&gt;
+&lt;p&gt;이렇게 &lt;code class=&quot;language-text&quot;&gt;exists T.A&lt;/code&gt; 형태로 생긴 타입이 &lt;strong&gt;무엇인가 타입&lt;/strong&gt;이며, &lt;strong&gt;T는 타입 매개변수, A는 타입을 의미한다.&lt;/strong&gt; 여기서 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;가 무엇인지는 알 수 없다.&lt;br&gt;
 그저 &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt; 함수 반환 값의 타입이 &lt;code class=&quot;language-text&quot;&gt;{ T init(); T next(T t); T compare(T o1, T o2); } 구조이다.&lt;/code&gt; 라는 사실이 되도록 만드는 T가 존재한다는 사실만 알려줄 뿐이다.&lt;br&gt;
-&lt;strong&gt;라이브러리 사용자는 타입에 의존하는 것이 아니라 구조에 의존하도록 의도하여 행동이 제약된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;strong&gt;라이브러리 사용자는 타입에 의존하는 것이 아니라 구조에 의존하도록 의도하여 행동이 제약된다.&lt;/strong&gt;&lt;br&gt;
+(타입을 알아야 한다면 직접 캐스팅해야 한다.)&lt;/p&gt;
 &lt;p&gt;실제로 &lt;code class=&quot;language-text&quot;&gt;exists T.A&lt;/code&gt; 키워드가 존재하는 것은 아니고 언어마다 이 타입을 지원하는 방법이 다르기 때문에 따로 확인이 필요할 것이다.&lt;br&gt;
 이런 문제를 해결하기 위해 이런 방법을 지원하는 언어들이 있다고 기억하면 좋을것이다. (하스켈, 오캐멀 참고)&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -570,15 +640,19 @@ compute selector =
 요즘은 한 언어가 &lt;strong&gt;두 종류의 다형성을 지원한다.&lt;/strong&gt;&lt;br&gt;
 서로 다른 특징을 가진 두 개의 다형성이 유용한 기능들이 탄생한다.&lt;/p&gt;
 &lt;h2 id=&quot;제네릭-클래스와-상속&quot; style=&quot;position:relative;&quot;&gt;제네릭 클래스와 상속&lt;a href=&quot;#%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%83%81%EC%86%8D&quot; aria-label=&quot;제네릭 클래스와 상속 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;알다시피 어떤 클래스를 상속해 새로운 클래스를 정의하면 기존 클래스에 정의된 필드와 메서드가 새 클래스에도 자동으로 정의된다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;abstract class List&amp;lt;T&amp;gt; {
     abstract fun get(index: Int): T
 }
 class ArrayList&amp;lt;T&amp;gt;: List&amp;lt;T&amp;gt;() {
     override fun get(index: Int): T = ..
-}
-class AnotherList: List&amp;lt;Boolean&amp;gt;() {
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위와 같은 제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;: List&amp;lt;T&gt;&lt;/code&gt;라면 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;A&gt;&lt;/code&gt;는 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&lt;/code&gt;에 등장하는 모든 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;로 바꿔서 만든 타입의 서브타입&lt;/strong&gt; 이라고 이해할 수 있다.&lt;br&gt;
+서브타입을 선언할 때 &lt;strong&gt;특정 타입에 대한 서브타입&lt;/strong&gt; 으로 만들 수 있다.&lt;br&gt;
+기존의 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;를 구현하는 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;&lt;/code&gt; 와 다르게 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Boolean&gt;()&lt;/code&gt; 에 대한 클래스와 함수를 필요로한다고 가정해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class AnotherList: List&amp;lt;Boolean&amp;gt;() {
     override fun get(index: Int): Boolean = ..
 }
 
@@ -600,8 +674,7 @@ fun name2() {
     isExist(anotherList)
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;기존의 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;를 구현하는 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;&lt;/code&gt; 와 다르게 &lt;strong&gt;특정 타입의 List에 대한 서브타입&lt;/strong&gt; 을 추가해야하는 경우이다.&lt;br&gt;
-제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 &lt;code class=&quot;language-text&quot;&gt;C&amp;lt;T&gt; extends D&amp;lt;T&gt;&lt;/code&gt;라면 &lt;code class=&quot;language-text&quot;&gt;C&amp;lt;A&gt;&lt;/code&gt;는 &lt;strong&gt;타입 &lt;code class=&quot;language-text&quot;&gt;D&lt;/code&gt;에 등장하는 모든 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;로 바꿔서 만든 타입의 서브타입&lt;/strong&gt; 이라고 정리할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AnotherList&lt;/code&gt;와 같이 특정 타입에 대한 서브타입을 지정하여 의도를 직관적으로 표현할 수 있다.&lt;/p&gt;
 &lt;h2 id=&quot;타입-매개변수-제한&quot; style=&quot;position:relative;&quot;&gt;타입 매개변수 제한&lt;a href=&quot;#%ED%83%80%EC%9E%85-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%9C%ED%95%9C&quot; aria-label=&quot;타입 매개변수 제한 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;제네릭 함수를 정의한다는 것은 여러 타입으로 사용될 수 있는 함수를 만드는 일이니, &lt;strong&gt;인자로 주어질 값이 특별한 능력을 가진다고 가정할 수 없다.&lt;/strong&gt;&lt;br&gt;
 반대로 인자가 특별한 능력을 가져야만 한다면 그 함수는 제네릭 함수일 필요가 없다.&lt;/p&gt;
@@ -632,6 +705,36 @@ val marathoner: Marathoner = elder&amp;lt;Marathoner&amp;gt;(marathoner1, marath
 &lt;p&gt;위와 같이 상한을 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;T: Person&gt;&lt;/code&gt;으로 지정하여 반환 타입으로 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;를 받을 수 있고, 특별한 &lt;code class=&quot;language-text&quot;&gt;&gt;&lt;/code&gt; 연산을 사용할 수 있게 되었다.&lt;/p&gt;
 &lt;p&gt;기본적으로 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;&gt;&lt;/code&gt;에 하나의 상한만 지정이 가능하지만 둘 이상의 상한이 필요한 경우 &lt;code class=&quot;language-text&quot;&gt;where&lt;/code&gt;을 사용할 수 있다. &lt;a href=&quot;https://kotlinlang.org/docs/generics.html#upper-bounds&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;kotlinlang&lt;/code&gt; Upper Bounds&lt;/a&gt;&lt;br&gt;
 &lt;strong&gt;전달된 유형은 절의 모든 조건을 동시에 만족해야한다.&lt;/strong&gt; 아래의 예제를 확인해보자.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+0lEQVR42n2Sa3OaUBCG/f9/pf3QtEkn07SNycR+iE2qUVEEhrugCN6IoFyeHjAxTSftzrzs4TDz7LvLNnpawL2k8yDbSJqH4a0way3/0uoo218j6XPmyy1VlEUpHgc1HpQp3ftbWjfXDKU+eZ7zvyifcpzs0QS8vitfvjdkK6oPhahS3RdJSmqqPGodoS6x2iExJBLHIewrhAOFSFLwOjJWT6Gc+WS+R+5NyH2fxvgILOqcTT1W6hW7lUEaaaQLk8dpG7s/wFNnhE5A5ITYQwdj5Ap7OUWaCpclmW1VwMUr4N63iO02VeNZntWudxsTs98jTctj0+l2h28GLzMUUblsjO3XwJ1nkfodhmOFiy/nXF232EQq8l2b88/faDYvOTs75fvXS1zNfwIWL8CRGb3psKqZpgm7TGTh0Br0SbYZ+yxlv0+J1zG+/obDnjY/gPY5WQXxXRZ6i+02JIkDdtslm3kPXcxwNtmwFquyWSU4AjYxDsBCbEaFzCqgG2xQnSX6ZInmx1gjE01WGcgPSKMug+EvZHWMIjpp3xm0fxrctnW6XZs8K/hzb2qHh/eynkNdZTaliON/7t9zJOLPaoaOK1bFcV1mqxVrTaVRPm/lc5UwJHMd8kUozsFRRTgnn8/JgoAyilgaBhfv39E8+cDN6SeaH0+wfrT4DfWnPeKOHHiFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;intersection&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png&quot;
+        srcset=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/3684f/intersection.png 225w,
+/static/a31fce48b48f12a00340d2c7fc9b87e6/fc2a6/intersection.png 450w,
+/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png 476w&quot;
+        sizes=&quot;(max-width: 476px) 100vw, 476px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface Person
 interface Marathoner
@@ -642,21 +745,19 @@ class Developer: Person, Marathoner
 interface Intersection&amp;lt;T&amp;gt; where T : Person, T : Marathoner
 
 fun main() {
-    val person = object : Intersection&amp;lt;Person&amp;gt; {}           &amp;quot;Type argument is not within its bounds. Compile Error !!!&amp;quot;
-    val marathoner = object : Intersection&amp;lt;Marathoner&amp;gt; {}   &amp;quot;Type argument is not within its bounds. Compile Error !!!&amp;quot;
+    val person = object : Intersection&amp;lt;Person&amp;gt; {}         &amp;quot;컴파일 에러 (타입 인수가 해당 바운드내에 없습니다.)&amp;quot;
+    val marathoner = object : Intersection&amp;lt;Marathoner&amp;gt; {} &amp;quot;컴파일 에러 (타입 인수가 해당 바운드내에 없습니다.)&amp;quot;
     val trainer = object : Intersection&amp;lt;Trainer&amp;gt; {}
     val developer = object : Intersection&amp;lt;Developer&amp;gt; {}
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Intersection&lt;/code&gt; 인터페이스를 구현하는 타입은 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt; 둘 다 만족해야 한다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#%EC%A7%91%ED%95%A9%EB%A1%A0%EC%A0%81-%EC%84%9C%EB%B8%8C%ED%83%80%EC%9E%85&quot;&gt;집합론적 서브타입의 &quot;이면서 타입 (교집합 타입)&quot;&lt;/a&gt;과 비슷하다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;Intersection&amp;lt;T&gt;&lt;/code&gt; 인터페이스를 구현하는 타입은 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt; 둘 다 만족해야 한다.&lt;/p&gt;
 &lt;p&gt;아래는 함수의 인자를 동시에 제한하여 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;CharSequence&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Comparable&lt;/code&gt;을 구현하는 타입만 받을 수 있는 함수&lt;/strong&gt;이다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T&amp;gt; copyWhenGenerator(list: List&amp;lt;T&amp;gt;, threshold: T): List&amp;lt;String&amp;gt;
-    where T: CharSequence, T: Comparable&amp;lt;T&amp;gt; {
-        return list.filter {
-            it &amp;gt; threshold
-        }.map { it.toString() }
-    }
+    where T: CharSequence, T: Comparable&amp;lt;T&amp;gt; = 
+        list.filter { it &amp;gt; threshold }.map { it.toString() }
 
 describe(&amp;quot;copyWhenGenerator 함수는&amp;quot;) {
     val param1: Pair&amp;lt;List&amp;lt;String&amp;gt;, String&amp;gt; = listOf(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;) to &amp;quot;b&amp;quot;
@@ -686,13 +787,9 @@ class Person(private val age: Int): Comparable&amp;lt;Person&amp;gt;(){
 
 fun &amp;lt;T: Comparable&amp;lt;T&amp;gt;&amp;gt; sort(list: List&amp;lt;T&amp;gt;) {
     list.forEachIndexed { index, element -&amp;gt;
-        var min = index
-        for (innerIndex in index + 1 until list.size) {
-            if (element.gt(list[innerIndex])) {
-                min = innerIndex
-            }
+        if (element.gt(..)) {
+            ..
         }
-        &amp;quot;index와 min의 원소를 교체&amp;quot;
     }
 }
 
@@ -702,7 +799,7 @@ sort(listOf(Person(10), Person(5)))&lt;/code&gt;
 어떤 리스트를 정렬하려면 그 리스트를 구성하는 값들이 서로 비교 가능해야 하기 때문에&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Comparable 추상 클래스는 자신과 동일한 타입의 다른 객체와 비교할 수 있는 클래스이다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Comparable 추상 클래스는 자신의 타입 매개변수 T를 자신의 상한으로 지정하고 있다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Comparable 추상 클래스는 자신의 타입 매개변수 T를 불변으로 지정하고 있다.&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;T가 Comparable&amp;#x3C;T&gt;의 서브타입일 때 T 타입의 값을 T 타입의 값과 비교할 수 있다&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;이 규칙을 모두 만족하므로 &lt;code class=&quot;language-text&quot;&gt;sort&lt;/code&gt; 함수는 컴파일된다.&lt;br&gt;
