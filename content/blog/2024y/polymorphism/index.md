@@ -315,10 +315,8 @@ class TimeStamper{
 }
 ```
 
-내가 라이브러리 개발자라고 가정해보자
-(위의 클래스는 문제가 많지만 상황을 설명하기 위해 어쩔 수 없이 사용해야 한다고 생각해보자.)  
-  
-만약 TimeStamper의 반환 타입을 String으로 바꿔야 한다면 라이브러리 사용자는 내부 필드의 타입까지 모두 알고있기 때문에 라이브러리 수정으로 인한 파급력이 클 수 있다.  
+내가 라이브러리 개발자라고 가정해보자  
+만약 TimeStamper의 반환 타입을 String으로 바꿔야 한다면 라이브러리 사용자는 메서드의 반환 타입을 모두 알고있기 때문에 라이브러리 수정으로 인한 파급력이 클 수 있다.  
 이때 **무엇인가 타입** 을 활용하면 라이브러리 사용자에게 TimeStamper의 타입이 되는 `무엇인가`가 있다는 사실은 알지만, 그 타입을 특정하여 사용할 수 없도록 할 수 있다.  
   
 ```kotlin
@@ -327,9 +325,10 @@ exists T.{ T init(); T next(T t); T compare(T o1, T o2); } create() {
 }
 ```
 
-이렇게 `exists T.A` 형태로 생긴 타입이 무엇인가 타입이며, **T는 타입 매개변수, A는 타입을 의미한다.** 여기서 `T`가 무엇인지는 알 수 없다.  
+이렇게 `exists T.A` 형태로 생긴 타입이 **무엇인가 타입**이며, **T는 타입 매개변수, A는 타입을 의미한다.** 여기서 `T`가 무엇인지는 알 수 없다.  
 그저 `create` 함수 반환 값의 타입이 `{ T init(); T next(T t); T compare(T o1, T o2); } 구조이다.` 라는 사실이 되도록 만드는 T가 존재한다는 사실만 알려줄 뿐이다.  
 **라이브러리 사용자는 타입에 의존하는 것이 아니라 구조에 의존하도록 의도하여 행동이 제약된다.**  
+(타입을 알아야 한다면 직접 캐스팅해야 한다.)  
   
 실제로 `exists T.A` 키워드가 존재하는 것은 아니고 언어마다 이 타입을 지원하는 방법이 다르기 때문에 따로 확인이 필요할 것이다.  
 이런 문제를 해결하기 위해 이런 방법을 지원하는 언어들이 있다고 기억하면 좋을것이다. (하스켈, 오캐멀 참고)  
@@ -346,8 +345,6 @@ exists T.{ T init(); T next(T t); T compare(T o1, T o2); } create() {
 
 ## 제네릭 클래스와 상속
 
-알다시피 어떤 클래스를 상속해 새로운 클래스를 정의하면 기존 클래스에 정의된 필드와 메서드가 새 클래스에도 자동으로 정의된다.  
-
 ```kotlin
 abstract class List<T> {
     abstract fun get(index: Int): T
@@ -355,6 +352,13 @@ abstract class List<T> {
 class ArrayList<T>: List<T>() {
     override fun get(index: Int): T = ..
 }
+```
+
+위와 같은 제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 `ArrayList<T>: List<T>`라면 `ArrayList<A>`는 **`List`에 등장하는 모든 `T`를 `A`로 바꿔서 만든 타입의 서브타입** 이라고 이해할 수 있다.  
+서브타입을 선언할 때 **특정 타입에 대한 서브타입** 으로 만들 수 있다.  
+기존의 `List<T>`를 구현하는 `ArrayList<T>` 와 다르게 `List<Boolean>()` 에 대한 클래스와 함수를 필요로한다고 가정해보자.  
+
+```kotlin
 class AnotherList: List<Boolean>() {
     override fun get(index: Int): Boolean = ..
 }
@@ -377,9 +381,8 @@ fun name2() {
     isExist(anotherList)
 }
 ```
-  
-기존의 `List<T>`를 구현하는 `ArrayList<T>` 와 다르게 **특정 타입의 List에 대한 서브타입** 을 추가해야하는 경우이다.  
-제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 `C<T> extends D<T>`라면 `C<A>`는 **타입 `D`에 등장하는 모든 `T`를 `A`로 바꿔서 만든 타입의 서브타입** 이라고 정리할 수 있다.  
+
+`AnotherList`와 같이 특정 타입에 대한 서브타입을 지정하여 의도를 직관적으로 표현할 수 있다.  
 
 ## 타입 매개변수 제한
 
@@ -419,6 +422,8 @@ val marathoner: Marathoner = elder<Marathoner>(marathoner1, marathoner1)
 기본적으로 `<>`에 하나의 상한만 지정이 가능하지만 둘 이상의 상한이 필요한 경우 `where`을 사용할 수 있다. [`kotlinlang` Upper Bounds](https://kotlinlang.org/docs/generics.html#upper-bounds)  
 **전달된 유형은 절의 모든 조건을 동시에 만족해야한다.** 아래의 예제를 확인해보자.  
   
+![](./intersection.png)
+
 ```kotlin
 interface Person
 interface Marathoner
@@ -429,24 +434,22 @@ class Developer: Person, Marathoner
 interface Intersection<T> where T : Person, T : Marathoner
 
 fun main() {
-    val person = object : Intersection<Person> {}           "Type argument is not within its bounds. Compile Error !!!"
-    val marathoner = object : Intersection<Marathoner> {}   "Type argument is not within its bounds. Compile Error !!!"
+    val person = object : Intersection<Person> {}         "컴파일 에러 (타입 인수가 해당 바운드내에 없습니다.)"
+    val marathoner = object : Intersection<Marathoner> {} "컴파일 에러 (타입 인수가 해당 바운드내에 없습니다.)"
     val trainer = object : Intersection<Trainer> {}
     val developer = object : Intersection<Developer> {}
 }
 ```
 
-`Intersection` 인터페이스를 구현하는 타입은 `Person`와 `Marathoner` 둘 다 만족해야 한다.  
+[집합론적 서브타입의 "이면서 타입 (교집합 타입)"](#집합론적-서브타입)과 비슷하다.  
+`Intersection<T>` 인터페이스를 구현하는 타입은 `Person`와 `Marathoner` 둘 다 만족해야 한다.  
    
 아래는 함수의 인자를 동시에 제한하여 **`CharSequence`와 `Comparable`을 구현하는 타입만 받을 수 있는 함수**이다.  
 
 ```kotlin
 fun <T> copyWhenGenerator(list: List<T>, threshold: T): List<String>
-    where T: CharSequence, T: Comparable<T> {
-        return list.filter {
-            it > threshold
-        }.map { it.toString() }
-    }
+    where T: CharSequence, T: Comparable<T> = 
+        list.filter { it > threshold }.map { it.toString() }
 
 describe("copyWhenGenerator 함수는") {
     val param1: Pair<List<String>, String> = listOf("a", "b", "c", "d") to "b"
@@ -479,13 +482,9 @@ class Person(private val age: Int): Comparable<Person>(){
 
 fun <T: Comparable<T>> sort(list: List<T>) {
     list.forEachIndexed { index, element ->
-        var min = index
-        for (innerIndex in index + 1 until list.size) {
-            if (element.gt(list[innerIndex])) {
-                min = innerIndex
-            }
+        if (element.gt(..)) {
+            ..
         }
-        "index와 min의 원소를 교체"
     }
 }
 
@@ -495,7 +494,7 @@ sort(listOf(Person(10), Person(5)))
 객체를 정렬 가능한 객체로 구현할 때 접하는 익숙한 코드이다.  
 어떤 리스트를 정렬하려면 그 리스트를 구성하는 값들이 서로 비교 가능해야 하기 때문에  
 - **Comparable 추상 클래스는 자신과 동일한 타입의 다른 객체와 비교할 수 있는 클래스이다.**
-- **Comparable 추상 클래스는 자신의 타입 매개변수 T를 자신의 상한으로 지정하고 있다.**
+- **Comparable 추상 클래스는 자신의 타입 매개변수 T를 불변으로 지정하고 있다.**
 - **T가 Comparable\<T\>의 서브타입일 때 T 타입의 값을 T 타입의 값과 비교할 수 있다**
 
 이 규칙을 모두 만족하므로 `sort` 함수는 컴파일된다.  
