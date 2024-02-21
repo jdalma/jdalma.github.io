@@ -340,8 +340,7 @@ exists T.{ T init(); T next(T t); T compare(T o1, T o2); } create() {
 # 두 다형성의 만남
 
 전통적으로 서브타입에 의한 다형성은 객체 지향 언어가 지원하고, 매개변수에 의한 다형성은 함수형 언어가 지원했다.  
-요즘은 한 언어가 **두 종류의 다형성을 지원한다.**  
-서로 다른 특징을 가진 두 개의 다형성이 유용한 기능들이 탄생한다.  
+요즘은 한 언어가 **두 종류의 다형성을 지원한다.** 서로 다른 특징을 가진 두 개의 다형성이 만나 유용한 기능들이 탄생한다.  
 
 ## 제네릭 클래스와 상속
 
@@ -503,9 +502,12 @@ Comparable의 gt 메서드가 (`that: T`) 자기 자신과 같은 타입의 매�
 ## 가변성
 
 **지금까지 제네릭 함수를 정의할 때는 대개 매개변수 타입과 결과 타입의 관계를 유지해야 한다는 명확한 목표가 있었다.**  
-아래의 `choose`와 `elder` 같이 받은 타입을 그대로 반환해야 하는 함수 **매개변수에 의한 다형성이 반드시 필요했다.**  
+아래의 `choose`와 `elder` 같이 받은 타입을 그대로 반환해야 하는 함수는 **매개변수에 의한 다형성이 반드시 필요했다.**  
 
 ```kotlin
+open class Person
+class Marathoner : Person()
+
 fun <T> choose(v1: T, v2: T): T = if ( .. ) v1 else v2
 fun <T: Person> elder(person: T, other: T): T = if( .. ) person else other
 ```
@@ -531,7 +533,7 @@ fun <T: Person> averageAge(people: List<T>): Int = ..
   
 > 그럼 그냥 `Marathoner`가 `Person`의 서브타입인 것처럼 `List<Marathoner>`도 `List<Person>`의 서브타입이면 안 될까?  
     
-즉, **"B가 A의 서브타입일 때 `List<B>`가 `List<A>`의 서브타입이도 될까?"**  
+즉, **"B가 A의 서브타입일 때 `List<B>`가 `List<A>`의 서브타입이어도 될까?"**  
 `List<Marathoner>`가 `List<Person>`의 서브타입이 된다고 가정하고 ReadOnlyList와 ReadWriteList의 예제를 보자.  
   
 ```kotlin
@@ -550,7 +552,7 @@ val person = people.get(0)
 person.age ..
 ```
 
-`[1]`의 상황을 보면 `Marathoner`의 객체들로 구성된 List이지만 `people`에 대입이 가능하고, `people`에서 꺼낸 원소는 `Person` 타입으로 사용할 수 있다.  
+`[1]`의 상황을 보면 `Marathoner`의 객체들로 구성된 List이지만 `marathoners`는 `people`에 대입이 가능하고, `people`에서 꺼낸 원소는 `Person` 타입으로 사용할 수 있다.  
 런타임에는 `Marathoner` 객체이지만 타입 검사기가 알 수 있는 타입은 `Person`이다.  
 하지만 이 상황은 문제가 되지 않는다. Marathoner는 이미 Person의 서브타입이므로 **Marathoner 객체를 Person 객체처럼 사용해도 문제 없다.**  
 즉, **ReadOnlyList\<Marathoner\> 를 ReadOnlyList\<Person\> 로 취급함으로써 일어날 수 있는 일은 Person 객체를 기대한 곳에서 Marathoner 객체가 나오는 것 뿐이다.**  
