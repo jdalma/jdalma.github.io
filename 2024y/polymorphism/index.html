@@ -524,8 +524,7 @@ compute selector =
 </blockquote>
 <h1 id="두-다형성의-만남" style="position:relative;">두 다형성의 만남<a href="#%EB%91%90-%EB%8B%A4%ED%98%95%EC%84%B1%EC%9D%98-%EB%A7%8C%EB%82%A8" aria-label="두 다형성의 만남 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>전통적으로 서브타입에 의한 다형성은 객체 지향 언어가 지원하고, 매개변수에 의한 다형성은 함수형 언어가 지원했다.<br>
-요즘은 한 언어가 <strong>두 종류의 다형성을 지원한다.</strong><br>
-서로 다른 특징을 가진 두 개의 다형성이 유용한 기능들이 탄생한다.</p>
+요즘은 한 언어가 <strong>두 종류의 다형성을 지원한다.</strong> 서로 다른 특징을 가진 두 개의 다형성이 만나 유용한 기능들이 탄생한다.</p>
 <h2 id="제네릭-클래스와-상속" style="position:relative;">제네릭 클래스와 상속<a href="#%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%83%81%EC%86%8D" aria-label="제네릭 클래스와 상속 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">abstract class List&lt;T&gt; {
@@ -693,9 +692,12 @@ sort(listOf(Person(10), Person(5)))</code>
 Comparable의 gt 메서드가 (<code class="language-text">that: T</code>) 자기 자신과 같은 타입의 매개변수를 참조하는 것과 <code class="language-text">sort</code> 함수가 요구하는 <code class="language-text">&lt;T: Comparable&lt;T>></code> 제네릭이 <strong>재귀적 타입 매개변수 제한</strong> 이다.</p>
 <h2 id="가변성" style="position:relative;">가변성<a href="#%EA%B0%80%EB%B3%80%EC%84%B1" aria-label="가변성 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p><strong>지금까지 제네릭 함수를 정의할 때는 대개 매개변수 타입과 결과 타입의 관계를 유지해야 한다는 명확한 목표가 있었다.</strong><br>
-아래의 <code class="language-text">choose</code>와 <code class="language-text">elder</code> 같이 받은 타입을 그대로 반환해야 하는 함수 <strong>매개변수에 의한 다형성이 반드시 필요했다.</strong></p>
+아래의 <code class="language-text">choose</code>와 <code class="language-text">elder</code> 같이 받은 타입을 그대로 반환해야 하는 함수는 <strong>매개변수에 의한 다형성이 반드시 필요했다.</strong></p>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
-          <code slot="code">fun &lt;T&gt; choose(v1: T, v2: T): T = if ( .. ) v1 else v2
+          <code slot="code">open class Person
+class Marathoner : Person()
+
+fun &lt;T&gt; choose(v1: T, v2: T): T = if ( .. ) v1 else v2
 fun &lt;T: Person&gt; elder(person: T, other: T): T = if( .. ) person else other</code>
         </deckgo-highlight-code>
 <p>반면 그냥 Person 객체를 인자로 받아 소비만하는 <code class="language-text">run</code>과 같은 함수는 <strong>서브타입에 의한 다형성이면 충분하다.</strong></p>
@@ -716,7 +718,7 @@ fun &lt;T: Person&gt; elder(person: T, other: T): T = if( .. ) person else other
 <blockquote>
 <p>그럼 그냥 <code class="language-text">Marathoner</code>가 <code class="language-text">Person</code>의 서브타입인 것처럼 <code class="language-text">List&lt;Marathoner></code>도 <code class="language-text">List&lt;Person></code>의 서브타입이면 안 될까?</p>
 </blockquote>
-<p>즉, <strong>"B가 A의 서브타입일 때 <code class="language-text">List&lt;B></code>가 <code class="language-text">List&lt;A></code>의 서브타입이도 될까?"</strong><br>
+<p>즉, <strong>"B가 A의 서브타입일 때 <code class="language-text">List&lt;B></code>가 <code class="language-text">List&lt;A></code>의 서브타입이어도 될까?"</strong><br>
 <code class="language-text">List&lt;Marathoner></code>가 <code class="language-text">List&lt;Person></code>의 서브타입이 된다고 가정하고 ReadOnlyList와 ReadWriteList의 예제를 보자.</p>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">open class Person(val age: Int)
@@ -733,7 +735,7 @@ val people: ReadOnlyList&lt;Person&gt; = marathoners
 val person = people.get(0)
 person.age ..</code>
         </deckgo-highlight-code>
-<p><code class="language-text">[1]</code>의 상황을 보면 <code class="language-text">Marathoner</code>의 객체들로 구성된 List이지만 <code class="language-text">people</code>에 대입이 가능하고, <code class="language-text">people</code>에서 꺼낸 원소는 <code class="language-text">Person</code> 타입으로 사용할 수 있다.<br>
+<p><code class="language-text">[1]</code>의 상황을 보면 <code class="language-text">Marathoner</code>의 객체들로 구성된 List이지만 <code class="language-text">marathoners</code>는 <code class="language-text">people</code>에 대입이 가능하고, <code class="language-text">people</code>에서 꺼낸 원소는 <code class="language-text">Person</code> 타입으로 사용할 수 있다.<br>
 런타임에는 <code class="language-text">Marathoner</code> 객체이지만 타입 검사기가 알 수 있는 타입은 <code class="language-text">Person</code>이다.<br>
 하지만 이 상황은 문제가 되지 않는다. Marathoner는 이미 Person의 서브타입이므로 <strong>Marathoner 객체를 Person 객체처럼 사용해도 문제 없다.</strong><br>
 즉, <strong>ReadOnlyList&#x3C;Marathoner> 를 ReadOnlyList&#x3C;Person> 로 취급함으로써 일어날 수 있는 일은 Person 객체를 기대한 곳에서 Marathoner 객체가 나오는 것 뿐이다.</strong></p>
