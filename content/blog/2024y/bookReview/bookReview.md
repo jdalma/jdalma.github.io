@@ -106,7 +106,6 @@ HTTP/2가 개선되긴 했지만 HTTP/1.1과 비교해서 **명확하게 어떤 
 5. **PECS를 지켜야하는 이유**
 6. 타입 클래스, 카인드
   
-내용들을 [정리](https://jdalma.github.io/2024y/polymorphism/)해 보았다.  
 제일 와닿았던 부분은 제네릭 가변성에 대한 이해가 없을 때 이게 왜 안되는지 몰랐던 부분들을 깨닫게 도와줬다.  
 [PECS : producer-extends, consumer-super](https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super)를 외워서 사용했는데 왜 저렇게 제한해야 하는지 더 깊은 이해를 할 수 있도록 도와주었다.    
   
