@@ -91,7 +91,7 @@
 서브타입은 타입 사이의 관계이며, <code class="language-text">"A는 B이다."</code> 라는 설명이 올바르다면 <code class="language-text">A는 B의 서브타입</code> , <code class="language-text">B는 A의 슈퍼타입</code>이다.</p>
 <p>A는 B의 서브타입일 때 B 타입의 부품을 A 타입의 부품으로도 간주할 수 있게 하는 기능이 서브타입에 의한 다형성이다.<br>
 즉, <strong>슈퍼타입이 요구되는 자리에 서브타입이 위치하더라도 타입 검사기가 문제삼지 않는다는 것이다.</strong><br>
-반대로 서브타입이 요구되는 자리에느 슈퍼타입이 위치할 수는 없다.</p>
+반대로 서브타입이 요구되는 자리에는 슈퍼타입이 위치할 수는 없다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 451px; "
@@ -135,7 +135,7 @@ run2(Person(name))   &quot;컴파일 에러&quot;
 run2(Marathoner(name))</code>
         </deckgo-highlight-code>
 <h2 id="오버로딩에-의한-다형성" style="position:relative;">오버로딩에 의한 다형성<a href="#%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1" aria-label="오버로딩에 의한 다형성 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
-<p>한 함수가 여러 타입의 인자를 받아야 같은 이름의 함수들을 매개변수 타입을 서로 다르게 하여 여러 개 정의하는 것이다.</p>
+<p>같은 이름의 함수들을 매개변수 타입을 서로 다르게 하여 여러 개 정의하는 것이다.</p>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">fun aging(person: Person) = Person(person.age + 1)
 fun aging(marathoner: Marathoner) = Marathoner(marathoner.age + 1)</code>
@@ -231,7 +231,7 @@ class ArrayList&lt;T&gt;: List&lt;T&gt;() {
 }</code>
         </deckgo-highlight-code>
 <p>위와 같은 제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 <code class="language-text">ArrayList&lt;T>: List&lt;T></code>라면 <code class="language-text">ArrayList&lt;A></code>는 <strong><code class="language-text">List</code>에 등장하는 모든 <code class="language-text">T</code>를 <code class="language-text">A</code>로 바꿔서 만든 타입의 서브타입</strong> 이라고 이해할 수 있다.<br>
-그리고 서브타입을 선언할 때 <strong>특정 타입에 대한 서브타입</strong>으로 만들 수 있다.<br>
+그리고 서브타입을 선언할 때 <strong>특정 타입에 대한 서브타입</strong>으로 만들수도 있다.<br>
 기존의 <code class="language-text">List&lt;T></code>를 구현하는 <code class="language-text">ArrayList&lt;T></code> 와 다르게 <code class="language-text">List&lt;Boolean>()</code> 에 대한 클래스와 함수를 필요로한다고 가정해보자.</p>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-dark" line-numbers="true"  >
           <code slot="code">class AnotherList: List&lt;Boolean&gt;() {
@@ -905,7 +905,7 @@ addMarathoner(readWriteMarathoners2)</code>
 <h1 id="맺으며" style="position:relative;">맺으며<a href="#%EB%A7%BA%EC%9C%BC%EB%A9%B0" aria-label="맺으며 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>여러 종류의 다형성을 이해하고 제네릭 가변성에 대해 알아보았다.<br>
 개인적으로 공변,불변을 제외한 나머지를 반변이라고 설명하는 글들을 많이 접했었는데 이 책에서는 반변을 설명할 때 <strong>함수와 서브타입</strong>에 대한 설명이 독특했다.<br>
-**"함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다."**는 사실이 반변을 이해할 때 도움이 되었다.</p>
+<strong>"함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다."</strong> 는 사실이 반변을 이해할 때 도움이 되었다.</p>
 <p>어려운 제네릭 가변성에 대한 내용을 배워봤지만 제네릭이 능사는 아니다.<br>
 서브타입 관계를 추가하는 대신 기능이 빠진 타입을 만들거나, 기능을 다 갖춘 타입을 만드는 대신 서브타입 관계를 포기하거나, 개발자는 반드시 이 둘 중 하나를 골라야 한다.</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2024y/transaction/">← <!-- -->트랜잭션과 잠금</a></li><li><a rel="next" href="/2024y/bookReview/bookReview/">2024년 책,강의 서평<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-beySPh kUHXGZ"><ul>
 <li>
