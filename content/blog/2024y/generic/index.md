@@ -13,11 +13,12 @@ tags:
 이번에 [타입으로 견고하게 다형성으로 유연하게](https://product.kyobobook.co.kr/detail/S000210397750)를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.  
 (만약 이런 경험이 있는 개발자라면 이 책을 추천한다.)  
   
-이 글에서는 아래의 내용을 전개한다.
+이 글을 통해 아래의 내용을 학습할 수 있다.
 
 1. **여러 종류의 다형성**
 2. **제네릭 가변성이 왜 필요한지** 
 3. **PECS를 왜 지켜야 하는지**
+4. **제네릭 가변성의 종류**
 
 일단 다형성에 대해 간단하게 알아보자.
 
@@ -391,11 +392,13 @@ open class Person
 class Marathoner : Person()
 
 fun selectBySubType(selector: (Marathoner) -> Person) {
-    val person = selector(Marathoner())
+    val person1 = selector(Person())    "컴파일 에러"
+    val person2 = selector(Marathoner())
 }
 
 fun selectBySuperType(selector: (Person) -> Person) {
-    val person = selector(Person())
+    val person1 = selector(Person())
+    val person2 = selector(Marathoner())
 }
 
 val superTypeConsumer: (Person) -> Person = ..
@@ -413,9 +416,11 @@ selectBySuperType(subTypeConsumer)      "컴파일 에러"
 **"사람을 인자로 받을 수 있는 함수는 마라토너를 인자로 받을 수 있는 함수다."** 가 성립되기 때문이다.  
   
 하지만 그 반대인 `(Marathoner) -> Marathoner`은 `(Person) -> Marathoner`의 서브타입이 아니다.  
-`Marathoner`에는 존재하는 속성이나 메서드가 `Person`에는 존재하지 않을 수 있기 때문에 **"마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다."** 가 성립되지 않는다.  
-타입 검사기가 `selectBySuperType(subTypeConsumer)` 함수를 거부하는 이유를 생각하면 된다.  
-
+**"마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다."** 가 성립되지 않는다.  
+  
+첫 번째 "컴파일 에러"는 **함수가 하위 타입 인스턴스를 기대하는데 상위 타입 인스턴스를 전달하려고 했기 때문에 발생한다.**  
+두 번째 "컴파일 에러"는 **함수가 상위 타입 인스턴스를 기대하는데 `더 구체적인 하위 타입을 처리하는 함수를 전달하려고 했기 때문에 발생`한다.**  
+  
 
 ![](./functionSubtype.png)
   
