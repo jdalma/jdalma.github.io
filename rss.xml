@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 22 Feb 2024 15:58:29 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 24 Feb 2024 15:01:34 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -185,11 +185,12 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
 &lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
 (만약 이런 경험이 있는 개발자라면 이 책을 추천한다.)&lt;/p&gt;
-&lt;p&gt;이 글에서는 아래의 내용을 전개한다.&lt;/p&gt;
+&lt;p&gt;이 글을 통해 아래의 내용을 학습할 수 있다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;여러 종류의 다형성&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;제네릭 가변성이 왜 필요한지&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PECS를 왜 지켜야 하는지&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;제네릭 가변성의 종류&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;일단 다형성에 대해 간단하게 알아보자.&lt;/p&gt;
 &lt;h1 id=&quot;다형성&quot; style=&quot;position:relative;&quot;&gt;다형성&lt;a href=&quot;#%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -561,11 +562,13 @@ val marathoner: Marathoner = marathoners.get(0)&lt;/code&gt;
 class Marathoner : Person()
 
 fun selectBySubType(selector: (Marathoner) -&amp;gt; Person) {
-    val person = selector(Marathoner())
+    val person1 = selector(Person())    &amp;quot;컴파일 에러&amp;quot;
+    val person2 = selector(Marathoner())
 }
 
 fun selectBySuperType(selector: (Person) -&amp;gt; Person) {
-    val person = selector(Person())
+    val person1 = selector(Person())
+    val person2 = selector(Marathoner())
 }
 
 val superTypeConsumer: (Person) -&amp;gt; Person = ..
@@ -581,8 +584,9 @@ selectBySuperType(subTypeConsumer)      &amp;quot;컴파일 에러&amp;quot;&lt;
 위의 예제를 보면 &lt;code class=&quot;language-text&quot;&gt;(Person) -&gt; Marathoner&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;(Marathoner) -&gt; Marathoner&lt;/code&gt;의 서브타입이 가능하다.&lt;br&gt;
 &lt;strong&gt;&quot;사람을 인자로 받을 수 있는 함수는 마라토너를 인자로 받을 수 있는 함수다.&quot;&lt;/strong&gt; 가 성립되기 때문이다.&lt;/p&gt;
 &lt;p&gt;하지만 그 반대인 &lt;code class=&quot;language-text&quot;&gt;(Marathoner) -&gt; Marathoner&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;(Person) -&gt; Marathoner&lt;/code&gt;의 서브타입이 아니다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;에는 존재하는 속성이나 메서드가 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;에는 존재하지 않을 수 있기 때문에 &lt;strong&gt;&quot;마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다.&quot;&lt;/strong&gt; 가 성립되지 않는다.&lt;br&gt;
-타입 검사기가 &lt;code class=&quot;language-text&quot;&gt;selectBySuperType(subTypeConsumer)&lt;/code&gt; 함수를 거부하는 이유를 생각하면 된다.&lt;/p&gt;
+&lt;strong&gt;&quot;마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다.&quot;&lt;/strong&gt; 가 성립되지 않는다.&lt;/p&gt;
+&lt;p&gt;첫 번째 &quot;컴파일 에러&quot;는 &lt;strong&gt;함수가 하위 타입 인스턴스를 기대하는데 상위 타입 인스턴스를 전달하려고 했기 때문에 발생한다.&lt;/strong&gt;&lt;br&gt;
+두 번째 &quot;컴파일 에러&quot;는 &lt;strong&gt;함수가 상위 타입 인스턴스를 기대하는데 &lt;code class=&quot;language-text&quot;&gt;더 구체적인 하위 타입을 처리하는 함수를 전달하려고 했기 때문에 발생&lt;/code&gt;한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 796px; &quot;

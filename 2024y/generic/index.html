@@ -73,11 +73,12 @@
 그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.</p>
 <p>이번에 <a href="https://product.kyobobook.co.kr/detail/S000210397750">타입으로 견고하게 다형성으로 유연하게</a>를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.<br>
 (만약 이런 경험이 있는 개발자라면 이 책을 추천한다.)</p>
-<p>이 글에서는 아래의 내용을 전개한다.</p>
+<p>이 글을 통해 아래의 내용을 학습할 수 있다.</p>
 <ol>
 <li><strong>여러 종류의 다형성</strong></li>
 <li><strong>제네릭 가변성이 왜 필요한지</strong></li>
 <li><strong>PECS를 왜 지켜야 하는지</strong></li>
+<li><strong>제네릭 가변성의 종류</strong></li>
 </ol>
 <p>일단 다형성에 대해 간단하게 알아보자.</p>
 <h1 id="다형성" style="position:relative;">다형성<a href="#%EB%8B%A4%ED%98%95%EC%84%B1" aria-label="다형성 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
@@ -449,11 +450,13 @@ val marathoner: Marathoner = marathoners.get(0)</code>
 class Marathoner : Person()
 
 fun selectBySubType(selector: (Marathoner) -&gt; Person) {
-    val person = selector(Marathoner())
+    val person1 = selector(Person())    &quot;컴파일 에러&quot;
+    val person2 = selector(Marathoner())
 }
 
 fun selectBySuperType(selector: (Person) -&gt; Person) {
-    val person = selector(Person())
+    val person1 = selector(Person())
+    val person2 = selector(Marathoner())
 }
 
 val superTypeConsumer: (Person) -&gt; Person = ..
@@ -469,8 +472,9 @@ selectBySuperType(subTypeConsumer)      &quot;컴파일 에러&quot;</code>
 위의 예제를 보면 <code class="language-text">(Person) -> Marathoner</code>은 <code class="language-text">(Marathoner) -> Marathoner</code>의 서브타입이 가능하다.<br>
 <strong>"사람을 인자로 받을 수 있는 함수는 마라토너를 인자로 받을 수 있는 함수다."</strong> 가 성립되기 때문이다.</p>
 <p>하지만 그 반대인 <code class="language-text">(Marathoner) -> Marathoner</code>은 <code class="language-text">(Person) -> Marathoner</code>의 서브타입이 아니다.<br>
-<code class="language-text">Marathoner</code>에는 존재하는 속성이나 메서드가 <code class="language-text">Person</code>에는 존재하지 않을 수 있기 때문에 <strong>"마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다."</strong> 가 성립되지 않는다.<br>
-타입 검사기가 <code class="language-text">selectBySuperType(subTypeConsumer)</code> 함수를 거부하는 이유를 생각하면 된다.</p>
+<strong>"마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다."</strong> 가 성립되지 않는다.</p>
+<p>첫 번째 "컴파일 에러"는 <strong>함수가 하위 타입 인스턴스를 기대하는데 상위 타입 인스턴스를 전달하려고 했기 때문에 발생한다.</strong><br>
+두 번째 "컴파일 에러"는 <strong>함수가 상위 타입 인스턴스를 기대하는데 <code class="language-text">더 구체적인 하위 타입을 처리하는 함수를 전달하려고 했기 때문에 발생</code>한다.</strong></p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 796px; "
