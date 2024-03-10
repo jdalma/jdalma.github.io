@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 Feb 2024 15:03:44 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Mar 2024 16:35:46 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -250,7 +250,403 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;h1 id=&quot;이펙티브-코틀린-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 코틀린 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 자바 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt; 예정&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4-%EC%98%88%EC%A0%95&quot; aria-label=&quot;개발자를 위한 레디스 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
+&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[ProxyFactory를 이해해보자 (+ AOP)]]></title><description><![CDATA[자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다. 그렇기에 스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다. 스프링의 ProxyFactory와 AOP…]]></description><link>https://jdalma.github.io/2024y/proxyfactory/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/proxyfactory/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다.&lt;br&gt;
+그렇기에 &lt;strong&gt;스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.&lt;/strong&gt;&lt;br&gt;
+스프링의 ProxyFactory와 AOP를 이해함을 목표로 차근차근 학습해보자.&lt;/p&gt;
+&lt;h1 id=&quot;java-reflection&quot; style=&quot;position:relative;&quot;&gt;Java Reflection&lt;a href=&quot;#java-reflection&quot; aria-label=&quot;java reflection permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;자바의 리플렉션(Reflection)은 런타임 시에 클래스의 속성, 메소드, 생성자 등의 메타데이터를 조회하거나 수정할 수 있는 강력한 기능이다.&lt;br&gt;
+또한, &lt;strong&gt;리플렉션을 사용하여 런타임 시에 동적으로 객체를 생성하고, 가시성에 관계없이 메소드를 호출하거나, 필드에 접근할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAECBAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHWcbIIYv8A/8QAGhAAAgIDAAAAAAAAAAAAAAAAAQMQETEyM//aAAgBAQABBQJmizaxg9o//8QAFhEAAwAAAAAAAAAAAAAAAAAAEBFB/9oACAEDAQE/Aax//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGhAAAQUBAAAAAAAAAAAAAAAAEAABAhEhQf/aAAgBAQAGPwKWquhj/8QAGxABAAICAwAAAAAAAAAAAAAAAQARECExQYH/2gAIAQEAAT8hd0p8lQGgdkCbNs1M4rP/2gAMAwEAAgADAAAAEI8v/8QAFhEBAQEAAAAAAAAAAAAAAAAAARAR/9oACAEDAQE/EE2H/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAECAQE/EAC2/8QAHBABAQACAgMAAAAAAAAAAAAAAREAITGBEEFR/9oACAEBAAE/EEGwahE3995T0cV9PcuAAQ5Ql6wACKkOFbcNaPH/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;javalang&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ba3e3f3cd9ce3e367559bba7dca13048/8e1fc/javalang.jpg&quot;
+        srcset=&quot;/static/ba3e3f3cd9ce3e367559bba7dca13048/863e1/javalang.jpg 225w,
+/static/ba3e3f3cd9ce3e367559bba7dca13048/20e5d/javalang.jpg 450w,
+/static/ba3e3f3cd9ce3e367559bba7dca13048/8e1fc/javalang.jpg 900w,
+/static/ba3e3f3cd9ce3e367559bba7dca13048/a2510/javalang.jpg 1000w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;a href=&quot;https://www.geeksforgeeks.org/reflection-in-java/&quot;&gt;출처 geeksforgeeks&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;필드(목록) 가져오기&lt;/li&gt;
+&lt;li&gt;메소드(목록) 가져오기&lt;/li&gt;
+&lt;li&gt;상위 클래스 가져오기&lt;/li&gt;
+&lt;li&gt;인터페이스(목록) 가져오기&lt;/li&gt;
+&lt;li&gt;어노테이션 가져오기&lt;/li&gt;
+&lt;li&gt;생성자 가져오기&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 리플렉션을 사용하는 것은 &lt;strong&gt;메타 프로그래밍&lt;/strong&gt; 이라고 하며 위와 같은 행위를 할 수 있다.&lt;br&gt;
+자바의 모든 클래스는 그 클래스 자체의 구성 정보를 담은 &lt;code class=&quot;language-text&quot;&gt;Class 타입&lt;/code&gt;의 오브젝트를 하나씩 갖고 있다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;Class&lt;/code&gt; 오브젝트를 이용하면 &lt;strong&gt;클래스 코드에 대한 메타 정보&lt;/strong&gt; 를 가져오거나 &lt;strong&gt;객체를 조작&lt;/strong&gt; 할 수 있다.&lt;br&gt;
+테스트 코드로 확인해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;data class Address(
+    private val state: String,
+    private val city: String
+)
+
+data class Person(
+    private val name: String,
+    var age: Int,
+    private val address: Address
+) {
+    constructor(name: String, age: Int): this(name, age, Address(&amp;quot;empty&amp;quot;, &amp;quot;empty&amp;quot;))
+
+    @Throws(IllegalArgumentException::class)
+    constructor(age: Int): this(&amp;quot;Admin&amp;quot;, age, Address(&amp;quot;Admin&amp;quot;, &amp;quot;Admin&amp;quot;))
+
+    fun greeting() = &amp;quot;안녕하세요.&amp;quot;
+}
+
+describe(&amp;quot;Person 클래스&amp;quot;) {
+    val personClass: Class&amp;lt;Person&amp;gt; = Person::class.java
+
+    it(&amp;quot;Constructor를 통해 Person 만들기&amp;quot;) {
+        val constructors: Array&amp;lt;Constructor&amp;lt;Person&amp;gt;&amp;gt;  = personClass.constructors as Array&amp;lt;Constructor&amp;lt;Person&amp;gt;&amp;gt;
+        constructors[0].toString() shouldBe &amp;quot;public _22_Reflection.ReflectionTest\$1\$Person(java.lang.String,int)&amp;quot;
+        constructors[1].toString() shouldBe &amp;quot;public _22_Reflection.ReflectionTest\$1\$Person(int) throws java.lang.IllegalArgumentException&amp;quot;
+        
+        val nameAndAgeConstructor = constructors[0]
+        val ageConstructor = constructors[1]
+
+        nameAndAgeConstructor.newInstance(&amp;quot;Reflection&amp;quot;, 10) shouldBe Person(&amp;quot;Reflection&amp;quot;, 10)
+        ageConstructor.newInstance(10) shouldBe Person(10)
+    }
+
+    it(&amp;quot;Field로 객체 내부 멤버변수 조회하기&amp;quot;) {
+        val fields: Array&amp;lt;Field&amp;gt; = personClass.declaredFields
+        fields[0].toString() shouldBe &amp;quot;private final java.lang.String _22_Reflection.ReflectionTest$1\$Person.name&amp;quot;
+        fields[1].toString() shouldBe &amp;quot;private int _22_Reflection.ReflectionTest$1\$Person.age&amp;quot;
+        fields[2].toString() shouldBe &amp;quot;private final _22_Reflection.ReflectionTest$1\$Address _22_Reflection.ReflectionTest$1\$Person.address&amp;quot;
+
+        val person = Person(100)
+
+        fields.forEach { it.trySetAccessible() }
+
+        val nameField = fields[0]
+        val ageField = fields[1]
+        val addressField = fields[2]
+
+        nameField.get(person) shouldBe &amp;quot;Admin&amp;quot;
+        ageField.get(person) shouldBe 100
+        addressField.get(person) shouldBe Address(&amp;quot;Admin&amp;quot;, &amp;quot;Admin&amp;quot;)
+    }
+
+    it(&amp;quot;Method 정보로 객체 실행하기&amp;quot;) {
+        val methods: Array&amp;lt;Method&amp;gt; = personClass.methods
+
+        val getAgeMethod = methods.find { it.name == &amp;quot;getAge&amp;quot; }!!
+        val setAgeMethod = methods.find { it.name == &amp;quot;setAge&amp;quot; }!!
+        val greetingMethod = methods.find { it.name == &amp;quot;greeting&amp;quot; }!!
+
+        val person = Person(100)
+
+        person.age shouldBe 100
+        getAgeMethod.invoke(person) shouldBe 100
+
+        setAgeMethod.invoke(person, 50)
+
+        person.age shouldBe 50
+        getAgeMethod.invoke(person) shouldBe 50
+
+        greetingMethod.invoke(person) shouldBe &amp;quot;안녕하세요.&amp;quot;
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위와 같이 &lt;code class=&quot;language-text&quot;&gt;Class&lt;/code&gt; 정보를 이용하여 실제 인스턴스를 조작하거나 생성할 수 있다. (더 자세한 예제는 &lt;a href=&quot;https://github.com/jdalma/kotlin-playground/blob/main/src/test/kotlin/_22_Reflection/ReflectionTest.kt&quot;&gt;여기&lt;/a&gt;를 확인하자.)&lt;/p&gt;
+&lt;p&gt;리플렉션을 간단하게 확인해보았는데 강력한 기능이라는 것을 느낄 수 있다.&lt;br&gt;
+이 강력한 기능을 통해 자바에서는 &lt;strong&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html&quot;&gt;Dynamic Proxy Class API&lt;/a&gt;&lt;/strong&gt; 를 제공한다.&lt;br&gt;
+다이나믹 프록시에 대해 확인하기 전에 먼저 프록시에 대해 알아보자.&lt;/p&gt;
+&lt;h1 id=&quot;proxy란&quot; style=&quot;position:relative;&quot;&gt;Proxy란?&lt;a href=&quot;#proxy%EB%9E%80&quot; aria-label=&quot;proxy란 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;단순히 확장성을 고려해서 한 가지 기능을 분리한다면 아래와 같이 전형적인 전략 패턴(&lt;code class=&quot;language-text&quot;&gt;condition: (Member) -&gt; Boolean&lt;/code&gt;)을 사용할 수 있을 것이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun register(member: Member, condition: (Member) -&amp;gt; Boolean) {
+    if(condition(member)) {
+        // business logic
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;하지만 여러 곳에서 동일한 기능이 필요하다면 아주 번거로워질 것이다. 대표적으로 옛날 방식의 커넥션 관리가 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public void accountTransfer(String fromId, String toId, int money) throws SQLException {
+    Connection con = dataSource.getConnection();
+    try {
+        con.setAutoCommit(false);
+        bizLogic(con, fromId, toId, money); // 핵심 기능
+        con.commit();
+    } catch (Exception e) {
+        con.rollback();
+        throw new IllegalStateException(e);
+    } finally {
+        release(con);
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;핵심 기능인 &lt;code class=&quot;language-text&quot;&gt;bizLogic()&lt;/code&gt;을 실행시키기 위한 부가 기능이 많이 존재한다.&lt;br&gt;
+이 문제를 &lt;strong&gt;위임&lt;/strong&gt; 을 통해 해결하면 어떨까?&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 574px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8218e1b1fc9598014689df3fa9c112af/86389/proxy.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 76.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAACTElEQVR42o2Ue2/aMBTF+f4fYf9smjRNk6ZO6ya1GqylokAoCRCgaEB5bQyVlkdGbMd2Es6u3U6l60O90pHj6OaXe31PksEjsd1u7drtdpHP55HNZjGdTu39OI4fVZIkds3giTAJURRBa20TDczcM/uHUpSjbf6TQAMxySYWiwW6vQHW68DuU4LfNnEvpJTPV/gPuF4t0W2d4HLiIhUTbOVP0i9oNoLeDK22MYdS+mXAhI+wZRWAe9DLEsY/9jEhJRsHEC4QOojXHmQkkEnT1J7PrkwYmFLKXqugSUB6MPKhFg78w7fwvr4B7+WhBgXIUQHJqoxIhMgEQYAwDO9N9/8KxdLH/OIQV+Msrr0DxNUzKBIvFcGKJYSnBfDBEaRiyCyXSzDGrMz1arWiw19jMBjQfoHL+TV6/gHalfdwjl+j/OEV0paPuFlHYtZWA5F7Btb7fgMUQthKjOf6/T6GwyFGoxHa7Tbq9TouLoaolfYw9D9h3PmC8ckelOdhkj3E7CiHq8IJpFu9A85mM2uLzWZjfWRGb2ReZCrWcYpgVkX4Ow9JA9k0c1SRC+f9O/h7H9HZ/wxdcxH2cjdA06Jp97kp67BDk6ShiBp4h8AETNs+kmaDWm9AVCtg/dsKX2IbHZwDfyoWys+PoWoeonoVsu5CNsguu2e4a5WHwDvbWCDzLJAXHfCyA1GuWLEiTbtPLcvwZRXGYko+K1KFVcTzU7B2jsBHtzoG63wjY7eoQvX8t2yGdPMXSSD5AlE4g+KXZPg5lNzVFeVpcCHwF+EObsU94YOyAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;proxy&quot;
+        title=&quot;&quot;
+        src=&quot;/static/8218e1b1fc9598014689df3fa9c112af/86389/proxy.png&quot;
+        srcset=&quot;/static/8218e1b1fc9598014689df3fa9c112af/3684f/proxy.png 225w,
+/static/8218e1b1fc9598014689df3fa9c112af/fc2a6/proxy.png 450w,
+/static/8218e1b1fc9598014689df3fa9c112af/86389/proxy.png 574w&quot;
+        sizes=&quot;(max-width: 574px) 100vw, 574px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;interface UserService {
+    fun accountTransfer(fromId: String, toId: String, money: Int)
+}
+
+class UserServiceProxy (
+    private val userServiceTarget: UserService
+): UserService {
+    override fun accountTransfer(fromId: String, toId: String, money: Int) {
+        // 부가 기능
+        userServiceTarget.accountTransfer(...)
+        // 부가 기능
+    }
+}
+
+class UserServiceTarget: UserService {
+    override fun accountTransfer(fromId: String, toId: String, money: Int) {
+        // 핵심 기능
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위임을 통해 부가 기능은 마치 &lt;strong&gt;자신이 핵심 기능 클래스인 것처럼 꾸며서, 클라이언트가 자신을 거쳐서 핵심 기능을 사용하도록 만드는 것이다.&lt;/strong&gt;&lt;br&gt;
+클라이언트는 인터페이스를 통해서만 핵심 기능을 사용하게 하여, 부가 기능은 자신도 같은 인터페이스를 구현한 뒤에 자신이 그 사이에 끼어들어 타깃을 직접 제어하는 것이다.&lt;/p&gt;
+&lt;p&gt;이렇게 마치 &lt;code class=&quot;language-text&quot;&gt;자신이 클라이언트가 사용하려고 하는 실제 대상인 것처럼 위장해서 클라이언트의 요청을 받아주는 것&lt;/code&gt;을 대리자,대리인 과 같은 역할을 한다고 해서 &lt;strong&gt;프록시&lt;/strong&gt; 라고 부르며, 프록시를 통해 최종적으로 요청을 위임받아 처리하는 실제 오브젝트를 &lt;strong&gt;타깃&lt;/strong&gt; 이라고 부른다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;타깃과 동일한 인터페이스를 구현하고&lt;/li&gt;
+&lt;li&gt;클라이언트와 타깃 사이에 존재하면서&lt;/li&gt;
+&lt;li&gt;기능의 부가 또는 접근 제어를 담당하면 모두 &lt;strong&gt;프록시&lt;/strong&gt; 라고 볼 수 있다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이 &lt;strong&gt;프록시의 사용 목적에 따라 디자인 패턴에서는 다른 패턴으로 구분된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;데코레이터 패턴&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;타깃에 부가적인 기능을 런타임에 동적으로 부여하기 위해 프록시를 사용하는 패턴을 말한다.&lt;/strong&gt;&lt;br&gt;
+대표적으로 &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/%EA%B5%AC%EC%A1%B0_%EA%B4%80%EB%A0%A8.md#%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4&quot;&gt;자바 IO패키지의 InputStream 구현 클래스&lt;/a&gt;이다.&lt;/p&gt;
+&lt;p&gt;프록시로서 동작하는 각 데코레이터는 위임하는 대상에도 인터페이스로 접근하기 때문에 자신이 최종 타깃으로 위임하는지, 아니면 다음 단계의 데코레이터 프록시로 위임하는지 알지 못한다.&lt;br&gt;
+그래서 데코레이터의 다음 위임 대상은 인터페이스로 선언하고 생성자나 수정자 메소드를 통해 위임 대상을 외부에서 런타임 시에 주입받을 수 있도록 만들어야 한다.&lt;br&gt;
+프록시가 꼭 한 개로 제한되지 않으며, 여러 개의 프록시를 &lt;strong&gt;순서를 정해서 단계적으로 위임하는 구조로 만들어야 한다.&lt;/strong&gt;&lt;br&gt;
+데코레이터는 스스로 존재할 수 없고 항상 꾸며줄 대상이 있어야 하며 &lt;strong&gt;타겟에 대한 기능을 확장시키는 개념이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;위의 &lt;code class=&quot;language-text&quot;&gt;UserServiceTarget&lt;/code&gt;에 부가 기능을 제공하는 &lt;code class=&quot;language-text&quot;&gt;UserServiceProxy&lt;/code&gt;를 추가한 것도 데코레이터 패턴을 적용했다고 볼 수 있다.&lt;/p&gt;
+&lt;h3&gt;프록시 패턴&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;클라이언트와 타깃 사이에서 대리 역할을 맡는 오브젝트를 두는 방법을 총칭하는 것이다.&lt;/strong&gt;&lt;br&gt;
+디자인 패턴에서 말하는 프록시 패턴은 &lt;strong&gt;프록시를 사용하는 방법 중에 타깃에 대한 접근 방법을 제어하려는 목적을 가진 경우&lt;/strong&gt; 를 가리킨다.&lt;br&gt;
+즉, 프록시 패턴의 프록시는 타깃의 기능을 확장하거나 추가하지 않고 클라이언트가 타깃에 대한 접근 권한을 제어하거나 접근하는 방식을 변경해주는 것이다.&lt;/p&gt;
+&lt;p&gt;위에서 봤던 &lt;strong&gt;실제 타깃 오브젝트를 만드는 대신 프록시를 넘겨주는 것, 그리고 프록시의 메소드를 통해 타깃을 사용하려고 시도하면, 그떄 프록시가 타깃 오브젝트를 (생성하고) 요청을 위임해주는 식이다.&lt;/strong&gt;&lt;br&gt;
+대표적으로 &lt;code class=&quot;language-text&quot;&gt;Collections.unmodifiableCollection()&lt;/code&gt;을 통해 만들어지는 객체가 전형적인 접근 권한 제어용 프록시라고 볼 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public static &amp;lt;T&amp;gt; Collection&amp;lt;T&amp;gt; unmodifiableCollection(Collection&amp;lt;? extends T&amp;gt; c) {
+    if (c.getClass() == UnmodifiableCollection.class) {
+        return (Collection&amp;lt;T&amp;gt;) c;
+    }
+    return new UnmodifiableCollection&amp;lt;&amp;gt;(c);
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;이렇게 프록시 패턴은 타깃의 기능 자체에는 관여하지 않으면서 접근하는 방법을 제어해주는 프록시를 &lt;code class=&quot;language-text&quot;&gt;이용&lt;/code&gt;하는 것이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;위임을 통한 프록시를 생성하여 부가 기능과 핵심 기능을 분리했지만 프록시를 만드는 일은 번거롭고 타깃 인터페이스에 의존적이여서 타깃이 여러 개라면 인터페이스 API가 수정될 수 밖에 없을 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;java-dynamic-proxy&quot; style=&quot;position:relative;&quot;&gt;Java Dynamic Proxy&lt;a href=&quot;#java-dynamic-proxy&quot; aria-label=&quot;java dynamic proxy permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;일일이 프록시 클래스를 정의하는 것은 한계가 있다는 것을 알 수 있다.&lt;br&gt;
+이 한계를 &lt;strong&gt;프록시처럼 동작하는 오브젝트를 동적으로 생성하는 JDK의 다이내믹 프록시&lt;/strong&gt; 와 &lt;strong&gt;리플렉션&lt;/strong&gt; 으로 해결할 수 있다.&lt;/p&gt;
+&lt;p&gt;이 프록시는 두 가지 기능으로 구성된다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;타깃과 같은 메소드를 구현하고 있다가 메소드가 호출되면 타깃 오브젝트로 위임한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;지정된 요청에 대해서는 부가 기능을 수행한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;다이나믹 프록시를 이용해 프록시를 만들어보자.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Hello&lt;/code&gt; 인터페이스를 구현한 프록시를 만들어보자.&lt;br&gt;
+프록시에는 데코레이터 패턴을 적용해서 타깃인 &lt;code class=&quot;language-text&quot;&gt;HelloTarget&lt;/code&gt;에 부가 기능을 추가해보자.&lt;br&gt;
+리턴하는 문자를 모두 대문자로 바꾸는 부가 기능을 만들어보자.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;interface Hello {
+    fun sayHello(name: String): String
+    fun sayHi(name: String): String
+    fun sayThankYou(name: String): String
+}
+interface Goodbye {
+    fun sayGoodbye(name: String): String
+    fun sayThankYou(name: String): String
+}
+class HelloTarget: Hello {
+    override fun sayHello(name: String): String = &amp;quot;Hello $name&amp;quot;
+    override fun sayHi(name: String): String = &amp;quot;Hi $name&amp;quot;
+    override fun sayThankYou(name: String): String = &amp;quot;Hello Thank You $name&amp;quot;
+}
+
+class GoodbyeTarget: Goodbye {
+    override fun sayGoodbye(name: String): String = &amp;quot;Goodbye $name&amp;quot;
+    override fun sayThankYou(name: String): String = &amp;quot;Goodbye Thank You $name&amp;quot;
+}
+
+class UppercaseHandler(
+    helloTarget: Hello,
+    goodbyeTarget: Goodbye
+): InvocationHandler {
+
+    private val lookupTarget = mapOf(
+        Hello::class.java to helloTarget,
+        Goodbye::class.java to goodbyeTarget,
+    )
+    override fun invoke(proxy: Any, method: Method, args: Array&amp;lt;out Any&amp;gt;): Any {
+        val result: String = method.invoke(lookupTarget[method.declaringClass], *args) as String
+        return result.uppercase()
+    }
+}
+
+&amp;quot;Hello 동적 프록시 테스트하기&amp;quot; {
+    val proxy = Proxy.newProxyInstance(
+        javaClass.classLoader,
+        arrayOf(Hello::class.java, Goodbye::class.java),
+        UppercaseHandler(HelloTarget(), GoodbyeTarget())
+    )
+
+    (proxy is HelloTarget) shouldBe false
+    (proxy is GoodbyeTarget) shouldBe false
+    (proxy is Hello) shouldBe true
+    (proxy is Goodbye) shouldBe true
+
+    val hello = proxy as Hello
+    hello.sayHello(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;HELLO ADMIN&amp;quot;
+    hello.sayHi(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;HI ADMIN&amp;quot;
+    hello.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;HELLO THANK YOU ADMIN&amp;quot;
+
+    val goodbye = proxy as Goodbye
+    goodbye.sayGoodbye(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;GOODBYE ADMIN&amp;quot;
+    goodbye.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;HELLO THANK YOU ADMIN&amp;quot;
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Proxy.newProxyInstance()&lt;/code&gt;로 중요한 두 가지의 값을 전달해야 한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;를 구현한 부가 기능을 가진 &lt;strong&gt;프록시&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Hello&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Goodbye&lt;/code&gt;와 같은 &lt;strong&gt;인터페이스&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;런타임 중에 주어진 인터페이스들을 구현하는 프록시 인스턴스를 생성하며, 프록시 인스턴스는 하나의 &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt; 인스턴스와 연결된다.&lt;br&gt;
+프록시 인스턴스에 대한 모든 메소드 호출은 &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;invoke()&lt;/code&gt; 메소드로 호출되며, 여기서 타갯 메소드를 호출하기 전에 &lt;strong&gt;추가 기능을 가로채거나 추가할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;리플렉션 메소드인 invoke()를 이용해 타깃 오브젝트의 메소드를 호출할 때는 타깃 오브젝트에서 발생하는 예외가 &lt;code class=&quot;language-text&quot;&gt;InvocationTargetException&lt;/code&gt;으로 한 번 포장돼서 전달된다.&lt;br&gt;
+따라서 InvocationTargetException으로 받은 후 &lt;code class=&quot;language-text&quot;&gt;getTargetException()&lt;/code&gt; 메소드로 &lt;strong&gt;중첩되어 있는 예외를 가져와야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Method&lt;/code&gt;를 이용한 타깃의 오브젝트의 메소드 호출을 구분하거나 &lt;code class=&quot;language-text&quot;&gt;args&lt;/code&gt; 인자들의 정보를 확인하거나 조작할 수 있다.&lt;br&gt;
+리플렉션의 매우 유연하고 막강한 기능을 사용하여 동적 프록시를 조금 더 편하게 만들어보았다.&lt;br&gt;
+하지만 인터페이스 기반이라는 단점이 있다. 이 단점을 해결하는 CGLIB에 대해 알아보자.&lt;/p&gt;
+&lt;h1 id=&quot;cglibcode-generation-library&quot; style=&quot;position:relative;&quot;&gt;CGLIB(Code Generation Library)&lt;a href=&quot;#cglibcode-generation-library&quot; aria-label=&quot;cglibcode generation library permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;자바 클래스의 바이트코드를 런타임에 조작하여 새로운 클래스나 객체를 동적으로 생성하고 수정할 수 있는 강력한 라이브러리다.&lt;br&gt;
+이 라이브러리는 스프링 AOP 프레임워크, ORM 툴, 그리고 다양한 테스팅 라이브러리 등에서 널리 사용되고 있다.&lt;br&gt;
+&lt;strong&gt;클래스 기반으로 타겟 객체의 클래스를 상속 받아 새로운 서브 클래스로 프록시를 생성하는 방식이다.&lt;/strong&gt;&lt;br&gt;
+인터페이스가 없는 클래스에도 적용할 수 있기에 자바의 동적 프록시의 단점을 해결한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Person: Hello, Goodbye {
+    open fun greeting() = &amp;quot;안녕하세요!&amp;quot;
+    override fun sayHello(name: String): String = &amp;quot;Hello $name&amp;quot;
+    override fun sayHi(name: String): String = &amp;quot;Hi $name&amp;quot;
+    override fun sayThankYou(name: String): String = &amp;quot;Thank you $name&amp;quot;
+    override fun sayGoodbye(name: String): String = &amp;quot;Goodbye $name&amp;quot;
+}
+
+class MyMethodInterceptor: MethodInterceptor {
+    override fun intercept(proxy: Any, method: Method, args: Array&amp;lt;out Any&amp;gt;, methodProxy: MethodProxy): Any =
+        // 프록시의 슈퍼클래스의 타겟 메서드를 호출한다.
+        &amp;quot;(Intercepted) &amp;quot; + methodProxy.invokeSuper(proxy, args)
+}
+
+&amp;quot;Person 클래스 Cglib 테스트&amp;quot; {
+    val proxy = Enhancer.create(
+        Person::class.java,
+        MyMethodInterceptor()
+    )
+
+    (proxy is Hello) shouldBe true
+    (proxy is Goodbye) shouldBe true
+    (proxy is Person) shouldBe true
+
+    val person = proxy as Person
+    person.greeting() shouldBe &amp;quot;(Intercepted) 안녕하세요!&amp;quot;
+    person.sayHello(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted) Hello admin&amp;quot;
+    person.sayHi(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted) Hi admin&amp;quot;
+    person.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted) Thank you admin&amp;quot;
+    person.sayGoodbye(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted) Goodbye admin&amp;quot;
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;프록시 클래스는 구체적인 클래스와 인터페이스의 서브 클래스이므로, 모든 메서드를 가로챌 수 있다.&lt;br&gt;
+인터페이스를 구현하지 않는 클래스를 프록시하고 싶을 때 유용하다.&lt;br&gt;
+하지만 CGLIB을 통하여 프록시를 생성할 때 지켜야하는 규칙들이 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;클래스를 상속하고 메서드를 오버라이드 하기 때문에 클래스와 메서드가 final이 선언되어 있지 않아야 한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;기본 생성자가 꼭 있어야 한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;CGLIB은 자바 동적 프록시에 비해 추가적인 기능도 제공한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class MyFixedValue: FixedValue {
+    override fun loadObject(): Any = &amp;quot;Intercepted and always return \&amp;quot;Fixed\&amp;quot;&amp;quot;
+}
+
+class MyCallbackFilter : CallbackFilter {
+    override fun accept(method: Method): Int =
+        when(method.name) {
+            &amp;quot;greeting&amp;quot; -&amp;gt; 1 // FixedValue 콜백 사용
+            else -&amp;gt; 0       // MethodInterceptor 사용
+        }
+
+}
+&amp;quot;Person 클래스 Cglib Callback, FixedValue 테스트&amp;quot; {
+    val proxy = Enhancer.create(
+        Person::class.java,
+        arrayOf(Hello::class.java, Goodbye::class.java),
+        MyCallbackFilter(),
+        arrayOf&amp;lt;Callback&amp;gt;(MyMethodInterceptor(), MyFixedValue())
+    )
+
+    val person = proxy as Person
+    person.greeting() shouldBe &amp;quot;Intercepted and always return \&amp;quot;Fixed\&amp;quot;&amp;quot;
+    person.sayHello(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted) Hello admin&amp;quot;
+    person.sayHi(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted) Hi admin&amp;quot;
+    person.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted) Thank you admin&amp;quot;
+    person.sayGoodbye(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted) Goodbye admin&amp;quot;
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Enhancer.create()&lt;/code&gt;에서 전달하는 Callback 순서대로 (&lt;code class=&quot;language-text&quot;&gt;arrayOf&amp;lt;Callback&gt;(MyMethodInterceptor(), MyFixedValue())&lt;/code&gt;) &lt;code class=&quot;language-text&quot;&gt;CallbackFilter&lt;/code&gt;에서 어떤 콜백을 실행할지 지정할 수 있다.&lt;/p&gt;
+&lt;h1 id=&quot;proxyfactory&quot; style=&quot;position:relative;&quot;&gt;ProxyFactory&lt;a href=&quot;#proxyfactory&quot; aria-label=&quot;proxyfactory permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
 하지만 매번 제네릭에 대한 이해가 부족해 타입 검사기가 왜 거부하는지 이해하지 못하여 원하는대로 작성을 못한 경험이 있다.&lt;br&gt;
 그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
 &lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
