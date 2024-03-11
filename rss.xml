@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Mar 2024 16:35:46 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 11 Mar 2024 13:42:02 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -34,8 +34,8 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 8일부터 01월 18일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;처음엔 3,4주면 다 읽을 줄 알았는데 6주가 걸렸다. 너무 기대해서 그런지 지루한 느낌이 있었다.&lt;br&gt;
-이 책을 기술책이라고 단정짓기는 힘들고 &lt;strong&gt;개발자라는 직업의 장인 정신에 대한 이야기&lt;/strong&gt; 를 한다고 느꼈다.&lt;br&gt;
-누구나 문제와 해법에 접근하는 태도와 방식, 철학에 차이가 있는 &lt;strong&gt;실용주의 프로그래머&lt;/strong&gt; 가 될 수 있다고 설득한다.&lt;/p&gt;
+기술 책이라기 보다는 &lt;strong&gt;개발자라는 직업의 장인 정신에 대한 이야기&lt;/strong&gt; 를 한다고 느꼈다.&lt;br&gt;
+누구나 문제에 접근하는 태도와 방식, 철학에 차이가 있는 &lt;strong&gt;실용주의 프로그래머&lt;/strong&gt; 가 될 수 있다고 설득한다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;자신의 경력에 대한 책임을 지고, 자신의 무지나 실수를 주저없이 인정하며 정직하고 솔직해야 한다.&lt;/li&gt;
 &lt;li&gt;어설픈 변명 말고 대안을 제시하라.&lt;/li&gt;
@@ -239,7 +239,28 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;p&gt;생각하는 시간을 점진적으로 늘려가는 훈련과 천천히 생각하기 훈련을 통하여 몰입에 빠지거나 재몰입하기 쉽도록 해야한다.&lt;br&gt;
 저자는 &lt;code class=&quot;language-text&quot;&gt;&quot;해야 할 일을 즐기며 행복하게 사는 방법. 나는 그 해답을 &apos;몰입&apos;에서 찾았다.&quot;&lt;/code&gt; 라고 한다.&lt;br&gt;
 올해 연말회고에 몰입한 사례를 기록하기 위해 첫 번째 몰입 대상으로 OAuth 구현 프로젝트에 시도해보려고 한다.&lt;/p&gt;
-&lt;h1 id=&quot;도둑맞은-집중력-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;도둑맞은 집중력&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%8F%84%EB%91%91%EB%A7%9E%EC%9D%80-%EC%A7%91%EC%A4%91%EB%A0%A5-ing&quot; aria-label=&quot;도둑맞은 집중력 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;도둑맞은-집중력&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;도둑맞은 집중력&lt;/strong&gt;&lt;a href=&quot;#%EB%8F%84%EB%91%91%EB%A7%9E%EC%9D%80-%EC%A7%91%EC%A4%91%EB%A0%A5&quot; aria-label=&quot;도둑맞은 집중력 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;2월 28일부터 3월 8일까지&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;몰입을 읽은 후에 집중력에 대한 관심이 커져서 읽어보았다.&lt;br&gt;
+무엇인가에 깊게 집중하지 못하면 항상 &lt;code class=&quot;language-text&quot;&gt;&quot;왜 이렇게 집중이 안되지?&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;이 정도밖에 집중을 못하나?&quot;&lt;/code&gt; 라며 스스로를 탓했다.&lt;br&gt;
+하지만 이 책에서는 스스로의 문제가 아니라 &lt;strong&gt;주변 환경&lt;/strong&gt;, &lt;strong&gt;시스템&lt;/strong&gt; 에 대해 지적한다.&lt;/p&gt;
+&lt;p&gt;저자는 여러 심리학자, 연구원, 엔지니어 등과 나누었던 이야기들을 전달한다.&lt;/p&gt;
+&lt;p&gt;그 중 &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%82%A4%EB%84%88_%EC%83%81%EC%9E%90&quot;&gt;스키너 상자&lt;/a&gt;이야기가 인상 깊다.&lt;br&gt;
+비둘기를 새장에 넣어 특정 행동을 하면 먹이를 주어 비둘기의 움직임을 제어하는 것이다. 이 강화 훈련을 통해 보상만 제대로 하면 많은 동물들이 우리가 선택한 행동들을 수행한다는 것이다.&lt;br&gt;
+스키너는 이 원칙으로 인간의 행동들을 설명한다. 자신이 스스로 선택을 내린다고 확신하며 자유로운 존재라고 믿지만 다 환상이라고 주장한다. 우리의 집중력은 그동안 살면서 경험한 강화 훈련의 총합이라고 말이다.&lt;br&gt;
+인스타그램의 설계자들은 이 강화 훈련을 인스타그램의 &apos;하트&apos;와 &apos;좋아요&apos;를 통해 수십억 사용자에게 적용했다.&lt;/p&gt;
+&lt;p&gt;하지만 저자와 많은 미국 심리학자들은 이렇게 생각하지 않았다. 사람들의 집중력은 강화 훈련으로 생기는 것이 아니라 내면에 있는 &lt;strong&gt;몰입&lt;/strong&gt; 이라고 주장한다. (이전에 읽은 &quot;몰입&quot;의 내용과 비슷한 설명들을 한다.)&lt;br&gt;
+이 몰입에 쉽게 빠져들기 위한 집중력을 강화하기 위해 수면, 음식, 긴 텍스트를 읽는 능력 등의 중요성을 설명한다.&lt;/p&gt;
+&lt;p&gt;또한 저자가 강조하는 우리가 집중력이 떨어지는 이유 중 하나는 거대 테크 기업들의 비즈니스 모델 때문이라고 설명한다.&lt;br&gt;
+조금 더 서비스를 오래 사용하도록 자극적이고 비관적인 내용을 노출시켜 사용자들의 &lt;a href=&quot;https://brunch.co.kr/@brilife78/204&quot;&gt;부정성 편향&lt;/a&gt;을 자극한다며 기업의 사회적 책임에 대해 이야기 한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;나는 깊이 집중하는 능력이 식물과 같다고 생각한다. 우리의 집중력이 잘 자라서 잠재력을 온전히 피워내려면 특정 조건이 갖춰져야 한다.&quot;&lt;br&gt;
+&quot;몰입을 느끼고, 책을 읽고, 자신이 집중하고 싶은 유의미한 활동을 찾고, 자기 삶을 이해할 수 있도록 생각이 배회할 공간을 마련하고, 신체 활동을 하고, 잘 자고, 뇌가 건강하게 발달할 수 있도록 영양가 있는 음식을 먹고, 안정감을 느껴야 한다.&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;항상 집중력이 낮은 스스로를 탓했었는데 주변 환경과 시스템에 대해 생각해본 계기가 됐다. 전적으로 환경이나 시스템 탓을 할 순 없지만 생각의 전환을 할 수 있었던 계기가 되었던 것 같다.&lt;/p&gt;
+&lt;h1 id=&quot;개발자의-글쓰기-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자의 글쓰기&lt;/strong&gt; ~ing&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0-ing&quot; aria-label=&quot;개발자의 글쓰기 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;real-my-sql-1권-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt; ~ing&lt;a href=&quot;#real-my-sql-1%EA%B6%8C-ing&quot; aria-label=&quot;real my sql 1권 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;oauth2-인-액션-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;OAuth2 인 액션&lt;/strong&gt; ~ing&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-ing&quot; aria-label=&quot;oauth2 인 액션 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;자바-네트워크-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;자바 네트워크 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -250,7 +271,7 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;h1 id=&quot;이펙티브-코틀린-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 코틀린 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 자바 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt; 예정&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4-%EC%98%88%EC%A0%95&quot; aria-label=&quot;개발자를 위한 레디스 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[ProxyFactory를 이해해보자 (+ AOP)]]></title><description><![CDATA[자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다. 그렇기에 스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다. 스프링의 ProxyFactory와 AOP…]]></description><link>https://jdalma.github.io/2024y/proxyfactory/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/proxyfactory/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다.&lt;br&gt;
+&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[스프링의 ProxyFactory를 이해해보자]]></title><description><![CDATA[자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다. 그렇기에 스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다. 스프링의 ProxyFactory와 AOP…]]></description><link>https://jdalma.github.io/2024y/proxyfactory/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/proxyfactory/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다.&lt;br&gt;
 그렇기에 &lt;strong&gt;스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.&lt;/strong&gt;&lt;br&gt;
 스프링의 ProxyFactory와 AOP를 이해함을 목표로 차근차근 학습해보자.&lt;/p&gt;
 &lt;h1 id=&quot;java-reflection&quot; style=&quot;position:relative;&quot;&gt;Java Reflection&lt;a href=&quot;#java-reflection&quot; aria-label=&quot;java reflection permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -629,6 +650,7 @@ class MyCallbackFilter : CallbackFilter {
         }
 
 }
+
 &amp;quot;Person 클래스 Cglib Callback, FixedValue 테스트&amp;quot; {
     val proxy = Enhancer.create(
         Person::class.java,
@@ -646,7 +668,113 @@ class MyCallbackFilter : CallbackFilter {
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Enhancer.create()&lt;/code&gt;에서 전달하는 Callback 순서대로 (&lt;code class=&quot;language-text&quot;&gt;arrayOf&amp;lt;Callback&gt;(MyMethodInterceptor(), MyFixedValue())&lt;/code&gt;) &lt;code class=&quot;language-text&quot;&gt;CallbackFilter&lt;/code&gt;에서 어떤 콜백을 실행할지 지정할 수 있다.&lt;/p&gt;
-&lt;h1 id=&quot;proxyfactory&quot; style=&quot;position:relative;&quot;&gt;ProxyFactory&lt;a href=&quot;#proxyfactory&quot; aria-label=&quot;proxyfactory permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
+&lt;h1 id=&quot;proxyfactory&quot; style=&quot;position:relative;&quot;&gt;ProxyFactory&lt;a href=&quot;#proxyfactory&quot; aria-label=&quot;proxyfactory permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;스프링에서 제공하는 AOP 프록시용 팩토리는 인터페이스가 있을 때는 JDK 동적 프록시를 사용하고, 그렇지 않은 경우에는 CGLIB을 사용한다.&lt;br&gt;
+이제는 부가 기능을 적용할 때 &lt;code class=&quot;language-text&quot;&gt;Advice (부가 기능)&lt;/code&gt;만 지정해주면된다. &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;를 알 필요가 없다.&lt;br&gt;
+프록시 팩토리가 내부에서 JDK 동적 프록시일 경우 InvocationHandler가 Advice를 호출하도록 하고, CGLIB인 경우 MethodInterceptor가 Advice를 호출하도록 기능을 개발해두었기 때문이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;interface Hello {
+    fun sayHello(name: String): String
+    fun sayHi(name: String): String
+    fun sayThankYou(name: String): String
+}
+
+open class Person: Hello {
+    open fun greeting() = &amp;quot;안녕하세요!&amp;quot;
+    override fun sayHello(name: String): String = &amp;quot;Hello $name&amp;quot;
+    override fun sayHi(name: String): String = &amp;quot;Hi $name&amp;quot;
+    override fun sayThankYou(name: String): String = &amp;quot;Thank you $name&amp;quot;
+}
+
+open class ConcretePerson {
+    open fun greeting() = &amp;quot;Concrete 안녕하세요!&amp;quot;
+    open fun sayHello(name: String): String = &amp;quot;Concrete Hello $name&amp;quot;
+    open fun sayHi(name: String): String = &amp;quot;Concrete Hi $name&amp;quot;
+    fun sayThankYou(name: String): String = &amp;quot;Concrete Thank you $name&amp;quot;
+}
+
+class MyMethodInterceptor1: MethodInterceptor {
+    override fun invoke(invocation: MethodInvocation): String = &amp;quot;(Intercepted1)&amp;quot; + invocation.proceed()
+}
+
+class MyMethodInterceptor2: MethodInterceptor {
+    override fun invoke(invocation: MethodInvocation): String = &amp;quot;(Intercepted2)&amp;quot; + invocation.proceed()
+}
+
+&amp;quot;인터페이스가 있으면 JDK 동적 프록시 사용&amp;quot; {
+    val proxyFactory: ProxyFactory = ProxyFactory(Person())
+    proxyFactory.addAdvice(MyMethodInterceptor1())
+    proxyFactory.addAdvice(MyMethodInterceptor2())
+
+    shouldThrowExactly&amp;lt;ClassCastException&amp;gt; {  proxyFactory.proxy as Person }
+
+    val proxy = proxyFactory.proxy as Hello
+
+    proxy.javaClass.toString() shouldBe &amp;quot;class jdk.proxy2.\$Proxy7&amp;quot;
+
+    proxy.sayHello(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Hello admin&amp;quot;
+    proxy.sayHi(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Hi admin&amp;quot;
+    proxy.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Thank you admin&amp;quot;
+}
+
+&amp;quot;구체 클래스만 있으면 CGLIB 사용&amp;quot; {
+    val proxyFactory: ProxyFactory = ProxyFactory(ConcretePerson())
+    proxyFactory.addAdvice(MyMethodInterceptor1())
+    proxyFactory.addAdvice(MyMethodInterceptor2())
+
+    val proxy = proxyFactory.proxy as ConcretePerson
+
+    proxy.javaClass.toString() shouldBe &amp;quot;class ConcretePerson$\$SpringCGLIB$$0&amp;quot;
+
+    proxy.greeting() shouldBe &amp;quot;(Intercepted1)(Intercepted2)Concrete 안녕하세요!&amp;quot;
+    proxy.sayHello(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Concrete Hello admin&amp;quot;
+    proxy.sayHi(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Concrete Hi admin&amp;quot;
+    // open 되지 않은 메서드는 프록시가 실행되지 않는다.
+    proxy.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;Concrete Thank you admin&amp;quot;
+}
+
+&amp;quot;인터페이스가 있어도 클래스 기반 CGLIB 프록시 사용&amp;quot; {
+    val proxyFactory: ProxyFactory = ProxyFactory(Person())
+    proxyFactory.isProxyTargetClass = true
+    proxyFactory.addAdvice(MyMethodInterceptor1())
+    proxyFactory.addAdvice(MyMethodInterceptor2())
+
+    val proxy = proxyFactory.proxy as Person
+
+    proxy.javaClass.toString() shouldBe &amp;quot;class Person$\$SpringCGLIB$$0&amp;quot;
+
+    proxy.greeting() shouldBe &amp;quot;(Intercepted1)(Intercepted2)안녕하세요!&amp;quot;
+    proxy.sayHello(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Hello admin&amp;quot;
+    proxy.sayHi(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Hi admin&amp;quot;
+    proxy.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Thank you admin&amp;quot;
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- JDK 동적 프록시를 사용하는 경우
+invoke:36, MyMethodInterceptor1
+invoke:35, MyMethodInterceptor1
+proceed:184, ReflectiveMethodInvocation (org.springframework.aop.framework)
+invoke:220, JdkDynamicAopProxy (org.springframework.aop.framework)
+sayHello:-1, $Proxy7 (jdk.proxy2)
+
+-- CGLIB을 사용하는 경우
+invoke:36, MyMethodInterceptor1
+invoke:35, MyMethodInterceptor1
+proceed:184, ReflectiveMethodInvocation (org.springframework.aop.framework)
+proceed:765, CglibAopProxy$CglibMethodInvocation (org.springframework.aop.framework)
+intercept:717, CglibAopProxy$DynamicAdvisedInterceptor (org.springframework.aop.framework)
+greeting:-1, Person$$SpringCGLIB$$0&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@FunctionalInterface
+public interface MethodInterceptor extends Interceptor {
+	@Nullable
+	Object invoke(@Nonnull MethodInvocation invocation) throws Throwable;
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;invoke()&lt;/code&gt;의 파라미터인 &lt;code class=&quot;language-text&quot;&gt;MethodInvocation&lt;/code&gt; 내부에는 &lt;strong&gt;다음 메서드를 호출하는 방법&lt;/strong&gt;, &lt;strong&gt;현재 프록시 객체 인스턴스&lt;/strong&gt;, &lt;strong&gt;args&lt;/strong&gt;, &lt;strong&gt;메서드 정보&lt;/strong&gt;등이 포함되어 있다.&lt;br&gt;
+Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 다르게 프록시 내부에서 Target을 신경쓰지 않아도 된다.&lt;/p&gt;
+&lt;p&gt;스프링 부트는 AOP를 적용할 때 기본적으로 &lt;code class=&quot;language-text&quot;&gt;proxyTargetClass=true&lt;/code&gt;로 설정해서 사용하기 때문에 &lt;strong&gt;인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
 하지만 매번 제네릭에 대한 이해가 부족해 타입 검사기가 왜 거부하는지 이해하지 못하여 원하는대로 작성을 못한 경험이 있다.&lt;br&gt;
 그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
 &lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
