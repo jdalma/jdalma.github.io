@@ -1,9 +1,10 @@
 ---
-title: ProxyFactory를 이해해보자 (+ AOP)
+title: 스프링의 ProxyFactory를 이해해보자
 date: "2024-03-11"
 tags:
    - spring
-   - aop
+   - reflection
+   - proxy
 ---
 
 자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다.  
@@ -367,6 +368,7 @@ class MyCallbackFilter : CallbackFilter {
         }
 
 }
+
 "Person 클래스 Cglib Callback, FixedValue 테스트" {
     val proxy = Enhancer.create(
         Person::class.java,
@@ -387,3 +389,115 @@ class MyCallbackFilter : CallbackFilter {
 `Enhancer.create()`에서 전달하는 Callback 순서대로 (`arrayOf<Callback>(MyMethodInterceptor(), MyFixedValue())`) `CallbackFilter`에서 어떤 콜백을 실행할지 지정할 수 있다.  
 
 # ProxyFactory
+
+스프링에서 제공하는 AOP 프록시용 팩토리는 인터페이스가 있을 때는 JDK 동적 프록시를 사용하고, 그렇지 않은 경우에는 CGLIB을 사용한다.  
+이제는 부가 기능을 적용할 때 `Advice (부가 기능)`만 지정해주면된다. `InvocationHandler`나 `MethodInterceptor`를 알 필요가 없다.  
+프록시 팩토리가 내부에서 JDK 동적 프록시일 경우 InvocationHandler가 Advice를 호출하도록 하고, CGLIB인 경우 MethodInterceptor가 Advice를 호출하도록 기능을 개발해두었기 때문이다.
+
+```kotlin
+interface Hello {
+    fun sayHello(name: String): String
+    fun sayHi(name: String): String
+    fun sayThankYou(name: String): String
+}
+
+open class Person: Hello {
+    open fun greeting() = "안녕하세요!"
+    override fun sayHello(name: String): String = "Hello $name"
+    override fun sayHi(name: String): String = "Hi $name"
+    override fun sayThankYou(name: String): String = "Thank you $name"
+}
+
+open class ConcretePerson {
+    open fun greeting() = "Concrete 안녕하세요!"
+    open fun sayHello(name: String): String = "Concrete Hello $name"
+    open fun sayHi(name: String): String = "Concrete Hi $name"
+    fun sayThankYou(name: String): String = "Concrete Thank you $name"
+}
+
+class MyMethodInterceptor1: MethodInterceptor {
+    override fun invoke(invocation: MethodInvocation): String = "(Intercepted1)" + invocation.proceed()
+}
+
+class MyMethodInterceptor2: MethodInterceptor {
+    override fun invoke(invocation: MethodInvocation): String = "(Intercepted2)" + invocation.proceed()
+}
+
+"인터페이스가 있으면 JDK 동적 프록시 사용" {
+    val proxyFactory: ProxyFactory = ProxyFactory(Person())
+    proxyFactory.addAdvice(MyMethodInterceptor1())
+    proxyFactory.addAdvice(MyMethodInterceptor2())
+
+    shouldThrowExactly<ClassCastException> {  proxyFactory.proxy as Person }
+
+    val proxy = proxyFactory.proxy as Hello
+
+    proxy.javaClass.toString() shouldBe "class jdk.proxy2.\$Proxy7"
+
+    proxy.sayHello("admin") shouldBe "(Intercepted1)(Intercepted2)Hello admin"
+    proxy.sayHi("admin") shouldBe "(Intercepted1)(Intercepted2)Hi admin"
+    proxy.sayThankYou("admin") shouldBe "(Intercepted1)(Intercepted2)Thank you admin"
+}
+
+"구체 클래스만 있으면 CGLIB 사용" {
+    val proxyFactory: ProxyFactory = ProxyFactory(ConcretePerson())
+    proxyFactory.addAdvice(MyMethodInterceptor1())
+    proxyFactory.addAdvice(MyMethodInterceptor2())
+
+    val proxy = proxyFactory.proxy as ConcretePerson
+
+    proxy.javaClass.toString() shouldBe "class ConcretePerson$\$SpringCGLIB$$0"
+
+    proxy.greeting() shouldBe "(Intercepted1)(Intercepted2)Concrete 안녕하세요!"
+    proxy.sayHello("admin") shouldBe "(Intercepted1)(Intercepted2)Concrete Hello admin"
+    proxy.sayHi("admin") shouldBe "(Intercepted1)(Intercepted2)Concrete Hi admin"
+    // open 되지 않은 메서드는 프록시가 실행되지 않는다.
+    proxy.sayThankYou("admin") shouldBe "Concrete Thank you admin"
+}
+
+"인터페이스가 있어도 클래스 기반 CGLIB 프록시 사용" {
+    val proxyFactory: ProxyFactory = ProxyFactory(Person())
+    proxyFactory.isProxyTargetClass = true
+    proxyFactory.addAdvice(MyMethodInterceptor1())
+    proxyFactory.addAdvice(MyMethodInterceptor2())
+
+    val proxy = proxyFactory.proxy as Person
+
+    proxy.javaClass.toString() shouldBe "class Person$\$SpringCGLIB$$0"
+
+    proxy.greeting() shouldBe "(Intercepted1)(Intercepted2)안녕하세요!"
+    proxy.sayHello("admin") shouldBe "(Intercepted1)(Intercepted2)Hello admin"
+    proxy.sayHi("admin") shouldBe "(Intercepted1)(Intercepted2)Hi admin"
+    proxy.sayThankYou("admin") shouldBe "(Intercepted1)(Intercepted2)Thank you admin"
+}
+```
+
+```
+-- JDK 동적 프록시를 사용하는 경우
+invoke:36, MyMethodInterceptor1
+invoke:35, MyMethodInterceptor1
+proceed:184, ReflectiveMethodInvocation (org.springframework.aop.framework)
+invoke:220, JdkDynamicAopProxy (org.springframework.aop.framework)
+sayHello:-1, $Proxy7 (jdk.proxy2)
+
+-- CGLIB을 사용하는 경우
+invoke:36, MyMethodInterceptor1
+invoke:35, MyMethodInterceptor1
+proceed:184, ReflectiveMethodInvocation (org.springframework.aop.framework)
+proceed:765, CglibAopProxy$CglibMethodInvocation (org.springframework.aop.framework)
+intercept:717, CglibAopProxy$DynamicAdvisedInterceptor (org.springframework.aop.framework)
+greeting:-1, Person$$SpringCGLIB$$0
+```
+
+```java
+@FunctionalInterface
+public interface MethodInterceptor extends Interceptor {
+	@Nullable
+	Object invoke(@Nonnull MethodInvocation invocation) throws Throwable;
+}
+```
+
+`invoke()`의 파라미터인 `MethodInvocation` 내부에는 **다음 메서드를 호출하는 방법**, **현재 프록시 객체 인스턴스**, **args**, **메서드 정보**등이 포함되어 있다.  
+Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 다르게 프록시 내부에서 Target을 신경쓰지 않아도 된다.  
+  
+스프링 부트는 AOP를 적용할 때 기본적으로 `proxyTargetClass=true`로 설정해서 사용하기 때문에 **인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.**  
