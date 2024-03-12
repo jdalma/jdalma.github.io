@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 11 Mar 2024 13:42:02 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 12 Mar 2024 13:39:40 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -338,8 +338,10 @@ describe(&amp;quot;Person 클래스&amp;quot;) {
 
     it(&amp;quot;Constructor를 통해 Person 만들기&amp;quot;) {
         val constructors: Array&amp;lt;Constructor&amp;lt;Person&amp;gt;&amp;gt;  = personClass.constructors as Array&amp;lt;Constructor&amp;lt;Person&amp;gt;&amp;gt;
-        constructors[0].toString() shouldBe &amp;quot;public _22_Reflection.ReflectionTest\$1\$Person(java.lang.String,int)&amp;quot;
-        constructors[1].toString() shouldBe &amp;quot;public _22_Reflection.ReflectionTest\$1\$Person(int) throws java.lang.IllegalArgumentException&amp;quot;
+        constructors[0].toString() shouldBe 
+            &amp;quot;public _22_Reflection.ReflectionTest\$1\$Person(java.lang.String,int)&amp;quot;
+        constructors[1].toString() shouldBe 
+            &amp;quot;public _22_Reflection.ReflectionTest\$1\$Person(int) throws java.lang.IllegalArgumentException&amp;quot;
         
         val nameAndAgeConstructor = constructors[0]
         val ageConstructor = constructors[1]
@@ -350,9 +352,12 @@ describe(&amp;quot;Person 클래스&amp;quot;) {
 
     it(&amp;quot;Field로 객체 내부 멤버변수 조회하기&amp;quot;) {
         val fields: Array&amp;lt;Field&amp;gt; = personClass.declaredFields
-        fields[0].toString() shouldBe &amp;quot;private final java.lang.String _22_Reflection.ReflectionTest$1\$Person.name&amp;quot;
-        fields[1].toString() shouldBe &amp;quot;private int _22_Reflection.ReflectionTest$1\$Person.age&amp;quot;
-        fields[2].toString() shouldBe &amp;quot;private final _22_Reflection.ReflectionTest$1\$Address _22_Reflection.ReflectionTest$1\$Person.address&amp;quot;
+        fields[0].toString() shouldBe 
+            &amp;quot;private final java.lang.String _22_Reflection.ReflectionTest$1\$Person.name&amp;quot;
+        fields[1].toString() shouldBe 
+            &amp;quot;private int _22_Reflection.ReflectionTest$1\$Person.age&amp;quot;
+        fields[2].toString() shouldBe 
+            &amp;quot;private final _22_Reflection.ReflectionTest$1\$Address _22_Reflection.ReflectionTest$1\$Person.address&amp;quot;
 
         val person = Person(100)
 
@@ -694,11 +699,13 @@ open class ConcretePerson {
 }
 
 class MyMethodInterceptor1: MethodInterceptor {
-    override fun invoke(invocation: MethodInvocation): String = &amp;quot;(Intercepted1)&amp;quot; + invocation.proceed()
+    override fun invoke(invocation: MethodInvocation): String = 
+        &amp;quot;(Intercepted1)&amp;quot; + invocation.proceed()
 }
 
 class MyMethodInterceptor2: MethodInterceptor {
-    override fun invoke(invocation: MethodInvocation): String = &amp;quot;(Intercepted2)&amp;quot; + invocation.proceed()
+    override fun invoke(invocation: MethodInvocation): String = 
+        &amp;quot;(Intercepted2)&amp;quot; + invocation.proceed()
 }
 
 &amp;quot;인터페이스가 있으면 JDK 동적 프록시 사용&amp;quot; {
@@ -706,7 +713,7 @@ class MyMethodInterceptor2: MethodInterceptor {
     proxyFactory.addAdvice(MyMethodInterceptor1())
     proxyFactory.addAdvice(MyMethodInterceptor2())
 
-    shouldThrowExactly&amp;lt;ClassCastException&amp;gt; {  proxyFactory.proxy as Person }
+    shouldThrowExactly&amp;lt;ClassCastException&amp;gt; { proxyFactory.proxy as Person }
 
     val proxy = proxyFactory.proxy as Hello
 
@@ -774,7 +781,51 @@ public interface MethodInterceptor extends Interceptor {
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;invoke()&lt;/code&gt;의 파라미터인 &lt;code class=&quot;language-text&quot;&gt;MethodInvocation&lt;/code&gt; 내부에는 &lt;strong&gt;다음 메서드를 호출하는 방법&lt;/strong&gt;, &lt;strong&gt;현재 프록시 객체 인스턴스&lt;/strong&gt;, &lt;strong&gt;args&lt;/strong&gt;, &lt;strong&gt;메서드 정보&lt;/strong&gt;등이 포함되어 있다.&lt;br&gt;
 Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 다르게 프록시 내부에서 Target을 신경쓰지 않아도 된다.&lt;/p&gt;
-&lt;p&gt;스프링 부트는 AOP를 적용할 때 기본적으로 &lt;code class=&quot;language-text&quot;&gt;proxyTargetClass=true&lt;/code&gt;로 설정해서 사용하기 때문에 &lt;strong&gt;인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
+&lt;p&gt;스프링 부트는 AOP를 적용할 때 기본적으로 &lt;code class=&quot;language-text&quot;&gt;proxyTargetClass=true&lt;/code&gt;로 설정해서 사용하기 때문에 &lt;strong&gt;인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;proxyfactorybean&quot; style=&quot;position:relative;&quot;&gt;ProxyFactoryBean&lt;a href=&quot;#proxyfactorybean&quot; aria-label=&quot;proxyfactorybean permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;ProxyFactory를 사용해여 프로그래밍 방식으로 프록시를 직접 생성해보았다. 스프링에서는 이 프록시를 빈으로 등록해주는 (&lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt;을 구현하는) &lt;code class=&quot;language-text&quot;&gt;ProxyFactoryBean&lt;/code&gt; 구현체가 존재한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;FactoryBean&lt;/strong&gt; &lt;a href=&quot;https://github.com/jdalma/tobyspringin5/commit/9238c441028b72d26be669418ef0785beec80c8d&quot;&gt;학습 테스트&lt;/a&gt;&lt;br&gt;
+스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이다.&lt;br&gt;
+&lt;strong&gt;스프링은 &lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt; 인터페이스를 구현한 클래스가 Bean의 클래스로 지정되면 &lt;code class=&quot;language-text&quot;&gt;getObject()&lt;/code&gt;를 통해 오브젝트를 가져오고, 이를 빈 오브젝트로 사용한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;복잡한 초기화가 필요한 빈을 생성 시&lt;/li&gt;
+&lt;li&gt;AOP 프록시와 같이 런타임에 생성되는 프록시 객체를 스프링 빈으로 등록할 때&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이런 경우 유용하게 사용할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2b0581d4a2f9eefae78781e53b037914/b1001/proxyFactory.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABy0lEQVR42k1S23aiQBDkNzYyDAx4ZSBG8ALqBhBcz5oE3BP3Zf//O2q7B415KLqprimmm7ZcV8EPxoiTDRbLFOtNjtVqTTHDar0hZJjONKTrwfX8b1DEPXKOkrwsfgzHGnnxG1Vd4e3tHd31Hz7aC9q2w/l8xssigUM6VwUPsMG3nKOkaHHCYuFICKkwsAX8KIdwA9jE2Y7bm7GBgbpF3/B37p5bLOSWGSoYQvkB/NEMnk95MDJfVpSbd3/0pfNIx5xHdS+4adlQkWB7aFGfGrQfHbruDy6XBz4/rxQviHSMdLdEdapuugvV/uJKONGYymODgEypZR+TWYRpGCGMnhGGGsnru/lJOp4jmieInhcIxiFG0xmmWmNG2pdVgsUmIX2MUEfkoU03FvctpAtbOBgIiSdbwhnGsN2hgVBjOIra8SeUT6ju4GnQa21P4sdAmDkL6Zk5WjzQ0UQjzStsd1tUVYOyOqAsS0IFHWnoeYb1do+iZL5HUVQ41A3q+og0XZqVud2Q1yZEmhXIt5kRmgNsStBRTIYbrHc/sdvviasN/1qUxrA5/kJChs7DsF9IR/bXHgjXtHAHCx1aajMWw8mvdeK2GXzuvkb/AbN5MFOXrCaCAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;proxyFactory&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2b0581d4a2f9eefae78781e53b037914/1cfc2/proxyFactory.png&quot;
+        srcset=&quot;/static/2b0581d4a2f9eefae78781e53b037914/3684f/proxyFactory.png 225w,
+/static/2b0581d4a2f9eefae78781e53b037914/fc2a6/proxyFactory.png 450w,
+/static/2b0581d4a2f9eefae78781e53b037914/1cfc2/proxyFactory.png 900w,
+/static/2b0581d4a2f9eefae78781e53b037914/21482/proxyFactory.png 1350w,
+/static/2b0581d4a2f9eefae78781e53b037914/b1001/proxyFactory.png 1380w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
 하지만 매번 제네릭에 대한 이해가 부족해 타입 검사기가 왜 거부하는지 이해하지 못하여 원하는대로 작성을 못한 경험이 있다.&lt;br&gt;
 그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
 &lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
@@ -5898,12 +5949,41 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;grpc-통신-종류&quot; style=&quot;position:relative;&quot;&gt;gRPC 통신 종류&lt;a href=&quot;#grpc-%ED%86%B5%EC%8B%A0-%EC%A2%85%EB%A5%98&quot; aria-label=&quot;grpc 통신 종류 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jdalma/armeria-grpc-kotlin/blob/master/src/test/java/com/example/armeriaserver/grpc/SampleServiceTest.java#L58&quot;&gt;테스트 코드&lt;/a&gt;에서 확인할 수 있다.&lt;br&gt;
+또는 &lt;a href=&quot;https://grpc.io/docs/languages/java/basics/&quot;&gt;공식 문서 Basics Tutorial&lt;/a&gt;에서도 확인 가능하다.&lt;/p&gt;
+&lt;p&gt;protocol buffer는 이진 부호화 라이브러리이며 부호화할 데이터를 위한 스키마를 &lt;code class=&quot;language-text&quot;&gt;proto&lt;/code&gt;언어를 통해 아래와 같이 메세지를 정의하고 protocol buffer compiler를 통해 원하는 언어로 &lt;a href=&quot;https://protobuf.dev/programming-guides/proto3/#generated&quot;&gt;generate&lt;/a&gt; 할 수 있다.&lt;br&gt;
+생성된 코드를 호출해 부호화하고 복호화할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;proto&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;syntax = &amp;quot;proto3&amp;quot;;
+
+package grpc.hello;
+
+option java_multiple_files = true;
+option java_package = &amp;quot;stub.hello&amp;quot;;
+
+message HelloRequest {
+  string message = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+service HelloService {
+  rpc SimpleRPC (HelloRequest) returns (HelloResponse) {}
+  rpc ClientSideStreaming (stream HelloRequest) returns (HelloResponse) {}
+  rpc ServerSideStreaming (HelloRequest) returns (stream HelloResponse) {}
+  rpc BidirectionalStreaming (stream HelloRequest) returns (stream HelloResponse) {}
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;HelloService&lt;/code&gt;의 내용과 같이 이 메시지를 통하여 어떤 통신을 사용할 것인지 정의할 수 있다.&lt;br&gt;
+각 통신 방법마다 지원하는 요청-응답 방식이 다르다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Async는 비동기-논블로킹 통신, Future는 동기-논블로킹 통신&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;UnaryCall&lt;/strong&gt; 단일 요청, 단일 응답&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Simple&lt;/strong&gt; : 단일 요청, 단일 응답&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Future Stub&lt;/li&gt;
 &lt;li&gt;Blocking Stub&lt;/li&gt;
@@ -5911,7 +5991,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;ServerStream&lt;/strong&gt; 서버 → 클라이언트 스트림 통신&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ServerSideStreaming&lt;/strong&gt; : 서버 → 클라이언트 스트림 통신&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;not support&lt;/code&gt; Future Stub&lt;/li&gt;
 &lt;li&gt;Blocking Stub&lt;/li&gt;
@@ -5919,7 +5999,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;ClientStream&lt;/strong&gt; 클라이언트 → 서버 스트림 통신&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ClientSideStreaming&lt;/strong&gt; : 클라이언트 → 서버 스트림 통신&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;not support&lt;/code&gt; Future Stub&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;not support&lt;/code&gt; Blocking Stub&lt;/li&gt;
@@ -5927,7 +6007,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;BiStream&lt;/strong&gt; 양방향 스트림 통신&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BidirectionalStreaming&lt;/strong&gt; : 양방향 스트림 통신&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;not support&lt;/code&gt; Future Stub&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;not support&lt;/code&gt; Blocking Stub&lt;/li&gt;
@@ -6053,6 +6133,44 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 63.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeElEQVR42nVSy2oUQRTtj3MnSkSJuHAn+AE+l4ILMREj6MalEgyCEOLCBwTduBAEH5CoSZxEyTg909PPqn7Uo7uPp2okKsSGy7l1u+rUOfdW8OnLFna297D9dQ97YYjz0X3Mh0s4O72HU9ktzJWLOCGJYgFzkrlYJC7gpLiN0+kS5rMlnMnu4Fh6E0/Ktwjer67h89pzfHn6AtvPXmJ94zVWd95hef0Vrn14jAubD3FlcxmXth7h8scHuEi8urGCc4O7OFrcwPGEF2WLOJJcx4p8g6CuahhGb1q0WYao2EdkY4RVxMgwFSkmjMjleUzMEYkMo3KCQRtioEPsmhDfzAhZKxFAKcBawBhiCwgBE6YoEw0jFIqpu9CgiCoo6dYl6kKhThlx48/o3KCZ1IA2CKJhjjxTsLrDOKxQ5xW6pkGtLGTVoKw0qkb7ddsBynTQtvOo6Mp91tWVoUsS6togSWkjmkJQQVdTMQn7vvebteZldNBSSdu26BhFkWM0GqEspa/5/1TnXAbJVCIcsz9xhvFEQgtKV47Q83GPmRErKq1ot24gpcR4PGZes07rFGB/ty4oSailpk2DMm1gMvkPodbaq1DKofVqXJRlhSROPPmBQkuF/mTXo+/YCLjcNUQfWHYKXe6i4z9L664mhMRwOERDlS2ba3nGK8Rh31+EM4Ude8gh0JahEkfsaoIvIo5j9lSgO1B4KKH6o1DPyHu6QD9z0rpnxqUk4e7uAGmawrKPfiiH8fVUqDT71CgflmQNn4jDms9DcjDKvT+q7niJq7uh/ZewmRbIfiSoJjkSoooLj3XE+n7KeoHiZ8ZIAU6+igTy7zH6usEviGfRJsFy3hEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;armeriaThread&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/1cfc2/armeriaThread.png&quot;
+        srcset=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/3684f/armeriaThread.png 225w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/fc2a6/armeriaThread.png 450w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/1cfc2/armeriaThread.png 900w,
+/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png 1161w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Event Loop가 처리하는 기준&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만&lt;/li&gt;
+&lt;li&gt;11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc7540#section-6.8&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;GOAWAY&lt;/code&gt; 프레임&lt;/a&gt;을 통해 서로 데이터를 다 보냈다는 확인을 한다.&lt;/li&gt;
+&lt;li&gt;마지막 &lt;strong&gt;RST flag&lt;/strong&gt;를 보내면서 서버에서 Socket이 닫히고 TCP 커넥션을 끊는다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/0000c7780b5d9a5ecc10f5a4a85f67c7/4ef3c/packet.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
@@ -6086,54 +6204,13 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 &lt;li&gt;&lt;strong&gt;HEADERS 프레임&lt;/strong&gt; 으로 HTTP/2 요청을 전송하고 &lt;strong&gt;DATA 프레임&lt;/strong&gt; 으로 응답을 받는다.&lt;/li&gt;
 &lt;li&gt;응답이 처리되고 클라이언트가 더 이상의 데이터를 기다리지 않으면 클라이언트는 &lt;strong&gt;GOAWAY 프레임&lt;/strong&gt; 을 보내 연결을 종료한다.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 63.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeElEQVR42nVSy2oUQRTtj3MnSkSJuHAn+AE+l4ILMREj6MalEgyCEOLCBwTduBAEH5CoSZxEyTg909PPqn7Uo7uPp2okKsSGy7l1u+rUOfdW8OnLFna297D9dQ97YYjz0X3Mh0s4O72HU9ktzJWLOCGJYgFzkrlYJC7gpLiN0+kS5rMlnMnu4Fh6E0/Ktwjer67h89pzfHn6AtvPXmJ94zVWd95hef0Vrn14jAubD3FlcxmXth7h8scHuEi8urGCc4O7OFrcwPGEF2WLOJJcx4p8g6CuahhGb1q0WYao2EdkY4RVxMgwFSkmjMjleUzMEYkMo3KCQRtioEPsmhDfzAhZKxFAKcBawBhiCwgBE6YoEw0jFIqpu9CgiCoo6dYl6kKhThlx48/o3KCZ1IA2CKJhjjxTsLrDOKxQ5xW6pkGtLGTVoKw0qkb7ddsBynTQtvOo6Mp91tWVoUsS6togSWkjmkJQQVdTMQn7vvebteZldNBSSdu26BhFkWM0GqEspa/5/1TnXAbJVCIcsz9xhvFEQgtKV47Q83GPmRErKq1ot24gpcR4PGZes07rFGB/ty4oSailpk2DMm1gMvkPodbaq1DKofVqXJRlhSROPPmBQkuF/mTXo+/YCLjcNUQfWHYKXe6i4z9L664mhMRwOERDlS2ba3nGK8Rh31+EM4Ude8gh0JahEkfsaoIvIo5j9lSgO1B4KKH6o1DPyHu6QD9z0rpnxqUk4e7uAGmawrKPfiiH8fVUqDT71CgflmQNn4jDms9DcjDKvT+q7niJq7uh/ZewmRbIfiSoJjkSoooLj3XE+n7KeoHiZ8ZIAU6+igTy7zH6usEviGfRJsFy3hEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;armeriaThread&quot;
-        title=&quot;&quot;
-        src=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/1cfc2/armeriaThread.png&quot;
-        srcset=&quot;/static/ee84d55503ee3e11c8d3623ef8b53226/3684f/armeriaThread.png 225w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/fc2a6/armeriaThread.png 450w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/1cfc2/armeriaThread.png 900w,
-/static/ee84d55503ee3e11c8d3623ef8b53226/129e9/armeriaThread.png 1161w&quot;
-        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Event Loop가 처리하는 기준&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;한 호스트의 동일한 Port에서 10초 간격으로 요청을 보내면 한 개의 Armeria Server Thread로 처리하지만&lt;/li&gt;
-&lt;li&gt;11초 간격으로 보내면 클라이언트의 Port가 바뀌면서 각기 다른 Armeria Server Thread가 처리한다&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc7540#section-6.8&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;GOAWAY&lt;/code&gt; 프레임&lt;/a&gt;을 통해 서로 데이터를 다 보냈다는 확인을 한다.&lt;/li&gt;
-&lt;li&gt;마지막 &lt;strong&gt;RST flag&lt;/strong&gt;를 보내면서 서버에서 Socket이 닫히고 TCP 커넥션을 끊는다.&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h1 id=&quot;소감과-무지-목록&quot; style=&quot;position:relative;&quot;&gt;소감과 무지 목록&lt;a href=&quot;#%EC%86%8C%EA%B0%90%EA%B3%BC-%EB%AC%B4%EC%A7%80-%EB%AA%A9%EB%A1%9D&quot; aria-label=&quot;소감과 무지 목록 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;proto를 작성해서 generate된 stub들을 이용하여 client ↔︎ server 스트림 통신을 테스트해보는 간단한 테스트 코드를 작성해보았다.&lt;br&gt;
 그리고 새로운 서비스를 개발할 때 다른 팀원들이 템플릿처럼 사용할 수 있도록 회사 레포에 등록해두었다.&lt;br&gt;
-기존 서비스들에 적용하기에는 큰 도전일 것으로 예상된다.&lt;br&gt;
+이벤트 루프를 블로킹하지 않는 주변 인프라가 더 많이 필요하며, 클라이언트와 서버 둘 다 수정이 필요하여 기존 서비스들에 적용하기에는 큰 도전일 것으로 예상된다.&lt;br&gt;
 이 기술들을 한 번에 적용하기 보다는 &lt;a href=&quot;https://spring.io/blog/2015/03/22/using-google-protocol-buffers-with-spring-mvc-based-rest-services&quot;&gt;JSON을 proto로 바꿔보는 단계&lt;/a&gt;를 밟는것도 좋을 것 같다.&lt;/p&gt;
-&lt;p&gt;해당 프로젝트에는 처음 접하는 기술적인 키워드들이 많이 포함되어 있었고, 네트워크 지식이 부족하다고 느꼈다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;추가적으로 정리한 내용은 &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/Armeria_gRPC.md&quot;&gt;Armeria와 gRPC 정리&lt;/a&gt;에서 볼 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;무지 목록&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;해당 프로젝트에는 처음 접하는 기술적인 키워드들이 많이 포함되어 있었고, 네트워크 지식이 부족하다고 느꼈다.&lt;br&gt;
+&lt;strong&gt;무지 목록&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Netty에 대한 이해&lt;/li&gt;
 &lt;li&gt;TCP 소켓 프로그래밍에 대한 이해&lt;/li&gt;

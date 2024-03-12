@@ -135,8 +135,10 @@ describe(&quot;Person 클래스&quot;) {
 
     it(&quot;Constructor를 통해 Person 만들기&quot;) {
         val constructors: Array&lt;Constructor&lt;Person&gt;&gt;  = personClass.constructors as Array&lt;Constructor&lt;Person&gt;&gt;
-        constructors[0].toString() shouldBe &quot;public _22_Reflection.ReflectionTest\$1\$Person(java.lang.String,int)&quot;
-        constructors[1].toString() shouldBe &quot;public _22_Reflection.ReflectionTest\$1\$Person(int) throws java.lang.IllegalArgumentException&quot;
+        constructors[0].toString() shouldBe 
+            &quot;public _22_Reflection.ReflectionTest\$1\$Person(java.lang.String,int)&quot;
+        constructors[1].toString() shouldBe 
+            &quot;public _22_Reflection.ReflectionTest\$1\$Person(int) throws java.lang.IllegalArgumentException&quot;
         
         val nameAndAgeConstructor = constructors[0]
         val ageConstructor = constructors[1]
@@ -147,9 +149,12 @@ describe(&quot;Person 클래스&quot;) {
 
     it(&quot;Field로 객체 내부 멤버변수 조회하기&quot;) {
         val fields: Array&lt;Field&gt; = personClass.declaredFields
-        fields[0].toString() shouldBe &quot;private final java.lang.String _22_Reflection.ReflectionTest$1\$Person.name&quot;
-        fields[1].toString() shouldBe &quot;private int _22_Reflection.ReflectionTest$1\$Person.age&quot;
-        fields[2].toString() shouldBe &quot;private final _22_Reflection.ReflectionTest$1\$Address _22_Reflection.ReflectionTest$1\$Person.address&quot;
+        fields[0].toString() shouldBe 
+            &quot;private final java.lang.String _22_Reflection.ReflectionTest$1\$Person.name&quot;
+        fields[1].toString() shouldBe 
+            &quot;private int _22_Reflection.ReflectionTest$1\$Person.age&quot;
+        fields[2].toString() shouldBe 
+            &quot;private final _22_Reflection.ReflectionTest$1\$Address _22_Reflection.ReflectionTest$1\$Person.address&quot;
 
         val person = Person(100)
 
@@ -491,11 +496,13 @@ open class ConcretePerson {
 }
 
 class MyMethodInterceptor1: MethodInterceptor {
-    override fun invoke(invocation: MethodInvocation): String = &quot;(Intercepted1)&quot; + invocation.proceed()
+    override fun invoke(invocation: MethodInvocation): String = 
+        &quot;(Intercepted1)&quot; + invocation.proceed()
 }
 
 class MyMethodInterceptor2: MethodInterceptor {
-    override fun invoke(invocation: MethodInvocation): String = &quot;(Intercepted2)&quot; + invocation.proceed()
+    override fun invoke(invocation: MethodInvocation): String = 
+        &quot;(Intercepted2)&quot; + invocation.proceed()
 }
 
 &quot;인터페이스가 있으면 JDK 동적 프록시 사용&quot; {
@@ -503,7 +510,7 @@ class MyMethodInterceptor2: MethodInterceptor {
     proxyFactory.addAdvice(MyMethodInterceptor1())
     proxyFactory.addAdvice(MyMethodInterceptor2())
 
-    shouldThrowExactly&lt;ClassCastException&gt; {  proxyFactory.proxy as Person }
+    shouldThrowExactly&lt;ClassCastException&gt; { proxyFactory.proxy as Person }
 
     val proxy = proxyFactory.proxy as Hello
 
@@ -571,12 +578,57 @@ public interface MethodInterceptor extends Interceptor {
         </deckgo-highlight-code>
 <p><code class="language-text">invoke()</code>의 파라미터인 <code class="language-text">MethodInvocation</code> 내부에는 <strong>다음 메서드를 호출하는 방법</strong>, <strong>현재 프록시 객체 인스턴스</strong>, <strong>args</strong>, <strong>메서드 정보</strong>등이 포함되어 있다.<br>
 Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 다르게 프록시 내부에서 Target을 신경쓰지 않아도 된다.</p>
-<p>스프링 부트는 AOP를 적용할 때 기본적으로 <code class="language-text">proxyTargetClass=true</code>로 설정해서 사용하기 때문에 <strong>인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.</strong></p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2024y/generic/">← <!-- -->제네릭 가변성에 대해</a></li><li><a rel="next" href="/2024y/bookReview/bookReview/">2024년 책,강의 서평<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-beySPh kUHXGZ"><ul>
+<p>스프링 부트는 AOP를 적용할 때 기본적으로 <code class="language-text">proxyTargetClass=true</code>로 설정해서 사용하기 때문에 <strong>인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.</strong></p>
+<h1 id="proxyfactorybean" style="position:relative;">ProxyFactoryBean<a href="#proxyfactorybean" aria-label="proxyfactorybean permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<p>ProxyFactory를 사용해여 프로그래밍 방식으로 프록시를 직접 생성해보았다. 스프링에서는 이 프록시를 빈으로 등록해주는 (<code class="language-text">FactoryBean</code>을 구현하는) <code class="language-text">ProxyFactoryBean</code> 구현체가 존재한다.</p>
+<blockquote>
+<p><strong>FactoryBean</strong> <a href="https://github.com/jdalma/tobyspringin5/commit/9238c441028b72d26be669418ef0785beec80c8d">학습 테스트</a><br>
+스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이다.<br>
+<strong>스프링은 <code class="language-text">FactoryBean</code> 인터페이스를 구현한 클래스가 Bean의 클래스로 지정되면 <code class="language-text">getObject()</code>를 통해 오브젝트를 가져오고, 이를 빈 오브젝트로 사용한다.</strong></p>
+<ul>
+<li>복잡한 초기화가 필요한 빈을 생성 시</li>
+<li>AOP 프록시와 같이 런타임에 생성되는 프록시 객체를 스프링 빈으로 등록할 때</li>
+</ul>
+<p>이런 경우 유용하게 사용할 수 있다.</p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2b0581d4a2f9eefae78781e53b037914/b1001/proxyFactory.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABy0lEQVR42k1S23aiQBDkNzYyDAx4ZSBG8ALqBhBcz5oE3BP3Zf//O2q7B415KLqprimmm7ZcV8EPxoiTDRbLFOtNjtVqTTHDar0hZJjONKTrwfX8b1DEPXKOkrwsfgzHGnnxG1Vd4e3tHd31Hz7aC9q2w/l8xssigUM6VwUPsMG3nKOkaHHCYuFICKkwsAX8KIdwA9jE2Y7bm7GBgbpF3/B37p5bLOSWGSoYQvkB/NEMnk95MDJfVpSbd3/0pfNIx5xHdS+4adlQkWB7aFGfGrQfHbruDy6XBz4/rxQviHSMdLdEdapuugvV/uJKONGYymODgEypZR+TWYRpGCGMnhGGGsnru/lJOp4jmieInhcIxiFG0xmmWmNG2pdVgsUmIX2MUEfkoU03FvctpAtbOBgIiSdbwhnGsN2hgVBjOIra8SeUT6ju4GnQa21P4sdAmDkL6Zk5WjzQ0UQjzStsd1tUVYOyOqAsS0IFHWnoeYb1do+iZL5HUVQ41A3q+og0XZqVud2Q1yZEmhXIt5kRmgNsStBRTIYbrHc/sdvviasN/1qUxrA5/kJChs7DsF9IR/bXHgjXtHAHCx1aajMWw8mvdeK2GXzuvkb/AbN5MFOXrCaCAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="proxyFactory"
+        title=""
+        src="/static/2b0581d4a2f9eefae78781e53b037914/1cfc2/proxyFactory.png"
+        srcset="/static/2b0581d4a2f9eefae78781e53b037914/3684f/proxyFactory.png 225w,
+/static/2b0581d4a2f9eefae78781e53b037914/fc2a6/proxyFactory.png 450w,
+/static/2b0581d4a2f9eefae78781e53b037914/1cfc2/proxyFactory.png 900w,
+/static/2b0581d4a2f9eefae78781e53b037914/21482/proxyFactory.png 1350w,
+/static/2b0581d4a2f9eefae78781e53b037914/b1001/proxyFactory.png 1380w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2024y/generic/">← <!-- -->제네릭 가변성에 대해</a></li><li><a rel="next" href="/2024y/bookReview/bookReview/">2024년 책,강의 서평<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-beySPh kUHXGZ"><ul>
 <li><a href="#java-reflection">Java Reflection</a></li>
 <li><a href="#proxy%EB%9E%80">Proxy란?</a></li>
 <li><a href="#java-dynamic-proxy">Java Dynamic Proxy</a></li>
 <li><a href="#cglibcode-generation-library">CGLIB(Code Generation Library)</a></li>
 <li><a href="#proxyfactory">ProxyFactory</a></li>
+<li><a href="#proxyfactorybean">ProxyFactoryBean</a></li>
 </ul></div></div><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2024<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024y/proxyfactory/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
