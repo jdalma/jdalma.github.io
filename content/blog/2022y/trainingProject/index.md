@@ -8,6 +8,7 @@ tags:
 ---
 
 기존에 존재하던 REST API를 그대로 유지하면서 gRPC 통신을 같이 사용할 수 있을지 확인하고, Stream 통신을 테스트해보는 것이다.  
+
 - REST API와 RPC 통신을 한 포트로 처리할 수 있는 Armeria를 사용한다.
 - protocol buffer를 통해 기존 JSON보다 데이터 사이즈를 줄일 수 있을 것이다.
   
@@ -71,24 +72,57 @@ Netty의 `EventLoop`가 client로부터 오는 모든 요청을 다 받는다.
 
 # gRPC 통신 종류
 
+[테스트 코드](https://github.com/jdalma/armeria-grpc-kotlin/blob/master/src/test/java/com/example/armeriaserver/grpc/SampleServiceTest.java#L58)에서 확인할 수 있다.  
+또는 [공식 문서 Basics Tutorial](https://grpc.io/docs/languages/java/basics/)에서도 확인 가능하다.  
+  
+protocol buffer는 이진 부호화 라이브러리이며 부호화할 데이터를 위한 스키마를 `proto`언어를 통해 아래와 같이 메세지를 정의하고 protocol buffer compiler를 통해 원하는 언어로 [generate](https://protobuf.dev/programming-guides/proto3/#generated) 할 수 있다.  
+생성된 코드를 호출해 부호화하고 복호화할 수 있다.  
+
+```proto
+syntax = "proto3";
+
+package grpc.hello;
+
+option java_multiple_files = true;
+option java_package = "stub.hello";
+
+message HelloRequest {
+  string message = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+service HelloService {
+  rpc SimpleRPC (HelloRequest) returns (HelloResponse) {}
+  rpc ClientSideStreaming (stream HelloRequest) returns (HelloResponse) {}
+  rpc ServerSideStreaming (HelloRequest) returns (stream HelloResponse) {}
+  rpc BidirectionalStreaming (stream HelloRequest) returns (stream HelloResponse) {}
+}
+```
+
+`HelloService`의 내용과 같이 이 메시지를 통하여 어떤 통신을 사용할 것인지 정의할 수 있다.  
+각 통신 방법마다 지원하는 요청-응답 방식이 다르다.  
+
 > Async는 비동기-논블로킹 통신, Future는 동기-논블로킹 통신
 
-- **UnaryCall** 단일 요청, 단일 응답 
+- **Simple** : 단일 요청, 단일 응답 
   - Future Stub
   - Blocking Stub
   - 기본(Async) Stub
 
-- **ServerStream** 서버 → 클라이언트 스트림 통신
+- **ServerSideStreaming** : 서버 → 클라이언트 스트림 통신
   - `not support` Future Stub 
   - Blocking Stub
   - 기본(Async) Stub
 
-- **ClientStream** 클라이언트 → 서버 스트림 통신
+- **ClientSideStreaming** : 클라이언트 → 서버 스트림 통신
   - `not support` Future Stub
   - `not support` Blocking Stub
   - 기본(Async) Stub
 
-- **BiStream** 양방향 스트림 통신
+- **BidirectionalStreaming** : 양방향 스트림 통신
   - `not support` Future Stub
   - `not support` Blocking Stub
   - 기본(Async) Stub
@@ -111,13 +145,6 @@ EventLoop는 단일 스레드로 요청과 응답을 처리하므로 해당 스�
 
 ![](blockingTaskExecutor.png)
 
-![](packet.png)
-
-1. **SETTINGS 프레임** 을 통해 초기 흐름 제어 창 크기와 최대 동시 스트림 수를 전송한다.
-2. **WINDOW_UPDATE 프레임** 을 통해 수신자를 압도하지 않도록 전송하는 데이터의 양을 조절하기 위해 창 크기를 업데이트한다.
-3. **HEADERS 프레임** 으로 HTTP/2 요청을 전송하고 **DATA 프레임** 으로 응답을 받는다.
-4. 응답이 처리되고 클라이언트가 더 이상의 데이터를 기다리지 않으면 클라이언트는 **GOAWAY 프레임** 을 보내 연결을 종료한다.
-  
 ![](armeriaThread.png)
 
 **Event Loop가 처리하는 기준**
@@ -126,17 +153,22 @@ EventLoop는 단일 스레드로 요청과 응답을 처리하므로 해당 스�
 - [`GOAWAY` 프레임](https://datatracker.ietf.org/doc/html/rfc7540#section-6.8)을 통해 서로 데이터를 다 보냈다는 확인을 한다.
 - 마지막 **RST flag**를 보내면서 서버에서 Socket이 닫히고 TCP 커넥션을 끊는다.
 
+![](packet.png)
+
+1. **SETTINGS 프레임** 을 통해 초기 흐름 제어 창 크기와 최대 동시 스트림 수를 전송한다.
+2. **WINDOW_UPDATE 프레임** 을 통해 수신자를 압도하지 않도록 전송하는 데이터의 양을 조절하기 위해 창 크기를 업데이트한다.
+3. **HEADERS 프레임** 으로 HTTP/2 요청을 전송하고 **DATA 프레임** 으로 응답을 받는다.
+4. 응답이 처리되고 클라이언트가 더 이상의 데이터를 기다리지 않으면 클라이언트는 **GOAWAY 프레임** 을 보내 연결을 종료한다.
+  
 # 소감과 무지 목록
   
 proto를 작성해서 generate된 stub들을 이용하여 client ↔︎ server 스트림 통신을 테스트해보는 간단한 테스트 코드를 작성해보았다.  
 그리고 새로운 서비스를 개발할 때 다른 팀원들이 템플릿처럼 사용할 수 있도록 회사 레포에 등록해두었다.  
-기존 서비스들에 적용하기에는 큰 도전일 것으로 예상된다.  
+이벤트 루프를 블로킹하지 않는 주변 인프라가 더 많이 필요하며, 클라이언트와 서버 둘 다 수정이 필요하여 기존 서비스들에 적용하기에는 큰 도전일 것으로 예상된다.  
 이 기술들을 한 번에 적용하기 보다는 [JSON을 proto로 바꿔보는 단계](https://spring.io/blog/2015/03/22/using-google-protocol-buffers-with-spring-mvc-based-rest-services)를 밟는것도 좋을 것 같다.    
   
 해당 프로젝트에는 처음 접하는 기술적인 키워드들이 많이 포함되어 있었고, 네트워크 지식이 부족하다고 느꼈다.  
-- 추가적으로 정리한 내용은 [Armeria와 gRPC 정리](https://github.com/jdalma/footprints/blob/main/%EC%A0%95%EB%A6%AC/Armeria_gRPC.md)에서 볼 수 있다.
-  
-**무지 목록**    
+**무지 목록**  
 1. Netty에 대한 이해
 2. TCP 소켓 프로그래밍에 대한 이해
 3. HTTP/2에 대한 이해
