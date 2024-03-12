@@ -56,8 +56,10 @@ describe("Person 클래스") {
 
     it("Constructor를 통해 Person 만들기") {
         val constructors: Array<Constructor<Person>>  = personClass.constructors as Array<Constructor<Person>>
-        constructors[0].toString() shouldBe "public _22_Reflection.ReflectionTest\$1\$Person(java.lang.String,int)"
-        constructors[1].toString() shouldBe "public _22_Reflection.ReflectionTest\$1\$Person(int) throws java.lang.IllegalArgumentException"
+        constructors[0].toString() shouldBe 
+            "public _22_Reflection.ReflectionTest\$1\$Person(java.lang.String,int)"
+        constructors[1].toString() shouldBe 
+            "public _22_Reflection.ReflectionTest\$1\$Person(int) throws java.lang.IllegalArgumentException"
         
         val nameAndAgeConstructor = constructors[0]
         val ageConstructor = constructors[1]
@@ -68,9 +70,12 @@ describe("Person 클래스") {
 
     it("Field로 객체 내부 멤버변수 조회하기") {
         val fields: Array<Field> = personClass.declaredFields
-        fields[0].toString() shouldBe "private final java.lang.String _22_Reflection.ReflectionTest$1\$Person.name"
-        fields[1].toString() shouldBe "private int _22_Reflection.ReflectionTest$1\$Person.age"
-        fields[2].toString() shouldBe "private final _22_Reflection.ReflectionTest$1\$Address _22_Reflection.ReflectionTest$1\$Person.address"
+        fields[0].toString() shouldBe 
+            "private final java.lang.String _22_Reflection.ReflectionTest$1\$Person.name"
+        fields[1].toString() shouldBe 
+            "private int _22_Reflection.ReflectionTest$1\$Person.age"
+        fields[2].toString() shouldBe 
+            "private final _22_Reflection.ReflectionTest$1\$Address _22_Reflection.ReflectionTest$1\$Person.address"
 
         val person = Person(100)
 
@@ -416,11 +421,13 @@ open class ConcretePerson {
 }
 
 class MyMethodInterceptor1: MethodInterceptor {
-    override fun invoke(invocation: MethodInvocation): String = "(Intercepted1)" + invocation.proceed()
+    override fun invoke(invocation: MethodInvocation): String = 
+        "(Intercepted1)" + invocation.proceed()
 }
 
 class MyMethodInterceptor2: MethodInterceptor {
-    override fun invoke(invocation: MethodInvocation): String = "(Intercepted2)" + invocation.proceed()
+    override fun invoke(invocation: MethodInvocation): String = 
+        "(Intercepted2)" + invocation.proceed()
 }
 
 "인터페이스가 있으면 JDK 동적 프록시 사용" {
@@ -428,7 +435,7 @@ class MyMethodInterceptor2: MethodInterceptor {
     proxyFactory.addAdvice(MyMethodInterceptor1())
     proxyFactory.addAdvice(MyMethodInterceptor2())
 
-    shouldThrowExactly<ClassCastException> {  proxyFactory.proxy as Person }
+    shouldThrowExactly<ClassCastException> { proxyFactory.proxy as Person }
 
     val proxy = proxyFactory.proxy as Hello
 
@@ -501,3 +508,19 @@ public interface MethodInterceptor extends Interceptor {
 Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 다르게 프록시 내부에서 Target을 신경쓰지 않아도 된다.  
   
 스프링 부트는 AOP를 적용할 때 기본적으로 `proxyTargetClass=true`로 설정해서 사용하기 때문에 **인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.**  
+  
+
+# ProxyFactoryBean
+
+ProxyFactory를 사용해여 프로그래밍 방식으로 프록시를 직접 생성해보았다. 스프링에서는 이 프록시를 빈으로 등록해주는 (`FactoryBean`을 구현하는) `ProxyFactoryBean` 구현체가 존재한다.  
+
+> **FactoryBean** [학습 테스트](https://github.com/jdalma/tobyspringin5/commit/9238c441028b72d26be669418ef0785beec80c8d)  
+> 스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이다.  
+> **스프링은 `FactoryBean` 인터페이스를 구현한 클래스가 Bean의 클래스로 지정되면 `getObject()`를 통해 오브젝트를 가져오고, 이를 빈 오브젝트로 사용한다.**  
+> - 복잡한 초기화가 필요한 빈을 생성 시
+> - AOP 프록시와 같이 런타임에 생성되는 프록시 객체를 스프링 빈으로 등록할 때  
+> 
+> 이런 경우 유용하게 사용할 수 있다.  
+
+
+![](./proxyFactory.png)
