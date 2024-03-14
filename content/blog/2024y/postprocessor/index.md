@@ -1,5 +1,5 @@
 ---
-title: 스프링의 ProxyFactory를 이해해보자
+title: 스프링의 빈 후처리기에 대해
 date: "2024-03-11"
 tags:
    - spring
@@ -7,11 +7,20 @@ tags:
    - proxy
 ---
 
-자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다.  
-그렇기에 **스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.**  
-스프링의 ProxyFactory와 AOP를 이해함을 목표로 차근차근 학습해보자.  
+스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 조금 필요하다.  
 
-# Java Reflection
+1. Reflection
+2. Java Dynamic Proxy
+3. CGLIB
+4. ProxyFactory
+5. FactoryBean
+6. ProxyFactoryBean
+
+**스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.**  
+이 글에서는 스프링 AOP를 사용하는 법, 포인트 컷, 어드바이스를 자세하게 설명하진 않는다.  
+스프링의 빈 후처리기를 통해 프록시가 어떻게 자동으로 생성되는지를 중점으로 다룬다. 단계별로 알아보자.
+
+# 1단계: Java Reflection
 
 자바의 리플렉션(Reflection)은 런타임 시에 클래스의 속성, 메소드, 생성자 등의 메타데이터를 조회하거나 수정할 수 있는 강력한 기능이다.  
 또한, **리플렉션을 사용하여 런타임 시에 동적으로 객체를 생성하고, 가시성에 관계없이 메소드를 호출하거나, 필드에 접근할 수 있다.**  
@@ -118,7 +127,7 @@ describe("Person 클래스") {
 이 강력한 기능을 통해 자바에서는 **[Dynamic Proxy Class API](https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html)** 를 제공한다.  
 다이나믹 프록시에 대해 확인하기 전에 먼저 프록시에 대해 알아보자.  
 
-# Proxy란?
+# 2단계: Proxy란?
 
 단순히 확장성을 고려해서 한 가지 기능을 분리한다면 아래와 같이 전형적인 전략 패턴(`condition: (Member) -> Boolean`)을 사용할 수 있을 것이다.  
 
@@ -220,7 +229,9 @@ public static <T> Collection<T> unmodifiableCollection(Collection<? extends T> c
   
 > 위임을 통한 프록시를 생성하여 부가 기능과 핵심 기능을 분리했지만 프록시를 만드는 일은 번거롭고 타깃 인터페이스에 의존적이여서 타깃이 여러 개라면 인터페이스 API가 수정될 수 밖에 없을 것이다.  
 
-# Java Dynamic Proxy
+# 3단계: Proxy 생성 방법
+
+## Java Dynamic Proxy
 
 일일이 프록시 클래스를 정의하는 것은 한계가 있다는 것을 알 수 있다.  
 이 한계를 **프록시처럼 동작하는 오브젝트를 동적으로 생성하는 JDK의 다이내믹 프록시** 와 **리플렉션** 으로 해결할 수 있다.  
@@ -310,7 +321,7 @@ class UppercaseHandler(
 리플렉션의 매우 유연하고 막강한 기능을 사용하여 동적 프록시를 조금 더 편하게 만들어보았다.  
 하지만 인터페이스 기반이라는 단점이 있다. 이 단점을 해결하는 CGLIB에 대해 알아보자.  
 
-# CGLIB(Code Generation Library)
+## CGLIB(Code Generation Library)
 
 자바 클래스의 바이트코드를 런타임에 조작하여 새로운 클래스나 객체를 동적으로 생성하고 수정할 수 있는 강력한 라이브러리다.  
 이 라이브러리는 스프링 AOP 프레임워크, ORM 툴, 그리고 다양한 테스팅 라이브러리 등에서 널리 사용되고 있다.  
@@ -393,7 +404,7 @@ class MyCallbackFilter : CallbackFilter {
 
 `Enhancer.create()`에서 전달하는 Callback 순서대로 (`arrayOf<Callback>(MyMethodInterceptor(), MyFixedValue())`) `CallbackFilter`에서 어떤 콜백을 실행할지 지정할 수 있다.  
 
-# 프록시의 구현체 생성 방법을 선택하는 ProxyFactory
+# 4단계: 프록시의 구현체 생성 방법을 선택하는 ProxyFactory
 
 스프링에서 제공하는 AOP 프록시용 팩토리는 인터페이스가 있을 때는 JDK 동적 프록시를 사용하고, 그렇지 않은 경우에는 CGLIB을 사용한다.  
 이제는 부가 기능을 적용할 때 `Advice (부가 기능)`만 지정해주면된다. `InvocationHandler`나 `MethodInterceptor`를 알 필요가 없다.  
@@ -509,7 +520,7 @@ Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 
   
 스프링 부트는 AOP를 적용할 때 기본적으로 `proxyTargetClass=true`로 설정해서 사용하기 때문에 **인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.**  
   
-# FactoryBean
+# 5단계: FactoryBean
 
 스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이.  
 생성할 프록시가 다른 빈을 주입 받을 필요가 있거나 스프링의 기능을 사용해야 한다면 스프링 빈으로 등록해야 할 필요가 있다.  
@@ -648,7 +659,7 @@ class FactoryBeanTest(
 `say`로 시작하는 메서드의 반환값에 `(Commit)` 문자열을 추가하여 반환하는 부가 기능을 `TransactionMethodInterceptor`로 정의하여 빈을 등록할 때 `PersonFactoryBean`을 통해 프록시로 감싼 빈을 등록하였다.  
 
 
-# ProxyFactoryBean
+# 6단계: ProxyFactoryBean
 
 ProxyFactory를 사용하여 프로그래밍 방식으로 프록시를 직접 생성해보았다. 스프링에서는 이 프록시를 빈으로 등록해주는 (`FactoryBean`을 구현하는) `ProxyFactoryBean` 구현체가 존재한다.  
 
