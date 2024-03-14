@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 12 Mar 2024 13:39:40 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 14 Mar 2024 13:49:39 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -260,7 +260,63 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &quot;몰입을 느끼고, 책을 읽고, 자신이 집중하고 싶은 유의미한 활동을 찾고, 자기 삶을 이해할 수 있도록 생각이 배회할 공간을 마련하고, 신체 활동을 하고, 잘 자고, 뇌가 건강하게 발달할 수 있도록 영양가 있는 음식을 먹고, 안정감을 느껴야 한다.&quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;항상 집중력이 낮은 스스로를 탓했었는데 주변 환경과 시스템에 대해 생각해본 계기가 됐다. 전적으로 환경이나 시스템 탓을 할 순 없지만 생각의 전환을 할 수 있었던 계기가 되었던 것 같다.&lt;/p&gt;
-&lt;h1 id=&quot;개발자의-글쓰기-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자의 글쓰기&lt;/strong&gt; ~ing&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0-ing&quot; aria-label=&quot;개발자의 글쓰기 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;개발자의-글쓰기&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자의 글쓰기&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;개발자의 글쓰기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;3월 9일부터 3월 13일까지&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;책이 얇고 글씨도 커서 금방 읽은 것 같다. 글을 쓸때 꼭 포함시켜야지 하는 중요한 내용들을 위주로 쓰다보면 문맥 연결이 잘 되지않을 때가 있어 글쓰기 책을 한번 읽어보고 싶어 이 책을 읽어보았다.&lt;/p&gt;
+&lt;h4&gt;서술식, 개조식, 도식의 차이&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;서술식&lt;/strong&gt; : &lt;code class=&quot;language-text&quot;&gt;~다.&lt;/code&gt;로 끝나는 완전한 문장으로 구성된 글을 말하며, 무엇을 설명하거나 논증할 때 주로 사용하는 방식이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;개조식&lt;/strong&gt; : 어떤 사항을 나열할 때 사용하며 종결 어미 대신 명사나 용언의 명사형(&lt;code class=&quot;language-text&quot;&gt;~했음&lt;/code&gt;)으로 끝내는 것이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;도식&lt;/strong&gt; : 사물의 구조나 관계, 상태를 그림이나 서식으로 보여주는 것이다.&lt;/li&gt;
+&lt;li&gt;줄거리가 있는 설명이나 이야기라면 &lt;strong&gt;서술식&lt;/strong&gt; , 여러 가지 종류의 항목과 내용이 반복되거나 서술식에서 강조가 필요한 내용이라면 &lt;strong&gt;개조식&lt;/strong&gt; , 각 항목이나 사항의 관계를 명확히 규정하고 싶다면 &lt;strong&gt;도식&lt;/strong&gt; 이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;내가 작성하려하는 글의 특징을 잘 이해하여 선택하여야 한다.&lt;/p&gt;
+&lt;h4&gt;네이밍 컨벤션&lt;/h4&gt;
+&lt;p&gt;이 네이밍 컨벤션은 항상 같은 조직 구성원들의 노력이 동반되어야 한다고 생각한다. 사내에는 네이밍 컨벤션이 따로 없지만 이 책의 내용이 좋은 가이드가 되어준 것 같다.&lt;br&gt;
+&lt;strong&gt;반대되는 단어를 선택할 때 일관성과 개연성이 있어야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;이상, 초과, 이하, 미만&lt;/strong&gt; : and over, over, or under, under&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;중단에 대한 단어 선택&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;잠시 중단하고 재시작 가능할 때는 &lt;code class=&quot;language-text&quot;&gt;stop&lt;/code&gt;, 완전히 중단되어 재시작 가능성이 없을 때 &lt;code class=&quot;language-text&quot;&gt;end&lt;/code&gt;, 끝장을 봐서 재시작을 고려할 필요도 없을 때 &lt;code class=&quot;language-text&quot;&gt;finish&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;다음 단계의 시작을 중단했을 때 &lt;code class=&quot;language-text&quot;&gt;suspend&lt;/code&gt;, 중단한 어떤 의도가 있을 때 &lt;code class=&quot;language-text&quot;&gt;hold&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;어떤 값을 가져올 때&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;어떤 값을 돌려받아서 반환하는 함수일 때 &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt;, 검색해서 가져온다는 의미인 &lt;code class=&quot;language-text&quot;&gt;retrieve&lt;/code&gt;, 다른 것을 가져가지 못하게 독점하고자 할 때는 &lt;code class=&quot;language-text&quot;&gt;acquire&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;현재 값을 가리키는 포인터가 다음 값으로 이동한 것을 가져올 때는 &lt;code class=&quot;language-text&quot;&gt;fetch&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;어떤 값을 만들거나 수정할 때&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;어떤 값을 정해진 틀에 넣을 때 &lt;code class=&quot;language-text&quot;&gt;set&lt;/code&gt;, 정해진 틀이 없으므로 먼저 틀을 만들때는 &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;내용을 단순히 바꾸는 &lt;code class=&quot;language-text&quot;&gt;change&lt;/code&gt;, 잘못된 것을 바로잡을 때 &lt;code class=&quot;language-text&quot;&gt;modify&lt;/code&gt;, 기존 내용과 달라졌음을 분명히할 때 &lt;code class=&quot;language-text&quot;&gt;revise&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;코드를 보는 개발자 사이에 일관적이고 개연적인 합의만 되어 있다면 어떻게 쓰든 상관없다.
+&lt;a href=&quot;https://brunch.co.kr/@goodvc78/12#comments&quot;&gt;오픈소스의 네이밍 특징들&lt;/a&gt;을 읽어보는 것도 추천한다.&lt;/p&gt;
+&lt;h4&gt;기술 블로그의 4종류&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;저&lt;/strong&gt; : 직접 경험하고 실험한 과정이나 결과&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;술&lt;/strong&gt; : 어떤 것을 분석하여 의미를 풀이하고 해석한 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;편&lt;/strong&gt; : 산만하고 복잡한 자료를 편집해 질서를 부여한 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;집&lt;/strong&gt; : 여러 사람의 견해나 흩어진 자료를 한데 정리한 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 책에서 더 좋은 많은 내용들을 서술한다.&lt;br&gt;
+느끼기로는 글쓰기 가장 중요한점은 내가 쓸 글의 특징과 이 글을 읽을 독자의 관심이 무엇인지, 비즈니스 관점의 글쓰기가 필요하진 않은지 잘 판단하여야 한다는 것이다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;이 글을 왜 쓰는지?&lt;/li&gt;
+&lt;li&gt;이 글을 읽는 독자는 누구인지?&lt;/li&gt;
+&lt;li&gt;이 글을 읽는 독자에게 무엇을 말하려고 하는지?&lt;/li&gt;
+&lt;li&gt;이 글이 주장하는 바가 무엇인지?&lt;/li&gt;
+&lt;li&gt;이 글이 주장하는 바의 근거가 분명한지?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;내가 문제 해결을 진행하면서 만난 모든 문제를 순차적으로 서술하기 보다는 문제 해결의 핵심 내용들을 정리하여 간결하게 써봐야겠다.&lt;/p&gt;
+&lt;h1 id=&quot;내-코드가-그렇게-이상한가요-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;내 코드가 그렇게 이상한가요?&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%82%B4-%EC%BD%94%EB%93%9C%EA%B0%80-%EA%B7%B8%EB%A0%87%EA%B2%8C-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94-ing&quot; aria-label=&quot;내 코드가 그렇게 이상한가요 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;real-my-sql-1권-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt; ~ing&lt;a href=&quot;#real-my-sql-1%EA%B6%8C-ing&quot; aria-label=&quot;real my sql 1권 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;oauth2-인-액션-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;OAuth2 인 액션&lt;/strong&gt; ~ing&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-ing&quot; aria-label=&quot;oauth2 인 액션 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;자바-네트워크-프로그래밍-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-ing&quot; aria-label=&quot;자바 네트워크 프로그래밍 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -271,10 +327,19 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;h1 id=&quot;이펙티브-코틀린-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 코틀린 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 자바 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt; 예정&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4-%EC%98%88%EC%A0%95&quot; aria-label=&quot;개발자를 위한 레디스 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[스프링의 ProxyFactory를 이해해보자]]></title><description><![CDATA[자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다. 그렇기에 스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다. 스프링의 ProxyFactory와 AOP…]]></description><link>https://jdalma.github.io/2024y/proxyfactory/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/proxyfactory/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바의 Reflection과 Dynamic Proxy, CGLIB은 스프링의 많은 곳에서 활용되고 있다.&lt;br&gt;
-그렇기에 &lt;strong&gt;스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.&lt;/strong&gt;&lt;br&gt;
-스프링의 ProxyFactory와 AOP를 이해함을 목표로 차근차근 학습해보자.&lt;/p&gt;
-&lt;h1 id=&quot;java-reflection&quot; style=&quot;position:relative;&quot;&gt;Java Reflection&lt;a href=&quot;#java-reflection&quot; aria-label=&quot;java reflection permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[스프링의 빈 후처리기에 대해]]></title><description><![CDATA[스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 조금 필요하다. Reflection Java Dynamic Proxy CGLIB ProxyFactory FactoryBean ProxyFactoryBean…]]></description><link>https://jdalma.github.io/2024y/postprocessor/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/postprocessor/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 조금 필요하다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Reflection&lt;/li&gt;
+&lt;li&gt;Java Dynamic Proxy&lt;/li&gt;
+&lt;li&gt;CGLIB&lt;/li&gt;
+&lt;li&gt;ProxyFactory&lt;/li&gt;
+&lt;li&gt;FactoryBean&lt;/li&gt;
+&lt;li&gt;ProxyFactoryBean&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.&lt;/strong&gt;&lt;br&gt;
+이 글에서는 스프링 AOP를 사용하는 법, 포인트 컷, 어드바이스를 자세하게 설명하진 않는다.&lt;br&gt;
+스프링의 빈 후처리기를 통해 프록시가 어떻게 자동으로 생성되는지를 중점으로 다룬다. 단계별로 알아보자.&lt;/p&gt;
+&lt;h1 id=&quot;1단계-java-reflection&quot; style=&quot;position:relative;&quot;&gt;1단계: Java Reflection&lt;a href=&quot;#1%EB%8B%A8%EA%B3%84-java-reflection&quot; aria-label=&quot;1단계 java reflection permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;자바의 리플렉션(Reflection)은 런타임 시에 클래스의 속성, 메소드, 생성자 등의 메타데이터를 조회하거나 수정할 수 있는 강력한 기능이다.&lt;br&gt;
 또한, &lt;strong&gt;리플렉션을 사용하여 런타임 시에 동적으로 객체를 생성하고, 가시성에 관계없이 메소드를 호출하거나, 필드에 접근할 수 있다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -397,7 +462,7 @@ describe(&amp;quot;Person 클래스&amp;quot;) {
 &lt;p&gt;리플렉션을 간단하게 확인해보았는데 강력한 기능이라는 것을 느낄 수 있다.&lt;br&gt;
 이 강력한 기능을 통해 자바에서는 &lt;strong&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html&quot;&gt;Dynamic Proxy Class API&lt;/a&gt;&lt;/strong&gt; 를 제공한다.&lt;br&gt;
 다이나믹 프록시에 대해 확인하기 전에 먼저 프록시에 대해 알아보자.&lt;/p&gt;
-&lt;h1 id=&quot;proxy란&quot; style=&quot;position:relative;&quot;&gt;Proxy란?&lt;a href=&quot;#proxy%EB%9E%80&quot; aria-label=&quot;proxy란 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;2단계-proxy란&quot; style=&quot;position:relative;&quot;&gt;2단계: Proxy란?&lt;a href=&quot;#2%EB%8B%A8%EA%B3%84-proxy%EB%9E%80&quot; aria-label=&quot;2단계 proxy란 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;단순히 확장성을 고려해서 한 가지 기능을 분리한다면 아래와 같이 전형적인 전략 패턴(&lt;code class=&quot;language-text&quot;&gt;condition: (Member) -&gt; Boolean&lt;/code&gt;)을 사용할 수 있을 것이다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun register(member: Member, condition: (Member) -&amp;gt; Boolean) {
@@ -510,7 +575,8 @@ class UserServiceTarget: UserService {
 &lt;blockquote&gt;
 &lt;p&gt;위임을 통한 프록시를 생성하여 부가 기능과 핵심 기능을 분리했지만 프록시를 만드는 일은 번거롭고 타깃 인터페이스에 의존적이여서 타깃이 여러 개라면 인터페이스 API가 수정될 수 밖에 없을 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;java-dynamic-proxy&quot; style=&quot;position:relative;&quot;&gt;Java Dynamic Proxy&lt;a href=&quot;#java-dynamic-proxy&quot; aria-label=&quot;java dynamic proxy permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;3단계-proxy-생성-방법&quot; style=&quot;position:relative;&quot;&gt;3단계: Proxy 생성 방법&lt;a href=&quot;#3%EB%8B%A8%EA%B3%84-proxy-%EC%83%9D%EC%84%B1-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;3단계 proxy 생성 방법 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;java-dynamic-proxy&quot; style=&quot;position:relative;&quot;&gt;Java Dynamic Proxy&lt;a href=&quot;#java-dynamic-proxy&quot; aria-label=&quot;java dynamic proxy permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;일일이 프록시 클래스를 정의하는 것은 한계가 있다는 것을 알 수 있다.&lt;br&gt;
 이 한계를 &lt;strong&gt;프록시처럼 동작하는 오브젝트를 동적으로 생성하는 JDK의 다이내믹 프록시&lt;/strong&gt; 와 &lt;strong&gt;리플렉션&lt;/strong&gt; 으로 해결할 수 있다.&lt;/p&gt;
 &lt;p&gt;이 프록시는 두 가지 기능으로 구성된다.&lt;/p&gt;
@@ -596,7 +662,7 @@ class UppercaseHandler(
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Method&lt;/code&gt;를 이용한 타깃의 오브젝트의 메소드 호출을 구분하거나 &lt;code class=&quot;language-text&quot;&gt;args&lt;/code&gt; 인자들의 정보를 확인하거나 조작할 수 있다.&lt;br&gt;
 리플렉션의 매우 유연하고 막강한 기능을 사용하여 동적 프록시를 조금 더 편하게 만들어보았다.&lt;br&gt;
 하지만 인터페이스 기반이라는 단점이 있다. 이 단점을 해결하는 CGLIB에 대해 알아보자.&lt;/p&gt;
-&lt;h1 id=&quot;cglibcode-generation-library&quot; style=&quot;position:relative;&quot;&gt;CGLIB(Code Generation Library)&lt;a href=&quot;#cglibcode-generation-library&quot; aria-label=&quot;cglibcode generation library permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;cglibcode-generation-library&quot; style=&quot;position:relative;&quot;&gt;CGLIB(Code Generation Library)&lt;a href=&quot;#cglibcode-generation-library&quot; aria-label=&quot;cglibcode generation library permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;자바 클래스의 바이트코드를 런타임에 조작하여 새로운 클래스나 객체를 동적으로 생성하고 수정할 수 있는 강력한 라이브러리다.&lt;br&gt;
 이 라이브러리는 스프링 AOP 프레임워크, ORM 툴, 그리고 다양한 테스팅 라이브러리 등에서 널리 사용되고 있다.&lt;br&gt;
 &lt;strong&gt;클래스 기반으로 타겟 객체의 클래스를 상속 받아 새로운 서브 클래스로 프록시를 생성하는 방식이다.&lt;/strong&gt;&lt;br&gt;
@@ -673,7 +739,7 @@ class MyCallbackFilter : CallbackFilter {
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Enhancer.create()&lt;/code&gt;에서 전달하는 Callback 순서대로 (&lt;code class=&quot;language-text&quot;&gt;arrayOf&amp;lt;Callback&gt;(MyMethodInterceptor(), MyFixedValue())&lt;/code&gt;) &lt;code class=&quot;language-text&quot;&gt;CallbackFilter&lt;/code&gt;에서 어떤 콜백을 실행할지 지정할 수 있다.&lt;/p&gt;
-&lt;h1 id=&quot;proxyfactory&quot; style=&quot;position:relative;&quot;&gt;ProxyFactory&lt;a href=&quot;#proxyfactory&quot; aria-label=&quot;proxyfactory permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;4단계-프록시의-구현체-생성-방법을-선택하는-proxyfactory&quot; style=&quot;position:relative;&quot;&gt;4단계: 프록시의 구현체 생성 방법을 선택하는 ProxyFactory&lt;a href=&quot;#4%EB%8B%A8%EA%B3%84-%ED%94%84%EB%A1%9D%EC%8B%9C%EC%9D%98-%EA%B5%AC%ED%98%84%EC%B2%B4-%EC%83%9D%EC%84%B1-%EB%B0%A9%EB%B2%95%EC%9D%84-%EC%84%A0%ED%83%9D%ED%95%98%EB%8A%94-proxyfactory&quot; aria-label=&quot;4단계 프록시의 구현체 생성 방법을 선택하는 proxyfactory permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;스프링에서 제공하는 AOP 프록시용 팩토리는 인터페이스가 있을 때는 JDK 동적 프록시를 사용하고, 그렇지 않은 경우에는 CGLIB을 사용한다.&lt;br&gt;
 이제는 부가 기능을 적용할 때 &lt;code class=&quot;language-text&quot;&gt;Advice (부가 기능)&lt;/code&gt;만 지정해주면된다. &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;를 알 필요가 없다.&lt;br&gt;
 프록시 팩토리가 내부에서 JDK 동적 프록시일 경우 InvocationHandler가 Advice를 호출하도록 하고, CGLIB인 경우 MethodInterceptor가 Advice를 호출하도록 기능을 개발해두었기 때문이다.&lt;/p&gt;
@@ -724,7 +790,7 @@ class MyMethodInterceptor2: MethodInterceptor {
     proxy.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Thank you admin&amp;quot;
 }
 
-&amp;quot;구체 클래스만 있으면 CGLIB 사용&amp;quot; {
+&amp;quot;구체 클래스만 있으면 CGLIB 사용&amp;quot; {w
     val proxyFactory: ProxyFactory = ProxyFactory(ConcretePerson())
     proxyFactory.addAdvice(MyMethodInterceptor1())
     proxyFactory.addAdvice(MyMethodInterceptor2())
@@ -782,18 +848,143 @@ public interface MethodInterceptor extends Interceptor {
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;invoke()&lt;/code&gt;의 파라미터인 &lt;code class=&quot;language-text&quot;&gt;MethodInvocation&lt;/code&gt; 내부에는 &lt;strong&gt;다음 메서드를 호출하는 방법&lt;/strong&gt;, &lt;strong&gt;현재 프록시 객체 인스턴스&lt;/strong&gt;, &lt;strong&gt;args&lt;/strong&gt;, &lt;strong&gt;메서드 정보&lt;/strong&gt;등이 포함되어 있다.&lt;br&gt;
 Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 다르게 프록시 내부에서 Target을 신경쓰지 않아도 된다.&lt;/p&gt;
 &lt;p&gt;스프링 부트는 AOP를 적용할 때 기본적으로 &lt;code class=&quot;language-text&quot;&gt;proxyTargetClass=true&lt;/code&gt;로 설정해서 사용하기 때문에 &lt;strong&gt;인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;proxyfactorybean&quot; style=&quot;position:relative;&quot;&gt;ProxyFactoryBean&lt;a href=&quot;#proxyfactorybean&quot; aria-label=&quot;proxyfactorybean permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;ProxyFactory를 사용해여 프로그래밍 방식으로 프록시를 직접 생성해보았다. 스프링에서는 이 프록시를 빈으로 등록해주는 (&lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt;을 구현하는) &lt;code class=&quot;language-text&quot;&gt;ProxyFactoryBean&lt;/code&gt; 구현체가 존재한다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;FactoryBean&lt;/strong&gt; &lt;a href=&quot;https://github.com/jdalma/tobyspringin5/commit/9238c441028b72d26be669418ef0785beec80c8d&quot;&gt;학습 테스트&lt;/a&gt;&lt;br&gt;
-스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이다.&lt;br&gt;
-&lt;strong&gt;스프링은 &lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt; 인터페이스를 구현한 클래스가 Bean의 클래스로 지정되면 &lt;code class=&quot;language-text&quot;&gt;getObject()&lt;/code&gt;를 통해 오브젝트를 가져오고, 이를 빈 오브젝트로 사용한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;5단계-factorybean&quot; style=&quot;position:relative;&quot;&gt;5단계: FactoryBean&lt;a href=&quot;#5%EB%8B%A8%EA%B3%84-factorybean&quot; aria-label=&quot;5단계 factorybean permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이.&lt;br&gt;
+생성할 프록시가 다른 빈을 주입 받을 필요가 있거나 스프링의 기능을 사용해야 한다면 스프링 빈으로 등록해야 할 필요가 있다.&lt;br&gt;
+이때 &lt;strong&gt;스프링은 &lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt; 인터페이스를 구현한 클래스가 Bean의 클래스로 지정되면 &lt;code class=&quot;language-text&quot;&gt;getObject()&lt;/code&gt;를 통해 오브젝트를 가져오고, 이를 빈 오브젝트로 사용한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;복잡한 초기화가 필요한 빈을 생성 시&lt;/li&gt;
 &lt;li&gt;AOP 프록시와 같이 런타임에 생성되는 프록시 객체를 스프링 빈으로 등록할 때&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;이런 경우 유용하게 사용할 수 있다.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;이런 경우 유용하게 사용할 수 있다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;@Transactional&lt;/code&gt;과 같은 역할을 하는 특정 패턴의 메서드는 정상 처리가 되었다면 commit을 하고 예러가 발생되면 rollback하는 프록시를 만들어보자.&lt;br&gt;
+아래의 예제를 확인해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;/**
+ * 프록시로 등록할 인터페이스와 구현체
+ */
+interface Hello {
+    fun sayGreeting(name: String): String
+    fun sayHello(name: String): String
+    fun sayHi(name: String): String
+    fun sayThankYou(name: String): String
+}
+open class Person: Hello {
+    open fun greeting() = &amp;quot;안녕하세요!&amp;quot;
+    override fun sayGreeting(name: String) = &amp;quot;안녕하세요! $name&amp;quot;
+    override fun sayHello(name: String): String = &amp;quot;Hello $name&amp;quot;
+    override fun sayHi(name: String): String = &amp;quot;Hi $name&amp;quot;
+    override fun sayThankYou(name: String): String = &amp;quot;Thank you $name&amp;quot;
+}
+
+/**
+ * 등록할 프록시를 스프링에서 관리할 수 있도록 빈으로 등록하는 FactoryBean 구현체
+ * 범용적으로 대상은 Any로 했고, Class 타입도 * 이다.
+ */
+class PersonFactoryBean(
+    private val target: Any,
+    private val `interface`: Class&amp;lt;*&amp;gt;
+): FactoryBean&amp;lt;Any&amp;gt; {
+
+    override fun getObject() = ProxyFactory(target).apply {
+        this.addAdvice(TransactionMethodInterceptor(target, &amp;quot;say&amp;quot;))
+        this.isProxyTargetClass = true // 인터페이스 기반이 아닌 Person 구현체의 프록시를 생성하기 위해 직접 설정
+    }.proxy
+
+    override fun getObjectType(): Class&amp;lt;*&amp;gt; = `interface`
+}
+
+/**
+ * 부가 기능을 정의한 MethodInterceptor 구현체이다.
+ * 메소드 이름이 주입받은 pattern으로 시작하는 메소드만 부가 기능을 실행하도록 한다.
+ */
+class TransactionMethodInterceptor(
+    private val target: Any,
+    private val pattern: String
+): MethodInterceptor {
+
+    override fun invoke(invocation: MethodInvocation) =
+        if (invocation.method.name.startsWith(pattern))
+            invokeInTransaction(invocation.method, invocation.arguments)
+        else invocation.proceed()
+
+    private fun invokeInTransaction(method: Method, args: Array&amp;lt;out Any&amp;gt;): String {
+        try {
+            return &amp;quot;(Commit)&amp;quot; + method.invoke(target, *args)
+        } catch (e: InvocationTargetException) {
+            throw e.targetException
+        }
+    }
+}
+
+/**
+ * Hello와 Person 빈을 등록할 때 프록시로 감싼 빈으로 등록한다.
+ */
+@Configuration
+class AppConfig {
+    @Bean
+    fun hello() = PersonFactoryBean(Person(), Hello::class.java)
+    @Bean
+    fun person() = PersonFactoryBean(Person(), Person::class.java)
+}
+
+@SpringBootTest(&amp;quot;spring.profiles.active=local&amp;quot;)
+class FactoryBeanTest(
+    private val context: ApplicationContext,
+    private val hello: Hello,
+    private val person: Person
+): AnnotationSpec() {
+
+    private val NAME: String = &amp;quot;admin&amp;quot;
+
+    init {
+        extension(SpringExtension)
+    }
+
+    @Test
+    @DisplayName(&amp;quot;인터페이스 기반 프록시&amp;quot;)
+    fun interfaceProxy() {
+        hello.sayGreeting(NAME) shouldBe &amp;quot;(Commit)안녕하세요! admin&amp;quot;
+        hello.sayHello(NAME) shouldBe &amp;quot;(Commit)Hello admin&amp;quot;
+        hello.sayHi(NAME) shouldBe &amp;quot;(Commit)Hi admin&amp;quot;
+        hello.sayThankYou(NAME) shouldBe &amp;quot;(Commit)Thank you admin&amp;quot;
+    }
+
+    @Test
+    @DisplayName(&amp;quot;클래스 기반 프록시&amp;quot;)
+    fun concreteProxy() {
+        person.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
+        person.sayGreeting(NAME) shouldBe &amp;quot;(Commit)안녕하세요! admin&amp;quot;
+        person.sayHello(NAME) shouldBe &amp;quot;(Commit)Hello admin&amp;quot;
+        person.sayHi(NAME) shouldBe &amp;quot;(Commit)Hi admin&amp;quot;
+        person.sayThankYou(NAME) shouldBe &amp;quot;(Commit)Thank you admin&amp;quot;
+    }
+
+    @Test
+    @DisplayName(&amp;quot;팩토리 빈과 빈을 직접 조회하기&amp;quot;)
+    fun searchFactoryBean() {
+        val factoryBean = context.getBean(&amp;quot;&amp;amp;person&amp;quot;, PersonFactoryBean::class.java)
+        (factoryBean.`object` is Person) shouldBe true
+        (factoryBean.`object` is Hello) shouldBe true
+
+        val helloBean = context.getBean(&amp;quot;hello&amp;quot;, Hello::class.java)
+        helloBean.sayGreeting(NAME) shouldBe &amp;quot;(Commit)안녕하세요! admin&amp;quot;
+        helloBean.sayHello(NAME) shouldBe &amp;quot;(Commit)Hello admin&amp;quot;
+        helloBean.sayHi(NAME) shouldBe &amp;quot;(Commit)Hi admin&amp;quot;
+        helloBean.sayThankYou(NAME) shouldBe &amp;quot;(Commit)Thank you admin&amp;quot;
+
+        val personBean = context.getBean(&amp;quot;person&amp;quot;, Person::class.java)
+        personBean.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
+        personBean.sayGreeting(NAME) shouldBe &amp;quot;(Commit)안녕하세요! admin&amp;quot;
+        personBean.sayHello(NAME) shouldBe &amp;quot;(Commit)Hello admin&amp;quot;
+        personBean.sayHi(NAME) shouldBe &amp;quot;(Commit)Hi admin&amp;quot;
+        personBean.sayThankYou(NAME) shouldBe &amp;quot;(Commit)Thank you admin&amp;quot;
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;say&lt;/code&gt;로 시작하는 메서드의 반환값에 &lt;code class=&quot;language-text&quot;&gt;(Commit)&lt;/code&gt; 문자열을 추가하여 반환하는 부가 기능을 &lt;code class=&quot;language-text&quot;&gt;TransactionMethodInterceptor&lt;/code&gt;로 정의하여 빈을 등록할 때 &lt;code class=&quot;language-text&quot;&gt;PersonFactoryBean&lt;/code&gt;을 통해 프록시로 감싼 빈을 등록하였다.&lt;/p&gt;
+&lt;h1 id=&quot;6단계-proxyfactorybean&quot; style=&quot;position:relative;&quot;&gt;6단계: ProxyFactoryBean&lt;a href=&quot;#6%EB%8B%A8%EA%B3%84-proxyfactorybean&quot; aria-label=&quot;6단계 proxyfactorybean permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;ProxyFactory를 사용하여 프로그래밍 방식으로 프록시를 직접 생성해보았다. 스프링에서는 이 프록시를 빈으로 등록해주는 (&lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt;을 구현하는) &lt;code class=&quot;language-text&quot;&gt;ProxyFactoryBean&lt;/code&gt; 구현체가 존재한다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
