@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 14 Mar 2024 13:49:39 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Mar 2024 14:57:51 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -327,7 +327,7 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;h1 id=&quot;이펙티브-코틀린-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 코틀린 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 자바 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt; 예정&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4-%EC%98%88%EC%A0%95&quot; aria-label=&quot;개발자를 위한 레디스 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[스프링의 빈 후처리기에 대해]]></title><description><![CDATA[스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 조금 필요하다. Reflection Java Dynamic Proxy CGLIB ProxyFactory FactoryBean ProxyFactoryBean…]]></description><link>https://jdalma.github.io/2024y/postprocessor/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/postprocessor/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 조금 필요하다.&lt;/p&gt;
+&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[스프링의 빈 후처리기에 대해]]></title><description><![CDATA[스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다. Reflection Java Dynamic Proxy CGLIB ProxyFactory FactoryBean ProxyFactoryBean…]]></description><link>https://jdalma.github.io/2024y/postprocessor/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/postprocessor/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Reflection&lt;/li&gt;
 &lt;li&gt;Java Dynamic Proxy&lt;/li&gt;
@@ -379,7 +379,7 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 자바의 모든 클래스는 그 클래스 자체의 구성 정보를 담은 &lt;code class=&quot;language-text&quot;&gt;Class 타입&lt;/code&gt;의 오브젝트를 하나씩 갖고 있다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;Class&lt;/code&gt; 오브젝트를 이용하면 &lt;strong&gt;클래스 코드에 대한 메타 정보&lt;/strong&gt; 를 가져오거나 &lt;strong&gt;객체를 조작&lt;/strong&gt; 할 수 있다.&lt;br&gt;
 테스트 코드로 확인해보자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;data class Address(
     private val state: String,
     private val city: String
@@ -464,7 +464,7 @@ describe(&amp;quot;Person 클래스&amp;quot;) {
 다이나믹 프록시에 대해 확인하기 전에 먼저 프록시에 대해 알아보자.&lt;/p&gt;
 &lt;h1 id=&quot;2단계-proxy란&quot; style=&quot;position:relative;&quot;&gt;2단계: Proxy란?&lt;a href=&quot;#2%EB%8B%A8%EA%B3%84-proxy%EB%9E%80&quot; aria-label=&quot;2단계 proxy란 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;단순히 확장성을 고려해서 한 가지 기능을 분리한다면 아래와 같이 전형적인 전략 패턴(&lt;code class=&quot;language-text&quot;&gt;condition: (Member) -&gt; Boolean&lt;/code&gt;)을 사용할 수 있을 것이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun register(member: Member, condition: (Member) -&amp;gt; Boolean) {
     if(condition(member)) {
         // business logic
@@ -472,7 +472,7 @@ describe(&amp;quot;Person 클래스&amp;quot;) {
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;하지만 여러 곳에서 동일한 기능이 필요하다면 아주 번거로워질 것이다. 대표적으로 옛날 방식의 커넥션 관리가 있다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public void accountTransfer(String fromId, String toId, int money) throws SQLException {
     Connection con = dataSource.getConnection();
     try {
@@ -519,7 +519,7 @@ describe(&amp;quot;Person 클래스&amp;quot;) {
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface UserService {
     fun accountTransfer(fromId: String, toId: String, money: Int)
 }
@@ -563,7 +563,7 @@ class UserServiceTarget: UserService {
 즉, 프록시 패턴의 프록시는 타깃의 기능을 확장하거나 추가하지 않고 클라이언트가 타깃에 대한 접근 권한을 제어하거나 접근하는 방식을 변경해주는 것이다.&lt;/p&gt;
 &lt;p&gt;위에서 봤던 &lt;strong&gt;실제 타깃 오브젝트를 만드는 대신 프록시를 넘겨주는 것, 그리고 프록시의 메소드를 통해 타깃을 사용하려고 시도하면, 그떄 프록시가 타깃 오브젝트를 (생성하고) 요청을 위임해주는 식이다.&lt;/strong&gt;&lt;br&gt;
 대표적으로 &lt;code class=&quot;language-text&quot;&gt;Collections.unmodifiableCollection()&lt;/code&gt;을 통해 만들어지는 객체가 전형적인 접근 권한 제어용 프록시라고 볼 수 있다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public static &amp;lt;T&amp;gt; Collection&amp;lt;T&amp;gt; unmodifiableCollection(Collection&amp;lt;? extends T&amp;gt; c) {
     if (c.getClass() == UnmodifiableCollection.class) {
         return (Collection&amp;lt;T&amp;gt;) c;
@@ -590,7 +590,7 @@ class UserServiceTarget: UserService {
 프록시에는 데코레이터 패턴을 적용해서 타깃인 &lt;code class=&quot;language-text&quot;&gt;HelloTarget&lt;/code&gt;에 부가 기능을 추가해보자.&lt;br&gt;
 리턴하는 문자를 모두 대문자로 바꾸는 부가 기능을 만들어보자.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface Hello {
     fun sayHello(name: String): String
     fun sayHi(name: String): String
@@ -620,6 +620,7 @@ class UppercaseHandler(
         Hello::class.java to helloTarget,
         Goodbye::class.java to goodbyeTarget,
     )
+
     override fun invoke(proxy: Any, method: Method, args: Array&amp;lt;out Any&amp;gt;): Any {
         val result: String = method.invoke(lookupTarget[method.declaringClass], *args) as String
         return result.uppercase()
@@ -667,7 +668,7 @@ class UppercaseHandler(
 이 라이브러리는 스프링 AOP 프레임워크, ORM 툴, 그리고 다양한 테스팅 라이브러리 등에서 널리 사용되고 있다.&lt;br&gt;
 &lt;strong&gt;클래스 기반으로 타겟 객체의 클래스를 상속 받아 새로운 서브 클래스로 프록시를 생성하는 방식이다.&lt;/strong&gt;&lt;br&gt;
 인터페이스가 없는 클래스에도 적용할 수 있기에 자바의 동적 프록시의 단점을 해결한다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Person: Hello, Goodbye {
     open fun greeting() = &amp;quot;안녕하세요!&amp;quot;
     override fun sayHello(name: String): String = &amp;quot;Hello $name&amp;quot;
@@ -708,7 +709,7 @@ class MyMethodInterceptor: MethodInterceptor {
 &lt;li&gt;&lt;strong&gt;기본 생성자가 꼭 있어야 한다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;CGLIB은 자바 동적 프록시에 비해 추가적인 기능도 제공한다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class MyFixedValue: FixedValue {
     override fun loadObject(): Any = &amp;quot;Intercepted and always return \&amp;quot;Fixed\&amp;quot;&amp;quot;
 }
@@ -743,7 +744,7 @@ class MyCallbackFilter : CallbackFilter {
 &lt;p&gt;스프링에서 제공하는 AOP 프록시용 팩토리는 인터페이스가 있을 때는 JDK 동적 프록시를 사용하고, 그렇지 않은 경우에는 CGLIB을 사용한다.&lt;br&gt;
 이제는 부가 기능을 적용할 때 &lt;code class=&quot;language-text&quot;&gt;Advice (부가 기능)&lt;/code&gt;만 지정해주면된다. &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;를 알 필요가 없다.&lt;br&gt;
 프록시 팩토리가 내부에서 JDK 동적 프록시일 경우 InvocationHandler가 Advice를 호출하도록 하고, CGLIB인 경우 MethodInterceptor가 Advice를 호출하도록 기능을 개발해두었기 때문이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface Hello {
     fun sayHello(name: String): String
     fun sayHi(name: String): String
@@ -822,7 +823,7 @@ class MyMethodInterceptor2: MethodInterceptor {
     proxy.sayThankYou(&amp;quot;admin&amp;quot;) shouldBe &amp;quot;(Intercepted1)(Intercepted2)Thank you admin&amp;quot;
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- JDK 동적 프록시를 사용하는 경우
 invoke:36, MyMethodInterceptor1
 invoke:35, MyMethodInterceptor1
@@ -838,7 +839,7 @@ proceed:765, CglibAopProxy$CglibMethodInvocation (org.springframework.aop.framew
 intercept:717, CglibAopProxy$DynamicAdvisedInterceptor (org.springframework.aop.framework)
 greeting:-1, Person$$SpringCGLIB$$0&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@FunctionalInterface
 public interface MethodInterceptor extends Interceptor {
 	@Nullable
@@ -849,8 +850,8 @@ public interface MethodInterceptor extends Interceptor {
 Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 다르게 프록시 내부에서 Target을 신경쓰지 않아도 된다.&lt;/p&gt;
 &lt;p&gt;스프링 부트는 AOP를 적용할 때 기본적으로 &lt;code class=&quot;language-text&quot;&gt;proxyTargetClass=true&lt;/code&gt;로 설정해서 사용하기 때문에 &lt;strong&gt;인터페이스가 있어도 CGLIB을 사용해서 구체 클래스를 기반으로 프록시를 생성한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;5단계-factorybean&quot; style=&quot;position:relative;&quot;&gt;5단계: FactoryBean&lt;a href=&quot;#5%EB%8B%A8%EA%B3%84-factorybean&quot; aria-label=&quot;5단계 factorybean permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이.&lt;br&gt;
-생성할 프록시가 다른 빈을 주입 받을 필요가 있거나 스프링의 기능을 사용해야 한다면 스프링 빈으로 등록해야 할 필요가 있다.&lt;br&gt;
+&lt;p&gt;스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이다.&lt;br&gt;
+생성할 프록시가 다른 빈을 주입 받을 필요가 있거나 스프링의 기능을 사용해야 한다면 스프링 빈으로 등록해야 한다.&lt;br&gt;
 이때 &lt;strong&gt;스프링은 &lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt; 인터페이스를 구현한 클래스가 Bean의 클래스로 지정되면 &lt;code class=&quot;language-text&quot;&gt;getObject()&lt;/code&gt;를 통해 오브젝트를 가져오고, 이를 빈 오브젝트로 사용한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;복잡한 초기화가 필요한 빈을 생성 시&lt;/li&gt;
@@ -859,7 +860,7 @@ Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 
 &lt;p&gt;이런 경우 유용하게 사용할 수 있다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;@Transactional&lt;/code&gt;과 같은 역할을 하는 특정 패턴의 메서드는 정상 처리가 되었다면 commit을 하고 예러가 발생되면 rollback하는 프록시를 만들어보자.&lt;br&gt;
 아래의 예제를 확인해보자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;/**
  * 프록시로 등록할 인터페이스와 구현체
  */
@@ -886,9 +887,11 @@ class PersonFactoryBean(
     private val `interface`: Class&amp;lt;*&amp;gt;
 ): FactoryBean&amp;lt;Any&amp;gt; {
 
+    // 인터페이스 기반이 아닌 Person 구현체의 프록시를 생성하기 ProxyFactory로 프록시를 생성
+    // ProxyFactory로 프록시를 생성하기 위해서는 (TransactionMethodInterceptor와 같은) 부가기능은 org.aopalliance.intercept.MethodInterceptor를 구현해야 한다.
     override fun getObject() = ProxyFactory(target).apply {
-        this.addAdvice(TransactionMethodInterceptor(target, &amp;quot;say&amp;quot;))
-        this.isProxyTargetClass = true // 인터페이스 기반이 아닌 Person 구현체의 프록시를 생성하기 위해 직접 설정
+        this.addAdvice(TransactionMethodInterceptor(&amp;quot;say&amp;quot;))
+        this.isProxyTargetClass = true
     }.proxy
 
     override fun getObjectType(): Class&amp;lt;*&amp;gt; = `interface`
@@ -904,17 +907,15 @@ class TransactionMethodInterceptor(
 ): MethodInterceptor {
 
     override fun invoke(invocation: MethodInvocation) =
-        if (invocation.method.name.startsWith(pattern))
-            invokeInTransaction(invocation.method, invocation.arguments)
+        if (invocation.method.name.startsWith(pattern)) invokeInTransaction(invocation)
         else invocation.proceed()
 
-    private fun invokeInTransaction(method: Method, args: Array&amp;lt;out Any&amp;gt;): String {
+    private fun invokeInTransaction(invocation: MethodInvocation): String =
         try {
-            return &amp;quot;(Commit)&amp;quot; + method.invoke(target, *args)
+            &amp;quot;(Commit)&amp;quot; + invocation.proceed()
         } catch (e: InvocationTargetException) {
             throw e.targetException
         }
-    }
 }
 
 /**
@@ -928,7 +929,7 @@ class AppConfig {
     fun person() = PersonFactoryBean(Person(), Person::class.java)
 }
 
-@SpringBootTest(&amp;quot;spring.profiles.active=local&amp;quot;)
+@SpringBootTest(&amp;quot;spring.profiles.active=local&amp;quot;, classes = [AppConfig::class])
 class FactoryBeanTest(
     private val context: ApplicationContext,
     private val hello: Hello,
@@ -979,12 +980,23 @@ class FactoryBeanTest(
         personBean.sayHello(NAME) shouldBe &amp;quot;(Commit)Hello admin&amp;quot;
         personBean.sayHi(NAME) shouldBe &amp;quot;(Commit)Hi admin&amp;quot;
         personBean.sayThankYou(NAME) shouldBe &amp;quot;(Commit)Thank you admin&amp;quot;
+
+        System.identityHashCode(hello) shouldBe System.identityHashCode(helloBean)
+        System.identityHashCode(person) shouldBe System.identityHashCode(personBean)
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;say&lt;/code&gt;로 시작하는 메서드의 반환값에 &lt;code class=&quot;language-text&quot;&gt;(Commit)&lt;/code&gt; 문자열을 추가하여 반환하는 부가 기능을 &lt;code class=&quot;language-text&quot;&gt;TransactionMethodInterceptor&lt;/code&gt;로 정의하여 빈을 등록할 때 &lt;code class=&quot;language-text&quot;&gt;PersonFactoryBean&lt;/code&gt;을 통해 프록시로 감싼 빈을 등록하였다.&lt;/p&gt;
+&lt;p&gt;하지만 빈을 직접 등록해야 하는 불편함이 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;한 번에 여러 개의 클래스에 공통적인 부가기능을 제공해야 한다면?&lt;/strong&gt; 비즈니스 로직을 담은 많은 클래스의 메소드에 부가기능을 적용하려 한다면 팩토리 빈의 설정 코드도 같이 늘어난다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;하나의 타깃에 여러 개의 부가기능을 적용해야 한다면?&lt;/strong&gt; 프록시를 생성하는 FactoryBean 구현체마다 advice를 직접 추가해줘야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이렇게 번거로운 작업을 없애고 프록시를 모든 타깃에 적용 가능한 싱글톤 빈으로 만드는 방법을 알아보자.&lt;/p&gt;
 &lt;h1 id=&quot;6단계-proxyfactorybean&quot; style=&quot;position:relative;&quot;&gt;6단계: ProxyFactoryBean&lt;a href=&quot;#6%EB%8B%A8%EA%B3%84-proxyfactorybean&quot; aria-label=&quot;6단계 proxyfactorybean permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;ProxyFactory를 사용하여 프로그래밍 방식으로 프록시를 직접 생성해보았다. 스프링에서는 이 프록시를 빈으로 등록해주는 (&lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt;을 구현하는) &lt;code class=&quot;language-text&quot;&gt;ProxyFactoryBean&lt;/code&gt; 구현체가 존재한다.&lt;/p&gt;
+&lt;p&gt;ProxyFactory를 사용하여 프로그래밍 방식으로 프록시를 직접 생성해보았지만, &lt;strong&gt;스프링은 프록시 오브젝트를 생성해주는 기술을 추상화한 팩토리 빈을 제공한다.&lt;/strong&gt;&lt;br&gt;
+프록시를 생성해서 빈 오브젝트로 등록해주는 &lt;code class=&quot;language-text&quot;&gt;ProxyFactoryBean&lt;/code&gt; 구현체가 존재한다.&lt;br&gt;
+(ProxyFactory와 동일한 기능을 제공하지만 &lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt;을 추가로 구현하는 것이다.)&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
@@ -1016,7 +1028,20 @@ class FactoryBeanTest(
         decoding=&quot;async&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이때까지 작성한 예제를 보면 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;를 구현하였고, 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;를 구현하였다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class MyMethodInterceptor: MethodInterceptor {
+    override fun invoke(invocation: MethodInvocation) = invocation.proceed()
+}
+
+class MyInvocationHandler(
+    private val target: Any
+): InvocationHandler {
+    override fun invoke(proxy: Any, method: Method, args: Array&amp;lt;out Any&amp;gt;): Any =
+        method.invoke(target, *args)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
 하지만 매번 제네릭에 대한 이해가 부족해 타입 검사기가 왜 거부하는지 이해하지 못하여 원하는대로 작성을 못한 경험이 있다.&lt;br&gt;
 그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
 &lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
@@ -1071,7 +1096,7 @@ class FactoryBeanTest(
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Person(val name: String)
 class Marathoner(name: String): Person(name)
 
@@ -1085,14 +1110,14 @@ run2(Marathoner(name))&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h2 id=&quot;오버로딩에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;오버로딩에 의한 다형성&lt;a href=&quot;#%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;오버로딩에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;같은 이름의 함수들을 매개변수 타입을 서로 다르게 하여 여러 개 정의하는 것이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun aging(person: Person) = Person(person.age + 1)
 fun aging(marathoner: Marathoner) = Marathoner(marathoner.age + 1)&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aging&lt;/code&gt; 두 함수 중에 어느 것을 호출할지는 언어 수준에서 자동으로 결정된다.&lt;br&gt;
 함수 선택의 가장 기본적인 규칙은 &lt;strong&gt;인자의 타입에 맞는 함수를 고른다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;예제는 정수를 관리하는 &lt;code class=&quot;language-text&quot;&gt;Numbers&lt;/code&gt; 클래스와 양수의 인덱스를 따로 가지는 &lt;code class=&quot;language-text&quot;&gt;PositiveNumbers&lt;/code&gt; 클래스가 있다고 가정하자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;)
 class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
     val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = &amp;quot;합계를 빠르게 계산하기 위해 양수의 index를 저장&amp;quot;
@@ -1123,7 +1148,7 @@ positiveNumberSum(numbers)    &amp;quot;정적 선택 (static dispatch)&amp;quot
 &lt;h2 id=&quot;오버라이딩에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;오버라이딩에 의한 다형성&lt;a href=&quot;#%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;오버라이딩에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;메서드 오버라이딩은 클래스를 상속해서 자식 클래스에 메서드를 새로 정의할 때 메서드의 이름과 매개변수 타입을 부모 클래스에 정의되어 있는 메서드와 똑같게 정의하여 &lt;strong&gt;자식 클래스에 특화된 방법을 정의하는 방법이다.&lt;/strong&gt;&lt;br&gt;
 양수의 개수를 반환하는 &lt;code class=&quot;language-text&quot;&gt;Numbers&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;length()&lt;/code&gt;함수를 최적화한 &lt;code class=&quot;language-text&quot;&gt;PositiveNumbers&lt;/code&gt;가 있다고 가정하자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;) {
     open fun length(): Int = ..
 }
@@ -1155,7 +1180,7 @@ numbers2.length()   &amp;quot;동적 선택 (dynamic dispatch)&amp;quot;&lt;/cod
 즉, 함수 선택은 인자의 정적 타입만 고려하지만 &lt;strong&gt;메서드 선택은 인자의 정적 타입도 고려하고 &lt;code class=&quot;language-text&quot;&gt;수신자(메서드를 호출하는 객체)의 동적 타입&lt;/code&gt;도 고려된다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;매개변수에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;매개변수에 의한 다형성&lt;a href=&quot;#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;매개변수에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;매개변수에 의한 다형성은 &lt;strong&gt;타입 매개변수를 통해 다형성을 만드는 기능으로, 제네릭스라고도 부른다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T&amp;gt; choose(v1: T, v2: T): T {
    println(v1)
    println(v2)
@@ -1171,7 +1196,7 @@ numbers2.length()   &amp;quot;동적 선택 (dynamic dispatch)&amp;quot;&lt;/cod
 &lt;p&gt;다형성의 내용은 이해하기 쉬웠을 것이다. 이제 이 글을 쓴 이유인 제네릭 가변성에 대해 알아보자.&lt;br&gt;
 위에서 설명한 &lt;strong&gt;서브타입에 의한 다형성&lt;/strong&gt;과 &lt;strong&gt;매개변수에 의한 다형성&lt;/strong&gt;이 만나게 되면서 복잡한 여러 기능들이 탄생하게 되는데 순서대로 알아보자.&lt;/p&gt;
 &lt;h2 id=&quot;제네릭-클래스와-상속&quot; style=&quot;position:relative;&quot;&gt;제네릭 클래스와 상속&lt;a href=&quot;#%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%83%81%EC%86%8D&quot; aria-label=&quot;제네릭 클래스와 상속 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;abstract class List&amp;lt;T&amp;gt; {
     abstract fun get(index: Int): T
 }
@@ -1182,7 +1207,7 @@ class ArrayList&amp;lt;T&amp;gt;: List&amp;lt;T&amp;gt;() {
 &lt;p&gt;위와 같은 제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;: List&amp;lt;T&gt;&lt;/code&gt;라면 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;A&gt;&lt;/code&gt;는 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&lt;/code&gt;에 등장하는 모든 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;로 바꿔서 만든 타입의 서브타입&lt;/strong&gt; 이라고 이해할 수 있다.&lt;br&gt;
 그리고 서브타입을 선언할 때 &lt;strong&gt;특정 타입에 대한 서브타입&lt;/strong&gt;으로 만들수도 있다.&lt;br&gt;
 기존의 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;를 구현하는 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;&lt;/code&gt; 와 다르게 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Boolean&gt;()&lt;/code&gt; 에 대한 클래스와 함수를 필요로한다고 가정해보자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class AnotherList: List&amp;lt;Boolean&amp;gt;() {
     override fun get(index: Int): Boolean = ..
 }
@@ -1206,7 +1231,7 @@ isExist(anotherList)&lt;/code&gt;
 &lt;h2 id=&quot;타입-매개변수-제한&quot; style=&quot;position:relative;&quot;&gt;타입 매개변수 제한&lt;a href=&quot;#%ED%83%80%EC%9E%85-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%9C%ED%95%9C&quot; aria-label=&quot;타입 매개변수 제한 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;제네릭 함수를 정의한다는 것은 여러 타입으로 사용될 수 있는 함수를 만드는 일이니, &lt;strong&gt;인자로 주어질 값이 특별한 능력을 가진다고 가정할 수 없다.&lt;/strong&gt;&lt;br&gt;
 반대로 인자가 특별한 능력을 가져야만 한다면 그 함수는 제네릭 함수일 필요가 없다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Person(private val age: Int): Comparable&amp;lt;Person&amp;gt;{
     override fun compareTo(other: Person): Int = compareValuesBy(this, other, Person::age)
 }
@@ -1223,7 +1248,7 @@ val marathoner: Marathoner = elder(marathoner1, marathoner1)    &amp;quot;[1] �
 &lt;p&gt;이때 제네릭 함수를 적용하려 할 수 있다. 하지만 제네릭 타입은 모든 타입을 수용하기 때문에 &lt;code class=&quot;language-text&quot;&gt;&gt;&lt;/code&gt; 연산 같은 특별한 능력을 사용할 수 없다.&lt;br&gt;
 이때 &lt;strong&gt;타입 매개변수 제한의 상한(upper bound)&lt;/strong&gt; 을 지정하여 &lt;strong&gt;&quot;T가 최대 Person 타입까지 커질 수 있다.&quot;&lt;/strong&gt; 라는 의미를 부여할 수 있다.&lt;br&gt;
 즉, &lt;strong&gt;T가 Person의 서브타입이다.&lt;/strong&gt; 라고 선언하는 것이다. (제네릭 함수뿐 아니라 제네릭 클래스도 마찬가지다.)&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T: Person&amp;gt; elder(person: T, other: T): T =
     if(person &amp;gt; other) person else other
 
@@ -1231,7 +1256,7 @@ val person: Person = elder&amp;lt;Person&amp;gt;(person1, person2)
 val marathoner: Marathoner = elder&amp;lt;Marathoner&amp;gt;(marathoner1, marathoner1)&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;위와 같이 상한을 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;T: Person&gt;&lt;/code&gt;으로 지정하여 반환 타입으로 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;를 받을 수 있고, 특별한 &lt;code class=&quot;language-text&quot;&gt;&gt;&lt;/code&gt; 연산을 사용할 수 있게 되었다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class List&amp;lt;T : Person&amp;gt; {
     fun get(index: Int): T = TODO()
 }&lt;/code&gt;
@@ -1270,7 +1295,7 @@ val marathoner: Marathoner = elder&amp;lt;Marathoner&amp;gt;(marathoner1, marath
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface Person
 interface Marathoner
 
@@ -1288,7 +1313,7 @@ fun main() {
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Intersection&amp;lt;T&gt;&lt;/code&gt; 인터페이스를 구현하는 타입은 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt; 둘 다 만족해야 한다.&lt;/p&gt;
 &lt;p&gt;아래와 같이 함수의 인자를 동시에 제한하여 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;CharSequence&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Comparable&lt;/code&gt;을 구현하는 타입만 받을 수 있는 함수&lt;/strong&gt;를 만들수도 있다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T&amp;gt; copyWhenGenerator(list: List&amp;lt;T&amp;gt;, threshold: T): List&amp;lt;String&amp;gt;
     where T: CharSequence, T: Comparable&amp;lt;T&amp;gt; = 
         list.filter { it &amp;gt; threshold }.map { it.toString() }
@@ -1312,7 +1337,7 @@ describe(&amp;quot;copyWhenGenerator 함수는&amp;quot;) {
 &lt;p&gt;&lt;strong&gt;지금까지 제네릭 함수를 정의할 때는 대개 매개변수 타입과 결과 타입의 관계를 유지해야 한다는 목표가 있었다.&lt;/strong&gt;&lt;br&gt;
 아래의 &lt;code class=&quot;language-text&quot;&gt;choose()&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;elder()&lt;/code&gt; 같이 받은 타입을 그대로 &lt;strong&gt;반환&lt;/strong&gt;해야 하는 함수는 매개변수에 의한 다형성이 반드시 필요했다.&lt;br&gt;
 반면 인자로 받아 &lt;strong&gt;소비&lt;/strong&gt;만하는 &lt;code class=&quot;language-text&quot;&gt;run()&lt;/code&gt;과 같은 함수는 서브타입에 의한 다형성이면 충분하다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Person
 class Marathoner : Person()
 
@@ -1325,7 +1350,7 @@ fun run(person: Person) {
         &lt;/deckgo-highlight-code&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;의 서브타입이 맞지만, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이 아니기 때문에 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt; 타입의 리스트를 모두 사용하기 위한 함수는 &lt;code class=&quot;language-text&quot;&gt;averageAge&lt;/code&gt;함수처럼 제네릭 함수로 정의하고 타입 매개변수 제한을 사용하였다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T: Person&amp;gt; averageAge(people: List&amp;lt;T&amp;gt;): Int = ..&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;하지만 이 방법대로라면 아래와 같은 귀찮은 점이 있다.&lt;/p&gt;
@@ -1338,7 +1363,7 @@ fun run(person: Person) {
 &lt;/blockquote&gt;
 &lt;p&gt;즉, &lt;strong&gt;&quot;B가 A의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;의 서브타입이라고 인정해주면 안될까?&quot;&lt;/strong&gt;&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이 된다고 가정하고 ReadOnlyList와 ReadWriteList의 예제를 보자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Person(val age: Int)
 class Marathoner(age: Int) : Person(age)
 
@@ -1357,7 +1382,7 @@ person.age ..&lt;/code&gt;
 런타임에는 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt; 객체이지만 타입 검사기가 알 수 있는 타입은 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;이다.&lt;br&gt;
 하지만 이 상황은 문제가 되지 않는다. Marathoner는 이미 Person의 서브타입이므로 &lt;strong&gt;Marathoner 객체를 Person 객체처럼 사용해도 문제 없다.&lt;/strong&gt;&lt;br&gt;
 즉, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;Marathoner&gt;&lt;/code&gt; 를 &lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;Person&gt;&lt;/code&gt;으로 취급함으로써 일어날 수 있는 일은 Person 객체를 기대한 곳에서 Marathoner 객체가 나오는 것 뿐이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;&amp;quot;가지고 있는 원소들을 알려주고 새 원소를 추가할 수 있다.&amp;quot;
 abstract class ReadWriteList&amp;lt;T&amp;gt; {
     abstract fun get(index: Int): T
@@ -1393,7 +1418,7 @@ val marathoner: Marathoner = marathoners.get(0)&lt;/code&gt;
 서로 다른 타입인 것이다. 따라서 &quot;타입 인자가 서브타입으로 변해도 제네릭 타입은 서브타입으로 안 변한다&quot;는 뜻을 담아, 이런 가변성을 &lt;strong&gt;불변 (invariance)&lt;/strong&gt; 이라 부른다.&lt;/p&gt;
 &lt;h3&gt;반변&lt;/h3&gt;
 &lt;p&gt;반변을 이해하기 위해서는 먼저 &lt;strong&gt;함수와 서브타입&lt;/strong&gt; 관계에 대해서 이해해야 한다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Person
 class Marathoner : Person()
 
@@ -1584,7 +1609,7 @@ selectBySuperType(subTypeConsumer)      &amp;quot;컴파일 에러&amp;quot;&lt;
 &lt;p&gt;가변성은 각 제네릭 타입의 고유한 속성이다. 따라서 &lt;strong&gt;제네릭 타입을 정의할 때 가변성을 지정하는게 가장 직관적이다.&lt;/strong&gt;&lt;br&gt;
 개발자는 제네릭 타입의 각 매개변수에 가변성을 표시함으로써 공변, 반변, 불변 중 하나를 고를 수 있다.&lt;/p&gt;
 &lt;h3&gt;불변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;abstract class List&amp;lt;T&amp;gt; {
     abstract fun length(): Int
     abstract fun get(index: Int): T
@@ -1592,7 +1617,7 @@ selectBySuperType(subTypeConsumer)      &amp;quot;컴파일 에러&amp;quot;&lt;
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h3&gt;공변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;abstract class ReadOnlyList&amp;lt;out T&amp;gt; {
     abstract fun get(index: Int): T
 }
@@ -1640,7 +1665,7 @@ averageAge(people)&lt;/code&gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;abstract class ReadOnlyList&amp;lt;T&amp;gt; {
     abstract fun get(index: Int): T
 }&lt;/code&gt;
@@ -1648,7 +1673,7 @@ averageAge(people)&lt;/code&gt;
 &lt;p&gt;위와 같이 선언된 List는 원소를 추가할 수도 없는 주제에 불변이기까지 한 불편한 리스트일 뿐이다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 입력에 사용하는 메서드를 추가하려고 계획 중인 게 아니라면, 굳이 이런 리스트를 정의할 필요는 없다.&lt;/p&gt;
 &lt;h3&gt;반변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;abstract class Map&amp;lt;in K, V&amp;gt; {
     abstract fun size(): Int
     abstract fun get(key: K): V
@@ -1661,7 +1686,7 @@ averageAge(people)&lt;/code&gt;
 반면 &lt;code class=&quot;language-text&quot;&gt;V&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt;에서는 출력, &lt;code class=&quot;language-text&quot;&gt;add()&lt;/code&gt;에서는 입력으로 사용되었기 때문에 &lt;strong&gt;반드시 불변이어야 한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;열쇠 타입에 대해 반변이므로 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;A, V&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;B, V&gt;&lt;/code&gt;의 서브타입이다.&lt;br&gt;
 예를 들면 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;Person, Int&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;Marathoner, Int&gt;&lt;/code&gt;의 서브타입이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;val personKey: Map&amp;lt;Person, Int&amp;gt; = ..
 personKey.add(Person(10), 1)
 personKey.add(Marathoner(10), 1)
@@ -1708,7 +1733,7 @@ marathonerKey.add(Marathoner(10), 1)&lt;/code&gt;
 &lt;p&gt;제네릭 타입을 사용할 때 가변성을 지정하는 경우, 제네릭 타입을 정의할 때는 가변성을 지정할 수 없다.&lt;br&gt;
 &lt;strong&gt;모든 제네릭 타입은 불변으로 정의되며 타입 매개변수를 아무 데서나 사용할 수 있다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;불변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;abstract class ReadWriteList&amp;lt;T&amp;gt; {
     abstract fun length(): Int
     abstract fun get(index: Int): T
@@ -1716,7 +1741,7 @@ marathonerKey.add(Marathoner(10), 1)&lt;/code&gt;
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h3&gt;공변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;val onlyReadPeople: ReadWriteList&amp;lt;out Person&amp;gt; = ..
 val size = onlyReadPeople.length()
 val person: Person = onlyReadPeople.get(0)
@@ -1725,7 +1750,7 @@ onlyReadPeople.add(Person(10)) &amp;quot;컴파일 에러&amp;quot;&lt;/code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;onlyReadPeople&lt;/code&gt;은 출력 기능만 사용할 수 있고, 원소 타입이 매개변수 타입으로 사용되지 않는 메서드만 사용할 수 있다는 뜻이다.&lt;br&gt;
 그리고 &lt;strong&gt;&quot;A를 출력과 입력에 모두 사용할 수 있는 불변 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 A를 출력에 사용할 수 있는 리스트다.&quot;&lt;/strong&gt; 가 사실이기 때문에 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out A&gt;&lt;/code&gt;의 서브타입이다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;T&gt;&lt;/code&gt;는 불변이지만 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;out Person&gt;&lt;/code&gt;는 공변이다. 따라서 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out A&gt;&lt;/code&gt;의 서브타입이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun averageAge(people: ReadWriteList&amp;lt;out Person&amp;gt;): Int {
     people.get(0)
     people.add(Person(10)) &amp;quot;컴파일 에러&amp;quot;
@@ -1775,7 +1800,7 @@ averageAge(readWriteMarathoner)&lt;/code&gt;
 &lt;h3&gt;반변&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;in A&gt;&lt;/code&gt; 역시 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;A&gt;&lt;/code&gt;와 비슷하게 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt; 타입의 원소들로 구성된 리스트를 나타내지만 &lt;strong&gt;입력 기능만 사용할 수 있다는 차이가 있다.&lt;/strong&gt;&lt;br&gt;
 정확히 말하면 &lt;strong&gt;메서드 중 원소 타입이 결과 타입으로 사용되지 않는 메서드만 사용할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;val readWritePeople: ReadWriteList&amp;lt;in Person&amp;gt; = ..
 val people: Any? = readWritePeople.get(0)
 readWritePeople.add(Person(10))
@@ -1818,7 +1843,7 @@ readWriteMarathoners.add(Marathoner(10))&lt;/code&gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun addPerson(people: ReadWriteList&amp;lt;in Person&amp;gt;) {
     people.add(Person(..))
     people.add(Marathoner(..))
@@ -1835,7 +1860,7 @@ addPerson(readWriteMarathoners1)    &amp;quot;컴파일 에러&amp;quot;
 addPerson(readWriteMarathoners2)    &amp;quot;컴파일 에러&amp;quot;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;addPerson&lt;/code&gt; 함수는 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;in Person&gt;&lt;/code&gt; 반변으로 지정되어 있기 때문에 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;Marathoner&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;의 서브타입이긴 하지만 &lt;code class=&quot;language-text&quot;&gt;addPerson&lt;/code&gt;의 인자로 사용될 수 없다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun addMarathoner(people: ReadWriteList&amp;lt;in Marathoner&amp;gt;) {
     people.add(Person(..))      &amp;quot;컴파일 에러&amp;quot;
     people.add(Marathoner(..))
@@ -1900,7 +1925,7 @@ InnoDB 테이블의 경우 &lt;strong&gt;스토리지 엔진 차원에서 레코
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;GET_LOCK()&lt;/code&gt; 함수를 이용해 임의의 문자열에 대해 잠금을 설정할 수 있다.&lt;br&gt;
 이 잠금의 특징은 잠금 대상이 테이블이나 레코드 또는 AUTO_INCREMENT와 같은 데이터베이스 객체가 아니라는 것이다.&lt;br&gt;
 &lt;strong&gt;단순히 사용자가 지정한 문자열에 대해 획득하고 반납하는 잠금&lt;/strong&gt; 이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잰셕 A&amp;gt;
 select GET_LOCK(&amp;#39;test1&amp;#39;, -1);
 +-----------------------+
@@ -1930,7 +1955,7 @@ select RELEASE_LOCK(&amp;#39;test1&amp;#39;);
 &lt;h2 id=&quot;메타데이터-락&quot; style=&quot;position:relative;&quot;&gt;메타데이터 락&lt;a href=&quot;#%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%9D%BD&quot; aria-label=&quot;메타데이터 락 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;데이터베이스 객체 (대표적으로 테이블이나 뷰 등)의 이름이나 구조를 변경하는 경우에 획득하는 잠금이다.&lt;br&gt;
 &lt;strong&gt;메타데이터 락은 명시적으로 획득하거나 해제할 수 있는 락은 아니고 테이블을 수정할 때 자동으로 획득하는 잠금이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잰셕 A&amp;gt;
 set autocommit = FALSE;
 
@@ -2008,7 +2033,7 @@ InnoDB는 &lt;strong&gt;레코드 기반의 잠금 방식 덕분에 MyISAM보다
 &lt;p&gt;InnoDB에서는 대부분 보조 인덱스를 이용한 변경 작업은 넥스트 키 락 또는 갭 락을 사용하지만 &lt;strong&gt;프라이머리 키 또는 유니크 인덱스에 의한 변경 작업에서는 갭에 대해서는 잠그지 않고 레코드 자체에 대해서만 락을 건다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;레코드를 잠그는 것과 인덱스를 잠그는 것은 중요한 차이를 만들어낸다.&lt;br&gt;
 즉, &lt;strong&gt;변경해야 할 레코드를 찾기 위해 검색한 인덱스의 레코드를 모두 락을 걸어야 한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;CREATE TABLE employees (
     id int NOT NULL AUTO_INCREMENT,
     first_name varchar(255) DEFAULT NULL,
@@ -2034,10 +2059,10 @@ InnoDB는 &lt;strong&gt;레코드 기반의 잠금 방식 덕분에 MyISAM보다
 | 12 | Jane       | Ann2           |
 +----+------------+----------------+&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;update employees SET last_name = &amp;#39;Updated Jane4&amp;#39; where first_name = &amp;#39;Jane&amp;#39; and last_name = &amp;#39;Ann1&amp;#39;;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;+-------------+----------------+-----------+---------------+-------------+------------+
 | OBJECT_NAME | INDEX_NAME     | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA  |
 +-------------+----------------+-----------+---------------+-------------+------------+
@@ -2058,7 +2083,7 @@ REC_NOT_GAP : 갭 락이 포함되지 않음 순수 레코드에 대한 잠금&l
 클러스터 인덱스와 보조 인덱스를 같이 where 절에 추가한다면 클러스터 인덱스 기준으로 락을 건다.&lt;br&gt;
 &lt;a href=&quot;https://stackoverflow.com/questions/60007863/why-does-innodb-block-more-records-in-case-of-a-secondary-index&quot;&gt;보조 인덱스의 경우 InnoDB가 더 많은 레코드를 차단하는 이유는 무엇입니까?&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;하지만 조금 의아한 점은 아래의 SQL은 모든 레코드를 잠근다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
 update employees SET last_name = &amp;#39;Updated Doe&amp;#39; where first_name = &amp;#39;John&amp;#39; and last_name = &amp;#39;Doe1&amp;#39;;
 
@@ -2067,7 +2092,7 @@ update employees SET last_name = &amp;#39;Updated Jane&amp;#39; where first_name
 -- 트랜잭션 A의 UPDATE문을 기다린다.&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;위와 같이 UPDATE문을 작성하면 10건만 레코드 락이 걸려야하겠지만 아래와 같이 모든 레코드를 잠그게 된다.&lt;/p&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FROM performance_schema.data_locks;
 +-------------+------------+-----------+-----------+-------------+------------------------+
 | OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE | LOCK_STATUS | LOCK_DATA              |
@@ -2108,7 +2133,7 @@ update employees SET last_name = &amp;#39;Updated Jane&amp;#39; where first_name
 &lt;h3&gt;SELECT ... LOCK IN SHARE MODE&lt;/h3&gt;
 &lt;p&gt;한 트랜잭션에서 읽어간 데이터를 &lt;strong&gt;다른 트랜잭션에서 배타적으로 수정하기 위해 락을 획득하려 할때 기다리게 한다. &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
 두 개의 세션에서 특정 레코드에 대한 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; 락을 동시에 가질 수 있다. (Shared Lock이 걸려있는 동안 다른 트랜잭션이 해당 row에 대해 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt; lock 획득은 불가능하지만 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; lock 획득은 가능)&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
 select * from employees where id = 10 for share;
 -- 1 row in set (0.00 sec)
@@ -2131,7 +2156,7 @@ SELECT OBJECT_NAME, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_STATUS, LOCK_DATA FRO
 &lt;h3&gt;SELECT ... FOR UPDATE&lt;/h3&gt;
 &lt;p&gt;한 트랜잭션에서 읽어간 데이터를 &lt;strong&gt;다른 트랜잭션에서 배타적으로 읽거나, 수정하기 위해 락을 획득하려할 때 기다리게 한다. &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;exclusive lock&lt;/code&gt;이 걸려있으면 다른 트랜잭션이 해당 row에 대해 &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt; lock을 모두 획득하지 못하고 대기해야 한다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
 select * from employees where id = 10 for update;
 -- 1 row in set (0.00 sec)
@@ -2155,7 +2180,7 @@ select * from employees where id = 10 for update;
 &lt;li&gt;intention exclusive lock (&lt;code class=&quot;language-text&quot;&gt;IX&lt;/code&gt;) : 트랜잭션이 테이블의 개별 행에 독점 잠금을 설정하려고 함을 나타낸다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;예를 들어 &lt;code class=&quot;language-text&quot;&gt;SELECT ... FOR SHARE&lt;/code&gt;는 IS 잠금을 설정하고 &lt;code class=&quot;language-text&quot;&gt;SELECT ... FOR UPDATE&lt;/code&gt;는 IX 잠금을 설정합니다.&lt;/p&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;+-------------+------------+-----------+---------------+-------------+-----------+
 | OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
 +-------------+------------+-----------+---------------+-------------+-----------+
@@ -2286,7 +2311,7 @@ Thread에서 공유 자원에 동시 접근을 제한하기 위해 &lt;strong&gt
 RDBMS 표준 에서는 트랜잭션의 격리 수준으로 인정하지 않을 정도로 문제가 많으며 &lt;code class=&quot;language-text&quot;&gt;Dirty Read&lt;/code&gt;가 허용되는 격리 수준이다&lt;/p&gt;
 &lt;h3 id=&quot;dirty-read-문제&quot; style=&quot;position:relative;&quot;&gt;Dirty Read 문제&lt;a href=&quot;#dirty-read-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;dirty read 문제 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;한 트랜잭션에서 처리한 작업이 완료되지 않았음에도 불구하고 다른 트랜잭션에서 볼 수 있게 되는 현상&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;set autocommit = FALSE;
 
 set transaction_isolation = &amp;#39;READ-UNCOMMITTED&amp;#39;;
@@ -2372,7 +2397,7 @@ rollback;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;동일한 SELECT 쿼리를 실행했을 때 항상 같은 결과를 보장해야 한다는 &lt;code class=&quot;language-text&quot;&gt;&quot;REPEATABLE READ&quot;&lt;/code&gt; 정합성에 어긋난다&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;set autocommit = FALSE;
 
 set transaction_isolation = &amp;#39;READ-COMMITTED&amp;#39;;
@@ -2482,7 +2507,7 @@ MVCC는 다중 버전 병행수행 제어의 약자로 DBMS에서는 쓰기(Writ
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;다른 트랜잭션에서 수행한 변경 작업에 의해 레코드가 보였다가 안보였다가 하는 현상을 &lt;code class=&quot;language-text&quot;&gt;PHANTOM READ(PHANTOM ROW)&lt;/code&gt;&lt;/strong&gt; 라고한다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;CREATE TABLE employees (
     id int NOT NULL,
     first_name varchar(255) DEFAULT NULL,
@@ -2507,7 +2532,7 @@ MVCC는 다중 버전 병행수행 제어의 약자로 DBMS에서는 쓰기(Writ
 +----+------------+-----------+&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;위의 테이블로 테스트를 해보자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 A&amp;gt;
 set transaction_isolation = &amp;#39;READ-COMMITTED&amp;#39;;
 set autocommit=false;
@@ -2541,7 +2566,7 @@ select * from employees where id &amp;gt;= 8 for update;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;트랜잭션 A&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;첫 번째 SELECT FOR UPDATE&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;두 번째 SELECT FOR UPDATE&lt;/code&gt;의 결과가 서로 다르다.&lt;br&gt;
 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;SELECT ... FOR UPDATE&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;SELECT ... LOCK IN SHARE MODE&lt;/code&gt;는 레코드에 쓰기 잠금을 걸어야 하는데, 언두 레코드에는 잠금을 걸 수 없기 때문에 조회되는 레코드는 언두 영역의 변경 전 데이터를 가져오는 것이 아니라 현재 레코드의 값을 가져오게 되는 것이다.&lt;/strong&gt;&lt;br&gt;
 격리 수준을 REPETABLE-READ로 올려보고 테스트하면 아래와 같이 해결된다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;트랜잭션 B&amp;gt;
 set transaction_isolation = &amp;#39;REPEATABLE-READ&amp;#39;;
 set autocommit=false;
@@ -3854,7 +3879,7 @@ DDD에 관심을 가지고 있다면 웜업 느낌으로 가볍게 읽을 수 �
 &lt;p&gt;위의 경우에 해당한다면 이 교육을 추천하고 싶다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;자동차-경주&quot; style=&quot;position:relative;&quot;&gt;자동차 경주&lt;a href=&quot;#%EC%9E%90%EB%8F%99%EC%B0%A8-%EA%B2%BD%EC%A3%BC&quot; aria-label=&quot;자동차 경주 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).
 pobi,crong,honux
 시도할 횟수는 몇 회인가요?
@@ -4045,7 +4070,7 @@ pobi, honux가 최종 우승했습니다.&lt;/code&gt;
 &lt;/ol&gt;
 &lt;p&gt;StringSpliterator를 유틸리티로 사용하였는데 유틸리티 클래스는 유익하지 않으니 문자열 계산기에 검증기와 같이 주입하는 것도 괜찮을 것 같다.&lt;/p&gt;
 &lt;h3&gt;로또&lt;/h3&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;구입금액을 입력해 주세요.
 14000
 
@@ -4114,7 +4139,7 @@ pobi, honux가 최종 우승했습니다.&lt;/code&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 입력 받은 당첨 번호 기준으로 당첨 금액과 당첨된 로또의 개수를 출력한다.
 &lt;ul&gt;
 &lt;li&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;3개 일치 (5000원)- 1개
 4개 일치 (50000원)- 0개
 5개 일치 (1500000원)- 0개
@@ -4198,7 +4223,7 @@ pobi, honux가 최종 우승했습니다.&lt;/code&gt;
 &lt;p&gt;&quot;열거타입은 결국 하나의 최상위 불변 인터페이스이고, 하위 속성들이 이 인터페이스를 구현한 구현체 인스턴스라고 할 수 있습니다&quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;LottoRank&lt;/code&gt;의 하위 속성들이 직접 당첨이 되었는지 각자 확인하도록 책임을 전가해야 했다. 이 생각을 하지 못한 이유가 열거타입과 하위 속성을 분리해서 생각해본적이 없었기 때문이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;typealias MatchedPredicate = (LottoWinningResult) -&amp;gt; Boolean
 
 enum class LottoRank(val prize: Int, val matchedPredicate: MatchedPredicate ) {
@@ -4239,7 +4264,7 @@ enum class LottoRank(val prize: Int, val matchedPredicate: MatchedPredicate ) {
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// AS-IS
 Lotto(
    lines: List&amp;lt;LottoLine&amp;gt;
@@ -4264,7 +4289,7 @@ Lotto(
 &lt;h3&gt;플라이웨이트 패턴&lt;/h3&gt;
 &lt;p&gt;로또를 구매할 때 마다 항상 새로운 &lt;code class=&quot;language-text&quot;&gt;LottoNumber&lt;/code&gt;를 생성하였다.&lt;br&gt;
 하지만 피드백을 통해 모든 로또는 똑같은 &lt;code class=&quot;language-text&quot;&gt;LottoNumber&lt;/code&gt;를 보유하도록 미리 초기화를 해놓았다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@JvmInline
 value class LottoNumber private constructor(
     private val number: Int
@@ -4298,7 +4323,7 @@ value class LottoNumber private constructor(
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;블랙잭&quot; style=&quot;position:relative;&quot;&gt;블랙잭&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD&quot; aria-label=&quot;블랙잭 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;게임에 참여할 사람의 이름을 입력하세요.(쉼표 기준으로 분리)
 pobi,jason
 
@@ -4442,7 +4467,7 @@ jason: -20000&lt;/code&gt;
 &lt;strong&gt;게임이 끝난 상태&lt;/strong&gt; 를 GameParticipants 클래스로 표현하였고,&lt;br&gt;
 &lt;strong&gt;게임 결과를 계산한 상태&lt;/strong&gt; 를 GameParticipantPlayerResult 클래스로 표현하였다.&lt;br&gt;
 그리고 게임 결과를 계산할 때 점수 비교는 아래와 같이 분기문으로 해결하였다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class GameParticipantDealer(
    name: String = NAME,
    cards: List&amp;lt;Card&amp;gt; = emptyList(),
@@ -4507,7 +4532,7 @@ jason: -20000&lt;/code&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;게임 내 규칙을 객체로 추상화&lt;/strong&gt; 하였다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface State {
    fun draw(card: PlayingCard): State
    fun stay(): State
@@ -4623,7 +4648,7 @@ abstract class Started : State {
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;지뢰찾기&quot; style=&quot;position:relative;&quot;&gt;지뢰찾기&lt;a href=&quot;#%EC%A7%80%EB%A2%B0%EC%B0%BE%EA%B8%B0&quot; aria-label=&quot;지뢰찾기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;높이를 입력하세요.
 10
 
@@ -4714,7 +4739,7 @@ Lose Game.&lt;/code&gt;
 &lt;strong&gt;3. 게임 진행&lt;/strong&gt; 게임에 사용될 게임판인 &lt;code class=&quot;language-text&quot;&gt;PlayingGameBoard&lt;/code&gt;와 플레이어 IO를 책임지는 &lt;code class=&quot;language-text&quot;&gt;ViewStrategy&lt;/code&gt;를 보유하는 &lt;code class=&quot;language-text&quot;&gt;MinesweeperGame&lt;/code&gt;을 통해 게임을 진행한다.&lt;br&gt;
 처음에는 컨트롤러 역할을하는 Game 클래스가 게임판을 준비하고 플레이어 IO와 게임 진행을 하는 책임을 모두 가지고 있었다.&lt;br&gt;
 해당 의존성을 아래처럼 분리했다.&lt;/p&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;                                          ➚ DefaultGameBoard extends GameBoard
 Game → MinesweeperGame → PlayingGameBoard
                                           ➘ MinesweeperGameBoard extends GameBoard&lt;/code&gt;
@@ -4736,7 +4761,7 @@ Game → MinesweeperGame → PlayingGameBoard
 이때 기준 셀의 주변 8방향 셀의 위치를 반환하는 기능을 &lt;strong&gt;게임판의 높이와 너비를 가지는 &lt;code class=&quot;language-text&quot;&gt;BoardElement&lt;/code&gt;&lt;/strong&gt; 에 구현할지, &lt;strong&gt;셀의 위치를 가지는 &lt;code class=&quot;language-text&quot;&gt;Position&lt;/code&gt;&lt;/strong&gt; 에 구현할지 고민했다.&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;BoardElement&lt;/code&gt;는 게임판의 높이와 너비를 이미 가지고 있기 때문에 IndexOutOfBounds 예외를 피할 수 있다.&lt;br&gt;
 하지만 문맥상 &lt;code class=&quot;language-text&quot;&gt;Position&lt;/code&gt; 클래스가 맞는 것 같아 &lt;code class=&quot;language-text&quot;&gt;Position&lt;/code&gt;에 구현했다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class MinesweeperBoardRender(
     private val mines: Set&amp;lt;Position&amp;gt;
 ): BoardRenderStrategy {
@@ -4900,7 +4925,7 @@ Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.&lt;/p&gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public static void main(String[] args) {
     List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;&amp;gt;();
     Set&amp;lt;String&amp;gt; set = new HashSet&amp;lt;&amp;gt;();
@@ -4910,7 +4935,7 @@ Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.&lt;/p&gt;
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;이렇게 Collection 하위 타입을 출력하게 되면 아래 코드의 구현체에 구현되어 있는 &lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;을 반환받아 출력받게 된다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public abstract class AbstractCollection&amp;lt;E&amp;gt; implements Collection&amp;lt;E&amp;gt; {
     public String toString() {
         Iterator&amp;lt;E&amp;gt; it = iterator();
@@ -5113,7 +5138,7 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface Flyable { fun fly() }
 interface Tweetable { fun tweet() }
 
@@ -5138,7 +5163,7 @@ class Penguin(
 다형성은 인터페이스를 사용하여 달성할 수 있으며,&lt;br&gt;
 코드 재사용은 합성과 위임으로 대체할 수 있다.&lt;/p&gt;
 &lt;p&gt;그럼 어떤 경우에 상속이 사용되면 좋을까? &lt;strong&gt;타입 계층 구조가 필요할 때 이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface Flyable { fun fly() }
 interface Tweetable { fun tweet() }
 
@@ -5186,7 +5211,7 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
 &lt;code class=&quot;language-text&quot;&gt;책임&lt;/code&gt;이란것은 이 코드가 변화하는 이유가 &lt;strong&gt;한 가지&lt;/strong&gt;이도록 만드는 것이라고 생각하면 쉽다.&lt;/p&gt;
 &lt;h4&gt;그럼 책임의 단위는 어떻게 판단해야할까?&lt;/h4&gt;
 &lt;p&gt;실제 소프트웨어 개발에서 클래스에 단일책임이 있는지를 판별하기란 쉬운 일이 아니다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class UserInfo (
     val userId: Long,
     val username: String,
@@ -5215,7 +5240,7 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
 &lt;p&gt;&lt;strong&gt;확장할 때는 개방, 수정할 때는 폐쇄&lt;/strong&gt; 원칙으로도 불린다.&lt;br&gt;
 새로운 기능을 추가할 때 기존의 모듈, 클래스, 함수를 수정하기 보다는 기존 코드를 기반으로 모듈, 클래스, 함수 등을 추가하는 방식으로 코드를 확장해야 한다는 뜻이다.&lt;/p&gt;
 &lt;p&gt;아래의 다양한 알림 채널을 지원하는 경고 알림 기능으로 예를 들어보겠다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Alert (
     private val rule: AlertRule,
     private val notification: Notification
@@ -5297,7 +5322,7 @@ class Penguin() : Bird(&amp;quot;펭귄&amp;quot;) {
 &lt;p&gt;&lt;strong&gt;만약 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;의 하위 유형인 경우, &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 유형의 객체는 프로그램을 중단하지 않고도 &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt;유형의 객체로 대체될 수 있다.&lt;/strong&gt;&lt;br&gt;
 하위 유형 또는 파생 클래스의 객체는 프로그램 내에서 &lt;strong&gt;상위 클래스가 나타나는 모든 상황에서 대체 가능&lt;/strong&gt;하며, 프로그램이 원래 가지는 &lt;strong&gt;논리적인 동작이 변경되지 않으며 정확성도 유지&lt;/strong&gt;된다.&lt;br&gt;
 한 마디로, 부모 클래스를 사용하는 기존의 클라이언트 코드가 자식 클래스로 대입하여도 문제 없이 작동하도록 하기 위해서 &lt;strong&gt;자식 클래스는 부모 클래스가 따르던 계약 사항을 자식도 따라야한다&lt;/strong&gt;는 것이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Parent (
     val p: Parameter
 ) {
@@ -5331,7 +5356,7 @@ class Main {
 &lt;h3&gt;리스코프 치환 원칙과 다형성의 차이점&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;리스코프 치환 원칙은 결국 다형성인건가?&lt;/code&gt;라고 생각할 수 있다.&lt;br&gt;
 보기에는 비슷하지만 &lt;strong&gt;실제로는 완전히 다른 의미이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;open class Parent (
     val p: Parameter
 ) {
@@ -5405,7 +5430,7 @@ class Child(
 &lt;p&gt;이 내용은 &lt;strong&gt;오현석님의 설명&lt;/strong&gt;으로 대체하겠다.&lt;/p&gt;
 &lt;p&gt;리스코프 치환 원칙에서 제네릭 파라미터 타입의 공변성, 반공변성 부분은 그냥 사족일 뿐이다.&lt;br&gt;
 &lt;strong&gt;선행조건 강화 금지&lt;/strong&gt;, &lt;strong&gt;후행조건 완화 금지&lt;/strong&gt;, &lt;strong&gt;불변조건 지키기&lt;/strong&gt; 정도로 충분하다.&lt;/p&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Foo&amp;lt;in A, out B&amp;gt; {
     fun foo(a: A) : B { ... }
 } &lt;/code&gt;
@@ -5433,7 +5458,7 @@ class Child(
 &lt;li&gt;객체지향 프로그래밍의 인터페이스&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;API나 기능의 집합&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface UserService {
     fun register(cellPhone: String, password: String) : Boolean
     fun login(cellPhone: String, password: String) : Boolean
@@ -5444,7 +5469,7 @@ class Child(
 대부분 반사적으로 &lt;code class=&quot;language-text&quot;&gt;UserService&lt;/code&gt;에 추가하게 될 것이다.&lt;br&gt;
 하지만 &lt;strong&gt;사용자 삭제는 신중하게 수행해야 하는 작업이므로 백그라운드 관리 시스템을 통해서만 수행되어야 하며, 따라서 관련 인터페이스의 사용 범위는 백그라운드 관리 시스템으로 제한되어야 한다.&lt;/strong&gt;&lt;br&gt;
 (예시가 사용자 도메인이기 때문에 여러 구현체가 있을지 만무하지만) 사용자 삭제 메서드를 현재 사용중인 인터페이스에 추가하게 된다면, 구현체들에서 모두 구현을 해줘야 해줄뿐더러 &lt;strong&gt;사용자 삭제와 관련없는 클라이언트에서도 삭제 메서드를 알게된다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface RestrictedUserService {
     fun deleteUserByCellphone(cellPhone: String) : Boolean
 }&lt;/code&gt;
@@ -5453,7 +5478,7 @@ class Child(
 핵심은 인터페이스 또는 기능의 일부가 호출자 중 일부에만 사용되거나 전혀 사용되지 않는다면 불필요한 항목을 &lt;strong&gt;강요&lt;/strong&gt;하는 대신, 인터페이스나 기능에서 해당 부분을 분리하여 해당 호출자에게 별도로 제공해야 하며, 사용하지 않는 인터페이스나 기능에는 접근하지 못하게 해야 한다.&lt;/p&gt;
 &lt;h3&gt;단일 API나 기능으로서의 인터페이스&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;API나 기능은 가능한 한 단순해야 하며 하나의 기능에 여러 다른 기능 논리를 구현하지 않아야 한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Statistics (
     val max: Long,
     val min: Long,
@@ -5524,7 +5549,7 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
 &lt;p&gt;이 인터페이스 분리 원칙을 지키지 못한 대표적인 예가 &lt;code class=&quot;language-text&quot;&gt;AbstractImmutableCollection&lt;/code&gt;이지 않을까 싶다.&lt;br&gt;
 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;UnsupportedOperationException&lt;/code&gt; 예외를 던지는 메소드들이 노출되어 있기 때문이다.&lt;br&gt;
 아마 기존 자바의 가변 콜렉션 타입 계층에 포함시키기 위해 어쩔 수 없는 선택이지 않았을까 싶다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;static abstract class AbstractImmutableCollection&amp;lt;E&amp;gt; extends AbstractCollection&amp;lt;E&amp;gt; {
     // all mutating methods throw UnsupportedOperationException
     @Override public boolean add(E e) { throw uoe(); }
@@ -5564,7 +5589,7 @@ fun count(dataSet: Collection&amp;lt;Long&amp;gt;) : Statistics {
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;모듈간 의존 역전이 필요한 경우&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// 수정 전
 // moduleA
 class Runner(val func: Func1) {
@@ -5736,7 +5761,7 @@ fun main() {
 &lt;p&gt;알고리즘이 실무의 문제를 해결할 떄 무조건 도움은 된다고 확신한다.&lt;br&gt;
 단순히 문제를 해결하기 위해 무지성으로 짜는 것이 아니라 &lt;strong&gt;시간,공간 복잡도를 고려하는 자세&lt;/strong&gt;가 생긴다.&lt;br&gt;
 최적의 답을 무조건 찾아내지 못 하더라도 (나는 시간복잡도를 확실히 모른다.) 생각하는 개발자라면 기계처럼 코드를 작성하는 것이 아니라 몇 분이라도 고민하고 작성하는것이 중요하다고 생각한다.&lt;/p&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;내가 사용하는 자바의 정렬 메소드는 어떻게 정렬이 되는지?  
 자료구조 마다 그리고 자료구조 구현체 마다 장,단점은 무엇인지?  &lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
@@ -6021,7 +6046,7 @@ fun main() {
 &lt;h1 id=&quot;armeria와-tomcat을-한-개의-포트로&quot; style=&quot;position:relative;&quot;&gt;Armeria와 Tomcat을 한 개의 포트로?&lt;a href=&quot;#armeria%EC%99%80-tomcat%EC%9D%84-%ED%95%9C-%EA%B0%9C%EC%9D%98-%ED%8F%AC%ED%8A%B8%EB%A1%9C&quot; aria-label=&quot;armeria와 tomcat을 한 개의 포트로 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Armeria에서는 &lt;a href=&quot;https://javadoc.io/doc/com.linecorp.armeria/armeria-javadoc/latest/com/linecorp/armeria/server/HttpService.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;javadoc&lt;/code&gt; HttpService&lt;/a&gt;로 Tomcat, gRPC 들을 추상화 해놓았다.&lt;br&gt;
 Armeria 서버가 실행될 때 원하는 Service들을 ServerBuilder에 추가시키기만 하면 된다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@Configuration
 class ArmeriaConfig{
 
@@ -6144,7 +6169,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 또는 &lt;a href=&quot;https://grpc.io/docs/languages/java/basics/&quot;&gt;공식 문서 Basics Tutorial&lt;/a&gt;에서도 확인 가능하다.&lt;/p&gt;
 &lt;p&gt;protocol buffer는 이진 부호화 라이브러리이며 부호화할 데이터를 위한 스키마를 &lt;code class=&quot;language-text&quot;&gt;proto&lt;/code&gt;언어를 통해 아래와 같이 메세지를 정의하고 protocol buffer compiler를 통해 원하는 언어로 &lt;a href=&quot;https://protobuf.dev/programming-guides/proto3/#generated&quot;&gt;generate&lt;/a&gt; 할 수 있다.&lt;br&gt;
 생성된 코드를 호출해 부호화하고 복호화할 수 있다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;proto&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;proto&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;syntax = &amp;quot;proto3&amp;quot;;
 
 package grpc.hello;
@@ -6437,7 +6462,7 @@ service HelloService {
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;p&gt;추가로 &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/technotes/guides/language/foreach.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;java 8 docs&lt;/code&gt; Iterable For-Each Loop&lt;/a&gt;를 확인해보자&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public interface Collection&amp;lt;E&amp;gt; extends Iterable&amp;lt;E&amp;gt;
 
 ...
@@ -6453,7 +6478,7 @@ public interface Iterable&amp;lt;T&amp;gt; {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 제공한다.&lt;/li&gt;
 &lt;li&gt;아래는 &lt;code class=&quot;language-text&quot;&gt;List&lt;/code&gt;의 구현체인 &lt;code class=&quot;language-text&quot;&gt;ArrayList&lt;/code&gt;를 &lt;strong&gt;For-Each&lt;/strong&gt;로 작성한 것이다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public static void enhancedForLoop() {
     List&amp;lt;String&amp;gt; test = new ArrayList&amp;lt;&amp;gt;(Arrays.asList(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;E&amp;quot;));
     for (String e : test) {
@@ -6484,7 +6509,7 @@ public static void enhancedForLoop() {
 &lt;strong&gt;For-Each Loop&lt;/strong&gt;는 각 자료구조에 구현된 &lt;code class=&quot;language-text&quot;&gt;iterator()&lt;/code&gt;를 호출하여 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 사용한다라고 볼 수 있다.&lt;br&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;concurrentmodificationexception-&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;ConcurrentModificationException&lt;/strong&gt; ?&lt;a href=&quot;#concurrentmodificationexception-&quot; aria-label=&quot;concurrentmodificationexception  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public static void main(String[] args) {
     List&amp;lt;String&amp;gt; chars = new ArrayList&amp;lt;&amp;gt;();
     chars.add(&amp;quot;A&amp;quot;);
@@ -6504,7 +6529,7 @@ public static void enhancedForLoop() {
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;private void fastRemove(int index) {
     modCount++;
     int numMoved = size - index - 1;
@@ -6519,7 +6544,7 @@ public static void enhancedForLoop() {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;System.arraycopy&lt;/code&gt;를 통해 삭제 인덱스 기준으로 복사한다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;br&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public Iterator&amp;lt;E&amp;gt; iterator() {
         return new Itr();
 }
@@ -6567,7 +6592,7 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;가 생성될 때 &lt;code class=&quot;language-text&quot;&gt;expectedModCount&lt;/code&gt;에 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;를 대입한다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;remove()&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;checkForComodification&lt;/code&gt;를 통해 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;expectedModCount&lt;/code&gt;&lt;/strong&gt; 와 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;ArrayList&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;&lt;/strong&gt; 는 다르게 되므로 해당 예외를 던지게 된다.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public static void main(String[] args) {
     List&amp;lt;String&amp;gt; chars = new ArrayList&amp;lt;&amp;gt;();
     chars.add(&amp;quot;A&amp;quot;);
@@ -6583,7 +6608,7 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
 위의 &lt;code class=&quot;language-text&quot;&gt;Itr&lt;/code&gt; 구현 클래스를 보면 &lt;code class=&quot;language-text&quot;&gt;next()&lt;/code&gt;가 호출될 때 마다 &lt;code class=&quot;language-text&quot;&gt;lastRet&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;cursor&lt;/code&gt;로 업데이트하고, &lt;code class=&quot;language-text&quot;&gt;remove()&lt;/code&gt;가 호출될 때 마다 &lt;code class=&quot;language-text&quot;&gt;lastRet&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 업데이트 하기 때문에 &lt;strong&gt;한 번의 next() 호출당 remove() 호출이 두 번 이상 존재하면 오류가 발생한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;반복자 클래스는 요소를 추가하는 메서드는 제공하지 않는다. 결국 반복자의 주요 기능은 &lt;code class=&quot;language-text&quot;&gt;순회&lt;/code&gt;이며, 요소를 추가하는 작업은 반복자에 적절하지 않다는 것을 유의하자.&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;Iterator 두 개를 만든 아래의 실행 결과는?&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public static void main(String[] args) {
     List&amp;lt;String&amp;gt; chars = new ArrayList&amp;lt;&amp;gt;();
     chars.add(&amp;quot;A&amp;quot;);
@@ -6600,7 +6625,7 @@ private class Itr implements Iterator&amp;lt;E&amp;gt; {
 그 이유는 최초 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;는 4이지만, &lt;code class=&quot;language-text&quot;&gt;iterator1.remove()&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;ArraysList.this.remove(lastRet)&lt;/code&gt;을 통해, ArraysList 내부 속성의 &lt;code class=&quot;language-text&quot;&gt;modCount&lt;/code&gt;는 4로 증가되기 때문에 &lt;code class=&quot;language-text&quot;&gt;iterator2&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;expectedModCount&lt;/code&gt;와 틀리게된다.&lt;/p&gt;
 &lt;h3&gt;이 경우에는 removeIf와 replaceAll로 대체할 수 있다.&lt;/h3&gt;  
 &lt;p&gt;꼭 내부 컬렉션을 직접 조작하고 싶다면 아래의 방법을 사용할 수 있다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;private List&amp;lt;Dish&amp;gt; menu;
 
 @BeforeEach
@@ -6648,7 +6673,7 @@ void replaceAll() {
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Iterable&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;Iterator&lt;/code&gt;를 구현하지 않고 &lt;code class=&quot;language-text&quot;&gt;operator&lt;/code&gt;만 작성했을 때&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;이 두 가지를 테스트해보았다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class IterableTest: BehaviorSpec ({
 
     val size = 5
@@ -6746,7 +6771,7 @@ void replaceAll() {
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;compileOnly &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;
 annotationProcessor &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
@@ -6789,7 +6814,7 @@ annotationProcessor &amp;#39;org.projectlombok:lombok:1.18.16&amp;#39;&lt;/code&
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@AllArgsConstructor
 public class ProductData {
     private Long id;
@@ -6802,7 +6827,7 @@ public class ProductData {
 &lt;blockquote&gt;
 &lt;p&gt;컴파일된 클래스를 디컴파일한 &lt;strong&gt;ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class ProductData {
     private Long id;
     private String name;
@@ -6822,7 +6847,7 @@ public class ProductData {
 &lt;blockquote&gt;
 &lt;p&gt;필드들의 순서가 섞인 &lt;strong&gt;ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@AllArgsConstructor
 public class ProductData {
     private Long id;
@@ -6835,7 +6860,7 @@ public class ProductData {
 &lt;blockquote&gt;
 &lt;p&gt;컴파일된 클래스를 디컴파일한 &lt;strong&gt;순서가 섞인 ProductData&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class ProductData {
     private Long id;
     private String imageUrl;
@@ -6899,7 +6924,7 @@ public class ProductData {
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;@Builder&lt;/code&gt;를 직접 확인해보자&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@Target({TYPE, METHOD, CONSTRUCTOR})
 @Retention(SOURCE)
 public @interface Builder {
@@ -6915,7 +6940,7 @@ public @interface Builder {
 &lt;li&gt;메서드&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;생성자&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;클래스에 주석이 달린 경우 패키지 전용 생성자가 모든 필드를 인수로 사용하여 생성되며  
 ( @AllArgsConstructor(access = AccessLevel.PACKAGE)클래스에 있는 것처럼) 
 이 생성자에 주석이 @Builder대신 추가된 것과 같습니다.&lt;/code&gt;
@@ -6926,7 +6951,7 @@ public @interface Builder {
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;클래스에 작성&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@Builder
 public class Test {
     private int a;
@@ -6955,7 +6980,7 @@ public class Test {
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;생성자에 작성&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class Test {
     private int a;
     private int b;
@@ -6975,7 +7000,7 @@ public class Test {
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;생성자에 작성&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;int d&lt;/code&gt;추가&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class Test {
     private int a;
     private int b;
@@ -7008,7 +7033,7 @@ public class Test {
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;특정 생성자에 작성&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class Test {
     private int a;
     private int b;
@@ -7113,7 +7138,7 @@ public class Test {
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;testcase-0--아무것도-호출하지-않음&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 0 :&lt;/code&gt; 아무것도 호출하지 않음&lt;a href=&quot;#testcase-0--%EC%95%84%EB%AC%B4%EA%B2%83%EB%8F%84-%ED%98%B8%EC%B6%9C%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%8C&quot; aria-label=&quot;testcase 0  아무것도 호출하지 않음 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
 
@@ -7174,7 +7199,7 @@ class Single{
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;클래스만 로딩 되었고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스는 로딩되지 않음&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;testcase-1--인스턴스-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 1 :&lt;/code&gt; 인스턴스 생성&lt;a href=&quot;#testcase-1--%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;testcase 1  인스턴스 생성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         Single single = new Single();
@@ -7235,7 +7260,7 @@ class Single{
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;이 실행되고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행되었다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;testcase-2--final키워드가-없는-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 2 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 없는 정적 변수 호출&lt;a href=&quot;#testcase-2--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%97%86%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 2  final키워드가 없는 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         System.out.println(Single.a);
@@ -7297,7 +7322,7 @@ class Single{
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;public static int a&lt;/code&gt;변수가 출력 되었다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;testcase-3--final키워드가-있는-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 3 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 있는 정적 변수 호출&lt;a href=&quot;#testcase-3--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 3  final키워드가 있는 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         System.out.println(Single.b);
@@ -7358,7 +7383,7 @@ class Single{
 &lt;li&gt;⭐️ &lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;클래스가 실행되고 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행되지 않았지만 &lt;code class=&quot;language-text&quot;&gt;public static final int b&lt;/code&gt;가 출력되었다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;testcase-4--final키워드가-없는-정적-메서드-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 4 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 없는 정적 메서드 호출&lt;a href=&quot;#testcase-4--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%97%86%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 4  final키워드가 없는 정적 메서드 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         Single.test();
@@ -7416,7 +7441,7 @@ class Single{
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;testcase-5--final키워드가-있는-정적-메서드-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 5 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 있는 정적 메서드 호출&lt;a href=&quot;#testcase-5--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 5  final키워드가 있는 정적 메서드 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         Single.test();
@@ -7474,7 +7499,7 @@ class Single{
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;testcase-6--정적-내부-클래스의-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 6 :&lt;/code&gt; 정적 내부 클래스의 정적 변수 호출&lt;a href=&quot;#testcase-6--%EC%A0%95%EC%A0%81-%EB%82%B4%EB%B6%80-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 6  정적 내부 클래스의 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
         System.out.println(Single.INNER_INSTANCE.INSTANCE);
@@ -7545,7 +7570,7 @@ class Single{
 &lt;li&gt;결과를 보면 10개의 스레드가 동시에 클래스 로딩을 시도해도 클래스 로딩은 한번만 수행되고, 그때 한번 초기화를 수행한다.&lt;/li&gt;
 &lt;li&gt;이후 인스턴스를 10개 생성한다&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String args[]) {
         // 1. 스레드 풀 생성
@@ -7628,7 +7653,7 @@ class Single {
 &lt;ul&gt;
 &lt;li&gt;&lt;span style=&quot;color:red; font-weight:bold&quot;&gt;실패 사례&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String args[]) {
         ExecutorService service = Executors.newCachedThreadPool();
@@ -7699,7 +7724,7 @@ class SingleTon {
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -7792,7 +7817,7 @@ class SingleTon {
 &lt;p&gt;✋ 위의 &lt;strong&gt;클래스 로드 시점과 같다.&lt;/strong&gt; 클래스가 로드되면 초기화도 바로 진행된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;부모클래스는-자식클래스보다-먼저-초기화된다&quot; style=&quot;position:relative;&quot;&gt;부모클래스는 자식클래스보다 먼저 초기화된다.&lt;a href=&quot;#%EB%B6%80%EB%AA%A8%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%9E%90%EC%8B%9D%ED%81%B4%EB%9E%98%EC%8A%A4%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%EC%B4%88%EA%B8%B0%ED%99%94%EB%90%9C%EB%8B%A4&quot; aria-label=&quot;부모클래스는 자식클래스보다 먼저 초기화된다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Super {
     static { System.out.println(&amp;quot;Super Init&amp;quot;); }
 }
@@ -7809,12 +7834,12 @@ class Main {
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;Super Init
 Two Init&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h3 id=&quot;부모-인터페이스는-자식-인터페이스가-호출하여도-초기화-하지-않는다&quot; style=&quot;position:relative;&quot;&gt;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다.&lt;a href=&quot;#%EB%B6%80%EB%AA%A8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%8A%94-%EC%9E%90%EC%8B%9D-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B0%80-%ED%98%B8%EC%B6%9C%ED%95%98%EC%97%AC%EB%8F%84-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface A {
     int A = 1;
     int AA = Main.out(&amp;quot;AA&amp;quot;, 2);
@@ -7839,7 +7864,7 @@ class Main {
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;B.A : 1
 B = 3
 BB = 4
@@ -7849,7 +7874,7 @@ CC = 6
 C.C : 5&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h2 id=&quot;초기화-진행-순서&quot; style=&quot;position:relative;&quot;&gt;초기화 진행 순서&lt;a href=&quot;#%EC%B4%88%EA%B8%B0%ED%99%94-%EC%A7%84%ED%96%89-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;초기화 진행 순서 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args) {
         new Single();
@@ -7887,7 +7912,7 @@ class Temp {
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-dark&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;A : 0
 B : 0
 1. 정적 블록
