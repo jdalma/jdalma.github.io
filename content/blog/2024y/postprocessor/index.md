@@ -7,7 +7,7 @@ tags:
    - proxy
 ---
 
-스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 조금 필요하다.  
+스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다.  
 
 1. Reflection
 2. Java Dynamic Proxy
@@ -277,6 +277,7 @@ class UppercaseHandler(
         Hello::class.java to helloTarget,
         Goodbye::class.java to goodbyeTarget,
     )
+
     override fun invoke(proxy: Any, method: Method, args: Array<out Any>): Any {
         val result: String = method.invoke(lookupTarget[method.declaringClass], *args) as String
         return result.uppercase()
@@ -522,8 +523,8 @@ Target이 MethodInvocation안에 포함되어 있기 때문에 이전 방법과 
   
 # 5단계: FactoryBean
 
-스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이.  
-생성할 프록시가 다른 빈을 주입 받을 필요가 있거나 스프링의 기능을 사용해야 한다면 스프링 빈으로 등록해야 할 필요가 있다.  
+스프링을 대신해서 오브젝트의 생성 로직을 담당하도록 만들어진 특별한 빈이다.  
+생성할 프록시가 다른 빈을 주입 받을 필요가 있거나 스프링의 기능을 사용해야 한다면 스프링 빈으로 등록해야 한다.  
 이때 **스프링은 `FactoryBean` 인터페이스를 구현한 클래스가 Bean의 클래스로 지정되면 `getObject()`를 통해 오브젝트를 가져오고, 이를 빈 오브젝트로 사용한다.**  
 - 복잡한 초기화가 필요한 빈을 생성 시
 - AOP 프록시와 같이 런타임에 생성되는 프록시 객체를 스프링 빈으로 등록할 때  
@@ -559,9 +560,11 @@ class PersonFactoryBean(
     private val `interface`: Class<*>
 ): FactoryBean<Any> {
 
+    // 인터페이스 기반이 아닌 Person 구현체의 프록시를 생성하기 ProxyFactory로 프록시를 생성
+    // ProxyFactory로 프록시를 생성하기 위해서는 (TransactionMethodInterceptor와 같은) 부가기능은 org.aopalliance.intercept.MethodInterceptor를 구현해야 한다.
     override fun getObject() = ProxyFactory(target).apply {
-        this.addAdvice(TransactionMethodInterceptor(target, "say"))
-        this.isProxyTargetClass = true // 인터페이스 기반이 아닌 Person 구현체의 프록시를 생성하기 위해 직접 설정
+        this.addAdvice(TransactionMethodInterceptor("say"))
+        this.isProxyTargetClass = true
     }.proxy
 
     override fun getObjectType(): Class<*> = `interface`
@@ -577,17 +580,15 @@ class TransactionMethodInterceptor(
 ): MethodInterceptor {
 
     override fun invoke(invocation: MethodInvocation) =
-        if (invocation.method.name.startsWith(pattern))
-            invokeInTransaction(invocation.method, invocation.arguments)
+        if (invocation.method.name.startsWith(pattern)) invokeInTransaction(invocation)
         else invocation.proceed()
 
-    private fun invokeInTransaction(method: Method, args: Array<out Any>): String {
+    private fun invokeInTransaction(invocation: MethodInvocation): String =
         try {
-            return "(Commit)" + method.invoke(target, *args)
+            "(Commit)" + invocation.proceed()
         } catch (e: InvocationTargetException) {
             throw e.targetException
         }
-    }
 }
 
 /**
@@ -601,7 +602,7 @@ class AppConfig {
     fun person() = PersonFactoryBean(Person(), Person::class.java)
 }
 
-@SpringBootTest("spring.profiles.active=local")
+@SpringBootTest("spring.profiles.active=local", classes = [AppConfig::class])
 class FactoryBeanTest(
     private val context: ApplicationContext,
     private val hello: Hello,
@@ -652,17 +653,40 @@ class FactoryBeanTest(
         personBean.sayHello(NAME) shouldBe "(Commit)Hello admin"
         personBean.sayHi(NAME) shouldBe "(Commit)Hi admin"
         personBean.sayThankYou(NAME) shouldBe "(Commit)Thank you admin"
+
+        System.identityHashCode(hello) shouldBe System.identityHashCode(helloBean)
+        System.identityHashCode(person) shouldBe System.identityHashCode(personBean)
     }
 }
 ```
 
 `say`로 시작하는 메서드의 반환값에 `(Commit)` 문자열을 추가하여 반환하는 부가 기능을 `TransactionMethodInterceptor`로 정의하여 빈을 등록할 때 `PersonFactoryBean`을 통해 프록시로 감싼 빈을 등록하였다.  
-
+  
+하지만 빈을 직접 등록해야 하는 불편함이 있다.  
+- **한 번에 여러 개의 클래스에 공통적인 부가기능을 제공해야 한다면?** 비즈니스 로직을 담은 많은 클래스의 메소드에 부가기능을 적용하려 한다면 팩토리 빈의 설정 코드도 같이 늘어난다.
+- **하나의 타깃에 여러 개의 부가기능을 적용해야 한다면?** 프록시를 생성하는 FactoryBean 구현체마다 advice를 직접 추가해줘야 한다.
+  
+이렇게 번거로운 작업을 없애고 프록시를 모든 타깃에 적용 가능한 싱글톤 빈으로 만드는 방법을 알아보자.
 
 # 6단계: ProxyFactoryBean
 
-ProxyFactory를 사용하여 프로그래밍 방식으로 프록시를 직접 생성해보았다. 스프링에서는 이 프록시를 빈으로 등록해주는 (`FactoryBean`을 구현하는) `ProxyFactoryBean` 구현체가 존재한다.  
-
+ProxyFactory를 사용하여 프로그래밍 방식으로 프록시를 직접 생성해보았지만, **스프링은 프록시 오브젝트를 생성해주는 기술을 추상화한 팩토리 빈을 제공한다.**  
+프록시를 생성해서 빈 오브젝트로 등록해주는 `ProxyFactoryBean` 구현체가 존재한다.  
+(ProxyFactory와 동일한 기능을 제공하지만 `FactoryBean`을 추가로 구현하는 것이다.)  
 
 ![](./proxyFactory.png)
 
+이때까지 작성한 예제를 보면 어떤 부가기능은 `MethodInterceptor`를 구현하였고, 어떤 부가기능은 `InvocationHandler`를 구현하였다.  
+
+```kotlin
+class MyMethodInterceptor: MethodInterceptor {
+    override fun invoke(invocation: MethodInvocation) = invocation.proceed()
+}
+
+class MyInvocationHandler(
+    private val target: Any
+): InvocationHandler {
+    override fun invoke(proxy: Any, method: Method, args: Array<out Any>): Any =
+        method.invoke(target, *args)
+}
+```
