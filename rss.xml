@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Mar 2024 14:57:51 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 16 Mar 2024 13:08:05 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -337,11 +337,12 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;li&gt;ProxyFactoryBean&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.&lt;/strong&gt;&lt;br&gt;
-이 글에서는 스프링 AOP를 사용하는 법, 포인트 컷, 어드바이스를 자세하게 설명하진 않는다.&lt;br&gt;
-스프링의 빈 후처리기를 통해 프록시가 어떻게 자동으로 생성되는지를 중점으로 다룬다. 단계별로 알아보자.&lt;/p&gt;
+이 글에서는 스프링 AOP를 사용하는 법, 포인트 컷, 어드바이스를 자세하게 설명하진 않으며, 스프링의 빈 후처리기를 통해 프록시가 어떻게 자동으로 생성되는지를 중점으로 다룬다.&lt;br&gt;
+이 글을 통해 프록시가 무엇인지, 프록시를 관리하고 생성할 때 불편한 방법들을 스프링은 어떻게 해결했는지 알 수 있을것 이다.&lt;br&gt;
+차근차근 단계별로 알아보자.&lt;/p&gt;
 &lt;h1 id=&quot;1단계-java-reflection&quot; style=&quot;position:relative;&quot;&gt;1단계: Java Reflection&lt;a href=&quot;#1%EB%8B%A8%EA%B3%84-java-reflection&quot; aria-label=&quot;1단계 java reflection permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;자바의 리플렉션(Reflection)은 런타임 시에 클래스의 속성, 메소드, 생성자 등의 메타데이터를 조회하거나 수정할 수 있는 강력한 기능이다.&lt;br&gt;
-또한, &lt;strong&gt;리플렉션을 사용하여 런타임 시에 동적으로 객체를 생성하고, 가시성에 관계없이 메소드를 호출하거나, 필드에 접근할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;자바의 리플렉션(Reflection)은 런타임 시에 클래스의 속성, 메소드, 생성자 등의 메타데이터를 조회하여 활용할 수 있는 강력한 기능이다.&lt;br&gt;
+즉 &lt;strong&gt;런타임 시에 동적으로 객체를 생성하고, 가시성에 관계없이 메소드를 호출하거나, 필드에 접근할 수 있다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
@@ -487,7 +488,7 @@ describe(&amp;quot;Person 클래스&amp;quot;) {
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;핵심 기능인 &lt;code class=&quot;language-text&quot;&gt;bizLogic()&lt;/code&gt;을 실행시키기 위한 부가 기능이 많이 존재한다.&lt;br&gt;
+&lt;p&gt;핵심 기능인 &lt;code class=&quot;language-text&quot;&gt;bizLogic()&lt;/code&gt;을 실행시키기 위한 부가기능이 많이 존재한다.&lt;br&gt;
 이 문제를 &lt;strong&gt;위임&lt;/strong&gt; 을 통해 해결하면 어떨까?&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -528,9 +529,9 @@ class UserServiceProxy (
     private val userServiceTarget: UserService
 ): UserService {
     override fun accountTransfer(fromId: String, toId: String, money: Int) {
-        // 부가 기능
+        // 부가기능
         userServiceTarget.accountTransfer(...)
-        // 부가 기능
+        // 부가기능
     }
 }
 
@@ -540,8 +541,8 @@ class UserServiceTarget: UserService {
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위임을 통해 부가 기능은 마치 &lt;strong&gt;자신이 핵심 기능 클래스인 것처럼 꾸며서, 클라이언트가 자신을 거쳐서 핵심 기능을 사용하도록 만드는 것이다.&lt;/strong&gt;&lt;br&gt;
-클라이언트는 인터페이스를 통해서만 핵심 기능을 사용하게 하여, 부가 기능은 자신도 같은 인터페이스를 구현한 뒤에 자신이 그 사이에 끼어들어 타깃을 직접 제어하는 것이다.&lt;/p&gt;
+&lt;p&gt;위임을 통해 부가기능은 마치 &lt;strong&gt;자신이 핵심 기능 클래스인 것처럼 꾸며서, 클라이언트가 자신을 거쳐서 핵심 기능을 사용하도록 만드는 것이다.&lt;/strong&gt;&lt;br&gt;
+클라이언트는 인터페이스를 통해서만 핵심 기능을 사용하게 하여, 부가기능은 자신도 같은 인터페이스를 구현한 뒤에 자신이 그 사이에 끼어들어 타깃을 직접 제어하는 것이다.&lt;/p&gt;
 &lt;p&gt;이렇게 마치 &lt;code class=&quot;language-text&quot;&gt;자신이 클라이언트가 사용하려고 하는 실제 대상인 것처럼 위장해서 클라이언트의 요청을 받아주는 것&lt;/code&gt;을 대리자,대리인 과 같은 역할을 한다고 해서 &lt;strong&gt;프록시&lt;/strong&gt; 라고 부르며, 프록시를 통해 최종적으로 요청을 위임받아 처리하는 실제 오브젝트를 &lt;strong&gt;타깃&lt;/strong&gt; 이라고 부른다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;타깃과 동일한 인터페이스를 구현하고&lt;/li&gt;
@@ -556,7 +557,7 @@ class UserServiceTarget: UserService {
 그래서 데코레이터의 다음 위임 대상은 인터페이스로 선언하고 생성자나 수정자 메소드를 통해 위임 대상을 외부에서 런타임 시에 주입받을 수 있도록 만들어야 한다.&lt;br&gt;
 프록시가 꼭 한 개로 제한되지 않으며, 여러 개의 프록시를 &lt;strong&gt;순서를 정해서 단계적으로 위임하는 구조로 만들어야 한다.&lt;/strong&gt;&lt;br&gt;
 데코레이터는 스스로 존재할 수 없고 항상 꾸며줄 대상이 있어야 하며 &lt;strong&gt;타겟에 대한 기능을 확장시키는 개념이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;위의 &lt;code class=&quot;language-text&quot;&gt;UserServiceTarget&lt;/code&gt;에 부가 기능을 제공하는 &lt;code class=&quot;language-text&quot;&gt;UserServiceProxy&lt;/code&gt;를 추가한 것도 데코레이터 패턴을 적용했다고 볼 수 있다.&lt;/p&gt;
+&lt;p&gt;위의 &lt;code class=&quot;language-text&quot;&gt;UserServiceTarget&lt;/code&gt;에 부가기능을 제공하는 &lt;code class=&quot;language-text&quot;&gt;UserServiceProxy&lt;/code&gt;를 추가한 것도 데코레이터 패턴을 적용했다고 볼 수 있다.&lt;/p&gt;
 &lt;h3&gt;프록시 패턴&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;클라이언트와 타깃 사이에서 대리 역할을 맡는 오브젝트를 두는 방법을 총칭하는 것이다.&lt;/strong&gt;&lt;br&gt;
 디자인 패턴에서 말하는 프록시 패턴은 &lt;strong&gt;프록시를 사용하는 방법 중에 타깃에 대한 접근 방법을 제어하려는 목적을 가진 경우&lt;/strong&gt; 를 가리킨다.&lt;br&gt;
@@ -573,7 +574,7 @@ class UserServiceTarget: UserService {
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;이렇게 프록시 패턴은 타깃의 기능 자체에는 관여하지 않으면서 접근하는 방법을 제어해주는 프록시를 &lt;code class=&quot;language-text&quot;&gt;이용&lt;/code&gt;하는 것이다.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;위임을 통한 프록시를 생성하여 부가 기능과 핵심 기능을 분리했지만 프록시를 만드는 일은 번거롭고 타깃 인터페이스에 의존적이여서 타깃이 여러 개라면 인터페이스 API가 수정될 수 밖에 없을 것이다.&lt;/p&gt;
+&lt;p&gt;위임을 통한 프록시를 생성하여 부가기능과 핵심 기능을 분리했지만 프록시를 만드는 일은 번거롭고 타깃 인터페이스에 의존적이여서 타깃이 여러 개라면 인터페이스 API가 수정될 수 밖에 없을 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;3단계-proxy-생성-방법&quot; style=&quot;position:relative;&quot;&gt;3단계: Proxy 생성 방법&lt;a href=&quot;#3%EB%8B%A8%EA%B3%84-proxy-%EC%83%9D%EC%84%B1-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;3단계 proxy 생성 방법 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id=&quot;java-dynamic-proxy&quot; style=&quot;position:relative;&quot;&gt;Java Dynamic Proxy&lt;a href=&quot;#java-dynamic-proxy&quot; aria-label=&quot;java dynamic proxy permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -582,13 +583,13 @@ class UserServiceTarget: UserService {
 &lt;p&gt;이 프록시는 두 가지 기능으로 구성된다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;타깃과 같은 메소드를 구현하고 있다가 메소드가 호출되면 타깃 오브젝트로 위임한다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;지정된 요청에 대해서는 부가 기능을 수행한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;지정된 요청에 대해서는 부가기능을 수행한다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;다이나믹 프록시를 이용해 프록시를 만들어보자.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Hello&lt;/code&gt; 인터페이스를 구현한 프록시를 만들어보자.&lt;br&gt;
-프록시에는 데코레이터 패턴을 적용해서 타깃인 &lt;code class=&quot;language-text&quot;&gt;HelloTarget&lt;/code&gt;에 부가 기능을 추가해보자.&lt;br&gt;
-리턴하는 문자를 모두 대문자로 바꾸는 부가 기능을 만들어보자.&lt;/p&gt;
+프록시에는 데코레이터 패턴을 적용해서 타깃인 &lt;code class=&quot;language-text&quot;&gt;HelloTarget&lt;/code&gt;에 부가기능을 추가해보자.&lt;br&gt;
+리턴하는 문자를 모두 대문자로 바꾸는 부가기능을 만들어보자.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface Hello {
@@ -651,7 +652,7 @@ class UppercaseHandler(
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Proxy.newProxyInstance()&lt;/code&gt;로 중요한 두 가지의 값을 전달해야 한다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;를 구현한 부가 기능을 가진 &lt;strong&gt;프록시&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;를 구현한 부가기능을 가진 &lt;strong&gt;프록시&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Hello&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Goodbye&lt;/code&gt;와 같은 &lt;strong&gt;인터페이스&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;런타임 중에 주어진 인터페이스들을 구현하는 프록시 인스턴스를 생성하며, 프록시 인스턴스는 하나의 &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt; 인스턴스와 연결된다.&lt;br&gt;
@@ -742,7 +743,7 @@ class MyCallbackFilter : CallbackFilter {
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Enhancer.create()&lt;/code&gt;에서 전달하는 Callback 순서대로 (&lt;code class=&quot;language-text&quot;&gt;arrayOf&amp;lt;Callback&gt;(MyMethodInterceptor(), MyFixedValue())&lt;/code&gt;) &lt;code class=&quot;language-text&quot;&gt;CallbackFilter&lt;/code&gt;에서 어떤 콜백을 실행할지 지정할 수 있다.&lt;/p&gt;
 &lt;h1 id=&quot;4단계-프록시의-구현체-생성-방법을-선택하는-proxyfactory&quot; style=&quot;position:relative;&quot;&gt;4단계: 프록시의 구현체 생성 방법을 선택하는 ProxyFactory&lt;a href=&quot;#4%EB%8B%A8%EA%B3%84-%ED%94%84%EB%A1%9D%EC%8B%9C%EC%9D%98-%EA%B5%AC%ED%98%84%EC%B2%B4-%EC%83%9D%EC%84%B1-%EB%B0%A9%EB%B2%95%EC%9D%84-%EC%84%A0%ED%83%9D%ED%95%98%EB%8A%94-proxyfactory&quot; aria-label=&quot;4단계 프록시의 구현체 생성 방법을 선택하는 proxyfactory permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;스프링에서 제공하는 AOP 프록시용 팩토리는 인터페이스가 있을 때는 JDK 동적 프록시를 사용하고, 그렇지 않은 경우에는 CGLIB을 사용한다.&lt;br&gt;
-이제는 부가 기능을 적용할 때 &lt;code class=&quot;language-text&quot;&gt;Advice (부가 기능)&lt;/code&gt;만 지정해주면된다. &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;를 알 필요가 없다.&lt;br&gt;
+이제는 부가기능을 적용할 때 &lt;code class=&quot;language-text&quot;&gt;Advice (부가기능)&lt;/code&gt;만 지정해주면된다. &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;를 알 필요가 없다.&lt;br&gt;
 프록시 팩토리가 내부에서 JDK 동적 프록시일 경우 InvocationHandler가 Advice를 호출하도록 하고, CGLIB인 경우 MethodInterceptor가 Advice를 호출하도록 기능을 개발해두었기 때문이다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface Hello {
@@ -898,8 +899,8 @@ class PersonFactoryBean(
 }
 
 /**
- * 부가 기능을 정의한 MethodInterceptor 구현체이다.
- * 메소드 이름이 주입받은 pattern으로 시작하는 메소드만 부가 기능을 실행하도록 한다.
+ * 부가기능을 정의한 MethodInterceptor 구현체이다.
+ * 메소드 이름이 주입받은 pattern으로 시작하는 메소드만 부가기능을 실행하도록 한다.
  */
 class TransactionMethodInterceptor(
     private val target: Any,
@@ -975,7 +976,7 @@ class FactoryBeanTest(
         helloBean.sayThankYou(NAME) shouldBe &amp;quot;(Commit)Thank you admin&amp;quot;
 
         val personBean = context.getBean(&amp;quot;person&amp;quot;, Person::class.java)
-        personBean.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
+    personBean.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
         personBean.sayGreeting(NAME) shouldBe &amp;quot;(Commit)안녕하세요! admin&amp;quot;
         personBean.sayHello(NAME) shouldBe &amp;quot;(Commit)Hello admin&amp;quot;
         personBean.sayHi(NAME) shouldBe &amp;quot;(Commit)Hi admin&amp;quot;
@@ -986,42 +987,57 @@ class FactoryBeanTest(
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;say&lt;/code&gt;로 시작하는 메서드의 반환값에 &lt;code class=&quot;language-text&quot;&gt;(Commit)&lt;/code&gt; 문자열을 추가하여 반환하는 부가 기능을 &lt;code class=&quot;language-text&quot;&gt;TransactionMethodInterceptor&lt;/code&gt;로 정의하여 빈을 등록할 때 &lt;code class=&quot;language-text&quot;&gt;PersonFactoryBean&lt;/code&gt;을 통해 프록시로 감싼 빈을 등록하였다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;say&lt;/code&gt;로 시작하는 메서드의 반환값에 &lt;code class=&quot;language-text&quot;&gt;(Commit)&lt;/code&gt; 문자열을 추가하여 반환하는 부가기능을 &lt;code class=&quot;language-text&quot;&gt;TransactionMethodInterceptor&lt;/code&gt;로 정의하여 빈을 등록할 때 &lt;code class=&quot;language-text&quot;&gt;PersonFactoryBean&lt;/code&gt;을 통해 프록시로 감싼 빈을 등록하였다.&lt;/p&gt;
 &lt;p&gt;하지만 빈을 직접 등록해야 하는 불편함이 있다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;한 번에 여러 개의 클래스에 공통적인 부가기능을 제공해야 한다면?&lt;/strong&gt; 비즈니스 로직을 담은 많은 클래스의 메소드에 부가기능을 적용하려 한다면 팩토리 빈의 설정 코드도 같이 늘어난다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;하나의 타깃에 여러 개의 부가기능을 적용해야 한다면?&lt;/strong&gt; 프록시를 생성하는 FactoryBean 구현체마다 advice를 직접 추가해줘야 한다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;이렇게 번거로운 작업을 없애고 프록시를 모든 타깃에 적용 가능한 싱글톤 빈으로 만드는 방법을 알아보자.&lt;/p&gt;
-&lt;h1 id=&quot;6단계-proxyfactorybean&quot; style=&quot;position:relative;&quot;&gt;6단계: ProxyFactoryBean&lt;a href=&quot;#6%EB%8B%A8%EA%B3%84-proxyfactorybean&quot; aria-label=&quot;6단계 proxyfactorybean permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;ProxyFactory를 사용하여 프로그래밍 방식으로 프록시를 직접 생성해보았지만, &lt;strong&gt;스프링은 프록시 오브젝트를 생성해주는 기술을 추상화한 팩토리 빈을 제공한다.&lt;/strong&gt;&lt;br&gt;
-프록시를 생성해서 빈 오브젝트로 등록해주는 &lt;code class=&quot;language-text&quot;&gt;ProxyFactoryBean&lt;/code&gt; 구현체가 존재한다.&lt;br&gt;
-(ProxyFactory와 동일한 기능을 제공하지만 &lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt;을 추가로 구현하는 것이다.)&lt;/p&gt;
+&lt;h1 id=&quot;6단계-부가기능을-구현하는-차이점&quot; style=&quot;position:relative;&quot;&gt;6단계: 부가기능을 구현하는 차이점&lt;a href=&quot;#6%EB%8B%A8%EA%B3%84-%EB%B6%80%EA%B0%80%EA%B8%B0%EB%8A%A5%EC%9D%84-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%B0%A8%EC%9D%B4%EC%A0%90&quot; aria-label=&quot;6단계 부가기능을 구현하는 차이점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;이때까지 작성한 예제를 보면 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;org.aopalliance.intercept.MethodInterceptor&lt;/code&gt;를 구현하였고, 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;java.lang.reflect.InvocationHandler&lt;/code&gt;를 구현하였다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class MyInvocationHandler(
+    private val target: Any
+): InvocationHandler {
+    override fun invoke(proxy: Any, method: Method, args: Array&amp;lt;out Any&amp;gt;): Any =
+        method.invoke(target, *args)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;자바에서 제공하는 &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;는 한번 빈으로 구성되면 타겟이 달라지거나 메서드 선정 조건이 달라지면 여러 프록시가 공유할 수 없었다.&lt;br&gt;
+즉, &lt;strong&gt;부가기능 내부에서 타겟과 메소드 선정을 함께하고 있기 떄문에 오브젝트 차원에서 특정 타깃을 위한 프록시에 제한된다는 뜻이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class MyMethodInterceptor: MethodInterceptor {
+    override fun invoke(invocation: MethodInvocation) = invocation.proceed()
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;그에 반해, &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor.invoke()&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;MethodInvocation&lt;/code&gt;을 통해 타깃 오브젝트에 대한 의존이 사라졌다.&lt;br&gt;
+그 이유는 스프링이 aopaliance에서 제공하는 &lt;code class=&quot;language-text&quot;&gt;MethodInvocation&lt;/code&gt;을 확장하고 구현하여 &lt;strong&gt;타겟에 대한 정보, 메서드, 인자, 부가기능 등을 가진 Advice를 필드에 가지고 있기 때문이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/2b0581d4a2f9eefae78781e53b037914/b1001/proxyFactory.png&quot;
+    href=&quot;/static/7aadce2fa23bdf9b8bbf54caeb6bb450/f02b9/methodInvocation.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 51.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABy0lEQVR42k1S23aiQBDkNzYyDAx4ZSBG8ALqBhBcz5oE3BP3Zf//O2q7B415KLqprimmm7ZcV8EPxoiTDRbLFOtNjtVqTTHDar0hZJjONKTrwfX8b1DEPXKOkrwsfgzHGnnxG1Vd4e3tHd31Hz7aC9q2w/l8xssigUM6VwUPsMG3nKOkaHHCYuFICKkwsAX8KIdwA9jE2Y7bm7GBgbpF3/B37p5bLOSWGSoYQvkB/NEMnk95MDJfVpSbd3/0pfNIx5xHdS+4adlQkWB7aFGfGrQfHbruDy6XBz4/rxQviHSMdLdEdapuugvV/uJKONGYymODgEypZR+TWYRpGCGMnhGGGsnru/lJOp4jmieInhcIxiFG0xmmWmNG2pdVgsUmIX2MUEfkoU03FvctpAtbOBgIiSdbwhnGsN2hgVBjOIra8SeUT6ju4GnQa21P4sdAmDkL6Zk5WjzQ0UQjzStsd1tUVYOyOqAsS0IFHWnoeYb1do+iZL5HUVQ41A3q+og0XZqVud2Q1yZEmhXIt5kRmgNsStBRTIYbrHc/sdvviasN/1qUxrA5/kJChs7DsF9IR/bXHgjXtHAHCx1aajMWw8mvdeK2GXzuvkb/AbN5MFOXrCaCAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 74.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAACNElEQVR42p1T23baMBDkJ3pOW8DYsm6WbxhsY64hKcZA2v//nOmuCD1tnpI+DFgraTQ7Go2CUOAjkErBWI1yUWCxrNC0NbquRVnmvs6YRQKjjxIaazAOQiyIaLvd4jwMuFxvcFmJL18n0EZDxPJzhKxgGkSYEHEgQ4wnAbpVic26QpJYhCL+OKFNDKazCI5aXHUddvsDDk9H5EWBKI69wuizCplQWYs0L9BsWsyrJUIi+T6dQen/IIykgjIJTJJCOwepLazLEEQSii5NyDdCPvmB90SPOm8olyW1ucflcsVwHdD3Pc7nM1yaQZPCPx5GxBzRhjukx4wmuZ1HXXBsyEdlFWItYXMDaUiZoboziMnDKXGNeKHQym/+Gya3UM74w/hknSbo9ms8v/xAT5FhvJxOOJHC3eGJyCk2JGTEzMFbHO7tcRxmEJaIpMC38RRjMn0WRoiVpoAbaOv8bSvyUJOnsTQ+SiyMCJVv7+GXtBmKqsaybgkrNKvO36q0OYr5AnWzQrWsUbcNvZjGfy/rhuYqIpTvCUPyY46qWeNIGXs6HLGlvM2rBUxKz2218fnb7vZ47n/6/81252t100IQ14h/2KNQSI+AWjMRecbvlyBYNY2VuIPrbEEQJx6T4D7mllncKIwFsqrFYXekGJxx6ge8DldcCP1wwUAR4beb5DUO+2f8ut1wvb36tf158PPrzc6L8oTcqnYJbOYIqYdJHRGkHq7IaJzQjf+75o77Op5nMr7c3z4hutFSsVmrAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;proxyFactory&quot;
+        alt=&quot;methodInvocation&quot;
         title=&quot;&quot;
-        src=&quot;/static/2b0581d4a2f9eefae78781e53b037914/1cfc2/proxyFactory.png&quot;
-        srcset=&quot;/static/2b0581d4a2f9eefae78781e53b037914/3684f/proxyFactory.png 225w,
-/static/2b0581d4a2f9eefae78781e53b037914/fc2a6/proxyFactory.png 450w,
-/static/2b0581d4a2f9eefae78781e53b037914/1cfc2/proxyFactory.png 900w,
-/static/2b0581d4a2f9eefae78781e53b037914/21482/proxyFactory.png 1350w,
-/static/2b0581d4a2f9eefae78781e53b037914/b1001/proxyFactory.png 1380w&quot;
+        src=&quot;/static/7aadce2fa23bdf9b8bbf54caeb6bb450/1cfc2/methodInvocation.png&quot;
+        srcset=&quot;/static/7aadce2fa23bdf9b8bbf54caeb6bb450/3684f/methodInvocation.png 225w,
+/static/7aadce2fa23bdf9b8bbf54caeb6bb450/fc2a6/methodInvocation.png 450w,
+/static/7aadce2fa23bdf9b8bbf54caeb6bb450/1cfc2/methodInvocation.png 900w,
+/static/7aadce2fa23bdf9b8bbf54caeb6bb450/21482/methodInvocation.png 1350w,
+/static/7aadce2fa23bdf9b8bbf54caeb6bb450/f02b9/methodInvocation.png 1554w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1029,19 +1045,163 @@ class FactoryBeanTest(
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이때까지 작성한 예제를 보면 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;를 구현하였고, 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;를 구현하였다.&lt;/p&gt;
+&lt;p&gt;즉, 이제 부가기능을 정의하던 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;는 부가기능 자체에만 집중할 수 있게 되므로 많은 곳에서 재사용할 수 있게 되었다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;ProxyFactoryBean&lt;/code&gt;은 MethodInterceptor 방식을 사용하고 있다.&lt;/p&gt;
+&lt;h1 id=&quot;7단계-proxyfactorybean&quot; style=&quot;position:relative;&quot;&gt;7단계: ProxyFactoryBean&lt;a href=&quot;#7%EB%8B%A8%EA%B3%84-proxyfactorybean&quot; aria-label=&quot;7단계 proxyfactorybean permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5a003b0806e77a553858c5dfeea16347/0a867/proxyFactory.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 76.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB9UlEQVR42oVTi46qMBT0M1ToAyjlVYoCgsq6SiKCPBR3c///V+5B1s2N7uYmQ0Pazpkz03aCif4NhDVNZ74MgkW4StZxnALgJ0nWnvBh9d/NgMkTWTd4kqbbLKuquu7aqqlPZVVWdRwnKnolY01FVEFUvUNRyQBEpjOEDU0lZDpVYeZVdiBT3bQc6QnpesL1pC+XnDsGs2xHwKQvF54nKTVemQPZtPx0V+V53t3+nOv2eu03m8zz/CzLzk19vfXQNgTxszJ8BApjysSaMnfcNI6Gw3WT/aj5HJimMdMOGPc0zYDYGOcwkl8afiJr0abYH46X7nLtP/vbx+322bUXxxWQ4n/ICOuaziEnA6SjPXcC07RM0xmVwcWvnu+2dUqHTSoixHDgSIeTU8mYCNUYjHf+V5Wx6ARTQ1WxjHZvh1NVlW13aZqubQdA8kVxgkNbvSWHQw6GznXT9x9V3bwfC87tydgVMx3b8V3Xh2sYbksZroW/8IPI9QKdWdyGVSFEEG5iKRdwHWxXQDvfnqFJpKh4pmBkCIVwBZuIWpialHkKNmZzNJ2BDzJT0HyOwRRIPjwTfZHk2+y9LM+A4niEhl2QiHbZ7nA6VSOKomyadr/PH54f0TkigrsZRavVanhM8So1uW17oQzCMIrHGUCSbpbLaEz7L5HHkj0uA11lAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;proxyFactory&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5a003b0806e77a553858c5dfeea16347/1cfc2/proxyFactory.png&quot;
+        srcset=&quot;/static/5a003b0806e77a553858c5dfeea16347/3684f/proxyFactory.png 225w,
+/static/5a003b0806e77a553858c5dfeea16347/fc2a6/proxyFactory.png 450w,
+/static/5a003b0806e77a553858c5dfeea16347/1cfc2/proxyFactory.png 900w,
+/static/5a003b0806e77a553858c5dfeea16347/0a867/proxyFactory.png 986w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Pointcut과 Advice를 재사용할 수 있는 &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor&lt;/code&gt;에 대해 알아보았다. &lt;strong&gt;스프링은 Pointcut과 Advice를 사용하여 프록시 오브젝트를 생성해주는 기술을 추상화한 팩토리 빈을 제공한다.&lt;/strong&gt;&lt;br&gt;
+(ProxyFactory와 비슷한 기능을 제공하지만 &lt;code class=&quot;language-text&quot;&gt;FactoryBean&lt;/code&gt;을 추가로 구현하는 것이다.)&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;class MyMethodInterceptor: MethodInterceptor {
-    override fun invoke(invocation: MethodInvocation) = invocation.proceed()
+          &lt;code slot=&quot;code&quot;&gt;@Configuration
+class AppConfig {
+    @Bean
+    fun personProxyFactoryBean() = ProxyFactoryBean().apply {
+        this.setTarget(Person())
+        this.addAdvisor(advisor())
+        this.isProxyTargetClass = true
+    }
+
+    // Pointcut과 Advice를 묶어서 Advisor 타입으로 전달하는 이유는
+    // 여러 개의 어드바이스와 포인트컷이 추가될 수 있기 때문에 &amp;quot;이 포인트컷은 이 어드바이스에 적용한다&amp;quot; 라고 알리기 위해서다
+    @Bean
+    fun advisor() = DefaultPointcutAdvisor(pointcut(), advice())
+
+    @Bean
+    fun pointcut() = NameMatchMethodPointcut().apply {
+        this.setMappedName(&amp;quot;sayH*&amp;quot;)
+    }
+
+    @Bean
+    fun advice() = MethodInterceptor { it: MethodInvocation -&amp;gt;
+        &amp;quot;intercept!!! &amp;quot; + (it.proceed() as String)
+    }
 }
 
-class MyInvocationHandler(
-    private val target: Any
-): InvocationHandler {
-    override fun invoke(proxy: Any, method: Method, args: Array&amp;lt;out Any&amp;gt;): Any =
-        method.invoke(target, *args)
+@SpringBootTest(&amp;quot;spring.profiles.active=local&amp;quot;)
+class FactoryBeanTest(
+    private val context: ApplicationContext,
+): AnnotationSpec() {
+
+    private val NAME: String = &amp;quot;admin&amp;quot;
+
+    init {
+        extension(SpringExtension)
+    }
+
+    @Test
+    @DisplayName(&amp;quot;ProxyFactoryBean 테스트&amp;quot;)
+    fun proxyFactoryBean() {
+        val proxyFactoryBean = context.getBean(&amp;quot;&amp;amp;personProxyFactoryBean&amp;quot;, ProxyFactoryBean::class.java)
+        val person = proxyFactoryBean.`object` as Person
+
+        person.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
+        person.sayGreeting(NAME) shouldBe &amp;quot;안녕하세요! admin&amp;quot;
+        person.sayHello(NAME) shouldBe &amp;quot;intercept!!! Hello admin&amp;quot;
+        person.sayHi(NAME) shouldBe &amp;quot;intercept!!! Hi admin&amp;quot;
+        person.sayThankYou(NAME) shouldBe &amp;quot;Thank you admin&amp;quot;
+        shouldThrow&amp;lt;java.lang.RuntimeException&amp;gt; { person.throwException() }
+            .message shouldBe &amp;quot;예외 테스트!&amp;quot;
+    }
+}
+
+interface Hello {
+    fun sayGreeting(name: String): String
+    fun sayHello(name: String): String
+    fun sayHi(name: String): String
+    fun sayThankYou(name: String): String
+    fun throwException(): Nothing
+}
+
+open class Person: Hello {
+    open fun greeting() = &amp;quot;안녕하세요!&amp;quot;
+    override fun sayGreeting(name: String): String = &amp;quot;안녕하세요! $name&amp;quot;
+    override fun sayHello(name: String): String = &amp;quot;Hello $name&amp;quot;
+    override fun sayHi(name: String): String = &amp;quot;Hi $name&amp;quot;
+    override fun sayThankYou(name: String): String = &amp;quot;Thank you $name&amp;quot;
+    override fun throwException(): Nothing = throw RuntimeException(&amp;quot;예외 테스트!&amp;quot;)
 }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Pointcut과 Advice는 여러 프록시에서 공유가 가능하도록 만들 수 있기 때문에 스프링의 싱글톤 빈으로 등록이 가능하다.&lt;br&gt;
+그렇기에 &lt;strong&gt;프록시를 생성할 때 사용되는 Pointcut과 Advice는 스프링의 DI로 주입하여 사용 할 수 있다.&lt;/strong&gt;&lt;br&gt;
+InvocationHandler와 다르게 부가기능 구현체는 클라이언트로부터 받는 요청을 일일이 전달받을 필요가 없어졌다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 566px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3bc85c5d5a841e7c782fd808abe16537/6fe44/proxyFactoryBean.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 97.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAADEUlEQVR42oVU/W+bSBD1//8/VOqvvVatVJ2qnnTSVWkuTew4ObuJbTD+wHwYbDCwy0dgYd8NENdxbKkjDYvx7pvZN/Omw8Z/Qb/5DO3fj/CHX4FsCwky2Tzb91d27tveOjI2kHkaYldFxVaAyNpDz4BCFEiTGGmaIOYM+dPhfylfhpDPgPSIeALb9VDJ49iiAmYWw2VfwdXdFBe9CX7ONkiLZxjaXlUtcB2gfu+MdIbBdIN7xcVoFWHHsiabjNzxGFRHYGTE6D6uMZj5UOi35WWUaQovTDDbCAxnO0xMjrGZoXM98vCtr+NyYOHqwYXjJ2BRiDAIYKw9qDMd2lSBbduYzzQs9RXsLUfMIphuiLFd4eLewK3io6ul6LCsQpwD/AlgmYQoD9dOshJzK8TC3GJp7Wj1MDd9+CxvKaG9YVzSeYkaJ0wEOgdCD8S2hLf+VFTIhWy8KNu1rKqGQPmL81dFOYU8WETXT5PkqPL7gjT+6mznOMIpbBCGSJ4BaytLgWDnQxT5+T7Eb2yfVb34vMTCoYoPNWqnCG4ojjj/BShFCsl08lXr3ICsyqONT8SdRj1pOj7UhUUdsG1Aw6TCC2G1gII7WP74gOX1J6jf/4DV/5M+xs3FhRC0u0LAUjwoOkx9DkUZYz6dYGE4iFJ5CihzkpQzBNNvwVd95O4jSSBHXgj4vg/TNLDQTShW0mTVG06h6B41c0KAZzLcF8ZxLOx875WWBUrSc04M1Py5XgjD3mLjR1isGV25PAXMSbQukzC2GdaBgBuVjS6zLG0U4roODMvBj+4d7vs9dG+6GPx3h4fJ9DwgS0vczRhu1R16GsdoTa3BU8SkZ845gmAH03Yx0QxsNy5UdYr12sKKMg1icQrISTbXjw4uexpu/r7Ety//QKEsEstAHMcNSMgzrJyAdB5QAOrNmFPFPQpcnALGpFl1I7E0Y/CbK1y8fYPB+3eI+rdNUcIwwHZHU2m8aGbicPizae6V7ZGuzwDWBSiIx6IoURYFZO1UjNr3RpTS2EphOGEzbepJozus6c+Xjf0/EnmvM5e2exgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;proxyFactoryBean&quot;
+        title=&quot;&quot;
+        src=&quot;/static/3bc85c5d5a841e7c782fd808abe16537/6fe44/proxyFactoryBean.png&quot;
+        srcset=&quot;/static/3bc85c5d5a841e7c782fd808abe16537/3684f/proxyFactoryBean.png 225w,
+/static/3bc85c5d5a841e7c782fd808abe16537/fc2a6/proxyFactoryBean.png 450w,
+/static/3bc85c5d5a841e7c782fd808abe16537/6fe44/proxyFactoryBean.png 566w&quot;
+        sizes=&quot;(max-width: 566px) 100vw, 566px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[1]&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;CglibAopProxy.ProxyCallbackFilter&lt;/code&gt;에서 등록된 Pointcut의 통해 부가기능 대상인지 확인한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[2,3]&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;CglibAopProxy.DynamicAdvisedInterceptor&lt;/code&gt;에서 부가기능들을 관리하고 실행시키는 역할을 한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[4]&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;CglibMethodInvocation&lt;/code&gt; → &lt;code class=&quot;language-text&quot;&gt;ReflectiveMethodInvocation&lt;/code&gt; 에서 부가기능과 타겟을 실행한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;실제 위임 대상인 타깃 오브젝트의 레퍼런스를 갖고 있고, 이를 이용해 타깃 메소드를 직접 호출하는 것은 프록시가 메소드 호출에 따라 만드는 &lt;code class=&quot;language-text&quot;&gt;Invocation Callback&lt;/code&gt;의 역할이다.&lt;br&gt;
+재사용 가능한 기능을 만들어두고 &quot;바뀌는 부분 (콜백 오브젝트와 메소드 호출정보)&quot;만 외부에서 주입해서 이를 &quot;작업 흐름 (부가기능 부여)&quot; 중에 사용하도록 하는 전형적인 &lt;strong&gt;템플릿/콜백&lt;/strong&gt; 구조다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;부가기능의 적용이 필요한 타깃 오브젝트마다 거의 비슷한 내용의 ProxyFactoryBean 빈 설정정보를 추가해줘야하는 단점이 있다.&lt;br&gt;
+타겟을 제외하면 빈 클래스의 종류, Advice, Pointcut의 설정이 거의 동일하며 빈으로 관리가 가능한데 이러한 중복을 제거할 수 있는 방법은 없을까?&lt;/p&gt;
+&lt;h1 id=&quot;빈-후처리기를-이용한-자동-프록시-생성기&quot; style=&quot;position:relative;&quot;&gt;빈 후처리기를 이용한 자동 프록시 생성기&lt;a href=&quot;#%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0&quot; aria-label=&quot;빈 후처리기를 이용한 자동 프록시 생성기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;이때까지&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;프록시가 무엇인지?&lt;/li&gt;
+&lt;li&gt;프록시를 구현하는 방법이 무엇인지?&lt;/li&gt;
+&lt;li&gt;타겟에 대한 의존을 스프링이 어떻게 끊었는지?&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
 하지만 매번 제네릭에 대한 이해가 부족해 타입 검사기가 왜 거부하는지 이해하지 못하여 원하는대로 작성을 못한 경험이 있다.&lt;br&gt;
 그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
 &lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
