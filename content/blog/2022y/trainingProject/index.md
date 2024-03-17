@@ -78,7 +78,7 @@ Netty의 `EventLoop`가 client로부터 오는 모든 요청을 다 받는다.
 protocol buffer는 이진 부호화 라이브러리이며 부호화할 데이터를 위한 스키마를 `proto`언어를 통해 아래와 같이 메세지를 정의하고 protocol buffer compiler를 통해 원하는 언어로 [generate](https://protobuf.dev/programming-guides/proto3/#generated) 할 수 있다.  
 생성된 코드를 호출해 부호화하고 복호화할 수 있다.  
 
-```proto
+```
 syntax = "proto3";
 
 package grpc.hello;
