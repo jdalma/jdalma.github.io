@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 16 Mar 2024 13:08:05 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 17 Mar 2024 13:46:39 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -327,7 +327,7 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;h1 id=&quot;이펙티브-코틀린-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 코틀린 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 자바 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt; 예정&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4-%EC%98%88%EC%A0%95&quot; aria-label=&quot;개발자를 위한 레디스 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[스프링의 빈 후처리기에 대해]]></title><description><![CDATA[스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다. Reflection Java Dynamic Proxy CGLIB ProxyFactory FactoryBean ProxyFactoryBean…]]></description><link>https://jdalma.github.io/2024y/postprocessor/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/postprocessor/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다.&lt;/p&gt;
+&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[빈 후처리기를 이용한 프록시 생성에 대해]]></title><description><![CDATA[스프링의 프록시 방식으로 AOP를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다. Reflection Java Dynamic Proxy CGLIB ProxyFactory FactoryBean ProxyFactoryBean…]]></description><link>https://jdalma.github.io/2024y/postprocessor/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/postprocessor/</guid><pubDate>Sun, 17 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링의 프록시 방식으로 AOP를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Reflection&lt;/li&gt;
 &lt;li&gt;Java Dynamic Proxy&lt;/li&gt;
@@ -338,7 +338,7 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.&lt;/strong&gt;&lt;br&gt;
 이 글에서는 스프링 AOP를 사용하는 법, 포인트 컷, 어드바이스를 자세하게 설명하진 않으며, 스프링의 빈 후처리기를 통해 프록시가 어떻게 자동으로 생성되는지를 중점으로 다룬다.&lt;br&gt;
-이 글을 통해 프록시가 무엇인지, 프록시를 관리하고 생성할 때 불편한 방법들을 스프링은 어떻게 해결했는지 알 수 있을것 이다.&lt;br&gt;
+이 글을 통해 프록시가 무엇인지, 프록시를 관리하고 생성할 때 불편한 방법들을 스프링은 어떻게 해결했는지 알 수 있을 것이다.&lt;br&gt;
 차근차근 단계별로 알아보자.&lt;/p&gt;
 &lt;h1 id=&quot;1단계-java-reflection&quot; style=&quot;position:relative;&quot;&gt;1단계: Java Reflection&lt;a href=&quot;#1%EB%8B%A8%EA%B3%84-java-reflection&quot; aria-label=&quot;1단계 java reflection permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;자바의 리플렉션(Reflection)은 런타임 시에 클래스의 속성, 메소드, 생성자 등의 메타데이터를 조회하여 활용할 수 있는 강력한 기능이다.&lt;br&gt;
@@ -976,7 +976,7 @@ class FactoryBeanTest(
         helloBean.sayThankYou(NAME) shouldBe &amp;quot;(Commit)Thank you admin&amp;quot;
 
         val personBean = context.getBean(&amp;quot;person&amp;quot;, Person::class.java)
-    personBean.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
+        personBean.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
         personBean.sayGreeting(NAME) shouldBe &amp;quot;(Commit)안녕하세요! admin&amp;quot;
         personBean.sayHello(NAME) shouldBe &amp;quot;(Commit)Hello admin&amp;quot;
         personBean.sayHi(NAME) shouldBe &amp;quot;(Commit)Hi admin&amp;quot;
@@ -995,7 +995,7 @@ class FactoryBeanTest(
 &lt;/ul&gt;
 &lt;p&gt;이렇게 번거로운 작업을 없애고 프록시를 모든 타깃에 적용 가능한 싱글톤 빈으로 만드는 방법을 알아보자.&lt;/p&gt;
 &lt;h1 id=&quot;6단계-부가기능을-구현하는-차이점&quot; style=&quot;position:relative;&quot;&gt;6단계: 부가기능을 구현하는 차이점&lt;a href=&quot;#6%EB%8B%A8%EA%B3%84-%EB%B6%80%EA%B0%80%EA%B8%B0%EB%8A%A5%EC%9D%84-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%B0%A8%EC%9D%B4%EC%A0%90&quot; aria-label=&quot;6단계 부가기능을 구현하는 차이점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;이때까지 작성한 예제를 보면 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;org.aopalliance.intercept.MethodInterceptor&lt;/code&gt;를 구현하였고, 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;java.lang.reflect.InvocationHandler&lt;/code&gt;를 구현하였다.&lt;/p&gt;
+&lt;p&gt;이때까지 작성한 예제를 보면 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;java.lang.reflect.InvocationHandler&lt;/code&gt;를 구현하였고 어떤 부가기능은 &lt;code class=&quot;language-text&quot;&gt;org.aopalliance.intercept.MethodInterceptor&lt;/code&gt;를 구현하였다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class MyInvocationHandler(
     private val target: Any
@@ -1004,15 +1004,15 @@ class FactoryBeanTest(
         method.invoke(target, *args)
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;자바에서 제공하는 &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;는 한번 빈으로 구성되면 타겟이 달라지거나 메서드 선정 조건이 달라지면 여러 프록시가 공유할 수 없었다.&lt;br&gt;
-즉, &lt;strong&gt;부가기능 내부에서 타겟과 메소드 선정을 함께하고 있기 떄문에 오브젝트 차원에서 특정 타깃을 위한 프록시에 제한된다는 뜻이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;자바에서 제공하는 &lt;code class=&quot;language-text&quot;&gt;InvocationHandler&lt;/code&gt;는 타겟이 달라지거나 메서드 선정 조건이 달라진다면 여러 프록시가 공유할 수 없었다.&lt;br&gt;
+즉, &lt;strong&gt;부가기능 내부에서 타겟과 메소드 선정을 함께하고 있기 떄문에 오브젝트 차원에서 특정 타깃을 위한 프록시에 제한된다는 것이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class MyMethodInterceptor: MethodInterceptor {
     override fun invoke(invocation: MethodInvocation) = invocation.proceed()
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;그에 반해, &lt;code class=&quot;language-text&quot;&gt;MethodInterceptor.invoke()&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;MethodInvocation&lt;/code&gt;을 통해 타깃 오브젝트에 대한 의존이 사라졌다.&lt;br&gt;
-그 이유는 스프링이 aopaliance에서 제공하는 &lt;code class=&quot;language-text&quot;&gt;MethodInvocation&lt;/code&gt;을 확장하고 구현하여 &lt;strong&gt;타겟에 대한 정보, 메서드, 인자, 부가기능 등을 가진 Advice를 필드에 가지고 있기 때문이다.&lt;/strong&gt;&lt;/p&gt;
+그 이유는 &lt;strong&gt;스프링이 aopaliance에서 제공하는 &lt;code class=&quot;language-text&quot;&gt;MethodInvocation&lt;/code&gt;을 확장하고 구현하여 타겟에 대한 정보, 메서드, 인자, 부가기능 등을 가진 Advice를 필드에 가지고 있기 때문이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
@@ -1107,9 +1107,10 @@ class AppConfig {
     }
 }
 
-@SpringBootTest(&amp;quot;spring.profiles.active=local&amp;quot;)
+@SpringBootTest(&amp;quot;spring.profiles.active=local&amp;quot;, classes = [AppConfig::class])
 class FactoryBeanTest(
     private val context: ApplicationContext,
+    private val person: Person
 ): AnnotationSpec() {
 
     private val NAME: String = &amp;quot;admin&amp;quot;
@@ -1121,9 +1122,6 @@ class FactoryBeanTest(
     @Test
     @DisplayName(&amp;quot;ProxyFactoryBean 테스트&amp;quot;)
     fun proxyFactoryBean() {
-        val proxyFactoryBean = context.getBean(&amp;quot;&amp;amp;personProxyFactoryBean&amp;quot;, ProxyFactoryBean::class.java)
-        val person = proxyFactoryBean.`object` as Person
-
         person.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
         person.sayGreeting(NAME) shouldBe &amp;quot;안녕하세요! admin&amp;quot;
         person.sayHello(NAME) shouldBe &amp;quot;intercept!!! Hello admin&amp;quot;
@@ -1131,6 +1129,19 @@ class FactoryBeanTest(
         person.sayThankYou(NAME) shouldBe &amp;quot;Thank you admin&amp;quot;
         shouldThrow&amp;lt;java.lang.RuntimeException&amp;gt; { person.throwException() }
             .message shouldBe &amp;quot;예외 테스트!&amp;quot;
+
+        val proxyFactoryBean = context.getBean(&amp;quot;&amp;amp;personProxyFactoryBean&amp;quot;, ProxyFactoryBean::class.java)
+        val person2 = proxyFactoryBean.`object` as Person
+
+        person2.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
+        person2.sayGreeting(NAME) shouldBe &amp;quot;안녕하세요! admin&amp;quot;
+        person2.sayHello(NAME) shouldBe &amp;quot;intercept!!! Hello admin&amp;quot;
+        person2.sayHi(NAME) shouldBe &amp;quot;intercept!!! Hi admin&amp;quot;
+        person2.sayThankYou(NAME) shouldBe &amp;quot;Thank you admin&amp;quot;
+        shouldThrow&amp;lt;java.lang.RuntimeException&amp;gt; { person2.throwException() }
+            .message shouldBe &amp;quot;예외 테스트!&amp;quot;
+
+        System.identityHashCode(person) shouldBe System.identityHashCode(person2)
     }
 }
 
@@ -1160,23 +1171,23 @@ InvocationHandler와 다르게 부가기능 구현체는 클라이언트로부�
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/3bc85c5d5a841e7c782fd808abe16537/6fe44/proxyFactoryBean.png&quot;
+    href=&quot;/static/dcf33ea9b90e862da3f1d6cc895f319e/6fe44/proxyFactoryBean.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 97.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAADEUlEQVR42oVU/W+bSBD1//8/VOqvvVatVJ2qnnTSVWkuTew4ObuJbTD+wHwYbDCwy0dgYd8NENdxbKkjDYvx7pvZN/Omw8Z/Qb/5DO3fj/CHX4FsCwky2Tzb91d27tveOjI2kHkaYldFxVaAyNpDz4BCFEiTGGmaIOYM+dPhfylfhpDPgPSIeALb9VDJ49iiAmYWw2VfwdXdFBe9CX7ONkiLZxjaXlUtcB2gfu+MdIbBdIN7xcVoFWHHsiabjNzxGFRHYGTE6D6uMZj5UOi35WWUaQovTDDbCAxnO0xMjrGZoXM98vCtr+NyYOHqwYXjJ2BRiDAIYKw9qDMd2lSBbduYzzQs9RXsLUfMIphuiLFd4eLewK3io6ul6LCsQpwD/AlgmYQoD9dOshJzK8TC3GJp7Wj1MDd9+CxvKaG9YVzSeYkaJ0wEOgdCD8S2hLf+VFTIhWy8KNu1rKqGQPmL81dFOYU8WETXT5PkqPL7gjT+6mznOMIpbBCGSJ4BaytLgWDnQxT5+T7Eb2yfVb34vMTCoYoPNWqnCG4ojjj/BShFCsl08lXr3ICsyqONT8SdRj1pOj7UhUUdsG1Aw6TCC2G1gII7WP74gOX1J6jf/4DV/5M+xs3FhRC0u0LAUjwoOkx9DkUZYz6dYGE4iFJ5CihzkpQzBNNvwVd95O4jSSBHXgj4vg/TNLDQTShW0mTVG06h6B41c0KAZzLcF8ZxLOx875WWBUrSc04M1Py5XgjD3mLjR1isGV25PAXMSbQukzC2GdaBgBuVjS6zLG0U4roODMvBj+4d7vs9dG+6GPx3h4fJ9DwgS0vczRhu1R16GsdoTa3BU8SkZ845gmAH03Yx0QxsNy5UdYr12sKKMg1icQrISTbXjw4uexpu/r7Ety//QKEsEstAHMcNSMgzrJyAdB5QAOrNmFPFPQpcnALGpFl1I7E0Y/CbK1y8fYPB+3eI+rdNUcIwwHZHU2m8aGbicPizae6V7ZGuzwDWBSiIx6IoURYFZO1UjNr3RpTS2EphOGEzbepJozus6c+Xjf0/EnmvM5e2exgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 97.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsTAAALEwEAmpwYAAACpUlEQVR42nVT246bMBDN/39Epb626kVqH9qHStvV3nJvkt0NkBBCMMQBE3zBEDA2dZJNGiL1aLAMzBnNHB+3qPHTaX+z7r+gyY86j1Rd1+qw1A1cvR7RUszLkc1DS9KVEtmBu88Uosx4qiNltNjtjt+VOpdSB3JdE8aDDZLqX3Uhle3Tu771MJjddo2JHeblW09S7kvoR29a0xUZzcKhtXl1yZZkGnmWQUQtKKZe2nkJRjYyofBRXuwyhLkdiskiNgGbgqz1NEU3g+X9CDw8b2DMKUkwTgCMLdudWWYQrG177rirALGUET8kr4G8HXo9C3XmvMVymRY129U0l6KSx7Z5Xi38xPGipR87IFqAOKb7sXUCTgUr9smYi9Zp+jcN1AlFKQuhdJTVfq0Os54UuxCswT6BEJxl/Cz+Ua19XCS3Lio1KmCMOefHfVVVyTbWh3d9zvV/cO4wToUD087I1oe3weVZlzey9oairtIm0cE8Javzbz3t3Kc+3FoL4AXRwieYVycTHsgVg8vHz87jV/P2I+h/r0Wq9g4TtZIJzZ4t13MXhjG1Z6bjQZKpBlkVtIBj6vbYqr+Dz7UsylKgOAbAc1xg+tz2SXc0M11kAE4y2SAfZ4Mw2G7RhbdFJcqiqvXAIcJgHYUxcdb0uu1CyJAqD+VBIkIipJR5nvtBsIEQ+PCpMxwO+p1OZzwavBjzazLNqoFNe7Ntd86ma5GwnGcZYwwnCQhCw/aiMDSt2Xrtr4IoSUWTnMun1819b97+dXfz48ZodzPfS1MeRSFm+Qom2vDa8Txl/holrGyQ07yyQrUEKWs//H7/7s+nD2TQi+MtwTja0vHU0Vd6PJ5on+j7EdMmWStUClmWVVWWSofQIY4ySlUHiK8gDiIGNsSFRAt0Nslf+8E0xD0MQgQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;proxyFactoryBean&quot;
         title=&quot;&quot;
-        src=&quot;/static/3bc85c5d5a841e7c782fd808abe16537/6fe44/proxyFactoryBean.png&quot;
-        srcset=&quot;/static/3bc85c5d5a841e7c782fd808abe16537/3684f/proxyFactoryBean.png 225w,
-/static/3bc85c5d5a841e7c782fd808abe16537/fc2a6/proxyFactoryBean.png 450w,
-/static/3bc85c5d5a841e7c782fd808abe16537/6fe44/proxyFactoryBean.png 566w&quot;
+        src=&quot;/static/dcf33ea9b90e862da3f1d6cc895f319e/6fe44/proxyFactoryBean.png&quot;
+        srcset=&quot;/static/dcf33ea9b90e862da3f1d6cc895f319e/3684f/proxyFactoryBean.png 225w,
+/static/dcf33ea9b90e862da3f1d6cc895f319e/fc2a6/proxyFactoryBean.png 450w,
+/static/dcf33ea9b90e862da3f1d6cc895f319e/6fe44/proxyFactoryBean.png 566w&quot;
         sizes=&quot;(max-width: 566px) 100vw, 566px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1185,7 +1196,7 @@ InvocationHandler와 다르게 부가기능 구현체는 클라이언트로부�
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[1]&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;CglibAopProxy.ProxyCallbackFilter&lt;/code&gt;에서 등록된 Pointcut의 통해 부가기능 대상인지 확인한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[1]&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;CglibAopProxy.ProxyCallbackFilter&lt;/code&gt;에서 등록된 Pointcut을 통해 부가기능 대상인지 확인한다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[2,3]&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;CglibAopProxy.DynamicAdvisedInterceptor&lt;/code&gt;에서 부가기능들을 관리하고 실행시키는 역할을 한다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[4]&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;CglibMethodInvocation&lt;/code&gt; → &lt;code class=&quot;language-text&quot;&gt;ReflectiveMethodInvocation&lt;/code&gt; 에서 부가기능과 타겟을 실행한다.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1193,15 +1204,311 @@ InvocationHandler와 다르게 부가기능 구현체는 클라이언트로부�
 &lt;p&gt;실제 위임 대상인 타깃 오브젝트의 레퍼런스를 갖고 있고, 이를 이용해 타깃 메소드를 직접 호출하는 것은 프록시가 메소드 호출에 따라 만드는 &lt;code class=&quot;language-text&quot;&gt;Invocation Callback&lt;/code&gt;의 역할이다.&lt;br&gt;
 재사용 가능한 기능을 만들어두고 &quot;바뀌는 부분 (콜백 오브젝트와 메소드 호출정보)&quot;만 외부에서 주입해서 이를 &quot;작업 흐름 (부가기능 부여)&quot; 중에 사용하도록 하는 전형적인 &lt;strong&gt;템플릿/콜백&lt;/strong&gt; 구조다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;부가기능의 적용이 필요한 타깃 오브젝트마다 거의 비슷한 내용의 ProxyFactoryBean 빈 설정정보를 추가해줘야하는 단점이 있다.&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7e1adceb41d12b5a1870848a720e632c/966a0/proxyFactoryBean2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 42.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABnUlEQVR42lVSiXLbIBD1/39cZzpNkzRumsq2LEACBIhD6HhdcOvGK+0sy7Bv3x4HfJJly3BJIy0e8xIQ5umuMfuqie5jprslYps1ltBVWzT7Kw7Yd4LaK2AJ8GnDiVkw6bFu/5OlmCC4AGccQz9AjgpGtwjeYZAjRkPJHCPAT1KYxbyhuSp8fT1BSIs0ZyiloLWCEAKMMfR9DzNZTLYjVRgGSqA0AvmHZAVRJccHAuDwk0OeZ1xlwPOvHg1z4JzXoK7rcLlcwDpWGWp5roBC9MSSWuU4DvbyhEm8U4BErwSMM8Rqhmgljk8faN7OaJoGMcbKrIArKes7O7bwTlMFmkp2N8DHkmkQU8T5vcXzlx9Q/YicaFDOwRhTSy9MNQFY6p2nnoVppHaMMNYhTn8B9zIY+iP1MIUZ3YlDXAds635PlnOGLFUQywI4EsMylOgt9EhnR7GTeGRYpjyvqZ738u3bzeJm/0nx4xqx0Irtq79vyRr7R8DCNOVY1XmD1+PLXV/evqPjLe1npL0sK7VSQMbAf+Pj5zd05yOCE/gDaGCzCYB3nTsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;proxyFactoryBean2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7e1adceb41d12b5a1870848a720e632c/1cfc2/proxyFactoryBean2.png&quot;
+        srcset=&quot;/static/7e1adceb41d12b5a1870848a720e632c/3684f/proxyFactoryBean2.png 225w,
+/static/7e1adceb41d12b5a1870848a720e632c/fc2a6/proxyFactoryBean2.png 450w,
+/static/7e1adceb41d12b5a1870848a720e632c/1cfc2/proxyFactoryBean2.png 900w,
+/static/7e1adceb41d12b5a1870848a720e632c/966a0/proxyFactoryBean2.png 944w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Pointcut과 Advice, 이 둘을 묶는 Advisor 각각 빈으로 등록하여 중복을 제거할 수 있게 되었다.&lt;br&gt;
+하지만 &lt;strong&gt;부가기능의 적용이 필요한 타깃 오브젝트마다 거의 비슷한 내용의 ProxyFactoryBean 빈 설정정보를 직접 작성해줘야하는 단점이 있다.&lt;/strong&gt;&lt;br&gt;
 타겟을 제외하면 빈 클래스의 종류, Advice, Pointcut의 설정이 거의 동일하며 빈으로 관리가 가능한데 이러한 중복을 제거할 수 있는 방법은 없을까?&lt;/p&gt;
 &lt;h1 id=&quot;빈-후처리기를-이용한-자동-프록시-생성기&quot; style=&quot;position:relative;&quot;&gt;빈 후처리기를 이용한 자동 프록시 생성기&lt;a href=&quot;#%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0&quot; aria-label=&quot;빈 후처리기를 이용한 자동 프록시 생성기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;이때까지&lt;/p&gt;
+&lt;p&gt;이제 스프링에서 프록시를 자동으로 생성하는 방법에 대해 알아볼 차례다.&lt;br&gt;
+말 그대로 &lt;strong&gt;스프링 빈 오브젝트로 만들어지고 난 후에, 빈 오브젝트를 다시 가공할 수 있게 해주는 것이다.&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;BeanPostProcessor&lt;/code&gt;를 직접 구현한 아래의 예제를 보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;/**
+ * 생성자로 pattern을 주입받아 빈의 이름이 해당 pattern으로 시작하는 빈만 프록시를 감싸서 반환하고 그렇지 않으면 빈 자체를 반환한다.
+ */
+class ClassLogTracePostProcessor(
+    private val pattern: String,
+    private val advisor: Advisor
+): BeanPostProcessor {
+
+    private val log = logger()
+    override fun postProcessBeforeInitialization(bean: Any, beanName: String): Any {
+        log.info(&amp;quot;[before] pattern = $pattern, beanName = $beanName, bean = ${bean.javaClass}&amp;quot;)
+        return bean
+    }
+
+    override fun postProcessAfterInitialization(bean: Any, beanName: String): Any {
+        log.info(&amp;quot;[after] pattern = $pattern, beanName = $beanName, bean = ${bean.javaClass}&amp;quot;)
+        if(!beanName.startsWith(pattern)) return bean
+
+        val proxy = ProxyFactory(bean).apply {
+            this.addAdvisor(advisor)
+            this.isProxyTargetClass = true
+        }.proxy
+
+        log.info(&amp;quot;[after - proxy] target = ${bean.javaClass}, proxy = ${proxy.javaClass}&amp;quot;)
+        return proxy
+    }
+}
+
+@Configuration
+class PostProcessorConfig {
+    @Bean
+    fun classLogTracePostProcessor() = ClassLogTracePostProcessor(&amp;quot;p&amp;quot;, advisor())
+    @Bean
+    fun advisor() = DefaultPointcutAdvisor(pointcut(), advice())
+    @Bean
+    fun pointcut() = NameMatchMethodPointcut().apply {
+        this.setMappedName(&amp;quot;sayH*&amp;quot;)
+    }
+    @Bean
+    fun advice() = MethodInterceptor { it: MethodInvocation -&amp;gt;
+        &amp;quot;intercept!!! &amp;quot; + (it.proceed() as String)
+    }
+    @Bean
+    fun hello(): Hello = Person()
+    @Bean
+    fun person(): Person = Person()
+}
+
+@SpringBootTest(&amp;quot;spring.profiles.active=local&amp;quot;, classes = [PostProcessorConfig::class])
+class MemberServiceTest(
+    private val hello: Hello,
+    private val person: Person
+): AnnotationSpec() {
+
+    private val NAME: String = &amp;quot;admin&amp;quot;
+
+    init {
+        extension(SpringExtension)
+    }
+
+    @Test
+    fun beanPostProcessor() {
+        hello.sayGreeting(NAME) shouldBe &amp;quot;안녕하세요! admin&amp;quot;
+        hello.sayHello(NAME) shouldBe &amp;quot;Hello admin&amp;quot;
+        hello.sayHi(NAME) shouldBe &amp;quot;Hi admin&amp;quot;
+        hello.sayThankYou(NAME) shouldBe &amp;quot;Thank you admin&amp;quot;
+
+        person.greeting() shouldBe &amp;quot;안녕하세요!&amp;quot;
+        person.sayGreeting(NAME) shouldBe &amp;quot;안녕하세요! admin&amp;quot;
+        person.sayHello(NAME) shouldBe &amp;quot;intercept!!! Hello admin&amp;quot;
+        person.sayHi(NAME) shouldBe &amp;quot;intercept!!! Hi admin&amp;quot;
+        person.sayThankYou(NAME) shouldBe &amp;quot;Thank you admin&amp;quot;
+
+        hello.javaClass.toString() shouldBe &amp;quot;class Person&amp;quot;
+        person.javaClass.toString() shouldBe &amp;quot;class Person$\$SpringCGLIB$$0&amp;quot;
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;BeanPostProcessor를 통해 빈의 이름이 &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt;로 시작하는 빈만 프록시를 감싸서 반환하도록 하였고, Pointcut을 통해 &lt;code class=&quot;language-text&quot;&gt;sayH&lt;/code&gt;로 시작하는 메서드만 부가기능이 실행되도록 지정하였다.&lt;br&gt;
+위의 테스트 코드를 보면 &lt;code class=&quot;language-text&quot;&gt;hello&lt;/code&gt;로 등록된 빈은 프록시가 적용되지 않았고, &lt;code class=&quot;language-text&quot;&gt;person&lt;/code&gt;으로 등록된 빈만 프록시가 적용되었고 &lt;code class=&quot;language-text&quot;&gt;sayH&lt;/code&gt;로 시작하는 메서드만 부가기능이 실행되는 것을 확인할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;[before] pattern = p, beanName = hello, bean = class Person
+[after] pattern = p, beanName = hello, bean = class Person
+[before] pattern = p, beanName = person, bean = class Person
+[after] pattern = p, beanName = person, bean = class Person
+[after - proxy] target = class Person, proxy = class Person$$SpringCGLIB$$0&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAADgklEQVR42kWUW08bVxSF+SV97w/pP6jUh6p96UMfqt4rRVVBIUJqBVHUpkmUNKoCBQoUCIGWQoOpgTiAsQ2+GzMY29gY3y9jsD22Z+br9pi2Iy3tM3POWbPXXvucAdo1LLSqoPWRVAJEAy7Ojr0oYY/1njjxE4t6SZwGOY0cUiucQ1fFbJVlr6BdtXgG/iOkAea1FU+iPrweFz6Pm6D3iKDPS+w4RPL4WBAh7HZTzWdlfUfWGxK7Foep9Qj1OkYxQ+P5KtqqDW3NTmfuOUbiGUZtEqP0DIrjVHIPeVn+CVt1AnttgqXSY14GhmBpCNM120+qWxdCSZtanoZjj4LNTsn+ipZrF/V8kUJilnxsimZumXJhie30HKvRCdZPJtgqLBKROfYF4x/Q3Z9GVcv/SlYl8RaaWaetX8FVBT1fQsvkaAn0fFHWtEAXiQ2Zb0ppDJFpitzek3TTfjFMIXN2Q2hIlolLOMrB2gZsPoKejIMZidNojik8NhtbuRqvsxUc2TKbmQrZ8A74X8DsZ3Qc45RLWQYMo4ppO4NPduFOAL56iukdoxm5Tyv8I1rwLsXwE578ts7gYY5hT8bCF6483hX58cxHGDtPMRpFug2RXEqd0fnuEEIZyV2TLB2YsQB5n5MzxwYp5zadeAhzb4Pr8gX1XIJGKWXB0DXLZV1gGr0uaTBQy6XoPvCLvJS4dIWeTqKHvegRPy2/h25vHPLRTR1L2WoYWgWjLTXuVmldROn4XXDuxVSOrEREstRwN4n55QHcdhL+OsXEIKzcM/njB5gfMRn/GH6e32KmcIeZ1CgzF3d5fvkt9x9/yJvv/Mrbn69QSCXAsd43xTBV9FwRM5hGDZU4dRcJbMUJbicIbMc5d6vE4wq+tA3fuR133EY0vYliX8QVK/LumJNbUz7qjj/7hKYuLpvSDvROSv0GUhOu/ofZlpJI63Tke7cp0zX0gNuq4bLjjPdGHeT+WugTjhwE+PSVl8H9ILf2QwztHlJw3YOoOK78AsokHXH6kU/h+6jKg5MKDyN5vrk9y1tDDt54f42F/Ti6c6NPOB1RGNk7YmTHyfD2AaO7bvLRBbrKArXwAqqgGZ3n71OF+UiapXCS5dMMi5PrjA3P4f59E2JizOsbQkuuOKhexlAvlP7NIQe+3azTlFPTEHS0a+t26daz0gxZ9EbhZp/ERg6zlJZY5h9pvCe/RbS6HQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;beanLifeCycle&quot;
+        title=&quot;&quot;
+        src=&quot;/static/55450b89cb04be0a1dc878607f8d65e2/1cfc2/beanLifeCycle.png&quot;
+        srcset=&quot;/static/55450b89cb04be0a1dc878607f8d65e2/3684f/beanLifeCycle.png 225w,
+/static/55450b89cb04be0a1dc878607f8d65e2/fc2a6/beanLifeCycle.png 450w,
+/static/55450b89cb04be0a1dc878607f8d65e2/1cfc2/beanLifeCycle.png 900w,
+/static/55450b89cb04be0a1dc878607f8d65e2/d0143/beanLifeCycle.png 1025w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;a href=&quot;https://bootcamptoprod.com/spring-bean-life-cycle-explained/&quot;&gt;출처&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;빈 후처리기는 빈의 생명주기에 대한 두 가지 단계의 훅을 제공한다.&lt;/strong&gt;&lt;br&gt;
+스프링은 이 빈 후처리기를 통해 프록시를 자동으로 생성하는 여러가지의 후처리기를 제공한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d9e7026e412a532600e73302b41bac23/f726e/autoProxyCreator.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 36.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABUUlEQVR42j1R25aDIBDzL/bmBVEEW1QUQXt2a/f/fyobPO0+5DAmQ8iMWVlJ/EOks0ZeVBCyxewXtNogL8WpF2WNr0JAEg3r8XpFWDy8m6HqFi37spdZVTenmbEj1njD1Q6Y3AQfAuK2YZhS7altWIYJdqQ+ezi/wtE01abtkBU0y9ProjnPhH5iU9jZHM4LQioUr0eZ3KgOi/ecIGKJEX7lydpdLDLDVH2CeIKxbS3hlMZsLEZlcOE4Tvcn5zqNpVMICTSOWuPasYeaaRSyoRIQfL3h/mT1BOuWSRQbVKsxcA2RKdZ1x23/hhu5M6ZuCcsAFfdZnJDIurzEG5f8SeGjqAmO1nQY5gXjEjGuN9YBQvV4p2YmD+tWDM7jQmPN6UrezU9D/pQ7/9Bj2/EIEb9xx88asHPBBxMd5A5yB7m7f/KJo5a+E/+YHBomlQyR8Adx58995AQnBgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;autoProxyCreator&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d9e7026e412a532600e73302b41bac23/1cfc2/autoProxyCreator.png&quot;
+        srcset=&quot;/static/d9e7026e412a532600e73302b41bac23/3684f/autoProxyCreator.png 225w,
+/static/d9e7026e412a532600e73302b41bac23/fc2a6/autoProxyCreator.png 450w,
+/static/d9e7026e412a532600e73302b41bac23/1cfc2/autoProxyCreator.png 900w,
+/static/d9e7026e412a532600e73302b41bac23/21482/autoProxyCreator.png 1350w,
+/static/d9e7026e412a532600e73302b41bac23/d61c2/autoProxyCreator.png 1800w,
+/static/d9e7026e412a532600e73302b41bac23/f726e/autoProxyCreator.png 2610w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;기본적으로 &lt;code class=&quot;language-text&quot;&gt;DefaultAdvisorAutoProxyCreator&lt;/code&gt;을 빈으로 등록하여 빈 후처리기 가공 시점에 프록시를 자동으로 생성하도록 할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Bean
+fun defaultAdvisorAutoProxyCreator() = DefaultAdvisorAutoProxyCreator().apply {
+    this.isProxyTargetClass = true
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans()&lt;/code&gt;을 통해 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Advisor.class&lt;/code&gt; 타입을 구현하는 모든 빈을 찾고 빈으로 등록된 모든 구현 클래스(타겟)들을 순회하면서 대상선별을 통하여 프록시를 적용한다.&lt;/strong&gt;&lt;br&gt;
+스프링 AOP (&lt;code class=&quot;language-text&quot;&gt;org.springframework.boot:spring-boot-starter-aop&lt;/code&gt;) 의존성을 추가한다면 이것조차 작성하지 않아도 된다.&lt;br&gt;
+의존성을 추가하면 자동으로 &lt;code class=&quot;language-text&quot;&gt;AnnotationAwareAspectJAutoProxyCreator&lt;/code&gt; 빈 후처리기가 등록되어 빈으로 등록된 Advisor와 &lt;code class=&quot;language-text&quot;&gt;@AspectJ&lt;/code&gt;로 선언된 Advisor도 처리한다.&lt;/p&gt;
+&lt;p&gt;이제는 Advisor만 빈으로 등록한다면 자동으로 모든 빈들을 순회하면서 Pointcut에 해당하는 대상이라면 Advice를 적용한 프록시를 등록한다.&lt;br&gt;
+프록시 생성 단계와 사용 단계의 Pointcut을 구분할 수 있어야 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;생성 단계: 프록시 적용 여부 판단&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;AutoProxyCreator는 Pointcut을 사용해서 &lt;strong&gt;해당 빈의 프록시를 생성할 필요가 있는지 없는지 체크한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;클래스와 메서드 조건을 모두 비교한다. Pointcut 하나하나에 매칭하여 해당되는 것이 하나라도 있으면 프록시를 생성한다.&lt;/li&gt;
+&lt;li&gt;10개의 메서드 중에 하나만 Pointcut 조건에 만족해도 프록시 적용 대상이 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;사용 단계: 어드바이스 적용 여부 판단&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;프록시가 호출되었을 때 부가 기능인 &lt;strong&gt;Advice를 적용할지 판단한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 786px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7f59b67ba794d27885536bf20de85e70/321ea/postProcessor.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 37.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABr0lEQVR42i2SW2+bQBSE+f9/p1LVh1Z9qSJHfmhc3+rYrmPAhthmIcACe4GvxziLRmcXRrMz5xA0pqS1Fc0nWlfTeY22Jc4bbFHQZjdsrjB5jqsqvOBebVmO1VUl5uNDUBCoCm5VT9N5mtYSXxvCtCbJNMv1C4e/G6r1inzyhF7MeU8S3qKIYxhyyzJet1uiOKbUGlNXBMuTY3V2IqS53hR/dhee50e2seIY7Tj/O6Cmz4TfvpI9/SINIwpxk6YpoYju93t2IprIWUuK4PvklZ/TPVmNrEGex7rXWiu8bsBZtMT2jabrOmpxMnKGgVzakIpr3/dYcRnMw47ZseFSelrjmK7OTBcx8504iPYoId+UYiMurpnCqgPbyRfSxQ+6PCI+JZwksnVOLmwIkgJOqqdqe7llIFXtiFvZURQXnK7RQnyXSJ2xDF0hgwox6shgq884j1x3buB7Ue6NwHLf98MDTt7p9jG53oqQxO6Nkb18d17Oftx7acEI4dynHhjfkuVXVpsls8Vv3uIDxnc0phZhP5Kt9MzI79G3nQzlyHr2IpgR7nbiSkvvauHUI/c/rcZei1tWxqsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;postProcessor&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7f59b67ba794d27885536bf20de85e70/321ea/postProcessor.png&quot;
+        srcset=&quot;/static/7f59b67ba794d27885536bf20de85e70/3684f/postProcessor.png 225w,
+/static/7f59b67ba794d27885536bf20de85e70/fc2a6/postProcessor.png 450w,
+/static/7f59b67ba794d27885536bf20de85e70/321ea/postProcessor.png 786w&quot;
+        sizes=&quot;(max-width: 786px) 100vw, 786px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;등록되어 있는 빈 후처리기가 있다면 스프링 컨테이너는 빈 생성 후 빈 후처리기에게 빈을 전달한다.&lt;/li&gt;
+&lt;li&gt;(일반적인) 빈 후처리기는 빈으로 등록된 모든 Advisor내의 Pointcut을 이용해 빈으로 등록된 모든 빈들을 &lt;strong&gt;프록시 적용 대상인지 확인한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;적용 대상이면 (내장된) 프록시 생성기에게 &lt;strong&gt;현재 빈에 대한 프록시를 만들고, 만들어진 프록시에 어드바이저를 연결한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;빈 후처리기는 스프링 컨테이너에게 전달받은 빈이 아니라 &lt;strong&gt;프록시를 컨테이너에게 돌려준다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;스프링-aop-맛보기&quot; style=&quot;position:relative;&quot;&gt;스프링 AOP 맛보기&lt;a href=&quot;#%EC%8A%A4%ED%94%84%EB%A7%81-aop-%EB%A7%9B%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;스프링 aop 맛보기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;프록시를 생성할 때 직접 빈으로 등록해주지 않고 Advisor만 등록하여도 빈 후처리기가 프록시를 생성해준다는 것을 배웠다.&lt;br&gt;
+하지만 Pointcut, Advice, Advisor를 재활용하기 위해서는 각각 빈으로 직접 등록해줘야 하다는 단점이 있다.&lt;/p&gt;
+&lt;p&gt;이것도 Spring의 &lt;code class=&quot;language-text&quot;&gt;@Aspect&lt;/code&gt;가 해결해준다. 간단한 예제를 보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Aspect
+@Component
+class MyAspect {
+
+    /**
+     * execution: 메소드 실행 조인 포인트에 대한 매칭을 지정합니다.
+     * *: 메소드의 반환 타입을 나타내며, 여기서는 모든 반환 타입을 의미합니다.
+     * *..*.*: 첫 번째 *는 모든 패키지를 의미하며, ..는 패키지의 모든 서브 패키지를 포함한다는 의미입니다. 두 번째 *는 모든 클래스를 의미합니다.
+     * sayH*: 메소드 이름이 sayH로 시작하는 것을 의미합니다. *는 그 뒤에 오는 어떤 문자열과도 매칭될 수 있음을 나타냅니다.
+     * (..): 메소드의 파라미터를 나타내며, 여기서는 어떤 타입과 어떤 개수의 파라미터도 허용한다는 의미입니다.
+     */
+    @Around(&amp;quot;execution(* *..*.*sayH*(..))&amp;quot;)
+    fun execute(joinPoint: ProceedingJoinPoint): Any {
+        println(&amp;quot;MyAspect!!!&amp;quot;)
+        return joinPoint.proceed()
+    }
+}
+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;JoinPoint&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;어드바이스가 적용될 수 있는 위치를 말한다&lt;/li&gt;
+&lt;li&gt;스프링의 프록시 AOP에서 조인 포인트는 메소드의 실행 단계 뿐이다&lt;/li&gt;
+&lt;li&gt;타깃 오브젝트가 구현한 인터페이스의 모든 메소드가 조인 포인트가 된다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aspect&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;한 개 또는 그 이상의 포인트컷과 어드바이스의 조합으로 만들어지며 보통 싱글톤 형태의 오브젝트로 존재한다.&lt;/li&gt;
+&lt;li&gt;스프링의 Advisor는 아주 단순한 Aspect라고 볼 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;정리&quot; style=&quot;position:relative;&quot;&gt;정리&lt;a href=&quot;#%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;정리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;프록시를 구현하기 위해 사용되는 &lt;strong&gt;Reflection&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;프록시의 개념&lt;/li&gt;
+&lt;li&gt;프록시를 구현하는 두 가지의 방법 (&lt;strong&gt;JDK Dynamic Proxy&lt;/strong&gt; 와 &lt;strong&gt;CGLIB&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;프록시를 구현하는 두 가지 방법과 부가기능과 메소드 선별 기능을 스프링이 추상화한 &lt;strong&gt;ProxyFactory&lt;/strong&gt; 와 &lt;strong&gt;ProxyFactoryBean&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;빈 후처리기를 통해 프록시를 편리하게 등록하는 방법&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@Aspect&lt;/code&gt; (AspectJ)를 사용하여 프록시를 등록하는 방법&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위와 같은 내용들을 순서대로 알아보았다. 많은 내용이고 더 깊게 조사할 수 있는 부분들도 존재하지만 자주 사용하는 &lt;code class=&quot;language-text&quot;&gt;@Transactional&lt;/code&gt;과 같은 AOP 기능에 대해 더 가까워질 수 있었다.&lt;br&gt;
+이런 프록시에 대한 이해가 없다면 스프링이 제공하는 많은 편리한 기능들을 이해할 수 없고 그저 마법같은 일이라고만 생각하고 넘어갈 것이다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;프록시가 무엇인지?&lt;/li&gt;
-&lt;li&gt;프록시를 구현하는 방법이 무엇인지?&lt;/li&gt;
-&lt;li&gt;타겟에 대한 의존을 스프링이 어떻게 끊었는지?&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
+&lt;li&gt;프록시를 구현하는 방법에는 무엇이 있는지?&lt;/li&gt;
+&lt;li&gt;스프링은 프록시를 어떻게 생성하는지?&lt;/li&gt;
+&lt;li&gt;스프링은 부가기능의 타겟에 대한 의존성을 어떻게 끊었는지?&lt;/li&gt;
+&lt;li&gt;스프링이 프록시를 만들기 위해 제공하는 두 가지의 방법은 무엇인지?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 글에서는 스프링의 AOP와 AspectJ는 더 자세하게 설명하지 않았다. 준비가 된다면 다른 글로 정리할 예정이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
 하지만 매번 제네릭에 대한 이해가 부족해 타입 검사기가 왜 거부하는지 이해하지 못하여 원하는대로 작성을 못한 경험이 있다.&lt;br&gt;
 그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
 &lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
@@ -6329,7 +6636,7 @@ Tomcat 포트를 &lt;code class=&quot;language-text&quot;&gt;-1&lt;/code&gt;로 
 또는 &lt;a href=&quot;https://grpc.io/docs/languages/java/basics/&quot;&gt;공식 문서 Basics Tutorial&lt;/a&gt;에서도 확인 가능하다.&lt;/p&gt;
 &lt;p&gt;protocol buffer는 이진 부호화 라이브러리이며 부호화할 데이터를 위한 스키마를 &lt;code class=&quot;language-text&quot;&gt;proto&lt;/code&gt;언어를 통해 아래와 같이 메세지를 정의하고 protocol buffer compiler를 통해 원하는 언어로 &lt;a href=&quot;https://protobuf.dev/programming-guides/proto3/#generated&quot;&gt;generate&lt;/a&gt; 할 수 있다.&lt;br&gt;
 생성된 코드를 호출해 부호화하고 복호화할 수 있다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;proto&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;syntax = &amp;quot;proto3&amp;quot;;
 
 package grpc.hello;
