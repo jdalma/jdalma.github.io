@@ -1,13 +1,13 @@
 ---
-title: 스프링의 빈 후처리기에 대해
-date: "2024-03-11"
+title: 빈 후처리기를 이용한 프록시 생성에 대해
+date: "2024-03-17"
 tags:
    - spring
    - reflection
    - proxy
 ---
 
-스프링의 AOP 프록시를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다.  
+스프링의 프록시 방식으로 AOP를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다.  
 
 1. Reflection
 2. Java Dynamic Proxy
@@ -18,7 +18,7 @@ tags:
 
 **스프링을 더 깊게 이해하기 위해서는 필수적인 선수 지식이라고 생각한다.**  
 이 글에서는 스프링 AOP를 사용하는 법, 포인트 컷, 어드바이스를 자세하게 설명하진 않으며, 스프링의 빈 후처리기를 통해 프록시가 어떻게 자동으로 생성되는지를 중점으로 다룬다.  
-이 글을 통해 프록시가 무엇인지, 프록시를 관리하고 생성할 때 불편한 방법들을 스프링은 어떻게 해결했는지 알 수 있을것 이다.  
+이 글을 통해 프록시가 무엇인지, 프록시를 관리하고 생성할 때 불편한 방법들을 스프링은 어떻게 해결했는지 알 수 있을 것이다.  
 차근차근 단계별로 알아보자.  
 
 # 1단계: Java Reflection
@@ -649,7 +649,7 @@ class FactoryBeanTest(
         helloBean.sayThankYou(NAME) shouldBe "(Commit)Thank you admin"
 
         val personBean = context.getBean("person", Person::class.java)
-    personBean.greeting() shouldBe "안녕하세요!"
+        personBean.greeting() shouldBe "안녕하세요!"
         personBean.sayGreeting(NAME) shouldBe "(Commit)안녕하세요! admin"
         personBean.sayHello(NAME) shouldBe "(Commit)Hello admin"
         personBean.sayHi(NAME) shouldBe "(Commit)Hi admin"
@@ -671,7 +671,7 @@ class FactoryBeanTest(
 
 # 6단계: 부가기능을 구현하는 차이점
 
-이때까지 작성한 예제를 보면 어떤 부가기능은 `org.aopalliance.intercept.MethodInterceptor`를 구현하였고, 어떤 부가기능은 `java.lang.reflect.InvocationHandler`를 구현하였다.  
+이때까지 작성한 예제를 보면 어떤 부가기능은 `java.lang.reflect.InvocationHandler`를 구현하였고 어떤 부가기능은 `org.aopalliance.intercept.MethodInterceptor`를 구현하였다.    
 
 ```kotlin
 class MyInvocationHandler(
@@ -682,8 +682,8 @@ class MyInvocationHandler(
 }
 ```
   
-자바에서 제공하는 `InvocationHandler`는 한번 빈으로 구성되면 타겟이 달라지거나 메서드 선정 조건이 달라지면 여러 프록시가 공유할 수 없었다.  
-즉, **부가기능 내부에서 타겟과 메소드 선정을 함께하고 있기 떄문에 오브젝트 차원에서 특정 타깃을 위한 프록시에 제한된다는 뜻이다.**  
+자바에서 제공하는 `InvocationHandler`는 타겟이 달라지거나 메서드 선정 조건이 달라진다면 여러 프록시가 공유할 수 없었다.  
+즉, **부가기능 내부에서 타겟과 메소드 선정을 함께하고 있기 떄문에 오브젝트 차원에서 특정 타깃을 위한 프록시에 제한된다는 것이다.**  
   
 ```kotlin
 class MyMethodInterceptor: MethodInterceptor {
@@ -692,7 +692,7 @@ class MyMethodInterceptor: MethodInterceptor {
 ```
   
 그에 반해, `MethodInterceptor.invoke()`는 `MethodInvocation`을 통해 타깃 오브젝트에 대한 의존이 사라졌다.  
-그 이유는 스프링이 aopaliance에서 제공하는 `MethodInvocation`을 확장하고 구현하여 **타겟에 대한 정보, 메서드, 인자, 부가기능 등을 가진 Advice를 필드에 가지고 있기 때문이다.**  
+그 이유는 **스프링이 aopaliance에서 제공하는 `MethodInvocation`을 확장하고 구현하여 타겟에 대한 정보, 메서드, 인자, 부가기능 등을 가진 Advice를 필드에 가지고 있기 때문이다.**  
   
 ![](./methodInvocation.png)
   
@@ -733,9 +733,10 @@ class AppConfig {
     }
 }
 
-@SpringBootTest("spring.profiles.active=local")
+@SpringBootTest("spring.profiles.active=local", classes = [AppConfig::class])
 class FactoryBeanTest(
     private val context: ApplicationContext,
+    private val person: Person
 ): AnnotationSpec() {
 
     private val NAME: String = "admin"
@@ -747,9 +748,6 @@ class FactoryBeanTest(
     @Test
     @DisplayName("ProxyFactoryBean 테스트")
     fun proxyFactoryBean() {
-        val proxyFactoryBean = context.getBean("&personProxyFactoryBean", ProxyFactoryBean::class.java)
-        val person = proxyFactoryBean.`object` as Person
-
         person.greeting() shouldBe "안녕하세요!"
         person.sayGreeting(NAME) shouldBe "안녕하세요! admin"
         person.sayHello(NAME) shouldBe "intercept!!! Hello admin"
@@ -757,6 +755,19 @@ class FactoryBeanTest(
         person.sayThankYou(NAME) shouldBe "Thank you admin"
         shouldThrow<java.lang.RuntimeException> { person.throwException() }
             .message shouldBe "예외 테스트!"
+
+        val proxyFactoryBean = context.getBean("&personProxyFactoryBean", ProxyFactoryBean::class.java)
+        val person2 = proxyFactoryBean.`object` as Person
+
+        person2.greeting() shouldBe "안녕하세요!"
+        person2.sayGreeting(NAME) shouldBe "안녕하세요! admin"
+        person2.sayHello(NAME) shouldBe "intercept!!! Hello admin"
+        person2.sayHi(NAME) shouldBe "intercept!!! Hi admin"
+        person2.sayThankYou(NAME) shouldBe "Thank you admin"
+        shouldThrow<java.lang.RuntimeException> { person2.throwException() }
+            .message shouldBe "예외 테스트!"
+
+        System.identityHashCode(person) shouldBe System.identityHashCode(person2)
     }
 }
 
@@ -784,19 +795,206 @@ InvocationHandler와 다르게 부가기능 구현체는 클라이언트로부�
   
 ![](./proxyFactoryBean.png)
   
-- `[1]` : `CglibAopProxy.ProxyCallbackFilter`에서 등록된 Pointcut의 통해 부가기능 대상인지 확인한다.
+- `[1]` : `CglibAopProxy.ProxyCallbackFilter`에서 등록된 Pointcut을 통해 부가기능 대상인지 확인한다.
 - `[2,3]` : `CglibAopProxy.DynamicAdvisedInterceptor`에서 부가기능들을 관리하고 실행시키는 역할을 한다.
 - `[4]` : `CglibMethodInvocation` → `ReflectiveMethodInvocation` 에서 부가기능과 타겟을 실행한다.
   
 > 실제 위임 대상인 타깃 오브젝트의 레퍼런스를 갖고 있고, 이를 이용해 타깃 메소드를 직접 호출하는 것은 프록시가 메소드 호출에 따라 만드는 `Invocation Callback`의 역할이다.  
 > 재사용 가능한 기능을 만들어두고 "바뀌는 부분 (콜백 오브젝트와 메소드 호출정보)"만 외부에서 주입해서 이를 "작업 흐름 (부가기능 부여)" 중에 사용하도록 하는 전형적인 **템플릿/콜백** 구조다.
   
-부가기능의 적용이 필요한 타깃 오브젝트마다 거의 비슷한 내용의 ProxyFactoryBean 빈 설정정보를 추가해줘야하는 단점이 있다.  
+![](./proxyFactoryBean2.png)
+
+Pointcut과 Advice, 이 둘을 묶는 Advisor 각각 빈으로 등록하여 중복을 제거할 수 있게 되었다.  
+하지만 **부가기능의 적용이 필요한 타깃 오브젝트마다 거의 비슷한 내용의 ProxyFactoryBean 빈 설정정보를 직접 작성해줘야하는 단점이 있다.**  
 타겟을 제외하면 빈 클래스의 종류, Advice, Pointcut의 설정이 거의 동일하며 빈으로 관리가 가능한데 이러한 중복을 제거할 수 있는 방법은 없을까?  
 
 # 빈 후처리기를 이용한 자동 프록시 생성기
 
-이때까지
+이제 스프링에서 프록시를 자동으로 생성하는 방법에 대해 알아볼 차례다.  
+말 그대로 **스프링 빈 오브젝트로 만들어지고 난 후에, 빈 오브젝트를 다시 가공할 수 있게 해주는 것이다.**  
+`BeanPostProcessor`를 직접 구현한 아래의 예제를 보자.  
+  
+```kotlin
+/**
+ * 생성자로 pattern을 주입받아 빈의 이름이 해당 pattern으로 시작하는 빈만 프록시를 감싸서 반환하고 그렇지 않으면 빈 자체를 반환한다.
+ */
+class ClassLogTracePostProcessor(
+    private val pattern: String,
+    private val advisor: Advisor
+): BeanPostProcessor {
+
+    private val log = logger()
+    override fun postProcessBeforeInitialization(bean: Any, beanName: String): Any {
+        log.info("[before] pattern = $pattern, beanName = $beanName, bean = ${bean.javaClass}")
+        return bean
+    }
+
+    override fun postProcessAfterInitialization(bean: Any, beanName: String): Any {
+        log.info("[after] pattern = $pattern, beanName = $beanName, bean = ${bean.javaClass}")
+        if(!beanName.startsWith(pattern)) return bean
+
+        val proxy = ProxyFactory(bean).apply {
+            this.addAdvisor(advisor)
+            this.isProxyTargetClass = true
+        }.proxy
+
+        log.info("[after - proxy] target = ${bean.javaClass}, proxy = ${proxy.javaClass}")
+        return proxy
+    }
+}
+
+@Configuration
+class PostProcessorConfig {
+    @Bean
+    fun classLogTracePostProcessor() = ClassLogTracePostProcessor("p", advisor())
+    @Bean
+    fun advisor() = DefaultPointcutAdvisor(pointcut(), advice())
+    @Bean
+    fun pointcut() = NameMatchMethodPointcut().apply {
+        this.setMappedName("sayH*")
+    }
+    @Bean
+    fun advice() = MethodInterceptor { it: MethodInvocation ->
+        "intercept!!! " + (it.proceed() as String)
+    }
+    @Bean
+    fun hello(): Hello = Person()
+    @Bean
+    fun person(): Person = Person()
+}
+
+@SpringBootTest("spring.profiles.active=local", classes = [PostProcessorConfig::class])
+class MemberServiceTest(
+    private val hello: Hello,
+    private val person: Person
+): AnnotationSpec() {
+
+    private val NAME: String = "admin"
+
+    init {
+        extension(SpringExtension)
+    }
+
+    @Test
+    fun beanPostProcessor() {
+        hello.sayGreeting(NAME) shouldBe "안녕하세요! admin"
+        hello.sayHello(NAME) shouldBe "Hello admin"
+        hello.sayHi(NAME) shouldBe "Hi admin"
+        hello.sayThankYou(NAME) shouldBe "Thank you admin"
+
+        person.greeting() shouldBe "안녕하세요!"
+        person.sayGreeting(NAME) shouldBe "안녕하세요! admin"
+        person.sayHello(NAME) shouldBe "intercept!!! Hello admin"
+        person.sayHi(NAME) shouldBe "intercept!!! Hi admin"
+        person.sayThankYou(NAME) shouldBe "Thank you admin"
+
+        hello.javaClass.toString() shouldBe "class Person"
+        person.javaClass.toString() shouldBe "class Person$\$SpringCGLIB$$0"
+    }
+}
+```
+
+BeanPostProcessor를 통해 빈의 이름이 `p`로 시작하는 빈만 프록시를 감싸서 반환하도록 하였고, Pointcut을 통해 `sayH`로 시작하는 메서드만 부가기능이 실행되도록 지정하였다.  
+위의 테스트 코드를 보면 `hello`로 등록된 빈은 프록시가 적용되지 않았고, `person`으로 등록된 빈만 프록시가 적용되었고 `sayH`로 시작하는 메서드만 부가기능이 실행되는 것을 확인할 수 있다.  
+  
+```
+[before] pattern = p, beanName = hello, bean = class Person
+[after] pattern = p, beanName = hello, bean = class Person
+[before] pattern = p, beanName = person, bean = class Person
+[after] pattern = p, beanName = person, bean = class Person
+[after - proxy] target = class Person, proxy = class Person$$SpringCGLIB$$0
+```
+
+![](./beanLifeCycle.png)
+[출처](https://bootcamptoprod.com/spring-bean-life-cycle-explained/)
+
+**빈 후처리기는 빈의 생명주기에 대한 두 가지 단계의 훅을 제공한다.**  
+스프링은 이 빈 후처리기를 통해 프록시를 자동으로 생성하는 여러가지의 후처리기를 제공한다.  
+
+![](./autoProxyCreator.png)
+
+기본적으로 `DefaultAdvisorAutoProxyCreator`을 빈으로 등록하여 빈 후처리기 가공 시점에 프록시를 자동으로 생성하도록 할 수 있다.  
+
+```kotlin
+@Bean
+fun defaultAdvisorAutoProxyCreator() = DefaultAdvisorAutoProxyCreator().apply {
+    this.isProxyTargetClass = true
+}
+```
+
+`BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans()`을 통해 **`Advisor.class` 타입을 구현하는 모든 빈을 찾고 빈으로 등록된 모든 구현 클래스(타겟)들을 순회하면서 대상선별을 통하여 프록시를 적용한다.**  
+스프링 AOP (`org.springframework.boot:spring-boot-starter-aop`) 의존성을 추가한다면 이것조차 작성하지 않아도 된다.  
+의존성을 추가하면 자동으로 `AnnotationAwareAspectJAutoProxyCreator` 빈 후처리기가 등록되어 빈으로 등록된 Advisor와 `@AspectJ`로 선언된 Advisor도 처리한다.  
+  
+이제는 Advisor만 빈으로 등록한다면 자동으로 모든 빈들을 순회하면서 Pointcut에 해당하는 대상이라면 Advice를 적용한 프록시를 등록한다.  
+프록시 생성 단계와 사용 단계의 Pointcut을 구분할 수 있어야 한다.  
+  
+- **생성 단계: 프록시 적용 여부 판단**
+  - AutoProxyCreator는 Pointcut을 사용해서 **해당 빈의 프록시를 생성할 필요가 있는지 없는지 체크한다.**
+  - 클래스와 메서드 조건을 모두 비교한다. Pointcut 하나하나에 매칭하여 해당되는 것이 하나라도 있으면 프록시를 생성한다.
+  - 10개의 메서드 중에 하나만 Pointcut 조건에 만족해도 프록시 적용 대상이 된다.
+- **사용 단계: 어드바이스 적용 여부 판단**
+  - 프록시가 호출되었을 때 부가 기능인 **Advice를 적용할지 판단한다.**
+  
+![](./postProcessor.png)
+
+1. 등록되어 있는 빈 후처리기가 있다면 스프링 컨테이너는 빈 생성 후 빈 후처리기에게 빈을 전달한다.
+2. (일반적인) 빈 후처리기는 빈으로 등록된 모든 Advisor내의 Pointcut을 이용해 빈으로 등록된 모든 빈들을 **프록시 적용 대상인지 확인한다.**
+3. 적용 대상이면 (내장된) 프록시 생성기에게 **현재 빈에 대한 프록시를 만들고, 만들어진 프록시에 어드바이저를 연결한다.**
+4. 빈 후처리기는 스프링 컨테이너에게 전달받은 빈이 아니라 **프록시를 컨테이너에게 돌려준다.**
+
+# 스프링 AOP 맛보기
+
+프록시를 생성할 때 직접 빈으로 등록해주지 않고 Advisor만 등록하여도 빈 후처리기가 프록시를 생성해준다는 것을 배웠다.  
+하지만 Pointcut, Advice, Advisor를 재활용하기 위해서는 각각 빈으로 직접 등록해줘야 하다는 단점이 있다.  
+  
+이것도 Spring의 `@Aspect`가 해결해준다. 간단한 예제를 보자.  
+
+```kotlin
+@Aspect
+@Component
+class MyAspect {
+
+    /**
+     * execution: 메소드 실행 조인 포인트에 대한 매칭을 지정합니다.
+     * *: 메소드의 반환 타입을 나타내며, 여기서는 모든 반환 타입을 의미합니다.
+     * *..*.*: 첫 번째 *는 모든 패키지를 의미하며, ..는 패키지의 모든 서브 패키지를 포함한다는 의미입니다. 두 번째 *는 모든 클래스를 의미합니다.
+     * sayH*: 메소드 이름이 sayH로 시작하는 것을 의미합니다. *는 그 뒤에 오는 어떤 문자열과도 매칭될 수 있음을 나타냅니다.
+     * (..): 메소드의 파라미터를 나타내며, 여기서는 어떤 타입과 어떤 개수의 파라미터도 허용한다는 의미입니다.
+     */
+    @Around("execution(* *..*.*sayH*(..))")
+    fun execute(joinPoint: ProceedingJoinPoint): Any {
+        println("MyAspect!!!")
+        return joinPoint.proceed()
+    }
+}
+
+```
+
+- **JoinPoint**
+  - 어드바이스가 적용될 수 있는 위치를 말한다
+  - 스프링의 프록시 AOP에서 조인 포인트는 메소드의 실행 단계 뿐이다
+  - 타깃 오브젝트가 구현한 인터페이스의 모든 메소드가 조인 포인트가 된다
+- **Aspect**
+  - 한 개 또는 그 이상의 포인트컷과 어드바이스의 조합으로 만들어지며 보통 싱글톤 형태의 오브젝트로 존재한다.
+  - 스프링의 Advisor는 아주 단순한 Aspect라고 볼 수 있다
+  
+# 정리
+
+1. 프록시를 구현하기 위해 사용되는 **Reflection**
+2. 프록시의 개념
+3. 프록시를 구현하는 두 가지의 방법 (**JDK Dynamic Proxy** 와 **CGLIB**)
+4. 프록시를 구현하는 두 가지 방법과 부가기능과 메소드 선별 기능을 스프링이 추상화한 **ProxyFactory** 와 **ProxyFactoryBean**
+5. 빈 후처리기를 통해 프록시를 편리하게 등록하는 방법
+6. `@Aspect` (AspectJ)를 사용하여 프록시를 등록하는 방법
+
+위와 같은 내용들을 순서대로 알아보았다. 많은 내용이고 더 깊게 조사할 수 있는 부분들도 존재하지만 자주 사용하는 `@Transactional`과 같은 AOP 기능에 대해 더 가까워질 수 있었다.  
+이런 프록시에 대한 이해가 없다면 스프링이 제공하는 많은 편리한 기능들을 이해할 수 없고 그저 마법같은 일이라고만 생각하고 넘어갈 것이다.  
+
 - 프록시가 무엇인지?
-- 프록시를 구현하는 방법이 무엇인지?
-- 타겟에 대한 의존을 스프링이 어떻게 끊었는지?
+- 프록시를 구현하는 방법에는 무엇이 있는지?
+- 스프링은 프록시를 어떻게 생성하는지?
+- 스프링은 부가기능의 타겟에 대한 의존성을 어떻게 끊었는지?
+- 스프링이 프록시를 만들기 위해 제공하는 두 가지의 방법은 무엇인지?
+  
+이 글에서는 스프링의 AOP와 AspectJ는 더 자세하게 설명하지 않았다. 준비가 된다면 다른 글로 정리할 예정이다.  
