@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 03 Apr 2024 11:57:42 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Apr 2024 11:09:54 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블  실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 6일부터 01월 17일까지&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -337,10 +337,10 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;li&gt;관심사가 다르고 관계없는 책무를 가진 메서드는 동사 + 목적어 형태가 되는 경향이 있으므로 &lt;strong&gt;메서드 이름은 &lt;code class=&quot;language-text&quot;&gt;동사&lt;/code&gt; 하나로 구성되게 해라.&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;모델&lt;/strong&gt;은 &lt;code class=&quot;language-text&quot;&gt;특정 목정 달성을 위해서, 최소한으로 필요한 요소를 갖춘 것&lt;/code&gt;이다. 그렇기에 &lt;strong&gt;목적 달성의 수단&lt;/strong&gt; 이며 목적별로 모델링해야 한다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;모델 != 클래스&lt;/strong&gt; 이다. 일반적으로 모델 하나는 여러 개의 클래스로 구현된다. 클래스 설계와 구현에서 무언가를 깨닫는다면, 이를 모델에 꾸준하게 피드백해야 한다. 그렇지않으면 서로 괴리가 생긴다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;일급 컬렉션&lt;/code&gt;에 대한 내용을 &lt;a href=&quot;http://localhost:8000/2023y/kotlinCleanCode/&quot;&gt;넥스트스텝 코틀린 교육&lt;/a&gt;에서 접했을땐 코틀린에서 지원하는 컬렉션 공통 함수들을 사용하기 불편하다고 생각해서 와닿지 않았었는데 이 책을 통해 잘못이해하고 있었다는 것을 느꼈다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;일급 컬렉션&lt;/code&gt;에 대한 내용을 &lt;a href=&quot;https://jdalma.github.io/2023y/kotlinCleanCode/&quot;&gt;넥스트스텝 코틀린 교육&lt;/a&gt;에서 접했을땐 코틀린에서 지원하는 컬렉션 공통 함수들을 사용하기 불편하다고 생각해서 와닿지 않았었는데 이 책을 통해 잘못이해하고 있었다는 것을 느꼈다.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;인상 깊은 내용들은 이 정도로 정리할 수 있겠다. 중후반부 까지는 이렇게 좋은 코드를 작성하는 방법, 설계에 대한 강조, 모델의 개념들에 대해 설명했다.&lt;br&gt;
-(&lt;a href=&quot;http://localhost:8000/2023y/bookReview/bookReview/&quot;&gt;엘레강트 오브젝트&lt;/a&gt;가 자주 떠올랐다.)&lt;/p&gt;
+&lt;p&gt;인상 깊은 내용들은 이 정도로 정리할 수 있겠다. 중후반부 까지는 좋은 코드를 작성하는 방법, 설계에 대한 강조, 모델의 개념들에 대해 설명했다.&lt;br&gt;
+(&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%97%98%EB%A0%88%EA%B0%95%ED%8A%B8-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot;&gt;엘레강트 오브젝트&lt;/a&gt;가 자주 떠올랐다.)&lt;/p&gt;
 &lt;p&gt;대체로 이렇게 코드,설계 레벨에서 마무리짓는데 이 책은 후반부에 &lt;strong&gt;레거시 코드와 엔지니어의 성장 가능성의 관계&lt;/strong&gt;, &lt;strong&gt;설계를 방해하는 환경&lt;/strong&gt;, &lt;strong&gt;리뷰의 의의&lt;/strong&gt; 들도 설명하면서 자신의 업무 환경을 개선하기위한 용기와 방법을 알려준다.&lt;br&gt;
 팀에 새로운 인원이 투입된다면 온보딩 기간에 읽어야 할 책으로 선정해도 무방할 정도로 좋은 책이였다.&lt;/p&gt;
 &lt;p&gt;이 책 덕분에 &lt;a href=&quot;https://m.yes24.com/Goods/Detail/64586851&quot;&gt;레거시 코드 활용 전략&lt;/a&gt;에 흥미가 생겨 읽어볼 예정이다.&lt;/p&gt;
@@ -406,7 +406,332 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;h1 id=&quot;이펙티브-코틀린-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 코틀린 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt; 예정&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%95&quot; aria-label=&quot;이펙티브 자바 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt; 예정&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4-%EC%98%88%EC%A0%95&quot; aria-label=&quot;개발자를 위한 레디스 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[빈 후처리기를 이용한 프록시 생성에 대해]]></title><description><![CDATA[스프링의 프록시 방식으로 AOP를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다. Reflection Java Dynamic Proxy CGLIB ProxyFactory FactoryBean ProxyFactoryBean…]]></description><link>https://jdalma.github.io/2024y/postprocessor/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/postprocessor/</guid><pubDate>Sun, 17 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링의 프록시 방식으로 AOP를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다.&lt;/p&gt;
+&lt;h1 id=&quot;nginx-쿡북-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt; 예정&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81-%EC%98%88%EC%A0%95&quot; aria-label=&quot;nginx 쿡북 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[테스트 불모지에 Testcontainers 심기]]></title><description><![CDATA[CI/CD를 고민하면서 서로 의존 관계에 있는 서비스들은 통합 테스트를 어떻게 진행할지 생각해본적이 있다.  위의 그림에서 A 서비스 를 수정하고 배포한다고 가정할 때 사용자의 요청을 처리하기 위해 이해관계에 놓여있는 B 서비스와 DB…]]></description><link>https://jdalma.github.io/2024y/testcontainers/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/testcontainers/</guid><pubDate>Sun, 07 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CI/CD를 고민하면서 서로 의존 관계에 있는 서비스들은 통합 테스트를 어떻게 진행할지 생각해본적이 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 773px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/da0ac8e27aa0636db1e07073b18aeda4/612f7/mocking.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaUlEQVR42o2Th67CMAxF+/8fBxKIVQpllkKB7sW6z9cQVMETEMmqmjjH1yMWflx5nsNxHGw2G3ieh/l8jvV6rWe32+3pZ30DGeckSZ6gVquFNE31vwn7CfigIokiBRC83+8Rx/FT4Ufga0RdZYl0t4MzGCAIAjXCIwnyBrxcLgp5Ne6zbkVRoBRzRyNUoqoU+PF41Muu6yq8qir15ZnFQ26YwpuoTIe23W6xE3OnU2RSN/oY4OFwwEgCGdXj8RgWHa7XK7Isw2QywXA4VMhqtVJ4p9NRJaydCW6Cso70s21bJ2CxWMCiY13XCmWaxuhIAI0XAzYiDFE8wFyh/C+XSz0nR4FUdj6f35pCJb7v39MRxd12G7UoKwUSCoDrdDrdSyINo9H3+xw+vjG73O/Dly8DMQM24a3L/45JQ21zsAmicqaaS+ebL8XYzy+FjSCIY9Tr9XSPKr8O9qe3zG7OZjN9fuwqh/sV+Ad6CO3tvGsMGwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;mocking&quot;
+        title=&quot;&quot;
+        src=&quot;/static/da0ac8e27aa0636db1e07073b18aeda4/612f7/mocking.png&quot;
+        srcset=&quot;/static/da0ac8e27aa0636db1e07073b18aeda4/3684f/mocking.png 225w,
+/static/da0ac8e27aa0636db1e07073b18aeda4/fc2a6/mocking.png 450w,
+/static/da0ac8e27aa0636db1e07073b18aeda4/612f7/mocking.png 773w&quot;
+        sizes=&quot;(max-width: 773px) 100vw, 773px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위의 그림에서 &lt;strong&gt;A 서비스&lt;/strong&gt; 를 수정하고 배포한다고 가정할 때 사용자의 요청을 처리하기 위해 이해관계에 놓여있는 B 서비스와 DB는 대부분 &lt;code class=&quot;language-text&quot;&gt;모킹&lt;/code&gt;으로 처리할 것이다.&lt;br&gt;
+개인적으로 모킹을 좋아하지 않는다. 필요하다면 모킹을 사용하긴 하지만 모킹 라이브러리를 추가하지 않기 위해 추상 계층, 위임을 활용하는 편이다.&lt;/p&gt;
+&lt;p&gt;이번에 &lt;a href=&quot;https://jdalma.github.io/2024y/refactoring/refactoring1&quot;&gt;리팩토링&lt;/a&gt;을 진행하면서 통합 테스트를 작성하게 되었는데, 위와 같은 고민을 해소해주는 &lt;strong&gt;Testcontainers&lt;/strong&gt; 를 접하게 되었다.&lt;/p&gt;
+&lt;h1 id=&quot;testcontainers란&quot; style=&quot;position:relative;&quot;&gt;Testcontainers란?&lt;a href=&quot;#testcontainers%EB%9E%80&quot; aria-label=&quot;testcontainers란 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;출처: &lt;a href=&quot;https://testcontainers.com/guides/introducing-testcontainers/&quot;&gt;What is Testcontainers, and why should you use it?&lt;/a&gt;, &lt;a href=&quot;https://testcontainers.com/getting-started/&quot;&gt;What is Testcontainers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;단위 테스트는 데이터베이스, 메시징 시스템 등과 같은 외부 서비스와 분리하여 비즈니스 로직 및 구현 세부 사항을 테스트하는 데 도움이 되지만, 애플리케이션 코드의 대부분은 여전히 이러한 외부 서비스와 통합되어 있을 수 있습니다.&lt;br&gt;
+&lt;strong&gt;애플리케이션에 대한 완전한 확신을 가지려면 단위 테스트와 함께 통합 테스트를 작성하여 애플리케이션이 완벽하게 작동하는지 확인해야 합니다.&lt;/strong&gt;&lt;br&gt;
+테스트 컨테이너는 데이터베이스, 메시지 브로커 등과 같은 &lt;strong&gt;애플리케이션 종속성을 Docker 컨테이너에서 실행하여 이러한 문제를 해결하고 실제 서비스와 대화하고 테스트 코드에 프로그래밍 방식의 API를 제공함으로써 안정적이고 반복 가능한 테스트를 실행할 수 있도록 도와줍니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;테스트를 실행하는 환경에서 아래의 세 개 중 한 개만 준비되어 있으면 사용 가능하다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Docker Desktop&lt;/li&gt;
+&lt;li&gt;Docker Engine on Linux&lt;/li&gt;
+&lt;li&gt;Testcontainers Cloud&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;흐름은 세 단계로 나뉜다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 820px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/03d8ef8e3709462dcc384bda0d75506e/9f82e/test-workflow.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABwklEQVR42lVSW2sTQRTeXy2+i88Bi2DV5KEgRVCsxhtWfTAIUrWpSStx3WZJE9sktjt7nfvM55mVFj3Dmct3zvedmcNEWSXnpwVHVXKf5wpFbsBygcUiQ1kKaO1QVxJNo8CUQVEprFYleYGTrKLcBnnBvW40eK3m0bIRbHiRQ3Ph68LifGmRpmsM3o+xOssQbL3McHFeIDUSZyS2//kYXz5N8DXLkVcNFZMenIpzyaJZssq2N1/h3kbf3+k8xvggaUWsDzkWXBqMhw0ORzWMtBDKUQxwlPPi4Qd0bz3FfeJ2bz/HaJhm0XGyZA+6b3DjWtff7ezg23AKyoeyBtq5Vnzwumnd0wiYdhbGOzx79BGbnSe4eb3nt3u7GO1PWSSkYYEUf595RT0K9mvqEI81kiON9IdGvyfIZbsPWIil8d9inEskk3m4A6QyLJLStI1yznln6TnWYneHYUbk09RivXA42hM43OPtPmCLxGL87jes1rDOw4UpCJJWZKxjl4JhLWuOrZcDqqZwaUnyE3E8uTpro/H2oA+hOf7lBq2obnRKF0PDtefCgFqAqlZ0NldeVoIw+R92Ql+sojVwauIGjaD1B09TUsDkPM/RAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;test workflow&quot;
+        title=&quot;&quot;
+        src=&quot;/static/03d8ef8e3709462dcc384bda0d75506e/9f82e/test-workflow.png&quot;
+        srcset=&quot;/static/03d8ef8e3709462dcc384bda0d75506e/3684f/test-workflow.png 225w,
+/static/03d8ef8e3709462dcc384bda0d75506e/fc2a6/test-workflow.png 450w,
+/static/03d8ef8e3709462dcc384bda0d75506e/9f82e/test-workflow.png 820w&quot;
+        sizes=&quot;(max-width: 820px) 100vw, 820px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;테스트 실행 전&lt;/strong&gt;: 테스트 컨테이너 API를 사용하여 필요한 서비스(데이터베이스, 메시징 시스템 등)를 Docker 컨테이너로 시작한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;테스트 실행 중&lt;/strong&gt;: 이러한 컨테이너화된 서비스를 사용하여 테스트를 실행한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;테스트 실행 후&lt;/strong&gt;: 테스트가 성공적으로 실행되었는지 또는 실패가 있었는지 여부에 관계없이 Testcontainers가 컨테이너를 파기한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;즉, &lt;strong&gt;Dokcer 컨테이너를 코드 레벨에서 제어하여 테스트의 생명 주기에 맞게 컨테이너를 생성하고 종료하는 것이다.&lt;/strong&gt;&lt;br&gt;
+현재 사내에서는 내부 Docker 레지스트리를 구축하여 모든 애플리케이션과 인프라를 이미지로 관리하고 있기 때문에 적용하기에 알맞다고 생각했다.&lt;/p&gt;
+&lt;h1 id=&quot;testcontainers-사용해보기&quot; style=&quot;position:relative;&quot;&gt;Testcontainers 사용해보기&lt;a href=&quot;#testcontainers-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;testcontainers 사용해보기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;기존에는 필요한 인프라를 로컬에 Docker 컨테이너를 직접 실행시켜놓고 애플리케이션의 프로파일을 &lt;code class=&quot;language-text&quot;&gt;local&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;test&lt;/code&gt; 등으로 구분하여 사용 중이였다.&lt;br&gt;
+먼저 local 테스트 환경에서 세션을 관리하는 Redis를 아래의 그림과 같이 Testcontainer를 적용해 보았다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/23d4417a3a3bffeeeccced6dabae796f/d4377/testcontainers.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 38.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABa0lEQVR42nWRz06DQBDGeRcfwJtnPXjyYDzrTa8+gzeeoj5HjQnGNJ6MMR5MjE0sofxpaUspdGEpu8vnDi3QSzeBDLMzv++bwYA+SlXICoWNqFBVFQ4dtbt7/PzB08cvln6EwJlBlLKtMaimVMA6F2CZ0DFBOwgJ7ItUJJ5twAqJOOHghe7hogPSazUc4u/+Ft/XV0h9vyEddMpiBtt8wNfFKbx+H2qr1AFjDXw9O8Hb5TlYOGuBUkqkaYo4juu40WEpx/vdDZ6Pj+BaLy2Q7oxNoe3nHGVZQgiJXH9zzuvmxWKBXq8H0zTh75zneY5VvNY1ekVppkeWWCdM94p6NYbneWCMdePo2HGcFqqUqt1RcRRFGI/HKIqi3S+dJEngum6dN6bTKcIwhNQK1EhOKEfP/s/Isgzz+RyTyUSDl7p+uwKajGppLYPBAIZt2wiCoIaRG3IwGo3aERsojUo5uiNws1MCUp6ELMvCPxNPXLuKB6NGAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;testcontainers&quot;
+        title=&quot;&quot;
+        src=&quot;/static/23d4417a3a3bffeeeccced6dabae796f/1cfc2/testcontainers.png&quot;
+        srcset=&quot;/static/23d4417a3a3bffeeeccced6dabae796f/3684f/testcontainers.png 225w,
+/static/23d4417a3a3bffeeeccced6dabae796f/fc2a6/testcontainers.png 450w,
+/static/23d4417a3a3bffeeeccced6dabae796f/1cfc2/testcontainers.png 900w,
+/static/23d4417a3a3bffeeeccced6dabae796f/d4377/testcontainers.png 1294w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;먼저 Docker 컨테이너를 생성하는 코드를 보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// [3]
+class RedisTestContainers: ApplicationContextInitializer&amp;lt;ConfigurableApplicationContext&amp;gt; {
+
+    override fun initialize(applicationContext: ConfigurableApplicationContext) {
+        redis.start()
+
+        val redisContainerIP = &amp;quot;spring.redis.host=${redis.host}&amp;quot;
+        val redisContainerPort = &amp;quot;spring.redis.port=${redis.getMappedPort(REDIS_PORT)}&amp;quot; // [2]
+
+        TestPropertySourceUtils.addInlinedPropertiesToEnvironment(
+            applicationContext,
+            redisContainerIP,
+            redisContainerPort
+        )
+    }
+
+    companion object {
+        private const val REDIS_IMAGE = &amp;quot;redis:latest&amp;quot;
+        private const val REDIS_PORT = 6379
+        private val redis = RedisContainer(DockerImageName.parse(REDIS_IMAGE))
+            .withExposedPorts(REDIS_PORT) // [1]
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[1]&lt;/code&gt; : Redis의 이미지 정보와 Redis의 컨테이너 내부 포트를 지정한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[2]&lt;/code&gt; : Testcontainers를 통하여 컨테이너를 실행시키면 호스트의 &lt;strong&gt;랜덤 포트&lt;/strong&gt;로 컨테이너가 실행되기 때문에 Property를 동적으로 변경하기 위함이다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[3]&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;[2]&lt;/code&gt;번을 수행하기 위한 훅을 제공하는 콜백 인터페이스인 &lt;code class=&quot;language-text&quot;&gt;ApplicationContextInitializer&lt;/code&gt;를 구현하였다.
+&lt;ul&gt;
+&lt;li&gt;ApplicationContext가 준비되고 빈 정의가 로드되기 전에 ApplicationContextInitializer가 호출된다.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.spring-application.application-events-and-listeners&quot;&gt;Application Events and Listeners&lt;/a&gt;, &lt;a href=&quot;https://www.baeldung.com/spring-tests-override-properties#testPropertySourceUtils&quot;&gt;TestPropertySourceUtils&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@SpringBootTest(&amp;quot;spring.profiles.active=test&amp;quot;)
+@AutoConfigureMockMvc
+@ContextConfiguration(initializers = [RedisTestContainers::class])
+class IntegrationTest: FunSpec() {
+
+    @Autowired
+    private lateinit var redisTemplate: StringRedisTemplate
+    @Autowired
+    private lateinit var mockMvc: MockMvc
+
+    private val key = &amp;quot;spring:session:sessions:expires:test&amp;quot;
+    private val value = &amp;quot;{\&amp;quot;username\&amp;quot;:\&amp;quot;hjjeong\&amp;quot;}&amp;quot;
+    private val cookie = Cookie(&amp;quot;SESSION&amp;quot;, &amp;quot;test&amp;quot;)
+
+    init {
+        extension(SpringExtension)
+
+        beforeSpec {
+            redisTemplate.opsForValue().set(key, value)
+        }
+
+        test(&amp;quot;GET ...&amp;quot;) {
+            val mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(&amp;quot;{url}&amp;quot;).cookie(cookie))
+                .andExpect { status().isOk }
+                .andDo(MockMvcResultHandlers.print())
+                .andReturn()
+            // ...
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위의 &lt;code class=&quot;language-text&quot;&gt;test&lt;/code&gt;를 실행하면 Redis 컨테이너가 실행되고 테스트가 실행되기 전에 세션을 준비하고 통합 테스트가 실행된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/994421475ee9f757b592d55baeb67cf0/e04e6/container.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 8.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAhElEQVR42iWN2w6CMBBE/Q9oUaRQoC23cA0hGF988P9/57jqw8nMJLM7l2J7Ue5vrt1J0j1I2kNUfHOg3Yz2q7Chyp67H8jCSJx7VBG41b101h+pG7DdwsWuT6rpROWOOKuITf1Hsg67PFtQtiEyARMmCjmKjEfblrydUd8xIfUjbtz5ABnXPIOclXXdAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;container&quot;
+        title=&quot;&quot;
+        src=&quot;/static/994421475ee9f757b592d55baeb67cf0/1cfc2/container.png&quot;
+        srcset=&quot;/static/994421475ee9f757b592d55baeb67cf0/3684f/container.png 225w,
+/static/994421475ee9f757b592d55baeb67cf0/fc2a6/container.png 450w,
+/static/994421475ee9f757b592d55baeb67cf0/1cfc2/container.png 900w,
+/static/994421475ee9f757b592d55baeb67cf0/21482/container.png 1350w,
+/static/994421475ee9f757b592d55baeb67cf0/d61c2/container.png 1800w,
+/static/994421475ee9f757b592d55baeb67cf0/e04e6/container.png 2152w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;컨테이너/네트워크/볼륨/이미지를 제거할 수 있도록 도와주는 &lt;code class=&quot;language-text&quot;&gt;ryuk&lt;/code&gt; 컨테이너와 지정한 &lt;code class=&quot;language-text&quot;&gt;redis&lt;/code&gt; 컨테이너가 생성되었다.&lt;br&gt;
+host 포트는 둘 다 랜덤 포트로 생성된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;로그도 확인해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- 스프링 테스트 로그 --
+org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 24.0.2
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 7851 MB
+tc.testcontainers/ryuk:0.4.0             : Creating container for image: testcontainers/ryuk:0.4.0
+o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+tc.testcontainers/ryuk:0.4.0             : Container testcontainers/ryuk:0.4.0 is starting: 9c8f4b440c407a6233d0b39fc70a6ac381f056d4856c9c22499df410eb28eb00
+tc.testcontainers/ryuk:0.4.0             : Container testcontainers/ryuk:0.4.0 started in PT1.244S
+o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+org.testcontainers.DockerClientFactory   : Checking the system...
+org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+tc.redis:latest                          : Creating container for image: redis:latest
+tc.redis:latest                          : Container redis:latest is starting: fff1342e14fbe959761d419a2624df282f38b74719d86cdb39fedae51d052d40
+tc.redis:latest                          : Container redis:latest started in PT0.201S
+
+-- 도커 이벤트 로그 --
+container create (image=testcontainers/ryuk:0.6.0 ...)
+network connect (name=bridge, type=bridge)
+container start (image=testcontainers/ryuk:0.6.0 ...)
+volume create (driver=local)
+container create (image=redis:latest ...)
+network connect (name=bridge, type=bridge)
+volume mount (destination=/data, driver=local, propagation=, read/write=true)
+container start (image=redis:latest ...)
+
+[테스트 진행]
+
+container kill (image=testcontainers/ryuk:0.6.0 ...)
+container kill (image=redis:latest ...)
+network disconnect (name=bridge, type=bridge)
+volume unmount (driver=local)
+container die (image=redis:latest ...)
+volume destroy (driver=local)
+container destroy (image=redis:latest ...)
+network disconnect (name=bridge, type=bridge)
+container die (image=testcontainers/ryuk:0.6.0 ...)
+container destroy (image=testcontainers/ryuk:0.6.0 ...)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;컨테이너가 생성되고 소멸되는 것들을 볼 수 있다.&lt;/p&gt;
+&lt;h1 id=&quot;applicationcontextinitializer-사용하지-않는-방법&quot; style=&quot;position:relative;&quot;&gt;ApplicationContextInitializer 사용하지 않는 방법&lt;a href=&quot;#applicationcontextinitializer-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;applicationcontextinitializer 사용하지 않는 방법 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@SpringBootTest(&amp;quot;spring.profiles.active=test&amp;quot;)
+@AutoConfigureMockMvc
+class IntegrationTest: FunSpec() {
+
+    @Autowired
+    private lateinit var redisTemplate: StringRedisTemplate
+    @Autowired
+    private lateinit var mockMvc: MockMvc
+
+    private val key = &amp;quot;spring:session:sessions:expires:test&amp;quot;
+    private val value = &amp;quot;{\&amp;quot;username\&amp;quot;:\&amp;quot;hjjeong\&amp;quot;}&amp;quot;
+    private val cookie = Cookie(&amp;quot;SESSION&amp;quot;, &amp;quot;test&amp;quot;)
+
+    init {
+        extension(SpringExtension)
+
+        beforeSpec {
+            redisTemplate.opsForValue().set(key, value)
+        }
+
+        test(&amp;quot;GET ...&amp;quot;) {
+            val mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(&amp;quot;{url}&amp;quot;).cookie(cookie))
+                .andExpect { status().isOk }
+                .andDo(MockMvcResultHandlers.print())
+                .andReturn()
+            // ...
+        }
+    }
+
+    companion object {
+        private const val REDIS_IMAGE = &amp;quot;redis:latest&amp;quot;
+        private const val REDIS_PORT = 6379
+
+        @JvmStatic
+        @Container
+        private val REDIS = RedisContainer(DockerImageName.parse(REDIS_IMAGE)).withExposedPorts(REDIS_PORT).apply {
+            this.start()
+        }
+
+        @JvmStatic
+        @DynamicPropertySource
+        private fun registerRedisProperties(registry: DynamicPropertyRegistry) {
+            registry.add(&amp;quot;spring.redis.host&amp;quot;, REDIS::getHost)
+            registry.add(&amp;quot;spring.redis.port&amp;quot;) { REDIS.getMappedPort(REDIS_PORT).toString() }
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;나는 Redis 컨테이너를 생성하는 로직을 테스트 코드와 분리하고 싶어서 &lt;code class=&quot;language-text&quot;&gt;ApplicationContextInitializer&lt;/code&gt;를 구현하였지만 테스트 코드와 같이 관리하고 싶을 땐 위와 같이 작성할 수 있다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;@DynamicPropertySource&lt;/code&gt;를 통해 동적으로 Property를 수정할 수 있다.&lt;/p&gt;
+&lt;h1 id=&quot;정리&quot; style=&quot;position:relative;&quot;&gt;정리&lt;a href=&quot;#%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;정리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;테스트 코드로 필요한 Docker 컨테이너를 생성하여 운영과 동일한 환경에서 테스트가 가능한 것을 확인할 수 있다.&lt;br&gt;
+이 글에서는 Redis를 대체하였지만 &lt;strong&gt;실제 의존하고 있는 서비스들을 컨테이너로 실행시켜서 운영과 동일한 환경을 세팅하여 테스트를 진행할 수 있다는 것이 큰 장점으로 보인다.&lt;/strong&gt;&lt;br&gt;
+테스트가 전혀 작성되어 있지 않은 환경에서 Testcontainers를 적용해보았다. 팀원들을 설득시키기 충분할 정도로 강력한 도구로 보이며 다음에는 Testcontainers를 적용한 실제 통합 테스트 작성기를 쓰도록 노력해봐야 겠다.&lt;/p&gt;
+&lt;p&gt;사용 사례는 &lt;a href=&quot;https://helloworld.kurly.com/blog/delivery-testContainer-apply/&quot;&gt;컬리의 TestContainers로 유저시나리오와 비슷한 통합테스트 만들어 보기&lt;/a&gt;를 참고하라.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[빈 후처리기를 이용한 프록시 생성에 대해]]></title><description><![CDATA[스프링의 프록시 방식으로 AOP를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다. Reflection Java Dynamic Proxy CGLIB ProxyFactory FactoryBean ProxyFactoryBean…]]></description><link>https://jdalma.github.io/2024y/postprocessor/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/postprocessor/</guid><pubDate>Sun, 17 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;스프링의 프록시 방식으로 AOP를 생성하는 가장 기본적인 방법을 이해하기 위해서는 사전지식이 필요하다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Reflection&lt;/li&gt;
 &lt;li&gt;Java Dynamic Proxy&lt;/li&gt;
