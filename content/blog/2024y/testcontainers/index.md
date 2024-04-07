@@ -85,7 +85,7 @@ class RedisTestContainers: ApplicationContextInitializer<ConfigurableApplication
 @SpringBootTest("spring.profiles.active=test")
 @AutoConfigureMockMvc
 @ContextConfiguration(initializers = [RedisTestContainers::class])
-class ProjectFolderControllerTest: FunSpec() {
+class IntegrationTest: FunSpec() {
 
     @Autowired
     private lateinit var redisTemplate: StringRedisTemplate
@@ -173,7 +173,7 @@ container destroy (image=testcontainers/ryuk:0.6.0 ...)
 ```kotlin
 @SpringBootTest("spring.profiles.active=test")
 @AutoConfigureMockMvc
-class ProjectFolderControllerTest: FunSpec() {
+class IntegrationTest: FunSpec() {
 
     @Autowired
     private lateinit var redisTemplate: StringRedisTemplate
