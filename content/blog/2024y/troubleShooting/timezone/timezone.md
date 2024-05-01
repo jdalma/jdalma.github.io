@@ -45,10 +45,6 @@ DB의 timezone이 변경되면 데이터 조회에 문제가 발생하는 것이
 
 새벽에 작업을 진행하기 위해 준비하고 기다리면서 문득 `"UTC로 저장된 데이터가 timezone을 KST로 변경하면 9시간 누적되어서 출력될까?"` 궁금했다.  
 
-||GLOBAL.time_zone|SESSION.time_zone|system_time_zone|
-|:------:|:---:|:---:|:---:|
-||SYSTEM|SYSTEM|UTC|
-
 ```sql
 create table TIMEZONE_TEST
 (
