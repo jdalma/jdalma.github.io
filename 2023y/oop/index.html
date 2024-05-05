@@ -80,19 +80,16 @@
 좋은 코드를 판단하지 못하고, 좋은 코드를 작성하지 못하는 이유는 <strong>어떤 코드가 고품질의 코드인지 알지 못하기 때문이다.</strong><br>
 아래와 같은 질문을 어느정도로 생각하나?</p>
 <ol>
-<li>계층화와 하위 모듈화 방법은 무엇인가?</li>
-<li>클래스를 어떻게 나누는 것이 좋은가?</li>
+<li>모듈의 구분이 명확하고 코드 구조가 높은 응집도, 낮은 결합도를 충족하는가?</li>
+<li>코드가 고전적인 설계 원칙을 따르고 있는가? (SOLID, DRY, KISS, YAGNI, LoD)</li>
+<li>디자인 패턴이 제대로 적용되었고, 과도하게 설계되지는 않았는가?</li>
+<li>다른 사람이 읽기 편한가?</li>
+<li>코드를 재사용할 수 있는가? 혹시 '바퀴를 재발명'하고 있지는 않은가?</li>
+<li>코드는 테스트하기 쉬우며, 단위 테스트가 정상 상황과 비정상 상황을 포괄적으로 다루고 있는가?</li>
+<li>코딩 규칙을 준수하고 있는가?</li>
 <li>각 클래스에는 어떤 책임과 역할이 있는가?</li>
 <li>클래스 간의 상호 작용을 설계하는 방법, 메시지는 무엇인가?</li>
-<li>상속을 사용하는 것이 옳은가?</li>
-<li>인터페이스나 추상 클래스를 사용하는 것이 옳은가?</li>
-<li>상속과 합성 중 뭐가 옳은가?</li>
-<li>결합도가 높은 코드와 낮은 코드는 무엇인가?</li>
-<li>디커플링을 달성하는 방법은 무엇인가?</li>
-<li>싱글턴 패턴이나 정적 메서드를 사용하는 것이 옳은가?</li>
-<li>객체를 생성할 때 팩터리 패턴을 사용하는 것이 옳은가?</li>
-<li>가독성을 유지하면서 확장성을 향상하기 위해 디자인 패턴을 도입하는 방법은 무엇인가?</li>
-<li>어떤 종류의 코드가 확장과 유지관리에 용이한가?</li>
+<li>인터페이스나 추상 클래스 그리고 상속과 합성 중 뭐가 옳은가?</li>
 </ol>
 <blockquote>
 <p>"컴퓨터가 이해할 수 있는 코드는 바보라도 작성할 수 있다. 훌륭한 프로그래머는 사람이 이해할 수 있는 코드를 작성한다." - 마틴 파울러</p>
@@ -113,107 +110,7 @@
 함수형 프로그래밍의 프로그래밍 단위는 <strong>스테이트리스 함수</strong>이다.</p>
 </blockquote>
 <p>객체지향 프로그래밍은 <code class="language-text">클래스의 관점</code>에서 생각해야 한다.<br>
-처음부터 복잡한 프로세스를 메서드로 분해하는 대신 <strong>어떻게 비즈니스 모델링을 할지 먼저 생각한 후 요구 사항을 클래스로 구성하고 클래스 간의 상호 작용을 설정</strong>한다.<br>
-객체지향 프로그래밍을 이해하기 위해서는 <strong>캡슐화</strong>, <strong>추상화</strong>, <strong>상속</strong>, <strong>다형성</strong>을 이해해야 한다.</p>
-<h3>캡슐화</h3>
-<p>정보 은닉 또는 데이터 접근 보호라고도 하는데, <strong>접근 가능한 인터페이스를 제한하여 클래스가 제공하는 메서드를 통해서만 내부 정보나 데이터에 대한 외부 접근을 허가하는 것을 뜻 한다.</strong><br>
-객체 생성 시 값이 결정되며 불변 속성을 지키거나 어쩔 수 없이 속성을 수정해야 한다면 비즈니스 세부 정보를 지킬 수 있다.<br>
-Getter,Setter를 남용하는 행위가 대표적인 안좋은 예다.</p>
-<p>클래스의 속성에 대한 접근을 제한하지 않으면 모든 코드가 클래스의 속성에 접근하고 값을 변경할 수 있게 된다.<br>
-얼핏 이것이 더 유연하게 느껴지지만, <strong>과도한 유연성은 제어할 수 없음을 의미하고 수정 로직이 코드의 모든 곳에 흩어져 가독성과 유지 관리 용이성에 문제를 끼친다.</strong><br>
-그리고 클래스는 필요한 작업만 노출하는 제한된 메서드를 제공하여 클래스의 사용성을 향상 시킬 수 있다.</p>
-<h3>추상화</h3>  
-<p><strong>메서드의 내부 구현을 숨기는 것을 의미한다.</strong> <code class="language-text">함수</code> 그 자체가 구현을 숨기는 추상화에 해당한다.<br>
-따라서 클래스를 사용할 때 기능의 구현 방식에 대해 고민하지 않고, <strong>메서드가 제공하는 기능에만 집중할 수 있다.</strong><br>
-함수라는 문법을 통해 구현되기 때문에 <strong>실제로 코드의 구현 내용은 그 자체로 추상화되는 함수의 내부에 포함된다.</strong><br>
-<strong>규칙과 구현의 분리</strong>를 준수하여 코드의 결합 정도를 줄이고 코드의 확장성을 향상 시킬 수 있다.</p>
-<blockquote>
-<p>객체 지향과 도메인 주도 설계는 소프트웨어 설계에 <strong>일관성과 맥락</strong>을 부여한다.<br>
-<strong>일관성과 맥락</strong>은 추상화의 기본 재료이며, 추상화로부터 얻은 <strong>모델</strong>은 주요 관심사이다.<br>
-모델은 소프트웨어에 <strong>단순함</strong>을 부여한다.</p>
-</blockquote>
-<h3>상속</h3>  
-<p><code class="language-text">고양이는 포유류의 일종이다.</code>처럼 클래스 사이의 <code class="language-text">is-a</code>관계를 나타내는 데 사용된다.<br>
-상속은 이해하기도 쉬우며 동일한 코드의 중복을 막아낼 수 있다.<br>
-하지만 과도하게 사용할 경우, 상속 계층 구조가 너무 깊고 복잡하면 코드의 가독성과 유지 관리성이 급격하게 떨어지므로 유의해야 한다.</p>
-<h3>다형성</h3>
-<p>여러가지 형태를 갖는 성질을 말하며 <code class="language-text">수정에 대해 폐쇄적이고 확장에 대해 개방적</code>이라는 설계 원칙을 준수할 수 있다.<br>
-<strong>동일한 논리(같은 타입)를 재사용할 수 있어 코드의 재사용성을 향상 시킬 수 있다.</strong><br>
-<code class="language-text">동적 디스패치</code>를 통한 런타임 시점에 결정되는 행위를 다형성이라고 생각할 수 있다.</p>
-<p>다형성의 특성을 구현하기 위해</p>
-<ol>
-<li>상속과 메서드 재정의를 하는 방식</li>
-<li>인터페이스를 사용하여 합성하는 방식</li>
-</ol>
-<p>Collection Framework의 <code class="language-text">Iterable</code>을 통해 인터페이스를 사용하여 합성하는 방식을 확인해보자.</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterableDiagram.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 70.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVR42o1T6Y6bMBjMU4TLJyYESJbLHOE0d7LZSn3/t+nHNlpV2/7opxH6jGfweGwOhNrfgAl3PV8WMkkzKYsky/3gDV7+zTx8G1NmI8TeonC+q2me78+Hmtc4zf5L/Foc25bJMOPUgYYQyv9Je4kpF0x8whbCO83Pfnssj8fHx8eP9f3ZrksQBVTYO8ERQH6JwSelgjsOyCgThO0fOnv+2Qu84BpmsedfXS/g4gRTAGY7XDgggf4AmzEMgigzLWIhCq9Mi+o61gwEMBGBpw6NiREGDgWORSkMQXiARdTUNk3bjFMiM0irqPK2b3s1qmFUUMPY90Ol1OUaZaXsVANTZdc7J+9wOnu3umhUU3bdNYoR5rFMiqosy6pqum75WdXt7VbndQMHFqVR1d3aSaVlJRz3ZRuCRYQYFt79I3LUTN2yTexY3NeRo1n8eDR0A+smNhFGjJkm2W1/nq2A7hqF09qDyWmexmEc13vR9pfgMiz9MC0T1DiNy3rrlXv29vC+jgpT++z7WZFB1cOzrJXMi7ckdV0vzVOoW7fUwyPLi0jmzsn9dkkYIkzTkaaBI9ew9jwhWEQ4JAwwTGJRT9MtACYM8ClmAiESlq26b2BtXbZp3cq+59yBqdemML1m1fD+vszztj3GbcubhvzeM8bMvcSRzJJEwp8QJ/ISxpSJP24rOwVhuBPSVOZw1SF4Qu1fp5mGyVobSkIAAAAASUVORK5CYII='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="iterableDiagram"
-        title=""
-        src="/static/4ae735127e3532ec667aba4cbba3554b/1cfc2/iterableDiagram.png"
-        srcset="/static/4ae735127e3532ec667aba4cbba3554b/3684f/iterableDiagram.png 225w,
-/static/4ae735127e3532ec667aba4cbba3554b/fc2a6/iterableDiagram.png 450w,
-/static/4ae735127e3532ec667aba4cbba3554b/1cfc2/iterableDiagram.png 900w,
-/static/4ae735127e3532ec667aba4cbba3554b/f3a19/iterableDiagram.png 1086w"
-        sizes="(max-width: 900px) 100vw, 900px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></p>
-<deckgo-highlight-code language="java" terminal="carbon" theme="one-light" line-numbers="true"  >
-          <code slot="code">public static void main(String[] args) {
-    List&lt;String&gt; list = new ArrayList&lt;&gt;();
-    Set&lt;String&gt; set = new HashSet&lt;&gt;();
-
-    System.out.println(list);
-    System.out.println(set);
-}</code>
-        </deckgo-highlight-code>
-<p>이렇게 Collection 하위 타입을 출력하게 되면 아래 코드의 구현체에 구현되어 있는 <code class="language-text">Iterable</code>을 반환받아 출력받게 된다.</p>
-<deckgo-highlight-code language="java" terminal="carbon" theme="one-light" line-numbers="true"  >
-          <code slot="code">public abstract class AbstractCollection&lt;E&gt; implements Collection&lt;E&gt; {
-    public String toString() {
-        Iterator&lt;E&gt; it = iterator();
-        // ...
-    }
-}
-
-public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt;
-        implements List&lt;E&gt;, RandomAccess, Cloneable, java.io.Serializable
-{
-    public Iterator&lt;E&gt; iterator() {
-        return new Itr();
-    }
-    // ...
-}
-
-public class HashSet&lt;E&gt; extends AbstractSet&lt;E&gt;
-    implements Set&lt;E&gt;, Cloneable, java.io.Serializable
-{
-    public Iterator&lt;E&gt; iterator() {
-        return map.keySet().iterator();
-    }
-    // ...
-}</code>
-        </deckgo-highlight-code>
-<h2 id="getter와-setter-남용" style="position:relative;">Getter와 Setter 남용<a href="#getter%EC%99%80-setter-%EB%82%A8%EC%9A%A9" aria-label="getter와 setter 남용 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+처음부터 복잡한 프로세스를 메서드로 분해하는 대신 <strong>어떻게 비즈니스 모델링을 할지 먼저 생각한 후 요구 사항을 클래스로 구성하고 클래스 간의 상호 작용을 설정</strong>한다.</p>
 <p>객체지향 프로그래밍 언어를 사용하여 모든 코드를 클래스에 넣기만 하면 그것이 바로 객체지향 프로그래밍이라고 생각하지만 절차지향 프로그래밍 스타일로 작성한 경우가 대부분일 것이다.<br>
 예를 들어, 많은 비즈니스 로직을 <code class="language-text">Service</code> 계층에 몰아넣고 객체지향이다 라고 말하는 것과 같이 말이다.<br>
 대부분의 백엔드 개발자들은 (표현 계층, 논리 계층, 데이터 계층) MVC 아키텍처에 익숙하여 <strong>빈약한 도메인 모델</strong>을 의식하지 못하며 개발한다.</p>
@@ -263,7 +160,7 @@ public class HashSet&lt;E&gt; extends AbstractSet&lt;E&gt;
 즉, <code class="language-text">Service</code>에 비즈니스 로직을 작성하는 것이 아니라 각 <code class="language-text">도메인 모델</code>에 책임을 부여하는 것이다.<br>
 이에 기반한 <strong>DDD</strong> 개발방식은 <strong>비즈니스 시스템을 분리하고, 비즈니스 모듈을 분할하고, 비즈니스 도메인 모델과 상호 작용을 정의하는 방법을 설계할 때 사용된다.</strong><br>
 DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리적인 도메인 설계를 얻을 수 없기 때문에 DDD의 개념을 공부하고 익히는 것이 아니라 <strong>비즈니스에 친숙해지는 것이다.</strong></p>
-<p>그리고 많은 백엔드 개발자들은 <code class="language-text">Setter</code>는 열심히 막으려 하지만 <code class="language-text">Getter</code>는 합리화한다. (나도 그렇다.)<br>
+<p>그리고 많은 백엔드 개발자들은 <code class="language-text">Setter</code>는 열심히 막으려 하지만 <code class="language-text">Getter</code>는 합리화한다.<br>
 도메인 모델의 속성이 객체일 때 클라이언트 코드가 참조한다면 신경써야할 것이 많다.<br>
 예를 들어, <code class="language-text">Getter</code>를 통해 컬렉션 내에있는 객체를 수정한다면? 수정할 수 없는 불변 컬렉션이였지만 가변 컬렉션으로 캐스팅하여 수정한다면?<br>
 <strong>객체 전파</strong>, <strong>방어적 복사</strong>, <strong>앨리어싱 에러</strong>들도 고려해야 한다.</p>
@@ -271,24 +168,21 @@ DDD를 잘 하기 위한 핵심은 비즈니스에 익숙하지 않으면 합리
 <h4>객체지향과 절차지향? 풍부한 도메인 모델과 빈약한 도메인 모델?</h4>  
 <p><code class="language-text">항상 객체지향 프로그래밍과 풍부한 도메인 모델이 옳지만은 않다.</code><br>
 요구사항이 간단하고 전체적인 작업 흐름이 가지를 뻗어나가지 않고 고정된 형태를 띄는 경우에는 절차지향 프로그래밍이 적절할 수 있다.<br>
-그리고 개발하는 시스템의 비즈니스가 비교적 단순할때는 굳이 복잡한 풍부한 도메인 모델을 설계하기 보다는 빈약한 도메인 모델이 더 적합하다.<br>
+그리고 개발하는 시스템의 비즈니스가 비교적 단순할때는 굳이 복잡하고 풍부한 도메인 모델을 설계하기 보다는 빈약한 도메인 모델이 더 적합하다.<br>
 하지만 복잡한 시스템일때 많은 개발자들이 풍부한 도메인 모델을 쉽게 적용할 수 있진 않을 것이다.<br>
 <strong>풍부한 도메인 모델은 설계하기가 훨씬 까다롭고, 빈약한 도메인 모델을 기반으로 하는 전통적인 개발 방식은 수년 동안 사용되어 왔고 대부분의 개발자에게 단단하게 박혀 있기 때문에 쉽게 적용하기에는 힘들 것이다.</strong></p>
 <hr>
-<h1 id="추상-클래스와-인터페이스-상속과-합성" style="position:relative;"><strong>추상 클래스와 인터페이스, 상속과 합성</strong><a href="#%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%83%81%EC%86%8D%EA%B3%BC-%ED%95%A9%EC%84%B1" aria-label="추상 클래스와 인터페이스 상속과 합성 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<h1 id="추상-클래스와-인터페이스" style="position:relative;"><strong>추상 클래스와 인터페이스</strong><a href="#%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4" aria-label="추상 클래스와 인터페이스 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>개발하면서 추상화를 고민할 때 추상 클래스를 쓸지, 인터페이스를 쓸지 잠깐 고민하게 된다.<br>
 하지만 항상 인터페이스를 쓰게 되는데 그 이유는</p>
 <ol>
 <li>인터페이스도 구현 메서드를 가질 수 있다.</li>
 <li>다중 상속이 안되니 정말 강한 관계라고 의도를 표현해야 할 상황인지 판단하지 못 하는 경우가 많다.</li>
-<li>상태가 필요한 경우에는 상수 모듈로 관리하거나 외부에서 전략을 주입받을 수 있다.</li>
 <li>추상 클래스는 부모 클래스를 같이 초기화해야 한다.</li>
 <li>상속 단계가 깊어지는 것이 부담스럽다.</li>
 </ol>
-<p>항상 추상 클래스를 배제하였지만, '디자인 패턴의 아름다움'을 읽고 생각이 조금 바뀌게 되어 정리하려 한다.</p>
 <p>클래스 상속의 관점에서 <strong>추상 클래스는 상향식 설계 방식</strong>이며 <code class="language-text">is-a</code> 관계를 나타낸다.<br>
-<strong>인터페이스는 반대로 하향식 설계 방식</strong>이며 깊어지지 않고 넓어진다. 그리고 프로토콜 또는 규약의 집합으로 사용자에게 제공되는 <strong>기능의 목록</strong>이다.<br>
-<code class="language-text">has-a</code>(또는 <code class="language-text">can-do</code>, <code class="language-text">behave like</code>) 관계를 나타낸다.</p>
+<strong>인터페이스는 반대로 하향식 설계 방식</strong>이며 깊어지지 않고 넓어진다. <code class="language-text">has-a</code> 관계를 나타낸다. 그리고 프로토콜 또는 규약의 집합으로 사용자에게 제공되는 <strong>기능의 목록</strong>이다.</p>
 <h3>추상 클래스</h3>  
 <ol>
 <li>인스턴스화할 수 없다.</li>
@@ -411,9 +305,14 @@ class Penguin(
     override fun tweet() = tweetAbility.tweet() // 위임
 }</code>
         </deckgo-highlight-code>
-<p>이론적으로는 <code class="language-text">is-a</code>관계는 합성과 인터페이스의 <code class="language-text">has-a</code>관계로 대체될 수 있고,<br>
-다형성은 인터페이스를 사용하여 달성할 수 있으며,<br>
+<p><code class="language-text">is-a</code>관계는 합성과 인터페이스의 <code class="language-text">has-a</code>관계로 대체될 수 있고, 다형성은 인터페이스를 사용하여 달성할 수 있으며,<br>
 코드 재사용은 합성과 위임으로 대체할 수 있다.</p>
+<blockquote>
+<p>"보통 다단계 클래스 계층을 사용한 경우 위임을 통해 다단계 클래스 계층을 제거하는 편이 좋다."</p>
+<ul>
+<li>켄트 백의 구현 패턴</li>
+</ul>
+</blockquote>
 <p>그럼 어떤 경우에 상속이 사용되면 좋을까? <strong>타입 계층 구조가 필요할 때 이다.</strong></p>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-light" line-numbers="true"  >
           <code slot="code">interface Flyable { fun fly() }
@@ -432,30 +331,33 @@ class Penguin() : Bird(&quot;펭귄&quot;) {
 }</code>
         </deckgo-highlight-code>
 <p>인터페이스로 행위를 일반화하고, 추상 클래스로 계층 구조를 나누었고, 구현 계층에서 행위를 구현하였다.<br>
-계층 구조를 만들게 되면</p>
-<ol>
-<li>인지적인 카테고리를 제공한다.</li>
-<li>특정 계층의 타입에만 해당 기능을 제공할 수 있다.</li>
-</ol>
-<p><code class="language-text">"저런 구조는 인터페이스로도 가능하지 않나?"</code>, <code class="language-text">"추상 계층의 내부 속성만 각 구현 계층으로 내리면 인터페이스로도 가능하지 않나?"</code><br>
-맞는 말이다.</p>
-<p>인터페이스에서 기본 메서드와 속성을 정의할 수 있긴 하지만(재차 강조하지만) 인터페이스의 본래 속성은 <strong>프로토콜 또는 규약의 집합으로, 사용자에게 제공되는 기능의 목록</strong>이다.</p>
-<blockquote>
-<p><a href="https://www.oracle.com/java/technologies/javase/8-whats-new.html">What's New in JDK 8</a>에서 인터페이스의 기본 메서드를 설명한다.<br>
-"Default methods enable new functionality to be added to the interfaces of libraries and ensure binary compatibility with code written for older versions of those interfaces."<br>
-<strong>"기본 메서드를 사용하면 새 기능을 라이브러리 인터페이스에 추가할 수 있고 해당 인터페이스의 이전 버전용으로 작성된 코드와의 이진 호환성을 보장할 수 있습니다."</strong> 라고 설명한다.</p>
-</blockquote>
-<p>"자 인터페이스에 기본 메서드로 구현 메서드를 작성할 수 있으니 적극 활용하세요."라는것이 아니라 기존에 인터페이스로 개발된 곳은 기본 메서드가 없으면 인터페이스에 새 메서드를 추가하고 이전 버전과의 호환성을 유지할 수 없기 때문에 추가되었으니 다른 방법이 없을 때 고려해라 라고 느껴진다. <a href="https://softwareengineering.stackexchange.com/questions/418912/why-were-default-methods-introduced-to-java">참고</a><br>
-<strong>인터페이스 정의는 구현 세부 정보를 노출하지 않고, 구체적인 수행 방법이 아닌, 어떤 작업을 수행하는지만 고려해야 하기 때문이다.</strong></p>
+추상 클래스는 대표적으로 템플릿 메서드 패턴이 필요하거나 상태를 공유해야 할 필요가 있는 경우 사용할 수 있다.<br>
+이런 하위 클래스 구조는 <code class="language-text">"이 객체는 상위 클래스와 같다. 이 부분만 제외하면.."</code> 이라고 말하는 것과 같다.</p>
 <h3>합성을 사용할지 상속을 사용할지?</h3>  
 <p>합성을 더 많이 사용하고 상속을 덜 사용하도록 권장하지만, <code class="language-text">언제나 합성이 옳은것도 아니고 상속이 항상 쓸모없는 것도 아니다.</code><br>
 클래스 간의 상속 구조가 안정적이어서 쉽게 변경되지 않고 상속 단계가 2단계 이하로 비교적 얕아 상속 관계가 복잡하지 않다면 과감하게 <strong>상속</strong>을 사용할 수 있다.<br>
 또한, 콘크리트 클래스의 특정 함수를 재정의하거나 (얕은)타입 계층 구조가 필요하다면 <strong>상속</strong>을 사용할 수 있다.<br>
-반대로 시스템이 불안정하고 타입 계층이 깊고 복잡하면 <strong>합성</strong>을 사용해야 한다.</p>
-<p><strong>상속</strong>은 반드시 하위 클래스가 상위 클래스의 "진짜" 하위 타입인 상황에서만 쓰여야 하며 클래스 B가 클래스 A와 is-a 관계일 때만 사용해야 한다. "B가 정말 A인가?"<br>
+상속이 구현을 공유하기 위한 기법이므로 공통된 구현을 갖는 경우에 효과적으로 사용될 수 있지만</p>
+<ol>
+<li><strong>하위 클래스를 사용하면 되돌리기가 쉽지 않다.</strong></li>
+<li><strong>하위 클래스를 이해하기 위해서는 먼저 상위 클래스를 이해해야 한다.</strong></li>
+</ol>
+<p>상속을 올바르게 사용하기 위한 키 포인트는 하위 클래스를 작성할 때 각 메소드를 따로 오버라이딩 할 수 있게 <strong>상위 클래스를 여러 개의 메소드로 잘게 쪼개는 것이다.</strong><br>
+<strong>하위 클래스를 사용한 경우와 위임을 사용한 경우를 모두 상상해보고, 특정 전략을 사용한 경우 다른 전략에 비해 상대적 강점이 있는가?를 고민하여 실제로 구현을 해보고 코드가 향상되었는지 확인해봐야 한다.</strong></p>
+<p><strong>상속</strong>은 반드시 하위 클래스가 상위 클래스의 <code class="language-text">"진짜" 하위 타입인 상황</code>에서만 쓰여야 하며 클래스 B가 클래스 A와 is-a 관계일 때만 사용해야 한다. <code class="language-text">"B가 정말 A인가?"</code><br>
 그리고 클래스의 행동을 확장하는 것이 아니라 <strong>정제</strong> 할 때다.<br>
 <strong>확장(합성)</strong> 이란 새로운 행동을 덧붙여 기존의 행동을 부분적으로 보완하는 것을 의미하고, <strong>정제(상속)</strong> 란 부분적으로 불완전한 행동을 완전하게 만드는 것을 의미한다.</p>
-<p>항상 상속을 배제하고 합성을 사용하려 하지마라. 상속 자체가 문제가 아니라 잘 적용하는 것이 문제다.</p>
+<p>시스템이 불안정하고 타입 계층이 깊고 복잡하면 <strong>합성</strong>을 사용해야 한다.<br>
+인터페이스는 <code class="language-text">"여기까지가 내가 원하는 것이고, 이외의 내용은 상관하지 않는다."</code>라고 이야기하는 것과 같다.<br>
+그렇기에 구현을 바꾸는 것은 쉽지만, 인터페이스 자체를 바꾸기는 쉽지 않다.<br>
+(기존 인터페이스를 확장하는 버전 인터페이스를 통해 기능을 추가할 수 있긴 하다.)</p>
+<p>추상 클래스는 내부 상태를 공유할 수 있으며 (기본 구현을 사용할 수 있는 길이 열려있는 한,) 기존 설계를 망가뜨리지 않고 새로운 연산을 얼마든지 추가할 수 있다.</p>
+<p>인터페이스 계층과 클래스 계층은 서로 배타적인 것이 아니기에 항상 상속을 배제하고 합성을 사용하려 하지마라.<br>
+상속 자체가 문제가 아니라 <code class="language-text">잘</code> 적용하는 것이 문제다.</p>
+<blockquote>
+<p>"소프트웨어는 유연해야 하지만, 유연성에는 비용이 들고, 어떤 부분에서 유연성이 필요할지 예측하기란 쉽지 않다."<br>
+"따라서 실제 필요해지는 경우에만 시스템에 유연성을 부여하자."</p>
+</blockquote>
 <hr>
 <h1 id="단일-책임-원칙" style="position:relative;"><strong>단일 책임 원칙</strong><a href="#%EB%8B%A8%EC%9D%BC-%EC%B1%85%EC%9E%84-%EC%9B%90%EC%B9%99" aria-label="단일 책임 원칙 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>클래스와 모듈은 <strong>하나의 책임 또는 기능만을 가지고 있어야 한다</strong>는 설계 원칙이다.<br>
@@ -920,36 +822,15 @@ fun main() {
 <p>중복된 코드에 매몰되지 말고 API에 집중해서 API의 책임이 중복되지 않게 꾸준히 신경써야 하며, 고품질 코드에 대한 <code class="language-text">책임</code>과 <code class="language-text">끈기</code>를 가져야 할 것이다.<br>
 좋은 코드, 고품질 코드에 대해 스스로의 주관을 가져야 한다.<br>
 내가 이렇게 작성한 이유를 상대방에게 설명하거나 설득시킬 수 있는 능력과 스스로의 안목을 키우기 위해 꾸준한 노력이 필요하다.</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2022y/yearend/">← <!-- -->2022년 회고</a></li><li><a rel="next" href="/2023y/kotlinCleanCode/">NEXTSTEP 클린코드 with Kotlin 회고<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-beySPh kUHXGZ"><ul>
-<li>
-<p><a href="#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90">들어가기전에</a></p>
-</li>
-<li>
-<p><a href="#%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D"><strong>객체지향 프로그래밍</strong></a></p>
-<ul>
-<li><a href="#getter%EC%99%80-setter-%EB%82%A8%EC%9A%A9">Getter와 Setter 남용</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%83%81%EC%86%8D%EA%B3%BC-%ED%95%A9%EC%84%B1"><strong>추상 클래스와 인터페이스, 상속과 합성</strong></a></p>
-</li>
-<li>
-<p><a href="#%EB%8B%A8%EC%9D%BC-%EC%B1%85%EC%9E%84-%EC%9B%90%EC%B9%99"><strong>단일 책임 원칙</strong></a></p>
-</li>
-<li>
-<p><a href="#%EA%B0%9C%EB%B0%A9-%ED%8F%90%EC%87%84-%EC%9B%90%EC%B9%99"><strong>개방 폐쇄 원칙</strong></a></p>
-</li>
-<li>
-<p><a href="#%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84-%EC%B9%98%ED%99%98-%EC%9B%90%EC%B9%99"><strong>리스코프 치환 원칙</strong></a></p>
-</li>
-<li>
-<p><a href="#%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B6%84%EB%A6%AC-%EC%9B%90%EC%B9%99"><strong>인터페이스 분리 원칙</strong></a></p>
-</li>
-<li>
-<p><a href="#%EC%9D%98%EC%A1%B4-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99"><strong>의존 역전 원칙</strong></a></p>
-</li>
-<li>
-<p><a href="#%EA%B2%B0%EB%A1%A0"><strong>결론</strong></a></p>
-</li>
+<li><a href="#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90">들어가기전에</a></li>
+<li><a href="#%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D"><strong>객체지향 프로그래밍</strong></a></li>
+<li><a href="#%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4"><strong>추상 클래스와 인터페이스</strong></a></li>
+<li><a href="#%EB%8B%A8%EC%9D%BC-%EC%B1%85%EC%9E%84-%EC%9B%90%EC%B9%99"><strong>단일 책임 원칙</strong></a></li>
+<li><a href="#%EA%B0%9C%EB%B0%A9-%ED%8F%90%EC%87%84-%EC%9B%90%EC%B9%99"><strong>개방 폐쇄 원칙</strong></a></li>
+<li><a href="#%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84-%EC%B9%98%ED%99%98-%EC%9B%90%EC%B9%99"><strong>리스코프 치환 원칙</strong></a></li>
+<li><a href="#%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B6%84%EB%A6%AC-%EC%9B%90%EC%B9%99"><strong>인터페이스 분리 원칙</strong></a></li>
+<li><a href="#%EC%9D%98%EC%A1%B4-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99"><strong>의존 역전 원칙</strong></a></li>
+<li><a href="#%EA%B2%B0%EB%A1%A0"><strong>결론</strong></a></li>
 </ul></div></div><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2024<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2023y/oop/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
