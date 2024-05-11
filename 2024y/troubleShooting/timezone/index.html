@@ -187,17 +187,15 @@ mysql&gt; select * from TIMEZONE_TEST;
 (동시에 유입된 쿼리는 최대 8개로 보인다.)</p>
 <h1 id="결론" style="position:relative;">결론<a href="#%EA%B2%B0%EB%A1%A0" aria-label="결론 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>데이터 이관이 뭐 내가 수작업으로 진행하는 것은 아니고 AWS DMS를 통해 자동으로 이관해주지만 문제가 발견되고 데이터 재이관을 해야할 것 같다는 이야기를 들었을 때 이관동안 많이 예민했었기에 다신 하고 싶지 않았다.<br>
-재이관 없이 짧은 시간에 데이터 수정으로 처리할 수 있어서 다행이었다.</p>
-<p>기본적인 설정을 놓쳐서 문제를 만들어 낸 것 같아 마음이 엄청 불편했다.<br>
-이 문제를 해결하기 위해 같이 어떤식으로 해결할지 고민하고 좋은 방법을 찾아 나가려 도와주셔서 감사하고 재밋었다.<br>
-내가 만약 제안한 방법대로 데이터 재이관으로 이 문제를 해결하려 했다면 더 큰 비용이 들었을 것이다.<br>
-지시했다고 그대로 따르기만 했다면 <strong>실무자의 책임</strong> 이 더 큰것 아닐까라는 생각이 들었다.</p>
-<p>이번 일을 계기로 해결 방법에 따른 검증만 확인할 것이 아니라 <strong>놓여 있는 상황과 원인을 완벽하게 분석해야할 필요를 느꼈다.</strong></p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2024y/testcontainers/">← <!-- -->테스트 불모지에 Testcontainers 심기</a></li><li><a rel="next" href="/2024y/bookReview/bookReview/">2024년 책,강의 서평<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-beySPh kUHXGZ"><ul>
+기본적인 설정을 놓쳐서 문제를 만들어 낸 것 같아 마음이 엄청 불편했지만 재이관 없이 짧은 시간에 데이터 수정으로 처리할 수 있어서 다행이었다.<br>
+내가 만약 제안주신 방법대로 데이터 재이관으로 이 문제를 해결하려 했다면 더 큰 비용이 들었을 것이다.<br>
+지시했다고 그대로 따르기만 했다면 <strong>작업자의 책임</strong> 이 더 큰것 아닐까라는 생각이 들었다.</p>
+<p>이번 일을 계기로 해결 방법에 따른 검증만 확인할 것이 아니라 <strong>놓여 있는 상황과 원인을 완벽하게 분석해야할 필요를 느꼈다.</strong></p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2024y/testcontainers/">← <!-- -->테스트 불모지에 Testcontainers 심기</a></li><li><a rel="next" href="/2024y/mysqlMigration/">AWS DMS를 이용한 MySQL 마이그레이션<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-beySPh kUHXGZ"><ul>
 <li><a href="#%EB%B0%9C%EB%8B%A8">발단</a></li>
 <li><a href="#%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95">해결 방법</a></li>
 <li><a href="#%EC%A0%95%EB%A7%90">정말?</a></li>
 <li><a href="#%EA%B2%B0%EB%A1%A0">결론</a></li>
-</ul></div></div><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2024<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024y/troubleShooting/timezone/timezone/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul></div></div><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2024<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024y/troubleShooting/timezone/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >

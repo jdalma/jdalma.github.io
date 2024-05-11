@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 08 May 2024 23:16:29 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블 실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 11 May 2024 11:33:54 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블 실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다.&lt;br&gt;
 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다.&lt;/p&gt;
 &lt;ol&gt;
@@ -484,7 +484,743 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 &lt;h1 id=&quot;이펙티브-코틀린&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0&quot; aria-label=&quot;이펙티브 코틀린 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94&quot; aria-label=&quot;이펙티브 자바 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4&quot; aria-label=&quot;개발자를 위한 레디스 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt;&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81&quot; aria-label=&quot;nginx 쿡북 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[MySQL time_zone 설정을 안했어요.]]></title><description><![CDATA[발단 얼마전에 IDC MySQL 5.7을 AWS Aurora로 업그레이드하면서 데이터 이관 작업을 진행했었다. 기존에 사용하던 옵션들을 확인해서 패킷 바디 사이즈, 최대 커넥션 개수를 Aurora Cluster Parameter Group…]]></description><link>https://jdalma.github.io/2024y/troubleShooting/timezone/timezone/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/troubleShooting/timezone/timezone/</guid><pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;nginx-쿡북&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt;&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81&quot; aria-label=&quot;nginx 쿡북 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[AWS DMS를 이용한 MySQL 마이그레이션]]></title><description><![CDATA[IDC에서 운용중이던 단일 데이터베이스를 AWS Aurora로 이관하는 동시에 MySQL…]]></description><link>https://jdalma.github.io/2024y/mysqlMigration/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/mysqlMigration/</guid><pubDate>Sat, 11 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;IDC에서 운용중이던 단일 데이터베이스를 AWS Aurora로 이관하는 동시에 MySQL 버전업도 이루어져야 했기 때문에 신경써야할 것이 많았다.&lt;br&gt;
+어떤 의사결정을 거쳐 어떤 부분들을 확인해야 했는지 정리해보려한다.&lt;/p&gt;
+&lt;h1 id=&quot;직접-클러스터-구성하기&quot; style=&quot;position:relative;&quot;&gt;직접 클러스터 구성하기&lt;a href=&quot;#%EC%A7%81%EC%A0%91-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot;직접 클러스터 구성하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;읽기 전용 DB(Secondary)들을 Primary DB의 Replication DB로 구성하여 &lt;strong&gt;&lt;a href=&quot;https://proxysql.com/&quot;&gt;ProxySQL&lt;/a&gt;을 사용하여 RW를 분리&lt;/strong&gt;하고 &lt;strong&gt;&lt;a href=&quot;https://github.com/openark/orchestrator&quot;&gt;Orchestrator&lt;/a&gt;를 통하여 페일백/페일오버&lt;/strong&gt;를 직접 구성하여 클러스터를 직접 구축하는 것을 고민했다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7fd84940401d4df4b898a46074eb5676/d8c86/proxySQLstructure.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACnklEQVR42n2Sy08TURTG548wGl+JxsRofEbjQqNb41JjDEo0oYgtj6KlBmIMMaxcGHChbly4MmHhQkSURaGGKAuChI2PKLZQSlvotJ3OTNvpzHSmPy+DLDTgufnu45x7vvOduSPxx+r1ureapoll1jBtsBZS2LJKMZUl+VNGz5QJ9w3Q2NqLU2NDk1YnwzBYWcmSk2WGJ78yM/sTihpoRchl0VNJCktx6iL+9PkLHjx6Ru1/hI7jCGUWtm2xkM6SFaqcRArkFbLpDMs/ZMyMKBiPo8k1bN2iZtc3Jlxtdb3ddRP8ooArFOXJJJKoQmGtbJJOLqEuJTDzukfojfrfkNjMRI26uwZEgfofePtN1HkKu7rChMNhQqEQfr+fYDBIW1s7nZ1BWlsD9PR0E4vF6H884J2Dwv/w5Sv6Bt8w++U7a29QxbIsD9KHyHvevR9lePgNQ0NDjIyMMD4+ztjYGJFIhGg0yvT0ZyYmJoQ/Ku68Znj0E/1PBjl/4SKB1hC+5g4aGnz4AyEkraR5VVzXxXEd8TD2P6271Ko6rl0RB1vcq3p9T01Osm37fo6fOCdwlh27DnDoyGmkglKkUtZZjMdIJ3KYZYWKlkcrrKDKKW+Vl5fIZpIYJRHTFSxDY+pjlKuNzXTe6REqu7h+3c+twB2kYnGVsMT83DcW52OohaxI0KmUiijpOcrKsvAJ8nwGQyuQW06w+CvJp4lZWvy3CYXv09HZzS2xb++4i6SqKoWCgq+phVMnz3DT5/cIyyK5rCloioycjgvMY5byVPUcTkUh8vY1W7bu89o9fOwMO3cfZM/eo0iGUUERKnvu9XGloYneBw+pOS5G1aQqfvbVuFFSPVT0IiW1IL6nwczMDJcu3yDQFqLJ1+blNlxr5jf8EDMP0xyo5gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;proxySQLstructure&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7fd84940401d4df4b898a46074eb5676/1cfc2/proxySQLstructure.png&quot;
+        srcset=&quot;/static/7fd84940401d4df4b898a46074eb5676/3684f/proxySQLstructure.png 225w,
+/static/7fd84940401d4df4b898a46074eb5676/fc2a6/proxySQLstructure.png 450w,
+/static/7fd84940401d4df4b898a46074eb5676/1cfc2/proxySQLstructure.png 900w,
+/static/7fd84940401d4df4b898a46074eb5676/21482/proxySQLstructure.png 1350w,
+/static/7fd84940401d4df4b898a46074eb5676/d8c86/proxySQLstructure.png 1663w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;하지만 큰 단점이 있었다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Proxy SQL에 문제가 생긴다면 모든 DB를 사용할 수 없게 되는 &lt;strong&gt;단일 장애 지점&lt;/strong&gt; 이 생긴다.&lt;/li&gt;
+&lt;li&gt;애플리케이션 외부에서 사용될 DB가 결정되기 때문에 애플리케이션에서 작업 단위(트랜잭션)를 지정하기 힘들어진다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위의 두 문제가 있어 AWS Aurora 클러스터를 분석하여 사용해보기로 하였다.&lt;br&gt;
+혹시 이 구성에 대해 더 자세히 알고 싶다면 &lt;a href=&quot;https://www.inflearn.com/course/mysql-docker/dashboard&quot;&gt;따라하며 배우는 MySQL on Docker&lt;/a&gt; 강의를 참고하길 바란다.&lt;/p&gt;
+&lt;h1 id=&quot;aws-aurora-클러스터-분석&quot; style=&quot;position:relative;&quot;&gt;AWS Aurora 클러스터 분석&lt;a href=&quot;#aws-aurora-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EB%B6%84%EC%84%9D&quot; aria-label=&quot;aws aurora 클러스터 분석 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Aurora 클러스터를 사용하기 위해서는 확인해야 할 부분들이 있었다.&lt;/p&gt;
+&lt;h3&gt;Aurora 클러스터의 페일오버와 페일백은 어떻게 진행되는가?&lt;/h3&gt;
+&lt;p&gt;기본 인스턴스에 문제가 발생하는 경우 읽기 인스턴스 중 하나가 기본 인스턴스 역할을 인수한다.&lt;br&gt;
+Aurora는 데이터베이스 문제를 감지하고 필요한 경우 장애 조치 메커니즘을 자동으로 활성화하여 장애 조치 중에 쓰기 작업을 처리하지 못하는 시간이 최소화된다.&lt;br&gt;
+Aurora는 다음 두 가지 방법 중 하나를 사용하여 자동으로 새 기본 인스턴스로 장애 조치한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;우선순위가 높은 기존 Aurora 복제본을 새 기본 인스턴스로 승격시킴&lt;/li&gt;
+&lt;li&gt;새로운 기본 인스턴스 만들기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;DB 클러스터에 Aurora 복제본이 하나 이상인 경우에는 장애가 발생하더라도 Aurora 복제본이 기본 인스턴스로 승격되며 &lt;strong&gt;이 실패 이벤트로 인해 예외적으로 실패하는 읽기 및 쓰기 작업 동안 짧은 중단이 발생한다.&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;일반적인 서비스 복구 시간은 60초 미만이지만 대부분 30초 미만에 복원된다.&lt;/strong&gt; (read only connection 예외 발생)&lt;br&gt;
+최소 하나 이상의 Aurora 복제본을 둘 이상의 다른 가용 영역에 생성하는 것이 바람직하다.&lt;/p&gt;
+&lt;p&gt;DB 클러스터에 Aurora 복제본이 포함되어 있지 않으면 기본 인스턴스가 동일한 AZ에 다시 생성되기 때문에 보통 10분 미만의 시간이 걸리며 그 동안 예외적으로 실패하는 읽기 및 쓰기 작업 동안 중단이 발생한다.&lt;br&gt;
+Aurora 복제본을 기본 인스턴스로 승격시키는 것이 기본 인스턴스를 새로 생성하는 것보다 훨씬 빠르다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;출처&lt;/strong&gt; : &lt;a href=&quot;https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html&quot;&gt;Amazon Aurora의 고가용성&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;운영 중 DB 스케일 업에 대한 트러블 슈팅 글도 읽어보면 도움이 될 것이다. &lt;a href=&quot;https://medium.com/29cm/29cm-%EC%9D%98-%EC%9D%B4%EA%B5%BF%EC%9C%84%ED%81%AC-%EC%9E%A5%EC%95%A0%EB%8C%80%EC%9D%91-%EA%B8%B0%EB%A1%9D-177b6b2f07a0&quot;&gt;29CM 의 이굿위크 장애대응 기록&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Secondary의 동기화 지연율은 어느정도인가?&lt;/h3&gt;
+&lt;p&gt;먼저 쓰기 연산은 Primary에서 관리하며 Aurora 복제본(Secondary)은 클러스터 볼륨의 읽기 연산에 사용되므로 읽기 조정에 유용하다.&lt;br&gt;
+데이터들은 단일 AWS 리전에서 다중 가용 영역에 걸쳐 DB 클러스터에 데이터 복사본을 저장하며, DB 클러스터의 인스턴스가 여러 가용성 영역에 걸쳐 있는지 여부에 관계없이 복사본을 저장한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/04b4b629efa4729d97bdee3b00cbc141/0e94d/writeAndAsyncRead.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACWElEQVR42k1T22oTURSdf/ETRNFX/QBFQf9A/0QQ+mDVpypiC4JtEdHaiihVqom2kaY6ySSZTOaSuWU6meuZlFiR5d4nCfRhcfY+l33WOmsfZeh6GJgW+gRV68K0HXT1PkZRBCEE8qJAVpbIihJFOUPGcwSOc0Iq89maEoQjuL4P1/PBxZ2hi+PxGFmey2KMPxOBU0KWFyjpEMc8l87zvxRPOc9yKL/UFrSuDssZoj8wJWyKx0kib4zTDGvfenhR71PxHOMsw8pnDRsHBgRdFsQpHn9s4V3TQkHrih+GiOmwlDFnldKhnCQIUSIYp7iy8gNXVw5InsAwLnB+uYYba4eYnpygG2Q4d38Pd1+1JFul09PRJejGALpuQOv0YJNs+T7MYBTBtoewDQO+NUBgmXAo9mwTkWcj9h24NB/5NpLxCIpp2VLigEaDjPGDQDIVokJSJHj46CnWl+7g3+sLqNYvotq4hOnmZZxuX8dk+yaqnVs4eX8b1dtrSBrLJDkIwbLZVTYoJEZsyszBAmrPQvugh9DtIvT78HQdrt1Bo63CdAzEIwtJZMFs03rgQWFmLJtZen4AjxgmaSoLikpgdaeGew+28GWvhpam4+d3Dbu7dSw938Kb+hEah0d4srmLl88+SUMVZhMSuyiOpRmMkvpv9oYl+paFhvobbU2jlhpSizlQmxrU/Q7FHpp0yeqHfXxtHCEMAygskXuQpS8kLxqYTakmExQ55fSmfEFJYzA6pnZKKRdyvaJumPA+IiIbm01YsMvnP+BsUX7LRcwjn2HIX3PmAzD+A1ZpGe7mX/aOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;writeAndAsyncRead&quot;
+        title=&quot;&quot;
+        src=&quot;/static/04b4b629efa4729d97bdee3b00cbc141/1cfc2/writeAndAsyncRead.png&quot;
+        srcset=&quot;/static/04b4b629efa4729d97bdee3b00cbc141/3684f/writeAndAsyncRead.png 225w,
+/static/04b4b629efa4729d97bdee3b00cbc141/fc2a6/writeAndAsyncRead.png 450w,
+/static/04b4b629efa4729d97bdee3b00cbc141/1cfc2/writeAndAsyncRead.png 900w,
+/static/04b4b629efa4729d97bdee3b00cbc141/21482/writeAndAsyncRead.png 1350w,
+/static/04b4b629efa4729d97bdee3b00cbc141/d61c2/writeAndAsyncRead.png 1800w,
+/static/04b4b629efa4729d97bdee3b00cbc141/0e94d/writeAndAsyncRead.png 4748w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7b498520d0ff7637179ef7a4ff3bfcfe/41c2c/replicas.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACbElEQVR42jWSS2sTcRTF800UQRD8EK78AKIuBD+AC7tyIYILd4Kl6F7ddCGCpdQ2Nm21htpG0yYxmWTy6DSPeWUyM5lk8myjm593prg4c+HMuX/OPfcmipUK2UIepapyUihynCtycJQlVyxSUiuUayoHmV/8PMmRzefJKyVKFZX04S/8fsBsPmO+uMTsfEailOtw9L3B8eEZmmbien35McU2Amolh7rSYxBMaGoOmfTppa5h0dG7eH6A74ZUCzbVvIXe9EncebbKjQcr3Hz4mqyi0Wp3GPRdXrzd4dr9Za7efcXmjwpvPh5w5d5Lrj9YZnX7hDAc4Do9dtUmt99/5ta7DVbSeRIruWOW9r7yJJ2m6Xn0AxljNGK9Ueex8EvfvpGzLJLaKY9291ja3+fQMPh7ccH5dE5p6PG89ZunWp4Nt0MikzliL7XN190dycSXTOZcLBZUJNvU1hY7X77IeDq1WpX1T59Ibm6STCbZTqVICbY2t/i8ts7ah48UcuJQO2tKcxW1WpP8fAbDkGE4wjAtavUG1VpdsvKxLJtiUUEpq1REG/FRT1mtosiSikoZUyZJGF2PlunQNhzOmibtjsWppscPL/4smJ+fM5dN9iSKluMS69s2lu3i9Po4biDo0+0FTGayZa3tkC/rqHWDxmlHHuyiGz0RB3jeUDINGQxG6E4fVe/RaJmYYmA8mcRnEp1NhMl0KtyYRBiO44ZhVIdDwtE4Fkdj23aA3RUHjk/X9rBMTzhX3Hi44qrn+jGi8xmNL/sS0Wcy/Y9pTP7nTKuPokiWNVvc6xKJEdcoknq9I9WIUW+0ZSI/7vkHLBG7ke2t780AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;replicas&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7b498520d0ff7637179ef7a4ff3bfcfe/1cfc2/replicas.png&quot;
+        srcset=&quot;/static/7b498520d0ff7637179ef7a4ff3bfcfe/3684f/replicas.png 225w,
+/static/7b498520d0ff7637179ef7a4ff3bfcfe/fc2a6/replicas.png 450w,
+/static/7b498520d0ff7637179ef7a4ff3bfcfe/1cfc2/replicas.png 900w,
+/static/7b498520d0ff7637179ef7a4ff3bfcfe/21482/replicas.png 1350w,
+/static/7b498520d0ff7637179ef7a4ff3bfcfe/d61c2/replicas.png 1800w,
+/static/7b498520d0ff7637179ef7a4ff3bfcfe/41c2c/replicas.png 4784w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;DB 클러스터 볼륨은 DB 클러스터의 여러 데이터 사본으로 구성되어 있지만, DB 클러스터의 Primary 및 Aurora 복제본(Secondary)에는 클러스터 볼륨 데이터가 단 하나의 볼륨으로 표시된다.&lt;br&gt;
+신규 인스턴스가 추가되어도 기존 데이터를 새로 복사하지 않고 DB 클러스터 볼륨에 연결만하기 때문에 인스턴스를 추가하기 용이하다.&lt;br&gt;
+전통적인(기존 MySQL) 방식으로 읽기 인스턴스를 스케일링 하기 위해서는 인스턴스들은 볼륨을 각각 소유하며 binlog를 이용해 SQL문을 복제본으로 전달하여 Primary에서는 멀티 스레드로 수행하던 쿼리를 Secondary에서는 싱글 스레드로 처리하기 때문에 동기화 지연율이 존재할 수 밖에 없다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b8545c225499d57c642813d00f089972/7a1fb/clusterRW.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAAEZUlEQVR42oWU228bRRTG/RfywCNFqBISCAleKLzQigJqUaCtSlEFAVSSpk1VkrQhTXohjXJ3UttJHF/j63q968uub3vxrtfX/Jg44gkkRhqt5puZ78ye853Pl8lkiCdjSEqOXCFNVkoTP4kQiUaIxWIk0zGqepmzcXp6yv8N3+h0SC3roAQslDc2arBN+ahN1+3T8/qUwmeYTTnkUgo5NHPe+KJTE3sHDuUD93weOnjGAN/ZZmiyzp/vF9m4VuLlJYWlD4q49T6eNeD5JyqvPlPYuK6yeFHGf0sfE2ZXLRbelVn/RuX1FYWn7xXHAceEB/dqLH9cZPuGyubVKq8/rdJpDulaQ1Y/L7N2ucTOzfKYPHi3PiaU1m2WP1TYmiizea3Mykcq1bB7Tthuelhql0JaZf8wRCKVo1CXaTkt6uUW1UKTqtREKzRo6gYDulimjSYLTOBn+5rcwHO754T/jO6og9aVqXVFNKdI3ohiDnSMgYY5FFN8jX6Vgpmg1T1fj/GhTmtQQXNlfEVFIZXOkM9L6FqNQX84Jh+JimqO8q8qDkcjtPZ/4MPh+LyvKZ5uWjYZpUSyWESScsgiSNNykA0Jpd4gW6kgyxJSUaYhziumjCrw3BgvIMkydcOiKgL5BsMRXcEef/qU1Nw8h7kKO34/5ZqCZOaJzs8TezBLIFNmZ3cfVROpMDPEnjwh9nCWULrE5pYfuZKn4sjnhLbnEftjhvjD+9zxW7zwh0kob4hrCRILsyQezXBnt8VfewnxF0EOygFSi39w8vgBP2zXWdmJciztIttpQTg6xXVdootXOJq6gLJ2W1Q5T9txyGiiaxa/FPg75F5+P66+ZVvk9CyJZ18Tnr5A5vmE6LQMLcMQOVTx9cULe70uQf82kaCf+OEeyUQc3aqKXOVIHh9xHNwjlzgkEYtSapSQzTQnkWOOA37yAo9FwhSFzFQ7h0/wUdV0MpO/cPgqyMNjl9DhgXhdhIpVI/lojtT0HLPxIa93jzhRjigYRVKPF0jNzPMo1ufFZoBIIYDZa53rMJMS5jA/web971jajxM6iuKJvJ5VOjx3k+PpyyxvbLF1kKTZqGG0PSILt4nNXGFpbZ31QIyarnNmHT5vIPSmZok8myC9/JUwhhWyBRW5XBlLJL76s8ivwHenSGclsrIiJGJzsjZJYukqpZ17ZHN5cUemN+jjczzRRqJl+r2ByOWIRrtHr+PgGg2Be3QFPhgI3B3itC2cZpW228HsDDE6I5ruANN20Gr6WPS+scP1PW7s6dwNicbvtZk8anB9ryl6sc1cvM4XW7qwM5v1vM2lHQ/ddKjX6qTyGq1Wi0bTIFOoo+kNUeXBEM9p8+NqlF83EnTMBlPbSW69iuCYTRYCab5dCdNstdl/84SffrtISdNQEmuczL1FpZhCzQvdzr2NerJ1XpRur4dRVTCFMzudDlatMl67HeFCddH8VVngfVwtTD89TcdtizNZjPjvOFYdu1WhlZjCrkv8Da5BTPDYAlIvAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;clusterRW&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b8545c225499d57c642813d00f089972/1cfc2/clusterRW.png&quot;
+        srcset=&quot;/static/b8545c225499d57c642813d00f089972/3684f/clusterRW.png 225w,
+/static/b8545c225499d57c642813d00f089972/fc2a6/clusterRW.png 450w,
+/static/b8545c225499d57c642813d00f089972/1cfc2/clusterRW.png 900w,
+/static/b8545c225499d57c642813d00f089972/7a1fb/clusterRW.png 1030w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;동기식 복제에서는 하나의 쓰기가 내구성을 갖추려면, 모든 복사본을 확인해야 합니다.&lt;br&gt;
+이 방법에서 속도는 디스크, 노드 또는 네트워크 경로에 중 가장 느린 요소에서 얼마나 느린가에 의해 결정됩니다.&lt;br&gt;
+반면, 비동기식 복제는 지연 시간을 낮출 수 있지만 데이터를 복제하고 데이터 내구성을 확인하기 전에 장애가 발생하면 데이터가 손실될 수 있습니다.&lt;br&gt;
+&lt;strong&gt;사실 두 방식 모두 완벽하지 않습니다.&lt;/strong&gt; 또한, 장애가 발생하면 복제 구성원 집합에 변경이 발생하게 되므로 쉽지 않습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Amazon Aurora는 &lt;strong&gt;쿼럼 모델&lt;/strong&gt;을 사용하여 3개의 가용 영역(AZ)에 걸쳐 4개의 쓰기 세트와 3개의 읽기 세트가 있는 6개 복사본 쿼럼을 사용하며, Pirmary에서 쓰기가 발생하면 6개의 스토리지 노드에 REDO 로그 레코드가 작성되며 &lt;strong&gt;이중 4개의 노드가 쓰기 완료 응답(ACK)을 전송하면 해당 쓰기가 완료된 것으로 확인한다.&lt;/strong&gt;&lt;br&gt;
+3개의 AZ에 걸쳐 노드를 분산하기 때문에, 하나의 AZ에 문제가 발생허다러도 내결함성을 유지할 수 있으며, 느린 노드가 존재하더라도 다른 노드가 신속하게 응답하기 때문에 가용성이 떨어지지 않는다.&lt;/p&gt;
+&lt;p&gt;즉, &lt;strong&gt;Aurora의 읽기 전용 복제본은 마스터 데이터베이스 노드와 동일한 스토리지 볼륨을 공유하며, 마스터의 실행 로그를 비동기로 전달받아 캐시내 데이터 페이지를 갱신한다.&lt;/strong&gt;&lt;br&gt;
+그렇기 때문에 읽기 복제본의 데이터 유실이나 마스터 노드로 승격 시키는 비용도 줄어든다.&lt;/p&gt;
+&lt;p&gt;마스터(쓰기) 노드에서 커밋된 모든 변경사항이 복제본으로 미처 전파되지 않았더라도 영구적으로 저장되며 복제 노드들은 독자적으로 읽기를 수행할 때 읽어야 할 데이터의 쓰기 및 쓰기 완료 응답 등의 현황에 대해 알 수 없다.&lt;br&gt;
+그렇기에 마스터에서 복제본으로 실행 레코드들을 전달할 때 읽기 뷰와 개념적으로 동일한 기능을 함께 제공한다.&lt;br&gt;
+이러한 뷰는 &lt;strong&gt;커밋 LSN&lt;/strong&gt; 과 &lt;strong&gt;어떤 세그먼트들이 어떤 LSN으로 영구 저장 되었는지&lt;/strong&gt; 의 정보를 보유하고 있으며, 일반적으로 커밋 LSN는 &lt;code class=&quot;language-text&quot;&gt;10 밀리초&lt;/code&gt;마다 반영될 수 있기에 &lt;strong&gt;복제본들은 최소한의 조정으로 마스터 노드와 거의 동일한 정보를 제공할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;읽기 뷰&lt;/strong&gt;&lt;br&gt;
+읽기 뷰는 SQL문 수행 시 커밋된 모든 변경사항을 볼 수 있고, 아직 커밋되지 않은 변경사항은 보지 못하게 하기 위한 논리적인 시점을 설정합니다.&lt;br&gt;
+MySQL은 가장 최근 커밋의 로그시퀀스번호(LSN)을 설정하여 이를 구현하며, 이러한 방식을 통해 이미 커밋된 모든 변경사항들은 조회 가능하게 하고, 조회되지 말아야 할 변경사항들은 활성 트랜잭션 리스트를 사용하여 확인합니다.&lt;br&gt;
+특정 읽기 뷰를 가진 SQL문이 데이터 페이지를 조회할 때, 읽기 뷰 생성 당시 활성화된 트랜잭션들의 변경 사항은 조회되지 말아야 합니다.&lt;br&gt;
+이는 변경 사항이 현재 커밋되었거나 읽기 시점 커밋 LSN 이후에 시작된 어떠한 트랜잭션들에 대해서도 동일하게 적용됩니다.&lt;br&gt;
+트랜잭션이 읽기 뷰를 생성하면, 시스템 내 발생한 모든 다른 변경 사항들로부터 격리될 수 있습니다. —일관된 특정 시점을 참조할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;출처&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Replication.html&quot;&gt;Amazon Aurora MySQL을 사용한 복제&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/ko/blogs/korea/amazon-aurora-under-the-hood-quorum-and-correlated-failure/&quot;&gt;Amazon Aurora 내부 들여다보기(1) – 쿼럼 및 상관 오류 해결 방법&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/ko/blogs/korea/amazon-aurora-under-the-hood-quorum-reads-and-mutating-state/&quot;&gt;Amazon Aurora 내부 들여다보기(2) – 쿼럼 읽기 및 상태 변경&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/garimoo/aws-aurora-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-6ff87b0d48c5&quot;&gt;AWS Aurora 아키텍처&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.asquareb.com/blog/2021/01/10/amazon-aurora-storage/&quot;&gt;Amazon Aurora Storage&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Aurora 클러스터 스토리지는 어느것을 사용하나?&lt;/h3&gt;
+&lt;p&gt;Aurora 클러스터 스토리지에는 &lt;strong&gt;Aurora Standard&lt;/strong&gt; 와 &lt;strong&gt;Aurora I/O-Optimized&lt;/strong&gt; 가 존재한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aurora Standard&lt;/strong&gt;는 I/O 사용량이 낮거나 보편적인 대부분의 환경에서 효율적인 요금으로 사용할 수 있는 구성이기에 많이 선택되는 것 같다.&lt;br&gt;
+&lt;strong&gt;Aurora I/O-Optimized&lt;/strong&gt;는 I/O를 많이 사용하는 애플리케이션(결제 처리 시스템, 전자상거래 시스템, 금융 애플리케이션 등)에 우수한 가격 대비 성능을 제공하는 데이터베이스 클러스터 구성이다.&lt;br&gt;
+또한 I/O 지출이 총 Aurora 데이터베이스 지출의 25%를 초과하는 경우 Aurora I/O-Optimized를 이용하면 I/O 집약적 워크로드의 비용을 최대 40% 절감할 수 있다.&lt;/p&gt;
+&lt;p&gt;클러스터 구성에서 스토리지 구성 수정이 가능하기 때문에 현재는 Standard로 설정했으며, 운영 반영 후에 CloudWatch를 사용하여 비용을 추정해보려 한다.&lt;br&gt;
+&lt;a href=&quot;https://aws.amazon.com/ko/blogs/tech/estimate-cost-savings-for-the-amazon-aurora-i-o-optimized-feature-using-amazon-cloudwatch/&quot;&gt;Amazon CloudWatch를 이용한 Amazon Aurora I/O Optimized 기능에 대한 비용 절감 예상하기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;출처&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/ko/rds/aurora/faqs/&quot;&gt;Aurora FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html&quot;&gt;Aurora 클러스터 스토리지 구성&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/ko/rds/aurora/pricing/&quot;&gt;Aurora 클러스터 스토리지 요금&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;정리&lt;/h3&gt;
+&lt;p&gt;AWS Aurora 클러스터의 장점들을 확인할 수 있었다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;동기화 지연율&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;안정적인 백업&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;고가용성(페일오버)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위의 장점들만 보아도 클러스터를 직접 구성하여 관리 포인트가 늘어나는 것 보다 AWS Aurora를 사용하는 것이 타당한 선택이란 것을 확인할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;aurora-인스턴스-스펙-선정을-위한-부하-테스트&quot; style=&quot;position:relative;&quot;&gt;Aurora 인스턴스 스펙 선정을 위한 부하 테스트&lt;a href=&quot;#aurora-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%8A%A4%ED%8E%99-%EC%84%A0%EC%A0%95%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8&quot; aria-label=&quot;aurora 인스턴스 스펙 선정을 위한 부하 테스트 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Aurora 클러스터를 사용하기로 결정했다면 이제 쓰기 인스턴스의 기본 스펙을 어느정도로 사용할지 추산해야 한다.&lt;br&gt;
+부하 테스트 결과를 통해 운영 환경과 비슷한 스펙의 DB와 AWS 인스턴스를 비교하기에는 &lt;strong&gt;mysqlslap&lt;/strong&gt; 의 테스트 결과 내용은 &lt;strong&gt;sysbench&lt;/strong&gt;에 비해 테스트 결과 내용이 빈약하다고 느꼈다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# mysqlslap
+Benchmark
+        Average number of seconds to run all queries: 217.151 seconds
+        Minimum number of seconds to run all queries: 213.368 seconds
+        Maximum number of seconds to run all queries: 220.934 seconds
+        Number of clients running queries: 20
+        Average number of queries per client: 50
+
+
+User time 58.16, System time 18.31
+Maximum resident set size 909008, Integral resident set size 0
+Non-physical pagefaults 2353672, Physical pagefaults 0, Swaps 0
+Blocks in 0 out 0, Messages in 0 out 0, Signals 0
+Voluntary context switches 102785, Involuntary context switches 43&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;mysqlslap에 더 자세한 내용은 &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-measure-mysql-query-performance-with-mysqlslap&quot;&gt;mysqlslap으로 MySQL 쿼리 성능을 측정하는 방법&lt;/a&gt;을 참고하길 바란다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# sysbench
+Running the test with following options:				
+Number of threads: 1				
+Initializing random number generator from current time				
+            
+            
+Initializing worker threads...				
+            
+Threads started!				
+            
+SQL statistics:				
+    queries performed:				
+        read:                            23282				
+        write:                           0				
+        other:                           3326				
+        total:                           26608				
+    transactions:                        1663   (166.17 per sec.)				
+    queries:                             26608  (2658.80 per sec.)				
+    ignored errors:                      0      (0.00 per sec.)				
+    reconnects:                          0      (0.00 per sec.)				
+            
+General statistics:				
+    total time:                          10.0022s				
+    total number of events:              1663				
+            
+Latency (ms):				
+         min:                                    4.93				
+         avg:                                    6.01				
+         max:                                   12.26				
+         95th percentile:                        6.79				
+         sum:                                 9992.34				
+            
+Threads fairness:				
+    events (avg/stddev):           1663.0000/0.00				
+    execution time (avg/stddev):   9.9923/0.00				&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;sysbench는 테스트에 실행된 총 쿼리수(초당 쿼리수), 총 소요시간, 지연율, &lt;a href=&quot;https://www.percona.com/blog/computing-95-percentile-in-mysql/&quot;&gt;95 백분위수&lt;/a&gt;까지 자동으로 계산해주기에 성능 비교에는 sysbench가 유용할 것이라고 판단했다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sh&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;#!/bin/bash
+host=$1
+port=$2
+user=$3
+password=$4
+task=$5
+filename=$6
+
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task prepare
+
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=50 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=100 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=300 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=500 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1000 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1300 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1500 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1700 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=2000 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;테스트에 사용한 쉘 스크립트이며, &lt;strong&gt;한 개의 task에 스레드를 1개부터 2000개까지 점진적으로 증가시켜서 테스트를 진행하였다.&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;sysbench에는 테스트에 사용할 task의 종류를 지정할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bulk_insert.lua&lt;/li&gt;
+&lt;li&gt;oltp_common.lua&lt;/li&gt;
+&lt;li&gt;oltp_delete.lua&lt;/li&gt;
+&lt;li&gt;oltp_insert.lua&lt;/li&gt;
+&lt;li&gt;oltp_point_select.lua&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;oltp_read_only.lua&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;oltp_read_only_custom.lua&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;oltp_read_write.lua&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;oltp_update_index.lua&lt;/li&gt;
+&lt;li&gt;oltp_update_non_index.lua&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;oltp_write_only.lua&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;select_random_points.lua&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;select_random_ranges.lua&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- prepare 단계
+create table sbtest1
+(
+   id int auto_increment
+   primary key,
+   k int default 0 not null,
+   c char(120) default &amp;#39;&amp;#39; not null,
+   pad char(60) default &amp;#39;&amp;#39; not null
+);
+create index k_1 on sbtest1 (k);
+
+-- readonly 태스크
+SELECT c FROM sbtest1 WHERE id=44
+SELECT c FROM sbtest1 WHERE id=55
+SELECT c FROM sbtest1 WHERE id BETWEEN 51 AND 150
+SELECT SUM(k) FROM sbtest1 WHERE id BETWEEN 51 AND 150
+SELECT c FROM sbtest1 WHERE id BETWEEN 51 AND 150 ORDER BY c
+SELECT DISTINCT c FROM sbtest1 WHERE id BETWEEN 50 AND 149 ORDER BY c
+
+-- writeonly 태스크
+UPDATE sbtest1 SET k=k+1 WHERE id=2
+UPDATE sbtest1 SET c=&amp;#39;03600646353&amp;#39; WHERE id=2
+DELETE FROM sbtest1 WHERE id=2
+INSERT INTO sbtest1 (id, k, c, pad) VALUES (2, 2, &amp;#39;38823248060&amp;#39;, &amp;#39;42610989539&amp;#39;)
+
+-- select_random_points 태스크
+SELECT id, k, c, pad FROM sbtest1 WHERE k IN (1, 2, 1, 2, 1, 1, 2, 1, 2, 2)
+
+-- select_random_range 태스크
+SELECT count(k)
+FROM sbtest1
+WHERE k BETWEEN 50 AND 55 OR k BETWEEN 50 AND 55 OR k BETWEEN 54 AND 59 OR k BETWEEN 51 AND 56 OR k BETWEEN 60 AND 65 OR k BETWEEN 50 AND 55 OR k BETWEEN 50 AND 55 OR k BETWEEN 51 AND 56 OR k BETWEEN 57 AND 62 OR k BETWEEN 50 AND 55&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;prepare 단계에서 &lt;code class=&quot;language-text&quot;&gt;sbtest1&lt;/code&gt;과 같은 테이블을 생성하고 각 &lt;code class=&quot;language-text&quot;&gt;task&lt;/code&gt;에 맞는 쿼리들을 부하 테스트에 사용한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5de1571c97f22ae808f8947c1161f4da/b6e50/stressTest.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 82.22222222222221%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAABwElEQVR42m2UW6vCQAyE9///NJ9EEEFRH7zXu7bWe47f4MhSzkOYbDabZJK0qd1uR6vViuFwGM/nM97vt/D1ekl8btqtNzF1u93Y7XZxuVxiu93Gfr/XGR1Zr9ex2WxkW61W0hH8QPuhH4/HSDgRvaoqGQmAQ1EUcTgcYjKZxOl0iul0qvNyudRDhKBlWeod73mTCMDh8XjE/X6X3G43YV3XsoMkhYXt1+tVgo4/McA0GAxUARdkICtJEM6LxUJIhbABc5r4+4yoQldEFrJSCYJ+Pp9/iB9UXRmIDV+YgKnf7yuzHxGUitF5DDIQegVyTy/zPoJUx12azWbqD5kITDAemo6HAFWQM0kIiuCPHzZR9h52Oh0F/W/fsFmHmu+awn3q9XpqPBnIBjUQMTVTpmpXhN1VmjI+CSpkpYdQZqKeLoHYQwLQGlN3XxG3iGC/KTMx7x+S75j3zsh9PuGmTxqPxyobAxnQ/Rl5J/2J5ZX7EzX680zz+VyRaShlI1ACvSLsFw9B76131V8JFetbHo1G6p0vqBTEmf6AXmaCVt/g+eDcUy02TXbPoGSq+R9GQ/kwKRnEx7/8+JRfPwcz/gHJNMepwxEXRAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;stressTest&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5de1571c97f22ae808f8947c1161f4da/1cfc2/stressTest.png&quot;
+        srcset=&quot;/static/5de1571c97f22ae808f8947c1161f4da/3684f/stressTest.png 225w,
+/static/5de1571c97f22ae808f8947c1161f4da/fc2a6/stressTest.png 450w,
+/static/5de1571c97f22ae808f8947c1161f4da/1cfc2/stressTest.png 900w,
+/static/5de1571c97f22ae808f8947c1161f4da/21482/stressTest.png 1350w,
+/static/5de1571c97f22ae808f8947c1161f4da/d61c2/stressTest.png 1800w,
+/static/5de1571c97f22ae808f8947c1161f4da/b6e50/stressTest.png 1862w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;총 5개의 task&lt;/strong&gt; 를 사용하여 스레드를 &lt;code class=&quot;language-text&quot;&gt;1 ~ 2000개&lt;/code&gt;까지 늘리면서 테스트를 진행하고 &lt;strong&gt;평균 실행 쿼리 개수&lt;/strong&gt;와 &lt;strong&gt;평균 지연율&lt;/strong&gt;, &lt;strong&gt;95 백분위수&lt;/strong&gt;를 기준으로 비교하였다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;즉, &lt;strong&gt;3개의 스펙 서버(AWS 인스턴스 2개, 운영 DB와 비슷한 스펙 서버) * 5개의 task * 10번의 스레드별 테스트&lt;/strong&gt; 를 진행하였다.&lt;br&gt;
+각 서버들의 버퍼풀 크기가 상이하여 동일한 식별자를 가진 쿼리를 기준으로 테스트하지 않았으며 버퍼풀 워밍업은 고려하지 않았다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;부하 테스트를 통해 인스턴스 스펙간 차이는 어느정도 확인되었지만 현재 운영 중인 DB에 얼마정도의 요청이 들어오는지 확인이 필요했다.&lt;br&gt;
+현재 모니터링 툴로 와탭을 사용중인데, 와탭은 짧은 시간에 다량으로 처리되는 쿼리는 확인하기 힘들다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;5초마다 조회된 시점의 액티브 세션 기준으로 조회되기 때문에 조회 시점에 액티브 세션이 존재하지 않는 건이라면 MySQL 통계에는 보이지 않을 수 있다.&lt;br&gt;
+와탭을 이용해서 단시간에 빠르게 처리된 쿼리들을 모두 확인은 할 수 없다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;위와 같은 이유로 운영 DB에 유입되는 질의문의 양을 측정할 수 있는 것은 MySQL의 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Com_xxx&lt;/code&gt; 서버 상태 변수&lt;/a&gt;가 가장 믿을만하다고 판단하여 한 달 동안의 명령 횟수와 위에서 산출된 부하 테스트의 처리량을 비교하여 추산하였다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;전역 &lt;code class=&quot;language-text&quot;&gt;Com_xxx&lt;/code&gt; 변수는 서버가 실행되는 동안 특정 질의문이 실행된 횟수를 나타낸다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a35d7f65b54e85c0109fc6f7f9ce5703/5dded/comVariables.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 42.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVR42k2RyYrDQAxE/f+fFphLDjMxXuMVbBNv8ZJ40fiJtElD042kKpVK1jAMEkWRFEUhz+dTOOu6yjzP+n+/3+K6rpRlKcuy6N33XdI0lTiONb5tm95pmsS63+9yu92kbduzmCZZlikxlzgvJNTxp4njONJ1nWLGcdS8EgZBII/HQwtJopQkXYnxQhqGoTRNozEwYOu61kmMCCWk0KgA3Pe95Hl+KjRxmkDI3/d9SZLknAqMEuKfbdsq2Sisqko8zzsVmrGxBkWGkBp844DBAosEpHQGRDFGY/i3OoB/H6+NhygyisEwqQUr/pmNksQfunOWI7YejabDo5/LRdpP4++FgEEUE1iv1+tUYV6zNZazHbGhayULfQl/rzIcXm1HHty3JQbzD1/hY1D5cBtWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;comVariables&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a35d7f65b54e85c0109fc6f7f9ce5703/1cfc2/comVariables.png&quot;
+        srcset=&quot;/static/a35d7f65b54e85c0109fc6f7f9ce5703/3684f/comVariables.png 225w,
+/static/a35d7f65b54e85c0109fc6f7f9ce5703/fc2a6/comVariables.png 450w,
+/static/a35d7f65b54e85c0109fc6f7f9ce5703/1cfc2/comVariables.png 900w,
+/static/a35d7f65b54e85c0109fc6f7f9ce5703/21482/comVariables.png 1350w,
+/static/a35d7f65b54e85c0109fc6f7f9ce5703/5dded/comVariables.png 1588w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;스프링에서-읽기쓰기-분리&quot; style=&quot;position:relative;&quot;&gt;스프링에서 읽기/쓰기 분리&lt;a href=&quot;#%EC%8A%A4%ED%94%84%EB%A7%81%EC%97%90%EC%84%9C-%EC%9D%BD%EA%B8%B0%EC%93%B0%EA%B8%B0-%EB%B6%84%EB%A6%AC&quot; aria-label=&quot;스프링에서 읽기쓰기 분리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;읽기/쓰기 커넥션을 분리하기 위해 &lt;a href=&quot;https://github.com/kwon37xi/replication-datasource&quot;&gt;권남님의 replication-datasource&lt;/a&gt;를 참고하였다.&lt;br&gt;
+Primary와 Secondary의 DataSource 정보를 주입받아 읽기/쓰기 라우팅을 시켜줄 &lt;code class=&quot;language-text&quot;&gt;AbstractRoutingDataSource&lt;/code&gt;를 상속받았다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;AbstractRoutingDataSource?&lt;/strong&gt;&lt;br&gt;
+조회 키를 기반으로 getConnection() 호출을 다양한 대상 DataSource 중 하나로 라우팅하는 추상 DataSource 구현입니다.&lt;br&gt;
+후자는 일반적으로 일부 스레드 바인딩 트랜잭션 컨텍스트를 통해 결정됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;즉, 현재 컨텍스트에 따라 데이터 소스를 동적으로 결정할 수 있는 방법을 제공하는 추상 클래스이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class TransactionRoutingDataSource(
+    primary: DataSource,
+    secondary: DataSource
+) : AbstractRoutingDataSource() {
+
+    init {
+        super.setTargetDataSources(mapOf(
+            READ_WRITE to primary,
+            READ_ONLY to secondary
+        ))
+        super.setDefaultTargetDataSource(primary)
+    }
+
+    override fun determineCurrentLookupKey(): Any {
+        return DataSourceType.from(TransactionSynchronizationManager.isCurrentTransactionReadOnly())
+    }
+
+    private enum class DataSourceType {
+        READ_WRITE,
+        READ_ONLY;
+
+        companion object {
+            fun from(isReadOnly: Boolean) = if (isReadOnly) READ_ONLY else READ_WRITE
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;상속받아 구현한 라우팅의 책임을 가진 TransactionRoutingDataSource를 스프링에서 사용할 DataSource로 등록할 때 &lt;code class=&quot;language-text&quot;&gt;LazyConnectionDataSourceProxy&lt;/code&gt;로 랩핑하여 등록한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;LazyConnectionDataSourceProxy?&lt;/strong&gt;&lt;br&gt;
+실제 JDBC 연결을 느리게 가져오는 대상 데이터 소스에 대한 프록시입니다.&lt;br&gt;
+즉, 처음으로 명령문을 생성할 때까지는 가져오지 않습니다. 자동 커밋 모드, 트랜잭션 격리 및 읽기 전용 모드와 같은 연결 초기화 속성은 실제 연결을 가져오는 즉시(있는 경우) 실제 JDBC 연결에 유지되고 적용됩니다.&lt;br&gt;
+...&lt;br&gt;
+이 DataSource 프록시를 사용하면 실제로 필요한 경우가 아니면 풀에서 JDBC 연결을 가져오는 것을 방지할 수 있습니다. JDBC 트랜잭션 제어는 풀에서 연결을 가져오거나 데이터베이스와 통신하지 않고도 발생할 수 있습니다.&lt;br&gt;
+이는 JDBC 문을 처음 생성할 때 느리게 수행됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;즉, 실제로 커넥션이 필요한 경우가 아니라면 풀에서 커넥션을 점유하지 않고 실제로 필요한 시점에 커넥션을 점유하도록 할 수 있다.&lt;br&gt;
+트랜잭션 진입 시점에 커넥션을 결정하지 않고 실제로 필요할 때 (&lt;code class=&quot;language-text&quot;&gt;readonly&lt;/code&gt; 속성에 따라) &lt;code class=&quot;language-text&quot;&gt;TransactionSynchronizationManager.isCurrentTransactionReadOnly()&lt;/code&gt; 결과를 기반으로 데이터 소스를 선택할 수 있게 된 것이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Bean
+@ConfigurationProperties(prefix = &amp;quot;spring.datasource.primary&amp;quot;)
+open fun primaryDataSource(): DataSource {
+   return DataSourceBuilder.create().build()
+}
+
+@Bean
+@ConfigurationProperties(prefix = &amp;quot;spring.datasource.secondary&amp;quot;)
+open fun secondaryDataSource(): DataSource {
+   return DataSourceBuilder.create().build()
+}
+
+@Primary
+@Bean
+@DependsOn(&amp;quot;primaryDataSource&amp;quot;, &amp;quot;secondaryDataSource&amp;quot;)
+open fun routingDataSource(): DataSource {
+   return TransactionRoutingDataSource(primaryDataSource(), secondaryDataSource())
+}
+
+@Bean
+open fun dataSourceTransactionManager(routingDataSource: DataSource): PlatformTransactionManager {
+   return DataSourceTransactionManager(LazyConnectionDataSourceProxy(routingDataSource))
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;더 자세한 이해와 원리는 다른 글로 정리하겠다.&lt;/p&gt;
+&lt;h1 id=&quot;aws-dms를-이용한-데이터-이관&quot; style=&quot;position:relative;&quot;&gt;AWS DMS를 이용한 데이터 이관&lt;a href=&quot;#aws-dms%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9D%B4%EA%B4%80&quot; aria-label=&quot;aws dms를 이용한 데이터 이관 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5105fb2eca0a0be6a457e472a0a8a0d5/00d43/dms.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 30.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAACxKAAAsSgF3enRNAAABIElEQVR42lVRSU7EMBDM/z8BBw5IXHgAH+A+CC4zQghEEoesdry07aLsYbXUapdcru6ubsAjMZWE69sBFzc9lkVhmi0kAyFm+AAGs3zlilHx7oCcS+Sq0eDP2W2C9xTPUrF9uIR7vKLqCOgXxhura77knz+B1PQL0YgItNa1gpeExFdvcv3inu8Q3u9hXcY2G+oEJL8jSSSHsHBDQuSERSNQq5mmCafTCcYYOM6wrjtenxy2xdAKjyJ9PH7gcFCIOSJ4C72aytGrpWBpyFSNcRzRDMOAruuwbRv9Av1bMQwKMwtB2E0SqL6D6lpYu7MtCm0L+q54PYNDsZkdbdtCKfXfQxfKgs4OFV8kBIh3yFEYETH4issOyw4Kx/rz/dvDT+qw0TdnNDiVAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;dms&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5105fb2eca0a0be6a457e472a0a8a0d5/1cfc2/dms.png&quot;
+        srcset=&quot;/static/5105fb2eca0a0be6a457e472a0a8a0d5/3684f/dms.png 225w,
+/static/5105fb2eca0a0be6a457e472a0a8a0d5/fc2a6/dms.png 450w,
+/static/5105fb2eca0a0be6a457e472a0a8a0d5/1cfc2/dms.png 900w,
+/static/5105fb2eca0a0be6a457e472a0a8a0d5/00d43/dms.png 1000w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;DMS는 데이터 마이그레이션 서비스로, 다양한 소스 데이터베이스에서 AWS 클라우드로 데이터를 안전하고 쉽게 마이그레이션할 수 있도록 제공되는 서비스다.&lt;br&gt;
+이관을 진행하기 위해서는 아래의 오브젝트를 준비해야 한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;소스 DB와 타겟 DB의 &lt;strong&gt;엔드포인트&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;이관을 진행할 때 사용될 &lt;strong&gt;복제 인스턴스&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;두 개의 엔드포인트와 복제 인스턴스를 사용하여 실제 이관할 이관 전략을 지정하는 &lt;strong&gt;데이터베이스 마이그레이션 태스크&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;제일 중요한 것은 &lt;strong&gt;데이터베이스 마이그레이션 태스크&lt;/strong&gt; 지정인데, 이와 관련해서 유의해야 할 점들을 살펴보자.&lt;/p&gt;
+&lt;h3&gt;1. 적재 모드 선택과 데이터 검증&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;초기 적재&lt;/strong&gt; 와 &lt;strong&gt;변경 사항 복제&lt;/strong&gt; 를 선택할 수 있으며 두 작업을 함께 진행하도록 할 수도 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;기존 데이터 마이그레이션(전체 로드만) - 소스 엔드포인트에서 대상 엔드포인트로 한 번만 마이그레이션을 수행&lt;/li&gt;
+&lt;li&gt;기존 데이터 마이그레이션 및 진행 중인 변경 사항 복제(전체 로드 및 CDC) - 소스에서 대상으로 한 번 마이그레이션을 수행한 다음, 소스에서 대상으로 데이터 변경 사항을 계속 복제&lt;/li&gt;
+&lt;li&gt;데이터 변경 사항만 복제(CDC만 해당) - 일회성 마이그레이션을 수행하지 않고 소스에서 타깃으로 데이터 변경 사항을 계속 복제&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;변경 사항 복제는 초기 적재가 끝나면 소스 DB의 binlog를 기반으로 타겟 DB에 동기화 시키는 작업을 의미한다.&lt;br&gt;
+해당 기능을 실행하기 위해서는 소스 DB의 binlog가 활성화되어 있어야 하며, &lt;a href=&quot;https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-stored-proc-configuring.html#mysql_rds_set_configuration-usage-notes.binlog-retention-hours&quot;&gt;binlog 보존 시간&lt;/a&gt;을 확인해야 한다.&lt;/p&gt;
+&lt;p&gt;그리고 초기 적재가 끝나면 소스 DB와 타겟 DB의 &lt;strong&gt;데이터 검증&lt;/strong&gt; 작업도 지정할 수 있다.&lt;br&gt;
+데이터 검증에 문제가 발생하면 어떤 문제가 발생했는지 &lt;code class=&quot;language-text&quot;&gt;awsdms_control.awsdms_validation_failures_v1&lt;/code&gt; 테이블에서 확인할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+
+|TASK_NAME|TABLE_OWNER|TABLE_NAME|FAILURE_TIME           |KEY_TYPE|KEY                                |FAILURE_TYPE  |
++---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+
+|...      |...        |...       |2024-03-29 04:28:55.367|Row     |{ &amp;quot;key&amp;quot;:	[&amp;quot;key1&amp;quot;, &amp;quot;key2&amp;quot;, ...] }   |MISSING_TARGET|
+|...      |...        |...       |2024-03-29 04:28:55.409|Row     |{ &amp;quot;key&amp;quot;:	[&amp;quot;key1&amp;quot;, &amp;quot;key2&amp;quot;, ...] }   |MISSING_SOURCE|
++---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;어떤 DB에서 실패하였는지, 어떤 레코드인지 식별하기 위한 정보들이 모두 들어있다.&lt;br&gt;
+실제로 이관이 끝나고 해당 로그를 기반으로 어떤 레코드에 문제가 있었는지 확인하기 편하다.&lt;/p&gt;
+&lt;h3&gt;2. 파티셔닝 테이블 이관&lt;/h3&gt;
+&lt;p&gt;DMS는 분할된 테이블에 대한 DDL을 지원하지 않기 때문에 이관 대상 테이블에 파티셔닝된 테이블이 있다면, 대상 DB에 미리 생성해놓아야 한다.&lt;br&gt;
+그리고 꼭 &lt;strong&gt;대상 테이블 준비 모드는 &lt;code class=&quot;language-text&quot;&gt;&quot;아무 작업 안함&quot;&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;&quot;자르기&quot;&lt;/code&gt;를 선택&lt;/strong&gt; 하여 이관 시작시 대상 DB의 메타데이터를 삭제하지 않도록 해야 한다.&lt;/p&gt;
+&lt;h3&gt;3. LOB 컬럼&lt;/h3&gt;
+&lt;p&gt;이관 테이블 중 LOB 컬럼이 존재한다면 아래의 설정에 신경써야 한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/88f9cd68bc87c29ab03c7820276d6db9/eb3fa/lobColumn.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 42.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA6ElEQVR42qVR0XKCMBDkXxwYCSIhBhKUJCgVtEiZ/v/HbC+p0/axgw87m73L7ezcRcP0gf42oT5ZMNODiRpsX4IVYhWi6/uM+/IJz2accGhabHO+3tCnu4x3jI8FmlLmQiLdi/WGt3nBMM0hYWPPL6ULhtXRwMPv0PMrZsHQvQ1QrYXtr5DNiYolMi5WI9J02VxoMnMo5BFxyhGz/yP5+85KRKxQ2Gw5NmlJRYE4O/ziqZOdpM8y6MTrZ/+Hqe/Z+0S1cdDuAk0HaYiV7aB8jXTdugDdUd99a2U6+JmKdh76Yf4cPHil8QX9sB0nFJE+mQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lobColumn&quot;
+        title=&quot;&quot;
+        src=&quot;/static/88f9cd68bc87c29ab03c7820276d6db9/1cfc2/lobColumn.png&quot;
+        srcset=&quot;/static/88f9cd68bc87c29ab03c7820276d6db9/3684f/lobColumn.png 225w,
+/static/88f9cd68bc87c29ab03c7820276d6db9/fc2a6/lobColumn.png 450w,
+/static/88f9cd68bc87c29ab03c7820276d6db9/1cfc2/lobColumn.png 900w,
+/static/88f9cd68bc87c29ab03c7820276d6db9/eb3fa/lobColumn.png 1026w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;해당 컬럼의 최대 사이즈가 13kb인 것을 확인하여서 기본 값인 64kb를 넘지 않아 전체 LOB 모드로 실행하였다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;SELECT MAX(OCTET_LENGTH({lob_column})) / 1024 AS max_size_kb
+FROM {table};&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;그리고 LOB 컬럼은 테이블에 데이터 INSERT 시점에 이관되지 않고 &lt;strong&gt;삽입된 레코드에 UPDATE로 이관&lt;/strong&gt;되기 때문에 만약 LOB 컬럼이 NOT NULL이라면 &lt;strong&gt;이관할 때에는 NULL을 허용하고 이관 끝난 후에 UPDATE&lt;/strong&gt; 해줘야 한다.&lt;/p&gt;
+&lt;h3&gt;4. 이관 시 소스 엔드포인트 ServerTimeZone 설정&lt;/h3&gt;
+&lt;p&gt;소스 DB의 timezone이 UTC가 아니고 TIMESTAMPE 컬럼을 사용중이라면 소스 엔드포인트의 ServerTimeZone을 설정해줘야 한다.&lt;br&gt;
+&lt;a href=&quot;https://repost.aws/knowledge-center/dms-migrate-mysql-non-utc&quot;&gt;How do I migrate a MySQL database in a non-UTC time zone using AWS DMS tasks?&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;mysql-버전업을-진행하면서-고려해야할-점&quot; style=&quot;position:relative;&quot;&gt;MySQL 버전업을 진행하면서 고려해야할 점&lt;a href=&quot;#mysql-%EB%B2%84%EC%A0%84%EC%97%85%EC%9D%84-%EC%A7%84%ED%96%89%ED%95%98%EB%A9%B4%EC%84%9C-%EA%B3%A0%EB%A0%A4%ED%95%B4%EC%95%BC%ED%95%A0-%EC%A0%90&quot; aria-label=&quot;mysql 버전업을 진행하면서 고려해야할 점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h3&gt;1. 예약어&lt;/h3&gt;
+&lt;p&gt;작성된 쿼리 중에 예약어가 포함되어 있는지 확인해야 한다. &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/keywords.html#keywords-8-0-detailed-C&quot;&gt;MySQL 예약어&lt;/a&gt;에서 사용 중인 예약어가 있는지 확인하는 것이 좋다.&lt;br&gt;
+MySQL 8.0.2에 추가된 &lt;code class=&quot;language-text&quot;&gt;RANK&lt;/code&gt; 예약어가 포함되어 있어서 모두 백틱으로 처리해주었다.&lt;/p&gt;
+&lt;p&gt;그리고 아래와 같이 Map의 Entry를 순회하며 생성하는 동적 쿼리에서 &lt;code class=&quot;language-text&quot;&gt;${key}&lt;/code&gt;에 예약어가 포함되는 경우가 있어서 해당 쿼리도 백틱으로 처리해주었다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;xml&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;&amp;lt;update id=&amp;quot;update...&amp;quot; parameterType=&amp;quot;java.util.Map&amp;quot;&amp;gt;
+    UPDATE ...
+    &amp;lt;foreach item=&amp;quot;value&amp;quot; index=&amp;quot;key&amp;quot; collection=&amp;quot;data.entrySet()&amp;quot; separator=&amp;quot;,&amp;quot;&amp;gt;
+        `${key}` = #{value}
+    &amp;lt;/foreach&amp;gt;
+    WHERE ...
+&amp;lt;/update&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h3&gt;2. SSL 설정&lt;/h3&gt;
+&lt;p&gt;각 애플리케이션에서 여러 DB를 사용하는데 DB 중에 MySQL 5.6이 포함되어 있어 해당 연결에서 &lt;code class=&quot;language-text&quot;&gt;useSSL=false&lt;/code&gt; 속성을 사용 중이였다.&lt;br&gt;
+MySQL 5.6은 SSL 설정을 직접 해주어야 하는데 따로 설정하지 않고 사용 중이라서 해당 속성을 지정한 것 같다.&lt;/p&gt;
+&lt;p&gt;이번에 추가한 AWS Aurora MySQL 8.0.28은 1.2와 1.3버전을 지원하고 Java 8부터 1.2를 지원하기 때문에 &lt;code class=&quot;language-text&quot;&gt;useSSL=false&lt;/code&gt; 속성을 모두 제거해도 무방하다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;Java Version&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;SSL/TLS Default&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Other Supported Versions&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;Java 6&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;TLS 1.0&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;TLS 1.1 (update 111 and later), SSLv3.0*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;Java 7&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;TLS 1.0&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;TLS 1.2, TLS 1.1, SSLv3.0*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;Java 8&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;TLS 1.2&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;TLS 1.1, TLS 1.0, SSLv3.0*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;show global variables like &amp;#39;%tls%&amp;#39;
+
++----------------------+---------------+
+|Variable_name         |Value          |
++----------------------+---------------+
+|admin_tls_ciphersuites|               |
+|admin_tls_version     |TLSv1.2,TLSv1.3|
+|aurora_zd_tls_v1_3    |ON             |
+|tls_ciphersuites      |               |
+|tls_version           |TLSv1.2,TLSv1.3|
++----------------------+---------------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;아래의 쿼리로 모든 연결이 SSL로 연결되었는지 확인할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;select b.processlist_user,
+       b.processlist_id,
+       b.connection_type,
+       b.PROCESSLIST_HOST,
+       a.ssl_version,
+       a.ssl_cipher
+from sys.session_ssl_status a join performance_schema.threads b
+   on a.thread_id= b.thread_id
+order by ssl_version desc;
+
++----------------+--------------+---------------+----------------+-----------+---------------------------+
+|processlist_user|processlist_id|connection_type|PROCESSLIST_HOST|ssl_version|ssl_cipher                 |
++----------------+--------------+---------------+----------------+-----------+---------------------------+
+|user            |811513        |SSL/TLS        |...             |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
+|user            |811738        |SSL/TLS        |...             |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
+|user            |810957        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
+|user            |810965        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
+|user            |810970        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
++----------------+--------------+---------------+----------------+-----------+---------------------------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h3&gt;3. utf8mb3 → utf8mb4&lt;/h3&gt;
+&lt;p&gt;MySQL 8.0 부터는 기본적으로 utf8mb4를 지원하며 utf8mb3는 deprecate될 예정이므로 마이그레이션 하면서 테이블 collation을 변경하여야 한다.&lt;br&gt;
+최대 문자 길이가 3바이트에서 4바이트로 더 많이 차지하기 때문에 확인할 것이 있다.&lt;/p&gt;
+&lt;p&gt;첫 번째로 &lt;strong&gt;테이블의 컬럼 최대 사이즈를 확인&lt;/strong&gt; 하여야 한다.&lt;br&gt;
+&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/char.html&quot;&gt;VARCHAR는 최대 65535 바이트를 저장&lt;/a&gt;할 수 있기에 최대 길이를 줄여야 한다.&lt;br&gt;
+테이블에 &lt;code class=&quot;language-text&quot;&gt;VARCHAR(20000)&lt;/code&gt; 컬럼을 &lt;code class=&quot;language-text&quot;&gt;VARCHAR(15000)&lt;/code&gt;으로 수정하였다. 수정하기전에 당연히 해당 컬럼의 최대 길이를 확인해야 한다.&lt;/p&gt;
+&lt;p&gt;두 번째로 최대 문자 수가 줄어들면서 인덱스의 사이즈도 줄어들기 때문에 &lt;strong&gt;인덱스 사이즈를 확인&lt;/strong&gt; 하여야 한다.&lt;br&gt;
+ROW_FORMAT에 따라 최대 인덱스 사이즈가 다르기 때문에 ROW_FORMAT을 먼저 확인하여야 한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;SELECT TABLE_NAME, ROW_FORMAT
+FROM INFORMATION_SCHEMA.TABLES
+
++----------+----------+
+|TABLE_NAME|ROW_FORMAT|
++----------+----------+
+|...       |Dynamic   |
+|...       |Dynamic   |
+|...       |Dynamic   |
++----------+----------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Dynamic으로 구성되어 있는 경우 최대 3072바이트까지 가능하다.&lt;br&gt;
+사용중인 모든 인덱스 구성의 컬럼 길이 합이 3072바이트를 초과하는지 확인하면 된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;SELECT
+    S.TABLE_SCHEMA,
+    S.TABLE_NAME,
+    INDEX_NAME,
+    SUM(COALESCE(SUB_PART, CHARACTER_MAXIMUM_LENGTH)) AS TOTAL_INDEX_LENGTH
+FROM
+    INFORMATION_SCHEMA.STATISTICS AS S JOIN INFORMATION_SCHEMA.COLUMNS AS C
+        ON S.TABLE_SCHEMA = C.TABLE_SCHEMA
+        AND S.TABLE_NAME = C.TABLE_NAME
+        AND S.COLUMN_NAME = C.COLUMN_NAME
+WHERE S.TABLE_SCHEMA = &amp;#39;business&amp;#39;
+GROUP BY TABLE_SCHEMA,TABLE_NAME,INDEX_NAME;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-conversion.html&quot;&gt;Converting Between 3-Byte and 4-Byte Unicode Character Sets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-row-format.html#innodb-row-format-dynamic&quot;&gt;DYNAMIC Row Format&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-limits.html&quot;&gt;InnoDB Limits&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;4. ZEROFILL&lt;/h3&gt;
+&lt;p&gt;MySQL 8.0.17부터 숫자 데이터 유형에 대한 ZEROFILL 속성과 정수 데이터 유형에 대한 표시 너비 속성은 더 이상 사용되지 않기 때문에 테이블 DDL에 &lt;code class=&quot;language-text&quot;&gt;INT(4)&lt;/code&gt;와 같이 너비를 지정해주면 경고 메시지가 발생한다.&lt;br&gt;
+추가로 FLOAT 및 DOUBLE 열에 대한 AUTO_INCREMENT 지원도 향후 MySQL 버전에서 제거될 예정이기 때무에 정수 유형으로 변환해야한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/numeric-type-attributes.html&quot;&gt;Numeric Type Attributes&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[MySQL time_zone 설정을 안했어요.]]></title><description><![CDATA[발단 얼마전에 IDC MySQL 5.7을 AWS Aurora로 업그레이드하면서 데이터 이관 작업을 진행했었다. 기존에 사용하던 옵션들을 확인해서 패킷 바디 사이즈, 최대 커넥션 개수를 Aurora Cluster Parameter Group…]]></description><link>https://jdalma.github.io/2024y/troubleShooting/timezone/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/troubleShooting/timezone/</guid><pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;얼마전에 IDC MySQL 5.7을 AWS Aurora로 업그레이드하면서 데이터 이관 작업을 진행했었다.&lt;br&gt;
 기존에 사용하던 옵션들을 확인해서 패킷 바디 사이즈, 최대 커넥션 개수를 &lt;a href=&quot;https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithDBClusterParamGroups.html&quot;&gt;Aurora Cluster Parameter Group&lt;/a&gt;으로 재정의 했었다.&lt;/p&gt;
 &lt;p&gt;이때 &lt;code class=&quot;language-text&quot;&gt;time_zone&lt;/code&gt;을 의식하지 못하여 설정해주지 않아.. 데이터가 UTC로 저장되어 사용자에게 노출되는 현재 시간 정보들은 9시간 이전의 정보로 노출되었다.&lt;/p&gt;
@@ -603,11 +1339,9 @@ mysql&amp;gt; select * from TIMEZONE_TEST;
 (동시에 유입된 쿼리는 최대 8개로 보인다.)&lt;/p&gt;
 &lt;h1 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;결론&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;데이터 이관이 뭐 내가 수작업으로 진행하는 것은 아니고 AWS DMS를 통해 자동으로 이관해주지만 문제가 발견되고 데이터 재이관을 해야할 것 같다는 이야기를 들었을 때 이관동안 많이 예민했었기에 다신 하고 싶지 않았다.&lt;br&gt;
-재이관 없이 짧은 시간에 데이터 수정으로 처리할 수 있어서 다행이었다.&lt;/p&gt;
-&lt;p&gt;기본적인 설정을 놓쳐서 문제를 만들어 낸 것 같아 마음이 엄청 불편했다.&lt;br&gt;
-이 문제를 해결하기 위해 같이 어떤식으로 해결할지 고민하고 좋은 방법을 찾아 나가려 도와주셔서 감사하고 재밋었다.&lt;br&gt;
-내가 만약 제안한 방법대로 데이터 재이관으로 이 문제를 해결하려 했다면 더 큰 비용이 들었을 것이다.&lt;br&gt;
-지시했다고 그대로 따르기만 했다면 &lt;strong&gt;실무자의 책임&lt;/strong&gt; 이 더 큰것 아닐까라는 생각이 들었다.&lt;/p&gt;
+기본적인 설정을 놓쳐서 문제를 만들어 낸 것 같아 마음이 엄청 불편했지만 재이관 없이 짧은 시간에 데이터 수정으로 처리할 수 있어서 다행이었다.&lt;br&gt;
+내가 만약 제안주신 방법대로 데이터 재이관으로 이 문제를 해결하려 했다면 더 큰 비용이 들었을 것이다.&lt;br&gt;
+지시했다고 그대로 따르기만 했다면 &lt;strong&gt;작업자의 책임&lt;/strong&gt; 이 더 큰것 아닐까라는 생각이 들었다.&lt;/p&gt;
 &lt;p&gt;이번 일을 계기로 해결 방법에 따른 검증만 확인할 것이 아니라 &lt;strong&gt;놓여 있는 상황과 원인을 완벽하게 분석해야할 필요를 느꼈다.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[테스트 불모지에 Testcontainers 심기]]></title><description><![CDATA[CI/CD를 고민하면서 서로 의존 관계에 있는 서비스들은 통합 테스트를 어떻게 진행할지 생각해본적이 있다.  위의 그림에서 A 서비스 를 수정하고 배포한다고 가정할 때 통합 테스트 환경에서 사용자의 요청을 처리하기 위해 이해관계에 놓여있는 B…]]></description><link>https://jdalma.github.io/2024y/testcontainers/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/testcontainers/</guid><pubDate>Sun, 07 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CI/CD를 고민하면서 서로 의존 관계에 있는 서비스들은 통합 테스트를 어떻게 진행할지 생각해본적이 있다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
