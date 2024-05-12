@@ -181,36 +181,7 @@ Threads fairness:
 ```
 
 sysbench는 테스트에 실행된 총 쿼리수(초당 쿼리수), 총 소요시간, 지연율, [95 백분위수](https://www.percona.com/blog/computing-95-percentile-in-mysql/)까지 자동으로 계산해주기에 성능 비교에는 sysbench가 유용할 것이라고 판단했다.  
-
-```sh
-#!/bin/bash
-host=$1
-port=$2
-user=$3
-password=$4
-task=$5
-filename=$6
-
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task prepare
-
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=50 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=100 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=300 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=500 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1000 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1300 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1500 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1700 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=2000 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
-
-```
-
-테스트에 사용한 쉘 스크립트이며, **한 개의 task에 스레드를 1개부터 2000개까지 점진적으로 증가시켜서 테스트를 진행하였다.**  
-**sysbench에는 테스트에 사용할 task의 종류를 지정할 수 있다.**  
+그리고 **sysbench는 테스트에 사용할 task의 종류를 지정할 수 있다.**  
 
 - bulk_insert.lua
 - oltp_common.lua
@@ -226,6 +197,25 @@ sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-passwo
 - **select_random_points.lua**
 - **select_random_ranges.lua**
 
+```shell
+#!/bin/bash
+host=$1
+port=$2
+user=$3
+password=$4
+task=$5
+filename=$6
+
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task prepare
+
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
+...
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=2000 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
+```
+
+테스트를 실행하기전 `prepare`를 꼭 거쳐야하며, 테스트가 끝나고 기존에 사용한 테이블과 데이터를 `cleanup`단계에서 제거해야 한다.  
+테스트에 사용한 쉘 스크립트이며, `cleanup` → `prepare` → `task` 순서로 정의했다.  
 
 ```sql
 -- prepare 단계
@@ -380,9 +370,9 @@ DMS는 데이터 마이그레이션 서비스로, 다양한 소스 데이터베�
 
 **초기 적재** 와 **변경 사항 복제** 를 선택할 수 있으며 두 작업을 함께 진행하도록 할 수도 있다.  
 
-1. 기존 데이터 마이그레이션(전체 로드만) - 소스 엔드포인트에서 대상 엔드포인트로 한 번만 마이그레이션을 수행
-2. 기존 데이터 마이그레이션 및 진행 중인 변경 사항 복제(전체 로드 및 CDC) - 소스에서 대상으로 한 번 마이그레이션을 수행한 다음, 소스에서 대상으로 데이터 변경 사항을 계속 복제
-3. 데이터 변경 사항만 복제(CDC만 해당) - 일회성 마이그레이션을 수행하지 않고 소스에서 타깃으로 데이터 변경 사항을 계속 복제
+1. **기존 데이터 마이그레이션(전체 로드만)** - 소스 엔드포인트에서 대상 엔드포인트로 한 번만 마이그레이션을 수행
+2. **기존 데이터 마이그레이션 및 진행 중인 변경 사항 복제(전체 로드 및 CDC)** - 소스에서 대상으로 한 번 마이그레이션을 수행한 다음, 소스에서 대상으로 데이터 변경 사항을 계속 복제
+3. **데이터 변경 사항만 복제(CDC만 해당)** - 일회성 마이그레이션을 수행하지 않고 소스에서 타깃으로 데이터 변경 사항을 계속 복제
   
 변경 사항 복제는 초기 적재가 끝나면 소스 DB의 binlog를 기반으로 타겟 DB에 동기화 시키는 작업을 의미한다.  
 해당 기능을 실행하기 위해서는 소스 DB의 binlog가 활성화되어 있어야 하며, [binlog 보존 시간](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-stored-proc-configuring.html#mysql_rds_set_configuration-usage-notes.binlog-retention-hours)을 확인해야 한다.  
