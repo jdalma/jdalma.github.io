@@ -113,7 +113,7 @@
 혹시 이 구성에 대해 더 자세히 알고 싶다면 <a href="https://www.inflearn.com/course/mysql-docker/dashboard">따라하며 배우는 MySQL on Docker</a> 강의를 참고하길 바란다.</p>
 <h1 id="aws-aurora-클러스터-분석" style="position:relative;">AWS Aurora 클러스터 분석<a href="#aws-aurora-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EB%B6%84%EC%84%9D" aria-label="aws aurora 클러스터 분석 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>Aurora 클러스터를 사용하기 위해서는 확인해야 할 부분들이 있었다.</p>
-<h3>Aurora 클러스터의 페일오버와 페일백은 어떻게 진행되는가?</h3>
+<h2 id="aurora-클러스터의-페일오버와-페일백은-어떻게-진행되는가" style="position:relative;">Aurora 클러스터의 페일오버와 페일백은 어떻게 진행되는가?<a href="#aurora-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EC%9D%98-%ED%8E%98%EC%9D%BC%EC%98%A4%EB%B2%84%EC%99%80-%ED%8E%98%EC%9D%BC%EB%B0%B1%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%A7%84%ED%96%89%EB%90%98%EB%8A%94%EA%B0%80" aria-label="aurora 클러스터의 페일오버와 페일백은 어떻게 진행되는가 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>기본 인스턴스에 문제가 발생하는 경우 읽기 인스턴스 중 하나가 기본 인스턴스 역할을 인수한다.<br>
 Aurora는 데이터베이스 문제를 감지하고 필요한 경우 장애 조치 메커니즘을 자동으로 활성화하여 장애 조치 중에 쓰기 작업을 처리하지 못하는 시간이 최소화된다.<br>
 Aurora는 다음 두 가지 방법 중 하나를 사용하여 자동으로 새 기본 인스턴스로 장애 조치한다.</p>
@@ -128,7 +128,7 @@ Aurora는 다음 두 가지 방법 중 하나를 사용하여 자동으로 새 �
 Aurora 복제본을 기본 인스턴스로 승격시키는 것이 기본 인스턴스를 새로 생성하는 것보다 훨씬 빠르다.</p>
 <p><strong>출처</strong> : <a href="https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html">Amazon Aurora의 고가용성</a></p>
 <p>운영 중 DB 스케일 업에 대한 트러블 슈팅 글도 읽어보면 도움이 될 것이다. <a href="https://medium.com/29cm/29cm-%EC%9D%98-%EC%9D%B4%EA%B5%BF%EC%9C%84%ED%81%AC-%EC%9E%A5%EC%95%A0%EB%8C%80%EC%9D%91-%EA%B8%B0%EB%A1%9D-177b6b2f07a0">29CM 의 이굿위크 장애대응 기록</a></p>
-<h3>Secondary의 동기화 지연율은 어느정도인가?</h3>
+<h2 id="secondary의-동기화-지연율은-어느정도인가" style="position:relative;">Secondary의 동기화 지연율은 어느정도인가?<a href="#secondary%EC%9D%98-%EB%8F%99%EA%B8%B0%ED%99%94-%EC%A7%80%EC%97%B0%EC%9C%A8%EC%9D%80-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84%EC%9D%B8%EA%B0%80" aria-label="secondary의 동기화 지연율은 어느정도인가 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>먼저 쓰기 연산은 Primary에서 관리하며 Aurora 복제본(Secondary)은 클러스터 볼륨의 읽기 연산에 사용되므로 읽기 조정에 유용하다.<br>
 데이터들은 단일 AWS 리전에서 다중 가용 영역에 걸쳐 DB 클러스터에 데이터 복사본을 저장하며, DB 클러스터의 인스턴스가 여러 가용성 영역에 걸쳐 있는지 여부에 관계없이 복사본을 저장한다.</p>
 <p><span
@@ -238,7 +238,7 @@ Aurora 복제본을 기본 인스턴스로 승격시키는 것이 기본 인스�
 <strong>사실 두 방식 모두 완벽하지 않습니다.</strong> 또한, 장애가 발생하면 복제 구성원 집합에 변경이 발생하게 되므로 쉽지 않습니다.</p>
 </blockquote>
 <p>Amazon Aurora는 <strong>쿼럼 모델</strong>을 사용하여 3개의 가용 영역(AZ)에 걸쳐 4개의 쓰기 세트와 3개의 읽기 세트가 있는 6개 복사본 쿼럼을 사용하며, Pirmary에서 쓰기가 발생하면 6개의 스토리지 노드에 REDO 로그 레코드가 작성되며 <strong>이중 4개의 노드가 쓰기 완료 응답(ACK)을 전송하면 해당 쓰기가 완료된 것으로 확인한다.</strong><br>
-3개의 AZ에 걸쳐 노드를 분산하기 때문에, 하나의 AZ에 문제가 발생허다러도 내결함성을 유지할 수 있으며, 느린 노드가 존재하더라도 다른 노드가 신속하게 응답하기 때문에 가용성이 떨어지지 않는다.</p>
+3개의 AZ에 걸쳐 노드를 분산하기 때문에, 하나의 AZ에 문제가 발생하더라도 내결함성을 유지할 수 있으며, 느린 노드가 존재하더라도 다른 노드가 신속하게 응답하기 때문에 가용성이 떨어지지 않는다.</p>
 <p>즉, <strong>Aurora의 읽기 전용 복제본은 마스터 데이터베이스 노드와 동일한 스토리지 볼륨을 공유하며, 마스터의 실행 로그를 비동기로 전달받아 캐시내 데이터 페이지를 갱신한다.</strong><br>
 그렇기 때문에 읽기 복제본의 데이터 유실이나 마스터 노드로 승격 시키는 비용도 줄어든다.</p>
 <p>마스터(쓰기) 노드에서 커밋된 모든 변경사항이 복제본으로 미처 전파되지 않았더라도 영구적으로 저장되며 복제 노드들은 독자적으로 읽기를 수행할 때 읽어야 할 데이터의 쓰기 및 쓰기 완료 응답 등의 현황에 대해 알 수 없다.<br>
@@ -260,7 +260,7 @@ MySQL은 가장 최근 커밋의 로그시퀀스번호(LSN)을 설정하여 이�
 <li><a href="https://medium.com/garimoo/aws-aurora-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-6ff87b0d48c5">AWS Aurora 아키텍처</a></li>
 <li><a href="https://blog.asquareb.com/blog/2021/01/10/amazon-aurora-storage/">Amazon Aurora Storage</a></li>
 </ol>
-<h3>Aurora 클러스터 스토리지는 어느것을 사용하나?</h3>
+<h2 id="aurora-클러스터-스토리지는-어느것을-사용하나" style="position:relative;">Aurora 클러스터 스토리지는 어느것을 사용하나?<a href="#aurora-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%EB%8A%94-%EC%96%B4%EB%8A%90%EA%B2%83%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EB%82%98" aria-label="aurora 클러스터 스토리지는 어느것을 사용하나 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>Aurora 클러스터 스토리지에는 <strong>Aurora Standard</strong> 와 <strong>Aurora I/O-Optimized</strong> 가 존재한다.</p>
 <p><strong>Aurora Standard</strong>는 I/O 사용량이 낮거나 보편적인 대부분의 환경에서 효율적인 요금으로 사용할 수 있는 구성이기에 많이 선택되는 것 같다.<br>
 <strong>Aurora I/O-Optimized</strong>는 I/O를 많이 사용하는 애플리케이션(결제 처리 시스템, 전자상거래 시스템, 금융 애플리케이션 등)에 우수한 가격 대비 성능을 제공하는 데이터베이스 클러스터 구성이다.<br>
@@ -273,7 +273,7 @@ MySQL은 가장 최근 커밋의 로그시퀀스번호(LSN)을 설정하여 이�
 <li><a href="https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html">Aurora 클러스터 스토리지 구성</a></li>
 <li><a href="https://aws.amazon.com/ko/rds/aurora/pricing/">Aurora 클러스터 스토리지 요금</a></li>
 </ol>
-<h3>정리</h3>
+<h2 id="정리" style="position:relative;">정리<a href="#%EC%A0%95%EB%A6%AC" aria-label="정리 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>AWS Aurora 클러스터의 장점들을 확인할 수 있었다.</p>
 <ol>
 <li><strong>동기화 지연율</strong></li>
@@ -281,11 +281,12 @@ MySQL은 가장 최근 커밋의 로그시퀀스번호(LSN)을 설정하여 이�
 <li><strong>고가용성(페일오버)</strong></li>
 </ol>
 <p>위의 장점들만 보아도 클러스터를 직접 구성하여 관리 포인트가 늘어나는 것 보다 AWS Aurora를 사용하는 것이 타당한 선택이란 것을 확인할 수 있다.</p>
-<h2 id="aurora-인스턴스-스펙-선정을-위한-부하-테스트" style="position:relative;">Aurora 인스턴스 스펙 선정을 위한 부하 테스트<a href="#aurora-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%8A%A4%ED%8E%99-%EC%84%A0%EC%A0%95%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8" aria-label="aurora 인스턴스 스펙 선정을 위한 부하 테스트 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<h1 id="aurora-인스턴스-스펙-선정을-위한-부하-테스트" style="position:relative;">Aurora 인스턴스 스펙 선정을 위한 부하 테스트<a href="#aurora-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%8A%A4%ED%8E%99-%EC%84%A0%EC%A0%95%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8" aria-label="aurora 인스턴스 스펙 선정을 위한 부하 테스트 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>Aurora 클러스터를 사용하기로 결정했다면 이제 쓰기 인스턴스의 기본 스펙을 어느정도로 사용할지 추산해야 한다.<br>
 부하 테스트 결과를 통해 운영 환경과 비슷한 스펙의 DB와 AWS 인스턴스를 비교하기에는 <strong>mysqlslap</strong> 의 테스트 결과 내용은 <strong>sysbench</strong>에 비해 테스트 결과 내용이 빈약하다고 느꼈다.</p>
 <deckgo-highlight-code  terminal="carbon" theme="one-light" line-numbers="true"  >
-          <code slot="code"># mysqlslap
+          <code slot="code"># mysqlslap 테스트 결과 정보
+
 Benchmark
         Average number of seconds to run all queries: 217.151 seconds
         Minimum number of seconds to run all queries: 213.368 seconds
@@ -302,7 +303,8 @@ Voluntary context switches 102785, Involuntary context switches 43</code>
         </deckgo-highlight-code>
 <p>mysqlslap에 더 자세한 내용은 <a href="https://www.digitalocean.com/community/tutorials/how-to-measure-mysql-query-performance-with-mysqlslap">mysqlslap으로 MySQL 쿼리 성능을 측정하는 방법</a>을 참고하길 바란다.</p>
 <deckgo-highlight-code  terminal="carbon" theme="one-light" line-numbers="true"  >
-          <code slot="code"># sysbench
+          <code slot="code"># sysbench 테스트 결과 정보
+
 Running the test with following options:				
 Number of threads: 1				
 Initializing random number generator from current time				
@@ -338,7 +340,7 @@ Threads fairness:
     events (avg/stddev):           1663.0000/0.00				
     execution time (avg/stddev):   9.9923/0.00				</code>
         </deckgo-highlight-code>
-<p>sysbench는 테스트에 실행된 총 쿼리수(초당 쿼리수), 총 소요시간, 지연율, <a href="https://www.percona.com/blog/computing-95-percentile-in-mysql/">95 백분위수</a>까지 자동으로 계산해주기에 성능 비교에는 sysbench가 유용할 것이라고 판단했다.<br>
+<p>sysbench는 테스트에 실행된 총 쿼리수(초당 쿼리수), 총 소요시간, 지연율, <a href="https://www.percona.com/blog/computing-95-percentile-in-mysql/">95 백분위수</a>까지 자동으로 계산해주기에 성능 비교에는 sysbench가 더 유용할 것이라고 판단했다.<br>
 그리고 <strong>sysbench는 테스트에 사용할 task의 종류를 지정할 수 있다.</strong></p>
 <ul>
 <li>bulk_insert.lua</li>
@@ -367,8 +369,8 @@ filename=$6
 sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
 sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task prepare
 
+# 스레드 1개 ~ 2000개 까지
 sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1 --table-size=444444 /usr/share/sysbench/$task run &gt;&gt; /stress_test/$filename.txt
-...
 sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=2000 --table-size=444444 /usr/share/sysbench/$task run &gt;&gt; /stress_test/$filename.txt</code>
         </deckgo-highlight-code>
 <p>테스트를 실행하기전 <code class="language-text">prepare</code>를 꼭 거쳐야하며, 테스트가 끝나고 기존에 사용한 테이블과 데이터를 <code class="language-text">cleanup</code>단계에서 제거해야 한다.<br>
@@ -602,7 +604,7 @@ open fun dataSourceTransactionManager(routingDataSource: DataSource): PlatformTr
 <li>두 개의 엔드포인트와 복제 인스턴스를 사용하여 실제 이관할 이관 전략을 지정하는 <strong>데이터베이스 마이그레이션 태스크</strong></li>
 </ol>
 <p>제일 중요한 것은 <strong>데이터베이스 마이그레이션 태스크</strong> 지정인데, 이와 관련해서 유의해야 할 점들을 살펴보자.</p>
-<h3>1. 적재 모드 선택과 데이터 검증</h3>
+<h2 id="적재-모드-선택과-데이터-검증" style="position:relative;">적재 모드 선택과 데이터 검증<a href="#%EC%A0%81%EC%9E%AC-%EB%AA%A8%EB%93%9C-%EC%84%A0%ED%83%9D%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%80%EC%A6%9D" aria-label="적재 모드 선택과 데이터 검증 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p><strong>초기 적재</strong> 와 <strong>변경 사항 복제</strong> 를 선택할 수 있으며 두 작업을 함께 진행하도록 할 수도 있다.</p>
 <ol>
 <li><strong>기존 데이터 마이그레이션(전체 로드만)</strong> - 소스 엔드포인트에서 대상 엔드포인트로 한 번만 마이그레이션을 수행</li>
@@ -614,19 +616,19 @@ open fun dataSourceTransactionManager(routingDataSource: DataSource): PlatformTr
 <p>그리고 초기 적재가 끝나면 소스 DB와 타겟 DB의 <strong>데이터 검증</strong> 작업도 지정할 수 있다.<br>
 데이터 검증에 문제가 발생하면 어떤 문제가 발생했는지 <code class="language-text">awsdms_control.awsdms_validation_failures_v1</code> 테이블에서 확인할 수 있다.</p>
 <deckgo-highlight-code  terminal="carbon" theme="one-light" line-numbers="true"  >
-          <code slot="code">+---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+
-|TASK_NAME|TABLE_OWNER|TABLE_NAME|FAILURE_TIME           |KEY_TYPE|KEY                                |FAILURE_TYPE  |
-+---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+
-|...      |...        |...       |2024-03-29 04:28:55.367|Row     |{ &quot;key&quot;:	[&quot;key1&quot;, &quot;key2&quot;, ...] }   |MISSING_TARGET|
-|...      |...        |...       |2024-03-29 04:28:55.409|Row     |{ &quot;key&quot;:	[&quot;key1&quot;, &quot;key2&quot;, ...] }   |MISSING_SOURCE|
-+---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+</code>
+          <code slot="code">+----------+-----------------------+--------+-----------------------------------+--------------+
+|TABLE_NAME|FAILURE_TIME           |KEY_TYPE|KEY                                |FAILURE_TYPE  |
++----------+-----------------------+--------+-----------------------------------+--------------+
+|...       |2024-03-29 04:28:55.367|Row     |{ &quot;key&quot;:	[&quot;key1&quot;, &quot;key2&quot;, ...] } |MISSING_TARGET|
+|...       |2024-03-29 04:28:55.409|Row     |{ &quot;key&quot;:	[&quot;key1&quot;, &quot;key2&quot;, ...] } |MISSING_SOURCE|
++----------+-----------------------+--------+-----------------------------------+--------------+</code>
         </deckgo-highlight-code>
 <p>어떤 DB에서 실패하였는지, 어떤 레코드인지 식별하기 위한 정보들이 모두 들어있다.<br>
 실제로 이관이 끝나고 해당 로그를 기반으로 어떤 레코드에 문제가 있었는지 확인하기 편하다.</p>
-<h3>2. 파티셔닝 테이블 이관</h3>
+<h2 id="파티셔닝-테이블-이관" style="position:relative;">파티셔닝 테이블 이관<a href="#%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9D%B4%EA%B4%80" aria-label="파티셔닝 테이블 이관 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>DMS는 분할된 테이블에 대한 DDL을 지원하지 않기 때문에 이관 대상 테이블에 파티셔닝된 테이블이 있다면, 대상 DB에 미리 생성해놓아야 한다.<br>
-그리고 꼭 <strong>대상 테이블 준비 모드는 <code class="language-text">"아무 작업 안함"</code> 또는 <code class="language-text">"자르기"</code>를 선택</strong> 하여 이관 시작시 대상 DB의 메타데이터를 삭제하지 않도록 해야 한다.</p>
-<h3>3. LOB 컬럼</h3>
+그리고 꼭 태스크 설정의 <strong>대상 테이블 준비 모드는 <code class="language-text">"아무 작업 안함"</code> 또는 <code class="language-text">"자르기"</code>를 선택</strong> 하여 이관 시작시 대상 DB의 메타데이터를 삭제하지 않도록 해야 한다.</p>
+<h2 id="lob-컬럼" style="position:relative;">LOB 컬럼<a href="#lob-%EC%BB%AC%EB%9F%BC" aria-label="lob 컬럼 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>이관 테이블 중 LOB 컬럼이 존재한다면 아래의 설정에 신경써야 한다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -664,12 +666,12 @@ open fun dataSourceTransactionManager(routingDataSource: DataSource): PlatformTr
           <code slot="code">SELECT MAX(OCTET_LENGTH({lob_column})) / 1024 AS max_size_kb
 FROM {table};</code>
         </deckgo-highlight-code>
-<p>그리고 LOB 컬럼은 테이블에 데이터 INSERT 시점에 이관되지 않고 <strong>삽입된 레코드에 UPDATE로 이관</strong>되기 때문에 만약 LOB 컬럼이 NOT NULL이라면 <strong>이관할 때에는 NULL을 허용하고 이관 끝난 후에 UPDATE</strong> 해줘야 한다.</p>
-<h3>4. 이관 시 소스 엔드포인트 ServerTimeZone 설정</h3>
+<p>그리고 LOB 컬럼은 테이블에 데이터 INSERT 시점에 이관되지 않고 <strong>삽입된 레코드에 UPDATE로 이관</strong>되기 때문에 만약 LOB 컬럼이 NOT NULL이라면 <strong>이관할 때에는 NULL을 허용하고 이관이 끝난 후에 제약조건을 추가</strong> 해줘야 한다.</p>
+<h2 id="이관-시-소스-엔드포인트-servertimezone-설정" style="position:relative;">이관 시 소스 엔드포인트 ServerTimeZone 설정<a href="#%EC%9D%B4%EA%B4%80-%EC%8B%9C-%EC%86%8C%EC%8A%A4-%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8-servertimezone-%EC%84%A4%EC%A0%95" aria-label="이관 시 소스 엔드포인트 servertimezone 설정 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>소스 DB의 timezone이 UTC가 아니고 TIMESTAMPE 컬럼을 사용중이라면 소스 엔드포인트의 ServerTimeZone을 설정해줘야 한다.<br>
 <a href="https://repost.aws/knowledge-center/dms-migrate-mysql-non-utc">How do I migrate a MySQL database in a non-UTC time zone using AWS DMS tasks?</a></p>
 <h1 id="mysql-버전업을-진행하면서-고려해야할-점" style="position:relative;">MySQL 버전업을 진행하면서 고려해야할 점<a href="#mysql-%EB%B2%84%EC%A0%84%EC%97%85%EC%9D%84-%EC%A7%84%ED%96%89%ED%95%98%EB%A9%B4%EC%84%9C-%EA%B3%A0%EB%A0%A4%ED%95%B4%EC%95%BC%ED%95%A0-%EC%A0%90" aria-label="mysql 버전업을 진행하면서 고려해야할 점 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
-<h3>1. 예약어</h3>
+<h2 id="예약어" style="position:relative;">예약어<a href="#%EC%98%88%EC%95%BD%EC%96%B4" aria-label="예약어 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>작성된 쿼리 중에 예약어가 포함되어 있는지 확인해야 한다. <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html#keywords-8-0-detailed-C">MySQL 예약어</a>에서 사용 중인 예약어가 있는지 확인하는 것이 좋다.<br>
 MySQL 8.0.2에 추가된 <code class="language-text">RANK</code> 예약어가 포함되어 있어서 모두 백틱으로 처리해주었다.</p>
 <p>그리고 아래와 같이 Map의 Entry를 순회하며 생성하는 동적 쿼리에서 <code class="language-text">${key}</code>에 예약어가 포함되는 경우가 있어서 해당 쿼리도 백틱으로 처리해주었다.</p>
@@ -682,7 +684,7 @@ MySQL 8.0.2에 추가된 <code class="language-text">RANK</code> 예약어가 �
     WHERE ...
 &lt;/update&gt;</code>
         </deckgo-highlight-code>
-<h3>2. SSL 설정</h3>
+<h2 id="ssl-설정" style="position:relative;">SSL 설정<a href="#ssl-%EC%84%A4%EC%A0%95" aria-label="ssl 설정 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>각 애플리케이션에서 여러 DB를 사용하는데 DB 중에 MySQL 5.6이 포함되어 있어 해당 연결에서 <code class="language-text">useSSL=false</code> 속성을 사용 중이였다.<br>
 MySQL 5.6은 SSL 설정을 직접 해주어야 하는데 따로 설정하지 않고 사용 중이라서 해당 속성을 지정한 것 같다.</p>
 <p>이번에 추가한 AWS Aurora MySQL 8.0.28은 1.2와 1.3버전을 지원하고 Java 8부터 1.2를 지원하기 때문에 <code class="language-text">useSSL=false</code> 속성을 모두 제거해도 무방하다.</p>
@@ -737,17 +739,17 @@ from sys.session_ssl_status a join performance_schema.threads b
    on a.thread_id= b.thread_id
 order by ssl_version desc;
 
-+----------------+--------------+---------------+----------------+-----------+---------------------------+
-|processlist_user|processlist_id|connection_type|PROCESSLIST_HOST|ssl_version|ssl_cipher                 |
-+----------------+--------------+---------------+----------------+-----------+---------------------------+
-|user            |811513        |SSL/TLS        |...             |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
-|user            |811738        |SSL/TLS        |...             |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
-|user            |810957        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
-|user            |810965        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
-|user            |810970        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
-+----------------+--------------+---------------+----------------+-----------+---------------------------+</code>
++----------------+--------------+---------------+-----------+---------------------------+
+|processlist_user|processlist_id|connection_type|ssl_version|ssl_cipher                 |
++----------------+--------------+---------------+-----------+---------------------------+
+|user            |811513        |SSL/TLS        |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
+|user            |811738        |SSL/TLS        |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
+|user            |810957        |SSL/TLS        |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
+|user            |810965        |SSL/TLS        |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
+|user            |810970        |SSL/TLS        |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
++----------------+--------------+---------------+-----------+---------------------------+</code>
         </deckgo-highlight-code>
-<h3>3. utf8mb3 → utf8mb4</h3>
+<h2 id="utf8mb3--utf8mb4" style="position:relative;">utf8mb3 → utf8mb4<a href="#utf8mb3--utf8mb4" aria-label="utf8mb3  utf8mb4 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>MySQL 8.0 부터는 기본적으로 utf8mb4를 지원하며 utf8mb3는 deprecate될 예정이므로 마이그레이션 하면서 테이블 collation을 변경하여야 한다.<br>
 최대 문자 길이가 3바이트에서 4바이트로 더 많이 차지하기 때문에 확인할 것이 있다.</p>
 <p>첫 번째로 <strong>테이블의 컬럼 최대 사이즈를 확인</strong> 하여야 한다.<br>
@@ -789,7 +791,7 @@ GROUP BY TABLE_SCHEMA,TABLE_NAME,INDEX_NAME;</code>
 <li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-row-format.html#innodb-row-format-dynamic">DYNAMIC Row Format</a></li>
 <li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-limits.html">InnoDB Limits</a></li>
 </ol>
-<h3>4. ZEROFILL</h3>
+<h2 id="zerofill" style="position:relative;">ZEROFILL<a href="#zerofill" aria-label="zerofill permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>MySQL 8.0.17부터 숫자 데이터 유형에 대한 ZEROFILL 속성과 정수 데이터 유형에 대한 표시 너비 속성은 더 이상 사용되지 않기 때문에 테이블 DDL에 <code class="language-text">INT(4)</code>와 같이 너비를 지정해주면 경고 메시지가 발생한다.<br>
 추가로 FLOAT 및 DOUBLE 열에 대한 AUTO_INCREMENT 지원도 향후 MySQL 버전에서 제거될 예정이기 때무에 정수 유형으로 변환해야한다.</p>
 <p><strong>참고</strong></p>
@@ -802,17 +804,35 @@ GROUP BY TABLE_SCHEMA,TABLE_NAME,INDEX_NAME;</code>
 <li>
 <p><a href="#aws-aurora-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EB%B6%84%EC%84%9D">AWS Aurora 클러스터 분석</a></p>
 <ul>
-<li><a href="#aurora-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%8A%A4%ED%8E%99-%EC%84%A0%EC%A0%95%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8">Aurora 인스턴스 스펙 선정을 위한 부하 테스트</a></li>
+<li><a href="#aurora-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EC%9D%98-%ED%8E%98%EC%9D%BC%EC%98%A4%EB%B2%84%EC%99%80-%ED%8E%98%EC%9D%BC%EB%B0%B1%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%A7%84%ED%96%89%EB%90%98%EB%8A%94%EA%B0%80">Aurora 클러스터의 페일오버와 페일백은 어떻게 진행되는가?</a></li>
+<li><a href="#secondary%EC%9D%98-%EB%8F%99%EA%B8%B0%ED%99%94-%EC%A7%80%EC%97%B0%EC%9C%A8%EC%9D%80-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84%EC%9D%B8%EA%B0%80">Secondary의 동기화 지연율은 어느정도인가?</a></li>
+<li><a href="#aurora-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%EB%8A%94-%EC%96%B4%EB%8A%90%EA%B2%83%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EB%82%98">Aurora 클러스터 스토리지는 어느것을 사용하나?</a></li>
+<li><a href="#%EC%A0%95%EB%A6%AC">정리</a></li>
 </ul>
+</li>
+<li>
+<p><a href="#aurora-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%8A%A4%ED%8E%99-%EC%84%A0%EC%A0%95%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8">Aurora 인스턴스 스펙 선정을 위한 부하 테스트</a></p>
 </li>
 <li>
 <p><a href="#%EC%8A%A4%ED%94%84%EB%A7%81%EC%97%90%EC%84%9C-%EC%9D%BD%EA%B8%B0%EC%93%B0%EA%B8%B0-%EB%B6%84%EB%A6%AC">스프링에서 읽기/쓰기 분리</a></p>
 </li>
 <li>
 <p><a href="#aws-dms%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9D%B4%EA%B4%80">AWS DMS를 이용한 데이터 이관</a></p>
+<ul>
+<li><a href="#%EC%A0%81%EC%9E%AC-%EB%AA%A8%EB%93%9C-%EC%84%A0%ED%83%9D%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%80%EC%A6%9D">적재 모드 선택과 데이터 검증</a></li>
+<li><a href="#%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9D%B4%EA%B4%80">파티셔닝 테이블 이관</a></li>
+<li><a href="#lob-%EC%BB%AC%EB%9F%BC">LOB 컬럼</a></li>
+<li><a href="#%EC%9D%B4%EA%B4%80-%EC%8B%9C-%EC%86%8C%EC%8A%A4-%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8-servertimezone-%EC%84%A4%EC%A0%95">이관 시 소스 엔드포인트 ServerTimeZone 설정</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#mysql-%EB%B2%84%EC%A0%84%EC%97%85%EC%9D%84-%EC%A7%84%ED%96%89%ED%95%98%EB%A9%B4%EC%84%9C-%EA%B3%A0%EB%A0%A4%ED%95%B4%EC%95%BC%ED%95%A0-%EC%A0%90">MySQL 버전업을 진행하면서 고려해야할 점</a></p>
+<ul>
+<li><a href="#%EC%98%88%EC%95%BD%EC%96%B4">예약어</a></li>
+<li><a href="#ssl-%EC%84%A4%EC%A0%95">SSL 설정</a></li>
+<li><a href="#utf8mb3--utf8mb4">utf8mb3 → utf8mb4</a></li>
+<li><a href="#zerofill">ZEROFILL</a></li>
+</ul>
 </li>
 </ul></div></div><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2024<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024y/mysqlMigration/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
