@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 11 May 2024 11:33:54 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블 실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 15 May 2024 15:34:40 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블 실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다.&lt;br&gt;
 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다.&lt;/p&gt;
 &lt;ol&gt;
@@ -754,35 +754,8 @@ Threads fairness:
     events (avg/stddev):           1663.0000/0.00				
     execution time (avg/stddev):   9.9923/0.00				&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;sysbench는 테스트에 실행된 총 쿼리수(초당 쿼리수), 총 소요시간, 지연율, &lt;a href=&quot;https://www.percona.com/blog/computing-95-percentile-in-mysql/&quot;&gt;95 백분위수&lt;/a&gt;까지 자동으로 계산해주기에 성능 비교에는 sysbench가 유용할 것이라고 판단했다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;sh&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;#!/bin/bash
-host=$1
-port=$2
-user=$3
-password=$4
-task=$5
-filename=$6
-
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task prepare
-
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=50 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=100 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=300 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=500 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1000 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1300 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1500 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1700 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=2000 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
-
-sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
-&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;테스트에 사용한 쉘 스크립트이며, &lt;strong&gt;한 개의 task에 스레드를 1개부터 2000개까지 점진적으로 증가시켜서 테스트를 진행하였다.&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;sysbench에는 테스트에 사용할 task의 종류를 지정할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;sysbench는 테스트에 실행된 총 쿼리수(초당 쿼리수), 총 소요시간, 지연율, &lt;a href=&quot;https://www.percona.com/blog/computing-95-percentile-in-mysql/&quot;&gt;95 백분위수&lt;/a&gt;까지 자동으로 계산해주기에 성능 비교에는 sysbench가 유용할 것이라고 판단했다.&lt;br&gt;
+그리고 &lt;strong&gt;sysbench는 테스트에 사용할 task의 종류를 지정할 수 있다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;bulk_insert.lua&lt;/li&gt;
 &lt;li&gt;oltp_common.lua&lt;/li&gt;
@@ -798,6 +771,24 @@ sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-passwo
 &lt;li&gt;&lt;strong&gt;select_random_points.lua&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;select_random_ranges.lua&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;deckgo-highlight-code language=&quot;shell&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;#!/bin/bash
+host=$1
+port=$2
+user=$3
+password=$4
+task=$5
+filename=$6
+
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task prepare
+
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt
+...
+sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=2000 --table-size=444444 /usr/share/sysbench/$task run &amp;gt;&amp;gt; /stress_test/$filename.txt&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;테스트를 실행하기전 &lt;code class=&quot;language-text&quot;&gt;prepare&lt;/code&gt;를 꼭 거쳐야하며, 테스트가 끝나고 기존에 사용한 테이블과 데이터를 &lt;code class=&quot;language-text&quot;&gt;cleanup&lt;/code&gt;단계에서 제거해야 한다.&lt;br&gt;
+테스트에 사용한 쉘 스크립트이며, &lt;code class=&quot;language-text&quot;&gt;cleanup&lt;/code&gt; → &lt;code class=&quot;language-text&quot;&gt;prepare&lt;/code&gt; → &lt;code class=&quot;language-text&quot;&gt;task&lt;/code&gt; 순서로 정의했다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- prepare 단계
 create table sbtest1
@@ -1030,9 +1021,9 @@ open fun dataSourceTransactionManager(routingDataSource: DataSource): PlatformTr
 &lt;h3&gt;1. 적재 모드 선택과 데이터 검증&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;초기 적재&lt;/strong&gt; 와 &lt;strong&gt;변경 사항 복제&lt;/strong&gt; 를 선택할 수 있으며 두 작업을 함께 진행하도록 할 수도 있다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;기존 데이터 마이그레이션(전체 로드만) - 소스 엔드포인트에서 대상 엔드포인트로 한 번만 마이그레이션을 수행&lt;/li&gt;
-&lt;li&gt;기존 데이터 마이그레이션 및 진행 중인 변경 사항 복제(전체 로드 및 CDC) - 소스에서 대상으로 한 번 마이그레이션을 수행한 다음, 소스에서 대상으로 데이터 변경 사항을 계속 복제&lt;/li&gt;
-&lt;li&gt;데이터 변경 사항만 복제(CDC만 해당) - 일회성 마이그레이션을 수행하지 않고 소스에서 타깃으로 데이터 변경 사항을 계속 복제&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;기존 데이터 마이그레이션(전체 로드만)&lt;/strong&gt; - 소스 엔드포인트에서 대상 엔드포인트로 한 번만 마이그레이션을 수행&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;기존 데이터 마이그레이션 및 진행 중인 변경 사항 복제(전체 로드 및 CDC)&lt;/strong&gt; - 소스에서 대상으로 한 번 마이그레이션을 수행한 다음, 소스에서 대상으로 데이터 변경 사항을 계속 복제&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;데이터 변경 사항만 복제(CDC만 해당)&lt;/strong&gt; - 일회성 마이그레이션을 수행하지 않고 소스에서 타깃으로 데이터 변경 사항을 계속 복제&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;변경 사항 복제는 초기 적재가 끝나면 소스 DB의 binlog를 기반으로 타겟 DB에 동기화 시키는 작업을 의미한다.&lt;br&gt;
 해당 기능을 실행하기 위해서는 소스 DB의 binlog가 활성화되어 있어야 하며, &lt;a href=&quot;https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-stored-proc-configuring.html#mysql_rds_set_configuration-usage-notes.binlog-retention-hours&quot;&gt;binlog 보존 시간&lt;/a&gt;을 확인해야 한다.&lt;/p&gt;
