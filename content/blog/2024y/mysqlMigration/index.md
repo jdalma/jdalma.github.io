@@ -28,7 +28,7 @@ IDC에서 운용중이던 단일 데이터베이스를 AWS Aurora로 이관하�
 
 Aurora 클러스터를 사용하기 위해서는 확인해야 할 부분들이 있었다.
 
-<h3>Aurora 클러스터의 페일오버와 페일백은 어떻게 진행되는가?</h3>
+## Aurora 클러스터의 페일오버와 페일백은 어떻게 진행되는가?
 
 기본 인스턴스에 문제가 발생하는 경우 읽기 인스턴스 중 하나가 기본 인스턴스 역할을 인수한다.  
 Aurora는 데이터베이스 문제를 감지하고 필요한 경우 장애 조치 메커니즘을 자동으로 활성화하여 장애 조치 중에 쓰기 작업을 처리하지 못하는 시간이 최소화된다.  
@@ -48,7 +48,7 @@ Aurora 복제본을 기본 인스턴스로 승격시키는 것이 기본 인스�
   
 운영 중 DB 스케일 업에 대한 트러블 슈팅 글도 읽어보면 도움이 될 것이다. [29CM 의 이굿위크 장애대응 기록](https://medium.com/29cm/29cm-%EC%9D%98-%EC%9D%B4%EA%B5%BF%EC%9C%84%ED%81%AC-%EC%9E%A5%EC%95%A0%EB%8C%80%EC%9D%91-%EA%B8%B0%EB%A1%9D-177b6b2f07a0)
 
-<h3>Secondary의 동기화 지연율은 어느정도인가?</h3>
+## Secondary의 동기화 지연율은 어느정도인가?
 
 먼저 쓰기 연산은 Primary에서 관리하며 Aurora 복제본(Secondary)은 클러스터 볼륨의 읽기 연산에 사용되므로 읽기 조정에 유용하다.  
 데이터들은 단일 AWS 리전에서 다중 가용 영역에 걸쳐 DB 클러스터에 데이터 복사본을 저장하며, DB 클러스터의 인스턴스가 여러 가용성 영역에 걸쳐 있는지 여부에 관계없이 복사본을 저장한다.  
@@ -69,7 +69,7 @@ DB 클러스터 볼륨은 DB 클러스터의 여러 데이터 사본으로 구�
 > **사실 두 방식 모두 완벽하지 않습니다.** 또한, 장애가 발생하면 복제 구성원 집합에 변경이 발생하게 되므로 쉽지 않습니다.  
   
 Amazon Aurora는 **쿼럼 모델**을 사용하여 3개의 가용 영역(AZ)에 걸쳐 4개의 쓰기 세트와 3개의 읽기 세트가 있는 6개 복사본 쿼럼을 사용하며, Pirmary에서 쓰기가 발생하면 6개의 스토리지 노드에 REDO 로그 레코드가 작성되며 **이중 4개의 노드가 쓰기 완료 응답(ACK)을 전송하면 해당 쓰기가 완료된 것으로 확인한다.**  
-3개의 AZ에 걸쳐 노드를 분산하기 때문에, 하나의 AZ에 문제가 발생허다러도 내결함성을 유지할 수 있으며, 느린 노드가 존재하더라도 다른 노드가 신속하게 응답하기 때문에 가용성이 떨어지지 않는다.  
+3개의 AZ에 걸쳐 노드를 분산하기 때문에, 하나의 AZ에 문제가 발생하더라도 내결함성을 유지할 수 있으며, 느린 노드가 존재하더라도 다른 노드가 신속하게 응답하기 때문에 가용성이 떨어지지 않는다.  
   
 즉, **Aurora의 읽기 전용 복제본은 마스터 데이터베이스 노드와 동일한 스토리지 볼륨을 공유하며, 마스터의 실행 로그를 비동기로 전달받아 캐시내 데이터 페이지를 갱신한다.**  
 그렇기 때문에 읽기 복제본의 데이터 유실이나 마스터 노드로 승격 시키는 비용도 줄어든다.  
@@ -93,7 +93,7 @@ Amazon Aurora는 **쿼럼 모델**을 사용하여 3개의 가용 영역(AZ)에 
 4. [AWS Aurora 아키텍처](https://medium.com/garimoo/aws-aurora-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-6ff87b0d48c5)
 5. [Amazon Aurora Storage](https://blog.asquareb.com/blog/2021/01/10/amazon-aurora-storage/)
 
-<h3>Aurora 클러스터 스토리지는 어느것을 사용하나?</h3>
+## Aurora 클러스터 스토리지는 어느것을 사용하나?
 
 Aurora 클러스터 스토리지에는 **Aurora Standard** 와 **Aurora I/O-Optimized** 가 존재한다.  
   
@@ -109,7 +109,7 @@ Aurora 클러스터 스토리지에는 **Aurora Standard** 와 **Aurora I/O-Opti
 2. [Aurora 클러스터 스토리지 구성](https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html)
 3. [Aurora 클러스터 스토리지 요금](https://aws.amazon.com/ko/rds/aurora/pricing/)
 
-<h3>정리</h3>
+## 정리
 
 AWS Aurora 클러스터의 장점들을 확인할 수 있었다.
 
@@ -119,13 +119,14 @@ AWS Aurora 클러스터의 장점들을 확인할 수 있었다.
 
 위의 장점들만 보아도 클러스터를 직접 구성하여 관리 포인트가 늘어나는 것 보다 AWS Aurora를 사용하는 것이 타당한 선택이란 것을 확인할 수 있다.  
 
-## Aurora 인스턴스 스펙 선정을 위한 부하 테스트
+# Aurora 인스턴스 스펙 선정을 위한 부하 테스트
 
 Aurora 클러스터를 사용하기로 결정했다면 이제 쓰기 인스턴스의 기본 스펙을 어느정도로 사용할지 추산해야 한다.  
 부하 테스트 결과를 통해 운영 환경과 비슷한 스펙의 DB와 AWS 인스턴스를 비교하기에는 **mysqlslap** 의 테스트 결과 내용은 **sysbench**에 비해 테스트 결과 내용이 빈약하다고 느꼈다.  
 
 ```
-# mysqlslap
+# mysqlslap 테스트 결과 정보
+
 Benchmark
         Average number of seconds to run all queries: 217.151 seconds
         Minimum number of seconds to run all queries: 213.368 seconds
@@ -143,7 +144,8 @@ Voluntary context switches 102785, Involuntary context switches 43
 mysqlslap에 더 자세한 내용은 [mysqlslap으로 MySQL 쿼리 성능을 측정하는 방법](https://www.digitalocean.com/community/tutorials/how-to-measure-mysql-query-performance-with-mysqlslap)을 참고하길 바란다.  
   
 ```
-# sysbench
+# sysbench 테스트 결과 정보
+
 Running the test with following options:				
 Number of threads: 1				
 Initializing random number generator from current time				
@@ -180,7 +182,7 @@ Threads fairness:
     execution time (avg/stddev):   9.9923/0.00				
 ```
 
-sysbench는 테스트에 실행된 총 쿼리수(초당 쿼리수), 총 소요시간, 지연율, [95 백분위수](https://www.percona.com/blog/computing-95-percentile-in-mysql/)까지 자동으로 계산해주기에 성능 비교에는 sysbench가 유용할 것이라고 판단했다.  
+sysbench는 테스트에 실행된 총 쿼리수(초당 쿼리수), 총 소요시간, 지연율, [95 백분위수](https://www.percona.com/blog/computing-95-percentile-in-mysql/)까지 자동으로 계산해주기에 성능 비교에는 sysbench가 더 유용할 것이라고 판단했다.  
 그리고 **sysbench는 테스트에 사용할 task의 종류를 지정할 수 있다.**  
 
 - bulk_insert.lua
@@ -209,8 +211,8 @@ filename=$6
 sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task cleanup
 sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --table-size=444444 /usr/share/sysbench/$task prepare
 
+# 스레드 1개 ~ 2000개 까지
 sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=1 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
-...
 sysbench --mysql-host=$host --mysql-port=$port --mysql-user=$user --mysql-password=$password --mysql-db=test --threads=2000 --table-size=444444 /usr/share/sysbench/$task run >> /stress_test/$filename.txt
 ```
 
@@ -366,7 +368,7 @@ DMS는 데이터 마이그레이션 서비스로, 다양한 소스 데이터베�
 
 제일 중요한 것은 **데이터베이스 마이그레이션 태스크** 지정인데, 이와 관련해서 유의해야 할 점들을 살펴보자.
 
-<h3>1. 적재 모드 선택과 데이터 검증</h3>
+## 적재 모드 선택과 데이터 검증
 
 **초기 적재** 와 **변경 사항 복제** 를 선택할 수 있으며 두 작업을 함께 진행하도록 할 수도 있다.  
 
@@ -381,23 +383,23 @@ DMS는 데이터 마이그레이션 서비스로, 다양한 소스 데이터베�
 데이터 검증에 문제가 발생하면 어떤 문제가 발생했는지 `awsdms_control.awsdms_validation_failures_v1` 테이블에서 확인할 수 있다.  
 
 ```
-+---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+
-|TASK_NAME|TABLE_OWNER|TABLE_NAME|FAILURE_TIME           |KEY_TYPE|KEY                                |FAILURE_TYPE  |
-+---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+
-|...      |...        |...       |2024-03-29 04:28:55.367|Row     |{ "key":	["key1", "key2", ...] }   |MISSING_TARGET|
-|...      |...        |...       |2024-03-29 04:28:55.409|Row     |{ "key":	["key1", "key2", ...] }   |MISSING_SOURCE|
-+---------+-----------+----------+-----------------------+--------+-----------------------------------+--------------+
++----------+-----------------------+--------+-----------------------------------+--------------+
+|TABLE_NAME|FAILURE_TIME           |KEY_TYPE|KEY                                |FAILURE_TYPE  |
++----------+-----------------------+--------+-----------------------------------+--------------+
+|...       |2024-03-29 04:28:55.367|Row     |{ "key":	["key1", "key2", ...] } |MISSING_TARGET|
+|...       |2024-03-29 04:28:55.409|Row     |{ "key":	["key1", "key2", ...] } |MISSING_SOURCE|
++----------+-----------------------+--------+-----------------------------------+--------------+
 ```
 
 어떤 DB에서 실패하였는지, 어떤 레코드인지 식별하기 위한 정보들이 모두 들어있다.  
 실제로 이관이 끝나고 해당 로그를 기반으로 어떤 레코드에 문제가 있었는지 확인하기 편하다.  
   
-<h3>2. 파티셔닝 테이블 이관</h3>
+## 파티셔닝 테이블 이관
 
 DMS는 분할된 테이블에 대한 DDL을 지원하지 않기 때문에 이관 대상 테이블에 파티셔닝된 테이블이 있다면, 대상 DB에 미리 생성해놓아야 한다.  
-그리고 꼭 **대상 테이블 준비 모드는 `"아무 작업 안함"` 또는 `"자르기"`를 선택** 하여 이관 시작시 대상 DB의 메타데이터를 삭제하지 않도록 해야 한다.  
+그리고 꼭 태스크 설정의 **대상 테이블 준비 모드는 `"아무 작업 안함"` 또는 `"자르기"`를 선택** 하여 이관 시작시 대상 DB의 메타데이터를 삭제하지 않도록 해야 한다.  
 
-<h3>3. LOB 컬럼</h3>
+## LOB 컬럼
 
 이관 테이블 중 LOB 컬럼이 존재한다면 아래의 설정에 신경써야 한다.  
 
@@ -410,16 +412,16 @@ SELECT MAX(OCTET_LENGTH({lob_column})) / 1024 AS max_size_kb
 FROM {table};
 ```
 
-그리고 LOB 컬럼은 테이블에 데이터 INSERT 시점에 이관되지 않고 **삽입된 레코드에 UPDATE로 이관**되기 때문에 만약 LOB 컬럼이 NOT NULL이라면 **이관할 때에는 NULL을 허용하고 이관 끝난 후에 UPDATE** 해줘야 한다.  
+그리고 LOB 컬럼은 테이블에 데이터 INSERT 시점에 이관되지 않고 **삽입된 레코드에 UPDATE로 이관**되기 때문에 만약 LOB 컬럼이 NOT NULL이라면 **이관할 때에는 NULL을 허용하고 이관이 끝난 후에 제약조건을 추가** 해줘야 한다.  
 
-<h3>4. 이관 시 소스 엔드포인트 ServerTimeZone 설정</h3>
+## 이관 시 소스 엔드포인트 ServerTimeZone 설정
 
 소스 DB의 timezone이 UTC가 아니고 TIMESTAMPE 컬럼을 사용중이라면 소스 엔드포인트의 ServerTimeZone을 설정해줘야 한다.  
 [How do I migrate a MySQL database in a non-UTC time zone using AWS DMS tasks?](https://repost.aws/knowledge-center/dms-migrate-mysql-non-utc)  
 
 # MySQL 버전업을 진행하면서 고려해야할 점
 
-<h3>1. 예약어</h3>
+## 예약어
 
 작성된 쿼리 중에 예약어가 포함되어 있는지 확인해야 한다. [MySQL 예약어](https://dev.mysql.com/doc/refman/8.0/en/keywords.html#keywords-8-0-detailed-C)에서 사용 중인 예약어가 있는지 확인하는 것이 좋다.  
 MySQL 8.0.2에 추가된 `RANK` 예약어가 포함되어 있어서 모두 백틱으로 처리해주었다.  
@@ -436,7 +438,7 @@ MySQL 8.0.2에 추가된 `RANK` 예약어가 포함되어 있어서 모두 백�
 </update>
 ```
 
-<h3>2. SSL 설정</h3>
+## SSL 설정
 
 각 애플리케이션에서 여러 DB를 사용하는데 DB 중에 MySQL 5.6이 포함되어 있어 해당 연결에서 `useSSL=false` 속성을 사용 중이였다.  
 MySQL 5.6은 SSL 설정을 직접 해주어야 하는데 따로 설정하지 않고 사용 중이라서 해당 속성을 지정한 것 같다.  
@@ -477,18 +479,18 @@ from sys.session_ssl_status a join performance_schema.threads b
    on a.thread_id= b.thread_id
 order by ssl_version desc;
 
-+----------------+--------------+---------------+----------------+-----------+---------------------------+
-|processlist_user|processlist_id|connection_type|PROCESSLIST_HOST|ssl_version|ssl_cipher                 |
-+----------------+--------------+---------------+----------------+-----------+---------------------------+
-|user            |811513        |SSL/TLS        |...             |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
-|user            |811738        |SSL/TLS        |...             |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
-|user            |810957        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
-|user            |810965        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
-|user            |810970        |SSL/TLS        |...             |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
-+----------------+--------------+---------------+----------------+-----------+---------------------------+
++----------------+--------------+---------------+-----------+---------------------------+
+|processlist_user|processlist_id|connection_type|ssl_version|ssl_cipher                 |
++----------------+--------------+---------------+-----------+---------------------------+
+|user            |811513        |SSL/TLS        |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
+|user            |811738        |SSL/TLS        |TLSv1.3    |TLS_AES_256_GCM_SHA384     |
+|user            |810957        |SSL/TLS        |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
+|user            |810965        |SSL/TLS        |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
+|user            |810970        |SSL/TLS        |TLSv1.2    |ECDHE-RSA-AES256-GCM-SHA384|
++----------------+--------------+---------------+-----------+---------------------------+
 ```
 
-<h3>3. utf8mb3 → utf8mb4</h3>
+## utf8mb3 → utf8mb4
 
 MySQL 8.0 부터는 기본적으로 utf8mb4를 지원하며 utf8mb3는 deprecate될 예정이므로 마이그레이션 하면서 테이블 collation을 변경하여야 한다.  
 최대 문자 길이가 3바이트에서 4바이트로 더 많이 차지하기 때문에 확인할 것이 있다.  
@@ -536,7 +538,7 @@ GROUP BY TABLE_SCHEMA,TABLE_NAME,INDEX_NAME;
 2. [DYNAMIC Row Format](https://dev.mysql.com/doc/refman/8.0/en/innodb-row-format.html#innodb-row-format-dynamic)
 3. [InnoDB Limits](https://dev.mysql.com/doc/refman/8.0/en/innodb-limits.html)
 
-<h3>4. ZEROFILL</h3>
+## ZEROFILL
 
 MySQL 8.0.17부터 숫자 데이터 유형에 대한 ZEROFILL 속성과 정수 데이터 유형에 대한 표시 너비 속성은 더 이상 사용되지 않기 때문에 테이블 DDL에 `INT(4)`와 같이 너비를 지정해주면 경고 메시지가 발생한다.  
 추가로 FLOAT 및 DOUBLE 열에 대한 AUTO_INCREMENT 지원도 향후 MySQL 버전에서 제거될 예정이기 때무에 정수 유형으로 변환해야한다.  
