@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 15 May 2024 15:44:57 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블 실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 26 May 2024 12:40:15 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블 실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다.&lt;br&gt;
 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다.&lt;/p&gt;
 &lt;ol&gt;
@@ -484,7 +484,506 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 &lt;h1 id=&quot;이펙티브-코틀린&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0&quot; aria-label=&quot;이펙티브 코틀린 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94&quot; aria-label=&quot;이펙티브 자바 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4&quot; aria-label=&quot;개발자를 위한 레디스 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt;&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81&quot; aria-label=&quot;nginx 쿡북 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[AWS DMS를 이용한 MySQL 마이그레이션]]></title><description><![CDATA[IDC에서 운용중이던 단일 데이터베이스를 AWS Aurora로 이관하는 동시에 MySQL…]]></description><link>https://jdalma.github.io/2024y/mysqlMigration/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/mysqlMigration/</guid><pubDate>Sat, 11 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;IDC에서 운용중이던 단일 데이터베이스를 AWS Aurora로 이관하는 동시에 MySQL 버전업도 이루어져야 했기 때문에 신경써야할 것이 많았다.&lt;br&gt;
+&lt;h1 id=&quot;nginx-쿡북&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt;&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81&quot; aria-label=&quot;nginx 쿡북 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[보이스카웃 규칙 실천하기]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/boyscoutRule/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/boyscoutRule/</guid><pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;엉클 밥이 설명한 &lt;a href=&quot;https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html&quot;&gt;보이스카웃 규칙&lt;/a&gt;을 실천한 경험을 정리해보려 한다.&lt;br&gt;
+보이스카웃 규칙에 대해서는 &lt;a href=&quot;https://johngrib.github.io/wiki/jargon/boy-scout-rule/&quot;&gt;종립님이 정리한 글&lt;/a&gt;을 읽어보자.&lt;/p&gt;
+&lt;h1 id=&quot;라이브러리에-대한-의존성-제한하기&quot; style=&quot;position:relative;&quot;&gt;라이브러리에 대한 의존성 제한하기&lt;a href=&quot;#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A0%9C%ED%95%9C%ED%95%98%EA%B8%B0&quot; aria-label=&quot;라이브러리에 대한 의존성 제한하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1ca94fb4d7ee01e7ade74f46d99e3ede/f02b9/before1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.999999999999996%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR42j1R7ZKCMBDj/Z/MP6DgjINCW4SRAsenCAgKue163s4sbFOaJsHCXxVFAdd14XkefN9HGIYYhoH31nVF3/e43++QUkIIwbPB3u83tm3jNmWZxzRNaJqGgWVZoHWGPM/5cNd1yLIMSZIwXpYV2rZlLI4/mKnn88m4ZZjHcYTjODidTqiqCkHg43h0EUWS11EUEVGBItf8llJgv7dxODg4n8/8jVKKZ8soSdMUu90Otm3TjTmiawd1rXG55GTNKKwhZIU46XCNG1IyQkUVQlHS5Qn1hSMyLv8VGmtseV6RFit+ekDFEzKtiahB3W2YXkBZv0jAgKIFdL0hEBXluODxGD6EhmSeZ1b57TC8kbqUrJp8Ngr/ASU1KbmRtZRzM3MQaNT1R8j3p/wCxuLBf5ySqGIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;before1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1ca94fb4d7ee01e7ade74f46d99e3ede/1cfc2/before1.png&quot;
+        srcset=&quot;/static/1ca94fb4d7ee01e7ade74f46d99e3ede/3684f/before1.png 225w,
+/static/1ca94fb4d7ee01e7ade74f46d99e3ede/fc2a6/before1.png 450w,
+/static/1ca94fb4d7ee01e7ade74f46d99e3ede/1cfc2/before1.png 900w,
+/static/1ca94fb4d7ee01e7ade74f46d99e3ede/21482/before1.png 1350w,
+/static/1ca94fb4d7ee01e7ade74f46d99e3ede/f02b9/before1.png 1554w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;검색 서비스에 의존하는 서비스들의 클라이언트 코드들이 위의 그림과 같이 응답으로 받는 ElasticSearch의 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt;에 직접 의존하는 것을 알 수 있다.&lt;br&gt;
+예를 들어, 검색에 실패하였을 경우 아래의 행위들을 클라이언트 코드에서 직접 구분하고 있었기에 비슷한 코드가 여러 곳에서 반복되는 것을 확인했다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;빈 검색 결과 객체를 반환하거나&lt;/li&gt;
+&lt;li&gt;null을 반환하거나&lt;/li&gt;
+&lt;li&gt;예외를 던지거나&lt;/li&gt;
+&lt;/ol&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;val searchResponse = searchService.search(...)
+if (searchResponse == null || searchResponse.failedShards &amp;gt; 0 || searchResponse.hits.totalHits == 0) {
+   // 검색 실패 로직
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위와 같이 클라이언트 코드에서 &lt;code class=&quot;language-text&quot;&gt;failedShards&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;hits.totalHits&lt;/code&gt; 필드들에 직접 의존하고 있어 엘라스틱서치의 클라이언트 의존성 버전 변경에 굉장히 민감해질 수 밖에 없다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c10543874b2b82b1afd258676a907a3c/f349c/usingSearchResponse.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 24.444444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA6klEQVR42pWO226DQAxE+REKyy7ZCxTKbUkEDQ0JEKjUVsr/f8vU0EjNQ1/6cOQZ2xrbMVJCaQOpo41QaigTIxA7uB7Dkx/8C0dSoJDqt8n4Dz7bcKnn3mfrgb+OPO44gj4K6UMVxzBJAqE1fAr0mYAXiLvm8MgzvgMLQtL8AYGAglZW7WilEZsIaV6grA8YpgUjcX3/wrR8YhwXzOSn+QOny4zm2KPat8QrMtviWFjcigK3qsRsazicCwrU0NEzjErQnc+4DCP604C2v+KtH3FoOmRFjZe8QppVVO1GSj7PSjRZjq6y2JcW3+fGlsbxStoXAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;usingSearchResponse&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c10543874b2b82b1afd258676a907a3c/1cfc2/usingSearchResponse.png&quot;
+        srcset=&quot;/static/c10543874b2b82b1afd258676a907a3c/3684f/usingSearchResponse.png 225w,
+/static/c10543874b2b82b1afd258676a907a3c/fc2a6/usingSearchResponse.png 450w,
+/static/c10543874b2b82b1afd258676a907a3c/1cfc2/usingSearchResponse.png 900w,
+/static/c10543874b2b82b1afd258676a907a3c/21482/usingSearchResponse.png 1350w,
+/static/c10543874b2b82b1afd258676a907a3c/d61c2/usingSearchResponse.png 1800w,
+/static/c10543874b2b82b1afd258676a907a3c/f349c/usingSearchResponse.png 2002w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이 검색 클라이언트 의존성을 격리시키면서 클라이언트 코드가 검색 결과에 따라 원하는 행위를 지정하도록 할 수 있는 방법은 없을까?&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sealed class ResponseResult&amp;lt;out T&amp;gt; {
+
+    data class Success&amp;lt;out T&amp;gt;(val body: T): ResponseResult&amp;lt;T&amp;gt;()
+    data class Failure(val errorResponse: ErrorResponse): ResponseResult&amp;lt;Nothing&amp;gt;()
+
+    val isSuccess: Boolean
+        get() = this is Success
+    val isFailure: Boolean
+        get() = this is Failure
+
+    inline fun onSuccess(action: (T) -&amp;gt; Unit): ResponseResult&amp;lt;T&amp;gt; {
+        if (this is Success) {
+            action(body)
+        }
+        return this
+    }
+
+    inline fun onFailure(action: (ErrorResponse) -&amp;gt; Unit): ResponseResult&amp;lt;T&amp;gt; {
+        if (this is Failure) {
+            action(errorResponse)
+        }
+        return this
+    }
+
+    fun getOrNull(): T? = if (this is Success) body else null
+
+    inline fun getOrThrow(exception: () -&amp;gt; Nothing): T {
+        return when (this) {
+            is Success -&amp;gt; body
+            is Failure -&amp;gt; exception()
+        }
+    }
+
+    inline fun &amp;lt;R&amp;gt; getOrDefault(default: R): R {
+        return when (this) {
+            is Success -&amp;gt; body
+            is Failure -&amp;gt; default
+        }
+    }
+}
+
+data class ErrorResponse(
+    val message: String,
+    val code: CustomError,
+    val status: HttpStatus
+)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;a href=&quot;https://tech.kakaopay.com/post/make-http-client-design-flexible/#%EA%B0%81%EA%B8%B0-%EB%8B%A4%EB%A5%B8-%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%97%90-%EB%A7%9E%EA%B2%8C-%EC%9C%A0%EC%97%B0%ED%95%9C-%ED%95%B8%EB%93%A4%EB%A7%81-%EC%A7%80%EC%9B%90&quot;&gt;MSA 환경에서의 유연한 HTTP 클라이언트 설계 전략&lt;/a&gt;을 참고하여 이 문제를 해결할 수 있었다.&lt;br&gt;
+간략하게 설명하자면 &lt;code class=&quot;language-text&quot;&gt;ResponseResult&lt;/code&gt; 추상 클래스를 상속하는 &lt;code class=&quot;language-text&quot;&gt;Success&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Failure&lt;/code&gt; 클래스를 통해 HTTP 통신 결과에 따라 클라이언트 코드가 원하는 행위를 지정할 수 있도록 도와주는 클래스이다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/287d55030171a22736ff2ee7fb54c446/f02b9/refactor1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.999999999999996%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABM0lEQVR42j2R63KCMBCFef8n8w8odGpFSKAgCTDcEVBUTjdr251JsjmQk283Fn6jLEu4rgvP83A6nRCGIaZp4m+v1wvjOGIYBkgpIYTg3GjP5xPbtvEwYZlpWRa0bcvCuq7I8xxFUfDhvu95n6YptM5RVTW6rmMtSd6aidvtxrplnOd5huM4OB6PqOsa/vkMj2ijOOJ9HMdkVKIsNK9SCuz3Ng4HB77v8z9RFHFuGRKlFHa7HWzbRqHp0OcXtOMi8z4wDj103kDIGkna4ztpiWSmy2qEokIQpDTO3CJT5T+hKY37RehTVlF/gFZcUKoLGXVo+g3LA6iaBwFMKDtANxsCUVMfV1yv09vQmNzvd6ZURKeyDBmVrOhh8kjyJeN4RSQ1kWRUmuK+mTwINJrmDfL3KD91/cET6pxlEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;refactor1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/287d55030171a22736ff2ee7fb54c446/1cfc2/refactor1.png&quot;
+        srcset=&quot;/static/287d55030171a22736ff2ee7fb54c446/3684f/refactor1.png 225w,
+/static/287d55030171a22736ff2ee7fb54c446/fc2a6/refactor1.png 450w,
+/static/287d55030171a22736ff2ee7fb54c446/1cfc2/refactor1.png 900w,
+/static/287d55030171a22736ff2ee7fb54c446/21482/refactor1.png 1350w,
+/static/287d55030171a22736ff2ee7fb54c446/f02b9/refactor1.png 1554w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;사실 검색 서비스에서 검색 결과를 &lt;code class=&quot;language-text&quot;&gt;ByteArrayInputStream&lt;/code&gt;으로만 응답해줄 것이 아니라 &lt;strong&gt;&quot;검색 서비스를 필요로 하는 서비스&quot;들에게 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt; 타입을 전혀 몰라도 검색 결과를 알 수 있도록 &lt;code class=&quot;language-text&quot;&gt;규격화된 응답 객체&lt;/code&gt;를 전송해야 마땅하다.&lt;/strong&gt;&lt;br&gt;
+하지만 검색 서비스 API 응답을 수정하는 작업은 작업 범위가 크다고 판단하였으며, 이번에 &lt;code class=&quot;language-text&quot;&gt;ResponseResult&lt;/code&gt;를 사용하여 의존성을 격리시킨다면 추후에 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt; 의존성을 제거하는 것은 쉬울 것이므로 수정 범위를 이 정도로만 정했다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;어떻게 적용하였는지 예제 코드를 확인해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// 확장함수
+fun HttpResponse&amp;lt;SearchResponse&amp;gt;.responseResult(): ResponseResult&amp;lt;Document&amp;gt; {
+    return when (this.isSuccess &amp;amp;&amp;amp; this.body != null &amp;amp;&amp;amp; this.body.failedShards == 0 &amp;amp;&amp;amp; this.body.hits.hits.isNotEmpty()) {
+        true -&amp;gt; {
+            val body = KotlinMapper.defaultMapper.readValue(hit.sourceAsString, Document::class.java)
+            ResponseResult.Success(body)
+        }
+        false -&amp;gt; ResponseResult.Failure(ErrorResponse(&amp;quot;외부 통신 실패&amp;quot;, CommonError.ERROR, HttpStatus.INTERNAL_SERVER_ERROR))
+    }
+}
+
+// UnirestInstance 요청 결과인 응답을 (확장함수를 사용하여) ResponseResult로 래핑
+fun searchResponseResult(...): ResponseResult&amp;lt;Document&amp;gt; {
+   return unirestInstance.post(url)
+      .cookie(cookie)
+      .routeParam(&amp;quot;cluster&amp;quot;, cluster)
+      .body(body)
+      .asObject&amp;lt;SearchResponse&amp;gt; { raw: RawResponse -&amp;gt;
+         // RawResponse convert to SearchResponse
+      }
+      .responseResult()
+}
+
+// ResponseResult를 반환받아 클라이언트 코드에서 행위를 지정
+// 1. 검색에 실패하였다면 null을 반환받음
+val document = searchService.searchResponseResult(...).getOrNull()
+
+// 2. 검색에 실패하였다면 지정한 예외를 던짐
+val document = searchService.searchResponseResult(...).getOrThrow {
+   throw DocumentNotFoundException(...)
+}
+
+// 3. 검색에 실패하였다면 지정한 람다의 반환값을 반환함
+val document = searchService.searchResponseResult(...).getOrDefault(::EmtyDocument) {
+   // body 가공 로직
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;이제부터는 격리시키고 싶은 의존성이 있다면 &lt;code class=&quot;language-text&quot;&gt;ResponseResult&lt;/code&gt;로 래핑하는 확장함수를 추가하면 된다.&lt;br&gt;
+그리고 클라이언트가 통신 결과에 따라 유연하게 람다를 지정하여 호출할 수 있어 클라이언트 코드가 불필요한 의존성을 알아야 할 필요가 없어졌다.&lt;/p&gt;
+&lt;h1 id=&quot;공통-기능을-모아놓은-빈-제거하기&quot; style=&quot;position:relative;&quot;&gt;공통 기능을 모아놓은 빈 제거하기&lt;a href=&quot;#%EA%B3%B5%ED%86%B5-%EA%B8%B0%EB%8A%A5%EC%9D%84-%EB%AA%A8%EC%95%84%EB%86%93%EC%9D%80-%EB%B9%88-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0&quot; aria-label=&quot;공통 기능을 모아놓은 빈 제거하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;폴더 구조를 가지는 기능을 가진 서비스가 있다.&lt;br&gt;
+어떤 정보들을 프로젝트안에 존재하는 폴더에 저장하는 기능이다. 즉, &lt;strong&gt;한 개의 프로젝트에 N개의 폴더를 생성할 수 있으며 각 폴더에 N개의 정보를 저장하는 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;한 프로젝트의 모든 폴더를 조회하는 API&lt;/li&gt;
+&lt;li&gt;한 프로젝트 안에 폴더를 생성하고 해당 폴더를 조회하는 API&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이 두 개의 웹 API가 아래와 같은 의존도를 가지고 있었다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/799bda9f2dea5e27d16211b78f3071e5/b962a/commonBeanDeleteBefore.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfklEQVR42m2S63LaMBCF8xIdQkBYtuQLtsCA7zaU5nem0/d/mtOzik0zKT/O7I5W+2n32C87HeG7VKCR5iXqtqU6tP2AhjHLHXRkEdkEh+qCqml53qPrR+TuiOl2x8tzYAibFnBlifJcETiiqluYOEWgjYemzsEdS5wvNU5UnO4J/PkcuEA3KoBiHhKgQwO10wRGXlvmUl/u/litMV4JlPU2iuIFf2mOCzg0MUySIbAxdgRvebZmXc11WV8mfn3bYhKgzQrsC0cd5uiQ7nMPEkmDYawYR1dgOhwwZhmyiBNzajMDVwvweGnRDSP6YfKS/EK/LKcSyXQxm9/54Eff4fcw4E9d4WQslFhBBQQ/Jly8+C7xRSQN8jFCQiPmltPq2QrRf0DxQQ4eEm8YF7OlQXIdcX0Bc0U113df6qv15h/wuTiRTeln4SXefn1Yc+UoSZDtnf9l1hv1+ZWfw0I2WZybnq/ecOX/VTedn2ZZM8kLNNPoa/f7L54ZDNMNfwGFQiGWksqujAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;commonBeanDeleteBefore&quot;
+        title=&quot;&quot;
+        src=&quot;/static/799bda9f2dea5e27d16211b78f3071e5/1cfc2/commonBeanDeleteBefore.png&quot;
+        srcset=&quot;/static/799bda9f2dea5e27d16211b78f3071e5/3684f/commonBeanDeleteBefore.png 225w,
+/static/799bda9f2dea5e27d16211b78f3071e5/fc2a6/commonBeanDeleteBefore.png 450w,
+/static/799bda9f2dea5e27d16211b78f3071e5/1cfc2/commonBeanDeleteBefore.png 900w,
+/static/799bda9f2dea5e27d16211b78f3071e5/21482/commonBeanDeleteBefore.png 1350w,
+/static/799bda9f2dea5e27d16211b78f3071e5/d61c2/commonBeanDeleteBefore.png 1800w,
+/static/799bda9f2dea5e27d16211b78f3071e5/b962a/commonBeanDeleteBefore.png 2465w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위의 다이어그램을 보면 의아한 점이 생긴다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;ProjectFolderService와 FolderService, ProjectFolderMapper와 FolderMapper의 차이는 뭘까?&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;ProjectFolder와 Folder를 분리할 필요가 없고 동일한 관심사를 가지고 있다고 판단되었다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CommonUtils는 어떤 공통 기능을 가졌을까?&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;폴더의 재귀 구조를 생성해주는 기능이 구현되어 있었다.&lt;/li&gt;
+&lt;li&gt;서로 같은 관심사를 가진 두 개의 Service가 존재하게 되면서 중복되는 코드를 CommonUtils라는 스프링 빈으로 몰아넣어져 있었다.&lt;/li&gt;
+&lt;li&gt;이 공통 기능을 가진 빈은 다시 Mapper를 필요로 한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;공통 기능을 가진 스프링 빈은 의존성을 분리하는 이점이 있긴 하지만 OOP에 전혀 도움이 되지 않으며, 깨진 창문처럼 더 더러워지기 쉬운 이름을 가져서 어정쩡한 책임을 쉽게 추가하기 좋은 클래스이다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;CommonUtils&lt;/code&gt; 라는 이름은 죄책감을 가지지 않고 기능을 추가하기 딱 좋은 이름이지 않나?&lt;/p&gt;
+&lt;p&gt;결론은 &lt;strong&gt;한 개의 관심사이지만 분리된 책임을 한 곳으로 모으고, 공통 기능을 수행하는 객체를 생성하기로 했다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6496fa019901870a4a6811825992d459/36563/commonBeanDeleteAfter.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 36%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABDElEQVR42p2Py26DMBRE+YiqQg3mjWMIBltJSDDYhEZNH1I33fT/v2TquO0irZRFFiNL947PzPXCOMVVJTkKVoGyEstyhYKyf54oyeA/BBj0BO8ajEQJkoxhPx4wzzNOp2coNTjATcBf+STEIkqdfBKB3NzQKrUt+4JiEgKzlNhmGfIovoBeAIMwxsKm/tV5TqwxDwjeucDHqPCpNY5FAWYbB3ZHfv6evXf3PtSo4dGyBrfpvBVohERzfluJquYuOc2X2G879OsNpJ0J3tgZdTvGufO3cg1WVng8PsFbic6SDUb9rcGmaDOh2/XI8gK0arFRxqUP5mDPMiir2kGF2kHpEWaa0asRL69v+ALJCc16FjnAIgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;commonBeanDeleteAfter&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6496fa019901870a4a6811825992d459/1cfc2/commonBeanDeleteAfter.png&quot;
+        srcset=&quot;/static/6496fa019901870a4a6811825992d459/3684f/commonBeanDeleteAfter.png 225w,
+/static/6496fa019901870a4a6811825992d459/fc2a6/commonBeanDeleteAfter.png 450w,
+/static/6496fa019901870a4a6811825992d459/1cfc2/commonBeanDeleteAfter.png 900w,
+/static/6496fa019901870a4a6811825992d459/21482/commonBeanDeleteAfter.png 1350w,
+/static/6496fa019901870a4a6811825992d459/d61c2/commonBeanDeleteAfter.png 1800w,
+/static/6496fa019901870a4a6811825992d459/36563/commonBeanDeleteAfter.png 2023w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;CommonUtils가 수행하던 기능을 (여러 FolderEntity를 대표하는) &lt;code class=&quot;language-text&quot;&gt;Folders&lt;/code&gt;라는 객체가 책임을 가지도록 수정하였다.&lt;br&gt;
+즉, 영속성 계층에서 조회한 결과로 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;폴더들&lt;/code&gt;을 조작하는 책임&lt;/strong&gt;을 가진 객체를 추가하여 CommonUtils를 대신하였다.&lt;/p&gt;
+&lt;h1 id=&quot;절차지향-메소드를-객체함수로-분리하여-책임-분리하기&quot; style=&quot;position:relative;&quot;&gt;절차지향 메소드를 객체,함수로 분리하여 책임 분리하기&lt;a href=&quot;#%EC%A0%88%EC%B0%A8%EC%A7%80%ED%96%A5-%EB%A9%94%EC%86%8C%EB%93%9C%EB%A5%BC-%EA%B0%9D%EC%B2%B4%ED%95%A8%EC%88%98%EB%A1%9C-%EB%B6%84%EB%A6%AC%ED%95%98%EC%97%AC-%EC%B1%85%EC%9E%84-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0&quot; aria-label=&quot;절차지향 메소드를 객체함수로 분리하여 책임 분리하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;사용자 회원가입의 검증 로직에 탈퇴한 ID와 동일하다면 회원가입이 되지 않도록 조건을 추가해야 하는 간단한 작업을 해야했다.&lt;br&gt;
+기존에 작성되어 있던 회원가입 검증 로직을 보고 그냥 조건문 추가하면 해결되었겠지만.. 냄새나는 코드 작성에 일조하기가 싫어서 코드 정리를 결심했다.&lt;br&gt;
+먼저 문제점을 확인해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Service
+class UserRegisterService(
+    private val userRegisterMapper: UserRegisterMapper,
+    ...
+) {
+
+   fun validationCheck(userDataList: List&amp;lt;UserDataVO&amp;gt;): Map&amp;lt;String, Any&amp;gt; {
+      val userIdList = userDataList.map { it.userId }
+      var errorReason = &amp;quot;&amp;quot;;
+      val validationError = mutableMapOf&amp;lt;String, MutableSet&amp;lt;String&amp;gt;&amp;gt;()
+
+      val userExistList = userRegisterMapper.selectExistId(userIdList).toMutableSet()
+      if (userExistList.isNotEmpty()) {
+         // 동일한 아이디가 이미 존재하면 errorReason에 에러 메세지를 누적하고, 동일한 아이디들을 validationError에 누적한다.
+      }
+
+      val companyIdExist = userRegisterMapper.selectExistCompanyId(userDataList[0].companyId)
+      if (companyIdExist.isNullOrEmpty()) {
+         // 회사 코드가 존재하지 않으면 errorReason에 에러 메세지를 누적하고, 회사 ID를 validationError에 누적한다.
+      }
+
+      val validationErrorValue = mutableSetOf&amp;lt;String&amp;gt;()
+      userDataList.forEach {
+         for (validation in RegisterValidation.values()) {
+               // enum으로 정의된 회원가입시 기입해야할 필드들을 리플렉션을 통해 객체의 필드를 순회하여 해당하는 정보를 조회한다.
+               val property =
+                  it::class.members.first { value -&amp;gt; value.name == validation.key } as KProperty1&amp;lt;UserDataVO, Any&amp;gt;
+
+               val value = property.get(it) as String?
+               if (!expCheck(value, validation)) {
+                  // 조회된 정보를 정규표현식을 통하여 검증한다.
+                  // 정규표현식을 통과하지 못하면 validationErrorValue와 validationError에 정보를 누적한다.
+               }
+         }
+      }
+      errorReason += &amp;quot;생성 규칙에 안맞는 데이터 입니다 : $validationErrorValue&amp;quot;
+      return mapOf(&amp;quot;error&amp;quot; to validationError, &amp;quot;reason&amp;quot; to errorReason)
+   }
+   ...
+}
+
+enum class RegisterValidation(val key: String, val required: Boolean, val regex: String) {
+    USERID(&amp;quot;userId&amp;quot;, true, &amp;quot;...&amp;quot;),
+    PASSWORD(&amp;quot;password&amp;quot;, true, &amp;quot;...&amp;quot;),
+    EMAIL(&amp;quot;email&amp;quot;, true, &amp;quot;...&amp;quot;),
+    MOBILE(&amp;quot;mobile&amp;quot;, true, &amp;quot;...&amp;quot;),
+    LEVEL(&amp;quot;level&amp;quot;, true, &amp;quot;...&amp;quot;),
+    TYPE(&amp;quot;type&amp;quot;, true, &amp;quot;...&amp;quot;),
+    STATUS(&amp;quot;status&amp;quot;, true, &amp;quot;...&amp;quot;),
+    COMPANYMOBILE(&amp;quot;companyMobile&amp;quot;, false, &amp;quot;...&amp;quot;)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ol&gt;
+&lt;li&gt;각 검증마다 검증 결과를 누적하고 공유되고 있는 &lt;code class=&quot;language-text&quot;&gt;errorReason&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;validationError&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;validationErrorValue&lt;/code&gt; 필드&lt;/li&gt;
+&lt;li&gt;사용자 회원가입 정보가 담겨있는 &lt;code class=&quot;language-text&quot;&gt;UserDataVO&lt;/code&gt; 객체의 정의된 필드를 순회&lt;/li&gt;
+&lt;li&gt;사용자 필드별 정규표현식을 가지는 &lt;code class=&quot;language-text&quot;&gt;RegisterValidation&lt;/code&gt; enum의 필드를 검증하는 관심사가 Service에 존재&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위 3개의 문제점을 발견하여 코드 정리를 진행했다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Service
+class UserRegisterValidationService(
+    private val userRegisterMapper: UserRegisterMapper
+) {
+
+    private val validationTasks: List&amp;lt;KFunction1&amp;lt;List&amp;lt;UserDataVO&amp;gt;, RegisterUserValidationResult?&amp;gt;&amp;gt; = listOf(
+        ::userIdDuplicateValidation,
+        ::dropUserIdValidation,
+        ::companyIdValidation
+    )
+
+    fun validationCheck(registerUsers: List&amp;lt;UserDataVO&amp;gt;): RegisterUserValidationResultVO {
+        val registerUserValidationResults = validationTasks.mapNotNull { it(registerUsers) }
+        val registerUserFieldValidationResult = RegisterUserFieldValidation.validate(registerUsers)
+
+        return RegisterUserValidationResultVO(
+            errorDataCombine(...),
+            errorReasonCombine(...)
+        )
+    }
+   
+    ...
+}
+
+enum class RegisterUserFieldValidation (
+    private val property: KProperty1&amp;lt;UserDataVO, String?&amp;gt;,
+    private val required: Boolean,
+    private val regex: String
+) {
+
+    USERID(UserDataVO::userId, true, &amp;quot;...&amp;quot;),
+    PASSWORD(UserDataVO::password, true, &amp;quot;...&amp;quot;),
+    EMAIL(UserDataVO::email, true, &amp;quot;...&amp;quot;),
+    MOBILE(UserDataVO::mobile, true, &amp;quot;...&amp;quot;),
+    LEVEL(UserDataVO::level, true, &amp;quot;...&amp;quot;),
+    TYPE(UserDataVO::type, true, &amp;quot;...&amp;quot;),
+    STATUS(UserDataVO::status, true, &amp;quot;...&amp;quot;),
+    COMPANYMOBILE(UserDataVO::companyMobile, false, &amp;quot;...&amp;quot;);
+
+    companion object {
+        fun validate(registerUsers: List&amp;lt;UserDataVO&amp;gt;): RegisterUserValidationResultVO {
+            val errorData = // UserDataVO를 순회하며 registerUsersValidate를 통한 검증 결과 누적
+
+            if (errorData.isEmpty()) {
+                return RegisterUserValidationResultVO(emptyMap(), emptyList())
+            }
+
+            val errorReason = ValidationErrorReason(ValidationMessage.REG_EXP_VALIDATION_FAIL, errorData.values)
+            return RegisterUserValidationResultVO(
+                errorData,
+                listOf(errorReason.convertMessage())
+            )
+        }
+
+        private fun registerUsersValidate(registerUsers: List&amp;lt;UserDataVO&amp;gt;, fieldValidation: RegisterUserFieldValidation): ValidationErrorData? {
+            val values = // 필드 검증
+
+            return if (values.isEmpty()) null else ValidationErrorData(fieldValidation.property.name, values)
+        }
+    }
+}
+
+enum class ValidationMessage(private val description: String) {
+    DUPLICATE_ID(&amp;quot;아이디가 이미 존재합니다. : %s&amp;quot;),
+    DROP_ID(&amp;quot;탈퇴한 아이디가 존재합니다. : %s&amp;quot;),
+    NOT_EXIST_COMPANY_ID(&amp;quot;존재하지 않는 회사입니다. : %s&amp;quot;),
+    REG_EXP_VALIDATION_FAIL(&amp;quot;생성 규칙에 맞지 않은 데이터입니다. : %s&amp;quot;);
+
+    fun convert(data: Collection&amp;lt;Any&amp;gt;) = this.description.format(data.toString())
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;대략적인 코드 정리 결과물이다. 이 작업을 통해 어떤 점이 개선되었을까?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;사용자 유효성 검증을 진행하는 함수들을 List로 묶어서 각 검증 결과 DTO를 반환하도록 수정하여 추가가 수월해졌다.&lt;/li&gt;
+&lt;li&gt;사용자 유효성 검증과 사용자 필드 유효성 검증을 구분하여 관심사를 분리하였다. 예를 들어, 정규표현식을 보유하고만 있던 Enum에게 직접 유효성 검증을 하도록 책임을 부여하였다.&lt;/li&gt;
+&lt;li&gt;UserDataVO 객체의 필드를 리플렉션으로 순회하는 부분을 제거하고 각 정규표현식이 관심가지는 UserDataVO의 필드를 직접 매칭하였다.&lt;/li&gt;
+&lt;li&gt;각 단계별 검증 반환 DTO를 추가하여 각 연산이 같은 객체를 수정하지 않도록 개선했다.&lt;/li&gt;
+&lt;li&gt;검증 실패 메시지를 Enum으로 분리하였다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;느낀-점&quot; style=&quot;position:relative;&quot;&gt;느낀 점&lt;a href=&quot;#%EB%8A%90%EB%82%80-%EC%A0%90&quot; aria-label=&quot;느낀 점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;NEXTSTEP의 코틀린 클린코드 교육을 듣고 클린코드 관련 서적 &quot;엘레강트 오브젝트&quot;, &quot;내 코드가 그렇게 이상한가요?&quot;, &quot;켄트 백의 구현 패턴&quot; 등을 읽게 되면서 깔끔한 코드를 작성하고 기존 코드를 청소하는 것에 관심을 가지게 되었다.&lt;br&gt;
+업무로 할당된 것도 아니고 누가 시키지도 않았지만 코드를 정리하는 리팩토링을 진행하면서 배운 점도 많고 재미도 느꼈다.&lt;br&gt;
+느낀 점들을 정리해보자.&lt;/p&gt;
+&lt;h3&gt;작업 범위를 결정하고 작업 종류를 분류하기&lt;/h3&gt;  
+&lt;ol&gt;
+&lt;li&gt;작업 범위를 분석한다. 이때는 얕게 분석한다.&lt;/li&gt;
+&lt;li&gt;그 범위에 해당하는 테스트를 작성한다.&lt;/li&gt;
+&lt;li&gt;현재 테스트 범위에서 필요로 하는 의존성을 파악하여 필요한 의존성만 주입한다. 가능하다면 단위테스트로 해결한다.&lt;/li&gt;
+&lt;li&gt;테스트를 진행하면서 코드를 제대로 분석한다.&lt;/li&gt;
+&lt;li&gt;리팩토링 작업을 분류한다. 코드 정리인지? 동작을 변경해야 하는지? 둘 다 인지?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이 작업을 하면서 불필요한 연산이나 논리적으로 잘못된 로직을 발견하는 경우가 많았다.&lt;br&gt;
+만약 동작을 변경해야 한다면 변경하기 전에 먼저 팀내에 공유하고 허락을 받았으며, 설득하기 위해 프론트나 데이터팀에게 협조를 요청하여 근거를 마련해야 할 필요도 있었다.&lt;/p&gt;
+&lt;h3&gt;리팩토링 공유의 순영향&lt;/h3&gt;
+&lt;p&gt;이 작업을 할 때 재직한 회사는 테스트 코드가 없었고 코드리뷰, 컨벤션도 존재하지 않았다.&lt;br&gt;
+그렇기에 리팩토링 작업이 끝나면 항상 공유하는 자리를 만들어 &lt;code class=&quot;language-text&quot;&gt;&quot;작업을 하계된 계기&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;변경된 내용&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;변경 후 효과&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;검증 방법&quot;&lt;/code&gt; 들을 공유했다.&lt;/p&gt;
+&lt;p&gt;리팩토링을 진행하면서 분석하고 설계한 자료를 다른 팀원들이 더 잘 이해하고 공감할 수 있도록 자료를 다듬고 질문에 대비하기 위한 조사들이 스스로에게 도움이 많이 되었다.&lt;br&gt;
+그리고 리팩토링에 대한 피드백을 받고 서로의 생각을 공유하는 자리를 통해 클린 코드에 대한 지식들이 팀원간 &lt;code class=&quot;language-text&quot;&gt;싱크&lt;/code&gt;되고 있다는 것을 느꼈다.&lt;br&gt;
+이 느낌 덕분에 리팩토링을 더 능동적으로 진행한 것 같다.&lt;/p&gt;
+&lt;h3&gt;개인의 기준&lt;/h3&gt;
+&lt;p&gt;리팩토링을 진행하면서 내가 생각하는 클린 코드에 대한 기준이 생기고 그 기준에 대한 근거를 스스로 확립해나갈 수 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;getter/setter에 비즈니스 로직이 들어가서 어떤 용도로 호출되는지 알 수가 없다. 직렬화/역직렬화할 때도 호출되어서 메서드를 리팩토링 하기 힘들다.&lt;/li&gt;
+&lt;li&gt;한 가지의 용도로만 사용하거나 직렬화/역직렬화 규칙에 포함되지 않도록 메서드를 작성하는게 좋을 것 같다.&lt;/li&gt;
+&lt;li&gt;어떤 setter가 로직에서 명시적으로 한 곳에서 사용중이지만 해당 객체로 역직렬화하는 곳도 해당 setter가 호출되기 때문에 의도된 행위인지 파악하기 힘들다.&lt;/li&gt;
+&lt;li&gt;getter에 필드를 갱신하는 로직이 들어가면 이 사이드 이펙트는 의미로 사용되는지 알기 힘들다.&lt;/li&gt;
+&lt;li&gt;요청부터 응답까지 동일한 생명주기를 가진 객체가 있는데, 전반적인 연산 자체가 해당 객체의 속성들을 수정하는 기조이다. 그래서 어떤 메서드 호출 순서를 바꾸기 위해서는 서로 의존하고 있는 필드가 있는지 확인해야 하는 너무 큰 문제가 발생한다.&lt;/li&gt;
+&lt;li&gt;레거시인 절차지향 코드들을 보면 가능한 DB 조회와 연산을 분리하려 한 것 같은 느낌이 있다. 대부분 이해가 안가는 코드들은 읽는 사람의 도메인 지식이 작성자와 싱크가 되지 않기 때문인 것 같다.&lt;/li&gt;
+&lt;li&gt;반환 타입이 &lt;code class=&quot;language-text&quot;&gt;Map&lt;/code&gt;으로 작성된 경우가 많다. 유연하기 때문에 기존 작업자들이 많이 선택한 것 같은데, 이 정도의 유연함은 제어가 불가능하다. 이런 경우는 그 반환 타입만을 위한 클래스를 정의하였다.&lt;/li&gt;
+&lt;li&gt;불변 객체를 참조하는 가변 필드와 가변 객체를 참조하는 불변 필드를 구분하여 객체의 변경 범위를 어디까지 정해야할지 고민해야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;결론&lt;/h3&gt;
+&lt;p&gt;스스로가 만든 작업 범위에서 &lt;code class=&quot;language-text&quot;&gt;분석 → 설계 → 개발 → 공유&lt;/code&gt;를 통해 많은 것을 배웠다.&lt;br&gt;
+그리고 리팩토링이 쉬운 작업이 아니라는 것을 확실히 느꼈다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;기존 코드를 완벽하게 분석하여 이해하고&lt;/li&gt;
+&lt;li&gt;이 작업이 어디까지 영향을 끼치는지 확인하여 작업 범위를 스스로 결정하고&lt;/li&gt;
+&lt;li&gt;코드 정리인지, 동작 변경인지 분류하여&lt;/li&gt;
+&lt;li&gt;설계,개발하여 검증하고&lt;/li&gt;
+&lt;li&gt;작업 결과를 공유하기 위한 준비를 해야한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;그래도 힘든만큼 보람도 있었으며, 교육을 듣거나 책을 여러 권 읽는 것보다 직접 실천하며 부딪히며 배우는 것이 훨씬 더 머리에 쉽게 각인되었다.&lt;br&gt;
+거기에다가 배운 것을 바로 써먹을 수 있는 기회까지 만들어 갈 수 있으니 쉬운 업무를 할당받거나 조금 더 도전적인 업무를 통해 성취감을 느끼고 싶다면 꼭 도전해보길 바란다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;클린 코드는 기계적인 원칙이 아닌 탐색의 결과이고 완성은 없다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;좋은 코드가 상업적 성공에 필수적인 부분은 아니다. 조잡한 코드로 돈을 많이 버는 사례가 있다고 할지라도, 나는 여전히 코드 품질이 매우 중요하다고 믿는다.&quot;&lt;br&gt;
+&quot;기능을 개발하고 출시하며, 기회와 경쟁 상황에 따라 개발 방향을 바꿀 수 있으며 위기 속에서도 직원들의 사기를 높일 수 있는 회사는 조잡하고 버그가 있는 코드를 작성하는 회사에 비해 성공할 확률이 높다.&quot;&lt;br&gt;
+&lt;strong&gt;&quot;설사 좋은 코딩이 장기적으로 경제적 이득을 가져오지 못한다고 하더라도 나는 여전히 내가 작성할 수 있는 최고의 코드를 작성할 것이다.&quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;켄트 백의 구현 패턴 중&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[AWS DMS를 이용한 MySQL 마이그레이션]]></title><description><![CDATA[IDC에서 운용중이던 단일 데이터베이스를 AWS Aurora로 이관하는 동시에 MySQL…]]></description><link>https://jdalma.github.io/2024y/mysqlMigration/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/mysqlMigration/</guid><pubDate>Sat, 11 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;IDC에서 운용중이던 단일 데이터베이스를 AWS Aurora로 이관하는 동시에 MySQL 버전업도 이루어져야 했기 때문에 신경써야할 것이 많았다.&lt;br&gt;
 어떤 의사결정을 거쳐 어떤 부분들을 확인해야 했는지 정리해보려한다.&lt;/p&gt;
 &lt;h1 id=&quot;직접-클러스터-구성하기&quot; style=&quot;position:relative;&quot;&gt;직접 클러스터 구성하기&lt;a href=&quot;#%EC%A7%81%EC%A0%91-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot;직접 클러스터 구성하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;읽기 전용 DB(Secondary)들을 Primary DB의 Replication DB로 구성하여 &lt;strong&gt;&lt;a href=&quot;https://proxysql.com/&quot;&gt;ProxySQL&lt;/a&gt;을 사용하여 RW를 분리&lt;/strong&gt;하고 &lt;strong&gt;&lt;a href=&quot;https://github.com/openark/orchestrator&quot;&gt;Orchestrator&lt;/a&gt;를 통하여 페일백/페일오버&lt;/strong&gt;를 직접 구성하여 클러스터를 직접 구축하는 것을 고민했다.&lt;/p&gt;
