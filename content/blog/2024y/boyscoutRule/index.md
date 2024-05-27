@@ -22,7 +22,9 @@ tags:
 
 ```java
 val searchResponse = searchService.search(...)
-if (searchResponse == null || searchResponse.failedShards > 0 || searchResponse.hits.totalHits == 0) {
+if (searchResponse == null || 
+    searchResponse.failedShards > 0 || 
+    searchResponse.hits.totalHits == 0) {
    // 검색 실패 로직
 }
 ```
@@ -95,12 +97,23 @@ data class ErrorResponse(
 ```kotlin
 // 확장함수
 fun HttpResponse<SearchResponse>.responseResult(): ResponseResult<Document> {
-    return when (this.isSuccess && this.body != null && this.body.failedShards == 0 && this.body.hits.hits.isNotEmpty()) {
+    return when (
+        this.isSuccess && 
+        this.body != null && 
+        this.body.failedShards == 0 && 
+        this.body.hits.hits.isNotEmpty()
+    ) {
         true -> {
-            val body = KotlinMapper.defaultMapper.readValue(hit.sourceAsString, Document::class.java)
+            val body = defaultMapper.readValue(hit.sourceAsString, Document::class.java)
             ResponseResult.Success(body)
         }
-        false -> ResponseResult.Failure(ErrorResponse("외부 통신 실패", CommonError.ERROR, HttpStatus.INTERNAL_SERVER_ERROR))
+        false -> ResponseResult.Failure(
+            ErrorResponse(
+                "외부 통신 실패", 
+                CommonError.ERROR, 
+                HttpStatus.INTERNAL_SERVER_ERROR
+            )
+        )
     }
 }
 
@@ -117,18 +130,16 @@ fun searchResponseResult(...): ResponseResult<Document> {
 }
 
 // ResponseResult를 반환받아 클라이언트 코드에서 행위를 지정
-// 1. 검색에 실패하였다면 null을 반환받음
+// 1. 검색에 실패하였다면 null을 반환한다.
 val document = searchService.searchResponseResult(...).getOrNull()
 
-// 2. 검색에 실패하였다면 지정한 예외를 던짐
+// 2. 검색에 실패하였다면 지정한 예외를 던진다.
 val document = searchService.searchResponseResult(...).getOrThrow {
    throw DocumentNotFoundException(...)
 }
 
-// 3. 검색에 실패하였다면 지정한 람다의 반환값을 반환함
-val document = searchService.searchResponseResult(...).getOrDefault(::EmtyDocument) {
-   // body 가공 로직
-}
+// 3. 검색에 실패하였다면 지정한 기본값을 반환한다.
+val document = searchService.searchResponseResult(...).getOrDefault(::EmtyDocument)
 ```
 
 이제부터는 격리시키고 싶은 의존성이 있다면 `ResponseResult`로 래핑하는 확장함수를 추가하면 된다.  
@@ -149,11 +160,11 @@ val document = searchService.searchResponseResult(...).getOrDefault(::EmtyDocume
 위의 다이어그램을 보면 의아한 점이 생긴다.  
 
 1. **ProjectFolderService와 FolderService, ProjectFolderMapper와 FolderMapper의 차이는 뭘까?**
-   1. ProjectFolder와 Folder를 분리할 필요가 없고 동일한 관심사를 가지고 있다고 판단되었다.
+    - ProjectFolder와 Folder를 분리할 필요가 없고 동일한 관심사를 가지고 있다고 판단되었다.
 2. **CommonUtils는 어떤 공통 기능을 가졌을까?**
-   1. 폴더의 재귀 구조를 생성해주는 기능이 구현되어 있었다.
-   2. 서로 같은 관심사를 가진 두 개의 Service가 존재하게 되면서 중복되는 코드를 CommonUtils라는 스프링 빈으로 몰아넣어져 있었다.
-   3. 이 공통 기능을 가진 빈은 다시 Mapper를 필요로 한다.
+    - 폴더의 재귀 구조를 생성해주는 기능이 구현되어 있었다.
+    - 서로 같은 관심사를 가진 두 개의 Service가 존재하게 되면서 중복되는 코드를 CommonUtils라는 스프링 빈으로 몰아넣어져 있었다.
+    - 이 공통 기능을 가진 빈은 다시 Mapper를 필요로 한다.
 
 공통 기능을 가진 스프링 빈은 의존성을 분리하는 이점이 있긴 하지만 OOP에 전혀 도움이 되지 않으며, 깨진 창문처럼 더 더러워지기 쉬운 이름을 가져서 어정쩡한 책임을 쉽게 추가하기 좋은 클래스이다.  
 `CommonUtils` 라는 이름은 죄책감을 가지지 않고 기능을 추가하기 딱 좋은 이름이지 않나?  
@@ -226,7 +237,7 @@ enum class RegisterValidation(val key: String, val required: Boolean, val regex:
 ```
 
 1. 각 검증마다 검증 결과를 누적하고 공유되고 있는 `errorReason`, `validationError`, `validationErrorValue` 필드
-2. 사용자 회원가입 정보가 담겨있는 `UserDataVO` 객체의 정의된 필드를 순회
+2. 사용자 회원가입 정보가 담겨있는 `UserDataVO` 객체의 정의된 필드를 검증 마다 매번 순회
 3. 사용자 필드별 정규표현식을 가지는 `RegisterValidation` enum의 필드를 검증하는 관심사가 Service에 존재
 
 위 3개의 문제점을 발견하여 코드 정리를 진행했다.  
