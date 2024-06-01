@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 May 2024 13:43:09 GMT</lastBuildDate><item><title><![CDATA[2024년 책,강의 서평]]></title><description><![CDATA[엘라스틱서치 바이블 실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 01 Jun 2024 14:32:50 GMT</lastBuildDate><item><title><![CDATA[2024년 기록]]></title><description><![CDATA[엘라스틱서치 바이블 실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다. 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다. 운영중인 여러 개의 검색 클러스터, ES…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다.&lt;br&gt;
 그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다.&lt;/p&gt;
 &lt;ol&gt;
@@ -447,10 +447,10 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 &lt;h1 id=&quot;가난한-아이들은-어떻게-어른이-되는가&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;가난한 아이들은 어떻게 어른이 되는가?&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%80%EB%82%9C%ED%95%9C-%EC%95%84%EC%9D%B4%EB%93%A4%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%96%B4%EB%A5%B8%EC%9D%B4-%EB%90%98%EB%8A%94%EA%B0%80&quot; aria-label=&quot;가난한 아이들은 어떻게 어른이 되는가 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;회사 책장을 둘러보다가 제목을 보고 재밌어 보여서 읽어보았다.&lt;/p&gt;
 &lt;p&gt;&quot;나도 어린시절이 풍족하진 않았지&quot; 라고 생각하면서 책을 읽었는데 내가 생각한 &quot;풍족하진 않다.&quot;와 책에서 말하는 &quot;빈곤&quot;이라는 단어는 확실히 달랐다.&lt;br&gt;
-이 책은 8명의 청(소)년들 이야기를 어린 시절부터 성인이 될 때까지 3,4년 주기로 세 번이상 인터뷰를 진행한 내용들을 담았으며, 개개인들이 빈곤, 어려운 환경들을 어떻게 극복해나가는지 설명하며 기질에 따라, 환경에 따라 다 다른 과정과 다른 결말이였다.&lt;/p&gt;
+이 책은 8명의 청(소)년들 이야기를 어린 시절부터 성인이 될 때까지 3,4년 주기로 세 번이상 인터뷰를 진행한 내용들을 담았으며, 개개인들이 빈곤, 어려운 환경들을 어떻게 극복해나가는지 설명하는데 기질에 따라, 환경에 따라 다 다른 과정과 다른 결말이였다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;불우한 가정환경으로 자신을 챙겨주고, 염려해주는 사람은 없지만 철저한 자기 객관화와 주변 환경(복지센터 등)을 잘 활용한 사례&lt;/li&gt;
-&lt;li&gt;가족이 어려움을 겪고 헤어지는 위기도 있었지만, 결국엔 다시 결합하는 과정을 통해 가족에 대한 애틋함을 배운 사례&lt;/li&gt;
+&lt;li&gt;불우한 가정환경 때문에 자신을 챙겨주고, 염려해주는 사람은 없지만 철저한 자기 객관화와 주변 환경(복지센터 등)을 잘 활용한 사례&lt;/li&gt;
+&lt;li&gt;가족이 어려움을 겪고 헤어지는 위기도 있었지만, 결국엔 다시 결합하는 과정을 통해 가족에 대한 애틋함을 배워 행복한 가정을 꾸리는 것이 꿈인 사례&lt;/li&gt;
 &lt;li&gt;가난은 사회적으로 만들어진 현상이라는 것을 깨닫아 타인의 편견과 시선에 굴하지 않고 자신이 원하는 바를 추구해나간 사례&lt;/li&gt;
 &lt;li&gt;자신을 돌보고 자기 욕망과 사회적 위치를 사고하고 판단하는 내면적 성숙도, 성찰하는 힘이 강한 사례&lt;/li&gt;
 &lt;li&gt;한 개인이 어디에 위치해 있는가에 대한 정확한 파악과 자아실현을 위한 일이 무엇인가에 대한 인식 혹은 사고, 즉 자아정체감을 찾으려 노력한 사례&lt;/li&gt;
@@ -500,18 +500,132 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 모든 것을 잃어버린 것처럼 보인다고 해서 그때가 가장 불행한 것은 아니다.&lt;br&gt;
 &lt;strong&gt;왜냐하면 불행이란 사물의 결핍 상태에서 오는 것이 아니라, 결핍감을 느끼게 하는 욕구에서 오는 것이기 때문이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;불안-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;불안&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%B6%88%EC%95%88-ing&quot; aria-label=&quot;불안 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;네티-인-액션-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;네티 인 액션&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-ing&quot; aria-label=&quot;네티 인 액션 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;켄트-벡의-tidy-first&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;켄트 벡의 Tidy First?&lt;/strong&gt;&lt;a href=&quot;#%EC%BC%84%ED%8A%B8-%EB%B2%A1%EC%9D%98-tidy-first&quot; aria-label=&quot;켄트 벡의 tidy first permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;이 책은 설계와 코드 정리를 잘 하기 위한 방법을 배우기 위해 읽기도 좋지만 &lt;strong&gt;코드 정리와 설계를 진행하면서 발생하는 비용에 대한 생각&lt;/strong&gt; 을 깨닫기 위해 읽기 좋은 책이라고 생각한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;이미 잦은 코드 정리가 진행되고 있어 변경사항 적응하는 것에 대한 팀원들의 불만은 없는지?&lt;/li&gt;
+&lt;li&gt;코드 정리가 결과적으로 도움이 되는지?&lt;/li&gt;
+&lt;li&gt;해당 변경사항이 코드 정리인지, 동작 변경인지? 코드 정리를 먼저할지? 동작 변경을 먼저할지?&lt;/li&gt;
+&lt;li&gt;코드 정리, 설계 대상이 얼마나 자주 변경되는지? 얼마나 자주 읽히는지? 얼마나 읽기 어려운지?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위와 같이 코드 정리, 설계를 진행할 때 고려해야할 것들의 근본적인 원인은 코드 정리, 설계를 진행하는 것은 &lt;strong&gt;비용이 들기 때문이다.&lt;/strong&gt;&lt;br&gt;
+일반적으로 개발자들이 근무하는 회사는 영리기업이고, 영리기업은 이윤을 목적으로 하기 때문에 지금 당장 이익을 얻기는 힘들면서 미래에 투자하는 코드 정리와 설계같은 업무는 비용 지출에 대한 이익과 손실을 고려하여 진행해야 한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;오늘의 1달러가 내일의 1달러보다 더 가치가 있기 때문에 버는 것은 빨리하고, 쓰는 것은 가능한 뒤로 미룹니다.&lt;br&gt;
+혼란스러운 상황에서는 어떤 물건에 대한 옵션이 물건 자체보다 낫기 때문에 불확실성에 맞서는 옵션을 만듭니다.&lt;br&gt;
+&lt;strong&gt;즉, 지금 돈을 벌려면 미래의 옵션이 줄어들 수 있지만, 지금 돈을 벌지 못하면 미래의 옵션을 행사할 여력이 없을 수도 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;금융 업계의 옵션을 소프트웨어 설계 결정에 투영한다. 옵션은 &apos;선택&apos;의 의미를 내포하는데,&lt;br&gt;
+소프트웨어 설계 문제에서 옵션을 보유하는 일은 당장 모든 비용을 &apos;동작 변경&apos;에 모두 투자하는 대신에 &apos;선택 가능성&apos; 혹은 &apos;선택의 기회&apos;를 유지하는 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이익이 미래에 언제 발생하는지? 그리고 그 이익은 얼마나 확실한지?를 스스로 질문해야 한다.&lt;br&gt;
+결국 &lt;strong&gt;지금 돈 벌기&lt;/strong&gt;와 &lt;strong&gt;지금 돈 쓰기&lt;/strong&gt;를 고민하는 것이다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;지금 돈 벌기&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;지금 돈 쓰기&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;정의&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;현금 흐름 할인, 발생하는 비용의 시간 가치&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;옵션, 선택 가능성을 늘리기&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;설명&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;흐름 할인지금 돈을 벌 수 있게 기능 변경 및 추가&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;미래에 기능 번경을 더 쉽게 할 수 있게 코드 정리, 리팩토링, 설계&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;지금 돈을 못 벌면 미래는 없다.&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;변경 비용이 높아지면 미래가 없다.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;옵션을 만드는 것과 동작을 변경하는 것의 균형을 맞추는데 집중해야 한다.&lt;br&gt;
+&lt;strong&gt;가치에 대한 예측이 불확실할수록 바로 구현하는 것보다 옵션이 지닌 가치가 더 커진다. 바로 구현하는 것보다 변화를 포용하면 창출한 가치를 극대화할 수 있지만, 그 상황은 통상적으로 소프트웨어 개발이 극적으로 실패하는 지점이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;비용(코드 정리) + 비용(코드 정리 후 동작 변경) &amp;lt; 비용(바로 동작 변경)&lt;/code&gt; 이라면 코드 정리를 진행해도 좋다. 그 반대라면 고민해야한다..&lt;br&gt;
+비용에 대한 판단력을 기르기 위한 연습을 꾸준히 한다면 어떻게 설계해야 하고 언제 설계하지 말아야하는지 직감적으로 느낄 수 있을것이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;비용&lt;/strong&gt; : 코드를 정리하면 비용이 줄까요? 아니면 나중에 하는 편이 나을까요? 줄일 가능성이 있을까요?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;수익&lt;/strong&gt; : 코드를 정리하면 수익이 더 커질까요? 혹은 더 빨리 발생하거나 커질 가능성이 있나요?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;결합도&lt;/strong&gt; : 코드를 정리하면 변경에 필요한 요소의 수가 줄어드나요?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;응집도&lt;/strong&gt; : 코드를 정리하면 변경을 더 작고 좁은 범위로 집중시켜 더 적은 수의 요소만 다룰 수 있을까요?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://yozm.wishket.com/magazine/@bettercoder/&quot;&gt;옮긴이의 글들&lt;/a&gt;도 참고하자.&lt;/p&gt;
+&lt;h1 id=&quot;네티-인-액션-서평-작성-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;네티 인 액션&lt;/strong&gt; 서평 작성 예정&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%84%9C%ED%8F%89-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;네티 인 액션 서평 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;real-my-sql-1권-서평-작성-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt; 서평 작성 예정&lt;a href=&quot;#real-my-sql-1%EA%B6%8C-%EC%84%9C%ED%8F%89-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;real my sql 1권 서평 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;oauth2-인-액션-서평-작성-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;OAuth2 인 액션&lt;/strong&gt; 서평 작성 예정&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%84%9C%ED%8F%89-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;oauth2 인 액션 서평 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;불안-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;불안&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%B6%88%EC%95%88-ing&quot; aria-label=&quot;불안 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;왜-일하는가-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;왜 일하는가?&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%99%9C-%EC%9D%BC%ED%95%98%EB%8A%94%EA%B0%80-ing&quot; aria-label=&quot;왜 일하는가 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;실전-api-설계-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;실전 API 설계&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%8B%A4%EC%A0%84-api-%EC%84%A4%EA%B3%84-ing&quot; aria-label=&quot;실전 api 설계 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;도메인주도설계-첫걸음-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;도메인주도설계 첫걸음&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%8F%84%EB%A9%94%EC%9D%B8%EC%A3%BC%EB%8F%84%EC%84%A4%EA%B3%84-%EC%B2%AB%EA%B1%B8%EC%9D%8C-ing&quot; aria-label=&quot;도메인주도설계 첫걸음 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;자바-네트워크-프로그래밍&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt;&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot; aria-label=&quot;자바 네트워크 프로그래밍 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;real-my-sql-2권&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 2권&lt;/strong&gt;&lt;a href=&quot;#real-my-sql-2%EA%B6%8C&quot; aria-label=&quot;real my sql 2권 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;오브젝트&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;오브젝트&lt;/strong&gt;&lt;a href=&quot;#%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot; aria-label=&quot;오브젝트 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-코틀린&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0&quot; aria-label=&quot;이펙티브 코틀린 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;이펙티브-자바&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94&quot; aria-label=&quot;이펙티브 자바 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;개발자를-위한-레디스&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4&quot; aria-label=&quot;개발자를 위한 레디스 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt;&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81&quot; aria-label=&quot;nginx 쿡북 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[보이스카웃 규칙 실천하기]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/boyscoutRule/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/boyscoutRule/</guid><pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;엉클 밥이 설명한 &lt;a href=&quot;https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html&quot;&gt;보이스카웃 규칙&lt;/a&gt;을 실천한 경험을 정리해보려 한다.&lt;br&gt;
-보이스카웃 규칙에 대해서는 &lt;a href=&quot;https://johngrib.github.io/wiki/jargon/boy-scout-rule/&quot;&gt;종립님이 정리한 글&lt;/a&gt;을 읽어보자.&lt;/p&gt;
+&lt;h1 id=&quot;nginx-쿡북&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt;&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81&quot; aria-label=&quot;nginx 쿡북 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[보이스카웃 규칙 실천하기]]></title><description><![CDATA[The Boy Scout Rule : Always leave the campground cleaner than you found it…]]></description><link>https://jdalma.github.io/2024y/boyscoutRule/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/boyscoutRule/</guid><pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;The Boy Scout Rule : Always leave the campground cleaner than you found it.&lt;br&gt;
+&lt;strong&gt;보이 스카웃 규칙 : 언제나 처음 왔을 때보다 깨끗하게 해놓고 캠프장을 떠날 것.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;엉클 밥이 설명한 &lt;a href=&quot;https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html&quot;&gt;보이스카웃 규칙&lt;/a&gt;을 실천한 경험을 정리해보려 한다.&lt;br&gt;
+종립님이 정리한 &lt;a href=&quot;https://johngrib.github.io/wiki/jargon/boy-scout-rule/&quot;&gt;글&lt;/a&gt;을 읽어보길 추천한다.&lt;/p&gt;
+&lt;h1 id=&quot;실천하면서-느낀-점&quot; style=&quot;position:relative;&quot;&gt;실천하면서 느낀 점&lt;a href=&quot;#%EC%8B%A4%EC%B2%9C%ED%95%98%EB%A9%B4%EC%84%9C-%EB%8A%90%EB%82%80-%EC%A0%90&quot; aria-label=&quot;실천하면서 느낀 점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;NEXTSTEP의 코틀린 클린코드 교육을 듣고 클린코드 관련 서적 &quot;엘레강트 오브젝트&quot;, &quot;내 코드가 그렇게 이상한가요?&quot;, &quot;켄트 백의 구현 패턴&quot; 등을 읽게 되면서 깔끔한 코드를 작성하고 기존 코드를 청소하는 것에 관심을 가지게 되었다.&lt;br&gt;
+업무로 할당된 것도 아니고 누가 시키지도 않았지만 코드를 정리하는 리팩토링을 진행하면서 배운 점도 많고 재미도 느꼈다.&lt;/p&gt;
+&lt;h3&gt;작업 범위를 결정하고 작업 종류를 분류하기&lt;/h3&gt;  
+&lt;ol&gt;
+&lt;li&gt;작업 범위를 분석한다. 이때는 얕게 분석한다.&lt;/li&gt;
+&lt;li&gt;그 범위에 해당하는 테스트를 작성한다.&lt;/li&gt;
+&lt;li&gt;현재 테스트 범위에서 필요로 하는 의존성을 파악하여 필요한 의존성만 주입한다. 가능하다면 단위테스트로 해결한다.&lt;/li&gt;
+&lt;li&gt;테스트를 진행하면서 코드를 제대로 분석한다.&lt;/li&gt;
+&lt;li&gt;리팩토링 작업을 분류한다. 코드 정리인지? 동작을 변경해야 하는지? 둘 다 인지?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이 작업을 하면서 불필요한 연산이나 논리적으로 잘못된 로직을 발견하는 경우가 많았다.&lt;br&gt;
+만약 동작을 변경해야 한다면 변경하기 전에 먼저 팀내에 공유하고 허락을 받았으며, 설득하기 위해 프론트나 데이터팀에게 협조를 요청하여 근거를 마련해야 할 필요도 있었다.&lt;/p&gt;
+&lt;h3&gt;리팩토링 실천과 결과 공유의 순영향&lt;/h3&gt;
+&lt;p&gt;이 작업을 할 때 재직한 회사는 테스트 코드가 없었고 코드리뷰, 컨벤션도 존재하지 않았다.&lt;br&gt;
+그렇기에 리팩토링 작업이 끝나면 항상 공유하는 자리를 만들어 &lt;code class=&quot;language-text&quot;&gt;&quot;작업을 하계된 계기&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;변경된 내용&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;변경 후 효과&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;검증 방법&quot;&lt;/code&gt; 들을 공유했다.&lt;/p&gt;
+&lt;p&gt;리팩토링을 진행하면서 분석하고 설계한 자료를 다른 팀원들이 더 잘 이해하고 공감할 수 있도록 자료를 다듬고 질문에 대비하기 위한 조사들이 스스로에게 도움이 많이 되었다.&lt;br&gt;
+그리고 리팩토링에 대한 피드백을 받고 서로의 생각을 공유하는 자리를 통해 클린 코드에 대한 지식들이 팀원간 &lt;code class=&quot;language-text&quot;&gt;싱크&lt;/code&gt;되고 있다는 것을 느꼈다.&lt;br&gt;
+이 느낌 덕분에 리팩토링을 더 능동적으로 진행한 것 같다.&lt;/p&gt;
+&lt;h3&gt;개인의 기준&lt;/h3&gt;
+&lt;p&gt;리팩토링을 진행하면서 내가 생각하는 클린 코드에 대한 기준이 생기고 그 기준에 대한 근거를 스스로 확립해나갈 수 있었다.&lt;br&gt;
+아래는 작업하면서 메모한 내용들이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;getter/setter에 비즈니스 로직이 들어가서 어떤 용도로 호출되는지 알 수가 없다. 직렬화/역직렬화할 때도 호출되어서 메서드를 리팩토링 하기 힘들다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;한 가지의 용도로만 사용하거나 직렬화/역직렬화 규칙에 포함되지 않도록 메서드를 작성하는게 좋을 것 같다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;어떤 setter가 명시적으로 한 곳에서 사용중이지만 해당 객체로 역직렬화하는 곳도 해당 setter가 호출되기 때문에 의도된 행위인지 파악하기 힘들다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;getter에 필드를 갱신하는 로직이 들어가면 어떤 의미로 사용되는지 알기 힘들다. 최악은 해당 getter의 반환값을 사용하지 않으면서 getter를 호출하는 코드들이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;요청부터 응답까지 동일한 생명주기를 가진 객체가 있는데, 전반적인 연산 자체가 해당 객체의 속성들을 수정하는 기조이다. 그래서 어떤 메서드 호출 순서를 바꾸기 위해서는 서로 의존하고 있는 필드가 있는지 확인해야 하는 너무 큰 문제가 발생한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;레거시인 절차지향 코드들을 보면 가능한 DB 조회와 연산을 분리하려 한 것 같은 느낌이 있다. 대부분 이해가 안가는 코드들은 읽는 사람의 도메인 지식이 작성자와 싱크가 되지 않기 때문인 것 같다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;반환 타입이 &lt;code class=&quot;language-text&quot;&gt;Map&lt;/code&gt;으로 작성된 경우가 많다. 유연하기 때문에 기존 작업자들이 많이 선택한 것 같은데, 이 정도의 유연함은 제어가 불가능하다. 이런 경우는 그 반환 타입만을 위한 클래스를 정의하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;불변 객체를 참조하는 가변 필드와 가변 객체를 참조하는 불변 필드를 구분하여 객체의 변경 범위를 어디까지 정해야할지 고민해야 한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;아래는 실천한 사례들을 정리해보았다.&lt;/p&gt;
 &lt;h1 id=&quot;라이브러리에-대한-의존성-제한하기&quot; style=&quot;position:relative;&quot;&gt;라이브러리에 대한 의존성 제한하기&lt;a href=&quot;#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A0%9C%ED%95%9C%ED%95%98%EA%B8%B0&quot; aria-label=&quot;라이브러리에 대한 의존성 제한하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -545,13 +659,7 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;검색 서비스에 의존하는 서비스들의 클라이언트 코드들이 위의 그림과 같이 응답으로 받는 ElasticSearch의 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt;에 직접 의존하는 것을 알 수 있다.&lt;br&gt;
-예를 들어, 검색에 실패하였을 경우 아래의 행위들을 클라이언트 코드에서 직접 구분하고 있었기에 비슷한 코드가 여러 곳에서 반복되는 것을 확인했다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;빈 검색 결과 객체를 반환하거나&lt;/li&gt;
-&lt;li&gt;null을 반환하거나&lt;/li&gt;
-&lt;li&gt;예외를 던지거나&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;검색 서비스에 의존하는 서비스들의 클라이언트 코드들이 위의 그림과 같이 응답으로 받는 ElasticSearch의 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt;에 직접 의존하는 것을 확인했다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;val searchResponse = searchService.search(...)
 if (searchResponse == null || 
@@ -560,7 +668,8 @@ if (searchResponse == null ||
    // 검색 실패 로직
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위와 같이 클라이언트 코드에서 &lt;code class=&quot;language-text&quot;&gt;failedShards&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;hits.totalHits&lt;/code&gt; 필드들에 직접 의존하고 있어 엘라스틱서치의 클라이언트 의존성 버전 변경에 굉장히 민감해질 수 밖에 없다.&lt;/p&gt;
+&lt;p&gt;위와 같이 클라이언트 코드에서 &lt;code class=&quot;language-text&quot;&gt;failedShards&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;hits.totalHits&lt;/code&gt; 필드들에 직접 의존하고 있어 엘라스틱서치의 클라이언트 의존성 버전 변경에 굉장히 민감해질 수 밖에 없다.&lt;br&gt;
+그리고 검색에 실패한 경우와 실패했을 때의 처리를 클라이언트 코드에서 직접 구분하고 있었기에 클라이언트는 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt;에 너무 많은 정보를 알고 있었고 비슷한 코드가 여러 곳에서 반복되고 있었다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
@@ -594,7 +703,13 @@ if (searchResponse == null ||
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이 검색 클라이언트 의존성을 격리시키면서 클라이언트 코드가 검색 결과에 따라 원하는 행위를 지정하도록 할 수 있는 방법은 없을까?&lt;/p&gt;
+&lt;p&gt;이 검색 클라이언트 의존성을 격리시키면서 클라이언트 코드가 검색 결과에 따라 원하는 행위를 지정하도록 할 수 있는 방법은 없을까?&lt;br&gt;
+클라이언트가 원하는 검색에 실패하였을 떄의 처리&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;빈 검색 결과 객체를 반환하거나&lt;/li&gt;
+&lt;li&gt;null을 반환하거나&lt;/li&gt;
+&lt;li&gt;예외를 던지거나&lt;/li&gt;
+&lt;/ol&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;sealed class ResponseResult&amp;lt;out T&amp;gt; {
 
@@ -679,11 +794,11 @@ data class ErrorResponse(
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;사실 검색 서비스에서 검색 결과를 &lt;code class=&quot;language-text&quot;&gt;ByteArrayInputStream&lt;/code&gt;으로만 응답해줄 것이 아니라 &lt;strong&gt;&quot;검색 서비스를 필요로 하는 서비스&quot;들에게 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt; 타입을 전혀 몰라도 검색 결과를 알 수 있도록 &lt;code class=&quot;language-text&quot;&gt;규격화된 응답 객체&lt;/code&gt;를 전송해야 마땅하다.&lt;/strong&gt;&lt;br&gt;
-하지만 검색 서비스 API 응답을 수정하는 작업은 작업 범위가 크다고 판단하였으며, 이번에 &lt;code class=&quot;language-text&quot;&gt;ResponseResult&lt;/code&gt;를 사용하여 의존성을 격리시킨다면 추후에 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt; 의존성을 제거하는 것은 쉬울 것이므로 수정 범위를 이 정도로만 정했다.&lt;/p&gt;
+하지만 검색 서비스 API 응답을 수정하는 작업은 해당 API를 사용하는 클라이언트에 대한 확인이 필요하여 작업 범위가 크다고 판단하였으며, 이번에 &lt;code class=&quot;language-text&quot;&gt;ResponseResult&lt;/code&gt;를 사용하여 의존성을 격리시킨다면 추후에 &lt;code class=&quot;language-text&quot;&gt;SearchResponse&lt;/code&gt; 의존성을 제거하는 것은 쉬울 것이므로 수정 범위를 이 정도로만 정했다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;어떻게 적용하였는지 예제 코드를 확인해보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;// 확장함수
+          &lt;code slot=&quot;code&quot;&gt;// Unirest 응답 타입 전용 확장함수
 fun HttpResponse&amp;lt;SearchResponse&amp;gt;.responseResult(): ResponseResult&amp;lt;Document&amp;gt; {
     return when (
         this.isSuccess &amp;amp;&amp;amp; 
@@ -712,12 +827,12 @@ fun searchResponseResult(...): ResponseResult&amp;lt;Document&amp;gt; {
       .routeParam(&amp;quot;cluster&amp;quot;, cluster)
       .body(body)
       .asObject&amp;lt;SearchResponse&amp;gt; { raw: RawResponse -&amp;gt;
-         // RawResponse convert to SearchResponse
+         // 검색 서비스에서 응답받은 Stream을 SearchResponse로 변환
       }
       .responseResult()
 }
 
-// ResponseResult를 반환받아 클라이언트 코드에서 행위를 지정
+// ResponseResult를 반환받아 클라이언트 코드에서 행위를 지정할 수 있다.
 // 1. 검색에 실패하였다면 null을 반환한다.
 val document = searchService.searchResponseResult(...).getOrNull()
 
@@ -960,47 +1075,48 @@ enum class ValidationMessage(private val description: String) {
     fun convert(data: Collection&amp;lt;Any&amp;gt;) = this.description.format(data.toString())
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3c33170bc9b7bbc6598ee42c18c460a9/0907e/refactor2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 28.444444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABCUlEQVR42l2Ra07DMBCEfQV+FFTUxO84SWPH6bsgcQ8OwvmHXVNHFT9Gir27n2c2opEarFaZVfKhlu5DCJjzAaEfsWvVqv8zVcL5AOs6Gjao8Hdl8UZn6QJyzrhc70h5gQsDYpqR5gW+61fws8Tt/oHlcII2FvYBX6TEZ9NgYqfWgx/tyOEwRkwE3MdUHGuuEbhKGQdxvt5Kg/eeoi2Iccb3bouf7QZfBH2lV6W2MOR2mlKJH+dcAP2wpwR0ThkTzbEhwcWRGhtyU/ezUQ4v2mFLd945ipsLiPuM7wswL8cCMpTID2P55rqokOefoUi6nrWBoWg8qCmSJeDxfAGvinfJ7rV1f3Xr8QvGaK04I+ZVbQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;refactor2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/3c33170bc9b7bbc6598ee42c18c460a9/1cfc2/refactor2.png&quot;
+        srcset=&quot;/static/3c33170bc9b7bbc6598ee42c18c460a9/3684f/refactor2.png 225w,
+/static/3c33170bc9b7bbc6598ee42c18c460a9/fc2a6/refactor2.png 450w,
+/static/3c33170bc9b7bbc6598ee42c18c460a9/1cfc2/refactor2.png 900w,
+/static/3c33170bc9b7bbc6598ee42c18c460a9/21482/refactor2.png 1350w,
+/static/3c33170bc9b7bbc6598ee42c18c460a9/d61c2/refactor2.png 1800w,
+/static/3c33170bc9b7bbc6598ee42c18c460a9/0907e/refactor2.png 3788w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;대략적인 코드 정리 결과물이다. 이 작업을 통해 어떤 점이 개선되었을까?&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;사용자 유효성 검증을 진행하는 함수들을 List로 묶어서 각 검증 결과 DTO를 반환하도록 수정하여 추가가 수월해졌다.&lt;/li&gt;
-&lt;li&gt;사용자 유효성 검증과 사용자 필드 유효성 검증을 구분하여 관심사를 분리하였다. 예를 들어, 정규표현식을 보유하고만 있던 Enum에게 직접 유효성 검증을 하도록 책임을 부여하였다.&lt;/li&gt;
-&lt;li&gt;UserDataVO 객체의 필드를 리플렉션으로 순회하는 부분을 제거하고 각 정규표현식이 관심가지는 UserDataVO의 필드를 직접 매칭하였다.&lt;/li&gt;
-&lt;li&gt;각 단계별 검증 반환 DTO를 추가하여 각 연산이 같은 객체를 수정하지 않도록 개선했다.&lt;/li&gt;
+&lt;li&gt;사용자 유효성 검증과 회원가입 필드 유효성 검증을 구분하여 관심사를 분리하였다. 예를 들어, 정규표현식을 보유하고만 있던 Enum에게 직접 유효성 검증을 하도록 책임을 부여하였다.&lt;/li&gt;
+&lt;li&gt;UserDataVO 객체의 필드를 리플렉션으로 순회하는 부분을 제거하고 각 정규표현식이 관심가지는 UserDataVO의 필드를 직접 매핑하였다.&lt;/li&gt;
+&lt;li&gt;각 단계별 검증 반환 DTO를 추가하여 검증 결과를 누적하기 위해 사용하던 변수들을 제거하였다.&lt;/li&gt;
 &lt;li&gt;검증 실패 메시지를 Enum으로 분리하였다.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&quot;느낀-점&quot; style=&quot;position:relative;&quot;&gt;느낀 점&lt;a href=&quot;#%EB%8A%90%EB%82%80-%EC%A0%90&quot; aria-label=&quot;느낀 점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;NEXTSTEP의 코틀린 클린코드 교육을 듣고 클린코드 관련 서적 &quot;엘레강트 오브젝트&quot;, &quot;내 코드가 그렇게 이상한가요?&quot;, &quot;켄트 백의 구현 패턴&quot; 등을 읽게 되면서 깔끔한 코드를 작성하고 기존 코드를 청소하는 것에 관심을 가지게 되었다.&lt;br&gt;
-업무로 할당된 것도 아니고 누가 시키지도 않았지만 코드를 정리하는 리팩토링을 진행하면서 배운 점도 많고 재미도 느꼈다.&lt;br&gt;
-느낀 점들을 정리해보자.&lt;/p&gt;
-&lt;h3&gt;작업 범위를 결정하고 작업 종류를 분류하기&lt;/h3&gt;  
-&lt;ol&gt;
-&lt;li&gt;작업 범위를 분석한다. 이때는 얕게 분석한다.&lt;/li&gt;
-&lt;li&gt;그 범위에 해당하는 테스트를 작성한다.&lt;/li&gt;
-&lt;li&gt;현재 테스트 범위에서 필요로 하는 의존성을 파악하여 필요한 의존성만 주입한다. 가능하다면 단위테스트로 해결한다.&lt;/li&gt;
-&lt;li&gt;테스트를 진행하면서 코드를 제대로 분석한다.&lt;/li&gt;
-&lt;li&gt;리팩토링 작업을 분류한다. 코드 정리인지? 동작을 변경해야 하는지? 둘 다 인지?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;이 작업을 하면서 불필요한 연산이나 논리적으로 잘못된 로직을 발견하는 경우가 많았다.&lt;br&gt;
-만약 동작을 변경해야 한다면 변경하기 전에 먼저 팀내에 공유하고 허락을 받았으며, 설득하기 위해 프론트나 데이터팀에게 협조를 요청하여 근거를 마련해야 할 필요도 있었다.&lt;/p&gt;
-&lt;h3&gt;리팩토링 공유의 순영향&lt;/h3&gt;
-&lt;p&gt;이 작업을 할 때 재직한 회사는 테스트 코드가 없었고 코드리뷰, 컨벤션도 존재하지 않았다.&lt;br&gt;
-그렇기에 리팩토링 작업이 끝나면 항상 공유하는 자리를 만들어 &lt;code class=&quot;language-text&quot;&gt;&quot;작업을 하계된 계기&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;변경된 내용&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;변경 후 효과&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;검증 방법&quot;&lt;/code&gt; 들을 공유했다.&lt;/p&gt;
-&lt;p&gt;리팩토링을 진행하면서 분석하고 설계한 자료를 다른 팀원들이 더 잘 이해하고 공감할 수 있도록 자료를 다듬고 질문에 대비하기 위한 조사들이 스스로에게 도움이 많이 되었다.&lt;br&gt;
-그리고 리팩토링에 대한 피드백을 받고 서로의 생각을 공유하는 자리를 통해 클린 코드에 대한 지식들이 팀원간 &lt;code class=&quot;language-text&quot;&gt;싱크&lt;/code&gt;되고 있다는 것을 느꼈다.&lt;br&gt;
-이 느낌 덕분에 리팩토링을 더 능동적으로 진행한 것 같다.&lt;/p&gt;
-&lt;h3&gt;개인의 기준&lt;/h3&gt;
-&lt;p&gt;리팩토링을 진행하면서 내가 생각하는 클린 코드에 대한 기준이 생기고 그 기준에 대한 근거를 스스로 확립해나갈 수 있었다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;getter/setter에 비즈니스 로직이 들어가서 어떤 용도로 호출되는지 알 수가 없다. 직렬화/역직렬화할 때도 호출되어서 메서드를 리팩토링 하기 힘들다.&lt;/li&gt;
-&lt;li&gt;한 가지의 용도로만 사용하거나 직렬화/역직렬화 규칙에 포함되지 않도록 메서드를 작성하는게 좋을 것 같다.&lt;/li&gt;
-&lt;li&gt;어떤 setter가 로직에서 명시적으로 한 곳에서 사용중이지만 해당 객체로 역직렬화하는 곳도 해당 setter가 호출되기 때문에 의도된 행위인지 파악하기 힘들다.&lt;/li&gt;
-&lt;li&gt;getter에 필드를 갱신하는 로직이 들어가면 이 사이드 이펙트는 의미로 사용되는지 알기 힘들다.&lt;/li&gt;
-&lt;li&gt;요청부터 응답까지 동일한 생명주기를 가진 객체가 있는데, 전반적인 연산 자체가 해당 객체의 속성들을 수정하는 기조이다. 그래서 어떤 메서드 호출 순서를 바꾸기 위해서는 서로 의존하고 있는 필드가 있는지 확인해야 하는 너무 큰 문제가 발생한다.&lt;/li&gt;
-&lt;li&gt;레거시인 절차지향 코드들을 보면 가능한 DB 조회와 연산을 분리하려 한 것 같은 느낌이 있다. 대부분 이해가 안가는 코드들은 읽는 사람의 도메인 지식이 작성자와 싱크가 되지 않기 때문인 것 같다.&lt;/li&gt;
-&lt;li&gt;반환 타입이 &lt;code class=&quot;language-text&quot;&gt;Map&lt;/code&gt;으로 작성된 경우가 많다. 유연하기 때문에 기존 작업자들이 많이 선택한 것 같은데, 이 정도의 유연함은 제어가 불가능하다. 이런 경우는 그 반환 타입만을 위한 클래스를 정의하였다.&lt;/li&gt;
-&lt;li&gt;불변 객체를 참조하는 가변 필드와 가변 객체를 참조하는 불변 필드를 구분하여 객체의 변경 범위를 어디까지 정해야할지 고민해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;결론&lt;/h3&gt;
+&lt;h1 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;결론&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;스스로가 만든 작업 범위에서 &lt;code class=&quot;language-text&quot;&gt;분석 → 설계 → 개발 → 공유&lt;/code&gt;를 통해 많은 것을 배웠다.&lt;br&gt;
 그리고 리팩토링이 쉬운 작업이 아니라는 것을 확실히 느꼈다.&lt;/p&gt;
 &lt;ol&gt;
@@ -5171,7 +5287,7 @@ SI회사에서 업무를 진행할 때는 RFP가 존재하고, 요구사항을 �
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;주변 사람들의 속도에 연연하지 말고 나만의 페이스로 주변 경치도 보면서 꾸준히 뛰는 것이 정답이다. &lt;a href=&quot;https://blog.naver.com/auraedu/221403855507&quot;&gt;연세대 교수가 말하는 3수&lt;/a&gt;&lt;br&gt;
-&lt;strong&gt;경치나 아름다운 길을 돌아보지 않고 앞만 보고 달리는 사람, 목적에 심취하여 과정에서 달콤함을 찾지 못하는 사람이 되지 않도록 의식하자.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 책,강의 서평]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘레강트-오브젝트&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘레강트 오브젝트&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%A0%88%EA%B0%95%ED%8A%B8-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot; aria-label=&quot;엘레강트 오브젝트 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;strong&gt;경치나 아름다운 길을 돌아보지 않고 앞만 보고 달리는 사람, 목적에 심취하여 과정에서 달콤함을 찾지 못하는 사람이 되지 않도록 의식하자.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2023년 기록]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/bookReview/bookReview/</guid><pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;엘레강트-오브젝트&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘레강트 오브젝트&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%A0%88%EA%B0%95%ED%8A%B8-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot; aria-label=&quot;엘레강트 오브젝트 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;넥스트 스텝의 클린코드를 진행하면서 해당 책의 내용이 많이 인용되기에 윤석님에게 빌려 읽어봤다. (절판이라서 구매할 수 없음)&lt;br&gt;
 절차지향적으로 컴퓨터를 위해 코드를 작성하는 것을 멀리하고 &lt;strong&gt;유지보수성&lt;/strong&gt; 을 위해 지켜야 할 규칙들을 설명한다.&lt;/p&gt;
 &lt;p&gt;공감하는것은 체크로 표시해보았다.&lt;/p&gt;
