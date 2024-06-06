@@ -56,8 +56,8 @@ public final class MainKt {
 }
 ```
   
-`filter()`에 전달된 람다가 `Function1` 타입의 인스턴스로 생성되어 `invoke()`되는 것을 확인할 수 있다.  
-이렇게 람다를 함수 유형의 인스턴스로 생성하여 (익명 클래스) 사용하는 것은 단점이 존재한다.  
+`filter()`에 전달된 람다가 `Function1` 타입의 인스턴스로 생성되어 `invoke()` 함수를 통해 실행되는 것을 확인할 수 있다.  
+이렇게 람다를 함수 유형의 인스턴스로 생성하여 사용하는 것은 단점이 존재한다.  
 
 1. **컴파일러는 익명 클래스에 대응하는 새로운 클래스 파일을 생성화며, 이 클래스를 사용하려면 각각의 클래스를 로드하고 검증하는 과정이 필요하므로 애플리케이션 스타트업의 성능에 악영향을 미친다.**
 2. **새로운 익명 클래스는 클래스나 인터페이스의 새로운 서브형식을 만든다.** Comparator를 표현하는 수백 개의 람다가 있다면 결국 수백 가지의 Comparator 서브형식이 생긴다는 의미다.
@@ -115,10 +115,9 @@ public class InnerClass {
 }
 ```
 
-```
+```java
 public class org.example.InnerClass {
   java.util.function.Function<java.lang.Object, java.lang.String> toString1;
-
   java.util.function.Function<java.lang.Object, java.lang.String> toString2;
 
   public org.example.InnerClass();
@@ -156,22 +155,12 @@ public class org.example.InnerClass {
 }
 ```
 
-> invokevirtual은 자바 바이트코드에서 메서드를 호출하는 가장 기본적인 명령어의 OpCode(operation code)이다.  
-> 참고로, 자바 바이트코드에서 메서드를 호출하는 명령어 OpCode는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지가 있으며 각각의 의미는 다음과 같다.  
-> 1. `invokeinterface`: 인터페이스 메서드 호출
-> 2. `invokespecial`: 생성자, private 메서드, 슈퍼 클래스의 메서드 호출
-> 3. `invokestatic`: static 메서드 호출
-> 4. `invokevirtual`: 인스턴스 메서드 호출
-
 `InnerClass$1`이라는 이름은 컴파일러가 익명 클래스에 붙인 이름이며, `new` 연산을 통해 메모리를 힙 안에 할당하고, 할당된 위치를 가리키는 참조를 오퍼랜드 스택에 쌓는다.  
 그리고 `invokespecial`을 통해 생성자를 호출한다.  
 **하지만 람다는 `invokedynamic` 연산만 호출된다.**  
 
 # invokedynamic 이란?
 
-자바 SE 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 추가된 명령어이다.  
-이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.  
-  
 ```ruby
 def addtwo(a, b)
     a + b;
@@ -179,7 +168,185 @@ end
 ```
 
 위의 코드를 컴파일할 때는 a와 b의 형식을 알 수 없듯이 동적 타입 언어 컴파일의 난제는 프로그램이 컴파일된 후 메서드나 함수의 가장 적절한 구현을 선택할 수 있는 런타임 시스템을 구현하는 방법이다.  
-**Java SE 7은 런타임 시스템이 `call site`와 `메서드 구현` 간의 연결을 커스터마이징할 수 있도록 `invokedynamic` 명령어를 도입한 것이다.**  
+  
+자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 `invokedynamic`이 추가되었다.    
+(이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.)  
+  
+간단하게 **invokedynamic은 특이한 형태의 팩토리 메서드 호출 이라고 생각하면 된다.**  
+실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 `Call sites`, `Method handles`, `Bootstrapping`을 이해해야 한다.  
+
+## Call sites
+
+바이트 코드에서 메서드 호출 명령이 발생하는 위치를 `call site`라고 한다.  
+이 메서드 호출에는 다양한 경우의 메서드 호출을 처리하기 위해 (기본적으로) 4가지의 opcode가 존재한다.  
+
+```java
+public class ParentClass {
+    public void printMessage() { System.out.println("ParentClass"); }
+}
+public class ChildClass extends ParentClass {
+    @Override
+    public void printMessage() { System.out.println("ChildClass"); }
+}
+
+abstract class AbstractClass {
+    public void printMessage() { System.out.println("AbstractClass"); }
+}
+public class AbstractChildClass extends AbstractClass { }
+
+public interface Interface {
+    void printMessage();
+}
+public class ImplementClass implements Interface {
+    @Override
+    public void printMessage() { System.out.println("ImplementClass"); }
+}
+
+public class Main {
+
+    public static void printMessage() { System.out.println("Main"); }
+
+    public static void main(String[] args) {
+        ParentClass parentClass = new ParentClass();
+        parentClass.printMessage();
+
+        ParentClass parentClass1 = new ChildClass();
+        parentClass1.printMessage();
+
+        ChildClass childClass = new ChildClass();
+        childClass.printMessage();
+
+        AbstractClass abstractClass = new AbstractChildClass();
+        abstractClass.printMessage();
+
+        AbstractChildClass abstractClass1 = new AbstractChildClass();
+        abstractClass1.printMessage();
+
+        Interface implementClass = new ImplementClass();
+        implementClass.printMessage();
+
+        ImplementClass implementClass1 = new ImplementClass();
+        implementClass1.printMessage();
+
+        Main.printMessage();
+    }
+}
+```
+
+```java
+// javap -v -p -s {class}
+Constant pool:
+    ...
+{
+  public org.example.Main();
+    ...
+
+  public static void printMessage();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #3                  // String Main
+         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 5: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=8, args_size=1
+         0: new           #5                  // class org/example/ParentClass
+         3: dup
+         4: invokespecial #6                  // Method org/example/ParentClass."<init>":()V
+         7: astore_1
+         8: aload_1
+         9: invokevirtual #7                  // Method org/example/ParentClass.printMessage:()V
+        12: new           #8                  // class org/example/ChildClass
+        15: dup
+        16: invokespecial #9                  // Method org/example/ChildClass."<init>":()V
+        19: astore_2
+        20: aload_2
+        21: invokevirtual #7                  // Method org/example/ParentClass.printMessage:()V
+        24: new           #8                  // class org/example/ChildClass
+        27: dup
+        28: invokespecial #9                  // Method org/example/ChildClass."<init>":()V
+        31: astore_3
+        32: aload_3
+        33: invokevirtual #10                 // Method org/example/ChildClass.printMessage:()V
+        36: new           #11                 // class org/example/AbstractChildClass
+        39: dup
+        40: invokespecial #12                 // Method org/example/AbstractChildClass."<init>":()V
+        43: astore        4
+        45: aload         4
+        47: invokevirtual #13                 // Method org/example/AbstractClass.printMessage:()V
+        50: new           #11                 // class org/example/AbstractChildClass
+        53: dup
+        54: invokespecial #12                 // Method org/example/AbstractChildClass."<init>":()V
+        57: astore        5
+        59: aload         5
+        61: invokevirtual #14                 // Method org/example/AbstractChildClass.printMessage:()V
+        64: new           #15                 // class org/example/ImplementClass
+        67: dup
+        68: invokespecial #16                 // Method org/example/ImplementClass."<init>":()V
+        71: astore        6
+        73: aload         6
+        75: invokeinterface #17,  1           // InterfaceMethod org/example/Interface.printMessage:()V
+        80: new           #15                 // class org/example/ImplementClass
+        83: dup
+        84: invokespecial #16                 // Method org/example/ImplementClass."<init>":()V
+        87: astore        7
+        89: aload         7
+        91: invokevirtual #18                 // Method org/example/ImplementClass.printMessage:()V
+        94: invokestatic  #19                 // Method printMessage:()V
+        97: return
+}
+```
+
+```java
+ParentClass parentClass = new ParentClass();
+parentClass.printMessage();
+
+ParentClass parentClass1 = new ChildClass();
+parentClass1.printMessage();
+
+ChildClass childClass = new ChildClass();
+childClass.printMessage();
+
+AbstractClass abstractClass = new AbstractChildClass();
+abstractClass.printMessage();
+
+AbstractChildClass abstractClass1 = new AbstractChildClass();
+abstractClass1.printMessage();
+
+Interface implementClass = new ImplementClass();
+implementClass.printMessage();
+
+ImplementClass implementClass1 = new ImplementClass();
+implementClass1.printMessage();
+
+Main.printMessage();
+```
+
+
+
+
+> invokevirtual은 자바 바이트코드에서 메서드를 호출하는 가장 기본적인 명령어의 OpCode(operation code)이다.  
+> 참고로, 자바 바이트코드에서 메서드를 호출하는 명령어 OpCode는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지가 있으며 각각의 의미는 다음과 같다.  
+> 1. `invokeinterface`: 인터페이스 메서드 호출
+> 2. `invokespecial`: 생성자, private 메서드, 슈퍼 클래스의 메서드 호출
+> 3. `invokestatic`: static 메서드 호출
+> 4. `invokevirtual`: 인스턴스 메서드 호출
+
+## Method Handles
+
+## Bootstrapping
+
+***
+
+**Java 7은 런타임 시스템이 `call site`와 `메서드 구현` 간의 연결을 커스터마이징할 수 있도록 `invokedynamic` 명령어를 도입한 것이다.**  
 위의 예제에서 호출된 invokedynamic call site는 `+`이며, 이 call site는 `bootstrap method`를 통해 메서드에 연결되며, **이는 동적 유형 언어에 대해 컴파일러가 지정한 메서드로서 JVM에서 site를 연결하기 위해 한 번 호출된다.**  
 런타임 시스템이 `adder(Integer, Integer)` 메서드를 알고 있다고 가정하면 런타임은 invokedynamic call site를 adder 메서드에 연결할 수 있다.  
 
