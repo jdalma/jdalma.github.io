@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 01 Jun 2024 15:04:56 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란? (작성 중)]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Sun, 02 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 07 Jun 2024 08:06:36 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란? (작성 중)]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Sun, 02 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;자바와 코틀린에서 람다를 처리하는 방식이 다르다는 것을 알게됐다.&lt;br&gt;
 코틀린을 먼저 확인해보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -44,8 +44,8 @@ private fun &amp;lt;T&amp;gt; Iterable&amp;lt;T&amp;gt;.filter(predicate: (T) -&
    }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;filter()&lt;/code&gt;에 전달된 람다가 &lt;code class=&quot;language-text&quot;&gt;Function1&lt;/code&gt; 타입의 인스턴스로 생성되어 &lt;code class=&quot;language-text&quot;&gt;invoke()&lt;/code&gt;되는 것을 확인할 수 있다.&lt;br&gt;
-이렇게 람다를 함수 유형의 인스턴스로 생성하여 (익명 클래스) 사용하는 것은 단점이 존재한다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;filter()&lt;/code&gt;에 전달된 람다가 &lt;code class=&quot;language-text&quot;&gt;Function1&lt;/code&gt; 타입의 인스턴스로 생성되어 &lt;code class=&quot;language-text&quot;&gt;invoke()&lt;/code&gt; 함수를 통해 실행되는 것을 확인할 수 있다.&lt;br&gt;
+이렇게 람다를 함수 유형의 인스턴스로 생성하여 사용하는 것은 단점이 존재한다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;컴파일러는 익명 클래스에 대응하는 새로운 클래스 파일을 생성화며, 이 클래스를 사용하려면 각각의 클래스를 로드하고 검증하는 과정이 필요하므로 애플리케이션 스타트업의 성능에 악영향을 미친다.&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;새로운 익명 클래스는 클래스나 인터페이스의 새로운 서브형식을 만든다.&lt;/strong&gt; Comparator를 표현하는 수백 개의 람다가 있다면 결국 수백 가지의 Comparator 서브형식이 생긴다는 의미다.&lt;/li&gt;
@@ -98,10 +98,9 @@ private fun &amp;lt;T&amp;gt; Iterable&amp;lt;T&amp;gt;.filter(predicate: (T) -&
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class org.example.InnerClass {
   java.util.function.Function&amp;lt;java.lang.Object, java.lang.String&amp;gt; toString1;
-
   java.util.function.Function&amp;lt;java.lang.Object, java.lang.String&amp;gt; toString2;
 
   public org.example.InnerClass();
@@ -138,6 +137,170 @@ private fun &amp;lt;T&amp;gt; Iterable&amp;lt;T&amp;gt;.filter(predicate: (T) -&
       32: return
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;InnerClass$1&lt;/code&gt;이라는 이름은 컴파일러가 익명 클래스에 붙인 이름이며, &lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; 연산을 통해 메모리를 힙 안에 할당하고, 할당된 위치를 가리키는 참조를 오퍼랜드 스택에 쌓는다.&lt;br&gt;
+그리고 &lt;code class=&quot;language-text&quot;&gt;invokespecial&lt;/code&gt;을 통해 생성자를 호출한다.&lt;br&gt;
+&lt;strong&gt;하지만 람다는 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt; 연산만 호출된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;invokedynamic-이란&quot; style=&quot;position:relative;&quot;&gt;invokedynamic 이란?&lt;a href=&quot;#invokedynamic-%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;invokedynamic 이란 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;deckgo-highlight-code language=&quot;ruby&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;def addtwo(a, b)
+    a + b;
+end&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위의 코드를 컴파일할 때는 a와 b의 형식을 알 수 없듯이 동적 타입 언어 컴파일의 난제는 프로그램이 컴파일된 후 메서드나 함수의 가장 적절한 구현을 선택할 수 있는 런타임 시스템을 구현하는 방법이다.&lt;/p&gt;
+&lt;p&gt;자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt;이 추가되었다.&lt;br&gt;
+(이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.)&lt;/p&gt;
+&lt;p&gt;간단하게 &lt;strong&gt;invokedynamic은 특이한 형태의 팩토리 메서드 호출 이라고 생각하면 된다.&lt;/strong&gt;&lt;br&gt;
+실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 &lt;code class=&quot;language-text&quot;&gt;Call sites&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Method handles&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Bootstrapping&lt;/code&gt;을 이해해야 한다.&lt;/p&gt;
+&lt;h2 id=&quot;call-sites&quot; style=&quot;position:relative;&quot;&gt;Call sites&lt;a href=&quot;#call-sites&quot; aria-label=&quot;call sites permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;바이트 코드에서 메서드 호출 명령이 발생하는 위치를 &lt;code class=&quot;language-text&quot;&gt;call site&lt;/code&gt;라고 한다.&lt;br&gt;
+이 메서드 호출에는 다양한 경우의 메서드 호출을 처리하기 위해 (기본적으로) 4가지의 opcode가 존재한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public class ParentClass {
+    public void printMessage() { System.out.println(&amp;quot;ParentClass&amp;quot;); }
+}
+public class ChildClass extends ParentClass {
+    @Override
+    public void printMessage() { System.out.println(&amp;quot;ChildClass&amp;quot;); }
+}
+
+abstract class AbstractClass {
+    public void printMessage() { System.out.println(&amp;quot;AbstractClass&amp;quot;); }
+}
+public class AbstractChildClass extends AbstractClass { }
+
+public interface Interface {
+    void printMessage();
+}
+public class ImplementClass implements Interface {
+    @Override
+    public void printMessage() { System.out.println(&amp;quot;ImplementClass&amp;quot;); }
+}
+
+public class Main {
+
+    public static void printMessage() { System.out.println(&amp;quot;Main&amp;quot;); }
+
+    public static void main(String[] args) {
+        ParentClass parentClass = new ParentClass();
+        parentClass.printMessage();
+
+        ParentClass parentClass1 = new ChildClass();
+        parentClass1.printMessage();
+
+        ChildClass childClass = new ChildClass();
+        childClass.printMessage();
+
+        AbstractClass abstractClass = new AbstractChildClass();
+        abstractClass.printMessage();
+
+        AbstractChildClass abstractClass1 = new AbstractChildClass();
+        abstractClass1.printMessage();
+
+        Interface implementClass = new ImplementClass();
+        implementClass.printMessage();
+
+        ImplementClass implementClass1 = new ImplementClass();
+        implementClass1.printMessage();
+
+        Main.printMessage();
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// javap -v -p -s {class}
+Constant pool:
+    ...
+{
+  public org.example.Main();
+    ...
+
+  public static void printMessage();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #3                  // String Main
+         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 5: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=8, args_size=1
+         0: new           #5                  // class org/example/ParentClass
+         3: dup
+         4: invokespecial #6                  // Method org/example/ParentClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+         7: astore_1
+         8: aload_1
+         9: invokevirtual #7                  // Method org/example/ParentClass.printMessage:()V
+        12: new           #8                  // class org/example/ChildClass
+        15: dup
+        16: invokespecial #9                  // Method org/example/ChildClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+        19: astore_2
+        20: aload_2
+        21: invokevirtual #7                  // Method org/example/ParentClass.printMessage:()V
+        24: new           #8                  // class org/example/ChildClass
+        27: dup
+        28: invokespecial #9                  // Method org/example/ChildClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+        31: astore_3
+        32: aload_3
+        33: invokevirtual #10                 // Method org/example/ChildClass.printMessage:()V
+        36: new           #11                 // class org/example/AbstractChildClass
+        39: dup
+        40: invokespecial #12                 // Method org/example/AbstractChildClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+        43: astore        4
+        45: aload         4
+        47: invokevirtual #13                 // Method org/example/AbstractClass.printMessage:()V
+        50: new           #11                 // class org/example/AbstractChildClass
+        53: dup
+        54: invokespecial #12                 // Method org/example/AbstractChildClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+        57: astore        5
+        59: aload         5
+        61: invokevirtual #14                 // Method org/example/AbstractChildClass.printMessage:()V
+        64: new           #15                 // class org/example/ImplementClass
+        67: dup
+        68: invokespecial #16                 // Method org/example/ImplementClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+        71: astore        6
+        73: aload         6
+        75: invokeinterface #17,  1           // InterfaceMethod org/example/Interface.printMessage:()V
+        80: new           #15                 // class org/example/ImplementClass
+        83: dup
+        84: invokespecial #16                 // Method org/example/ImplementClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+        87: astore        7
+        89: aload         7
+        91: invokevirtual #18                 // Method org/example/ImplementClass.printMessage:()V
+        94: invokestatic  #19                 // Method printMessage:()V
+        97: return
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;ParentClass parentClass = new ParentClass();
+parentClass.printMessage();
+
+ParentClass parentClass1 = new ChildClass();
+parentClass1.printMessage();
+
+ChildClass childClass = new ChildClass();
+childClass.printMessage();
+
+AbstractClass abstractClass = new AbstractChildClass();
+abstractClass.printMessage();
+
+AbstractChildClass abstractClass1 = new AbstractChildClass();
+abstractClass1.printMessage();
+
+Interface implementClass = new ImplementClass();
+implementClass.printMessage();
+
+ImplementClass implementClass1 = new ImplementClass();
+implementClass1.printMessage();
+
+Main.printMessage();&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
 &lt;blockquote&gt;
 &lt;p&gt;invokevirtual은 자바 바이트코드에서 메서드를 호출하는 가장 기본적인 명령어의 OpCode(operation code)이다.&lt;br&gt;
 참고로, 자바 바이트코드에서 메서드를 호출하는 명령어 OpCode는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지가 있으며 각각의 의미는 다음과 같다.&lt;/p&gt;
@@ -148,19 +311,10 @@ private fun &amp;lt;T&amp;gt; Iterable&amp;lt;T&amp;gt;.filter(predicate: (T) -&
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokevirtual&lt;/code&gt;: 인스턴스 메서드 호출&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;InnerClass$1&lt;/code&gt;이라는 이름은 컴파일러가 익명 클래스에 붙인 이름이며, &lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; 연산을 통해 메모리를 힙 안에 할당하고, 할당된 위치를 가리키는 참조를 오퍼랜드 스택에 쌓는다.&lt;br&gt;
-그리고 &lt;code class=&quot;language-text&quot;&gt;invokespecial&lt;/code&gt;을 통해 생성자를 호출한다.&lt;br&gt;
-&lt;strong&gt;하지만 람다는 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt; 연산만 호출된다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;invokedynamic-이란&quot; style=&quot;position:relative;&quot;&gt;invokedynamic 이란?&lt;a href=&quot;#invokedynamic-%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;invokedynamic 이란 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;자바 SE 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 추가된 명령어이다.&lt;br&gt;
-이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;ruby&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;def addtwo(a, b)
-    a + b;
-end&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위의 코드를 컴파일할 때는 a와 b의 형식을 알 수 없듯이 동적 타입 언어 컴파일의 난제는 프로그램이 컴파일된 후 메서드나 함수의 가장 적절한 구현을 선택할 수 있는 런타임 시스템을 구현하는 방법이다.&lt;br&gt;
-&lt;strong&gt;Java SE 7은 런타임 시스템이 &lt;code class=&quot;language-text&quot;&gt;call site&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;메서드 구현&lt;/code&gt; 간의 연결을 커스터마이징할 수 있도록 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt; 명령어를 도입한 것이다.&lt;/strong&gt;&lt;br&gt;
+&lt;h2 id=&quot;method-handles&quot; style=&quot;position:relative;&quot;&gt;Method Handles&lt;a href=&quot;#method-handles&quot; aria-label=&quot;method handles permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;bootstrapping&quot; style=&quot;position:relative;&quot;&gt;Bootstrapping&lt;a href=&quot;#bootstrapping&quot; aria-label=&quot;bootstrapping permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Java 7은 런타임 시스템이 &lt;code class=&quot;language-text&quot;&gt;call site&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;메서드 구현&lt;/code&gt; 간의 연결을 커스터마이징할 수 있도록 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt; 명령어를 도입한 것이다.&lt;/strong&gt;&lt;br&gt;
 위의 예제에서 호출된 invokedynamic call site는 &lt;code class=&quot;language-text&quot;&gt;+&lt;/code&gt;이며, 이 call site는 &lt;code class=&quot;language-text&quot;&gt;bootstrap method&lt;/code&gt;를 통해 메서드에 연결되며, &lt;strong&gt;이는 동적 유형 언어에 대해 컴파일러가 지정한 메서드로서 JVM에서 site를 연결하기 위해 한 번 호출된다.&lt;/strong&gt;&lt;br&gt;
 런타임 시스템이 &lt;code class=&quot;language-text&quot;&gt;adder(Integer, Integer)&lt;/code&gt; 메서드를 알고 있다고 가정하면 런타임은 invokedynamic call site를 adder 메서드에 연결할 수 있다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -854,11 +1008,42 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 &lt;li&gt;&lt;strong&gt;응집도&lt;/strong&gt; : 코드를 정리하면 변경을 더 작고 좁은 범위로 집중시켜 더 적은 수의 요소만 다룰 수 있을까요?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&quot;https://yozm.wishket.com/magazine/@bettercoder/&quot;&gt;옮긴이의 글들&lt;/a&gt;도 참고하자.&lt;/p&gt;
+&lt;h1 id=&quot;왜-일하는가&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;왜 일하는가?&lt;/strong&gt;&lt;a href=&quot;#%EC%99%9C-%EC%9D%BC%ED%95%98%EB%8A%94%EA%B0%80&quot; aria-label=&quot;왜 일하는가 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;나는 개발자를 하기전에 기계설비 관련 일을 먼저 했었다.&lt;br&gt;
+처음에는 자동차 엔진 생산 라인 설비 유지보수를 하다가 유지보수말고 설비를 만드는 회사에 가고 싶어서 전기 자동차 모터 테스트 설비를 만드는 회사로 이직했었다.&lt;br&gt;
+그리고 설비를 만드는 회사에서 소프트웨어 팀과 협업했던 경험이 지금 개발자로 지내게된 계기가 되었다.&lt;/p&gt;
+&lt;p&gt;개발자를 하기전에는 일을 잘 해내고 싶다는 욕심이 없었다. 개인 시간에 공부를 한다거나 자기개발에 대한 노력조차 없었다.&lt;br&gt;
+삶과 일을 분리하여 생각하면서 퇴근 시간만 기다리고, 일에 대한 재미를 느끼지 못한 시기였다.&lt;br&gt;
+삶에 대해 무료함을 느끼면서 생산적이지 않은 행동들로 시간을 허투루 보내왔다.&lt;/p&gt;
+&lt;p&gt;하지만 개발자를 시작하면서 삶과 일을 분리하려 해도 분리할 수 없는 경험을 하고 있다.&lt;br&gt;
+읽고 싶은 책과 듣고 싶은 강의 목록이 생기고, 다음에는 무엇을 공부할지, 일을 더 잘 해내기 위해서는 무엇이 필요한지를 고민하며, 하고 싶고 경험하고 싶은 일, 환경, 목표가 생겼다.&lt;br&gt;
+자연스럽게 삶에 생기가 돌기 시작했고 생산적인 행동들로 시간을 보내기 위해 노력하고 있다.&lt;/p&gt;
+&lt;p&gt;이런 경험 덕분에 이 책을 읽으면서 공감할 수 있는 내용들이 많았다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;세상에 태어나 단 한 번뿐인 귀한 삶을 사는데, 지금 당신은 정말로 가치 있는 삶을 살고 있는가?&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;내가 하고 있는 일을 사회악으로 생각하면서 단순히 돈을 벌기 위한 수단이라고만 생각하면 삶의 아름다움과 일의 재미를 느끼기 힘들다.&lt;/li&gt;
+&lt;li&gt;일하는 수고로움을 아는 사람만이 안락함의 소중함도 아는 법이다. 추위를 알아야 따뜻함을 알듯이 말이다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;인생과 일 = 능력 * 열의 * 사고방식&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;자신의 일을 진심으로 사랑하는 사람을 볼 때 감동을 느끼며, 나도 그런 사람이 되기 위해 노력한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 책을 통해 일을 사랑하는 방법과 일을 통해 삶의 아름다움을 느끼는 방법을 배울 수 있을 것이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;일하기 싫다. 먹고 살기 위해 어쩔 수 없이 회사에 나간다. 그러니 가능하다면 힘든 일은 피하고, 몸도 마음도 편하게 일하고 싶다.&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;위와 같은 생각을 한적이 있고 인생이 무료하고 일이 재미없다면 이 책을 읽어보길 추천한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;오늘도 습관처럼 출근하는 당신에게 묻는다.&lt;br&gt;
+&lt;strong&gt;당신은 어떤 일을 하는가?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;그 일을 통해 당신은 무엇이 되길 꿈꾸는가?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;당신이 꿈꾸는 일과 삶의 미래는 어떠한 모습을 하고 있는가?&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h1 id=&quot;네티-인-액션-서평-작성-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;네티 인 액션&lt;/strong&gt; 서평 작성 예정&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%84%9C%ED%8F%89-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;네티 인 액션 서평 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;real-my-sql-1권-서평-작성-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt; 서평 작성 예정&lt;a href=&quot;#real-my-sql-1%EA%B6%8C-%EC%84%9C%ED%8F%89-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;real my sql 1권 서평 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;oauth2-인-액션-서평-작성-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;OAuth2 인 액션&lt;/strong&gt; 서평 작성 예정&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%84%9C%ED%8F%89-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;oauth2 인 액션 서평 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;불안-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;불안&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%B6%88%EC%95%88-ing&quot; aria-label=&quot;불안 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;왜-일하는가-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;왜 일하는가?&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%99%9C-%EC%9D%BC%ED%95%98%EB%8A%94%EA%B0%80-ing&quot; aria-label=&quot;왜 일하는가 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;물고기는-존재하지-않는다-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;물고기는 존재하지 않는다.&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%AC%BC%EA%B3%A0%EA%B8%B0%EB%8A%94-%EC%A1%B4%EC%9E%AC%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4-ing&quot; aria-label=&quot;물고기는 존재하지 않는다 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;실전-api-설계-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;실전 API 설계&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%8B%A4%EC%A0%84-api-%EC%84%A4%EA%B3%84-ing&quot; aria-label=&quot;실전 api 설계 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;도메인주도설계-첫걸음-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;도메인주도설계 첫걸음&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%8F%84%EB%A9%94%EC%9D%B8%EC%A3%BC%EB%8F%84%EC%84%A4%EA%B3%84-%EC%B2%AB%EA%B1%B8%EC%9D%8C-ing&quot; aria-label=&quot;도메인주도설계 첫걸음 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;자바-네트워크-프로그래밍&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt;&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot; aria-label=&quot;자바 네트워크 프로그래밍 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
