@@ -1,6 +1,6 @@
 ---
 title: invokedynamic 이란? (작성 중)
-date: "2024-06-02"
+date: "2024-06-08"
 tags:
    - java
 ---
@@ -98,7 +98,6 @@ public final class MainKt {
 
 ```java
 public class InnerClass {
-
     Function<Object, String> toString1 = new Function<Object, String>() {
         @Override
         public String apply(Object o) {
@@ -236,7 +235,28 @@ public class Main {
 ```java
 // javap -v -p -s {class}
 Constant pool:
-    ...
+  #1 = Methodref          #21.#49        // java/lang/Object."<init>":()V
+  #2 = Fieldref           #50.#51        // java/lang/System.out:Ljava/io/PrintStream;
+  #3 = String             #52            // Main
+  #4 = Methodref          #53.#54        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #5 = Class              #55            // org/example/ParentClass
+  #6 = Methodref          #5.#49         // org/example/ParentClass."<init>":()V
+  #7 = Methodref          #5.#56         // org/example/ParentClass.printMessage:()V
+  #8 = Class              #57            // org/example/ChildClass
+  #9 = Methodref          #8.#49         // org/example/ChildClass."<init>":()V
+  #10 = Methodref          #8.#56         // org/example/ChildClass.printMessage:()V
+  #11 = Class              #58            // org/example/AbstractChildClass
+  #12 = Methodref          #11.#49        // org/example/AbstractChildClass."<init>":()V
+  #13 = Methodref          #59.#56        // org/example/AbstractClass.printMessage:()V
+  #14 = Methodref          #11.#56        // org/example/AbstractChildClass.printMessage:()V
+  #15 = Class              #60            // org/example/ImplementClass
+  #16 = Methodref          #15.#49        // org/example/ImplementClass."<init>":()V
+  #17 = InterfaceMethodref #61.#56        // org/example/Interface.printMessage:()V
+  #18 = Methodref          #15.#56        // org/example/ImplementClass.printMessage:()V
+  #19 = Methodref          #20.#56        // org/example/Main.printMessage:()V
+  #20 = Class              #62            // org/example/Main
+  #21 = Class              #63            // java/lang/Object
+  ...
 {
   public org.example.Main();
     ...
@@ -305,44 +325,162 @@ Constant pool:
 }
 ```
 
-```java
-ParentClass parentClass = new ParentClass();
-parentClass.printMessage();
+- `new` : 인자로 지정된 클래스의 새 인스턴스에 필요한 메모리를 힙 안에 할당한다.
+- `invokespecial` : 생성자 또는 슈퍼 클래스의 생성자를 호출할 때 사용된다.
+- `invokevirtual` : 상속 관계, 인스턴스의 메서드를 호출할 때 사용되며 동적 디스패치를 통한 런타임 해석을 담당한다.
+- `invokeinterface` : 인터페이스 관계의 메서드를 호출할 때 사용된다.
+- `invokestatic` : 정적 메소드를 호출할 때 사용된다.
+  
+자바 바이트코드에서 메서드를 호출하는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지 opcode가 존재하며, 이렇게 메서드 호출 명령이 발생하는 위치를 **call site** 라고 한다.  
+`invokedynamic`은 **이보다 훨씬 더 나아가 어떤 메서드가 실제로 호출될지 call site별로 결정할 수 있는 메커니즘을 제공한다.**  
+해당 명령어가 실행되면 JVM은 해당 (실제로 호출하려는 메서드 핸들을 보유한) call site 객체를 찾는다. 만약 이 call site에 도달한 적이 없는 경우 객체를 생성한다.  
+  
+![](./CallSite.png)
 
-ParentClass parentClass1 = new ChildClass();
-parentClass1.printMessage();
-
-ChildClass childClass = new ChildClass();
-childClass.printMessage();
-
-AbstractClass abstractClass = new AbstractChildClass();
-abstractClass.printMessage();
-
-AbstractChildClass abstractClass1 = new AbstractChildClass();
-abstractClass1.printMessage();
-
-Interface implementClass = new ImplementClass();
-implementClass.printMessage();
-
-ImplementClass implementClass1 = new ImplementClass();
-implementClass1.printMessage();
-
-Main.printMessage();
-```
-
-
-
-
-> invokevirtual은 자바 바이트코드에서 메서드를 호출하는 가장 기본적인 명령어의 OpCode(operation code)이다.  
-> 참고로, 자바 바이트코드에서 메서드를 호출하는 명령어 OpCode는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지가 있으며 각각의 의미는 다음과 같다.  
-> 1. `invokeinterface`: 인터페이스 메서드 호출
-> 2. `invokespecial`: 생성자, private 메서드, 슈퍼 클래스의 메서드 호출
-> 3. `invokestatic`: static 메서드 호출
-> 4. `invokevirtual`: 인스턴스 메서드 호출
+invokedynamic의 call site는 Java 힙에서 **[CallSite](https://docs.oracle.com/javase/8/docs/api/java/lang/invoke/CallSite.html) 객체로** 표현된다.  
+람다 표현식은 이 CallSite의 구현 클래스인 **처음 실행된 후에는 대상 메서드가 변경되지 않는 `ConstantCallSite` 사용한다.**   
 
 ## Method Handles
 
+리플렉션의 성능 문제를 해결하기 위해 Java 7은 새로운 API인 `java.lang.invoke`를 도입했다.  
+이에 포함되는 **`MethodHandle`은 코드가 호출하고자 하는 메서드를 참조하는 클래스이다.**  
+Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메커니즘이라고 볼 수 있다.  
+  
+즉, 메서드를 찾고, 조정하고, 호출하기 위한 저수준 메커니즘이다.  
+`MethodHandle`을 사용하기 위해서는 4가지를 준비해야 한다.  
+
+1. **Lookup 생성하기**
+2. **MethodType 생성하기** : 반환 타입과 매개변수 유형으로 구성되며, 불변이다.
+3. **MethodHandle 찾기** : 원본 클래스와 메서드 이름, MethodType을 Lookup 객체에 제공하여 조회할 수 있다.
+4. **MethodHandle 호출하기**
+
+```java
+public class Main {
+
+    private final List<Integer> numbers;
+
+    public Main(List<Integer> numbers) {
+        this.numbers = numbers;
+    }
+
+    public Integer sum() {
+        return numbers.stream().mapToInt(it -> it).sum();
+    }
+
+    public static void main(String[] args) throws Throwable {
+        // Main의 sum 메서드 실행하기
+        Method sumMethod = Main.class.getDeclaredMethod("sum");
+        MethodHandle sum = lookup().unreflect(sumMethod);
+        final Main main = new Main(Arrays.asList(1, 3, 5, 6, 7));
+        Object invoke4 = sum.invoke(main);
+        Object invoke5 = sum.invokeWithArguments(main);
+        Integer invoke6 = (Integer) sum.invokeExact(main);
+        
+        // String의 concat 메서드 실행하기
+        Lookup publicLookup = lookup();
+        MethodType methodType = MethodType.methodType(String.class, String.class);
+        MethodHandle concat = publicLookup.findVirtual(String.class, "concat", methodType);
+        final String s1 = "who are ";
+        final String s2 = "you?";
+        Object invoke1 = concat.invoke(s1, s2);
+        Object invoke2 = concat.invokeWithArguments(s1, s2);
+        String invoke3 = (String) concat.invokeExact(s1, s2);
+    }
+}
+```
+
 ## Bootstrapping
+
+바이트코드 명령에서 특정 invokedynamic call site가 처음 호출될 때, JVM은 명령과 연관된 call site 객체가 없기 때문에 어떤 메서드를 대상으로 실행해야 하는지 알지 못한다.  
+
+```java
+public class InnerClass {
+    Function<Object, String> toString1 = new Function<Object, String>() {
+        @Override
+        public String apply(Object o) {
+            return o.toString();
+        }
+    };
+    Function<Object, String> toString2 = Object::toString;
+
+    public static void main(String[] args) {
+        InnerClass innerClass = new InnerClass();
+        innerClass.toString1.apply("test");
+        innerClass.toString2.apply("test");
+    }
+}
+```
+
+```java
+Constant pool:
+   #1 = Methodref          #11.#32        // java/lang/Object."<init>":()V
+   #2 = Class              #33            // org/example/InnerClass$1
+   #3 = Methodref          #2.#34         // org/example/InnerClass$1."<init>":(Lorg/example/InnerClass;)V
+   #4 = Fieldref           #7.#35         // org/example/InnerClass.toString1:Ljava/util/function/Function;
+   #5 = InvokeDynamic      #0:#41         // #0:apply:()Ljava/util/function/Function;
+   #6 = Fieldref           #7.#42         // org/example/InnerClass.toString2:Ljava/util/function/Function;
+   #7 = Class              #43            // org/example/InnerClass
+   #8 = Methodref          #7.#32         // org/example/InnerClass."<init>":()V
+   #9 = String             #44            // test
+  #10 = InterfaceMethodref #45.#46        // java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+   ...
+  #16 = Utf8               Ljava/util/function/Function<Ljava/lang/Object;Ljava/lang/String;>;
+   ...
+  #41 = NameAndType        #53:#54        // apply:()Ljava/util/function/Function;
+   ...
+  #53 = Utf8               apply
+  #54 = Utf8               ()Ljava/util/function/Function;
+{
+  java.util.function.Function<java.lang.Object, java.lang.String> toString1;
+    descriptor: Ljava/util/function/Function;
+    flags:
+    Signature: #16                          // Ljava/util/function/Function<Ljava/lang/Object;Ljava/lang/String;>;
+
+  java.util.function.Function<java.lang.Object, java.lang.String> toString2;
+    descriptor: Ljava/util/function/Function;
+    flags:
+    Signature: #16                          // Ljava/util/function/Function<Ljava/lang/Object;Ljava/lang/String;>;
+
+  public org.example.InnerClass();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=4, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: new           #2                  // class org/example/InnerClass$1
+         8: dup
+         9: aload_0
+        10: invokespecial #3                  // Method org/example/InnerClass$1."<init>":(Lorg/example/InnerClass;)V
+        13: putfield      #4                  // Field toString1:Ljava/util/function/Function;
+        16: aload_0
+        17: invokedynamic #5,  0              // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+        22: putfield      #6                  // Field toString2:Ljava/util/function/Function;
+        25: return
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: new           #7                  // class org/example/InnerClass
+         3: dup
+         4: invokespecial #8                  // Method "<init>":()V
+         7: astore_1
+         8: aload_1
+         9: getfield      #4                  // Field toString1:Ljava/util/function/Function;
+        12: ldc           #9                  // String test
+        14: invokeinterface #10,  2           // InterfaceMethod java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+        19: pop
+        20: aload_1
+        21: getfield      #6                  // Field toString2:Ljava/util/function/Function;
+        24: ldc           #9                  // String test
+        26: invokeinterface #10,  2           // InterfaceMethod java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+        31: pop
+        32: return
+}
+```
 
 ***
 
@@ -483,6 +621,7 @@ abstract public class CallSite {
 - [Behind the scenes: How do lambda expressions really work in Java?](https://blogs.oracle.com/javamagazine/post/behind-the-scenes-how-do-lambda-expressions-really-work-in-java)
 - [Understanding Java method invocation with invokedynamic](https://blogs.oracle.com/javamagazine/post/understanding-java-method-invocation-with-invokedynamic)
 - [Mastering the mechanics of Java method invocation](https://blogs.oracle.com/javamagazine/post/mastering-the-mechanics-of-java-method-invocation)
+- [Baeldung : Method Handles in Java](https://www.baeldung.com/java-method-handles)
 - [Inline Functions in Kotlin](https://www.baeldung.com/kotlin/inline-functions)
 - [JVM Internal](https://d2.naver.com/helloworld/1230)
 - [모던 자바 인 액션](https://m.yes24.com/Goods/Detail/77125987) : 부록 D
