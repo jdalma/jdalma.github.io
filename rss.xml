@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 07 Jun 2024 08:06:36 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란? (작성 중)]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Sun, 02 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 09 Jun 2024 15:11:24 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란? (작성 중)]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Sat, 08 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;자바와 코틀린에서 람다를 처리하는 방식이 다르다는 것을 알게됐다.&lt;br&gt;
 코틀린을 먼저 확인해보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -82,7 +82,6 @@ private fun &amp;lt;T&amp;gt; Iterable&amp;lt;T&amp;gt;.filter(predicate: (T) -&
 익명 클래스와 람다를 바이트코드로 확인해보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class InnerClass {
-
     Function&amp;lt;Object, String&amp;gt; toString1 = new Function&amp;lt;Object, String&amp;gt;() {
         @Override
         public String apply(Object o) {
@@ -209,7 +208,28 @@ public class Main {
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// javap -v -p -s {class}
 Constant pool:
-    ...
+  #1 = Methodref          #21.#49        // java/lang/Object.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+  #2 = Fieldref           #50.#51        // java/lang/System.out:Ljava/io/PrintStream;
+  #3 = String             #52            // Main
+  #4 = Methodref          #53.#54        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #5 = Class              #55            // org/example/ParentClass
+  #6 = Methodref          #5.#49         // org/example/ParentClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+  #7 = Methodref          #5.#56         // org/example/ParentClass.printMessage:()V
+  #8 = Class              #57            // org/example/ChildClass
+  #9 = Methodref          #8.#49         // org/example/ChildClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+  #10 = Methodref          #8.#56         // org/example/ChildClass.printMessage:()V
+  #11 = Class              #58            // org/example/AbstractChildClass
+  #12 = Methodref          #11.#49        // org/example/AbstractChildClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+  #13 = Methodref          #59.#56        // org/example/AbstractClass.printMessage:()V
+  #14 = Methodref          #11.#56        // org/example/AbstractChildClass.printMessage:()V
+  #15 = Class              #60            // org/example/ImplementClass
+  #16 = Methodref          #15.#49        // org/example/ImplementClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+  #17 = InterfaceMethodref #61.#56        // org/example/Interface.printMessage:()V
+  #18 = Methodref          #15.#56        // org/example/ImplementClass.printMessage:()V
+  #19 = Methodref          #20.#56        // org/example/Main.printMessage:()V
+  #20 = Class              #62            // org/example/Main
+  #21 = Class              #63            // java/lang/Object
+  ...
 {
   public org.example.Main();
     ...
@@ -277,46 +297,394 @@ Constant pool:
         97: return
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;ParentClass parentClass = new ParentClass();
-parentClass.printMessage();
-
-ParentClass parentClass1 = new ChildClass();
-parentClass1.printMessage();
-
-ChildClass childClass = new ChildClass();
-childClass.printMessage();
-
-AbstractClass abstractClass = new AbstractChildClass();
-abstractClass.printMessage();
-
-AbstractChildClass abstractClass1 = new AbstractChildClass();
-abstractClass1.printMessage();
-
-Interface implementClass = new ImplementClass();
-implementClass.printMessage();
-
-ImplementClass implementClass1 = new ImplementClass();
-implementClass1.printMessage();
-
-Main.printMessage();&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;blockquote&gt;
-&lt;p&gt;invokevirtual은 자바 바이트코드에서 메서드를 호출하는 가장 기본적인 명령어의 OpCode(operation code)이다.&lt;br&gt;
-참고로, 자바 바이트코드에서 메서드를 호출하는 명령어 OpCode는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지가 있으며 각각의 의미는 다음과 같다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokeinterface&lt;/code&gt;: 인터페이스 메서드 호출&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokespecial&lt;/code&gt;: 생성자, private 메서드, 슈퍼 클래스의 메서드 호출&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokestatic&lt;/code&gt;: static 메서드 호출&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokevirtual&lt;/code&gt;: 인스턴스 메서드 호출&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; : 인자로 지정된 클래스의 새 인스턴스에 필요한 메모리를 힙 안에 할당한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokespecial&lt;/code&gt; : 생성자 또는 슈퍼 클래스의 생성자를 호출할 때 사용된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokevirtual&lt;/code&gt; : 상속 관계, 인스턴스의 메서드를 호출할 때 사용되며 동적 디스패치를 통한 런타임 해석을 담당한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokeinterface&lt;/code&gt; : 인터페이스 관계의 메서드를 호출할 때 사용된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokestatic&lt;/code&gt; : 정적 메소드를 호출할 때 사용된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;자바 바이트코드에서 메서드를 호출하는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지 opcode가 존재하며, 이렇게 메서드 호출 명령이 발생하는 위치를 &lt;strong&gt;call site&lt;/strong&gt; 라고 한다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt;은 &lt;strong&gt;이보다 훨씬 더 나아가 어떤 메서드가 실제로 호출될지 call site별로 결정할 수 있는 메커니즘을 제공한다.&lt;/strong&gt;&lt;br&gt;
+해당 명령어가 실행되면 JVM은 해당 (실제로 호출하려는 메서드 핸들을 보유한) call site 객체를 찾는다. 만약 이 call site에 도달한 적이 없는 경우 객체를 생성한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/87f7a0772e657a29b2c55fe0e4c083c5/8078c/CallSite.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 36.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABHUlEQVR42p1R7WqDQBD0ORK98+JFEzUaT70mttV6fiRQaKHv/y7T9SgthQZCfwwLN7M7O7cO8zf4Cx4TOD9pmKnHMM4wZsA4TnhuO9zqWeDcHMg3iNMEaZZBlTV6M6LSJyRpBv6fgQtc5sPzBaJ9jGNRkomA6/H7NvxxFd9YtuyGBtfXC97ePyj6ABFIMC5+abkILOxAl3GsPYYVOa+5hOtvCRI8iGi7kEQSYneEzB7BBPEi/OIWXWj1K5cTmE3kRGmOvFAUqYKqT1CVtthGMZKixlGVyBXV8oH+UqMoK0jiDkpbTukGxVKrGrs4gZM1HVqKYnq64jRTrAnjMGGfHKDNhPaltW9mGG3te4MoyXCmy7dda3sWbr5cybDCJ2730Phsf0+UAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;CallSite&quot;
+        title=&quot;&quot;
+        src=&quot;/static/87f7a0772e657a29b2c55fe0e4c083c5/1cfc2/CallSite.png&quot;
+        srcset=&quot;/static/87f7a0772e657a29b2c55fe0e4c083c5/3684f/CallSite.png 225w,
+/static/87f7a0772e657a29b2c55fe0e4c083c5/fc2a6/CallSite.png 450w,
+/static/87f7a0772e657a29b2c55fe0e4c083c5/1cfc2/CallSite.png 900w,
+/static/87f7a0772e657a29b2c55fe0e4c083c5/21482/CallSite.png 1350w,
+/static/87f7a0772e657a29b2c55fe0e4c083c5/d61c2/CallSite.png 1800w,
+/static/87f7a0772e657a29b2c55fe0e4c083c5/8078c/CallSite.png 2218w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;invokedynamic의 call site는 Java 힙에서 &lt;strong&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/lang/invoke/CallSite.html&quot;&gt;CallSite&lt;/a&gt; 객체로&lt;/strong&gt; 표현된다.&lt;br&gt;
+람다 표현식은 이 CallSite의 구현 클래스인 &lt;strong&gt;(처음 실행된 후에는 대상 메서드가 변경되지 않는) &lt;code class=&quot;language-text&quot;&gt;ConstantCallSite&lt;/code&gt;를 사용한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;method-handles&quot; style=&quot;position:relative;&quot;&gt;Method Handles&lt;a href=&quot;#method-handles&quot; aria-label=&quot;method handles permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Java 7은 새로운 API인 &lt;code class=&quot;language-text&quot;&gt;java.lang.invoke&lt;/code&gt;를 도입했다.&lt;br&gt;
+이에 포함되는 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;MethodHandle&lt;/code&gt;은 코드가 호출하고자 하는 메서드를 참조하는 클래스이다.&lt;/strong&gt;&lt;br&gt;
+Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메커니즘이라고 볼 수 있다.&lt;/p&gt;
+&lt;p&gt;즉, 메서드를 찾고, 조정하고, 호출하기 위한 저수준 메커니즘이다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;MethodHandle&lt;/code&gt;을 사용하기 위해서는 4가지를 준비해야 한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Lookup 생성하기&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MethodType 생성하기&lt;/strong&gt; : 반환 타입과 매개변수 유형으로 구성되며, 불변이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MethodHandle 찾기&lt;/strong&gt; : 원본 클래스와 메서드 이름, MethodType을 Lookup 객체에 제공하여 조회할 수 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MethodHandle 호출하기&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public class Main {
+
+    private final List&amp;lt;Integer&amp;gt; numbers;
+
+    public Main(List&amp;lt;Integer&amp;gt; numbers) {
+        this.numbers = numbers;
+    }
+
+    public Integer sum() {
+        return numbers.stream().mapToInt(it -&amp;gt; it).sum();
+    }
+
+    public static void main(String[] args) throws Throwable {
+        // Main의 sum 메서드 실행하기
+        Method sumMethod = Main.class.getDeclaredMethod(&amp;quot;sum&amp;quot;);
+        MethodHandle sum = lookup().unreflect(sumMethod);
+        final Main main = new Main(Arrays.asList(1, 3, 5, 6, 7));
+        Object invoke4 = sum.invoke(main);
+        Object invoke5 = sum.invokeWithArguments(main);
+        Integer invoke6 = (Integer) sum.invokeExact(main);
+        
+        // String의 concat 메서드 실행하기
+        Lookup publicLookup = lookup();
+        MethodType methodType = MethodType.methodType(String.class, String.class);
+        MethodHandle concat = publicLookup.findVirtual(String.class, &amp;quot;concat&amp;quot;, methodType);
+        final String s1 = &amp;quot;who are &amp;quot;;
+        final String s2 = &amp;quot;you?&amp;quot;;
+        Object invoke1 = concat.invoke(s1, s2);
+        Object invoke2 = concat.invokeWithArguments(s1, s2);
+        String invoke3 = (String) concat.invokeExact(s1, s2);
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract public class CallSite {
+    static { MethodHandleImpl.initStatics(); }
+
+    // The actual payload of this call site:
+    /*package-private*/
+    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
+
+    public abstract MethodHandle dynamicInvoker();
+    ...
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
 &lt;h2 id=&quot;bootstrapping&quot; style=&quot;position:relative;&quot;&gt;Bootstrapping&lt;a href=&quot;#bootstrapping&quot; aria-label=&quot;bootstrapping permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Java 7은 런타임 시스템이 &lt;code class=&quot;language-text&quot;&gt;call site&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;메서드 구현&lt;/code&gt; 간의 연결을 커스터마이징할 수 있도록 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt; 명령어를 도입한 것이다.&lt;/strong&gt;&lt;br&gt;
-위의 예제에서 호출된 invokedynamic call site는 &lt;code class=&quot;language-text&quot;&gt;+&lt;/code&gt;이며, 이 call site는 &lt;code class=&quot;language-text&quot;&gt;bootstrap method&lt;/code&gt;를 통해 메서드에 연결되며, &lt;strong&gt;이는 동적 유형 언어에 대해 컴파일러가 지정한 메서드로서 JVM에서 site를 연결하기 위해 한 번 호출된다.&lt;/strong&gt;&lt;br&gt;
-런타임 시스템이 &lt;code class=&quot;language-text&quot;&gt;adder(Integer, Integer)&lt;/code&gt; 메서드를 알고 있다고 가정하면 런타임은 invokedynamic call site를 adder 메서드에 연결할 수 있다.&lt;/p&gt;
+&lt;p&gt;바이트코드 명령에서 특정 invokedynamic call site가 처음 호출될 때, JVM에는 명령과 연관된 call site 객체가 없기 때문에 어떤 메서드를 대상으로 실행해야 하는지 알지 못한다.&lt;br&gt;
+즉, 이전에 보았던 invokestatic 및 invokespecial의 경우 컴파일 시점에 정확한 호출 대상을 알 수 있지만, invokedynamic은 호출 대상을 모르는 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;invokedynamic은 &lt;a href=&quot;https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-4.html#jvms-4.7.23&quot;&gt;BootstrapMethods(BSM)&lt;/a&gt;라고하는 동적 특성 호출을 지원하는 추가 정보를 참조한다.&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;특정 invokedynamic call site에 BSM을 연결할 수 있도록&lt;/strong&gt; Java 7부터 클래스 파일 형식에 InvokeDynamic라는 새로운 항목 유형이 추가되었다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public class FirstClass {
+    private final Function&amp;lt;String, String&amp;gt; toLowercase = String::toLowerCase;
+    private final Predicate&amp;lt;Character&amp;gt; isUppercase = ch -&amp;gt; ch &amp;gt;= 65 &amp;amp;&amp;amp; ch &amp;lt;= 90;
+
+    public static void main(String[] args) {
+        FirstClass firstClass = new FirstClass();
+        firstClass.toLowercase.apply(&amp;quot;TEST&amp;quot;);
+        firstClass.isUppercase.test(&amp;#39;A&amp;#39;);
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;details&gt;
+&lt;summary&gt;모든 바이트코드 펼치기&lt;/summary&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;Constant pool:
+   #1 = Methodref          #13.#40        // java/lang/Object.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+   #2 = InvokeDynamic      #0:#46         // #0:apply:()Ljava/util/function/Function;
+   #3 = Fieldref           #6.#47         // org/example/FirstClass.toLowercase:Ljava/util/function/Function;
+   #4 = InvokeDynamic      #1:#51         // #1:test:()Ljava/util/function/Predicate;
+   #5 = Fieldref           #6.#52         // org/example/FirstClass.isUppercase:Ljava/util/function/Predicate;
+   #6 = Class              #53            // org/example/FirstClass
+   #7 = Methodref          #6.#40         // org/example/FirstClass.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+   #8 = String             #54            // TEST
+   #9 = InterfaceMethodref #55.#56        // java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+  #10 = Methodref          #57.#58        // java/lang/Character.valueOf:(C)Ljava/lang/Character;
+  #11 = InterfaceMethodref #59.#60        // java/util/function/Predicate.test:(Ljava/lang/Object;)Z
+  #12 = Methodref          #57.#61        // java/lang/Character.charValue:()C
+  #13 = Class              #62            // java/lang/Object
+  #14 = Utf8               toLowercase
+  #15 = Utf8               Ljava/util/function/Function;
+  #16 = Utf8               Signature
+  #17 = Utf8               Ljava/util/function/Function&amp;lt;Ljava/lang/String;Ljava/lang/String;&amp;gt;;
+  #18 = Utf8               isUppercase
+  #19 = Utf8               Ljava/util/function/Predicate;
+  #20 = Utf8               Ljava/util/function/Predicate&amp;lt;Ljava/lang/Character;&amp;gt;;
+  #21 = Utf8               &amp;lt;init&amp;gt;
+  #22 = Utf8               ()V
+  #23 = Utf8               Code
+  #24 = Utf8               LineNumberTable
+  #25 = Utf8               LocalVariableTable
+  #26 = Utf8               this
+  #27 = Utf8               Lorg/example/FirstClass;
+  #28 = Utf8               main
+  #29 = Utf8               ([Ljava/lang/String;)V
+  #30 = Utf8               args
+  #31 = Utf8               [Ljava/lang/String;
+  #32 = Utf8               firstClass
+  #33 = Utf8               lambda$new$0
+  #34 = Utf8               (Ljava/lang/Character;)Z
+  #35 = Utf8               ch
+  #36 = Utf8               Ljava/lang/Character;
+  #37 = Utf8               StackMapTable
+  #38 = Utf8               SourceFile
+  #39 = Utf8               FirstClass.java
+  #40 = NameAndType        #21:#22        // &amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+  #41 = Utf8               BootstrapMethods
+  #42 = MethodHandle       #6:#63         // invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #43 = MethodType         #64            //  (Ljava/lang/Object;)Ljava/lang/Object;
+  #44 = MethodHandle       #5:#65         // invokevirtual java/lang/String.toLowerCase:()Ljava/lang/String;
+  #45 = MethodType         #66            //  (Ljava/lang/String;)Ljava/lang/String;
+  #46 = NameAndType        #67:#68        // apply:()Ljava/util/function/Function;
+  #47 = NameAndType        #14:#15        // toLowercase:Ljava/util/function/Function;
+  #48 = MethodType         #69            //  (Ljava/lang/Object;)Z
+  #49 = MethodHandle       #6:#70         // invokestatic org/example/FirstClass.lambda$new$0:(Ljava/lang/Character;)Z
+  #50 = MethodType         #34            //  (Ljava/lang/Character;)Z
+  #51 = NameAndType        #71:#72        // test:()Ljava/util/function/Predicate;
+  #52 = NameAndType        #18:#19        // isUppercase:Ljava/util/function/Predicate;
+  #53 = Utf8               org/example/FirstClass
+  #54 = Utf8               TEST
+  #55 = Class              #73            // java/util/function/Function
+  #56 = NameAndType        #67:#64        // apply:(Ljava/lang/Object;)Ljava/lang/Object;
+  #57 = Class              #74            // java/lang/Character
+  #58 = NameAndType        #75:#76        // valueOf:(C)Ljava/lang/Character;
+  #59 = Class              #77            // java/util/function/Predicate
+  #60 = NameAndType        #71:#69        // test:(Ljava/lang/Object;)Z
+  #61 = NameAndType        #78:#79        // charValue:()C
+  #62 = Utf8               java/lang/Object
+  #63 = Methodref          #80.#81        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #64 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #65 = Methodref          #82.#83        // java/lang/String.toLowerCase:()Ljava/lang/String;
+  #66 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #67 = Utf8               apply
+  #68 = Utf8               ()Ljava/util/function/Function;
+  #69 = Utf8               (Ljava/lang/Object;)Z
+  #70 = Methodref          #6.#84         // org/example/FirstClass.lambda$new$0:(Ljava/lang/Character;)Z
+  #71 = Utf8               test
+  #72 = Utf8               ()Ljava/util/function/Predicate;
+  #73 = Utf8               java/util/function/Function
+  #74 = Utf8               java/lang/Character
+  #75 = Utf8               valueOf
+  #76 = Utf8               (C)Ljava/lang/Character;
+  #77 = Utf8               java/util/function/Predicate
+  #78 = Utf8               charValue
+  #79 = Utf8               ()C
+  #80 = Class              #85            // java/lang/invoke/LambdaMetafactory
+  #81 = NameAndType        #86:#90        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #82 = Class              #91            // java/lang/String
+  #83 = NameAndType        #92:#93        // toLowerCase:()Ljava/lang/String;
+  #84 = NameAndType        #33:#34        // lambda$new$0:(Ljava/lang/Character;)Z
+  #85 = Utf8               java/lang/invoke/LambdaMetafactory
+  #86 = Utf8               metafactory
+  #87 = Class              #95            // java/lang/invoke/MethodHandles$Lookup
+  #88 = Utf8               Lookup
+  #89 = Utf8               InnerClasses
+  #90 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #91 = Utf8               java/lang/String
+  #92 = Utf8               toLowerCase
+  #93 = Utf8               ()Ljava/lang/String;
+  #94 = Class              #96            // java/lang/invoke/MethodHandles
+  #95 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #96 = Utf8               java/lang/invoke/MethodHandles
+{
+  private final java.util.function.Function&amp;lt;java.lang.String, java.lang.String&amp;gt; toLowercase;
+    descriptor: Ljava/util/function/Function;
+    flags: ACC_PRIVATE, ACC_FINAL
+    Signature: #17                          // Ljava/util/function/Function&amp;lt;Ljava/lang/String;Ljava/lang/String;&amp;gt;;
+
+  private final java.util.function.Predicate&amp;lt;java.lang.Character&amp;gt; isUppercase;
+    descriptor: Ljava/util/function/Predicate;
+    flags: ACC_PRIVATE, ACC_FINAL
+    Signature: #20                          // Ljava/util/function/Predicate&amp;lt;Ljava/lang/Character;&amp;gt;;
+
+  public org.example.FirstClass();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+         4: aload_0
+         5: invokedynamic #2,  0              // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+        10: putfield      #3                  // Field toLowercase:Ljava/util/function/Function;
+        13: aload_0
+        14: invokedynamic #4,  0              // InvokeDynamic #1:test:()Ljava/util/function/Predicate;
+        19: putfield      #5                  // Field isUppercase:Ljava/util/function/Predicate;
+        22: return
+      LineNumberTable:
+        line 6: 0
+        line 7: 4
+        line 8: 13
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      23     0  this   Lorg/example/FirstClass;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: new           #6                  // class org/example/FirstClass
+         3: dup
+         4: invokespecial #7                  // Method &amp;quot;&amp;lt;init&amp;gt;&amp;quot;:()V
+         7: astore_1
+         8: aload_1
+         9: getfield      #3                  // Field toLowercase:Ljava/util/function/Function;
+        12: ldc           #8                  // String TEST
+        14: invokeinterface #9,  2            // InterfaceMethod java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+        19: pop
+        20: aload_1
+        21: getfield      #5                  // Field isUppercase:Ljava/util/function/Predicate;
+        24: bipush        65
+        26: invokestatic  #10                 // Method java/lang/Character.valueOf:(C)Ljava/lang/Character;
+        29: invokeinterface #11,  2           // InterfaceMethod java/util/function/Predicate.test:(Ljava/lang/Object;)Z
+        34: pop
+        35: return
+      LineNumberTable:
+        line 11: 0
+        line 12: 8
+        line 13: 20
+        line 14: 35
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      36     0  args   [Ljava/lang/String;
+            8      28     1 firstClass   Lorg/example/FirstClass;
+
+  private static boolean lambda$new$0(java.lang.Character);
+    descriptor: (Ljava/lang/Character;)Z
+    flags: ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokevirtual #12                 // Method java/lang/Character.charValue:()C
+         4: bipush        65
+         6: if_icmplt     22
+         9: aload_0
+        10: invokevirtual #12                 // Method java/lang/Character.charValue:()C
+        13: bipush        90
+        15: if_icmpgt     22
+        18: iconst_1
+        19: goto          23
+        22: iconst_0
+        23: ireturn
+      LineNumberTable:
+        line 8: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      24     0    ch   Ljava/lang/Character;
+      StackMapTable: number_of_entries = 2
+        frame_type = 22 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+}
+SourceFile: &amp;quot;FirstClass.java&amp;quot;
+InnerClasses:
+     public static final #88= #87 of #94; //Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #42 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #43 (Ljava/lang/Object;)Ljava/lang/Object;
+      #44 invokevirtual java/lang/String.toLowerCase:()Ljava/lang/String;
+      #45 (Ljava/lang/String;)Ljava/lang/String;
+  1: #42 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #48 (Ljava/lang/Object;)Z
+      #49 invokestatic org/example/FirstClass.lambda$new$0:(Ljava/lang/Character;)Z
+      #50 (Ljava/lang/Character;)Z&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9ae3fccd654513fef2d3095c09ccd3ca/e515d/bsm.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAADOklEQVR42n2TWXPiVhCF/f9/RKqSSio1M3E8GceY8XjDC7sxAiHJWtCCQAgJYbPaYPtLQ2Wq5iGVh1OtbnWf7tv3nj3e1rB+FDz9NzZTVtMRUWDy/vI/eYL3lwl7m0XGLDSZ9R2B/QOcHeaDLv0HBatRYuIb4v+Qt/0ebHNs5pHH1KuxN1/MaA+HtOMR7WSMmmZiU9RIYlFMJ04omxYn9TpN8VX51x4ltCTeGkT/YoASjdC9jhBmMb7eIDRb+OVvuJeHBNUzgkDD9zt4nortdnAclaBxRdgqEiq39DsVBgOLMLIZbBF7dL0qewtTZaLbLA2PrHlPcFWgd3lO2G4z1DQSQ44Zx7zVq4S//4oqSPJHOPuf8C/OyBp1Xk2dd8ui79zJhL7FeD1n9b5hBUziIZ3COW7pGq94TdKsM9XbrE5zjMo33H7eR/l6hFk4Y1gtkt5VeNZbrIU0dLY79CxS2c0sGpPZJknrnkRpkPV84q5DaOhEYY/FXZVlvURUKVI7+IPy/kes8xN6xSsemzU2pvGd0CbpRUz7KenVOV7uCwOZcPCgE0uDsWMxG6espMlKCt8lX/ua4/K3nzn75SfMb3leDZW1oRHaW0LfZrKc8fL6xovc1tTzME5PcAuXu2my+zuWmsoq/zdr2ddGGk3UluxWJxUsPJeXMGDd79P37oXQtXCSLt7Yp2fUcAMVw23SDTXa4teaN9y1izglaeJI3JaLU0t4WYAvNb5YL/XED7EDmXChK2idApp2zcPtZ+xmAfUij3Ke26GaO6B8uI95cYxxc4rbaeApNRw5mSWCaEfKDq2hKu+wKBPOH+kMWnQSHUM5JdSqmPk89Y8fUA+/0P7rM8rBn/iXFzgnJ6SVMk/ynCbZI8MkQhWizrCNGmsYXmlLOEEdKKIIFTWoEzzUUfLHXH36QOP4iG7xBr9Swi3f4pXlUTdFBIHPOE2Jkr4QyjACNe4I4XbCxZNIT0MdPdAa6XhPEePpgl6c0hulxJMnJotnstmSbL5kLHbyNGP1vCGdPYpkdak1RK4merBVyjRGswvo3VvBDYbYrYTcoLZD16/iiL+NfbfbmO1WsNzyrkbvXqO5RUwjxz8ojTDV7F2nHQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;bsm&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9ae3fccd654513fef2d3095c09ccd3ca/1cfc2/bsm.png&quot;
+        srcset=&quot;/static/9ae3fccd654513fef2d3095c09ccd3ca/3684f/bsm.png 225w,
+/static/9ae3fccd654513fef2d3095c09ccd3ca/fc2a6/bsm.png 450w,
+/static/9ae3fccd654513fef2d3095c09ccd3ca/1cfc2/bsm.png 900w,
+/static/9ae3fccd654513fef2d3095c09ccd3ca/21482/bsm.png 1350w,
+/static/9ae3fccd654513fef2d3095c09ccd3ca/e515d/bsm.png 1430w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;즉, &lt;code class=&quot;language-text&quot;&gt;#2&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;#4&lt;/code&gt;의 상수는 &lt;code class=&quot;language-text&quot;&gt;CONSTANT_InvokeDynamic&lt;/code&gt; 유형의 상수이며, 이 call site의 bootstrap method는 상수 풀의 &lt;code class=&quot;language-text&quot;&gt;#42&lt;/code&gt; 항목이다.&lt;br&gt;
+&lt;strong&gt;BSM으로 사용될 메서드 핸들은 &lt;code class=&quot;language-text&quot;&gt;LambdaMetafactory.metafactory(...)&lt;/code&gt;이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public class LambdaMetafactory {
+    /**
+     * 적절한 유형 조정 및 인수의 부분 평가 후 제공된 MethodHandle에 대한 위임을 통해 하나 이상의 인터페이스를 구현하는 간단한 &amp;quot;함수 개체&amp;quot; 생성을 용이하게 합니다.
+     * 일반적으로 Java 프로그래밍 언어의 람다식 및 메서드 참조식 기능을 지원하기 위해 invokedynamic 호출 ​​사이트의 부트스트랩 메서드로 사용됩니다.
+     * 이 메서드에서 반환된 CallSite의 대상이 호출되면 결과 함수 객체는 invokedType의 반환 유형으로 명명된 인터페이스를 구현하고, invokedName으로 지정된 이름과 samMethodType으로 지정된 서명으로 메서드를 선언하는 클래스의 인스턴스입니다.
+     */
+    public static CallSite metafactory(MethodHandles.Lookup caller,
+                                       String invokedName,
+                                       MethodType invokedType,
+                                       MethodType samMethodType,
+                                       MethodHandle implMethod,
+                                       MethodType instantiatedMethodType)
+            throws LambdaConversionException {
+        AbstractValidatingLambdaMetafactory mf;
+        mf = new InnerClassLambdaMetafactory(caller, invokedType,
+                                             invokedName, samMethodType,
+                                             implMethod, instantiatedMethodType,
+                                             false, EMPTY_CLASS_ARRAY, EMPTY_MT_ARRAY);
+        mf.validateMetafactoryArgs();
+        return mf.buildCallSite();
+    }
+    ...
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;strong&gt;BSM은 이 정적 메서드를 호출하여 CallSite 객체를 반환하며, invokedynamic 명령이 실행되면 CallSite에 포함된 MethodHandle은 람다의 대상 유형을 구현하는 클래스의 인스턴스를 반환한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;bsm-만들어보기&quot; style=&quot;position:relative;&quot;&gt;BSM 만들어보기&lt;a href=&quot;#bsm-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;bsm 만들어보기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class Ops {
     public static Integer adder(Integer x, Integer y) {
@@ -369,10 +737,7 @@ class MethodHandleTest {
 런타임 시스템에서 사용할 수 있는 메서드가 여러 개 있고 각각 다른 인수 유형을 처리하는 경우 부트스트랩 메서드 mybsm은 &lt;strong&gt;dynamicMethodType 인수에 따라 메서드를 동적으로 선택할 수 있다.&lt;/strong&gt;&lt;br&gt;
 invokedynamic 명령어는 컴파일러와 런타임 시스템의 동적 언어 구현을 단순화하며, 이는 Java 클래스 및 인터페이스에 특정한 연결 동작이 JVM에 의해 하드와이어링 되는 invokevirtual과 같은 다른 JVM 명령어와 대조된다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;위의 예제처럼 &lt;code class=&quot;language-text&quot;&gt;MethodHandle&lt;/code&gt;을 사용하는 것은 Reflection API에 비해 너무 복잡하다고 느낄 수 있다.&lt;br&gt;
-하지만 &lt;code class=&quot;language-text&quot;&gt;MethodHandle&lt;/code&gt;의 주된 목적은 메서드를 직접 호출하는 것이 아니라 &lt;strong&gt;invokedynamic call site와 함께 사용하는 것이 주된 목적이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;invokedynamic 명령의 각 인스턴스를 &lt;code class=&quot;language-text&quot;&gt;dynamic call site&lt;/code&gt;라고 하며, 최초에는 호출할 메서드가 지정되어 있지 않아 위와 같은 부트스트랩 메서드를 통해 메서드에 연결된다.&lt;/p&gt;
-&lt;p&gt;부트스트랩 메서드가 반환하는 &lt;code class=&quot;language-text&quot;&gt;ConstantCallSite&lt;/code&gt; 인스턴스는 호출된 &lt;strong&gt;invokedynamic 명령어&lt;/strong&gt;와 연결할 호출 사이트를 의미하며 고유하다. ConstantCallSite 인스턴스의 대상(target)은 영구적이며 절대 변경할 수 없다.&lt;/p&gt;
+&lt;p&gt;부트스트랩 메서드가 반환하는 &lt;code class=&quot;language-text&quot;&gt;ConstantCallSite&lt;/code&gt; 인스턴스는 호출된 &lt;strong&gt;invokedynamic 명령어&lt;/strong&gt;와 &lt;strong&gt;연결할 CallSite&lt;/strong&gt;를 의미하며 고유하다. ConstantCallSite 인스턴스의 대상(target)은 영구적이며 절대 변경할 수 없다.&lt;/p&gt;
 &lt;p&gt;invokedynamic 명령으로 동적으로 연결된 메서드를 호출하려면 아래의 단계가 필요하다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Defining the Bootstrap Method&lt;/strong&gt; (부트스트랩 메서드 정의하기)&lt;/li&gt;
@@ -386,18 +751,6 @@ invokedynamic 명령어는 컴파일러와 런타임 시스템의 동적 언어 
 부트스트랩 메서드의 반환 유형은 &lt;code class=&quot;language-text&quot;&gt;java.lang.invoke.CallSite&lt;/code&gt;여야 한다.&lt;/p&gt;
 &lt;p&gt;즉, CallSite 객체는 호출된 invokedynamic 명령의 연결된 상태와 연결된 메서드 핸들을 나타낸다.&lt;br&gt;
 &lt;strong&gt;JVM이 동일한 호출된 동적 명령어를 다시 실행하면 부트스트랩 메서드를 호출하지 않고 연결된 메서드 핸들을 자동으로 호출한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;abstract public class CallSite {
-    static { MethodHandleImpl.initStatics(); }
-
-    // The actual payload of this call site:
-    /*package-private*/
-    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
-
-    public abstract MethodHandle dynamicInvoker();
-    ...
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;컴파일러는 람다 식을 캡처하기 위해 생성하는 코드는 람다 식 자체와 해당 식이 할당되는 함수형 인터페이스 유형에 따라 달라진다.&lt;br&gt;
 람다 식을 구현하는 객체를 생성하기 위해 바이트코드를 생성하는 대신(예: 내부 클래스의 생성자 호출), 람다를 구성하는 레시피를 설명하고 실제 구성은 언어 런타임에 위임합니다. 이 레시피는 호출된 동적 명령어의 정적 및 동적 인수 목록에 인코딩됩니다.&lt;/p&gt;
 &lt;p&gt;호출된 다이나믹을 사용하면 번역 전략 선택을 런타임까지 연기할 수 있습니다. 런타임 구현은 람다 식을 평가하기 위해 동적으로 전략을 자유롭게 선택할 수 있습니다. 런타임 구현 선택은 람다 구성을 위한 표준화된(즉, 플랫폼 사양의 일부인) API 뒤에 숨겨져 있으므로 정적 컴파일러는 이 API에 대한 호출을 내보낼 수 있으며, JRE 구현은 선호하는 구현 전략을 선택할 수 있습니다. 호출된 동적 메커니즘을 사용하면 이러한 후기 바인딩 접근 방식이 부과할 수 있는 성능 비용 없이 이 작업을 수행할 수 있습니다.&lt;/p&gt;
@@ -437,12 +790,14 @@ invokedynamic 명령어는 컴파일러와 런타임 시스템의 동적 언어 
 만약 상태를 포함한다면 그 상태를 람다 표현식의 인수에 캡처한 각 변수를 추가하는 것이다.&lt;/p&gt;
 &lt;h1 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;참고&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/technotes/guides/vm/multiple-language-support.html&quot;&gt;Java Virtual Machine Support for Non-Java Languages&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://dzone.com/articles/dismantling-invokedynamic&quot;&gt;Dismantling invokedynamic&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://cr.openjdk.org/~briangoetz/lambda/lambda-translation.html&quot;&gt;Translation of Lambda Expressions&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/technotes/guides/vm/multiple-language-support.html&quot;&gt;Java Virtual Machine Support for Non-Java Languages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://homoefficio.github.io/2019/01/31/Back-to-the-Essence-Java-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%EA%B9%8C%EC%A7%80-2/&quot;&gt;Back to the Essence - Java 컴파일에서 실행까지 - (2)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://blogs.oracle.com/javamagazine/post/behind-the-scenes-how-do-lambda-expressions-really-work-in-java&quot;&gt;Behind the scenes: How do lambda expressions really work in Java?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://blogs.oracle.com/javamagazine/post/understanding-java-method-invocation-with-invokedynamic&quot;&gt;Understanding Java method invocation with invokedynamic&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://blogs.oracle.com/javamagazine/post/mastering-the-mechanics-of-java-method-invocation&quot;&gt;Mastering the mechanics of Java method invocation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://dzone.com/articles/dismantling-invokedynamic&quot;&gt;Dismantling invokedynamic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cr.openjdk.org/~briangoetz/lambda/lambda-translation.html&quot;&gt;Translation of Lambda Expressions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.baeldung.com/java-method-handles&quot;&gt;Baeldung : Method Handles in Java&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.baeldung.com/kotlin/inline-functions&quot;&gt;Inline Functions in Kotlin&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://d2.naver.com/helloworld/1230&quot;&gt;JVM Internal&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://m.yes24.com/Goods/Detail/77125987&quot;&gt;모던 자바 인 액션&lt;/a&gt; : 부록 D&lt;/li&gt;
