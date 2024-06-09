@@ -338,11 +338,11 @@ Constant pool:
 ![](./CallSite.png)
 
 invokedynamic의 call site는 Java 힙에서 **[CallSite](https://docs.oracle.com/javase/8/docs/api/java/lang/invoke/CallSite.html) 객체로** 표현된다.  
-람다 표현식은 이 CallSite의 구현 클래스인 **처음 실행된 후에는 대상 메서드가 변경되지 않는 `ConstantCallSite` 사용한다.**   
+람다 표현식은 이 CallSite의 구현 클래스인 **(처음 실행된 후에는 대상 메서드가 변경되지 않는) `ConstantCallSite`를 사용한다.**   
 
 ## Method Handles
 
-리플렉션의 성능 문제를 해결하기 위해 Java 7은 새로운 API인 `java.lang.invoke`를 도입했다.  
+Java 7은 새로운 API인 `java.lang.invoke`를 도입했다.  
 이에 포함되는 **`MethodHandle`은 코드가 호출하고자 하는 메서드를 참조하는 클래스이다.**  
 Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메커니즘이라고 볼 수 있다.  
   
@@ -389,104 +389,284 @@ public class Main {
 }
 ```
 
+```java
+abstract public class CallSite {
+    static { MethodHandleImpl.initStatics(); }
+
+    // The actual payload of this call site:
+    /*package-private*/
+    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
+
+    public abstract MethodHandle dynamicInvoker();
+    ...
+}
+```
+
 ## Bootstrapping
 
-바이트코드 명령에서 특정 invokedynamic call site가 처음 호출될 때, JVM은 명령과 연관된 call site 객체가 없기 때문에 어떤 메서드를 대상으로 실행해야 하는지 알지 못한다.  
+바이트코드 명령에서 특정 invokedynamic call site가 처음 호출될 때, JVM에는 명령과 연관된 call site 객체가 없기 때문에 어떤 메서드를 대상으로 실행해야 하는지 알지 못한다.  
+즉, 이전에 보았던 invokestatic 및 invokespecial의 경우 컴파일 시점에 정확한 호출 대상을 알 수 있지만, invokedynamic은 호출 대상을 모르는 것이다.  
+  
+**invokedynamic은 [BootstrapMethods(BSM)](https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-4.html#jvms-4.7.23)라고하는 동적 특성 호출을 지원하는 추가 정보를 참조한다.**  
+**특정 invokedynamic call site에 BSM을 연결할 수 있도록** Java 7부터 클래스 파일 형식에 InvokeDynamic라는 새로운 항목 유형이 추가되었다.  
 
 ```java
-public class InnerClass {
-    Function<Object, String> toString1 = new Function<Object, String>() {
-        @Override
-        public String apply(Object o) {
-            return o.toString();
-        }
-    };
-    Function<Object, String> toString2 = Object::toString;
+public class FirstClass {
+    private final Function<String, String> toLowercase = String::toLowerCase;
+    private final Predicate<Character> isUppercase = ch -> ch >= 65 && ch <= 90;
 
     public static void main(String[] args) {
-        InnerClass innerClass = new InnerClass();
-        innerClass.toString1.apply("test");
-        innerClass.toString2.apply("test");
+        FirstClass firstClass = new FirstClass();
+        firstClass.toLowercase.apply("TEST");
+        firstClass.isUppercase.test('A');
     }
 }
 ```
 
+<details>
+<summary>모든 바이트코드 펼치기</summary>
+
 ```java
 Constant pool:
-   #1 = Methodref          #11.#32        // java/lang/Object."<init>":()V
-   #2 = Class              #33            // org/example/InnerClass$1
-   #3 = Methodref          #2.#34         // org/example/InnerClass$1."<init>":(Lorg/example/InnerClass;)V
-   #4 = Fieldref           #7.#35         // org/example/InnerClass.toString1:Ljava/util/function/Function;
-   #5 = InvokeDynamic      #0:#41         // #0:apply:()Ljava/util/function/Function;
-   #6 = Fieldref           #7.#42         // org/example/InnerClass.toString2:Ljava/util/function/Function;
-   #7 = Class              #43            // org/example/InnerClass
-   #8 = Methodref          #7.#32         // org/example/InnerClass."<init>":()V
-   #9 = String             #44            // test
-  #10 = InterfaceMethodref #45.#46        // java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
-   ...
-  #16 = Utf8               Ljava/util/function/Function<Ljava/lang/Object;Ljava/lang/String;>;
-   ...
-  #41 = NameAndType        #53:#54        // apply:()Ljava/util/function/Function;
-   ...
-  #53 = Utf8               apply
-  #54 = Utf8               ()Ljava/util/function/Function;
+   #1 = Methodref          #13.#40        // java/lang/Object."<init>":()V
+   #2 = InvokeDynamic      #0:#46         // #0:apply:()Ljava/util/function/Function;
+   #3 = Fieldref           #6.#47         // org/example/FirstClass.toLowercase:Ljava/util/function/Function;
+   #4 = InvokeDynamic      #1:#51         // #1:test:()Ljava/util/function/Predicate;
+   #5 = Fieldref           #6.#52         // org/example/FirstClass.isUppercase:Ljava/util/function/Predicate;
+   #6 = Class              #53            // org/example/FirstClass
+   #7 = Methodref          #6.#40         // org/example/FirstClass."<init>":()V
+   #8 = String             #54            // TEST
+   #9 = InterfaceMethodref #55.#56        // java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+  #10 = Methodref          #57.#58        // java/lang/Character.valueOf:(C)Ljava/lang/Character;
+  #11 = InterfaceMethodref #59.#60        // java/util/function/Predicate.test:(Ljava/lang/Object;)Z
+  #12 = Methodref          #57.#61        // java/lang/Character.charValue:()C
+  #13 = Class              #62            // java/lang/Object
+  #14 = Utf8               toLowercase
+  #15 = Utf8               Ljava/util/function/Function;
+  #16 = Utf8               Signature
+  #17 = Utf8               Ljava/util/function/Function<Ljava/lang/String;Ljava/lang/String;>;
+  #18 = Utf8               isUppercase
+  #19 = Utf8               Ljava/util/function/Predicate;
+  #20 = Utf8               Ljava/util/function/Predicate<Ljava/lang/Character;>;
+  #21 = Utf8               <init>
+  #22 = Utf8               ()V
+  #23 = Utf8               Code
+  #24 = Utf8               LineNumberTable
+  #25 = Utf8               LocalVariableTable
+  #26 = Utf8               this
+  #27 = Utf8               Lorg/example/FirstClass;
+  #28 = Utf8               main
+  #29 = Utf8               ([Ljava/lang/String;)V
+  #30 = Utf8               args
+  #31 = Utf8               [Ljava/lang/String;
+  #32 = Utf8               firstClass
+  #33 = Utf8               lambda$new$0
+  #34 = Utf8               (Ljava/lang/Character;)Z
+  #35 = Utf8               ch
+  #36 = Utf8               Ljava/lang/Character;
+  #37 = Utf8               StackMapTable
+  #38 = Utf8               SourceFile
+  #39 = Utf8               FirstClass.java
+  #40 = NameAndType        #21:#22        // "<init>":()V
+  #41 = Utf8               BootstrapMethods
+  #42 = MethodHandle       #6:#63         // invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #43 = MethodType         #64            //  (Ljava/lang/Object;)Ljava/lang/Object;
+  #44 = MethodHandle       #5:#65         // invokevirtual java/lang/String.toLowerCase:()Ljava/lang/String;
+  #45 = MethodType         #66            //  (Ljava/lang/String;)Ljava/lang/String;
+  #46 = NameAndType        #67:#68        // apply:()Ljava/util/function/Function;
+  #47 = NameAndType        #14:#15        // toLowercase:Ljava/util/function/Function;
+  #48 = MethodType         #69            //  (Ljava/lang/Object;)Z
+  #49 = MethodHandle       #6:#70         // invokestatic org/example/FirstClass.lambda$new$0:(Ljava/lang/Character;)Z
+  #50 = MethodType         #34            //  (Ljava/lang/Character;)Z
+  #51 = NameAndType        #71:#72        // test:()Ljava/util/function/Predicate;
+  #52 = NameAndType        #18:#19        // isUppercase:Ljava/util/function/Predicate;
+  #53 = Utf8               org/example/FirstClass
+  #54 = Utf8               TEST
+  #55 = Class              #73            // java/util/function/Function
+  #56 = NameAndType        #67:#64        // apply:(Ljava/lang/Object;)Ljava/lang/Object;
+  #57 = Class              #74            // java/lang/Character
+  #58 = NameAndType        #75:#76        // valueOf:(C)Ljava/lang/Character;
+  #59 = Class              #77            // java/util/function/Predicate
+  #60 = NameAndType        #71:#69        // test:(Ljava/lang/Object;)Z
+  #61 = NameAndType        #78:#79        // charValue:()C
+  #62 = Utf8               java/lang/Object
+  #63 = Methodref          #80.#81        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #64 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #65 = Methodref          #82.#83        // java/lang/String.toLowerCase:()Ljava/lang/String;
+  #66 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #67 = Utf8               apply
+  #68 = Utf8               ()Ljava/util/function/Function;
+  #69 = Utf8               (Ljava/lang/Object;)Z
+  #70 = Methodref          #6.#84         // org/example/FirstClass.lambda$new$0:(Ljava/lang/Character;)Z
+  #71 = Utf8               test
+  #72 = Utf8               ()Ljava/util/function/Predicate;
+  #73 = Utf8               java/util/function/Function
+  #74 = Utf8               java/lang/Character
+  #75 = Utf8               valueOf
+  #76 = Utf8               (C)Ljava/lang/Character;
+  #77 = Utf8               java/util/function/Predicate
+  #78 = Utf8               charValue
+  #79 = Utf8               ()C
+  #80 = Class              #85            // java/lang/invoke/LambdaMetafactory
+  #81 = NameAndType        #86:#90        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #82 = Class              #91            // java/lang/String
+  #83 = NameAndType        #92:#93        // toLowerCase:()Ljava/lang/String;
+  #84 = NameAndType        #33:#34        // lambda$new$0:(Ljava/lang/Character;)Z
+  #85 = Utf8               java/lang/invoke/LambdaMetafactory
+  #86 = Utf8               metafactory
+  #87 = Class              #95            // java/lang/invoke/MethodHandles$Lookup
+  #88 = Utf8               Lookup
+  #89 = Utf8               InnerClasses
+  #90 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #91 = Utf8               java/lang/String
+  #92 = Utf8               toLowerCase
+  #93 = Utf8               ()Ljava/lang/String;
+  #94 = Class              #96            // java/lang/invoke/MethodHandles
+  #95 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #96 = Utf8               java/lang/invoke/MethodHandles
 {
-  java.util.function.Function<java.lang.Object, java.lang.String> toString1;
+  private final java.util.function.Function<java.lang.String, java.lang.String> toLowercase;
     descriptor: Ljava/util/function/Function;
-    flags:
-    Signature: #16                          // Ljava/util/function/Function<Ljava/lang/Object;Ljava/lang/String;>;
+    flags: ACC_PRIVATE, ACC_FINAL
+    Signature: #17                          // Ljava/util/function/Function<Ljava/lang/String;Ljava/lang/String;>;
 
-  java.util.function.Function<java.lang.Object, java.lang.String> toString2;
-    descriptor: Ljava/util/function/Function;
-    flags:
-    Signature: #16                          // Ljava/util/function/Function<Ljava/lang/Object;Ljava/lang/String;>;
+  private final java.util.function.Predicate<java.lang.Character> isUppercase;
+    descriptor: Ljava/util/function/Predicate;
+    flags: ACC_PRIVATE, ACC_FINAL
+    Signature: #20                          // Ljava/util/function/Predicate<Ljava/lang/Character;>;
 
-  public org.example.InnerClass();
+  public org.example.FirstClass();
     descriptor: ()V
     flags: ACC_PUBLIC
     Code:
-      stack=4, locals=1, args_size=1
+      stack=2, locals=1, args_size=1
          0: aload_0
          1: invokespecial #1                  // Method java/lang/Object."<init>":()V
          4: aload_0
-         5: new           #2                  // class org/example/InnerClass$1
-         8: dup
-         9: aload_0
-        10: invokespecial #3                  // Method org/example/InnerClass$1."<init>":(Lorg/example/InnerClass;)V
-        13: putfield      #4                  // Field toString1:Ljava/util/function/Function;
-        16: aload_0
-        17: invokedynamic #5,  0              // InvokeDynamic #0:apply:()Ljava/util/function/Function;
-        22: putfield      #6                  // Field toString2:Ljava/util/function/Function;
-        25: return
+         5: invokedynamic #2,  0              // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+        10: putfield      #3                  // Field toLowercase:Ljava/util/function/Function;
+        13: aload_0
+        14: invokedynamic #4,  0              // InvokeDynamic #1:test:()Ljava/util/function/Predicate;
+        19: putfield      #5                  // Field isUppercase:Ljava/util/function/Predicate;
+        22: return
+      LineNumberTable:
+        line 6: 0
+        line 7: 4
+        line 8: 13
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      23     0  this   Lorg/example/FirstClass;
 
   public static void main(java.lang.String[]);
     descriptor: ([Ljava/lang/String;)V
     flags: ACC_PUBLIC, ACC_STATIC
     Code:
       stack=2, locals=2, args_size=1
-         0: new           #7                  // class org/example/InnerClass
+         0: new           #6                  // class org/example/FirstClass
          3: dup
-         4: invokespecial #8                  // Method "<init>":()V
+         4: invokespecial #7                  // Method "<init>":()V
          7: astore_1
          8: aload_1
-         9: getfield      #4                  // Field toString1:Ljava/util/function/Function;
-        12: ldc           #9                  // String test
-        14: invokeinterface #10,  2           // InterfaceMethod java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+         9: getfield      #3                  // Field toLowercase:Ljava/util/function/Function;
+        12: ldc           #8                  // String TEST
+        14: invokeinterface #9,  2            // InterfaceMethod java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
         19: pop
         20: aload_1
-        21: getfield      #6                  // Field toString2:Ljava/util/function/Function;
-        24: ldc           #9                  // String test
-        26: invokeinterface #10,  2           // InterfaceMethod java/util/function/Function.apply:(Ljava/lang/Object;)Ljava/lang/Object;
-        31: pop
-        32: return
+        21: getfield      #5                  // Field isUppercase:Ljava/util/function/Predicate;
+        24: bipush        65
+        26: invokestatic  #10                 // Method java/lang/Character.valueOf:(C)Ljava/lang/Character;
+        29: invokeinterface #11,  2           // InterfaceMethod java/util/function/Predicate.test:(Ljava/lang/Object;)Z
+        34: pop
+        35: return
+      LineNumberTable:
+        line 11: 0
+        line 12: 8
+        line 13: 20
+        line 14: 35
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      36     0  args   [Ljava/lang/String;
+            8      28     1 firstClass   Lorg/example/FirstClass;
+
+  private static boolean lambda$new$0(java.lang.Character);
+    descriptor: (Ljava/lang/Character;)Z
+    flags: ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokevirtual #12                 // Method java/lang/Character.charValue:()C
+         4: bipush        65
+         6: if_icmplt     22
+         9: aload_0
+        10: invokevirtual #12                 // Method java/lang/Character.charValue:()C
+        13: bipush        90
+        15: if_icmpgt     22
+        18: iconst_1
+        19: goto          23
+        22: iconst_0
+        23: ireturn
+      LineNumberTable:
+        line 8: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      24     0    ch   Ljava/lang/Character;
+      StackMapTable: number_of_entries = 2
+        frame_type = 22 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+}
+SourceFile: "FirstClass.java"
+InnerClasses:
+     public static final #88= #87 of #94; //Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #42 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #43 (Ljava/lang/Object;)Ljava/lang/Object;
+      #44 invokevirtual java/lang/String.toLowerCase:()Ljava/lang/String;
+      #45 (Ljava/lang/String;)Ljava/lang/String;
+  1: #42 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #48 (Ljava/lang/Object;)Z
+      #49 invokestatic org/example/FirstClass.lambda$new$0:(Ljava/lang/Character;)Z
+      #50 (Ljava/lang/Character;)Z
+```
+
+</details>
+
+![](./bsm.png)
+
+즉, `#2`와 `#4`의 상수는 `CONSTANT_InvokeDynamic` 유형의 상수이며, 이 call site의 bootstrap method는 상수 풀의 `#42` 항목이다.  
+**BSM으로 사용될 메서드 핸들은 `LambdaMetafactory.metafactory(...)`이다.**  
+
+```java
+public class LambdaMetafactory {
+    /**
+     * 적절한 유형 조정 및 인수의 부분 평가 후 제공된 MethodHandle에 대한 위임을 통해 하나 이상의 인터페이스를 구현하는 간단한 "함수 개체" 생성을 용이하게 합니다.
+     * 일반적으로 Java 프로그래밍 언어의 람다식 및 메서드 참조식 기능을 지원하기 위해 invokedynamic 호출 ​​사이트의 부트스트랩 메서드로 사용됩니다.
+     * 이 메서드에서 반환된 CallSite의 대상이 호출되면 결과 함수 객체는 invokedType의 반환 유형으로 명명된 인터페이스를 구현하고, invokedName으로 지정된 이름과 samMethodType으로 지정된 서명으로 메서드를 선언하는 클래스의 인스턴스입니다.
+     */
+    public static CallSite metafactory(MethodHandles.Lookup caller,
+                                       String invokedName,
+                                       MethodType invokedType,
+                                       MethodType samMethodType,
+                                       MethodHandle implMethod,
+                                       MethodType instantiatedMethodType)
+            throws LambdaConversionException {
+        AbstractValidatingLambdaMetafactory mf;
+        mf = new InnerClassLambdaMetafactory(caller, invokedType,
+                                             invokedName, samMethodType,
+                                             implMethod, instantiatedMethodType,
+                                             false, EMPTY_CLASS_ARRAY, EMPTY_MT_ARRAY);
+        mf.validateMetafactoryArgs();
+        return mf.buildCallSite();
+    }
+    ...
 }
 ```
 
-***
+**BSM은 이 정적 메서드를 호출하여 CallSite 객체를 반환하며, invokedynamic 명령이 실행되면 CallSite에 포함된 MethodHandle은 람다의 대상 유형을 구현하는 클래스의 인스턴스를 반환한다.**  
 
-**Java 7은 런타임 시스템이 `call site`와 `메서드 구현` 간의 연결을 커스터마이징할 수 있도록 `invokedynamic` 명령어를 도입한 것이다.**  
-위의 예제에서 호출된 invokedynamic call site는 `+`이며, 이 call site는 `bootstrap method`를 통해 메서드에 연결되며, **이는 동적 유형 언어에 대해 컴파일러가 지정한 메서드로서 JVM에서 site를 연결하기 위해 한 번 호출된다.**  
-런타임 시스템이 `adder(Integer, Integer)` 메서드를 알고 있다고 가정하면 런타임은 invokedynamic call site를 adder 메서드에 연결할 수 있다.  
+# BSM 만들어보기
 
 ```java
 public class Ops {
@@ -540,13 +720,7 @@ class MethodHandleTest {
 > 런타임 시스템에서 사용할 수 있는 메서드가 여러 개 있고 각각 다른 인수 유형을 처리하는 경우 부트스트랩 메서드 mybsm은 **dynamicMethodType 인수에 따라 메서드를 동적으로 선택할 수 있다.**  
 > invokedynamic 명령어는 컴파일러와 런타임 시스템의 동적 언어 구현을 단순화하며, 이는 Java 클래스 및 인터페이스에 특정한 연결 동작이 JVM에 의해 하드와이어링 되는 invokevirtual과 같은 다른 JVM 명령어와 대조된다.  
 
-위의 예제처럼 `MethodHandle`을 사용하는 것은 Reflection API에 비해 너무 복잡하다고 느낄 수 있다.  
-하지만 `MethodHandle`의 주된 목적은 메서드를 직접 호출하는 것이 아니라 **invokedynamic call site와 함께 사용하는 것이 주된 목적이다.**  
-
-
-invokedynamic 명령의 각 인스턴스를 `dynamic call site`라고 하며, 최초에는 호출할 메서드가 지정되어 있지 않아 위와 같은 부트스트랩 메서드를 통해 메서드에 연결된다.  
-
-부트스트랩 메서드가 반환하는 `ConstantCallSite` 인스턴스는 호출된 **invokedynamic 명령어**와 연결할 호출 사이트를 의미하며 고유하다. ConstantCallSite 인스턴스의 대상(target)은 영구적이며 절대 변경할 수 없다.  
+부트스트랩 메서드가 반환하는 `ConstantCallSite` 인스턴스는 호출된 **invokedynamic 명령어**와 **연결할 CallSite**를 의미하며 고유하다. ConstantCallSite 인스턴스의 대상(target)은 영구적이며 절대 변경할 수 없다.  
   
 invokedynamic 명령으로 동적으로 연결된 메서드를 호출하려면 아래의 단계가 필요하다.  
 
@@ -564,18 +738,6 @@ JVM이 런타임에 invokedynamic 명령을 '처음'만나면 부트스트랩 �
 즉, CallSite 객체는 호출된 invokedynamic 명령의 연결된 상태와 연결된 메서드 핸들을 나타낸다.  
 **JVM이 동일한 호출된 동적 명령어를 다시 실행하면 부트스트랩 메서드를 호출하지 않고 연결된 메서드 핸들을 자동으로 호출한다.**  
   
-```java
-abstract public class CallSite {
-    static { MethodHandleImpl.initStatics(); }
-
-    // The actual payload of this call site:
-    /*package-private*/
-    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
-
-    public abstract MethodHandle dynamicInvoker();
-    ...
-}
-```
 
 컴파일러는 람다 식을 캡처하기 위해 생성하는 코드는 람다 식 자체와 해당 식이 할당되는 함수형 인터페이스 유형에 따라 달라진다.  
 람다 식을 구현하는 객체를 생성하기 위해 바이트코드를 생성하는 대신(예: 내부 클래스의 생성자 호출), 람다를 구성하는 레시피를 설명하고 실제 구성은 언어 런타임에 위임합니다. 이 레시피는 호출된 동적 명령어의 정적 및 동적 인수 목록에 인코딩됩니다.  
@@ -615,12 +777,13 @@ abstract public class CallSite {
 
 # 참고
 
-- **[Java Virtual Machine Support for Non-Java Languages](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/multiple-language-support.html)**
-- **[Dismantling invokedynamic](https://dzone.com/articles/dismantling-invokedynamic)**
-- **[Translation of Lambda Expressions](https://cr.openjdk.org/~briangoetz/lambda/lambda-translation.html)**
+- [Java Virtual Machine Support for Non-Java Languages](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/multiple-language-support.html)
+- [Back to the Essence - Java 컴파일에서 실행까지 - (2)](https://homoefficio.github.io/2019/01/31/Back-to-the-Essence-Java-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%EA%B9%8C%EC%A7%80-2/)
 - [Behind the scenes: How do lambda expressions really work in Java?](https://blogs.oracle.com/javamagazine/post/behind-the-scenes-how-do-lambda-expressions-really-work-in-java)
 - [Understanding Java method invocation with invokedynamic](https://blogs.oracle.com/javamagazine/post/understanding-java-method-invocation-with-invokedynamic)
 - [Mastering the mechanics of Java method invocation](https://blogs.oracle.com/javamagazine/post/mastering-the-mechanics-of-java-method-invocation)
+- [Dismantling invokedynamic](https://dzone.com/articles/dismantling-invokedynamic)
+- [Translation of Lambda Expressions](https://cr.openjdk.org/~briangoetz/lambda/lambda-translation.html)
 - [Baeldung : Method Handles in Java](https://www.baeldung.com/java-method-handles)
 - [Inline Functions in Kotlin](https://www.baeldung.com/kotlin/inline-functions)
 - [JVM Internal](https://d2.naver.com/helloworld/1230)
