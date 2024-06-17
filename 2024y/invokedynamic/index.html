@@ -218,13 +218,14 @@ end</code>
 <p>위의 코드를 컴파일할 때는 a와 b의 형식을 알 수 없듯이 동적 타입 언어 컴파일의 난제는 프로그램이 컴파일된 후 메서드나 함수의 가장 적절한 구현을 선택할 수 있는 런타임 시스템을 구현하는 방법이다.</p>
 <p>자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 <code class="language-text">invokedynamic</code>이 추가되었다.<br>
 (이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.)</p>
-<p>간단하게 <strong>invokedynamic은 특이한 형태의 팩토리 메서드 호출 이라고 생각하면 된다.</strong><br>
-실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 <code class="language-text">Call sites</code>, <code class="language-text">Method handles</code>, <code class="language-text">Bootstrapping</code>을 이해해야 한다.</p>
+<p>실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 <code class="language-text">Call sites</code>, <code class="language-text">Method handles</code>, <code class="language-text">Bootstrapping</code>을 이해해야 한다.</p>
 <h2 id="call-sites" style="position:relative;">Call sites<a href="#call-sites" aria-label="call sites permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>바이트 코드에서 메서드 호출 명령이 발생하는 위치를 <code class="language-text">call site</code>라고 한다.<br>
 이 메서드 호출에는 다양한 경우의 메서드 호출을 처리하기 위해 (기본적으로) 4가지의 opcode가 존재한다.</p>
+<p>아래의 예제를 통해 어떤 경우에 어떤 opcode가 사용되는지 알아보자.</p>
 <deckgo-highlight-code language="java" terminal="carbon" theme="one-light" line-numbers="true"  >
-          <code slot="code">public class ParentClass {
+          <code slot="code">// 1. ParentClass를 상속하는 ChildClass (상속관계)
+public class ParentClass {
     public void printMessage() { System.out.println(&quot;ParentClass&quot;); }
 }
 public class ChildClass extends ParentClass {
@@ -232,11 +233,13 @@ public class ChildClass extends ParentClass {
     public void printMessage() { System.out.println(&quot;ChildClass&quot;); }
 }
 
+// 2. AbstractClass를 상속하는 AbstractChildClass (상속관계)
 abstract class AbstractClass {
     public void printMessage() { System.out.println(&quot;AbstractClass&quot;); }
 }
 public class AbstractChildClass extends AbstractClass { }
 
+// 3. Interface를 구현하는 ImplementClass (구현관계)
 public interface Interface {
     void printMessage();
 }
@@ -250,31 +253,41 @@ public class Main {
     public static void printMessage() { System.out.println(&quot;Main&quot;); }
 
     public static void main(String[] args) {
+        // &quot;invokevirtual&quot; Method org/example/ParentClass.printMessage:()V
         ParentClass parentClass = new ParentClass();
-        parentClass.printMessage();
+        parentClass.printMessage(); 
 
+        // &quot;invokevirtual&quot; Method org/example/ParentClass.printMessage:()V
         ParentClass parentClass1 = new ChildClass();
         parentClass1.printMessage();
 
+        // &quot;invokevirtual&quot; Method org/example/ChildClass.printMessage:()V
         ChildClass childClass = new ChildClass();
         childClass.printMessage();
 
+        // &quot;invokevirtual&quot; Method org/example/AbstractClass.printMessage:()V
         AbstractClass abstractClass = new AbstractChildClass();
         abstractClass.printMessage();
 
+        // &quot;invokevirtual&quot; Method org/example/AbstractChildClass.printMessage:()V
         AbstractChildClass abstractClass1 = new AbstractChildClass();
         abstractClass1.printMessage();
 
+        // &quot;invokeinterface&quot; InterfaceMethod org/example/Interface.printMessage:()V
         Interface implementClass = new ImplementClass();
         implementClass.printMessage();
 
+        // &quot;invokevirtual&quot; Method org/example/ImplementClass.printMessage:()V
         ImplementClass implementClass1 = new ImplementClass();
         implementClass1.printMessage();
 
+        // &quot;invokestatic&quot; Method printMessage:()V
         Main.printMessage();
     }
 }</code>
         </deckgo-highlight-code>
+<details>
+<summary>모든 바이트코드 펼치기</summary>
 <deckgo-highlight-code language="java" terminal="carbon" theme="one-light" line-numbers="true"  >
           <code slot="code">// javap -v -p -s {class}
 Constant pool:
@@ -367,16 +380,29 @@ Constant pool:
         97: return
 }</code>
         </deckgo-highlight-code>
-<ul>
-<li><code class="language-text">new</code> : 인자로 지정된 클래스의 새 인스턴스에 필요한 메모리를 힙 안에 할당한다.</li>
-<li><code class="language-text">invokespecial</code> : 생성자 또는 슈퍼 클래스의 생성자를 호출할 때 사용된다.</li>
-<li><code class="language-text">invokevirtual</code> : 상속 관계, 인스턴스의 메서드를 호출할 때 사용되며 동적 디스패치를 통한 런타임 해석을 담당한다.</li>
-<li><code class="language-text">invokeinterface</code> : 인터페이스 관계의 메서드를 호출할 때 사용된다.</li>
-<li><code class="language-text">invokestatic</code> : 정적 메소드를 호출할 때 사용된다.</li>
-</ul>
+</details>
+<blockquote>
+<p><code class="language-text">new</code> : 인자로 지정된 클래스의 새 인스턴스에 필요한 메모리를 힙 안에 할당한다.<br>
+<code class="language-text">invokespecial</code> : 생성자 또는 슈퍼 클래스의 생성자를 호출할 때 사용된다.<br>
+<code class="language-text">invokevirtual</code> : 상속 관계, 인스턴스의 메서드를 호출할 때 사용되며 동적 디스패치를 통한 런타임 해석을 담당한다.<br>
+<code class="language-text">invokeinterface</code> : 인터페이스 관계의 메서드를 호출할 때 사용된다.<br>
+<code class="language-text">invokestatic</code> : 정적 메소드를 호출할 때 사용된다.</p>
+</blockquote>
 <p>자바 바이트코드에서 메서드를 호출하는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지 opcode가 존재하며, 이렇게 메서드 호출 명령이 발생하는 위치를 <strong>call site</strong> 라고 한다.<br>
 <code class="language-text">invokedynamic</code>은 <strong>이보다 훨씬 더 나아가 어떤 메서드가 실제로 호출될지 call site별로 결정할 수 있는 메커니즘을 제공한다.</strong><br>
 해당 명령어가 실행되면 JVM은 해당 (실제로 호출하려는 메서드 핸들을 보유한) call site 객체를 찾는다. 만약 이 call site에 도달한 적이 없는 경우 객체를 생성한다.</p>
+<deckgo-highlight-code language="java" terminal="carbon" theme="one-light" line-numbers="true"  >
+          <code slot="code">abstract public class CallSite {
+    static { MethodHandleImpl.initStatics(); }
+
+    // The actual payload of this call site:
+    /*package-private*/
+    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
+
+    public abstract MethodHandle dynamicInvoker();
+    ...
+}</code>
+        </deckgo-highlight-code>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
@@ -456,18 +482,6 @@ Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메
         Object invoke2 = concat.invokeWithArguments(s1, s2);
         String invoke3 = (String) concat.invokeExact(s1, s2);
     }
-}</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code language="java" terminal="carbon" theme="one-light" line-numbers="true"  >
-          <code slot="code">abstract public class CallSite {
-    static { MethodHandleImpl.initStatics(); }
-
-    // The actual payload of this call site:
-    /*package-private*/
-    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
-
-    public abstract MethodHandle dynamicInvoker();
-    ...
 }</code>
         </deckgo-highlight-code>
 <h2 id="bootstrapping" style="position:relative;">Bootstrapping<a href="#bootstrapping" aria-label="bootstrapping permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 16 Jun 2024 13:21:41 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Mon, 10 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Jun 2024 14:26:22 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Mon, 10 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;자바와 코틀린에서 람다를 처리하는 방식이 다르다는 것을 알게됐다.&lt;br&gt;
 코틀린을 먼저 확인해보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -148,13 +148,14 @@ end&lt;/code&gt;
 &lt;p&gt;위의 코드를 컴파일할 때는 a와 b의 형식을 알 수 없듯이 동적 타입 언어 컴파일의 난제는 프로그램이 컴파일된 후 메서드나 함수의 가장 적절한 구현을 선택할 수 있는 런타임 시스템을 구현하는 방법이다.&lt;/p&gt;
 &lt;p&gt;자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt;이 추가되었다.&lt;br&gt;
 (이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.)&lt;/p&gt;
-&lt;p&gt;간단하게 &lt;strong&gt;invokedynamic은 특이한 형태의 팩토리 메서드 호출 이라고 생각하면 된다.&lt;/strong&gt;&lt;br&gt;
-실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 &lt;code class=&quot;language-text&quot;&gt;Call sites&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Method handles&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Bootstrapping&lt;/code&gt;을 이해해야 한다.&lt;/p&gt;
+&lt;p&gt;실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 &lt;code class=&quot;language-text&quot;&gt;Call sites&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Method handles&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Bootstrapping&lt;/code&gt;을 이해해야 한다.&lt;/p&gt;
 &lt;h2 id=&quot;call-sites&quot; style=&quot;position:relative;&quot;&gt;Call sites&lt;a href=&quot;#call-sites&quot; aria-label=&quot;call sites permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;바이트 코드에서 메서드 호출 명령이 발생하는 위치를 &lt;code class=&quot;language-text&quot;&gt;call site&lt;/code&gt;라고 한다.&lt;br&gt;
 이 메서드 호출에는 다양한 경우의 메서드 호출을 처리하기 위해 (기본적으로) 4가지의 opcode가 존재한다.&lt;/p&gt;
+&lt;p&gt;아래의 예제를 통해 어떤 경우에 어떤 opcode가 사용되는지 알아보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;public class ParentClass {
+          &lt;code slot=&quot;code&quot;&gt;// 1. ParentClass를 상속하는 ChildClass (상속관계)
+public class ParentClass {
     public void printMessage() { System.out.println(&amp;quot;ParentClass&amp;quot;); }
 }
 public class ChildClass extends ParentClass {
@@ -162,11 +163,13 @@ public class ChildClass extends ParentClass {
     public void printMessage() { System.out.println(&amp;quot;ChildClass&amp;quot;); }
 }
 
+// 2. AbstractClass를 상속하는 AbstractChildClass (상속관계)
 abstract class AbstractClass {
     public void printMessage() { System.out.println(&amp;quot;AbstractClass&amp;quot;); }
 }
 public class AbstractChildClass extends AbstractClass { }
 
+// 3. Interface를 구현하는 ImplementClass (구현관계)
 public interface Interface {
     void printMessage();
 }
@@ -180,31 +183,41 @@ public class Main {
     public static void printMessage() { System.out.println(&amp;quot;Main&amp;quot;); }
 
     public static void main(String[] args) {
+        // &amp;quot;invokevirtual&amp;quot; Method org/example/ParentClass.printMessage:()V
         ParentClass parentClass = new ParentClass();
-        parentClass.printMessage();
+        parentClass.printMessage(); 
 
+        // &amp;quot;invokevirtual&amp;quot; Method org/example/ParentClass.printMessage:()V
         ParentClass parentClass1 = new ChildClass();
         parentClass1.printMessage();
 
+        // &amp;quot;invokevirtual&amp;quot; Method org/example/ChildClass.printMessage:()V
         ChildClass childClass = new ChildClass();
         childClass.printMessage();
 
+        // &amp;quot;invokevirtual&amp;quot; Method org/example/AbstractClass.printMessage:()V
         AbstractClass abstractClass = new AbstractChildClass();
         abstractClass.printMessage();
 
+        // &amp;quot;invokevirtual&amp;quot; Method org/example/AbstractChildClass.printMessage:()V
         AbstractChildClass abstractClass1 = new AbstractChildClass();
         abstractClass1.printMessage();
 
+        // &amp;quot;invokeinterface&amp;quot; InterfaceMethod org/example/Interface.printMessage:()V
         Interface implementClass = new ImplementClass();
         implementClass.printMessage();
 
+        // &amp;quot;invokevirtual&amp;quot; Method org/example/ImplementClass.printMessage:()V
         ImplementClass implementClass1 = new ImplementClass();
         implementClass1.printMessage();
 
+        // &amp;quot;invokestatic&amp;quot; Method printMessage:()V
         Main.printMessage();
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
+&lt;details&gt;
+&lt;summary&gt;모든 바이트코드 펼치기&lt;/summary&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// javap -v -p -s {class}
 Constant pool:
@@ -297,16 +310,29 @@ Constant pool:
         97: return
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; : 인자로 지정된 클래스의 새 인스턴스에 필요한 메모리를 힙 안에 할당한다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokespecial&lt;/code&gt; : 생성자 또는 슈퍼 클래스의 생성자를 호출할 때 사용된다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokevirtual&lt;/code&gt; : 상속 관계, 인스턴스의 메서드를 호출할 때 사용되며 동적 디스패치를 통한 런타임 해석을 담당한다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokeinterface&lt;/code&gt; : 인터페이스 관계의 메서드를 호출할 때 사용된다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;invokestatic&lt;/code&gt; : 정적 메소드를 호출할 때 사용된다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/details&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; : 인자로 지정된 클래스의 새 인스턴스에 필요한 메모리를 힙 안에 할당한다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;invokespecial&lt;/code&gt; : 생성자 또는 슈퍼 클래스의 생성자를 호출할 때 사용된다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;invokevirtual&lt;/code&gt; : 상속 관계, 인스턴스의 메서드를 호출할 때 사용되며 동적 디스패치를 통한 런타임 해석을 담당한다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;invokeinterface&lt;/code&gt; : 인터페이스 관계의 메서드를 호출할 때 사용된다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;invokestatic&lt;/code&gt; : 정적 메소드를 호출할 때 사용된다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;자바 바이트코드에서 메서드를 호출하는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지 opcode가 존재하며, 이렇게 메서드 호출 명령이 발생하는 위치를 &lt;strong&gt;call site&lt;/strong&gt; 라고 한다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt;은 &lt;strong&gt;이보다 훨씬 더 나아가 어떤 메서드가 실제로 호출될지 call site별로 결정할 수 있는 메커니즘을 제공한다.&lt;/strong&gt;&lt;br&gt;
 해당 명령어가 실행되면 JVM은 해당 (실제로 호출하려는 메서드 핸들을 보유한) call site 객체를 찾는다. 만약 이 call site에 도달한 적이 없는 경우 객체를 생성한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract public class CallSite {
+    static { MethodHandleImpl.initStatics(); }
+
+    // The actual payload of this call site:
+    /*package-private*/
+    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
+
+    public abstract MethodHandle dynamicInvoker();
+    ...
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
@@ -386,18 +412,6 @@ Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메
         Object invoke2 = concat.invokeWithArguments(s1, s2);
         String invoke3 = (String) concat.invokeExact(s1, s2);
     }
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;abstract public class CallSite {
-    static { MethodHandleImpl.initStatics(); }
-
-    // The actual payload of this call site:
-    /*package-private*/
-    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
-
-    public abstract MethodHandle dynamicInvoker();
-    ...
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h2 id=&quot;bootstrapping&quot; style=&quot;position:relative;&quot;&gt;Bootstrapping&lt;a href=&quot;#bootstrapping&quot; aria-label=&quot;bootstrapping permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
