@@ -172,15 +172,17 @@ end
 자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 `invokedynamic`이 추가되었다.    
 (이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.)  
   
-간단하게 **invokedynamic은 특이한 형태의 팩토리 메서드 호출 이라고 생각하면 된다.**  
 실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 `Call sites`, `Method handles`, `Bootstrapping`을 이해해야 한다.  
 
 ## Call sites
 
 바이트 코드에서 메서드 호출 명령이 발생하는 위치를 `call site`라고 한다.  
 이 메서드 호출에는 다양한 경우의 메서드 호출을 처리하기 위해 (기본적으로) 4가지의 opcode가 존재한다.  
+  
+아래의 예제를 통해 어떤 경우에 어떤 opcode가 사용되는지 알아보자.
 
 ```java
+// 1. ParentClass를 상속하는 ChildClass (상속관계)
 public class ParentClass {
     public void printMessage() { System.out.println("ParentClass"); }
 }
@@ -189,11 +191,13 @@ public class ChildClass extends ParentClass {
     public void printMessage() { System.out.println("ChildClass"); }
 }
 
+// 2. AbstractClass를 상속하는 AbstractChildClass (상속관계)
 abstract class AbstractClass {
     public void printMessage() { System.out.println("AbstractClass"); }
 }
 public class AbstractChildClass extends AbstractClass { }
 
+// 3. Interface를 구현하는 ImplementClass (구현관계)
 public interface Interface {
     void printMessage();
 }
@@ -207,31 +211,42 @@ public class Main {
     public static void printMessage() { System.out.println("Main"); }
 
     public static void main(String[] args) {
+        // "invokevirtual" Method org/example/ParentClass.printMessage:()V
         ParentClass parentClass = new ParentClass();
-        parentClass.printMessage();
+        parentClass.printMessage(); 
 
+        // "invokevirtual" Method org/example/ParentClass.printMessage:()V
         ParentClass parentClass1 = new ChildClass();
         parentClass1.printMessage();
 
+        // "invokevirtual" Method org/example/ChildClass.printMessage:()V
         ChildClass childClass = new ChildClass();
         childClass.printMessage();
 
+        // "invokevirtual" Method org/example/AbstractClass.printMessage:()V
         AbstractClass abstractClass = new AbstractChildClass();
         abstractClass.printMessage();
 
+        // "invokevirtual" Method org/example/AbstractChildClass.printMessage:()V
         AbstractChildClass abstractClass1 = new AbstractChildClass();
         abstractClass1.printMessage();
 
+        // "invokeinterface" InterfaceMethod org/example/Interface.printMessage:()V
         Interface implementClass = new ImplementClass();
         implementClass.printMessage();
 
+        // "invokevirtual" Method org/example/ImplementClass.printMessage:()V
         ImplementClass implementClass1 = new ImplementClass();
         implementClass1.printMessage();
 
+        // "invokestatic" Method printMessage:()V
         Main.printMessage();
     }
 }
 ```
+
+<details>
+<summary>모든 바이트코드 펼치기</summary>
 
 ```java
 // javap -v -p -s {class}
@@ -326,16 +341,31 @@ Constant pool:
 }
 ```
 
-- `new` : 인자로 지정된 클래스의 새 인스턴스에 필요한 메모리를 힙 안에 할당한다.
-- `invokespecial` : 생성자 또는 슈퍼 클래스의 생성자를 호출할 때 사용된다.
-- `invokevirtual` : 상속 관계, 인스턴스의 메서드를 호출할 때 사용되며 동적 디스패치를 통한 런타임 해석을 담당한다.
-- `invokeinterface` : 인터페이스 관계의 메서드를 호출할 때 사용된다.
-- `invokestatic` : 정적 메소드를 호출할 때 사용된다.
+</details>
+
+> `new` : 인자로 지정된 클래스의 새 인스턴스에 필요한 메모리를 힙 안에 할당한다.  
+> `invokespecial` : 생성자 또는 슈퍼 클래스의 생성자를 호출할 때 사용된다.  
+> `invokevirtual` : 상속 관계, 인스턴스의 메서드를 호출할 때 사용되며 동적 디스패치를 통한 런타임 해석을 담당한다.  
+> `invokeinterface` : 인터페이스 관계의 메서드를 호출할 때 사용된다.  
+> `invokestatic` : 정적 메소드를 호출할 때 사용된다.
   
 자바 바이트코드에서 메서드를 호출하는 invokeinterface, invokespecial, invokestatic, invokevirtual의 4가지 opcode가 존재하며, 이렇게 메서드 호출 명령이 발생하는 위치를 **call site** 라고 한다.  
 `invokedynamic`은 **이보다 훨씬 더 나아가 어떤 메서드가 실제로 호출될지 call site별로 결정할 수 있는 메커니즘을 제공한다.**  
 해당 명령어가 실행되면 JVM은 해당 (실제로 호출하려는 메서드 핸들을 보유한) call site 객체를 찾는다. 만약 이 call site에 도달한 적이 없는 경우 객체를 생성한다.  
   
+```java
+abstract public class CallSite {
+    static { MethodHandleImpl.initStatics(); }
+
+    // The actual payload of this call site:
+    /*package-private*/
+    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
+
+    public abstract MethodHandle dynamicInvoker();
+    ...
+}
+```
+
 ![](./CallSite.png)
 
 invokedynamic의 call site는 Java 힙에서 **[CallSite](https://docs.oracle.com/javase/8/docs/api/java/lang/invoke/CallSite.html) 객체로** 표현된다.  
@@ -387,19 +417,6 @@ public class Main {
         Object invoke2 = concat.invokeWithArguments(s1, s2);
         String invoke3 = (String) concat.invokeExact(s1, s2);
     }
-}
-```
-
-```java
-abstract public class CallSite {
-    static { MethodHandleImpl.initStatics(); }
-
-    // The actual payload of this call site:
-    /*package-private*/
-    MethodHandle target;    // Note: This field is known to the JVM.  Do not change.
-
-    public abstract MethodHandle dynamicInvoker();
-    ...
 }
 ```
 
