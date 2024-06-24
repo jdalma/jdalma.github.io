@@ -1,9 +1,9 @@
 ---
-title: invokedynamic 이란?
+title: invokedynamic 이란? (작성중)
 date: "2024-06-10"
 tags:
    - java
-   - deep
+   - deep-dive
 ---
 
 # 발단
