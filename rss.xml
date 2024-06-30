@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 28 Jun 2024 06:58:44 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란? (작성중)]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Mon, 10 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 30 Jun 2024 15:51:48 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;자바와 코틀린에서 람다를 처리하는 방식이 다르다는 것을 알게됐다.&lt;br&gt;
 코틀린을 먼저 확인해보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -14,7 +14,7 @@ private fun &amp;lt;T&amp;gt; Iterable&amp;lt;T&amp;gt;.filter(predicate: (T) -&
     return destination
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위의 확장함수에 람다를 전달하는 코틀린 코드는 아래와 같이 컴파일된다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;(T) -&gt; Boolean&lt;/code&gt; 람다를 전달받아 해당 람다의 결과를 반환하는 확장함수에 람다를 전달하는 코틀린 코드는 아래와 같이 컴파일된다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public final class MainKt {
    public static final void main(@NotNull String[] args) {
@@ -136,9 +136,9 @@ private fun &amp;lt;T&amp;gt; Iterable&amp;lt;T&amp;gt;.filter(predicate: (T) -&
       32: return
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;InnerClass$1&lt;/code&gt;이라는 이름은 컴파일러가 익명 클래스에 붙인 이름이며, &lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; 연산을 통해 메모리를 힙 안에 할당하고, 할당된 위치를 가리키는 참조를 오퍼랜드 스택에 쌓는다.&lt;br&gt;
-그리고 &lt;code class=&quot;language-text&quot;&gt;invokespecial&lt;/code&gt;을 통해 생성자를 호출한다.&lt;br&gt;
-&lt;strong&gt;하지만 람다는 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt; 연산만 호출된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;InnerClass&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;#1&lt;/code&gt;부터 &lt;code class=&quot;language-text&quot;&gt;#10&lt;/code&gt;까지는 익명 클래스로 지정한 &lt;code class=&quot;language-text&quot;&gt;toString1&lt;/code&gt;의 설명이며 &lt;code class=&quot;language-text&quot;&gt;InnerClass$1&lt;/code&gt;이라는 이름은 컴파일러가 익명 클래스에 붙인 이름이다.&lt;br&gt;
+그리고 &lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; 연산을 통해 메모리를 힙 안에 할당하고, 할당된 위치를 가리키는 참조를 오퍼랜드 스택에 쌓고 &lt;code class=&quot;language-text&quot;&gt;invokespecial&lt;/code&gt;을 통해 실행된다.&lt;br&gt;
+하지만 &lt;strong&gt;람다로 지정한 &lt;code class=&quot;language-text&quot;&gt;toString2&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt; 연산만 호출된다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;invokedynamic-이란&quot; style=&quot;position:relative;&quot;&gt;invokedynamic 이란?&lt;a href=&quot;#invokedynamic-%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;invokedynamic 이란 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;deckgo-highlight-code language=&quot;ruby&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;def addtwo(a, b)
@@ -146,7 +146,7 @@ private fun &amp;lt;T&amp;gt; Iterable&amp;lt;T&amp;gt;.filter(predicate: (T) -&
 end&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;위의 코드를 컴파일할 때는 a와 b의 형식을 알 수 없듯이 동적 타입 언어 컴파일의 난제는 프로그램이 컴파일된 후 메서드나 함수의 가장 적절한 구현을 선택할 수 있는 런타임 시스템을 구현하는 방법이다.&lt;/p&gt;
-&lt;p&gt;자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt;이 추가되었다.&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt;이 추가되었다.&lt;/strong&gt;&lt;br&gt;
 (이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.)&lt;/p&gt;
 &lt;p&gt;실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 &lt;code class=&quot;language-text&quot;&gt;Call sites&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Method handles&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Bootstrapping&lt;/code&gt;을 이해해야 한다.&lt;/p&gt;
 &lt;h2 id=&quot;call-sites&quot; style=&quot;position:relative;&quot;&gt;Call sites&lt;a href=&quot;#call-sites&quot; aria-label=&quot;call sites permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -375,7 +375,7 @@ Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메
 &lt;p&gt;즉, 메서드를 찾고, 조정하고, 호출하기 위한 저수준 메커니즘이다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;MethodHandle&lt;/code&gt;을 사용하기 위해서는 4가지를 준비해야 한다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Lookup 생성하기&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lookup 생성하기&lt;/strong&gt; : MethodHandle을 생성하기 위한 팩토리이다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;MethodType 생성하기&lt;/strong&gt; : 반환 타입과 매개변수 유형으로 구성되며, 불변이다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;MethodHandle 찾기&lt;/strong&gt; : 원본 클래스와 메서드 이름, MethodType을 Lookup 객체에 제공하여 조회할 수 있다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;MethodHandle 호출하기&lt;/strong&gt;&lt;/li&gt;
@@ -394,7 +394,7 @@ Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메
     }
 
     public static void main(String[] args) throws Throwable {
-        // Main의 sum 메서드 실행하기
+        // 첫 번째 예제. Main의 sum 메서드 실행하기
         Method sumMethod = Main.class.getDeclaredMethod(&amp;quot;sum&amp;quot;);
         MethodHandle sum = lookup().unreflect(sumMethod);
         final Main main = new Main(Arrays.asList(1, 3, 5, 6, 7));
@@ -402,7 +402,7 @@ Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메
         Object invoke5 = sum.invokeWithArguments(main);
         Integer invoke6 = (Integer) sum.invokeExact(main);
         
-        // String의 concat 메서드 실행하기
+        // 두 번째 예제. String의 concat 메서드 실행하기
         Lookup publicLookup = lookup();
         MethodType methodType = MethodType.methodType(String.class, String.class);
         MethodHandle concat = publicLookup.findVirtual(String.class, &amp;quot;concat&amp;quot;, methodType);
@@ -416,7 +416,7 @@ Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메
         &lt;/deckgo-highlight-code&gt;
 &lt;h2 id=&quot;bootstrapping&quot; style=&quot;position:relative;&quot;&gt;Bootstrapping&lt;a href=&quot;#bootstrapping&quot; aria-label=&quot;bootstrapping permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;바이트코드 명령에서 특정 invokedynamic call site가 처음 호출될 때, JVM에는 명령과 연관된 call site 객체가 없기 때문에 어떤 메서드를 대상으로 실행해야 하는지 알지 못한다.&lt;br&gt;
-즉, 이전에 보았던 invokestatic 및 invokespecial의 경우 컴파일 시점에 정확한 호출 대상을 알 수 있지만, invokedynamic은 호출 대상을 모르는 것이다.&lt;/p&gt;
+즉, &lt;strong&gt;이전에 보았던 invokestatic 및 invokespecial의 경우 컴파일 시점에 정확한 호출 대상을 알 수 있지만, invokedynamic은 호출 대상을 모르는 것이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;invokedynamic은 &lt;a href=&quot;https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-4.html#jvms-4.7.23&quot;&gt;BootstrapMethods(BSM)&lt;/a&gt;라고하는 동적 특성 호출을 지원하는 추가 정보를 참조한다.&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;특정 invokedynamic call site에 BSM을 연결할 수 있도록&lt;/strong&gt; Java 7부터 클래스 파일 형식에 InvokeDynamic라는 새로운 항목 유형이 추가되었다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -644,25 +644,25 @@ BootstrapMethods:
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/9ae3fccd654513fef2d3095c09ccd3ca/e515d/bsm.png&quot;
+    href=&quot;/static/7f529b09af10e982b601af1b16ecc927/e515d/bsm.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAADOklEQVR42n2TWXPiVhCF/f9/RKqSSio1M3E8GceY8XjDC7sxAiHJWtCCQAgJYbPaYPtLQ2Wq5iGVh1OtbnWf7tv3nj3e1rB+FDz9NzZTVtMRUWDy/vI/eYL3lwl7m0XGLDSZ9R2B/QOcHeaDLv0HBatRYuIb4v+Qt/0ebHNs5pHH1KuxN1/MaA+HtOMR7WSMmmZiU9RIYlFMJ04omxYn9TpN8VX51x4ltCTeGkT/YoASjdC9jhBmMb7eIDRb+OVvuJeHBNUzgkDD9zt4nortdnAclaBxRdgqEiq39DsVBgOLMLIZbBF7dL0qewtTZaLbLA2PrHlPcFWgd3lO2G4z1DQSQ44Zx7zVq4S//4oqSPJHOPuf8C/OyBp1Xk2dd8ui79zJhL7FeD1n9b5hBUziIZ3COW7pGq94TdKsM9XbrE5zjMo33H7eR/l6hFk4Y1gtkt5VeNZbrIU0dLY79CxS2c0sGpPZJknrnkRpkPV84q5DaOhEYY/FXZVlvURUKVI7+IPy/kes8xN6xSsemzU2pvGd0CbpRUz7KenVOV7uCwOZcPCgE0uDsWMxG6espMlKCt8lX/ua4/K3nzn75SfMb3leDZW1oRHaW0LfZrKc8fL6xovc1tTzME5PcAuXu2my+zuWmsoq/zdr2ddGGk3UluxWJxUsPJeXMGDd79P37oXQtXCSLt7Yp2fUcAMVw23SDTXa4teaN9y1izglaeJI3JaLU0t4WYAvNb5YL/XED7EDmXChK2idApp2zcPtZ+xmAfUij3Ke26GaO6B8uI95cYxxc4rbaeApNRw5mSWCaEfKDq2hKu+wKBPOH+kMWnQSHUM5JdSqmPk89Y8fUA+/0P7rM8rBn/iXFzgnJ6SVMk/ynCbZI8MkQhWizrCNGmsYXmlLOEEdKKIIFTWoEzzUUfLHXH36QOP4iG7xBr9Swi3f4pXlUTdFBIHPOE2Jkr4QyjACNe4I4XbCxZNIT0MdPdAa6XhPEePpgl6c0hulxJMnJotnstmSbL5kLHbyNGP1vCGdPYpkdak1RK4merBVyjRGswvo3VvBDYbYrYTcoLZD16/iiL+NfbfbmO1WsNzyrkbvXqO5RUwjxz8ojTDV7F2nHQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAADLklEQVR42n2T6XMaRxDF+f//iVS5knLFjpJYjg5LRpaQQVxCXMvCHrAXuyx7YHEIsUj80khOyh9S+fBqpnt6XvXreZPjOYPsm+D+v7Gds55PCRyN3eZ/6gS7zYzcdpWy8DQWY1Ng/ADzBUt/yHjQQm/cMLP7Ev9Qt9/7+xqDZWAxt2rklqsFncmETjilEyV041TWmG4guSBECSPKms5ZvU5T4q6cdaYRbcm3/eA7fFrBFNVShDANsdUGntbGLp8zuvyIU83jOD1sW8GyuhgjBdPs4jQKeO0SXqvIWKng+zpeYODvEVoMrSq5ldZlpho89C3S5h1O4Qr38gKv02HS6xH1RWYY8lyv4r39ma4gOj3CPHiP/SVP2qjzpKnsdJ2xeSsd2jpJtmS927IGZuEE5eqC0c01VumaqFlnrnZYfz5mWv5K8c8DWp+O0K7yTKol4tsKj2qbTEg9cz9DSyeW2SyChNTQiNp3RK0GqWsTDk28vkrguaxuqzzUbwgqJWp//Eb54B36xRluqcC3Zo2t1v+H0CByA+bjmLhwgXV8iC8d+gOV0JDuTZ1FErNuNgQ1dlLf+3TM5S9vyL/5Ce38lKd+l6zfwzNqr5JnD/dsnjIefY+5PaT/+YRRIc9YZKd30tle8ukhm0aVbKAw6zZltgqxEC0tk41nkY1dxlbjtUNzOsGKY1xVYWRbDETq0HVQDYN6q0lVutMKl4wkNmX4bkcckaY4cYKdJFhRhJXMMO0OuQdpVVd89F7IsCg2aRooX65p5wuohRKN03NKHz7SP8+jFStYiobd6sllH9NL6Ptb+sEWdQKGPRbbrJZo/iNaJImWQ9AbMjj9i9q7t3QOf6f1QV5VXtaWuZpnJ0SVIve9LmkaE0YzBpMntMmWQbgn9PaEi1fCUA6clXwzm6b4rPD+V+5OjhiWvmJXbsRGRayymFrke45NHE+ZvBBmQph9J3T3hA8SCNkUVIF7/0wyX+GGCd40IZwtmK02pIs16XL9ss7uV6wfM9nviXZyd8dgr1DcklstYnRTk+81FJiYI12+nIHjmq9wDIlfc/9CciPx71Cwv2OMDAzLZjio8DcasDko7rnOjgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;bsm&quot;
         title=&quot;&quot;
-        src=&quot;/static/9ae3fccd654513fef2d3095c09ccd3ca/1cfc2/bsm.png&quot;
-        srcset=&quot;/static/9ae3fccd654513fef2d3095c09ccd3ca/3684f/bsm.png 225w,
-/static/9ae3fccd654513fef2d3095c09ccd3ca/fc2a6/bsm.png 450w,
-/static/9ae3fccd654513fef2d3095c09ccd3ca/1cfc2/bsm.png 900w,
-/static/9ae3fccd654513fef2d3095c09ccd3ca/21482/bsm.png 1350w,
-/static/9ae3fccd654513fef2d3095c09ccd3ca/e515d/bsm.png 1430w&quot;
+        src=&quot;/static/7f529b09af10e982b601af1b16ecc927/1cfc2/bsm.png&quot;
+        srcset=&quot;/static/7f529b09af10e982b601af1b16ecc927/3684f/bsm.png 225w,
+/static/7f529b09af10e982b601af1b16ecc927/fc2a6/bsm.png 450w,
+/static/7f529b09af10e982b601af1b16ecc927/1cfc2/bsm.png 900w,
+/static/7f529b09af10e982b601af1b16ecc927/21482/bsm.png 1350w,
+/static/7f529b09af10e982b601af1b16ecc927/e515d/bsm.png 1430w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -670,8 +670,7 @@ BootstrapMethods:
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;즉, 상수 풀에 존재하는 &lt;code class=&quot;language-text&quot;&gt;#2&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;#4&lt;/code&gt;의 call site는 &lt;code class=&quot;language-text&quot;&gt;CONSTANT_InvokeDynamic&lt;/code&gt; 유형이며, 이 유형은 ClassFile 구조체의 &lt;a href=&quot;https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html#jvms-4.7&quot;&gt;BootstrapMethods 속성&lt;/a&gt; bootstrap method는 상수 풀의 &lt;code class=&quot;language-text&quot;&gt;#42&lt;/code&gt; 항목이다.&lt;br&gt;
-&lt;strong&gt;BSM으로 사용될 메서드 핸들은 &lt;code class=&quot;language-text&quot;&gt;LambdaMetafactory.metafactory(...)&lt;/code&gt;이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;즉, 상수 풀에 존재하는 &lt;code class=&quot;language-text&quot;&gt;#2&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;#4&lt;/code&gt;의 call site는 &lt;code class=&quot;language-text&quot;&gt;CONSTANT_InvokeDynamic&lt;/code&gt; 유형이며, 이 유형은 ClassFile 구조체의 &lt;a href=&quot;https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html#jvms-4.7&quot;&gt;BootstrapMethods 속성&lt;/a&gt;에 정의되어 있는 &lt;code class=&quot;language-text&quot;&gt;LambdaMetafactory.metafactory(...)&lt;/code&gt; 호출하며 이 BSM은 상수 풀의 &lt;code class=&quot;language-text&quot;&gt;#42&lt;/code&gt; 항목이다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;
 // 제공된 MethodHandle에 대한 위임을 통해 하나 이상의 인터페이스를 구현하는 간단한 &amp;quot;함수 개체&amp;quot; 생성을 용이하게 한다.
@@ -687,8 +686,7 @@ public class LambdaMetafactory {
         MethodHandle implMethod,
         MethodType instantiatedMethodType
     ) throws LambdaConversionException {
-        AbstractValidatingLambdaMetafactory mf;
-        mf = new InnerClassLambdaMetafactory(
+        AbstractValidatingLambdaMetafactory mf = new InnerClassLambdaMetafactory(
             caller, 
             invokedType,
             invokedName, 
@@ -706,9 +704,90 @@ public class LambdaMetafactory {
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;BSM은 이 정적 메서드를 호출하여 CallSite 객체를 반환한다, 즉, invokedynamic 명령이 실행되어 반환된 CallSite는 람다의 대상 유형을 구현하는 클래스의 인스턴스를 포함하고 있는 MethodHandle을 포함하고 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BSM은 이 정적 메서드를 호출하여 CallSite 객체를 반환한다,&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;즉, &lt;code class=&quot;language-text&quot;&gt;invokedynamic&lt;/code&gt; 명령이 실행되어 반환된 CallSite는 람다의 대상 유형을 구현하는 클래스의 인스턴스를 포함하고 있는 MethodHandle을 포함하고 있는것이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;bsm-만들어보기&quot; style=&quot;position:relative;&quot;&gt;BSM 만들어보기&lt;a href=&quot;#bsm-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;bsm 만들어보기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;람다와-클로저-특징&quot; style=&quot;position:relative;&quot;&gt;람다와 클로저 특징&lt;a href=&quot;#%EB%9E%8C%EB%8B%A4%EC%99%80-%ED%81%B4%EB%A1%9C%EC%A0%80-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;람다와 클로저 특징 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;람다가 둘러싸는 범위에서 매개변수를 캡쳐하지 않으면 람다 내부에서 사용하는 상태가 존재하지 않으므로 &lt;strong&gt;람다의 구현 클래스를 싱글톤으로 관리하여 최적화한다.&lt;/strong&gt;&lt;br&gt;
+그리고 InvokeDynamic call site와 람다 구현 인스턴스가 한 번 연결된 후에는 &lt;code class=&quot;language-text&quot;&gt;LambdaMetaFactory.metafactory&lt;/code&gt; 메서드는 호출되지 않는다.&lt;br&gt;
+하지만 동일한 형식의 람다 인스턴스라도 &lt;strong&gt;서로 다른 call site를 통해 생성된다면 BootstrapMethods가 InvokeDynamic call site별로 생성되기 때문에 독립적으로 구분된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;Function&amp;lt;Person, Integer&amp;gt; makeLambda() {
+    return (person1) -&amp;gt; person1.age;
+}
+
+Function&amp;lt;Person, Integer&amp;gt; otherMakeLambda() {
+    return (person1) -&amp;gt; person1.age;
+}
+
+@Test
+void lambdaEqualTest() {
+    Function&amp;lt;Person, Integer&amp;gt; lambda1 = makeLambda();
+    Function&amp;lt;Person, Integer&amp;gt; lambda2 = makeLambda();
+
+    assertThat(lambda1).isEqualTo(lambda2);
+
+    Function&amp;lt;Person, Integer&amp;gt; lambda3 = makeLambda();
+    Function&amp;lt;Person, Integer&amp;gt; lambda4 = otherMakeLambda();
+
+    assertThat(lambda1).isEqualTo(lambda3);
+    assertThat(lambda2).isEqualTo(lambda3);
+    assertThat(lambda3).isNotEqualTo(lambda4);
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;하지만 &lt;strong&gt;람다가 외부 스코프에 존재하는 변수에 의존하게되면 람다는 싱글톤으로 관리되지 않는다.&lt;/strong&gt;&lt;br&gt;
+(이 외부 스코프에 존재하는 변수에 의존하는 람다를 클로저라고 부른다.)&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;Supplier&amp;lt;Integer&amp;gt; makeClosure(Person person) {
+    return () -&amp;gt; person.age;
+}
+
+Supplier&amp;lt;Integer&amp;gt; makeAnonymous(Person person) {
+    return new Supplier&amp;lt;Integer&amp;gt;() {
+        @Override
+        public Integer get() {
+            return person.age;
+        }
+    };
+}
+
+@Test
+void closureEqualTest() {
+    Person person = new Person();
+    Supplier&amp;lt;Integer&amp;gt; lambda1 = makeClosure(person);
+    Supplier&amp;lt;Integer&amp;gt; lambda2 = makeClosure(person);
+    Supplier&amp;lt;Integer&amp;gt; anonymous1 = makeAnonymous(person);
+    Supplier&amp;lt;Integer&amp;gt; anonymous2 = makeAnonymous(person);
+
+//  assertThat(lambda1).isEqualTo(lambda2);    // fail !!!
+    assertThat(lambda1).isNotEqualTo(lambda2);
+
+//  assertThat(anonymous1).isEqualTo(anonymous2);    // fail !!!
+    assertThat(anonymous1).isNotEqualTo(anonymous2);
+
+    person.age = 1;
+    assertThat(lambda1.get()).isEqualTo(1);
+    assertThat(lambda2.get()).isEqualTo(1);
+    assertThat(anonymous1.get()).isEqualTo(1);
+    assertThat(anonymous2.get()).isEqualTo(1);
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위의 테스트 코드처럼 클로저가 싱글톤으로 관리되지 않는다고 해서 &lt;strong&gt;매번 새로운 CallSite가 생기는 것은 아니다.&lt;/strong&gt;&lt;br&gt;
+익명 클래스는 외부 변수를 캡처해야한다면 생성자에 캡처링된 변수를 넘겨주며, 람다는 InvokeDynamic만 호출한다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// 익명 클래스
+0: new           #3                  // class org/example/Main$1
+3: dup
+4: aload_0
+5: invokespecial #4                  // Method org/example/Main$1.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:(Lorg/example/Person;)V
+8: areturn
+
+// 람다
+0: aload_0
+1: invokedynamic #2,  0              // InvokeDynamic #0:get:(Lorg/example/Person;)Ljava/util/function/Supplier;
+6: areturn&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h1 id=&quot;callsite를-반환하는-bsm-만들어보기&quot; style=&quot;position:relative;&quot;&gt;CallSite를 반환하는 BSM 만들어보기&lt;a href=&quot;#callsite%EB%A5%BC-%EB%B0%98%ED%99%98%ED%95%98%EB%8A%94-bsm-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;callsite를 반환하는 bsm 만들어보기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;public class Ops {
     public static Integer adder(Integer x, Integer y) {
@@ -777,119 +856,14 @@ class MethodHandleTest {
 런타임 시스템에서 사용할 수 있는 메서드가 여러 개 있고 각각 다른 인수 유형을 처리하는 경우 부트스트랩 메서드 mybsm은 &lt;strong&gt;dynamicMethodType 인수에 따라 메서드를 동적으로 선택할 수 있다.&lt;/strong&gt;&lt;br&gt;
 invokedynamic 명령어는 컴파일러와 런타임 시스템의 동적 언어 구현을 단순화하며, 이는 Java 클래스 및 인터페이스에 특정한 연결 동작이 JVM에 의해 하드와이어링 되는 invokevirtual과 같은 다른 JVM 명령어와 대조된다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;클로저&quot; style=&quot;position:relative;&quot;&gt;클로저&lt;a href=&quot;#%ED%81%B4%EB%A1%9C%EC%A0%80&quot; aria-label=&quot;클로저 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;람다가 둘러싸는 범위에서 매개변수를 캡쳐하지 않으면 람다 내부에서 사용하는 상태가 존재하지 않으므로 람다의 구현 클래스를 싱글톤으로 관리하여 최적화한다.&lt;br&gt;
-InvokeDynamic call site와 람다 구현 인스턴스가 한 번 연결된 후에는 LambdaMetaFactory.metafactory 메서드는 호출되지 않는다.&lt;br&gt;
-하지만 동일한 형식의 람다 인스턴스라도 &lt;strong&gt;서로 다른 call site를 통해 생성된다면 BootstrapMethods가 InvokeDynamic call site별로 생성되기 때문에 독립적으로 구분된다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;Function&amp;lt;Person, Integer&amp;gt; makeLambda() {
-    return (person1) -&amp;gt; person1.age;
-}
-
-Function&amp;lt;Person, Integer&amp;gt; otherMakeLambda() {
-    return (person1) -&amp;gt; person1.age;
-}
-
-@Test
-void lambdaEqualTest() {
-    Function&amp;lt;Person, Integer&amp;gt; lambda1 = makeLambda();
-    Function&amp;lt;Person, Integer&amp;gt; lambda2 = makeLambda();
-
-    assertThat(lambda1).isEqualTo(lambda2);
-
-    Function&amp;lt;Person, Integer&amp;gt; lambda3 = makeLambda();
-    Function&amp;lt;Person, Integer&amp;gt; lambda4 = otherMakeLambda();
-
-    assertThat(lambda1).isEqualTo(lambda3);
-    assertThat(lambda2).isEqualTo(lambda3);
-    assertThat(lambda3).isNotEqualTo(lambda4);
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;만약 &lt;strong&gt;람다가 외부 스코프에 존재하는 변수에 의존하게되면 람다는 싱글톤으로 관리되지 않는다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;Supplier&amp;lt;Integer&amp;gt; makeClosure(Person person) {
-    return () -&amp;gt; person.age;
-}
-
-Supplier&amp;lt;Integer&amp;gt; makeAnonymous(Person person) {
-    return new Supplier&amp;lt;Integer&amp;gt;() {
-        @Override
-        public Integer get() {
-            return person.age;
-        }
-    };
-}
-
-@Test
-void closureEqualTest() {
-    Person person = new Person();
-    Supplier&amp;lt;Integer&amp;gt; lambda1 = makeClosure(person);
-    Supplier&amp;lt;Integer&amp;gt; lambda2 = makeClosure(person);
-    Supplier&amp;lt;Integer&amp;gt; anonymous1 = makeAnonymous(person);
-    Supplier&amp;lt;Integer&amp;gt; anonymous2 = makeAnonymous(person);
-
-//  assertThat(lambda1).isEqualTo(lambda2);    // fail !!!
-    assertThat(lambda1).isNotEqualTo(lambda2);
-
-//  assertThat(anonymous1).isEqualTo(anonymous2);    // fail !!!
-    assertThat(anonymous1).isNotEqualTo(anonymous2);
-
-    person.age = 1;
-    assertThat(lambda1.get()).isEqualTo(1);
-    assertThat(lambda2.get()).isEqualTo(1);
-    assertThat(anonymous1.get()).isEqualTo(1);
-    assertThat(anonymous2.get()).isEqualTo(1);
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;익명 클래스는 외부 변수를 캡처해야한다면 생성자에 캡처링된 변수를 넘겨주게 된다.&lt;/p&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;0: new           #3 // class org/example/Example$1
-3: dup
-4: aload_0
-5: aload_1
-6: invokespecial #4 // Method org/example/Example$1.&amp;quot;&amp;lt;init&amp;gt;&amp;quot;:(Lorg/example/Example;Lorg/example/Person;)V&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;람다는&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;public class ConstructorInjection {
-    Person person;
-    Supplier&amp;lt;Person&amp;gt; older = () -&amp;gt; {
-        person.age += 1;
-        return person;
-    };
-    Consumer&amp;lt;Person&amp;gt; printLambda = person1 -&amp;gt; System.out.println(person1);
-    Consumer&amp;lt;Person&amp;gt; printMethodRef = System.out::println;
-    public ConstructorInjection(Person person) {
-        this.person = person;
-    }
-}
-
-@Test
-void injectionTest() {
-    Person person = new Person();
-    ConstructorInjection test1 = new ConstructorInjection(person);
-    ConstructorInjection test2 = new ConstructorInjection(person);
-
-    test1.older.get();
-    test1.older.get();
-    test2.older.get();
-
-    assertThat(test1.person.age).isEqualTo(3);
-    assertThat(test2.person.age).isEqualTo(3);
-
-    assertThat(test1.older).isNotEqualTo(test2.older);
-    assertThat(test1.person).isEqualTo(test2.person);
-    assertThat(test1.printLambda).isEqualTo(test2.printLambda);
-    assertThat(test1.printMethodRef).isNotEqualTo(test2.printMethodRef);
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
 &lt;h1 id=&quot;정리&quot; style=&quot;position:relative;&quot;&gt;정리&lt;a href=&quot;#%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;정리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;람다 팩토리의 부트스트랩 메서드는 Java 언어 런타임 라이브러리에서 람다 메타팩토리라고 하는 표준화된 메서드입니다. 정적 부트스트랩 인수는 컴파일 시점에 람다에 대해 알려진 정보(변환될 함수 인터페이스, 파생된 람다 본문에 대한 메서드 핸들, SAM 유형이 직렬화 가능한지 여부에 대한 정보 등)를 캡처합니다.&lt;/p&gt;
+&lt;p&gt;람다를 생성하기 위한 BSM은 &lt;code class=&quot;language-text&quot;&gt;LambdaMetafactory.metafactory()&lt;/code&gt; 표준화된 메서드이며, CallSite별로 넘기는 파라미터 인자들과 내부 정보가 달라질 뿐이다.&lt;br&gt;
+상태를 포함하지 않는 람다는 컴파일러가 람다 표현식과 같은 시그니처를 갖는 메서드를 생성한다.&lt;br&gt;
+만약 상태를 포함한다면 그 상태를 람다 표현식의 인수에 캡처한 각 변수를 추가하는 것이다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;람다 덕분에 추가적인 필드나 정적 초기자 등의 오버헤드가 사라진다.&lt;/li&gt;
 &lt;li&gt;상태 없는(캡처하지 않는) 람다에서 람다 객체 인스턴스를 만들고, 캐시하고, 같은 결과를 반환할 수 있다.
 &lt;ul&gt;
-&lt;li&gt;자바 8 이전에도 사람들은 이런 방식을 사용했다.&lt;/li&gt;
 &lt;li&gt;예를 들어, 정적 final 변수에 특정 Comparator 인스턴스를 선언할 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -899,9 +873,7 @@ void injectionTest() {
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;상태를 포함하지 않는 람다는 컴파일러가 람다 표현식과 같은 시그니처를 갖는 메서드를 생성한다.&lt;br&gt;
-만약 상태를 포함한다면 그 상태를 람다 표현식의 인수에 캡처한 각 변수를 추가하는 것이다.&lt;/p&gt;
-&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;각 람다를 생성하는 CallSite는 ClassFile 정보에 BootStrapMethods 속성에 저장되어 있는 BSM을 실행하며, 이 BSM은 CallSite 객체를 반환하며 한 번 생성되면 다시 재생성되지 않는다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;참고&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/technotes/guides/vm/multiple-language-support.html&quot;&gt;Java Virtual Machine Support for Non-Java Languages&lt;/a&gt;&lt;/li&gt;
@@ -912,7 +884,11 @@ void injectionTest() {
 &lt;li&gt;&lt;a href=&quot;https://dzone.com/articles/dismantling-invokedynamic&quot;&gt;Dismantling invokedynamic&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://m.yes24.com/Goods/Detail/77125987&quot;&gt;모던 자바 인 액션&lt;/a&gt; : 부록 D&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://jcp.org/en/jsr/detail?id=292&quot;&gt;JSR 292: Supporting Dynamically Typed Languages on the JavaTM Platform&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2024년 기록]]></title><description><![CDATA[HTTP/2 인 액션 사내에서 Armeria + gRPC를 통한 POC를 진행한 적이 있는데 HTTP/2에 대한 이해가 없었어서 힘들었던 경험이 있다. 위의 경험 때문에 코드숨 스터디 모집을 보고 바로 참가했다. HTTP/2가 개선되긴 했지만 HTTP…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;http2-인-액션&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;HTTP/2 인 액션&lt;/strong&gt;&lt;a href=&quot;#http2-%EC%9D%B8-%EC%95%A1%EC%85%98&quot; aria-label=&quot;http2 인 액션 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2024년 기록]]></title><description><![CDATA[기술 네티 인 액션 작성 예정 OAuth2 인 액션 작성 예정 오브젝트 ~ing HTTP/2 인 액션 사내에서 Armeria + gRPC를 통한 POC를 진행한 적이 있는데 HTTP/…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;기술&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;기술&lt;/strong&gt;&lt;a href=&quot;#%EA%B8%B0%EC%88%A0&quot; aria-label=&quot;기술 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;네티-인-액션-작성-예정&quot; style=&quot;position:relative;&quot;&gt;네티 인 액션 &lt;em&gt;작성 예정&lt;/em&gt;&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;네티 인 액션 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;oauth2-인-액션-작성-예정&quot; style=&quot;position:relative;&quot;&gt;OAuth2 인 액션 &lt;em&gt;작성 예정&lt;/em&gt;&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;oauth2 인 액션 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;오브젝트-ing&quot; style=&quot;position:relative;&quot;&gt;오브젝트 ~ing&lt;a href=&quot;#%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-ing&quot; aria-label=&quot;오브젝트 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;http2-인-액션&quot; style=&quot;position:relative;&quot;&gt;HTTP/2 인 액션&lt;a href=&quot;#http2-%EC%9D%B8-%EC%95%A1%EC%85%98&quot; aria-label=&quot;http2 인 액션 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;사내에서 Armeria + gRPC를 통한 POC를 진행한 적이 있는데 HTTP/2에 대한 이해가 없었어서 힘들었던 경험이 있다.&lt;br&gt;
 위의 경험 때문에 &lt;a href=&quot;https://www.codesoom.com/courses/soomtudy&quot;&gt;코드숨 스터디&lt;/a&gt; 모집을 보고 바로 참가했다.&lt;/p&gt;
 &lt;p&gt;HTTP/2가 개선되긴 했지만 HTTP/1.1과 비교해서 &lt;strong&gt;명확하게 어떤 부분이 개선되었는지&lt;/strong&gt; , 스트림에 대해서는 들어봤는데 &lt;strong&gt;명확하게 어떤 방식으로 통신이 이루어지는지&lt;/strong&gt; 알지 못했다.&lt;br&gt;
@@ -934,10 +910,46 @@ void injectionTest() {
 &lt;li&gt;&lt;a href=&quot;https://blog.banksalad.com/tech/production-ready-grpc-in-golang/&quot;&gt;뱅크샐러드 프로덕션 환경에서 사용하는 golang과 gRPC&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://story.cookapps.com/articles/187&quot;&gt;쿡앱스는 gRPC를 어떻게 사용하나요?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;타입으로-견고하게-다형성으로-유연하게&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;타입으로 견고하게 다형성으로 유연하게&lt;/strong&gt;&lt;a href=&quot;#%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EA%B2%AC%EA%B3%A0%ED%95%98%EA%B2%8C-%EB%8B%A4%ED%98%95%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EC%97%B0%ED%95%98%EA%B2%8C&quot; aria-label=&quot;타입으로 견고하게 다형성으로 유연하게 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;1월 19일부터 2월 20일까지&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&quot;real-my-sql-1권&quot; style=&quot;position:relative;&quot;&gt;Real My SQL 1권&lt;a href=&quot;#real-my-sql-1%EA%B6%8C&quot; aria-label=&quot;real my sql 1권 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MySQL의 아키텍처부터 메모리 영역, 인덱스, 옵티마이저와 힌트, 실행 계획까지 넓고 깊은 내용을 학습할 수 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;아키텍처&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;MySQL 엔진, 스토리지 엔진, 핸들러 API&lt;/li&gt;
+&lt;li&gt;포그라운드, 백그라운드 스레드&lt;/li&gt;
+&lt;li&gt;글로벌 메모리 영역 (InnoDB 버퍼풀, InnoDB 어댑티브 해시 인덱스, InnoDB 리두 로그 버퍼 등)&lt;/li&gt;
+&lt;li&gt;로컬 메모리 영역 (커넥션의 생명주기와 동일한 커넥션 버퍼, 결과 버퍼 그리고 쿼리를 실행하는 순간에만 할당했다가 다시 해제하는 소트 버퍼, 조인 버퍼 등)&lt;/li&gt;
+&lt;li&gt;쿼리 실행 구조 (쿼리 파서 → 전처리기 → 옵티마이저 → 실행 엔진 → 핸들러)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;InnoDB 스토리지 엔진 아키텍처&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;언두 로그를 활용한 MVCC와 잠금 없는 일관된 읽기&lt;/li&gt;
+&lt;li&gt;버퍼풀 (데이터 페이지를 관리하는 LRU 리스트 구조, 클린 페이지, 더티 페이지)&lt;/li&gt;
+&lt;li&gt;리두 로그, 언두 로그, 체인지 버퍼, 어댑티브 해시 인덱스&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인덱스&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;인덱스를 통한 데이터 읽는 방법&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;옵티마이저와 힌트&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터 스캔 방식&lt;/li&gt;
+&lt;li&gt;정렬과 조인 처리 방식&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;실행 계획과 통계정보&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;실행 계획 분석 방법&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;많은 양의 이론적인 내용들을 설명해서 지루한 부분도 있었지만 겉핥기 식으로 알고 있었던 인덱스와 실행 계획에 대해 학습할 수 있어서 좋앗다.&lt;br&gt;
+한 번 읽고 모든 내용을 기억할 수는 없으니 일회독으로 MySQL에 대한 윤곽을 어느정도 잡고 나중에 필요할 때 찾아봐야할 것 같다.
+MySQL을 사용하는 개발자라면 필수로 읽어야 할 책이라고 생각한다.&lt;/p&gt;
+&lt;h2 id=&quot;타입으로-견고하게-다형성으로-유연하게&quot; style=&quot;position:relative;&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;a href=&quot;#%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EA%B2%AC%EA%B3%A0%ED%95%98%EA%B2%8C-%EB%8B%A4%ED%98%95%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EC%97%B0%ED%95%98%EA%B2%8C&quot; aria-label=&quot;타입으로 견고하게 다형성으로 유연하게 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;정적 타입 언어는 타입 검사기를 통하여 생산성을 높이기도 좋고, 불필요한 실행 중 검사를 없앨 수 있어서 프로그램이 좋은 성능을 내는데 유리하고 큰 프로그램을 만들 때 타입 검사기의 위력은 강력하다.&lt;br&gt;
 타입 검사기가 거부하는 코드를 줄이고 정적 언어를 잘 사용하기 위해 여러 경우에 대한 다형성,가변성에 대한 이해와 타입 검사기와 친해지도록 노력해야 한다.&lt;/p&gt;
@@ -955,7 +967,265 @@ void injectionTest() {
 &lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/effective-java/item31_%ED%95%9C%EC%A0%95%EC%A0%81%20%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%20API%20%EC%9C%A0%EC%97%B0%EC%84%B1%EC%9D%84%20%EB%86%92%EC%9D%B4%EB%9D%BC.md#pecs--producer-extends-consumer-super&quot;&gt;PECS : producer-extends, consumer-super&lt;/a&gt;를 외워서 사용했는데 왜 저렇게 제한해야 하는지 더 깊은 이해를 할 수 있도록 도와주었다.&lt;/p&gt;
 &lt;p&gt;이 책을 읽으면서 안다고 착각했던 부분들이 많았다는 것을 깨달았다. 정적 타입 언어에 대한 이해를 한층 더 높여준 책이다.&lt;br&gt;
 개발하면서 타입 검사기가 거부하는 상황이 발생하면 IDE의 도움을 받아 어영부영 넘어간 경험 또는 제네릭이나 제네릭을 통한 타입 매개변수 제한을 사용할 때 타입 검사기가 왜 거부하는지 이해하지 못 했던 경험이 있다면 이 책은 큰 도움이 될 것이다.&lt;/p&gt;
-&lt;h1 id=&quot;프레임&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;프레임&lt;/strong&gt;&lt;a href=&quot;#%ED%94%84%EB%A0%88%EC%9E%84&quot; aria-label=&quot;프레임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;내-코드가-그렇게-이상한가요&quot; style=&quot;position:relative;&quot;&gt;내 코드가 그렇게 이상한가요?&lt;a href=&quot;#%EB%82%B4-%EC%BD%94%EB%93%9C%EA%B0%80-%EA%B7%B8%EB%A0%87%EA%B2%8C-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94&quot; aria-label=&quot;내 코드가 그렇게 이상한가요 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 50%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ffupfin.geek%2Fposts%2Fpfbid09WddbAYkCwAaB3xKi4tazk2WzvuFhzqGvUhqYMCDdxxGJ7stEcm8nLMJbMdGpudZl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
+&lt;p&gt;(박성철님의 이 글을 보고 구매해서 읽어보았다.)&lt;br&gt;
+대부분의 개발자들은 코드를 작성하는 시간보다 코드를 읽고 이해하려 노력하는 시간이 더 많을 것이다.&lt;br&gt;
+그 이해를 바탕으로 코드를 수정하거나 기능을 추가하고 테스트를 할 것이다. 하지만 이 행위는 말처럼 쉽지 않다.&lt;/p&gt;
+&lt;p&gt;이해하기 힘든 코드, 의도를 전혀 알 수 없는 코드들을 맞닥뜨린 경험 또는 수정이나 확장했을 때 어디까지 영향을 끼치는지 확인하다가 하루가 다 가버린 경험, 냄새나는 코드인 줄은 알지만 어떻게 수정해야 할지 몰라서 결국 냄새나는 코드를 또 작성하며 죄책감을 느낀 경험이 있다면 이 책이 재밌게 읽힐 것이다.&lt;br&gt;
+이 책에서는 이와같이 개발 능력을 떨어뜨리고 소프트웨어의 성장을 방해하는 설계, 또는 구현상의 문제를 &lt;code class=&quot;language-text&quot;&gt;악마&lt;/code&gt;에 비유하며 악마를 인식할 수 있는 시각과 악마가 코드에 스며들지 못하도록 예방하고 무찌를 수 있도록 도와준다.&lt;/p&gt;
+&lt;p&gt;많은 책에서 &lt;strong&gt;응집도와 결합도&lt;/strong&gt; 이야기가 자주 나오는데 항상 뉘앙스로 이해 했었다.&lt;br&gt;
+이 책에서는 명확하게 &lt;strong&gt;데이터와 로직 등이 분산되어 있는 것을 응집도가 낮은 구조&lt;/strong&gt; 라고 정의한다.&lt;br&gt;
+응집도가 낮고 결합도가 높을 때 발생하는 &lt;code class=&quot;language-text&quot;&gt;코드 중복&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;수정 누락&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;가독성 저하&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;초기화되지 않은 객체&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;잘못된 값 할당&lt;/code&gt; 들을 설명해준다.&lt;br&gt;
+그렇다고 코드 중복을 해결하기 위해 섣부른 일반화를 해서도 안된다. &lt;strong&gt;코드 중복을 제거하는것이 핵심이 아니라 비즈니스적인 책무를 일반화 해도 괜찮은지를 먼저 고민해야한다.&lt;/strong&gt;&lt;br&gt;
+즉, &lt;strong&gt;같은 로직, 비슷한 로직이라도 개념이 다르면 중복을 허용해야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;성숙한 클래스를 설계하기 위해 클래스의 내부 필드와 그 필드를 가공하는 로직이 분산되지 않도록 노력해야하며 &lt;strong&gt;인스턴스 변수가 잘못된 상태에 빠지지 않게 하기 위한 구조를 만드는 것임을 명심해야 한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;값 객체&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;완전 생성자&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;불변&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;부수 효과 방지&lt;/code&gt; 는 기본적으로 유의해야 한다. 그렇다고 응집도를 높이기 위해 로직을 한곳에 모아 강한 결합 구조를 만들지 않도록 신경써야 한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;..Manager&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Product&lt;/code&gt;와 같은 너무 범용적인 이름을 사용하여 많은 책임과 관심사를 가지도록 하면 안된다. &lt;strong&gt;목적 중심 이름 설계&lt;/strong&gt;를 명심해라.&lt;/li&gt;
+&lt;li&gt;관심사가 다르고 관계없는 책무를 가진 메서드는 동사 + 목적어 형태가 되는 경향이 있으므로 &lt;strong&gt;메서드 이름은 &lt;code class=&quot;language-text&quot;&gt;동사&lt;/code&gt; 하나로 구성되게 해라.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;모델&lt;/strong&gt;은 &lt;code class=&quot;language-text&quot;&gt;특정 목정 달성을 위해서, 최소한으로 필요한 요소를 갖춘 것&lt;/code&gt;이다. 그렇기에 &lt;strong&gt;목적 달성의 수단&lt;/strong&gt; 이며 목적별로 모델링해야 한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;모델 != 클래스&lt;/strong&gt; 이다. 일반적으로 모델 하나는 여러 개의 클래스로 구현된다. 클래스 설계와 구현에서 무언가를 깨닫는다면, 이를 모델에 꾸준하게 피드백해야 한다. 그렇지않으면 서로 괴리가 생긴다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;일급 컬렉션&lt;/code&gt;에 대한 내용을 &lt;a href=&quot;https://jdalma.github.io/2023y/kotlinCleanCode/&quot;&gt;넥스트스텝 코틀린 교육&lt;/a&gt;에서 접했을땐 코틀린에서 지원하는 컬렉션 공통 함수들을 사용하기 불편하다고 생각해서 와닿지 않았었는데 이 책을 통해 잘못이해하고 있었다는 것을 느꼈다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;인상 깊은 내용들은 이 정도로 정리할 수 있겠다. 중후반부 까지는 좋은 코드를 작성하는 방법, 설계에 대한 강조, 모델의 개념들에 대해 설명했다.&lt;br&gt;
+(&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%97%98%EB%A0%88%EA%B0%95%ED%8A%B8-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot;&gt;엘레강트 오브젝트&lt;/a&gt;가 자주 떠올랐다.)&lt;/p&gt;
+&lt;p&gt;대체로 이렇게 코드,설계 레벨에서 마무리짓는데 이 책은 후반부에 &lt;strong&gt;레거시 코드와 엔지니어의 성장 가능성의 관계&lt;/strong&gt;, &lt;strong&gt;설계를 방해하는 환경&lt;/strong&gt;, &lt;strong&gt;리뷰의 의의&lt;/strong&gt; 들도 설명하면서 자신의 업무 환경을 개선하기위한 용기와 방법을 알려준다.&lt;br&gt;
+팀에 새로운 인원이 투입된다면 온보딩 기간에 읽어야 할 책으로 선정해도 무방할 정도로 좋은 책이였다.&lt;/p&gt;
+&lt;p&gt;이 책 덕분에 &lt;a href=&quot;https://m.yes24.com/Goods/Detail/64586851&quot;&gt;레거시 코드 활용 전략&lt;/a&gt;에 흥미가 생겨 읽어볼 예정이다.&lt;/p&gt;
+&lt;h2 id=&quot;켄트-벡의-tidy-first&quot; style=&quot;position:relative;&quot;&gt;켄트 벡의 Tidy First?&lt;a href=&quot;#%EC%BC%84%ED%8A%B8-%EB%B2%A1%EC%9D%98-tidy-first&quot; aria-label=&quot;켄트 벡의 tidy first permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;이 책은 설계와 코드 정리를 잘 하기 위한 방법을 배우기 위해 읽기도 좋지만 &lt;strong&gt;코드 정리와 설계를 진행하면서 발생하는 비용에 대한 생각&lt;/strong&gt; 을 깨닫기 위해 읽기 좋은 책이라고 생각한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;이미 잦은 코드 정리가 진행되고 있어 변경사항 적응하는 것에 대한 팀원들의 불만은 없는지?&lt;/li&gt;
+&lt;li&gt;코드 정리가 결과적으로 도움이 되는지?&lt;/li&gt;
+&lt;li&gt;해당 변경사항이 코드 정리인지, 동작 변경인지? 코드 정리를 먼저할지? 동작 변경을 먼저할지?&lt;/li&gt;
+&lt;li&gt;코드 정리, 설계 대상이 얼마나 자주 변경되는지? 얼마나 자주 읽히는지? 얼마나 읽기 어려운지?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위와 같이 코드 정리, 설계를 진행할 때 고려해야할 것들의 근본적인 원인은 코드 정리, 설계를 진행하는 것은 &lt;strong&gt;비용이 들기 때문이다.&lt;/strong&gt;&lt;br&gt;
+일반적으로 개발자들이 근무하는 회사는 영리기업이고, 영리기업은 이윤을 목적으로 하기 때문에 지금 당장 이익을 얻기는 힘들면서 미래에 투자하는 코드 정리와 설계같은 업무는 비용 지출에 대한 이익과 손실을 고려하여 진행해야 한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;오늘의 1달러가 내일의 1달러보다 더 가치가 있기 때문에 버는 것은 빨리하고, 쓰는 것은 가능한 뒤로 미룹니다.&lt;br&gt;
+혼란스러운 상황에서는 어떤 물건에 대한 옵션이 물건 자체보다 낫기 때문에 불확실성에 맞서는 옵션을 만듭니다.&lt;br&gt;
+&lt;strong&gt;즉, 지금 돈을 벌려면 미래의 옵션이 줄어들 수 있지만, 지금 돈을 벌지 못하면 미래의 옵션을 행사할 여력이 없을 수도 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;금융 업계의 옵션을 소프트웨어 설계 결정에 투영한다. 옵션은 &apos;선택&apos;의 의미를 내포하는데,&lt;br&gt;
+소프트웨어 설계 문제에서 옵션을 보유하는 일은 당장 모든 비용을 &apos;동작 변경&apos;에 모두 투자하는 대신에 &apos;선택 가능성&apos; 혹은 &apos;선택의 기회&apos;를 유지하는 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이익이 미래에 언제 발생하는지? 그리고 그 이익은 얼마나 확실한지?를 스스로 질문해야 한다.&lt;br&gt;
+결국 &lt;strong&gt;지금 돈 벌기&lt;/strong&gt;와 &lt;strong&gt;지금 돈 쓰기&lt;/strong&gt;를 고민하는 것이다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;지금 돈 벌기&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;지금 돈 쓰기&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;정의&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;현금 흐름 할인, 발생하는 비용의 시간 가치&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;옵션, 선택 가능성을 늘리기&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;설명&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;흐름 할인지금 돈을 벌 수 있게 기능 변경 및 추가&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;미래에 기능 번경을 더 쉽게 할 수 있게 코드 정리, 리팩토링, 설계&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;지금 돈을 못 벌면 미래는 없다.&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;변경 비용이 높아지면 미래가 없다.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;옵션을 만드는 것과 동작을 변경하는 것의 균형을 맞추는데 집중해야 한다.&lt;br&gt;
+&lt;strong&gt;가치에 대한 예측이 불확실할수록 바로 구현하는 것보다 옵션이 지닌 가치가 더 커진다. 바로 구현하는 것보다 변화를 포용하면 창출한 가치를 극대화할 수 있지만, 그 상황은 통상적으로 소프트웨어 개발이 극적으로 실패하는 지점이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;비용(코드 정리) + 비용(코드 정리 후 동작 변경) &amp;lt; 비용(바로 동작 변경)&lt;/code&gt; 이라면 코드 정리를 진행해도 좋다. 그 반대라면 고민해야한다..&lt;br&gt;
+비용에 대한 판단력을 기르기 위한 연습을 꾸준히 한다면 어떻게 설계해야 하고 언제 설계하지 말아야하는지 직감적으로 느낄 수 있을것이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;비용&lt;/strong&gt; : 코드를 정리하면 비용이 줄까요? 아니면 나중에 하는 편이 나을까요? 줄일 가능성이 있을까요?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;수익&lt;/strong&gt; : 코드를 정리하면 수익이 더 커질까요? 혹은 더 빨리 발생하거나 커질 가능성이 있나요?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;결합도&lt;/strong&gt; : 코드를 정리하면 변경에 필요한 요소의 수가 줄어드나요?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;응집도&lt;/strong&gt; : 코드를 정리하면 변경을 더 작고 좁은 범위로 집중시켜 더 적은 수의 요소만 다룰 수 있을까요?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://yozm.wishket.com/magazine/@bettercoder/&quot;&gt;옮긴이의 글들&lt;/a&gt;도 참고하자.&lt;/p&gt;
+&lt;h2 id=&quot;켄트-백의-구현-패턴&quot; style=&quot;position:relative;&quot;&gt;켄트 백의 구현 패턴&lt;a href=&quot;#%EC%BC%84%ED%8A%B8-%EB%B0%B1%EC%9D%98-%EA%B5%AC%ED%98%84-%ED%8C%A8%ED%84%B4&quot; aria-label=&quot;켄트 백의 구현 패턴 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;클린코드와 리팩토링에 관심을 가지면서 접하게 된 책이다. 아마 이때까지 읽은 책들 중에 가장 많은 인덱스 스티커를 사용한 것 같다.&lt;br&gt;
+켄트 백은 서문에서부터 &lt;code class=&quot;language-text&quot;&gt;&quot;프로그램을 짤 때는 자신과 컴퓨터뿐만 아니라, 다른 사람들을 생각해야 한다!&quot;&lt;/code&gt;고 강조한다.&lt;br&gt;
+기능을 개발하는 비용이 1이라면 그 소프트웨어가 폐기될 때까지 유지보수하고 기능을 추가하기 위한 비용은 1보다 크다는 것을 다 알고 있을 것이다.&lt;br&gt;
+그렇기에 정확하게 작동하도록 코드를 작성하는 것은 당연하지만 다른 사람들이 읽기 편하도록 작성하는 것도 정말 중요하다.&lt;/p&gt;
+&lt;p&gt;이 책은 개발하면서 만나는 많은 선택들을 &lt;code class=&quot;language-text&quot;&gt;&quot;내 생각을 다른 사람에게 어떻게 전달할까?&quot;&lt;/code&gt; 고민에 차선책을 선택할 수 있도록 도와준다.&lt;br&gt;
+이런 고민과 결정은 &lt;strong&gt;책임감&lt;/strong&gt;과 &lt;strong&gt;장인 정신&lt;/strong&gt;을 지키기 위한 자신의 양심과 자랑스럽지 않은 일을 하지 않으려는 마음에 의존한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;좋은 코드가 상업적 성공에 필수적인 부분은 아니다. 조잡한 코드로 돈을 많이 버는 사례가 있다고 할지라도, 나는 여전히 코드 품질이 매우 중요하다고 믿는다.&quot;&lt;br&gt;
+&quot;기능을 개발하고 출시하며, 기회와 경쟁 상황에 따라 개발 방향을 바꿀 수 있으며 위기 속에서도 직원들의 사기를 높일 수 있는 회사는 조잡하고 버그가 있는 코드를 작성하는 회사에 비해 성공할 확률이 높다.&quot;&lt;br&gt;
+&quot;설사 좋은 코딩이 장기적으로 경제적 이득을 가져오지 못한다고 하더라도 &lt;strong&gt;나는 여전히 내가 작성할 수 있는 최고의 코드를 작성할 것이다.&lt;/strong&gt;&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;많은 패턴을 학습하여도 개발하면서 모든 상황을 커버할 수 없고 정형화된 패턴도 적용할 수 없는 경우가 있다.&lt;br&gt;
+이때는 학습한 이론과 패턴이 아닌 결정 사항에 영향을 끼치는 &lt;strong&gt;가치&lt;/strong&gt;와 &lt;strong&gt;원칙&lt;/strong&gt; 이 존재한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;가치는 코드의 복잡성을 낮추고 가독성을 중시하며, 유연성있는 코드를 작성하는 클린 코드의 &lt;strong&gt;가치&lt;/strong&gt;이다.&lt;/li&gt;
+&lt;li&gt;원칙은 가치처럼 언제나 적용되는 것은 아니지만 때로는 직접 적용하기 어려운 가치와 적용법은 명확하지만 조금은 지엽적인 패턴 사이의 가교 역할을 하는 것이 &lt;strong&gt;원칙&lt;/strong&gt;이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;패턴은 &lt;code class=&quot;language-text&quot;&gt;&quot;지금 당장 무엇을 해야할지&quot;&lt;/code&gt; 알려주며, 가치는 &lt;code class=&quot;language-text&quot;&gt;&quot;패턴을 사용해야 하는 동기&quot;&lt;/code&gt;를 알려주고, 원칙은 &lt;code class=&quot;language-text&quot;&gt;&quot;동기를 행동으로 어떻게 바꿔줄지&quot;&lt;/code&gt; 알려준다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;절대적인 최고의 개발 스타일이란 존재하지 않는다. 가치, 원칙, 패턴은 실무 경험과 다른 프로그래머와의 대화를 통해 스스로 만들어 가야한다.&lt;br&gt;
+일하는 환경에 따라 다르겠지만 업무에 치이다보면 좋은 코드와 나쁜 코드 작성에 대한 저울질을 할 때가 많다.&lt;br&gt;
+자신있게 항상 좋은 코드를 작성하기 위해 노력했다라고 말하기 힘든 경험들이 분명있을 것이다. 그리고 함께 일하는 동료들이 클린 코드에 대한 공감이 없어 괴리감을 느낄 수도 있다.&lt;/p&gt;
+&lt;p&gt;이 책은 그 괴리감을 메꿔주며 스스로의 소프트웨어 장인 정신을 확립해나가는데 큰 도움을 준다.&lt;/p&gt;
+&lt;h2 id=&quot;uml-실전에서는-이것만-쓴다&quot; style=&quot;position:relative;&quot;&gt;UML 실전에서는 이것만 쓴다&lt;a href=&quot;#uml-%EC%8B%A4%EC%A0%84%EC%97%90%EC%84%9C%EB%8A%94-%EC%9D%B4%EA%B2%83%EB%A7%8C-%EC%93%B4%EB%8B%A4&quot; aria-label=&quot;uml 실전에서는 이것만 쓴다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;책의 제목을 보면 UML을 사용해야 한다고 강조할 것 같지만 실제로는 &lt;code class=&quot;language-text&quot;&gt;UML은 그저 표기법이며 목표를 이루기 위한 도구&lt;/code&gt; 임을 강조한다.&lt;br&gt;
+UML 다이어그램을 그리는 일도 비용이다. &lt;strong&gt;시험해 볼 구체적인 것이 있고, 그것을 코드로 시험해 보는 것보다 UML로 시험해 보는 쪽이 비용이 덜 들때 사용해야 한다.&lt;/strong&gt;&lt;br&gt;
+항상 산출물로 작성해야 한다는 강제성이 포함되거나 형식적인 문서라고 생각해서는 안된다. UML 다이어그램의 수명 주기는 짧게 가져가도록 버리는 습관을 길러야 한다.&lt;br&gt;
+잘 그려야한다는 생각을 버려라. 다이어그램을 잘 그리는 것, 시퀀스 번호에 점을 제대로 찍는 것은 중요하지 않다.&lt;br&gt;
+&lt;strong&gt;앞에 있는 사람들이 지금 논의하는 내용을 다 이해하고, 회의를 빨리 끝내 사람들이 코드를 빨리 작성하기 시작하도록 돕는 것이 핵심이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;클래스 다이어그램&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;객체 다이어그램&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;시퀀스 다이어그램&lt;/strong&gt; : 객체 사이의 연결을 드러내기 위해 사용하지, 알고리즘의 세부사항을 자세하게 보여주기 위해 사용해서는 안된다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;상태 다이어그램&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;유스케이스&lt;/strong&gt; : 사용자의 눈에 보이지 않는 동작을 전혀 기술하지 않고 시스템 안에 숨겨진 메커니즘도 다루지 않는다. 오직 사용자가 직접 볼 수 있는 것을 적어 놓을 뿐이다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;UML 다이어그램을 이용해 시스템 설계에 대한 놓친 부분이나 보완할 점을 빨리 찾기 위함도 있다.&lt;br&gt;
+많은 책임을 가진 클래스를 발견하거나, 수정에 의한 여파가 여러 클래스에 전달되는 것을 발견하는 것이 대표적이다.&lt;/p&gt;
+&lt;p&gt;객체지향 개발의 &lt;code class=&quot;language-text&quot;&gt;SOLID&lt;/code&gt; 설계 원칙을 명심하고 나쁜 설계의 냄새가 스며들지 않도록 신경써야 한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;하나를 바꿀 때 반드시 다른 것도 바꿔야 하는 &lt;strong&gt;경직성&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;한 부분을 변경하면 다른 부분에 문제가 생기는 &lt;strong&gt;부서지기 쉬움&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;작은 단위로 분해해서 다른 시스템에 재사용하기 힘든 &lt;strong&gt;부동성&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;YAGNI 원칙을 위배한 &lt;strong&gt;쓸데없이 복잡함&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;필요없는 반복&lt;/strong&gt; 과 코드를 작성한 의도가 &lt;strong&gt;불투명함&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;자주 변경되는 콘크리트 클래스에 의존하지 마라.&lt;br&gt;
+만약 어떤 클래스에서 상속받아야 한다면, 기반 클래스를 추상 클래스로 만들어라.&lt;br&gt;
+어떤 클래스의 참조를 가져야 한다면, 참조 대상이 되는 클래스를 추상 클래스로 만들어라.&lt;br&gt;
+만약 어떤 함수를 호출해야 한다면 호출되는 함수를 추상 함수로 만들어라.&lt;br&gt;
+&lt;strong&gt;구체적인 것보다는 이런 추상적인 것에 의존하는 편이 좋으며 추상적인 것은 구체적인 것에 의존하지 말아야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이 원칙들을 적용하는 가장 좋은 방법은 능동적으로 적극 적용하는 것이 아니라, &lt;strong&gt;문제가 생겼을 때 그에 대한 &lt;code class=&quot;language-text&quot;&gt;반응으로써 작용하는 것&lt;/code&gt; 이다.&lt;/strong&gt;&lt;br&gt;
+코드의 구조적인 문제를 처음 발견했거나, 어떤 모듈이 다른 모듈에서 생긴 변화에 영향을 받음을 처음 깨달았을 때 그때 &lt;code class=&quot;language-text&quot;&gt;비로소&lt;/code&gt; 원칙 가운데 하나 또는 여러 개를 써서 이 문제를 해결할 수 있는지 알아보아야 한다.&lt;/p&gt;
+&lt;p&gt;이 책에서 UML 다이어그램의 내용은 절반도 되지 않는 것 같다.&lt;br&gt;
+UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본질에 집중하라는 느낌이다.&lt;br&gt;
+좋은 품질의 소프트웨어를 작성하기 위한 객체지향 설계, 짝 프로그래밍, 테스트 코드(분로 단위 테스팅 패턴 등), 리팩토링, 개발자의 꾸준한 학습, 휴리스틱, 개발 일정 등에 대해 설명한다.&lt;br&gt;
+가장 중요한 핵심은 우리가 좋은 코드를 작성하기 위한 이유가 &lt;strong&gt;사람을 위한 것이라는 점을 명심해라,&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;휴리스틱&lt;/strong&gt;&lt;br&gt;
+우리말로 번역하면 경험적 방법이며, 어떤 문제가 있는데 그 문제를 푸는 방법이 아직 없거나 현실적으로 불가능할 때, 문제를 풀기 위한 정보가 완전하지 않을 때,&lt;br&gt;
+또는 확립된 절차에 따라 답을 구할 수 있을 정도로 문제가 명확하게 정의되지 않았을 때 경험이나 직관을 사용하거나, 노력을 기울여 시행착오를 거치며 &lt;strong&gt;충분히 효율적인 해답이나 지식을 알게 되는 과정이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;엘라스틱서치 바이블&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다.&lt;br&gt;
+그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;운영중인 여러 개의 검색 클러스터, ES 내부 아키텍처에 대한 이해가 없어 검색 이슈가 발생했을 때의 상황과 해결 방법을 이해할 수 없음&lt;/li&gt;
+&lt;li&gt;ES QueryDSL 작성할 때 마다 구글링을 하는 불편함&lt;/li&gt;
+&lt;li&gt;현재 운영중인 ES 환경의 문제점과 개선점에 대해 고민하거나 공감할 수 없음&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위와 같은 이유로 엘라스틱서치를 공부해야겠다는 생각이 들었고 사내 스터디를 만들어서 읽어보았다.&lt;br&gt;
+ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발책은 외국에서 쓰여서 번역본으로 읽게 되는데 이 책은 내국인이 써서 읽기 편했다.&lt;/p&gt;
+&lt;p&gt;읽으면서 내용들을 &lt;a href=&quot;https://github.com/jdalma/footprints/tree/main/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98&quot;&gt;정리&lt;/a&gt;해 보았다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;엘라스틱서치 클러스터 수준에서 루씬 세그먼트와 루씬 commit, flush 그리고 translog 수준까지의 &lt;strong&gt;개괄적인 구조&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;복잡한 수준의 쿼리를 작성하면서 설명하진 않지만 기본적인 여러 종류의 &lt;strong&gt;ES Query DSL&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인덱스 설정과 필드 타입&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;문서를 검색하거나 조작하는 &lt;strong&gt;여러 문서 API&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;저수준, 고수준 REST 클라이언트와 최신 자바 클라이언트 사용 방법&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위의 내용들을 재밌게 읽었다.&lt;br&gt;
+하지만 아래와 같이 실제 운영하는 인원에게 도움이 되는 내용들은 흥미가 없었다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;엘라스틱서치, 키바나, 클라이언트 등을 TLS로 구성하는 방법&lt;/li&gt;
+&lt;li&gt;인덱스, 샤드 운영 전략과 스냅샷 복구 방법&lt;/li&gt;
+&lt;li&gt;코드 레벨의 동작과 커스텀 플러그인&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;전반적인 내용으로 봤을 때, 엘라스틱서치 클라이언트 입장이거나 엘라스틱서치의 관계자인 개발자보다는 클러스터를 직접 운영하고 튜닝하거나 깊은 내용의 이해를 필요로 하는 개발자한테 도움이 많이 될 것으로 보인다.&lt;br&gt;
+그래도 학습하면서 현재 실무 운영 환경과 책의 내용을 비교하면서 읽을 수 있었고 같은 회사의 팀원들과 읽어서 더욱 재밌게 읽었던 것 같다.&lt;br&gt;
+이 책으로 진행한 스터디 덕분에 실무 환경에서 모르고 넘어갔던 부분들을 배울 수 있었고 백엔드만의 영역이 아니라 데이터 팀의 영역에 대한 시야도 넓어진 느낌이다.&lt;/p&gt;
+&lt;h2 id=&quot;실용주의-프로그래머&quot; style=&quot;position:relative;&quot;&gt;실용주의 프로그래머&lt;a href=&quot;#%EC%8B%A4%EC%9A%A9%EC%A3%BC%EC%9D%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8&quot; aria-label=&quot;실용주의 프로그래머 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 8일부터 01월 18일까지&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;처음엔 3,4주면 다 읽을 줄 알았는데 6주가 걸렸다. 너무 기대해서 그런지 지루한 느낌이 있었다.&lt;br&gt;
+기술 책이라기 보다는 &lt;strong&gt;개발자라는 직업의 장인 정신에 대한 이야기&lt;/strong&gt; 를 한다고 느꼈다.&lt;br&gt;
+누구나 문제에 접근하는 태도와 방식, 철학에 차이가 있는 &lt;strong&gt;실용주의 프로그래머&lt;/strong&gt; 가 될 수 있다고 설득한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;자신의 경력에 대한 책임을 지고, 자신의 무지나 실수를 주저없이 인정하며 정직하고 솔직해야 한다.&lt;/li&gt;
+&lt;li&gt;어설픈 변명 말고 대안을 제시하라.&lt;/li&gt;
+&lt;li&gt;프로그램을 과도하게 장식하거나 지나칠 정도로 다듬느라 망치지 말라.&lt;/li&gt;
+&lt;li&gt;왜냐고 다섯 번 묻기&lt;/li&gt;
+&lt;li&gt;직교적인(응집도가 높은) 시스템을 작성하도록 노력하여 관련 없는 것들 간에 서로 영향이 없도록 하라.&lt;/li&gt;
+&lt;li&gt;누군가에 문제를 설명해봐라. 고무 오리라도 괜찮다.&lt;/li&gt;
+&lt;li&gt;여러분은 완벽한 소프트웨어를 만들 수 없다.&lt;/li&gt;
+&lt;li&gt;이 책의 저자는 문제를 찾고 원인을 밝히기 위해서는 사고가 난 지점에서 &quot;일찍 멈추기&quot;를 장려한다.&lt;/li&gt;
+&lt;li&gt;has-a가 is-a 보다 낫다.&lt;/li&gt;
+&lt;li&gt;의도적으로 프로그래밍하라. 우연에 기대지 말고 가정에 의존하지 마라. 신뢰할 수 있는것에만 기대라.&lt;/li&gt;
+&lt;li&gt;리팩토링가 기능 추가를 동시에 하지 말라.&lt;/li&gt;
+&lt;li&gt;요구 사항 문서는 의뢰인을 위한 것이 아니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;책을 읽으면서 표시해놓은 인덱스들을 작성해봤다. 위의 내용만 보아도 책에서 설명하는 범위는 굉장히 넓은 것을 알 수 있다.&lt;br&gt;
+개인적으로는 &lt;code class=&quot;language-text&quot;&gt;철학, 편집도구, 클린코드, 테스트, 태도, 문서화, 협업 등&lt;/code&gt; 내용이 너무 포괄적이라서 흥미를 느끼지 못한 것 같다.&lt;br&gt;
+순서대로 읽기 보다는 목차에서 관심있는 주제들을 골라서 읽는 것을 추천한다.&lt;/p&gt;
+&lt;h2 id=&quot;개발자의-글쓰기&quot; style=&quot;position:relative;&quot;&gt;개발자의 글쓰기&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;개발자의 글쓰기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;책이 얇고 글씨도 커서 금방 읽은 것 같다. 글을 쓸때 꼭 포함시켜야지 하는 중요한 내용들을 위주로 쓰다보면 문맥 연결이 잘 되지않을 때가 있어 글쓰기 책을 한번 읽어보고 싶어 이 책을 읽어보았다.&lt;/p&gt;
+&lt;h4&gt;서술식, 개조식, 도식의 차이&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;서술식&lt;/strong&gt; : &lt;code class=&quot;language-text&quot;&gt;~다.&lt;/code&gt;로 끝나는 완전한 문장으로 구성된 글을 말하며, 무엇을 설명하거나 논증할 때 주로 사용하는 방식이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;개조식&lt;/strong&gt; : 어떤 사항을 나열할 때 사용하며 종결 어미 대신 명사나 용언의 명사형(&lt;code class=&quot;language-text&quot;&gt;~했음&lt;/code&gt;)으로 끝내는 것이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;도식&lt;/strong&gt; : 사물의 구조나 관계, 상태를 그림이나 서식으로 보여주는 것이다.&lt;/li&gt;
+&lt;li&gt;줄거리가 있는 설명이나 이야기라면 &lt;strong&gt;서술식&lt;/strong&gt; , 여러 가지 종류의 항목과 내용이 반복되거나 서술식에서 강조가 필요한 내용이라면 &lt;strong&gt;개조식&lt;/strong&gt; , 각 항목이나 사항의 관계를 명확히 규정하고 싶다면 &lt;strong&gt;도식&lt;/strong&gt; 이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;내가 작성하려하는 글의 특징을 잘 이해하여 선택하여야 한다.&lt;/p&gt;
+&lt;h4&gt;네이밍 컨벤션&lt;/h4&gt;
+&lt;p&gt;이 네이밍 컨벤션은 항상 같은 조직 구성원들의 노력이 동반되어야 한다고 생각한다. 사내에는 네이밍 컨벤션이 따로 없지만 이 책의 내용이 좋은 가이드가 되어준 것 같다.&lt;br&gt;
+&lt;strong&gt;반대되는 단어를 선택할 때 일관성과 개연성이 있어야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;이상, 초과, 이하, 미만&lt;/strong&gt; : and over, over, or under, under&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;중단에 대한 단어 선택&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;잠시 중단하고 재시작 가능할 때는 &lt;code class=&quot;language-text&quot;&gt;stop&lt;/code&gt;, 완전히 중단되어 재시작 가능성이 없을 때 &lt;code class=&quot;language-text&quot;&gt;end&lt;/code&gt;, 끝장을 봐서 재시작을 고려할 필요도 없을 때 &lt;code class=&quot;language-text&quot;&gt;finish&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;다음 단계의 시작을 중단했을 때 &lt;code class=&quot;language-text&quot;&gt;suspend&lt;/code&gt;, 중단한 어떤 의도가 있을 때 &lt;code class=&quot;language-text&quot;&gt;hold&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;어떤 값을 가져올 때&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;어떤 값을 돌려받아서 반환하는 함수일 때 &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt;, 검색해서 가져온다는 의미인 &lt;code class=&quot;language-text&quot;&gt;retrieve&lt;/code&gt;, 다른 것을 가져가지 못하게 독점하고자 할 때는 &lt;code class=&quot;language-text&quot;&gt;acquire&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;현재 값을 가리키는 포인터가 다음 값으로 이동한 것을 가져올 때는 &lt;code class=&quot;language-text&quot;&gt;fetch&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;어떤 값을 만들거나 수정할 때&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;어떤 값을 정해진 틀에 넣을 때 &lt;code class=&quot;language-text&quot;&gt;set&lt;/code&gt;, 정해진 틀이 없으므로 먼저 틀을 만들때는 &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;내용을 단순히 바꾸는 &lt;code class=&quot;language-text&quot;&gt;change&lt;/code&gt;, 잘못된 것을 바로잡을 때 &lt;code class=&quot;language-text&quot;&gt;modify&lt;/code&gt;, 기존 내용과 달라졌음을 분명히할 때 &lt;code class=&quot;language-text&quot;&gt;revise&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;코드를 보는 개발자 사이에 일관적이고 개연적인 합의만 되어 있다면 어떻게 쓰든 상관없다.
+&lt;a href=&quot;https://brunch.co.kr/@goodvc78/12#comments&quot;&gt;오픈소스의 네이밍 특징들&lt;/a&gt;을 읽어보는 것도 추천한다.&lt;/p&gt;
+&lt;h4&gt;기술 블로그의 4종류&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;저&lt;/strong&gt; : 직접 경험하고 실험한 과정이나 결과&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;술&lt;/strong&gt; : 어떤 것을 분석하여 의미를 풀이하고 해석한 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;편&lt;/strong&gt; : 산만하고 복잡한 자료를 편집해 질서를 부여한 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;집&lt;/strong&gt; : 여러 사람의 견해나 흩어진 자료를 한데 정리한 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 책에서 더 좋은 많은 내용들을 서술한다.&lt;br&gt;
+느끼기로는 글쓰기 가장 중요한점은 내가 쓸 글의 특징과 이 글을 읽을 독자의 관심이 무엇인지, 비즈니스 관점의 글쓰기가 필요하진 않은지 잘 판단하여야 한다는 것이다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;이 글을 왜 쓰는지?&lt;/li&gt;
+&lt;li&gt;이 글을 읽는 독자는 누구인지?&lt;/li&gt;
+&lt;li&gt;이 글을 읽는 독자에게 무엇을 말하려고 하는지?&lt;/li&gt;
+&lt;li&gt;이 글이 주장하는 바가 무엇인지?&lt;/li&gt;
+&lt;li&gt;이 글이 주장하는 바의 근거가 분명한지?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;문제를 해결하면서 만난 모든 문제를 순차적으로 서술하기 보다는 문제 해결의 핵심 내용들을 정리하여 간결하게 써봐야겠다.&lt;/p&gt;
+&lt;h1 id=&quot;그-외&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;그 외&lt;/strong&gt;&lt;a href=&quot;#%EA%B7%B8-%EC%99%B8&quot; aria-label=&quot;그 외 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;이방인-ing&quot; style=&quot;position:relative;&quot;&gt;이방인 ~ing&lt;a href=&quot;#%EC%9D%B4%EB%B0%A9%EC%9D%B8-ing&quot; aria-label=&quot;이방인 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;시지프-신화-ing&quot; style=&quot;position:relative;&quot;&gt;시지프 신화 ~ing&lt;a href=&quot;#%EC%8B%9C%EC%A7%80%ED%94%84-%EC%8B%A0%ED%99%94-ing&quot; aria-label=&quot;시지프 신화 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;프레임&quot; style=&quot;position:relative;&quot;&gt;프레임&lt;a href=&quot;#%ED%94%84%EB%A0%88%EC%9E%84&quot; aria-label=&quot;프레임 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;책을 추천받아 읽어보았다. 아마 현재를 만족하지 못하고 불평만 하며 가지지 않은 것에 대한 욕심만 높아 스트레스를 받는 나를 보고 추천해준 것 아닐까 싶다.&lt;br&gt;
 책 이름을 보고 따분한 자기계발서로 예상할 수 있지만 연구 결과에 기반한 심리학 내용을 전개하여 흥미롭게 읽었다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1022,33 +1292,7 @@ void injectionTest() {
 &lt;p&gt;책이 나를 설명한다고 느낄 정도로 읽으면서 뜨끔한 적이 많았다.&lt;br&gt;
 그리고 읽으면서 &lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%9C%A0%EC%97%B0%ED%95%A8%EC%9D%98-%ED%9E%98&quot;&gt;유연함의 힘&lt;/a&gt;이 떠올랐다. 유연함의 힘은 커리어, 회사생활에 대한 내용이였다면 이 책은 삶에 대한 내용을 설명한다고 느꼈다.&lt;/p&gt;
 &lt;p&gt;심리학에 흥미가 있는 사람이라면 추천해주고 싶다.&lt;/p&gt;
-&lt;h1 id=&quot;내-코드가-그렇게-이상한가요&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;내 코드가 그렇게 이상한가요?&lt;/strong&gt;&lt;a href=&quot;#%EB%82%B4-%EC%BD%94%EB%93%9C%EA%B0%80-%EA%B7%B8%EB%A0%87%EA%B2%8C-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94&quot; aria-label=&quot;내 코드가 그렇게 이상한가요 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 50%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;iframe src=&quot;https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ffupfin.geek%2Fposts%2Fpfbid09WddbAYkCwAaB3xKi4tazk2WzvuFhzqGvUhqYMCDdxxGJ7stEcm8nLMJbMdGpudZl&amp;amp;show_text=true&amp;amp;width=500&quot; style=&quot;border:none;overflow:hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
-&lt;p&gt;(박성철님의 이 글을 보고 구매해서 읽어보았다.)&lt;br&gt;
-대부분의 개발자들은 코드를 작성하는 시간보다 코드를 읽고 이해하려 노력하는 시간이 더 많을 것이다.&lt;br&gt;
-그 이해를 바탕으로 코드를 수정하거나 기능을 추가하고 테스트를 할 것이다. 하지만 이 행위는 말처럼 쉽지 않다.&lt;/p&gt;
-&lt;p&gt;이해하기 힘든 코드, 의도를 전혀 알 수 없는 코드들을 맞닥뜨린 경험 또는 수정이나 확장했을 때 어디까지 영향을 끼치는지 확인하다가 하루가 다 가버린 경험, 냄새나는 코드인 줄은 알지만 어떻게 수정해야 할지 몰라서 결국 냄새나는 코드를 또 작성하며 죄책감을 느낀 경험이 있다면 이 책이 재밌게 읽힐 것이다.&lt;br&gt;
-이 책에서는 이와같이 개발 능력을 떨어뜨리고 소프트웨어의 성장을 방해하는 설계, 또는 구현상의 문제를 &lt;code class=&quot;language-text&quot;&gt;악마&lt;/code&gt;에 비유하며 악마를 인식할 수 있는 시각과 악마가 코드에 스며들지 못하도록 예방하고 무찌를 수 있도록 도와준다.&lt;/p&gt;
-&lt;p&gt;많은 책에서 &lt;strong&gt;응집도와 결합도&lt;/strong&gt; 이야기가 자주 나오는데 항상 뉘앙스로 이해 했었다.&lt;br&gt;
-이 책에서는 명확하게 &lt;strong&gt;데이터와 로직 등이 분산되어 있는 것을 응집도가 낮은 구조&lt;/strong&gt; 라고 정의한다.&lt;br&gt;
-응집도가 낮고 결합도가 높을 때 발생하는 &lt;code class=&quot;language-text&quot;&gt;코드 중복&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;수정 누락&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;가독성 저하&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;초기화되지 않은 객체&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;잘못된 값 할당&lt;/code&gt; 들을 설명해준다.&lt;br&gt;
-그렇다고 코드 중복을 해결하기 위해 섣부른 일반화를 해서도 안된다. &lt;strong&gt;코드 중복을 제거하는것이 핵심이 아니라 비즈니스적인 책무를 일반화 해도 괜찮은지를 먼저 고민해야한다.&lt;/strong&gt;&lt;br&gt;
-즉, &lt;strong&gt;같은 로직, 비슷한 로직이라도 개념이 다르면 중복을 허용해야 한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;성숙한 클래스를 설계하기 위해 클래스의 내부 필드와 그 필드를 가공하는 로직이 분산되지 않도록 노력해야하며 &lt;strong&gt;인스턴스 변수가 잘못된 상태에 빠지지 않게 하기 위한 구조를 만드는 것임을 명심해야 한다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;값 객체&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;완전 생성자&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;불변&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;부수 효과 방지&lt;/code&gt; 는 기본적으로 유의해야 한다. 그렇다고 응집도를 높이기 위해 로직을 한곳에 모아 강한 결합 구조를 만들지 않도록 신경써야 한다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;..Manager&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Product&lt;/code&gt;와 같은 너무 범용적인 이름을 사용하여 많은 책임과 관심사를 가지도록 하면 안된다. &lt;strong&gt;목적 중심 이름 설계&lt;/strong&gt;를 명심해라.&lt;/li&gt;
-&lt;li&gt;관심사가 다르고 관계없는 책무를 가진 메서드는 동사 + 목적어 형태가 되는 경향이 있으므로 &lt;strong&gt;메서드 이름은 &lt;code class=&quot;language-text&quot;&gt;동사&lt;/code&gt; 하나로 구성되게 해라.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;모델&lt;/strong&gt;은 &lt;code class=&quot;language-text&quot;&gt;특정 목정 달성을 위해서, 최소한으로 필요한 요소를 갖춘 것&lt;/code&gt;이다. 그렇기에 &lt;strong&gt;목적 달성의 수단&lt;/strong&gt; 이며 목적별로 모델링해야 한다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;모델 != 클래스&lt;/strong&gt; 이다. 일반적으로 모델 하나는 여러 개의 클래스로 구현된다. 클래스 설계와 구현에서 무언가를 깨닫는다면, 이를 모델에 꾸준하게 피드백해야 한다. 그렇지않으면 서로 괴리가 생긴다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;일급 컬렉션&lt;/code&gt;에 대한 내용을 &lt;a href=&quot;https://jdalma.github.io/2023y/kotlinCleanCode/&quot;&gt;넥스트스텝 코틀린 교육&lt;/a&gt;에서 접했을땐 코틀린에서 지원하는 컬렉션 공통 함수들을 사용하기 불편하다고 생각해서 와닿지 않았었는데 이 책을 통해 잘못이해하고 있었다는 것을 느꼈다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;인상 깊은 내용들은 이 정도로 정리할 수 있겠다. 중후반부 까지는 좋은 코드를 작성하는 방법, 설계에 대한 강조, 모델의 개념들에 대해 설명했다.&lt;br&gt;
-(&lt;a href=&quot;https://jdalma.github.io/2023y/bookReview/bookReview/#%EC%97%98%EB%A0%88%EA%B0%95%ED%8A%B8-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot;&gt;엘레강트 오브젝트&lt;/a&gt;가 자주 떠올랐다.)&lt;/p&gt;
-&lt;p&gt;대체로 이렇게 코드,설계 레벨에서 마무리짓는데 이 책은 후반부에 &lt;strong&gt;레거시 코드와 엔지니어의 성장 가능성의 관계&lt;/strong&gt;, &lt;strong&gt;설계를 방해하는 환경&lt;/strong&gt;, &lt;strong&gt;리뷰의 의의&lt;/strong&gt; 들도 설명하면서 자신의 업무 환경을 개선하기위한 용기와 방법을 알려준다.&lt;br&gt;
-팀에 새로운 인원이 투입된다면 온보딩 기간에 읽어야 할 책으로 선정해도 무방할 정도로 좋은 책이였다.&lt;/p&gt;
-&lt;p&gt;이 책 덕분에 &lt;a href=&quot;https://m.yes24.com/Goods/Detail/64586851&quot;&gt;레거시 코드 활용 전략&lt;/a&gt;에 흥미가 생겨 읽어볼 예정이다.&lt;/p&gt;
-&lt;h1 id=&quot;타이탄의-도구들&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;타이탄의 도구들&lt;/strong&gt;&lt;a href=&quot;#%ED%83%80%EC%9D%B4%ED%83%84%EC%9D%98-%EB%8F%84%EA%B5%AC%EB%93%A4&quot; aria-label=&quot;타이탄의 도구들 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;타이탄의-도구들&quot; style=&quot;position:relative;&quot;&gt;타이탄의 도구들&lt;a href=&quot;#%ED%83%80%EC%9D%B4%ED%83%84%EC%9D%98-%EB%8F%84%EA%B5%AC%EB%93%A4&quot; aria-label=&quot;타이탄의 도구들 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;개인적으로 자기계발서 책을 선택할 때는 어떤 주제에 특정적으로 관심이 생기거나 &quot;몰입&quot;과 &quot;프레임&quot;, &quot;이너게임&quot;처럼 심리학을 근거로 연구 결과에 기반한 자기계발서들을 선택하려 한다.&lt;br&gt;
 타이탄의 도구들과 같이 성공한 사람들의 이야기를 전달하는 자기계발서를 좋아하지 않다보니 거부감이 드는 내용도 있었다.&lt;br&gt;
 원래는 조금 읽다가 덮었겠지만 추천받은 책이라서 끝까지 읽어보았다.&lt;/p&gt;
@@ -1097,73 +1341,7 @@ void injectionTest() {
 이루고 싶고 원하는 것을 위해 노력하고 있지만 발전이 보이지 않는다고 생각하는 사람이라면 꼭 읽어봤으면 좋겠다.&lt;/p&gt;
 &lt;p&gt;이 글 시작에 이런 종류의 자기계발서를 좋아하지 않는다고 적었지만 위에 작성한 내용 말고도 인상 깊은 내용들이 많았다.&lt;br&gt;
 모든 내용들이 다 와닿지는 않았지만 주옥같은 조언들이 많으니 나와 같이 이런 종류의 자기계발서를 기피하고 있다면 한 번은 읽어보길 추천한다.&lt;/p&gt;
-&lt;h1 id=&quot;uml-실전에서는-이것만-쓴다&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;UML 실전에서는 이것만 쓴다&lt;/strong&gt;&lt;a href=&quot;#uml-%EC%8B%A4%EC%A0%84%EC%97%90%EC%84%9C%EB%8A%94-%EC%9D%B4%EA%B2%83%EB%A7%8C-%EC%93%B4%EB%8B%A4&quot; aria-label=&quot;uml 실전에서는 이것만 쓴다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;책의 제목을 보면 UML을 사용해야 한다고 강조할 것 같지만 실제로는 &lt;code class=&quot;language-text&quot;&gt;UML은 그저 표기법이며 목표를 이루기 위한 도구&lt;/code&gt; 임을 강조한다.&lt;br&gt;
-UML 다이어그램을 그리는 일도 비용이다. &lt;strong&gt;시험해 볼 구체적인 것이 있고, 그것을 코드로 시험해 보는 것보다 UML로 시험해 보는 쪽이 비용이 덜 들때 사용해야 한다.&lt;/strong&gt;&lt;br&gt;
-항상 산출물로 작성해야 한다는 강제성이 포함되거나 형식적인 문서라고 생각해서는 안된다. UML 다이어그램의 수명 주기는 짧게 가져가도록 버리는 습관을 길러야 한다.&lt;br&gt;
-잘 그려야한다는 생각을 버려라. 다이어그램을 잘 그리는 것, 시퀀스 번호에 점을 제대로 찍는 것은 중요하지 않다.&lt;br&gt;
-&lt;strong&gt;앞에 있는 사람들이 지금 논의하는 내용을 다 이해하고, 회의를 빨리 끝내 사람들이 코드를 빨리 작성하기 시작하도록 돕는 것이 핵심이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;클래스 다이어그램&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;객체 다이어그램&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;시퀀스 다이어그램&lt;/strong&gt; : 객체 사이의 연결을 드러내기 위해 사용하지, 알고리즘의 세부사항을 자세하게 보여주기 위해 사용해서는 안된다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;상태 다이어그램&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;유스케이스&lt;/strong&gt; : 사용자의 눈에 보이지 않는 동작을 전혀 기술하지 않고 시스템 안에 숨겨진 메커니즘도 다루지 않는다. 오직 사용자가 직접 볼 수 있는 것을 적어 놓을 뿐이다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;UML 다이어그램을 이용해 시스템 설계에 대한 놓친 부분이나 보완할 점을 빨리 찾기 위함도 있다.&lt;br&gt;
-많은 책임을 가진 클래스를 발견하거나, 수정에 의한 여파가 여러 클래스에 전달되는 것을 발견하는 것이 대표적이다.&lt;/p&gt;
-&lt;p&gt;객체지향 개발의 &lt;code class=&quot;language-text&quot;&gt;SOLID&lt;/code&gt; 설계 원칙을 명심하고 나쁜 설계의 냄새가 스며들지 않도록 신경써야 한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;하나를 바꿀 때 반드시 다른 것도 바꿔야 하는 &lt;strong&gt;경직성&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;한 부분을 변경하면 다른 부분에 문제가 생기는 &lt;strong&gt;부서지기 쉬움&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;작은 단위로 분해해서 다른 시스템에 재사용하기 힘든 &lt;strong&gt;부동성&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;YAGNI 원칙을 위배한 &lt;strong&gt;쓸데없이 복잡함&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;필요없는 반복&lt;/strong&gt; 과 코드를 작성한 의도가 &lt;strong&gt;불투명함&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;자주 변경되는 콘크리트 클래스에 의존하지 마라.&lt;br&gt;
-만약 어떤 클래스에서 상속받아야 한다면, 기반 클래스를 추상 클래스로 만들어라.&lt;br&gt;
-어떤 클래스의 참조를 가져야 한다면, 참조 대상이 되는 클래스를 추상 클래스로 만들어라.&lt;br&gt;
-만약 어떤 함수를 호출해야 한다면 호출되는 함수를 추상 함수로 만들어라.&lt;br&gt;
-&lt;strong&gt;구체적인 것보다는 이런 추상적인 것에 의존하는 편이 좋으며 추상적인 것은 구체적인 것에 의존하지 말아야 한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;이 원칙들을 적용하는 가장 좋은 방법은 능동적으로 적극 적용하는 것이 아니라, &lt;strong&gt;문제가 생겼을 때 그에 대한 &lt;code class=&quot;language-text&quot;&gt;반응으로써 작용하는 것&lt;/code&gt; 이다.&lt;/strong&gt;&lt;br&gt;
-코드의 구조적인 문제를 처음 발견했거나, 어떤 모듈이 다른 모듈에서 생긴 변화에 영향을 받음을 처음 깨달았을 때 그때 &lt;code class=&quot;language-text&quot;&gt;비로소&lt;/code&gt; 원칙 가운데 하나 또는 여러 개를 써서 이 문제를 해결할 수 있는지 알아보아야 한다.&lt;/p&gt;
-&lt;p&gt;이 책에서 UML 다이어그램의 내용은 절반도 되지 않는 것 같다.&lt;br&gt;
-UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본질에 집중하라는 느낌이다.&lt;br&gt;
-좋은 품질의 소프트웨어를 작성하기 위한 객체지향 설계, 짝 프로그래밍, 테스트 코드(분로 단위 테스팅 패턴 등), 리팩토링, 개발자의 꾸준한 학습, 휴리스틱, 개발 일정 등에 대해 설명한다.&lt;br&gt;
-가장 중요한 핵심은 우리가 좋은 코드를 작성하기 위한 이유가 &lt;strong&gt;사람을 위한 것이라는 점을 명심해라,&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;휴리스틱&lt;/strong&gt;&lt;br&gt;
-우리말로 번역하면 경험적 방법이며, 어떤 문제가 있는데 그 문제를 푸는 방법이 아직 없거나 현실적으로 불가능할 때, 문제를 풀기 위한 정보가 완전하지 않을 때,&lt;br&gt;
-또는 확립된 절차에 따라 답을 구할 수 있을 정도로 문제가 명확하게 정의되지 않았을 때 경험이나 직관을 사용하거나, 노력을 기울여 시행착오를 거치며 &lt;strong&gt;충분히 효율적인 해답이나 지식을 알게 되는 과정이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;켄트-백의-구현-패턴&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;켄트 백의 구현 패턴&lt;/strong&gt;&lt;a href=&quot;#%EC%BC%84%ED%8A%B8-%EB%B0%B1%EC%9D%98-%EA%B5%AC%ED%98%84-%ED%8C%A8%ED%84%B4&quot; aria-label=&quot;켄트 백의 구현 패턴 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;클린코드와 리팩토링에 관심을 가지면서 접하게 된 책이다. 아마 이때까지 읽은 책들 중에 가장 많은 인덱스 스티커를 사용한 것 같다.&lt;br&gt;
-켄트 백은 서문에서부터 &lt;code class=&quot;language-text&quot;&gt;&quot;프로그램을 짤 때는 자신과 컴퓨터뿐만 아니라, 다른 사람들을 생각해야 한다!&quot;&lt;/code&gt;고 강조한다.&lt;br&gt;
-기능을 개발하는 비용이 1이라면 그 소프트웨어가 폐기될 때까지 유지보수하고 기능을 추가하기 위한 비용은 1보다 크다는 것을 다 알고 있을 것이다.&lt;br&gt;
-그렇기에 정확하게 작동하도록 코드를 작성하는 것은 당연하지만 다른 사람들이 읽기 편하도록 작성하는 것도 정말 중요하다.&lt;/p&gt;
-&lt;p&gt;이 책은 개발하면서 만나는 많은 선택들을 &lt;code class=&quot;language-text&quot;&gt;&quot;내 생각을 다른 사람에게 어떻게 전달할까?&quot;&lt;/code&gt; 고민에 차선책을 선택할 수 있도록 도와준다.&lt;br&gt;
-이런 고민과 결정은 &lt;strong&gt;책임감&lt;/strong&gt;과 &lt;strong&gt;장인 정신&lt;/strong&gt;을 지키기 위한 자신의 양심과 자랑스럽지 않은 일을 하지 않으려는 마음에 의존한다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&quot;좋은 코드가 상업적 성공에 필수적인 부분은 아니다. 조잡한 코드로 돈을 많이 버는 사례가 있다고 할지라도, 나는 여전히 코드 품질이 매우 중요하다고 믿는다.&quot;&lt;br&gt;
-&quot;기능을 개발하고 출시하며, 기회와 경쟁 상황에 따라 개발 방향을 바꿀 수 있으며 위기 속에서도 직원들의 사기를 높일 수 있는 회사는 조잡하고 버그가 있는 코드를 작성하는 회사에 비해 성공할 확률이 높다.&quot;&lt;br&gt;
-&quot;설사 좋은 코딩이 장기적으로 경제적 이득을 가져오지 못한다고 하더라도 &lt;strong&gt;나는 여전히 내가 작성할 수 있는 최고의 코드를 작성할 것이다.&lt;/strong&gt;&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;많은 패턴을 학습하여도 개발하면서 모든 상황을 커버할 수 없고 정형화된 패턴도 적용할 수 없는 경우가 있다.&lt;br&gt;
-이때는 학습한 이론과 패턴이 아닌 결정 사항에 영향을 끼치는 &lt;strong&gt;가치&lt;/strong&gt;와 &lt;strong&gt;원칙&lt;/strong&gt; 이 존재한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;가치는 코드의 복잡성을 낮추고 가독성을 중시하며, 유연성있는 코드를 작성하는 클린 코드의 &lt;strong&gt;가치&lt;/strong&gt;이다.&lt;/li&gt;
-&lt;li&gt;원칙은 가치처럼 언제나 적용되는 것은 아니지만 때로는 직접 적용하기 어려운 가치와 적용법은 명확하지만 조금은 지엽적인 패턴 사이의 가교 역할을 하는 것이 &lt;strong&gt;원칙&lt;/strong&gt;이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;패턴은 &lt;code class=&quot;language-text&quot;&gt;&quot;지금 당장 무엇을 해야할지&quot;&lt;/code&gt; 알려주며, 가치는 &lt;code class=&quot;language-text&quot;&gt;&quot;패턴을 사용해야 하는 동기&quot;&lt;/code&gt;를 알려주고, 원칙은 &lt;code class=&quot;language-text&quot;&gt;&quot;동기를 행동으로 어떻게 바꿔줄지&quot;&lt;/code&gt; 알려준다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;절대적인 최고의 개발 스타일이란 존재하지 않는다. 가치, 원칙, 패턴은 실무 경험과 다른 프로그래머와의 대화를 통해 스스로 만들어 가야한다.&lt;br&gt;
-일하는 환경에 따라 다르겠지만 업무에 치이다보면 좋은 코드와 나쁜 코드 작성에 대한 저울질을 할 때가 많다.&lt;br&gt;
-자신있게 항상 좋은 코드를 작성하기 위해 노력했다라고 말하기 힘든 경험들이 분명있을 것이다. 그리고 함께 일하는 동료들이 클린 코드에 대한 공감이 없어 괴리감을 느낄 수도 있다.&lt;/p&gt;
-&lt;p&gt;이 책은 그 괴리감을 메꿔주며 스스로의 소프트웨어 장인 정신을 확립해나가는데 큰 도움을 준다.&lt;/p&gt;
-&lt;h1 id=&quot;가난한-아이들은-어떻게-어른이-되는가&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;가난한 아이들은 어떻게 어른이 되는가?&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%80%EB%82%9C%ED%95%9C-%EC%95%84%EC%9D%B4%EB%93%A4%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%96%B4%EB%A5%B8%EC%9D%B4-%EB%90%98%EB%8A%94%EA%B0%80&quot; aria-label=&quot;가난한 아이들은 어떻게 어른이 되는가 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;가난한-아이들은-어떻게-어른이-되는가&quot; style=&quot;position:relative;&quot;&gt;가난한 아이들은 어떻게 어른이 되는가?&lt;a href=&quot;#%EA%B0%80%EB%82%9C%ED%95%9C-%EC%95%84%EC%9D%B4%EB%93%A4%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%96%B4%EB%A5%B8%EC%9D%B4-%EB%90%98%EB%8A%94%EA%B0%80&quot; aria-label=&quot;가난한 아이들은 어떻게 어른이 되는가 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;회사 책장을 둘러보다가 제목을 보고 재밌어 보여서 읽어보았다.&lt;/p&gt;
 &lt;p&gt;&quot;나도 어린시절이 풍족하진 않았지&quot; 라고 생각하면서 책을 읽었는데 내가 생각한 &quot;풍족하진 않다.&quot;와 책에서 말하는 &quot;빈곤&quot;이라는 단어는 확실히 달랐다.&lt;br&gt;
 이 책은 8명의 청(소)년들 이야기를 어린 시절부터 성인이 될 때까지 3,4년 주기로 세 번이상 인터뷰를 진행한 내용들을 담았으며, 개개인들이 빈곤, 어려운 환경들을 어떻게 극복해나가는지 설명하는데 기질에 따라, 환경에 따라 다 다른 과정과 다른 결말이였다.&lt;/p&gt;
@@ -1192,7 +1370,7 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 &lt;p&gt;그럼에도 불구하고 이 책에서 소개하는 청(소)년들은 성인이되어 회사를 다니고, 결혼도 하며, 삶을 정상적인 궤도에 올리게 된다.&lt;br&gt;
 이 책은 개인적으로 굉장히 잘 읽혔다. 자기 삶이 지루하고 허무하다고 느껴진다면 이 책을 읽어보면 좋은 자극을 받을 수 있을 것이다.&lt;br&gt;
 이 책을 통해 가난과 빈곤은 대물림되어 사회적으로 만들어질 수 있다는 것과 극심한 빈곤은 생존 자체에 에너지가 너무 많이 들어가서 합리적 판단을 하고 미래지향적 사고를 할 에너지가 바닥난다는 것을 배웠다.&lt;/p&gt;
-&lt;h1 id=&quot;인간-불평등-기원론&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;인간 불평등 기원론&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B8%EA%B0%84-%EB%B6%88%ED%8F%89%EB%93%B1-%EA%B8%B0%EC%9B%90%EB%A1%A0&quot; aria-label=&quot;인간 불평등 기원론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;인간-불평등-기원론&quot; style=&quot;position:relative;&quot;&gt;인간 불평등 기원론&lt;a href=&quot;#%EC%9D%B8%EA%B0%84-%EB%B6%88%ED%8F%89%EB%93%B1-%EA%B8%B0%EC%9B%90%EB%A1%A0&quot; aria-label=&quot;인간 불평등 기원론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&apos;불안&apos;을 읽다가 소개되어 불안보다 먼저 읽어보았다.&lt;br&gt;
 대부분의 사람들이 남에 비해 자신이 더 행복하지 않다고 생각하며 살아간다. 무엇인가 남보다 못한 점이 있다는 생각을 떨치지 못하는 것이다.&lt;br&gt;
 상대적으로 무엇인가를 더 가진 자와 비교하면서 발생하는 &lt;code class=&quot;language-text&quot;&gt;불평등&lt;/code&gt;에 대한 장자크 루소의 개인적인 생각을 전개한다.&lt;/p&gt;
@@ -1219,65 +1397,7 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 모든 것을 잃어버린 것처럼 보인다고 해서 그때가 가장 불행한 것은 아니다.&lt;br&gt;
 &lt;strong&gt;왜냐하면 불행이란 사물의 결핍 상태에서 오는 것이 아니라, 결핍감을 느끼게 하는 욕구에서 오는 것이기 때문이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;켄트-벡의-tidy-first&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;켄트 벡의 Tidy First?&lt;/strong&gt;&lt;a href=&quot;#%EC%BC%84%ED%8A%B8-%EB%B2%A1%EC%9D%98-tidy-first&quot; aria-label=&quot;켄트 벡의 tidy first permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;이 책은 설계와 코드 정리를 잘 하기 위한 방법을 배우기 위해 읽기도 좋지만 &lt;strong&gt;코드 정리와 설계를 진행하면서 발생하는 비용에 대한 생각&lt;/strong&gt; 을 깨닫기 위해 읽기 좋은 책이라고 생각한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;이미 잦은 코드 정리가 진행되고 있어 변경사항 적응하는 것에 대한 팀원들의 불만은 없는지?&lt;/li&gt;
-&lt;li&gt;코드 정리가 결과적으로 도움이 되는지?&lt;/li&gt;
-&lt;li&gt;해당 변경사항이 코드 정리인지, 동작 변경인지? 코드 정리를 먼저할지? 동작 변경을 먼저할지?&lt;/li&gt;
-&lt;li&gt;코드 정리, 설계 대상이 얼마나 자주 변경되는지? 얼마나 자주 읽히는지? 얼마나 읽기 어려운지?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;위와 같이 코드 정리, 설계를 진행할 때 고려해야할 것들의 근본적인 원인은 코드 정리, 설계를 진행하는 것은 &lt;strong&gt;비용이 들기 때문이다.&lt;/strong&gt;&lt;br&gt;
-일반적으로 개발자들이 근무하는 회사는 영리기업이고, 영리기업은 이윤을 목적으로 하기 때문에 지금 당장 이익을 얻기는 힘들면서 미래에 투자하는 코드 정리와 설계같은 업무는 비용 지출에 대한 이익과 손실을 고려하여 진행해야 한다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;오늘의 1달러가 내일의 1달러보다 더 가치가 있기 때문에 버는 것은 빨리하고, 쓰는 것은 가능한 뒤로 미룹니다.&lt;br&gt;
-혼란스러운 상황에서는 어떤 물건에 대한 옵션이 물건 자체보다 낫기 때문에 불확실성에 맞서는 옵션을 만듭니다.&lt;br&gt;
-&lt;strong&gt;즉, 지금 돈을 벌려면 미래의 옵션이 줄어들 수 있지만, 지금 돈을 벌지 못하면 미래의 옵션을 행사할 여력이 없을 수도 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;금융 업계의 옵션을 소프트웨어 설계 결정에 투영한다. 옵션은 &apos;선택&apos;의 의미를 내포하는데,&lt;br&gt;
-소프트웨어 설계 문제에서 옵션을 보유하는 일은 당장 모든 비용을 &apos;동작 변경&apos;에 모두 투자하는 대신에 &apos;선택 가능성&apos; 혹은 &apos;선택의 기회&apos;를 유지하는 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;이익이 미래에 언제 발생하는지? 그리고 그 이익은 얼마나 확실한지?를 스스로 질문해야 한다.&lt;br&gt;
-결국 &lt;strong&gt;지금 돈 벌기&lt;/strong&gt;와 &lt;strong&gt;지금 돈 쓰기&lt;/strong&gt;를 고민하는 것이다.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;지금 돈 벌기&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;지금 돈 쓰기&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;정의&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;현금 흐름 할인, 발생하는 비용의 시간 가치&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;옵션, 선택 가능성을 늘리기&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;설명&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;흐름 할인지금 돈을 벌 수 있게 기능 변경 및 추가&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;미래에 기능 번경을 더 쉽게 할 수 있게 코드 정리, 리팩토링, 설계&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;지금 돈을 못 벌면 미래는 없다.&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;변경 비용이 높아지면 미래가 없다.&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;옵션을 만드는 것과 동작을 변경하는 것의 균형을 맞추는데 집중해야 한다.&lt;br&gt;
-&lt;strong&gt;가치에 대한 예측이 불확실할수록 바로 구현하는 것보다 옵션이 지닌 가치가 더 커진다. 바로 구현하는 것보다 변화를 포용하면 창출한 가치를 극대화할 수 있지만, 그 상황은 통상적으로 소프트웨어 개발이 극적으로 실패하는 지점이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;비용(코드 정리) + 비용(코드 정리 후 동작 변경) &amp;lt; 비용(바로 동작 변경)&lt;/code&gt; 이라면 코드 정리를 진행해도 좋다. 그 반대라면 고민해야한다..&lt;br&gt;
-비용에 대한 판단력을 기르기 위한 연습을 꾸준히 한다면 어떻게 설계해야 하고 언제 설계하지 말아야하는지 직감적으로 느낄 수 있을것이다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;비용&lt;/strong&gt; : 코드를 정리하면 비용이 줄까요? 아니면 나중에 하는 편이 나을까요? 줄일 가능성이 있을까요?&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;수익&lt;/strong&gt; : 코드를 정리하면 수익이 더 커질까요? 혹은 더 빨리 발생하거나 커질 가능성이 있나요?&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;결합도&lt;/strong&gt; : 코드를 정리하면 변경에 필요한 요소의 수가 줄어드나요?&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;응집도&lt;/strong&gt; : 코드를 정리하면 변경을 더 작고 좁은 범위로 집중시켜 더 적은 수의 요소만 다룰 수 있을까요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://yozm.wishket.com/magazine/@bettercoder/&quot;&gt;옮긴이의 글들&lt;/a&gt;도 참고하자.&lt;/p&gt;
-&lt;h1 id=&quot;왜-일하는가&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;왜 일하는가?&lt;/strong&gt;&lt;a href=&quot;#%EC%99%9C-%EC%9D%BC%ED%95%98%EB%8A%94%EA%B0%80&quot; aria-label=&quot;왜 일하는가 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;왜-일하는가&quot; style=&quot;position:relative;&quot;&gt;왜 일하는가?&lt;a href=&quot;#%EC%99%9C-%EC%9D%BC%ED%95%98%EB%8A%94%EA%B0%80&quot; aria-label=&quot;왜 일하는가 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;나는 개발자를 하기전에 기계설비 관련 일을 먼저 했었다.&lt;br&gt;
 처음에는 자동차 엔진 생산 라인 설비 유지보수를 하다가 유지보수말고 설비를 만드는 회사에 가고 싶어서 전기 자동차 모터 테스트 설비를 만드는 회사로 이직했었다.&lt;br&gt;
 그리고 설비를 만드는 회사에서 소프트웨어 팀과 협업했던 경험이 지금 개발자로 지내게된 계기가 되었다.&lt;/p&gt;
@@ -1308,7 +1428,7 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 &lt;strong&gt;그 일을 통해 당신은 무엇이 되길 꿈꾸는가?&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;당신이 꿈꾸는 일과 삶의 미래는 어떠한 모습을 하고 있는가?&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;물고기는-존재하지-않는다&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;물고기는 존재하지 않는다.&lt;/strong&gt;&lt;a href=&quot;#%EB%AC%BC%EA%B3%A0%EA%B8%B0%EB%8A%94-%EC%A1%B4%EC%9E%AC%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;물고기는 존재하지 않는다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;물고기는-존재하지-않는다&quot; style=&quot;position:relative;&quot;&gt;물고기는 존재하지 않는다.&lt;a href=&quot;#%EB%AC%BC%EA%B3%A0%EA%B8%B0%EB%8A%94-%EC%A1%B4%EC%9E%AC%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;물고기는 존재하지 않는다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;어린 시절 저자는 아버지에게 &quot;인생의 의미가 뭐에요?&quot; 라고 물었을 때, 아래의 이야기를 듣게 된다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;인생의 의미? 그런 것은 없어. 신도 없어. 어떤 식으로든 너를 지켜보거나 보살펴주는 신적인 존재는 없어.&quot;&lt;br&gt;
@@ -1341,46 +1461,7 @@ UML 다이어그램은 단지 도구에 불과하다는 것을 명심하고 본�
 &lt;p&gt;처음엔 위인에 대한 대단한 면을 읽으면서 존경심이 들었지만, 어두운 면을 읽으면서 어떻게 저런 행동을 할 수 있었을까? 라는 혐오감도 들었다.&lt;br&gt;
 이 책은 자연과학, 과학자, 에세이 분류에 속하여 넓은 범위에 대한 내용을 설명하여 읽는 사람마다 느끼고 깨닫는 점이 다를 것이라고 보인다.&lt;br&gt;
 (문학인 줄 알고 읽었지만) 과학에 더 가까운 내용이였음에도 불구하고 재밌게 읽었다.&lt;/p&gt;
-&lt;h1 id=&quot;real-my-sql-1권&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 1권&lt;/strong&gt;&lt;a href=&quot;#real-my-sql-1%EA%B6%8C&quot; aria-label=&quot;real my sql 1권 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;MySQL의 아키텍처부터 메모리 영역, 인덱스, 옵티마이저와 힌트, 실행 계획까지 넓고 깊은 내용을 학습할 수 있었다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;아키텍처&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;MySQL 엔진, 스토리지 엔진, 핸들러 API&lt;/li&gt;
-&lt;li&gt;포그라운드, 백그라운드 스레드&lt;/li&gt;
-&lt;li&gt;글로벌 메모리 영역 (InnoDB 버퍼풀, InnoDB 어댑티브 해시 인덱스, InnoDB 리두 로그 버퍼 등)&lt;/li&gt;
-&lt;li&gt;로컬 메모리 영역 (커넥션의 생명주기와 동일한 커넥션 버퍼, 결과 버퍼 그리고 쿼리를 실행하는 순간에만 할당했다가 다시 해제하는 소트 버퍼, 조인 버퍼 등)&lt;/li&gt;
-&lt;li&gt;쿼리 실행 구조 (쿼리 파서 → 전처리기 → 옵티마이저 → 실행 엔진 → 핸들러)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;InnoDB 스토리지 엔진 아키텍처&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;언두 로그를 활용한 MVCC와 잠금 없는 일관된 읽기&lt;/li&gt;
-&lt;li&gt;버퍼풀 (데이터 페이지를 관리하는 LRU 리스트 구조, 클린 페이지, 더티 페이지)&lt;/li&gt;
-&lt;li&gt;리두 로그, 언두 로그, 체인지 버퍼, 어댑티브 해시 인덱스&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;인덱스&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;인덱스를 통한 데이터 읽는 방법&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;옵티마이저와 힌트&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;데이터 스캔 방식&lt;/li&gt;
-&lt;li&gt;정렬과 조인 처리 방식&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;실행 계획과 통계정보&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;실행 계획 분석 방법&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;많은 양의 이론적인 내용들을 설명해서 지루한 부분도 있었지만 겉핥기 식으로 알고 있었던 인덱스와 실행 계획에 대해 학습할 수 있어서 좋앗다.&lt;br&gt;
-한 번 읽고 모든 내용을 기억할 수는 없으니 일회독으로 MySQL에 대한 윤곽을 어느정도 잡고 나중에 필요할 때 찾아봐야할 것 같다.
-MySQL을 사용하는 개발자라면 필수로 읽어야 할 책이라고 생각한다.&lt;/p&gt;
-&lt;h1 id=&quot;불안&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;불안&lt;/strong&gt;&lt;a href=&quot;#%EB%B6%88%EC%95%88&quot; aria-label=&quot;불안 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;불안&quot; style=&quot;position:relative;&quot;&gt;불안&lt;a href=&quot;#%EB%B6%88%EC%95%88&quot; aria-label=&quot;불안 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;이 책은 군대 훈련소에서 처음으로 읽어보고 감명받았던 책이였는데, 개정판이 나왔다는 소식을 듣고 구매하여 다시 읽어보았다.&lt;br&gt;
 퇴사를 진지하게 고민하고 있던 시점에 읽어 더 재밌게 읽힌건지 모르겠다.&lt;/p&gt;
 &lt;ol&gt;
@@ -1410,7 +1491,7 @@ MySQL을 사용하는 개발자라면 필수로 읽어야 할 책이라고 생�
 &lt;/blockquote&gt;
 &lt;p&gt;위에서 말하는 지위와 명에, 부를 스스로 쫓고 있다고 느껴진다면 이 책을 통해 생각할 기회를 가져보는 것은 어떨까?&lt;br&gt;
 난 뭔가를 얻기 위해 노력하고 성취하는 경험은 아주 좋은 행동이라고 생각한다. 하지만 스스로가 원하는 것이 아니라 단순히 누군가의 인정과 사랑을 받기 위한 노력은 아닌지 확인해보면 좋을 것이다.&lt;/p&gt;
-&lt;h1 id=&quot;몰입&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;몰입&lt;/strong&gt;&lt;a href=&quot;#%EB%AA%B0%EC%9E%85&quot; aria-label=&quot;몰입 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;몰입&quot; style=&quot;position:relative;&quot;&gt;몰입&lt;a href=&quot;#%EB%AA%B0%EC%9E%85&quot; aria-label=&quot;몰입 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;이 &lt;a href=&quot;https://www.youtube.com/watch?v=TTk9Q5FyD3s&amp;#x26;ab_channel=%EC%A7%80%EC%8B%9D%EC%9D%B8%EC%82%AC%EC%9D%B4%EB%93%9C&quot;&gt;영상&lt;/a&gt;을 보고 책에 대해 알게되었다.&lt;br&gt;
 책을 읽거나 업무를 할때 집중력을 금방 잃는다는 것을 느꼈다. 그리고 잠들기전에 유튜브 쇼츠를 보는 버릇이 생겼다.&lt;br&gt;
 유튜브 쇼츠를 보는 것만으로도, 그저 평범한 영상임에도 불구하고 기분이 좋아지고 편안함을 느끼는 자신을 발견하고 놀랐다.&lt;br&gt;
@@ -1476,7 +1557,7 @@ MySQL을 사용하는 개발자라면 필수로 읽어야 할 책이라고 생�
 &lt;p&gt;생각하는 시간을 점진적으로 늘려가는 훈련과 천천히 생각하기 훈련을 통하여 몰입에 빠지거나 재몰입하기 쉽도록 해야한다.&lt;br&gt;
 저자는 &lt;code class=&quot;language-text&quot;&gt;&quot;해야 할 일을 즐기며 행복하게 사는 방법. 나는 그 해답을 &apos;몰입&apos;에서 찾았다.&quot;&lt;/code&gt; 라고 한다.&lt;br&gt;
 올해 연말회고에 몰입한 사례를 기록하기 위해 노력해봐야겠다.&lt;/p&gt;
-&lt;h1 id=&quot;도둑맞은-집중력&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;도둑맞은 집중력&lt;/strong&gt;&lt;a href=&quot;#%EB%8F%84%EB%91%91%EB%A7%9E%EC%9D%80-%EC%A7%91%EC%A4%91%EB%A0%A5&quot; aria-label=&quot;도둑맞은 집중력 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;도둑맞은-집중력&quot; style=&quot;position:relative;&quot;&gt;도둑맞은 집중력&lt;a href=&quot;#%EB%8F%84%EB%91%91%EB%A7%9E%EC%9D%80-%EC%A7%91%EC%A4%91%EB%A0%A5&quot; aria-label=&quot;도둑맞은 집중력 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;몰입을 읽은 후에 집중력에 대한 관심이 커져서 읽어보았다.&lt;br&gt;
 무엇인가에 깊게 집중하지 못하면 항상 &lt;code class=&quot;language-text&quot;&gt;&quot;왜 이렇게 집중이 안되지?&quot;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&quot;이 정도밖에 집중을 못하나?&quot;&lt;/code&gt; 라며 스스로를 탓했다.&lt;br&gt;
 하지만 이 책에서는 스스로의 문제가 아니라 &lt;strong&gt;주변 환경&lt;/strong&gt;, &lt;strong&gt;시스템&lt;/strong&gt; 에 대해 지적한다.&lt;/p&gt;
@@ -1493,123 +1574,7 @@ MySQL을 사용하는 개발자라면 필수로 읽어야 할 책이라고 생�
 &lt;p&gt;&quot;나는 깊이 집중하는 능력이 식물과 같다고 생각한다. 우리의 집중력이 잘 자라서 잠재력을 온전히 피워내려면 특정 조건이 갖춰져야 한다.&quot;&lt;br&gt;
 &quot;몰입을 느끼고, 책을 읽고, 자신이 집중하고 싶은 유의미한 활동을 찾고, 자기 삶을 이해할 수 있도록 생각이 배회할 공간을 마련하고, 신체 활동을 하고, 잘 자고, 뇌가 건강하게 발달할 수 있도록 영양가 있는 음식을 먹고, 안정감을 느껴야 한다.&quot;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;항상 집중력이 낮은 스스로를 탓했었는데 항상 환경이나 시스템 탓을 할 순 없지만 주변 환경과 시스템에 대해 생각해본 계기가 됐다.&lt;/p&gt;
-&lt;h1 id=&quot;개발자의-글쓰기&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자의 글쓰기&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B8%80%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;개발자의 글쓰기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;책이 얇고 글씨도 커서 금방 읽은 것 같다. 글을 쓸때 꼭 포함시켜야지 하는 중요한 내용들을 위주로 쓰다보면 문맥 연결이 잘 되지않을 때가 있어 글쓰기 책을 한번 읽어보고 싶어 이 책을 읽어보았다.&lt;/p&gt;
-&lt;h4&gt;서술식, 개조식, 도식의 차이&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;서술식&lt;/strong&gt; : &lt;code class=&quot;language-text&quot;&gt;~다.&lt;/code&gt;로 끝나는 완전한 문장으로 구성된 글을 말하며, 무엇을 설명하거나 논증할 때 주로 사용하는 방식이다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;개조식&lt;/strong&gt; : 어떤 사항을 나열할 때 사용하며 종결 어미 대신 명사나 용언의 명사형(&lt;code class=&quot;language-text&quot;&gt;~했음&lt;/code&gt;)으로 끝내는 것이다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;도식&lt;/strong&gt; : 사물의 구조나 관계, 상태를 그림이나 서식으로 보여주는 것이다.&lt;/li&gt;
-&lt;li&gt;줄거리가 있는 설명이나 이야기라면 &lt;strong&gt;서술식&lt;/strong&gt; , 여러 가지 종류의 항목과 내용이 반복되거나 서술식에서 강조가 필요한 내용이라면 &lt;strong&gt;개조식&lt;/strong&gt; , 각 항목이나 사항의 관계를 명확히 규정하고 싶다면 &lt;strong&gt;도식&lt;/strong&gt; 이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;내가 작성하려하는 글의 특징을 잘 이해하여 선택하여야 한다.&lt;/p&gt;
-&lt;h4&gt;네이밍 컨벤션&lt;/h4&gt;
-&lt;p&gt;이 네이밍 컨벤션은 항상 같은 조직 구성원들의 노력이 동반되어야 한다고 생각한다. 사내에는 네이밍 컨벤션이 따로 없지만 이 책의 내용이 좋은 가이드가 되어준 것 같다.&lt;br&gt;
-&lt;strong&gt;반대되는 단어를 선택할 때 일관성과 개연성이 있어야 한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;이상, 초과, 이하, 미만&lt;/strong&gt; : and over, over, or under, under&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;중단에 대한 단어 선택&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;잠시 중단하고 재시작 가능할 때는 &lt;code class=&quot;language-text&quot;&gt;stop&lt;/code&gt;, 완전히 중단되어 재시작 가능성이 없을 때 &lt;code class=&quot;language-text&quot;&gt;end&lt;/code&gt;, 끝장을 봐서 재시작을 고려할 필요도 없을 때 &lt;code class=&quot;language-text&quot;&gt;finish&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;다음 단계의 시작을 중단했을 때 &lt;code class=&quot;language-text&quot;&gt;suspend&lt;/code&gt;, 중단한 어떤 의도가 있을 때 &lt;code class=&quot;language-text&quot;&gt;hold&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;어떤 값을 가져올 때&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;어떤 값을 돌려받아서 반환하는 함수일 때 &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt;, 검색해서 가져온다는 의미인 &lt;code class=&quot;language-text&quot;&gt;retrieve&lt;/code&gt;, 다른 것을 가져가지 못하게 독점하고자 할 때는 &lt;code class=&quot;language-text&quot;&gt;acquire&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;현재 값을 가리키는 포인터가 다음 값으로 이동한 것을 가져올 때는 &lt;code class=&quot;language-text&quot;&gt;fetch&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;어떤 값을 만들거나 수정할 때&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;어떤 값을 정해진 틀에 넣을 때 &lt;code class=&quot;language-text&quot;&gt;set&lt;/code&gt;, 정해진 틀이 없으므로 먼저 틀을 만들때는 &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;내용을 단순히 바꾸는 &lt;code class=&quot;language-text&quot;&gt;change&lt;/code&gt;, 잘못된 것을 바로잡을 때 &lt;code class=&quot;language-text&quot;&gt;modify&lt;/code&gt;, 기존 내용과 달라졌음을 분명히할 때 &lt;code class=&quot;language-text&quot;&gt;revise&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;코드를 보는 개발자 사이에 일관적이고 개연적인 합의만 되어 있다면 어떻게 쓰든 상관없다.
-&lt;a href=&quot;https://brunch.co.kr/@goodvc78/12#comments&quot;&gt;오픈소스의 네이밍 특징들&lt;/a&gt;을 읽어보는 것도 추천한다.&lt;/p&gt;
-&lt;h4&gt;기술 블로그의 4종류&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;저&lt;/strong&gt; : 직접 경험하고 실험한 과정이나 결과&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;술&lt;/strong&gt; : 어떤 것을 분석하여 의미를 풀이하고 해석한 것&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;편&lt;/strong&gt; : 산만하고 복잡한 자료를 편집해 질서를 부여한 것&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;집&lt;/strong&gt; : 여러 사람의 견해나 흩어진 자료를 한데 정리한 것&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;이 책에서 더 좋은 많은 내용들을 서술한다.&lt;br&gt;
-느끼기로는 글쓰기 가장 중요한점은 내가 쓸 글의 특징과 이 글을 읽을 독자의 관심이 무엇인지, 비즈니스 관점의 글쓰기가 필요하진 않은지 잘 판단하여야 한다는 것이다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;이 글을 왜 쓰는지?&lt;/li&gt;
-&lt;li&gt;이 글을 읽는 독자는 누구인지?&lt;/li&gt;
-&lt;li&gt;이 글을 읽는 독자에게 무엇을 말하려고 하는지?&lt;/li&gt;
-&lt;li&gt;이 글이 주장하는 바가 무엇인지?&lt;/li&gt;
-&lt;li&gt;이 글이 주장하는 바의 근거가 분명한지?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;문제를 해결하면서 만난 모든 문제를 순차적으로 서술하기 보다는 문제 해결의 핵심 내용들을 정리하여 간결하게 써봐야겠다.&lt;/p&gt;
-&lt;h1 id=&quot;엘라스틱서치-바이블&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;엘라스틱서치 바이블&lt;/strong&gt;&lt;a href=&quot;#%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EB%B0%94%EC%9D%B4%EB%B8%94&quot; aria-label=&quot;엘라스틱서치 바이블 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;실무에서 엘라스틱서치와 맞닿아 있는 업무를 할 때 모르고 넘어가는 것이 많아 불편하고 찝찝한 느낌이 있었다.&lt;br&gt;
-그리고 데이터 팀의 공유 사항을 들으면 이해 못하는 것이 많았다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;운영중인 여러 개의 검색 클러스터, ES 내부 아키텍처에 대한 이해가 없어 검색 이슈가 발생했을 때의 상황과 해결 방법을 이해할 수 없음&lt;/li&gt;
-&lt;li&gt;ES QueryDSL 작성할 때 마다 구글링을 하는 불편함&lt;/li&gt;
-&lt;li&gt;현재 운영중인 ES 환경의 문제점과 개선점에 대해 고민하거나 공감할 수 없음&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;위와 같은 이유로 엘라스틱서치를 공부해야겠다는 생각이 들었고 사내 스터디를 만들어서 읽어보았다.&lt;br&gt;
-ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발책은 외국에서 쓰여서 번역본으로 읽게 되는데 이 책은 내국인이 써서 읽기 편했다.&lt;/p&gt;
-&lt;p&gt;읽으면서 내용들을 &lt;a href=&quot;https://github.com/jdalma/footprints/tree/main/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98&quot;&gt;정리&lt;/a&gt;해 보았다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;엘라스틱서치 클러스터 수준에서 루씬 세그먼트와 루씬 commit, flush 그리고 translog 수준까지의 &lt;strong&gt;개괄적인 구조&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;복잡한 수준의 쿼리를 작성하면서 설명하진 않지만 기본적인 여러 종류의 &lt;strong&gt;ES Query DSL&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;인덱스 설정과 필드 타입&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;문서를 검색하거나 조작하는 &lt;strong&gt;여러 문서 API&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;저수준, 고수준 REST 클라이언트와 최신 자바 클라이언트 사용 방법&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;위의 내용들을 재밌게 읽었다.&lt;br&gt;
-하지만 아래와 같이 실제 운영하는 인원에게 도움이 되는 내용들은 흥미가 없었다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;엘라스틱서치, 키바나, 클라이언트 등을 TLS로 구성하는 방법&lt;/li&gt;
-&lt;li&gt;인덱스, 샤드 운영 전략과 스냅샷 복구 방법&lt;/li&gt;
-&lt;li&gt;코드 레벨의 동작과 커스텀 플러그인&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;전반적인 내용으로 봤을 때, 엘라스틱서치 클라이언트 입장이거나 엘라스틱서치의 관계자인 개발자보다는 클러스터를 직접 운영하고 튜닝하거나 깊은 내용의 이해를 필요로 하는 개발자한테 도움이 많이 될 것으로 보인다.&lt;br&gt;
-그래도 학습하면서 현재 실무 운영 환경과 책의 내용을 비교하면서 읽을 수 있었고 같은 회사의 팀원들과 읽어서 더욱 재밌게 읽었던 것 같다.&lt;br&gt;
-이 책으로 진행한 스터디 덕분에 실무 환경에서 모르고 넘어갔던 부분들을 배울 수 있었고 백엔드만의 영역이 아니라 데이터 팀의 영역에 대한 시야도 넓어진 느낌이다.&lt;/p&gt;
-&lt;h1 id=&quot;실용주의-프로그래머&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;실용주의 프로그래머&lt;/strong&gt;&lt;a href=&quot;#%EC%8B%A4%EC%9A%A9%EC%A3%BC%EC%9D%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8&quot; aria-label=&quot;실용주의 프로그래머 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;12월 8일부터 01월 18일까지&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;처음엔 3,4주면 다 읽을 줄 알았는데 6주가 걸렸다. 너무 기대해서 그런지 지루한 느낌이 있었다.&lt;br&gt;
-기술 책이라기 보다는 &lt;strong&gt;개발자라는 직업의 장인 정신에 대한 이야기&lt;/strong&gt; 를 한다고 느꼈다.&lt;br&gt;
-누구나 문제에 접근하는 태도와 방식, 철학에 차이가 있는 &lt;strong&gt;실용주의 프로그래머&lt;/strong&gt; 가 될 수 있다고 설득한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;자신의 경력에 대한 책임을 지고, 자신의 무지나 실수를 주저없이 인정하며 정직하고 솔직해야 한다.&lt;/li&gt;
-&lt;li&gt;어설픈 변명 말고 대안을 제시하라.&lt;/li&gt;
-&lt;li&gt;프로그램을 과도하게 장식하거나 지나칠 정도로 다듬느라 망치지 말라.&lt;/li&gt;
-&lt;li&gt;왜냐고 다섯 번 묻기&lt;/li&gt;
-&lt;li&gt;직교적인(응집도가 높은) 시스템을 작성하도록 노력하여 관련 없는 것들 간에 서로 영향이 없도록 하라.&lt;/li&gt;
-&lt;li&gt;누군가에 문제를 설명해봐라. 고무 오리라도 괜찮다.&lt;/li&gt;
-&lt;li&gt;여러분은 완벽한 소프트웨어를 만들 수 없다.&lt;/li&gt;
-&lt;li&gt;이 책의 저자는 문제를 찾고 원인을 밝히기 위해서는 사고가 난 지점에서 &quot;일찍 멈추기&quot;를 장려한다.&lt;/li&gt;
-&lt;li&gt;has-a가 is-a 보다 낫다.&lt;/li&gt;
-&lt;li&gt;의도적으로 프로그래밍하라. 우연에 기대지 말고 가정에 의존하지 마라. 신뢰할 수 있는것에만 기대라.&lt;/li&gt;
-&lt;li&gt;리팩토링가 기능 추가를 동시에 하지 말라.&lt;/li&gt;
-&lt;li&gt;요구 사항 문서는 의뢰인을 위한 것이 아니다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;책을 읽으면서 표시해놓은 인덱스들을 작성해봤다. 위의 내용만 보아도 책에서 설명하는 범위는 굉장히 넓은 것을 알 수 있다.&lt;br&gt;
-개인적으로는 &lt;code class=&quot;language-text&quot;&gt;철학, 편집도구, 클린코드, 테스트, 태도, 문서화, 협업 등&lt;/code&gt; 내용이 너무 포괄적이라서 흥미를 느끼지 못한 것 같다.&lt;br&gt;
-순서대로 읽기 보다는 목차에서 관심있는 주제들을 골라서 읽는 것을 추천한다.&lt;/p&gt;
-&lt;h1 id=&quot;네티-인-액션-작성-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;네티 인 액션&lt;/strong&gt; 작성 예정&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;네티 인 액션 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;oauth2-인-액션-작성-예정&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;OAuth2 인 액션&lt;/strong&gt; 작성 예정&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;oauth2 인 액션 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;실전-api-설계-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;실전 API 설계&lt;/strong&gt; ~ing&lt;a href=&quot;#%EC%8B%A4%EC%A0%84-api-%EC%84%A4%EA%B3%84-ing&quot; aria-label=&quot;실전 api 설계 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;도메인주도설계-첫걸음-ing&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;도메인주도설계 첫걸음&lt;/strong&gt; ~ing&lt;a href=&quot;#%EB%8F%84%EB%A9%94%EC%9D%B8%EC%A3%BC%EB%8F%84%EC%84%A4%EA%B3%84-%EC%B2%AB%EA%B1%B8%EC%9D%8C-ing&quot; aria-label=&quot;도메인주도설계 첫걸음 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;자바-네트워크-프로그래밍&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;자바 네트워크 프로그래밍&lt;/strong&gt;&lt;a href=&quot;#%EC%9E%90%EB%B0%94-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot; aria-label=&quot;자바 네트워크 프로그래밍 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;real-my-sql-2권&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Real My SQL 2권&lt;/strong&gt;&lt;a href=&quot;#real-my-sql-2%EA%B6%8C&quot; aria-label=&quot;real my sql 2권 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;오브젝트&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;오브젝트&lt;/strong&gt;&lt;a href=&quot;#%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot; aria-label=&quot;오브젝트 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;이펙티브-코틀린&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 코틀린&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%BD%94%ED%8B%80%EB%A6%B0&quot; aria-label=&quot;이펙티브 코틀린 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;이펙티브-자바&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;이펙티브 자바&lt;/strong&gt;&lt;a href=&quot;#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94&quot; aria-label=&quot;이펙티브 자바 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;개발자를-위한-레디스&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;개발자를 위한 레디스&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4&quot; aria-label=&quot;개발자를 위한 레디스 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&quot;nginx-쿡북&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;Nginx 쿡북&lt;/strong&gt;&lt;a href=&quot;#nginx-%EC%BF%A1%EB%B6%81&quot; aria-label=&quot;nginx 쿡북 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[보이스카웃 규칙 실천하기]]></title><description><![CDATA[The Boy Scout Rule : Always leave the campground cleaner than you found it…]]></description><link>https://jdalma.github.io/2024y/boyscoutRule/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/boyscoutRule/</guid><pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;항상 집중력이 낮은 스스로를 탓했었는데 항상 환경이나 시스템 탓을 할 순 없지만 주변 환경과 시스템에 대해 생각해본 계기가 됐다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[보이스카웃 규칙 실천하기]]></title><description><![CDATA[The Boy Scout Rule : Always leave the campground cleaner than you found it…]]></description><link>https://jdalma.github.io/2024y/boyscoutRule/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/boyscoutRule/</guid><pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;The Boy Scout Rule : Always leave the campground cleaner than you found it.&lt;br&gt;
 &lt;strong&gt;보이 스카웃 규칙 : 언제나 처음 왔을 때보다 깨끗하게 해놓고 캠프장을 떠날 것.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
