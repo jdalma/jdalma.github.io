@@ -1,6 +1,6 @@
 ---
-title: invokedynamic 이란? (작성중)
-date: "2024-06-10"
+title: invokedynamic 이란?
+date: "2024-07-01"
 tags:
    - java
    - deep-dive
@@ -25,7 +25,7 @@ private fun <T> Iterable<T>.filter(predicate: (T) -> Boolean): Iterable<T> {
 }
 ```
 
-위의 확장함수에 람다를 전달하는 코틀린 코드는 아래와 같이 컴파일된다.  
+`(T) -> Boolean` 람다를 전달받아 해당 람다의 결과를 반환하는 확장함수에 람다를 전달하는 코틀린 코드는 아래와 같이 컴파일된다.  
 
 ```java
 public final class MainKt {
@@ -155,9 +155,9 @@ public class org.example.InnerClass {
 }
 ```
 
-`InnerClass$1`이라는 이름은 컴파일러가 익명 클래스에 붙인 이름이며, `new` 연산을 통해 메모리를 힙 안에 할당하고, 할당된 위치를 가리키는 참조를 오퍼랜드 스택에 쌓는다.  
-그리고 `invokespecial`을 통해 생성자를 호출한다.  
-**하지만 람다는 `invokedynamic` 연산만 호출된다.**  
+`InnerClass`의 `#1`부터 `#10`까지는 익명 클래스로 지정한 `toString1`의 설명이며 `InnerClass$1`이라는 이름은 컴파일러가 익명 클래스에 붙인 이름이다.  
+그리고 `new` 연산을 통해 메모리를 힙 안에 할당하고, 할당된 위치를 가리키는 참조를 오퍼랜드 스택에 쌓고 `invokespecial`을 통해 실행된다.    
+하지만 **람다로 지정한 `toString2`은 `invokedynamic` 연산만 호출된다.**  
 
 # invokedynamic 이란?
 
@@ -169,7 +169,7 @@ end
 
 위의 코드를 컴파일할 때는 a와 b의 형식을 알 수 없듯이 동적 타입 언어 컴파일의 난제는 프로그램이 컴파일된 후 메서드나 함수의 가장 적절한 구현을 선택할 수 있는 런타임 시스템을 구현하는 방법이다.  
   
-자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 `invokedynamic`이 추가되었다.    
+**자바 7부터 JVM 자체에서 자바 언어뿐만 아니라 다른 언어, 특히 스크립트 언어들과 같이 타입이 고정되어 있지 않은 동적 타입 언어를 지원하기 위해 `invokedynamic`이 추가되었다.**  
 (이 명령어는 Java 8에서 람다 표현식을 구현하기 위한 기반을 마련했을 뿐만 아니라 동적 언어를 Java 바이트 코드 형식으로 변환하는 데 있어서도 큰 전환점이 되었다.)  
   
 실제 타입은 컴파일 시점에 존재하지 않고 런타임에 필요에 따라 생성되는데, 이 메커니즘을 이해하려면 `Call sites`, `Method handles`, `Bootstrapping`을 이해해야 한다.  
@@ -380,7 +380,7 @@ Reflection의 Method 객체와 유사하지만 더 효율적인 리플렉션 메
 즉, 메서드를 찾고, 조정하고, 호출하기 위한 저수준 메커니즘이다.  
 `MethodHandle`을 사용하기 위해서는 4가지를 준비해야 한다.  
 
-1. **Lookup 생성하기**
+1. **Lookup 생성하기** : MethodHandle을 생성하기 위한 팩토리이다.
 2. **MethodType 생성하기** : 반환 타입과 매개변수 유형으로 구성되며, 불변이다.
 3. **MethodHandle 찾기** : 원본 클래스와 메서드 이름, MethodType을 Lookup 객체에 제공하여 조회할 수 있다.
 4. **MethodHandle 호출하기**
@@ -399,7 +399,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Throwable {
-        // Main의 sum 메서드 실행하기
+        // 첫 번째 예제. Main의 sum 메서드 실행하기
         Method sumMethod = Main.class.getDeclaredMethod("sum");
         MethodHandle sum = lookup().unreflect(sumMethod);
         final Main main = new Main(Arrays.asList(1, 3, 5, 6, 7));
@@ -407,7 +407,7 @@ public class Main {
         Object invoke5 = sum.invokeWithArguments(main);
         Integer invoke6 = (Integer) sum.invokeExact(main);
         
-        // String의 concat 메서드 실행하기
+        // 두 번째 예제. String의 concat 메서드 실행하기
         Lookup publicLookup = lookup();
         MethodType methodType = MethodType.methodType(String.class, String.class);
         MethodHandle concat = publicLookup.findVirtual(String.class, "concat", methodType);
@@ -423,7 +423,7 @@ public class Main {
 ## Bootstrapping
 
 바이트코드 명령에서 특정 invokedynamic call site가 처음 호출될 때, JVM에는 명령과 연관된 call site 객체가 없기 때문에 어떤 메서드를 대상으로 실행해야 하는지 알지 못한다.  
-즉, 이전에 보았던 invokestatic 및 invokespecial의 경우 컴파일 시점에 정확한 호출 대상을 알 수 있지만, invokedynamic은 호출 대상을 모르는 것이다.  
+즉, **이전에 보았던 invokestatic 및 invokespecial의 경우 컴파일 시점에 정확한 호출 대상을 알 수 있지만, invokedynamic은 호출 대상을 모르는 것이다.**  
   
 **invokedynamic은 [BootstrapMethods(BSM)](https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-4.html#jvms-4.7.23)라고하는 동적 특성 호출을 지원하는 추가 정보를 참조한다.**  
 **특정 invokedynamic call site에 BSM을 연결할 수 있도록** Java 7부터 클래스 파일 형식에 InvokeDynamic라는 새로운 항목 유형이 추가되었다.  
@@ -653,8 +653,8 @@ BootstrapMethods:
 
 ![](./bsm.png)
 
-즉, 상수 풀에 존재하는 `#2`와 `#4`의 call site는 `CONSTANT_InvokeDynamic` 유형이며, 이 유형은 ClassFile 구조체의 [BootstrapMethods 속성](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html#jvms-4.7) bootstrap method는 상수 풀의 `#42` 항목이다.  
-**BSM으로 사용될 메서드 핸들은 `LambdaMetafactory.metafactory(...)`이다.**  
+즉, 상수 풀에 존재하는 `#2`와 `#4`의 call site는 `CONSTANT_InvokeDynamic` 유형이며, 이 유형은 ClassFile 구조체의 [BootstrapMethods 속성](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html#jvms-4.7)에 정의되어 있는 `LambdaMetafactory.metafactory(...)` 호출하며 이 BSM은 상수 풀의 `#42` 항목이다.  
+
 
 ```java
 
@@ -671,8 +671,7 @@ public class LambdaMetafactory {
         MethodHandle implMethod,
         MethodType instantiatedMethodType
     ) throws LambdaConversionException {
-        AbstractValidatingLambdaMetafactory mf;
-        mf = new InnerClassLambdaMetafactory(
+        AbstractValidatingLambdaMetafactory mf = new InnerClassLambdaMetafactory(
             caller, 
             invokedType,
             invokedName, 
@@ -690,9 +689,97 @@ public class LambdaMetafactory {
 }
 ```
 
-> **BSM은 이 정적 메서드를 호출하여 CallSite 객체를 반환한다, 즉, invokedynamic 명령이 실행되어 반환된 CallSite는 람다의 대상 유형을 구현하는 클래스의 인스턴스를 포함하고 있는 MethodHandle을 포함하고 있다.**  
+> **BSM은 이 정적 메서드를 호출하여 CallSite 객체를 반환한다,**  
+> **즉, `invokedynamic` 명령이 실행되어 반환된 CallSite는 람다의 대상 유형을 구현하는 클래스의 인스턴스를 포함하고 있는 MethodHandle을 포함하고 있는것이다.**  
 
-# BSM 만들어보기
+# 람다와 클로저 특징
+
+람다가 둘러싸는 범위에서 매개변수를 캡쳐하지 않으면 람다 내부에서 사용하는 상태가 존재하지 않으므로 **람다의 구현 클래스를 싱글톤으로 관리하여 최적화한다.**  
+그리고 InvokeDynamic call site와 람다 구현 인스턴스가 한 번 연결된 후에는 `LambdaMetaFactory.metafactory` 메서드는 호출되지 않는다.  
+하지만 동일한 형식의 람다 인스턴스라도 **서로 다른 call site를 통해 생성된다면 BootstrapMethods가 InvokeDynamic call site별로 생성되기 때문에 독립적으로 구분된다.**  
+
+```java
+Function<Person, Integer> makeLambda() {
+    return (person1) -> person1.age;
+}
+
+Function<Person, Integer> otherMakeLambda() {
+    return (person1) -> person1.age;
+}
+
+@Test
+void lambdaEqualTest() {
+    Function<Person, Integer> lambda1 = makeLambda();
+    Function<Person, Integer> lambda2 = makeLambda();
+
+    assertThat(lambda1).isEqualTo(lambda2);
+
+    Function<Person, Integer> lambda3 = makeLambda();
+    Function<Person, Integer> lambda4 = otherMakeLambda();
+
+    assertThat(lambda1).isEqualTo(lambda3);
+    assertThat(lambda2).isEqualTo(lambda3);
+    assertThat(lambda3).isNotEqualTo(lambda4);
+}
+```
+
+하지만 **람다가 외부 스코프에 존재하는 변수에 의존하게되면 람다는 싱글톤으로 관리되지 않는다.**  
+(이 외부 스코프에 존재하는 변수에 의존하는 람다를 클로저라고 부른다.)    
+  
+```java
+Supplier<Integer> makeClosure(Person person) {
+    return () -> person.age;
+}
+
+Supplier<Integer> makeAnonymous(Person person) {
+    return new Supplier<Integer>() {
+        @Override
+        public Integer get() {
+            return person.age;
+        }
+    };
+}
+
+@Test
+void closureEqualTest() {
+    Person person = new Person();
+    Supplier<Integer> lambda1 = makeClosure(person);
+    Supplier<Integer> lambda2 = makeClosure(person);
+    Supplier<Integer> anonymous1 = makeAnonymous(person);
+    Supplier<Integer> anonymous2 = makeAnonymous(person);
+
+//  assertThat(lambda1).isEqualTo(lambda2);    // fail !!!
+    assertThat(lambda1).isNotEqualTo(lambda2);
+
+//  assertThat(anonymous1).isEqualTo(anonymous2);    // fail !!!
+    assertThat(anonymous1).isNotEqualTo(anonymous2);
+
+    person.age = 1;
+    assertThat(lambda1.get()).isEqualTo(1);
+    assertThat(lambda2.get()).isEqualTo(1);
+    assertThat(anonymous1.get()).isEqualTo(1);
+    assertThat(anonymous2.get()).isEqualTo(1);
+}
+```
+  
+위의 테스트 코드처럼 클로저가 싱글톤으로 관리되지 않는다고 해서 **매번 새로운 CallSite가 생기는 것은 아니다.**  
+익명 클래스는 외부 변수를 캡처해야한다면 생성자에 캡처링된 변수를 넘겨주며, 람다는 InvokeDynamic만 호출한다.  
+
+```
+// 익명 클래스
+0: new           #3                  // class org/example/Main$1
+3: dup
+4: aload_0
+5: invokespecial #4                  // Method org/example/Main$1."<init>":(Lorg/example/Person;)V
+8: areturn
+
+// 람다
+0: aload_0
+1: invokedynamic #2,  0              // InvokeDynamic #0:get:(Lorg/example/Person;)Ljava/util/function/Supplier;
+6: areturn
+```
+  
+# CallSite를 반환하는 BSM 만들어보기
 
 ```java
 public class Ops {
@@ -762,137 +849,19 @@ class MethodHandleTest {
 > 런타임 시스템에서 사용할 수 있는 메서드가 여러 개 있고 각각 다른 인수 유형을 처리하는 경우 부트스트랩 메서드 mybsm은 **dynamicMethodType 인수에 따라 메서드를 동적으로 선택할 수 있다.**  
 > invokedynamic 명령어는 컴파일러와 런타임 시스템의 동적 언어 구현을 단순화하며, 이는 Java 클래스 및 인터페이스에 특정한 연결 동작이 JVM에 의해 하드와이어링 되는 invokevirtual과 같은 다른 JVM 명령어와 대조된다.   
 
-# 클로저
-
-람다가 둘러싸는 범위에서 매개변수를 캡쳐하지 않으면 람다 내부에서 사용하는 상태가 존재하지 않으므로 람다의 구현 클래스를 싱글톤으로 관리하여 최적화한다.  
-InvokeDynamic call site와 람다 구현 인스턴스가 한 번 연결된 후에는 LambdaMetaFactory.metafactory 메서드는 호출되지 않는다.  
-하지만 동일한 형식의 람다 인스턴스라도 **서로 다른 call site를 통해 생성된다면 BootstrapMethods가 InvokeDynamic call site별로 생성되기 때문에 독립적으로 구분된다.**  
-
-```java
-Function<Person, Integer> makeLambda() {
-    return (person1) -> person1.age;
-}
-
-Function<Person, Integer> otherMakeLambda() {
-    return (person1) -> person1.age;
-}
-
-@Test
-void lambdaEqualTest() {
-    Function<Person, Integer> lambda1 = makeLambda();
-    Function<Person, Integer> lambda2 = makeLambda();
-
-    assertThat(lambda1).isEqualTo(lambda2);
-
-    Function<Person, Integer> lambda3 = makeLambda();
-    Function<Person, Integer> lambda4 = otherMakeLambda();
-
-    assertThat(lambda1).isEqualTo(lambda3);
-    assertThat(lambda2).isEqualTo(lambda3);
-    assertThat(lambda3).isNotEqualTo(lambda4);
-}
-```
-
-만약 **람다가 외부 스코프에 존재하는 변수에 의존하게되면 람다는 싱글톤으로 관리되지 않는다.**  
-
-```java
-Supplier<Integer> makeClosure(Person person) {
-    return () -> person.age;
-}
-
-Supplier<Integer> makeAnonymous(Person person) {
-    return new Supplier<Integer>() {
-        @Override
-        public Integer get() {
-            return person.age;
-        }
-    };
-}
-
-@Test
-void closureEqualTest() {
-    Person person = new Person();
-    Supplier<Integer> lambda1 = makeClosure(person);
-    Supplier<Integer> lambda2 = makeClosure(person);
-    Supplier<Integer> anonymous1 = makeAnonymous(person);
-    Supplier<Integer> anonymous2 = makeAnonymous(person);
-
-//  assertThat(lambda1).isEqualTo(lambda2);    // fail !!!
-    assertThat(lambda1).isNotEqualTo(lambda2);
-
-//  assertThat(anonymous1).isEqualTo(anonymous2);    // fail !!!
-    assertThat(anonymous1).isNotEqualTo(anonymous2);
-
-    person.age = 1;
-    assertThat(lambda1.get()).isEqualTo(1);
-    assertThat(lambda2.get()).isEqualTo(1);
-    assertThat(anonymous1.get()).isEqualTo(1);
-    assertThat(anonymous2.get()).isEqualTo(1);
-}
-```
-
-익명 클래스는 외부 변수를 캡처해야한다면 생성자에 캡처링된 변수를 넘겨주게 된다.  
-
-```
-0: new           #3 // class org/example/Example$1
-3: dup
-4: aload_0
-5: aload_1
-6: invokespecial #4 // Method org/example/Example$1."<init>":(Lorg/example/Example;Lorg/example/Person;)V
-```
-
-람다는 
-
-```java
-public class ConstructorInjection {
-    Person person;
-    Supplier<Person> older = () -> {
-        person.age += 1;
-        return person;
-    };
-    Consumer<Person> printLambda = person1 -> System.out.println(person1);
-    Consumer<Person> printMethodRef = System.out::println;
-    public ConstructorInjection(Person person) {
-        this.person = person;
-    }
-}
-
-@Test
-void injectionTest() {
-    Person person = new Person();
-    ConstructorInjection test1 = new ConstructorInjection(person);
-    ConstructorInjection test2 = new ConstructorInjection(person);
-
-    test1.older.get();
-    test1.older.get();
-    test2.older.get();
-
-    assertThat(test1.person.age).isEqualTo(3);
-    assertThat(test2.person.age).isEqualTo(3);
-
-    assertThat(test1.older).isNotEqualTo(test2.older);
-    assertThat(test1.person).isEqualTo(test2.person);
-    assertThat(test1.printLambda).isEqualTo(test2.printLambda);
-    assertThat(test1.printMethodRef).isNotEqualTo(test2.printMethodRef);
-}
-```
-
 # 정리
 
-람다 팩토리의 부트스트랩 메서드는 Java 언어 런타임 라이브러리에서 람다 메타팩토리라고 하는 표준화된 메서드입니다. 정적 부트스트랩 인수는 컴파일 시점에 람다에 대해 알려진 정보(변환될 함수 인터페이스, 파생된 람다 본문에 대한 메서드 핸들, SAM 유형이 직렬화 가능한지 여부에 대한 정보 등)를 캡처합니다.
-
-
+람다를 생성하기 위한 BSM은 `LambdaMetafactory.metafactory()` 표준화된 메서드이며, CallSite별로 넘기는 파라미터 인자들과 내부 정보가 달라질 뿐이다.  
+상태를 포함하지 않는 람다는 컴파일러가 람다 표현식과 같은 시그니처를 갖는 메서드를 생성한다.  
+만약 상태를 포함한다면 그 상태를 람다 표현식의 인수에 캡처한 각 변수를 추가하는 것이다.  
+  
 1. 람다 덕분에 추가적인 필드나 정적 초기자 등의 오버헤드가 사라진다.
 2. 상태 없는(캡처하지 않는) 람다에서 람다 객체 인스턴스를 만들고, 캐시하고, 같은 결과를 반환할 수 있다.
-   - 자바 8 이전에도 사람들은 이런 방식을 사용했다.
    - 예를 들어, 정적 final 변수에 특정 Comparator 인스턴스를 선언할 수 있다.
 3. 람다를 처음 실행할 때만 반환과 결과 연결 작업이 실행되므로 추가적인 성능 비용이 들지 않는다.
    - 즉, 두 번째 호출부터는 이전 호출에서 연결된 구현을 바로 이용할 수 있다.
-
-상태를 포함하지 않는 람다는 컴파일러가 람다 표현식과 같은 시그니처를 갖는 메서드를 생성한다.  
-만약 상태를 포함한다면 그 상태를 람다 표현식의 인수에 캡처한 각 변수를 추가하는 것이다.  
-
-***
+  
+**각 람다를 생성하는 CallSite는 ClassFile 정보에 BootStrapMethods 속성에 저장되어 있는 BSM을 실행하며, 이 BSM은 CallSite 객체를 반환하며 한 번 생성되면 다시 재생성되지 않는다.**  
 
 
 # 참고
