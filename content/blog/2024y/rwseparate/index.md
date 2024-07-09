@@ -1,5 +1,5 @@
 ---
-title: Spring에서 RW분리를 이해하기 위한 여정 (+ JDBC, 서비스 추상화)
+title: Spring RW분리를 이해하기 위한 여정 (+ JDBC, 서비스 추상화)
 date: "2024-07-10"
 tags:
    - Lab
@@ -238,20 +238,47 @@ public class MemberService {
 
 서비스 추상화를 통해 유연해졌고, 트랜잭션 동기화 매니저를 통해 Connection도 동기화하였다.  
 하지만 아직 서비스 계층에서 트랜잭션 관련 코드가 남아있는데, 이 문제를 `@Transacitonal`을 통해 해결할 수 있다.  
+일반적으로 데이터베이스, 트랜잭션 관련 API를 직접 사용하는 것보다 Spring 추상화를 통한 작업이 훨씬 더 유연하기 때문에 DataSourceUtils나 다른 헬퍼 클래스 사용을 자제하는 것이 좋다.  
+
+```java
+// [4]
+public interface Service {
+    // [3]
+    void method1();
+    // [3]
+    void method2();
+}
+
+// [2]
+public class ServiceImpl implements Service {
+    // [1]
+    public void method1(){ ... }
+    // [1]
+    public void method2() { ... }
+}
+```
+
+`@Transactional`을 적용할 때 **4단계의 대체정책** 을 이용한다.  
+타깃 오브젝트의 메소드 → 타깃 클래스 → 선언 메소드 → 선언 클래스(또는 인터페이스)의 순서에 따라서 적용됐는지 차례대로 확인하고,
+가장 먼저 발견되는 속성정보를 사용하게된다.  
+그리고 `public`으로 정의된 메서드만 트랜잭션이 걸리게 스프링이 제한해놓았다.  
   
 이 AOP를 적용하기 위해 아래의 클래스가 제공된다.  
 1. **어드바이저** : `BeanFactoryTransactionAttributeSourceAdvisor`
 2. **포인트컷** : `TransactionAttributeSourcePointcut`
 3. **어드바이스** : `TransactionInterceptor`
 
+![](./transactionalAOP.png)
 
+![](./transactional.png)
 
-
-
+Spring AOP 덕분에 비즈니스 로직까지 모두 해결하였다. 프록시 생성에 대한 자세한 내용은 [빈 후처리기를 이용한 프록시 생성에 대해](https://jdalma.github.io/2024y/postprocessor/#%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0)를 참고하자.
 
 ***
 
 # 읽기/쓰기 분리하기
+
+
 
 ## 두 개의 DataSource 등록
 
@@ -310,11 +337,9 @@ public final class DataSourceBuilder<T extends DataSource> {
 
 # 궁금한 내용들 정리
 
-2. [ ] DataSource의 Connection을 얻어오는 과정부터 실제로 쿼리가 실행되고 커밋되는 구조 (트랜잭션 서비스 추상화에 대한 이해)
-   1. [ ] [Understanding the Spring Framework Transaction Abstraction](https://docs.spring.io/spring-framework/reference/data-access/transaction/strategies.html#page-title)
-   2. [ ] 
-3. [ ] LazyConnectionDataSourceProxy의 역할
-4. [ ] 여러 데이터소스 사용 시 락 예외 [참고](https://github.com/jdalma/footprints/tree/main/%EC%B4%88%EC%95%88)
+1. [x] DataSource의 Connection을 얻어오는 과정부터 실제로 쿼리가 실행되고 커밋되는 구조 (트랜잭션 서비스 추상화에 대한 이해)
+2. [ ] LazyConnectionDataSourceProxy의 역할
+3. [ ] 여러 데이터소스 사용 시 락 예외 [참고](https://github.com/jdalma/footprints/tree/main/%EC%B4%88%EC%95%88)
 
 # 읽어보기
 
@@ -328,4 +353,5 @@ public final class DataSourceBuilder<T extends DataSource> {
 3. [[10분 테코톡] 코코닥의 JDBC](https://www.youtube.com/watch?v=ONYVhJGl48U&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC)
 4. [JDBC Connection 에 대한 이해, HikariCP 설정 팁](https://jiwondev.tistory.com/291)
 5. [스프링 DB 1편 - 데이터 접근 핵심 원리](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-db-1)
-6. [스프링 DB 2편 - 데이터 접근 활용 기술](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-db-2)
+6. [Synchronizing Resources with Transactions](https://docs.spring.io/spring-framework/reference/data-access/transaction/tx-resource-synchronization.html)
+7. [Understanding the Spring Framework Transaction Abstraction](https://docs.spring.io/spring-framework/reference/data-access/transaction/strategies.html#page-title)
