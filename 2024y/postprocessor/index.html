@@ -979,7 +979,7 @@ InvocationHandler와 다르게 부가기능 구현체는 클라이언트로부�
 <p>Pointcut과 Advice, 이 둘을 묶는 Advisor 각각 빈으로 등록하여 중복을 제거할 수 있게 되었다.<br>
 하지만 <strong>부가기능의 적용이 필요한 타깃 오브젝트마다 거의 비슷한 내용의 ProxyFactoryBean 빈 설정정보를 직접 작성해줘야하는 단점이 있다.</strong><br>
 타겟을 제외하면 빈 클래스의 종류, Advice, Pointcut의 설정이 거의 동일하며 빈으로 관리가 가능한데 이러한 중복을 제거할 수 있는 방법은 없을까?</p>
-<h1 id="빈-후처리기를-이용한-자동-프록시-생성기" style="position:relative;">빈 후처리기를 이용한 자동 프록시 생성기<a href="#%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0" aria-label="빈 후처리기를 이용한 자동 프록시 생성기 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<h1 id="8단계-빈-후처리기를-이용한-자동-프록시-생성기" style="position:relative;">8단계: 빈 후처리기를 이용한 자동 프록시 생성기<a href="#8%EB%8B%A8%EA%B3%84-%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0" aria-label="8단계 빈 후처리기를 이용한 자동 프록시 생성기 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>이제 스프링에서 프록시를 자동으로 생성하는 방법에 대해 알아볼 차례다.<br>
 말 그대로 <strong>스프링 빈 오브젝트로 만들어지고 난 후에, 빈 오브젝트를 다시 가공할 수 있게 해주는 것이다.</strong><br>
 <code class="language-text">BeanPostProcessor</code>를 직접 구현한 아래의 예제를 보자.</p>
@@ -1236,7 +1236,7 @@ class MyAspect {
 <li>프록시를 구현하기 위해 사용되는 <strong>Reflection</strong></li>
 <li>프록시의 개념</li>
 <li>프록시를 구현하는 두 가지의 방법 (<strong>JDK Dynamic Proxy</strong> 와 <strong>CGLIB</strong>)</li>
-<li>프록시를 구현하는 두 가지 방법과 부가기능과 메소드 선별 기능을 스프링이 추상화한 <strong>ProxyFactory</strong> 와 <strong>ProxyFactoryBean</strong></li>
+<li>부가기능과 메소드 선별 기능을 스프링이 추상화한 <strong>ProxyFactory</strong> 와 <strong>ProxyFactoryBean</strong></li>
 <li>빈 후처리기를 통해 프록시를 편리하게 등록하는 방법</li>
 <li><code class="language-text">@Aspect</code> (AspectJ)를 사용하여 프록시를 등록하는 방법</li>
 </ol>
@@ -1276,7 +1276,7 @@ class MyAspect {
 <p><a href="#7%EB%8B%A8%EA%B3%84-proxyfactorybean">7단계: ProxyFactoryBean</a></p>
 </li>
 <li>
-<p><a href="#%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0">빈 후처리기를 이용한 자동 프록시 생성기</a></p>
+<p><a href="#8%EB%8B%A8%EA%B3%84-%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0">8단계: 빈 후처리기를 이용한 자동 프록시 생성기</a></p>
 </li>
 <li>
 <p><a href="#%EC%8A%A4%ED%94%84%EB%A7%81-aop-%EB%A7%9B%EB%B3%B4%EA%B8%B0">스프링 AOP 맛보기</a></p>

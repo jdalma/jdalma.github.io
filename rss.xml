@@ -1,4 +1,867 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 04 Jul 2024 11:15:13 GMT</lastBuildDate><item><title><![CDATA[invokedynamic 이란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 14 Jul 2024 14:43:39 GMT</lastBuildDate><item><title><![CDATA[Spring RW분리를 이해하기 위한 여정 (+ JDBC, 서비스 추상화)]]></title><description><![CDATA[IDC 환경의 MySQL 서버를 AWS로 마이그레이션하면서 스프링에서 읽기/쓰기 분리를 스프링에서 제공하는 LazyConnectionDataSourceProxy 클래스를 활용해서 해결하였다. 이번 글을 통해 JDBC와 스프링이 제공하는 PSA…]]></description><link>https://jdalma.github.io/2024y/rwseparate/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/rwseparate/</guid><pubDate>Sun, 14 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;IDC 환경의 MySQL 서버를 AWS로 마이그레이션하면서 &lt;a href=&quot;https://jdalma.github.io/2024y/mysqlMigration/#%EC%8A%A4%ED%94%84%EB%A7%81%EC%97%90%EC%84%9C-%EC%9D%BD%EA%B8%B0%EC%93%B0%EA%B8%B0-%EB%B6%84%EB%A6%AC&quot;&gt;스프링에서 읽기/쓰기 분리&lt;/a&gt;를 스프링에서 제공하는 &lt;a href=&quot;https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/datasource/LazyConnectionDataSourceProxy.html&quot;&gt;LazyConnectionDataSourceProxy&lt;/a&gt; 클래스를 활용해서 해결하였다.&lt;/p&gt;
+&lt;p&gt;이번 글을 통해 JDBC와 스프링이 제공하는 PSA에 대해 정리해보고 어떤 원리로 읽기/쓰기가 분리된 것인지 이해해보려한다.&lt;/p&gt;
+&lt;h1 id=&quot;jdbc&quot; style=&quot;position:relative;&quot;&gt;JDBC&lt;a href=&quot;#jdbc&quot; aria-label=&quot;jdbc permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/57d01e37159315a501e82468a2eb06d9/54c3a/jdbcApi.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJUlEQVR42n2PTU7CUBSFuxKGLIABTlgFMzZnQDZQwoCBEyoJIGgCDUIlBSliQovYf7CU9rM8okNfcnPey333fPdI/X6fl+mUaVaqqrJcLDiezkRJyn8nSRKh3W6XcrlMpVJB13UkPTN4zkyVdpuHToe1YRDGZzZBjBmlPA2HyI0Gr/M5o9GIXq/HBRVGsdBqrUYulyOfz3NZTrpQrO2W2WyG53uCmqYpQZyycL8ZDB65b7XQJhPU8VgkCc9ghhGf2d/bao1CoUCxeCNgwlDTNOr1O97eN+xP8BGcMA9xtuk1VhAeiffZeBT9AX8jy7IsDEulEuMMKLmug7E2WK2WWDsLy3bxPZfAu6pt2+z2X9ieh+044u24rrh7vo9pmjSbTRRFEb0f7S5gaxbjceUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;jdbcApi&quot;
+        title=&quot;&quot;
+        src=&quot;/static/57d01e37159315a501e82468a2eb06d9/1cfc2/jdbcApi.png&quot;
+        srcset=&quot;/static/57d01e37159315a501e82468a2eb06d9/3684f/jdbcApi.png 225w,
+/static/57d01e37159315a501e82468a2eb06d9/fc2a6/jdbcApi.png 450w,
+/static/57d01e37159315a501e82468a2eb06d9/1cfc2/jdbcApi.png 900w,
+/static/57d01e37159315a501e82468a2eb06d9/54c3a/jdbcApi.png 1257w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;우리가 쉽게 접하고 사용하는 MyBatis와 하이버네이트에서도 기저에는 JDBC API를 사용하여 데이터베이스와 통신하기에 먼저 JDBC가 무엇인지 이해할 필요가 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/db6eac85a5d94264e0b8039c94e2bbe8/13ae7/jdbcArchitecture.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 111.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAIAAABPIytRAAAACXBIWXMAAAPoAAAD6AG1e1JrAAACkklEQVR42oXUaU+aURAF4Pf//wc/SGKMxjQKAu47SBFcse4L7rgraowL7eN7I7Y2rfPhzWXuzJyZc+YS/Xy3RqPhe3p6WiqVVlZWfvxpvb29t7e3zbBg0afkWq22v78vuVwuq1IoFHzPz89TqZSrr5OLxWLp3WZmZvxcWlpqa2vT1D+TmzY7Ozs6Ojo9PZ3NZoeHh3O53MTExPj4+N3d3RfJT09PZ2dn+jQhzNXV1ZubGx7fv2E+ty0O1OTkpJm/x5bP51VB2PX19RczA0wmkx0dHe3t7Z2xJRKJrq6ulpYWdf+X/Pr66nBxcYEnM6OaSLqYn5+X6bYR20fyJ9fV1dXh4eH9/X3QPBzq9frx8XGTsGASP5AfHh5OTk4uLy+btQge5mQvLy/ABTw+Pn4ga2xvb69arRKGntvb24KQDApVCwsLbtfX1+m/u7ur/4GBgYODg62trY2NjQiTlUpFkCoyR0ZGiCzahvC4cs5kMiZfW1ubm5uzfIJFIjISRIZkbJYB2tTUlEZU6enp6evrCxWRBzmEARdAiAiriulneXkZCNixsTEt7ezsVGI7OjoyEWQe4ywuLnIaqrW1NYJmBzUGXxo0EUKV9xikDQ0NudIzfGfI2pFC/AiNeFMVvsPz8zOqfZ3xh/BAdfOLI3KGn5FQMobX97tOVs1EHklzKwlLCN0hkq5vUkkwLSVcOLgIDxNsLTYM44ITc7qzf9SG7xu5CI/We0Bbf38/TIQJ5YQsaHBwEIZIfmFBKhREfuv5W2y8QSd3CiGsu7t7c3MTfzLx4pHhid9Zxcgmawb1OrQ3oj3p8E9EJE6DiDYwFRQSaefRYfi33VaVYNoQBDMwKTk40+m0fQzL75H7S4Fpunq9/gtKPIDr1PEtjAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;jdbcArchitecture&quot;
+        title=&quot;&quot;
+        src=&quot;/static/db6eac85a5d94264e0b8039c94e2bbe8/13ae7/jdbcArchitecture.png&quot;
+        srcset=&quot;/static/db6eac85a5d94264e0b8039c94e2bbe8/3684f/jdbcArchitecture.png 225w,
+/static/db6eac85a5d94264e0b8039c94e2bbe8/13ae7/jdbcArchitecture.png 350w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JDBC(Java Database Connectivity)&lt;/strong&gt; 는 클라이언트가 모든 종류의 표 형식 데이터, 특히 관계형 데이터베이스에 액세스할 수 있는 방법을 정의하는 Java용 응용 프로그래밍 인터페이스이다.&lt;br&gt;
+Java 애플리케이션과 데이터베이스 간의 &lt;strong&gt;중간 계층 인터페이스 역할&lt;/strong&gt; 을 하며, 데이터 소스에 연결하거나 쿼리를 실행하고 데이터베이스 질의 결과를 처리하기 위한 가이드이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JDBC 드라이버&lt;/strong&gt; 는 Java 애플리케이션의 요청을 DBMS가 이해할 수 있는 프로토콜로 변환하는 &lt;code class=&quot;language-text&quot;&gt;클라이언트 측 어댑터&lt;/code&gt;이다.&lt;br&gt;
+즉, JDBC 드라이버는 Java 애플리케이션과 데이터베이스가 상호 작용할 수 있도록 JDBC API의 인터페이스를 구현하는 소프트웨어 구성 요소이다.&lt;br&gt;
+이 드라이버의 유형에는 Sun Microsystem에서 정의한 4개의 유형이 있다.&lt;br&gt;
+(자세한 설명은 &lt;a href=&quot;https://www.geeksforgeeks.org/jdbc-drivers/&quot;&gt;JDBC 드라이버&lt;/a&gt;를 참고하자.)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Type-1 드라이버 또는 JDBC-ODBC 브리지 드라이버&lt;/li&gt;
+&lt;li&gt;Type-2 드라이버 또는 Native-API 드라이버&lt;/li&gt;
+&lt;li&gt;Type-3 드라이버 또는 네트워크 프로토콜 드라이버&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Type-4 드라이버 또는 Thin 드라이버(완전 Java 드라이버)&lt;/strong&gt; : 데이터베이스에 직접 연결하여 JDBC 호출을 데이터베이스별 호출로 변환한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;데이터베이스마다 고유한 프로토콜이 필요하다는 단점이 있긴 하지만, 데이터베이스 서버에 직접 연결하면 다른 Type에 비해 더 나은 성능을 제공하는 장점이 있는 Type-4가 가장 일반적으로 사용된다.&lt;/p&gt;
+&lt;h2 id=&quot;jdbc-api-사용하기&quot; style=&quot;position:relative;&quot;&gt;JDBC API 사용하기&lt;a href=&quot;#jdbc-api-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0&quot; aria-label=&quot;jdbc api 사용하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 710px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/32a5df3c23949ec622af96963a1873d2/7131f/jdbc.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 74.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAACxElEQVR42nVT224SURTlG/2JGh+8xKS+Wa3amBh9MMa+VkwAi22hpaRVQqClV6AU2oECM9zKwAyXggzMcO3ynI3TxISeZGXtGeZs1tpnHYsxGENp6Whqfcg3XYYeNGMIvm4xXfpwglxNh9zuY2K+vGdZUpUuzksdxBkS1xrVgqxRs2q1img0iouLC5zH40gwTiQSiLO63+/PbvhyI4un9is8/3GFeWcazxyMV9PQ+mOcRSP4urwMh8MBm83G2A6r1YqVlRV0Op2pi9v/JVvkVh/5hsEs9SCpXVYza63pv/9ptyFJEsrlMkGWKygWi4TRaDRb4YedAl65RbzzSHjNeMElEvcGE5RLRezt7yMcDuPk5ASnp6fER0dHMAxjtsJQ9ga/hQZ8SQahTnXgqokx+67dakEURVJUKBTuOJ/P36+QN3DHanCdKdiMKYxVeM5VjCZgm/Pw+/04Pj4mcIUHBwfYZ6pNhZPJhFSasHz2FbHE7C55cnjvzeHNlsTsi9CZ5aRwCbvdAZfLRXC73VhfX6da07TZlq+bBqS6DlHpIlvVILG88Xd88U38MCqVCoHHSJZlqnmjZrMJQRCQTqeRSqVoPJYXPzOY+ybg0fck5qxJPPgSw0P2zGOTl0Ts7OySzVAohMPDQwSDQfh8PrLMG9ntdqytrcHpdMLr9Zqx0VGo91BqMNwYqLAbwZ2Mx2MKMN/Moes6PZuhNhVydclkkiJm+bRbwFs2twVXlsL92JaaxmZ4i1KxQIfCo2LGhqvkau+NjZ9FZDtRhyeuws1OeOOshl+XDQxZbrp8hmxmtVoNqqoSK4pCs+TqZ8aGb/bE69iKqXCGK1gNK9iO1yg27XYL2WwWuVzuDtwWZ96wxXLKLWcyGbJNlj8yy4ubIsVl3pnBE3avF5ll/Z/lYHAPkUiELJs3hlseDAakNBAI0O/84Dj/BU1OMu3fQ/HOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;jdbc&quot;
+        title=&quot;&quot;
+        src=&quot;/static/32a5df3c23949ec622af96963a1873d2/7131f/jdbc.png&quot;
+        srcset=&quot;/static/32a5df3c23949ec622af96963a1873d2/3684f/jdbc.png 225w,
+/static/32a5df3c23949ec622af96963a1873d2/fc2a6/jdbc.png 450w,
+/static/32a5df3c23949ec622af96963a1873d2/7131f/jdbc.png 710w&quot;
+        sizes=&quot;(max-width: 710px) 100vw, 710px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;    // 1. JDBC 드라이버 로드는 JDBC4.0부터 클래스 경로에 있는 모든 드라이버가 자동으로 로드되기 때문에 직접 Class.forName을 호출할 필요가 없다.
+    public Member findById(String memberId) throws SQLException {
+        String sql = &amp;quot;select * from member where member_id = ?&amp;quot;;
+
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs =  null;
+
+        try {
+            // 2. 데이터베이스 연결 (커넥션 생성)
+            con = getConnection();
+
+            // 3. SQL 명령을 전송하기 위한 Statement 준비 (PreparedStatement 또는 CallableStatment)
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, memberId);
+
+            // 4. SQL문 전송
+            // 5. 질의문 결과(ResultSet) 생성
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Member member = new Member();
+                member.setMemberId(rs.getString(&amp;quot;member_id&amp;quot;));
+                member.setMoney(rs.getInt(&amp;quot;money&amp;quot;));
+                return member;
+            } else {
+                throw new NoSuchElementException(&amp;quot;member not found memberId = {}&amp;quot; + memberId);
+            }
+        } catch (SQLException e) {
+            log.error(&amp;quot;db error&amp;quot;, e);
+            throw e;
+        } finally {
+            // 6. 연결 해제 (사용된 리소스 해제)
+            close(con, pstmt, rs);
+        }
+    }
+
+    public Connection getConnection() {
+        try {
+            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            log.info(&amp;quot;get connection = {}, class = {}&amp;quot;, connection, connection.getClass());
+            return connection;
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        }
+    }&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/898fb4670e3f3fb1f814df9e31154f25/c2d9c/sequence.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 30.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmUlEQVR42n2P309ScRjGz3/RVl1oEmAl4K+FuS7sopuu/StKUfMXbl2RGvh/uBDlyEVOo+U6evCg44Qo57QWuCkH0VyCtWKw+enL7MKrnu2zPXufvXvfR0ql0szPh1mWl4lGoyxEZE5Ov9NQPL5OeCFCLCaL+RJy7B21Wo3/SRqbeMXNWy10tXfgcbm4Y2vjk6JSrF7y9Fk/LXcd9Hg92B338XQ+5vTfsXq9TqVywfn5FeVyhT/VKlIulyehJlhTNBRVQ9OSGMUzLmqXmIYhMo1VJcmGmmQ3naYqlhpaVxI473XT2+ul70kPzeKRwHQIqVEv/y1P0shhfhUIf/xDXPv1k6zxhUxmn487GfTdfbJZg8OTMw7Kv9nc1hkdnWR80o9/aooB3whvwxGk1zMhbty24XZ3Ym914XzQhba1hWmatLU/osnmwPuwVWROmu1u5JX3lEolCkeHFIsWVkFgWVfeKiAtLi4RCEwTDIaYmX1DMDTHpqqK6hrjE36evxhkeHiIgUEfvqGXfIjH2dvLkErp6HqDz9fQ+QuNFWqRUbGraAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;sequence&quot;
+        title=&quot;&quot;
+        src=&quot;/static/898fb4670e3f3fb1f814df9e31154f25/1cfc2/sequence.png&quot;
+        srcset=&quot;/static/898fb4670e3f3fb1f814df9e31154f25/3684f/sequence.png 225w,
+/static/898fb4670e3f3fb1f814df9e31154f25/fc2a6/sequence.png 450w,
+/static/898fb4670e3f3fb1f814df9e31154f25/1cfc2/sequence.png 900w,
+/static/898fb4670e3f3fb1f814df9e31154f25/c2d9c/sequence.png 1326w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DriverManager와 Driver&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;DriverManager가 모든 Driver를 로드한 다음, 연결 요청이 있을 때마다 각 드라이버에 차례대로 대상 URL에 연결을 시도하도록 요청한다. (&lt;a href=&quot;https://www.baeldung.com/java-spi&quot;&gt;Service Provider Interface&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Driver는 모든 드라이버 클래스가 구현해야 하는 인터페이스이며, 실질적으로 데이터베이스에 연결을 시도하고 Connection을 반환하는 &lt;code class=&quot;language-text&quot;&gt;connect()&lt;/code&gt; 메서드가 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Connection&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;특정 데이터베이스와의 연결(세션)을 유지하며, SQL문이 실행되고 결과가 반환되는 컨텍스트이다.&lt;/li&gt;
+&lt;li&gt;데이터베이스의 메타정보를 조회하거나 트랜잭션의 격리 수준과 커밋 모드 등을 수정하는 책임을 가지고 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PreparedStatement&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;SQL문을 나타내는 객체이며, 파라미터를 바인딩할 수 있다.&lt;/li&gt;
+&lt;li&gt;SQL문을 실행하고 결과를 반환하는 책임이 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ResultSet&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터베이스 결과 집합을 나타내며, 결과 집합의 데이터 행을 가리키는 커서를 유지한다.&lt;/li&gt;
+&lt;li&gt;레코드의 데이터를 특정 데이터 타입으로 가져오는 방법을 제공한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;아래와 같이 사용하는 데이터베이스 드라이버에 따라 다른 구현체가 선택되어 실행된다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JDBC API&lt;/th&gt;
+&lt;th&gt;H2&lt;/th&gt;
+&lt;th&gt;MySQL&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;java.sql.Driver&lt;/td&gt;
+&lt;td&gt;org.h2.Driver&lt;/td&gt;
+&lt;td&gt;com.mysql.cj.jdbc.NonRegisteringDriver&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;java.sql.Connection&lt;/td&gt;
+&lt;td&gt;org.h2.jdbc.JdbcConnection&lt;/td&gt;
+&lt;td&gt;com.mysql.cj.jdbc.ConnectionImpl&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;java.sql.PreparedStatement&lt;/td&gt;
+&lt;td&gt;org.h2.jdbc.JdbcPreparedStatement&lt;/td&gt;
+&lt;td&gt;com.mysql.cj.jdbc.ClientPreparedStatement&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;java.sql.ResultSet&lt;/td&gt;
+&lt;td&gt;org.h2.jdbc.ResultSet&lt;/td&gt;
+&lt;td&gt;com.mysql.cj.jdbc.result.ResultSetInternalMethods&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;커넥션-생성-추상화&quot; style=&quot;position:relative;&quot;&gt;커넥션 생성 추상화&lt;a href=&quot;#%EC%BB%A4%EB%84%A5%EC%85%98-%EC%83%9D%EC%84%B1-%EC%B6%94%EC%83%81%ED%99%94&quot; aria-label=&quot;커넥션 생성 추상화 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 816px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/661794a0a401f3f85d631b3888725674/b4098/individualConnection.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 33.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABH0lEQVR42l2Q6YrCUAyF+/6PJShuoNAFrT9cumgXtSrutmf4ApWZCYTk5ibnnMSZTCaaz+fmo9FIw+FQvu/rfr/rdrtZbPPX66WmafR+v/X5fISRP59Pe/Pn0IRvNht5nvf1KIq03W6tvl6vtVwuFYahsixTHMdKkkRFUajf76vT6WixWBiBMx6Pdblc1O12TSXNgADIUK/XUxAEGgwGpj7PcwMFDAK2OZ1ORo5K53q9qq5rU5CmqXa7nSmEEV+tVgYCEfWyLO293++/9fP5bCTgOMhkZRgw7oChcDqd/qkxxD0RQQQApfQeDgerGSAfrFdVlfnxeDTnFCghJ9Lz2yBqyYi2MmA8Ho+HDbbyXdfVbDazlbgRf/TQy8x/b+s/P5kOSM7JLvYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;individualConnection&quot;
+        title=&quot;&quot;
+        src=&quot;/static/661794a0a401f3f85d631b3888725674/b4098/individualConnection.png&quot;
+        srcset=&quot;/static/661794a0a401f3f85d631b3888725674/3684f/individualConnection.png 225w,
+/static/661794a0a401f3f85d631b3888725674/fc2a6/individualConnection.png 450w,
+/static/661794a0a401f3f85d631b3888725674/b4098/individualConnection.png 816w&quot;
+        sizes=&quot;(max-width: 816px) 100vw, 816px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이전에 알아보았던 &lt;code class=&quot;language-text&quot;&gt;DriverManager.getConnection(...)&lt;/code&gt;을 통한 커넥션 생성은 항상 새로운 커넥션을 생성한다.&lt;br&gt;
+이런 비효율적인 작업을 &lt;strong&gt;Connection Pool을 통해 개선할 수 있다.&lt;/strong&gt;&lt;br&gt;
+하지만 Connection Pool을 사용해서 Connection을 얻어오는 방법과 DriverManager를 사용해서 Connection을 얻어오는 방법이 서로 다를 수 있기에 자바는 &lt;strong&gt;Connection을 획득하는 방법을 추상화 시킬 수 있는 &lt;code class=&quot;language-text&quot;&gt;javax.sql.DataSource&lt;/code&gt; 인터페이스를 제공한다.&lt;/strong&gt;&lt;br&gt;
+JDBC API처럼 드라이버 공급업체에서 해당 DataSource 인터페이스를 구현해놓았다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c8a39f4b73a98fcfdcd300564cc7f77f/a3bed/dataSource.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 40.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXUlEQVR42o2RTUvDQBCGF/pz/AHevNSD9OzNi/gH9OpZ8CYeRagHwYMaLwUFEVtBpEmgYJuDaNOkpiEfhSa1janbfPS1WawkBbEDw+zOzjy8s0OwgE0mExZt20a1WoUoihAEAfV6HbquQ1EUOI7DnCTFaZ8HpfPNpgynP8CIBgjCGHJLQa1WA8dx7J1SCrKIwjAM8en78IYDuLYG19LQN9vwnC7irAYQ0zSZ7E6n8xs1TWNnVVXhui6GQ28qN4Le/cDGwQPW929R2LvHOW8mc2SgxPM8GIYBy7LQaDQgyzIqlQokSQLP8+xO6XjaF6IsvoGsniCXPwLJX2LzWE0GzQLTcoMgYPCZ93o9lvP9EeI4hv9FURLa4J4UnJVf8PpuZ5bGgP8tJbEoihHQESTZwMruDZZ3LrC0fY3DOyP54b8Vzm92Box/Oh6fVZDCKXKFIsjaFbaKrWl2jCgF/AZBXU6tROQwFQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;dataSource&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c8a39f4b73a98fcfdcd300564cc7f77f/1cfc2/dataSource.png&quot;
+        srcset=&quot;/static/c8a39f4b73a98fcfdcd300564cc7f77f/3684f/dataSource.png 225w,
+/static/c8a39f4b73a98fcfdcd300564cc7f77f/fc2a6/dataSource.png 450w,
+/static/c8a39f4b73a98fcfdcd300564cc7f77f/1cfc2/dataSource.png 900w,
+/static/c8a39f4b73a98fcfdcd300564cc7f77f/21482/dataSource.png 1350w,
+/static/c8a39f4b73a98fcfdcd300564cc7f77f/a3bed/dataSource.png 1721w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;    @Test
+    void dataSourceDriverManager() throws SQLException {
+        DataSource dataSource = new DriverManagerDataSource(URL, USERNAME, PASSWORD);
+        
+        useDataSource(dataSource);
+    }
+
+    @Test
+    void dataSourceConnectionPool() throws SQLException {
+        HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setJdbcUrl(URL);
+        dataSource.setUsername(USERNAME);
+        dataSource.setPassword(PASSWORD);
+        dataSource.setMaximumPoolSize(10);
+        dataSource.setPoolName(&amp;quot;My Pool!!!&amp;quot;);
+
+        useDataSource(dataSource);
+    }
+
+    private void useDataSource(DataSource dataSource) throws SQLException {
+        Connection con1 = dataSource.getConnection();
+        Connection con2 = dataSource.getConnection();
+        ...
+    }&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// DrivetManager를 통한 요청할 때마다 Connection 새로 생성
+[main] DEBUG o.s.j.d.DriverManagerDataSource -- Creating new JDBC DriverManager Connection to [..]
+[main] DEBUG o.s.j.d.DriverManagerDataSource -- Creating new JDBC DriverManager Connection to [..]
+
+// HikariCP 초기화를 위한 Connection 생성
+[main] INFO  com.zaxxer.hikari.pool.HikariPool -- My Pool!!! - Added connection conn0: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn1: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn2: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn3: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn4: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn5: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn6: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn7: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn8: ...
+[connection adder] DEBUG ...HikariPool -- My Pool!!! - Added connection conn9: ...&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;이 추상화 덕분에 클라이언트 입장에서는 인터페이스에만 의존하기 때문에 Connection을 반환하는 DataSource의 구현체가 변경되어도 상관없다.&lt;/p&gt;
+&lt;h1 id=&quot;스프링-서비스-추상화&quot; style=&quot;position:relative;&quot;&gt;스프링 서비스 추상화&lt;a href=&quot;#%EC%8A%A4%ED%94%84%EB%A7%81-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%B6%94%EC%83%81%ED%99%94&quot; aria-label=&quot;스프링 서비스 추상화 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Connection에 대한 추상화를 통해 데이터베이스 의존성에 대한 결합도가 약해졌지만 아직 문제가 있다.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;데이터 접근 기술(JDBC, JPA...)마다 다른 트랜잭션 사용 방법은 어떻게 통일할 수 있을까? → &lt;strong&gt;트랜잭션 추상화&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;애플리케이션의 서비스 로직에 DB 트랜잭션 경계 설정을 사용하기 위해서는 어떻게 해야 할까? → &lt;strong&gt;리소스 동기화&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;반복되는 JDBC API 코드는 어떻게 해결할 수 있을까? → &lt;strong&gt;트랜잭션 AOP&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;스프링은 이미 모두 해결해놓았다.&lt;/p&gt;
+&lt;h2 id=&quot;트랙잭션-추상화&quot; style=&quot;position:relative;&quot;&gt;트랙잭션 추상화&lt;a href=&quot;#%ED%8A%B8%EB%9E%99%EC%9E%AD%EC%85%98-%EC%B6%94%EC%83%81%ED%99%94&quot; aria-label=&quot;트랙잭션 추상화 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Spring 프레임워크는 트랜잭션 관리를 위한 일관된 추상화를 제공한다. 대표적인 인터페이스들을 알아보자.&lt;br&gt;
+트랜잭션 상태를 질의할 수 있고 트랜잭션 Commit,Rollback에 사용되는 &lt;code class=&quot;language-text&quot;&gt;TransactionStatus&lt;/code&gt; 인터페이스를 제공한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4b988c7e14f0a66e7ac4d3ba40607a45/fbf76/transactionStatus.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABk0lEQVR42nVS25ajIBD0N1au4iVoIAJmzs5sJiLiZTP//0Hb6mw2L3tOnabFKrpoOrGdtd3VbsvVuTdIykq21hjbwafW5iRr6xzsm51q3dV1b835QmiW3MPHvfdxnuM6hTEOY2yUuvl3H/3yWH++37S53MPt9tmPyzQuse8HoIEeE56kiKWIIswI54gyAOEiJYxkHGcsJZSwDG9gmDPMeJrSg0+ZSBgXjOeMbSBEyKaJa++HsP5+zMu6rg/IM1FSKg7ORuY5KDfxsRwgJINYSVmUstaqVqo61UUlweEr7Yl/YmiAKErdXqAZZ9U2Sp+VPnKlW57l/xHvzkEs6ybM9wGaNsY4f8XlKwxhmhdwLvISmPsFxdN5QghHiEEDEKaY5ikpAD9QxkrDTwazApEc0RJhvnM2pDt/E5+0+xWnYQhQEMr4EIcQ47Q4d4VzoYL7HDwQQvQ+gIXeB3gqeF2RV0leNQoGwLjWdi0MB0TjYBLqRsNF4Hip7cV8779GnhXfttMD+G+C2LPDGL/8PYDgqTfbfwAyBWv2hBAolwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;transactionStatus&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4b988c7e14f0a66e7ac4d3ba40607a45/1cfc2/transactionStatus.png&quot;
+        srcset=&quot;/static/4b988c7e14f0a66e7ac4d3ba40607a45/3684f/transactionStatus.png 225w,
+/static/4b988c7e14f0a66e7ac4d3ba40607a45/fc2a6/transactionStatus.png 450w,
+/static/4b988c7e14f0a66e7ac4d3ba40607a45/1cfc2/transactionStatus.png 900w,
+/static/4b988c7e14f0a66e7ac4d3ba40607a45/fbf76/transactionStatus.png 1252w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;그리고 DataSource와 TransactionStatus를 사용하는 &lt;code class=&quot;language-text&quot;&gt;PlatformTransactionManager&lt;/code&gt; 인터페이스를 제공한다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;org.springframework.transaction.PlatformTransactionManager&lt;/code&gt; 인터페이스는 명령형 트랜잭션 관리를 위한   트랜잭션 추상화의 핵심이다.&lt;br&gt;
+(반응형을 위한 ReactiveTransactionManager 인터페이스도 존재한다.)&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public interface PlatformTransactionManager extends TransactionManager {
+
+    TransactionStatus getTransaction(TransactionDefinition definition) 
+        throws TransactionException;
+    void commit(TransactionStatus status) throws TransactionException;
+    void rollback(TransactionStatus status) throws TransactionException;
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f0f039ea5f89657df54fda01d9f03f06/22284/platformTransactionManager.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 32%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVR42k2QCY7DMAhFc48m3rJ6iW0wTtK0c/9rDWnVqtKTBZgPXzRCmi+d0CGu5/m435/Oh3Faptm9sFL1v51vmk6wxghlpL7efhxp35Dq4ixWSrlAISTS/SAVC/SHl5hXIRKUwh1rzFyaFj9MVpmxYy/S3FoldZ8AMhLWI0PBsvXDfGtlwx82RCACpARY6uGBQsL9eG7Hn424QqXtBNpLPUOuCTcsOzuaF8e2Ne/hnTFTTBhj5tTa4H1kxsku1nu/csW56wqz9dYFHyIfohFCs8OEBS4/lafwuLZTb37jT6q/8T+c3DjL4t5WcQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;platformTransactionManager&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f0f039ea5f89657df54fda01d9f03f06/1cfc2/platformTransactionManager.png&quot;
+        srcset=&quot;/static/f0f039ea5f89657df54fda01d9f03f06/3684f/platformTransactionManager.png 225w,
+/static/f0f039ea5f89657df54fda01d9f03f06/fc2a6/platformTransactionManager.png 450w,
+/static/f0f039ea5f89657df54fda01d9f03f06/1cfc2/platformTransactionManager.png 900w,
+/static/f0f039ea5f89657df54fda01d9f03f06/21482/platformTransactionManager.png 1350w,
+/static/f0f039ea5f89657df54fda01d9f03f06/d61c2/platformTransactionManager.png 1800w,
+/static/f0f039ea5f89657df54fda01d9f03f06/22284/platformTransactionManager.png 2428w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;리소스-동기화&quot; style=&quot;position:relative;&quot;&gt;리소스 동기화&lt;a href=&quot;#%EB%A6%AC%EC%86%8C%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94&quot; aria-label=&quot;리소스 동기화 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;스프링은 Connection 동기화를 위해 &lt;code class=&quot;language-text&quot;&gt;ThreadLocal&lt;/code&gt;을 사용하는 &lt;strong&gt;TransactionSynchronizationManager&lt;/strong&gt; 를 제공한다.&lt;br&gt;
+AbstractPlatformTransactionManager와 이 추상 클래스를 상속하고 있는 하위 클래스는 템플릿 메서드 패턴으로 협력하며, TransactionSynchronizationManager를 이용한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public class MemberService {
+
+    private final PlatformTransactionManager transactionManager;
+
+    public void accountTransfer(String fromId, String toId, int money) {
+        // TransactionStatus를 생성하면서 트랜잭션을 시작한다.
+        TransactionStatus status = transactionManager.getTransaction(
+            new DefaultTransactionDefinition()
+        );
+
+        try {
+            bizLogic(fromId, toId, money);
+            transactionManager.commit(status);
+        } catch (Exception e) {
+            transactionManager.rollback(status);
+            throw new IllegalStateException(e);
+        }
+    }
+    ...
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ceb7c0749bcfbdac796575bc45f62089/1c181/transactionSynchronization.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABt0lEQVR42nWS227iUAxF+f/vQTwj8VAQggppWkBcCoWQEEJCroTc1tinoepoZo7kWMmJl+1td/jfaRo4nWD/+eUdB85nqjDEEb/dbNiIrddroihqQxo6Pxl5nuN5nsQ6BEFAld8pAp/d+zt4F7hcqOX99WVEt9tlOByyXC65Xq9/A+u6lgLOTKdTer0e8/kc7+RQJSlhnFDUUIrdC7C9CN/3sSwL27ZNhff73dg3sKoqacXlbb5gNBzxJlU57pVM7qy4YevDIYT4AYlAmzbuKFDtShOEIkeHsqQp5K+qJLmF2HuL+HjAl2qLNAW5q8qKSgi16tqSVJLD4cBkMmG1WhlolmUClMfjFhNrG15K5CdEbkAaZoR+Sh5EBqqcoiiMzqqV6rZYLOj3+0amZ5Wm5Vqzi4/yhs1qy6/pK57rfQndtlZKJ67rcrvdDEyrUc2N1i1ME3ae0zFtJA/so0WZpZxVcFkXDVK7yIQ1UI9ugbZ7au+f8Xo6z5UzwLRk/bEjkCq22w8zRQ3WyhQwGAyYzWaMx2MzWR2kmm6IQr/X5slPHjW745n90cbx/D8yq3YK1m/qFfSv8xuiKPpAxN4VpAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;transactionSynchronization&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ceb7c0749bcfbdac796575bc45f62089/1cfc2/transactionSynchronization.png&quot;
+        srcset=&quot;/static/ceb7c0749bcfbdac796575bc45f62089/3684f/transactionSynchronization.png 225w,
+/static/ceb7c0749bcfbdac796575bc45f62089/fc2a6/transactionSynchronization.png 450w,
+/static/ceb7c0749bcfbdac796575bc45f62089/1cfc2/transactionSynchronization.png 900w,
+/static/ceb7c0749bcfbdac796575bc45f62089/21482/transactionSynchronization.png 1350w,
+/static/ceb7c0749bcfbdac796575bc45f62089/d61c2/transactionSynchronization.png 1800w,
+/static/ceb7c0749bcfbdac796575bc45f62089/1c181/transactionSynchronization.png 2696w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;DataSourceUtils.getConnection()&lt;/code&gt; : TransactionSynchronizationManager가 관리하는 Connection이 있으면 해당 Connection을 반환한다. 없으면 생성해서 반환한다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;DataSourceUtils.releaseConnection()&lt;/code&gt; : 동기화된 Connection은 닫지 않고, 동기화되지 않은 Connection은 닫아버린다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;트랜잭션-aop&quot; style=&quot;position:relative;&quot;&gt;트랜잭션 AOP&lt;a href=&quot;#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-aop&quot; aria-label=&quot;트랜잭션 aop permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;서비스 추상화를 통해 유연해졌고, 트랜잭션 동기화 매니저를 통해 Connection도 동기화하였다.&lt;br&gt;
+하지만 아직 서비스 계층에서 트랜잭션 관련 코드가 남아있는데, 이 문제를 &lt;code class=&quot;language-text&quot;&gt;@Transacitonal&lt;/code&gt;을 통해 해결할 수 있다.&lt;br&gt;
+일반적으로 데이터베이스, 트랜잭션 관련 API를 직접 사용하는 것보다 Spring 추상화를 통한 작업이 훨씬 더 유연하기 때문에 DataSourceUtils나 다른 헬퍼 클래스 사용을 자제하는 것이 좋다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// [4]
+public interface Service {
+    // [3]
+    void method1();
+    // [3]
+    void method2();
+}
+
+// [2]
+public class ServiceImpl implements Service {
+    // [1]
+    public void method1(){ ... }
+    // [1]
+    public void method2() { ... }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@Transactional&lt;/code&gt;을 적용할 때 &lt;strong&gt;4단계의 대체정책&lt;/strong&gt; 을 이용한다.&lt;br&gt;
+타깃 오브젝트의 메소드 → 타깃 클래스 → 선언 메소드 → 선언 클래스(또는 인터페이스)의 순서에 따라서 적용됐는지 차례대로 확인하고,
+가장 먼저 발견되는 속성정보를 사용하게된다.&lt;br&gt;
+그리고 &lt;code class=&quot;language-text&quot;&gt;public&lt;/code&gt;으로 정의된 메서드만 트랜잭션이 걸리게 스프링이 제한해놓았다.&lt;/p&gt;
+&lt;p&gt;이 AOP를 적용하기 위해 아래의 클래스가 제공된다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;어드바이저&lt;/strong&gt; : &lt;code class=&quot;language-text&quot;&gt;BeanFactoryTransactionAttributeSourceAdvisor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;포인트컷&lt;/strong&gt; : &lt;code class=&quot;language-text&quot;&gt;TransactionAttributeSourcePointcut&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;어드바이스&lt;/strong&gt; : &lt;code class=&quot;language-text&quot;&gt;TransactionInterceptor&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/49c8549d53cd8118065147c65dac8727/50f29/transactionalAOP.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 23.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9ElEQVR42mWPy3KEIBBF/ZDogCiCgLxEZ5GqSVZj/v+DbhomySaLW5fu0y+6fuCQSsM6j+E2/lPlbz1vXuNFrRiFfMXDizMuoLSBUgZdLXKbRy4FYpLUzFrR74BpXjDPqr1vTCDmTEMNeqqrTNDw2pfyTiroBCV9TAiU0Ktr2wUNqD7JBWkvKOcd86JRa3M56IBIC0dYvyGmHcY6yt9p2YlunmaY1cLaAE3f8Z4gXeHpamsMgg+IIcMZh3XViDE2xtkIMU6Np3iQRyip0F17wjN6XDk2fZHelURhAw7O8eHsH3vo5SfPcI4Mn8SeKZCIk19hwzeDEZUva0tLfQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;transactionalAOP&quot;
+        title=&quot;&quot;
+        src=&quot;/static/49c8549d53cd8118065147c65dac8727/1cfc2/transactionalAOP.png&quot;
+        srcset=&quot;/static/49c8549d53cd8118065147c65dac8727/3684f/transactionalAOP.png 225w,
+/static/49c8549d53cd8118065147c65dac8727/fc2a6/transactionalAOP.png 450w,
+/static/49c8549d53cd8118065147c65dac8727/1cfc2/transactionalAOP.png 900w,
+/static/49c8549d53cd8118065147c65dac8727/21482/transactionalAOP.png 1350w,
+/static/49c8549d53cd8118065147c65dac8727/d61c2/transactionalAOP.png 1800w,
+/static/49c8549d53cd8118065147c65dac8727/50f29/transactionalAOP.png 3038w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4b3bc8b5068ee8ed290789cdd4624700/fe6cb/transactional.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8ElEQVR42oVTa2/aQBD0//9FqZR8AjUKEUmkBgOC2Bgwxg9e5mH8nM5cYtRUlXrScvZ5b3ZmdrHwn1VVFc7nM47HI06nE+rLBXUQ4Oy6AHesVkAUKdHkW/ppmuYbSFMUaK5XgJe3cYzxeIyH+3vYwyHSJMGV4do26rJEmecomV/y+QZY1zWyLDNMtFcMbDYmouUS/ZcX/Li7Q+/5Gcl6bYDsfh+z2Qwh2SliFs4JbgATVhyNRhgMBvj1/o5AcnhJvBsWU2JBFiqmdSFz5Ym5TaYu8xeLhbHEAK7oxVOvhzcy+fn4CPfjAzcr/rKj9TU9HJCmKSaTCcIwpI2RKWqJiaJm9Wa///RPZzL5y+jW4z+9Fqh8W9ISyRWgClgFfSp3O+TcL/yYcS8IXPAs226NDHkrADG4slnyXDZNp1N0Oh0jW++ywsqZpBUTbPz6isj3b0w2BNywQEBLNDZ6Fos9C4qVgLrdLobsvnKMh6Jds3pAoBVj7s1MtYDzpXc1RHIcxzFdFbDPczVoRxUqUn81TkQsyah4sKax3nzOjs0MgEBluJh4nmcANQVz5kiqvutM4Ac2qF3WJzKwCGI43hJ+mNCvGu04yTOBik17sWVllFDqN0C96IJPiQN64nBklCSfNA6aNUmVRMkViEj86x8mwN/6XJBgmdiPlQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;transactional&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4b3bc8b5068ee8ed290789cdd4624700/1cfc2/transactional.png&quot;
+        srcset=&quot;/static/4b3bc8b5068ee8ed290789cdd4624700/3684f/transactional.png 225w,
+/static/4b3bc8b5068ee8ed290789cdd4624700/fc2a6/transactional.png 450w,
+/static/4b3bc8b5068ee8ed290789cdd4624700/1cfc2/transactional.png 900w,
+/static/4b3bc8b5068ee8ed290789cdd4624700/21482/transactional.png 1350w,
+/static/4b3bc8b5068ee8ed290789cdd4624700/d61c2/transactional.png 1800w,
+/static/4b3bc8b5068ee8ed290789cdd4624700/fe6cb/transactional.png 2879w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Spring AOP 덕분에 비즈니스 로직까지 모두 해결하였다. 프록시 생성에 대한 자세한 내용은 &lt;a href=&quot;https://jdalma.github.io/2024y/postprocessor/#%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0&quot;&gt;빈 후처리기를 이용한 프록시 생성에 대해&lt;/a&gt;를 참고하자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;spring-61-이전-읽기쓰기-분리&quot; style=&quot;position:relative;&quot;&gt;Spring 6.1 이전 읽기/쓰기 분리&lt;a href=&quot;#spring-61-%EC%9D%B4%EC%A0%84-%EC%9D%BD%EA%B8%B0%EC%93%B0%EA%B8%B0-%EB%B6%84%EB%A6%AC&quot; aria-label=&quot;spring 61 이전 읽기쓰기 분리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;JDBC부터 스프링이 Connection을 가져오는 방법을 추상화한 것과 ThreadLocal + TransactionSynchronizationManager를 통해 리소스 동기화를 하는 방법 그리고 스프링 AOP를 통해 트랜잭션 관련 로직과 비즈니스 로직을 완벽히 분리해내는 것까지 알아보았다.&lt;br&gt;
+이제 본론으로 돌아가서 읽기/쓰기 분리한 방법에 대해 알아보자.&lt;br&gt;
+테스트 환경은 Spring Boot 3.2.2, 도커 컨테이너로 직접 실행한 MySQL 컨테이너 2개, JdbcTemplate을 사용하였다.&lt;br&gt;
+자세한 예제는 &lt;a href=&quot;https://github.com/jdalma/datasource-routing-test&quot;&gt;datasource-routing-test&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;yml&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;spring:
+  datasource:
+    primary:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3306/test
+      username: root
+      password: root
+    secondary:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3307/test
+      username: root
+      password: root&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Configuration
+class ReplicationDataSourceConfig {
+    @Bean
+    @Primary
+    @DependsOn(&amp;quot;primaryDataSource&amp;quot;, &amp;quot;secondaryDataSource&amp;quot;, &amp;quot;routingDataSource&amp;quot;)
+    fun dataSource(): DataSource = LazyConnectionDataSourceProxy(routingDataSource())
+
+    @Bean
+    fun routingDataSource(): DataSource = RoutingDataSource(primaryDataSource(), secondaryDataSource())
+
+    @Bean
+    @ConfigurationProperties(prefix = &amp;quot;spring.datasource.primary&amp;quot;)
+    fun primaryDataSource(): DataSource {
+        return DataSourceBuilder.create().build()
+    }
+
+    @Bean
+    @ConfigurationProperties(prefix = &amp;quot;spring.datasource.secondary&amp;quot;)
+    fun secondaryDataSource(): DataSource {
+        return DataSourceBuilder.create().build()
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;각 DB로 라우팅 역할을 하는 &lt;code class=&quot;language-text&quot;&gt;RoutingDataSource&lt;/code&gt;에 primary, secondary DataSource를 주입하고 &lt;code class=&quot;language-text&quot;&gt;LazyConnectionDataSourceProxy&lt;/code&gt;로 감싼 DataSource를 &lt;code class=&quot;language-text&quot;&gt;@Primary&lt;/code&gt;로 등록한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5233d78fec13777390de802c6374de46/64ef0/lazyConnection.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABkklEQVR42pWST2+CQBTE/f4fyIs9a+KhXmqtghFEUFH+KCqCsNMZQlOb0kM3eexulp0377evh9sNyHM0c7s+7XbYWBbWjHC9RlUU0DDG4PF4oK6qJiqG9s+jl18ucFYrJFEE8GJNQddx8D6f4202w3yxQMZ/NLIsQ8T/7OUSHzx3XRdxHON+v38LGmWRkDLVtWwgSRJs6MznhcD3UbYOb0zmBwE8CnpM6noegu32h8seOobRh4kgZ8JAZ3LPmzCHA0BREAu0fhITkk7BnE7k0LVtpHRr5FxlMWoKV5oZBRMWWvNcPDX/EtTBgZlHoxH6/T4sMsyPxwZHQbGYCU7nM0o6i8hvv983Bm6sRIx/CSqLGC4I/XUygUNO9/ZRApb6MhhgOBzCJ1vtPZ7LgJJtybOzZImKh7gZlZymAF2ldHq9Xhsn0+kU4/EYNrHsyFOiFtusU/DrYdQB4mbEjwlSXpKYKgjDsMGjUiXk8NUl/qdg1zjTpZyXZdkI1y1XJbgQy5Lt9G/Bou1JNbPKl0OF9mr6T5feUCOP3qmLAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lazyConnection&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5233d78fec13777390de802c6374de46/1cfc2/lazyConnection.png&quot;
+        srcset=&quot;/static/5233d78fec13777390de802c6374de46/3684f/lazyConnection.png 225w,
+/static/5233d78fec13777390de802c6374de46/fc2a6/lazyConnection.png 450w,
+/static/5233d78fec13777390de802c6374de46/1cfc2/lazyConnection.png 900w,
+/static/5233d78fec13777390de802c6374de46/21482/lazyConnection.png 1350w,
+/static/5233d78fec13777390de802c6374de46/d61c2/lazyConnection.png 1800w,
+/static/5233d78fec13777390de802c6374de46/64ef0/lazyConnection.png 4071w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;대략적인 구조는 위와 같다.&lt;br&gt;
+일반적으로는 &lt;code class=&quot;language-text&quot;&gt;4. getConnection()&lt;/code&gt;에서 반환되는 것이 &lt;code class=&quot;language-text&quot;&gt;java.sql.Connection&lt;/code&gt;의 구현체가 반환되지만 &lt;code class=&quot;language-text&quot;&gt;LazyConnectionDataSourceProxy&lt;/code&gt;를 사용하면 Proxy를 반환한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// Statement(또는 PreparedStatement나 CallableStatement)에 대한 요청이 있을 때 실제 JDBC Connection을 느리게 가져오는 Connection 핸들을 반환합니다.
+// 반환된 Connection 핸들은 ConnectionProxy 인터페이스를 구현하여 기본 대상 Connection을 검색할 수 있습니다.
+@Override
+public Connection getConnection() throws SQLException {
+    checkDefaultConnectionProperties();
+    return (Connection) Proxy.newProxyInstance(
+        ConnectionProxy.class.getClassLoader(),
+        new Class&amp;lt;?&amp;gt;[] {ConnectionProxy.class},
+        new LazyConnectionInvocationHandler()
+    );
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;어떤 흐름으로 사용할 Connection을 선택하는지 확인해보자.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3ad8ce5ae7adb9b6b42c9ec6b7057f1e/7798c/dataSourceProxy.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABpUlEQVR42oVS2W7bMBDU/39U+upXB25sJz7g1pKtIyJFk7p4TIeMkyIJihJYSKKWwzk2w/+Wc+ilhFEKfpqAYQCaBraqUF4uOO73OO52+HU8Yv/8jOzr+fAVjyBnHvh9OGDoOkBr4HbDxHeR51BFAUlgdb0iZ1/2DuJDQAjhG8F5nhOLzXoNE8FYoW0BVn8+Q5O5IWvnfaqsnzyE9ijEjFpZqMHDur/AloAtJTeUOUS59zWS+Xq7xY+HB6xWKxhj0n4mlcblWqF5bVHVr6mm2d31Ezj6RhZhHD/ZIXnJMM1ohGK/hRAyKcy0NqjKEsvlEtvthvbcMPQjEP0SIgUi6zqVvrNIgNFD1ePpUBJUp+8EKGSH0+mExWKRfKp4cDCUxidodAQ6MMHdywuainvefQDmxQVPGwZ2ztHy8iS5o+SSDOu6YdXJq3Gyb3JZ0egQZRPAMoiBEt3NwNHbaI33gcVA3NtFWQzAxvHQPdw4w/o4euFjgFqC/KTpq8dHFGQ087+1PvX470PBsYlM6BuuJVkIBCc/NcT0Cs5awVnrGM57Vv9afwBeiwL+2ajGhwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;dataSourceProxy&quot;
+        title=&quot;&quot;
+        src=&quot;/static/3ad8ce5ae7adb9b6b42c9ec6b7057f1e/1cfc2/dataSourceProxy.png&quot;
+        srcset=&quot;/static/3ad8ce5ae7adb9b6b42c9ec6b7057f1e/3684f/dataSourceProxy.png 225w,
+/static/3ad8ce5ae7adb9b6b42c9ec6b7057f1e/fc2a6/dataSourceProxy.png 450w,
+/static/3ad8ce5ae7adb9b6b42c9ec6b7057f1e/1cfc2/dataSourceProxy.png 900w,
+/static/3ad8ce5ae7adb9b6b42c9ec6b7057f1e/7798c/dataSourceProxy.png 1183w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;targetDataSource의 Connection을 통해 DB 세션의 자동 커밋 유무와 트랜잭션 격리수준을 저장한다. 이때 최초 Connection을 생성(커넥션 풀 준비)하고 동기화를 위해 바인딩하게 된다.&lt;/li&gt;
+&lt;li&gt;ConnectionProxy를 구현한 타겟 클래스를 &lt;code class=&quot;language-text&quot;&gt;LazyConnectionInvocationHandler&lt;/code&gt; 구현체로 동적 프록시를 생성하여 Connection 타입으로 반환한다.&lt;/li&gt;
+&lt;li&gt;생성한 Connection 타입의 동적 프록시를 반환하면서 ThreadLocal에 저장한다.&lt;/li&gt;
+&lt;li&gt;데이터 로직 처리에서 Query를 실행한다.&lt;/li&gt;
+&lt;li&gt;바인딩되어 있는 Connection을 조회하여 반환한다.&lt;/li&gt;
+&lt;li&gt;반환받은 Connection으로 Statement를 요청한다.&lt;/li&gt;
+&lt;li&gt;RoutingDataSource를 생성할 때 &lt;code class=&quot;language-text&quot;&gt;setTargetDataSources()&lt;/code&gt;를 통해 정의해놓은 &lt;code class=&quot;language-text&quot;&gt;resolvedDataSources&lt;/code&gt;필드인 라우팅 맵을 이용하여 사용할 Connection을 조회한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;2번&lt;/code&gt;단계는 Connection이 최초 사용되는 경우라면 LazyConnectionDataSourceProxy의 auto-commit 유무와 격리수준 레벨을 세팅하기 위한 Connection을 최초로 생성하는 과정이 발생한다.&lt;br&gt;
+이때 구현 드라이버에 따라 Connectipn Pool이 준비된다. 준비된 ConnectionPool은 바인딩된다.&lt;br&gt;
+(나는 readonly가 아닌 경우에는 항상 primary DB를 사용하도록 하여서 primary HikariCP가 먼저 준비되었다.)&lt;/p&gt;
+&lt;p&gt;일반적인 경우에는 &lt;code class=&quot;language-text&quot;&gt;3번&lt;/code&gt;단계에서 바인딩되는 DataSource는 사용할 DataSource 그 자체가 저장되지만, LazyConnectionDataSourceProxy를 이용하여 감싼 DataSource를 저장하여 &lt;strong&gt;Statement를 생성할 때 사용할 DataSource 라우팅을 통해 결정하는 것이 핵심이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;즉, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;4번&lt;/code&gt;과 같이 query가 실행되어 실제로 Connection이 필요한 경우에만 &lt;code class=&quot;language-text&quot;&gt;7번&lt;/code&gt;을 통해 DataSource를 라우팅하는 RoutingDataSource가 오버라이딩한 &lt;code class=&quot;language-text&quot;&gt;determineCurrentLookupKey()&lt;/code&gt; 메소드를 통해 어떤 DataSource를 사용할지 결정하는 것이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;datasource-router-not-initialized-예외-발생&quot; style=&quot;position:relative;&quot;&gt;DataSource router not initialized 예외 발생&lt;a href=&quot;#datasource-router-not-initialized-%EC%98%88%EC%99%B8-%EB%B0%9C%EC%83%9D&quot; aria-label=&quot;datasource router not initialized 예외 발생 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;조금 더 깔끔하게 작성하고 싶어 DataSource를 등록할 때 &lt;code class=&quot;language-text&quot;&gt;LazyConnectionDataSourceProxy&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;RoutingDataSource&lt;/code&gt;를 한 번에 등록하면 아래와 같이 예외가 발생한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Configuration
+class ReplicationDataSourceConfig {
+    @Bean
+    @Primary
+    @DependsOn(&amp;quot;primaryDataSource&amp;quot;, &amp;quot;secondaryDataSource&amp;quot;)
+    fun routingDataSource(): DataSource = LazyConnectionDataSourceProxy(
+        RoutingDataSource(primaryDataSource(), secondaryDataSource())
+    )
+
+    ...
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;java.lang.IllegalArgumentException: DataSource router not initialized
+...lookup.AbstractRoutingDataSource.determineTargetDataSource(AbstractRoutingDataSource.java:255)
+...lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:213)
+...LazyConnectionDataSourceProxy.checkDefaultConnectionProperties(LazyConnectionDataSourceProxy.java:212)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;원인은 RoutingDataSource가 상속받은 &lt;code class=&quot;language-text&quot;&gt;AbstractRoutingDataSource&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;resolvedDataSource&lt;/code&gt; 필드가 초기화되지 않아 발생한 문제다.&lt;br&gt;
+초기화되는 시점은 &lt;code class=&quot;language-text&quot;&gt;InitializingBean&lt;/code&gt; 인터페이스를 통한 &lt;code class=&quot;language-text&quot;&gt;afterPropertiesSet()&lt;/code&gt; 시점에 (RoutingDataSource 초기화 시점에 정의한) &lt;code class=&quot;language-text&quot;&gt;targetDataSource&lt;/code&gt;를 복사하여 &lt;code class=&quot;language-text&quot;&gt;resolvedDataSource&lt;/code&gt;를 초기화한다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/BeanFactory.html&quot;&gt;Interface BeanFactory&lt;/a&gt;를 보면 BeanFactory에서 12번째 단계에서 &lt;code class=&quot;language-text&quot;&gt;afterPropertiesSet()&lt;/code&gt;를 호출하여 준다.&lt;br&gt;
+즉, &lt;strong&gt;AbstractRoutingDataSource를 상속한 RoutingDataSource 자체가 Bean으로 정의되지 않아 BeanFactory를 통한 작업 과정이 생략되었기에 위와 같은 예외가 발생하는 것이다.&lt;/strong&gt;&lt;br&gt;
+그렇기에 꼭 Bean으로 등록해주여야 한다.&lt;/p&gt;
+&lt;h1 id=&quot;spring-61-이후-추가된-읽기쓰기-분리-개선&quot; style=&quot;position:relative;&quot;&gt;Spring 6.1 이후 추가된 읽기/쓰기 분리 개선&lt;a href=&quot;#spring-61-%EC%9D%B4%ED%9B%84-%EC%B6%94%EA%B0%80%EB%90%9C-%EC%9D%BD%EA%B8%B0%EC%93%B0%EA%B8%B0-%EB%B6%84%EB%A6%AC-%EA%B0%9C%EC%84%A0&quot; aria-label=&quot;spring 61 이후 추가된 읽기쓰기 분리 개선 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;이번에 Spring 6.1.2 부터 &lt;code class=&quot;language-text&quot;&gt;setReadOnlyDataSource()&lt;/code&gt; 메소드가 추가되었으며, 자세한 히스토리는 아래의 이슈 내용을 확인하길 바란다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues/31785&quot;&gt;#31785 Support for a read-only DataSource in LazyConnectionDataSourceProxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues/21415&quot;&gt;#21415 Document LazyConnectionDataSourceProxy setup for routing datasource to act on transaction definition read-only flag&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이전에 사용했던 읽기/쓰기 분리 기준을 정의해 놓았던 &lt;code class=&quot;language-text&quot;&gt;RoutingDataSource&lt;/code&gt;는 필요하지 않고 아래와 같이 작성하면 끝이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Configuration
+class ReplicationDataSourceConfig {
+    @Bean
+    @Primary
+    @DependsOn(&amp;quot;primaryDataSource&amp;quot;, &amp;quot;secondaryDataSource&amp;quot;)
+    fun dataSource(): DataSource = LazyConnectionDataSourceProxy(primaryDataSource()).apply {
+        setReadOnlyDataSource(secondaryDataSource())
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Connection을 생성할 DataSource를 결정할 때 추가된 &lt;code class=&quot;language-text&quot;&gt;getDataSourceToUse()&lt;/code&gt; 메소드로 가져오게 된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public class LazyConnectionDataSourceProxy extends DelegatingDataSource {
+    private DataSource readOnlyDataSource;
+    ...
+
+    private class LazyConnectionInvocationHandler implements InvocationHandler {
+        private boolean readOnly = false;
+
+        private DataSource getDataSourceToUse() {
+            return (this.readOnly &amp;amp;&amp;amp; readOnlyDataSource != null ? 
+                readOnlyDataSource : obtainTargetDataSource()
+            );
+        }
+        ...
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b8d37cbee21c6d8847ad1011bf546150/b1c31/readonlyDataSource.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABoUlEQVR42o1S2ZLCMAzj//9vC7NQoNBy9E56kTaNVg6wwwN7eMZN48SypXihLheoLMNhvcaeLv9dUcBZCzvPGG43FGUJ3TSYJGYMwBiGAWBMHY9QaQrwTGxRclPlOcrrFcVuh3K/hyaAB2w0TF0hPxygzidYrTC1Ldw4AvSJwDnz0vMZYHEPKB/nHGJWipno5IB7sZ7A4km4QZ7EMCzQVxW7uSeP04SS+1wYPXIW8mPZTc/KPatZ0vCHjHWM6a7DibJkPGuZPApVKSrUuY5aY1TKdywx32Fd11itVvikV9TQ8RKEGim5m7kXmCza6wXpdossimB4Dyw29z1m3hUXXT2gIXJJahWBbww6XpLL3rk3BOu5ZqQWUucojjExp+N5GIbY8DEbAXxq+M4sm6rISpNJUTdYBh9YLpcIggAROxyFIjufyWImdc+C/g0ogaewz72dmcBQrVsvS8qJEJduBtFNxoeaexdWv3X4ak3b4XzNfGenJPHyDA8A/0Ayg69j85cJvapWyNldwcfwQ86ReWf/AhRtnOGLc2xkAmbR7wf7AtmAVZ0aJr+yAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;readonlyDataSource&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b8d37cbee21c6d8847ad1011bf546150/1cfc2/readonlyDataSource.png&quot;
+        srcset=&quot;/static/b8d37cbee21c6d8847ad1011bf546150/3684f/readonlyDataSource.png 225w,
+/static/b8d37cbee21c6d8847ad1011bf546150/fc2a6/readonlyDataSource.png 450w,
+/static/b8d37cbee21c6d8847ad1011bf546150/1cfc2/readonlyDataSource.png 900w,
+/static/b8d37cbee21c6d8847ad1011bf546150/21482/readonlyDataSource.png 1350w,
+/static/b8d37cbee21c6d8847ad1011bf546150/b1c31/readonlyDataSource.png 1413w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;1 ~ 3번&lt;/code&gt;은 스프링이 초기화하면서 &lt;code class=&quot;language-text&quot;&gt;SpringTransactionAnnotationParser&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;TransactionAttribute&lt;/code&gt;를 생성하며 생성에 성공한다면 해당 &lt;code class=&quot;language-text&quot;&gt;TransactionAttribute&lt;/code&gt;를 캐싱한다.&lt;br&gt;
+캐싱되는 내용은 간략하게 아래와 같다. 자세한 내용은 &lt;a href=&quot;https://github.com/spring-projects/spring-framework/blob/main/spring-tx/src/main/java/org/springframework/transaction/annotation/SpringTransactionAnnotationParser.java#L59&quot;&gt;SpringTransactionAnnotationParser #L59&lt;/a&gt;를 확인하면 된다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;4 ~ 5번&lt;/code&gt;은 캐시되어 있는 &lt;code class=&quot;language-text&quot;&gt;TransactionAttribute&lt;/code&gt; 목록에서 현재 실행되고 있는 메소드 또는 클래스 기준으로 캐시 정보를 조회하며, 준비 작업을 한다.&lt;br&gt;
+이때 &lt;code class=&quot;language-text&quot;&gt;LazyConnectionDataSourceProxy&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;readonly&lt;/code&gt; 속성을 &lt;code class=&quot;language-text&quot;&gt;TransactionAttribute&lt;/code&gt; 기준으로 업데이트 해준다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TransactionAttribute에는 Transaction의 격리 수준, 전파 속성, &lt;strong&gt;읽기 전용 유무&lt;/strong&gt; , 타임아웃, 롤백할 클래스 이름 등이 저장되어 있다.&lt;br&gt;
+한마디로 &lt;code class=&quot;language-text&quot;&gt;@Transactional&lt;/code&gt;에서 기입할 수 있는 정보들을 묶어 놓은 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;{MethodClassKey@10042} &amp;quot;...MemberService.findAllPrimary() -&amp;gt; 
+    {RuleBasedTransactionAttribute@10043} &amp;quot;PROPAGATION_REQUIRED,ISOLATION_DEFAULT&amp;quot;
+{MethodClassKey@9559} &amp;quot;...MemberService.findAllSecondary() -&amp;gt; 
+    {RuleBasedTransactionAttribute@9560} &amp;quot;PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;7번&lt;/code&gt;의 동적 프록시 &lt;code class=&quot;language-text&quot;&gt;LazyConnectionInvocationHandler&lt;/code&gt;는 매 요청마다 매번 새로 생성된다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;8번&lt;/code&gt; 과정에서 DataSource를 가져올 때 &lt;code class=&quot;language-text&quot;&gt;readOnly&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;readOnlyDataSource&lt;/code&gt; 유무를 기준으로 어떤 DataSource를 사용할지 결정된다.&lt;/p&gt;
+&lt;p&gt;즉, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;readOnlyDataSource&lt;/code&gt; 관리를 &lt;code class=&quot;language-text&quot;&gt;LazyConnectionDataSourceProxy&lt;/code&gt;가 해주면서 추가적인 작업이 필요없어졌다.&lt;/strong&gt;&lt;br&gt;
+만약 읽기 전용으로 라우팅할 것이 아니라면 이전 방법으로 해야 한다.&lt;/p&gt;
+&lt;h1 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;참고&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://etutorials.org/SQL/Postgresql/Part+II+Programming+with+PostgreSQL/Chapter+13.+Using+PostgreSQL+from+a+Java+Client+Application/JDBC+Architecture+Overview/&quot;&gt;JDBC Architecture Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.baeldung.com/java-jdbc&quot;&gt;Introduction to JDBC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.baeldung.com/java-jdbc-loading-drivers&quot;&gt;Loading JDBC Drivers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ONYVhJGl48U&amp;#x26;ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC&quot;&gt;[10분 테코톡] 코코닥의 JDBC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jiwondev.tistory.com/291&quot;&gt;JDBC Connection 에 대한 이해, HikariCP 설정 팁&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-db-1&quot;&gt;스프링 DB 1편 - 데이터 접근 핵심 원리&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-framework/reference/data-access/transaction/tx-resource-synchronization.html&quot;&gt;Synchronizing Resources with Transactions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-framework/reference/data-access/transaction/strategies.html#page-title&quot;&gt;Understanding the Spring Framework Transaction Abstraction&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[invokedynamic 이란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/invokedynamic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/invokedynamic/</guid><pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;발단&quot; style=&quot;position:relative;&quot;&gt;발단&lt;a href=&quot;#%EB%B0%9C%EB%8B%A8&quot; aria-label=&quot;발단 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;자바와 코틀린에서 람다를 처리하는 방식이 다르다는 것을 알게됐다.&lt;br&gt;
 코틀린을 먼저 확인해보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -897,11 +1760,12 @@ invokedynamic 명령어는 컴파일러와 런타임 시스템의 동적 언어 
 &lt;li&gt;트랜잭션 AOP를 이해하기 위한 트랜잭션 프록시 구현&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;위의 내용을 깊진 않지만 넓게 설명해주었다.&lt;br&gt;
-1권을 읽은 분이라면 복습하기 좋고, 1권을 읽지 않았다면 강의에서 설명하는 내용만 찾아서 읽어보면 좋을 것 같다.&lt;/p&gt;
+1권을 읽은 분이라면 복습하기 좋고, 1권을 읽지 않았다면 강의에서 설명하는 내용만 더 자세한 내용을 책에서 읽어보면 좋을 것 같다.&lt;/p&gt;
 &lt;h1 id=&quot;기술&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;기술&lt;/strong&gt;&lt;a href=&quot;#%EA%B8%B0%EC%88%A0&quot; aria-label=&quot;기술 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id=&quot;네티-인-액션-작성-예정&quot; style=&quot;position:relative;&quot;&gt;네티 인 액션 &lt;em&gt;작성 예정&lt;/em&gt;&lt;a href=&quot;#%EB%84%A4%ED%8B%B0-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;네티 인 액션 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&quot;oauth2-인-액션-작성-예정&quot; style=&quot;position:relative;&quot;&gt;OAuth2 인 액션 &lt;em&gt;작성 예정&lt;/em&gt;&lt;a href=&quot;#oauth2-%EC%9D%B8-%EC%95%A1%EC%85%98-%EC%9E%91%EC%84%B1-%EC%98%88%EC%A0%95&quot; aria-label=&quot;oauth2 인 액션 작성 예정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&quot;오브젝트-ing&quot; style=&quot;position:relative;&quot;&gt;오브젝트 ~ing&lt;a href=&quot;#%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-ing&quot; aria-label=&quot;오브젝트 ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;코틀린-디자인-패턴-2e-ing&quot; style=&quot;position:relative;&quot;&gt;코틀린 디자인 패턴 2/e ~ing&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-2e-ing&quot; aria-label=&quot;코틀린 디자인 패턴 2e ing permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&quot;http2-인-액션&quot; style=&quot;position:relative;&quot;&gt;HTTP/2 인 액션&lt;a href=&quot;#http2-%EC%9D%B8-%EC%95%A1%EC%85%98&quot; aria-label=&quot;http2 인 액션 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;사내에서 Armeria + gRPC를 통한 POC를 진행한 적이 있는데 HTTP/2에 대한 이해가 없었어서 힘들었던 경험이 있다.&lt;br&gt;
 위의 경험 때문에 &lt;a href=&quot;https://www.codesoom.com/courses/soomtudy&quot;&gt;코드숨 스터디&lt;/a&gt; 모집을 보고 바로 참가했다.&lt;/p&gt;
@@ -4237,7 +5101,7 @@ InvocationHandler와 다르게 부가기능 구현체는 클라이언트로부�
 &lt;p&gt;Pointcut과 Advice, 이 둘을 묶는 Advisor 각각 빈으로 등록하여 중복을 제거할 수 있게 되었다.&lt;br&gt;
 하지만 &lt;strong&gt;부가기능의 적용이 필요한 타깃 오브젝트마다 거의 비슷한 내용의 ProxyFactoryBean 빈 설정정보를 직접 작성해줘야하는 단점이 있다.&lt;/strong&gt;&lt;br&gt;
 타겟을 제외하면 빈 클래스의 종류, Advice, Pointcut의 설정이 거의 동일하며 빈으로 관리가 가능한데 이러한 중복을 제거할 수 있는 방법은 없을까?&lt;/p&gt;
-&lt;h1 id=&quot;빈-후처리기를-이용한-자동-프록시-생성기&quot; style=&quot;position:relative;&quot;&gt;빈 후처리기를 이용한 자동 프록시 생성기&lt;a href=&quot;#%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0&quot; aria-label=&quot;빈 후처리기를 이용한 자동 프록시 생성기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;8단계-빈-후처리기를-이용한-자동-프록시-생성기&quot; style=&quot;position:relative;&quot;&gt;8단계: 빈 후처리기를 이용한 자동 프록시 생성기&lt;a href=&quot;#8%EB%8B%A8%EA%B3%84-%EB%B9%88-%ED%9B%84%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%83%9D%EC%84%B1%EA%B8%B0&quot; aria-label=&quot;8단계 빈 후처리기를 이용한 자동 프록시 생성기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;이제 스프링에서 프록시를 자동으로 생성하는 방법에 대해 알아볼 차례다.&lt;br&gt;
 말 그대로 &lt;strong&gt;스프링 빈 오브젝트로 만들어지고 난 후에, 빈 오브젝트를 다시 가공할 수 있게 해주는 것이다.&lt;/strong&gt;&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;BeanPostProcessor&lt;/code&gt;를 직접 구현한 아래의 예제를 보자.&lt;/p&gt;
@@ -4494,7 +5358,7 @@ class MyAspect {
 &lt;li&gt;프록시를 구현하기 위해 사용되는 &lt;strong&gt;Reflection&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;프록시의 개념&lt;/li&gt;
 &lt;li&gt;프록시를 구현하는 두 가지의 방법 (&lt;strong&gt;JDK Dynamic Proxy&lt;/strong&gt; 와 &lt;strong&gt;CGLIB&lt;/strong&gt;)&lt;/li&gt;
-&lt;li&gt;프록시를 구현하는 두 가지 방법과 부가기능과 메소드 선별 기능을 스프링이 추상화한 &lt;strong&gt;ProxyFactory&lt;/strong&gt; 와 &lt;strong&gt;ProxyFactoryBean&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;부가기능과 메소드 선별 기능을 스프링이 추상화한 &lt;strong&gt;ProxyFactory&lt;/strong&gt; 와 &lt;strong&gt;ProxyFactoryBean&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;빈 후처리기를 통해 프록시를 편리하게 등록하는 방법&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@Aspect&lt;/code&gt; (AspectJ)를 사용하여 프록시를 등록하는 방법&lt;/li&gt;
 &lt;/ol&gt;
