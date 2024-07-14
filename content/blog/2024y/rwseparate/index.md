@@ -1,6 +1,6 @@
 ---
 title: Spring RW분리를 이해하기 위한 여정 (+ JDBC, 서비스 추상화)
-date: "2024-07-10"
+date: "2024-07-14"
 tags:
    - Lab
    - Spring
@@ -41,7 +41,7 @@ Java 애플리케이션과 데이터베이스 간의 **중간 계층 인터페�
 ```java
     // 1. JDBC 드라이버 로드는 JDBC4.0부터 클래스 경로에 있는 모든 드라이버가 자동으로 로드되기 때문에 직접 Class.forName을 호출할 필요가 없다.
     public Member findById(String memberId) throws SQLException {
-		String sql = "select * from member where member_id = ?";
+        String sql = "select * from member where member_id = ?";
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -125,7 +125,7 @@ JDBC API처럼 드라이버 공급업체에서 해당 DataSource 인터페이스
     @Test
     void dataSourceDriverManager() throws SQLException {
         DataSource dataSource = new DriverManagerDataSource(URL, USERNAME, PASSWORD);
-		
+        
         useDataSource(dataSource);
     }
 
@@ -144,7 +144,7 @@ JDBC API처럼 드라이버 공급업체에서 해당 DataSource 인터페이스
     private void useDataSource(DataSource dataSource) throws SQLException {
         Connection con1 = dataSource.getConnection();
         Connection con2 = dataSource.getConnection();
-		...
+        ...
     }
 ```
 
@@ -168,7 +168,7 @@ JDBC API처럼 드라이버 공급업체에서 해당 DataSource 인터페이스
 
 이 추상화 덕분에 클라이언트 입장에서는 인터페이스에만 의존하기 때문에 Connection을 반환하는 DataSource의 구현체가 변경되어도 상관없다.  
 
-# 트랜잭션 서비스 추상화
+# 스프링 서비스 추상화
 
 Connection에 대한 추상화를 통해 데이터베이스 의존성에 대한 결합도가 약해졌지만 아직 문제가 있다.  
 
@@ -193,7 +193,7 @@ Spring 프레임워크는 트랜잭션 관리를 위한 일관된 추상화를 �
 public interface PlatformTransactionManager extends TransactionManager {
 
     TransactionStatus getTransaction(TransactionDefinition definition) 
-		throws TransactionException;
+        throws TransactionException;
     void commit(TransactionStatus status) throws TransactionException;
     void rollback(TransactionStatus status) throws TransactionException;
 }
@@ -212,10 +212,10 @@ public class MemberService {
     private final PlatformTransactionManager transactionManager;
 
     public void accountTransfer(String fromId, String toId, int money) {
-		// TransactionStatus를 생성하면서 트랜잭션을 시작한다.
+        // TransactionStatus를 생성하면서 트랜잭션을 시작한다.
         TransactionStatus status = transactionManager.getTransaction(
-			new DefaultTransactionDefinition()
-		);
+            new DefaultTransactionDefinition()
+        );
 
         try {
             bizLogic(fromId, toId, money);
@@ -225,7 +225,7 @@ public class MemberService {
             throw new IllegalStateException(e);
         }
     }
-	...
+    ...
 }
 ```
 
@@ -276,15 +276,38 @@ Spring AOP 덕분에 비즈니스 로직까지 모두 해결하였다. 프록시
 
 ***
 
-# 읽기/쓰기 분리하기
+# Spring 6.1 이전 읽기/쓰기 분리
 
+JDBC부터 스프링이 Connection을 가져오는 방법을 추상화한 것과 ThreadLocal + TransactionSynchronizationManager를 통해 리소스 동기화를 하는 방법 그리고 스프링 AOP를 통해 트랜잭션 관련 로직과 비즈니스 로직을 완벽히 분리해내는 것까지 알아보았다.  
+이제 본론으로 돌아가서 읽기/쓰기 분리한 방법에 대해 알아보자.  
+테스트 환경은 Spring Boot 3.2.2, 도커 컨테이너로 직접 실행한 MySQL 컨테이너 2개, JdbcTemplate을 사용하였다.  
+자세한 예제는 [datasource-routing-test](https://github.com/jdalma/datasource-routing-test)에서 확인할 수 있다.  
 
-
-## 두 개의 DataSource 등록
+```yml
+spring:
+  datasource:
+    primary:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3306/test
+      username: root
+      password: root
+    secondary:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3307/test
+      username: root
+      password: root
+```
 
 ```kotlin
 @Configuration
 class ReplicationDataSourceConfig {
+    @Bean
+    @Primary
+    @DependsOn("primaryDataSource", "secondaryDataSource", "routingDataSource")
+    fun dataSource(): DataSource = LazyConnectionDataSourceProxy(routingDataSource())
+
+    @Bean
+    fun routingDataSource(): DataSource = RoutingDataSource(primaryDataSource(), secondaryDataSource())
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.primary")
@@ -297,53 +320,144 @@ class ReplicationDataSourceConfig {
     fun secondaryDataSource(): DataSource {
         return DataSourceBuilder.create().build()
     }
-
-    ...
 }
 ```
 
-읽기/쓰기를 모두 사용할 DataSource와 읽기 전용으로 사용할 DataSource를 등록해야 한다.  
-DataSource가 생성되는 
+각 DB로 라우팅 역할을 하는 `RoutingDataSource`에 primary, secondary DataSource를 주입하고 `LazyConnectionDataSourceProxy`로 감싼 DataSource를 `@Primary`로 등록한다.  
+
+![](./lazyConnection.png)
+
+대략적인 구조는 위와 같다.  
+일반적으로는 `4. getConnection()`에서 반환되는 것이 `java.sql.Connection`의 구현체가 반환되지만 `LazyConnectionDataSourceProxy`를 사용하면 Proxy를 반환한다.  
 
 ```java
-/**
- * DataSource 를 구축하기 위한 편의 클래스입니다.  
- * 일반적인 DataSource 에서 지원하는 속성의 제한된 하위 집합과 가장 적합한 풀링 DataSource 구현을 선택하기 위한 감지 논리를 제공합니다.
- */
-public final class DataSourceBuilder<T extends DataSource> {
+// Statement(또는 PreparedStatement나 CallableStatement)에 대한 요청이 있을 때 실제 JDBC Connection을 느리게 가져오는 Connection 핸들을 반환합니다.
+// 반환된 Connection 핸들은 ConnectionProxy 인터페이스를 구현하여 기본 대상 Connection을 검색할 수 있습니다.
+@Override
+public Connection getConnection() throws SQLException {
+    checkDefaultConnectionProperties();
+    return (Connection) Proxy.newProxyInstance(
+        ConnectionProxy.class.getClassLoader(),
+        new Class<?>[] {ConnectionProxy.class},
+        new LazyConnectionInvocationHandler()
+    );
+}
+```
 
-    private static <T extends DataSource> MappedDataSourceProperties<T> lookupPooled(ClassLoader classLoader,
-            Class<T> type) {
-        MappedDataSourceProperties<T> result = null;
-        result = lookup(classLoader, type, result, "com.zaxxer.hikari.HikariDataSource",
-                HikariDataSourceProperties::new);
-        result = lookup(classLoader, type, result, "org.apache.tomcat.jdbc.pool.DataSource",
-                TomcatPoolDataSourceProperties::new);
-        result = lookup(classLoader, type, result, "org.apache.commons.dbcp2.BasicDataSource",
-                MappedDbcp2DataSource::new);
-        result = lookup(classLoader, type, result, "oracle.ucp.jdbc.PoolDataSourceImpl",
-                OraclePoolDataSourceProperties::new, "oracle.jdbc.OracleConnection");
-        result = lookup(classLoader, type, result, "com.mchange.v2.c3p0.ComboPooledDataSource",
-                ComboPooledDataSourceProperties::new);
-        return result;
-    }
+어떤 흐름으로 사용할 Connection을 선택하는지 확인해보자.
+
+![](./dataSourceProxy.png)
+
+1. targetDataSource의 Connection을 통해 DB 세션의 자동 커밋 유무와 트랜잭션 격리수준을 저장한다. 이때 최초 Connection을 생성(커넥션 풀 준비)하고 동기화를 위해 바인딩하게 된다.
+2. ConnectionProxy를 구현한 타겟 클래스를 `LazyConnectionInvocationHandler` 구현체로 동적 프록시를 생성하여 Connection 타입으로 반환한다.
+3. 생성한 Connection 타입의 동적 프록시를 반환하면서 ThreadLocal에 저장한다.
+4. 데이터 로직 처리에서 Query를 실행한다.
+5. 바인딩되어 있는 Connection을 조회하여 반환한다.
+6. 반환받은 Connection으로 Statement를 요청한다.
+7. RoutingDataSource를 생성할 때 `setTargetDataSources()`를 통해 정의해놓은 `resolvedDataSources`필드인 라우팅 맵을 이용하여 사용할 Connection을 조회한다.
+
+`2번`단계는 Connection이 최초 사용되는 경우라면 LazyConnectionDataSourceProxy의 auto-commit 유무와 격리수준 레벨을 세팅하기 위한 Connection을 최초로 생성하는 과정이 발생한다.  
+이때 구현 드라이버에 따라 Connectipn Pool이 준비된다. 준비된 ConnectionPool은 바인딩된다.  
+(나는 readonly가 아닌 경우에는 항상 primary DB를 사용하도록 하여서 primary HikariCP가 먼저 준비되었다.)  
+  
+일반적인 경우에는 `3번`단계에서 바인딩되는 DataSource는 사용할 DataSource 그 자체가 저장되지만, LazyConnectionDataSourceProxy를 이용하여 감싼 DataSource를 저장하여 **Statement를 생성할 때 사용할 DataSource 라우팅을 통해 결정하는 것이 핵심이다.**  
+  
+즉, **`4번`과 같이 query가 실행되어 실제로 Connection이 필요한 경우에만 `7번`을 통해 DataSource를 라우팅하는 RoutingDataSource가 오버라이딩한 `determineCurrentLookupKey()` 메소드를 통해 어떤 DataSource를 사용할지 결정하는 것이다.**  
+
+# DataSource router not initialized 예외 발생
+
+조금 더 깔끔하게 작성하고 싶어 DataSource를 등록할 때 `LazyConnectionDataSourceProxy`와 `RoutingDataSource`를 한 번에 등록하면 아래와 같이 예외가 발생한다.  
+
+```kotlin
+@Configuration
+class ReplicationDataSourceConfig {
+    @Bean
+    @Primary
+    @DependsOn("primaryDataSource", "secondaryDataSource")
+    fun routingDataSource(): DataSource = LazyConnectionDataSourceProxy(
+        RoutingDataSource(primaryDataSource(), secondaryDataSource())
+    )
+
     ...
 }
 ```
 
-5개의 DataSourceClassName 중 제공되는 DataSource를 생성한다.  
-순서대로 진행되면서 DataSource가 생성되면 그 후에 진행되는 `lookup`은 무시된다.  
+```
+java.lang.IllegalArgumentException: DataSource router not initialized
+...lookup.AbstractRoutingDataSource.determineTargetDataSource(AbstractRoutingDataSource.java:255)
+...lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:213)
+...LazyConnectionDataSourceProxy.checkDefaultConnectionProperties(LazyConnectionDataSourceProxy.java:212)
+```
 
+원인은 RoutingDataSource가 상속받은 `AbstractRoutingDataSource`의 `resolvedDataSource` 필드가 초기화되지 않아 발생한 문제다.  
+초기화되는 시점은 `InitializingBean` 인터페이스를 통한 `afterPropertiesSet()` 시점에 (RoutingDataSource 초기화 시점에 정의한) `targetDataSource`를 복사하여 `resolvedDataSource`를 초기화한다.  
+  
+[Interface BeanFactory](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/BeanFactory.html)를 보면 BeanFactory에서 12번째 단계에서 `afterPropertiesSet()`를 호출하여 준다.  
+즉, **AbstractRoutingDataSource를 상속한 RoutingDataSource 자체가 Bean으로 정의되지 않아 BeanFactory를 통한 작업 과정이 생략되었기에 위와 같은 예외가 발생하는 것이다.**  
+그렇기에 꼭 Bean으로 등록해주여야 한다.  
 
-# 궁금한 내용들 정리
+# Spring 6.1 이후 추가된 읽기/쓰기 분리 개선
 
-1. [x] DataSource의 Connection을 얻어오는 과정부터 실제로 쿼리가 실행되고 커밋되는 구조 (트랜잭션 서비스 추상화에 대한 이해)
-2. [ ] LazyConnectionDataSourceProxy의 역할
-3. [ ] 여러 데이터소스 사용 시 락 예외 [참고](https://github.com/jdalma/footprints/tree/main/%EC%B4%88%EC%95%88)
+이번에 Spring 6.1.2 부터 `setReadOnlyDataSource()` 메소드가 추가되었으며, 자세한 히스토리는 아래의 이슈 내용을 확인하길 바란다.  
+- [#31785 Support for a read-only DataSource in LazyConnectionDataSourceProxy](https://github.com/spring-projects/spring-framework/issues/31785)  
+- [#21415 Document LazyConnectionDataSourceProxy setup for routing datasource to act on transaction definition read-only flag](https://github.com/spring-projects/spring-framework/issues/21415)  
+  
+이전에 사용했던 읽기/쓰기 분리 기준을 정의해 놓았던 `RoutingDataSource`는 필요하지 않고 아래와 같이 작성하면 끝이다.  
 
-# 읽어보기
+```kotlin
+@Configuration
+class ReplicationDataSourceConfig {
+    @Bean
+    @Primary
+    @DependsOn("primaryDataSource", "secondaryDataSource")
+    fun dataSource(): DataSource = LazyConnectionDataSourceProxy(primaryDataSource()).apply {
+        setReadOnlyDataSource(secondaryDataSource())
+    }
+}
+```
 
-1. [ ] [JDBC Internal - 타임아웃의 이해](https://d2.naver.com/helloworld/1321)
+Connection을 생성할 DataSource를 결정할 때 추가된 `getDataSourceToUse()` 메소드로 가져오게 된다.  
+
+```java
+public class LazyConnectionDataSourceProxy extends DelegatingDataSource {
+    private DataSource readOnlyDataSource;
+    ...
+
+    private class LazyConnectionInvocationHandler implements InvocationHandler {
+        private boolean readOnly = false;
+
+        private DataSource getDataSourceToUse() {
+            return (this.readOnly && readOnlyDataSource != null ? 
+                readOnlyDataSource : obtainTargetDataSource()
+            );
+        }
+        ...
+    }
+}
+```
+
+![](./readonlyDataSource.png)
+
+`1 ~ 3번`은 스프링이 초기화하면서 `SpringTransactionAnnotationParser`에서 `TransactionAttribute`를 생성하며 생성에 성공한다면 해당 `TransactionAttribute`를 캐싱한다.  
+캐싱되는 내용은 간략하게 아래와 같다. 자세한 내용은 [SpringTransactionAnnotationParser #L59](https://github.com/spring-projects/spring-framework/blob/main/spring-tx/src/main/java/org/springframework/transaction/annotation/SpringTransactionAnnotationParser.java#L59)를 확인하면 된다.  
+`4 ~ 5번`은 캐시되어 있는 `TransactionAttribute` 목록에서 현재 실행되고 있는 메소드 또는 클래스 기준으로 캐시 정보를 조회하며, 준비 작업을 한다.  
+이때 `LazyConnectionDataSourceProxy`의 `readonly` 속성을 `TransactionAttribute` 기준으로 업데이트 해준다.  
+
+> TransactionAttribute에는 Transaction의 격리 수준, 전파 속성, **읽기 전용 유무** , 타임아웃, 롤백할 클래스 이름 등이 저장되어 있다.  
+> 한마디로 `@Transactional`에서 기입할 수 있는 정보들을 묶어 놓은 것이다.
+
+```
+{MethodClassKey@10042} "...MemberService.findAllPrimary() -> 
+    {RuleBasedTransactionAttribute@10043} "PROPAGATION_REQUIRED,ISOLATION_DEFAULT"
+{MethodClassKey@9559} "...MemberService.findAllSecondary() -> 
+    {RuleBasedTransactionAttribute@9560} "PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly"
+```
+
+`7번`의 동적 프록시 `LazyConnectionInvocationHandler`는 매 요청마다 매번 새로 생성된다.  
+`8번` 과정에서 DataSource를 가져올 때 `readOnly`와 `readOnlyDataSource` 유무를 기준으로 어떤 DataSource를 사용할지 결정된다.  
+  
+즉, **`readOnlyDataSource` 관리를 `LazyConnectionDataSourceProxy`가 해주면서 추가적인 작업이 필요없어졌다.**  
+만약 읽기 전용으로 라우팅할 것이 아니라면 이전 방법으로 해야 한다.  
 
 # 참고
 
