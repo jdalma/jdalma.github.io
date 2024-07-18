@@ -3,7 +3,7 @@ title: 테스트 불모지에 Testcontainers 심기
 date: "2024-04-07"
 tags:
    - testcontainers
-   - integration test
+   - integration-test
 ---
 
 CI/CD를 고민하면서 서로 의존 관계에 있는 서비스들은 통합 테스트를 어떻게 진행할지 생각해본적이 있다.  

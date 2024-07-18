@@ -3,7 +3,7 @@ title: AWS DMS를 이용한 MySQL 마이그레이션
 date: "2024-05-11"
 tags:
    - mysql
-   - aws dms
+   - aws-dms
    - migration
 ---
 

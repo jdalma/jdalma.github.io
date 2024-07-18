@@ -4,7 +4,7 @@ date: "2023-12-10"
 tags:
    - oop
    - kotlin
-   - cleancode
+   - clean-code
 ---
 
 

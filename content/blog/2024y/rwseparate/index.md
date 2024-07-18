@@ -2,9 +2,9 @@
 title: Spring RW분리를 이해하기 위한 여정 (+ JDBC, 서비스 추상화)
 date: "2024-07-14"
 tags:
-   - Lab
-   - Spring
-   - Transaction
+   - spring
+   - transaction
+   - deep-dive
 ---
 
 IDC 환경의 MySQL 서버를 AWS로 마이그레이션하면서 [스프링에서 읽기/쓰기 분리](https://jdalma.github.io/2024y/mysqlMigration/#%EC%8A%A4%ED%94%84%EB%A7%81%EC%97%90%EC%84%9C-%EC%9D%BD%EA%B8%B0%EC%93%B0%EA%B8%B0-%EB%B6%84%EB%A6%AC)를 스프링에서 제공하는 [LazyConnectionDataSourceProxy](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/datasource/LazyConnectionDataSourceProxy.html) 클래스를 활용해서 해결하였다.  

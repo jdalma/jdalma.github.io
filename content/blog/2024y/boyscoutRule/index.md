@@ -2,8 +2,8 @@
 title: 보이스카웃 규칙 실천하기
 date: "2024-05-25"
 tags:
-   - Refactoring
-   - Cleancode
+   - refactoring
+   - clean-code
 ---
 
 > The Boy Scout Rule : Always leave the campground cleaner than you found it.  
