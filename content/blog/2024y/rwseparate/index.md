@@ -328,19 +328,25 @@ class ReplicationDataSourceConfig {
 ![](./lazyConnection.png)
 
 대략적인 구조는 위와 같다.  
-일반적으로는 `4. getConnection()`에서 반환되는 것이 `java.sql.Connection`의 구현체가 반환되지만 `LazyConnectionDataSourceProxy`를 사용하면 Proxy를 반환한다.  
+일반적인 경우에는 `4. getConnection()`에서 반환되는 것이 `java.sql.Connection`의 구현체가 반환되지만 현재 기본 DataSource로 등록된 `LazyConnectionDataSourceProxy.getConnection()`을 사용하면 Proxy를 반환한다.  
+  
+> **LazyConnectionDataSourceProxy.getConnection()**  
+> Statement(또는 PreparedStatement나 CallableStatement)에 대한 요청이 있을 때 실제 JDBC Connection을 느리게 가져오는 Connection 핸들을 반환합니다.  
+> 반환된 Connection 핸들은 ConnectionProxy 인터페이스를 구현하여 기본 대상 Connection을 검색할 수 있습니다.  
 
 ```java
-// Statement(또는 PreparedStatement나 CallableStatement)에 대한 요청이 있을 때 실제 JDBC Connection을 느리게 가져오는 Connection 핸들을 반환합니다.
-// 반환된 Connection 핸들은 ConnectionProxy 인터페이스를 구현하여 기본 대상 Connection을 검색할 수 있습니다.
-@Override
-public Connection getConnection() throws SQLException {
-    checkDefaultConnectionProperties();
-    return (Connection) Proxy.newProxyInstance(
-        ConnectionProxy.class.getClassLoader(),
-        new Class<?>[] {ConnectionProxy.class},
-        new LazyConnectionInvocationHandler()
-    );
+public class LazyConnectionDataSourceProxy extends DelegatingDataSource {
+    
+    @Override
+    public Connection getConnection() throws SQLException {
+        checkDefaultConnectionProperties();
+        return (Connection) Proxy.newProxyInstance(
+            ConnectionProxy.class.getClassLoader(),
+            new Class<?>[] {ConnectionProxy.class},
+            new LazyConnectionInvocationHandler()
+        );
+    }
+    ...
 }
 ```
 
@@ -348,21 +354,24 @@ public Connection getConnection() throws SQLException {
 
 ![](./dataSourceProxy.png)
 
-1. targetDataSource의 Connection을 통해 DB 세션의 자동 커밋 유무와 트랜잭션 격리수준을 저장한다. 이때 최초 Connection을 생성(커넥션 풀 준비)하고 동기화를 위해 바인딩하게 된다.
-2. ConnectionProxy를 구현한 타겟 클래스를 `LazyConnectionInvocationHandler` 구현체로 동적 프록시를 생성하여 Connection 타입으로 반환한다.
-3. 생성한 Connection 타입의 동적 프록시를 반환하면서 ThreadLocal에 저장한다.
+
+> 1번부터 3번까지의 자세한 행위는 [이 이미지](https://jdalma.github.io/static/5233d78fec13777390de802c6374de46/64ef0/lazyConnection.png)와 같다.
+
+1. 커넥션을 요청한다.
+2. 메소드에서 targetDataSource의 Connection을 통해 DB 세션의 자동 커밋 유무와 트랜잭션 격리수준을 저장한다. 이때 최초 Connection을 생성(커넥션 풀 준비)한다.
+3. ConnectionProxy를 구현한 타겟 클래스를 `LazyConnectionInvocationHandler` 구현체로 동적 프록시를 생성하여 Connection 타입으로 반환하며 Connection을 바인딩한다.
 4. 데이터 로직 처리에서 Query를 실행한다.
 5. 바인딩되어 있는 Connection을 조회하여 반환한다.
 6. 반환받은 Connection으로 Statement를 요청한다.
 7. RoutingDataSource를 생성할 때 `setTargetDataSources()`를 통해 정의해놓은 `resolvedDataSources`필드인 라우팅 맵을 이용하여 사용할 Connection을 조회한다.
 
 `2번`단계는 Connection이 최초 사용되는 경우라면 LazyConnectionDataSourceProxy의 auto-commit 유무와 격리수준 레벨을 세팅하기 위한 Connection을 최초로 생성하는 과정이 발생한다.  
-이때 구현 드라이버에 따라 Connectipn Pool이 준비된다. 준비된 ConnectionPool은 바인딩된다.  
-(나는 readonly가 아닌 경우에는 항상 primary DB를 사용하도록 하여서 primary HikariCP가 먼저 준비되었다.)  
+이때 구현 드라이버에 따라 Connectipn Pool이 준비되고 바인딩된다.  
+이 targetDataSource는 내가 커스텀한 RoutingDataSource가 주입되어 있으며 `determineCurrentLookupKey()`를 통해 readonly가 아닌 경우에는 항상 primary DB를 사용하도록 하여서 primary HikariCP가 먼저 준비된다.  
   
-일반적인 경우에는 `3번`단계에서 바인딩되는 DataSource는 사용할 DataSource 그 자체가 저장되지만, LazyConnectionDataSourceProxy를 이용하여 감싼 DataSource를 저장하여 **Statement를 생성할 때 사용할 DataSource 라우팅을 통해 결정하는 것이 핵심이다.**  
+일반적인 경우에는 `3번`단계에서 바인딩되는 DataSource는 사용할 DataSource 구현체 자체가 저장되지만, LazyConnectionDataSourceProxy로 래핑된 DataSource를 저장하여 **Statement를 생성할 때 등록된 DataSource 라우팅을 통해 결정하는 것이 핵심이다.**  
   
-즉, **`4번`과 같이 query가 실행되어 실제로 Connection이 필요한 경우에만 `7번`을 통해 DataSource를 라우팅하는 RoutingDataSource가 오버라이딩한 `determineCurrentLookupKey()` 메소드를 통해 어떤 DataSource를 사용할지 결정하는 것이다.**  
+즉, **`7번`에서 LazyConnectionDataSourceProxy$LazyConnectionInvocationHandler.getConnection()을 통한 determineTargetDataSource() 메서드에서 RoutingDataSource가 오버라이딩한 `determineCurrentLookupKey()` 메소드를 실행시켜 어떤 DataSource를 사용할지 query가 실행되어 실제로 Connection이 필요한 경우에 결정하는 것이다.**  
 
 # DataSource router not initialized 예외 발생
 
@@ -392,8 +401,8 @@ java.lang.IllegalArgumentException: DataSource router not initialized
 원인은 RoutingDataSource가 상속받은 `AbstractRoutingDataSource`의 `resolvedDataSource` 필드가 초기화되지 않아 발생한 문제다.  
 초기화되는 시점은 `InitializingBean` 인터페이스를 통한 `afterPropertiesSet()` 시점에 (RoutingDataSource 초기화 시점에 정의한) `targetDataSource`를 복사하여 `resolvedDataSource`를 초기화한다.  
   
-[Interface BeanFactory](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/BeanFactory.html)를 보면 BeanFactory에서 12번째 단계에서 `afterPropertiesSet()`를 호출하여 준다.  
-즉, **AbstractRoutingDataSource를 상속한 RoutingDataSource 자체가 Bean으로 정의되지 않아 BeanFactory를 통한 작업 과정이 생략되었기에 위와 같은 예외가 발생하는 것이다.**  
+[Interface BeanFactory](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/BeanFactory.html)를 보면 BeanFactory의 12번째 단계에서 `afterPropertiesSet()`를 호출하여 준다.  
+즉, **AbstractRoutingDataSource를 상속한 RoutingDataSource 자체가 Bean으로 정의되지 않아 BeanFactory를 통한 초기화 과정이 생략되었기에 위와 같은 예외가 발생하는 것이다.**  
 그렇기에 꼭 Bean으로 등록해주여야 한다.  
 
 # Spring 6.1 이후 추가된 읽기/쓰기 분리 개선
@@ -457,7 +466,7 @@ public class LazyConnectionDataSourceProxy extends DelegatingDataSource {
 `8번` 과정에서 DataSource를 가져올 때 `readOnly`와 `readOnlyDataSource` 유무를 기준으로 어떤 DataSource를 사용할지 결정된다.  
   
 즉, **`readOnlyDataSource` 관리를 `LazyConnectionDataSourceProxy`가 해주면서 추가적인 작업이 필요없어졌다.**  
-만약 읽기 전용으로 라우팅할 것이 아니라면 이전 방법으로 해야 한다.  
+만약 readonly 힌트로 라우팅할 것이 아니라면 이전 방법처럼 `determineCurrentLookupKey()`를 오버라이딩해야 한다.  
 
 # 참고
 
