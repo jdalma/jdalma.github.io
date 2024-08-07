@@ -908,10 +908,13 @@ addMarathoner(readWriteMarathoners2)</code>
 이는 <strong>Person 리스트에 Marathoner 객체를 추가해도 괜찮고 Marathoner 리스트에 Person 객체를 추가하지 못한다는 직관과 일치한다.</strong></p>
 <h1 id="맺으며" style="position:relative;">맺으며<a href="#%EB%A7%BA%EC%9C%BC%EB%A9%B0" aria-label="맺으며 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>여러 종류의 다형성을 이해하고 제네릭 가변성에 대해 알아보았다.<br>
-개인적으로 공변,불변을 제외한 나머지를 반변이라고 설명하는 글들을 많이 접했었는데 이 책에서는 반변을 설명할 때 <strong>함수와 서브타입</strong>에 대한 설명이 독특했다.<br>
+사용하는 언어가 공변성과 반공변성을 어느 정도로 지원하는지를 정확하게 이해한 후 사용해야 한다.<br>
+예를들어 자바는 리턴 타입 공변성을 지원하지만 C#은 리턴 타입 공변성을 지원하지 않기 때문이다.</p>
+<p>개인적으로 공변,불변을 제외한 나머지를 반변이라고 설명하는 글들을 많이 접했었는데 이 책에서는 반변을 설명할 때 <strong>함수와 서브타입</strong>에 대한 설명이 독특했다.<br>
 <strong>"함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다."</strong> 는 사실이 반변을 이해할 때 도움이 되었다.</p>
 <p>어려운 제네릭 가변성에 대한 내용을 배워봤지만 제네릭이 능사는 아니다.<br>
-서브타입 관계를 추가하는 대신 기능이 빠진 타입을 만들거나, 기능을 다 갖춘 타입을 만드는 대신 서브타입 관계를 포기하거나, 개발자는 반드시 이 둘 중 하나를 골라야 한다.</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2024y/transaction/">← <!-- -->트랜잭션과 잠금</a></li><li><a rel="next" href="/2024y/postprocessor/">빈 후처리기를 이용한 프록시 생성에 대해<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-beySPh kUHXGZ"><ul>
+서브타입 관계를 추가하는 대신 기능이 빠진 타입을 만들거나, 기능을 다 갖춘 타입을 만드는 대신 서브타입 관계를 포기하거나, 개발자는 반드시 이 둘 중 하나를 골라야 한다.<br>
++</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2024y/transaction/">← <!-- -->트랜잭션과 잠금</a></li><li><a rel="next" href="/2024y/postprocessor/">빈 후처리기를 이용한 프록시 생성에 대해<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-beySPh kUHXGZ"><ul>
 <li>
 <p><a href="#%EB%8B%A4%ED%98%95%EC%84%B1">다형성</a></p>
 <ul>
