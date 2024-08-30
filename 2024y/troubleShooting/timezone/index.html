@@ -147,7 +147,7 @@ set time_zone = &#39;Asia/Seoul&#39;
 +--------------------+---------------------+--------------------+
 | @@GLOBAL.time_zone | @@SESSION.time_zone | @@system_time_zone |
 +--------------------+---------------------+--------------------+
-| SYSTEM             | SYSTEM              | UTC                |
+| SYSTEM             | Asia/Seoul          | UTC                |
 +--------------------+---------------------+--------------------+
 
 mysql&gt; select * from TIMEZONE_TEST;
@@ -161,6 +161,12 @@ mysql&gt; select * from TIMEZONE_TEST;
 
 -- America/Anchorage 기준 (UTC-8)
 set time_zone = &#39;America/Anchorage&#39;;
+
++--------------------+---------------------+--------------------+
+| @@GLOBAL.time_zone | @@SESSION.time_zone | @@system_time_zone |
++--------------------+---------------------+--------------------+
+| SYSTEM             | America/Anchorage   | UTC                |
++--------------------+---------------------+--------------------+
 
 mysql&gt; select * from TIMEZONE_TEST;
 +----+---------------------+---------------------+
