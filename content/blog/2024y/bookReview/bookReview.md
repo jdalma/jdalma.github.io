@@ -73,9 +73,29 @@ tags:
 
 # **기술**
 
-## 네티 인 액션 *작성 예정*
+## 자바의 신 1권, 2권
 
-## OAuth2 인 액션 *작성 예정*
+자바 기본서를 진득하게 다 읽어본적도 없고 flab 필독서로 나와있길래 읽어보았다.  
+언어를 처음 배울 때 학습했던 것들을 상기시키기 좋았으며, 처음 배운 내용도 있다.  
+
+1. String 클래스가 자바 9부터 개선되었다.
+   1. 내부 문자열 저장을 `char[]`에서 `byte[]`로 변경하였다.
+   2. 내부 `coder` 필드를 통해 인코딩 방식에 따라 UTF16을 사용할지, LATIN1을 사용할지 지정한다. (Compact String)
+2. 자식이 메서드 오버라이딩 시 접근 권한을 확장 시킬 수 있다.
+3. 자바의 sealed class와 permits, non-sealed
+4. HotSpot 클라이언트 컴파일러와 HotSpot 서버 컴파일러
+5. Thread 생성 시 `stackSize`를 통해 스택의 크기를 제한할 수 있다.
+6. Thread는 임계영역 안에서 `wait()`을 실행하면 해당 lock을 반환한 상태로 기다린다.
+7. Serializable과 `serialVersionUID`에 대한 내용
+8. non reifiable varargs 타입에 대한 `@SafeVarargs` 어노테이션
+9.  NIO의 WatchService
+10. [OpenJDK 21](https://openjdk.org/projects/jdk/21/) 문서를 통해 자바의 버전별 개선 사항을 확인할 수 있다.
+11. Publish-Subscribe 프레임워크의 publisher와 subscriber 사이에 존재하는 Processor
+
+더 빨리 배웠으면 좋았을만한 내용들이 많아서 첫 회사에 입사하자마자 읽었었다면 도움이 많이 되었을텐데 이제 읽어서 아쉽다.  
+자바의 Thread, NIO, 버전별 변화에 대해 학습하고 싶다면 2권만 읽기를 추천한다.  
+
+## OAuth2 인 액션, 네티 인 액션 *리뷰 내용 작성 시점을 놓침..*
 
 ## 오브젝트
 
