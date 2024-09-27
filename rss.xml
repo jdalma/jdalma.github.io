@@ -1,4 +1,858 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 20 Sep 2024 09:01:16 GMT</lastBuildDate><item><title><![CDATA[2024년 기록]]></title><description><![CDATA[강의 견고한 결제 시스템 구축 평소에 결제/정산 도메인에 관심이 있었어서 강의가 공개되자마자 구매해놓았었는데 이번에 완강해보았다. 결제,정산,장부 서비스들을 Spring webflux, R2DBC, 헥사고날 아키텍처, kafka…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Tue, 03 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;강의&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;강의&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%95%EC%9D%98&quot; aria-label=&quot;강의 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 27 Sep 2024 05:15:15 GMT</lastBuildDate><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Fri, 27 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
+하지만 매번 제네릭에 대한 이해가 부족해 타입 검사기가 왜 거부하는지 이해하지 못하여 원하는대로 작성을 못한 경험이 있다.&lt;br&gt;
+그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
+&lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
+(만약 이런 경험이 있는 개발자라면 이 책을 추천한다.)&lt;/p&gt;
+&lt;p&gt;이 글을 통해 아래의 내용을 학습할 수 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;여러 종류의 다형성&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;제네릭 가변성이 왜 필요한지&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PECS를 왜 지켜야 하는지&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;제네릭 가변성의 종류&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;일단 다형성에 대해 간단하게 알아보자.&lt;/p&gt;
+&lt;h1 id=&quot;다형성&quot; style=&quot;position:relative;&quot;&gt;다형성&lt;a href=&quot;#%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;다형성은 프로그램의 &lt;strong&gt;한 개체가 여러 타입에 속하도록 만드는 것이다.&lt;/strong&gt;&lt;br&gt;
+(개체는 값, 함수, 클래스, 메서드 등 여러 가지가 될 수 있다.)&lt;/p&gt;
+&lt;p&gt;하나의 값이 여러 타입에 속할 수도 있고, 한 함수를 여러 타입의 함수로 사용할 수도 있는 것이다.&lt;br&gt;
+&lt;strong&gt;다형성은 거의 모든 정적 타입 언어에서만 발견할 수 있는 매우 널리 사용되는 개념이다.&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;&quot;어떤 개체에 다형성을 부여하는지&quot;&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;&quot;어떻게 다형성을 부여하는지&quot;&lt;/code&gt; 를 이해하는 것이 중요하다.&lt;/p&gt;
+&lt;h2 id=&quot;서브타입에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;서브타입에 의한 다형성&lt;a href=&quot;#%EC%84%9C%EB%B8%8C%ED%83%80%EC%9E%85%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;서브타입에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;이 주제는 객체를 다룰 때 유용하며 &lt;strong&gt;서브타입&lt;/strong&gt; 이라는 개념을 통해 다형성을 실현한다.&lt;br&gt;
+서브타입은 타입 사이의 관계이며, &lt;code class=&quot;language-text&quot;&gt;&quot;A는 B이다.&quot;&lt;/code&gt; 라는 설명이 올바르다면 &lt;code class=&quot;language-text&quot;&gt;A는 B의 서브타입&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;B는 A의 슈퍼타입&lt;/code&gt;이다.&lt;/p&gt;
+&lt;p&gt;A는 B의 서브타입일 때 B 타입의 부품을 A 타입의 부품으로도 간주할 수 있게 하는 기능이 서브타입에 의한 다형성이다.&lt;br&gt;
+즉, &lt;strong&gt;슈퍼타입이 요구되는 자리에 서브타입이 위치하더라도 타입 검사기가 문제삼지 않는다는 것이다.&lt;/strong&gt;&lt;br&gt;
+반대로 서브타입이 요구되는 자리에는 슈퍼타입이 위치할 수는 없다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 451px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ab487c944bf8a83a56f771c3d2cfa5c7/38070/subtype.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42lWTSY/TQBCF/f+Pc+AGB8SVXEAgoaBwgMlCRrNAEme1J453OxnHieO1H9Vle5ix9NRlu/vrV13VCugRAs0jUFZAdBGwI4GNW0A1M0x2KaYk1cqwcjIYQY7gWCDNK17zkqG0QZqXsA4Frv+Y+PVgYTBxMNkmWLrA3BEkQG00swSmVomFncPc58gYXEMVGRyTAnPafeEKfP5xjw+dLt53ehhMfWh+Ac0OsXNsmK7J46MTYmUnUO2SwGCwZLDD86WkVHLM6efCKaGFlOoeMMMTonCJ/DCmMxjRrlLDZhzx96dghkc3IDBlQAzJUjQv550kTGpGqdiOjurQbwBjiOj3C9Xv8jviIcUD+N6G12l+DmW6y7BkGBWAzmrr+DyJQcebemFyC1zuSXe1krvmP/3jOX1YnkXFK18DZzYQ+Et2JqKbZ3dfO1fofnqDLx+v8PPbW1x33yEPadP4hh0jHuEpVPHXIIe6X6e8ZIeA5Rq8o3RXOxjjYPQQ6F2E+nfstz1+b9OupMO4D8fdYO2Rw3P6uihcsWDCkxA3KZ1v6zSlZCzVHsdpgFP4gLl5xjmt2rapQapVELTi2PN0qqRcRKlFjY6thjwWVGnXXWFhJcQQ3ORKe0myouImlbAZgSfUvHKi4bgIAw3H/QJRMMXeVwmyxta2sbRiGGGFtGhuC5rGfr55fGMqhHFBE3Nqg5Idj9cpxpuUYkHnJKAHFbyjIND/dS3jH61mgkoOmwTNAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;subtype&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ab487c944bf8a83a56f771c3d2cfa5c7/38070/subtype.png&quot;
+        srcset=&quot;/static/ab487c944bf8a83a56f771c3d2cfa5c7/3684f/subtype.png 225w,
+/static/ab487c944bf8a83a56f771c3d2cfa5c7/fc2a6/subtype.png 450w,
+/static/ab487c944bf8a83a56f771c3d2cfa5c7/38070/subtype.png 451w&quot;
+        sizes=&quot;(max-width: 451px) 100vw, 451px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Person(val name: String)
+class Marathoner(name: String): Person(name)
+
+fun run1(person: Person) { .. }
+run1(Person(..))
+run1(Marathoner(..))
+
+fun run2(marathoner: Marathoner) { .. }
+run2(Person(name))   // 컴파일 에러 !!!
+run2(Marathoner(name))&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;오버로딩에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;오버로딩에 의한 다형성&lt;a href=&quot;#%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;오버로딩에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;같은 이름의 함수들을 매개변수 타입을 서로 다르게 하여 여러 개 정의하는 것이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun aging(person: Person) = Person(person.age + 1)
+fun aging(marathoner: Marathoner) = Marathoner(marathoner.age + 1)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aging&lt;/code&gt; 두 함수 중에 어느 것을 호출할지는 언어 수준에서 자동으로 결정된다.&lt;br&gt;
+함수 선택의 가장 기본적인 규칙은 &lt;strong&gt;인자의 타입에 맞는 함수를 고른다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;예제는 정수를 관리하는 &lt;code class=&quot;language-text&quot;&gt;Numbers&lt;/code&gt; 클래스와 양수의 인덱스를 따로 가지는 &lt;code class=&quot;language-text&quot;&gt;PositiveNumbers&lt;/code&gt; 클래스가 있다고 가정하자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;)
+class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
+    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = .. // 합계를 빠르게 계산하기 위해 양수의 index를 저장
+}
+
+fun positiveNumberSum(numbers: Numbers): Int = ..
+fun positiveNumberSum(numbers: PositiveNumbers): Int = ..
+
+// 각 타입에 맞는 함수가 실행된다. 
+positiveNumberSum(Numbers(..))
+positiveNumberSum(PositiveNumbers(..))
+
+// Numbers가 정적 타입, PositiveNumber가 동적 타입인 경우 정적 선택을 우선한다. (static dispatch)
+val numbers: Numbers = PositiveNumbers(..)
+positiveNumberSum(numbers)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;오버로딩된 양수의 사이즈를 반환하는 &lt;code class=&quot;language-text&quot;&gt;positiveNumberSum()&lt;/code&gt; 함수를 확인할 수 있다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;인자의 타입에 맞는 함수를 고른다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인자의 타입에 가장 특화된 함수를 고른다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;함수를 고를 때는 인자의 정적 타입을 우선으로 고려한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;2번&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;3번&lt;/code&gt;을 취합하면 &lt;strong&gt;함수는 인자의 동적 타입보다는 정적 타입을 우선 고려하며, 이 정적 타입에 가장 특화된 함수를 고른다.&lt;/strong&gt;&lt;br&gt;
+이 이유로 함수 선택 시 정적 타입에 대한 이해가 없다면 버그를 발생시키기 쉽다.&lt;br&gt;
+버그를 방지하기 위한 방법은 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;를 위한 함수가 이미 있다면 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;를 위한 같은 이름의 함수를 추가로 정의하지 않는 것이다.&lt;/strong&gt;&lt;br&gt;
+즉, 함수 오버로딩은 서로 완전히 다른 타입들의 값을 인자로 받는 함수를 정의하는 용도로 사용하는 게 좋다.&lt;br&gt;
+굳이 함수 오버로딩에 서브타입에 의한 다형성을 활용하여 복잡한 상황을 만들지 말자. (메서드 오버로딩도 동일하다.)&lt;/p&gt;
+&lt;h2 id=&quot;오버라이딩에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;오버라이딩에 의한 다형성&lt;a href=&quot;#%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;오버라이딩에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;메서드 오버라이딩은 클래스를 상속해서 자식 클래스에 메서드를 새로 정의할 때 메서드의 이름과 매개변수 타입을 부모 클래스에 정의되어 있는 메서드와 똑같게 정의하여 &lt;strong&gt;자식 클래스에 특화된 방법을 정의하는 방법이다.&lt;/strong&gt;&lt;br&gt;
+양수의 개수를 반환하는 &lt;code class=&quot;language-text&quot;&gt;Numbers&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;length()&lt;/code&gt;함수를 최적화한 &lt;code class=&quot;language-text&quot;&gt;PositiveNumbers&lt;/code&gt;가 있다고 가정하자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;) {
+    open fun length(): Int = ..
+}
+class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
+    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = ..
+
+    override fun length(): Int = ..
+}
+
+val elements = listOf(1,2,3,4)
+
+// 각 타입이 소유하고 있는 메서드가 실행된다.
+val numbers: Numbers = Numbers(elements)
+numbers.length()
+val positiveNumbers: PositiveNumbers = PositiveNumbers(elements)
+positiveNumbers.length()
+
+// 오버라이딩의 경우 동적 선택 (dynamic dispatch)을 우선한다.
+val numbers2: Numbers = PositiveNumbers(elements)
+numbers2.length()&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;인자의 타입에 맞는 메서드를 고른다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인자의 타입에 가장 특화된 메서드를 고른다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;메서드를 고를 때는 인자의 정적 타입을 우선으로 고려한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;메서드를 고를 때는 수신자의 동적 타입도 고려한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;오버로딩과 다르게 &lt;strong&gt;오버라이딩은 동적 타입에 대해 더 특화된 메서드가 선택되기 때문에, 정적 타입에 상관없이 언제나 그 특화된 동작이 사용되도록 만들 수 있다.&lt;/strong&gt;&lt;br&gt;
+즉, 함수 선택은 인자의 정적 타입만 고려하지만 &lt;strong&gt;메서드 선택은 인자의 정적 타입도 고려하고 &lt;code class=&quot;language-text&quot;&gt;수신자(메서드를 호출하는 객체)의 동적 타입&lt;/code&gt;도 고려된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;매개변수에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;매개변수에 의한 다형성&lt;a href=&quot;#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;매개변수에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;매개변수에 의한 다형성은 &lt;strong&gt;타입 매개변수를 통해 다형성을 만드는 기능으로, 제네릭스라고도 부른다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T&amp;gt; choose(v1: T, v2: T): T {
+   println(v1)
+   println(v2)
+   return if(readln() == &amp;quot;Y&amp;quot;) v1 else v2
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 매개변수 타입 표시와 결과 타입 표시에 사용했다. 이와 같이 한 개 이상의 타입 매개변수를 가지는 함수를 &lt;strong&gt;제네릭 함수&lt;/strong&gt;라고 부른다.&lt;br&gt;
+타입 매개변수를 추가할 수 있는 곳은 함수뿐이 아니라 타입에 타입 매개변수를 추가하여 &lt;strong&gt;제네릭 타입&lt;/strong&gt;을 지정할 수 있고,&lt;br&gt;
+타입 매개변수를 가진 클래스를 정의하여 &lt;strong&gt;제네릭 클래스&lt;/strong&gt;도 만들 수 있다.&lt;/p&gt;
+&lt;p&gt;하지만 제네릭 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;가 아무 타입이나 될 수 있기 때문에 특정 타입에서 제공하는 기능을 사용할 수 없다.&lt;br&gt;
+&lt;strong&gt;타입 매개변수로 지정된 타입은 함수 또는 클래스 안에서 특정 능력이 필요한 자리에 사용된다면 제네릭으로 선언할 필요가 없다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;두-다형성의-만남&quot; style=&quot;position:relative;&quot;&gt;두 다형성의 만남&lt;a href=&quot;#%EB%91%90-%EB%8B%A4%ED%98%95%EC%84%B1%EC%9D%98-%EB%A7%8C%EB%82%A8&quot; aria-label=&quot;두 다형성의 만남 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;다형성의 내용은 이해하기 쉬웠을 것이다. 이제 이 글을 쓴 이유인 제네릭 가변성에 대해 알아보자.&lt;br&gt;
+위에서 설명한 &lt;strong&gt;서브타입에 의한 다형성&lt;/strong&gt;과 &lt;strong&gt;매개변수에 의한 다형성&lt;/strong&gt;이 만나게 되면서 복잡한 여러 기능들이 탄생하게 되는데 순서대로 알아보자.&lt;/p&gt;
+&lt;h2 id=&quot;제네릭-클래스와-상속&quot; style=&quot;position:relative;&quot;&gt;제네릭 클래스와 상속&lt;a href=&quot;#%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%83%81%EC%86%8D&quot; aria-label=&quot;제네릭 클래스와 상속 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract class List&amp;lt;T&amp;gt; {
+    abstract fun get(index: Int): T
+}
+class ArrayList&amp;lt;T&amp;gt;: List&amp;lt;T&amp;gt;() {
+    override fun get(index: Int): T = ..
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위와 같은 제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;: List&amp;lt;T&gt;&lt;/code&gt;라면 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;A&gt;&lt;/code&gt;는 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&lt;/code&gt;에 등장하는 모든 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;로 바꿔서 만든 타입의 서브타입&lt;/strong&gt; 이라고 이해할 수 있다.&lt;br&gt;
+그리고 서브타입을 선언할 때 &lt;strong&gt;특정 타입에 대한 서브타입&lt;/strong&gt;으로 만들수도 있다.&lt;br&gt;
+기존의 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;를 구현하는 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;&lt;/code&gt; 와 다르게 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Boolean&gt;()&lt;/code&gt; 에 대한 클래스와 함수를 필요로한다고 가정해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class AnotherList: List&amp;lt;Boolean&amp;gt;() {
+    override fun get(index: Int): Boolean = ..
+}
+
+val stringList = ArrayList&amp;lt;String&amp;gt;()
+val intList = ArrayList&amp;lt;Int&amp;gt;()
+val anotherList = AnotherList()
+
+fun &amp;lt;T&amp;gt; findFirst(list: List&amp;lt;T&amp;gt;): T = ..
+fun isExist(list: List&amp;lt;Boolean&amp;gt;): Boolean = ..
+
+findFirst(stringList)
+findFirst(intList)
+findFirst(anotherList)
+
+isExist(stringList)     // 컴파일 에러 !!!
+isExist(intList)        // 컴파일 에러 !!!
+isExist(anotherList)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AnotherList&lt;/code&gt;와 같이 특정 타입에 대한 서브타입을 지정하여 의도를 직관적으로 표현할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;타입-매개변수-제한&quot; style=&quot;position:relative;&quot;&gt;타입 매개변수 제한&lt;a href=&quot;#%ED%83%80%EC%9E%85-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%9C%ED%95%9C&quot; aria-label=&quot;타입 매개변수 제한 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;제네릭 함수를 정의한다는 것은 여러 타입으로 사용될 수 있는 함수를 만드는 일이니, &lt;strong&gt;인자로 주어질 값이 특별한 능력을 가진다고 가정할 수 없다.&lt;/strong&gt;&lt;br&gt;
+반대로 인자가 특별한 능력을 가져야만 한다면 그 함수는 제네릭 함수일 필요가 없다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Person(private val age: Int): Comparable&amp;lt;Person&amp;gt;{
+    override fun compareTo(other: Person): Int = compareValuesBy(this, other, Person::age)
+}
+class Marathoner(age: Int): Person(age)
+
+fun elder(person: Person, other: Person): Person =
+    if(person &amp;gt; other) person else other
+
+val person: Person = elder(person1, person2)
+val marathoner: Marathoner = elder(marathoner1, marathoner1)    // [1] 컴파일 에러 !!!&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;[1]&lt;/code&gt; 컴파일 에러가 난 부분은 &lt;code class=&quot;language-text&quot;&gt;elder()&lt;/code&gt; 함수의 파라미터로 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;가 사용되어도 서브타입에 의한 다형성으로 컴파일을 통과하지만 기대하는 반환 타입이 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;이기 때문에 컴파일 에러가 발생한다.&lt;br&gt;
+실제로 반환 타입인 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;의 서브타입이 아니기 때문이다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;elder&lt;/code&gt; 함수를 사용하기 위해 제네릭을 적용하려 할 수 있다. 하지만 제네릭 타입은 모든 타입을 수용하기 때문에 &lt;code class=&quot;language-text&quot;&gt;&gt;&lt;/code&gt; 연산 같은 특별한 능력을 사용할 수 없다.&lt;br&gt;
+이때 &lt;strong&gt;타입 매개변수 제한의 상한(upper bound)&lt;/strong&gt; 을 지정하여 &lt;strong&gt;&quot;T가 최대 Person 타입까지 커질 수 있다.&quot;&lt;/strong&gt; 라는 의미를 부여할 수 있다.&lt;br&gt;
+즉, &lt;strong&gt;T가 Person의 서브타입이다.&lt;/strong&gt; 라고 선언하는 것이다. (제네릭 함수뿐 아니라 제네릭 클래스도 마찬가지다.)&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T: Person&amp;gt; elder(person: T, other: T): T =
+    if(person &amp;gt; other) person else other
+
+val person: Person = elder&amp;lt;Person&amp;gt;(person1, person2)
+val marathoner: Marathoner = elder&amp;lt;Marathoner&amp;gt;(marathoner1, marathoner1)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위와 같이 상한을 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;T: Person&gt;&lt;/code&gt;으로 지정하여 반환 타입으로 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;를 받을 수 있고, 특별한 &lt;code class=&quot;language-text&quot;&gt;&gt;&lt;/code&gt; 연산을 사용할 수 있게 되었다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;class List&amp;lt;T : Person&amp;gt; {
+    fun get(index: Int): T = TODO()
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;하지만 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;의 상한을 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;으로 제한했다고 해서 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이라고 보장하진 않는다.&lt;/p&gt;
+&lt;h2 id=&quot;둘-이상의-상한-제한&quot; style=&quot;position:relative;&quot;&gt;둘 이상의 상한 제한&lt;a href=&quot;#%EB%91%98-%EC%9D%B4%EC%83%81%EC%9D%98-%EC%83%81%ED%95%9C-%EC%A0%9C%ED%95%9C&quot; aria-label=&quot;둘 이상의 상한 제한 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;기본적으로 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;&gt;&lt;/code&gt;에 하나의 상한만 지정이 가능하지만 &lt;strong&gt;코틀린에서는 둘 이상의 상한이 필요한 경우 &lt;code class=&quot;language-text&quot;&gt;where&lt;/code&gt;을 사용할 수 있다.&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;전달된 유형은 절의 모든 조건을 동시에 만족해야한다.&lt;/strong&gt; 아래의 예제를 확인해보자.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+0lEQVR42n2Sa3OaUBCG/f9/pf3QtEkn07SNycR+iE2qUVEEhrugCN6IoFyeHjAxTSftzrzs4TDz7LvLNnpawL2k8yDbSJqH4a0way3/0uoo218j6XPmyy1VlEUpHgc1HpQp3ftbWjfXDKU+eZ7zvyifcpzs0QS8vitfvjdkK6oPhahS3RdJSmqqPGodoS6x2iExJBLHIewrhAOFSFLwOjJWT6Gc+WS+R+5NyH2fxvgILOqcTT1W6hW7lUEaaaQLk8dpG7s/wFNnhE5A5ITYQwdj5Ap7OUWaCpclmW1VwMUr4N63iO02VeNZntWudxsTs98jTctj0+l2h28GLzMUUblsjO3XwJ1nkfodhmOFiy/nXF232EQq8l2b88/faDYvOTs75fvXS1zNfwIWL8CRGb3psKqZpgm7TGTh0Br0SbYZ+yxlv0+J1zG+/obDnjY/gPY5WQXxXRZ6i+02JIkDdtslm3kPXcxwNtmwFquyWSU4AjYxDsBCbEaFzCqgG2xQnSX6ZInmx1gjE01WGcgPSKMug+EvZHWMIjpp3xm0fxrctnW6XZs8K/hzb2qHh/eynkNdZTaliON/7t9zJOLPaoaOK1bFcV1mqxVrTaVRPm/lc5UwJHMd8kUozsFRRTgnn8/JgoAyilgaBhfv39E8+cDN6SeaH0+wfrT4DfWnPeKOHHiFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;intersection&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png&quot;
+        srcset=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/3684f/intersection.png 225w,
+/static/a31fce48b48f12a00340d2c7fc9b87e6/fc2a6/intersection.png 450w,
+/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png 476w&quot;
+        sizes=&quot;(max-width: 476px) 100vw, 476px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;interface Person
+interface Marathoner
+
+class Trainer: Person, Marathoner
+class Developer: Person, Marathoner
+
+interface Intersection&amp;lt;T&amp;gt; where T : Person, T : Marathoner
+
+fun main() {
+    val person = object : Intersection&amp;lt;Person&amp;gt; {}         // 컴파일 에러 !!!
+    val marathoner = object : Intersection&amp;lt;Marathoner&amp;gt; {} // 컴파일 에러 !!!
+    val trainer = object : Intersection&amp;lt;Trainer&amp;gt; {}
+    val developer = object : Intersection&amp;lt;Developer&amp;gt; {}
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Intersection&amp;lt;T&gt;&lt;/code&gt; 인터페이스를 구현하는 타입은 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt; 둘 다 만족해야 한다.&lt;/p&gt;
+&lt;p&gt;아래와 같이 함수의 인자를 동시에 제한하여 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;CharSequence&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Comparable&lt;/code&gt;을 구현하는 타입만 받을 수 있는 함수&lt;/strong&gt;를 만들수도 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T&amp;gt; copyWhenGenerator(list: List&amp;lt;T&amp;gt;, threshold: T): List&amp;lt;String&amp;gt;
+    where T: CharSequence, T: Comparable&amp;lt;T&amp;gt; = 
+        list.filter { it &amp;gt; threshold }.map { it.toString() }
+
+describe(&amp;quot;copyWhenGenerator 함수는&amp;quot;) {
+    val param1: Pair&amp;lt;List&amp;lt;String&amp;gt;, String&amp;gt; = listOf(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;) to &amp;quot;b&amp;quot;
+    val param2: Pair&amp;lt;List&amp;lt;StringBuilder&amp;gt;, StringBuilder&amp;gt; = listOf(
+        StringBuilder(&amp;quot;A&amp;quot;),
+        StringBuilder(&amp;quot;B&amp;quot;),
+        StringBuilder(&amp;quot;C&amp;quot;)
+    ) to StringBuilder(&amp;quot;B&amp;quot;)
+
+    context(&amp;quot;threshold 보다 큰 값만 반환한다.&amp;quot;) {
+
+        copyWhenGenerator(param1.first, param1.second) shouldBe listOf(&amp;quot;c&amp;quot; , &amp;quot;d&amp;quot;)
+        copyWhenGenerator(param2.first, param2.second) shouldBe listOf(&amp;quot;C&amp;quot;)
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;가변성&quot; style=&quot;position:relative;&quot;&gt;가변성&lt;a href=&quot;#%EA%B0%80%EB%B3%80%EC%84%B1&quot; aria-label=&quot;가변성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;지금까지 제네릭 함수를 정의할 때는 대개 매개변수 타입과 결과 타입의 관계를 유지해야 한다는 목표가 있었다.&lt;/strong&gt;&lt;br&gt;
+아래의 &lt;code class=&quot;language-text&quot;&gt;choose()&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;elder()&lt;/code&gt; 같이 받은 타입을 그대로 &lt;strong&gt;반환&lt;/strong&gt;해야 하는 함수는 매개변수에 의한 다형성이 반드시 필요했다.&lt;br&gt;
+반면 인자로 받아 &lt;strong&gt;소비&lt;/strong&gt;만하는 &lt;code class=&quot;language-text&quot;&gt;run()&lt;/code&gt;과 같은 함수는 서브타입에 의한 다형성이면 충분하다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Person
+class Marathoner : Person()
+
+fun &amp;lt;T&amp;gt; choose(v1: T, v2: T): T = if ( .. ) v1 else v2
+fun &amp;lt;T: Person&amp;gt; elder(person: T, other: T): T = if( .. ) person else other
+
+fun run(person: Person) {
+    person.age ..
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;의 서브타입이 맞지만, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이 아니기 때문에 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt; 타입의 리스트를 모두 사용하기 위한 함수는 &lt;code class=&quot;language-text&quot;&gt;averageAge&lt;/code&gt;함수처럼 제네릭 함수로 정의하고 타입 매개변수 제한을 사용하였다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T: Person&amp;gt; averageAge(people: List&amp;lt;T&amp;gt;): Int = ..&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;하지만 이 방법대로라면 아래와 같은 귀찮은 점이 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt; 타입의 인자를 받는 함수를 정의할 때 마다 매개변수 타입을 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;로 하는 대신, 상한이 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;인 타입 매개변수 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 정의하고 매개변수 타입을 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;로 해야 한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;제네릭 타입의 값을 인자로 받는 모든 함수를 동일하게 제네릭 함수로 만들어야 한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;그럼 그냥 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;의 서브타입인 것처럼 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;도 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이면 안 될까?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;즉, &lt;strong&gt;&quot;B가 A의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;의 서브타입이라고 인정해주면 안될까?&quot;&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이 된다고 가정하고 ReadOnlyList와 ReadWriteList의 예제를 보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Person(val age: Int)
+class Marathoner(age: Int) : Person(age)
+
+// [1] 가지고 있는 원소들을 알려줄 뿐, 원소를 추가하거나 제거할 수 없는 리스트다.
+abstract class ReadOnlyList&amp;lt;T&amp;gt; {
+    abstract fun get(index: Int): T
+}
+
+val marathoners: ReadOnlyList&amp;lt;Marathoner&amp;gt; = ..
+val people: ReadOnlyList&amp;lt;Person&amp;gt; = marathoners
+val person = people.get(0)
+person.age ..&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;[1]&lt;/code&gt;의 상황을 보면 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;의 객체들로 구성된 &lt;code class=&quot;language-text&quot;&gt;marathoners&lt;/code&gt; 리스트는 &lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에 대입이 가능하고, &lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에서 꺼낸 원소는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt; 타입으로 사용할 수 있다.&lt;br&gt;
+런타임에는 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt; 객체이지만 타입 검사기가 알 수 있는 타입은 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;이다.&lt;br&gt;
+하지만 이 상황은 문제가 되지 않는다. Marathoner는 이미 Person의 서브타입이므로 &lt;strong&gt;Marathoner 객체를 Person 객체처럼 사용해도 문제 없다.&lt;/strong&gt;&lt;br&gt;
+즉, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;Marathoner&gt;&lt;/code&gt; 를 &lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;Person&gt;&lt;/code&gt;으로 취급함으로써 일어날 수 있는 일은 Person 객체를 기대한 곳에서 Marathoner 객체가 나오는 것 뿐이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// [2] 가지고 있는 원소들을 알려주고 새 원소를 추가할 수 있다.
+abstract class ReadWriteList&amp;lt;T&amp;gt; {
+    abstract fun get(index: Int): T
+    abstract fun add(element: T)
+}
+
+val marathoners: ReadWriteList&amp;lt;Marathoner&amp;gt; = ..
+val people: ReadWriteList&amp;lt;Person&amp;gt; = marathoners
+people.add(Person(..))
+
+val marathoner: Marathoner = marathoners.get(0)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;[2]&lt;/code&gt;의 상황을 보면 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;의 객체들로 구성된 &lt;code class=&quot;language-text&quot;&gt;marathoners&lt;/code&gt; 리스트를 &lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에 대입하고, &lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;을 추가할 때 &lt;strong&gt;Marathoner와 Person이 같은 리스트를 나태나는 문제가 발생한다.&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에 Marathoner 객체와 Person 객체가 동시에 존재할 수 있게 되면서 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;marathoners&lt;/code&gt;에 Person 객체가 추가되게 되었다.&lt;/strong&gt;&lt;br&gt;
+타입 검사기는 &lt;code class=&quot;language-text&quot;&gt;marathoners&lt;/code&gt;에서 꺼낸 원소의 타입은 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;라고 믿고있지만 실제로는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt; 객체가 반환될 수 있기 때문에 &lt;strong&gt;타입 안전성을 깨트리는 큰 문제다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;즉, B가 A의 서브타입일 때&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;A&gt;&lt;/code&gt;의 서브타입이 가능하지만,&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;A&gt;&lt;/code&gt;의 서브타입이 불가능하다는 것이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;원소 읽기만 허용하면 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;의 서브타입이 될 수 있지만, 원소 쓰기를 허용하면 서브타입이 될 수 없다.&lt;br&gt;
+이 예제를 이해하면 &lt;strong&gt;PECS : producer-extends, consumer-super&lt;/strong&gt; 원칙이 등장한 이유를 이해할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이 내용들로 알 수 있는 사실은 &lt;strong&gt;&quot;어떤 제네릭 타입은 타입 인자의 서브타입 관계를 보존하지만, 어떤 제네릭 타입은 그렇지 않다.&quot;&lt;/strong&gt; 라는 것이다.&lt;br&gt;
+그러므로 제네릭 타입과 타입 인자 사이의 관계를 분류할 수 있다. 이 분류를 &lt;strong&gt;가변성&lt;/strong&gt; 이라고 부른다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;가변성은 제네릭 타입과 타입 인자 사이의 관계를 뜻하며, 제네릭 타입 사이의 서브타입 관계를 추가로 정의하는 기능이다.&lt;/strong&gt;&lt;br&gt;
+(하나의 제네릭 타입에서 타입 인자만 다르게 하여 얻은 타입들 사이의 서브타입 관계를 만든다.)&lt;/p&gt;
+&lt;h3&gt;공변&lt;/h3&gt;
+&lt;p&gt;제네릭 타입이 타인 인자의 서브타입 관계를 보존하는 것이며, &lt;strong&gt;타입 인자가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;에서 서브타입인 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;로 변할 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt; 역시 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;로 변한다고 말할 수 있다.&lt;/strong&gt;&lt;br&gt;
+그래서 &quot;제네릭 타입이 타입 인자와 함께 변한다&quot;는 뜻을 담아, 이런 가변성을 &lt;strong&gt;공변 (convariance)&lt;/strong&gt; 라고 부른다.&lt;/p&gt;
+&lt;h3&gt;불변&lt;/h3&gt;
+&lt;p&gt;제네릭 타입이 타입 인자의 서브타입 관계를 무시하는 것이며, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입이더라도 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 아무런 관계가 없는 것이다.&lt;/strong&gt;&lt;br&gt;
+서로 다른 타입인 것이다. 따라서 &quot;타입 인자가 서브타입으로 변해도 제네릭 타입은 서브타입으로 안 변한다&quot;는 뜻을 담아, 이런 가변성을 &lt;strong&gt;불변 (invariance)&lt;/strong&gt; 이라 부른다.&lt;/p&gt;
+&lt;h3&gt;반변&lt;/h3&gt;
+&lt;p&gt;반변을 이해하기 위해서는 먼저 &lt;strong&gt;함수와 서브타입&lt;/strong&gt; 관계에 대해서 이해해야 한다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;open class Person
+class Marathoner : Person()
+
+fun selectBySuperType(selector: (Person) -&amp;gt; Person) {
+    val person1: Person = selector(Person())
+    val person2: Person = selector(Marathoner())
+}
+
+fun selectBySubType(selector: (Marathoner) -&amp;gt; Person) {
+    val person1: Person = selector(Person())    // 컴파일 에러 !!!
+    val person2: Person = selector(Marathoner())
+}
+
+val superTypeConsumer: (Person) -&amp;gt; Person = ..
+val subTypeConsumer: (Marathoner) -&amp;gt; Person = ..
+
+selectBySubType(superTypeConsumer)
+selectBySubType(subTypeConsumer)
+
+selectBySuperType(superTypeConsumer)
+selectBySuperType(subTypeConsumer)      // 컴파일 에러 !!!&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;(결과 타입은 서브타입 관계를 유지하기 때문에 입력으로 받는 타입에 집중하자.)&lt;br&gt;
+위의 예제를 보면 &lt;code class=&quot;language-text&quot;&gt;(Person) -&gt; Person&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;(Marathoner) -&gt; Person&lt;/code&gt;의 서브타입이 가능하다.&lt;br&gt;
+&lt;strong&gt;&quot;사람을 인자로 받을 수 있는 함수는 마라토너를 인자로 받을 수 있는 함수다.&quot;&lt;/strong&gt; 가 성립되기 때문이다.&lt;br&gt;
+즉, &lt;code class=&quot;language-text&quot;&gt;selectBySubType&lt;/code&gt; 함수에 &lt;code class=&quot;language-text&quot;&gt;superTypeConsumer&lt;/code&gt; 람다가 전달 가능하다는 것이다.&lt;/p&gt;
+&lt;p&gt;하지만 그 반대인 &lt;code class=&quot;language-text&quot;&gt;(Marathoner) -&gt; Person&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;(Person) -&gt; Person&lt;/code&gt;의 서브타입이 아니다.&lt;br&gt;
+&lt;strong&gt;&quot;마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다.&quot;&lt;/strong&gt; 가 성립되지 않는다.&lt;br&gt;
+즉, &lt;code class=&quot;language-text&quot;&gt;selectBySuperType&lt;/code&gt; 함수에 &lt;code class=&quot;language-text&quot;&gt;subTypeConsumer&lt;/code&gt; 람다를 전달할 수 없다는 것이다.&lt;/p&gt;
+&lt;p&gt;첫 번째 &quot;컴파일 에러&quot;는 &lt;strong&gt;함수가 하위 타입 인스턴스를 기대하는데 상위 타입 인스턴스를 전달하려고 했기 때문에 발생한다.&lt;/strong&gt;&lt;br&gt;
+두 번째 &quot;컴파일 에러&quot;는 &lt;strong&gt;함수가 상위 타입 인스턴스를 기대하는데 &lt;code class=&quot;language-text&quot;&gt;더 구체적인 하위 타입을 처리하는 함수를 전달하려고 했기 때문에 발생&lt;/code&gt;한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 796px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b8fd32776c679261a601b162ffd247e4/d48f1/functionSubtype.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC6UlEQVR42p1U25KbOhD0jywgCQlxR1wMGHvt7Fad85L//51OS/iyyUMqyUPXGIFHPT09c+jrGpW1aFuHVFu8RQJRLP8Zh0xnSI2FzgporUPCkNTHf0lYMFlrHXJTIi8KWJszNihsBpOqv2Z8mJsW7+6KS3dF13ZYlhnODTgeF/RdhabMEP9NQp2SibQwykJJzbItJGPK8zQ1RLrLwI/fYvGUZJdFBuzv928OxuSITB0QmwYJNY1TgUSl1DZH7C8xBZRgFCZcaDKLLCsheJnIFKUxgZSSKQ5dVSErHbrxhKZf4KYZ8+mE47JhY/zvcsVtu6J1DpnRSJIUUmkiQyIVL1SsiGfCv1M49HUFm9cYJ2o2TBiPK97fP7BdvuF82vBtvOA6XDGOM4q2eDbp2azoLsWjZMGSYj4kQvEGGRgIf5tIA+KI5/H+O0rkFw0f+r0ShqZYWyCxHUTRQ+YO0moIrejLHIra2LzC3jg2ifDfZ7aE0gbCUj9GK3NoEgsJh6aGrRzG+Qw3rpjmleXSRjeWPbF8d8PRrXCDg1I7U19VYE/9BCsTrMrrFxK2RRludP2Epu0Zj1jWM9bThYkmLPUJYzWzYT1Z0ehve4kPywQ97wgJE0/1PmpR/OtUiJf4ifx5aqKvDfli7KqsocoRupmhqxGm5kxzOsq6Q1U1qKuWY1ij0DxPLceypA8LyExD5Sksz2zKZ5Yeujxw2xTUsKdeAzGvGy7XD5zfb/i83fD9839sywUdNZRSIqZWHp6xRxyrgCfD0rve+sVQo24chnFBR+2O/Ygzm7G2R2rbIc30yy6/m2UhDW9SO+KXp+K7TnH0YHWPjz8Hdi88E7Z1A0P9Mreh7GdUPZl2LdqmR1l2aMi6NN5n1Cr3662CNIZ+VfC7NFcF/Zm+utxxBxZlGyzjy93ON4Ljdjrjc/vAxLOqq+k7eS/3NXLRF7u8Fmzmt0cZJqKsuqBfy324dhN35IyhGZBzgXgD/8k+/AFhGEPuNY5zJQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;functionSubtype&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b8fd32776c679261a601b162ffd247e4/d48f1/functionSubtype.png&quot;
+        srcset=&quot;/static/b8fd32776c679261a601b162ffd247e4/3684f/functionSubtype.png 225w,
+/static/b8fd32776c679261a601b162ffd247e4/fc2a6/functionSubtype.png 450w,
+/static/b8fd32776c679261a601b162ffd247e4/d48f1/functionSubtype.png 796w&quot;
+        sizes=&quot;(max-width: 796px) 100vw, 796px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;람다 \ 함수 인자&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;selectSuperToSuper&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;selectSubToSuper&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;selectSuperToSub&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;selectSubToSub&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(Super) -&gt; Super&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(Super) -&gt; Sub&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(Sub) -&gt; Sub&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(Sub) -&gt; Super&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;즉, A가 B의 서브타입일 떄 &lt;code class=&quot;language-text&quot;&gt;B → C&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A → C&lt;/code&gt;의 서브타입이며 그 반대는 성립하지 않는다. 따라서 &lt;strong&gt;함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다.&lt;/strong&gt;&lt;br&gt;
+결과 타입의 서브타입 관계가 유지된다는 사실(반환 타입의 공변성)은 나름 직관적인것에 비해, 매개변수 타입의 서브타입 관계가 뒤집히는게(매개변수의 반공변성) 이상할 수 있지만 논리적으로 타당하다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;selectSubToSuper&lt;/code&gt;의 함수는 4가지의 람다를 모두 허용하는 이유가 &lt;strong&gt;&quot;함수 타입은 매개변수 타입의 서브타입 관계를 뒤집고 결과 타입의 서브타입 관계는 유지하기 때문이다.&quot;&lt;/strong&gt; ⭐️&lt;/p&gt;
+&lt;p&gt;즉, 함수의 결과 타입과 실제 결과 타입 사이의 관계는 &lt;strong&gt;공변&lt;/strong&gt;이다. 한편 함수 매개변수 타입과 실제 매개변수 타입 사이의 관계는 공변도 불변도 아니다.&lt;br&gt;
+여기서 &lt;strong&gt;제네릭 타입이 타입 인자의 서브타입 관계를 뒤집는 가변성이 등장한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;✋ 잠깐, 왜 함수의 매개변수에 대해서는 반공변성이 적용될까?&lt;/strong&gt;&lt;br&gt;
+리스코프 치환 원칙에 따르면 &lt;strong&gt;&quot;서브타입은 슈퍼타입을 대체할 수 있어야 한다.&quot;&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;(Super) -&gt; Super&lt;/code&gt;가 필요한 자리에 &lt;code class=&quot;language-text&quot;&gt;(Sub) -&gt; Super&lt;/code&gt;를 사용할 수 있어야 한다면 &lt;code class=&quot;language-text&quot;&gt;(Sub) -&gt; Super&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Super&lt;/code&gt;도 처리할 수 있어야 한다.&lt;br&gt;
+하지만 실제로는 더 구체적인 타입인 &lt;code class=&quot;language-text&quot;&gt;Sub&lt;/code&gt;가 더 일반적인 타입인 &lt;code class=&quot;language-text&quot;&gt;Super&lt;/code&gt;를 처리할 수 없기 때문에 서브타입 함수가 슈퍼타입 함수처럼 사용되기 위해서는 매개변수의 타입이 더 일반적이어야 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;결과 타입을 &lt;code class=&quot;language-text&quot;&gt;C&lt;/code&gt;로 고정할 때 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입이면 &lt;code class=&quot;language-text&quot;&gt;B → C&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;A → C&lt;/code&gt;의 &lt;strong&gt;슈퍼 타입이다.&lt;/strong&gt;&lt;br&gt;
+타입 인자가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;에서 서브타입인 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;로 변할 때 &lt;code class=&quot;language-text&quot;&gt;A → C&lt;/code&gt;는 타입 인자와는 반대 반향으로 움직여 슈퍼 타입인 &lt;code class=&quot;language-text&quot;&gt;B → C&lt;/code&gt;로 변한다고도 할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/be7b1988a84f607240aa2c956fdab9a4/951a4/variance.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 17.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAlUlEQVR42k2PCw6AIAxDuf9BNX5Q8Q8qNW8JxiXNxsrazS3LonEc1fe9rusy5Jy/fJ6n5nk23Pctgj71cRwKIXw8Mw5imiZVVWWiwzDoeR6r13VVSkn7vpswNYDnH3Olt22buq6TK44EjmUL3GKMJto0jWXvvdq2Na78R/z/djQ4u65rG2QzerixAcEb/ANxUHguwOwFoNA2xvhlrbwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;variance&quot;
+        title=&quot;&quot;
+        src=&quot;/static/be7b1988a84f607240aa2c956fdab9a4/1cfc2/variance.png&quot;
+        srcset=&quot;/static/be7b1988a84f607240aa2c956fdab9a4/3684f/variance.png 225w,
+/static/be7b1988a84f607240aa2c956fdab9a4/fc2a6/variance.png 450w,
+/static/be7b1988a84f607240aa2c956fdab9a4/1cfc2/variance.png 900w,
+/static/be7b1988a84f607240aa2c956fdab9a4/21482/variance.png 1350w,
+/static/be7b1988a84f607240aa2c956fdab9a4/951a4/variance.png 1355w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;종합해보자면 &lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&lt;/code&gt;는 원소 타입에 대해 &lt;strong&gt;공변&lt;/strong&gt; 이며, &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&lt;/code&gt;는 &lt;strong&gt;불변&lt;/strong&gt; 이다.&lt;br&gt;
+마지막으로 함수 타입은 매개변수 타입에 대해서는 &lt;strong&gt;반변&lt;/strong&gt; 이고, 결과 타입에 대해서는 &lt;strong&gt;공변&lt;/strong&gt; 이다.&lt;/p&gt;
+&lt;h3&gt;각 제네릭 타입의 가변성을 결정하는 일반적인 방법&lt;/h3&gt;
+&lt;p&gt;논의를 간단하게 만들기 위해 타입 매개변수가 하나뿐인 제네릭 타입만 고려한다.&lt;br&gt;
+제네릭 타임의 이름은 &lt;code class=&quot;language-text&quot;&gt;G&lt;/code&gt;, 타입 매개변수의 이름은 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;라고 하자.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;G&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 출력에만 사용하면 &lt;strong&gt;공변&lt;/strong&gt; , 입력에만 사용하면 &lt;strong&gt;반변&lt;/strong&gt; , 출력과 입력 모두에 사용하면 &lt;strong&gt;불변&lt;/strong&gt; 이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;G&lt;/code&gt;에 해당하는 타입&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 출력에 사용&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 입력에 사용&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;strong&gt;가변성&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;ReadOnlyList&amp;#x3C;T&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;공변&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;ReadWriteList&amp;#x3C;T&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;불변&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;Int -&gt; T&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;공변&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;T -&gt; Int&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;반변&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;즉, &lt;strong&gt;타입 매개변수를 출력에만 사용하는지, 입력에만 사용하는지, 둘 모두에 사용하는지 보면 가변성을 판단할 수 있다.&lt;/strong&gt;&lt;br&gt;
+타입 매개변수를 사용한 곳에 따라 달라진다는 것이다.&lt;/p&gt;
+&lt;h3 id=&quot;정의할-때-가변성-지정하기&quot; style=&quot;position:relative;&quot;&gt;정의할 때 가변성 지정하기&lt;a href=&quot;#%EC%A0%95%EC%9D%98%ED%95%A0-%EB%95%8C-%EA%B0%80%EB%B3%80%EC%84%B1-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0&quot; aria-label=&quot;정의할 때 가변성 지정하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;가변성은 각 제네릭 타입의 고유한 속성이다. 따라서 &lt;strong&gt;제네릭 타입을 정의할 때 가변성을 지정하는게 가장 직관적이다.&lt;/strong&gt;&lt;br&gt;
+개발자는 제네릭 타입의 각 매개변수에 가변성을 표시함으로써 공변, 반변, 불변 중 하나를 고를 수 있다.&lt;/p&gt;
+&lt;h3&gt;불변&lt;/h3&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract class List&amp;lt;T&amp;gt; {
+    abstract fun length(): Int
+    abstract fun get(index: Int): T
+    abstract fun add(element: T)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h3&gt;공변&lt;/h3&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract class ReadOnlyList&amp;lt;out T&amp;gt; {
+    abstract fun get(index: Int): T
+}
+
+val marathoners: ReadOnlyList&amp;lt;Marathoner&amp;gt; = ..
+val people: ReadOnlyList&amp;lt;Person&amp;gt; = marathoners
+val person = people.get(0)
+
+fun averageAge(people: ReadOnlyList&amp;lt;Person&amp;gt;): Int = ..
+
+averageAge(marathoners)
+averageAge(people)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;out T&gt;&lt;/code&gt;는 해당 타입 매개변수가 출력에만 사용됨을 뜻하며 원소를 추가할 수 없는 대신 공변인 리스트를 정의할 수 있다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 출력에만 사용한다고 했으니, &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 메서드 결과 타입으로 사용할 수 있는 있어도 매개변수 타입으로 사용할 수는 없다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&lt;/code&gt;는 &lt;strong&gt;공변이므로 타입 인자의 서브타입 관계를 보존한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;이제 &lt;code class=&quot;language-text&quot;&gt;averageAge&lt;/code&gt; 함수를 제네릭 함수로 만들지 않고 타입 매개변수 제한없이 사용할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 783px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/16c3998ca212b2bd0b7a9d4af61c113e/e51a6/genericOut.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACIElEQVR42lWSCU8aURhF+f9/o6klrbUa05q2VtkGZgWhpGosGlkEHBHQYVhmOb2DTVMnuXnztvO+9+7NkaZkX5rGJKsJK/+c8WWBUfuI+9YhfnOfSWufzfUx0W2BqF8lHp8RP15t12f7/gK2TS5NE+KgTzS0SfsG65syF8VdLku7dMx9ru09OvZHknENJjb4JsmgRNIvEXdLRHe29g+ESgQVMPKbpL0y3DlSXYu1aWIST6pcuHnaVp6rn59oWTs0K284V39zb0iCScl9Bj7Rf4s02ajCngHDumAecb9C7JdJZhbJ3GEl8GJUZvrrmKl3wswqMKsWCB2DsF4lbKm9KLK+E7z/neihTY5hQzCXdFBTVao0EHzuwrNHMrUJmyVCyxTEYSGt6h6BrXHX2Y4tbUd9g2XnlI2g/4BxX5XNdd0n7wW4cAmvdLrj4RslrHdv8d7naXx4j5PfwZZc9Ttfv7BpNFh4NRY3h7pyt0IGTQcW0bioytwXaOCx0VxQq7D26qwarqpzWdadV+2qoTm3wdw8UEK8zJQWidxi4MqQDFraviFPWZUe69uKGsmqsXQFcD2W2QHSUlcOzAJza49QccqczqXyOrM9GgnYq5B2DeLeKfGwSOIbpDO97UOZVU9mXP4gaH8jODsiaH7muX1AeCOHgy7bzGSxeR3sR+LZb2JFIB55ck7x6CrMvaLyJg3LiodJ5LtEs3OS9fQlf/8F+w96RNZi2cqAkAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;genericOut&quot;
+        title=&quot;&quot;
+        src=&quot;/static/16c3998ca212b2bd0b7a9d4af61c113e/e51a6/genericOut.png&quot;
+        srcset=&quot;/static/16c3998ca212b2bd0b7a9d4af61c113e/3684f/genericOut.png 225w,
+/static/16c3998ca212b2bd0b7a9d4af61c113e/fc2a6/genericOut.png 450w,
+/static/16c3998ca212b2bd0b7a9d4af61c113e/e51a6/genericOut.png 783w&quot;
+        sizes=&quot;(max-width: 783px) 100vw, 783px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract class ReadOnlyList&amp;lt;T&amp;gt; {
+    abstract fun get(index: Int): T
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위와 같이 선언된 List는 원소를 추가할 수도 없는 주제에 불변이기까지 한 불편한 리스트일 뿐이다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 입력에 사용하는 메서드를 추가하려고 계획 중인 게 아니라면, 굳이 이런 리스트를 정의할 필요는 없다.&lt;/p&gt;
+&lt;h3&gt;반변&lt;/h3&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract class Map&amp;lt;in K, V&amp;gt; {
+    abstract fun size(): Int
+    abstract fun get(key: K): V
+    abstract fun add(key: K, value: V)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;타입 매개변수를 반변으로 만들고 싶을 때는 &lt;code class=&quot;language-text&quot;&gt;in&lt;/code&gt;을 붙여 &lt;strong&gt;그 타입 매개변수를 입력에만 사용한다는 뜻이다.&lt;/strong&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;abstract fun getKey(value: V): K&lt;/code&gt; 이 메서드는 컴파일 에러를 발생시킨다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;in K, V&gt;&lt;/code&gt; 클래스는 두 개의 타입 매개변수를 가지며, &lt;code class=&quot;language-text&quot;&gt;in&lt;/code&gt;으로 가변성이 지정된 &lt;code class=&quot;language-text&quot;&gt;K&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;add()&lt;/code&gt;에서 입력으로만 사용되었기 때문에 &lt;strong&gt;반변&lt;/strong&gt; 으로 정의해도 타입 검사기가 문제 삼지 않는다.&lt;br&gt;
+반면 &lt;code class=&quot;language-text&quot;&gt;V&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt;에서는 출력, &lt;code class=&quot;language-text&quot;&gt;add()&lt;/code&gt;에서는 입력으로 사용되었기 때문에 &lt;strong&gt;반드시 불변이어야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;열쇠 타입에 대해 반변이므로 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;A, V&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;B, V&gt;&lt;/code&gt;의 서브타입이다.&lt;br&gt;
+예를 들면 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;Person, Int&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;Marathoner, Int&gt;&lt;/code&gt;의 서브타입이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;val personKey: Map&amp;lt;Person, Int&amp;gt; = ..
+personKey.add(Person(10), 1)
+personKey.add(Marathoner(10), 1)
+
+val marathonerKey: Map&amp;lt;Marathoner, Int&amp;gt; = ..
+marathonerKey.add(Person(10), 1)        &amp;quot;컴파일 에러&amp;quot;
+marathonerKey.add(Marathoner(10), 1)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 783px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6b9822e8b29a39a5df81410ae89c62ce/e51a6/genericIn.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJUlEQVR42k2SiU7bUBBF8//fUVGVqiyNuggUwFmI4y0hhCYFKpTVZIM4OI4d2+907FQVlkbvWfacuTNzCyhF9iiVoKIlm+kdbveS2d1PZu0iL50iy9tTto9nJH2NZFQnmbZIXh5Iw2We9w+QHwWlUhJ/ROwaMLlm3SvRPj+gq32mWz7kyTymb5+wGWiwNEifr0lH5TySQZl4Ykj+WFCpQAUYz29Qw4rATAkH5ZqohQ5vBt7kglv9I/ftI3rOIT3rE16/hFrq7KYCm1VIZxn4Qu5tVLoThcMauI7AbGmnSjyX6qsGam2RrEx8t4wnql+tEp6h4RtVArNG4EjcSPQ0oonAR+fEiw4F3KbALNRYZrMUpb7APUsU2qSvDUkqE5oGkW2ztSy2cga2RWCZhNm7IUWNGts/l+wE+h+YjES+J3Nc23vgRn5+KBM0JLFpE7cc7r8X0Q8+cHv8hV9fT2QqOlHLJpQiG7vO5qkoLQ+qZFA1bhBPZfBv1h7q2+zkm1+v5gkZNHSkiGOKSjO/h02LqOmI0iaefko4t7OltEllW4wt0hy6nyHrTKVN1K/KIdGo5y2GVqbIyWNrSrv6FV7jiGB0nW+6oGTX2drjZwEOq6hBjWR4SeJqpPMaaiWzXVQIh1cEv0v4nTP81g/8m2+8dU4JnmTD/oDcM5lt3hs7DV9ks48kYoHkWeY2qknbV8RDTfwm4VbEHro4wSJedUmj173/3hn7Lx1j2Krz2R/8AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;genericIn&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6b9822e8b29a39a5df81410ae89c62ce/e51a6/genericIn.png&quot;
+        srcset=&quot;/static/6b9822e8b29a39a5df81410ae89c62ce/3684f/genericIn.png 225w,
+/static/6b9822e8b29a39a5df81410ae89c62ce/fc2a6/genericIn.png 450w,
+/static/6b9822e8b29a39a5df81410ae89c62ce/e51a6/genericIn.png 783w&quot;
+        sizes=&quot;(max-width: 783px) 100vw, 783px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;정의할 때 가변성을 지정하는 방법은 이해하기 쉬운 대신 클래스를 정의할 때 큰 제약이 생긴다는 문제가 있다.&lt;/strong&gt;&lt;br&gt;
+타입을 공변으로 만든다면 타입 매개변수를 입력에 사용하는 절반을 모두 포기해야 하고, 반변으로 만든나면 나머지 절반을 포기해야 한다.&lt;br&gt;
+그러니 공변이나 반변을 선택하면 &lt;strong&gt;반쪽짜리 클래스를 만들 수 밖에 없는 것이다.&lt;/strong&gt;&lt;br&gt;
+함수형 프로그래밍에서는 대부분의 경우 수정할 수 없는 자료구조만 사용해 프로그램을 작성하기 때문에 함수형 언어에서는 이 단점이 상대적으로 덜 드러난다.&lt;/p&gt;
+&lt;h3 id=&quot;사용할-때-가변성-지정하기&quot; style=&quot;position:relative;&quot;&gt;사용할 때 가변성 지정하기&lt;a href=&quot;#%EC%82%AC%EC%9A%A9%ED%95%A0-%EB%95%8C-%EA%B0%80%EB%B3%80%EC%84%B1-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0&quot; aria-label=&quot;사용할 때 가변성 지정하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;제네릭 타입을 사용할 때 가변성을 지정하는 경우, 제네릭 타입을 정의할 때는 가변성을 지정할 수 없다.&lt;br&gt;
+&lt;strong&gt;모든 제네릭 타입은 불변으로 정의되며 타입 매개변수를 아무 데서나 사용할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;불변&lt;/h3&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;abstract class ReadWriteList&amp;lt;T&amp;gt; {
+    abstract fun length(): Int
+    abstract fun get(index: Int): T
+    abstract fun add(element: T)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h3&gt;공변&lt;/h3&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;val onlyReadPeople: ReadWriteList&amp;lt;out Person&amp;gt; = ..
+val size = onlyReadPeople.length()
+val person: Person = onlyReadPeople.get(0)
+onlyReadPeople.add(Person(10)) &amp;quot;컴파일 에러&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;onlyReadPeople&lt;/code&gt;은 출력 기능만 사용할 수 있고, 원소 타입이 매개변수 타입으로 사용되지 않는 메서드만 사용할 수 있다는 뜻이다.&lt;br&gt;
+그리고 &lt;strong&gt;&quot;A를 출력과 입력에 모두 사용할 수 있는 불변 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 A를 출력에 사용할 수 있는 리스트다.&quot;&lt;/strong&gt; 가 사실이기 때문에 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out A&gt;&lt;/code&gt;의 서브타입이다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;T&gt;&lt;/code&gt;는 불변이지만 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;out Person&gt;&lt;/code&gt;는 공변이다. 따라서 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out A&gt;&lt;/code&gt;의 서브타입이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun averageAge(people: ReadWriteList&amp;lt;out Person&amp;gt;): Int {
+    people.get(0)
+    people.add(Person(10)) &amp;quot;컴파일 에러&amp;quot;
+}
+
+val onlyReadPeople: ReadWriteList&amp;lt;out Person&amp;gt; = ..
+averageAge(onlyReadPeople)
+
+val onlyReadMarathoners: ReadWriteList&amp;lt;out Marathoner&amp;gt; = ..
+averageAge(onlyReadMarathoners)
+
+val readWriteMarathoner: ReadWriteList&amp;lt;Marathoner&amp;gt; = ..
+averageAge(readWriteMarathoner)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0372e7ff130078424ceddb061324fb5c/38124/chainingOut.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.55555555555555%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5ElEQVR42k1S2XLaQBDk//8klVRBnASwzCVucTix8+ALgYQOTscIJ0KwR6cRhMpWTWm1s9vTM90ZnJfWAvttiG34E++uhWTagvKbUFMT2qtD+w3osA0160Et76DebKh4mb77f2W0EhDRBHreR/RUxrj9CY51hei5AcwHBGwhscvYHWNUgnRrLGBCOSXmaixgQW2nF+CMXNzyQhsIBgT4DqzugeUPKK/BB1XEowoL5OD0chh3stg+FrEfGwQ3ED/nET/mIOxvkCyu5Y4MvQ7ANnTYgQ4sRh/SqZKJyQI9Bs/S/BAIm9g8FAmexcT6iFHnA7zhZ+zta0j7CyTJZNRrF3/CGt5DE4d1C3LGr1uAWHewntxgxYjndai5CcG9Wlh4c0tY2kaai7wy9KILMT4yz5PhrwYTZdj3OfzmQ71uY+98RbKoYPZiIHgqYONzbqtmCiiCMsHy8B7yaW5pF3Hwr3F4yUKs7pA5HFULapzbsbVj24O0beHcUNkSz5r8Z4Sc8eyWcyVbr8oc2foG5OTqBMbxaJmQoZaQkQsZ9nmJ80wF6qePtdeFcusnENrnFNw7NQpRSNsUQfussjypfPEh7aN2K6jNCJI+kyHt4LfOapsUqQJJm8iAc14MeY8+TF4vQP98+Beos5JXTnVBiAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;chainingOut&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0372e7ff130078424ceddb061324fb5c/1cfc2/chainingOut.png&quot;
+        srcset=&quot;/static/0372e7ff130078424ceddb061324fb5c/3684f/chainingOut.png 225w,
+/static/0372e7ff130078424ceddb061324fb5c/fc2a6/chainingOut.png 450w,
+/static/0372e7ff130078424ceddb061324fb5c/1cfc2/chainingOut.png 900w,
+/static/0372e7ff130078424ceddb061324fb5c/38124/chainingOut.png 953w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;averageAge()&lt;/code&gt; 함수와 같이 새로운 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;out Person&gt;&lt;/code&gt; 타입을 통해 함수 내부에서는 출력의 용도로만 사용하겠다고 선언하여 공변으로 지정하여 사용할 수 있다.&lt;/p&gt;
+&lt;h3&gt;반변&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;in A&gt;&lt;/code&gt; 역시 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;A&gt;&lt;/code&gt;와 비슷하게 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt; 타입의 원소들로 구성된 리스트를 나타내지만 &lt;strong&gt;입력 기능만 사용할 수 있다는 차이가 있다.&lt;/strong&gt;&lt;br&gt;
+정확히 말하면 &lt;strong&gt;메서드 중 원소 타입이 결과 타입으로 사용되지 않는 메서드만 사용할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;val readWritePeople: ReadWriteList&amp;lt;in Person&amp;gt; = ..
+val people: Any? = readWritePeople.get(0)
+readWritePeople.add(Person(10))
+readWritePeople.add(Marathoner(10))
+
+val readWriteMarathoners: ReadWriteList&amp;lt;in Marathoner&amp;gt; = ..
+val marathoner: Any? = readWriteMarathoners.get(0)
+readWriteMarathoners.add(Marathoner(10))&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;strong&gt;&quot;A를 출력과 입력에 모두 사용할 수 있는 불변 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 A를 입력에 사용할 수 있는 리스트다.&quot;&lt;/strong&gt; 가 사실이기 때문에 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in A&gt;&lt;/code&gt;의 서브타입이다.&lt;br&gt;
+따라서 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in A&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in B&gt;&lt;/code&gt;의 서브타입이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/48da0b2963cedd8e26b04c7ad7f470a3/38124/chainingIn.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.55555555555555%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5ElEQVR42k1Si27aQBDk/z+lqgRJ1EDAPEwMmEdQkqqqmhrw2ca8AoEkCo7vMR2bJOpJq1tbtzs7s1PAx9E6xesuwEv8EwffxcvUhgqvoQOb0YZhbuZd6MUAen0HvZ9Av61hjMT/p2C0hH6eIZ27EP0ipt3v8LpFiOElVODCRF0kkzqOHoO3FDZMBiIsArWgY5f14qtxQa3GRO8C8Q1AZGzuGbf8dljQxPvMhhicwR+UMOuX2NSC9C0C1BgVpN4F1JTgyxGMOnLCyAWWQ5i4xyYD0hpB+U1O0uL/AaMPQ5pYjKHDNhA52P+uYeJ+QzguIvHbfE8Q7xyKwxSSxTWeAguHqIXXuIU0biIVFcjHHh5ntTzelixa2pDMNQHUrodd0MBONPJcr1zIaYVsLlF48suY3J8zShC/LnCMWSh+IFk1sPhbxfxPGXuCmY3DhpwkqkNtHSy9KuIHUt52kEZXSB+KkJs7argekQ6prPvAihFTi2hIGjXeFuk6lMHJpchpc+PSr0NHnDas4t07OzWjPEYl1NAoqIMPNR/yAXXMFsQ8KzYhNyjaeZOTfT4sRH3lpEyaV5CZlZ4DZH3yLX/6J7fPcUN/eVDctor7nKJDkJMXVaYXbaLmHajVzcmHyfar0acP/wGdHpKfkVW4jAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;chainingIn&quot;
+        title=&quot;&quot;
+        src=&quot;/static/48da0b2963cedd8e26b04c7ad7f470a3/1cfc2/chainingIn.png&quot;
+        srcset=&quot;/static/48da0b2963cedd8e26b04c7ad7f470a3/3684f/chainingIn.png 225w,
+/static/48da0b2963cedd8e26b04c7ad7f470a3/fc2a6/chainingIn.png 450w,
+/static/48da0b2963cedd8e26b04c7ad7f470a3/1cfc2/chainingIn.png 900w,
+/static/48da0b2963cedd8e26b04c7ad7f470a3/38124/chainingIn.png 953w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun addPerson(people: ReadWriteList&amp;lt;in Person&amp;gt;) {
+    people.add(Person(..))
+    people.add(Marathoner(..))
+}
+
+val readWritePeople1: ReadWriteList&amp;lt;in Person&amp;gt; = ..
+val readWritePeople2: ReadWriteList&amp;lt;Person&amp;gt; = ..
+addPerson(readWritePeople1)
+addPerson(readWritePeople2)
+
+val readWriteMarathoners1: ReadWriteList&amp;lt;in Marathoner&amp;gt; = ..
+val readWriteMarathoners2: ReadWriteList&amp;lt;Marathoner&amp;gt; = ..
+addPerson(readWriteMarathoners1)    &amp;quot;컴파일 에러&amp;quot;
+addPerson(readWriteMarathoners2)    &amp;quot;컴파일 에러&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;addPerson&lt;/code&gt; 함수는 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;in Person&gt;&lt;/code&gt; 반변으로 지정되어 있기 때문에 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;Marathoner&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;의 서브타입이긴 하지만 &lt;code class=&quot;language-text&quot;&gt;addPerson&lt;/code&gt;의 인자로 사용될 수 없다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun addMarathoner(people: ReadWriteList&amp;lt;in Marathoner&amp;gt;) {
+    people.add(Person(..))      &amp;quot;컴파일 에러&amp;quot;
+    people.add(Marathoner(..))
+}
+
+val readWritePeople1: ReadWriteList&amp;lt;in Person&amp;gt; = ..
+val readWritePeople2: ReadWriteList&amp;lt;Person&amp;gt; = ..
+addMarathoner(readWritePeople1)
+addMarathoner(readWritePeople2)
+
+val readWriteMarathoners1: ReadWriteList&amp;lt;in Marathoner&amp;gt; = ..
+val readWriteMarathoners2: ReadWriteList&amp;lt;Marathoner&amp;gt; = ..
+addMarathoner(readWriteMarathoners1)
+addMarathoner(readWriteMarathoners2)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;in Marathoner&gt;&lt;/code&gt; 반변으로 지정하면 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in Marathoner&gt;&lt;/code&gt;의 서브타입이기 때문에 &lt;code class=&quot;language-text&quot;&gt;addMarathoner&lt;/code&gt; 함수 호출이 다 가능해진다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in Marathoner&gt;&lt;/code&gt;에는 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;가 보장되어야 하기 때문에 더 작은 의미를 가지는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;을 직접 추가하지는 못한다.&lt;br&gt;
+이는 &lt;strong&gt;Person 리스트에 Marathoner 객체를 추가해도 괜찮고 Marathoner 리스트에 Person 객체를 추가하지 못한다는 직관과 일치한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;맺으며&quot; style=&quot;position:relative;&quot;&gt;맺으며&lt;a href=&quot;#%EB%A7%BA%EC%9C%BC%EB%A9%B0&quot; aria-label=&quot;맺으며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;여러 종류의 다형성을 이해하고 제네릭 가변성에 대해 알아보았다.&lt;br&gt;
+사용하는 언어가 공변성과 반공변성을 어느 정도로 지원하는지를 정확하게 이해한 후 사용해야 한다.&lt;br&gt;
+예를들어 자바는 리턴 타입 공변성을 지원하지만 C#은 리턴 타입 공변성을 지원하지 않기 때문이다.&lt;/p&gt;
+&lt;p&gt;개인적으로 공변,불변을 제외한 나머지를 반변이라고 설명하는 글들을 많이 접했었는데 이 책에서는 반변을 설명할 때 &lt;strong&gt;함수와 서브타입&lt;/strong&gt;에 대한 설명이 독특했다.&lt;br&gt;
+&lt;strong&gt;&quot;함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다.&quot;&lt;/strong&gt; 는 사실이 반변을 이해할 때 도움이 되었다.&lt;/p&gt;
+&lt;p&gt;어려운 제네릭 가변성에 대한 내용을 배워봤지만 제네릭이 능사는 아니다.&lt;br&gt;
+서브타입 관계를 추가하는 대신 기능이 빠진 타입을 만들거나, 기능을 다 갖춘 타입을 만드는 대신 서브타입 관계를 포기하거나, 개발자는 반드시 이 둘 중 하나를 골라야 한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2024년 기록]]></title><description><![CDATA[강의 견고한 결제 시스템 구축 평소에 결제/정산 도메인에 관심이 있었어서 강의가 공개되자마자 구매해놓았었는데 이번에 완강해보았다. 결제,정산,장부 서비스들을 Spring webflux, R2DBC, 헥사고날 아키텍처, kafka…]]></description><link>https://jdalma.github.io/2024y/bookReview/bookReview/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/bookReview/bookReview/</guid><pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;강의&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;강의&lt;/strong&gt;&lt;a href=&quot;#%EA%B0%95%EC%9D%98&quot; aria-label=&quot;강의 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id=&quot;견고한-결제-시스템-구축&quot; style=&quot;position:relative;&quot;&gt;견고한 결제 시스템 구축&lt;a href=&quot;#%EA%B2%AC%EA%B3%A0%ED%95%9C-%EA%B2%B0%EC%A0%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95&quot; aria-label=&quot;견고한 결제 시스템 구축 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;평소에 결제/정산 도메인에 관심이 있었어서 강의가 공개되자마자 구매해놓았었는데 이번에 완강해보았다.&lt;br&gt;
 결제,정산,장부 서비스들을 Spring webflux, R2DBC, 헥사고날 아키텍처, kafka를 사용하여 구현해보는 강의이다.&lt;br&gt;
@@ -15,13 +869,12 @@
 &lt;li&gt;&lt;strong&gt;더 견고해지기 위해 추가적으로 신경써야 할 부분&lt;/strong&gt; (보안, 모니터링 지표, 신뢰성을 향상 시킬 수 있는 다른 방법)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;강의의 흐름이 굉장히 빠르고 webflux와 헥사고날 아키텍처에 익숙하지 않다면 초반에 고생할 수도 있다..&lt;br&gt;
-하지만 Spring webflux와 R2DBC가 도메인을 이해하는데 걸림돌이 될 정도는 아니며 제공되는 교안이 상당히 고품질이라는 것이다.&lt;br&gt;
+하지만 Spring webflux와 R2DBC가 도메인을 이해하는데 걸림돌이 될 정도는 아니며 제공되는 교안이 상당히 고품질이다.&lt;br&gt;
 추후에 예제 코드와 교안만 다시 보아도 이해하는데 문제가 없을정도이다.&lt;br&gt;
-그래도 헥사고날 아키텍처는 이 강의를 보기전에 대략적으로 이해하고 보는것을 추천한다. 그렇지 않으면 패키지 구조나 왜 이런 추상화와 구현체가 생기는지 이해할 수 없어 넋놓고 따라치기만 하는 스스로를 볼 수 있다..&lt;br&gt;
+그래도 헥사고날 아키텍처는 이 강의를 보기전에 대략적으로 이해하고 보는것을 추천한다. 그렇지 않으면 패키지 구조나 왜 이런 추상화와 구현체가 생기는지 이해할 수 없어 넋놓고 따라치기만 할 가능성이 높다.&lt;br&gt;
 사전에 이 &lt;a href=&quot;https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/dashboard&quot;&gt;강의&lt;/a&gt;를 보길 추천한다.&lt;/p&gt;
 &lt;h2 id=&quot;javaspring-테스트를-추가하고-싶은-개발자들의-오답노트&quot; style=&quot;position:relative;&quot;&gt;Java/Spring 테스트를 추가하고 싶은 개발자들의 오답노트&lt;a href=&quot;#javaspring-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%B6%94%EA%B0%80%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4%EC%9D%98-%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8&quot; aria-label=&quot;javaspring 테스트를 추가하고 싶은 개발자들의 오답노트 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;이 강의가 새로 등록된 것을 보고 테스트 코드는 단방향으로 학습하는 것에 한계가 있고 실제로 적용하면서 많이 배운다고 생각하고 있었기에 구매할 생각은 없었다.&lt;br&gt;
-하지만 &lt;a href=&quot;https://inf.run/FcsUb&quot;&gt;수강평&lt;/a&gt;과 커리큘럼에 헥사고날 아키텍처가 있어서 구매해보았다.&lt;br&gt;
+&lt;p&gt;극찬의 &lt;a href=&quot;https://inf.run/FcsUb&quot;&gt;수강평&lt;/a&gt;과 커리큘럼에 헥사고날 아키텍처가 있어서 구매해보았다.&lt;br&gt;
 (&lt;a href=&quot;https://www.inflearn.com/course/%EA%B2%AC%EA%B3%A0%ED%95%9C-%EA%B2%B0%EC%A0%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95?srsltid=AfmBOooVYgoCpuSqsins2KXxboQ_iBZVndJoB9L7fa6OFB39qOdCTztw&quot;&gt;견고한 결제 시스템 구축&lt;/a&gt; 강의를 들으면서 헥사고날 아키텍처 때문에 고생하고 있었다.)&lt;/p&gt;
 &lt;p&gt;강의 초반 ~ 중반까지는 지루한 이론 + 리팩토링 과정이 진행된다. &lt;em&gt;그래도 좋은 설계 + 객체지향 + 테스트 가능성에 대한 강조는 언제 들어도 항상 좋다.&lt;/em&gt;&lt;br&gt;
 처음엔 mockito와 h2를 이용한 중형 테스트와 mockmvc를 이용한 대형 테스트부터 작성하여 이 코드를 점차 개선해나간다.&lt;br&gt;
@@ -53,6 +906,25 @@
 &lt;p&gt;위의 내용을 깊진 않지만 넓게 설명해주었다.&lt;br&gt;
 1권을 읽은 분이라면 복습하기 좋고, 1권을 읽지 않았다면 강의에서 설명하는 내용만 더 자세한 내용을 책에서 읽어보면 좋을 것 같다.&lt;/p&gt;
 &lt;h1 id=&quot;기술&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;기술&lt;/strong&gt;&lt;a href=&quot;#%EA%B8%B0%EC%88%A0&quot; aria-label=&quot;기술 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;이벤트-소싱과-마이크로서비스-아키텍처&quot; style=&quot;position:relative;&quot;&gt;이벤트 소싱과 마이크로서비스 아키텍처&lt;a href=&quot;#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%86%8C%EC%8B%B1%EA%B3%BC-%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98&quot; aria-label=&quot;이벤트 소싱과 마이크로서비스 아키텍처 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MSA에서 일관성 관리는 어떻게 하지? 작업 단위는 어떻게 관리하지? 이런 궁금증이 항상 있었는데 코드스피츠에서 이 책으로 스터디를 모집하기에 읽어보았다.&lt;br&gt;
+도메인 주도 설계부터 애그리게이트 설계, 객체지향 설계 원칙까지 설명하고 나서야 이벤트 소싱과 MSA를 설명해주기 때문에 베이스 지식이 없어도 부담이 조금 덜 했던 것 같다.&lt;/p&gt;
+&lt;p&gt;이벤트 소싱 자체는 나에게 엄청 신기하게 다가왔다. 상태 변화를 도메인 이벤트를 기준으로 기록하여 필요할 때 재수화하여 (성능상 스냅샷이나 CQRS를 이용할 수 있다.) 최종 상태를 만들어 응답한다는 것은 생각도 해본적이 없었기 때문이다.&lt;br&gt;
+(이 이벤트 소싱을 적극적으로 활용하는 곳이 있다면 다녀보고 싶다는 생각이 들었다.)&lt;br&gt;
+배우게 된 내용을 정리해보자면&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;이벤트 소싱&lt;/li&gt;
+&lt;li&gt;커맨드와 이벤트&lt;/li&gt;
+&lt;li&gt;동시성과 이벤트 충돌&lt;/li&gt;
+&lt;li&gt;아웃바운드 어댑터와 이벤트 발행 (트랜잭셔널 아웃박스 패턴과 메시지 릴레이)&lt;/li&gt;
+&lt;li&gt;인바운드 어댑터와 이벤트 소비 (트랜잭셔널 인박스 패턴과 리버스 릴레이)&lt;/li&gt;
+&lt;li&gt;EventStore (메시지 릴레이에서 이벤트 브로커로 도메인 이벤트를 발행하기 위함)&lt;/li&gt;
+&lt;li&gt;분산 트랜잭션&lt;/li&gt;
+&lt;li&gt;사가 (오케스트레이션, 코레오그래피) : 시나리오를 전부 설명하기에 294p부터 참고&lt;/li&gt;
+&lt;li&gt;CQRS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;평소에 궁금했었던 내용들을 이 책을 통해 학습할 수 있게 되어서 재밌었다.&lt;br&gt;
+이벤트 소싱과 MSA에 대해 윤곽도 잡으면서 입문하기에는 부담없는 책인 것 같다.&lt;/p&gt;
 &lt;h2 id=&quot;자바의-신-1권-2권&quot; style=&quot;position:relative;&quot;&gt;자바의 신 1권, 2권&lt;a href=&quot;#%EC%9E%90%EB%B0%94%EC%9D%98-%EC%8B%A0-1%EA%B6%8C-2%EA%B6%8C&quot; aria-label=&quot;자바의 신 1권 2권 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;자바 기본서를 진득하게 다 읽어본적도 없고 flab 필독서로 나와있길래 읽어보았다.&lt;br&gt;
 언어를 처음 배울 때 학습했던 것들을 상기시키기 좋았으며, 처음 배운 내용도 있다.&lt;/p&gt;
@@ -60,7 +932,7 @@
 &lt;li&gt;String 클래스가 자바 9부터 개선되었다.
 &lt;ol&gt;
 &lt;li&gt;내부 문자열 저장을 &lt;code class=&quot;language-text&quot;&gt;char[]&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;byte[]&lt;/code&gt;로 변경하였다.&lt;/li&gt;
-&lt;li&gt;내부 &lt;code class=&quot;language-text&quot;&gt;coder&lt;/code&gt; 필드를 통해 인코딩 방식에 따라 UTF16을 사용할지, LATIN1을 사용할지 지정한다. (Compact String)&lt;/li&gt;
+&lt;li&gt;내부 &lt;code class=&quot;language-text&quot;&gt;coder&lt;/code&gt; 필드를 통해 인코딩 방식에 따라 UTF16을 사용할지, LATIN1을 사용할지 지정하여 최적화한다. (Compact String)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;자식이 메서드 오버라이딩 시 접근 권한을 확장 시킬 수 있다.&lt;/li&gt;
@@ -81,7 +953,7 @@
 &lt;p&gt;이 책은 2년전 코드숨 소소한 스터디에서 한 번 진행한적이 있었는데 초반에 조금 읽다가 포기한 경험이 있다.&lt;br&gt;
 그간 읽어야지 읽어야지 하면서 책이 두꺼워 못 펼쳐보았었는데 이번에 다 읽게 되었다.&lt;br&gt;
 토비의 스프링과 모던 자바 인 액션 같이 &apos;조금 더 빨리 읽었으면 좋았겠다.&apos; 라는 생각이 들 정도로 내용이 좋았다.&lt;br&gt;
-얄팍한 지식으로 대충 지레직잠하고 있던 내용들도 있었고, 깨닫게 되는 내용도 많았어서 좋았다.&lt;/p&gt;
+얄팍한 지식으로 대충 지레직잠하고 있던 내용들을 확실하게 학습할 수 있었고, 깨닫게 되는 내용도 많았어서 좋았다.&lt;/p&gt;
 &lt;p&gt;책이 꽤 두꺼운만큼 여러 개의 설계 예제들이 등장하며, 이 예제들을 이리저리 수정하고 확장해보면서 트레이드 오프가 어디서 어떻게 발생하는지 친절하게 설명해준다.&lt;br&gt;
 &apos;이것이 왜 좋은 설계인지? 이것이 왜 나쁜 설계인지?&apos;를 배울 수 있다.&lt;/p&gt;
 &lt;p&gt;책을 읽은 후에 아래와 같은 내용들도 깨닫게 되었다.&lt;/p&gt;
@@ -93,7 +965,7 @@
 &lt;li&gt;추상화와 다형성을 통한 런타임 의존성, 동적 디스패치를 잘 활용하여 유연성을 가져야한다.&lt;/li&gt;
 &lt;li&gt;...&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;객체지향 프로그래밍이라는 크고 두루뭉술한 단어에 대한 스스로의 주관적인 생각과 윤곽을 가지기에 좋은 책이라는 생각이 들었다.&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;객체지향 프로그래밍이라는 크고 두루뭉술한 단어에 대한 스스로의 주관적인 생각과 윤곽을 잡기에 좋은 책이라는 생각이 들었다.&lt;/strong&gt;&lt;br&gt;
 만약 아래에 대한 질문에 관심이 생긴다면 이 책을 강력 추천한다.&lt;/p&gt;
 &lt;ul class=&quot;contains-task-list&quot;&gt;
 &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; 협력, 책임, 역할에 대해 이해하고 있는가? 설계에서 얼마나 고려하는가?&lt;/li&gt;
@@ -6275,853 +7147,7 @@ class MyAspect {
 &lt;li&gt;스프링은 부가기능의 타겟에 대한 의존성을 어떻게 끊었는지?&lt;/li&gt;
 &lt;li&gt;스프링이 프록시를 만들기 위해 제공하는 두 가지의 방법은 무엇인지?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;이 글에서는 스프링의 AOP와 AspectJ는 더 자세하게 설명하지 않았다. 준비가 된다면 다른 글로 정리할 예정이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[제네릭 가변성에 대해]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2024y/generic/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/generic/</guid><pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바나 코틀린을 사용하면서 언어 내부를 조사한다던지, 자료구조 성격의 클래스를 설계한다던지, 특정 계층에서만 사용할 수 있는 함수를 작성 할때 제네릭을 종종 접한다.&lt;br&gt;
-하지만 매번 제네릭에 대한 이해가 부족해 타입 검사기가 왜 거부하는지 이해하지 못하여 원하는대로 작성을 못한 경험이 있다.&lt;br&gt;
-그리고 제네릭하면 빠지지 않는 공변,불변,반공변에 대한 내용도 머리에서 정리되지 않아 누군가에게 설명하기도 힘들었다.&lt;/p&gt;
-&lt;p&gt;이번에 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000210397750&quot;&gt;타입으로 견고하게 다형성으로 유연하게&lt;/a&gt;를 읽으면서 제네릭에 대해 구멍나있던 지식들을 촘촘히 채울 수 있었다.&lt;br&gt;
-(만약 이런 경험이 있는 개발자라면 이 책을 추천한다.)&lt;/p&gt;
-&lt;p&gt;이 글을 통해 아래의 내용을 학습할 수 있다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;여러 종류의 다형성&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;제네릭 가변성이 왜 필요한지&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PECS를 왜 지켜야 하는지&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;제네릭 가변성의 종류&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;일단 다형성에 대해 간단하게 알아보자.&lt;/p&gt;
-&lt;h1 id=&quot;다형성&quot; style=&quot;position:relative;&quot;&gt;다형성&lt;a href=&quot;#%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;다형성은 프로그램의 &lt;strong&gt;한 개체가 여러 타입에 속하도록 만드는 것이다.&lt;/strong&gt;&lt;br&gt;
-(개체는 값, 함수, 클래스, 메서드 등 여러 가지가 될 수 있다.)&lt;/p&gt;
-&lt;p&gt;하나의 값이 여러 타입에 속할 수도 있고, 한 함수를 여러 타입의 함수로 사용할 수도 있는 것이다.&lt;br&gt;
-&lt;strong&gt;다형성은 거의 모든 정적 타입 언어에서만 발견할 수 있는 매우 널리 사용되는 개념이다.&lt;/strong&gt;&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;&quot;어떤 개체에 다형성을 부여하는지&quot;&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;&quot;어떻게 다형성을 부여하는지&quot;&lt;/code&gt; 를 이해하는 것이 중요하다.&lt;/p&gt;
-&lt;h2 id=&quot;서브타입에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;서브타입에 의한 다형성&lt;a href=&quot;#%EC%84%9C%EB%B8%8C%ED%83%80%EC%9E%85%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;서브타입에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;이 주제는 객체를 다룰 때 유용하며 &lt;strong&gt;서브타입&lt;/strong&gt; 이라는 개념을 통해 다형성을 실현한다.&lt;br&gt;
-서브타입은 타입 사이의 관계이며, &lt;code class=&quot;language-text&quot;&gt;&quot;A는 B이다.&quot;&lt;/code&gt; 라는 설명이 올바르다면 &lt;code class=&quot;language-text&quot;&gt;A는 B의 서브타입&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;B는 A의 슈퍼타입&lt;/code&gt;이다.&lt;/p&gt;
-&lt;p&gt;A는 B의 서브타입일 때 B 타입의 부품을 A 타입의 부품으로도 간주할 수 있게 하는 기능이 서브타입에 의한 다형성이다.&lt;br&gt;
-즉, &lt;strong&gt;슈퍼타입이 요구되는 자리에 서브타입이 위치하더라도 타입 검사기가 문제삼지 않는다는 것이다.&lt;/strong&gt;&lt;br&gt;
-반대로 서브타입이 요구되는 자리에는 슈퍼타입이 위치할 수는 없다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 451px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ab487c944bf8a83a56f771c3d2cfa5c7/38070/subtype.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR42lWTSY/TQBCF/f+Pc+AGB8SVXEAgoaBwgMlCRrNAEme1J453OxnHieO1H9Vle5ix9NRlu/vrV13VCugRAs0jUFZAdBGwI4GNW0A1M0x2KaYk1cqwcjIYQY7gWCDNK17zkqG0QZqXsA4Frv+Y+PVgYTBxMNkmWLrA3BEkQG00swSmVomFncPc58gYXEMVGRyTAnPafeEKfP5xjw+dLt53ehhMfWh+Ac0OsXNsmK7J46MTYmUnUO2SwGCwZLDD86WkVHLM6efCKaGFlOoeMMMTonCJ/DCmMxjRrlLDZhzx96dghkc3IDBlQAzJUjQv550kTGpGqdiOjurQbwBjiOj3C9Xv8jviIcUD+N6G12l+DmW6y7BkGBWAzmrr+DyJQcebemFyC1zuSXe1krvmP/3jOX1YnkXFK18DZzYQ+Et2JqKbZ3dfO1fofnqDLx+v8PPbW1x33yEPadP4hh0jHuEpVPHXIIe6X6e8ZIeA5Rq8o3RXOxjjYPQQ6F2E+nfstz1+b9OupMO4D8fdYO2Rw3P6uihcsWDCkxA3KZ1v6zSlZCzVHsdpgFP4gLl5xjmt2rapQapVELTi2PN0qqRcRKlFjY6thjwWVGnXXWFhJcQQ3ORKe0myouImlbAZgSfUvHKi4bgIAw3H/QJRMMXeVwmyxta2sbRiGGGFtGhuC5rGfr55fGMqhHFBE3Nqg5Idj9cpxpuUYkHnJKAHFbyjIND/dS3jH61mgkoOmwTNAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;subtype&quot;
-        title=&quot;&quot;
-        src=&quot;/static/ab487c944bf8a83a56f771c3d2cfa5c7/38070/subtype.png&quot;
-        srcset=&quot;/static/ab487c944bf8a83a56f771c3d2cfa5c7/3684f/subtype.png 225w,
-/static/ab487c944bf8a83a56f771c3d2cfa5c7/fc2a6/subtype.png 450w,
-/static/ab487c944bf8a83a56f771c3d2cfa5c7/38070/subtype.png 451w&quot;
-        sizes=&quot;(max-width: 451px) 100vw, 451px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;open class Person(val name: String)
-class Marathoner(name: String): Person(name)
-
-fun run1(person: Person) { .. }
-run1(Person(..))
-run1(Marathoner(..))
-
-fun run2(marathoner: Marathoner) { .. }
-run2(Person(name))   &amp;quot;컴파일 에러&amp;quot;
-run2(Marathoner(name))&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;h2 id=&quot;오버로딩에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;오버로딩에 의한 다형성&lt;a href=&quot;#%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;오버로딩에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;같은 이름의 함수들을 매개변수 타입을 서로 다르게 하여 여러 개 정의하는 것이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun aging(person: Person) = Person(person.age + 1)
-fun aging(marathoner: Marathoner) = Marathoner(marathoner.age + 1)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aging&lt;/code&gt; 두 함수 중에 어느 것을 호출할지는 언어 수준에서 자동으로 결정된다.&lt;br&gt;
-함수 선택의 가장 기본적인 규칙은 &lt;strong&gt;인자의 타입에 맞는 함수를 고른다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;예제는 정수를 관리하는 &lt;code class=&quot;language-text&quot;&gt;Numbers&lt;/code&gt; 클래스와 양수의 인덱스를 따로 가지는 &lt;code class=&quot;language-text&quot;&gt;PositiveNumbers&lt;/code&gt; 클래스가 있다고 가정하자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;)
-class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
-    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = &amp;quot;합계를 빠르게 계산하기 위해 양수의 index를 저장&amp;quot;
-}
-
-fun positiveNumberSum(numbers: Numbers): Int = ..
-fun positiveNumberSum(numbers: PositiveNumbers): Int = ..
-
-positiveNumberSum(Numbers(..))
-positiveNumberSum(PositiveNumbers(..))
-
-val numbers: Numbers = PositiveNumbers(..)  &amp;quot;Numbers가 정적 타입, PositiveNumber가 동적 타입이다.&amp;quot;
-positiveNumberSum(numbers)    &amp;quot;정적 선택 (static dispatch)&amp;quot;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;오버로딩된 양수의 사이즈를 반환하는 &lt;code class=&quot;language-text&quot;&gt;positiveNumberSum()&lt;/code&gt; 함수를 확인할 수 있다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;인자의 타입에 맞는 함수를 고른다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;인자의 타입에 가장 특화된 함수를 고른다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;함수를 고를 때는 인자의 정적 타입을 우선으로 고려한다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;2번&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;3번&lt;/code&gt;을 취합하면 &lt;strong&gt;함수는 인자의 동적 타입보다는 정적 타입을 우선 고려하며, 이 정적 타입에 가장 특화된 함수를 고른다.&lt;/strong&gt;&lt;br&gt;
-이 이유로 함수 선택 시 정적 타입에 대한 이해가 없다면 버그를 발생시키기 쉽다.&lt;br&gt;
-버그를 방지하기 위한 방법은 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;를 위한 함수가 이미 있다면 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;를 위한 같은 이름의 함수를 추가로 정의하지 않는 것이다.&lt;/strong&gt;&lt;br&gt;
-즉, 함수 오버로딩은 서로 완전히 다른 타입들의 값을 인자로 받는 함수를 정의하는 용도로 사용하는 게 좋다.&lt;br&gt;
-굳이 함수 오버로딩에 서브타입에 의한 다형성을 활용하여 복잡한 상황을 만들지 말자. (메서드 오버로딩도 동일하다.)&lt;/p&gt;
-&lt;h2 id=&quot;오버라이딩에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;오버라이딩에 의한 다형성&lt;a href=&quot;#%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;오버라이딩에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;메서드 오버라이딩은 클래스를 상속해서 자식 클래스에 메서드를 새로 정의할 때 메서드의 이름과 매개변수 타입을 부모 클래스에 정의되어 있는 메서드와 똑같게 정의하여 &lt;strong&gt;자식 클래스에 특화된 방법을 정의하는 방법이다.&lt;/strong&gt;&lt;br&gt;
-양수의 개수를 반환하는 &lt;code class=&quot;language-text&quot;&gt;Numbers&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;length()&lt;/code&gt;함수를 최적화한 &lt;code class=&quot;language-text&quot;&gt;PositiveNumbers&lt;/code&gt;가 있다고 가정하자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;open class Numbers(val elements: List&amp;lt;Int&amp;gt;) {
-    open fun length(): Int = ..
-}
-class PositiveNumbers(elements: List&amp;lt;Int&amp;gt;): Numbers(elements) {
-    val positiveNumberIndexes: List&amp;lt;Int&amp;gt; = ..
-
-    override fun length(): Int = ..
-}
-
-val elements = listOf(1,2,3,4)
-val numbers: Numbers = Numbers(elements)
-numbers.length()
-
-val positiveNumbers: PositiveNumbers = PositiveNumbers(elements)
-positiveNumbers.length()
-
-val numbers2: Numbers = PositiveNumbers(elements)
-numbers2.length()   &amp;quot;동적 선택 (dynamic dispatch)&amp;quot;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;인자의 타입에 맞는 메서드를 고른다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;인자의 타입에 가장 특화된 메서드를 고른다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;메서드를 고를 때는 인자의 정적 타입을 우선으로 고려한다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;메서드를 고를 때는 수신자의 동적 타입도 고려한다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;오버로딩과 다르게 &lt;strong&gt;오버라이딩은 동적 타입에 대해 더 특화된 메서드가 선택되기 때문에, 정적 타입에 상관없이 언제나 그 특화된 동작이 사용되도록 만들 수 있다.&lt;/strong&gt;&lt;br&gt;
-즉, 함수 선택은 인자의 정적 타입만 고려하지만 &lt;strong&gt;메서드 선택은 인자의 정적 타입도 고려하고 &lt;code class=&quot;language-text&quot;&gt;수신자(메서드를 호출하는 객체)의 동적 타입&lt;/code&gt;도 고려된다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;매개변수에-의한-다형성&quot; style=&quot;position:relative;&quot;&gt;매개변수에 의한 다형성&lt;a href=&quot;#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%97%90-%EC%9D%98%ED%95%9C-%EB%8B%A4%ED%98%95%EC%84%B1&quot; aria-label=&quot;매개변수에 의한 다형성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;매개변수에 의한 다형성은 &lt;strong&gt;타입 매개변수를 통해 다형성을 만드는 기능으로, 제네릭스라고도 부른다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T&amp;gt; choose(v1: T, v2: T): T {
-   println(v1)
-   println(v2)
-   return if(readln() == &amp;quot;Y&amp;quot;) v1 else v2
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 매개변수 타입 표시와 결과 타입 표시에 사용했다. 이와 같이 한 개 이상의 타입 매개변수를 가지는 함수를 &lt;strong&gt;제네릭 함수&lt;/strong&gt; 라고 부른다.&lt;br&gt;
-타입 매개변수를 추가할 수 있는 곳은 함수뿐이 아니라 타입에 타입 매개변수를 추가하여 &lt;strong&gt;제네릭 타입&lt;/strong&gt; 을 지정할 수 있고,&lt;br&gt;
-타입 매개변수를 가진 클래스를 정의하여 &lt;strong&gt;제네릭 클래스&lt;/strong&gt; 도 만들 수 있다.&lt;/p&gt;
-&lt;p&gt;하지만 제네릭 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;가 아무 타입이나 될 수 있기 때문에 특정 타입에서 제공하는 기능을 사용할 수 없다.&lt;br&gt;
-&lt;strong&gt;타입 매개변수로 지정된 타입은 함수 또는 클래스 안에서 특정 능력이 필요한 자리에 사용된다면 제네릭으로 선언할 필요가 없다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;두-다형성의-만남&quot; style=&quot;position:relative;&quot;&gt;두 다형성의 만남&lt;a href=&quot;#%EB%91%90-%EB%8B%A4%ED%98%95%EC%84%B1%EC%9D%98-%EB%A7%8C%EB%82%A8&quot; aria-label=&quot;두 다형성의 만남 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;다형성의 내용은 이해하기 쉬웠을 것이다. 이제 이 글을 쓴 이유인 제네릭 가변성에 대해 알아보자.&lt;br&gt;
-위에서 설명한 &lt;strong&gt;서브타입에 의한 다형성&lt;/strong&gt;과 &lt;strong&gt;매개변수에 의한 다형성&lt;/strong&gt;이 만나게 되면서 복잡한 여러 기능들이 탄생하게 되는데 순서대로 알아보자.&lt;/p&gt;
-&lt;h2 id=&quot;제네릭-클래스와-상속&quot; style=&quot;position:relative;&quot;&gt;제네릭 클래스와 상속&lt;a href=&quot;#%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%83%81%EC%86%8D&quot; aria-label=&quot;제네릭 클래스와 상속 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;abstract class List&amp;lt;T&amp;gt; {
-    abstract fun get(index: Int): T
-}
-class ArrayList&amp;lt;T&amp;gt;: List&amp;lt;T&amp;gt;() {
-    override fun get(index: Int): T = ..
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위와 같은 제네릭 클래스가 있을 때 타입들 사이의 서브타입 관계가 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;: List&amp;lt;T&gt;&lt;/code&gt;라면 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;A&gt;&lt;/code&gt;는 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&lt;/code&gt;에 등장하는 모든 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;로 바꿔서 만든 타입의 서브타입&lt;/strong&gt; 이라고 이해할 수 있다.&lt;br&gt;
-그리고 서브타입을 선언할 때 &lt;strong&gt;특정 타입에 대한 서브타입&lt;/strong&gt;으로 만들수도 있다.&lt;br&gt;
-기존의 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;를 구현하는 &lt;code class=&quot;language-text&quot;&gt;ArrayList&amp;lt;T&gt;&lt;/code&gt; 와 다르게 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Boolean&gt;()&lt;/code&gt; 에 대한 클래스와 함수를 필요로한다고 가정해보자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;class AnotherList: List&amp;lt;Boolean&amp;gt;() {
-    override fun get(index: Int): Boolean = ..
-}
-
-val stringList = ArrayList&amp;lt;String&amp;gt;()
-val intList = ArrayList&amp;lt;Int&amp;gt;()
-val anotherList = AnotherList()
-
-fun &amp;lt;T&amp;gt; findFirst(list: List&amp;lt;T&amp;gt;): T = ..
-fun isExist(list: List&amp;lt;Boolean&amp;gt;): Boolean = ..
-
-findFirst(stringList)
-findFirst(intList)
-findFirst(anotherList)
-
-isExist(stringList)     &amp;quot;컴파일 에러&amp;quot;
-isExist(intList)        &amp;quot;컴파일 에러&amp;quot;
-isExist(anotherList)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AnotherList&lt;/code&gt;와 같이 특정 타입에 대한 서브타입을 지정하여 의도를 직관적으로 표현할 수 있다.&lt;/p&gt;
-&lt;h2 id=&quot;타입-매개변수-제한&quot; style=&quot;position:relative;&quot;&gt;타입 매개변수 제한&lt;a href=&quot;#%ED%83%80%EC%9E%85-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%9C%ED%95%9C&quot; aria-label=&quot;타입 매개변수 제한 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;제네릭 함수를 정의한다는 것은 여러 타입으로 사용될 수 있는 함수를 만드는 일이니, &lt;strong&gt;인자로 주어질 값이 특별한 능력을 가진다고 가정할 수 없다.&lt;/strong&gt;&lt;br&gt;
-반대로 인자가 특별한 능력을 가져야만 한다면 그 함수는 제네릭 함수일 필요가 없다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;open class Person(private val age: Int): Comparable&amp;lt;Person&amp;gt;{
-    override fun compareTo(other: Person): Int = compareValuesBy(this, other, Person::age)
-}
-class Marathoner(age: Int): Person(age)
-
-fun elder(person: Person, other: Person): Person =
-    if(person &amp;gt; other) person else other
-
-val person: Person = elder(person1, person2)
-val marathoner: Marathoner = elder(marathoner1, marathoner1)    &amp;quot;[1] 컴파일 에러&amp;quot;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;[1]&lt;/code&gt; 컴파일 에러가 난 부분은 &lt;code class=&quot;language-text&quot;&gt;elder()&lt;/code&gt; 함수의 파라미터로 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;가 사용되어도 서브타입에 의한 다형성으로 컴파일을 통과하지만 기대하는 반환 타입이 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;이기 때문에 컴파일 에러가 발생한다.&lt;br&gt;
-실제로 반환 타입인 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;의 서브타입이 아니기 때문이다.&lt;/p&gt;
-&lt;p&gt;이때 제네릭 함수를 적용하려 할 수 있다. 하지만 제네릭 타입은 모든 타입을 수용하기 때문에 &lt;code class=&quot;language-text&quot;&gt;&gt;&lt;/code&gt; 연산 같은 특별한 능력을 사용할 수 없다.&lt;br&gt;
-이때 &lt;strong&gt;타입 매개변수 제한의 상한(upper bound)&lt;/strong&gt; 을 지정하여 &lt;strong&gt;&quot;T가 최대 Person 타입까지 커질 수 있다.&quot;&lt;/strong&gt; 라는 의미를 부여할 수 있다.&lt;br&gt;
-즉, &lt;strong&gt;T가 Person의 서브타입이다.&lt;/strong&gt; 라고 선언하는 것이다. (제네릭 함수뿐 아니라 제네릭 클래스도 마찬가지다.)&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T: Person&amp;gt; elder(person: T, other: T): T =
-    if(person &amp;gt; other) person else other
-
-val person: Person = elder&amp;lt;Person&amp;gt;(person1, person2)
-val marathoner: Marathoner = elder&amp;lt;Marathoner&amp;gt;(marathoner1, marathoner1)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위와 같이 상한을 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;T: Person&gt;&lt;/code&gt;으로 지정하여 반환 타입으로 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;를 받을 수 있고, 특별한 &lt;code class=&quot;language-text&quot;&gt;&gt;&lt;/code&gt; 연산을 사용할 수 있게 되었다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;class List&amp;lt;T : Person&amp;gt; {
-    fun get(index: Int): T = TODO()
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위와 같이 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;의 상한을 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;으로 제한했다고 해서 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이라고 보장하진 않는다.&lt;/p&gt;
-&lt;h2 id=&quot;둘-이상의-상한-제한&quot; style=&quot;position:relative;&quot;&gt;둘 이상의 상한 제한&lt;a href=&quot;#%EB%91%98-%EC%9D%B4%EC%83%81%EC%9D%98-%EC%83%81%ED%95%9C-%EC%A0%9C%ED%95%9C&quot; aria-label=&quot;둘 이상의 상한 제한 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;기본적으로 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;&gt;&lt;/code&gt;에 하나의 상한만 지정이 가능하지만 &lt;strong&gt;코틀린에서는 둘 이상의 상한이 필요한 경우 &lt;code class=&quot;language-text&quot;&gt;where&lt;/code&gt;을 사용할 수 있다.&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;전달된 유형은 절의 모든 조건을 동시에 만족해야한다.&lt;/strong&gt; 아래의 예제를 확인해보자.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 55.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+0lEQVR42n2Sa3OaUBCG/f9/pf3QtEkn07SNycR+iE2qUVEEhrugCN6IoFyeHjAxTSftzrzs4TDz7LvLNnpawL2k8yDbSJqH4a0way3/0uoo218j6XPmyy1VlEUpHgc1HpQp3ftbWjfXDKU+eZ7zvyifcpzs0QS8vitfvjdkK6oPhahS3RdJSmqqPGodoS6x2iExJBLHIewrhAOFSFLwOjJWT6Gc+WS+R+5NyH2fxvgILOqcTT1W6hW7lUEaaaQLk8dpG7s/wFNnhE5A5ITYQwdj5Ap7OUWaCpclmW1VwMUr4N63iO02VeNZntWudxsTs98jTctj0+l2h28GLzMUUblsjO3XwJ1nkfodhmOFiy/nXF232EQq8l2b88/faDYvOTs75fvXS1zNfwIWL8CRGb3psKqZpgm7TGTh0Br0SbYZ+yxlv0+J1zG+/obDnjY/gPY5WQXxXRZ6i+02JIkDdtslm3kPXcxwNtmwFquyWSU4AjYxDsBCbEaFzCqgG2xQnSX6ZInmx1gjE01WGcgPSKMug+EvZHWMIjpp3xm0fxrctnW6XZs8K/hzb2qHh/eynkNdZTaliON/7t9zJOLPaoaOK1bFcV1mqxVrTaVRPm/lc5UwJHMd8kUozsFRRTgnn8/JgoAyilgaBhfv39E8+cDN6SeaH0+wfrT4DfWnPeKOHHiFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;intersection&quot;
-        title=&quot;&quot;
-        src=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png&quot;
-        srcset=&quot;/static/a31fce48b48f12a00340d2c7fc9b87e6/3684f/intersection.png 225w,
-/static/a31fce48b48f12a00340d2c7fc9b87e6/fc2a6/intersection.png 450w,
-/static/a31fce48b48f12a00340d2c7fc9b87e6/f2205/intersection.png 476w&quot;
-        sizes=&quot;(max-width: 476px) 100vw, 476px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;interface Person
-interface Marathoner
-
-class Trainer: Person, Marathoner
-class Developer: Person, Marathoner
-
-interface Intersection&amp;lt;T&amp;gt; where T : Person, T : Marathoner
-
-fun main() {
-    val person = object : Intersection&amp;lt;Person&amp;gt; {}         &amp;quot;컴파일 에러 (타입 인수가 해당 바운드내에 없습니다.)&amp;quot;
-    val marathoner = object : Intersection&amp;lt;Marathoner&amp;gt; {} &amp;quot;컴파일 에러 (타입 인수가 해당 바운드내에 없습니다.)&amp;quot;
-    val trainer = object : Intersection&amp;lt;Trainer&amp;gt; {}
-    val developer = object : Intersection&amp;lt;Developer&amp;gt; {}
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Intersection&amp;lt;T&gt;&lt;/code&gt; 인터페이스를 구현하는 타입은 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt; 둘 다 만족해야 한다.&lt;/p&gt;
-&lt;p&gt;아래와 같이 함수의 인자를 동시에 제한하여 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;CharSequence&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Comparable&lt;/code&gt;을 구현하는 타입만 받을 수 있는 함수&lt;/strong&gt;를 만들수도 있다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T&amp;gt; copyWhenGenerator(list: List&amp;lt;T&amp;gt;, threshold: T): List&amp;lt;String&amp;gt;
-    where T: CharSequence, T: Comparable&amp;lt;T&amp;gt; = 
-        list.filter { it &amp;gt; threshold }.map { it.toString() }
-
-describe(&amp;quot;copyWhenGenerator 함수는&amp;quot;) {
-    val param1: Pair&amp;lt;List&amp;lt;String&amp;gt;, String&amp;gt; = listOf(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;) to &amp;quot;b&amp;quot;
-    val param2: Pair&amp;lt;List&amp;lt;StringBuilder&amp;gt;, StringBuilder&amp;gt; = listOf(
-        StringBuilder(&amp;quot;A&amp;quot;),
-        StringBuilder(&amp;quot;B&amp;quot;),
-        StringBuilder(&amp;quot;C&amp;quot;)
-    ) to StringBuilder(&amp;quot;B&amp;quot;)
-
-    context(&amp;quot;threshold 보다 큰 값만 반환한다.&amp;quot;) {
-
-        copyWhenGenerator(param1.first, param1.second) shouldBe listOf(&amp;quot;c&amp;quot; , &amp;quot;d&amp;quot;)
-        copyWhenGenerator(param2.first, param2.second) shouldBe listOf(&amp;quot;C&amp;quot;)
-    }
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;h2 id=&quot;가변성&quot; style=&quot;position:relative;&quot;&gt;가변성&lt;a href=&quot;#%EA%B0%80%EB%B3%80%EC%84%B1&quot; aria-label=&quot;가변성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;지금까지 제네릭 함수를 정의할 때는 대개 매개변수 타입과 결과 타입의 관계를 유지해야 한다는 목표가 있었다.&lt;/strong&gt;&lt;br&gt;
-아래의 &lt;code class=&quot;language-text&quot;&gt;choose()&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;elder()&lt;/code&gt; 같이 받은 타입을 그대로 &lt;strong&gt;반환&lt;/strong&gt;해야 하는 함수는 매개변수에 의한 다형성이 반드시 필요했다.&lt;br&gt;
-반면 인자로 받아 &lt;strong&gt;소비&lt;/strong&gt;만하는 &lt;code class=&quot;language-text&quot;&gt;run()&lt;/code&gt;과 같은 함수는 서브타입에 의한 다형성이면 충분하다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;open class Person
-class Marathoner : Person()
-
-fun &amp;lt;T&amp;gt; choose(v1: T, v2: T): T = if ( .. ) v1 else v2
-fun &amp;lt;T: Person&amp;gt; elder(person: T, other: T): T = if( .. ) person else other
-
-fun run(person: Person) {
-    person.age ..
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;br&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;의 서브타입이 맞지만, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이 아니기 때문에 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt; 타입의 리스트를 모두 사용하기 위한 함수는 &lt;code class=&quot;language-text&quot;&gt;averageAge&lt;/code&gt;함수처럼 제네릭 함수로 정의하고 타입 매개변수 제한을 사용하였다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun &amp;lt;T: Person&amp;gt; averageAge(people: List&amp;lt;T&amp;gt;): Int = ..&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;하지만 이 방법대로라면 아래와 같은 귀찮은 점이 있다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt; 타입의 인자를 받는 함수를 정의할 때 마다 매개변수 타입을 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;로 하는 대신, 상한이 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;인 타입 매개변수 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 정의하고 매개변수 타입을 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;T&gt;&lt;/code&gt;로 해야 한다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;제네릭 타입의 값을 인자로 받는 모든 함수를 동일하게 제네릭 함수로 만들어야 한다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;그럼 그냥 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;의 서브타입인 것처럼 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;도 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이면 안 될까?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;즉, &lt;strong&gt;&quot;B가 A의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;의 서브타입이라고 인정해주면 안될까?&quot;&lt;/strong&gt;&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Marathoner&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;의 서브타입이 된다고 가정하고 ReadOnlyList와 ReadWriteList의 예제를 보자.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;open class Person(val age: Int)
-class Marathoner(age: Int) : Person(age)
-
-&amp;quot;가지고 있는 원소들을 알려줄 뿐, 원소를 추가하거나 제거할 수 없는 리스트다.&amp;quot;
-abstract class ReadOnlyList&amp;lt;T&amp;gt; {
-    abstract fun get(index: Int): T
-}
-
-&amp;quot;[1]&amp;quot;
-val marathoners: ReadOnlyList&amp;lt;Marathoner&amp;gt; = ..
-val people: ReadOnlyList&amp;lt;Person&amp;gt; = marathoners
-val person = people.get(0)
-person.age ..&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;[1]&lt;/code&gt;의 상황을 보면 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;의 객체들로 구성된 &lt;code class=&quot;language-text&quot;&gt;marathoners&lt;/code&gt; 리스트는 &lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에 대입이 가능하고, &lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에서 꺼낸 원소는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt; 타입으로 사용할 수 있다.&lt;br&gt;
-런타임에는 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt; 객체이지만 타입 검사기가 알 수 있는 타입은 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;이다.&lt;br&gt;
-하지만 이 상황은 문제가 되지 않는다. Marathoner는 이미 Person의 서브타입이므로 &lt;strong&gt;Marathoner 객체를 Person 객체처럼 사용해도 문제 없다.&lt;/strong&gt;&lt;br&gt;
-즉, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;Marathoner&gt;&lt;/code&gt; 를 &lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;Person&gt;&lt;/code&gt;으로 취급함으로써 일어날 수 있는 일은 Person 객체를 기대한 곳에서 Marathoner 객체가 나오는 것 뿐이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;&amp;quot;가지고 있는 원소들을 알려주고 새 원소를 추가할 수 있다.&amp;quot;
-abstract class ReadWriteList&amp;lt;T&amp;gt; {
-    abstract fun get(index: Int): T
-    abstract fun add(element: T)
-}
-
-&amp;quot;[2]&amp;quot;
-val marathoners: ReadWriteList&amp;lt;Marathoner&amp;gt; = ..
-val people: ReadWriteList&amp;lt;Person&amp;gt; = marathoners
-people.add(Person(..))
-
-val marathoner: Marathoner = marathoners.get(0)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;[2]&lt;/code&gt;의 상황을 보면 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;의 객체들로 구성된 &lt;code class=&quot;language-text&quot;&gt;marathoners&lt;/code&gt; 리스트를 &lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에 대입하고, &lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;을 추가할 때 &lt;strong&gt;Marathoner와 Person이 같은 리스트를 나태나는 문제가 발생한다.&lt;/strong&gt;&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;people&lt;/code&gt;에 Marathoner 객체와 Person 객체가 동시에 존재할 수 있게 되면서 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;marathoners&lt;/code&gt;에 Person 객체가 추가되게 되었다.&lt;/strong&gt;&lt;br&gt;
-타입 검사기는 &lt;code class=&quot;language-text&quot;&gt;marathoners&lt;/code&gt;에서 꺼낸 원소의 타입은 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;라고 믿고있지만 실제로는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt; 객체가 반환될 수 있기 때문에 &lt;strong&gt;타입 안전성을 깨트리는 큰 문제다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;즉, B가 A의 서브타입일 때&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;A&gt;&lt;/code&gt;의 서브타입이 가능하지만,&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;A&gt;&lt;/code&gt;의 서브타입이 불가능하다는 것이다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;원소 읽기만 허용하면 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;의 서브타입이 될 수 있지만, 원소 쓰기를 허용하면 서브타입이 될 수 없다.&lt;br&gt;
-이 예제를 이해하면 &lt;strong&gt;PECS : producer-extends, consumer-super&lt;/strong&gt; 원칙이 등장한 이유를 이해할 수 있다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;이 내용들로 알 수 있는 사실은 &lt;strong&gt;&quot;어떤 제네릭 타입은 타입 인자의 서브타입 관계를 보존하지만, 어떤 제네릭 타입은 그렇지 않다.&quot;&lt;/strong&gt; 라는 것이다.&lt;br&gt;
-그러므로 제네릭 타입과 타입 인자 사이의 관계를 분류할 수 있다. 이 분류를 &lt;strong&gt;가변성&lt;/strong&gt; 이라고 부른다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;가변성은 제네릭 타입과 타입 인자 사이의 관계를 뜻하며, 제네릭 타입 사이의 서브타입 관계를 추가로 정의하는 기능이다.&lt;/strong&gt;&lt;br&gt;
-(하나의 제네릭 타입에서 타입 인자만 다르게 하여 얻은 타입들 사이의 서브타입 관계를 만든다.)&lt;/p&gt;
-&lt;h3&gt;공변&lt;/h3&gt;
-&lt;p&gt;제네릭 타입이 타인 인자의 서브타입 관계를 보존하는 것이며, &lt;strong&gt;타입 인자가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;에서 서브타입인 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;로 변할 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt; 역시 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;로 변한다고 말할 수 있다.&lt;/strong&gt;&lt;br&gt;
-그래서 &quot;제네릭 타입이 타입 인자와 함께 변한다&quot;는 뜻을 담아, 이런 가변성을 &lt;strong&gt;공변 (convariance)&lt;/strong&gt; 라고 부른다.&lt;/p&gt;
-&lt;h3&gt;불변&lt;/h3&gt;
-&lt;p&gt;제네릭 타입이 타입 인자의 서브타입 관계를 무시하는 것이며, &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입이더라도 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;B&gt;&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 아무런 관계가 없는 것이다.&lt;/strong&gt;&lt;br&gt;
-서로 다른 타입인 것이다. 따라서 &quot;타입 인자가 서브타입으로 변해도 제네릭 타입은 서브타입으로 안 변한다&quot;는 뜻을 담아, 이런 가변성을 &lt;strong&gt;불변 (invariance)&lt;/strong&gt; 이라 부른다.&lt;/p&gt;
-&lt;h3&gt;반변&lt;/h3&gt;
-&lt;p&gt;반변을 이해하기 위해서는 먼저 &lt;strong&gt;함수와 서브타입&lt;/strong&gt; 관계에 대해서 이해해야 한다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;open class Person
-class Marathoner : Person()
-
-fun selectBySubType(selector: (Marathoner) -&amp;gt; Person) {
-    val person1 = selector(Person())    &amp;quot;컴파일 에러&amp;quot;
-    val person2 = selector(Marathoner())
-}
-
-fun selectBySuperType(selector: (Person) -&amp;gt; Person) {
-    val person1 = selector(Person())
-    val person2 = selector(Marathoner())
-}
-
-val superTypeConsumer: (Person) -&amp;gt; Person = ..
-val subTypeConsumer: (Marathoner) -&amp;gt; Person = ..
-
-selectBySubType(superTypeConsumer)
-selectBySubType(subTypeConsumer)
-
-selectBySuperType(superTypeConsumer)
-selectBySuperType(subTypeConsumer)      &amp;quot;컴파일 에러&amp;quot;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;(결과 타입은 서브타입 관계를 유지하기 때문에 입력으로 받는 타입에 집중하자.)&lt;br&gt;
-위의 예제를 보면 &lt;code class=&quot;language-text&quot;&gt;(Person) -&gt; Marathoner&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;(Marathoner) -&gt; Marathoner&lt;/code&gt;의 서브타입이 가능하다.&lt;br&gt;
-&lt;strong&gt;&quot;사람을 인자로 받을 수 있는 함수는 마라토너를 인자로 받을 수 있는 함수다.&quot;&lt;/strong&gt; 가 성립되기 때문이다.&lt;/p&gt;
-&lt;p&gt;하지만 그 반대인 &lt;code class=&quot;language-text&quot;&gt;(Marathoner) -&gt; Marathoner&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;(Person) -&gt; Marathoner&lt;/code&gt;의 서브타입이 아니다.&lt;br&gt;
-&lt;strong&gt;&quot;마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다.&quot;&lt;/strong&gt; 가 성립되지 않는다.&lt;/p&gt;
-&lt;p&gt;첫 번째 &quot;컴파일 에러&quot;는 &lt;strong&gt;함수가 하위 타입 인스턴스를 기대하는데 상위 타입 인스턴스를 전달하려고 했기 때문에 발생한다.&lt;/strong&gt;&lt;br&gt;
-두 번째 &quot;컴파일 에러&quot;는 &lt;strong&gt;함수가 상위 타입 인스턴스를 기대하는데 &lt;code class=&quot;language-text&quot;&gt;더 구체적인 하위 타입을 처리하는 함수를 전달하려고 했기 때문에 발생&lt;/code&gt;한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 796px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/b8fd32776c679261a601b162ffd247e4/d48f1/functionSubtype.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC6UlEQVR42p1U25KbOhD0jywgCQlxR1wMGHvt7Fad85L//51OS/iyyUMqyUPXGIFHPT09c+jrGpW1aFuHVFu8RQJRLP8Zh0xnSI2FzgporUPCkNTHf0lYMFlrHXJTIi8KWJszNihsBpOqv2Z8mJsW7+6KS3dF13ZYlhnODTgeF/RdhabMEP9NQp2SibQwykJJzbItJGPK8zQ1RLrLwI/fYvGUZJdFBuzv928OxuSITB0QmwYJNY1TgUSl1DZH7C8xBZRgFCZcaDKLLCsheJnIFKUxgZSSKQ5dVSErHbrxhKZf4KYZ8+mE47JhY/zvcsVtu6J1DpnRSJIUUmkiQyIVL1SsiGfCv1M49HUFm9cYJ2o2TBiPK97fP7BdvuF82vBtvOA6XDGOM4q2eDbp2azoLsWjZMGSYj4kQvEGGRgIf5tIA+KI5/H+O0rkFw0f+r0ShqZYWyCxHUTRQ+YO0moIrejLHIra2LzC3jg2ifDfZ7aE0gbCUj9GK3NoEgsJh6aGrRzG+Qw3rpjmleXSRjeWPbF8d8PRrXCDg1I7U19VYE/9BCsTrMrrFxK2RRludP2Epu0Zj1jWM9bThYkmLPUJYzWzYT1Z0ehve4kPywQ97wgJE0/1PmpR/OtUiJf4ifx5aqKvDfli7KqsocoRupmhqxGm5kxzOsq6Q1U1qKuWY1ij0DxPLceypA8LyExD5Sksz2zKZ5Yeujxw2xTUsKdeAzGvGy7XD5zfb/i83fD9839sywUdNZRSIqZWHp6xRxyrgCfD0rve+sVQo24chnFBR+2O/Ygzm7G2R2rbIc30yy6/m2UhDW9SO+KXp+K7TnH0YHWPjz8Hdi88E7Z1A0P9Mreh7GdUPZl2LdqmR1l2aMi6NN5n1Cr3662CNIZ+VfC7NFcF/Zm+utxxBxZlGyzjy93ON4Ljdjrjc/vAxLOqq+k7eS/3NXLRF7u8Fmzmt0cZJqKsuqBfy324dhN35IyhGZBzgXgD/8k+/AFhGEPuNY5zJQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;functionSubtype&quot;
-        title=&quot;&quot;
-        src=&quot;/static/b8fd32776c679261a601b162ffd247e4/d48f1/functionSubtype.png&quot;
-        srcset=&quot;/static/b8fd32776c679261a601b162ffd247e4/3684f/functionSubtype.png 225w,
-/static/b8fd32776c679261a601b162ffd247e4/fc2a6/functionSubtype.png 450w,
-/static/b8fd32776c679261a601b162ffd247e4/d48f1/functionSubtype.png 796w&quot;
-        sizes=&quot;(max-width: 796px) 100vw, 796px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;람다 \ 함수 인자&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;selectSuperToSuper&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;selectSubToSuper&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;selectSuperToSub&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;selectSubToSub&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(Sub) -&gt; Sub&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(Sub) -&gt; Super&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(Super) -&gt; Super&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;(Super) -&gt; Sub&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;즉, A가 B의 서브타입일 떄 &lt;code class=&quot;language-text&quot;&gt;B -&gt; C&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A -&gt; C&lt;/code&gt;의 서브타입이며 그 반대는 성립하지 않는다.&lt;br&gt;
-따라서 &lt;strong&gt;함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다.&lt;/strong&gt;&lt;br&gt;
-결과 타입의 서브타입 관계가 유지된다는 사실은 나름 직관적인것에 비해, 매개변수 타입의 서브타입 관계가 뒤집히는게 이상할 수 있지만 논리적으로 타당하다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;selectSubToSuper&lt;/code&gt;의 함수는 4가지의 람다를 모두 허용하는 이유가 &lt;strong&gt;&quot;함수 타입은 매개변수 타입의 서브타입 관계를 뒤집고 결과 타입의 서브타입 관계는 유지하기 때문이다.&quot;&lt;/strong&gt; ⭐️&lt;/p&gt;
-&lt;p&gt;즉, 함수 타입과 결과 타입 사이의 관계는 &lt;strong&gt;공변&lt;/strong&gt;이다. 한편 함수 타입과 매개변수 타입 사이의 관계는 공변도 불변도 아니다.&lt;br&gt;
-여기서 &lt;strong&gt;제네릭 타입이 타입 인자의 서브타입 관계를 뒤집는 가변성이 등장한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;결과 타입을 &lt;code class=&quot;language-text&quot;&gt;C&lt;/code&gt;로 고정할 때 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입이면 &lt;code class=&quot;language-text&quot;&gt;B -&gt; C&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;A -&gt; C&lt;/code&gt;의 &lt;strong&gt;슈퍼 타입이다.&lt;/strong&gt;&lt;br&gt;
-타입 인자가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;에서 서브타입인 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;로 변할 때 &lt;code class=&quot;language-text&quot;&gt;A -&gt; C&lt;/code&gt;는 타입 인자와는 반대 반향으로 움직여 슈퍼 타입인 &lt;code class=&quot;language-text&quot;&gt;B -&gt; C&lt;/code&gt;로 변한다고도 할 수 있다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/be7b1988a84f607240aa2c956fdab9a4/951a4/variance.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 17.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAlUlEQVR42k2PCw6AIAxDuf9BNX5Q8Q8qNW8JxiXNxsrazS3LonEc1fe9rusy5Jy/fJ6n5nk23Pctgj71cRwKIXw8Mw5imiZVVWWiwzDoeR6r13VVSkn7vpswNYDnH3Olt22buq6TK44EjmUL3GKMJto0jWXvvdq2Na78R/z/djQ4u65rG2QzerixAcEb/ANxUHguwOwFoNA2xvhlrbwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;variance&quot;
-        title=&quot;&quot;
-        src=&quot;/static/be7b1988a84f607240aa2c956fdab9a4/1cfc2/variance.png&quot;
-        srcset=&quot;/static/be7b1988a84f607240aa2c956fdab9a4/3684f/variance.png 225w,
-/static/be7b1988a84f607240aa2c956fdab9a4/fc2a6/variance.png 450w,
-/static/be7b1988a84f607240aa2c956fdab9a4/1cfc2/variance.png 900w,
-/static/be7b1988a84f607240aa2c956fdab9a4/21482/variance.png 1350w,
-/static/be7b1988a84f607240aa2c956fdab9a4/951a4/variance.png 1355w&quot;
-        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;종합해보자면 &lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&lt;/code&gt;는 원소 타입에 대해 &lt;strong&gt;공변&lt;/strong&gt; 이며, &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&lt;/code&gt;는 &lt;strong&gt;불변&lt;/strong&gt; 이다.&lt;br&gt;
-마지막으로 함수 타입은 매개변수 타입에 대해서는 &lt;strong&gt;반변&lt;/strong&gt; 이고, 결과 타입에 대해서는 &lt;strong&gt;공변&lt;/strong&gt; 이다.&lt;/p&gt;
-&lt;h3&gt;각 제네릭 타입의 가변성을 결정하는 일반적인 방법&lt;/h3&gt;
-&lt;p&gt;논의를 간단하게 만들기 위해 타입 매개변수가 하나뿐인 제네릭 타입만 고려한다.&lt;br&gt;
-제네릭 타임의 이름은 &lt;code class=&quot;language-text&quot;&gt;G&lt;/code&gt;, 타입 매개변수의 이름은 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;라고 하자.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;G&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 출력에만 사용하면 &lt;strong&gt;공변&lt;/strong&gt; , 입력에만 사용하면 &lt;strong&gt;반변&lt;/strong&gt; , 출력과 입력 모두에 사용하면 &lt;strong&gt;불변&lt;/strong&gt; 이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;G&lt;/code&gt;에 해당하는 타입&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 출력에 사용(공급자)&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 입력에 사용(소비자)&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;&lt;strong&gt;가변성&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;ReadOnlyList&amp;#x3C;T&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;X&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;공변&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;ReadWriteList&amp;#x3C;T&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;불변&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;Int -&gt; T&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;X&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;공변&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;T -&gt; Int&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;X&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;O&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;반변&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;즉, &lt;strong&gt;타입 매개변수를 출력에만 사용하는지, 입력에만 사용하는지, 둘 모두에 사용하는지 보면 가변성을 판단할 수 있다.&lt;/strong&gt;&lt;br&gt;
-타입 매개변수를 사용한 곳에 따라 달라진다는 것이다.&lt;/p&gt;
-&lt;h3 id=&quot;정의할-때-가변성-지정하기&quot; style=&quot;position:relative;&quot;&gt;정의할 때 가변성 지정하기&lt;a href=&quot;#%EC%A0%95%EC%9D%98%ED%95%A0-%EB%95%8C-%EA%B0%80%EB%B3%80%EC%84%B1-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0&quot; aria-label=&quot;정의할 때 가변성 지정하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;가변성은 각 제네릭 타입의 고유한 속성이다. 따라서 &lt;strong&gt;제네릭 타입을 정의할 때 가변성을 지정하는게 가장 직관적이다.&lt;/strong&gt;&lt;br&gt;
-개발자는 제네릭 타입의 각 매개변수에 가변성을 표시함으로써 공변, 반변, 불변 중 하나를 고를 수 있다.&lt;/p&gt;
-&lt;h3&gt;불변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;abstract class List&amp;lt;T&amp;gt; {
-    abstract fun length(): Int
-    abstract fun get(index: Int): T
-    abstract fun add(element: T)
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;h3&gt;공변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;abstract class ReadOnlyList&amp;lt;out T&amp;gt; {
-    abstract fun get(index: Int): T
-}
-
-val marathoners: ReadOnlyList&amp;lt;Marathoner&amp;gt; = ..
-val people: ReadOnlyList&amp;lt;Person&amp;gt; = marathoners
-val person = people.get(0)
-
-fun averageAge(people: ReadOnlyList&amp;lt;Person&amp;gt;): Int = ..
-
-averageAge(marathoners)
-averageAge(people)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&amp;lt;out T&gt;&lt;/code&gt;는 해당 타입 매개변수가 출력에만 사용됨을 뜻하며 원소를 추가할 수 없는 대신 공변인 리스트를 정의할 수 있다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 출력에만 사용한다고 했으니, &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 메서드 결과 타입으로 사용할 수 있는 있어도 매개변수 타입으로 사용할 수는 없다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;ReadOnlyList&lt;/code&gt;는 &lt;strong&gt;공변이므로 타입 인자의 서브타입 관계를 보존한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;이제 &lt;code class=&quot;language-text&quot;&gt;averageAge&lt;/code&gt; 함수를 제네릭 함수로 만들지 않고 타입 매개변수 제한없이 사용할 수 있다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 783px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/16c3998ca212b2bd0b7a9d4af61c113e/e51a6/genericOut.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 47.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACIElEQVR42lWSCU8aURhF+f9/o6klrbUa05q2VtkGZgWhpGosGlkEHBHQYVhmOb2DTVMnuXnztvO+9+7NkaZkX5rGJKsJK/+c8WWBUfuI+9YhfnOfSWufzfUx0W2BqF8lHp8RP15t12f7/gK2TS5NE+KgTzS0SfsG65syF8VdLku7dMx9ru09OvZHknENJjb4JsmgRNIvEXdLRHe29g+ESgQVMPKbpL0y3DlSXYu1aWIST6pcuHnaVp6rn59oWTs0K284V39zb0iCScl9Bj7Rf4s02ajCngHDumAecb9C7JdJZhbJ3GEl8GJUZvrrmKl3wswqMKsWCB2DsF4lbKm9KLK+E7z/neihTY5hQzCXdFBTVao0EHzuwrNHMrUJmyVCyxTEYSGt6h6BrXHX2Y4tbUd9g2XnlI2g/4BxX5XNdd0n7wW4cAmvdLrj4RslrHdv8d7naXx4j5PfwZZc9Ttfv7BpNFh4NRY3h7pyt0IGTQcW0bioytwXaOCx0VxQq7D26qwarqpzWdadV+2qoTm3wdw8UEK8zJQWidxi4MqQDFraviFPWZUe69uKGsmqsXQFcD2W2QHSUlcOzAJza49QccqczqXyOrM9GgnYq5B2DeLeKfGwSOIbpDO97UOZVU9mXP4gaH8jODsiaH7muX1AeCOHgy7bzGSxeR3sR+LZb2JFIB55ck7x6CrMvaLyJg3LiodJ5LtEs3OS9fQlf/8F+w96RNZi2cqAkAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;genericOut&quot;
-        title=&quot;&quot;
-        src=&quot;/static/16c3998ca212b2bd0b7a9d4af61c113e/e51a6/genericOut.png&quot;
-        srcset=&quot;/static/16c3998ca212b2bd0b7a9d4af61c113e/3684f/genericOut.png 225w,
-/static/16c3998ca212b2bd0b7a9d4af61c113e/fc2a6/genericOut.png 450w,
-/static/16c3998ca212b2bd0b7a9d4af61c113e/e51a6/genericOut.png 783w&quot;
-        sizes=&quot;(max-width: 783px) 100vw, 783px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;abstract class ReadOnlyList&amp;lt;T&amp;gt; {
-    abstract fun get(index: Int): T
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위와 같이 선언된 List는 원소를 추가할 수도 없는 주제에 불변이기까지 한 불편한 리스트일 뿐이다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt;를 입력에 사용하는 메서드를 추가하려고 계획 중인 게 아니라면, 굳이 이런 리스트를 정의할 필요는 없다.&lt;/p&gt;
-&lt;h3&gt;반변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;abstract class Map&amp;lt;in K, V&amp;gt; {
-    abstract fun size(): Int
-    abstract fun get(key: K): V
-    abstract fun add(key: K, value: V)
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;타입 매개변수를 반변으로 만들고 싶을 때는 &lt;code class=&quot;language-text&quot;&gt;in&lt;/code&gt;을 붙여 &lt;strong&gt;그 타입 매개변수를 입력에만 사용한다는 뜻이다.&lt;/strong&gt;&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;abstract fun getKey(value: V): K&lt;/code&gt; 이 메서드는 컴파일 에러를 발생시킨다.&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;in K, V&gt;&lt;/code&gt; 클래스는 두 개의 타입 매개변수를 가지며, &lt;code class=&quot;language-text&quot;&gt;in&lt;/code&gt;으로 가변성이 지정된 &lt;code class=&quot;language-text&quot;&gt;K&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;add()&lt;/code&gt;에서 입력으로만 사용되었기 때문에 &lt;strong&gt;반변&lt;/strong&gt; 으로 정의해도 타입 검사기가 문제 삼지 않는다.&lt;br&gt;
-반면 &lt;code class=&quot;language-text&quot;&gt;V&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt;에서는 출력, &lt;code class=&quot;language-text&quot;&gt;add()&lt;/code&gt;에서는 입력으로 사용되었기 때문에 &lt;strong&gt;반드시 불변이어야 한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;열쇠 타입에 대해 반변이므로 &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;A, V&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;B, V&gt;&lt;/code&gt;의 서브타입이다.&lt;br&gt;
-예를 들면 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;Person, Int&gt;&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;Map&amp;lt;Marathoner, Int&gt;&lt;/code&gt;의 서브타입이다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;val personKey: Map&amp;lt;Person, Int&amp;gt; = ..
-personKey.add(Person(10), 1)
-personKey.add(Marathoner(10), 1)
-
-val marathonerKey: Map&amp;lt;Marathoner, Int&amp;gt; = ..
-marathonerKey.add(Person(10), 1)        &amp;quot;컴파일 에러&amp;quot;
-marathonerKey.add(Marathoner(10), 1)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 783px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/6b9822e8b29a39a5df81410ae89c62ce/e51a6/genericIn.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 47.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJUlEQVR42k2SiU7bUBBF8//fUVGVqiyNuggUwFmI4y0hhCYFKpTVZIM4OI4d2+907FQVlkbvWfacuTNzCyhF9iiVoKIlm+kdbveS2d1PZu0iL50iy9tTto9nJH2NZFQnmbZIXh5Iw2We9w+QHwWlUhJ/ROwaMLlm3SvRPj+gq32mWz7kyTymb5+wGWiwNEifr0lH5TySQZl4Ykj+WFCpQAUYz29Qw4rATAkH5ZqohQ5vBt7kglv9I/ftI3rOIT3rE16/hFrq7KYCm1VIZxn4Qu5tVLoThcMauI7AbGmnSjyX6qsGam2RrEx8t4wnql+tEp6h4RtVArNG4EjcSPQ0oonAR+fEiw4F3KbALNRYZrMUpb7APUsU2qSvDUkqE5oGkW2ztSy2cga2RWCZhNm7IUWNGts/l+wE+h+YjES+J3Nc23vgRn5+KBM0JLFpE7cc7r8X0Q8+cHv8hV9fT2QqOlHLJpQiG7vO5qkoLQ+qZFA1bhBPZfBv1h7q2+zkm1+v5gkZNHSkiGOKSjO/h02LqOmI0iaefko4t7OltEllW4wt0hy6nyHrTKVN1K/KIdGo5y2GVqbIyWNrSrv6FV7jiGB0nW+6oGTX2drjZwEOq6hBjWR4SeJqpPMaaiWzXVQIh1cEv0v4nTP81g/8m2+8dU4JnmTD/oDcM5lt3hs7DV9ks48kYoHkWeY2qknbV8RDTfwm4VbEHro4wSJedUmj173/3hn7Lx1j2Krz2R/8AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;genericIn&quot;
-        title=&quot;&quot;
-        src=&quot;/static/6b9822e8b29a39a5df81410ae89c62ce/e51a6/genericIn.png&quot;
-        srcset=&quot;/static/6b9822e8b29a39a5df81410ae89c62ce/3684f/genericIn.png 225w,
-/static/6b9822e8b29a39a5df81410ae89c62ce/fc2a6/genericIn.png 450w,
-/static/6b9822e8b29a39a5df81410ae89c62ce/e51a6/genericIn.png 783w&quot;
-        sizes=&quot;(max-width: 783px) 100vw, 783px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;정의할 때 가변성을 지정하는 방법은 이해하기 쉬운 대신 클래스를 정의할 때 큰 제약이 생긴다는 문제가 있다.&lt;/strong&gt;&lt;br&gt;
-타입을 공변으로 만든다면 타입 매개변수를 입력에 사용하는 절반을 모두 포기해야 하고, 반변으로 만든나면 나머지 절반을 포기해야 한다.&lt;br&gt;
-그러니 공변이나 반변을 선택하면 &lt;strong&gt;반쪽짜리 클래스를 만들 수 밖에 없는 것이다.&lt;/strong&gt;&lt;br&gt;
-함수형 프로그래밍에서는 대부분의 경우 수정할 수 없는 자료구조만 사용해 프로그램을 작성하기 때문에 함수형 언어에서는 이 단점이 상대적으로 덜 드러난다.&lt;/p&gt;
-&lt;h3 id=&quot;사용할-때-가변성-지정하기&quot; style=&quot;position:relative;&quot;&gt;사용할 때 가변성 지정하기&lt;a href=&quot;#%EC%82%AC%EC%9A%A9%ED%95%A0-%EB%95%8C-%EA%B0%80%EB%B3%80%EC%84%B1-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0&quot; aria-label=&quot;사용할 때 가변성 지정하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;제네릭 타입을 사용할 때 가변성을 지정하는 경우, 제네릭 타입을 정의할 때는 가변성을 지정할 수 없다.&lt;br&gt;
-&lt;strong&gt;모든 제네릭 타입은 불변으로 정의되며 타입 매개변수를 아무 데서나 사용할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;불변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;abstract class ReadWriteList&amp;lt;T&amp;gt; {
-    abstract fun length(): Int
-    abstract fun get(index: Int): T
-    abstract fun add(element: T)
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;h3&gt;공변&lt;/h3&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;val onlyReadPeople: ReadWriteList&amp;lt;out Person&amp;gt; = ..
-val size = onlyReadPeople.length()
-val person: Person = onlyReadPeople.get(0)
-onlyReadPeople.add(Person(10)) &amp;quot;컴파일 에러&amp;quot;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;onlyReadPeople&lt;/code&gt;은 출력 기능만 사용할 수 있고, 원소 타입이 매개변수 타입으로 사용되지 않는 메서드만 사용할 수 있다는 뜻이다.&lt;br&gt;
-그리고 &lt;strong&gt;&quot;A를 출력과 입력에 모두 사용할 수 있는 불변 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 A를 출력에 사용할 수 있는 리스트다.&quot;&lt;/strong&gt; 가 사실이기 때문에 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out A&gt;&lt;/code&gt;의 서브타입이다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;T&gt;&lt;/code&gt;는 불변이지만 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;out Person&gt;&lt;/code&gt;는 공변이다. 따라서 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out B&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;out A&gt;&lt;/code&gt;의 서브타입이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun averageAge(people: ReadWriteList&amp;lt;out Person&amp;gt;): Int {
-    people.get(0)
-    people.add(Person(10)) &amp;quot;컴파일 에러&amp;quot;
-}
-
-val onlyReadPeople: ReadWriteList&amp;lt;out Person&amp;gt; = ..
-averageAge(onlyReadPeople)
-
-val onlyReadMarathoners: ReadWriteList&amp;lt;out Marathoner&amp;gt; = ..
-averageAge(onlyReadMarathoners)
-
-val readWriteMarathoner: ReadWriteList&amp;lt;Marathoner&amp;gt; = ..
-averageAge(readWriteMarathoner)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/0372e7ff130078424ceddb061324fb5c/38124/chainingOut.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 43.55555555555555%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5ElEQVR42k1S2XLaQBDk//8klVRBnASwzCVucTix8+ALgYQOTscIJ0KwR6cRhMpWTWm1s9vTM90ZnJfWAvttiG34E++uhWTagvKbUFMT2qtD+w3osA0160Et76DebKh4mb77f2W0EhDRBHreR/RUxrj9CY51hei5AcwHBGwhscvYHWNUgnRrLGBCOSXmaixgQW2nF+CMXNzyQhsIBgT4DqzugeUPKK/BB1XEowoL5OD0chh3stg+FrEfGwQ3ED/nET/mIOxvkCyu5Y4MvQ7ANnTYgQ4sRh/SqZKJyQI9Bs/S/BAIm9g8FAmexcT6iFHnA7zhZ+zta0j7CyTJZNRrF3/CGt5DE4d1C3LGr1uAWHewntxgxYjndai5CcG9Wlh4c0tY2kaai7wy9KILMT4yz5PhrwYTZdj3OfzmQ71uY+98RbKoYPZiIHgqYONzbqtmCiiCMsHy8B7yaW5pF3Hwr3F4yUKs7pA5HFULapzbsbVj24O0beHcUNkSz5r8Z4Sc8eyWcyVbr8oc2foG5OTqBMbxaJmQoZaQkQsZ9nmJ80wF6qePtdeFcusnENrnFNw7NQpRSNsUQfussjypfPEh7aN2K6jNCJI+kyHt4LfOapsUqQJJm8iAc14MeY8+TF4vQP98+Beos5JXTnVBiAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;chainingOut&quot;
-        title=&quot;&quot;
-        src=&quot;/static/0372e7ff130078424ceddb061324fb5c/1cfc2/chainingOut.png&quot;
-        srcset=&quot;/static/0372e7ff130078424ceddb061324fb5c/3684f/chainingOut.png 225w,
-/static/0372e7ff130078424ceddb061324fb5c/fc2a6/chainingOut.png 450w,
-/static/0372e7ff130078424ceddb061324fb5c/1cfc2/chainingOut.png 900w,
-/static/0372e7ff130078424ceddb061324fb5c/38124/chainingOut.png 953w&quot;
-        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;averageAge()&lt;/code&gt; 함수와 같이 새로운 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;out Person&gt;&lt;/code&gt; 타입을 통해 함수 내부에서는 출력의 용도로만 사용하겠다고 선언하여 공변으로 지정하여 사용할 수 있다.&lt;/p&gt;
-&lt;h3&gt;반변&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;in A&gt;&lt;/code&gt; 역시 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;A&gt;&lt;/code&gt;와 비슷하게 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt; 타입의 원소들로 구성된 리스트를 나타내지만 &lt;strong&gt;입력 기능만 사용할 수 있다는 차이가 있다.&lt;/strong&gt;&lt;br&gt;
-정확히 말하면 &lt;strong&gt;메서드 중 원소 타입이 결과 타입으로 사용되지 않는 메서드만 사용할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;val readWritePeople: ReadWriteList&amp;lt;in Person&amp;gt; = ..
-val people: Any? = readWritePeople.get(0)
-readWritePeople.add(Person(10))
-readWritePeople.add(Marathoner(10))
-
-val readWriteMarathoners: ReadWriteList&amp;lt;in Marathoner&amp;gt; = ..
-val marathoner: Any? = readWriteMarathoners.get(0)
-readWriteMarathoners.add(Marathoner(10))&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;strong&gt;&quot;A를 출력과 입력에 모두 사용할 수 있는 불변 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 A를 입력에 사용할 수 있는 리스트다.&quot;&lt;/strong&gt; 가 사실이기 때문에 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;A&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in A&gt;&lt;/code&gt;의 서브타입이다.&lt;br&gt;
-따라서 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;의 서브타입일 때 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in A&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in B&gt;&lt;/code&gt;의 서브타입이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/48da0b2963cedd8e26b04c7ad7f470a3/38124/chainingIn.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 43.55555555555555%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5ElEQVR42k1Si27aQBDk/z+lqgRJ1EDAPEwMmEdQkqqqmhrw2ca8AoEkCo7vMR2bJOpJq1tbtzs7s1PAx9E6xesuwEv8EwffxcvUhgqvoQOb0YZhbuZd6MUAen0HvZ9Av61hjMT/p2C0hH6eIZ27EP0ipt3v8LpFiOElVODCRF0kkzqOHoO3FDZMBiIsArWgY5f14qtxQa3GRO8C8Q1AZGzuGbf8dljQxPvMhhicwR+UMOuX2NSC9C0C1BgVpN4F1JTgyxGMOnLCyAWWQ5i4xyYD0hpB+U1O0uL/AaMPQ5pYjKHDNhA52P+uYeJ+QzguIvHbfE8Q7xyKwxSSxTWeAguHqIXXuIU0biIVFcjHHh5ntTzelixa2pDMNQHUrodd0MBONPJcr1zIaYVsLlF48suY3J8zShC/LnCMWSh+IFk1sPhbxfxPGXuCmY3DhpwkqkNtHSy9KuIHUt52kEZXSB+KkJs7argekQ6prPvAihFTi2hIGjXeFuk6lMHJpchpc+PSr0NHnDas4t07OzWjPEYl1NAoqIMPNR/yAXXMFsQ8KzYhNyjaeZOTfT4sRH3lpEyaV5CZlZ4DZH3yLX/6J7fPcUN/eVDctor7nKJDkJMXVaYXbaLmHajVzcmHyfar0acP/wGdHpKfkVW4jAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;chainingIn&quot;
-        title=&quot;&quot;
-        src=&quot;/static/48da0b2963cedd8e26b04c7ad7f470a3/1cfc2/chainingIn.png&quot;
-        srcset=&quot;/static/48da0b2963cedd8e26b04c7ad7f470a3/3684f/chainingIn.png 225w,
-/static/48da0b2963cedd8e26b04c7ad7f470a3/fc2a6/chainingIn.png 450w,
-/static/48da0b2963cedd8e26b04c7ad7f470a3/1cfc2/chainingIn.png 900w,
-/static/48da0b2963cedd8e26b04c7ad7f470a3/38124/chainingIn.png 953w&quot;
-        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun addPerson(people: ReadWriteList&amp;lt;in Person&amp;gt;) {
-    people.add(Person(..))
-    people.add(Marathoner(..))
-}
-
-val readWritePeople1: ReadWriteList&amp;lt;in Person&amp;gt; = ..
-val readWritePeople2: ReadWriteList&amp;lt;Person&amp;gt; = ..
-addPerson(readWritePeople1)
-addPerson(readWritePeople2)
-
-val readWriteMarathoners1: ReadWriteList&amp;lt;in Marathoner&amp;gt; = ..
-val readWriteMarathoners2: ReadWriteList&amp;lt;Marathoner&amp;gt; = ..
-addPerson(readWriteMarathoners1)    &amp;quot;컴파일 에러&amp;quot;
-addPerson(readWriteMarathoners2)    &amp;quot;컴파일 에러&amp;quot;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;addPerson&lt;/code&gt; 함수는 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;in Person&gt;&lt;/code&gt; 반변으로 지정되어 있기 때문에 &lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;Marathoner&gt;&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;의 서브타입이긴 하지만 &lt;code class=&quot;language-text&quot;&gt;addPerson&lt;/code&gt;의 인자로 사용될 수 없다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun addMarathoner(people: ReadWriteList&amp;lt;in Marathoner&amp;gt;) {
-    people.add(Person(..))      &amp;quot;컴파일 에러&amp;quot;
-    people.add(Marathoner(..))
-}
-
-val readWritePeople1: ReadWriteList&amp;lt;in Person&amp;gt; = ..
-val readWritePeople2: ReadWriteList&amp;lt;Person&amp;gt; = ..
-addMarathoner(readWritePeople1)
-addMarathoner(readWritePeople2)
-
-val readWriteMarathoners1: ReadWriteList&amp;lt;in Marathoner&amp;gt; = ..
-val readWriteMarathoners2: ReadWriteList&amp;lt;Marathoner&amp;gt; = ..
-addMarathoner(readWriteMarathoners1)
-addMarathoner(readWriteMarathoners2)&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReadWriteList&amp;lt;in Marathoner&gt;&lt;/code&gt; 반변으로 지정하면 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Person&gt;&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in Marathoner&gt;&lt;/code&gt;의 서브타입이기 때문에 &lt;code class=&quot;language-text&quot;&gt;addMarathoner&lt;/code&gt; 함수 호출이 다 가능해진다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;in Marathoner&gt;&lt;/code&gt;에는 &lt;code class=&quot;language-text&quot;&gt;Marathoner&lt;/code&gt;가 보장되어야 하기 때문에 더 작은 의미를 가지는 &lt;code class=&quot;language-text&quot;&gt;Person&lt;/code&gt;을 직접 추가하지는 못한다.&lt;br&gt;
-이는 &lt;strong&gt;Person 리스트에 Marathoner 객체를 추가해도 괜찮고 Marathoner 리스트에 Person 객체를 추가하지 못한다는 직관과 일치한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;맺으며&quot; style=&quot;position:relative;&quot;&gt;맺으며&lt;a href=&quot;#%EB%A7%BA%EC%9C%BC%EB%A9%B0&quot; aria-label=&quot;맺으며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;여러 종류의 다형성을 이해하고 제네릭 가변성에 대해 알아보았다.&lt;br&gt;
-사용하는 언어가 공변성과 반공변성을 어느 정도로 지원하는지를 정확하게 이해한 후 사용해야 한다.&lt;br&gt;
-예를들어 자바는 리턴 타입 공변성을 지원하지만 C#은 리턴 타입 공변성을 지원하지 않기 때문이다.&lt;/p&gt;
-&lt;p&gt;개인적으로 공변,불변을 제외한 나머지를 반변이라고 설명하는 글들을 많이 접했었는데 이 책에서는 반변을 설명할 때 &lt;strong&gt;함수와 서브타입&lt;/strong&gt;에 대한 설명이 독특했다.&lt;br&gt;
-&lt;strong&gt;&quot;함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다.&quot;&lt;/strong&gt; 는 사실이 반변을 이해할 때 도움이 되었다.&lt;/p&gt;
-&lt;p&gt;어려운 제네릭 가변성에 대한 내용을 배워봤지만 제네릭이 능사는 아니다.&lt;br&gt;
-서브타입 관계를 추가하는 대신 기능이 빠진 타입을 만들거나, 기능을 다 갖춘 타입을 만드는 대신 서브타입 관계를 포기하거나, 개발자는 반드시 이 둘 중 하나를 골라야 한다.&lt;br&gt;
-+&lt;/p&gt;</content:encoded></item><item><title><![CDATA[트랜잭션과 잠금]]></title><description><![CDATA[InnoDB Locking Dirty read, Non-repeatable read, and Phantom read 트랜잭션 트랜잭션은 작업의 완전성을 보장 (COMMIT, ROLLBACK…]]></description><link>https://jdalma.github.io/2024y/transaction/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/transaction/</guid><pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;p&gt;이 글에서는 스프링의 AOP와 AspectJ는 더 자세하게 설명하지 않았다. 준비가 된다면 다른 글로 정리할 예정이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[트랜잭션과 잠금]]></title><description><![CDATA[InnoDB Locking Dirty read, Non-repeatable read, and Phantom read 트랜잭션 트랜잭션은 작업의 완전성을 보장 (COMMIT, ROLLBACK…]]></description><link>https://jdalma.github.io/2024y/transaction/</link><guid isPermaLink="false">https://jdalma.github.io/2024y/transaction/</guid><pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html&quot;&gt;InnoDB Locking&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://jennyttt.medium.com/dirty-read-non-repeatable-read-and-phantom-read-bd75dd69d03a&quot;&gt;Dirty read, Non-repeatable read, and Phantom read&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
