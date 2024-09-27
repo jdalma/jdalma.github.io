@@ -1,6 +1,6 @@
 ---
 title: 제네릭 가변성에 대해
-date: "2024-02-20"
+date: "2024-09-27"
 tags:
    - generic
 ---
@@ -51,7 +51,7 @@ run1(Person(..))
 run1(Marathoner(..))
 
 fun run2(marathoner: Marathoner) { .. }
-run2(Person(name))   "컴파일 에러"
+run2(Person(name))   // 컴파일 에러 !!!
 run2(Marathoner(name))
 ```
 
@@ -72,17 +72,19 @@ fun aging(marathoner: Marathoner) = Marathoner(marathoner.age + 1)
 ```kotlin
 open class Numbers(val elements: List<Int>)
 class PositiveNumbers(elements: List<Int>): Numbers(elements) {
-    val positiveNumberIndexes: List<Int> = "합계를 빠르게 계산하기 위해 양수의 index를 저장"
+    val positiveNumberIndexes: List<Int> = .. // 합계를 빠르게 계산하기 위해 양수의 index를 저장
 }
 
 fun positiveNumberSum(numbers: Numbers): Int = ..
 fun positiveNumberSum(numbers: PositiveNumbers): Int = ..
 
+// 각 타입에 맞는 함수가 실행된다. 
 positiveNumberSum(Numbers(..))
 positiveNumberSum(PositiveNumbers(..))
 
-val numbers: Numbers = PositiveNumbers(..)  "Numbers가 정적 타입, PositiveNumber가 동적 타입이다."
-positiveNumberSum(numbers)    "정적 선택 (static dispatch)"
+// Numbers가 정적 타입, PositiveNumber가 동적 타입인 경우 정적 선택을 우선한다. (static dispatch)
+val numbers: Numbers = PositiveNumbers(..)
+positiveNumberSum(numbers)
 ```
   
 오버로딩된 양수의 사이즈를 반환하는 `positiveNumberSum()` 함수를 확인할 수 있다.  
@@ -113,14 +115,16 @@ class PositiveNumbers(elements: List<Int>): Numbers(elements) {
 }
 
 val elements = listOf(1,2,3,4)
+
+// 각 타입이 소유하고 있는 메서드가 실행된다.
 val numbers: Numbers = Numbers(elements)
 numbers.length()
-
 val positiveNumbers: PositiveNumbers = PositiveNumbers(elements)
 positiveNumbers.length()
 
+// 오버라이딩의 경우 동적 선택 (dynamic dispatch)을 우선한다.
 val numbers2: Numbers = PositiveNumbers(elements)
-numbers2.length()   "동적 선택 (dynamic dispatch)"
+numbers2.length()
 ```
 
 > 1. **인자의 타입에 맞는 메서드를 고른다.**
@@ -143,9 +147,9 @@ fun <T> choose(v1: T, v2: T): T {
 }
 ```
 
-`T`를 매개변수 타입 표시와 결과 타입 표시에 사용했다. 이와 같이 한 개 이상의 타입 매개변수를 가지는 함수를 **제네릭 함수** 라고 부른다.  
-타입 매개변수를 추가할 수 있는 곳은 함수뿐이 아니라 타입에 타입 매개변수를 추가하여 **제네릭 타입** 을 지정할 수 있고,  
-타입 매개변수를 가진 클래스를 정의하여 **제네릭 클래스** 도 만들 수 있다.  
+`T`를 매개변수 타입 표시와 결과 타입 표시에 사용했다. 이와 같이 한 개 이상의 타입 매개변수를 가지는 함수를 **제네릭 함수**라고 부른다.  
+타입 매개변수를 추가할 수 있는 곳은 함수뿐이 아니라 타입에 타입 매개변수를 추가하여 **제네릭 타입**을 지정할 수 있고,  
+타입 매개변수를 가진 클래스를 정의하여 **제네릭 클래스**도 만들 수 있다.  
   
 하지만 제네릭 `T`가 아무 타입이나 될 수 있기 때문에 특정 타입에서 제공하는 기능을 사용할 수 없다.  
 **타입 매개변수로 지정된 타입은 함수 또는 클래스 안에서 특정 능력이 필요한 자리에 사용된다면 제네릭으로 선언할 필요가 없다.**  
@@ -186,8 +190,8 @@ findFirst(stringList)
 findFirst(intList)
 findFirst(anotherList)
 
-isExist(stringList)     "컴파일 에러"
-isExist(intList)        "컴파일 에러"
+isExist(stringList)     // 컴파일 에러 !!!
+isExist(intList)        // 컴파일 에러 !!!
 isExist(anotherList)
 ```
 
@@ -208,13 +212,13 @@ fun elder(person: Person, other: Person): Person =
     if(person > other) person else other
 
 val person: Person = elder(person1, person2)
-val marathoner: Marathoner = elder(marathoner1, marathoner1)    "[1] 컴파일 에러"
+val marathoner: Marathoner = elder(marathoner1, marathoner1)    // [1] 컴파일 에러 !!!
 ```
   
 `[1]` 컴파일 에러가 난 부분은 `elder()` 함수의 파라미터로 `Marathoner`가 사용되어도 서브타입에 의한 다형성으로 컴파일을 통과하지만 기대하는 반환 타입이 `Marathoner`이기 때문에 컴파일 에러가 발생한다.  
 실제로 반환 타입인 `Person`은 `Marathoner`의 서브타입이 아니기 때문이다.  
   
-이때 제네릭 함수를 적용하려 할 수 있다. 하지만 제네릭 타입은 모든 타입을 수용하기 때문에 `>` 연산 같은 특별한 능력을 사용할 수 없다.  
+`elder` 함수를 사용하기 위해 제네릭을 적용하려 할 수 있다. 하지만 제네릭 타입은 모든 타입을 수용하기 때문에 `>` 연산 같은 특별한 능력을 사용할 수 없다.  
 이때 **타입 매개변수 제한의 상한(upper bound)** 을 지정하여 **"T가 최대 Person 타입까지 커질 수 있다."** 라는 의미를 부여할 수 있다.  
 즉, **T가 Person의 서브타입이다.** 라고 선언하는 것이다. (제네릭 함수뿐 아니라 제네릭 클래스도 마찬가지다.)  
 
@@ -232,7 +236,7 @@ class List<T : Person> {
     fun get(index: Int): T = TODO()
 }
 ```
-위와 같이 `List<T>`의 상한을 `Person`으로 제한했다고 해서 `List<Marathoner>`가 `List<Person>`의 서브타입이라고 보장하진 않는다.  
+하지만 `List<T>`의 상한을 `Person`으로 제한했다고 해서 `List<Marathoner>`가 `List<Person>`의 서브타입이라고 보장하진 않는다.  
   
 ## 둘 이상의 상한 제한
 
@@ -251,8 +255,8 @@ class Developer: Person, Marathoner
 interface Intersection<T> where T : Person, T : Marathoner
 
 fun main() {
-    val person = object : Intersection<Person> {}         "컴파일 에러 (타입 인수가 해당 바운드내에 없습니다.)"
-    val marathoner = object : Intersection<Marathoner> {} "컴파일 에러 (타입 인수가 해당 바운드내에 없습니다.)"
+    val person = object : Intersection<Person> {}         // 컴파일 에러 !!!
+    val marathoner = object : Intersection<Marathoner> {} // 컴파일 에러 !!!
     val trainer = object : Intersection<Trainer> {}
     val developer = object : Intersection<Developer> {}
 }
@@ -324,12 +328,11 @@ fun <T: Person> averageAge(people: List<T>): Int = ..
 open class Person(val age: Int)
 class Marathoner(age: Int) : Person(age)
 
-"가지고 있는 원소들을 알려줄 뿐, 원소를 추가하거나 제거할 수 없는 리스트다."
+// [1] 가지고 있는 원소들을 알려줄 뿐, 원소를 추가하거나 제거할 수 없는 리스트다.
 abstract class ReadOnlyList<T> {
     abstract fun get(index: Int): T
 }
 
-"[1]"
 val marathoners: ReadOnlyList<Marathoner> = ..
 val people: ReadOnlyList<Person> = marathoners
 val person = people.get(0)
@@ -342,13 +345,12 @@ person.age ..
 즉, **`ReadOnlyList<Marathoner>` 를 `ReadOnlyList<Person>`으로 취급함으로써 일어날 수 있는 일은 Person 객체를 기대한 곳에서 Marathoner 객체가 나오는 것 뿐이다.**  
   
 ```kotlin
-"가지고 있는 원소들을 알려주고 새 원소를 추가할 수 있다."
+// [2] 가지고 있는 원소들을 알려주고 새 원소를 추가할 수 있다.
 abstract class ReadWriteList<T> {
     abstract fun get(index: Int): T
     abstract fun add(element: T)
 }
 
-"[2]"
 val marathoners: ReadWriteList<Marathoner> = ..
 val people: ReadWriteList<Person> = marathoners
 people.add(Person(..))
@@ -391,14 +393,14 @@ val marathoner: Marathoner = marathoners.get(0)
 open class Person
 class Marathoner : Person()
 
-fun selectBySubType(selector: (Marathoner) -> Person) {
-    val person1 = selector(Person())    "컴파일 에러"
-    val person2 = selector(Marathoner())
+fun selectBySuperType(selector: (Person) -> Person) {
+    val person1: Person = selector(Person())
+    val person2: Person = selector(Marathoner())
 }
 
-fun selectBySuperType(selector: (Person) -> Person) {
-    val person1 = selector(Person())
-    val person2 = selector(Marathoner())
+fun selectBySubType(selector: (Marathoner) -> Person) {
+    val person1: Person = selector(Person())    // 컴파일 에러 !!!
+    val person2: Person = selector(Marathoner())
 }
 
 val superTypeConsumer: (Person) -> Person = ..
@@ -408,15 +410,17 @@ selectBySubType(superTypeConsumer)
 selectBySubType(subTypeConsumer)
 
 selectBySuperType(superTypeConsumer)
-selectBySuperType(subTypeConsumer)      "컴파일 에러"
+selectBySuperType(subTypeConsumer)      // 컴파일 에러 !!!
 ```
 
 (결과 타입은 서브타입 관계를 유지하기 때문에 입력으로 받는 타입에 집중하자.)  
-위의 예제를 보면 `(Person) -> Marathoner`은 `(Marathoner) -> Marathoner`의 서브타입이 가능하다.  
+위의 예제를 보면 `(Person) -> Person`은 `(Marathoner) -> Person`의 서브타입이 가능하다.  
 **"사람을 인자로 받을 수 있는 함수는 마라토너를 인자로 받을 수 있는 함수다."** 가 성립되기 때문이다.  
+즉, `selectBySubType` 함수에 `superTypeConsumer` 람다가 전달 가능하다는 것이다.  
   
-하지만 그 반대인 `(Marathoner) -> Marathoner`은 `(Person) -> Marathoner`의 서브타입이 아니다.  
+하지만 그 반대인 `(Marathoner) -> Person`은 `(Person) -> Person`의 서브타입이 아니다.  
 **"마라토너를 인자로 받을 수 있는 함수는 사람을 인자로 받을 수 있는 함수다."** 가 성립되지 않는다.  
+즉, `selectBySuperType` 함수에 `subTypeConsumer` 람다를 전달할 수 없다는 것이다.  
   
 첫 번째 "컴파일 에러"는 **함수가 하위 타입 인스턴스를 기대하는데 상위 타입 인스턴스를 전달하려고 했기 때문에 발생한다.**  
 두 번째 "컴파일 에러"는 **함수가 상위 타입 인스턴스를 기대하는데 `더 구체적인 하위 타입을 처리하는 함수를 전달하려고 했기 때문에 발생`한다.**  
@@ -426,21 +430,26 @@ selectBySuperType(subTypeConsumer)      "컴파일 에러"
   
 | 람다 \ 함수 인자   | selectSuperToSuper | selectSubToSuper | selectSuperToSub | selectSubToSub |
 | :----------------- | :----------------: | :--------------: | :--------------: | :------------: |
-| `(Sub) -> Sub`     |         ❌          |        O         |        ❌         |       O        |
-| `(Sub) -> Super`   |         ❌          |        O         |        ❌         |       ❌        |
 | `(Super) -> Super` |         O          |        O         |        ❌         |       ❌        |
 | `(Super) -> Sub`   |         O          |        O         |        O         |       O        |
+| `(Sub) -> Sub`     |         ❌          |        O         |        ❌         |       O        |
+| `(Sub) -> Super`   |         ❌          |        O         |        ❌         |       ❌        |
 
-즉, A가 B의 서브타입일 떄 `B -> C`가 `A -> C`의 서브타입이며 그 반대는 성립하지 않는다.  
-따라서 **함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다.**  
-결과 타입의 서브타입 관계가 유지된다는 사실은 나름 직관적인것에 비해, 매개변수 타입의 서브타입 관계가 뒤집히는게 이상할 수 있지만 논리적으로 타당하다.  
+즉, A가 B의 서브타입일 떄 `B → C`가 `A → C`의 서브타입이며 그 반대는 성립하지 않는다. 따라서 **함수 타입은 매개변수 타입의 서브타입 관계를 뒤집는다.**  
+결과 타입의 서브타입 관계가 유지된다는 사실(반환 타입의 공변성)은 나름 직관적인것에 비해, 매개변수 타입의 서브타입 관계가 뒤집히는게(매개변수의 반공변성) 이상할 수 있지만 논리적으로 타당하다.  
 `selectSubToSuper`의 함수는 4가지의 람다를 모두 허용하는 이유가 **"함수 타입은 매개변수 타입의 서브타입 관계를 뒤집고 결과 타입의 서브타입 관계는 유지하기 때문이다."** ⭐️  
   
-즉, 함수 타입과 결과 타입 사이의 관계는 **공변**이다. 한편 함수 타입과 매개변수 타입 사이의 관계는 공변도 불변도 아니다.  
+즉, 함수의 결과 타입과 실제 결과 타입 사이의 관계는 **공변**이다. 한편 함수 매개변수 타입과 실제 매개변수 타입 사이의 관계는 공변도 불변도 아니다.  
 여기서 **제네릭 타입이 타입 인자의 서브타입 관계를 뒤집는 가변성이 등장한다.**  
   
-결과 타입을 `C`로 고정할 때 `B`가 `A`의 서브타입이면 `B -> C`는 `A -> C`의 **슈퍼 타입이다.**  
-타입 인자가 `A`에서 서브타입인 `B`로 변할 때 `A -> C`는 타입 인자와는 반대 반향으로 움직여 슈퍼 타입인 `B -> C`로 변한다고도 할 수 있다.  
+
+> **✋ 잠깐, 왜 함수의 매개변수에 대해서는 반공변성이 적용될까?**  
+> 리스코프 치환 원칙에 따르면 **"서브타입은 슈퍼타입을 대체할 수 있어야 한다."**  
+> `(Super) -> Super`가 필요한 자리에 `(Sub) -> Super`를 사용할 수 있어야 한다면 `(Sub) -> Super`는 `Super`도 처리할 수 있어야 한다.  
+> 하지만 실제로는 더 구체적인 타입인 `Sub`가 더 일반적인 타입인 `Super`를 처리할 수 없기 때문에 서브타입 함수가 슈퍼타입 함수처럼 사용되기 위해서는 매개변수의 타입이 더 일반적이어야 한다.  
+
+결과 타입을 `C`로 고정할 때 `B`가 `A`의 서브타입이면 `B → C`는 `A → C`의 **슈퍼 타입이다.**  
+타입 인자가 `A`에서 서브타입인 `B`로 변할 때 `A → C`는 타입 인자와는 반대 반향으로 움직여 슈퍼 타입인 `B → C`로 변한다고도 할 수 있다.  
 
 ![](./variance.png)
 
@@ -454,16 +463,16 @@ selectBySuperType(subTypeConsumer)      "컴파일 에러"
 
 > `G`가 `T`를 출력에만 사용하면 **공변** , 입력에만 사용하면 **반변** , 출력과 입력 모두에 사용하면 **불변** 이다.
 
-| `G`에 해당하는 타입 | `T`를 출력에 사용(공급자) | `T`를 입력에 사용(소비자) | **가변성** |
+| `G`에 해당하는 타입 | `T`를 출력에 사용 | `T`를 입력에 사용 | **가변성** |
 | :---: | :---: | :---: | :---: |
-| ReadOnlyList\<T\> | O | X | **공변** |
+| ReadOnlyList\<T\> | O | ❌ | **공변** |
 | ReadWriteList\<T\> | O | O | **불변** |
-| Int -> T | O | X | **공변** |
-| T -> Int | X | O | **반변** |
+| Int -> T | O | ❌ | **공변** |
+| T -> Int | ❌ | O | **반변** |
 
 즉, **타입 매개변수를 출력에만 사용하는지, 입력에만 사용하는지, 둘 모두에 사용하는지 보면 가변성을 판단할 수 있다.**  
 타입 매개변수를 사용한 곳에 따라 달라진다는 것이다.  
-  
+
 ### 정의할 때 가변성 지정하기
 
 가변성은 각 제네릭 타입의 고유한 속성이다. 따라서 **제네릭 타입을 정의할 때 가변성을 지정하는게 가장 직관적이다.**  
@@ -669,4 +678,3 @@ addMarathoner(readWriteMarathoners2)
   
 어려운 제네릭 가변성에 대한 내용을 배워봤지만 제네릭이 능사는 아니다.  
 서브타입 관계를 추가하는 대신 기능이 빠진 타입을 만들거나, 기능을 다 갖춘 타입을 만드는 대신 서브타입 관계를 포기하거나, 개발자는 반드시 이 둘 중 하나를 골라야 한다.  
-+
