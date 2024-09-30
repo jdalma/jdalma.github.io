@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 30 Sep 2024 05:14:57 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Tue, 16 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 30 Sep 2024 07:42:01 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Tue, 16 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
@@ -11502,76 +11502,31 @@ public class Test {
 &lt;li&gt;생성자에 직접 달아주자&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[클래스는 언제 로딩될까?]]></title><description><![CDATA[출처 Loading, Linking, and Initializing 클래스는 언제 로딩되고 초기화되는가? 위의 게시글을 따라 테스트 하였습니다. 클래스 로딩 클래스 로더가 파일을 찾고 JVM 메모리에 올리는 작업을 의미한다. ⭐️ JVM…]]></description><link>https://jdalma.github.io/2022y/classLoader/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/classLoader/</guid><pubDate>Tue, 30 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[클래스는 언제 로딩될까?]]></title><description><![CDATA[출처 Loading, Linking, and Initializing 클래스는 언제 로딩되고 초기화되는가? JVM 밑바닥까지 파헤치기 클래스 로딩 클래스의 완전한 이름을 보고 해당 클래스를 정의하는 바이너리 바이트 스트림을 JVM…]]></description><link>https://jdalma.github.io/2022y/classLoader/</link><guid isPermaLink="false">https://jdalma.github.io/2022y/classLoader/</guid><pubDate>Tue, 30 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;출처
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-5.html&quot;&gt;Loading, Linking, and Initializing&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://velog.io/@skyepodium/%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%96%B8%EC%A0%9C-%EB%A1%9C%EB%94%A9%EB%90%98%EA%B3%A0-%EC%B4%88%EA%B8%B0%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80&quot;&gt;클래스는 언제 로딩되고 초기화되는가?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;위의 게시글을 따라 테스트 하였습니다.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.yes24.com/Product/Goods/126114513&quot;&gt;JVM 밑바닥까지 파헤치기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;클래스-로딩&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;클래스 로딩&lt;/strong&gt;&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A1%9C%EB%94%A9&quot; aria-label=&quot;클래스 로딩 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;클래스 로더가 &lt;code class=&quot;language-text&quot;&gt;.class&lt;/code&gt;파일을 찾고 &lt;strong&gt;JVM&lt;/strong&gt; 메모리에 올리는 작업을 의미한다.&lt;/li&gt;
-&lt;li&gt;⭐️ &lt;strong&gt;JVM&lt;/strong&gt;은 실행될 때 모든 클래스를 메모리에 올려 놓지 않는다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;필요할 때 마다 클래스를 메모리에 올려&lt;/strong&gt; 효율적으로 관리하기 위함이다.&lt;/li&gt;
+&lt;li&gt;클래스의 완전한 이름을 보고 해당 클래스를 정의하는 바이너리 바이트 스트림을 &lt;strong&gt;JVM&lt;/strong&gt; 메모리에 올리는 작업을 의미한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JVM&lt;/strong&gt;은 실행될 때 모든 클래스를 메모리에 올리지 않고 &lt;strong&gt;필요할 때 마다 클래스를 메모리에 올린다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;클래스 로딩의 메커니즘은 &lt;em&gt;로딩 → (검증 → 준비 → 해석) → 초기화 → 사용 → 언로딩&lt;/em&gt; 과정이 존재하며 이번 게시글에서는 &lt;strong&gt;로딩 단계&lt;/strong&gt;를 확인한다. (위에 작성한 과정의 순서는 시작 지점 기준이다.)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;java -verbose:class {파일 이름.java}&lt;/code&gt; 명령어를 통해 클래스 로딩에 대한 상세 정보를 확인할 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;그럼-언제-클래스를-로딩할까&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;그럼 언제 클래스를 로딩할까?&lt;/strong&gt;&lt;a href=&quot;#%EA%B7%B8%EB%9F%BC-%EC%96%B8%EC%A0%9C-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EB%A1%9C%EB%94%A9%ED%95%A0%EA%B9%8C&quot; aria-label=&quot;그럼 언제 클래스를 로딩할까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a4fcdeba5a2eed89220d7aa71bad6770/18539/verbose.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 28.444444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABhElEQVR42lWRu24TQRhG9xloKQHHju114t317uz9MvZevN4IcylCCzT0SIiACUqEkHgApMgSwTFFijS8BDWXGt7kMNkGURx9oynO/80/2v7YwLxzC/vZe6LTS8Tzj3hH5wSvN4SrjcrP7Tk6ucR5/Jae4WDaCb2+Q6dr0t2d/IcWRhWun6PrAttJ8cMC35/hKfb2PByRMVECy4qxjIDhUGBOEqJkzmDkttKdnvVPGEQlwp1iTFJksaRZHioesbh7iO3NkPmSMKmJZaNygWElyNkB5fy+apqyO3DoqyHXsk7XQvP8Qsky+jsjYhFTyYoqKylSdT+0iN0Y1/QI7YDQTRkbEZF6VZzWZNMDUrlQNNhCMtBdNF0fM+71EU+PqU621Ks1zekFzbsvyJdnlMefkK/WyDfnRE9WjESIlU4pq3skWU1VP8BSTW0na4dpnc5t9m/eIPnwlfnVH7Kzb8w238kvflBsf5Jvf7U5v/pN8GLNMPYVMblaT908bFt6Qd7+w/Xq/gI1LeGgOVxMWQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;verbose&quot;
-        title=&quot;&quot;
-        src=&quot;/static/a4fcdeba5a2eed89220d7aa71bad6770/1cfc2/verbose.png&quot;
-        srcset=&quot;/static/a4fcdeba5a2eed89220d7aa71bad6770/3684f/verbose.png 225w,
-/static/a4fcdeba5a2eed89220d7aa71bad6770/fc2a6/verbose.png 450w,
-/static/a4fcdeba5a2eed89220d7aa71bad6770/1cfc2/verbose.png 900w,
-/static/a4fcdeba5a2eed89220d7aa71bad6770/18539/verbose.png 1074w&quot;
-        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;testcase-0--아무것도-호출하지-않음&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 0 :&lt;/code&gt; 아무것도 호출하지 않음&lt;a href=&quot;#testcase-0--%EC%95%84%EB%AC%B4%EA%B2%83%EB%8F%84-%ED%98%B8%EC%B6%9C%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%8C&quot; aria-label=&quot;testcase 0  아무것도 호출하지 않음 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;첫 번째. initial class만 실행&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
-    public static void main(String[] args){
-
-    }
+    public static void main(String[] args){ }
 }
 
 class Single{
-    public Single() {
-    }
-
-    public static int a;
-
-    public static final int b = 0;
-
-    public static void test(){
-
-    }
-
-    public static class INNER_INSTANCE{
-        public static Single INSTANCE;
-    }
+    public Single() { }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
@@ -11610,7 +11565,7 @@ class Single{
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;클래스만 로딩 되었고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스는 로딩되지 않음&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;testcase-1--인스턴스-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 1 :&lt;/code&gt; 인스턴스 생성&lt;a href=&quot;#testcase-1--%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;testcase 1  인스턴스 생성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;두 번째. 다른 클래스의 인스턴스 생성&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
@@ -11619,20 +11574,7 @@ class Single{
 }
 
 class Single{
-    public Single() {
-    }
-
-    public static int a;
-
-    public static final int b = 0;
-
-    public static void test(){
-
-    }
-
-    public static class INNER_INSTANCE{
-        public static Single INSTANCE;
-    }
+    public Single() { }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
@@ -11669,9 +11611,9 @@ class Single{
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;이 실행되고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행되었다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;이 실행되고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행됨&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;testcase-2--final키워드가-없는-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 2 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 없는 정적 변수 호출&lt;a href=&quot;#testcase-2--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%97%86%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 2  final키워드가 없는 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;세 번째. final 키워드가 없는 정적 변수만 호출&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
@@ -11680,20 +11622,7 @@ class Single{
 }
 
 class Single{
-    public Single() {
-    }
-
     public static int a;
-
-    public static final int b = 0;
-
-    public static void test(){
-
-    }
-
-    public static class INNER_INSTANCE{
-        public static Single INSTANCE;
-    }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
@@ -11730,10 +11659,10 @@ class Single{
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;이 실행되고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행되었다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;public static int a&lt;/code&gt;변수가 출력 되었다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;이 실행되고 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행됨&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;public static int a&lt;/code&gt;변수가 타입 기본값으로 출력됨&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;testcase-3--final키워드가-있는-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 3 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 있는 정적 변수 호출&lt;a href=&quot;#testcase-3--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 3  final키워드가 있는 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;네 번째. final 키워드가 있는 정적 변수 호출&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
@@ -11742,20 +11671,8 @@ class Single{
 }
 
 class Single{
-    public Single() {
-    }
-
     public static int a;
-
     public static final int b = 1000;
-
-    public static void test(){
-
-    }
-
-    public static class INNER_INSTANCE{
-        public static Single INSTANCE;
-    }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;&lt;span
@@ -11792,9 +11709,9 @@ class Single{
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;⭐️ &lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;클래스가 실행되고 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 실행되지 않았지만 &lt;code class=&quot;language-text&quot;&gt;public static final int b&lt;/code&gt;가 출력되었다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt;클래스가 로딩되고 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 로딩되지 않았지만 &lt;code class=&quot;language-text&quot;&gt;public static final int b&lt;/code&gt;가 출력됨&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;testcase-4--final키워드가-없는-정적-메서드-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 4 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 없는 정적 메서드 호출&lt;a href=&quot;#testcase-4--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%97%86%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 4  final키워드가 없는 정적 메서드 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;다섯 번째. 정적 메서드 호출&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
@@ -11803,19 +11720,8 @@ class Single{
 }
 
 class Single{
-    public Single() {
-    }
-
-    public static int a;
-
-    public static final int b = 1000;
-
     public static void test(){
         System.out.println(&amp;quot;static method 호출&amp;quot;);
-    }
-
-    public static class INNER_INSTANCE{
-        public static Single INSTANCE;
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
@@ -11852,65 +11758,10 @@ class Single{
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;testcase-5--final키워드가-있는-정적-메서드-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 5 :&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 있는 정적 메서드 호출&lt;a href=&quot;#testcase-5--final%ED%82%A4%EC%9B%8C%EB%93%9C%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%A0%95%EC%A0%81-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 5  final키워드가 있는 정적 메서드 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;class Main {
-    public static void main(String[] args){
-        Single.test();
-    }
-}
-
-class Single{
-    public Single() {
-    }
-
-    public static int a;
-
-    public static final int b = 1000;
-
-    public final static void test(){
-        System.out.println(&amp;quot;final static method 호출&amp;quot;);
-    }
-
-    public static class INNER_INSTANCE{
-        public static Single INSTANCE;
-    }
-}&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/5d49b6d122cb7bc2df8426e2f9031ac9/b3608/testcase5.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 19.555555555555557%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAABC0lEQVR42h2Q21KCYBSFeZpypm48IEIqUKCAMhpYDpgM2uQpJjoomR0uuu2hv/66+GbtvWbN7FlbcrwQdxBhWT52Z4jjBrgCy+6jGwPi2ORtXyUMdZSGg2F6tHWXZqsr1BEZj1bbQa6bnJwqSL1hTJBs8IIEbxDTDxP8kZiF37ucEkZjtvsuy0wc7I2xvCtswZ8adoCm91FaLmXFoiKQosUzaf5BNM+4TtYkqxfSTUH6cGB6f+D2qeDrJ2P3nRMtd0xWhfD3TNaF2LeM5o+CnHCWM0wyJLWu0fRvsBafdO7eMdJXrNkO49ynVmsjyyY1uSsqdWioF6gC7cxG1SzxApNyuUmpVOXouPLPL7HNmnJWeIlCAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;testcase5&quot;
-        title=&quot;&quot;
-        src=&quot;/static/5d49b6d122cb7bc2df8426e2f9031ac9/1cfc2/testcase5.png&quot;
-        srcset=&quot;/static/5d49b6d122cb7bc2df8426e2f9031ac9/3684f/testcase5.png 225w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/fc2a6/testcase5.png 450w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/1cfc2/testcase5.png 900w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/21482/testcase5.png 1350w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/d61c2/testcase5.png 1800w,
-/static/5d49b6d122cb7bc2df8426e2f9031ac9/b3608/testcase5.png 2160w&quot;
-        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;testcase-6--정적-내부-클래스의-정적-변수-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;TestCase 6 :&lt;/code&gt; 정적 내부 클래스의 정적 변수 호출&lt;a href=&quot;#testcase-6--%EC%A0%95%EC%A0%81-%EB%82%B4%EB%B6%80-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98-%EC%A0%95%EC%A0%81-%EB%B3%80%EC%88%98-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;testcase 6  정적 내부 클래스의 정적 변수 호출 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Main과 Single 클래스 모두 로딩됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;여섯 번째. 클래스의 내부 정적 클래스의 정적 변수 호출&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args){
@@ -11919,17 +11770,6 @@ class Single{
 }
 
 class Single{
-    public Single() {
-    }
-
-    public static int a;
-
-    public static final int b = 1000;
-
-    public final static void test(){
-        System.out.println(&amp;quot;final static method 호출&amp;quot;);
-    }
-
     public static class INNER_INSTANCE{
         public static Single INSTANCE;
     }
@@ -11968,100 +11808,70 @@ class Single{
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;클래스는-한-번만-로딩됨을-보장한다&quot; style=&quot;position:relative;&quot;&gt;클래스는 한 번만 로딩됨을 보장한다.&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%ED%95%9C-%EB%B2%88%EB%A7%8C-%EB%A1%9C%EB%94%A9%EB%90%A8%EC%9D%84-%EB%B3%B4%EC%9E%A5%ED%95%9C%EB%8B%A4&quot; aria-label=&quot;클래스는 한 번만 로딩됨을 보장한다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Java 프로그래밍 언어는 &lt;strong&gt;다중 스레드이기 때문에 클래스 또는 인터페이스의 초기화는 신중한 동기화가 필요합니다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;다른 스레드가 동시에 동일한 클래스 또는 인터페이스를 초기화하려고 할 수 있기 때문입니다.&lt;/p&gt;
-&lt;p&gt;클래스 또는 인터페이스의 초기화가 해당 클래스 또는 인터페이스 초기화의 일부로 재귀적으로 요청될 수도 있습니다.&lt;/p&gt;
-&lt;p&gt;예를 들어, 클래스 A 의 변수 이니셜라이저 는 관련 없는 클래스 B 의 메서드를 호출할 수 있으며, 이는 차례로 클래스 A 의 메서드를 호출할 수 있습니다..&lt;/p&gt;
-&lt;p&gt;Java Virtual Machine의 구현은 다음 절차를 사용하여 동기화 및 재귀 초기화를 처리하는 역할을 합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/specs/jls/se17/html/jls-12.html#jls-12.4&quot;&gt;출처 - &lt;code class=&quot;language-text&quot;&gt;Detailed Initialization Procedure&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;다음 코드는 10개의 스레드가 동시에 클래스의 인스턴스를 생성한다&lt;/li&gt;
-&lt;li&gt;결과를 보면 10개의 스레드가 동시에 클래스 로딩을 시도해도 클래스 로딩은 한번만 수행되고, 그때 한번 초기화를 수행한다.&lt;/li&gt;
-&lt;li&gt;이후 인스턴스를 10개 생성한다&lt;/li&gt;
+&lt;li&gt;Main 클래스와 Single$INNER_INSTANCE는 로딩되었지만, Single 클래스는 로딩되지 않음&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&quot;정리&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;정리&lt;/strong&gt;&lt;a href=&quot;#%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;정리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;위의 테스트를 통해 두 가지 의문점이 생긴다.&lt;/p&gt;
+&lt;h3&gt;첫 번째. static final 클래스 변수는 클래스 로딩이 필요없는가?&lt;/h3&gt;
+&lt;p&gt;세 번째 테스트인 final 키워드가 없는 정적 변수를 호출하면 Single 클래스가 로딩되는 것을 확인할 수 있었다.&lt;br&gt;
+그 이유는 &lt;code class=&quot;language-text&quot;&gt;static final&lt;/code&gt; 클래스 변수는 컴파일 타임에 바이트 코드의 상수 풀에 채워지므로 클래스 로딩이 필요없는 것이다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;  public static int a;
+    descriptor: I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+
+  public static final int b;
+    descriptor: I
+    flags: (0x0019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+    ConstantValue: int 1000&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위의 바이트 코드를 확인하면 &lt;code class=&quot;language-text&quot;&gt;ConstantValue&lt;/code&gt; 속성에 실제 선언한 값이 인라인화 되어있는 것을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;추가로 내부 정적 클래스의 클래스 변수에 접근하는 것도 Single 클래스가 로딩되지 않는 것을 알 수 있다. 실제로 &lt;code class=&quot;language-text&quot;&gt;Single$INNER_INSTANCE&lt;/code&gt;는 다른 클래스 파일로 컴파일되며, &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt; 클래스에 종속되지 않기 때문이다.&lt;/p&gt;
+&lt;h3&gt;두 번째. 클래스는 한 번만 로딩됨을 보장한다.&lt;/h3&gt;
+&lt;p&gt;자바 컴파일러는 변수 초기화와 정적 문장 블록, 부모 클래스의 인스턴스 생성자를 취합하여 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;clinit&gt;()&lt;/code&gt; 이라는 클래스 생성자를 자동으로 생성하며 작성된 순서의 영향을 받는다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;&amp;lt;clinit&gt;()&lt;/code&gt;은 자바 언어에서 말하는 생성자와 다르며, 가상 머신 관점에서 인스턴스를 만드는 인스턴스 생성자는 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;init&gt;()&lt;/code&gt;이다.&lt;br&gt;
+(지금부터 clinit은 클래스 생성자, init은 인스턴스 생성자라고 부르겠다.)&lt;/p&gt;
+&lt;p&gt;자바 가상 머신은 클래스 생성자가 멀티스레드 환경에서 적절히 동기화되도록 해야 한다.&lt;br&gt;
+여러 스레드가 한 클래스를 동시에 초기화하려 시도하면 그중 한 스레드만 클래스 생성자를 실행하고 다른 스레드는 모두 대기시켜야 한다.&lt;br&gt;
+&lt;strong&gt;그렇기에 클래스 생성자에 오래 걸리는 작업이 포함되어 있다면 여러 스레드가 장시간 블록될 수 있기에 조심해야 한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String args[]) {
-        // 1. 스레드 풀 생성
         ExecutorService service = Executors.newCachedThreadPool();
-
-        // 2. 반복문을 통해 - 10개의 스레드가 동시에 인스턴스 생성
         for (int i = 0; i &amp;lt; 10; i++) {
             service.submit(() -&amp;gt; {
                 new Single();
             });
         }
-        // 3. 종료
         service.shutdown();
     }
 }
 class Single {
     static {
-        System.out.println(&amp;quot;static 블록 호출&amp;quot;);
+        System.out.println(Thread.currentThread() + &amp;quot;: static 블록 호출 &amp;quot; + System.currentTimeMillis());
     }
 
     public Single() {
-        System.out.println(&amp;quot;생성자 호출&amp;quot;);
+        System.out.println(Thread.currentThread() + &amp;quot;: 생성자 호출 &amp;quot; + System.currentTimeMillis());
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jdalma.github.io/docs/java/concurrent/#executors&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Executor&lt;/code&gt; 참고&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/3ec6d66c8fada88fb205319edcdafb48/8079d/multiThreadTest.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 37.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABh0lEQVR42nWSTU8TURSG588IVVmQMElbZNq5M1P7AWkVNprW0LgAF4BpGypLgokJKcVCa4AoUFtj2AKyMEBMoIA7IS74+DMPp9OaVBIWT973vefk3MU5mm0NEou/xHLiKDNCMweMEGYwIkQJBhzSozrjYzqWUni9in6/Jdiu+n0Kvc/g0UOdrge9aK/z75n4UCFT+Mz0xyr5pa/MlOtCjXypxrulKvP1FQrfP0leJ7OwTm5xk1xxg2zTi7p5cUNqX9CyyzXmtn5S+fWXtcY1q8dXrBxdurj++FJqN5SFZv7Xs9q4y7Vb06Zk6mx9j+X9P1QOL+7hvE0rlw/+951omVKV2W97zG83WNj9LZy1OaWwc9Km0wu7nf6UovQXf5y5qr0YyzH86g0DA7IIM0bQjBKQhahQHDP0TEhgPX2OExnGDrdwoiPY7aykx1BDeJ+E6fPaaEa/IiiPTuotsXQWJzmJnZoikkhiBMJC1P3EsodEY5hqsKXNa5Ar8PkdHvf46PLodHt0bgFRGlisGZAtggAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;multiThreadTest&quot;
-        title=&quot;&quot;
-        src=&quot;/static/3ec6d66c8fada88fb205319edcdafb48/1cfc2/multiThreadTest.png&quot;
-        srcset=&quot;/static/3ec6d66c8fada88fb205319edcdafb48/3684f/multiThreadTest.png 225w,
-/static/3ec6d66c8fada88fb205319edcdafb48/fc2a6/multiThreadTest.png 450w,
-/static/3ec6d66c8fada88fb205319edcdafb48/1cfc2/multiThreadTest.png 900w,
-/static/3ec6d66c8fada88fb205319edcdafb48/21482/multiThreadTest.png 1350w,
-/static/3ec6d66c8fada88fb205319edcdafb48/d61c2/multiThreadTest.png 1800w,
-/static/3ec6d66c8fada88fb205319edcdafb48/8079d/multiThreadTest.png 2100w&quot;
-        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;클래스-로딩-정리-&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;클래스 로딩 정리&lt;/strong&gt; 📌&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A1%9C%EB%94%A9-%EC%A0%95%EB%A6%AC-&quot; aria-label=&quot;클래스 로딩 정리  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스가 로딩 될 때
-&lt;ul&gt;
-&lt;li&gt;해당 클래스의 인스턴스를 생성했을 때&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 없는 정적 변수를 호출했을 때&lt;/li&gt;
-&lt;li&gt;해당 클래스의 정적 메서드를 호출했을 때&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;🚩
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;키워드가 있는 정적 변수를 호출해도 왜 &lt;code class=&quot;language-text&quot;&gt;Single&lt;/code&gt;클래스는 생성이 되지 않을까?&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;외부 클래스가 로딩 되어도 내부 클래스는 생성되지 않는다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;내부 클래스가 로딩 되어도 외부 클래스는 생성되지 않는다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;위의-특성을-이용하여-싱글-톤-인스턴스-생성해보기-lazyholder-&quot; style=&quot;position:relative;&quot;&gt;위의 특성을 이용하여 싱글 톤 인스턴스 생성해보기 &lt;code class=&quot;language-text&quot;&gt;LazyHolder&lt;/code&gt; ✋&lt;a href=&quot;#%EC%9C%84%EC%9D%98-%ED%8A%B9%EC%84%B1%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8B%B1%EA%B8%80-%ED%86%A4-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%B4%EB%B3%B4%EA%B8%B0-lazyholder-&quot; aria-label=&quot;위의 특성을 이용하여 싱글 톤 인스턴스 생성해보기 lazyholder  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;Thread[#25,pool-1-thread-1,5,main]: static 블록 호출 1727681233985
+Thread[#34,pool-1-thread-10,5,main]: 생성자 호출 1727681233989
+Thread[#27,pool-1-thread-3,5,main]: 생성자 호출 1727681233989
+Thread[#30,pool-1-thread-6,5,main]: 생성자 호출 1727681233989
+Thread[#32,pool-1-thread-8,5,main]: 생성자 호출 1727681233989
+Thread[#28,pool-1-thread-4,5,main]: 생성자 호출 1727681233989
+Thread[#31,pool-1-thread-7,5,main]: 생성자 호출 1727681233989
+Thread[#29,pool-1-thread-5,5,main]: 생성자 호출 1727681233989
+Thread[#33,pool-1-thread-9,5,main]: 생성자 호출 1727681233989
+Thread[#26,pool-1-thread-2,5,main]: 생성자 호출 1727681233989
+Thread[#25,pool-1-thread-1,5,main]: 생성자 호출 1727681233989&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;인스턴스 생성자는 동일한 시간대에 여러 번 호출된 것을 볼 수 있지만 클래스 생성자는 단 한 번만 호출된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;싱글-톤-인스턴스-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;싱글 톤 인스턴스 만들기&lt;/strong&gt;&lt;a href=&quot;#%EC%8B%B1%EA%B8%80-%ED%86%A4-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;싱글 톤 인스턴스 만들기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;span style=&quot;color:red; font-weight:bold&quot;&gt;실패 사례&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -12069,13 +11879,11 @@ class Single {
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String args[]) {
         ExecutorService service = Executors.newCachedThreadPool();
-
         for (int i = 0; i &amp;lt; 10; i++) {
             service.submit(() -&amp;gt; {
                 SingleTon.getInstance();
             });
         }
-
         service.shutdown();
     }
 }
@@ -12130,11 +11938,7 @@ class SingleTon {
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;LazyHolder&lt;/code&gt; 라는 방법으로 싱글톤 인스턴스를 생성하는데 가장 권장되는 방법중 하나이다.
-&lt;ul&gt;
-&lt;li&gt;(다른 하나는 &lt;code class=&quot;language-text&quot;&gt;enum&lt;/code&gt; 사용)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;span style=&quot;color:green; font-weight:bold&quot;&gt;LazyHolder를 이용한 사례&lt;/span&gt; (가장 권장되는 방법중 하나이다.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;import java.util.concurrent.ExecutorService;
@@ -12143,13 +11947,11 @@ import java.util.concurrent.Executors;
 class Main {
     public static void main(String args[]) {
         ExecutorService service = Executors.newCachedThreadPool();
-
         for (int i = 0; i &amp;lt; 10; i++) {
             service.submit(() -&amp;gt; {
                 SingleTon.getInstance();
             });
         }
-
         service.shutdown();
     }
 }
@@ -12158,11 +11960,9 @@ class SingleTon {
     private SingleTon() {
         System.out.println(&amp;quot;싱글톤 인스턴스 생성&amp;quot;);
     }
-
     public static SingleTon getInstance() {
         return LazyHolder.INSTANCE;
     }
-
     // 클래스는 한 번만 로딩됨을 보장한다.
     private static class LazyHolder {
         private static final SingleTon INSTANCE = new SingleTon();
@@ -12203,32 +12003,25 @@ class SingleTon {
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;클래스-초기화-initialization-단계&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;클래스 초기화&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;Initialization&lt;/code&gt; 단계&lt;a href=&quot;#%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%B4%88%EA%B8%B0%ED%99%94-initialization-%EB%8B%A8%EA%B3%84&quot; aria-label=&quot;클래스 초기화 initialization 단계 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;클래스 초기화는 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt;블록과 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt;멤버 변수의 값을 할당하는 것을 의미&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/specs/jls/se17/html/jls-12.html#jls-12.4&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Initialization of Classes and Interfaces&lt;/code&gt; 공식 문서&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;초기화가-언제-발생되나&quot; style=&quot;position:relative;&quot;&gt;초기화가 언제 발생되나?&lt;a href=&quot;#%EC%B4%88%EA%B8%B0%ED%99%94%EA%B0%80-%EC%96%B8%EC%A0%9C-%EB%B0%9C%EC%83%9D%EB%90%98%EB%82%98&quot; aria-label=&quot;초기화가 언제 발생되나 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;초기화는-언제-발생되나&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;초기화는 언제 발생되나?&lt;/strong&gt;&lt;a href=&quot;#%EC%B4%88%EA%B8%B0%ED%99%94%EB%8A%94-%EC%96%B8%EC%A0%9C-%EB%B0%9C%EC%83%9D%EB%90%98%EB%82%98&quot; aria-label=&quot;초기화는 언제 발생되나 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;자바 가상 머신 명세에서는 로딩이 정확히 어떤 상황에서 시작해야 하는지 명시하지 않았다. 하지만 &lt;strong&gt;초기화 단계는 아래의 상황에 대해서는 즉시 시작하도록 규정해 놓았다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;간단한 사례를 확인하면 아래와 같다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;클래스 또는 인터페이스 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 는 다음 중 하나가 처음 발생하기 직전에 초기화된다
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 는 클래스이고 &lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 의 인스턴스가 생성 될 때&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 의 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt; 메소드가 호출 될 때&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 의 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt; 변수가 할당 될 때&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 의 &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;이 아닌 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt; 변수가 사용될 떄&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;T&lt;/code&gt; 의 &lt;code class=&quot;language-text&quot;&gt;final&lt;/code&gt;이 아닌 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt; 변수가 사용될 떄 (final로 지정된 정적 필드는 컴파일 타임에 상수 풀에 채워지므로 예외)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;클래스가 초기화되면 해당 수퍼클래스가 초기화되고(이전에 초기화되지 않은 경우)&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;기본 메서드를 선언하는 수퍼인터페이스(이전에 초기화되지 않은 경우)도 초기화된다&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;인터페이스의 초기화는 그 자체로 그 슈퍼인터페이스의 초기화를 일으키지 않는다.&lt;/li&gt;
-&lt;li&gt;필드 에 대한 참조 &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt;은 하위 클래스, 하위 인터페이스 또는 인터페이스를 구현하는 클래스의 이름을 통해 참조될 수 있지만 실제로 필드를 선언하는 클래스 또는 인터페이스만 초기화한다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Class&lt;/code&gt;클래스 및 패키지 에서 특정 메서드를 호출 &lt;code class=&quot;language-text&quot;&gt;java.lang.reflect&lt;/code&gt;하면 클래스 또는 인터페이스도 초기화된다&lt;/li&gt;
-&lt;li&gt;클래스 또는 인터페이스는 다른 상황에서 초기화되지 않는다.&lt;/li&gt;
+&lt;li&gt;이전에 초기화되지 않은 경우 클래스가 초기화되면 해당 슈퍼 클래스가 초기화된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt; 필드에 대한 참조은 하위 클래스, 하위 인터페이스 또는 인터페이스를 구현하는 클래스의 이름을 통해 참조될 수 있지만 실제로 필드를 선언하는 클래스 또는 인터페이스만 초기화한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;java.lang.reflect&lt;/code&gt; 패키지 등 표준 클래스 라이브러리에서 제공하는 리플렉션을 사용할 때 해당 클래스가 초기화되어 있지 않다면 초기화를 촉발한다.&lt;/li&gt;
+&lt;li&gt;인터페이스의 초기화는 그 자체로 그 슈퍼 인터페이스의 초기화를 일으키지 않으며, 인터페이스에 디폴트 메서드를 정의했다면, 해당 인터페이스를 직간접적으로 구현한 클래스가 초기화될 때 인터페이스부터 초기화한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;java.lang.invoke.MethodHandle&lt;/code&gt; 인스턴스를 호출할 때 해당하는 클래스가 초기화되어 있지 않았다면 초기화를 촉발&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;✋ 위의 &lt;strong&gt;클래스 로드 시점과 같다.&lt;/strong&gt; 클래스가 로드되면 초기화도 바로 진행된다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;부모클래스는-자식클래스보다-먼저-초기화된다&quot; style=&quot;position:relative;&quot;&gt;부모클래스는 자식클래스보다 먼저 초기화된다.&lt;a href=&quot;#%EB%B6%80%EB%AA%A8%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%9E%90%EC%8B%9D%ED%81%B4%EB%9E%98%EC%8A%A4%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%EC%B4%88%EA%B8%B0%ED%99%94%EB%90%9C%EB%8B%A4&quot; aria-label=&quot;부모클래스는 자식클래스보다 먼저 초기화된다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;부모클래스는 자식클래스보다 먼저 초기화된다.&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Super {
     static { System.out.println(&amp;quot;Super Init&amp;quot;); }
@@ -12250,7 +12043,7 @@ class Main {
           &lt;code slot=&quot;code&quot;&gt;Super Init
 Two Init&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;h3 id=&quot;부모-인터페이스는-자식-인터페이스가-호출하여도-초기화-하지-않는다&quot; style=&quot;position:relative;&quot;&gt;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다.&lt;a href=&quot;#%EB%B6%80%EB%AA%A8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%8A%94-%EC%9E%90%EC%8B%9D-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B0%80-%ED%98%B8%EC%B6%9C%ED%95%98%EC%97%AC%EB%8F%84-%EC%B4%88%EA%B8%B0%ED%99%94-%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;부모 인터페이스는 자식 인터페이스가 호출하여도 초기화 하지 않는다.&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;interface A {
     int A = 1;
@@ -12285,7 +12078,7 @@ C = 5
 CC = 6
 C.C : 5&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;h2 id=&quot;초기화-진행-순서&quot; style=&quot;position:relative;&quot;&gt;초기화 진행 순서&lt;a href=&quot;#%EC%B4%88%EA%B8%B0%ED%99%94-%EC%A7%84%ED%96%89-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;초기화 진행 순서 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;초기화-진행-순서&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;초기화 진행 순서&lt;/strong&gt;&lt;a href=&quot;#%EC%B4%88%EA%B8%B0%ED%99%94-%EC%A7%84%ED%96%89-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;초기화 진행 순서 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;class Main {
     public static void main(String[] args) {
