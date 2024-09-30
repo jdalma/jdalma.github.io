@@ -1,6 +1,7 @@
 ---
 title: 클래스는 언제 로딩될까?
 date: "2022-08-30"
+update: "2024-09-30"
 tags:
    - JVM
    - ClassLoader

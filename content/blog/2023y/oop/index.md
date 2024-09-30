@@ -1,6 +1,7 @@
 ---
 title: 좋은 코드, 고품질 코드란?
 date: "2024-07-16"
+update: "2024-07-16"
 tags:
    - oop
    - clean-code

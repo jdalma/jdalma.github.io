@@ -42,16 +42,16 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>수정일 {post.frontmatter.update}, 작성일 {post.frontmatter.date}</small>
                 </header>
-                <section>
+                {/* <section>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
                     itemProp="description"
                   />
-                </section>
+                </section> */}
               </article>
             </li>
           )
@@ -77,14 +77,15 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(sort: { frontmatter: { update: DESC } }) {
       nodes {
         excerpt
         fields {
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY-MM-DD")
+          update(formatString: "YYYY-MM-DD")
           title
           description
         }

@@ -1,6 +1,7 @@
 ---
 title: Iterator?Enumerator?Iterable?
 date: "2022-11-15"
+update: "2022-11-15"
 tags:
    - Java
    - Lab

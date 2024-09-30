@@ -1,6 +1,7 @@
 ---
 title: Armeria + gRPC 사용해보기
 date: "2022-12-15"
+update: "2022-12-15"
 tags:
    - Armeria
    - gRPC

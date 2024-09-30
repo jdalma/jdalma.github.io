@@ -1,6 +1,7 @@
 ---
 title: Spring RW분리를 이해하기 위한 여정 (+ JDBC, 서비스 추상화)
 date: "2024-07-14"
+update: "2024-07-14"
 tags:
    - spring
    - transaction

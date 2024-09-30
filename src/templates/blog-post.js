@@ -40,8 +40,8 @@ const BlogPostTemplate = ({
             >
               <header>
                 <h1 itemProp="headline">{post.frontmatter.title}</h1>
-                <p>{post.frontmatter.date}</p>
-              </header>
+                <p>수정일 {post.frontmatter.update}, 작성일 {post.frontmatter.date}</p>
+              </header> 
               <div className="tags">
                 <ul>
                   {post.frontmatter.tags ? post.frontmatter.tags.map(
@@ -122,7 +122,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
+        update(formatString: "YYYY-MM-DD")
         description
         tags
       }

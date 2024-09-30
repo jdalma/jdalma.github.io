@@ -1,6 +1,7 @@
 ---
 title: 롬복 생성자 어노테이션 써도 될까?
 date: "2022-10-03"
+update: "2022-10-03"
 tags:
    - Lombok
    - Lab

@@ -1,6 +1,7 @@
 ---
 title: 보이스카웃 규칙 실천하기
 date: "2024-05-25"
+update: "2024-05-25"
 tags:
    - refactoring
    - clean-code

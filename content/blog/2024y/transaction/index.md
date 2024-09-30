@@ -1,6 +1,7 @@
 ---
 title: 트랜잭션과 잠금
 date: "2024-02-13"
+update: "2024-02-13"
 tags:
    - transaction
    - lock

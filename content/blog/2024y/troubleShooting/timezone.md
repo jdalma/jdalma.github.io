@@ -1,6 +1,7 @@
 ---
 title: DATETIME 필드와 TIMESTAMP 필드 차이
 date: "2024-05-01"
+update: "2024-05-01"
 tags:
    - mysql
    - timezone

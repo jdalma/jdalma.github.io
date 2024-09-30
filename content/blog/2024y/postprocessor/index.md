@@ -1,6 +1,7 @@
 ---
 title: 빈 후처리기를 이용한 프록시 생성에 대해
 date: "2024-03-17"
+update: "2024-03-17"
 tags:
    - spring
    - reflection
