@@ -206,6 +206,11 @@ Thread[#25,pool-1-thread-1,5,main]: 생성자 호출 1727681233989
 ```
 
 인스턴스 생성자는 동일한 시간대에 여러 번 호출된 것을 볼 수 있지만 클래스 생성자는 단 한 번만 호출된 것을 확인할 수 있다.
+실제로 한 개의 스레드만 클래스 생성자 영역에 들어가게 되며 클래스 로더는 로딩부터 초기화까지 원자적인 연산이 보장된다.
+
+![](./clinit.png)
+
+[ClassLoader의 loadClass 메소드](https://github.com/openjdk/jdk/blob/988a531b097ccbd699d233059d73f41cae24dc5b/src/java.base/share/classes/java/lang/ClassLoader.java#L572)를 참고하는 것도 좋을 것이다.
 
 ## **싱글 톤 인스턴스 만들기**
 
