@@ -436,7 +436,38 @@ Thread[#33,pool-1-thread-9,5,main]: 생성자 호출 1727681233989
 Thread[#26,pool-1-thread-2,5,main]: 생성자 호출 1727681233989
 Thread[#25,pool-1-thread-1,5,main]: 생성자 호출 1727681233989</code>
         </deckgo-highlight-code>
-<p>인스턴스 생성자는 동일한 시간대에 여러 번 호출된 것을 볼 수 있지만 클래스 생성자는 단 한 번만 호출된 것을 확인할 수 있다.</p>
+<p>인스턴스 생성자는 동일한 시간대에 여러 번 호출된 것을 볼 수 있지만 클래스 생성자는 단 한 번만 호출된 것을 확인할 수 있다.
+실제로 한 개의 스레드만 클래스 생성자 영역에 들어가게 되며 클래스 로더는 로딩부터 초기화까지 원자적인 연산이 보장된다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 411px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b11ad9e489eefaff260595e9a05d2c89/2a432/clinit.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 121.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsTAAALEwEAmpwYAAAD+0lEQVR42mWVe3PaRhTF+UBtzMMQwDyEXkjaXe3qCQjwxE36ykwybu02mcy0M/3kp/cuoJjxH3fW4NVv7znnruhM5gpBVEBkDUK1hzRbRKs5Yt9FltcQKsNNb4je4C3V6LxeV7c/aqszma3gx0fobEeAEirNUGiNLPKxbe5R1HssViF+6A5xQw/f9EZ4Q3+/oUN4PR02bqvT63UxnTpYzJYELJDqDEJIxGEAI2LI0IW3nMGfT+DOxgiDEFEi4NOaJBJhGKPXH9jq9wbo9L0PGIa/YOh/wNI8Imm+Iv/pX3jVM9LmGaZ5gtr+ger+LxSHJ6THryjp//r+G7Y//4fy4R/cid/x4+Ideu57AjoNLtVbbKHr39AcP6FuPiKvf8Xm+Bnm8CfBCfrwBbp5xObhb6jdZ5T3T8gPj8iOz3D1R9zF71lyH1xdqsFgAOnNodYuFEmtdYJdYSCVtpUXpbUkLyqYrEBZbazvFa37wxFRnBDwhaFcSeAhkQZrkcGUO5TbI7Jyi3p3RL09UHg1cvpcbfYoqp2t1JTntWLg9/j7t2+pMx/G5PTQDrFI7ebLA0oXMDRKXAyVaU4HVHaNBU1GsbkGckXeCqlUUMrQDJoWyJsNlYXQ5wvInGf18vcroAxclCJEkYRIFZ/K8hqUdWO75IdY+oYs4O/4UL4AbNNVh93+aY196pAkF/UBYazOoMZuZiB3wv7x0HPnfAB/x8XQFjgg/wbDMQE9pHRbeGOUnDxUOidgbaXyg2EkW1hMe/jKXTgdvp/D8RzSmUOnxkrkjdydShKywIOOAroxHkwcYJPG1g5J4RVkjZESOSngZ/gQC7wloFouYHRux4IN94LEAlOaR0P3Ol0TkGpTFKjJ07wkC6jq7R7j6YImZIzb0fRFhwTUZLCmk9hkLyQYAQV5yslzUCogf/VppJQprKfs52A4sS+Nk2TSP5osIJYsObNDXNLGgHxiOZz62l2hkiQvIvkisUFV9Smo5vAOjhvatw53aYHDydwCFY3JxYtgTcYLgch1LJBlS+pWqxTlpmnTZehoPGuDaT2UZw95eK2HJFkTMCZguHKQUSDSd5Bnue0ws0Oe2VF5OcethxwKS2YPGeiH4gT0zkBKmj002ligOQ8zd8lSX4/NGZgSjOeNU+ZQEgY6jpWsKfGMRqukIHRWtlfuusOrUIyVXNY7+GsORVBXHIqDWq6pS8/uKelngX1mINcr4PAMTNXpPpq8silfJPPYsIcsOTMnDzXtYckMvpLM6dyO78jD7x2yHE7ZKGlD4Q4ZyJIr+t25eMjd8SvtCsjvwNHUR+y4KOhNzDfFkI+LVYAoCOzY+M7SXj3uUNAPE0vmoea7HqzFFfB/5a522QdwubUAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="clinit"
+        title=""
+        src="/static/b11ad9e489eefaff260595e9a05d2c89/2a432/clinit.png"
+        srcset="/static/b11ad9e489eefaff260595e9a05d2c89/3684f/clinit.png 225w,
+/static/b11ad9e489eefaff260595e9a05d2c89/2a432/clinit.png 411w"
+        sizes="(max-width: 411px) 100vw, 411px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><a href="https://github.com/openjdk/jdk/blob/988a531b097ccbd699d233059d73f41cae24dc5b/src/java.base/share/classes/java/lang/ClassLoader.java#L572">ClassLoader의 loadClass 메소드</a>를 참고하는 것도 좋을 것이다.</p>
 <h2 id="싱글-톤-인스턴스-만들기" style="position:relative;"><strong>싱글 톤 인스턴스 만들기</strong><a href="#%EC%8B%B1%EA%B8%80-%ED%86%A4-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-label="싱글 톤 인스턴스 만들기 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <ul>
 <li><span style="color:red; font-weight:bold">실패 사례</span></li>

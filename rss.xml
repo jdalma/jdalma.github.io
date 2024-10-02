@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 30 Sep 2024 07:42:01 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Tue, 16 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Oct 2024 04:22:25 GMT</lastBuildDate><item><title><![CDATA[좋은 코드, 고품질 코드란?]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2023y/oop/</link><guid isPermaLink="false">https://jdalma.github.io/2023y/oop/</guid><pubDate>Tue, 16 Jul 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;들어가기전에&quot; style=&quot;position:relative;&quot;&gt;들어가기전에&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0%EC%A0%84%EC%97%90&quot; aria-label=&quot;들어가기전에 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&quot;소스 코드를 읽으면서 종종 그것이 어떤 의미인지 이해하지 못하는 경우가 있다. 사실 이런 문제의 원인은 매우 간단하다.&quot;&lt;br&gt;
 &quot;코드를 완벽하게 이해하기 위해 &lt;strong&gt;필요한 기본적인 기술적 소양과 능력이 부족하기 때문이다.&lt;/strong&gt;&quot;&lt;br&gt;
@@ -11870,7 +11870,38 @@ Thread[#33,pool-1-thread-9,5,main]: 생성자 호출 1727681233989
 Thread[#26,pool-1-thread-2,5,main]: 생성자 호출 1727681233989
 Thread[#25,pool-1-thread-1,5,main]: 생성자 호출 1727681233989&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;인스턴스 생성자는 동일한 시간대에 여러 번 호출된 것을 볼 수 있지만 클래스 생성자는 단 한 번만 호출된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;인스턴스 생성자는 동일한 시간대에 여러 번 호출된 것을 볼 수 있지만 클래스 생성자는 단 한 번만 호출된 것을 확인할 수 있다.
+실제로 한 개의 스레드만 클래스 생성자 영역에 들어가게 되며 클래스 로더는 로딩부터 초기화까지 원자적인 연산이 보장된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 411px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b11ad9e489eefaff260595e9a05d2c89/2a432/clinit.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 121.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsTAAALEwEAmpwYAAAD+0lEQVR42mWVe3PaRhTF+UBtzMMQwDyEXkjaXe3qCQjwxE36ykwybu02mcy0M/3kp/cuoJjxH3fW4NVv7znnruhM5gpBVEBkDUK1hzRbRKs5Yt9FltcQKsNNb4je4C3V6LxeV7c/aqszma3gx0fobEeAEirNUGiNLPKxbe5R1HssViF+6A5xQw/f9EZ4Q3+/oUN4PR02bqvT63UxnTpYzJYELJDqDEJIxGEAI2LI0IW3nMGfT+DOxgiDEFEi4NOaJBJhGKPXH9jq9wbo9L0PGIa/YOh/wNI8Imm+Iv/pX3jVM9LmGaZ5gtr+ger+LxSHJ6THryjp//r+G7Y//4fy4R/cid/x4+Ideu57AjoNLtVbbKHr39AcP6FuPiKvf8Xm+Bnm8CfBCfrwBbp5xObhb6jdZ5T3T8gPj8iOz3D1R9zF71lyH1xdqsFgAOnNodYuFEmtdYJdYSCVtpUXpbUkLyqYrEBZbazvFa37wxFRnBDwhaFcSeAhkQZrkcGUO5TbI7Jyi3p3RL09UHg1cvpcbfYoqp2t1JTntWLg9/j7t2+pMx/G5PTQDrFI7ebLA0oXMDRKXAyVaU4HVHaNBU1GsbkGckXeCqlUUMrQDJoWyJsNlYXQ5wvInGf18vcroAxclCJEkYRIFZ/K8hqUdWO75IdY+oYs4O/4UL4AbNNVh93+aY196pAkF/UBYazOoMZuZiB3wv7x0HPnfAB/x8XQFjgg/wbDMQE9pHRbeGOUnDxUOidgbaXyg2EkW1hMe/jKXTgdvp/D8RzSmUOnxkrkjdydShKywIOOAroxHkwcYJPG1g5J4RVkjZESOSngZ/gQC7wloFouYHRux4IN94LEAlOaR0P3Ol0TkGpTFKjJ07wkC6jq7R7j6YImZIzb0fRFhwTUZLCmk9hkLyQYAQV5yslzUCogf/VppJQprKfs52A4sS+Nk2TSP5osIJYsObNDXNLGgHxiOZz62l2hkiQvIvkisUFV9Smo5vAOjhvatw53aYHDydwCFY3JxYtgTcYLgch1LJBlS+pWqxTlpmnTZehoPGuDaT2UZw95eK2HJFkTMCZguHKQUSDSd5Bnue0ws0Oe2VF5OcethxwKS2YPGeiH4gT0zkBKmj002ligOQ8zd8lSX4/NGZgSjOeNU+ZQEgY6jpWsKfGMRqukIHRWtlfuusOrUIyVXNY7+GsORVBXHIqDWq6pS8/uKelngX1mINcr4PAMTNXpPpq8silfJPPYsIcsOTMnDzXtYckMvpLM6dyO78jD7x2yHE7ZKGlD4Q4ZyJIr+t25eMjd8SvtCsjvwNHUR+y4KOhNzDfFkI+LVYAoCOzY+M7SXj3uUNAPE0vmoea7HqzFFfB/5a522QdwubUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;clinit&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b11ad9e489eefaff260595e9a05d2c89/2a432/clinit.png&quot;
+        srcset=&quot;/static/b11ad9e489eefaff260595e9a05d2c89/3684f/clinit.png 225w,
+/static/b11ad9e489eefaff260595e9a05d2c89/2a432/clinit.png 411w&quot;
+        sizes=&quot;(max-width: 411px) 100vw, 411px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/openjdk/jdk/blob/988a531b097ccbd699d233059d73f41cae24dc5b/src/java.base/share/classes/java/lang/ClassLoader.java#L572&quot;&gt;ClassLoader의 loadClass 메소드&lt;/a&gt;를 참고하는 것도 좋을 것이다.&lt;/p&gt;
 &lt;h2 id=&quot;싱글-톤-인스턴스-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;strong&gt;싱글 톤 인스턴스 만들기&lt;/strong&gt;&lt;a href=&quot;#%EC%8B%B1%EA%B8%80-%ED%86%A4-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;싱글 톤 인스턴스 만들기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;span style=&quot;color:red; font-weight:bold&quot;&gt;실패 사례&lt;/span&gt;&lt;/li&gt;
