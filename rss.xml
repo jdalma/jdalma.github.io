@@ -1,14 +1,424 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Jan 2025 16:47:15 GMT</lastBuildDate><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;돈의-심리학&quot; style=&quot;position:relative;&quot;&gt;돈의 심리학&lt;a href=&quot;#%EB%8F%88%EC%9D%98-%EC%8B%AC%EB%A6%AC%ED%95%99&quot; aria-label=&quot;돈의 심리학 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 02 Feb 2025 15:07:22 GMT</lastBuildDate><item><title><![CDATA[GraphQL 이해하기 (작성 중)]]></title><description><![CDATA[GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.    이 글에서는 Netflix DGS Framework를 기준으로 이러한 의문들을 해결해보고자 한다. 이 글을 통해 아래의 내용을 학습할 수 있다. GraphQL API…]]></description><link>https://jdalma.github.io/2025y/graphql/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/graphql/</guid><pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;스키마를 어떤 기준으로 작성해야 할까?&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;조회 쿼리가 너무 많이 발생하는데 어떻게 개선할 수 있을까?&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;Selection Set의 필드는 어떤 원리로 채워지는 걸까?&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 글에서는 Netflix DGS Framework를 기준으로 이러한 의문들을 해결해보고자 한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이 글을 통해 아래의 내용을 학습할 수 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GraphQL API의 호출 구조 이해&lt;/li&gt;
+&lt;li&gt;Query의 &lt;code class=&quot;language-text&quot;&gt;Selection set&lt;/code&gt; 동작 원리&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Data Loaders&lt;/code&gt;를 통한 N+1 문제 해결 방법&lt;/li&gt;
+&lt;li&gt;GraphQL의 예외 처리 방식&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;company-employee-예제로-보는-graphql&quot; style=&quot;position:relative;&quot;&gt;Company-Employee 예제로 보는 GraphQL&lt;a href=&quot;#company-employee-%EC%98%88%EC%A0%9C%EB%A1%9C-%EB%B3%B4%EB%8A%94-graphql&quot; aria-label=&quot;company employee 예제로 보는 graphql permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;간단한 회사-직원 관계&lt;code class=&quot;language-text&quot;&gt;(Company 1:N Employee)&lt;/code&gt; 예제를 통해 GraphQL의 데이터 조회와 변경 작업을 살펴보자.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GraphQL에서는 &lt;code class=&quot;language-text&quot;&gt;schema&lt;/code&gt;를 통해 클라이언트와 서버 간의 통신 계약(Contract)을 명시적으로 정의하여 안전한 타입 체킹, 자동 문서화, 코드 생성 등을 가능하게 한다.&lt;br&gt;
+아래의 코드 블록에서 &lt;code class=&quot;language-text&quot;&gt;# schema&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;*.graphql&lt;/code&gt;에 작성된 schema 정보임을 뜻한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;dgsquery와-dgsdata를-이용한-조회&quot; style=&quot;position:relative;&quot;&gt;@DgsQuery와 @DgsData를 이용한 조회&lt;a href=&quot;#dgsquery%EC%99%80-dgsdata%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A1%B0%ED%9A%8C&quot; aria-label=&quot;dgsquery와 dgsdata를 이용한 조회 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6d805fe4e752719e6a93498fae60b617/c23ad/schema.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 41.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfElEQVR42mWS647aMBBG8/7P1H+V0BYWrQoESIhawobESQi5Oiabyyk2pRet5dFItr+ZMzO2pmni05r+MeMm+r6nbmqGYeCpGceRPM+ZzWYsl0uKosDSF1JK4jg2FkYh3Uf3CPRbKDOJ/dXm9csr3tyjqx735/MZx3HwfZ/b7Wb0ls7cdZ0h0CRDNzDKEe4a4++7/FnytnzDdVxkKUnchCAM2G63bDYb9vu9Ib1er1jz+ZzL5YJs7g8vCWInaOOWLMiQgUTFCuEIXNfF3tokIiH1UpNctcpQ6VKzLCOKIqzD4UDTNKRpSiQiUjc1Jb4f32nihiqoCDYBnucRhiFt09In/aMl42T6eDweEUKYM6uuaxOwqiqKskCVijEfmep7+dkAH1D8KHj59sLO2VHmJf53nyiOjE73cbVaocEM4XMomlBjK6X+TPa5+qJHhYo2bFFnhcqVSa4DLRYLTqeT6Z8mtfQk//s60+dvY/z4157vde9t22a9XhtCHfAXU2dfVS2uoPYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;schema&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6d805fe4e752719e6a93498fae60b617/1cfc2/schema.png&quot;
+        srcset=&quot;/static/6d805fe4e752719e6a93498fae60b617/3684f/schema.png 225w,
+/static/6d805fe4e752719e6a93498fae60b617/fc2a6/schema.png 450w,
+/static/6d805fe4e752719e6a93498fae60b617/1cfc2/schema.png 900w,
+/static/6d805fe4e752719e6a93498fae60b617/c23ad/schema.png 1193w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이 이미지의 의미는 아래와 같다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@DgsComponent
+class CompanyFetcher {
+
+    @DgsQuery
+    fun findAllCompanies(@InputArgument filter: CompanyFilter): Connection&amp;lt;Company&amp;gt; {
+        ...
+    }
+
+    @DgsData(parentType = &amp;quot;CompanyResponse&amp;quot;, field = &amp;quot;staffs&amp;quot;)
+    fun staff(environment: DgsDataFetchingEnvironment): CompletableFuture&amp;lt;List&amp;lt;Staff&amp;gt;&amp;gt; {
+        val dataLoader = environment.getDataLoader&amp;lt;String, List&amp;lt;Employee&amp;gt;&amp;gt;(EmployeeDataLoader.EMPLOYEE_LOADER_NAME)
+        return dataLoader.load(..)
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;graphql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# schema
+type Query {
+    findAllCompanies(filter: CompanyFilter): CompanyConnection!
+}
+
+type CompanyConnection {
+    totalCount: Int!
+    responses: [CompanyResponse!]!
+}
+
+type CompanyResponse {
+    id: ID!
+    alias: String!
+    state: CompanyState!,
+    employees: [Employee]
+}
+
+type Employee {
+    id: Int,
+    companyId: String
+    name: String
+}
+
+# request
+query {
+    findAllCompanies(filter: {
+        statusIn: [NORMAL]
+    }) {
+        totalCount
+        responses {
+            id
+            alias
+            state
+            employees {
+                name
+            }
+        }
+    }
+}
+
+# response
+{
+  &amp;quot;data&amp;quot;: {
+    &amp;quot;findAllCompanies&amp;quot;: {
+      &amp;quot;totalCount&amp;quot;: 3,
+      &amp;quot;responses&amp;quot;: [
+        {
+          &amp;quot;id&amp;quot;: &amp;quot;별빛기술&amp;quot;,
+          &amp;quot;alias&amp;quot;: &amp;quot;STAR&amp;quot;,
+          &amp;quot;state&amp;quot;: &amp;quot;NORMAL&amp;quot;,
+          &amp;quot;employees&amp;quot;: [
+            {
+              &amp;quot;name&amp;quot;: &amp;quot;하늘솔&amp;quot;
+            },
+            {
+              &amp;quot;name&amp;quot;: &amp;quot;달빛솔&amp;quot;
+            }
+          ]
+        },
+        { ... }
+      ]
+    }
+  }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;주요 특징은 &lt;code class=&quot;language-text&quot;&gt;CompanyResponse&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;@DgsQuery&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;@DgsData&lt;/code&gt;의 응답을 합쳐서 만든다는 것이다.&lt;br&gt;
+(이 기능을 지원하는 BatchLoader에 대해서는 뒤에서 자세히 다룬다.)&lt;br&gt;
+GraphQL의 가장 큰 특징인 &lt;code class=&quot;language-text&quot;&gt;selection set&lt;/code&gt;을 필요한 것만 선택하여 지정할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;selection set&lt;/code&gt;이란, &lt;strong&gt;GraphQL 쿼리에서 어떤 필드를 선택할지 지정하는 중괄호(&lt;code class=&quot;language-text&quot;&gt;{}&lt;/code&gt;) 내부의 집합이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;graphql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;query {
+    findAllCompanies(filter: {
+        ...
+    }) {
+        # &amp;lt;selections set&amp;gt;
+        totalCount
+        responses {
+            id
+            alias
+            state
+            employees {
+                name
+            }
+        }
+        # &amp;lt;/selection set&amp;gt;
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;selection set&gt;&lt;/code&gt; 영역에 있는 최상위 필드 또는 중첩된 필드를 필요한 것만 선택하여 응답을 받을 수 있다.&lt;br&gt;
+당연히 schema 응답 타입의 필드에 작성된 필드를 기준으로 선택해야 한다.&lt;/p&gt;
+&lt;h2 id=&quot;dgsmutation을-이용한-조작&quot; style=&quot;position:relative;&quot;&gt;@DgsMutation을 이용한 조작&lt;a href=&quot;#dgsmutation%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A1%B0%EC%9E%91&quot; aria-label=&quot;dgsmutation을 이용한 조작 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@DgsComponent
+class CompanyMutation {
+    @DgsMutation
+    fun createCompany(createRequest: CreateCompanyRequest): Company {
+        val company = ...
+        return company
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;graphql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# schema
+type Mutation {
+    createCompany(createCompanyRequest: CreateCompanyRequest!): CompanyResponse!
+}
+input CreateCompanyRequest {
+    id: String!
+    alias: String!
+    employees: [EmployeeInput!]!
+}
+input EmployeeInput {
+    name: String
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;위와 같이 schema를 정의하고 그에 맞게 Mutation을 등록한 후에, Spring Web API 작성하듯이 &lt;code class=&quot;language-text&quot;&gt;@DgsComponent&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;@DgsMutation&lt;/code&gt;을 작성하면 호출할 수 있게 된다.&lt;br&gt;
+(GraphQl API가 어떻게 호출되는지는 뒤에서 자세하게 설명한다.)&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;graphql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;# request
+mutation {
+ createCompany(createCompanyRequest: {
+   id: &amp;quot;company-123&amp;quot;
+   alias: &amp;quot;신규회사&amp;quot; 
+   employees: [
+     {
+       name: &amp;quot;김철수&amp;quot;
+     },
+     {
+       name: &amp;quot;이영희&amp;quot;  
+     }
+   ]
+ }) {
+   id
+   alias
+   state
+   employees {
+     id
+     name
+   }
+ }
+}
+
+# response
+{
+  &amp;quot;data&amp;quot;: {
+    &amp;quot;createCompany&amp;quot;: {
+      &amp;quot;id&amp;quot;: &amp;quot;company-123&amp;quot;,
+      &amp;quot;alias&amp;quot;: &amp;quot;신규회사&amp;quot;,
+      &amp;quot;state&amp;quot;: &amp;quot;NORMAL&amp;quot;,
+      &amp;quot;employees&amp;quot;: [
+        {
+          &amp;quot;id&amp;quot;: 9,
+          &amp;quot;name&amp;quot;: &amp;quot;김철수&amp;quot;
+        },
+        {
+          &amp;quot;id&amp;quot;: 10,
+          &amp;quot;name&amp;quot;: &amp;quot;이영희&amp;quot;
+        }
+      ]
+    }
+  }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;정리&quot; style=&quot;position:relative;&quot;&gt;정리&lt;a href=&quot;#%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;정리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;각 어노테이션의 주요 특징과 사용 목적을 정리하면 다음과 같다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;어노테이션&lt;/th&gt;
+&lt;th&gt;용도&lt;/th&gt;
+&lt;th&gt;사용 위치&lt;/th&gt;
+&lt;th&gt;특징&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;@DgsQuery&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;데이터 조회 작업&lt;/td&gt;
+&lt;td&gt;최상위 레벨&lt;/td&gt;
+&lt;td&gt;1. Query 타입 구현 (1:1 관계)&lt;br&gt;2. 읽기 전용 작업&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;@DgsData&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;타입의 필드 구현&lt;/td&gt;
+&lt;td&gt;중첩 필드&lt;/td&gt;
+&lt;td&gt;1. 특정 Query 타입 내부의 필드를 구현 (1:1 또는 1:N 관계)&lt;br&gt;2. &lt;code class=&quot;language-text&quot;&gt;parentType&lt;/code&gt; 지정 필요&lt;br&gt;3. DataLoader와 함께 사용하여 N+1 문제 해결&lt;br&gt;4. DgsDataFetchingEnvironment로 부모 컨텍스트 접근 가능&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;@DgsMutation&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;데이터 변경 작업&lt;/td&gt;
+&lt;td&gt;최상위 레벨&lt;/td&gt;
+&lt;td&gt;1. Mutation 타입 구현 및 (1:1 관계)&lt;br&gt;2. 생성/수정/삭제 작업&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;GraphQL의 내부 동작 원리와 최적화 방법에 대해 더 자세히 알아보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;graphql-분석하기&quot; style=&quot;position:relative;&quot;&gt;GraphQL 분석하기&lt;a href=&quot;#graphql-%EB%B6%84%EC%84%9D%ED%95%98%EA%B8%B0&quot; aria-label=&quot;graphql 분석하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;%EC%9D%B4%EB%AF%B8%EC%A7%80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;graphql-request는-다른-spring-request와-어떻게-구분될까&quot; style=&quot;position:relative;&quot;&gt;GraphQL Request는 다른 Spring Request와 어떻게 구분될까?&lt;a href=&quot;#graphql-request%EB%8A%94-%EB%8B%A4%EB%A5%B8-spring-request%EC%99%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%EB%B6%84%EB%90%A0%EA%B9%8C&quot; aria-label=&quot;graphql request는 다른 spring request와 어떻게 구분될까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;DispatcherServlet은 요청이 들어오면 아래의 과정을 거친다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;API 요청을 처리할 수 있는 &lt;code class=&quot;language-text&quot;&gt;핸들러&lt;/code&gt;를 조회한다.&lt;/li&gt;
+&lt;li&gt;핸들러를 실행시킬 수 있는 &lt;code class=&quot;language-text&quot;&gt;핸들러 어댑터&lt;/code&gt;를 조회한다.&lt;/li&gt;
+&lt;li&gt;핸들러 어댑터를 이용하여 &lt;code class=&quot;language-text&quot;&gt;핸들러를 실행&lt;/code&gt;한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GraphQL도 DispatcherServlet을 통해 실행되기에 Spring Boot의 Auto Configuration을 통해 GraphQL의 요청을 처리하기 위해 필요한 구성들을 자동으로 등록한다.&lt;/p&gt;
+&lt;h3&gt;1. GraphQL 요청을 처리하는 핸들러 찾기&lt;/h3&gt;
+&lt;p&gt;아래는 GraphQL 요청을 처리할 수 있는 &lt;code class=&quot;language-text&quot;&gt;핸들러&lt;/code&gt;를 조회할 때 사용되는 조건이다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;GraphQlHttpRequestPredicate&lt;/code&gt; 구현체는 DispatcherServlet에서 Handler를 조회할 때 사용된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;public final class GraphQlRequestPredicates {
+    ...
+    private static class GraphQlHttpRequestPredicate implements RequestPredicate {
+
+        @Override
+        public boolean test(ServerRequest request) {
+            return httpMethodMatch(request, HttpMethod.POST)
+                    &amp;amp;&amp;amp; contentTypeMatch(request, this.contentTypes)
+                    &amp;amp;&amp;amp; acceptMatch(request, this.acceptedMediaTypes)
+                    &amp;amp;&amp;amp; pathMatch(request, this.pattern);
+        }
+        ...
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;POST&lt;/code&gt; 요청&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;content-type&lt;/code&gt; : application/json || applciation/graphql&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;media-type&lt;/code&gt; : application/json || application/graphql-response+json&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;/graphql&lt;/code&gt; 경로&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위 4가지 조건에 모두 만족한다면 &lt;code class=&quot;language-text&quot;&gt;GraphQlHttpHandler&lt;/code&gt;를 반환한다.&lt;br&gt;
+(GraphQlHttpHandler는 &lt;code class=&quot;language-text&quot;&gt;GraphQlWebMvcAutoConfiguration&lt;/code&gt;에서 자동으로 등록된 빈이다.)&lt;/p&gt;
+&lt;h3&gt;2. GraphQlHttpHandler를 이용해 핸들러 어댑터 찾기&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 470px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/992d95b0ba43a2df0fa44094f68c2863/f96db/handlerAdapter.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR42k3R2W7TQBQGYD9OVYkmXmPP6hlvMW6ICmHJoqRuQEBaoYIEEgLUCx7853jShYvPZ86M5veM7Ymyx+LiK968/YHF6+/YX92hv/yD7fY3+YX3+zscPv3FavUTtj6gqK//c3DK5gYVSaa38Po4wGcrcNsVOFQKW6Oxs+aJMdjkGislsZRH74SgfphTri6lwnqYC0N4m/EpZsOmVy+wLiUaxtEJiedCEYmWdLRhprWrZZLARhEMbR5YkpM68LGmLM+kDDse4Vsr8aUW2MiMMGfJJvRm5mwUv0cn4RleBiPnwj/DjHwcnyAJY3gRk4gahWldomkqdG2Dlur8fAppCkSyQKwKJLpyhp7V57DzBUJd4yQWUEEITZ6FKbwgnIBlEpa+R54X4NJCKAupC1JCUphwLLSpIGiu5QJzUkcxOn+Ehq47phyfeCNKzTOODyzAXkzQixRXdO0dS3DJqedDz2icurWe1q6DU1T+GJJONaFrnlGG/xDoRyk4U+joL06NpZMaVNqioGpVjnIYk8dK83leIsyUCxpRSHAfdgykR5IKChVgMseEHyVMO8M4FeaxOlyDUR9ETyd7CPwHCSJABvXPO0EAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;handlerAdapter&quot;
+        title=&quot;&quot;
+        src=&quot;/static/992d95b0ba43a2df0fa44094f68c2863/f96db/handlerAdapter.png&quot;
+        srcset=&quot;/static/992d95b0ba43a2df0fa44094f68c2863/3684f/handlerAdapter.png 225w,
+/static/992d95b0ba43a2df0fa44094f68c2863/fc2a6/handlerAdapter.png 450w,
+/static/992d95b0ba43a2df0fa44094f68c2863/f96db/handlerAdapter.png 470w&quot;
+        sizes=&quot;(max-width: 470px) 100vw, 470px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;DispatcherServlet에서는 4개의 HandlerAdapter를 보유하고 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RequestMappingHandlerAdapter (일반적인 스프링 어노테이션 기반 Web API)&lt;/li&gt;
+&lt;li&gt;HandlerFunctionAdapter (함수형 스타일)&lt;/li&gt;
+&lt;li&gt;HttpRequestHandlerAdapter (HTTP 요청 직접 처리)&lt;/li&gt;
+&lt;li&gt;SimpleControllerHandlerAdapter (레거시 Controller 인터페이스 구현체 지원)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GraphQL은 Spring에서 지원하는 &lt;code class=&quot;language-text&quot;&gt;RouterFunction&lt;/code&gt;을 통해 함수형으로 라우팅 기능을 구현해놓았기에 &lt;code class=&quot;language-text&quot;&gt;HandlerFunctionAdapter&lt;/code&gt;를 사용한다.&lt;br&gt;
+GraphQL은 4개의 RouterFunction이 존재하며, 일반적인 요청은 &lt;code class=&quot;language-text&quot;&gt;GraphQlHttpHandler&lt;/code&gt;가 처리한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/07efeffeef66478b1559af1e0670f32c/2e92a/routerFunction.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 42.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABpElEQVR42o2SW2/aQBCF/fP7kD+Q9zYXQSCplJaU5gYKMdBQaCSwIWZt1tddYwOqEtJInM4uIOUhqTrSkXa+PbPSrI6xWgFvSdVy+YxYpAgTAZlmeM/7Wgb+UY9PT3AYgzUcYcJ9/E8Z+WyObCN1zueLtTYsSnO4fgyZv+/ZajafwwhFhq38JIUfS0wiqVdt2QF2qh4+fHWwW/fh8ghBMgWne04+5d/OKh4kEkYkErgTj1aaIJL0EP1VnEowzwXjHE4g4IQS4yAmnwuPfCKbIpYkIXWvvGFCW2Q5jINyB3sFEx8PTZxd9DF4iFA46eITsb1iC7XGCINRgOLnHvaPWpqXT+/JF+LL9z71Tc32j+7wa8Bh1EwXNZPh+pah2XFhO4Hula6Itbse+jbH5Y2DepN85hi1WwfWA0fjh+qZ5lcNhsGQHkz4GNyxELojzKYCLy9/oNnY1myRS6gU5TKCz4bELWLpOgW/FwgUo/lMhOvYnJ+UUC0XUSkcoP/zDkuKyvlxCd9KBc3s+54e7tzUUSke4oxk9bqa+RSpKvkUa19f6tj8BbF+j0vvI9eFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;routerFunction&quot;
+        title=&quot;&quot;
+        src=&quot;/static/07efeffeef66478b1559af1e0670f32c/1cfc2/routerFunction.png&quot;
+        srcset=&quot;/static/07efeffeef66478b1559af1e0670f32c/3684f/routerFunction.png 225w,
+/static/07efeffeef66478b1559af1e0670f32c/fc2a6/routerFunction.png 450w,
+/static/07efeffeef66478b1559af1e0670f32c/1cfc2/routerFunction.png 900w,
+/static/07efeffeef66478b1559af1e0670f32c/21482/routerFunction.png 1350w,
+/static/07efeffeef66478b1559af1e0670f32c/d61c2/routerFunction.png 1800w,
+/static/07efeffeef66478b1559af1e0670f32c/2e92a/routerFunction.png 2508w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;graphql-쿼리-파싱&quot; style=&quot;position:relative;&quot;&gt;GraphQL 쿼리 파싱&lt;a href=&quot;#graphql-%EC%BF%BC%EB%A6%AC-%ED%8C%8C%EC%8B%B1&quot; aria-label=&quot;graphql 쿼리 파싱 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;todo&quot; style=&quot;position:relative;&quot;&gt;TODO&lt;a href=&quot;#todo&quot; aria-label=&quot;todo permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;DgsContext&lt;/li&gt;
+&lt;li&gt;DataLoaderRegistry&lt;/li&gt;
+&lt;li&gt;dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;dataloaderhelper&quot; style=&quot;position:relative;&quot;&gt;DataLoaderHelper&lt;a href=&quot;#dataloaderhelper&quot; aria-label=&quot;dataloaderhelper permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;private void assertResultSize(List&amp;lt;K&amp;gt; keys, List&amp;lt;V&amp;gt; values) {
+    assertState(keys.size() == values.size(), () -&amp;gt; &amp;quot;The size of the promised values MUST be the same size as the key list&amp;quot;);
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ul&gt;
+&lt;li&gt;각 companyId에 대해 빈 리스트라도 반환해야 함&lt;/li&gt;
+&lt;li&gt;결과는 반드시 입력 keys와 같은 순서를 유지해야 함&lt;/li&gt;
+&lt;li&gt;반환 타입이 List&amp;#x3C;List&lt;Staff&gt;&gt;이어야 함 (각 companyId당 하나의 List)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// 입력 keys
+companyIds = [1, 2, 3]
+
+// 올바른 결과 (size = 3)
+[
+    [staff1, staff2],  // company1의 직원들
+    [],                // company2의 직원 (없음)
+    [staff3]           // company3의 직원
+]
+
+// 잘못된 결과 (size = 4 != keys.size)
+[staff1, staff2, staff3, staff4]&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;돈의-심리학&quot; style=&quot;position:relative;&quot;&gt;돈의 심리학&lt;a href=&quot;#%EB%8F%88%EC%9D%98-%EC%8B%AC%EB%A6%AC%ED%95%99&quot; aria-label=&quot;돈의 심리학 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;부제는 &lt;code class=&quot;language-text&quot;&gt;&quot;당신은 왜 부자가 되지 못했는가&quot;&lt;/code&gt;이다. 책의 제목만 보면 속물들이 읽을 법한 책으로 보일 수 있다.&lt;br&gt;
 인문학적 소양은 제쳐두고 돈을 벌기에 혈안이 된 사람들이 좋아할 내용일 것처럼 보이지만, 읽는 동안 &lt;code class=&quot;language-text&quot;&gt;총,균,쇠&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;불안&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;프레임&lt;/code&gt; 같은 책들이 떠오를 만큼 의외로 깊이 있는 통찰과 여러 교훈을 제공한다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;투자에 대한 성향과 선호도는 개인의 지능이나 교육과 무관하다.&lt;/strong&gt; 사람의 성향은 그들이 언제, 어디서 태어나고 어떤 경험을 했는지에 따라 결정된다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;성공에서 행운의 역할을 인정하라.&lt;/strong&gt; 개인의 노력만으로 모든 결과가 이루어진다는 믿음은 착각이다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;스스로 느끼는 만족의 기준을 이해하고 현실과 타협하라.&lt;/strong&gt; 무조건 더 많은 것을 추구하기보다는 자신에게 진정한 만족감을 주는 것이 무엇인지 알아야 한다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;다른 사람에게 잘 보이려 소비하지 마라.&lt;/strong&gt; 부는 당신이 소유한 것이 아니라 보이지 않게 축적된 자산이다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;어마어마한 성공은 어마어마한 힘에서 오지 않는다.&lt;/strong&gt; 꾸준히 시간을 들이고 인내하는 과정이 성공의 핵심이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;투자에 대한 성향과 선호도는 개인의 지능이나 교육과 무관하다.&lt;/strong&gt; 사람의 성향은 그들이 언제, 어디서 태어나고 어떤 경험을 했는지에 따라 결정된다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;성공에서 행운의 역할을 인정하라.&lt;/strong&gt; 개인의 노력만으로 모든 결과가 이루어진다는 믿음은 착각이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;스스로 느끼는 만족의 기준을 이해하고 현실과 타협하라.&lt;/strong&gt; 무조건 더 많은 것을 추구하기보다는 자신에게 진정한 만족감을 주는 것이 무엇인지 알아야 한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;다른 사람에게 잘 보이려 소비하지 마라.&lt;/strong&gt; 부는 당신이 소유한 것이 아니라 보이지 않게 축적된 자산이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;어마어마한 성공은 어마어마한 힘에서 오지 않는다.&lt;/strong&gt; 꾸준히 시간을 들이고 인내하는 과정이 성공의 핵심이다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;내 시간을 내 뜻대로 사용할 수 있는 자유가 돈이 주는 가장 큰 가치다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;부의 진정한 척도는 소득이 아니라 지출과 만족의 균형이다.&lt;/strong&gt; 연간 5천 달러를 벌면서 4천 달러에 만족하는 사람은, 연간 1만 달러를 벌지만 1만1천 달러에 만족하는 사람보다 부자다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;부의 진정한 척도는 소득이 아니라 지출과 만족의 균형이다.&lt;/strong&gt; 연간 5천 달러를 벌면서 4천 달러에 만족하는 사람은, 연간 1만 달러를 벌지만 1만1천 달러에 만족하는 사람보다 부자다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;이 책은 단기간에 돈을 벌 수 있는 비법을 알려주는 책이 아니다. 그런 목적이라면 이 책을 읽지 않는 것이 좋다.&lt;br&gt;
 그러나 돈을 대하는 자세와 철학, 그리고 돈이 줄 수 있는 진정한 가치를 배우고 싶다면 강력히 추천한다. 책은 단순한 투자 전략을 넘어 삶의 방식과 가치관을 돌아보게 한다.&lt;/p&gt;
