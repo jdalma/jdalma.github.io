@@ -1,5 +1,5 @@
 ---
-title: GraphQL 이해하기 (작성 중)
+title: GraphQL 이해하고 사용하기 (작성 중)
 date: "2025-01-24"
 update: "2025-02-03"
 tags:
@@ -240,7 +240,7 @@ GraphQL의 내부 동작 원리와 최적화 방법에 대해 더 자세히 알�
 
 # GraphQL 분석하기
 
-![](이미지)
+![](./overview.png)
 
 ## GraphQL Request는 다른 Spring Request와 어떻게 구분될까?
 
@@ -298,10 +298,10 @@ GraphQL은 4개의 RouterFunction이 존재하며, 일반적인 요청은 `Graph
 
 ![](./routerFunction.png)
 
-## GraphQL 쿼리 파싱
-
 ## TODO
 
+- BatchLoader 규칙
+- 중첩 필드가 실행될 때 재귀적으로 실행하는 것을 확인했음. 더 분석 필요
 - DgsContext
 - DataLoaderRegistry
 - dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled
