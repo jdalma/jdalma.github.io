@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 02 Feb 2025 15:07:22 GMT</lastBuildDate><item><title><![CDATA[GraphQL 이해하기 (작성 중)]]></title><description><![CDATA[GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.    이 글에서는 Netflix DGS Framework를 기준으로 이러한 의문들을 해결해보고자 한다. 이 글을 통해 아래의 내용을 학습할 수 있다. GraphQL API…]]></description><link>https://jdalma.github.io/2025y/graphql/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/graphql/</guid><pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Feb 2025 15:15:39 GMT</lastBuildDate><item><title><![CDATA[GraphQL 이해하고 사용하기 (작성 중)]]></title><description><![CDATA[GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.    이 글에서는 Netflix DGS Framework를 기준으로 이러한 의문들을 해결해보고자 한다. 이 글을 통해 아래의 내용을 학습할 수 있다. GraphQL API…]]></description><link>https://jdalma.github.io/2025y/graphql/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/graphql/</guid><pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;스키마를 어떤 기준으로 작성해야 할까?&quot;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;조회 쿼리가 너무 많이 발생하는데 어떻게 개선할 수 있을까?&quot;&lt;/code&gt;&lt;/li&gt;
@@ -268,7 +268,39 @@ mutation {
 &lt;p&gt;GraphQL의 내부 동작 원리와 최적화 방법에 대해 더 자세히 알아보자.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;graphql-분석하기&quot; style=&quot;position:relative;&quot;&gt;GraphQL 분석하기&lt;a href=&quot;#graphql-%EB%B6%84%EC%84%9D%ED%95%98%EA%B8%B0&quot; aria-label=&quot;graphql 분석하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;%EC%9D%B4%EB%AF%B8%EC%A7%80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a19b9f452e8bcf5c84c29669d24de0ce/6c2f8/overview.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABp0lEQVR42nWSi26jMBBF+/+f1Q9YpVk1ibIpJCmUQMG8bGMM5qyx1HQrZQdZfjA+M+O5TzywyU20Y0tve1rb0kwN27ctz7+eeTm9EBcxSZ0gRkEzNszLfL/79AjY2S5AF/91qqMWNUoplFFhP9oRN7vguwZe/Vdb/R8Dxw7nHHaxpGlKmqXcyhtJlZDmaTj/MjMbalN/A621SClDBuvan90j6lGTlRlxFhOJiKRPyNs8BPwBHP8Bns9ndrsdm82Gw+GAECJcKoqCKInIdU58i4lrPz5jXg+vfJQfWGNZpoVxHr8zXDzwcrmQ5zlRFLHf70mTlHPmg+x3HA/HAK7aisUtOOPoux5RCdJrSlVUSCV/ZriWuw6t9b3stbvrz8EOFFHB7XTDfBpsaZn6CVMYzr/PxNuY4k9BmZfIwj9brv7flDX9cRmZuon33TvNW0P71pKcEmxkERdBdalQkSKPc66nK9kxewxctbcCrfMZzRNOOdzgWJQvW/rZ+Ln3sulBthKhhO8OwechcJgHpJVBsGpSaKfRk0YOMmhRDSqstdGUqgz+X8L+CzYbAYU9xkWhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;overview&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a19b9f452e8bcf5c84c29669d24de0ce/1cfc2/overview.png&quot;
+        srcset=&quot;/static/a19b9f452e8bcf5c84c29669d24de0ce/3684f/overview.png 225w,
+/static/a19b9f452e8bcf5c84c29669d24de0ce/fc2a6/overview.png 450w,
+/static/a19b9f452e8bcf5c84c29669d24de0ce/1cfc2/overview.png 900w,
+/static/a19b9f452e8bcf5c84c29669d24de0ce/21482/overview.png 1350w,
+/static/a19b9f452e8bcf5c84c29669d24de0ce/d61c2/overview.png 1800w,
+/static/a19b9f452e8bcf5c84c29669d24de0ce/6c2f8/overview.png 2065w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;graphql-request는-다른-spring-request와-어떻게-구분될까&quot; style=&quot;position:relative;&quot;&gt;GraphQL Request는 다른 Spring Request와 어떻게 구분될까?&lt;a href=&quot;#graphql-request%EB%8A%94-%EB%8B%A4%EB%A5%B8-spring-request%EC%99%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%EB%B6%84%EB%90%A0%EA%B9%8C&quot; aria-label=&quot;graphql request는 다른 spring request와 어떻게 구분될까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;DispatcherServlet은 요청이 들어오면 아래의 과정을 거친다.&lt;/p&gt;
 &lt;ol&gt;
@@ -377,9 +409,10 @@ GraphQL은 4개의 RouterFunction이 존재하며, 일반적인 요청은 &lt;co
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;graphql-쿼리-파싱&quot; style=&quot;position:relative;&quot;&gt;GraphQL 쿼리 파싱&lt;a href=&quot;#graphql-%EC%BF%BC%EB%A6%AC-%ED%8C%8C%EC%8B%B1&quot; aria-label=&quot;graphql 쿼리 파싱 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&quot;todo&quot; style=&quot;position:relative;&quot;&gt;TODO&lt;a href=&quot;#todo&quot; aria-label=&quot;todo permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;BatchLoader 규칙&lt;/li&gt;
+&lt;li&gt;중첩 필드가 실행될 때 재귀적으로 실행하는 것을 확인했음. 더 분석 필요&lt;/li&gt;
 &lt;li&gt;DgsContext&lt;/li&gt;
 &lt;li&gt;DataLoaderRegistry&lt;/li&gt;
 &lt;li&gt;dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled&lt;/li&gt;
@@ -408,7 +441,27 @@ companyIds = [1, 2, 3]
 
 // 잘못된 결과 (size = 4 != keys.size)
 [staff1, staff2, staff3, staff4]&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;돈의-심리학&quot; style=&quot;position:relative;&quot;&gt;돈의 심리학&lt;a href=&quot;#%EB%8F%88%EC%9D%98-%EC%8B%AC%EB%A6%AC%ED%95%99&quot; aria-label=&quot;돈의 심리학 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;길-위의-뇌&quot; style=&quot;position:relative;&quot;&gt;길 위의 뇌&lt;a href=&quot;#%EA%B8%B8-%EC%9C%84%EC%9D%98-%EB%87%8C&quot; aria-label=&quot;길 위의 뇌 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;우연하게 &lt;a href=&quot;https://www.youtube.com/watch?v=fU2cp-0vKWU&amp;#x26;ab_channel=%EC%9E%A5%EB%8F%99%EC%84%A0%EC%9D%98%EA%B6%81%EA%B8%88%ED%95%9C%EB%87%8C&quot;&gt;유산소 운동이 뇌에 미치는 놀라운 효과&lt;/a&gt;영상을 접하면서 책을 읽게 되었다.&lt;br&gt;
+평소 러닝에 관심이 많기에 러닝에 대한 장점은 대충 알고 있었다. 심페지구력이과 근지구력이 좋아지고 뇌의 노화를 낮추고 뇌 가소성을 높힌다라는 것들 말이다.&lt;br&gt;
+하지만 책으로 더 확실하게 알아본다면 나의 러닝 습관에 좋은 영향을 줄 수 있지 않을까 하고 읽어보았다.&lt;/p&gt;
+&lt;p&gt;저자는 재활의학과에서 뇌신경질환을 겪는 환자들을 진료하기에 운동이 신체 건강과 뇌 건강에 끼치는 영향에 대해 잘 알고 있다.&lt;br&gt;
+그렇기에 이 건강을 지키거나 얻기 위해서는 가만히 노력없이 얻을 수 없다고 설명한다. 전문가가 이렇게 설명하니 꾸준히 달리는 입장에서 기분이 좋았다.&lt;/p&gt;
+&lt;p&gt;러닝이 명상같다고 느껴 머리가 복잡하거나 불안할 때 늦은 시간이라도 그냥 뛰러 나가 내 발소리를 들으면서 생각 정리를 한 적이 많다.&lt;br&gt;
+부정적 감정을 없애고 머리에 불필요한 찌꺼기들을 지우기에도 좋다고 생각했다.&lt;br&gt;
+저자도 &lt;code class=&quot;language-text&quot;&gt;&quot;운동하러 갔다올게&quot;&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;&quot;생각하러 갔다올게&quot;&lt;/code&gt;라고 말할 수 있을 정도로 고요함을 느낀다고 하기에 동질감을 느꼈다.&lt;/p&gt;
+&lt;p&gt;이 책은 단순히 &apos;운동하면 건강이 좋아져요~&apos;라는 이야기를 하기보다는 운동을 대하는 생각을 바꿔주기 위해 노력하고 있다고 느껴졌다.&lt;br&gt;
+몸과 마음의 힘을 기르기 위해 운동을 통해 컴포트존을 벗어나 스트레스를 관리하는 것을 추천한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;스트레스라고 하면 다들 부정적으로 여기지만, 그렇다고 스트레스 진공 상태에서 지내는 것이 몸과 마음에 좋은 것만은 아니다.&lt;br&gt;
+중요한 것은 내가 그 스트레스를 충분히 처리하고 대처할 수 있는가다.&lt;br&gt;
+&apos;좋은 스트레스&apos;는 힘들고 도전적이지만 긍정적인 결과를 얻게하는 스트레스다.&lt;br&gt;
+결과가 좋지 않았어도 좋은 스트레스가 될 수 있는데, 성장하는 경험이 되었을 때다.&lt;br&gt;
+&apos;견딜 만한 스트레스&apos;는 결과는 부정적일지라도 이를 잘 처리할 수 있는 스트레스다.&lt;br&gt;
+&apos;나쁜 스트레스&apos;는 신체, 행동, 생각에 부정적인 영향을 미치는 스트레스다.&lt;br&gt;
+결국 좋은 스트레스, 나쁜 스트레스를 결정하는 것은 &lt;strong&gt;스트레스 그 자체가 아니라 스트레스를 처리하는 나의 능력치에 달렸다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;돈의-심리학&quot; style=&quot;position:relative;&quot;&gt;돈의 심리학&lt;a href=&quot;#%EB%8F%88%EC%9D%98-%EC%8B%AC%EB%A6%AC%ED%95%99&quot; aria-label=&quot;돈의 심리학 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;부제는 &lt;code class=&quot;language-text&quot;&gt;&quot;당신은 왜 부자가 되지 못했는가&quot;&lt;/code&gt;이다. 책의 제목만 보면 속물들이 읽을 법한 책으로 보일 수 있다.&lt;br&gt;
 인문학적 소양은 제쳐두고 돈을 벌기에 혈안이 된 사람들이 좋아할 내용일 것처럼 보이지만, 읽는 동안 &lt;code class=&quot;language-text&quot;&gt;총,균,쇠&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;불안&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;프레임&lt;/code&gt; 같은 책들이 떠오를 만큼 의외로 깊이 있는 통찰과 여러 교훈을 제공한다.&lt;/p&gt;
 &lt;ol&gt;
