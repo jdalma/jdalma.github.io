@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Feb 2025 15:15:39 GMT</lastBuildDate><item><title><![CDATA[GraphQL 이해하고 사용하기 (작성 중)]]></title><description><![CDATA[GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.    이 글에서는 Netflix DGS Framework를 기준으로 이러한 의문들을 해결해보고자 한다. 이 글을 통해 아래의 내용을 학습할 수 있다. GraphQL API…]]></description><link>https://jdalma.github.io/2025y/graphql/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/graphql/</guid><pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 15 Mar 2025 15:54:39 GMT</lastBuildDate><item><title><![CDATA[GraphQL 이해하고 사용하기 (작성 중)]]></title><description><![CDATA[GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.      이 글에서는 Netflix DGS Framework를 기준으로 이러한 의문들을 해결해보고자 한다. 이 글을 통해 아래의 내용을 학습할 수 있다. GraphQL…]]></description><link>https://jdalma.github.io/2025y/graphql/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/graphql/</guid><pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;스키마를 어떤 기준으로 작성해야 할까?&quot;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;조회 쿼리가 너무 많이 발생하는데 어떻게 개선할 수 있을까?&quot;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;Selection Set의 필드는 어떤 원리로 채워지는 걸까?&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;/graphql은 누가 라우팅할까?&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;예외는 어떻게 처리할까?&quot;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;이 글에서는 Netflix DGS Framework를 기준으로 이러한 의문들을 해결해보고자 한다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -17,7 +19,7 @@
 &lt;h1 id=&quot;company-employee-예제로-보는-graphql&quot; style=&quot;position:relative;&quot;&gt;Company-Employee 예제로 보는 GraphQL&lt;a href=&quot;#company-employee-%EC%98%88%EC%A0%9C%EB%A1%9C-%EB%B3%B4%EB%8A%94-graphql&quot; aria-label=&quot;company employee 예제로 보는 graphql permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;간단한 회사-직원 관계&lt;code class=&quot;language-text&quot;&gt;(Company 1:N Employee)&lt;/code&gt; 예제를 통해 GraphQL의 데이터 조회와 변경 작업을 살펴보자.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;GraphQL에서는 &lt;code class=&quot;language-text&quot;&gt;schema&lt;/code&gt;를 통해 클라이언트와 서버 간의 통신 계약(Contract)을 명시적으로 정의하여 안전한 타입 체킹, 자동 문서화, 코드 생성 등을 가능하게 한다.&lt;br&gt;
+&lt;p&gt;GraphQL에서는 &lt;code class=&quot;language-text&quot;&gt;schema&lt;/code&gt;를 통해 클라이언트와 서버 간의 통신을 명시적으로 정의하여 안전한 타입 체킹, 자동 문서화, 코드 생성 등을 가능하게 한다.&lt;br&gt;
 아래의 코드 블록에서 &lt;code class=&quot;language-text&quot;&gt;# schema&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;*.graphql&lt;/code&gt;에 작성된 schema 정보임을 뜻한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;dgsquery와-dgsdata를-이용한-조회&quot; style=&quot;position:relative;&quot;&gt;@DgsQuery와 @DgsData를 이용한 조회&lt;a href=&quot;#dgsquery%EC%99%80-dgsdata%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A1%B0%ED%9A%8C&quot; aria-label=&quot;dgsquery와 dgsdata를 이용한 조회 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -158,8 +160,8 @@ GraphQL의 가장 큰 특징인 &lt;code class=&quot;language-text&quot;&gt;sele
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;selection set&gt;&lt;/code&gt; 영역에 있는 최상위 필드 또는 중첩된 필드를 필요한 것만 선택하여 응답을 받을 수 있다.&lt;br&gt;
-당연히 schema 응답 타입의 필드에 작성된 필드를 기준으로 선택해야 한다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;selection set&gt;&lt;/code&gt; 영역에 있는 최상위 필드 또는 중첩된 필드를 필요한 것만 선택하여 응답을 받을 수 있기에 오버페칭과 언더페칭을 해결할 수 있다.&lt;br&gt;
+당연히 schema에 type으로 응답 타입의 필드에 작성된 필드를 기준으로 선택해야 한다.&lt;/p&gt;
 &lt;h2 id=&quot;dgsmutation을-이용한-조작&quot; style=&quot;position:relative;&quot;&gt;@DgsMutation을 이용한 조작&lt;a href=&quot;#dgsmutation%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A1%B0%EC%9E%91&quot; aria-label=&quot;dgsmutation을 이용한 조작 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@DgsComponent
@@ -185,8 +187,7 @@ input EmployeeInput {
     name: String
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;위와 같이 schema를 정의하고 그에 맞게 Mutation을 등록한 후에, Spring Web API 작성하듯이 &lt;code class=&quot;language-text&quot;&gt;@DgsComponent&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;@DgsMutation&lt;/code&gt;을 작성하면 호출할 수 있게 된다.&lt;br&gt;
-(GraphQl API가 어떻게 호출되는지는 뒤에서 자세하게 설명한다.)&lt;/p&gt;
+&lt;p&gt;위와 같이 schema를 정의하고 그에 맞게 Mutation을 등록한 후에, Spring Web API 작성하듯이 &lt;code class=&quot;language-text&quot;&gt;@DgsComponent&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;@DgsMutation&lt;/code&gt;을 작성하면 호출할 수 있게 된다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;graphql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;# request
 mutation {
@@ -274,26 +275,26 @@ mutation {
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a19b9f452e8bcf5c84c29669d24de0ce/6c2f8/overview.png&quot;
+    href=&quot;/static/d4ed9a3f45a5f88a7cd5427f1d1a654c/6c960/overview.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 48.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABp0lEQVR42nWSi26jMBBF+/+f1Q9YpVk1ibIpJCmUQMG8bGMM5qyx1HQrZQdZfjA+M+O5TzywyU20Y0tve1rb0kwN27ctz7+eeTm9EBcxSZ0gRkEzNszLfL/79AjY2S5AF/91qqMWNUoplFFhP9oRN7vguwZe/Vdb/R8Dxw7nHHaxpGlKmqXcyhtJlZDmaTj/MjMbalN/A621SClDBuvan90j6lGTlRlxFhOJiKRPyNs8BPwBHP8Bns9ndrsdm82Gw+GAECJcKoqCKInIdU58i4lrPz5jXg+vfJQfWGNZpoVxHr8zXDzwcrmQ5zlRFLHf70mTlHPmg+x3HA/HAK7aisUtOOPoux5RCdJrSlVUSCV/ZriWuw6t9b3stbvrz8EOFFHB7XTDfBpsaZn6CVMYzr/PxNuY4k9BmZfIwj9brv7flDX9cRmZuon33TvNW0P71pKcEmxkERdBdalQkSKPc66nK9kxewxctbcCrfMZzRNOOdzgWJQvW/rZ+Ln3sulBthKhhO8OwechcJgHpJVBsGpSaKfRk0YOMmhRDSqstdGUqgz+X8L+CzYbAYU9xkWhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 47.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABtElEQVR42m2Sb5OiMAzG/f7fa1/sK29uOM9zFQRUEAvInxYKlN+VOrpzu5dMppk0efqkyYovoo2m7EvyPn+Z6AT+1ef91ztvP97wfI+0Sf/JWawZGlZPoNnqIkVfoEa1BJjn+RVvu5Z7c2c0I2YyzlzdPL/IpCr9BHxKoQvKqsT3fYqicICT1aRKCM4BvelfBJ4PmvkB7lc+q7ZtkVKitXasFkCpJFmaUcua6/3KqToRNzHJPSFX+VcOL8CgDlhtt1vW6zWe53HLbu5vojgiyzIaq/vLnkAExPeY7X7LSZwwg2HUI7rT7ny279eWoRCCw+HAZrMhPIZEIsLbeAQfASITiFIwTROztvRt3aAHknPC5XThml7p2555etz5uQVsmgallGtzSV6mNZnJ/U0RFlz+XFCpYsxH+rJnyAciLyL4GVAeS0xrqLKKqZz4CD++T3lZkQXQiR32+fcZsRPIoyTaRehQU4c1aZCij5ohtQ/4Ebfwxm6/+z/gYIZnENPZFZGGWc2OzdK6aWystn5nE0ZcnA7iW/x9bdqhdbvYTZ3bRzU9THYS2cvP8+mrh990DUIJ/gKoJACBQRT3iQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;overview&quot;
         title=&quot;&quot;
-        src=&quot;/static/a19b9f452e8bcf5c84c29669d24de0ce/1cfc2/overview.png&quot;
-        srcset=&quot;/static/a19b9f452e8bcf5c84c29669d24de0ce/3684f/overview.png 225w,
-/static/a19b9f452e8bcf5c84c29669d24de0ce/fc2a6/overview.png 450w,
-/static/a19b9f452e8bcf5c84c29669d24de0ce/1cfc2/overview.png 900w,
-/static/a19b9f452e8bcf5c84c29669d24de0ce/21482/overview.png 1350w,
-/static/a19b9f452e8bcf5c84c29669d24de0ce/d61c2/overview.png 1800w,
-/static/a19b9f452e8bcf5c84c29669d24de0ce/6c2f8/overview.png 2065w&quot;
+        src=&quot;/static/d4ed9a3f45a5f88a7cd5427f1d1a654c/1cfc2/overview.png&quot;
+        srcset=&quot;/static/d4ed9a3f45a5f88a7cd5427f1d1a654c/3684f/overview.png 225w,
+/static/d4ed9a3f45a5f88a7cd5427f1d1a654c/fc2a6/overview.png 450w,
+/static/d4ed9a3f45a5f88a7cd5427f1d1a654c/1cfc2/overview.png 900w,
+/static/d4ed9a3f45a5f88a7cd5427f1d1a654c/21482/overview.png 1350w,
+/static/d4ed9a3f45a5f88a7cd5427f1d1a654c/d61c2/overview.png 1800w,
+/static/d4ed9a3f45a5f88a7cd5427f1d1a654c/6c960/overview.png 2135w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -370,7 +371,7 @@ mutation {
 &lt;p&gt;DispatcherServlet에서는 4개의 HandlerAdapter를 보유하고 있다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;RequestMappingHandlerAdapter (일반적인 스프링 어노테이션 기반 Web API)&lt;/li&gt;
-&lt;li&gt;HandlerFunctionAdapter (함수형 스타일)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HandlerFunctionAdapter (함수형 스타일)&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;HttpRequestHandlerAdapter (HTTP 요청 직접 처리)&lt;/li&gt;
 &lt;li&gt;SimpleControllerHandlerAdapter (레거시 Controller 인터페이스 구현체 지원)&lt;/li&gt;
 &lt;/ul&gt;
@@ -409,17 +410,15 @@ GraphQL은 4개의 RouterFunction이 존재하며, 일반적인 요청은 &lt;co
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;todo&quot; style=&quot;position:relative;&quot;&gt;TODO&lt;a href=&quot;#todo&quot; aria-label=&quot;todo permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;executionstrategy&quot; style=&quot;position:relative;&quot;&gt;ExecutionStrategy&lt;a href=&quot;#executionstrategy&quot; aria-label=&quot;executionstrategy permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;BatchLoader 규칙&lt;/li&gt;
 &lt;li&gt;중첩 필드가 실행될 때 재귀적으로 실행하는 것을 확인했음. 더 분석 필요&lt;/li&gt;
-&lt;li&gt;DgsContext&lt;/li&gt;
-&lt;li&gt;DataLoaderRegistry&lt;/li&gt;
-&lt;li&gt;dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;dataloaderhelper&quot; style=&quot;position:relative;&quot;&gt;DataLoaderHelper&lt;a href=&quot;#dataloaderhelper&quot; aria-label=&quot;dataloaderhelper permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;batchloader-규칙&quot; style=&quot;position:relative;&quot;&gt;BatchLoader 규칙&lt;a href=&quot;#batchloader-%EA%B7%9C%EC%B9%99&quot; aria-label=&quot;batchloader 규칙 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;private void assertResultSize(List&amp;lt;K&amp;gt; keys, List&amp;lt;V&amp;gt; values) {
+          &lt;code slot=&quot;code&quot;&gt;// DataLoaderHelper
+
+private void assertResultSize(List&amp;lt;K&amp;gt; keys, List&amp;lt;V&amp;gt; values) {
     assertState(keys.size() == values.size(), () -&amp;gt; &amp;quot;The size of the promised values MUST be the same size as the key list&amp;quot;);
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
@@ -441,7 +440,28 @@ companyIds = [1, 2, 3]
 
 // 잘못된 결과 (size = 4 != keys.size)
 [staff1, staff2, staff3, staff4]&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;길-위의-뇌&quot; style=&quot;position:relative;&quot;&gt;길 위의 뇌&lt;a href=&quot;#%EA%B8%B8-%EC%9C%84%EC%9D%98-%EB%87%8C&quot; aria-label=&quot;길 위의 뇌 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;todo&quot; style=&quot;position:relative;&quot;&gt;TODO&lt;a href=&quot;#todo&quot; aria-label=&quot;todo permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;DgsContext&lt;/li&gt;
+&lt;li&gt;DataLoaderRegistry&lt;/li&gt;
+&lt;li&gt;dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[개발자를 위한 레디스 사내 스터디를 진행하면서 읽어보았다. 내용이 무겁지 않고 글자가 커서 1주일에 한 번씩, 2회만에 완독했다. 레디스를 유용하게 사용하는 사례, 적절한 상황 레디스 자료구조 쓰기 전략 키 삭제 방식 메모리 관리와 maxmemory…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;개발자를-위한-레디스&quot; style=&quot;position:relative;&quot;&gt;개발자를 위한 레디스&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A0%88%EB%94%94%EC%8A%A4&quot; aria-label=&quot;개발자를 위한 레디스 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;사내 스터디를 진행하면서 읽어보았다. 내용이 무겁지 않고 글자가 커서 1주일에 한 번씩, 2회만에 완독했다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;레디스를 유용하게 사용하는 사례, 적절한 상황&lt;/li&gt;
+&lt;li&gt;레디스 자료구조&lt;/li&gt;
+&lt;li&gt;쓰기 전략&lt;/li&gt;
+&lt;li&gt;키 삭제 방식&lt;/li&gt;
+&lt;li&gt;메모리 관리와 maxmemory-policy 설정&lt;/li&gt;
+&lt;li&gt;캐시 스탬피드를 완화하는 방법&lt;/li&gt;
+&lt;li&gt;레디스의 pub/sub : &lt;code class=&quot;language-text&quot;&gt;fire-and-forget&lt;/code&gt; 패턴&lt;/li&gt;
+&lt;li&gt;레디스의 stream : 카프카와 같은 팬아웃 데이터 분산 처리 가능, 소비자 그룹의 장점이 있음&lt;/li&gt;
+&lt;li&gt;복제 방식&lt;/li&gt;
+&lt;li&gt;클러스터 등&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;레디스 입문서로 적절하다고 생각한다.&lt;/p&gt;
+&lt;h1 id=&quot;길-위의-뇌&quot; style=&quot;position:relative;&quot;&gt;길 위의 뇌&lt;a href=&quot;#%EA%B8%B8-%EC%9C%84%EC%9D%98-%EB%87%8C&quot; aria-label=&quot;길 위의 뇌 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;우연하게 &lt;a href=&quot;https://www.youtube.com/watch?v=fU2cp-0vKWU&amp;#x26;ab_channel=%EC%9E%A5%EB%8F%99%EC%84%A0%EC%9D%98%EA%B6%81%EA%B8%88%ED%95%9C%EB%87%8C&quot;&gt;유산소 운동이 뇌에 미치는 놀라운 효과&lt;/a&gt;영상을 접하면서 책을 읽게 되었다.&lt;br&gt;
 평소 러닝에 관심이 많기에 러닝에 대한 장점은 대충 알고 있었다. 심페지구력이과 근지구력이 좋아지고 뇌의 노화를 낮추고 뇌 가소성을 높힌다라는 것들 말이다.&lt;br&gt;
 하지만 책으로 더 확실하게 알아본다면 나의 러닝 습관에 좋은 영향을 줄 수 있지 않을까 하고 읽어보았다.&lt;/p&gt;
@@ -9281,7 +9301,7 @@ ES에 대한 지식 하나도 없었지만 읽기 편했고 대부분의 개발�
 &lt;p&gt;2년 반정도 SI 회사에서 근무한 습관은 금방 털어내고 회사에 금방 적응할 줄 알았지만, 쉽지 않았다. 가장 힘들었던 점은 &lt;code class=&quot;language-text&quot;&gt;일을 진행하면서 고민해야하는 범위&lt;/code&gt;이다.&lt;br&gt;
 SI회사에서 업무를 진행할 때는 RFP가 존재하고, 요구사항을 충족시키기 위한 기술도 정해져있기 때문에 문제를 해결해야 할 영역이 매우 좁았다.&lt;br&gt;
 되돌아보면 대부분 코드레벨의 구현 수준을 고민했었다. Java 8을 쓰니 Stream이나 Optional을 써볼까? 추상화는 어떻게 할까? SP를 애플리케이션 레벨로 어떻게 옮길까? 와 같은 고민들이다.&lt;/p&gt;
-&lt;p&gt;분석 → 설계 → 개발의 사이클을 거치면서 &lt;strong&gt;목표와 문제만 주어지고 목표에 도달할 수 있는 많은 방법들을 프로젝트의 실무자들이 결정하여 주도한다.&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;하지만 이번에 이직한 회사는 분석 → 설계 → 개발의 사이클을 거치면서 &lt;strong&gt;목표와 문제만 주어지고 목표에 도달할 수 있는 많은 방법들을 프로젝트의 실무자들이 결정하여 주도한다.&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;문제를 해결하기 위한 방법들을 다각도로 고민하여, 프로젝트의 이해관계자들을 설득하여 일을 진행하는 것&lt;/strong&gt; 이 핵심이다.&lt;br&gt;
 (개발자는 코딩하는 시간이 대부분이라고 생각했었는데 실제로 개발하는 시간은 10~20% 밖에 되지 않았다.)&lt;/p&gt;
 &lt;p&gt;올해 진행한 프로젝트는 5,6개 정도 되는데, 어떤 프로젝트는 수동적으로 답을 얻으러 다녔고 어떤 프로젝트는 능동적으로 진행하는 스스로를 볼 수 있었다.&lt;br&gt;
