@@ -12,6 +12,8 @@ GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을
 - `"스키마를 어떤 기준으로 작성해야 할까?"`
 - `"조회 쿼리가 너무 많이 발생하는데 어떻게 개선할 수 있을까?"`
 - `"Selection Set의 필드는 어떤 원리로 채워지는 걸까?"`
+- `"/graphql은 누가 라우팅할까?"`
+- `"예외는 어떻게 처리할까?"`
 
 이 글에서는 Netflix DGS Framework를 기준으로 이러한 의문들을 해결해보고자 한다.
 
@@ -25,7 +27,7 @@ GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을
 
 간단한 회사-직원 관계`(Company 1:N Employee)` 예제를 통해 GraphQL의 데이터 조회와 변경 작업을 살펴보자.
 
-> GraphQL에서는 `schema`를 통해 클라이언트와 서버 간의 통신 계약(Contract)을 명시적으로 정의하여 안전한 타입 체킹, 자동 문서화, 코드 생성 등을 가능하게 한다.  
+> GraphQL에서는 `schema`를 통해 클라이언트와 서버 간의 통신을 명시적으로 정의하여 안전한 타입 체킹, 자동 문서화, 코드 생성 등을 가능하게 한다.  
 > 아래의 코드 블록에서 `# schema`는 `*.graphql`에 작성된 schema 정보임을 뜻한다.
 
 ## @DgsQuery와 @DgsData를 이용한 조회
@@ -144,8 +146,8 @@ query {
 }
 ```
 
-`<selection set>` 영역에 있는 최상위 필드 또는 중첩된 필드를 필요한 것만 선택하여 응답을 받을 수 있다.  
-당연히 schema 응답 타입의 필드에 작성된 필드를 기준으로 선택해야 한다.  
+`<selection set>` 영역에 있는 최상위 필드 또는 중첩된 필드를 필요한 것만 선택하여 응답을 받을 수 있기에 오버페칭과 언더페칭을 해결할 수 있다.  
+당연히 schema에 type으로 응답 타입의 필드에 작성된 필드를 기준으로 선택해야 한다.  
 
 ## @DgsMutation을 이용한 조작
 
@@ -175,7 +177,6 @@ input EmployeeInput {
 ```
 
 위와 같이 schema를 정의하고 그에 맞게 Mutation을 등록한 후에, Spring Web API 작성하듯이 `@DgsComponent`와 `@DgsMutation`을 작성하면 호출할 수 있게 된다.  
-(GraphQl API가 어떻게 호출되는지는 뒤에서 자세하게 설명한다.)  
   
 ```graphql
 # request
@@ -289,7 +290,7 @@ public final class GraphQlRequestPredicates {
 DispatcherServlet에서는 4개의 HandlerAdapter를 보유하고 있다.  
 
 - RequestMappingHandlerAdapter (일반적인 스프링 어노테이션 기반 Web API)
-- HandlerFunctionAdapter (함수형 스타일)
+- **HandlerFunctionAdapter (함수형 스타일)**
 - HttpRequestHandlerAdapter (HTTP 요청 직접 처리)
 - SimpleControllerHandlerAdapter (레거시 Controller 인터페이스 구현체 지원)
 
@@ -298,17 +299,15 @@ GraphQL은 4개의 RouterFunction이 존재하며, 일반적인 요청은 `Graph
 
 ![](./routerFunction.png)
 
-## TODO
+## ExecutionStrategy
 
-- BatchLoader 규칙
 - 중첩 필드가 실행될 때 재귀적으로 실행하는 것을 확인했음. 더 분석 필요
-- DgsContext
-- DataLoaderRegistry
-- dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled
 
-## DataLoaderHelper
+## BatchLoader 규칙
 
 ```java
+// DataLoaderHelper
+
 private void assertResultSize(List<K> keys, List<V> values) {
     assertState(keys.size() == values.size(), () -> "The size of the promised values MUST be the same size as the key list");
 }
@@ -332,3 +331,10 @@ companyIds = [1, 2, 3]
 // 잘못된 결과 (size = 4 != keys.size)
 [staff1, staff2, staff3, staff4]
 ```
+
+
+## TODO
+
+- DgsContext
+- DataLoaderRegistry
+- dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled
