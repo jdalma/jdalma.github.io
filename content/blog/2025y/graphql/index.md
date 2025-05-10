@@ -1,7 +1,7 @@
 ---
 title: GraphQL 이해하고 사용하기 (작성 중)
 date: "2025-01-24"
-update: "2025-02-03"
+update: "2025-04-05"
 tags:
    - graphql
    - deep-dive
@@ -300,6 +300,9 @@ GraphQL은 4개의 RouterFunction이 존재하며, 일반적인 요청은 `Graph
 ![](./routerFunction.png)
 
 ## ExecutionStrategy
+
+HandlerFunctionAdapter가 GraphQlHttpHandler를 통하여 GraphQl의 요청을 처리하게 된다.  
+
 
 - 중첩 필드가 실행될 때 재귀적으로 실행하는 것을 확인했음. 더 분석 필요
 
