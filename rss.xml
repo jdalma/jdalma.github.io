@@ -1,4 +1,690 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 02 Sep 2025 08:36:11 GMT</lastBuildDate><item><title><![CDATA[I/O 멀티플렉싱에 대해]]></title><description><![CDATA[Netty…]]></description><link>https://jdalma.github.io/2025y/multiplexing/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/multiplexing/</guid><pubDate>Tue, 02 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;netty의-스레딩-모델&quot; style=&quot;position:relative;&quot;&gt;Netty의 스레딩 모델&lt;a href=&quot;#netty%EC%9D%98-%EC%8A%A4%EB%A0%88%EB%94%A9-%EB%AA%A8%EB%8D%B8&quot; aria-label=&quot;netty의 스레딩 모델 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 12 Sep 2025 07:35:07 GMT</lastBuildDate><item><title><![CDATA[API가 왜 멈췄을까? 코루틴 이해하기]]></title><description><![CDATA[CS팀에서 특정 기능에 대한 사용자 문의 인입이 증가하고 있다고 백엔드 팀에 문의가 들어왔다. 사용량이 갑자기 늘어나서 병목이 생긴건가? 지연되고 있는 API가 있나? DB…]]></description><link>https://jdalma.github.io/2025y/coroutinescope/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/coroutinescope/</guid><pubDate>Wed, 10 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CS팀에서 특정 기능에 대한 사용자 문의 인입이 증가하고 있다고 백엔드 팀에 문의가 들어왔다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;사용량이 갑자기 늘어나서 병목이 생긴건가?&lt;/li&gt;
+&lt;li&gt;지연되고 있는 API가 있나?&lt;/li&gt;
+&lt;li&gt;DB에 부하가 발생해서 지연되는 쿼리가 있나?&lt;/li&gt;
+&lt;li&gt;가용할 수 있는 스레드가 없나?&lt;/li&gt;
+&lt;li&gt;메모리 또는 CPU로 인해 서버가 다운되었나?&lt;/li&gt;
+&lt;li&gt;ECS 태스크가 증설중인가?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;특이사항은 발견하지 못했지만 해당 API의 기능은 계속 먹통이였다.&lt;br&gt;
+애플리케이션 로그를 통해 배포가 완료된 뒤에 정상적으로 호출되다가 런타임 예외가 발생한 시점부터 해당 API가 반응이 없었다.&lt;/p&gt;
+&lt;h2 id=&quot;문제-지점&quot; style=&quot;position:relative;&quot;&gt;문제 지점&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EC%A7%80%EC%A0%90&quot; aria-label=&quot;문제 지점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@RestController
+class TestController {
+    private val scope = CoroutineScope(Dispatchers.IO)
+    
+    @GetMapping(&amp;quot;/test&amp;quot;)
+    fun test() {
+        scope.launch {
+            // business logic ...
+            throw RuntimeException(&amp;quot;비즈니스 로직 런타임 예외 발생!!!&amp;quot;)
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;CoroutineScope를 생성하는 오버헤드를 줄이기 위해 싱글톤 빈 내부에 선언하여 재사용한것으로 보인다.&lt;br&gt;
+&lt;strong&gt;문제는 이 scope 자식 코루틴에서 발생한 예외가 적절히 처리되지 않아 scope의 Job도 &lt;code class=&quot;language-text&quot;&gt;cancelled&lt;/code&gt;로 상태를 전이시키기 때문이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;아래의 코드를 통해 코루틴 내부에서 예외를 어떻게 처리하는지, 취소 상태가 되면 왜 코루틴이 실행되지 않는지 알 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// 1. BaseContinuationImpl에서 코루틴 블록 내부에서 발생한 런타임 예외를 failure result로 resume 한다.
+public final override fun resumeWith(result: Result&amp;lt;Any?&amp;gt;) {
+    var current = this
+    var param = result
+    while (true) {
+        probeCoroutineResumed(current)
+        with(current) {
+            // fail fast when trying to resume continuation without completion
+            val completion = completion!!
+            val outcome: Result&amp;lt;Any?&amp;gt; =
+                try {
+                    val outcome = invokeSuspend(param)
+                    if (outcome === COROUTINE_SUSPENDED) return
+                    Result.success(outcome)
+                } catch (exception: Throwable) {
+                    Result.failure(exception)
+                }
+            releaseIntercepted()
+            if (completion is BaseContinuationImpl) {
+                current = completion
+                param = outcome
+            } else {
+                completion.resumeWith(outcome)
+                return
+            }
+        }
+    }
+}
+
+// 2. AbstractCoroutine에서 resume을 실행하면서 전달받은 result를 CompletedExceptionally로 변환하여 전달한다.
+public final override fun resumeWith(result: Result&amp;lt;T&amp;gt;) {
+    val state = makeCompletingOnce(result.toState())
+    if (state === COMPLETING_WAITING_CHILDREN) return
+    afterResume(state)
+}
+internal fun &amp;lt;T&amp;gt; Result&amp;lt;T&amp;gt;.toState(
+    onCancellation: ((cause: Throwable) -&amp;gt; Unit)? = null
+): Any? = fold(
+    onSuccess = { if (onCancellation != null) CompletedWithCancellation(it, onCancellation) else it },
+    onFailure = { CompletedExceptionally(it) }
+)
+
+
+// 3. JobSupport에서 예외가 감지된다면 모든 형제,부모 Job에게 예외를 전달하고 상태를 취소,완료 상태로 변경한다.
+private fun tryMakeCompletingSlowPath(state: Incomplete, proposedUpdate: Any?): Any? {
+    val list = getOrPromoteCancellingList(state) ?: return COMPLETING_RETRY
+    val finishing = state as? Finishing ?: Finishing(list, false, null)
+    var notifyRootCause: Throwable? = null
+    synchronized(finishing) {
+        ...
+        notifyRootCause = finishing.rootCause.takeIf { !wasCancelling }
+    }
+    notifyRootCause?.let { notifyCancelling(list, it) }
+    val child = firstChild(state)
+    if (child != null &amp;amp;&amp;amp; tryWaitForChild(finishing, child, proposedUpdate))
+        return COMPLETING_WAITING_CHILDREN
+    return finalizeFinishingState(finishing, proposedUpdate)
+}
+private fun notifyCancelling(list: NodeList, cause: Throwable) {
+    // first cancel our own children
+    onCancelling(cause)
+    notifyHandlers&amp;lt;JobCancellingNode&amp;gt;(list, cause)
+    cancelParent(cause) // tentative cancellation -- does not matter if there is no parent
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/880a59dd8ab44d605908b0f9d6d2ccd9/b97f6/scopeexception.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 21.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVR42j3P207CQBSF4b6NkRnowXZ6mENngGIpKIQEkRj1/Z/id2yiF1/Wzr5Zeyd9kXP3mte65KgqDtHFWe7bzezjeeD7MPG1H7n6nts6cA09p66dDXmGl4KwlGyWgsSKBcZYQvDopqVSLZ3pMS7g/Ibtbk/daKq6Q8X8m+UqRywzhExZyBUPIqURksSJx9iSctl6Pn3Ne99ytoZdWc6G8ompqTnF3a8XoxlrxSGWT03DqBTHeOlRxy9VSSJjQ74q2Lmet8Fxi87BMlrN1Bt8p7GdZ72e8MbhOkOZFf+esnzOKirSgh+uvog2/eORdAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;scopeexception&quot;
+        title=&quot;&quot;
+        src=&quot;/static/880a59dd8ab44d605908b0f9d6d2ccd9/1cfc2/scopeexception.png&quot;
+        srcset=&quot;/static/880a59dd8ab44d605908b0f9d6d2ccd9/3684f/scopeexception.png 225w,
+/static/880a59dd8ab44d605908b0f9d6d2ccd9/fc2a6/scopeexception.png 450w,
+/static/880a59dd8ab44d605908b0f9d6d2ccd9/1cfc2/scopeexception.png 900w,
+/static/880a59dd8ab44d605908b0f9d6d2ccd9/b97f6/scopeexception.png 958w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;처음 예외가 발생한 이후 코루틴 스코프의 Job은 취소된 상태이고, 상세 상태에는 예외 정보가 저장된것을 볼 수 있다.&lt;br&gt;
+만약 이 취소된 코루틴 스코프를 재호출하면, 내부 상태를 확인하고 비어있는 구현체인 NonDisposableHandle을 반환하기 때문에 코루틴이 실행되지 않는다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;loopOnState { state -&amp;gt;
+    when (state) {
+        is Empty -&amp;gt; {
+            ...
+        }
+        is Incomplete -&amp;gt; {
+            ...
+        }
+        else -&amp;gt; { // is complete
+            if (invokeImmediately) {
+                // ChildHandleNode.childJob.parentCancelled(job) 부모 Job을 취소한다.
+                handler.invoke((state as? CompletedExceptionally)?.cause)
+            }
+            return NonDisposableHandle
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;테스트 코드로 확인해보면 더 이해하기 쉬울 것이다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;given(&amp;quot;코루틴 빌더별 예외 처리 방식&amp;quot;) {
+    `when`(&amp;quot;스코프 내에서 launch 빌더를 사용할 때&amp;quot;) {
+        then(&amp;quot;예외가 parentJob에 전파되며, 취소된 스코프는 실행되지 않는다.&amp;quot;) {
+            var caughtException = false
+            val handler = CoroutineExceptionHandler { _, _ -&amp;gt;
+                // 예외 핸들러를 통해 스코프 내의 에외를 잡아도 부모 Job에 그대로 전파된다.
+                caughtException = true
+            }
+            val parentJob = Job()
+            val scope = CoroutineScope(parentJob + Dispatchers.IO + handler)
+
+            parentJob.isActive shouldBe true
+            parentJob.isCancelled shouldBe false
+            parentJob.isCompleted shouldBe false
+
+            val childJob = scope.launch {
+                delay(50)
+                throw RuntimeException(&amp;quot;launch 내부 예외&amp;quot;)
+            }
+
+            childJob.isActive shouldBe true
+            childJob.isCancelled shouldBe false
+            childJob.isCompleted shouldBe false
+            caughtException shouldBe false
+
+            childJob.join()
+
+            parentJob.isActive shouldBe false
+            parentJob.isCancelled shouldBe true
+            parentJob.isCompleted shouldBe true
+
+            childJob.isActive shouldBe false
+            childJob.isCancelled shouldBe true
+            childJob.isCompleted shouldBe true
+            caughtException shouldBe true
+
+            scope.launch {
+                throw RuntimeException(&amp;quot;이 코드는 실행되지 않습니다.&amp;quot;)
+            }
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;첫-번째-코루틴의-구조&quot; style=&quot;position:relative;&quot;&gt;첫 번째. 코루틴의 구조&lt;a href=&quot;#%EC%B2%AB-%EB%B2%88%EC%A7%B8-%EC%BD%94%EB%A3%A8%ED%8B%B4%EC%9D%98-%EA%B5%AC%EC%A1%B0&quot; aria-label=&quot;첫 번째 코루틴의 구조 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 583px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/84c9a2296b8160a5dbf148c091c3afb7/9fc4b/coroutinescope.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 61.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACbklEQVR42mWTWW/iWBBG8///Sj+NpjVqqdNZCDgEB7PHGzbGBq9gY9YEkj5dBs1MZvrhU6l0vzq3qnx9dTx9sFy/kZWi9emstDyy3H5geglPXZNW16KpGdSaPQw3otj9PHv+9le1FaNiXZnzHYPgyDB4ZeCVDP31OY4kfldGfKv3+Hrb5q/7Dn/eqNy0DIbT8qLKW0Wp7ftHxtGeK21yYJxIR0mPU6GyS5u8FW3eco0iuGMx/UEe3JP792TeNeW8xmuhyXn74s1b5EkfJz2h2luuOpNXnHjPLqtLoUIaaJRRnfeyxSJQSX2BF62z8rBLEWmcVk22AlvMe6zjltQquPEGxdhcOpyke2b2LbNZgB/EpKGN+vCF65s76kqLZu0PzP4duunQ6Q7w9Fu6zzVG+pj2s0roPjDNdp+BBzzjmuHoBWcSYBldRto3hi+WyGbYucPRH2k8qjypHaZWnZ7W4Pt1jUZDIZwon4GXkTdJjYXfZBmZMvqD7OaR2FOJpx32MtImbbCKdZZhj8OiThkqrLIxRfgstXUZeYtibqod7rHjE1FoUqZtkqBJmfVYpX3yWJP8SS7pnDVz6+e8zAbi7Z29q+SZSJpw0g8ejfICHEuih+/o8yNmdIl6eOLF32JNIkx3hu1FzNMVQbrhZXaQ8/963eznv0A7kUccnbDi939kiMkPF5SrnPV6je9PsSwT29Tp2xF2ivguNVVtBVR0AWruDkeSqsvPsuSSaZQLcCkqmAVTvInDRDR0M5wF4ns/e6uGKqA6lh268kEG8tK73v5/OqA5a7pWTFuf0zZCBk4mf9GKzm9eYfjyUpIDvwAmmGe/St7gsAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;coroutinescope&quot;
+        title=&quot;&quot;
+        src=&quot;/static/84c9a2296b8160a5dbf148c091c3afb7/9fc4b/coroutinescope.png&quot;
+        srcset=&quot;/static/84c9a2296b8160a5dbf148c091c3afb7/3684f/coroutinescope.png 225w,
+/static/84c9a2296b8160a5dbf148c091c3afb7/fc2a6/coroutinescope.png 450w,
+/static/84c9a2296b8160a5dbf148c091c3afb7/9fc4b/coroutinescope.png 583w&quot;
+        sizes=&quot;(max-width: 583px) 100vw, 583px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;간략하게 보면 위의 구조와 같다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;CoroutineScope&lt;/strong&gt; : 코루틴의 실행 범위를 정의하며, 모든 코루틴은 특정 Scope 내에서 실행된다. CoroutineContext를 포함하고 있어 코루틴의 실행 환경을 제공한다.
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;supervisorScope {}&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;coroutineScope {}&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;CoroutineScope()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;runBlocking {}&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;withContext {}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CoroutineContext&lt;/strong&gt; : 코루틴 실행에 필요한 &lt;strong&gt;컨텍스트 정보들의 집합&lt;/strong&gt; 이다.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Job&lt;/strong&gt; : 코루틴의 생명주기를 관리할 수 있는 &lt;code class=&quot;language-text&quot;&gt;시작&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;취소&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;완료&lt;/code&gt;등의 상태를 가지며, 부모와 자식 Job을 참조한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dispatcher&lt;/strong&gt; : 코루틴이 어떤 스레드에서 실행될지 결정한다.
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Dispatchers.Main&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;IO&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Default&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Unconfined&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CoroutineExceptionHandler&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Continuation&lt;/strong&gt; : 코루틴의 중단, 재개 메커니즘을 담당하며, &lt;code class=&quot;language-text&quot;&gt;suspend&lt;/code&gt; 함수가 호출될 때 현재 실행 상태를 저장하고, 작업 완료 후 해당 지점부터 재개할 수 있게 해준다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;코루틴을 중단하면 스레드를 반환해 콜 스택에 있는 정보가 사라지기 때문에 어딘가에 실행 지점을 저장해놓아야 한다.&lt;br&gt;
+그 역할이 Continuation이다.&lt;br&gt;
+&lt;strong&gt;중단이 되었을 때의 상태(label)와 함수의 지역 변수와 파라미터(필드), 그리고 중단 함수를 호출한 함수가 재개될 위치 정보를 가지고 있다.&lt;/strong&gt;&lt;br&gt;
+그렇기에 하나의 Continuation 객체가 다른 Continuation 객체를 참조하는 거대한 양파와 같다.&lt;/p&gt;
+&lt;p&gt;아래의 코드를 통해 중단함수가 디컴파일되는 경우 Continuation이 어떻게 상태를 구분하는지, 또한 continuation은 어떻게 resume되는지 확인할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;suspend fun findUserName(token: String): String {
+    println(&amp;quot;Before&amp;quot;)
+    val userId = getUserId(token) // suspending
+    println(&amp;quot;Got userId: $userId&amp;quot;)
+    val userName = getUserName(userId)
+    println(&amp;quot;After&amp;quot;)
+    return userName
+}
+
+suspend fun getUserId(token: String): String {
+    delay(1000)
+    return &amp;quot;test user id&amp;quot;
+}
+
+suspend fun getUserName(userId: String): String {
+    delay(1000)
+    return &amp;quot;test user name&amp;quot;
+}
+
+private val executor = Executors.newSingleThreadScheduledExecutor {
+    Thread(it, &amp;quot;scheduler&amp;quot;).apply { isDaemon = true }
+}
+
+suspend fun delay(timeMillis: Long): Unit = suspendCancellableCoroutine { cont -&amp;gt;
+    executor.schedule({
+        cont.resume(Unit)
+    }, timeMillis, TimeUnit.MILLISECONDS)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7b6b8c1d339c8793085d17b3966d231c/b06fe/continuation.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 88.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsTAAALEwEAmpwYAAADBElEQVR42p2Ua3OaYBCF/QONclc0gkSjgNwEbNR4A7zl0uZD//9fOT2gSZtM2un0w87AwPvsnj27b00URXwWjUYDo0mMZHfEeJ1hvNrA2+7Qcz0I9TpESfr0XO1PQIHAGz8k8IAg2xG2ZeQwHAIb/wFssIqbMMKEwCgr4LJCZ0NgWSGTSbJ8hn6ImiAI+CxkQqNkivnxESFB8SrHhJJLYOPq6hz1q/fPjJqiqlCbTShNDarWhKxpuDVNmK0WhkmE9OEBYUHJeY708IQB26C1dVieh+uRDeMS10MbncEQNcsdIykObHoOb0lZjIihEaz3TXiTEAEh3dsRujzk3Q4RxinWLz8wOz1hSgXJ7oRJwcj3qBm2h3T/yJcTgu2ejWfP1ju0uxbqwhd4ro90OkeY3KHvBmgpCvwower5BfenZ3zdPbAVe0SMNDuwwnGIiDCPFZZV2qsM4XILvduBRtnxYoP7x2dW8YC0OKJ3bWDsuHDvFvDv5ojnS4zTBW4nU/TDpAQGzPTETEfE2wLBOkdwv4GiK+ypDI8/RxybsooJv9kDB1ani25Lh9HqQGe0tBbEi5nsoY8pJXubAtFmh5CHRrMlZJolygLcZIbZ4bGSF68L6NcWDWxXoyVxTFSVRsoK34XzHFpBiuTSw1LyiIaM5megwJ9u4hjBnoblGexlBpUVyYp6BpTjxWdJkn8NtuVF+Hr6TpfOK+awh/Z8VQHL4W52Omj3LOimhbZhXQ4KbwCFct8DS8mnb/AzOrw5wKXLzqqAxMxGv4++F8KwXZi2U+2xbvaqTakkU2qz06ukvwE71g0dijmoIXpeAIsz1w+n/CihH0ScsycE+QE+t8SnCrPcFFZeQoTPJFfuMONriIIITTeqZ3PsI2TlAQ1z2VuXhnVZ7dttw7OKon0AfrwYqqxaBR5wrhI67BPo0BCXU2BWt41QyS2rVOjy34GX3oiSgkHECeD+lsAxt8fLONhsTQlQuPeKqrFC9V/vwzr76ld3ocPNsRdrSs4qg8rb5VVNFb8BfwKUIv8VK530VQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7b6b8c1d339c8793085d17b3966d231c/1cfc2/continuation.png&quot;
+        srcset=&quot;/static/7b6b8c1d339c8793085d17b3966d231c/3684f/continuation.png 225w,
+/static/7b6b8c1d339c8793085d17b3966d231c/fc2a6/continuation.png 450w,
+/static/7b6b8c1d339c8793085d17b3966d231c/1cfc2/continuation.png 900w,
+/static/7b6b8c1d339c8793085d17b3966d231c/21482/continuation.png 1350w,
+/static/7b6b8c1d339c8793085d17b3966d231c/d61c2/continuation.png 1800w,
+/static/7b6b8c1d339c8793085d17b3966d231c/b06fe/continuation.png 15340w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/678d094323c1155cfccdf1e8181cc5f9/22284/continuation_sequence.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 158.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAEHUlEQVR42pVWaXPbNhT0//857afOdJJp67R2aseJ3VGcTGqptg5KpESRAHGD2wUpyfIhx8EMRiQELN6x+x6PvNYohkPYWiCN0LYYlgW+FTlU8N1ayzWR36Ga3aD1Fi3XJlLha1lzT4QJFv/VGSorcdRGgdX8DKt8BNloCCFRCQ1tNJxrEJzk8QjvPKyxCb6bznsY24OnYZ3tLj5KL46bvQ8IgdMbaDVBlf+C1fhn1MUx2iAQI7jHYzsiF/bfnXP7gD16756HkiPkiwHqdQ5J15LVjXJwpoS3U/5O4E2xAdxY/BDQ7QC3cTSxpcWxszwd1PUIJS0uxr+imL6DLAdcj4csfAwY4dqA/dG6AnJ9C0GLFa2tpYPRc6j1ALa5IYZGgjhooWvjA0BEXhDcFh7p32U5wnT4O2a377BejtBG+x3Atu0TRffb6BFsss6gkQ0abWHTOo8FT6ZkJ3A6S7Rx0E1F8wU0OamVhmHWDYESTSQPK655XuqZvBTXdEmK635SrN3E0KkxlrO/GOQvuwQki/cp0Vkd4kHatJHczS+6zD/r8mOOPbeW3hPdUjisnqGc/gSvhz8GmNzqvSAnXWTWR5jf/YGqpHRtOEybyIymmGEToTSM+IL5+ARSCJLco6b2rdWdEJI0k9peAHxqodENFrNrmGbIbFMpTr2W2MyizcirbxB1Sdn10pOSdGFF0eIGmtJ0toEPrwIMqJefMbs756Ga2e25+DjzXVgOF4d7wMisCVpTFDVLVB/odkPw52nziuKQbq+qunN1OxvJWrn6l3z9xOxeQVY3ry8OD0kbeytpeTEbYHp7Qu2eYjYZUFkVa2WB6HOqSh4uDs9ludeyZRhYaMlB0g5FeUsqnZKLp1ivJt2+DnBL2K4QbBJgeTjNpOWm0zLBdK/rrjgoBUOXaXg3d1ruOGZIiUZ1hzsAPieibi1Nv0+0nN435A9+DbFMWl68oJTHxYEe1LXsLtPadIVWJGtTYyNfZTXhJc2BehiSbu8tTARupESesUKzxLkUCoIqH3byfEF6bFLVJTN5zCaVMQS6DwU17I3aXeq5PxXY79OGlbquF8iXY7pg9rIcuib/SkD7wOVU3hcrcV9qfhRwG6+UjDQNKZBl19T0Jd2/ZkKaDjB6s2tSnp7Y1P2fSK9VKLIBytUComHRZHuspGfQGTNbEazmxrgBvP/0cDysNxa22ONh21o28bdw8g28+sB5hqDPEA15pT9iXbzHYnqM8eg3LOd/Qon3CIZ71Gbqc86/4ZtPJDgBqSgo9lQv/kG0/BrgLNbnWJRnUM0V3b4g6Adkw7eYD98wBB8R3WeU8gpzPhvDRq8vsRQX0PwKOwoUZZ0byiruenLGr69ZzXa6KaDJFUPaqGrdJ4drBfdPRGq3jB/X5uRp4zT+BxeNwG5mUmQNAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;continuation sequence&quot;
+        title=&quot;&quot;
+        src=&quot;/static/678d094323c1155cfccdf1e8181cc5f9/1cfc2/continuation_sequence.png&quot;
+        srcset=&quot;/static/678d094323c1155cfccdf1e8181cc5f9/3684f/continuation_sequence.png 225w,
+/static/678d094323c1155cfccdf1e8181cc5f9/fc2a6/continuation_sequence.png 450w,
+/static/678d094323c1155cfccdf1e8181cc5f9/1cfc2/continuation_sequence.png 900w,
+/static/678d094323c1155cfccdf1e8181cc5f9/21482/continuation_sequence.png 1350w,
+/static/678d094323c1155cfccdf1e8181cc5f9/d61c2/continuation_sequence.png 1800w,
+/static/678d094323c1155cfccdf1e8181cc5f9/22284/continuation_sequence.png 2428w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;코루틴은 Continuation의 실행 가능한 단위(블록)라고 볼 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;두-번째-코루틴의-구조적-동시성&quot; style=&quot;position:relative;&quot;&gt;두 번째. 코루틴의 구조적 동시성&lt;a href=&quot;#%EB%91%90-%EB%B2%88%EC%A7%B8-%EC%BD%94%EB%A3%A8%ED%8B%B4%EC%9D%98-%EA%B5%AC%EC%A1%B0%EC%A0%81-%EB%8F%99%EC%8B%9C%EC%84%B1&quot; aria-label=&quot;두 번째 코루틴의 구조적 동시성 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;코루틴간 하나의 block으로 감싸져있는 형태로 계층적인 구조를 갖도록하여, 생명주기와 에러 처리, 취소 전파를 통해 예측 가능하도록 하기 위함이다.&lt;br&gt;
+그렇기 때문에, Coroutine이 손실되거나 누수되지 않도록 보장하며, 발생하는 오류도 제대로 보고되도록 보장할 수 있다.&lt;br&gt;
+CoroutineContext의 Job이 아래와 같은 생명주기를 가지면서 코루틴의 구조적 동시성을 지원하고 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f7b102779d4c79b1c5e819da077b5173/bb2fd/coroutinehierarchy.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACUklEQVR42oWT227TQBCG+xK8AQ/IBRIXXPIkXMAVUiUkIhUEAiFRoKEFWpK0NGkS1/Epjb0+H9b7MXZbqZUKWBqt15r5/P8zu1tcP8Zg2pam1jRJhnY8stk52emC6ccTPm8fMHp7gvczIDxXaN2im5a20eiupmp6zBY3HtOaPpG2hjIhcVx0HBI5AdZsxdoNEQSJSkmiFG0EKjVGahsB3wYqhVk5aNvGWGPy0x2Wu8/JpwNMrUR50RdalsW34T5Hh7/wJhOK+ZxGasrFEvL8BlBrTFmh0wxTiKVwSj5/LeuxwErqMu/Tcimyzi3slU1TFJ00TFVRqlictXdbbuIp/ukbluMBzuglVTQTa2JPNzjiYjyaMJHw/eCq/YayqK4sS2KnrltN1+CyRPtL1M4L3KdPUK+eUa8dKrHcSo59seT7yVDiK6vNQgRKfi0KxVmndoswBM/rwwRr6sUcsw7wHj5gfv8eweNHYregyEK69g/PPjEYbjPY3+Z4sQeBT+PY0ssFbEIBitzr6C1X8scsoslkEGmIzhV1uiFOE1ReikIPL7rADde40ZqNHLFSjkyeZf84Nv08b3w3mk2ccXjm82Pqo1JNWhj2f7scLQLirKIo8n8Br5jmGtgSpan0zWdv7AqgJisbdg9tjmYbgQsw/xuwuVTYTa6P/ntLKNa+jFw+HCyJ84apHfFub8b74RmWr2TK/1N4y/KlwqUfM3cjAVb4UcZsFcpeEcjNudNyN5iqqCmlJ2Uua171UchehYosSciTlDhSpLG8y0+u99117IB/AEfq4LCDgMqSAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;coroutinehierarchy&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f7b102779d4c79b1c5e819da077b5173/1cfc2/coroutinehierarchy.png&quot;
+        srcset=&quot;/static/f7b102779d4c79b1c5e819da077b5173/3684f/coroutinehierarchy.png 225w,
+/static/f7b102779d4c79b1c5e819da077b5173/fc2a6/coroutinehierarchy.png 450w,
+/static/f7b102779d4c79b1c5e819da077b5173/1cfc2/coroutinehierarchy.png 900w,
+/static/f7b102779d4c79b1c5e819da077b5173/bb2fd/coroutinehierarchy.png 1058w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;suspend fun start() {
+    val userData = UserData()
+    var parentJob: Job? = null
+    var dbJob: Deferred&amp;lt;UserData&amp;gt;? = null
+    var cacheJob: Job? = null
+    shouldThrow&amp;lt;RuntimeException&amp;gt; {
+        coroutineScope {
+            parentJob = currentCoroutineContext()[Job]!!
+            parentJob.isActive shouldBe true
+            parentJob.isCancelled shouldBe false
+            parentJob.isCompleted shouldBe false
+
+            cacheJob = launch { saveInCache(userData) }
+            dbJob = async { saveInDatabase(userData) }
+            dbJob.await()
+        }
+    }.shouldHaveMessage(&amp;quot;commit 예외 발생&amp;quot;)
+
+    parentJob!!.isActive shouldBe false
+    parentJob.isCancelled shouldBe true
+    parentJob.isCompleted shouldBe true
+    dbJob!!.isActive shouldBe false
+    dbJob.isCancelled shouldBe true
+    dbJob.isCompleted shouldBe true
+    cacheJob!!.isActive shouldBe false
+    cacheJob.isCancelled shouldBe true
+    cacheJob.isCompleted shouldBe true
+}
+
+suspend fun saveInDatabase(userData: UserData): UserData {
+    return coroutineScope {
+        commit()    // 예외 발생 !!!
+        userData
+    }
+}
+
+suspend fun saveInCache(userData: UserData): UserData {
+    coroutineScope {
+        val job1 = async { putKey() }
+        val job2 = async { updateInMem() }
+
+        try {
+            awaitAll(job1, job2)
+        } catch (e: Exception) {
+            e.shouldBeInstanceOf&amp;lt;CancellationException&amp;gt;()
+            e.message shouldBe &amp;quot;Parent job is Cancelling&amp;quot;
+            throw e
+        }
+    }
+    return userData
+}
+
+suspend fun commit() {
+    throw RuntimeException(&amp;quot;commit 예외 발생&amp;quot;)
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;commit()&lt;/code&gt; 메소드에서 런타임 예외가 발생하여 관계된 코루틴의 Job 상태들이 &lt;code class=&quot;language-text&quot;&gt;Cancelled&lt;/code&gt;로 전이된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5c40df9d2ee084131068ab736dbb5e81/45662/job_lifecycle.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 30.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABcElEQVR42l2QTUsbURSG84MstIX+AJfuui7Y7opEsLR140Zaav9AoSBoEDSUQg1FF0qkSC3EaEOJgqgBk1FkJpP5yuRzkjtz5+lNAtb0bF7O5Tnvee9JbBzesJa7JvNHx293sGsmRbPFx0KNd/kqu5qPaRhUdYOvpTIz2X3e/DjgzHZxTAvddfisbfLhMsVyJUPi+epvXqQKzH0pYjgNPMclXbzlUfqCB+kS7/MGfsPHsjzeHp/yJPuLyf08O9ot7XqL4o3GVO4Vj39O8/RongSqIhlzv+JeQOTZ2J5LVasgup3BK1GjTteuIYbQv5koEvREQBiKkeGdkYIGmAwCpF8nbLTo2x6h7xL5HrLugFo2ZBmx41EYNySWo43GCe3tJN2tl4jz76PBfo9YCKRSOfhB0MHSdbqmQe3bOnrqE9bmxv+G0VDCyh7N1Yc0VyYIDpaIW8rEtZHqBNJzVFKVWKlQfa9c4mphlsvkM8qLr/kLspevrR+NMTUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5c40df9d2ee084131068ab736dbb5e81/1cfc2/job_lifecycle.png&quot;
+        srcset=&quot;/static/5c40df9d2ee084131068ab736dbb5e81/3684f/job_lifecycle.png 225w,
+/static/5c40df9d2ee084131068ab736dbb5e81/fc2a6/job_lifecycle.png 450w,
+/static/5c40df9d2ee084131068ab736dbb5e81/1cfc2/job_lifecycle.png 900w,
+/static/5c40df9d2ee084131068ab736dbb5e81/21482/job_lifecycle.png 1350w,
+/static/5c40df9d2ee084131068ab736dbb5e81/45662/job_lifecycle.png 1410w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;해결방법&quot; style=&quot;position:relative;&quot;&gt;해결방법&lt;a href=&quot;#%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;해결방법 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;1-supervisorjob-적용-&quot; style=&quot;position:relative;&quot;&gt;1. SupervisorJob 적용 👍&lt;a href=&quot;#1-supervisorjob-%EC%A0%81%EC%9A%A9-&quot; aria-label=&quot;1 supervisorjob 적용  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@RestController
+class TestController {
+    // SupervisorJob을 사용하여 자식 코루틴의 실패가 부모에 영향을 주지 않도록 함
+    private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
+    
+    @GetMapping(&amp;quot;/test&amp;quot;)
+    fun test() {
+        scope.launch {
+            // 예외가 발생해도 scope는 계속 활성 상태 유지
+            throw RuntimeException(&amp;quot;예외 발생!&amp;quot;)
+        }
+    }
+}
+
+given(&amp;quot;간단한 SupervisorJob 테스트&amp;quot;) {
+    `when`(&amp;quot;SupervisorJob을 사용한 스코프에서 자식이 실패하면&amp;quot;) {
+        then(&amp;quot;다른 자식과 스코프는 영향받지 않는다&amp;quot;) {
+            runBlocking {
+                var child2Completed = false
+                val scope = CoroutineScope(SupervisorJob())
+                
+                // 첫 번째 자식 - 실패
+                scope.launch {
+                    throw RuntimeException(&amp;quot;자식1 실패&amp;quot;)
+                }
+                
+                // 두 번째 자식 - 정상 실행
+                scope.launch {
+                    delay(100)
+                    child2Completed = true
+                }.join()
+                
+                child2Completed shouldBe true
+                scope.coroutineContext[Job]?.isActive shouldBe true
+                
+                scope.cancel()
+            }
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;2-supervisorscope-사용&quot; style=&quot;position:relative;&quot;&gt;2. supervisorScope 사용&lt;a href=&quot;#2-supervisorscope-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;2 supervisorscope 사용 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@RestController
+class TestController {
+    private val scope = CoroutineScope(Dispatchers.IO)
+    
+    @GetMapping(&amp;quot;/test&amp;quot;)
+    fun test() {
+        scope.launch {
+            supervisorScope {
+                // supervisorScope 내부의 자식 코루틴 실패가 부모에 영향 없음
+                throw RuntimeException(&amp;quot;예외 발생!&amp;quot;)
+            }
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;코루틴 스코프 안에 코루틴 빌더가 한 개 더 생성되어야 해서 굳이 이렇게 해결하진 않을 것 같다.&lt;/p&gt;
+&lt;h2 id=&quot;3-spring-suspend--코루틴-빌더&quot; style=&quot;position:relative;&quot;&gt;3. Spring suspend + 코루틴 빌더&lt;a href=&quot;#3-spring-suspend--%EC%BD%94%EB%A3%A8%ED%8B%B4-%EB%B9%8C%EB%8D%94&quot; aria-label=&quot;3 spring suspend  코루틴 빌더 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@RestController
+class TestController {
+    @GetMapping(&amp;quot;/test&amp;quot;)
+    suspend fun test() {
+
+        // 1. 컨텍스트 전환이 필요한 경우
+        withContext(Dispatchers.IO) {
+            // ...
+        }
+
+        // 2. 모든 자식이 완료될 때까지 대기, 하나라도 실패하면 모두 취소
+        return coroutineScope {
+            val data1 = async { fetchData1() }
+            val data2 = async { fetchData2() }
+            Result(data1.await(), data2.await())
+        }
+
+        // 3. 자식 실패가 다른 자식에 영향 없음
+        supervisorScope {
+            launch { .. }
+            launch { .. }
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1a7390e309b46b0c93a3ab6807e4e075/960bd/suspendingFunctionInvoke.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmElEQVR42k2S6XLbMAyE9SARL4AHCFKUbKdp7B6TH0n6/k/Upd1pO/OJA3G4xGKHC3O8HG1sPYmGPLLu2gbF4mMsKedcpfbAKXBmLtjnJNaxdQSW1foMXdu4ZJ5HN227VCWOzJmgiSXQFEMZ7jv49WGyGBdwRwgROsiK9FK66EBddc+iLrD1YTXBGKz+TniwkF5JbyBv3/fL2/jyPl4+Tq+/jq+f+8t7e/5Zzz/68xu1a9DXqNfYv8V+S1jbbTE+wvj0nkRyQbc+zhVt2679lFUTDPWT9kPawaU5SnZKJrDtjSPgA+UYHwkV0VJUpMM2cosZI22UkGKyFv79xPrFumAcz2yILTHyiDPSsvpgPK2rnxj/tDoUGNvYfyz4fIiRYkwFHWA8S4tJPMEY/390ffAnM79OsYOYa23bfh7j3HuX1nrfk1QbCFE7x85H58lhNM/o5O6gnrZXSylVEZWmdevjcm5jb207Dlw3qvZcFMYkI9SSiuY7yGd2RuCER0SYVIr2UlueaWnVgfCgwoMx6EboFp7+2jbhN0PxYzdUUsQlAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;suspendingFunctionInvoke&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1a7390e309b46b0c93a3ab6807e4e075/1cfc2/suspendingFunctionInvoke.png&quot;
+        srcset=&quot;/static/1a7390e309b46b0c93a3ab6807e4e075/3684f/suspendingFunctionInvoke.png 225w,
+/static/1a7390e309b46b0c93a3ab6807e4e075/fc2a6/suspendingFunctionInvoke.png 450w,
+/static/1a7390e309b46b0c93a3ab6807e4e075/1cfc2/suspendingFunctionInvoke.png 900w,
+/static/1a7390e309b46b0c93a3ab6807e4e075/21482/suspendingFunctionInvoke.png 1350w,
+/static/1a7390e309b46b0c93a3ab6807e4e075/d61c2/suspendingFunctionInvoke.png 1800w,
+/static/1a7390e309b46b0c93a3ab6807e4e075/960bd/suspendingFunctionInvoke.png 6360w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Controller API가 suspend 함수인지 확인하여 &lt;code class=&quot;language-text&quot;&gt;reactor.core.publisher.Mono&amp;lt;T&gt;&lt;/code&gt;가 실행된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/dc9bad17c701c74ca59ae02478e14599/b54cd/springcoroutine.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 18.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAw0lEQVR42jWPWW4CMRBE5z4RUkLA8b6Mx2Y2BsL971K4G/mjVOpFT1XDkT28dRDK4SotjEuY1wPLdmA/XtjuT6z7o/k/7o8XfMz848LYPML6xKL9z6/AEEpBcgajVdBS4XyRuAiF65+B1A4hTUi5Io4VU12aFxYB6ebj505AmofTWaCuC5LR0No0kGYYqcMoLcG6xunG++65zLyv84ZBhYhSMlyDiVZZKAtpPEJLcVt2rtuB2gZO1isaF7g+zdTq6/SNN6sxjDXLbldmAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;springcoroutine&quot;
+        title=&quot;&quot;
+        src=&quot;/static/dc9bad17c701c74ca59ae02478e14599/1cfc2/springcoroutine.png&quot;
+        srcset=&quot;/static/dc9bad17c701c74ca59ae02478e14599/3684f/springcoroutine.png 225w,
+/static/dc9bad17c701c74ca59ae02478e14599/fc2a6/springcoroutine.png 450w,
+/static/dc9bad17c701c74ca59ae02478e14599/1cfc2/springcoroutine.png 900w,
+/static/dc9bad17c701c74ca59ae02478e14599/21482/springcoroutine.png 1350w,
+/static/dc9bad17c701c74ca59ae02478e14599/b54cd/springcoroutine.png 1662w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이때 사용되는 코루틴 스코프는 &lt;code class=&quot;language-text&quot;&gt;SupervisorJob&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;Dispatchers.Default&lt;/code&gt;로 구성되어 있기에, 예외가 발생해도 부모 스코프는 취소되지 않는다.&lt;/p&gt;
+&lt;h2 id=&quot;4-예외-처리-&quot; style=&quot;position:relative;&quot;&gt;4. 예외 처리 👍&lt;a href=&quot;#4-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC-&quot; aria-label=&quot;4 예외 처리  permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@RestController
+class TestController {
+    private val scope = CoroutineScope(Dispatchers.IO)
+    
+    @GetMapping(&amp;quot;/test&amp;quot;)
+    fun test() {
+        scope.launch {
+            try {
+                // business logic
+                throw RuntimeException(&amp;quot;예외 발생!&amp;quot;)
+            } catch (e: Exception) {
+                // 예외를 처리하여 스코프 취소 방지
+                logger.error(&amp;quot;Error occurred: &amp;quot;, e)
+            }
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Job간 예외가 전파되기 때문에 &lt;code class=&quot;language-text&quot;&gt;scope.launch {}&lt;/code&gt; 밖에서 예외를 잡으면 의미없다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;given(&amp;quot;코루틴 스코프 독립성 테스트&amp;quot;) {
+    `when`(&amp;quot;launch 바깥에서 try-catch로 예외를 잡으려고 하면&amp;quot;) {
+        then(&amp;quot;예외는 잡히지 않고 Job 계층으로 전파된다&amp;quot;) {
+            val tryBlockException = AtomicBoolean(false)
+            val handlerException = AtomicBoolean(false)
+            
+            runBlocking {
+                val scope = CoroutineScope(Job() + CoroutineExceptionHandler { _, _ -&amp;gt;
+                    handlerException.set(true)
+                })
+                
+                // try-catch로 launch를 감싸도 예외는 잡히지 않음
+                try {
+                    scope.launch {
+                        delay(50)
+                        throw RuntimeException(&amp;quot;launch 내부 예외&amp;quot;)
+                    }
+                    // launch는 즉시 반환되므로 여기서 예외가 발생하지 않음
+                } catch (e: Exception) {
+                    tryBlockException.set(true)  // 실행되지 않음
+                }
+                
+                delay(100)
+                
+                // 검증: try-catch는 예외를 잡지 못하고, ExceptionHandler가 처리
+                tryBlockException.get() shouldBe false  // try-catch로 잡지 못함
+                handlerException.get() shouldBe true    // CoroutineExceptionHandler가 처리
+                scope.coroutineContext[Job]?.isCancelled shouldBe true
+            }
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h1 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;마무리&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;이번 장애를 계기로 코루틴을 더 깊게 분석해보았다.&lt;br&gt;
+실무에 적용된 코루틴 안티 패턴을 걷어내고 동료들에게 공유할 수 있도록 노력해야겠다.&lt;br&gt;
+요즘 AI가 작성해주는 코드를 사용하게 되면서 이런 일이 쉽게 발생하는 것 같다. 여전히 딥 다이브하는 능력은 필수임을 잊지 말자.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[I/O 멀티플렉싱에 대해]]></title><description><![CDATA[Netty…]]></description><link>https://jdalma.github.io/2025y/multiplexing/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/multiplexing/</guid><pubDate>Tue, 02 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;netty의-스레딩-모델&quot; style=&quot;position:relative;&quot;&gt;Netty의 스레딩 모델&lt;a href=&quot;#netty%EC%9D%98-%EC%8A%A4%EB%A0%88%EB%94%A9-%EB%AA%A8%EB%8D%B8&quot; aria-label=&quot;netty의 스레딩 모델 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;스레딩 모델은 &lt;strong&gt;코드가 실행되는 방법을 지정&lt;/strong&gt;한다.&lt;/p&gt;
 &lt;p&gt;자바 초창기의 멀티스레딩 체계는 동시 작업 단위를 실행하기 위해 필요할 때 마다 스레드를 만들고 시작하는 기초적인 수준이였기 때문에 부하가 심한 상황에서는 성능 저하가 심했다.&lt;br&gt;
 하지만 자바 5에는 &lt;strong&gt;Thread 캐싱과 재사용을 통해 성능을 크게 개선한 스레드 풀을 지원하는 &lt;code class=&quot;language-text&quot;&gt;Executor API&lt;/code&gt;가 도입&lt;/strong&gt;됐다.&lt;/p&gt;
