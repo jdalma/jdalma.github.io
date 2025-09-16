@@ -55,21 +55,25 @@ tags:
 아래와 같은 구조가 된다.  
 
 ```
-root
- ├── adapter
- │   ├── in
- │   │   └── web
- │   └── out
- │       └── persistence
- ├── application
- │   ├── domain
- │   │   ├── model
- │   │   └── service
- │   └── port
- │       ├── in
- │       └── out
- └── common
-     └── validation
+src/main/java/com/example/
+├── domain/                # 핵심 비즈니스 로직
+│   ├── model/             # 엔티티, VO
+│   ├── service/           # 도메인 서비스
+│   └── exception/         # 도메인 예외
+│
+├── application/           # 애플리케이션 서비스
+│   ├── port/             
+│   │   ├── in/            # Inbound Ports Interface (UseCase)
+│   │   └── out/           # Outbound Ports Interface (Repository, Client)
+│   └── service/           # UseCase 구현체
+│
+└── adapter/               # 어댑터 구현
+    ├── in/                # Inbound Adapters
+    │   ├── web/           # REST Controller
+    │   └── messaging/     # Message Consumer
+    └── out/               # Outbound Adapters
+        ├── persistence/   # JPA Repository
+        └── messaging/     # Message Producer
 ```
 
 애플리케이션 코어와 어댑터들 간의 통신이 가능하려면 애플리케이션 코어가 각각의 포트를 제공해야 한다.  
