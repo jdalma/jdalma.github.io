@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 12 Sep 2025 07:35:07 GMT</lastBuildDate><item><title><![CDATA[API가 왜 멈췄을까? 코루틴 이해하기]]></title><description><![CDATA[CS팀에서 특정 기능에 대한 사용자 문의 인입이 증가하고 있다고 백엔드 팀에 문의가 들어왔다. 사용량이 갑자기 늘어나서 병목이 생긴건가? 지연되고 있는 API가 있나? DB…]]></description><link>https://jdalma.github.io/2025y/coroutinescope/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/coroutinescope/</guid><pubDate>Wed, 10 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CS팀에서 특정 기능에 대한 사용자 문의 인입이 증가하고 있다고 백엔드 팀에 문의가 들어왔다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 16 Sep 2025 10:34:31 GMT</lastBuildDate><item><title><![CDATA[PrematureCloseException 해결부터 재현까지 (작성중)]]></title><description><![CDATA[모니터링을 통해 보름에 한 번씩 PrematureCloseException 네트워크 예외가 발생하는 것을 확인했다.]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Fri, 12 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;모니터링을 통해 보름에 한 번씩 PrematureCloseException 네트워크 예외가 발생하는 것을 확인했다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;mermaid&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;sequenceDiagram
+    participant C as Client (WebClient)
+    participant P as Connection Pool
+    participant S as Server (Tomcat)
+    
+    Note over C,S: ✅ 정상 통신
+    C-&amp;gt;&amp;gt;S: Request
+    S-&amp;gt;&amp;gt;C: Response
+    C-&amp;gt;&amp;gt;P: 연결 반환 (유휴 시작)
+    
+    Note over S: ⏰ Keep-alive 20초 경과
+    S-&amp;gt;&amp;gt;C: FIN 패킷 (연결 종료)
+    Note over C: 연결 닫힘 (하지만 풀은 모름!)
+    
+    Note over C: 30초 후 새 요청
+    P-&amp;gt;&amp;gt;C: 죽은 연결 제공
+    C-&amp;gt;&amp;gt;S: Request 시도
+    S-&amp;gt;&amp;gt;C: ❌ RST (이미 닫힌 연결)
+    Note over C: 💥 PrematureCloseException!&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[API가 왜 멈췄을까? 코루틴 이해하기]]></title><description><![CDATA[CS팀에서 특정 기능에 대한 사용자 문의 인입이 증가하고 있다고 백엔드 팀에 문의가 들어왔다. 사용량이 갑자기 늘어나서 병목이 생긴건가? 지연되고 있는 API가 있나? DB…]]></description><link>https://jdalma.github.io/2025y/coroutinescope/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/coroutinescope/</guid><pubDate>Wed, 10 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CS팀에서 특정 기능에 대한 사용자 문의 인입이 증가하고 있다고 백엔드 팀에 문의가 들어왔다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;사용량이 갑자기 늘어나서 병목이 생긴건가?&lt;/li&gt;
 &lt;li&gt;지연되고 있는 API가 있나?&lt;/li&gt;
@@ -9,7 +30,7 @@
 &lt;/ol&gt;
 &lt;p&gt;특이사항은 발견하지 못했지만 해당 API의 기능은 계속 먹통이였다.&lt;br&gt;
 애플리케이션 로그를 통해 배포가 완료된 뒤에 정상적으로 호출되다가 런타임 예외가 발생한 시점부터 해당 API가 반응이 없었다.&lt;/p&gt;
-&lt;h2 id=&quot;문제-지점&quot; style=&quot;position:relative;&quot;&gt;문제 지점&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EC%A7%80%EC%A0%90&quot; aria-label=&quot;문제 지점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1 id=&quot;문제-지점&quot; style=&quot;position:relative;&quot;&gt;문제 지점&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EC%A7%80%EC%A0%90&quot; aria-label=&quot;문제 지점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@RestController
 class TestController {
@@ -1394,7 +1415,20 @@ companyIds = [1, 2, 3]
 &lt;li&gt;DgsContext&lt;/li&gt;
 &lt;li&gt;DataLoaderRegistry&lt;/li&gt;
 &lt;li&gt;dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[무진장 힘들었지만 무진장 성장한 개발 이야기 이벤트 피크 타임의 분당 매출 1억 원, 분당 주문 약 1만 건을 안정적으로 처리하는 것 이벤트 전시 페이지에만 분당 약 400만 건의 요청(RPM, Requests Per Minute…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;무진장-힘들었지만-무진장-성장한-개발-이야기&quot; style=&quot;position:relative;&quot;&gt;무진장 힘들었지만 무진장 성장한 개발 이야기&lt;a href=&quot;#%EB%AC%B4%EC%A7%84%EC%9E%A5-%ED%9E%98%EB%93%A4%EC%97%88%EC%A7%80%EB%A7%8C-%EB%AC%B4%EC%A7%84%EC%9E%A5-%EC%84%B1%EC%9E%A5%ED%95%9C-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0&quot; aria-label=&quot;무진장 힘들었지만 무진장 성장한 개발 이야기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[코틀린 코루틴 실무에서 코루틴 장애를 경험하게 되어서 원인을 확실히 이해하고 코루틴을 확실히 짚고 넘어가고 싶어 읽어보았다. API…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;코틀린-코루틴&quot; style=&quot;position:relative;&quot;&gt;코틀린 코루틴&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4&quot; aria-label=&quot;코틀린 코루틴 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;실무에서 코루틴 장애를 경험하게 되어서 원인을 확실히 이해하고 코루틴을 확실히 짚고 넘어가고 싶어 읽어보았다.&lt;br&gt;
+&lt;a href=&quot;https://jdalma.github.io/2025y/coroutinescope/&quot;&gt;API가 왜 멈췄을까? 코루틴 이해하기&lt;/a&gt;글을 참고하라.&lt;/p&gt;
+&lt;p&gt;단순히 사용하는 방법만 알려주지 않고 코루틴의 메커니즘까지 설명해줘서 좋았다.&lt;br&gt;
+실제로 어떻게 중단되고 재개되는지 알 수 있고, 이 중단 함수를 통해서 스레드를 어떻게 효율적으로 사용하게 되는지 이해할 수 있게 됐다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Continuation 메커니즘&lt;/li&gt;
+&lt;li&gt;CoroutineScope, CoroutineBuilder&lt;/li&gt;
+&lt;li&gt;CoroutineContext (Job, Dispatchers)&lt;/li&gt;
+&lt;li&gt;Job을 통한 예외 전파&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;어떤 원리로 성능이 개선된건지 몰라서 답답했는데 이 책을 읽고 안개가 조금 걷힌 느낌이다.&lt;br&gt;
+추가로 Sequnece, Channel, Flow도 설명하기에, 코틀린을 효과적으로 사용하고 싶다면 꼭 읽어야 할 책이다.&lt;/p&gt;
+&lt;h1 id=&quot;무진장-힘들었지만-무진장-성장한-개발-이야기&quot; style=&quot;position:relative;&quot;&gt;무진장 힘들었지만 무진장 성장한 개발 이야기&lt;a href=&quot;#%EB%AC%B4%EC%A7%84%EC%9E%A5-%ED%9E%98%EB%93%A4%EC%97%88%EC%A7%80%EB%A7%8C-%EB%AC%B4%EC%A7%84%EC%9E%A5-%EC%84%B1%EC%9E%A5%ED%95%9C-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0&quot; aria-label=&quot;무진장 힘들었지만 무진장 성장한 개발 이야기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;이벤트 피크 타임의 &lt;strong&gt;분당 매출 1억 원, 분당 주문 약 1만 건&lt;/strong&gt;을 안정적으로 처리하는 것&lt;br&gt;
 이벤트 전시 페이지에만 &lt;strong&gt;분당 약 400만 건의 요청(RPM&lt;/strong&gt;, Requests Per Minute**)** 초로 환산하면 대략 약 6만 7천 건의 요청(RPS, Requests Per Second)
@@ -2600,21 +2634,25 @@ void test() throws InterruptedException {
 &lt;/ul&gt;
 &lt;p&gt;아래와 같은 구조가 된다.&lt;/p&gt;
 &lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;root
- ├── adapter
- │   ├── in
- │   │   └── web
- │   └── out
- │       └── persistence
- ├── application
- │   ├── domain
- │   │   ├── model
- │   │   └── service
- │   └── port
- │       ├── in
- │       └── out
- └── common
-     └── validation&lt;/code&gt;
+          &lt;code slot=&quot;code&quot;&gt;src/main/java/com/example/
+├── domain/                # 핵심 비즈니스 로직
+│   ├── model/             # 엔티티, VO
+│   ├── service/           # 도메인 서비스
+│   └── exception/         # 도메인 예외
+│
+├── application/           # 애플리케이션 서비스
+│   ├── port/             
+│   │   ├── in/            # Inbound Ports Interface (UseCase)
+│   │   └── out/           # Outbound Ports Interface (Repository, Client)
+│   └── service/           # UseCase 구현체
+│
+└── adapter/               # 어댑터 구현
+    ├── in/                # Inbound Adapters
+    │   ├── web/           # REST Controller
+    │   └── messaging/     # Message Consumer
+    └── out/               # Outbound Adapters
+        ├── persistence/   # JPA Repository
+        └── messaging/     # Message Producer&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;애플리케이션 코어와 어댑터들 간의 통신이 가능하려면 애플리케이션 코어가 각각의 포트를 제공해야 한다.&lt;br&gt;
 &lt;strong&gt;주도하는 어댑터&lt;/strong&gt;에게는 그러한 포트가 코어에 있는 유스케이스 클래스 중 하나에 의해 구현되고 어댑터에 의해 호출되는 인터페이스가 될 것이고,&lt;br&gt;
