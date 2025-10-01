@@ -129,19 +129,27 @@ Date: <filtered>
 > 6. 응답 바디 수신   ← 여기서 닫히면 `"DURING response"` **응답을 받기 시작했지만 응답이 완전히 안 온 상태**
 > 7. 응답 완료
 
-## 1. while sending request body
+## 1. BEFORE response while sending request body
 
-클라이언트 서버가 요청을 보내고 있는 경우 커넥션이 닫히면 발생한다.  
-
-## 2. BEFORE response
-
-송신 서버와 수신 서버가 연결된 이후에 수신 서버가 일방적으로 커넥션을 닫는 경우다.  
-즉, ChannelActive 상태까지 도달한 후 클라이언트가 응답을 대기하고 있지만 서버가 해당 채널을 닫아버리는 경우이다.  
-
-<details>
-<summary>💡 Netty 예제 코드 및 로그 자세히 보기</summary>
+송신 서버의 요청을 수신 서버가 수신 중에 (바디를 완전히 받기 전에) 연결을 종료하는 경우에 발생한다.
 
 ```kotlin
+// WebClient Body
+val chunkData = "X".repeat(4096) // 4KB per chunk
+val streamingBody = Flux.interval(Duration.ofMillis(500))
+    .take(20)  // 20개 청크 = 80KB
+    .map { index ->
+        logger.info("Preparing to send chunk ${index + 1}/20")
+        chunkData
+    }
+    .doOnNext {
+        logger.info("Sending chunk of ${it.length} bytes...")
+    }
+    .doOnComplete {
+        logger.info("All chunks sent")
+    }
+
+// Netty 서버
 fun main() {
     val parentGroup = NioEventLoopGroup()
     val workerGroup = NioEventLoopGroup()
@@ -150,13 +158,16 @@ fun main() {
         ServerBootstrap()
             .group(parentGroup, workerGroup)
             .channel(NioServerSocketChannel::class.java)
+            .handler(LoggingHandler(LogLevel.DEBUG))    // 서버 자체 이벤트 로깅 (bind, accept 등)
             .childHandler(object : ChannelInitializer<SocketChannel>() {
-                override fun initChannel(ch: SocketChannel) {
+                override fun initChannel(ch: SocketChannel) {           // ch는 연결된 클라이언트 채널
+                    ch.pipeline().addLast(LoggingHandler(LogLevel.DEBUG))   // 클라이언트 데이터 송수신 체크
                     ch.pipeline().addLast(RudeServerHandler())
                 }
             })
-            .bind(8080).sync()
-            .channel().closeFuture().sync()
+            .bind(9090).sync()
+            .channel()
+            .closeFuture().sync()
     } finally {
         parentGroup.shutdownGracefully()
         workerGroup.shutdownGracefully()
@@ -164,71 +175,239 @@ fun main() {
 }
 
 private class RudeServerHandler : ChannelInboundHandlerAdapter() {
-
-    private val logger = org.slf4j.LoggerFactory.getLogger(this::class.java)
-
-    override fun channelRegistered(ctx: ChannelHandlerContext) {
-        logger.info("[REGISTERED] Channel registered: ${ctx.channel()}")
-        super.channelRegistered(ctx)
-    }
-
-    override fun channelUnregistered(ctx: ChannelHandlerContext) {
-        logger.info("[UNREGISTERED] Channel unregistered: ${ctx.channel()}")
-        super.channelUnregistered(ctx)
-    }
+    private val logger = org.slf4j.LoggerFactory.getLogger("RudeServer")
+    private var readCount = 0
+    private var totalBytesReceived = 0
 
     override fun channelActive(ctx: ChannelHandlerContext) {
-        logger.info("[ACTIVE] Channel active (connected): ${ctx.channel()}")
         super.channelActive(ctx)
-    }
-
-    override fun channelInactive(ctx: ChannelHandlerContext) {
-        logger.info("[INACTIVE] Channel inactive (disconnected): ${ctx.channel()}")
-        super.channelInactive(ctx)
+        logger.info("Client connected: ${ctx.channel().remoteAddress()}")
     }
 
     override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
-        logger.info("[READ] Data received from client: ${ctx.channel()}")
-        logger.info("[READ] Message content: ${msg}")
-
-        // 데이터를 받자마자 즉시 연결을 끊음 (FIN 패킷 전송)
-        ctx.close()
-        logger.info("[READ] Connection close initiated")
-    }
-
-    override fun channelReadComplete(ctx: ChannelHandlerContext) {
-        logger.info("[READ_COMPLETE] Channel read complete: ${ctx.channel()}")
-        super.channelReadComplete(ctx)
+        val buffer = msg as io.netty.buffer.ByteBuf
+        val readableBytes = buffer.readableBytes()
+        readCount++
+        totalBytesReceived += readableBytes
+        
+        logger.info("channelRead #$readCount: Received $readableBytes bytes (total: $totalBytesReceived)")
+        
+        // 첫 번째 read에서 헤더가 포함되어 있을 수 있음
+        // 두 번째 read는 바디 데이터
+        // 두 번째 청크를 받으면 연결 끊기
+        if (readCount >= 2) {
+            logger.info("Received 2nd chunk, closing connection WITHOUT sending response!")
+            buffer.release()
+            ctx.close().await()
+        } else {
+            logger.info("Waiting for more data...")
+            buffer.release()
+        }
     }
 }
 ```
+<details>
+<summary>💡 WebClient와 Netty 로그 자세히보기</summary>
+
+```
+<Spring WebClient 로그>
+
+[reactor-http-kqueue-7] DEBUG r.n.r.PooledConnectionProvider - [c437bfe8] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8] REGISTERED
+[reactor-http-kqueue-7] DEBUG i.n.r.dns.DnsNameResolverBuilder - resolveCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-7] DEBUG i.n.r.dns.DnsNameResolverBuilder - cnameCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-7] DEBUG i.n.r.dns.DnsNameResolverBuilder - authoritativeDnsServerCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8] CONNECT: localhost/127.0.0.1:9090
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] Registering pool release on close event for channel
+[reactor-http-kqueue-7] DEBUG r.n.r.PooledConnectionProvider - [c437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] Channel connected, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] ACTIVE
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] onStateChange(PooledConnection{channel=[id: 0xc437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090]}, [connected])
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=null, connection=PooledConnection{channel=[id: 0xc437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090]}}, [configured])
+[reactor-http-kqueue-7] DEBUG r.n.http.client.HttpClientConnect - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] Handler is being applied: {uri=http://localhost:9090/any-path, method=POST}
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xc437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090]}}, [request_prepared])
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] WRITE: 155B POST /any-path HTTP/1.1
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] FLUSH
+[parallel-6] INFO  e.s.PrematureCloseExceptionService - Preparing to send chunk 1/20
+[parallel-6] INFO  e.s.PrematureCloseExceptionService - Sending chunk of 4096 bytes...
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] WRITE: 6B 1000
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] WRITE: 4096B XXXX... // send data ...
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] WRITE: 2B 
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] FLUSH
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] READ COMPLETE
+[reactor-http-kqueue-7] DEBUG r.n.r.PooledConnectionProvider - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] Channel closed, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] INACTIVE
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xc437bfe8, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090]}}, [response_incomplete])
+[reactor-http-kqueue-7] WARN  r.n.http.client.HttpClientConnect - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] The connection observed an error
+reactor.netty.http.client.PrematureCloseException: Connection has been closed BEFORE response, while sending request body
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] UNREGISTERED
+[http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.reactive.function.client.WebClientRequestException: Connection has been closed BEFORE response, while sending request body] with root cause
+reactor.netty.http.client.PrematureCloseException: Connection has been closed BEFORE response, while sending request body
+```
+
+```
+<Netty 서버 로그>
+
+-- 리스너 포트 등록 및 활성화 완료
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xc281fdae] REGISTERED
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xc281fdae] BIND: 0.0.0.0/0.0.0.0:9090
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xc281fdae, L:/[0:0:0:0:0:0:0:0]:9090] ACTIVE
+
+-- 요청 수신
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x5421fff9, L:/[0:0:0:0:0:0:0:0]:9090] READ: [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226]
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x5421fff9, L:/[0:0:0:0:0:0:0:0]:9090] READ COMPLETE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] REGISTERED
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] ACTIVE
+[nioEventLoopGroup-3-3] INFO  RudeServer - Client connected: /127.0.0.1:52226
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] READ: 155B
+[nioEventLoopGroup-3-3] INFO  RudeServer - channelRead #1: Received 155 bytes (total: 155)
+[nioEventLoopGroup-3-3] INFO  RudeServer - Waiting for more data...
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] READ COMPLETE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] READ: 2048B
+[nioEventLoopGroup-3-3] INFO  RudeServer - channelRead #2: Received 2048 bytes (total: 2203)
+[nioEventLoopGroup-3-3] INFO  RudeServer - Received 2nd chunk, closing connection WITHOUT sending response!
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] CLOSE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] READ COMPLETE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] USER_EVENT: io.netty.channel.socket.ChannelInputShutdownReadComplete@6a0d7782
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] INACTIVE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] UNREGISTERED
+```
+
 </details>
-
-
-```
-[REGISTERED] Channel registered: [id: 0x19ba8155, L:/127.0.0.1:8080 - R:/127.0.0.1:58625]
-[ACTIVE] Channel active (connected): [id: 0x19ba8155, L:/127.0.0.1:8080 - R:/127.0.0.1:58625]
-[READ] Data received from client: [id: 0x19ba8155, L:/127.0.0.1:8080 - R:/127.0.0.1:58625]
-[READ] Message content: PooledUnsafeDirectByteBuf(ridx: 0, widx: 159, cap: 2048)
-[READ] Connection close initiated
-[READ_COMPLETE] Channel read complete: [id: 0x19ba8155, L:/127.0.0.1:8080 ! R:/127.0.0.1:58625]
-[INACTIVE] Channel inactive (disconnected): [id: 0x19ba8155, L:/127.0.0.1:8080 ! R:/127.0.0.1:58625]
-[UNREGISTERED] Channel unregistered: [id: 0x19ba8155, L:/127.0.0.1:8080 ! R:/127.0.0.1:58625]
-```
 
 1. `ChannelRegistered` : Channel 이 Event Loop에 등록됨
 2. `ChannelActive` : Channel이 활성화됨, 이제 데이터를 주고받을 수 있음
 3. `Channellnactive` : Channel이 원격 피어로 연결되지 않음
 4. `ChannelUnregistered`: Channel이 생성됐지만 Event Loop에 등록되지 않음
 
+![](./whileSending.png)
+
+```
+-- Netty 서버 로그
+18:09:15.348 [nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] USER_EVENT: io.netty.channel.socket.ChannelInputShutdownReadComplete@6a0d7782
+
+-- RST 패킷
+UTC Arrival Time: Oct  1, 2025 09:09:15.348334000 UTC
+Transmission Control Protocol, Src Port: 9090, Dst Port: 52226, Seq: 2, Ack: 4260, Len: 0
+Flags: 0x014 (RST, ACK)
+```
+
+RST 플래그가 전송된 시점이 해당 USER_EVENT가 전송된 이후에 전송된 것을 확인할 수 있다.
+
+
+## 2. BEFORE response
+
+`BEFORE response while sending request body`과 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.  
+
+```kotlin
+
+fun main() {
+    val parentGroup = NioEventLoopGroup()
+    val workerGroup = NioEventLoopGroup()
+
+    try {
+        ServerBootstrap()
+            .group(parentGroup, workerGroup)
+            .channel(NioServerSocketChannel::class.java)
+            .handler(LoggingHandler(LogLevel.DEBUG))    // 서버 자체 이벤트 로깅 (bind, accept 등)
+            .childHandler(object : ChannelInitializer<SocketChannel>() {
+                override fun initChannel(ch: SocketChannel) {           // ch는 연결된 클라이언트 채널
+                    ch.pipeline().addLast(LoggingHandler(LogLevel.DEBUG))   // 클라이언트 데이터 송수신 체크
+                    ch.pipeline().addLast(RudeServerHandler())
+                }
+            })
+            .bind(9090).sync()
+            .channel()
+            .closeFuture().sync()
+    } finally {
+        parentGroup.shutdownGracefully()
+        workerGroup.shutdownGracefully()
+    }
+}
+
+private class RudeServerHandler : ChannelInboundHandlerAdapter() {
+    private val logger = org.slf4j.LoggerFactory.getLogger("RudeServer")
+
+    override fun channelActive(ctx: ChannelHandlerContext) {
+        super.channelActive(ctx)
+        logger.info("Client connected: ${ctx.channel().remoteAddress()}")
+    }
+
+    override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
+        logger.info("Received message: $msg")
+        logger.info("Closing connection !!!")
+        ctx.close().await()
+    }
+}
+```
+
+<details>
+<summary>💡 WebClient와 Netty 로그 자세히보기</summary>
+
+```
+<Spring WebClient 로그>
+
+[reactor-http-kqueue-4] DEBUG r.n.r.PooledConnectionProvider - [ace71497] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497] REGISTERED
+[reactor-http-kqueue-4] DEBUG i.n.r.dns.DnsNameResolverBuilder - resolveCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-4] DEBUG i.n.r.dns.DnsNameResolverBuilder - cnameCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-4] DEBUG i.n.r.dns.DnsNameResolverBuilder - authoritativeDnsServerCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497] CONNECT: localhost/127.0.0.1:9090
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] Registering pool release on close event for channel
+[reactor-http-kqueue-4] DEBUG r.n.r.PooledConnectionProvider - [ace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] Channel connected, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] ACTIVE
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] onStateChange(PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090]}, [connected])
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=null, connection=PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090]}}, [configured])
+[reactor-http-kqueue-4] DEBUG r.n.http.client.HttpClientConnect - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] Handler is being applied: {uri=http://localhost:9090/any-path, method=POST}
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090]}}, [request_prepared])
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] WRITE: 123B POST /any-path HTTP/1.1
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] FLUSH
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] WRITE: 5B 0
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] FLUSH
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090]}}, [request_sent])
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] READ COMPLETE
+[reactor-http-kqueue-4] DEBUG r.n.r.PooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] Channel closed, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] INACTIVE
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090]}}, [response_incomplete])
+[reactor-http-kqueue-4] WARN  r.n.http.client.HttpClientConnect - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] The connection observed an error
+reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] UNREGISTERED
+[http-nio-8080-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.reactive.function.client.WebClientRequestException: Connection prematurely closed BEFORE response] with root cause
+reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
+```
+
+```
+<Netty 서버 로그>
+
+-- 리스너 포트 등록 및 활성화 완료
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c] REGISTERED
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c] BIND: 0.0.0.0/0.0.0.0:9090
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c, L:/[0:0:0:0:0:0:0:0]:9090] ACTIVE
+
+-- 요청 수신
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c, L:/[0:0:0:0:0:0:0:0]:9090] READ: [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390]
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c, L:/[0:0:0:0:0:0:0:0]:9090] READ COMPLETE
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390] REGISTERED
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390] ACTIVE
+[nioEventLoopGroup-3-2] INFO  RudeServer - Client connected: /127.0.0.1:50390
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390] READ: 128B
+[nioEventLoopGroup-3-2] INFO  RudeServer - Received message: PooledUnsafeDirectByteBuf(ridx: 0, widx: 128, cap: 2048)
+[nioEventLoopGroup-3-2] INFO  RudeServer - Closing connection !!!
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390] CLOSE
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 ! R:/127.0.0.1:50390] READ COMPLETE
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 ! R:/127.0.0.1:50390] INACTIVE
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 ! R:/127.0.0.1:50390] UNREGISTERED
+```
+
+</details>
+
 ![](./beforeResponse.png)
 
-송신 서버 (클라이언트)는 reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response 예외를 전달받지만 패킷상으로는 정상적인 통신이 완료된 것을 확인할 수 있다.  
+`BEFORE response while sending request body` 다른 점은 Netty 서버에서 USER_EVENT가 발생하지 않는 차이점이 있다.  
 
 ## 3. DURING response
 
 송신 서버가 수신 서버에게 헤더를 정상적으로 응답받고 바디를 대기하는 도중 커넥션이 송신 서버가 커넥션을 일방적으로 닫는 경우이다.  
-즉 송신 서버가 헤더를 정상적으로 받고 바디를 완전히 받기 위해 대기하는 중에 수신 서버가 일방적으로 커넥션을 종료하는 경우이다.  
+즉, 송신 서버가 헤더를 정상적으로 받고 바디를 완전히 받기 위해 대기하는 중에 수신 서버가 일방적으로 커넥션을 종료하는 경우이다.  
 
 ```kotlin
 @GetMapping("/abort-connection")
@@ -304,9 +483,12 @@ but response failed with cause: reactor.netty.http.client.PrematureCloseExceptio
 
 ![](./duringResponse.png)
 
+이 각각 다른 세 가지의 예외 메세지는 복잡한 네트워크 통신에서 발생하는 예외를 더 자세하게 표현하기 위해 나뉘어진 것을 확인할 수 있다.  
+
 # 커널 TCP 소켓 상태에 따른 처리
 
-이때까지 정상적인 종료인 FIN 패킷만 보았는데, 4-way handshake 중에 해당 커넥션으로 데이터를 재전송하게 되면 RST 패킷을 전송하게 되는 경우도 있다.  
+4-way handshake 단계를 진행중인 커넥션을 사용하여 수신받으면 어떻게 되는지 확인해보자.  
+실제로 굉장히 짧은 시간에 이루어지기 때문에.. 재현하기 힘들어 TCP 코드를 확인해보면서 유추해보자.  
 
 ![](./4way-handshake.png)
 
