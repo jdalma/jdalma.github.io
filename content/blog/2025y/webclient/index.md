@@ -1,7 +1,7 @@
 ---
 title: WebClient PrematureCloseException 원인 분석하기
 date: "2025-09-22"
-update: "2025-09-22"
+update: "2025-10-02"
 tags:
    - deep-dive
    - network
@@ -11,8 +11,7 @@ tags:
 
 # 문제 발견
 
-모니터링을 통해 1,2주 간격으로 한 번씩 PrematureCloseException 예외가 발생하는 것을 확인했다.  
-외부 서비스를 초당 300 ~ 400회 정도, 요청하고 응답을 기다리지 않는 비동기 방식으로 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.  
+모니터링을 통해 1~2주 간격으로 한 번씩 `PrematureCloseException` 예외가 발생하는 것을 확인했다. 외부 서비스로 초당 300~400회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.
   
 예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.
 
@@ -104,19 +103,23 @@ Date: <filtered>
 
 ![](./connection-statediagram.png)
 
-로그와 다이어그램을 통해 Connection의 상태가 변화되는 단계를 확인해볼 수 있었다.  
-이제 PrematureCloseException이 발생하는 원인에 대해 더 자세하게 확인해보자.  
+로그와 다이어그램을 통해 Connection의 상태가 변화되는 주요 단계를 확인할 수 있다.  
+이제 PrematureCloseException이 발생하는 원인에 대해 더 자세하게 확인해보자.
 
 # PrematureCloseException이 발생하는 케이스
 
-`HttpClientOperations.onInboundClose()`는 원격 서버에서 FIN 패킷을 보내어 수신 서버에서 EOF 이벤트를 감지하여 정상적으로 연결을 닫는 경우 호출된다.  
+`PrematureCloseException`은 HTTP 통신 중 예상하지 못한 시점에 연결이 종료될 때 발생하는 예외다.  
+이 예외는 복잡한 네트워크 통신에서 발생하는 다양한 시나리오를 구분하여 더 구체적인 디버깅 정보를 제공한다.
   
-1. (테스트 환경이 mac이라서) KQueueEventLoop 에서 FIN 패킷을 EV_EOF 이벤트로 감지
+`HttpClientOperations.onInboundClose()`는 원격 서버에서 FIN 패킷을 보내면 수신 서버가 EOF 이벤트를 감지하고 정상적으로 연결을 닫는 경우 호출된다.  
+  
+**연결 종료 감지 과정**  
+1. (테스트 환경이 mac이라서) KQueueEventLoop에서 FIN 패킷을 EV_EOF 이벤트로 감지
 2. EV_EOF 이벤트로 인해 EOF 처리, Half-closure 설정에 따라 입력만 종료 또는 전체 종료 결정
 3. Channel inputShutdown 플래그 설정 + 시스템 레벨 소켓 수신 부분 종료
 4. 실제 소켓 fd 닫기 + closeInitiated 플래그 설정
 5. channelInactive 이벤트가 파이프라인 통해 전파 EventLoop에서 채널 등록 해제
-6. **ChannelHandler.channelInactive() 프로토콜별 정리 작업에서 onInboundClose() 호출** -> HTTP 프로토콜 레벨에서 어떤 단계에서 문제가 발생했는지 구분해서 적절한 예외를 발생시킨다.
+6. **ChannelHandler.channelInactive() 프로토콜별 정리 작업에서 onInboundClose() 호출** → HTTP 프로토콜 레벨에서 어떤 단계에서 문제가 발생했는지 구분해서 적절한 예외를 발생시킨다.
 
 ![](./onInboundClose.png)
 
@@ -131,8 +134,9 @@ Date: <filtered>
 
 ## 1. BEFORE response while sending request body
 
-송신 서버의 요청을 수신 서버가 수신 중에 (바디를 완전히 받기 전에) 연결을 종료하는 경우에 발생한다.
-
+송신 서버의 요청을 수신 서버가 수신 중에 (바디를 완전히 받기 전에) 연결을 종료하는 경우에 발생한다.  
+**테스트 시나리오**: 스트리밍 바디를 전송하는 중에 서버가 두 번째 청크를 받으면 즉시 연결을 종료  
+  
 ```kotlin
 // WebClient Body
 val chunkData = "X".repeat(4096) // 4KB per chunk
@@ -296,10 +300,10 @@ RST 플래그가 전송된 시점이 해당 USER_EVENT가 전송된 이후에 �
 
 ## 2. BEFORE response
 
-`BEFORE response while sending request body`과 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.  
-
+`BEFORE response while sending request body`와 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.  
+**테스트 시나리오**: 요청 헤더만 받고 즉시 연결을 종료  
+  
 ```kotlin
-
 fun main() {
     val parentGroup = NioEventLoopGroup()
     val workerGroup = NioEventLoopGroup()
@@ -408,8 +412,10 @@ reactor.netty.http.client.PrematureCloseException: Connection prematurely closed
 
 송신 서버가 수신 서버에게 헤더를 정상적으로 응답받고 바디를 대기하는 도중 커넥션이 송신 서버가 커넥션을 일방적으로 닫는 경우이다.  
 즉, 송신 서버가 헤더를 정상적으로 받고 바디를 완전히 받기 위해 대기하는 중에 수신 서버가 일방적으로 커넥션을 종료하는 경우이다.  
-
+**테스트 시나리오**: 응답 헤더와 일부 바디를 전송한 후 연결 종료  
+  
 ```kotlin
+// 송신 서버의 API
 @GetMapping("/abort-connection")
 fun abortConnection(response: HttpServletResponse) {
     logger.info("Starting abort connection...")
@@ -483,32 +489,32 @@ but response failed with cause: reactor.netty.http.client.PrematureCloseExceptio
 
 ![](./duringResponse.png)
 
-이 각각 다른 세 가지의 예외 메세지는 복잡한 네트워크 통신에서 발생하는 예외를 더 자세하게 표현하기 위해 나뉘어진 것을 확인할 수 있다.  
+이 세 가지 다른 예외 메시지는 복잡한 네트워크 통신에서 발생하는 예외를 더 자세하게 표현하기 위해 나뉘어진 것을 확인할 수 있다.
 
 # 커널 TCP 소켓 상태에 따른 처리
 
-4-way handshake 단계를 진행중인 커넥션을 사용하여 수신받으면 어떻게 되는지 확인해보자.  
-실제로 굉장히 짧은 시간에 이루어지기 때문에.. 재현하기 힘들어 TCP 코드를 확인해보면서 유추해보자.  
+4-way handshake 단계를 진행 중인 커넥션을 사용하여 요청을 보내면 어떻게 되는지 확인해보자.  
+실제로는 굉장히 짧은 시간에 이루어지기 때문에 재현하기 힘들어 TCP 커널 코드를 확인해보면서 유추해보자.
 
 ![](./4way-handshake.png)
 
 **Active Closer의 정상적인 상태 진행** ESTABLISHED → FIN_WAIT1 → FIN_WAIT2 → TIME_WAIT → CLOSE
   
-1. `FIN-WAIT-1`: 원격 TCP 피어의 연결 종료 요청을 기다리거나, 자신이 보낸 종료 요청에 대한 승인을 기다리는 상태
-2. `CLOSE-WAIT`: 응용프로그램이 더 이상 데이터 송수신이 필요 없다고 close() 또는 연결 종료(종료 관련 API 호출 등)를 실행할 때까지 기다리는 상태를 의미 (연결 종료 요청을 기다리는 상태)
-3. `FIN-WAIT-2`: 원격 TCP 피어의 연결 종료 요청을 기다리는 상태
-4. `LAST-ACK`: 원격 TCP 피어에게 보낸 종료 요청에 대한 승인을 기다리는 상태
-5. `TIME-WAIT`: 상대방이 종료 요청에 대한 승인을 수신했음을 확실히 하고, **이전 연결에서 지연된 세그먼트가 새 연결에 영향을 주지 않도록 일정 시간 대기하는 상태**
-6. `CLOSED`: 연결이 완전히 없는 상태
+## 커널 레벨 처리 로직
+   
+[tcp_ipv4.c `tcp_v4_do_rcv(...)`](https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_ipv4.c#L1905) 함수를 보면 소켓 상태에 따른 처리 방식을 확인할 수 있다.
   
-[tcp_ipv4.c `tcp_v4_do_rcv(...)`](https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_ipv4.c#L1905)함수를 보면 소켓이 `TCP_ESTABLISHED` 상태가 아닌 경우 `tcp_rcv_state_process(...)`를 통해 처리한다.
-
+**주요 TCP 상태 설명**  
+1. **FIN-WAIT-1**: 자신이 보낸 종료 요청(FIN)에 대한 ACK을 기다리거나, 상대방의 FIN을 기다리는 상태
+2. **CLOSE-WAIT**: 상대방으로부터 FIN을 받고 ACK를 보낸 후, 애플리케이션이 close()를 호출할 때까지 기다리는 상태
+3. **FIN-WAIT-2**: 상대방의 FIN을 기다리는 상태 (자신의 FIN에 대한 ACK는 이미 받음)
+4. **LAST-ACK**: 자신이 보낸 FIN에 대한 ACK를 기다리는 상태
+5. **TIME-WAIT**: 상대방이 마지막 ACK를 확실히 받았음을 보장하고, 이전 연결의 지연된 패킷이 새 연결에 영향을 주지 않도록 일정 시간 대기하는 상태 (보통 2*MSL)
+6. **CLOSED**: 연결이 완전히 종료된 상태
+  
 ```c
 int tcp_v4_do_rcv(struct sock *sk, struct sk_buff *skb)
 {
-    enum skb_drop_reason reason;
-    struct sock *rsk;
-
     // 1. 수신된 데이터를 사용자 영역에 전달할 수 있는 상태인 경우
     if (sk->sk_state == TCP_ESTABLISHED) { /* Fast path */
         // ...
@@ -583,47 +589,44 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
 }
 ```
 
-1. TCP_FIN_WAIT1, TCP_FIN_WAIT2 상태 : 데이터가 포함되어 있다면 즉시 RST 패킷 전송
-2. TCP_TIME_WAIT 상태 : RST 패킷 전송 [tcp_minisocks.c#L99](https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_minisocks.c#L99)
+1. **TCP_FIN_WAIT1, TCP_FIN_WAIT2 상태** : 데이터가 포함되어 있다면 즉시 RST 패킷 전송
+2. **TCP_TIME_WAIT 상태** : RST 패킷 전송 [tcp_minisocks.c#L99](https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_minisocks.c#L99)
    - TIME_WAIT은 마지막 ACK가 유실될 경우를 대비하여 상대방이 FIN을 재전송하는 경우 대응하기 위한 상태이다.
+  
+이는 종료 절차가 진행 중인 연결에 새로운 데이터가 오는 것을 비정상적인 상황으로 간주하여 강제로 연결을 리셋하기 때문이다.
 
-# 원인
+# 원인 분석
+
+## 로드밸런서와 서버간 timeout이 다른 경우
+
+## retry 로직 추가
+
+## WebClient maxIdleTime 설정 부재
 
 ![](./timeout.png)
 
-WebClient를 생성할 때 maxIdleTime을 지정해주지 않아 무제한으로 설정되어, B서버의 keep-alive timeout이 초과한 경우 클라이언트가 stale connection을 사용할 경우가 생기기 때문이다.  
-
+WebClient를 생성할 때 maxIdleTime을 지정해주지 않아 무제한으로 설정되어, 클라이언트가 연결을 재사용하려고 할 때 서버가 이미 타임아웃으로 연결을 끊어버리면서 발생하며, 해결을 위해서는 서버의 타임아웃 값을 조정하거나, 클라이언트의 maxIdleTime을 서버의 타임아웃보다 짧게 설정해야 한다.  
+  
 1. 클라이언트가 요청 완료 후 커넥션을 풀에 반환 (시각 `T0`)
-2. 서버의 keep-alive timeout은 `20`초로 설정됨
+2. 서버의 keep-alive timeout은 `60초`
 3. 클라이언트 maxIdleTime은 무제한
-4. `T0 + 20`초에 클라이언트가 해당 커넥션을 다시 사용하려고 시도
-5. 서버는 이미 커넥션을 닫았거나 닫는 과정에 있거나 클라이언트가 응답을 완전하게 받지 못한 경우
-6. **PrematureCloseException 발생**
+4. `T0 + 60초 이상`에 클라이언트가 해당 커넥션을 다시 사용하려고 시도
+5. 서버는 이미 커넥션을 닫았거나 닫는 과정에 있음
+6. **Race Condition 발생**: 클라이언트가 요청을 보내는 시점과 서버의 연결 종료 시점이 겹침
+7. **PrematureCloseException 발생**
 
 서버가 커넥션을 닫기 전에 클라이언트가 proactive하게 커넥션을 정리해서 race condition을 방지할 수 있기에 maxIdleTime을 서버의 keep-alive timeout보다 작게 지정해주는 것이 좋다.  
+  
+## maxIdleTiem 설정 이후 커넥션 풀 고갈 문제 발생
 
-# 정리 필요
-
-1. maxIdleTime을 지정해줘서 해결될 거라고 판단
-2. 하지만 커넥션 풀 고갈 문제 발생 (커넥션을 할당받기 위해 대기하다가 예외 발생. 이 예외로 인해 일반 Job 코루틴 스코프가 멈춤)
+넥션을 할당받기 위해 대기하다가 예외 발생
 
 ```
 Exception in thread "DefaultDispatcher-worker-5" Exception in thread "DefaultDispatcher-worker-1" Exception in thread "DefaultDispatcher-worker-7" Exception in thread "DefaultDispatcher-worker-10" Exception in thread "DefaultDispatcher-worker-3" org.springframework.web.reactive.function.client.WebClientRequestException: Pending acquire queue has reached its maximum size of 32
 ```
 
-```
-// 기본값
-ConnectionProvider.create()  // 기본 설정 사용 시
-    .maxIdleTime(-1)         // 무제한 ⚠️
-    .maxLifeTime(-1)         // 무제한 ⚠️  
-    .evictInBackground(0)    // 비활성 ⚠️
-    .maxConnections(500)     // 제한 있음
-    .pendingAcquireMaxCount(32)  // 제한 있음
-```
 
-
-- 커넥션 풀의 맥스 커넥션 수만큼 Flow로 배압조절한다면 커넥션 고갈 문제는 없지 않을까? 근데 버퍼가 어느정도 감당가능한지?
-- 커넥션을 먼저 끊는 Active Closer는 TIME_WAIT 소켓을 보유하게 되는 것을 이해했다
+- 커넥션 풀의 최대 개수만큼 배압 조절
 
 
 > 참고  
