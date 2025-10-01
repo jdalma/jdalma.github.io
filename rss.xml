@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Sep 2025 11:54:20 GMT</lastBuildDate><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 1,2주 간격으로 한 번씩 PrematureCloseException 예외가 발생하는 것을 확인했다. 외부 서비스를 초당 300 ~ 40…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;모니터링을 통해 1,2주 간격으로 한 번씩 PrematureCloseException 예외가 발생하는 것을 확인했다.&lt;br&gt;
-외부 서비스를 초당 300 ~ 400회 정도, 요청하고 응답을 기다리지 않는 비동기 방식으로 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 01 Oct 2025 16:43:26 GMT</lastBuildDate><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 12주 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 30040…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;모니터링을 통해 1&lt;del&gt;2주 간격으로 한 번씩 &lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 발생하는 것을 확인했다. 외부 서비스로 초당 300&lt;/del&gt;400회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
 &lt;p&gt;예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.&lt;/p&gt;
 &lt;h1 id=&quot;webclient-connection-상태-변화&quot; style=&quot;position:relative;&quot;&gt;WebClient Connection 상태 변화&lt;a href=&quot;#webclient-connection-%EC%83%81%ED%83%9C-%EB%B3%80%ED%99%94&quot; aria-label=&quot;webclient connection 상태 변화 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
@@ -176,17 +175,20 @@ Date: &amp;lt;filtered&amp;gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;로그와 다이어그램을 통해 Connection의 상태가 변화되는 단계를 확인해볼 수 있었다.&lt;br&gt;
+&lt;p&gt;로그와 다이어그램을 통해 Connection의 상태가 변화되는 주요 단계를 확인할 수 있다.&lt;br&gt;
 이제 PrematureCloseException이 발생하는 원인에 대해 더 자세하게 확인해보자.&lt;/p&gt;
 &lt;h1 id=&quot;prematurecloseexception이-발생하는-케이스&quot; style=&quot;position:relative;&quot;&gt;PrematureCloseException이 발생하는 케이스&lt;a href=&quot;#prematurecloseexception%EC%9D%B4-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%BC%80%EC%9D%B4%EC%8A%A4&quot; aria-label=&quot;prematurecloseexception이 발생하는 케이스 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;HttpClientOperations.onInboundClose()&lt;/code&gt;는 원격 서버에서 FIN 패킷을 보내어 수신 서버에서 EOF 이벤트를 감지하여 정상적으로 연결을 닫는 경우 호출된다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt;은 HTTP 통신 중 예상하지 못한 시점에 연결이 종료될 때 발생하는 예외다.&lt;br&gt;
+이 예외는 복잡한 네트워크 통신에서 발생하는 다양한 시나리오를 구분하여 더 구체적인 디버깅 정보를 제공한다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;HttpClientOperations.onInboundClose()&lt;/code&gt;는 원격 서버에서 FIN 패킷을 보내면 수신 서버가 EOF 이벤트를 감지하고 정상적으로 연결을 닫는 경우 호출된다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;연결 종료 감지 과정&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;(테스트 환경이 mac이라서) KQueueEventLoop 에서 FIN 패킷을 EV_EOF 이벤트로 감지&lt;/li&gt;
+&lt;li&gt;(테스트 환경이 mac이라서) KQueueEventLoop에서 FIN 패킷을 EV_EOF 이벤트로 감지&lt;/li&gt;
 &lt;li&gt;EV_EOF 이벤트로 인해 EOF 처리, Half-closure 설정에 따라 입력만 종료 또는 전체 종료 결정&lt;/li&gt;
 &lt;li&gt;Channel inputShutdown 플래그 설정 + 시스템 레벨 소켓 수신 부분 종료&lt;/li&gt;
 &lt;li&gt;실제 소켓 fd 닫기 + closeInitiated 플래그 설정&lt;/li&gt;
 &lt;li&gt;channelInactive 이벤트가 파이프라인 통해 전파 EventLoop에서 채널 등록 해제&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ChannelHandler.channelInactive() 프로토콜별 정리 작업에서 onInboundClose() 호출&lt;/strong&gt; -&gt; HTTP 프로토콜 레벨에서 어떤 단계에서 문제가 발생했는지 구분해서 적절한 예외를 발생시킨다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ChannelHandler.channelInactive() 프로토콜별 정리 작업에서 onInboundClose() 호출&lt;/strong&gt; → HTTP 프로토콜 레벨에서 어떤 단계에서 문제가 발생했는지 구분해서 적절한 예외를 발생시킨다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -232,15 +234,27 @@ Date: &amp;lt;filtered&amp;gt;
 &lt;li&gt;응답 완료&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;1-while-sending-request-body&quot; style=&quot;position:relative;&quot;&gt;1. while sending request body&lt;a href=&quot;#1-while-sending-request-body&quot; aria-label=&quot;1 while sending request body permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;클라이언트 서버가 요청을 보내고 있는 경우 커넥션이 닫히면 발생한다.&lt;/p&gt;
-&lt;h2 id=&quot;2-before-response&quot; style=&quot;position:relative;&quot;&gt;2. BEFORE response&lt;a href=&quot;#2-before-response&quot; aria-label=&quot;2 before response permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;송신 서버와 수신 서버가 연결된 이후에 수신 서버가 일방적으로 커넥션을 닫는 경우다.&lt;br&gt;
-즉, ChannelActive 상태까지 도달한 후 클라이언트가 응답을 대기하고 있지만 서버가 해당 채널을 닫아버리는 경우이다.&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;💡 Netty 예제 코드 및 로그 자세히 보기&lt;/summary&gt;
+&lt;h2 id=&quot;1-before-response-while-sending-request-body&quot; style=&quot;position:relative;&quot;&gt;1. BEFORE response while sending request body&lt;a href=&quot;#1-before-response-while-sending-request-body&quot; aria-label=&quot;1 before response while sending request body permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;송신 서버의 요청을 수신 서버가 수신 중에 (바디를 완전히 받기 전에) 연결을 종료하는 경우에 발생한다.&lt;br&gt;
+&lt;strong&gt;테스트 시나리오&lt;/strong&gt;: 스트리밍 바디를 전송하는 중에 서버가 두 번째 청크를 받으면 즉시 연결을 종료&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;fun main() {
+          &lt;code slot=&quot;code&quot;&gt;// WebClient Body
+val chunkData = &amp;quot;X&amp;quot;.repeat(4096) // 4KB per chunk
+val streamingBody = Flux.interval(Duration.ofMillis(500))
+    .take(20)  // 20개 청크 = 80KB
+    .map { index -&amp;gt;
+        logger.info(&amp;quot;Preparing to send chunk ${index + 1}/20&amp;quot;)
+        chunkData
+    }
+    .doOnNext {
+        logger.info(&amp;quot;Sending chunk of ${it.length} bytes...&amp;quot;)
+    }
+    .doOnComplete {
+        logger.info(&amp;quot;All chunks sent&amp;quot;)
+    }
+
+// Netty 서버
+fun main() {
     val parentGroup = NioEventLoopGroup()
     val workerGroup = NioEventLoopGroup()
 
@@ -248,13 +262,16 @@ Date: &amp;lt;filtered&amp;gt;
         ServerBootstrap()
             .group(parentGroup, workerGroup)
             .channel(NioServerSocketChannel::class.java)
+            .handler(LoggingHandler(LogLevel.DEBUG))    // 서버 자체 이벤트 로깅 (bind, accept 등)
             .childHandler(object : ChannelInitializer&amp;lt;SocketChannel&amp;gt;() {
-                override fun initChannel(ch: SocketChannel) {
+                override fun initChannel(ch: SocketChannel) {           // ch는 연결된 클라이언트 채널
+                    ch.pipeline().addLast(LoggingHandler(LogLevel.DEBUG))   // 클라이언트 데이터 송수신 체크
                     ch.pipeline().addLast(RudeServerHandler())
                 }
             })
-            .bind(8080).sync()
-            .channel().closeFuture().sync()
+            .bind(9090).sync()
+            .channel()
+            .closeFuture().sync()
     } finally {
         parentGroup.shutdownGracefully()
         workerGroup.shutdownGracefully()
@@ -262,55 +279,101 @@ Date: &amp;lt;filtered&amp;gt;
 }
 
 private class RudeServerHandler : ChannelInboundHandlerAdapter() {
-
-    private val logger = org.slf4j.LoggerFactory.getLogger(this::class.java)
-
-    override fun channelRegistered(ctx: ChannelHandlerContext) {
-        logger.info(&amp;quot;[REGISTERED] Channel registered: ${ctx.channel()}&amp;quot;)
-        super.channelRegistered(ctx)
-    }
-
-    override fun channelUnregistered(ctx: ChannelHandlerContext) {
-        logger.info(&amp;quot;[UNREGISTERED] Channel unregistered: ${ctx.channel()}&amp;quot;)
-        super.channelUnregistered(ctx)
-    }
+    private val logger = org.slf4j.LoggerFactory.getLogger(&amp;quot;RudeServer&amp;quot;)
+    private var readCount = 0
+    private var totalBytesReceived = 0
 
     override fun channelActive(ctx: ChannelHandlerContext) {
-        logger.info(&amp;quot;[ACTIVE] Channel active (connected): ${ctx.channel()}&amp;quot;)
         super.channelActive(ctx)
-    }
-
-    override fun channelInactive(ctx: ChannelHandlerContext) {
-        logger.info(&amp;quot;[INACTIVE] Channel inactive (disconnected): ${ctx.channel()}&amp;quot;)
-        super.channelInactive(ctx)
+        logger.info(&amp;quot;Client connected: ${ctx.channel().remoteAddress()}&amp;quot;)
     }
 
     override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
-        logger.info(&amp;quot;[READ] Data received from client: ${ctx.channel()}&amp;quot;)
-        logger.info(&amp;quot;[READ] Message content: ${msg}&amp;quot;)
-
-        // 데이터를 받자마자 즉시 연결을 끊음 (FIN 패킷 전송)
-        ctx.close()
-        logger.info(&amp;quot;[READ] Connection close initiated&amp;quot;)
-    }
-
-    override fun channelReadComplete(ctx: ChannelHandlerContext) {
-        logger.info(&amp;quot;[READ_COMPLETE] Channel read complete: ${ctx.channel()}&amp;quot;)
-        super.channelReadComplete(ctx)
+        val buffer = msg as io.netty.buffer.ByteBuf
+        val readableBytes = buffer.readableBytes()
+        readCount++
+        totalBytesReceived += readableBytes
+        
+        logger.info(&amp;quot;channelRead #$readCount: Received $readableBytes bytes (total: $totalBytesReceived)&amp;quot;)
+        
+        // 첫 번째 read에서 헤더가 포함되어 있을 수 있음
+        // 두 번째 read는 바디 데이터
+        // 두 번째 청크를 받으면 연결 끊기
+        if (readCount &amp;gt;= 2) {
+            logger.info(&amp;quot;Received 2nd chunk, closing connection WITHOUT sending response!&amp;quot;)
+            buffer.release()
+            ctx.close().await()
+        } else {
+            logger.info(&amp;quot;Waiting for more data...&amp;quot;)
+            buffer.release()
+        }
     }
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;💡 WebClient와 Netty 로그 자세히보기&lt;/summary&gt;
 &lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;[REGISTERED] Channel registered: [id: 0x19ba8155, L:/127.0.0.1:8080 - R:/127.0.0.1:58625]
-[ACTIVE] Channel active (connected): [id: 0x19ba8155, L:/127.0.0.1:8080 - R:/127.0.0.1:58625]
-[READ] Data received from client: [id: 0x19ba8155, L:/127.0.0.1:8080 - R:/127.0.0.1:58625]
-[READ] Message content: PooledUnsafeDirectByteBuf(ridx: 0, widx: 159, cap: 2048)
-[READ] Connection close initiated
-[READ_COMPLETE] Channel read complete: [id: 0x19ba8155, L:/127.0.0.1:8080 ! R:/127.0.0.1:58625]
-[INACTIVE] Channel inactive (disconnected): [id: 0x19ba8155, L:/127.0.0.1:8080 ! R:/127.0.0.1:58625]
-[UNREGISTERED] Channel unregistered: [id: 0x19ba8155, L:/127.0.0.1:8080 ! R:/127.0.0.1:58625]&lt;/code&gt;
+          &lt;code slot=&quot;code&quot;&gt;&amp;lt;Spring WebClient 로그&amp;gt;
+
+[reactor-http-kqueue-7] DEBUG r.n.r.PooledConnectionProvider - [c437bfe8] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8] REGISTERED
+[reactor-http-kqueue-7] DEBUG i.n.r.dns.DnsNameResolverBuilder - resolveCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-7] DEBUG i.n.r.dns.DnsNameResolverBuilder - cnameCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-7] DEBUG i.n.r.dns.DnsNameResolverBuilder - authoritativeDnsServerCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8] CONNECT: localhost/127.0.0.1:9090
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] Registering pool release on close event for channel
+[reactor-http-kqueue-7] DEBUG r.n.r.PooledConnectionProvider - [c437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] Channel connected, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] ACTIVE
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] onStateChange(PooledConnection{channel=[id: 0xc437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090]}, [connected])
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=null, connection=PooledConnection{channel=[id: 0xc437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090]}}, [configured])
+[reactor-http-kqueue-7] DEBUG r.n.http.client.HttpClientConnect - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] Handler is being applied: {uri=http://localhost:9090/any-path, method=POST}
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xc437bfe8, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090]}}, [request_prepared])
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] WRITE: 155B POST /any-path HTTP/1.1
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] FLUSH
+[parallel-6] INFO  e.s.PrematureCloseExceptionService - Preparing to send chunk 1/20
+[parallel-6] INFO  e.s.PrematureCloseExceptionService - Sending chunk of 4096 bytes...
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] WRITE: 6B 1000
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] WRITE: 4096B XXXX... // send data ...
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] WRITE: 2B 
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] FLUSH
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 - R:localhost/127.0.0.1:9090] READ COMPLETE
+[reactor-http-kqueue-7] DEBUG r.n.r.PooledConnectionProvider - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] Channel closed, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] INACTIVE
+[reactor-http-kqueue-7] DEBUG r.n.r.DefaultPooledConnectionProvider - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xc437bfe8, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090]}}, [response_incomplete])
+[reactor-http-kqueue-7] WARN  r.n.http.client.HttpClientConnect - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] The connection observed an error
+reactor.netty.http.client.PrematureCloseException: Connection has been closed BEFORE response, while sending request body
+[reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8-1, L:/127.0.0.1:52226 ! R:localhost/127.0.0.1:9090] UNREGISTERED
+[http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.reactive.function.client.WebClientRequestException: Connection has been closed BEFORE response, while sending request body] with root cause
+reactor.netty.http.client.PrematureCloseException: Connection has been closed BEFORE response, while sending request body&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;&amp;lt;Netty 서버 로그&amp;gt;
+
+-- 리스너 포트 등록 및 활성화 완료
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xc281fdae] REGISTERED
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xc281fdae] BIND: 0.0.0.0/0.0.0.0:9090
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xc281fdae, L:/[0:0:0:0:0:0:0:0]:9090] ACTIVE
+
+-- 요청 수신
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x5421fff9, L:/[0:0:0:0:0:0:0:0]:9090] READ: [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226]
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x5421fff9, L:/[0:0:0:0:0:0:0:0]:9090] READ COMPLETE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] REGISTERED
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] ACTIVE
+[nioEventLoopGroup-3-3] INFO  RudeServer - Client connected: /127.0.0.1:52226
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] READ: 155B
+[nioEventLoopGroup-3-3] INFO  RudeServer - channelRead #1: Received 155 bytes (total: 155)
+[nioEventLoopGroup-3-3] INFO  RudeServer - Waiting for more data...
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] READ COMPLETE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] READ: 2048B
+[nioEventLoopGroup-3-3] INFO  RudeServer - channelRead #2: Received 2048 bytes (total: 2203)
+[nioEventLoopGroup-3-3] INFO  RudeServer - Received 2nd chunk, closing connection WITHOUT sending response!
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 - R:/127.0.0.1:52226] CLOSE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] READ COMPLETE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] USER_EVENT: io.netty.channel.socket.ChannelInputShutdownReadComplete@6a0d7782
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] INACTIVE
+[nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] UNREGISTERED&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;/details&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ChannelRegistered&lt;/code&gt; : Channel 이 Event Loop에 등록됨&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ChannelActive&lt;/code&gt; : Channel이 활성화됨, 이제 데이터를 주고받을 수 있음&lt;/li&gt;
@@ -323,26 +386,25 @@ private class RudeServerHandler : ChannelInboundHandlerAdapter() {
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/0021a9ec656e7946c29270483c4b3a9c/60708/beforeResponse.png&quot;
+    href=&quot;/static/c89228419bd6fa200e076aae3d9f741b/d7ceb/whileSending.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 12.444444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAlUlEQVR42h3KywqCQACFYZ+/G0FEEJlpRQiRpaMRWU0tLEbLZkoJyoXZe5xGFz/nWxxluMzQMxOoiw9UK4NBCvTnL4zJT/oL3c7RnQl0phztyQONEUdNi9EyBOraHU2dVx5YOcxNAeV0DOGuKShlKB2xJ3w/wDVMwC4C5yCGTfayHTz5K3flbOF6h8qOjEjfohSpeOMPuld/EmQl+bUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 31.555555555555554%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABaklEQVR42i2QS2+bQBSF+f8/oFJXVSNVtgyOU2MMDMObCWADfudhx0m66KqNlEVVZfd1jLq4Oufec+48jrFYHQjzBWWzo2737O+fyatVj+v9iW77iMxr3KggSCtEUiKzSs8u/JYgK/ETRbO5xw9zDJGmjB1HL0R4caIPq7BF0GOslL6sYDxzGH6fYtoOluYTd86N72E6Nteam7MpodI+e4qxuXsjKZ9pd79YHX5zevmg6n7y9PrB4/kvu4f3XpfFkbR6IVJnRPqg8Yno9ky2+KG1E4fTHwqtG8XQRXy9phjMUQOXxgpJv9m0VkRjSsqhj7ya9J7gP86/mAjN3c8jPF2zTwOWI0lypV+4VhWZJ+nyknVRc2w2LJOCY7vlru44VA0qiLVHx+CHZL4kDySLNNN9QKH7S/U+EWEEOnBrHuJfAs9q1HKLEypUs9VfXBGXLRMv1nlJxm7U42gmuBExlnuZhT1GZYeIFf8A6EuHde0hP+QAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;beforeResponse&quot;
+        alt=&quot;whileSending&quot;
         title=&quot;&quot;
-        src=&quot;/static/0021a9ec656e7946c29270483c4b3a9c/1cfc2/beforeResponse.png&quot;
-        srcset=&quot;/static/0021a9ec656e7946c29270483c4b3a9c/3684f/beforeResponse.png 225w,
-/static/0021a9ec656e7946c29270483c4b3a9c/fc2a6/beforeResponse.png 450w,
-/static/0021a9ec656e7946c29270483c4b3a9c/1cfc2/beforeResponse.png 900w,
-/static/0021a9ec656e7946c29270483c4b3a9c/21482/beforeResponse.png 1350w,
-/static/0021a9ec656e7946c29270483c4b3a9c/d61c2/beforeResponse.png 1800w,
-/static/0021a9ec656e7946c29270483c4b3a9c/60708/beforeResponse.png 2872w&quot;
+        src=&quot;/static/c89228419bd6fa200e076aae3d9f741b/1cfc2/whileSending.png&quot;
+        srcset=&quot;/static/c89228419bd6fa200e076aae3d9f741b/3684f/whileSending.png 225w,
+/static/c89228419bd6fa200e076aae3d9f741b/fc2a6/whileSending.png 450w,
+/static/c89228419bd6fa200e076aae3d9f741b/1cfc2/whileSending.png 900w,
+/static/c89228419bd6fa200e076aae3d9f741b/21482/whileSending.png 1350w,
+/static/c89228419bd6fa200e076aae3d9f741b/d7ceb/whileSending.png 1446w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -350,12 +412,156 @@ private class RudeServerHandler : ChannelInboundHandlerAdapter() {
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;송신 서버 (클라이언트)는 reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response 예외를 전달받지만 패킷상으로는 정상적인 통신이 완료된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- Netty 서버 로그
+18:09:15.348 [nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] USER_EVENT: io.netty.channel.socket.ChannelInputShutdownReadComplete@6a0d7782
+
+-- RST 패킷
+UTC Arrival Time: Oct  1, 2025 09:09:15.348334000 UTC
+Transmission Control Protocol, Src Port: 9090, Dst Port: 52226, Seq: 2, Ack: 4260, Len: 0
+Flags: 0x014 (RST, ACK)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;RST 플래그가 전송된 시점이 해당 USER_EVENT가 전송된 이후에 전송된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;2-before-response&quot; style=&quot;position:relative;&quot;&gt;2. BEFORE response&lt;a href=&quot;#2-before-response&quot; aria-label=&quot;2 before response permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;BEFORE response while sending request body&lt;/code&gt;와 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.&lt;br&gt;
+&lt;strong&gt;테스트 시나리오&lt;/strong&gt;: 요청 헤더만 받고 즉시 연결을 종료&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;fun main() {
+    val parentGroup = NioEventLoopGroup()
+    val workerGroup = NioEventLoopGroup()
+
+    try {
+        ServerBootstrap()
+            .group(parentGroup, workerGroup)
+            .channel(NioServerSocketChannel::class.java)
+            .handler(LoggingHandler(LogLevel.DEBUG))    // 서버 자체 이벤트 로깅 (bind, accept 등)
+            .childHandler(object : ChannelInitializer&amp;lt;SocketChannel&amp;gt;() {
+                override fun initChannel(ch: SocketChannel) {           // ch는 연결된 클라이언트 채널
+                    ch.pipeline().addLast(LoggingHandler(LogLevel.DEBUG))   // 클라이언트 데이터 송수신 체크
+                    ch.pipeline().addLast(RudeServerHandler())
+                }
+            })
+            .bind(9090).sync()
+            .channel()
+            .closeFuture().sync()
+    } finally {
+        parentGroup.shutdownGracefully()
+        workerGroup.shutdownGracefully()
+    }
+}
+
+private class RudeServerHandler : ChannelInboundHandlerAdapter() {
+    private val logger = org.slf4j.LoggerFactory.getLogger(&amp;quot;RudeServer&amp;quot;)
+
+    override fun channelActive(ctx: ChannelHandlerContext) {
+        super.channelActive(ctx)
+        logger.info(&amp;quot;Client connected: ${ctx.channel().remoteAddress()}&amp;quot;)
+    }
+
+    override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
+        logger.info(&amp;quot;Received message: $msg&amp;quot;)
+        logger.info(&amp;quot;Closing connection !!!&amp;quot;)
+        ctx.close().await()
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;details&gt;
+&lt;summary&gt;💡 WebClient와 Netty 로그 자세히보기&lt;/summary&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;&amp;lt;Spring WebClient 로그&amp;gt;
+
+[reactor-http-kqueue-4] DEBUG r.n.r.PooledConnectionProvider - [ace71497] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497] REGISTERED
+[reactor-http-kqueue-4] DEBUG i.n.r.dns.DnsNameResolverBuilder - resolveCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-4] DEBUG i.n.r.dns.DnsNameResolverBuilder - cnameCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-4] DEBUG i.n.r.dns.DnsNameResolverBuilder - authoritativeDnsServerCache and TTLs are mutually exclusive. TTLs are ignored.
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497] CONNECT: localhost/127.0.0.1:9090
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] Registering pool release on close event for channel
+[reactor-http-kqueue-4] DEBUG r.n.r.PooledConnectionProvider - [ace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] Channel connected, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] ACTIVE
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] onStateChange(PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090]}, [connected])
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=null, connection=PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090]}}, [configured])
+[reactor-http-kqueue-4] DEBUG r.n.http.client.HttpClientConnect - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] Handler is being applied: {uri=http://localhost:9090/any-path, method=POST}
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090]}}, [request_prepared])
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] WRITE: 123B POST /any-path HTTP/1.1
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] FLUSH
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] WRITE: 5B 0
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] FLUSH
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090]}}, [request_sent])
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 - R:localhost/127.0.0.1:9090] READ COMPLETE
+[reactor-http-kqueue-4] DEBUG r.n.r.PooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] Channel closed, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] INACTIVE
+[reactor-http-kqueue-4] DEBUG r.n.r.DefaultPooledConnectionProvider - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] onStateChange(POST{uri=/any-path, connection=PooledConnection{channel=[id: 0xace71497, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090]}}, [response_incomplete])
+[reactor-http-kqueue-4] WARN  r.n.http.client.HttpClientConnect - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] The connection observed an error
+reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
+[reactor-http-kqueue-4] INFO  my-webclient - [ace71497-1, L:/127.0.0.1:50390 ! R:localhost/127.0.0.1:9090] UNREGISTERED
+[http-nio-8080-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.reactive.function.client.WebClientRequestException: Connection prematurely closed BEFORE response] with root cause
+reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;&amp;lt;Netty 서버 로그&amp;gt;
+
+-- 리스너 포트 등록 및 활성화 완료
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c] REGISTERED
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c] BIND: 0.0.0.0/0.0.0.0:9090
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c, L:/[0:0:0:0:0:0:0:0]:9090] ACTIVE
+
+-- 요청 수신
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c, L:/[0:0:0:0:0:0:0:0]:9090] READ: [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390]
+[nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c, L:/[0:0:0:0:0:0:0:0]:9090] READ COMPLETE
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390] REGISTERED
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390] ACTIVE
+[nioEventLoopGroup-3-2] INFO  RudeServer - Client connected: /127.0.0.1:50390
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390] READ: 128B
+[nioEventLoopGroup-3-2] INFO  RudeServer - Received message: PooledUnsafeDirectByteBuf(ridx: 0, widx: 128, cap: 2048)
+[nioEventLoopGroup-3-2] INFO  RudeServer - Closing connection !!!
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 - R:/127.0.0.1:50390] CLOSE
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 ! R:/127.0.0.1:50390] READ COMPLETE
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 ! R:/127.0.0.1:50390] INACTIVE
+[nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 ! R:/127.0.0.1:50390] UNREGISTERED&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f548df5c4bf745e84c88fd244cdd323f/b297c/beforeResponse.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 32.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABn0lEQVR42iWR6Y7aQBCE/f5PkEirTUgWAsthsMEYbPAxNr4Bc0ssLEk2kXK8w5fB+VGqrqlqdbdG+dIboo4shhMHf5HT0Uy8IGUyC/DDrPKe2gMaXb1CUx1WeO4bNHo6Lcn1zoC27BtbHopmWUyFjxtHFNsNpueSb9aEeSZ1iRX4DGRGs220mY3hzZkIFyv0Gfv/a9N3cNOIVPYpmrFg7pUE0ZHd7ie2s2KzfSPLL+yldvyt3D7BmGaM7VxuXkgdV7VuxoymaaVn3hpX7FDGQuDlOVG55vh6ZR4nHK4Xiv2B4/WKXxQYvo8pAuZJLLMps2SBV2SSI5w0xopCYnnN6faKouoCU06fOSVp+oJhJiTxGSH2ZOml8lRNoI0W9PWgQrvnMhiGdFSXbt+reDItZP4FxcmWpPsT5fnKt99/iTZ7br/+cLx956vk7HDCyQrEsuSe9fIV3nIp3w+E8qqwLBGrJclux/ntB8pDrcVTU6XZ0RmN59TqXfSRLaeOK/1Zeu8/NHj89MzDxyb3/LvHOrVGV/60SUvm7mgPJngi5x9pP8eTAzpr6wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;beforeResponse&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f548df5c4bf745e84c88fd244cdd323f/1cfc2/beforeResponse.png&quot;
+        srcset=&quot;/static/f548df5c4bf745e84c88fd244cdd323f/3684f/beforeResponse.png 225w,
+/static/f548df5c4bf745e84c88fd244cdd323f/fc2a6/beforeResponse.png 450w,
+/static/f548df5c4bf745e84c88fd244cdd323f/1cfc2/beforeResponse.png 900w,
+/static/f548df5c4bf745e84c88fd244cdd323f/21482/beforeResponse.png 1350w,
+/static/f548df5c4bf745e84c88fd244cdd323f/d61c2/beforeResponse.png 1800w,
+/static/f548df5c4bf745e84c88fd244cdd323f/b297c/beforeResponse.png 2844w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;BEFORE response while sending request body&lt;/code&gt; 다른 점은 Netty 서버에서 USER_EVENT가 발생하지 않는 차이점이 있다.&lt;/p&gt;
 &lt;h2 id=&quot;3-during-response&quot; style=&quot;position:relative;&quot;&gt;3. DURING response&lt;a href=&quot;#3-during-response&quot; aria-label=&quot;3 during response permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;송신 서버가 수신 서버에게 헤더를 정상적으로 응답받고 바디를 대기하는 도중 커넥션이 송신 서버가 커넥션을 일방적으로 닫는 경우이다.&lt;br&gt;
-즉 송신 서버가 헤더를 정상적으로 받고 바디를 완전히 받기 위해 대기하는 중에 수신 서버가 일방적으로 커넥션을 종료하는 경우이다.&lt;/p&gt;
+즉, 송신 서버가 헤더를 정상적으로 받고 바디를 완전히 받기 위해 대기하는 중에 수신 서버가 일방적으로 커넥션을 종료하는 경우이다.&lt;br&gt;
+&lt;strong&gt;테스트 시나리오&lt;/strong&gt;: 응답 헤더와 일부 바디를 전송한 후 연결 종료&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;@GetMapping(&amp;quot;/abort-connection&amp;quot;)
+          &lt;code slot=&quot;code&quot;&gt;// 송신 서버의 API
+@GetMapping(&amp;quot;/abort-connection&amp;quot;)
 fun abortConnection(response: HttpServletResponse) {
     logger.info(&amp;quot;Starting abort connection...&amp;quot;)
     
@@ -455,8 +661,10 @@ but response failed with cause: reactor.netty.http.client.PrematureCloseExceptio
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이 세 가지 다른 예외 메시지는 복잡한 네트워크 통신에서 발생하는 예외를 더 자세하게 표현하기 위해 나뉘어진 것을 확인할 수 있다.&lt;/p&gt;
 &lt;h1 id=&quot;커널-tcp-소켓-상태에-따른-처리&quot; style=&quot;position:relative;&quot;&gt;커널 TCP 소켓 상태에 따른 처리&lt;a href=&quot;#%EC%BB%A4%EB%84%90-tcp-%EC%86%8C%EC%BC%93-%EC%83%81%ED%83%9C%EC%97%90-%EB%94%B0%EB%A5%B8-%EC%B2%98%EB%A6%AC&quot; aria-label=&quot;커널 tcp 소켓 상태에 따른 처리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;이때까지 정상적인 종료인 FIN 패킷만 보았는데, 4-way handshake 중에 해당 커넥션으로 데이터를 재전송하게 되면 RST 패킷을 전송하게 되는 경우도 있다.&lt;/p&gt;
+&lt;p&gt;4-way handshake 단계를 진행 중인 커넥션을 사용하여 요청을 보내면 어떻게 되는지 확인해보자.&lt;br&gt;
+실제로는 굉장히 짧은 시간에 이루어지기 때문에 재현하기 힘들어 TCP 커널 코드를 확인해보면서 유추해보자.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
@@ -489,21 +697,20 @@ but response failed with cause: reactor.netty.http.client.PrematureCloseExceptio
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Active Closer의 정상적인 상태 진행&lt;/strong&gt; ESTABLISHED → FIN_WAIT1 → FIN_WAIT2 → TIME_WAIT → CLOSE&lt;/p&gt;
+&lt;h2 id=&quot;커널-레벨-처리-로직&quot; style=&quot;position:relative;&quot;&gt;커널 레벨 처리 로직&lt;a href=&quot;#%EC%BB%A4%EB%84%90-%EB%A0%88%EB%B2%A8-%EC%B2%98%EB%A6%AC-%EB%A1%9C%EC%A7%81&quot; aria-label=&quot;커널 레벨 처리 로직 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_ipv4.c#L1905&quot;&gt;tcp_ipv4.c &lt;code class=&quot;language-text&quot;&gt;tcp_v4_do_rcv(...)&lt;/code&gt;&lt;/a&gt; 함수를 보면 소켓 상태에 따른 처리 방식을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;주요 TCP 상태 설명&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;FIN-WAIT-1&lt;/code&gt;: 원격 TCP 피어의 연결 종료 요청을 기다리거나, 자신이 보낸 종료 요청에 대한 승인을 기다리는 상태&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;CLOSE-WAIT&lt;/code&gt;: 응용프로그램이 더 이상 데이터 송수신이 필요 없다고 close() 또는 연결 종료(종료 관련 API 호출 등)를 실행할 때까지 기다리는 상태를 의미 (연결 종료 요청을 기다리는 상태)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;FIN-WAIT-2&lt;/code&gt;: 원격 TCP 피어의 연결 종료 요청을 기다리는 상태&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;LAST-ACK&lt;/code&gt;: 원격 TCP 피어에게 보낸 종료 요청에 대한 승인을 기다리는 상태&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;TIME-WAIT&lt;/code&gt;: 상대방이 종료 요청에 대한 승인을 수신했음을 확실히 하고, &lt;strong&gt;이전 연결에서 지연된 세그먼트가 새 연결에 영향을 주지 않도록 일정 시간 대기하는 상태&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;CLOSED&lt;/code&gt;: 연결이 완전히 없는 상태&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FIN-WAIT-1&lt;/strong&gt;: 자신이 보낸 종료 요청(FIN)에 대한 ACK을 기다리거나, 상대방의 FIN을 기다리는 상태&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CLOSE-WAIT&lt;/strong&gt;: 상대방으로부터 FIN을 받고 ACK를 보낸 후, 애플리케이션이 close()를 호출할 때까지 기다리는 상태&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FIN-WAIT-2&lt;/strong&gt;: 상대방의 FIN을 기다리는 상태 (자신의 FIN에 대한 ACK는 이미 받음)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LAST-ACK&lt;/strong&gt;: 자신이 보낸 FIN에 대한 ACK를 기다리는 상태&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TIME-WAIT&lt;/strong&gt;: 상대방이 마지막 ACK를 확실히 받았음을 보장하고, 이전 연결의 지연된 패킷이 새 연결에 영향을 주지 않도록 일정 시간 대기하는 상태 (보통 2*MSL)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CLOSED&lt;/strong&gt;: 연결이 완전히 종료된 상태&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_ipv4.c#L1905&quot;&gt;tcp_ipv4.c &lt;code class=&quot;language-text&quot;&gt;tcp_v4_do_rcv(...)&lt;/code&gt;&lt;/a&gt;함수를 보면 소켓이 &lt;code class=&quot;language-text&quot;&gt;TCP_ESTABLISHED&lt;/code&gt; 상태가 아닌 경우 &lt;code class=&quot;language-text&quot;&gt;tcp_rcv_state_process(...)&lt;/code&gt;를 통해 처리한다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;c&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;int tcp_v4_do_rcv(struct sock *sk, struct sk_buff *skb)
 {
-    enum skb_drop_reason reason;
-    struct sock *rsk;
-
     // 1. 수신된 데이터를 사용자 영역에 전달할 수 있는 상태인 경우
     if (sk-&amp;gt;sk_state == TCP_ESTABLISHED) { /* Fast path */
         // ...
@@ -578,14 +785,18 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
 }&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;ol&gt;
-&lt;li&gt;TCP_FIN_WAIT1, TCP_FIN_WAIT2 상태 : 데이터가 포함되어 있다면 즉시 RST 패킷 전송&lt;/li&gt;
-&lt;li&gt;TCP_TIME_WAIT 상태 : RST 패킷 전송 &lt;a href=&quot;https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_minisocks.c#L99&quot;&gt;tcp_minisocks.c#L99&lt;/a&gt;
+&lt;li&gt;&lt;strong&gt;TCP_FIN_WAIT1, TCP_FIN_WAIT2 상태&lt;/strong&gt; : 데이터가 포함되어 있다면 즉시 RST 패킷 전송&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TCP_TIME_WAIT 상태&lt;/strong&gt; : RST 패킷 전송 &lt;a href=&quot;https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_minisocks.c#L99&quot;&gt;tcp_minisocks.c#L99&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;TIME_WAIT은 마지막 ACK가 유실될 경우를 대비하여 상대방이 FIN을 재전송하는 경우 대응하기 위한 상태이다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&quot;원인&quot; style=&quot;position:relative;&quot;&gt;원인&lt;a href=&quot;#%EC%9B%90%EC%9D%B8&quot; aria-label=&quot;원인 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;이는 종료 절차가 진행 중인 연결에 새로운 데이터가 오는 것을 비정상적인 상황으로 간주하여 강제로 연결을 리셋하기 때문이다.&lt;/p&gt;
+&lt;h1 id=&quot;원인-분석&quot; style=&quot;position:relative;&quot;&gt;원인 분석&lt;a href=&quot;#%EC%9B%90%EC%9D%B8-%EB%B6%84%EC%84%9D&quot; aria-label=&quot;원인 분석 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;로드밸런서와-서버간-timeout이-다른-경우&quot; style=&quot;position:relative;&quot;&gt;로드밸런서와 서버간 timeout이 다른 경우&lt;a href=&quot;#%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%84%9C%EC%99%80-%EC%84%9C%EB%B2%84%EA%B0%84-timeout%EC%9D%B4-%EB%8B%A4%EB%A5%B8-%EA%B2%BD%EC%9A%B0&quot; aria-label=&quot;로드밸런서와 서버간 timeout이 다른 경우 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;retry-로직-추가&quot; style=&quot;position:relative;&quot;&gt;retry 로직 추가&lt;a href=&quot;#retry-%EB%A1%9C%EC%A7%81-%EC%B6%94%EA%B0%80&quot; aria-label=&quot;retry 로직 추가 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;webclient-maxidletime-설정-부재&quot; style=&quot;position:relative;&quot;&gt;WebClient maxIdleTime 설정 부재&lt;a href=&quot;#webclient-maxidletime-%EC%84%A4%EC%A0%95-%EB%B6%80%EC%9E%AC&quot; aria-label=&quot;webclient maxidletime 설정 부재 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 582px; &quot;
@@ -616,36 +827,24 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;WebClient를 생성할 때 maxIdleTime을 지정해주지 않아 무제한으로 설정되어, B서버의 keep-alive timeout이 초과한 경우 클라이언트가 stale connection을 사용할 경우가 생기기 때문이다.&lt;/p&gt;
+&lt;p&gt;WebClient를 생성할 때 maxIdleTime을 지정해주지 않아 무제한으로 설정되어, 클라이언트가 연결을 재사용하려고 할 때 서버가 이미 타임아웃으로 연결을 끊어버리면서 발생하며, 해결을 위해서는 서버의 타임아웃 값을 조정하거나, 클라이언트의 maxIdleTime을 서버의 타임아웃보다 짧게 설정해야 한다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;클라이언트가 요청 완료 후 커넥션을 풀에 반환 (시각 &lt;code class=&quot;language-text&quot;&gt;T0&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;서버의 keep-alive timeout은 &lt;code class=&quot;language-text&quot;&gt;20&lt;/code&gt;초로 설정됨&lt;/li&gt;
+&lt;li&gt;서버의 keep-alive timeout은 &lt;code class=&quot;language-text&quot;&gt;60초&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;클라이언트 maxIdleTime은 무제한&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;T0 + 20&lt;/code&gt;초에 클라이언트가 해당 커넥션을 다시 사용하려고 시도&lt;/li&gt;
-&lt;li&gt;서버는 이미 커넥션을 닫았거나 닫는 과정에 있거나 클라이언트가 응답을 완전하게 받지 못한 경우&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;T0 + 60초 이상&lt;/code&gt;에 클라이언트가 해당 커넥션을 다시 사용하려고 시도&lt;/li&gt;
+&lt;li&gt;서버는 이미 커넥션을 닫았거나 닫는 과정에 있음&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Race Condition 발생&lt;/strong&gt;: 클라이언트가 요청을 보내는 시점과 서버의 연결 종료 시점이 겹침&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PrematureCloseException 발생&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;서버가 커넥션을 닫기 전에 클라이언트가 proactive하게 커넥션을 정리해서 race condition을 방지할 수 있기에 maxIdleTime을 서버의 keep-alive timeout보다 작게 지정해주는 것이 좋다.&lt;/p&gt;
-&lt;h1 id=&quot;정리-필요&quot; style=&quot;position:relative;&quot;&gt;정리 필요&lt;a href=&quot;#%EC%A0%95%EB%A6%AC-%ED%95%84%EC%9A%94&quot; aria-label=&quot;정리 필요 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;maxIdleTime을 지정해줘서 해결될 거라고 판단&lt;/li&gt;
-&lt;li&gt;하지만 커넥션 풀 고갈 문제 발생 (커넥션을 할당받기 위해 대기하다가 예외 발생. 이 예외로 인해 일반 Job 코루틴 스코프가 멈춤)&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&quot;maxidletiem-설정-이후-커넥션-풀-고갈-문제-발생&quot; style=&quot;position:relative;&quot;&gt;maxIdleTiem 설정 이후 커넥션 풀 고갈 문제 발생&lt;a href=&quot;#maxidletiem-%EC%84%A4%EC%A0%95-%EC%9D%B4%ED%9B%84-%EC%BB%A4%EB%84%A5%EC%85%98-%ED%92%80-%EA%B3%A0%EA%B0%88-%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EC%83%9D&quot; aria-label=&quot;maxidletiem 설정 이후 커넥션 풀 고갈 문제 발생 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;넥션을 할당받기 위해 대기하다가 예외 발생&lt;/p&gt;
 &lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;Exception in thread &amp;quot;DefaultDispatcher-worker-5&amp;quot; Exception in thread &amp;quot;DefaultDispatcher-worker-1&amp;quot; Exception in thread &amp;quot;DefaultDispatcher-worker-7&amp;quot; Exception in thread &amp;quot;DefaultDispatcher-worker-10&amp;quot; Exception in thread &amp;quot;DefaultDispatcher-worker-3&amp;quot; org.springframework.web.reactive.function.client.WebClientRequestException: Pending acquire queue has reached its maximum size of 32&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;// 기본값
-ConnectionProvider.create()  // 기본 설정 사용 시
-    .maxIdleTime(-1)         // 무제한 ⚠️
-    .maxLifeTime(-1)         // 무제한 ⚠️  
-    .evictInBackground(0)    // 비활성 ⚠️
-    .maxConnections(500)     // 제한 있음
-    .pendingAcquireMaxCount(32)  // 제한 있음&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
 &lt;ul&gt;
-&lt;li&gt;커넥션 풀의 맥스 커넥션 수만큼 Flow로 배압조절한다면 커넥션 고갈 문제는 없지 않을까? 근데 버퍼가 어느정도 감당가능한지?&lt;/li&gt;
-&lt;li&gt;커넥션을 먼저 끊는 Active Closer는 TIME_WAIT 소켓을 보유하게 되는 것을 이해했다&lt;/li&gt;
+&lt;li&gt;커넥션 풀의 최대 개수만큼 배압 조절&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;참고&lt;/p&gt;
@@ -664,10 +863,9 @@ ConnectionProvider.create()  // 기본 설정 사용 시
 &lt;li&gt;DB에 부하가 발생해서 지연되는 쿼리가 있나?&lt;/li&gt;
 &lt;li&gt;가용할 수 있는 스레드가 없나?&lt;/li&gt;
 &lt;li&gt;메모리 또는 CPU로 인해 서버가 다운되었나?&lt;/li&gt;
-&lt;li&gt;ECS 태스크가 증설중인가?&lt;/li&gt;
+&lt;li&gt;부하로 인해 ECS 태스크가 스케일링 중인가?&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;특이사항은 발견하지 못했지만 해당 API의 기능은 계속 먹통이였다.&lt;br&gt;
-애플리케이션 로그를 통해 배포가 완료된 뒤에 정상적으로 호출되다가 런타임 예외가 발생한 시점부터 해당 API가 반응이 없었다.&lt;/p&gt;
+&lt;p&gt;위에 해당하는 특이사항은 발견하지 못했지만 데이터독 애플리케이션 로그를 통해 배포가 완료된 뒤에 정상적으로 호출되다가 런타임 예외가 발생한 시점부터 해당 API가 정상 작동하지 않는다는 것을 알아챌 수 있었다.&lt;/p&gt;
 &lt;h1 id=&quot;문제-지점&quot; style=&quot;position:relative;&quot;&gt;문제 지점&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EC%A7%80%EC%A0%90&quot; aria-label=&quot;문제 지점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;@RestController

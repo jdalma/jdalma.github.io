@@ -75,10 +75,9 @@
 <li>DB에 부하가 발생해서 지연되는 쿼리가 있나?</li>
 <li>가용할 수 있는 스레드가 없나?</li>
 <li>메모리 또는 CPU로 인해 서버가 다운되었나?</li>
-<li>ECS 태스크가 증설중인가?</li>
+<li>부하로 인해 ECS 태스크가 스케일링 중인가?</li>
 </ol>
-<p>특이사항은 발견하지 못했지만 해당 API의 기능은 계속 먹통이였다.<br>
-애플리케이션 로그를 통해 배포가 완료된 뒤에 정상적으로 호출되다가 런타임 예외가 발생한 시점부터 해당 API가 반응이 없었다.</p>
+<p>위에 해당하는 특이사항은 발견하지 못했지만 데이터독 애플리케이션 로그를 통해 배포가 완료된 뒤에 정상적으로 호출되다가 런타임 예외가 발생한 시점부터 해당 API가 정상 작동하지 않는다는 것을 알아챌 수 있었다.</p>
 <h1 id="문제-지점" style="position:relative;">문제 지점<a href="#%EB%AC%B8%EC%A0%9C-%EC%A7%80%EC%A0%90" aria-label="문제 지점 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-light" line-numbers="true"  >
           <code slot="code">@RestController
