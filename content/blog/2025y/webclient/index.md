@@ -11,13 +11,12 @@ tags:
 
 # 문제 발견
 
-모니터링을 통해 1~2주 간격으로 한 번씩 `PrematureCloseException` 예외가 발생하는 것을 확인했다. 외부 서비스로 초당 300~400회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.
-  
-예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.
+모니터링을 통해 보름 간격으로 한 번씩 `PrematureCloseException` 예외가 발생하는 것을 확인했다.  
+외부 서비스로 초당 300~400회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.  
+    
+예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.  
 
 # WebClient Connection 상태 변화
-
-![](./network-sequence.png)
 
 > 8080포트의 서버에서 9090포트의 서버로 요청을 보내고 1초 후에 응답하는 API를 테스트해보았다.  
 > (keep-alive timeout = 3000ms)
@@ -26,92 +25,102 @@ tags:
 
 WebClient를 생성할 때 metrics를 활성화하여 로그를 확인해볼 수 있다.  
 
-<details>
-<summary>💡 WebClient Connection Pool 로그 자세히보기</summary>
-
 ```kotlin
 val httpClient = HttpClient.create(connectionProvider)
     .metrics(true) { uriTagValue -> uriTagValue }
-    .doOnConnected { conn ->
-        conn.channel().closeFuture().addListener {
-            logger.info("[Connection Closed] : $conn")
-        }
-        logger.info("[New Connection] : $conn")
-    }
-    .doOnConnect { config ->
-        logger.info("[Connection Attempt] Attempting to connect...")
-    }
-
-return WebClient.builder()
-    .baseUrl("http://localhost:9090")
-    .clientConnector(ReactorClientHttpConnector(httpClient))
-    .build()
 ```
 
-```
+```diff
++ 1. 커넥션 풀 생성
 Creating a new [my-provider] client pool [PoolFactory{evictionInterval=PT0S, leasingStrategy=fifo, maxConnections=1, maxIdleTime=-1, maxLifeTime=-1, metricsEnabled=false, pendingAcquireMaxCount=2, pendingAcquireTimeout=45000}] for [localhost/<unresolved>:9090]
 [1965a96f] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+
++ 2. TCP 연결을 완료하고 커넥션 풀에 등록
 [1965a96f] REGISTERED
 [1965a96f] CONNECT: localhost/127.0.0.1:9090
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] Registering pool release on close event for channel
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] Channel connected, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] ACTIVE
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] onStateChange(PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}, [connected])
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=null, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [configured])
-[New Connection] : GET{uri=null, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] Handler is being applied: {uri=http://localhost:9090/internal/delay/1, method=GET}
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [request_prepared])
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] WRITE: 102B GET /internal/delay/1 HTTP/1.1
+[1965a96f] Registering pool release on close event for channel
+[1965a96f] Channel connected, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+[1965a96f] ACTIVE
+[1965a96f] onStateChange(PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}, [connected])
+
++ 3. 요청 준비
+[1965a96f-1] onStateChange(GET{uri=null, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [configured])
+[1965a96f-1] Handler is being applied: {uri=http://localhost:9090/internal/delay/1, method=GET}
+[1965a96f-1] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [request_prepared])
+
++ 4. 요청 전송
+[1965a96f-1] WRITE: 102B GET /internal/delay/1 HTTP/1.1
 user-agent: ReactorNetty/1.1.22
 host: localhost:9090
 accept: */*
+[1965a96f-1] FLUSH
+[1965a96f-1] WRITE: 0B
+[1965a96f-1] FLUSH
+[1965a96f-1] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [request_sent])
 
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] FLUSH
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] WRITE: 0B
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] FLUSH
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [request_sent])
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] READ: 142B HTTP/1.1 200 
++ 5. 응답 헤더 수신
+[1965a96f-1] READ: 142B HTTP/1.1 200 
 Content-Type: text/plain;charset=UTF-8
 Content-Length: 28
 Date: Tue, 23 Sep 2025 06:09:17 GMT
 
-
++ 6. 응답 바디 수신
 delay api success. seconds=1
-15:09:17.136+09:00 --- [r-http-kqueue-2] r.n.http.client.HttpClientOperations     : [1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
+[1965a96f-1] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
 HTTP/1.1 200 
 Content-Type: <filtered>
 Content-Length: <filtered>
 Date: <filtered>
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [response_received])
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
-[1965a96f-1, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] Received last HTTP packet
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [response_completed])
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [disconnecting])
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] Releasing channel
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] READ COMPLETE
+[1965a96f-1] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [response_received])
+[1965a96f-1] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+
++ 6-1. 응답 바디 수신 완료
+[1965a96f-1] Received last HTTP packet
+[1965a96f] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [response_completed])
+
++ 7. 연결 해제 및 커넥션을 풀에 반환하여 idle 상태로 전환
+[1965a96f] onStateChange(GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090]}}, [disconnecting])
+[1965a96f] Releasing channel
+[1965a96f] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
+[1965a96f] READ COMPLETE
 
 -- 3초 이후 --
 
-[1965a96f, L:/127.0.0.1:59768 - R:localhost/127.0.0.1:9090] READ COMPLETE
++ 8. 커넥션 최종 연결 종료
+[1965a96f] READ COMPLETE
 [Connection Closed] : GET{uri=/internal/delay/1, connection=PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 ! R:localhost/127.0.0.1:9090]}}
-[1965a96f, L:/127.0.0.1:59768 ! R:localhost/127.0.0.1:9090] INACTIVE
-[1965a96f, L:/127.0.0.1:59768 ! R:localhost/127.0.0.1:9090] onStateChange(PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 ! R:localhost/127.0.0.1:9090]}, [disconnecting])
-[1965a96f, L:/127.0.0.1:59768 ! R:localhost/127.0.0.1:9090] UNREGISTERED
+[1965a96f] INACTIVE
+[1965a96f] onStateChange(PooledConnection{channel=[id: 0x1965a96f, L:/127.0.0.1:59768 ! R:localhost/127.0.0.1:9090]}, [disconnecting])
+[1965a96f] UNREGISTERED
 ```
-</details>
 
-![](./connection-statediagram.png)
+
+```diff
+┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐
+│ 1. 풀 생성    │ →  │ 2. TCP 연결   │ →  │ 3. HTTP 요청 │ →  │ 4. HTTP 응답  │ →
+└─────────────┘    └──────────────┘    └─────────────┘    └──────────────┘
+  Pool Init         REGISTERED            configured          response
+                    CONNECT               request_prepared    received
+                    ACTIVE                request_sent        completed
+                    (1 active)            (WRITE/FLUSH)       (200 OK)
+
+┌──────────────┐    ┌─────────────┐    ┌──────────────┐
+│ 5. 연결 해제   │ →  │ 6. 유휴 대기   │ →  │ 7. 최종 종료   │
+└──────────────┘    └─────────────┘    └──────────────┘
+  disconnecting     Keep-Alive          INACTIVE
+  Release           (재사용 대기)        UNREGISTERED
+  (0 active,        (~3초)              (Pool에서 제거)
+   1 inactive)
+```
+
 
 로그와 다이어그램을 통해 Connection의 상태가 변화되는 주요 단계를 확인할 수 있다.  
 이제 PrematureCloseException이 발생하는 원인에 대해 더 자세하게 확인해보자.
 
 # PrematureCloseException이 발생하는 케이스
 
-`PrematureCloseException`은 HTTP 통신 중 예상하지 못한 시점에 연결이 종료될 때 발생하는 예외다.  
-이 예외는 복잡한 네트워크 통신에서 발생하는 다양한 시나리오를 구분하여 더 구체적인 디버깅 정보를 제공한다.
-  
-`HttpClientOperations.onInboundClose()`는 원격 서버에서 FIN 패킷을 보내면 수신 서버가 EOF 이벤트를 감지하고 정상적으로 연결을 닫는 경우 호출된다.  
+즉, `PrematureCloseException`은 HTTP 통신 중 예상하지 못한 시점에 연결이 종료될 때 발생하는 예외다.  
+자세히는 네트워크의 입출력과 생명주기, 이벤트, 상태 관리 등을 관리하는 ChannelOperations를 상속한 `HttpClientOperations`에서 채널을 정리할 때 실행되는 `onInboundClose()`함수에서 EOF 이벤트를 감지하고 현재의 상태를 확인하여 예외를 생성한다.  
   
 **연결 종료 감지 과정**  
 1. (테스트 환경이 mac이라서) KQueueEventLoop에서 FIN 패킷을 EV_EOF 이벤트로 감지
@@ -122,7 +131,6 @@ Date: <filtered>
 6. **ChannelHandler.channelInactive() 프로토콜별 정리 작업에서 onInboundClose() 호출** → HTTP 프로토콜 레벨에서 어떤 단계에서 문제가 발생했는지 구분해서 적절한 예외를 발생시킨다.
 
 ![](./onInboundClose.png)
-
 
 > 1. 요청 헤더 전송
 > 2. 요청 바디 전송   ← 여기서 닫히면 `"while sending request body"` **아직 요청도 완전히 못 보낸 상태**
@@ -295,7 +303,7 @@ Transmission Control Protocol, Src Port: 9090, Dst Port: 52226, Seq: 2, Ack: 426
 Flags: 0x014 (RST, ACK)
 ```
 
-RST 플래그가 전송된 시점이 해당 USER_EVENT가 전송된 이후에 전송된 것을 확인할 수 있다.
+RST 패킷이 전송된 시점이 해당 USER_EVENT가 전송된 이후에 전송된 것을 확인할 수 있다.
 
 
 ## 2. BEFORE response
@@ -595,11 +603,22 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
   
 이는 종료 절차가 진행 중인 연결에 새로운 데이터가 오는 것을 비정상적인 상황으로 간주하여 강제로 연결을 리셋하기 때문이다.
 
-# 원인 분석
+# 원인과 예방 방법
+
+`PrematureCloseException`예외가 무엇인지, 예외의 메세지가 왜 서로 다른지 알아보았다.  
+이 예외의 원인인 서버가 갑자기 연결을 끊는 경우는 어떤 경우가 있는지, 해결 방법은 무엇인지 알아보자.
 
 ## 로드밸런서와 서버간 timeout이 다른 경우
 
-## retry 로직 추가
+![](./diff-timeout.png)
+
+![](./lb-timeout.png)
+
+LB와 서버의 timeout 값이 서로 다를 때 RST 패킷으로 인해 PrematureCloseException 예외가 발생할 수 있다.  
+[`AWS` Introducing configurable Idle timeout for Connection tracking](https://aws.amazon.com/ko/blogs/networking-and-content-delivery/introducing-configurable-idle-timeout-for-connection-tracking/) 글을 보면 세션 테이블이 갱신되는 경우 직접적으로 FIN 이나 RST를 보내지 않고 조용히 세션 테이블을 갱신한다.  
+
+>  It’s also important to note that almost all firewalls will silently remove idle connections from their state and will not initiate a close (send a TCP FIN or RST) to the client or server.  
+> The NLB has a fixed idle timeout of 350 seconds for TCP flows. Once the idle timeout is reached or a TCP connection is closed, it is removed from NLB’s connection state table.
 
 ## WebClient maxIdleTime 설정 부재
 
@@ -628,6 +647,9 @@ Exception in thread "DefaultDispatcher-worker-5" Exception in thread "DefaultDis
 
 - 커넥션 풀의 최대 개수만큼 배압 조절
 
+![](./network-sequence.png)
+
+## retry 로직 추가
 
 > 참고  
 > 1. [[Kernel] 커널과 함께 알아보는 소켓과 TCP Deep Dive](https://brewagebear.github.io/linux-kernel-internal-3/)
