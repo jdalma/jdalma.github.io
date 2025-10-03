@@ -12,7 +12,7 @@ tags:
 # 문제 발견
 
 모니터링을 통해 보름 간격으로 한 번씩 `PrematureCloseException` 예외가 발생하는 것을 확인했다.  
-외부 서비스로 초당 300~400회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.  
+외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.  
     
 예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.  
 
@@ -122,7 +122,8 @@ Date: <filtered>
 즉, `PrematureCloseException`은 HTTP 통신 중 예상하지 못한 시점에 연결이 종료될 때 발생하는 예외다.  
 자세히는 네트워크의 입출력과 생명주기, 이벤트, 상태 관리 등을 관리하는 ChannelOperations를 상속한 `HttpClientOperations`에서 채널을 정리할 때 실행되는 `onInboundClose()`함수에서 EOF 이벤트를 감지하고 현재의 상태를 확인하여 예외를 생성한다.  
   
-**연결 종료 감지 과정**  
+<h4>연결 종료 감지 과정</h4>
+
 1. (테스트 환경이 mac이라서) KQueueEventLoop에서 FIN 패킷을 EV_EOF 이벤트로 감지
 2. EV_EOF 이벤트로 인해 EOF 처리, Half-closure 설정에 따라 입력만 종료 또는 전체 종료 결정
 3. Channel inputShutdown 플래그 설정 + 시스템 레벨 소켓 수신 부분 종료
@@ -218,11 +219,12 @@ private class RudeServerHandler : ChannelInboundHandlerAdapter() {
     }
 }
 ```
+<br/>  
 <details>
-<summary>💡 WebClient와 Netty 로그 자세히보기</summary>
+<summary>📋 WebClient와 Netty 로그 자세히보기 (클릭하여 펼치기)</summary>
 
-```
-<Spring WebClient 로그>
+```diff
++ <Spring WebClient 로그>
 
 [reactor-http-kqueue-7] DEBUG r.n.r.PooledConnectionProvider - [c437bfe8] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
 [reactor-http-kqueue-7] INFO  my-webclient - [c437bfe8] REGISTERED
@@ -256,8 +258,8 @@ reactor.netty.http.client.PrematureCloseException: Connection has been closed BE
 reactor.netty.http.client.PrematureCloseException: Connection has been closed BEFORE response, while sending request body
 ```
 
-```
-<Netty 서버 로그>
+```diff
++ <Netty 서버 로그>
 
 -- 리스너 포트 등록 및 활성화 완료
 [nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xc281fdae] REGISTERED
@@ -283,8 +285,9 @@ reactor.netty.http.client.PrematureCloseException: Connection has been closed BE
 [nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] INACTIVE
 [nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] UNREGISTERED
 ```
-
+  
 </details>
+<br/>
 
 1. `ChannelRegistered` : Channel 이 Event Loop에 등록됨
 2. `ChannelActive` : Channel이 활성화됨, 이제 데이터를 주고받을 수 있음
@@ -293,11 +296,11 @@ reactor.netty.http.client.PrematureCloseException: Connection has been closed BE
 
 ![](./whileSending.png)
 
-```
--- Netty 서버 로그
+```diff
++ Netty 서버 로그
 18:09:15.348 [nioEventLoopGroup-3-3] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x57861e0a, L:/127.0.0.1:9090 ! R:/127.0.0.1:52226] USER_EVENT: io.netty.channel.socket.ChannelInputShutdownReadComplete@6a0d7782
 
--- RST 패킷
++ RST 패킷
 UTC Arrival Time: Oct  1, 2025 09:09:15.348334000 UTC
 Transmission Control Protocol, Src Port: 9090, Dst Port: 52226, Seq: 2, Ack: 4260, Len: 0
 Flags: 0x014 (RST, ACK)
@@ -352,11 +355,12 @@ private class RudeServerHandler : ChannelInboundHandlerAdapter() {
 }
 ```
 
+<br/>
 <details>
-<summary>💡 WebClient와 Netty 로그 자세히보기</summary>
+<summary>📋 WebClient와 Netty 로그 자세히보기 (클릭하여 펼치기)</summary>
 
-```
-<Spring WebClient 로그>
+```diff
++ <Spring WebClient 로그>
 
 [reactor-http-kqueue-4] DEBUG r.n.r.PooledConnectionProvider - [ace71497] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
 [reactor-http-kqueue-4] INFO  my-webclient - [ace71497] REGISTERED
@@ -387,8 +391,8 @@ reactor.netty.http.client.PrematureCloseException: Connection prematurely closed
 reactor.netty.http.client.PrematureCloseException: Connection prematurely closed BEFORE response
 ```
 
-```
-<Netty 서버 로그>
+```diff
++ <Netty 서버 로그>
 
 -- 리스너 포트 등록 및 활성화 완료
 [nioEventLoopGroup-2-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0x1828781c] REGISTERED
@@ -409,8 +413,8 @@ reactor.netty.http.client.PrematureCloseException: Connection prematurely closed
 [nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 ! R:/127.0.0.1:50390] INACTIVE
 [nioEventLoopGroup-3-2] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xb065a578, L:/127.0.0.1:9090 ! R:/127.0.0.1:50390] UNREGISTERED
 ```
-
 </details>
+<br/>
 
 ![](./beforeResponse.png)
 
@@ -448,10 +452,11 @@ fun abortConnection(response: HttpServletResponse) {
 }
 ```
 
+<br/>
 <details>
 <summary>💡 WebClient Connection Pool 로그 자세히보기</summary>
 
-```
+```diff
 Creating a new [my-provider] client pool [PoolFactory{evictionInterval=PT0S, leasingStrategy=fifo, maxConnections=1, maxIdleTime=-1, maxLifeTime=-1, metricsEnabled=false, pendingAcquireMaxCount=2, pendingAcquireTimeout=45000}] for [localhost/<unresolved>:9090]
 [551113d8] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
 [551113d8] REGISTERED
@@ -494,6 +499,7 @@ but response failed with cause: reactor.netty.http.client.PrematureCloseExceptio
 ```
 
 </details>
+<br/>
 
 ![](./duringResponse.png)
 
@@ -512,7 +518,8 @@ but response failed with cause: reactor.netty.http.client.PrematureCloseExceptio
    
 [tcp_ipv4.c `tcp_v4_do_rcv(...)`](https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_ipv4.c#L1905) 함수를 보면 소켓 상태에 따른 처리 방식을 확인할 수 있다.
   
-**주요 TCP 상태 설명**  
+<h4>주요 TCP 상태 설명</h4>
+
 1. **FIN-WAIT-1**: 자신이 보낸 종료 요청(FIN)에 대한 ACK을 기다리거나, 상대방의 FIN을 기다리는 상태
 2. **CLOSE-WAIT**: 상대방으로부터 FIN을 받고 ACK를 보낸 후, 애플리케이션이 close()를 호출할 때까지 기다리는 상태
 3. **FIN-WAIT-2**: 상대방의 FIN을 기다리는 상태 (자신의 FIN에 대한 ACK는 이미 받음)
@@ -606,26 +613,33 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
 # 원인과 예방 방법
 
 `PrematureCloseException`예외가 무엇인지, 예외의 메세지가 왜 서로 다른지 알아보았다.  
-이 예외의 원인인 서버가 갑자기 연결을 끊는 경우는 어떤 경우가 있는지, 해결 방법은 무엇인지 알아보자.
+이 예외의 원인인 서버가 갑자기 연결을 끊는 경우는 어떤 경우가 있는지, 예방 방법은 무엇인지 알아보자.
 
 ## 로드밸런서와 서버간 timeout이 다른 경우
 
 ![](./diff-timeout.png)
 
+이 이미지와 같이 LB와 서버의 timeout 값이 서로 다를 때 RST 패킷으로 인해 PrematureCloseException 예외가 발생할 수 있다.  
+
 ![](./lb-timeout.png)
 
-LB와 서버의 timeout 값이 서로 다를 때 RST 패킷으로 인해 PrematureCloseException 예외가 발생할 수 있다.  
-[`AWS` Introducing configurable Idle timeout for Connection tracking](https://aws.amazon.com/ko/blogs/networking-and-content-delivery/introducing-configurable-idle-timeout-for-connection-tracking/) 글을 보면 세션 테이블이 갱신되는 경우 직접적으로 FIN 이나 RST를 보내지 않고 조용히 세션 테이블을 갱신한다.  
+로드밸런서의 세션 테이블이 갱신되는 경우 직접적으로 FIN 이나 RST를 보내지 않고 조용히 세션 테이블을 갱신하기 때문이다.  
+송신 서버는 이미 3-way handshake가 끝났다고 기억하고 있기 때문에 바로 바디를 전송하는 경우 로드밸런서는 RST 플래그를 반환하는 케이스가 발생할 수 있다.  
+ 
 
 >  It’s also important to note that almost all firewalls will silently remove idle connections from their state and will not initiate a close (send a TCP FIN or RST) to the client or server.  
-> The NLB has a fixed idle timeout of 350 seconds for TCP flows. Once the idle timeout is reached or a TCP connection is closed, it is removed from NLB’s connection state table.
+> The NLB has a fixed idle timeout of 350 seconds for TCP flows. Once the idle timeout is reached or a TCP connection is closed, it is removed from NLB’s connection state table.  
+> [`AWS` Introducing configurable Idle timeout for Connection tracking](https://aws.amazon.com/ko/blogs/networking-and-content-delivery/introducing-configurable-idle-timeout-for-connection-tracking/)
 
 ## WebClient maxIdleTime 설정 부재
 
 ![](./timeout.png)
 
-WebClient를 생성할 때 maxIdleTime을 지정해주지 않아 무제한으로 설정되어, 클라이언트가 연결을 재사용하려고 할 때 서버가 이미 타임아웃으로 연결을 끊어버리면서 발생하며, 해결을 위해서는 서버의 타임아웃 값을 조정하거나, 클라이언트의 maxIdleTime을 서버의 타임아웃보다 짧게 설정해야 한다.  
-  
+실무의 운영환경은 위와 같이 로드밸러서와 수신 서버의 timeout 설정이 동일했기 때문에 이전에 말한 케이스에는 해당하지 않을 것이다.  
+또 다른 추정으로는 Reactor Netty 클라이언트가 커넥션 풀을 통해 Connection을 획득했을 때는 열려 있었지만 그 직후 외부 요인(네트워크 구성요소 등)으로 인해 연결이 닫힌 경우이다.  
+
+![](./connection-race-condition.png)
+
 1. 클라이언트가 요청 완료 후 커넥션을 풀에 반환 (시각 `T0`)
 2. 서버의 keep-alive timeout은 `60초`
 3. 클라이언트 maxIdleTime은 무제한
@@ -633,24 +647,115 @@ WebClient를 생성할 때 maxIdleTime을 지정해주지 않아 무제한으로
 5. 서버는 이미 커넥션을 닫았거나 닫는 과정에 있음
 6. **Race Condition 발생**: 클라이언트가 요청을 보내는 시점과 서버의 연결 종료 시점이 겹침
 7. **PrematureCloseException 발생**
-
-서버가 커넥션을 닫기 전에 클라이언트가 proactive하게 커넥션을 정리해서 race condition을 방지할 수 있기에 maxIdleTime을 서버의 keep-alive timeout보다 작게 지정해주는 것이 좋다.  
   
-## maxIdleTiem 설정 이후 커넥션 풀 고갈 문제 발생
+이 경우 Reactor Netty의 timeout 관련 옵션을 적절히 조정하면 문제 해결에 도움이 될 수 있다.  
 
-넥션을 할당받기 위해 대기하다가 예외 발생
+```kotlin
+// AS-IS
+private val client = WebClient.builder()
+    .baseUrl({url})
+    .build()
 
+// TO-BE
+private fun connectionProvider(): ConnectionProvider =
+    ConnectionProvider.builder("client-pool")
+        .maxIdleTime(Duration.ofSeconds(45)) // 서버 keep-alive timeout 보다 짧게 설정
+        .build()
+
+private val httpClient = HttpClient.create(connectionProvider())
+
+private val client = WebClient
+    .builder()
+    .clientConnector(ReactorClientHttpConnector(httpClient))
+    .baseUrl(baseURL)
+    .build()
 ```
+
+서버가 커넥션을 닫기 전에 클라이언트가 proactive하게 커넥션을 정리해서 race condition을 방지할 수 있기에 maxIdleTime을 서버의 keep-alive timeout보다 작게 지정하였다.  
+
+## maxIdleTime 설정 이후 커넥션 풀 예외 발생
+
+maxIdleTime을 설정한 이후 커넥션 풀의 커넥션 고갈 예외가 발생한 것을 확인했다.  
+
+```diff
 Exception in thread "DefaultDispatcher-worker-5" Exception in thread "DefaultDispatcher-worker-1" Exception in thread "DefaultDispatcher-worker-7" Exception in thread "DefaultDispatcher-worker-10" Exception in thread "DefaultDispatcher-worker-3" org.springframework.web.reactive.function.client.WebClientRequestException: Pending acquire queue has reached its maximum size of 32
 ```
 
+```diff
+Creating a new [client-pool] client pool 
+[
+    PoolFactory{
+        evictionInterval=PT0S,
+        leasingStrategy=fifo, 
++       maxConnections=16, 
+        maxIdleTime=45000, 
+        maxLifeTime=-1, 
+        metricsEnabled=false, 
++       pendingAcquireMaxCount=32, 
+        pendingAcquireTimeout=45000
+    }
+] 
+for [{url}]
+```
+  
+<h4>maxIdleTime 설정 전</h4>
 
-- 커넥션 풀의 최대 개수만큼 배압 조절
+- 연결은 충분히 재사용 가능하기에 불규칙한 트래픽에 유용함.
+- 하지만 서버가 FIN 패킷을 보낼 때까지 Connection을 보유하기에 PrematureCloseException 발생 가능성 높았음.
+- 또한 Stale Connection 문제로 Connection reset by peer 예외도 발생 가능성 있음.
+  
+<h4>maxIdleTime 설정 후</h4>
 
-![](./network-sequence.png)
+- PrematureCloseException 발생 가능성 및 Stale Connection 문제를 예방할 수 있음.
+- 하지만 idle 시간 초과로 인해 Connection이 자주 제거되어 새 연결을 계속 생성하기에 TCP 오버헤드 증가.
+- `연결 생성 속도 < 요청 속도` 대기 큐에 요청이 쌓여 Connection 고갈 문제 발생할 수 있음.
+  
+![](./rate-limiter.png)
+<br/>
 
-## retry 로직 추가
+이 상황을 고려해서 설정을 다시 했다.
 
+1. **하루에 N번 정기적으로 호출**
+2. **400 ~ 500명에 대한 배치성 부하**
+3. **실시간이 보장되지 않아도 좋음**
+4. **한 번쯤 전송되지 않아도 큰 문제가 있지 않음**
+5. **B 서버의 응답은 300ms 이내 응답**
+6. **외부 API 서버에 rate limiter가 존재함**
+
+```diff
+Creating a new [client-pool] client pool 
+[
+    PoolFactory{
+        evictionInterval=PT0S,
+        leasingStrategy=fifo, 
+-       maxConnections=16,         
++       maxConnections=10, -- rate limiter가 존재하여 방어적으로 전송
+        maxIdleTime=45000, 
+        maxLifeTime=-1, 
+        metricsEnabled=false, 
+-       pendingAcquireMaxCount=32, 
++       pendingAcquireMaxCount=500,  -- 최대 요청에 수용 가능한 정도
+-       pendingAcquireTimeout=45000
++       pendingAcquireTimeout=180000  -- 최대 요청이 증가함에 대비하여 여유롭게 대기
+    }
+] 
+for [{url}]
+```
+
+# 느낀점
+
+이번 PrematureCloseException 원인 분석을 통해 많은 것을 배울 수 있었다.  
+기존에는 WebClient의 기본 설정을 그대로 사용했었는데, 이번 경험을 통해 운영 환경의 특성을 파악하고 적절한 설정을 적용해야함을 깨달았다.  
+
+- **기본값 ≠ 최적값**: 기본 설정은 일반적인 상황을 가정하므로, 특정 환경에서는 적절하지 않을 수 있다
+- **상황별 튜닝 필요**: 트래픽 패턴, 서버 환경, 비즈니스 환경, 네트워크 환경을 고려한 세밀한 조정이 필요하다
+  
+이번에 적용한 설정으로 문제가 상당히 개선되었지만, **모든 네트워크 예외를 완전히 방지할 수는 없다**.  
+우리가 제어할 수 없는 영역인 외부 회사의 서비스 API는 불가피한 네트워크 예외에 대비한 적절한 재시도 전략과 알림 전략이 필요하다.  
+  
+실무에서는 시간 압박으로 인해 급하게 처리했지만, FIN/RST 패킷의 송신자를 정확히 파악하기 위해 TCP dump를 뜨는 것이 더 정확할 것이다.  
+(ECS 환경에서의 TCP dump를 뜨기 위한 방법을 정리해야겠다.)  
+  
 > 참고  
 > 1. [[Kernel] 커널과 함께 알아보는 소켓과 TCP Deep Dive](https://brewagebear.github.io/linux-kernel-internal-3/)
 > 2. [헷갈리는 WebClient Timeout](https://blog.cjlee.io/post/webclient-timeout/)
