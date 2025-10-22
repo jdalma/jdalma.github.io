@@ -94,7 +94,7 @@ class TestController {
 }</code>
         </deckgo-highlight-code>
 <p>CoroutineScope를 생성하는 오버헤드를 줄이기 위해 싱글톤 빈 내부에 선언하여 재사용한것으로 보인다.<br>
-<strong>문제는 이 scope 자식 코루틴에서 발생한 예외가 적절히 처리되지 않아 scope의 Job도 <code class="language-text">cancelled</code>로 상태를 전이시키기 때문이다.</strong></p>
+<strong>문제는 이 scope 자식 코루틴에서 발생한 예외가 적절히 처리되지 않아 <code class="language-text">scope</code>의 Job이 <code class="language-text">cancelled</code> 상태로 전이되었기 때문이다.</strong></p>
 <p>아래의 코드를 통해 코루틴 내부에서 예외를 어떻게 처리하는지, 취소 상태가 되면 왜 코루틴이 실행되지 않는지 알 수 있다.</p>
 <deckgo-highlight-code language="kotlin" terminal="carbon" theme="one-light" line-numbers="true"  >
           <code slot="code">// 1. BaseContinuationImpl에서 코루틴 블록 내부에서 발생한 런타임 예외를 failure result로 resume 한다.
