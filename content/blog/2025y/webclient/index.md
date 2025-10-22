@@ -306,9 +306,6 @@ Transmission Control Protocol, Src Port: 9090, Dst Port: 52226, Seq: 2, Ack: 426
 Flags: 0x014 (RST, ACK)
 ```
 
-RST 패킷이 전송된 시점이 해당 USER_EVENT가 전송된 이후에 전송된 것을 확인할 수 있다.
-
-
 ## 2. BEFORE response
 
 `BEFORE response while sending request body`와 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.  
@@ -635,7 +632,7 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
 
 ![](./timeout.png)
 
-실무의 운영환경은 위와 같이 로드밸러서와 수신 서버의 timeout 설정이 동일했기 때문에 이전에 말한 케이스에는 해당하지 않을 것이다.  
+실무의 운영환경은 위와 같이 로드밸러서와 수신 서버의 timeout 설정이 동일했기 때문에 세션 테이블 갱신이 원인이 되지는 않을 것이다.  
 또 다른 추정으로는 Reactor Netty 클라이언트가 커넥션 풀을 통해 Connection을 획득했을 때는 열려 있었지만 그 직후 외부 요인(네트워크 구성요소 등)으로 인해 연결이 닫힌 경우이다.  
 
 ![](./connection-race-condition.png)

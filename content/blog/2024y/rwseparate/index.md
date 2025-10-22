@@ -1,7 +1,7 @@
 ---
 title: Spring RW분리를 이해하기 위한 여정 (+ JDBC, 서비스 추상화)
 date: "2024-07-14"
-update: "2024-07-14"
+update: "2025-10-21"
 tags:
    - spring
    - transaction
@@ -320,6 +320,36 @@ class ReplicationDataSourceConfig {
     @ConfigurationProperties(prefix = "spring.datasource.secondary")
     fun secondaryDataSource(): DataSource {
         return DataSourceBuilder.create().build()
+    }
+}
+
+class RoutingDataSource(
+    primary: DataSource,
+    secondary: DataSource
+): AbstractRoutingDataSource() {
+    private val log = LoggerFactory.getLogger(RoutingDataSource::class.java)
+
+    init {
+        this.setTargetDataSources(mapOf(
+            READ_WRITE to primary,
+            READ_ONLY to secondary
+        ))
+        this.setDefaultTargetDataSource(primary)
+    }
+
+    override fun determineCurrentLookupKey(): Any {
+        return DataSourceType.from(TransactionSynchronizationManager.isCurrentTransactionReadOnly()).apply {
+            log.info("DataSource Type : {}", this)
+        }
+    }
+
+    private enum class DataSourceType {
+        READ_WRITE,
+        READ_ONLY;
+
+        companion object {
+            fun from(isReadOnly: Boolean) = if (isReadOnly) READ_ONLY else READ_WRITE
+        }
     }
 }
 ```
