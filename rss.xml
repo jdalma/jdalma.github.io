@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 22 Oct 2025 03:48:32 GMT</lastBuildDate><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 26 Oct 2025 15:44:35 GMT</lastBuildDate><item><title><![CDATA[MySQL 실험실]]></title><description><![CDATA[넥스트 키 락이 레코드 락 또는 갭 락으로 강등 출처: InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;넥스트-키-락이-레코드-락-또는-갭-락으로-강등&quot; style=&quot;position:relative;&quot;&gt;넥스트 키 락이 레코드 락 또는 갭 락으로 강등&lt;a href=&quot;#%EB%84%A5%EC%8A%A4%ED%8A%B8-%ED%82%A4-%EB%9D%BD%EC%9D%B4-%EB%A0%88%EC%BD%94%EB%93%9C-%EB%9D%BD-%EB%98%90%EB%8A%94-%EA%B0%AD-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EA%B0%95%EB%93%B1&quot; aria-label=&quot;넥스트 키 락이 레코드 락 또는 갭 락으로 강등 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;출처: &lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- 테스트 테이블 및 데이터 준비
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
+INSERT INTO t (id, a, b) VALUES
+  (0, 0, 0), (5, 5, 5), (10, 10, 10),
+  (15, 15, 15), (20, 20, 20), (25, 25, 25);&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;details&gt;
+&lt;summary&gt;잠금 상태 조회하기&lt;/summary&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- 잠금 상태 조회하기
+SELECT 
+    dl.object_name AS `table`,
+    dl.lock_type,
+    dl.index_name,
+    dl.lock_mode,
+    CASE 
+        WHEN dl.lock_mode LIKE &amp;#39;%REC_NOT_GAP%&amp;#39; THEN &amp;#39;Record Lock&amp;#39;
+        WHEN dl.lock_mode LIKE &amp;#39;%GAP%&amp;#39; AND dl.lock_mode NOT LIKE &amp;#39;%REC_NOT_GAP%&amp;#39; THEN &amp;#39;Gap Lock&amp;#39;
+        WHEN dl.lock_mode NOT LIKE &amp;#39;%GAP%&amp;#39; AND dl.lock_mode NOT LIKE &amp;#39;%REC_NOT_GAP%&amp;#39; THEN &amp;#39;Next-Key Lock&amp;#39;
+        ELSE dl.lock_mode
+    END AS lock_type_detail,
+    dl.lock_data AS locked_data
+FROM performance_schema.data_locks dl
+ORDER BY dl.object_name, dl.lock_data;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;/details&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;InnoDB 잠금의 시작은 넥스트 키 락이다. 이후에 갭 락과 레코드 락을 따져보는 것이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;원칙 2&lt;/strong&gt;: 잠금은 쿼리를 수행하는 과정에서 접근한 객체에만 걸린다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;규칙 1&lt;/strong&gt;: 인덱스(고유, 비고유)를 사용하는 동등 조건의 쿼리를 수행할 때 레코드 스캔 방향은 오른쪽이며, 마지막 레코드가 동등 조건을 만족하지 않으면 넥스트 키 락은 갭 락으로 강등된다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;규칙 2&lt;/strong&gt;: 고유 인덱스를 사용하는 동등 조건의 쿼리를 수행할 때, 레코드가 동등 조건을 만족하면 넥스트 키 락은 레코드 락으로 강등된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;갭-락으로-인한-insert-실패&quot; style=&quot;position:relative;&quot;&gt;갭 락으로 인한 INSERT 실패&lt;a href=&quot;#%EA%B0%AD-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-insert-%EC%8B%A4%ED%8C%A8&quot; aria-label=&quot;갭 락으로 인한 insert 실패 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;A 세션&amp;gt; 존재하지 않는 id = 7를 업데이트 
+BEGIN;
+UPDATE t SET b=b+1 WHERE id=7;
+
++-------+-----------+------------+-----------+------------------+-------------+
+| table | lock_type | index_name | lock_mode | lock_type_detail | locked_data |
++-------+-----------+------------+-----------+------------------+-------------+
+| t     | TABLE     | NULL       | IX        | Next-Key Lock    | NULL        |
+| t     | RECORD    | PRIMARY    | X,GAP     | Gap Lock         | 10          |
++-------+-----------+------------+-----------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+INSERT INTO t VALUES (8, 8, 8);     -- BLOCKED
+INSERT INTO t VALUES (9, 9, 9);     -- BLCOKED
+
+INSERT INTO t VALUES (4, 4, 4);     -- 성공
+INSERT INTO t VALUES (11, 11, 11);  -- 성공
+UPDATE t SET b=b+1 WHERE id=5;      -- 성공
+UPDATE t SET b=b+1 WHERE id=10;     -- 성공&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;먼저 넥스트 키 락에 의해 &lt;code class=&quot;language-text&quot;&gt;(5, 10]&lt;/code&gt;으로 잠금되고, 마지막 레코드 10이 id=7 조건에 만족하지 않기 때문에 넥스트 키 락은 갭 락으로 강등되어 &lt;code class=&quot;language-text&quot;&gt;(5, 10)&lt;/code&gt;의 잠금이 발생한다.&lt;br&gt;
+그리하여 마지막 업데이트 쿼리는 둘 다 성공한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;모니터링을 통해 보름 간격으로 한 번씩 &lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 발생하는 것을 확인했다.&lt;br&gt;
 외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
 &lt;p&gt;예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.&lt;/p&gt;
@@ -1718,57 +1789,7 @@ class TestController {
 &lt;h1 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;마무리&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;이번 장애를 계기로 코루틴을 더 깊게 분석해보았다.&lt;br&gt;
 실무에 적용된 코루틴 안티 패턴을 걷어내고 동료들에게 공유할 수 있도록 노력해야겠다.&lt;br&gt;
-요즘 AI가 작성해주는 코드를 사용하게 되면서 이런 일이 쉽게 발생하는 것 같다. 여전히 딥 다이브하는 능력은 필수임을 잊지 말자.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[I/O 멀티플렉싱에 대해]]></title><description><![CDATA[Netty…]]></description><link>https://jdalma.github.io/2025y/multiplexing/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/multiplexing/</guid><pubDate>Tue, 02 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;netty의-스레딩-모델&quot; style=&quot;position:relative;&quot;&gt;Netty의 스레딩 모델&lt;a href=&quot;#netty%EC%9D%98-%EC%8A%A4%EB%A0%88%EB%94%A9-%EB%AA%A8%EB%8D%B8&quot; aria-label=&quot;netty의 스레딩 모델 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;스레딩 모델은 &lt;strong&gt;코드가 실행되는 방법을 지정&lt;/strong&gt;한다.&lt;/p&gt;
-&lt;p&gt;자바 초창기의 멀티스레딩 체계는 동시 작업 단위를 실행하기 위해 필요할 때 마다 스레드를 만들고 시작하는 기초적인 수준이였기 때문에 부하가 심한 상황에서는 성능 저하가 심했다.&lt;br&gt;
-하지만 자바 5에는 &lt;strong&gt;Thread 캐싱과 재사용을 통해 성능을 크게 개선한 스레드 풀을 지원하는 &lt;code class=&quot;language-text&quot;&gt;Executor API&lt;/code&gt;가 도입&lt;/strong&gt;됐다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://mangkyu.tistory.com/259&quot;&gt;여기&lt;/a&gt;가 읽기 쉽게 정리가 잘 되어있다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/be4742ae92c91b7f7c2c28c183861552/5bf79/eventLoopDiagram.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 111.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsTAAALEwEAmpwYAAADCUlEQVR42pVU53raQBDkKRKE2qkiRFenGVMkOjL2l/d/lMneYRSc4Hz2j+FWp9WwZXZrmm7iK1BUA36ngygJMRiEGA4jBEEE225C1YzKr/YVMp1ZkGUdcRZhX+bY7LfYH4/Y7fbwWm36M/Y9Qg5VMyErOqS6BuZYUA0DUkP7QPYtQtNy4bgtggen6V3Pdxim/Q1CRvVTDCyKGY6XAofDCS+XV5zLUpxl+YIgjET0vDT/JVTvbB6FaTkwDAdez4fr88gcETkzHkSo36F6Zn/sax0NAd20ROS3539qyEPdnpbYHnLs90eczyWK0xFxOsIgGOD0ViDPC3F/Op3x8nKh1I/kexDP3N5ud7CdJmq+YWFqu2iTxvx2BwFJI0gi0lwfTa8Ni5y6vR6979M5RLc7RDROMIgCdDoDdHqEbl+856nXUmr/ziKNqQpBRqIrCGUJYaNOZx2RIiFSJQTST4Fh/Ye4SzRZ+N+QElo6Q61HxZ7bDtidiOerKRarORaLFdaU6mqVY7kke50LJEl2rSX53kPUUKEf+b4BzEY2TZBNMoxGM8yenkgyC0xnTxhPZnTOhUw03ahIPjTl1tmGzAg6QUNdVtFQNUiyAlnToLsG3SmQlCsaiir8OLj+Hk5KnIZI0hhJTJGNJ0ipw1k2Rq8/hOf5GE1TxHFKUU/Ij+wkFT5hGAuN3uRTET7nUyzzZ6yoRvvygLzYYLvb0YcZOv0uisMz5vNnuttjc9igKLYoNlssV2sh7oqQDz1fTZJEqRKkhgrNZuKsS8p7arQUGrrYOIqmg7lUosYnKXPtuDTgAs2WQLPlV7YrFkKrGi9G6XHouvW4KZ7fRvmroFQ2NAGvuLy+EV5xoqkoy4vAhqbANCkt9dpZZhG59nj+a9yBD/kNfAH4wzbsZhO268Ii8JEyuFaJyLAJli3240PC+6Gvhp1rkhlUHwaV0QI1GdXuCmZalWY/Jfy47k1B1Ov3sTuvqetrsQM31FG+IBzHE6l/mfAWsUtbOc5C9AcBItJfQHoLo1iU5e+VdU/4G85BiCLclfO2AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;eventLoopDiagram&quot;
-        title=&quot;&quot;
-        src=&quot;/static/be4742ae92c91b7f7c2c28c183861552/1cfc2/eventLoopDiagram.png&quot;
-        srcset=&quot;/static/be4742ae92c91b7f7c2c28c183861552/3684f/eventLoopDiagram.png 225w,
-/static/be4742ae92c91b7f7c2c28c183861552/fc2a6/eventLoopDiagram.png 450w,
-/static/be4742ae92c91b7f7c2c28c183861552/1cfc2/eventLoopDiagram.png 900w,
-/static/be4742ae92c91b7f7c2c28c183861552/5bf79/eventLoopDiagram.png 966w&quot;
-        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Callable&lt;/code&gt; : 제네릭을 사용해 결과를 반환할 수 있고, 예외를 throw 할 수 있는 Task&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Future&lt;/code&gt; : 미래에 완료된 Callable의 반환값을 구하기 위해 사용, 계산이 완료되었는지 확인하고, 완료를 기다리며, 계산결과를 검색하는 메서드를 제공&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Executor&lt;/code&gt; : ThreadPool의 구현을 위한 인터페이스 , 등록된 작업을 실행하는 책임을 갖는다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ExecutorService&lt;/code&gt; : Task (Runnable, Callable) 등록을 위한 인터페이스, 작업 등록과 실행을 위한 책임을 갖는다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ScheduledExecutorService&lt;/code&gt; : 특정 시간 이후 또는 주기적으로 작업을 실행시키는 메소드가 존재&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Executors&lt;/code&gt; : 위의 ThreadPool을 위한 인터페이스들을 다루기 위한 팩토리 클래스&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;자바 5 이후로 등장한 ForkJoinPool이나 CompletableFuture은 Netty의 EventLoop에서 사용되지 않는 것 같다.&lt;/em&gt;&lt;/p&gt;
-&lt;h1 id=&quot;멀티플렉싱&quot; style=&quot;position:relative;&quot;&gt;멀티플렉싱&lt;a href=&quot;#%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%89%EC%8B%B1&quot; aria-label=&quot;멀티플렉싱 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;출처 &lt;a href=&quot;https://engineering.linecorp.com/ko/blog/do-not-block-the-event-loop-part1&quot;&gt;이벤트 루프를 블록하면 안되는 이유 - 파트1&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+요즘 AI가 작성해주는 코드를 사용하게 되면서 이런 일이 쉽게 발생하는 것 같다. 여전히 딥 다이브하는 능력은 필수임을 잊지 말자.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[I/O 멀티플렉싱에 대해]]></title><description><![CDATA[멀티플렉싱 먼저 TCP…]]></description><link>https://jdalma.github.io/2025y/multiplexing/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/multiplexing/</guid><pubDate>Tue, 02 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;멀티플렉싱&quot; style=&quot;position:relative;&quot;&gt;멀티플렉싱&lt;a href=&quot;#%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%89%EC%8B%B1&quot; aria-label=&quot;멀티플렉싱 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;먼저 TCP 소켓에 대해 이해하자.&lt;br&gt;
 소켓은 네트워크에서 서버와 클라이언트, 두 개의 프로세스가 특정 포트를 통해 양방향 통신이 가능하도록 만들어 주는 추상화된 장치이다.&lt;br&gt;
 &lt;code class=&quot;language-text&quot;&gt;{srcIP, srcPort, destIP, destPort}&lt;/code&gt;로 이루어져 있다.&lt;br&gt;
@@ -1800,8 +1821,9 @@ class TestController {
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;br&gt;
 한 개의 프로세스 내에 다수의 스레드가 존재하기 때문에 하나의 스레드에서 발생한 문제가 전체에 영향을 미쳐 나머지 다수의 스레드에 영향을 끼칠 수 있다.&lt;br&gt;
-일정 크기의 스레드를 생성해 풀로 관리하며 운영할 수 있지만 클라이언트의 요청마다 스레드를 무한정 생성할 수 없기 때문에 많은 수의 요청을 동시에 처리할 수 없다.&lt;/p&gt;
-&lt;p&gt;여기서 더 나아가 I/O 멀티플렉싱 기법을 사용한다면 각 클라이언트마다 별도 스레드를 이용하는게 아니라,&lt;br&gt;
+일정 크기의 스레드를 생성해 풀로 관리하며 운영할 수 있지만 클라이언트의 요청마다 스레드를 무한정 생성할 수 없기 때문에 많은 수의 요청을 동시에 처리할 수 없다.&lt;br&gt;
+또한 스레드들이 idle한 시간동안 불필요하게 블로킹되기에 낭비가 많다.&lt;/p&gt;
+&lt;p&gt;I/O 멀티플렉싱 기법을 사용한다면 각 클라이언트마다 별도 스레드를 이용하는게 아니라,&lt;br&gt;
 &lt;strong&gt;하나의 스레드에서 다수의 클라이언트에 연결된 소켓(파일 디스크립터)을 관리하면서 소켓에 이벤트 (&lt;code class=&quot;language-text&quot;&gt;read&lt;/code&gt;/&lt;code class=&quot;language-text&quot;&gt;write&lt;/code&gt;)가 발생할 때만 해당 이벤트를 처리하도록 구현해서 더 적은 리소스를 사용하도록 개선할 수 있다.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;멀티플렉싱multiplexing-기반-서버&quot; style=&quot;position:relative;&quot;&gt;멀티플렉싱(multiplexing) 기반 서버&lt;a href=&quot;#%EB%A9%80%ED%8B%B0%ED%94%8C%EB%A0%89%EC%8B%B1multiplexing-%EA%B8%B0%EB%B0%98-%EC%84%9C%EB%B2%84&quot; aria-label=&quot;멀티플렉싱multiplexing 기반 서버 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;&apos;입출력 대상을 묶어서 관리&apos;하는 방식으로 서비스를 제공한다.&lt;/strong&gt;&lt;/p&gt;
@@ -1814,20 +1836,12 @@ class TestController {
 패킷이 도착하면 커널 내 버퍼에 복사되고, 이 데이터를 사용하기 위해서는 사용자 공간에 다시 복사해야 한다.&lt;br&gt;
 &lt;strong&gt;이 작업들이 끝날 때까지 시스템 콜이 반환되지 않는다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://vos.line-scdn.net/landpress-content-v2_954/1663604384989.png?updatedAt%253D1663604385000&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;select&lt;/code&gt;는 여러 파일 디스크립터를 감시하여, 어떤 파일에서 읽기, 쓰기 또는 예외 이벤트가 발생했는지를 확인하는 시스템 콜이다.
-&lt;strong&gt;즉, 여러 개의 소켓 중 &lt;code class=&quot;language-text&quot;&gt;read&lt;/code&gt; 함수 호출이 가능한 소켓이 생길 때까지 대기한다.&lt;/strong&gt;&lt;br&gt;
-호출이 가능한 소켓이 생긴다면 해당 소켓들에 대해 &lt;code class=&quot;language-text&quot;&gt;read&lt;/code&gt;함수를 호출한다.&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;select&lt;/code&gt;함수는 이벤트(입력, 출력, 에러)가 준비된 파일에 대해 입출력을 수행하기 때문에 &lt;strong&gt;무한정 대기해야하는 블록이 발생하지 않을 것이라는게 보장된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I/O 멀티플렉싱 시스템 콜들은 여러 파일 디스크립터를 감시하여, 어떤 파일에서 읽기, 쓰기 또는 예외 이벤트가 발생했는지를 확인하는 시스템 콜이다.&lt;br&gt;
+즉, 이벤트(입력, 출력, 에러)가 준비된 파일에 대해 입출력을 수행하기 때문에 &lt;strong&gt;무한정 대기해야하는 블록이 발생하지 않을 것이라는게 보장된다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;파일 디스크립터 준비&lt;/strong&gt;: 감시할 파일 디스크립터를 fd_set이라는 구조체에 등록합니다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;이벤트 대기&lt;/strong&gt;: select 함수를 호출하여 등록된 파일 디스크립터 중 이벤트가 발생할 때까지 대기합니다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;이벤트 처리&lt;/strong&gt;: 이벤트가 발생한 파일 디스크립터에 대해 적절한 입출력 작업을 수행합니다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;하지만 아래와 같은 단점이 있다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;파일 디스크립터 수 제한&lt;/strong&gt;: 보통 1024개의 FD만 감시할 수 있어 대규모 소켓 서버에는 부적합하다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;비효율적인 검사 방식&lt;/strong&gt;: 호출할 때마다 감시 대상 fd_set을 사용자 공간에서 커널 공간으로 복사하고, 커널이 fd_set을 순차 탐색해야 해서 성능 저하가 심하다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;이벤트 발생 상태 전달 한계&lt;/strong&gt;: 이벤트 발생시 변화가 있는 FD만 전달하는 것이 아니라 매번 fd_set 상태를 검사하고 결과를 넘기므로 불필요한 오버헤드가 있다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;아래는 I/O 멀티플렉싱의 select와 epoll의 주요 차이점을 정리한 마크다운 테이블입니다.&lt;/p&gt;
 &lt;table&gt;
@@ -1876,50 +1890,66 @@ class TestController {
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;요약하면, &lt;code class=&quot;language-text&quot;&gt;epoll&lt;/code&gt;은 대규모 소켓 처리와 높은 효율성이 요구되는 리눅스 환경에서 select 대비 월등한 성능과 확장성을 제공하도록 설계된 시스템 호출이다.&lt;br&gt;
+&lt;p&gt;요약하면, &lt;code class=&quot;language-text&quot;&gt;epoll&lt;/code&gt;은 대규모 소켓 처리와 높은 효율성이 요구되는 리눅스 환경에서 &lt;code class=&quot;language-text&quot;&gt;select&lt;/code&gt; 대비 월등한 성능과 확장성을 제공하도록 설계된 시스템 호출이다.&lt;br&gt;
 반면, select는 낮은 이식성과 확장성 문제로 인해 소규모 혹은 범용 환경에서만 주로 사용된다.&lt;/p&gt;
 &lt;p&gt;Java NIO가 시스템 수준의 I/O 멀티플렉싱 기술(특히 select, poll, epoll 등)을 추상화하여 자바 개발자가 쉽게 비동기 입출력을 구현할 수 있게 해준다&lt;/p&gt;
 &lt;h1 id=&quot;java-nio&quot; style=&quot;position:relative;&quot;&gt;Java NIO&lt;a href=&quot;#java-nio&quot; aria-label=&quot;java nio permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;출처 &lt;a href=&quot;https://engineering.linecorp.com/ko/blog/do-not-block-the-event-loop-part2&quot;&gt;이벤트 루프를 블록하면 안되는 이유 - 파트2&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2 id=&quot;채널과-버퍼&quot; style=&quot;position:relative;&quot;&gt;채널과 버퍼&lt;a href=&quot;#%EC%B1%84%EB%84%90%EA%B3%BC-%EB%B2%84%ED%8D%BC&quot; aria-label=&quot;채널과 버퍼 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Java NIO에서는 채널과 버퍼를 사용합니다.&lt;/li&gt;
-&lt;li&gt;서버에서 클라이언트와 데이터를 주고받을 때 채널을 통해서 버퍼(ByteBuffer)를 이용해 읽고 씁니다.&lt;/li&gt;
+&lt;li&gt;kernel 버퍼를 직접 핸들링 할 수 없어 복사 오버헤드가 존재했지만, ByteBuffer가 등장하면서 개선됐다. (zero copy)&lt;/li&gt;
 &lt;li&gt;FileChannel, DatagramChaneel, SocketChannel, ServerSocketChannel&lt;/li&gt;
-&lt;li&gt;채널은 양방향으로 사용하기 때문에 버퍼에 데이터를 쓰다가 이후 데이터를 읽어야 한다면 &lt;code class=&quot;language-text&quot;&gt;filp()&lt;/code&gt;을 호출해서 버퍼를 쓰기 모드에서 읽기 모드로 전환해야 합니다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;clear()&lt;/code&gt;로 전체 버퍼를 지울 수 있습니다.&lt;/li&gt;
+&lt;li&gt;채널은 양방향으로 사용하기 때문에 버퍼에 데이터를 쓰다가 이후 데이터를 읽어야 한다면 &lt;code class=&quot;language-text&quot;&gt;filp()&lt;/code&gt;을 호출해서 버퍼를 쓰기 모드에서 읽기 모드로 전환해야 한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;clear()&lt;/code&gt;로 전체 버퍼를 지울 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;논블로킹non-blocking-io&quot; style=&quot;position:relative;&quot;&gt;논블로킹(non-blocking) I/O&lt;a href=&quot;#%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9non-blocking-io&quot; aria-label=&quot;논블로킹non blocking io permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Java NIO에서는 논블로킹 I/O를 사용할 수 있습니다.&lt;/li&gt;
-&lt;li&gt;예를 들어보겠습니다. 스레드가 버퍼로 데이터를 읽어달라고 채널에 요청하면, 채널이 버퍼에 데이터를 채워 넣는 동안 해당 스레드는 다른 작업을 수행할 수 있습니다.&lt;/li&gt;
-&lt;li&gt;이후 채널이 버퍼에 데이터를 채워 넣고 나면 스레드는 해당 버퍼를 이용해 계속 처리를 진행할 수 있습니다.&lt;/li&gt;
-&lt;li&gt;반대로 데이터를 채널로 보내는 경우에도 논블로킹으로 처리할 수 있습니다.&lt;/li&gt;
+&lt;li&gt;Java NIO에서는 논블로킹 I/O를 사용할 수 있다.&lt;/li&gt;
+&lt;li&gt;예를 들어, 스레드가 버퍼로 데이터를 읽어달라고 채널에 요청하면, 채널이 버퍼에 데이터를 채워 넣는 동안 해당 스레드는 다른 작업을 수행할 수 있다.&lt;/li&gt;
+&lt;li&gt;이후 채널이 버퍼에 데이터를 채워 넣고 나면 스레드는 해당 버퍼를 이용해 계속 처리를 진행할 수 있다.&lt;/li&gt;
+&lt;li&gt;반대로 데이터를 채널로 보내는 경우에도 논블로킹으로 처리할 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;셀렉터&quot; style=&quot;position:relative;&quot;&gt;셀렉터&lt;a href=&quot;#%EC%85%80%EB%A0%89%ED%84%B0&quot; aria-label=&quot;셀렉터 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Java NIO에는 여러 개의 채널에서 이벤트(예: 연결 생성, 데이터 도착 등)를 모니터링할 수 있는 셀렉터가 포함돼 있기 때문에 하나의 스레드로 여러 채널을 모니터링할 수 있습니다.&lt;/li&gt;
-&lt;li&gt;내부적으로 SelectorProvider에서 운영체제와 버전에 따라 사용 가능한 &lt;strong&gt;멀티플렉싱 기술을 선택해 사용&lt;/strong&gt;합니다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;하나 이상의 채널을 셀렉터에 등록하고 &lt;code class=&quot;language-text&quot;&gt;select()&lt;/code&gt;를 호출하면, 등록된 채널 중 이벤트 준비가 완료된 하나 이상의 채널이 생길 때까지 블록됩니다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Java NIO에는 여러 개의 채널에서 이벤트(예: 연결 생성, 데이터 도착 등)를 모니터링할 수 있는 셀렉터가 포함돼 있기 때문에 하나의 스레드로 여러 채널을 모니터링할 수 있다.&lt;/li&gt;
+&lt;li&gt;내부적으로 SelectorProvider에서 운영체제와 버전에 따라 사용 가능한 &lt;strong&gt;멀티플렉싱 기술을 선택해 사용한다&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;하나 이상의 채널을 셀렉터에 등록하고 &lt;code class=&quot;language-text&quot;&gt;select()&lt;/code&gt;를 호출하면, 등록된 채널 중 이벤트 준비가 완료된 하나 이상의 채널이 생길 때까지 블록된다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Java NIO에는 이 외에도 더 많은 클래스와 컴포넌트가 있지만 &lt;strong&gt;채널&lt;/strong&gt;과 &lt;strong&gt;버퍼&lt;/strong&gt;, &lt;strong&gt;셀렉터&lt;/strong&gt;가 API의 핵심입니다.&lt;/p&gt;
+&lt;p&gt;Java NIO에는 이 외에도 더 많은 클래스와 컴포넌트가 있지만 &lt;strong&gt;채널&lt;/strong&gt;과 &lt;strong&gt;버퍼&lt;/strong&gt;, &lt;strong&gt;셀렉터&lt;/strong&gt;가 API의 핵심이다.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;ServerSocketChannel channel = ServerSocketChannel.open();
 channel.bind(new InetSocketAddress(&amp;quot;localhost&amp;quot;, 8080));
 channel.configureBlocking(false); // 논블로킹 모드로 변경
+
+Selector selector = Selector.open();
+
+// 하나의 Selector는 여러 Channel을 관리할 수 있습니다
+// 각 Channel마다 독립적으로 관심 이벤트(interest ops)를 설정합니다
+// 이 코드는 해당 channel에 대해 OP_READ만 등록한 것입니다
 SelectionKey key = channel.register(selector, SelectionKey.OP_READ); // 채널을 셀렉터에 등록&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;ServerSocketChannel을 열고 Channel에 IP와 Port를 바인딩한다.&lt;br&gt;
-Selector에 Channel을 등록한다.&lt;/p&gt;
-&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;Set&amp;lt;SelectionKey&amp;gt; selectedKeys = selector.selectedKeys();&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;준비된 채널의 집합을 받는다.&lt;/p&gt;
+Selector에 Channel을 등록하고, 준비된 채널의 집합을 받는다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ServerSocketChannel&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;역할: 클라이언트의 연결 요청을 **듣고(listen) 수락(accept)**하는 채널&lt;/li&gt;
+&lt;li&gt;생성: 한 번만 생성 (서버당 포트당 1개)&lt;/li&gt;
+&lt;li&gt;이벤트: OP_ACCEPT (연결 요청 감지)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;SocketChannel&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;역할: 실제 클라이언트와 데이터를 주고받는 채널&lt;/li&gt;
+&lt;li&gt;생성: 클라이언트마다 생성 (클라이언트 수만큼)&lt;/li&gt;
+&lt;li&gt;이벤트: OP_READ, OP_WRITE (데이터 읽기/쓰기)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;SelectionKey&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;역할: Channel과 Selector의 연결 관계 표현, 관심 이벤트 관리, 핸들러 저장&lt;/li&gt;
+&lt;li&gt;생성: Channel을 Selector에 등록하는 경우 반환&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;Set&amp;lt;SelectionKey&amp;gt; selectedKeys = selector.selectedKeys();
- 
 Iterator&amp;lt;SelectionKey&amp;gt; keyIterator = selectedKeys.iterator();
  
 while(keyIterator.hasNext()) {
@@ -1973,13 +2003,56 @@ public void run() {
 &lt;p&gt;이벤트 루프(event loop)는 동시성(concurrency)을 제공하기 위한 프로그래밍 모델 중 하나로,&lt;br&gt;
 특정 이벤트가 발생할 때까지 대기하다가 이벤트가 발생하면 디스패치해 처리하는 방식으로 작동합니다.&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 560px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f35be33cdc63b3fca328dcd390bb4ba7/ac282/netty_eventloop.webp&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 96.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoUABMAPtFgqE+oJSOiKAgBABoJaQAAPS/0oEGI3aQAAP7xiTh7btuqZqeuzFag3O4IUVk45CoKOyVYhTlUztxE2KUCgAAA&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;netty eventloop&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f35be33cdc63b3fca328dcd390bb4ba7/ac282/netty_eventloop.webp&quot;
+        srcset=&quot;/static/f35be33cdc63b3fca328dcd390bb4ba7/d7e55/netty_eventloop.webp 225w,
+/static/f35be33cdc63b3fca328dcd390bb4ba7/8626f/netty_eventloop.webp 450w,
+/static/f35be33cdc63b3fca328dcd390bb4ba7/ac282/netty_eventloop.webp 560w&quot;
+        sizes=&quot;(max-width: 560px) 100vw, 560px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;출처: &lt;a href=&quot;https://mark-kim.blog/netty_deepdive_1/&quot;&gt;Netty Deep Dive&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;내부적으로 &lt;code class=&quot;language-text&quot;&gt;Selector&lt;/code&gt;를 이용해 특정 이벤트가 발생할 때까지 대기하다가 이벤트가 발생하면 적절한 핸들러로 이벤트를 전달(dispatch)해 처리하는 역할을 무한 루프로 실행해 반복하던 Reactor가 바로 이벤트 루프이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;이벤트가 발생하기를 대기한다.&lt;/li&gt;
 &lt;li&gt;이벤트가 발생하면 처리할 수 있는 핸들러에 이벤트를 디스패치한다.&lt;/li&gt;
 &lt;li&gt;핸들러에서 이벤트를 처리한다.&lt;/li&gt;
 &lt;li&gt;다시 1~3 단계를 반복한다.&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[GraphQL 이해하고 사용하기 (작성 중)]]></title><description><![CDATA[GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.      이 글에서는 Netflix DGS Framework를 기준으로 이러한 고민들을 해소해보고자 한다. 이 글을 통해 아래의 내용을 학습할 수 있다. GraphQL…]]></description><link>https://jdalma.github.io/2025y/graphql/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/graphql/</guid><pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.&lt;/p&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://engineering.linecorp.com/ko/blog/do-not-block-the-event-loop-part1&quot;&gt;이벤트 루프를 블록하면 안되는 이유 - 파트1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://engineering.linecorp.com/ko/blog/do-not-block-the-event-loop-part2&quot;&gt;이벤트 루프를 블록하면 안되는 이유 - 파트2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mark-kim.blog/understanding-non-blocking-io-and-nio/&quot;&gt;사례를 통해 이해하는 네트워크 논블로킹 I/O와 Java NIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mark-kim.blog/netty_deepdive_1/&quot;&gt;Netty Deep Dive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/Netty/%EB%84%A4%ED%8B%B0%EC%9D%98%20%ED%95%B5%EC%8B%AC%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8.md&quot;&gt;Netty의 핵심 컴포넌트&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jdalma/footprints/blob/main/Netty/ChannelHandler%EC%99%80%20ChannelPipeline.md&quot;&gt;ChannelHandler와 ChannelPipeline&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[GraphQL 이해하고 사용하기]]></title><description><![CDATA[GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.      이 글에서는 Netflix DGS Framework를 기준으로 이러한 고민들을 해소해보고자 한다. 이 글을 통해 아래의 내용을 학습할 수 있다. GraphQL…]]></description><link>https://jdalma.github.io/2025y/graphql/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/graphql/</guid><pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL 기반 서비스를 처음으로 접하면서 다음과 같은 고민을 한적이 있다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;스키마를 어떤 기준으로 작성해야 할까?&quot;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;조회 쿼리가 너무 많이 발생하는데 어떻게 개선할 수 있을까?&quot;&lt;/code&gt;&lt;/li&gt;
@@ -2391,12 +2464,13 @@ GraphQL은 4개의 RouterFunction이 존재하며, 일반적인 요청은 &lt;co
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;executionstrategy&quot; style=&quot;position:relative;&quot;&gt;ExecutionStrategy&lt;a href=&quot;#executionstrategy&quot; aria-label=&quot;executionstrategy permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;todo&quot; style=&quot;position:relative;&quot;&gt;TODO&lt;a href=&quot;#todo&quot; aria-label=&quot;todo permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;executionstrategy&quot; style=&quot;position:relative;&quot;&gt;ExecutionStrategy&lt;a href=&quot;#executionstrategy&quot; aria-label=&quot;executionstrategy permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;HandlerFunctionAdapter가 GraphQlHttpHandler를 통하여 GraphQl의 요청을 처리하게 된다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;중첩 필드가 실행될 때 재귀적으로 실행하는 것을 확인했음. 더 분석 필요&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;batchloader-규칙&quot; style=&quot;position:relative;&quot;&gt;BatchLoader 규칙&lt;a href=&quot;#batchloader-%EA%B7%9C%EC%B9%99&quot; aria-label=&quot;batchloader 규칙 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;batchloader-규칙&quot; style=&quot;position:relative;&quot;&gt;BatchLoader 규칙&lt;a href=&quot;#batchloader-%EA%B7%9C%EC%B9%99&quot; aria-label=&quot;batchloader 규칙 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;// DataLoaderHelper
 
@@ -2423,11 +2497,9 @@ companyIds = [1, 2, 3]
 // 잘못된 결과 (size = 4 != keys.size)
 [staff1, staff2, staff3, staff4]&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;h2 id=&quot;todo&quot; style=&quot;position:relative;&quot;&gt;TODO&lt;a href=&quot;#todo&quot; aria-label=&quot;todo permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;DgsContext&lt;/li&gt;
 &lt;li&gt;DataLoaderRegistry&lt;/li&gt;
-&lt;li&gt;dgsSpringConfigurationProperties.webmvc.asyncdispatch.enabled&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[코틀린 코루틴 실무에서 코루틴 장애를 경험하게 되어서 원인을 확실히 이해하고 코루틴을 확실히 짚고 넘어가고 싶어 읽어보았다. API…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;코틀린-코루틴&quot; style=&quot;position:relative;&quot;&gt;코틀린 코루틴&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4&quot; aria-label=&quot;코틀린 코루틴 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;실무에서 코루틴 장애를 경험하게 되어서 원인을 확실히 이해하고 코루틴을 확실히 짚고 넘어가고 싶어 읽어보았다.&lt;br&gt;
 &lt;a href=&quot;https://jdalma.github.io/2025y/coroutinescope/&quot;&gt;API가 왜 멈췄을까? 코루틴 이해하기&lt;/a&gt;글을 참고하라.&lt;/p&gt;
