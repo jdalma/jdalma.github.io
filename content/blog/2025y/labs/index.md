@@ -394,3 +394,89 @@ UPDATE t SET b=b+1 WHERE id = 30;    -- BLOCKED
 -- ix_a, X,GAP (Gap Lock)
 ( (a=10, id=30), (a=15, id=15) )
 ```
+
+## non-unique 세컨더리 인덱스 중복된 행 잠금 (추가 케이스)
+
+```sql
+CREATE TABLE employees (
+    id int NOT NULL AUTO_INCREMENT,
+    first_name varchar(255) DEFAULT NULL,
+    last_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY idx_first_name (first_name)
+) ENGINE=InnoDB
+
++----+------------+-----------+
+| id | first_name | last_name |
++----+------------+-----------+
+| 34 | E          | E1        |
+| 35 | E          | E2        |
+| 36 | E          | E3        |
+| 37 | B          | B1        |
+| 38 | B          | B2        |
++----+------------+-----------+
+```
+
+```sql
+-- <A 세션>
+BEGIN;
+update employees SET last_name = 'Updated E' where first_name = 'E' and last_name = 'E2';
+
++-----------+-----------+----------------+---------------+------------------+------------------------+
+| table     | lock_type | index_name     | lock_mode     | lock_type_detail | locked_data            |
++-----------+-----------+----------------+---------------+------------------+------------------------+
+| employees | TABLE     | NULL           | IX            | Next-Key Lock    | NULL                   |
+| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 34                |
+| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 35                |
+| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 36                |
+| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 34                     |
+| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 35                     |
+| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 36                     |
+| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | supremum pseudo-record |
++-----------+-----------+----------------+---------------+------------------+------------------------+
+
+-- <B 세션>
+insert into employees (first_name, last_name) values ('A', 'A1');    -- 성공
+insert into employees (first_name, last_name) values ('B', 'B1');    -- BLOCKED
+insert into employees (first_name, last_name) values ('C', 'C1');    -- BLOCKED
+insert into employees (first_name, last_name) values ('D', 'D1');    -- BLOCKED
+insert into employees (first_name, last_name) values ('F', 'F1');    -- BLOCKED
+insert into employees (first_name, last_name) values ('Z', 'Z1');    -- BLOCKED
+
+update employees set last_name = 'updated B1' where id = 37;   -- 성공
+update employees set last_name = 'updated B2' where id = 38;   -- 성공
+update employees set last_name = 'updated B2' where first_name = 'B';    -- 성공
+update employees set first_name = 'C' where id = 37;   -- BLOCKED
+update employees set first_name = 'A' where id = 37;   -- 성공
+```
+
+먼저 `first_name = 'E'`를 찾기 위해 오른쪽으로 검색하지만 `E`보다 큰 데이터는 없기에 supremum 락이 걸린다.
+
+```
+('B', 37)
+('B', 38) ← 마지막 B 레코드
+    ↓
+  [갭1] ← ('B', 38) ~ ('E', 34)
+    ↓
+('E', 34) ← Next-Key Lock = 레코드 + 갭1
+('E', 35) ← Next-Key Lock = 레코드 + 갭2
+('E', 36) ← Next-Key Lock = 레코드 + 갭3
+    ↓
+  [갭4] ← ('E', 36) ~ supremum
+    ↓
+supremum  ← Next-Key Lock = supremum + 갭4
+```
+
+**실제 락 범위**  
+1. `('E', 34)` **Next-Key Lock**
+   - 레코드: `('E', 34)`
+   - 갭: `(('B', 38) ~ ('E', 34))`
+2. `('E', 35)` **Next-Key Lock**
+   - 레코드: `('E', 35)`
+   - 갭: `(('E', 34) ~ ('E', 35))`
+3. `('E', 36)` **Next-Key Lock**
+   - 레코드: `('E', 36)`
+   - 갭: `(('E', 35) ~ ('E', 36))`
+4. **supremum Next-Key Lock**
+   - supremum 자체
+   - 갭: `(('E', 36) ~ supremum)`
