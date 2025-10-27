@@ -1,6 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 26 Oct 2025 15:44:35 GMT</lastBuildDate><item><title><![CDATA[MySQL 실험실]]></title><description><![CDATA[넥스트 키 락이 레코드 락 또는 갭 락으로 강등 출처: InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;넥스트-키-락이-레코드-락-또는-갭-락으로-강등&quot; style=&quot;position:relative;&quot;&gt;넥스트 키 락이 레코드 락 또는 갭 락으로 강등&lt;a href=&quot;#%EB%84%A5%EC%8A%A4%ED%8A%B8-%ED%82%A4-%EB%9D%BD%EC%9D%B4-%EB%A0%88%EC%BD%94%EB%93%9C-%EB%9D%BD-%EB%98%90%EB%8A%94-%EA%B0%AD-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EA%B0%95%EB%93%B1&quot; aria-label=&quot;넥스트 키 락이 레코드 락 또는 갭 락으로 강등 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;출처: &lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 Oct 2025 08:13:36 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;InnoDB 잠금의 시작은 넥스트 키 락이다. 이후에 갭 락과 레코드 락을 따져보는 것이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;원칙 2&lt;/strong&gt;: 잠금은 쿼리를 수행하는 과정에서 접근한 객체에만 걸린다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;규칙 1&lt;/strong&gt;: 인덱스(고유, 비고유)를 사용하는 동등 조건의 쿼리를 수행할 때 레코드 스캔 방향은 오른쪽이며, 마지막 레코드가 동등 조건을 만족하지 않으면 넥스트 키 락은 갭 락으로 강등된다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;규칙 2&lt;/strong&gt;: 고유 인덱스를 사용하는 동등 조건의 쿼리를 수행할 때, 레코드가 동등 조건을 만족하면 넥스트 키 락은 레코드 락으로 강등된다.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- 테스트 테이블 및 데이터 준비
@@ -10,14 +19,10 @@ CREATE TABLE t (
   b int NULL,
   PRIMARY KEY (id),
   KEY ix_a (a)
-) ENGINE=InnoDB;
-
-INSERT INTO t (id, a, b) VALUES
-  (0, 0, 0), (5, 5, 5), (10, 10, 10),
-  (15, 15, 15), (20, 20, 20), (25, 25, 25);&lt;/code&gt;
+) ENGINE=InnoDB;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;details&gt;
-&lt;summary&gt;잠금 상태 조회하기&lt;/summary&gt;
+&lt;summary&gt;🔐 잠금 상태 조회 쿼리&lt;/summary&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;-- 잠금 상태 조회하기
 SELECT 
@@ -36,19 +41,20 @@ FROM performance_schema.data_locks dl
 ORDER BY dl.object_name, dl.lock_data;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;/details&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;InnoDB 잠금의 시작은 넥스트 키 락이다. 이후에 갭 락과 레코드 락을 따져보는 것이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;원칙 2&lt;/strong&gt;: 잠금은 쿼리를 수행하는 과정에서 접근한 객체에만 걸린다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;규칙 1&lt;/strong&gt;: 인덱스(고유, 비고유)를 사용하는 동등 조건의 쿼리를 수행할 때 레코드 스캔 방향은 오른쪽이며, 마지막 레코드가 동등 조건을 만족하지 않으면 넥스트 키 락은 갭 락으로 강등된다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;규칙 2&lt;/strong&gt;: 고유 인덱스를 사용하는 동등 조건의 쿼리를 수행할 때, 레코드가 동등 조건을 만족하면 넥스트 키 락은 레코드 락으로 강등된다.&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&quot;갭-락으로-인한-insert-실패&quot; style=&quot;position:relative;&quot;&gt;갭 락으로 인한 INSERT 실패&lt;a href=&quot;#%EA%B0%AD-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-insert-%EC%8B%A4%ED%8C%A8&quot; aria-label=&quot;갭 락으로 인한 insert 실패 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;A 세션&amp;gt; 존재하지 않는 id = 7를 업데이트 
+          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt; 존재하지 않는 id = 7를 업데이트 
 BEGIN;
 UPDATE t SET b=b+1 WHERE id=7;
 
@@ -69,7 +75,304 @@ UPDATE t SET b=b+1 WHERE id=5;      -- 성공
 UPDATE t SET b=b+1 WHERE id=10;     -- 성공&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;먼저 넥스트 키 락에 의해 &lt;code class=&quot;language-text&quot;&gt;(5, 10]&lt;/code&gt;으로 잠금되고, 마지막 레코드 10이 id=7 조건에 만족하지 않기 때문에 넥스트 키 락은 갭 락으로 강등되어 &lt;code class=&quot;language-text&quot;&gt;(5, 10)&lt;/code&gt;의 잠금이 발생한다.&lt;br&gt;
-그리하여 마지막 업데이트 쿼리는 둘 다 성공한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+그리하여 마지막 업데이트 쿼리는 둘 다 성공한다.&lt;/p&gt;
+&lt;h2 id=&quot;non-unique-세컨더리-인덱스-동등-잠금-for-share&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 동등 잠금 (FOR SHARE)&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%8F%99%EB%93%B1-%EC%9E%A0%EA%B8%88-for-share&quot; aria-label=&quot;non unique 세컨더리 인덱스 동등 잠금 for share permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+select id from t where a = 5 for share;
+
++-------+-----------+------------+-----------+------------------+-------------+
+| table | lock_type | index_name | lock_mode | lock_type_detail | locked_data |
++-------+-----------+------------+-----------+------------------+-------------+
+| t     | TABLE     | NULL       | IS        | Next-Key Lock    | NULL        |
+| t     | RECORD    | ix_a       | S,GAP     | Gap Lock         | 10, 10      | &amp;lt;- (5, 10)
+| t     | RECORD    | ix_a       | S         | Next-Key Lock    | 5, 5        | &amp;lt;- (0, 5]
++-------+-----------+------------+-----------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+INSERT INTO t VALUES (-1, -1, -1);  -- 성공
+INSERT INTO t VALUES (0,0,0);   -- BLOCKED
+INSERT INTO t VALUES (3,3,3);   -- BLOCKED
+INSERT INTO t VALUES (7,7,7);   -- BLOCKED
+
+UPDATE t SET b=b+1 WHERE id=5;  -- 성공
+UPDATE t SET b=b+1 WHERE id=10; -- 성공
+
++----+------+------+
+| id | a    | b    |
++----+------+------+
+| -1 |   -1 |   -1 |
+|  0 |    0 |    0 |
+|  5 |    5 |    6 |
+| 10 |   10 |   11 |
++----+------+------+
+
+UPDATE t SET a=a+1 WHERE id=10; -- 성공
+UPDATE t SET a=a+1 WHERE id=5;  -- BLOCKED
+
++----+------+------+
+| id | a    | b    |
++----+------+------+
+| -1 |   -1 |   -1 |
+|  0 |    0 |    0 |
+|  5 |    5 |    6 |
+| 10 |   11 |   11 |
++----+------+------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Q: 왜 5미만의 INSERT 쿼리는 실행하지 못할까?&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;원칙 1에 따라 기본 잠금 단위는 넥스트 키 락이기 때문에 &lt;code class=&quot;language-text&quot;&gt;(0,5]&lt;/code&gt;에 넥스트 키 락이 설정된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Q: 왜 &lt;code class=&quot;language-text&quot;&gt;id = (5 &amp;lt; N &amp;lt; 10)&lt;/code&gt;의 INSERT 쿼리는 실행하지 못할까?&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;a 컬럼 인덱스는 유니크하지 않은 세컨더리 인덱스이기 때문에 &lt;code class=&quot;language-text&quot;&gt;a = 5&lt;/code&gt;에 해당하는 레코드만 찾아서 바로 종료하는 것이 아니라 오른쪽으로 계속 스캔하여 레코드 10을 찾을 때까지 이동하기에 &lt;code class=&quot;language-text&quot;&gt;(5,10]&lt;/code&gt;에 넥스트 키 락이 설정된다. &lt;strong&gt;이 과정에서 접근한 모든 객체에 잠금을 걸게 되기 때문이다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Q: 왜 &lt;code class=&quot;language-text&quot;&gt;id=10&lt;/code&gt;에 대한 a,b 컬럼 UPDATE는 성공할까?&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;10은 &lt;code class=&quot;language-text&quot;&gt;a = 5&lt;/code&gt; 조건을 만족하지 않기 때문에 넥스트 키 락이 갭 락으로 강등되어 &lt;code class=&quot;language-text&quot;&gt;(5,10)&lt;/code&gt;으로 잠금 범위가 변경되기 때문이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Q: FOR SHARE로 &lt;code class=&quot;language-text&quot;&gt;a = 5&lt;/code&gt;에 대한 명시적 공유 잠금을 걸었는데 b 컬럼에 대한 업데이트는 왜 실행될까?&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;A 세션의 FOR SHARE 쿼리는 커버링 인덱스를 활용하고 있고 조회 가능 잠금이기 때문에 프라이머리 키 인덱스에 어떠한 잠금도 설정되지 않는다.&lt;/li&gt;
+&lt;li&gt;잠금에 대한 정보를 통해 &lt;code class=&quot;language-text&quot;&gt;ix_a 인덱스의 (5,10) 구간에 걸린 Gap Lock&lt;/code&gt;으로 인해 a 컬럼은 UPDATE가 실행되지 않았고, b 컬럼에 대한 UPDATE는 실행 가능한 것이다.&lt;/li&gt;
+&lt;li&gt;만약 &lt;code class=&quot;language-text&quot;&gt;a = 5&lt;/code&gt;에 대한 조회 가능 잠금을 통해 레코드가 업데이트 되는 것을 원하지 않으면 FOR SHARE 쿼리를 수정하면 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;select * from t where a = 5 for share; -- 또는
+select id, a, b from t where a = 5 for share;
+
++-------+-----------+------------+---------------+------------------+-------------+
+| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-------+-----------+------------+---------------+------------------+-------------+
+| t     | TABLE     | NULL       | IS            | Next-Key Lock    | NULL        |
+| t     | RECORD    | ix_a       | S,GAP         | Gap Lock         | 10, 10      |
+| t     | RECORD    | PRIMARY    | S,REC_NOT_GAP | Record Lock      | 5           | -&amp;gt; 레코드 락을 확인할 수 있다!
+| t     | RECORD    | ix_a       | S             | Next-Key Lock    | 5, 5        |
++-------+-----------+------------+---------------+------------------+-------------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;non-unique-세컨더리-인덱스-동등-장금-for-update&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 동등 장금 (FOR UPDATE)&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%8F%99%EB%93%B1-%EC%9E%A5%EA%B8%88-for-update&quot; aria-label=&quot;non unique 세컨더리 인덱스 동등 장금 for update permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+select id from t where a = 5 for update;
+
++-------+-----------+------------+---------------+------------------+-------------+
+| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-------+-----------+------------+---------------+------------------+-------------+
+| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| t     | RECORD    | ix_a       | X,GAP         | Gap Lock         | 10, 10      |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 5           |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 5, 5        |
++-------+-----------+------------+---------------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+
+INSERT INTO t VALUES (7,7,7);   -- BLOCKED
+UPDATE t SET b=b+1 WHERE id=5;  -- BLOCKED
+UPDATE t SET b=b+1 WHERE id=10; -- 성공
+
+UPDATE t SET a=a+1 WHERE id=5;   -- BLOCKED
+UPDATE t SET a=a+1 WHERE id=10;  -- 성공&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;프라이머리-키-인덱스-범위-잠금&quot; style=&quot;position:relative;&quot;&gt;프라이머리 키 인덱스 범위 잠금&lt;a href=&quot;#%ED%94%84%EB%9D%BC%EC%9D%B4%EB%A8%B8%EB%A6%AC-%ED%82%A4-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%B2%94%EC%9C%84-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;프라이머리 키 인덱스 범위 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;조회 결과는 같지만 잠금 범위가 서로 다른 케이스를 확인해보자.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+SELECT * FROM t WHERE id=10 FOR UPDATE;
+
++-------+-----------+------------+---------------+------------------+-------------+
+| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-------+-----------+------------+---------------+------------------+-------------+
+| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
++-------+-----------+------------+---------------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+UPDATE t SET b=b+1 WHERE id=5;  -- 성공
+INSERT INTO t VALUES (7,7,7);   -- 성공
+INSERT INTO t VALUES (11,11,11);    -- 성공&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;처음엔 &lt;code class=&quot;language-text&quot;&gt;(5, 10]&lt;/code&gt; 넥스트 키 락이 설정되고, id는 프라이머리 키 인덱스이고 &lt;code class=&quot;language-text&quot;&gt;id = 10&lt;/code&gt; 조건에 해당하는 레코드가 존재하므로 레코드 락으로 강등된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+SELECT * FROM t WHERE id &amp;gt;= 10 AND id &amp;lt; 11 FOR UPDATE;
+
++-------+-----------+------------+---------------+------------------+-------------+
+| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-------+-----------+------------+---------------+------------------+-------------+
+| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| t     | RECORD    | PRIMARY    | X,GAP         | Gap Lock         | 15          |
++-------+-----------+------------+---------------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+INSERT INTO t VALUES (8, 8, 8);     -- 성공
+INSERT INTO t VALUES (9, 9, 9);     -- 성공
+INSERT INTO t VALUES (11, 11, 11);  -- BLOCKED
+
+UPDATE t SET b=b+1 WHERE id = 15;   -- 성공
+UPDATE t SET a=a+1 WHERE id = 15;   -- 성공
+UPDATE t SET a=a+1 WHERE id = 10;   -- BLOCKED&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;id &gt;= 10 AND id &amp;lt; 11&lt;/code&gt; 조건에 해당하는 레코드를 찾게 되는데, 먼저 &lt;code class=&quot;language-text&quot;&gt;id &gt;= 10&lt;/code&gt;에 대한 &lt;code class=&quot;language-text&quot;&gt;(5, 10]&lt;/code&gt; 넥스트 키 락이 설정된다. 하지만 &lt;code class=&quot;language-text&quot;&gt;id = 10&lt;/code&gt;인 레코드가 존재하므로 레코드 락으로 강등된다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;id &amp;lt; 11&lt;/code&gt; 같은 범위 검색은 조건을 만족하는지 안하는지 다음 첫 번째 레코드까지 접근해야만 알 수 있기 때문에 오른쪽으로 범위 검색을 계속해서 수행하며 &lt;code class=&quot;language-text&quot;&gt;id=15&lt;/code&gt; 레코드를 찾게된다.&lt;br&gt;
+이미 &lt;code class=&quot;language-text&quot;&gt;id=10&lt;/code&gt;레코드를 찾았으므로 &lt;code class=&quot;language-text&quot;&gt;(10, 15)&lt;/code&gt;에 갭락이 설정된다.&lt;/p&gt;
+&lt;p&gt;즉, 최종 잠금 범위는 &lt;code class=&quot;language-text&quot;&gt;10, (10, 15)&lt;/code&gt;가 된다.&lt;/p&gt;
+&lt;h2 id=&quot;non-unique-세컨더리-인덱스-범위-잠금&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 범위 잠금&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%B2%94%EC%9C%84-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;non unique 세컨더리 인덱스 범위 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+SELECT * FROM t WHERE a &amp;gt;= 10 AND a &amp;lt; 11 FOR UPDATE;
+
++-------+-----------+------------+---------------+------------------+-------------+
+| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-------+-----------+------------+---------------+------------------+-------------+
+| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 15, 15      |
++-------+-----------+------------+---------------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+INSERT INTO t VALUES (6, 6, 6);     -- BLOCKED
+INSERT INTO t VALUES (8, 8, 8);     -- BLOCKED
+INSERT INTO t VALUES (4, 4, 4);     -- 성공
+
+UPDATE t SET b=b+1 WHERE a = 15;    -- BLOCKED
+UPDATE t SET b=b+1 WHERE a = 10;    -- BLOCKED
+UPDATE t SET b=b+1 WHERE a = 5;     -- 성공
+UPDATE t SET b=b+1 WHERE a = 4;     -- 성공&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;먼저 &lt;code class=&quot;language-text&quot;&gt;a=10&lt;/code&gt;인 레코드를 찾아 &lt;code class=&quot;language-text&quot;&gt;(5, 10]&lt;/code&gt; 넥스트 키 락이 설정된다. &lt;code class=&quot;language-text&quot;&gt;ix_a&lt;/code&gt; 인덱스는 유니크 인덱스가 아니기 때문에 레코드 락으로 끝나지 않는다. (규칙 2를 적용할 수 없다.)&lt;br&gt;
+그렇기에 동등 조건을 만족하지 않는 다음 레코드까지 범위 검색을 수행하며, &lt;code class=&quot;language-text&quot;&gt;a=15&lt;/code&gt;에 해당하는 레코드를 찾아 검색이 중단되고 &lt;code class=&quot;language-text&quot;&gt;(10, 15]&lt;/code&gt;에 넥스트 키 락이 설정된다.&lt;br&gt;
+동등 조건이 아닌 범위 검색에 해당하기 때문에 갭 락으로 강등되지 않는다.&lt;/p&gt;
+&lt;p&gt;즉, 최종 잠금 범위는 &lt;code class=&quot;language-text&quot;&gt;(5, 10], (10, 15]&lt;/code&gt;이다.&lt;/p&gt;
+&lt;h2 id=&quot;non-unique-세컨더리-인덱스-중복된-행-잠금&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 중복된 행 잠금&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%A4%91%EB%B3%B5%EB%90%9C-%ED%96%89-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;non unique 세컨더리 인덱스 중복된 행 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
+| 30 |   10 |   30 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+SELECT * FROM t WHERE a=10 FOR UPDATE;
+
+
++-------+-----------+------------+---------------+------------------+-------------+
+| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-------+-----------+------------+---------------+------------------+-------------+
+| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
+| t     | RECORD    | ix_a       | X,GAP         | Gap Lock         | 15, 15      |
++-------+-----------+------------+---------------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+INSERT INTO t VALUES (4, 4, 4);      -- 성공
+INSERT INTO t VALUES (6, 6, 6);      -- BLOCKED
+INSERT INTO t VALUES (9, 9, 9);      -- BLOCKED
+INSERT INTO t VALUES (12, 12, 12);   -- BLOCKED
+INSERT INTO t VALUES (17, 17, 17);   -- 성공
+INSERT INTO t VALUES (24, 24, 24);   -- 성공
+INSERT INTO t VALUES (27, 27, 27);   -- 성공
+
+UPDATE t SET b=b+1 WHERE a = 5;     -- 성공
+UPDATE t SET b=b+1 WHERE a = 10;    -- BLOCKED
+UPDATE t SET b=b+1 WHERE a = 15;    -- 성공
+UPDATE t SET b=b+1 WHERE a = 20;    -- 성공
+UPDATE t SET b=b+1 WHERE a = 25;    -- 성공
+
+UPDATE t SET a=a+1 WHERE id = 0;
+UPDATE t SET a=a+1 WHERE id = 5;     -- BLOCKED
+UPDATE t SET a=a+1 WHERE id = 10;    -- BLOCKED
+UPDATE t SET a=a+1 WHERE id = 15;
+UPDATE t SET a=a+1 WHERE id = 20;
+UPDATE t SET a=a+1 WHERE id = 25;
+UPDATE t SET a=a+1 WHERE id = 30;    -- BLOCKED
+
+UPDATE t SET b=b+1 WHERE id = 0;
+UPDATE t SET b=b+1 WHERE id = 5;
+UPDATE t SET b=b+1 WHERE id = 10;    -- BLOCKED
+UPDATE t SET b=b+1 WHERE id = 15;
+UPDATE t SET b=b+1 WHERE id = 20;
+UPDATE t SET b=b+1 WHERE id = 25;
+UPDATE t SET b=b+1 WHERE id = 30;    -- BLOCKED&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;먼저 &lt;code class=&quot;language-text&quot;&gt;a=10&lt;/code&gt; 조건에 해당하는 레코드를 찾아 &lt;code class=&quot;language-text&quot;&gt;(5, 10]&lt;/code&gt; 넥스트 키 락을 설정한다.&lt;br&gt;
+정확히는 &lt;code class=&quot;language-text&quot;&gt;(a=5, id=5)부터 (a=10, id=10)&lt;/code&gt;까지 넥스트 키 락이 설정된다.&lt;/p&gt;
+&lt;p&gt;그리고 넌유니크 세컨더리 인덱스이기 때문에 다음 레코드 &lt;code class=&quot;language-text&quot;&gt;a=15&lt;/code&gt;를 찾을 때 까지 오른쪽으로 검색을 수행하며, 이 과정에서 &lt;code class=&quot;language-text&quot;&gt;a=10, id=30&lt;/code&gt; 레코드를 거치기 때문에 &lt;code class=&quot;language-text&quot;&gt;(a=10, id=10) ~ (a=10, id=30)&lt;/code&gt;까지 넥스트 키 락이 설정된다.&lt;/p&gt;
+&lt;p&gt;계속 오른쪽으로 검색하며 &lt;code class=&quot;language-text&quot;&gt;a=15, id=15&lt;/code&gt; 레코드를 만나면 검색 루프는 종료되고 &lt;code class=&quot;language-text&quot;&gt;(a=10, id=30) ~ (a=15, id=15)&lt;/code&gt; 까지 넥스트 키 락이 설정된다.&lt;br&gt;
+하지만 검색 조건 &lt;code class=&quot;language-text&quot;&gt;a=10&lt;/code&gt; 조건에 해당되지 않으므로 최종적으로 갭 락으로 강등된다.&lt;/p&gt;
+&lt;p&gt;즉 최종 잠금 범위는&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- ix_a, X (Next-Key Lock)
+( (a=5, id=5), (a=10, id=10) ],
+
+-- ix_a, X (Next-Key Lock)
+( (a=10, id=10), (a=10, id=30) ], 
+
+-- ix_a, X,GAP (Gap Lock)
+( (a=10, id=30), (a=15, id=15) )&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;모니터링을 통해 보름 간격으로 한 번씩 &lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 발생하는 것을 확인했다.&lt;br&gt;
 외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
 &lt;p&gt;예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.&lt;/p&gt;
