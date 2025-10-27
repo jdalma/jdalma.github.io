@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 Oct 2025 08:13:36 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 Oct 2025 09:03:53 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
@@ -372,7 +372,101 @@ UPDATE t SET b=b+1 WHERE id = 30;    -- BLOCKED&lt;/code&gt;
 
 -- ix_a, X,GAP (Gap Lock)
 ( (a=10, id=30), (a=15, id=15) )&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;non-unique-세컨더리-인덱스-중복된-행-잠금-추가-케이스&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 중복된 행 잠금 (추가 케이스)&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%A4%91%EB%B3%B5%EB%90%9C-%ED%96%89-%EC%9E%A0%EA%B8%88-%EC%B6%94%EA%B0%80-%EC%BC%80%EC%9D%B4%EC%8A%A4&quot; aria-label=&quot;non unique 세컨더리 인덱스 중복된 행 잠금 추가 케이스 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE employees (
+    id int NOT NULL AUTO_INCREMENT,
+    first_name varchar(255) DEFAULT NULL,
+    last_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY idx_first_name (first_name)
+) ENGINE=InnoDB
+
++----+------------+-----------+
+| id | first_name | last_name |
++----+------------+-----------+
+| 34 | E          | E1        |
+| 35 | E          | E2        |
+| 36 | E          | E3        |
+| 37 | B          | B1        |
+| 38 | B          | B2        |
++----+------------+-----------+&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+update employees SET last_name = &amp;#39;Updated E&amp;#39; where first_name = &amp;#39;E&amp;#39; and last_name = &amp;#39;E2&amp;#39;;
+
++-----------+-----------+----------------+---------------+------------------+------------------------+
+| table     | lock_type | index_name     | lock_mode     | lock_type_detail | locked_data            |
++-----------+-----------+----------------+---------------+------------------+------------------------+
+| employees | TABLE     | NULL           | IX            | Next-Key Lock    | NULL                   |
+| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 34                |
+| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 35                |
+| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 36                |
+| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 34                     |
+| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 35                     |
+| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 36                     |
+| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | supremum pseudo-record |
++-----------+-----------+----------------+---------------+------------------+------------------------+
+
+-- &amp;lt;B 세션&amp;gt;
+insert into employees (first_name, last_name) values (&amp;#39;A&amp;#39;, &amp;#39;A1&amp;#39;);    -- 성공
+insert into employees (first_name, last_name) values (&amp;#39;B&amp;#39;, &amp;#39;B1&amp;#39;);    -- BLOCKED
+insert into employees (first_name, last_name) values (&amp;#39;C&amp;#39;, &amp;#39;C1&amp;#39;);    -- BLOCKED
+insert into employees (first_name, last_name) values (&amp;#39;D&amp;#39;, &amp;#39;D1&amp;#39;);    -- BLOCKED
+insert into employees (first_name, last_name) values (&amp;#39;F&amp;#39;, &amp;#39;F1&amp;#39;);    -- BLOCKED
+insert into employees (first_name, last_name) values (&amp;#39;Z&amp;#39;, &amp;#39;Z1&amp;#39;);    -- BLOCKED
+
+update employees set last_name = &amp;#39;updated B1&amp;#39; where id = 37;   -- 성공
+update employees set last_name = &amp;#39;updated B2&amp;#39; where id = 38;   -- 성공
+update employees set last_name = &amp;#39;updated B2&amp;#39; where first_name = &amp;#39;B&amp;#39;;    -- 성공
+update employees set first_name = &amp;#39;C&amp;#39; where id = 37;   -- BLOCKED
+update employees set first_name = &amp;#39;A&amp;#39; where id = 37;   -- 성공&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;먼저 &lt;code class=&quot;language-text&quot;&gt;first_name = &apos;E&apos;&lt;/code&gt;를 찾기 위해 오른쪽으로 검색하지만 &lt;code class=&quot;language-text&quot;&gt;E&lt;/code&gt;보다 큰 데이터는 없기에 supremum 락이 걸린다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;(&amp;#39;B&amp;#39;, 37)
+(&amp;#39;B&amp;#39;, 38) ← 마지막 B 레코드
+    ↓
+  [갭1] ← (&amp;#39;B&amp;#39;, 38) ~ (&amp;#39;E&amp;#39;, 34)
+    ↓
+(&amp;#39;E&amp;#39;, 34) ← Next-Key Lock = 레코드 + 갭1
+(&amp;#39;E&amp;#39;, 35) ← Next-Key Lock = 레코드 + 갭2
+(&amp;#39;E&amp;#39;, 36) ← Next-Key Lock = 레코드 + 갭3
+    ↓
+  [갭4] ← (&amp;#39;E&amp;#39;, 36) ~ supremum
+    ↓
+supremum  ← Next-Key Lock = supremum + 갭4&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;strong&gt;실제 락 범위&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;(&apos;E&apos;, 34)&lt;/code&gt; &lt;strong&gt;Next-Key Lock&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;레코드: &lt;code class=&quot;language-text&quot;&gt;(&apos;E&apos;, 34)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;갭: &lt;code class=&quot;language-text&quot;&gt;((&apos;B&apos;, 38) ~ (&apos;E&apos;, 34))&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;(&apos;E&apos;, 35)&lt;/code&gt; &lt;strong&gt;Next-Key Lock&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;레코드: &lt;code class=&quot;language-text&quot;&gt;(&apos;E&apos;, 35)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;갭: &lt;code class=&quot;language-text&quot;&gt;((&apos;E&apos;, 34) ~ (&apos;E&apos;, 35))&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;(&apos;E&apos;, 36)&lt;/code&gt; &lt;strong&gt;Next-Key Lock&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;레코드: &lt;code class=&quot;language-text&quot;&gt;(&apos;E&apos;, 36)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;갭: &lt;code class=&quot;language-text&quot;&gt;((&apos;E&apos;, 35) ~ (&apos;E&apos;, 36))&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;supremum Next-Key Lock&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;supremum 자체&lt;/li&gt;
+&lt;li&gt;갭: &lt;code class=&quot;language-text&quot;&gt;((&apos;E&apos;, 36) ~ supremum)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;모니터링을 통해 보름 간격으로 한 번씩 &lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 발생하는 것을 확인했다.&lt;br&gt;
 외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
 &lt;p&gt;예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.&lt;/p&gt;
