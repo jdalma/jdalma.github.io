@@ -480,3 +480,48 @@ supremum  ← Next-Key Lock = supremum + 갭4
 4. **supremum Next-Key Lock**
    - supremum 자체
    - 갭: `(('E', 36) ~ supremum)`
+
+## non-unique 세컨더리 인덱스 LIMIT 잠금
+
+```sql
++----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
+| 30 |   10 |   30 |
+| 35 |   10 |   35 |
++----+------+------+
+
+-- <A 세션>
+BEGIN;
+select * from t where a = 10 limit 2 FOR UPDATE;
+
++-------+-----------+------------+---------------+------------------+-------------+
+| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-------+-----------+------------+---------------+------------------+-------------+
+| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
++-------+-----------+------------+---------------+------------------+-------------+
+
+-- <B 세션>
+insert into t values (9, 9, 9);       -- BLOCKED
+insert into t values (13, 13, 13);    -- 성공
+insert into t values (14, 9, 14);     -- BLOCKED
+insert into t values (16, 16, 16);    -- 성공
+
+UPDATE t SET b=b+1 WHERE id = 15;     -- 성공
+```
+
+![](./not_gray_gaplock.webp)
+
+1. 처음으로 좌측 개구간 `(a=5, id=5)부터 (a=10, id=10)` 까지 넥스트 키 락이 설정된다.
+2. 우측으로 탐색하며 `(a=10, id=30)` 레코드에 접근학데 되므로 `(a=10, id=10)부터 (a=10, id=30)`까지 넥스트 키 락이 설정된다.
+3. LIMIT 2에 대한 조건을 만족했기 때문에 더 이상 검색을 진행하지 않고 종료한다.
