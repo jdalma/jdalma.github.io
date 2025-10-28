@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 Oct 2025 09:03:53 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 28 Oct 2025 11:34:02 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
@@ -466,6 +466,78 @@ supremum  ← Next-Key Lock = supremum + 갭4&lt;/code&gt;
 &lt;li&gt;갭: &lt;code class=&quot;language-text&quot;&gt;((&apos;E&apos;, 36) ~ supremum)&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;non-unique-세컨더리-인덱스-limit-잠금&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 LIMIT 잠금&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-limit-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;non unique 세컨더리 인덱스 limit 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
+| 30 |   10 |   30 |
+| 35 |   10 |   35 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+select * from t where a = 10 limit 2 FOR UPDATE;
+
++-------+-----------+------------+---------------+------------------+-------------+
+| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-------+-----------+------------+---------------+------------------+-------------+
+| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
+| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
++-------+-----------+------------+---------------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+insert into t values (9, 9, 9);       -- BLOCKED
+insert into t values (13, 13, 13);    -- 성공
+insert into t values (14, 9, 14);     -- BLOCKED
+insert into t values (16, 16, 16);    -- 성공
+
+UPDATE t SET b=b+1 WHERE id = 15;     -- 성공&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 712px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0fa3f7bc2ed3df21f40adff80ae95151/c4538/not_gray_gaplock.webp&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 13.777777777777779%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAwCdASoUAAMAPtFUo0uoJKMhsAgBABoJaQDGfB7HiqstkCsGAAD+8eBgRKEvjjsZCYemeID/2OF4AAA=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;not gray gaplock&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0fa3f7bc2ed3df21f40adff80ae95151/c4538/not_gray_gaplock.webp&quot;
+        srcset=&quot;/static/0fa3f7bc2ed3df21f40adff80ae95151/d7e55/not_gray_gaplock.webp 225w,
+/static/0fa3f7bc2ed3df21f40adff80ae95151/8626f/not_gray_gaplock.webp 450w,
+/static/0fa3f7bc2ed3df21f40adff80ae95151/c4538/not_gray_gaplock.webp 712w&quot;
+        sizes=&quot;(max-width: 712px) 100vw, 712px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;처음으로 좌측 개구간 &lt;code class=&quot;language-text&quot;&gt;(a=5, id=5)부터 (a=10, id=10)&lt;/code&gt; 까지 넥스트 키 락이 설정된다.&lt;/li&gt;
+&lt;li&gt;우측으로 탐색하며 &lt;code class=&quot;language-text&quot;&gt;(a=10, id=30)&lt;/code&gt; 레코드에 접근학데 되므로 &lt;code class=&quot;language-text&quot;&gt;(a=10, id=10)부터 (a=10, id=30)&lt;/code&gt;까지 넥스트 키 락이 설정된다.&lt;/li&gt;
+&lt;li&gt;LIMIT 2에 대한 조건을 만족했기 때문에 더 이상 검색을 진행하지 않고 종료한다.&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;모니터링을 통해 보름 간격으로 한 번씩 &lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 발생하는 것을 확인했다.&lt;br&gt;
 외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
