@@ -1,7 +1,7 @@
 ---
 title: 가시성 문제와 동시성 문제 이해하기
 date: "2024-12-04"
-update: "2024-12-04"
+update: "2025-10-29"
 tags:
    - concurrency
    - visibility
@@ -73,29 +73,53 @@ JVM은 자체 메모리 모델을 가졌기 때문에 플랫폼에 상관없이 
 하지만 스레드의 작업 메모리간 동기화가 보장되지 않아 문제가 발생하는 경우가 존재하는데, 이 문제를 **가시성 문제** 라고 한다.  
   
 ```java
-public class VolatileTest implements Runnable {
+/**
+ * volatile 키워드 없이 발생하는 메모리 가시성 문제 예제
+ * 문제: 메인 스레드가 runnable을 false로 변경해도,
+ *      워커 스레드는 CPU 캐시에 저장된 true 값을 계속 읽어서 무한 루프에 빠짐
+ */
+public class VolatileTest {
+    private boolean runnable = true;
 
-    boolean runnable = true;
-    int count = 0;
-
-    @Override
-    public void run() {
+    public void work() {
+        System.out.println("[워커 스레드] 작업 시작");
+        long count = 0;
         while (runnable) {
             count++;
         }
-        System.out.println(Thread.currentThread().getName() + "end, count = " + count);
+        System.out.println("[워커 스레드] 작업 종료! 총 카운트: " + count);
+    }
+
+    public void stop() {
+        System.out.println("[메인 스레드] 중지 신호 전송 (runnable = false)");
+        runnable = false;
     }
 
     public static void main(String[] args) throws InterruptedException {
-        VolatileTest task = new VolatileTest();
-        Thread thread = new Thread(task);
+        VolatileTest test = new VolatileTest();
+        Thread worker = new Thread(test::work, "Worker");
+        worker.start();
 
-        thread.start();
+        Thread.sleep(1000);
 
-        Thread.sleep(500);
-        System.out.println("task runnable false, count = " + task.count);
+        test.stop();
+
+        // 5초 더 대기하며 스레드가 종료되는지 확인
+        System.out.println("[메인 스레드] 5초 동안 대기 중...");
+        Thread.sleep(5000);
+
+        if (worker.isAlive()) {
+            System.out.println("[메인 스레드] 워커 스레드가 여전히 실행 중!");
+        } else {
+            System.out.println("[메인 스레드] ✓ 워커 스레드가 정상 종료됨");
+        }
     }
 }
+
+// [워커 스레드] 작업 시작
+// [메인 스레드] 중지 신호 전송 (runnable = false)
+// [메인 스레드] 5초 동안 대기 중...
+// [메인 스레드] 워커 스레드가 여전히 실행 중!
 ```
 
 메인 스레드는 `count`를 1씩 증가시키는 자식 스레드를 생성하고 500ms후에 자식 스레드가 종료될 수 있도록 `runnable` 상태를 false로 변경하기에 자식 스레드가 종료될 것이라고 예상할 수 있다.  
