@@ -739,6 +739,54 @@ Creating a new [client-pool] client pool
 for [{url}]
 ```
 
+# 💡 DB Connection Pool은 어떻게 설정하는게 좋을까?
+  
+그렇다면 DB Connection Pool은 어떻게 설정해야 할까?  
+[HikariCP About Pool Sizing](https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing)을 통해 Pool Sizing에 대한 가이드를 읽을 수 있다.  
+  
+- 풀 사이즈 관련 설정들(**maximumPoolSize**, minimumIdle, idleTimeout)
+- 커넥션 생명주기 관리(maxLifetime, **keepaliveTime**)
+- 커넥션 요청 대기(**connectionTimeout**)
+
+풀 사이즈 관련 설정 중 maximumPoolSize에 대해 일반적으로 추천하는 사이즈는 아래와 같다.  
+
+```
+core_count: 하이퍼스레딩 제외한 물리 코어 수
+effective_spindle_count: 실제 디스크 동시 처리 가능 수 (데이터가 메모리에 캐싱되어 있으면 0)
+
+connections = ((core_count * 2) + effective_spindle_count)
+```
+
+그렇다고 풀 사이즈를 단순히 크게 지정한다고 해서 성능이 보장되는 것은 아니다.  
+- 소수 커넥션이 스레드에 의해 포화될 때가 최적
+- 나머지 스레드는 커넥션을 기다리도록 하고, **데이터베이스가 동시에 처리할 수 있는 쿼리 수(max)를 기준으로 풀 크기 산정**
+- 기본 값은 10개 (4코어 + 1스핀들 -> 9 ~ 10개 적정)
+  
+또한 데드 락을 피할 수 있는 **최소 커넥션 수 산정 공식**도 확인할 수 있다.  
+  
+```
+Tn: 동시에 실행되는 최대 쓰레드 수 (예: 동시 처리 요청 수)
+Cm: 한 요청(Task)이 동시에 필요로 하는 커넥션 수 (예: ID 채번/메인 쿼리 등 다중 커넥션)
+
+최소 커넥션 풀 사이즈 = Tn × (Cm − 1) + 1
+```
+
+예를 들어, 16개의 요청(Tn)이 각각 2개(Cm)의 커넥션을 필요로 하면 최소 17개의 커넥션 풀을 설정해야 데드락이 발생하지 않는다.  
+- 동시 요청 10개(Tn=10), 요청당 최대 2개 커넥션 필요(Cm=2) → `10×(2−1)+1=11`
+- 동시 요청 20개, 요청당 3개 커넥션 필요 → `20×(3−1)+1=41`
+  
+> **maximumPoolSize와 연관된 속성**  
+> - minimumIdle: 풀에서 유지하는 최소 idle 커넥션 갯수 (default: maximumPoolSize와 동일)
+> - idleTimeout: 풀에서 커넥션이 idle 상태로 유지되는 최대 시간 (minimum: 10초, default: 10분)
+
+서비스 환경의 네트워크와 DB 속성을 확인하여 아래의 설정도 확인하는 것이 좋다.
+1. **maxLifetime** : DB 혹은 네트워크 infra에서 설정된 "최대 커넥션 생존 시간"보다 수 초 짧게 설정 필요 (default 30분)
+2. **keepaliveTime** : idle 커넥션 생존을 위해 상태 확인 주기, db/network timeout보다 짧게 (default 2분)
+3. **connectionTimeout** : 풀에서 커넥션을 가져올 때 기다리는 최대 시간, 기본 값은 너무 커 트래픽이 몰리는 경우 서버 스레드가 커넥션을 획득하기 위해 대량으로 블로킹될 가능성이 있음 (default 30초)
+  
+실제 최적값을 찾기 위해 공식 가이드나 추천을 통해 도움을 받을 수 있지만, 서비스 특성에 따른 트래픽 패턴이나 쿼리 패턴은 다 다르기 때문에 꾸준한 모니터링과 테스트가 필요하다.  
+프로메테우스와 그라파나를 이용하여 자세한 메트릭 수집이 가능하기에 세팅해서 테스트를 실제로 해봐야겠다.  
+
 # 느낀점
 
 이번 PrematureCloseException 원인 분석을 통해 많은 것을 배울 수 있었다.  

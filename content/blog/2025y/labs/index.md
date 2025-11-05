@@ -13,17 +13,6 @@ tags:
 > - **원칙 2**: 잠금은 쿼리를 수행하는 과정에서 접근한 객체에만 걸린다.
 > - **규칙 1**: 인덱스(고유, 비고유)를 사용하는 동등 조건의 쿼리를 수행할 때 레코드 스캔 방향은 오른쪽이며, 마지막 레코드가 동등 조건을 만족하지 않으면 넥스트 키 락은 갭 락으로 강등된다.
 > - **규칙 2**: 고유 인덱스를 사용하는 동등 조건의 쿼리를 수행할 때, 레코드가 동등 조건을 만족하면 넥스트 키 락은 레코드 락으로 강등된다.
-  
-```sql
--- 테스트 테이블 및 데이터 준비
-CREATE TABLE t (
-  id int NOT NULL,
-  a int NULL,
-  b int NULL,
-  PRIMARY KEY (id),
-  KEY ix_a (a)
-) ENGINE=InnoDB;
-```
 
 <details>
 <summary>🔐 잠금 상태 조회 쿼리</summary>
@@ -51,6 +40,14 @@ ORDER BY dl.object_name, dl.lock_data;
 ## 갭 락으로 인한 INSERT 실패
 
 ```sql
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
 +----+------+------+
 | id | a    | b    |
 +----+------+------+
@@ -66,12 +63,12 @@ ORDER BY dl.object_name, dl.lock_data;
 BEGIN;
 UPDATE t SET b=b+1 WHERE id=7;
 
-+-------+-----------+------------+-----------+------------------+-------------+
-| table | lock_type | index_name | lock_mode | lock_type_detail | locked_data |
-+-------+-----------+------------+-----------+------------------+-------------+
-| t     | TABLE     | NULL       | IX        | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,GAP     | Gap Lock         | 10          |
-+-------+-----------+------------+-----------+------------------+-------------+
++-----------+------------+-----------+------------------+-------------+
+| lock_type | index_name | lock_mode | lock_type_detail | locked_data |
++-----------+------------+-----------+------------------+-------------+
+| TABLE     | NULL       | IX        | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,GAP     | Gap Lock         | 10          |
++-----------+------------+-----------+------------------+-------------+
 
 -- <B 세션>
 INSERT INTO t VALUES (8, 8, 8);     -- BLOCKED
@@ -89,6 +86,14 @@ UPDATE t SET b=b+1 WHERE id=10;     -- 성공
 ## non-unique 세컨더리 인덱스 동등 잠금 (FOR SHARE)
 
 ```sql
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
 +----+------+------+
 | id | a    | b    |
 +----+------+------+
@@ -104,13 +109,13 @@ UPDATE t SET b=b+1 WHERE id=10;     -- 성공
 BEGIN;
 select id from t where a = 5 for share;
 
-+-------+-----------+------------+-----------+------------------+-------------+
-| table | lock_type | index_name | lock_mode | lock_type_detail | locked_data |
-+-------+-----------+------------+-----------+------------------+-------------+
-| t     | TABLE     | NULL       | IS        | Next-Key Lock    | NULL        |
-| t     | RECORD    | ix_a       | S,GAP     | Gap Lock         | 10, 10      | <- (5, 10)
-| t     | RECORD    | ix_a       | S         | Next-Key Lock    | 5, 5        | <- (0, 5]
-+-------+-----------+------------+-----------+------------------+-------------+
++-----------+------------+-----------+------------------+-------------+
+| lock_type | index_name | lock_mode | lock_type_detail | locked_data |
++-----------+------------+-----------+------------------+-------------+
+| TABLE     | NULL       | IS        | Next-Key Lock    | NULL        |
+| RECORD    | ix_a       | S,GAP     | Gap Lock         | 10, 10      | <- (5, 10)
+| RECORD    | ix_a       | S         | Next-Key Lock    | 5, 5        | <- (0, 5]
++-----------+------------+-----------+------------------+-------------+
 
 -- <B 세션>
 INSERT INTO t VALUES (-1, -1, -1);  -- 성공
@@ -158,20 +163,28 @@ UPDATE t SET a=a+1 WHERE id=5;  -- BLOCKED
 select * from t where a = 5 for share; -- 또는
 select id, a, b from t where a = 5 for share;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IS            | Next-Key Lock    | NULL        |
-| t     | RECORD    | ix_a       | S,GAP         | Gap Lock         | 10, 10      |
-| t     | RECORD    | PRIMARY    | S,REC_NOT_GAP | Record Lock      | 5           | -> 레코드 락을 확인할 수 있다!
-| t     | RECORD    | ix_a       | S             | Next-Key Lock    | 5, 5        |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IS            | Next-Key Lock    | NULL        |
+| RECORD    | ix_a       | S,GAP         | Gap Lock         | 10, 10      |
+| RECORD    | PRIMARY    | S,REC_NOT_GAP | Record Lock      | 5           | -> 레코드 락을 확인할 수 있다!
+| RECORD    | ix_a       | S             | Next-Key Lock    | 5, 5        |
++-----------+------------+---------------+------------------+-------------+
 ```
 
 
 ## non-unique 세컨더리 인덱스 동등 장금 (FOR UPDATE)
 
 ```sql
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
 +----+------+------+
 | id | a    | b    |
 +----+------+------+
@@ -187,14 +200,14 @@ select id, a, b from t where a = 5 for share;
 BEGIN;
 select id from t where a = 5 for update;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | ix_a       | X,GAP         | Gap Lock         | 10, 10      |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 5           |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 5, 5        |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | ix_a       | X,GAP         | Gap Lock         | 10, 10      |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 5           |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 5, 5        |
++-----------+------------+---------------+------------------+-------------+
 
 -- <B 세션>
 
@@ -211,6 +224,14 @@ UPDATE t SET a=a+1 WHERE id=10;  -- 성공
 조회 결과는 같지만 잠금 범위가 서로 다른 케이스를 확인해보자.  
 
 ```sql
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
 +----+------+------+
 | id | a    | b    |
 +----+------+------+
@@ -224,12 +245,12 @@ UPDATE t SET a=a+1 WHERE id=10;  -- 성공
 BEGIN;
 SELECT * FROM t WHERE id=10 FOR UPDATE;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
++-----------+------------+---------------+------------------+-------------+
 
 -- <B 세션>
 UPDATE t SET b=b+1 WHERE id=5;  -- 성공
@@ -244,13 +265,13 @@ INSERT INTO t VALUES (11,11,11);    -- 성공
 BEGIN;
 SELECT * FROM t WHERE id >= 10 AND id < 11 FOR UPDATE;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-| t     | RECORD    | PRIMARY    | X,GAP         | Gap Lock         | 15          |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | PRIMARY    | X,GAP         | Gap Lock         | 15          |
++-----------+------------+---------------+------------------+-------------+
 
 -- <B 세션>
 INSERT INTO t VALUES (8, 8, 8);     -- 성공
@@ -272,6 +293,14 @@ UPDATE t SET a=a+1 WHERE id = 10;   -- BLOCKED
 ## non-unique 세컨더리 인덱스 범위 잠금
 
 ```sql
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
 +----+------+------+
 | id | a    | b    |
 +----+------+------+
@@ -285,14 +314,14 @@ UPDATE t SET a=a+1 WHERE id = 10;   -- BLOCKED
 BEGIN;
 SELECT * FROM t WHERE a >= 10 AND a < 11 FOR UPDATE;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 15, 15      |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 15, 15      |
++-----------+------------+---------------+------------------+-------------+
 
 -- <B 세션>
 INSERT INTO t VALUES (6, 6, 6);     -- BLOCKED
@@ -311,9 +340,61 @@ UPDATE t SET b=b+1 WHERE a = 4;     -- 성공
   
 즉, 최종 잠금 범위는 `(5, 10], (10, 15]`이다.
 
+## unique 세컨더리 인덱스 업데이트 잠금
+
+```sql
+CREATE TABLE t2 (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  UNIQUE ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
++----+------+------+
+
+-- <A 세션>
+BEGIN;
+UPDATE t2 set b = b + 1 where a = 10;
+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | ix_a       | X,REC_NOT_GAP | Record Lock      | 10, 10      |
++-----------+------------+---------------+------------------+-------------+
+
+-- <B 세션>
+
+insert into t2 values (9, 9, 9);    -- 성공
+insert into t2 values (11, 11, 11); -- 성공
+update t2 set b = 15 where a = 10;  -- BLOCKED
+```
+
+`a` 컬럼의 인덱스는 유니크함을 보장하기 때문에 `a = 10`을 찾게되면 넥스트 키 락은 레코드 락으로 강등되기 때문에 왼쪽과 오른쪽에 대한 갭락 또는 넥스트 키 락이 발생하지 않는다.
+
+
 ## non-unique 세컨더리 인덱스 중복된 행 잠금
 
 ```sql
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
 +----+------+------+
 | id | a    | b    |
 +----+------+------+
@@ -330,17 +411,16 @@ UPDATE t SET b=b+1 WHERE a = 4;     -- 성공
 BEGIN;
 SELECT * FROM t WHERE a=10 FOR UPDATE;
 
-
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
-| t     | RECORD    | ix_a       | X,GAP         | Gap Lock         | 15, 15      |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
+| RECORD    | ix_a       | X,GAP         | Gap Lock         | 15, 15      |
++-----------+------------+---------------+------------------+-------------+
 
 -- <B 세션>
 INSERT INTO t VALUES (4, 4, 4);      -- 성공
@@ -422,18 +502,18 @@ CREATE TABLE employees (
 BEGIN;
 update employees SET last_name = 'Updated E' where first_name = 'E' and last_name = 'E2';
 
-+-----------+-----------+----------------+---------------+------------------+------------------------+
-| table     | lock_type | index_name     | lock_mode     | lock_type_detail | locked_data            |
-+-----------+-----------+----------------+---------------+------------------+------------------------+
-| employees | TABLE     | NULL           | IX            | Next-Key Lock    | NULL                   |
-| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 34                |
-| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 35                |
-| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 36                |
-| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 34                     |
-| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 35                     |
-| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 36                     |
-| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | supremum pseudo-record |
-+-----------+-----------+----------------+---------------+------------------+------------------------+
++-----------+----------------+---------------+------------------+------------------------+
+| lock_type | index_name     | lock_mode     | lock_type_detail | locked_data            |
++-----------+----------------+---------------+------------------+------------------------+
+| TABLE     | NULL           | IX            | Next-Key Lock    | NULL                   |
+| RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 34                |
+| RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 35                |
+| RECORD    | idx_first_name | X             | Next-Key Lock    | 'E', 36                |
+| RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 34                     |
+| RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 35                     |
+| RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 36                     |
+| RECORD    | idx_first_name | X             | Next-Key Lock    | supremum pseudo-record |
++-----------+----------------+---------------+------------------+------------------------+
 
 -- <B 세션>
 insert into employees (first_name, last_name) values ('A', 'A1');    -- 성공
@@ -484,6 +564,14 @@ supremum  ← Next-Key Lock = supremum + 갭4
 ## non-unique 세컨더리 인덱스 LIMIT 잠금
 
 ```sql
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
 +----+------+------+
 | id | a    | b    |
 +----+------+------+
@@ -501,15 +589,15 @@ supremum  ← Next-Key Lock = supremum + 갭4
 BEGIN;
 select * from t where a = 10 limit 2 FOR UPDATE;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
++-----------+------------+---------------+------------------+-------------+
 
 -- <B 세션>
 insert into t values (9, 9, 9);       -- BLOCKED
@@ -525,3 +613,59 @@ UPDATE t SET b=b+1 WHERE id = 15;     -- 성공
 1. 처음으로 좌측 개구간 `(a=5, id=5)부터 (a=10, id=10)` 까지 넥스트 키 락이 설정된다.
 2. 우측으로 탐색하며 `(a=10, id=30)` 레코드에 접근학데 되므로 `(a=10, id=10)부터 (a=10, id=30)`까지 넥스트 키 락이 설정된다.
 3. LIMIT 2에 대한 조건을 만족했기 때문에 더 이상 검색을 진행하지 않고 종료한다.
+
+## 넥스트 키 락(갭 락 + 레코드 락)으로 인한 데드락 발생 케이스
+
+```sql
+CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
++----+------+------+
+
+-- <A 세션>
+BEGIN;
+select * from t where a = 10 for update;
+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| RECORD    | ix_a       | X,GAP         | Gap Lock         | 15, 15      |
++-----------+------------+---------------+------------------+-------------+
+
+-- <B 세션>
+UPDATE t SET b=b+1 WHERE a=10;   -- BLOCKED
+
+-- <A 세션>
+insert into t values (8,8,8);    -- 데드락을 감지하여 B 세션의 트랜잭션을 재시작해버리면서 성공한다.
+
+-- <B 세션>
+ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting transaction
+```
+
+1. A 세션이 `a=10 FOR UPDATE`를 실행하면, 인덱스 ix_a 기준 `(5,10], (10,15)`에 넥스트 키 락(갭 락+레코드 락)이 설정된다.
+2. B 세션이 `UPDATE t SET b=b+1 WHERE a=10;`을 실행하면, 이미 A 세션이 소유한 레코드 락 때문에 세션 2는 대기한다.
+3. 이후 A 세션이 커밋/롤백 없이 `INSERT INTO t VALUES (8,8,8);`을 실행하면, 해당 값은 ix_a 인덱스의 `(5,10) 갭`에 삽입되어야 하므로, B 세션이 이미 `(5,10) 구간의 갭 락`을 소유하고 있을 경우 세션 1의 INSERT도 대기(블로킹)하게 된다.
+
+결과적으로, A 세션은 B 세션의 갭 락을 기다리고, B 세션은 A 세션의 레코드 락을 기다리는 데드락이 성립하여 MySQL이 둘 중 하나의 트랜잭션을 강제 롤백시키면서 B 세션에 에러가 발생한다.  
+  
+> 💡 **핵심**  
+> InnoDB는 팬텀 리드 등 트랜잭션 고립성을 위해 넥스트 키 락(갭 락+레코드 락) 구조를 채택  
+> 갭 락과 레코드 락이 분리되어 동작하기 때문에, 세션 간 대기가 서로 꼬이면 데드락이 자주 발생함  
+> 데드락 발생 시 애플리케이션에서 트랜잭션 재시도 처리를 해주는 것이 필요함  
