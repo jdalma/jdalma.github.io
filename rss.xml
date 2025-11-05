@@ -1,4 +1,576 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 29 Oct 2025 13:51:36 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 Nov 2025 05:08:31 GMT</lastBuildDate><item><title><![CDATA[캐시 읽기 부하 테스트 비교 - 인메모리 vs Caffeine vs Redis]]></title><description><![CDATA[애플리케이션의 성능 향상을 위해 캐시를 도입하려고 할 때 어떤 캐시 전략을 선택해야 할지 고민하게 된다.
+이번 글에서는 인메모리 캐시, Caffeine(인메모리 객체 캐시), Redis…]]></description><link>https://jdalma.github.io/2025y/cache/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/cache/</guid><pubDate>Thu, 30 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;애플리케이션의 성능 향상을 위해 캐시를 도입하려고 할 때 어떤 캐시 전략을 선택해야 할지 고민하게 된다.
+이번 글에서는 인메모리 캐시, Caffeine(인메모리 객체 캐시), Redis(외부 캐시)의 특징과 부하 테스트를 통한 성능 비교를 진행하고자 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-boot/reference/io/caching.html&quot;&gt;Spring Boot/Reference/IO/Caching&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;캐시-전략-종류&quot; style=&quot;position:relative;&quot;&gt;캐시 전략 종류&lt;a href=&quot;#%EC%BA%90%EC%8B%9C-%EC%A0%84%EB%9E%B5-%EC%A2%85%EB%A5%98&quot; aria-label=&quot;캐시 전략 종류 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;1-인메모리-캐시-concurrenthashmap-기반&quot; style=&quot;position:relative;&quot;&gt;1. 인메모리 캐시 (ConcurrentHashMap 기반)&lt;a href=&quot;#1-%EC%9D%B8%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%BA%90%EC%8B%9C-concurrenthashmap-%EA%B8%B0%EB%B0%98&quot; aria-label=&quot;1 인메모리 캐시 concurrenthashmap 기반 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;가장 단순한 형태의 캐시 구현으로, Java의 ConcurrentHashMap을 활용하여 스레드 안전성을 보장한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;장점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;구현이 간단하고 빠른 응답 속도&lt;/li&gt;
+&lt;li&gt;외부 의존성 없이 바로 사용 가능&lt;/li&gt;
+&lt;li&gt;네트워크 오버헤드가 없어 가장 빠른 성능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;메모리 관리가 수동적 (직접 eviction 정책 구현 필요)&lt;/li&gt;
+&lt;li&gt;TTL, LRU 등 고급 기능 부재&lt;/li&gt;
+&lt;li&gt;멀티 인스턴스 환경에서 캐시 불일치 문제&lt;/li&gt;
+&lt;li&gt;애플리케이션 재시작 시 캐시 손실&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;2-caffeine-캐시&quot; style=&quot;position:relative;&quot;&gt;2. Caffeine 캐시&lt;a href=&quot;#2-caffeine-%EC%BA%90%EC%8B%9C&quot; aria-label=&quot;2 caffeine 캐시 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Google Guava Cache의 후속으로 개발된 고성능 Java 캐싱 라이브러리로, Window TinyLFU eviction 정책을 통한 높은 캐시 히트율을 제공한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;장점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;자동 메모리 관리 (크기 기반, TTL 기반 eviction)&lt;/li&gt;
+&lt;li&gt;비동기 로딩, 자동 갱신 지원&lt;/li&gt;
+&lt;li&gt;통계 및 모니터링 기능 내장&lt;/li&gt;
+&lt;li&gt;높은 동시성 처리 성능&lt;/li&gt;
+&lt;li&gt;Spring Cache 추상화와 완벽한 통합&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;여전히 로컬 캐시이므로 멀티 인스턴스 환경에서 불일치 가능&lt;/li&gt;
+&lt;li&gt;인메모리이므로 애플리케이션 재시작 시 캐시 손실&lt;/li&gt;
+&lt;li&gt;ConcurrentHashMap 대비 약간의 추가 오버헤드&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;3-redis-캐시&quot; style=&quot;position:relative;&quot;&gt;3. Redis 캐시&lt;a href=&quot;#3-redis-%EC%BA%90%EC%8B%9C&quot; aria-label=&quot;3 redis 캐시 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;외부 인메모리 데이터 저장소를 활용한 분산 캐시로, Key-Value 기반의 NoSQL 데이터베이스이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;장점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;멀티 인스턴스 환경에서 캐시 공유 가능&lt;/li&gt;
+&lt;li&gt;영속성 옵션 제공 (RDB, AOF)&lt;/li&gt;
+&lt;li&gt;다양한 자료구조 지원 (String, List, Set, Hash, Sorted Set 등)&lt;/li&gt;
+&lt;li&gt;TTL 자동 관리&lt;/li&gt;
+&lt;li&gt;마이크로서비스 간 캐시 공유&lt;/li&gt;
+&lt;li&gt;Pub/Sub, 분산 락 등 추가 기능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;네트워크 I/O로 인한 레이턴시 증가&lt;/li&gt;
+&lt;li&gt;별도 인프라 운영 및 관리 필요&lt;/li&gt;
+&lt;li&gt;직렬화/역직렬화 오버헤드&lt;/li&gt;
+&lt;li&gt;네트워크 장애 시 캐시 사용 불가&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;부하-테스트-환경-설정&quot; style=&quot;position:relative;&quot;&gt;부하 테스트 환경 설정&lt;a href=&quot;#%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;부하 테스트 환경 설정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;테스트-시나리오&quot; style=&quot;position:relative;&quot;&gt;테스트 시나리오&lt;a href=&quot;#%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4&quot; aria-label=&quot;테스트 시나리오 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;목적&lt;/strong&gt;: 동시 사용자 환경에서 각 캐시 전략의 성능 비교&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;대상 API&lt;/strong&gt;: 상품 정보 조회 API (DB 쿼리가 필요한 읽기 집약적 작업)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;측정 지표&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TPS (Transactions Per Second)&lt;/li&gt;
+&lt;li&gt;평균/최대/99 percentile 응답 시간&lt;/li&gt;
+&lt;li&gt;캐시 히트율&lt;/li&gt;
+&lt;li&gt;CPU/메모리 사용률&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;테스트-도구&quot; style=&quot;position:relative;&quot;&gt;테스트 도구&lt;a href=&quot;#%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%8F%84%EA%B5%AC&quot; aria-label=&quot;테스트 도구 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;부하 테스트 도구: JMeter / Gatling / k6&lt;/li&gt;
+&lt;li&gt;동시 사용자 수: 100 ~ 1000명&lt;/li&gt;
+&lt;li&gt;테스트 시간: 각 5분&lt;/li&gt;
+&lt;li&gt;Ramp-up 시간: 30초&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;테스트-환경&quot; style=&quot;position:relative;&quot;&gt;테스트 환경&lt;a href=&quot;#%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%99%98%EA%B2%BD&quot; aria-label=&quot;테스트 환경 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;- CPU: [스펙 정보]
+- Memory: [스펙 정보]
+- JVM: OpenJDK 17
+- JVM Options: -Xms2G -Xmx4G
+- Spring Boot: 3.x
+- Redis: 7.x
+- Caffeine: 3.x&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h1 id=&quot;각-캐시-전략-구현&quot; style=&quot;position:relative;&quot;&gt;각 캐시 전략 구현&lt;a href=&quot;#%EA%B0%81-%EC%BA%90%EC%8B%9C-%EC%A0%84%EB%9E%B5-%EA%B5%AC%ED%98%84&quot; aria-label=&quot;각 캐시 전략 구현 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;1-인메모리-캐시-구현&quot; style=&quot;position:relative;&quot;&gt;1. 인메모리 캐시 구현&lt;a href=&quot;#1-%EC%9D%B8%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%BA%90%EC%8B%9C-%EA%B5%AC%ED%98%84&quot; aria-label=&quot;1 인메모리 캐시 구현 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Component
+class SimpleInMemoryCache {
+    private val cache = ConcurrentHashMap&amp;lt;String, CacheEntry&amp;gt;()
+
+    data class CacheEntry(
+        val value: Any,
+        val createdAt: Long = System.currentTimeMillis()
+    )
+
+    fun get(key: String): Any? {
+        return cache[key]?.value
+    }
+
+    fun put(key: String, value: Any) {
+        cache[key] = CacheEntry(value)
+    }
+
+    fun evict(key: String) {
+        cache.remove(key)
+    }
+
+    fun clear() {
+        cache.clear()
+    }
+
+    fun size(): Int = cache.size
+}
+
+@Service
+class ProductService(
+    private val inMemoryCache: SimpleInMemoryCache,
+    private val productRepository: ProductRepository
+) {
+
+    fun getProduct(id: Long): Product {
+        val cacheKey = &amp;quot;product:$id&amp;quot;
+
+        return inMemoryCache.get(cacheKey) as? Product
+            ?: productRepository.findById(id).also {
+                inMemoryCache.put(cacheKey, it)
+            }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;2-caffeine-캐시-구현&quot; style=&quot;position:relative;&quot;&gt;2. Caffeine 캐시 구현&lt;a href=&quot;#2-caffeine-%EC%BA%90%EC%8B%9C-%EA%B5%AC%ED%98%84&quot; aria-label=&quot;2 caffeine 캐시 구현 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Configuration
+@EnableCaching
+class CaffeineCacheConfig {
+
+    @Bean
+    fun cacheManager(): CacheManager {
+        return CaffeineCacheManager().apply {
+            setCaffeine(
+                Caffeine.newBuilder()
+                    .maximumSize(10_000)
+                    .expireAfterWrite(10, TimeUnit.MINUTES)
+                    .recordStats()
+            )
+        }
+    }
+
+    @Bean
+    fun caffeineCache(): Cache&amp;lt;String, Any&amp;gt; {
+        return Caffeine.newBuilder()
+            .maximumSize(10_000)
+            .expireAfterWrite(10, TimeUnit.MINUTES)
+            .recordStats()
+            .build()
+    }
+}
+
+@Service
+class ProductService(
+    private val productRepository: ProductRepository
+) {
+
+    @Cacheable(value = [&amp;quot;product&amp;quot;], key = &amp;quot;#id&amp;quot;)
+    fun getProduct(id: Long): Product {
+        return productRepository.findById(id)
+    }
+
+    @CacheEvict(value = [&amp;quot;product&amp;quot;], key = &amp;quot;#id&amp;quot;)
+    fun evictProduct(id: Long) {
+        // 캐시 삭제
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;3-redis-캐시-구현&quot; style=&quot;position:relative;&quot;&gt;3. Redis 캐시 구현&lt;a href=&quot;#3-redis-%EC%BA%90%EC%8B%9C-%EA%B5%AC%ED%98%84&quot; aria-label=&quot;3 redis 캐시 구현 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Configuration
+@EnableCaching
+class RedisCacheConfig(
+    private val redisConnectionFactory: RedisConnectionFactory
+) {
+
+    @Bean
+    fun cacheManager(): CacheManager {
+        return RedisCacheManager.builder(redisConnectionFactory)
+            .cacheDefaults(
+                RedisCacheConfiguration.defaultCacheConfig()
+                    .entryTtl(Duration.ofMinutes(10))
+                    .serializeKeysWith(
+                        RedisSerializationContext.SerializationPair
+                            .fromSerializer(StringRedisSerializer())
+                    )
+                    .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair
+                            .fromSerializer(GenericJackson2JsonRedisSerializer())
+                    )
+            )
+            .build()
+    }
+
+    @Bean
+    fun redisTemplate(
+        redisConnectionFactory: RedisConnectionFactory
+    ): RedisTemplate&amp;lt;String, Any&amp;gt; {
+        return RedisTemplate&amp;lt;String, Any&amp;gt;().apply {
+            connectionFactory = redisConnectionFactory
+            keySerializer = StringRedisSerializer()
+            valueSerializer = GenericJackson2JsonRedisSerializer()
+        }
+    }
+}
+
+@Service
+class ProductService(
+    private val productRepository: ProductRepository
+) {
+
+    @Cacheable(value = [&amp;quot;product&amp;quot;], key = &amp;quot;#id&amp;quot;)
+    fun getProduct(id: Long): Product {
+        return productRepository.findById(id)
+    }
+
+    @CacheEvict(value = [&amp;quot;product&amp;quot;], key = &amp;quot;#id&amp;quot;)
+    fun evictProduct(id: Long) {
+        // 캐시 삭제
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h1 id=&quot;부하-테스트-결과&quot; style=&quot;position:relative;&quot;&gt;부하 테스트 결과&lt;a href=&quot;#%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B2%B0%EA%B3%BC&quot; aria-label=&quot;부하 테스트 결과 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;1-응답-시간-비교&quot; style=&quot;position:relative;&quot;&gt;1. 응답 시간 비교&lt;a href=&quot;#1-%EC%9D%91%EB%8B%B5-%EC%8B%9C%EA%B0%84-%EB%B9%84%EA%B5%90&quot; aria-label=&quot;1 응답 시간 비교 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;캐시 전략&lt;/th&gt;
+&lt;th&gt;평균 응답 시간&lt;/th&gt;
+&lt;th&gt;99 percentile&lt;/th&gt;
+&lt;th&gt;최대 응답 시간&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;No Cache&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;In-Memory&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Caffeine&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redis&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;td&gt;[결과] ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;예상 결과&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No Cache: 평균 200ms, 99p 500ms&lt;/li&gt;
+&lt;li&gt;In-Memory: 평균 5ms, 99p 15ms&lt;/li&gt;
+&lt;li&gt;Caffeine: 평균 8ms, 99p 20ms&lt;/li&gt;
+&lt;li&gt;Redis: 평균 15ms, 99p 35ms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;2-tps-throughput-비교&quot; style=&quot;position:relative;&quot;&gt;2. TPS (Throughput) 비교&lt;a href=&quot;#2-tps-throughput-%EB%B9%84%EA%B5%90&quot; aria-label=&quot;2 tps throughput 비교 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;캐시 전략&lt;/th&gt;
+&lt;th&gt;동시 사용자 100명&lt;/th&gt;
+&lt;th&gt;동시 사용자 500명&lt;/th&gt;
+&lt;th&gt;동시 사용자 1000명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;No Cache&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;In-Memory&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Caffeine&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redis&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;td&gt;[결과] TPS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;예상 결과&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;로컬 캐시(In-Memory, Caffeine)가 Redis보다 3~5배 높은 TPS&lt;/li&gt;
+&lt;li&gt;동시 사용자 증가 시 Redis의 네트워크 병목 현상 발생 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;3-캐시-히트율&quot; style=&quot;position:relative;&quot;&gt;3. 캐시 히트율&lt;a href=&quot;#3-%EC%BA%90%EC%8B%9C-%ED%9E%88%ED%8A%B8%EC%9C%A8&quot; aria-label=&quot;3 캐시 히트율 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;Caffeine Stats:
+- Hit Count: [결과]
+- Miss Count: [결과]
+- Hit Rate: [결과]%
+- Eviction Count: [결과]
+
+Redis Stats:
+- Hit Count: [결과]
+- Miss Count: [결과]
+- Hit Rate: [결과]%&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;4-리소스-사용률&quot; style=&quot;position:relative;&quot;&gt;4. 리소스 사용률&lt;a href=&quot;#4-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%82%AC%EC%9A%A9%EB%A5%A0&quot; aria-label=&quot;4 리소스 사용률 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;캐시 전략&lt;/th&gt;
+&lt;th&gt;CPU 사용률&lt;/th&gt;
+&lt;th&gt;메모리 사용량&lt;/th&gt;
+&lt;th&gt;네트워크 I/O&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;In-Memory&lt;/td&gt;
+&lt;td&gt;[결과]%&lt;/td&gt;
+&lt;td&gt;[결과] MB&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Caffeine&lt;/td&gt;
+&lt;td&gt;[결과]%&lt;/td&gt;
+&lt;td&gt;[결과] MB&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redis&lt;/td&gt;
+&lt;td&gt;[결과]%&lt;/td&gt;
+&lt;td&gt;[결과] MB&lt;/td&gt;
+&lt;td&gt;[결과] MB/s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;분석-및-고찰&quot; style=&quot;position:relative;&quot;&gt;분석 및 고찰&lt;a href=&quot;#%EB%B6%84%EC%84%9D-%EB%B0%8F-%EA%B3%A0%EC%B0%B0&quot; aria-label=&quot;분석 및 고찰 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;cold-start-vs-warm-start&quot; style=&quot;position:relative;&quot;&gt;Cold Start vs Warm Start&lt;a href=&quot;#cold-start-vs-warm-start&quot; aria-label=&quot;cold start vs warm start permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;캐시가 비어있는 상태(Cold Start)와 캐시가 채워진 상태(Warm Start)의 성능 차이를 측정한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cold Start&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;첫 요청은 모두 DB로 가므로 응답 시간이 길다&lt;/li&gt;
+&lt;li&gt;캐시 워밍업 전략이 필요한 경우&lt;/li&gt;
+&lt;li&gt;애플리케이션 재시작 시나리오&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Warm Start&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;캐시가 충분히 채워진 후 안정적인 성능&lt;/li&gt;
+&lt;li&gt;실제 운영 환경과 유사한 상황&lt;/li&gt;
+&lt;li&gt;캐시 히트율이 높아 빠른 응답&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;동시성-환경에서의-캐시-경합&quot; style=&quot;position:relative;&quot;&gt;동시성 환경에서의 캐시 경합&lt;a href=&quot;#%EB%8F%99%EC%8B%9C%EC%84%B1-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98-%EC%BA%90%EC%8B%9C-%EA%B2%BD%ED%95%A9&quot; aria-label=&quot;동시성 환경에서의 캐시 경합 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;동일한 키에 대한 동시 요청 시 각 캐시의 동작 방식&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cache Stampede 문제&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;캐시가 만료되는 순간 동일한 키에 대한 대량의 요청이 DB로 몰리는 현상&lt;/li&gt;
+&lt;li&gt;해결 방법:
+&lt;ol&gt;
+&lt;li&gt;락을 활용한 단일 스레드 로딩 (Caffeine의 &lt;code class=&quot;language-text&quot;&gt;get(key, Function)&lt;/code&gt; 활용)&lt;/li&gt;
+&lt;li&gt;Early recomputation (만료 전 미리 갱신)&lt;/li&gt;
+&lt;li&gt;확률적 조기 만료 (Probabilistic early expiration)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// Caffeine의 Cache Stampede 방지
+val cache: LoadingCache&amp;lt;String, Product&amp;gt; = Caffeine.newBuilder()
+    .expireAfterWrite(10, TimeUnit.MINUTES)
+    .refreshAfterWrite(8, TimeUnit.MINUTES) // 조기 갱신
+    .build { key -&amp;gt;
+        // 단일 스레드만 이 함수 실행
+        productRepository.findById(key.toLong())
+    }&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;멀티-인스턴스-환경-고려사항&quot; style=&quot;position:relative;&quot;&gt;멀티 인스턴스 환경 고려사항&lt;a href=&quot;#%EB%A9%80%ED%8B%B0-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%ED%99%98%EA%B2%BD-%EA%B3%A0%EB%A0%A4%EC%82%AC%ED%95%AD&quot; aria-label=&quot;멀티 인스턴스 환경 고려사항 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;로컬 캐시의 한계&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;각 인스턴스가 독립적인 캐시를 가지므로 불일치 발생 가능&lt;/li&gt;
+&lt;li&gt;데이터 업데이트 시 모든 인스턴스의 캐시 무효화 필요&lt;/li&gt;
+&lt;li&gt;메모리 사용량이 인스턴스 수에 비례하여 증가&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Redis의 이점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 인스턴스가 하나의 캐시를 공유하므로 일관성 보장&lt;/li&gt;
+&lt;li&gt;메모리를 중앙에서 관리&lt;/li&gt;
+&lt;li&gt;하나의 인스턴스에서 업데이트하면 모든 인스턴스에 즉시 반영&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;트레이드오프&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;네트워크 레이턴시 vs 캐시 일관성&lt;/li&gt;
+&lt;li&gt;인프라 비용 vs 개발/운영 복잡도&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;캐시-전략-선택-가이드&quot; style=&quot;position:relative;&quot;&gt;캐시 전략 선택 가이드&lt;a href=&quot;#%EC%BA%90%EC%8B%9C-%EC%A0%84%EB%9E%B5-%EC%84%A0%ED%83%9D-%EA%B0%80%EC%9D%B4%EB%93%9C&quot; aria-label=&quot;캐시 전략 선택 가이드 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;in-memory-캐시가-적합한-경우&quot; style=&quot;position:relative;&quot;&gt;In-Memory 캐시가 적합한 경우&lt;a href=&quot;#in-memory-%EC%BA%90%EC%8B%9C%EA%B0%80-%EC%A0%81%ED%95%A9%ED%95%9C-%EA%B2%BD%EC%9A%B0&quot; aria-label=&quot;in memory 캐시가 적합한 경우 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;단일 인스턴스 환경&lt;/li&gt;
+&lt;li&gt;캐시 불일치가 허용되는 경우&lt;/li&gt;
+&lt;li&gt;극도로 빠른 응답이 필요한 경우&lt;/li&gt;
+&lt;li&gt;캐시 데이터 크기가 작은 경우&lt;/li&gt;
+&lt;li&gt;간단한 캐싱 로직으로 충분한 경우&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;사용 예시&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;설정 정보, 코드 테이블 등 거의 변경되지 않는 데이터&lt;/li&gt;
+&lt;li&gt;사용자 세션 정보 (단일 인스턴스)&lt;/li&gt;
+&lt;li&gt;임시 계산 결과 캐싱&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;caffeine-캐시가-적합한-경우&quot; style=&quot;position:relative;&quot;&gt;Caffeine 캐시가 적합한 경우&lt;a href=&quot;#caffeine-%EC%BA%90%EC%8B%9C%EA%B0%80-%EC%A0%81%ED%95%A9%ED%95%9C-%EA%B2%BD%EC%9A%B0&quot; aria-label=&quot;caffeine 캐시가 적합한 경우 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;단일 인스턴스 또는 캐시 불일치가 허용되는 멀티 인스턴스 환경&lt;/li&gt;
+&lt;li&gt;고급 eviction 정책이 필요한 경우&lt;/li&gt;
+&lt;li&gt;캐시 통계 및 모니터링이 필요한 경우&lt;/li&gt;
+&lt;li&gt;별도 인프라 없이 고성능 캐시를 원하는 경우&lt;/li&gt;
+&lt;li&gt;비동기 로딩, 자동 갱신 기능이 필요한 경우&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;사용 예시&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;API 응답 결과 캐싱&lt;/li&gt;
+&lt;li&gt;복잡한 계산 결과&lt;/li&gt;
+&lt;li&gt;외부 API 호출 결과&lt;/li&gt;
+&lt;li&gt;자주 조회되는 데이터베이스 쿼리 결과&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;redis-캐시가-적합한-경우&quot; style=&quot;position:relative;&quot;&gt;Redis 캐시가 적합한 경우&lt;a href=&quot;#redis-%EC%BA%90%EC%8B%9C%EA%B0%80-%EC%A0%81%ED%95%A9%ED%95%9C-%EA%B2%BD%EC%9A%B0&quot; aria-label=&quot;redis 캐시가 적합한 경우 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;멀티 인스턴스 환경에서 캐시 일관성이 중요한 경우&lt;/li&gt;
+&lt;li&gt;캐시 영속성이 필요한 경우&lt;/li&gt;
+&lt;li&gt;복잡한 자료구조나 pub/sub 기능이 필요한 경우&lt;/li&gt;
+&lt;li&gt;마이크로서비스 간 캐시 공유가 필요한 경우&lt;/li&gt;
+&lt;li&gt;분산 락, 세션 클러스터링 등 추가 기능이 필요한 경우&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;사용 예시&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;사용자 세션 (멀티 인스턴스)&lt;/li&gt;
+&lt;li&gt;실시간 랭킹, 리더보드&lt;/li&gt;
+&lt;li&gt;분산 환경에서의 API 속도 제한 (Rate Limiting)&lt;/li&gt;
+&lt;li&gt;서비스 간 공유 데이터&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;하이브리드-접근-다층-캐시-multi-level-cache&quot; style=&quot;position:relative;&quot;&gt;하이브리드 접근: 다층 캐시 (Multi-Level Cache)&lt;a href=&quot;#%ED%95%98%EC%9D%B4%EB%B8%8C%EB%A6%AC%EB%93%9C-%EC%A0%91%EA%B7%BC-%EB%8B%A4%EC%B8%B5-%EC%BA%90%EC%8B%9C-multi-level-cache&quot; aria-label=&quot;하이브리드 접근 다층 캐시 multi level cache permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;L1 Cache (Caffeine) + L2 Cache (Redis) 조합으로 로컬 캐시의 빠른 응답과 분산 캐시의 일관성을 동시에 달성할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;장점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;L1 캐시 히트 시 가장 빠른 응답 (네트워크 없음)&lt;/li&gt;
+&lt;li&gt;L1 캐시 미스 시 L2 캐시에서 조회 (DB보다 빠름)&lt;/li&gt;
+&lt;li&gt;L2 캐시를 통한 인스턴스 간 캐시 공유&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;구현 복잡도 증가&lt;/li&gt;
+&lt;li&gt;캐시 무효화 전략 복잡&lt;/li&gt;
+&lt;li&gt;메모리 사용량 증가 (L1 + L2)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Service
+class MultiLevelCacheService(
+    private val caffeineCache: Cache&amp;lt;String, Product&amp;gt;,
+    private val redisTemplate: RedisTemplate&amp;lt;String, Product&amp;gt;
+) {
+
+    fun getProduct(id: Long): Product? {
+        val key = &amp;quot;product:$id&amp;quot;
+
+        // L1 캐시 확인
+        return caffeineCache.getIfPresent(key)
+            ?: run {
+                // L2 캐시 확인
+                redisTemplate.opsForValue().get(key)?.also {
+                    // L2에 있으면 L1에 복제
+                    caffeineCache.put(key, it)
+                }
+            }
+    }
+
+    fun putProduct(id: Long, product: Product) {
+        val key = &amp;quot;product:$id&amp;quot;
+
+        // L1, L2 모두에 저장
+        caffeineCache.put(key, product)
+        redisTemplate.opsForValue().set(key, product, 10, TimeUnit.MINUTES)
+    }
+
+    fun evictProduct(id: Long) {
+        val key = &amp;quot;product:$id&amp;quot;
+
+        // L1, L2 모두에서 삭제
+        caffeineCache.invalidate(key)
+        redisTemplate.delete(key)
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;strong&gt;캐시 무효화 전략&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Component
+class CacheInvalidationListener(
+    private val caffeineCache: Cache&amp;lt;String, Product&amp;gt;,
+    private val redisMessageListenerContainer: RedisMessageListenerContainer
+) {
+
+    @PostConstruct
+    fun subscribeToInvalidationChannel() {
+        redisMessageListenerContainer.addMessageListener(
+            { message, _ -&amp;gt;
+                val key = String(message.body)
+                caffeineCache.invalidate(key)
+            },
+            ChannelTopic(&amp;quot;cache:invalidation&amp;quot;)
+        )
+    }
+}
+
+@Service
+class ProductUpdateService(
+    private val multiLevelCacheService: MultiLevelCacheService,
+    private val redisTemplate: RedisTemplate&amp;lt;String, String&amp;gt;
+) {
+
+    fun updateProduct(id: Long, product: Product) {
+        // DB 업데이트
+        // ...
+
+        // 캐시 무효화
+        multiLevelCacheService.evictProduct(id)
+
+        // 다른 인스턴스에 무효화 이벤트 발행
+        redisTemplate.convertAndSend(&amp;quot;cache:invalidation&amp;quot;, &amp;quot;product:$id&amp;quot;)
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h1 id=&quot;정리&quot; style=&quot;position:relative;&quot;&gt;정리&lt;a href=&quot;#%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;정리 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;각 캐시 전략은 명확한 트레이드오프를 가지고 있다&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;성능만이 아닌 운영 복잡도, 일관성 요구사항, 인프라 비용을 종합적으로 고려&lt;/strong&gt;해야 한다&lt;/li&gt;
+&lt;li&gt;실제 부하 테스트를 통해 자신의 환경에 맞는 캐시 전략을 선택하는 것이 중요하다&lt;/li&gt;
+&lt;li&gt;하나의 전략만 고집하지 말고, 사용 사례에 따라 다른 전략을 혼용하는 것도 좋은 방법이다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;일반적인 권장사항&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;작게 시작하기&lt;/strong&gt;: 먼저 Caffeine 같은 로컬 캐시로 시작&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;측정하기&lt;/strong&gt;: 실제 성능 지표와 캐시 히트율을 모니터링&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;필요시 확장&lt;/strong&gt;: 멀티 인스턴스나 일관성 요구사항이 생기면 Redis 도입&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;하이브리드 고려&lt;/strong&gt;: 성능과 일관성을 모두 잡아야 한다면 다층 캐시 검토&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;참고-자료&quot; style=&quot;position:relative;&quot;&gt;참고 자료&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C&quot; aria-label=&quot;참고 자료 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ben-manes/caffeine&quot;&gt;Caffeine GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ben-manes/caffeine/wiki/Efficiency&quot;&gt;Caffeine Wiki - Efficiency&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://redis.io/docs/&quot;&gt;Redis Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-framework/reference/integration/cache.html&quot;&gt;Spring Cache Abstraction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://highscalability.com/blog/2016/1/25/design-of-a-modern-cache.html&quot;&gt;Design Of A Modern Cache&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
@@ -11,16 +583,6 @@
 &lt;li&gt;&lt;strong&gt;규칙 2&lt;/strong&gt;: 고유 인덱스를 사용하는 동등 조건의 쿼리를 수행할 때, 레코드가 동등 조건을 만족하면 넥스트 키 락은 레코드 락으로 강등된다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;-- 테스트 테이블 및 데이터 준비
-CREATE TABLE t (
-  id int NOT NULL,
-  a int NULL,
-  b int NULL,
-  PRIMARY KEY (id),
-  KEY ix_a (a)
-) ENGINE=InnoDB;&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
 &lt;details&gt;
 &lt;summary&gt;🔐 잠금 상태 조회 쿼리&lt;/summary&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -43,7 +605,15 @@ ORDER BY dl.object_name, dl.lock_data;&lt;/code&gt;
 &lt;/details&gt;
 &lt;h2 id=&quot;갭-락으로-인한-insert-실패&quot; style=&quot;position:relative;&quot;&gt;갭 락으로 인한 INSERT 실패&lt;a href=&quot;#%EA%B0%AD-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-insert-%EC%8B%A4%ED%8C%A8&quot; aria-label=&quot;갭 락으로 인한 insert 실패 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
 | id | a    | b    |
 +----+------+------+
 |  0 |    0 |    0 |
@@ -58,12 +628,12 @@ ORDER BY dl.object_name, dl.lock_data;&lt;/code&gt;
 BEGIN;
 UPDATE t SET b=b+1 WHERE id=7;
 
-+-------+-----------+------------+-----------+------------------+-------------+
-| table | lock_type | index_name | lock_mode | lock_type_detail | locked_data |
-+-------+-----------+------------+-----------+------------------+-------------+
-| t     | TABLE     | NULL       | IX        | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,GAP     | Gap Lock         | 10          |
-+-------+-----------+------------+-----------+------------------+-------------+
++-----------+------------+-----------+------------------+-------------+
+| lock_type | index_name | lock_mode | lock_type_detail | locked_data |
++-----------+------------+-----------+------------------+-------------+
+| TABLE     | NULL       | IX        | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,GAP     | Gap Lock         | 10          |
++-----------+------------+-----------+------------------+-------------+
 
 -- &amp;lt;B 세션&amp;gt;
 INSERT INTO t VALUES (8, 8, 8);     -- BLOCKED
@@ -78,7 +648,15 @@ UPDATE t SET b=b+1 WHERE id=10;     -- 성공&lt;/code&gt;
 그리하여 마지막 업데이트 쿼리는 둘 다 성공한다.&lt;/p&gt;
 &lt;h2 id=&quot;non-unique-세컨더리-인덱스-동등-잠금-for-share&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 동등 잠금 (FOR SHARE)&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%8F%99%EB%93%B1-%EC%9E%A0%EA%B8%88-for-share&quot; aria-label=&quot;non unique 세컨더리 인덱스 동등 잠금 for share permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
 | id | a    | b    |
 +----+------+------+
 |  0 |    0 |    0 |
@@ -93,13 +671,13 @@ UPDATE t SET b=b+1 WHERE id=10;     -- 성공&lt;/code&gt;
 BEGIN;
 select id from t where a = 5 for share;
 
-+-------+-----------+------------+-----------+------------------+-------------+
-| table | lock_type | index_name | lock_mode | lock_type_detail | locked_data |
-+-------+-----------+------------+-----------+------------------+-------------+
-| t     | TABLE     | NULL       | IS        | Next-Key Lock    | NULL        |
-| t     | RECORD    | ix_a       | S,GAP     | Gap Lock         | 10, 10      | &amp;lt;- (5, 10)
-| t     | RECORD    | ix_a       | S         | Next-Key Lock    | 5, 5        | &amp;lt;- (0, 5]
-+-------+-----------+------------+-----------+------------------+-------------+
++-----------+------------+-----------+------------------+-------------+
+| lock_type | index_name | lock_mode | lock_type_detail | locked_data |
++-----------+------------+-----------+------------------+-------------+
+| TABLE     | NULL       | IS        | Next-Key Lock    | NULL        |
+| RECORD    | ix_a       | S,GAP     | Gap Lock         | 10, 10      | &amp;lt;- (5, 10)
+| RECORD    | ix_a       | S         | Next-Key Lock    | 5, 5        | &amp;lt;- (0, 5]
++-----------+------------+-----------+------------------+-------------+
 
 -- &amp;lt;B 세션&amp;gt;
 INSERT INTO t VALUES (-1, -1, -1);  -- 성공
@@ -159,18 +737,26 @@ UPDATE t SET a=a+1 WHERE id=5;  -- BLOCKED
           &lt;code slot=&quot;code&quot;&gt;select * from t where a = 5 for share; -- 또는
 select id, a, b from t where a = 5 for share;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IS            | Next-Key Lock    | NULL        |
-| t     | RECORD    | ix_a       | S,GAP         | Gap Lock         | 10, 10      |
-| t     | RECORD    | PRIMARY    | S,REC_NOT_GAP | Record Lock      | 5           | -&amp;gt; 레코드 락을 확인할 수 있다!
-| t     | RECORD    | ix_a       | S             | Next-Key Lock    | 5, 5        |
-+-------+-----------+------------+---------------+------------------+-------------+&lt;/code&gt;
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IS            | Next-Key Lock    | NULL        |
+| RECORD    | ix_a       | S,GAP         | Gap Lock         | 10, 10      |
+| RECORD    | PRIMARY    | S,REC_NOT_GAP | Record Lock      | 5           | -&amp;gt; 레코드 락을 확인할 수 있다!
+| RECORD    | ix_a       | S             | Next-Key Lock    | 5, 5        |
++-----------+------------+---------------+------------------+-------------+&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;h2 id=&quot;non-unique-세컨더리-인덱스-동등-장금-for-update&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 동등 장금 (FOR UPDATE)&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%8F%99%EB%93%B1-%EC%9E%A5%EA%B8%88-for-update&quot; aria-label=&quot;non unique 세컨더리 인덱스 동등 장금 for update permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
 | id | a    | b    |
 +----+------+------+
 |  0 |    0 |    0 |
@@ -185,14 +771,14 @@ select id, a, b from t where a = 5 for share;
 BEGIN;
 select id from t where a = 5 for update;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | ix_a       | X,GAP         | Gap Lock         | 10, 10      |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 5           |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 5, 5        |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | ix_a       | X,GAP         | Gap Lock         | 10, 10      |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 5           |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 5, 5        |
++-----------+------------+---------------+------------------+-------------+
 
 -- &amp;lt;B 세션&amp;gt;
 
@@ -206,7 +792,15 @@ UPDATE t SET a=a+1 WHERE id=10;  -- 성공&lt;/code&gt;
 &lt;h2 id=&quot;프라이머리-키-인덱스-범위-잠금&quot; style=&quot;position:relative;&quot;&gt;프라이머리 키 인덱스 범위 잠금&lt;a href=&quot;#%ED%94%84%EB%9D%BC%EC%9D%B4%EB%A8%B8%EB%A6%AC-%ED%82%A4-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%B2%94%EC%9C%84-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;프라이머리 키 인덱스 범위 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;조회 결과는 같지만 잠금 범위가 서로 다른 케이스를 확인해보자.&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
 | id | a    | b    |
 +----+------+------+
 |  0 |    0 |    0 |
@@ -219,12 +813,12 @@ UPDATE t SET a=a+1 WHERE id=10;  -- 성공&lt;/code&gt;
 BEGIN;
 SELECT * FROM t WHERE id=10 FOR UPDATE;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
++-----------+------------+---------------+------------------+-------------+
 
 -- &amp;lt;B 세션&amp;gt;
 UPDATE t SET b=b+1 WHERE id=5;  -- 성공
@@ -237,13 +831,13 @@ INSERT INTO t VALUES (11,11,11);    -- 성공&lt;/code&gt;
 BEGIN;
 SELECT * FROM t WHERE id &amp;gt;= 10 AND id &amp;lt; 11 FOR UPDATE;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-| t     | RECORD    | PRIMARY    | X,GAP         | Gap Lock         | 15          |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | PRIMARY    | X,GAP         | Gap Lock         | 15          |
++-----------+------------+---------------+------------------+-------------+
 
 -- &amp;lt;B 세션&amp;gt;
 INSERT INTO t VALUES (8, 8, 8);     -- 성공
@@ -260,7 +854,15 @@ UPDATE t SET a=a+1 WHERE id = 10;   -- BLOCKED&lt;/code&gt;
 &lt;p&gt;즉, 최종 잠금 범위는 &lt;code class=&quot;language-text&quot;&gt;10, (10, 15)&lt;/code&gt;가 된다.&lt;/p&gt;
 &lt;h2 id=&quot;non-unique-세컨더리-인덱스-범위-잠금&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 범위 잠금&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%B2%94%EC%9C%84-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;non unique 세컨더리 인덱스 범위 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
 | id | a    | b    |
 +----+------+------+
 |  0 |    0 |    0 |
@@ -273,14 +875,14 @@ UPDATE t SET a=a+1 WHERE id = 10;   -- BLOCKED&lt;/code&gt;
 BEGIN;
 SELECT * FROM t WHERE a &amp;gt;= 10 AND a &amp;lt; 11 FOR UPDATE;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 15, 15      |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 15, 15      |
++-----------+------------+---------------+------------------+-------------+
 
 -- &amp;lt;B 세션&amp;gt;
 INSERT INTO t VALUES (6, 6, 6);     -- BLOCKED
@@ -296,9 +898,57 @@ UPDATE t SET b=b+1 WHERE a = 4;     -- 성공&lt;/code&gt;
 그렇기에 동등 조건을 만족하지 않는 다음 레코드까지 범위 검색을 수행하며, &lt;code class=&quot;language-text&quot;&gt;a=15&lt;/code&gt;에 해당하는 레코드를 찾아 검색이 중단되고 &lt;code class=&quot;language-text&quot;&gt;(10, 15]&lt;/code&gt;에 넥스트 키 락이 설정된다.&lt;br&gt;
 동등 조건이 아닌 범위 검색에 해당하기 때문에 갭 락으로 강등되지 않는다.&lt;/p&gt;
 &lt;p&gt;즉, 최종 잠금 범위는 &lt;code class=&quot;language-text&quot;&gt;(5, 10], (10, 15]&lt;/code&gt;이다.&lt;/p&gt;
+&lt;h2 id=&quot;unique-세컨더리-인덱스-업데이트-잠금&quot; style=&quot;position:relative;&quot;&gt;unique 세컨더리 인덱스 업데이트 잠금&lt;a href=&quot;#unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;unique 세컨더리 인덱스 업데이트 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t2 (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  UNIQUE ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+UPDATE t2 set b = b + 1 where a = 10;
+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | ix_a       | X,REC_NOT_GAP | Record Lock      | 10, 10      |
++-----------+------------+---------------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+
+insert into t2 values (9, 9, 9);    -- 성공
+insert into t2 values (11, 11, 11); -- 성공
+update t2 set b = 15 where a = 10;  -- BLOCKED&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt; 컬럼의 인덱스는 유니크함을 보장하기 때문에 &lt;code class=&quot;language-text&quot;&gt;a = 10&lt;/code&gt;을 찾게되면 넥스트 키 락은 레코드 락으로 강등되기 때문에 왼쪽과 오른쪽에 대한 갭락 또는 넥스트 키 락이 발생하지 않는다.&lt;/p&gt;
 &lt;h2 id=&quot;non-unique-세컨더리-인덱스-중복된-행-잠금&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 중복된 행 잠금&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%A4%91%EB%B3%B5%EB%90%9C-%ED%96%89-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;non unique 세컨더리 인덱스 중복된 행 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
 | id | a    | b    |
 +----+------+------+
 |  0 |    0 |    0 |
@@ -314,17 +964,16 @@ UPDATE t SET b=b+1 WHERE a = 4;     -- 성공&lt;/code&gt;
 BEGIN;
 SELECT * FROM t WHERE a=10 FOR UPDATE;
 
-
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
-| t     | RECORD    | ix_a       | X,GAP         | Gap Lock         | 15, 15      |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
+| RECORD    | ix_a       | X,GAP         | Gap Lock         | 15, 15      |
++-----------+------------+---------------+------------------+-------------+
 
 -- &amp;lt;B 세션&amp;gt;
 INSERT INTO t VALUES (4, 4, 4);      -- 성공
@@ -398,18 +1047,18 @@ UPDATE t SET b=b+1 WHERE id = 30;    -- BLOCKED&lt;/code&gt;
 BEGIN;
 update employees SET last_name = &amp;#39;Updated E&amp;#39; where first_name = &amp;#39;E&amp;#39; and last_name = &amp;#39;E2&amp;#39;;
 
-+-----------+-----------+----------------+---------------+------------------+------------------------+
-| table     | lock_type | index_name     | lock_mode     | lock_type_detail | locked_data            |
-+-----------+-----------+----------------+---------------+------------------+------------------------+
-| employees | TABLE     | NULL           | IX            | Next-Key Lock    | NULL                   |
-| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 34                |
-| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 35                |
-| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 36                |
-| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 34                     |
-| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 35                     |
-| employees | RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 36                     |
-| employees | RECORD    | idx_first_name | X             | Next-Key Lock    | supremum pseudo-record |
-+-----------+-----------+----------------+---------------+------------------+------------------------+
++-----------+----------------+---------------+------------------+------------------------+
+| lock_type | index_name     | lock_mode     | lock_type_detail | locked_data            |
++-----------+----------------+---------------+------------------+------------------------+
+| TABLE     | NULL           | IX            | Next-Key Lock    | NULL                   |
+| RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 34                |
+| RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 35                |
+| RECORD    | idx_first_name | X             | Next-Key Lock    | &amp;#39;E&amp;#39;, 36                |
+| RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 34                     |
+| RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 35                     |
+| RECORD    | PRIMARY        | X,REC_NOT_GAP | Record Lock      | 36                     |
+| RECORD    | idx_first_name | X             | Next-Key Lock    | supremum pseudo-record |
++-----------+----------------+---------------+------------------+------------------------+
 
 -- &amp;lt;B 세션&amp;gt;
 insert into employees (first_name, last_name) values (&amp;#39;A&amp;#39;, &amp;#39;A1&amp;#39;);    -- 성공
@@ -469,7 +1118,15 @@ supremum  ← Next-Key Lock = supremum + 갭4&lt;/code&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;non-unique-세컨더리-인덱스-limit-잠금&quot; style=&quot;position:relative;&quot;&gt;non-unique 세컨더리 인덱스 LIMIT 잠금&lt;a href=&quot;#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-limit-%EC%9E%A0%EA%B8%88&quot; aria-label=&quot;non unique 세컨더리 인덱스 limit 잠금 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
-          &lt;code slot=&quot;code&quot;&gt;+----+------+------+
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
 | id | a    | b    |
 +----+------+------+
 |  0 |    0 |    0 |
@@ -486,15 +1143,15 @@ supremum  ← Next-Key Lock = supremum + 갭4&lt;/code&gt;
 BEGIN;
 select * from t where a = 10 limit 2 FOR UPDATE;
 
-+-------+-----------+------------+---------------+------------------+-------------+
-| table | lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
-+-------+-----------+------------+---------------+------------------+-------------+
-| t     | TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
-| t     | RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
-| t     | RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
-+-------+-----------+------------+---------------+------------------+-------------+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 30      |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 30          |
++-----------+------------+---------------+------------------+-------------+
 
 -- &amp;lt;B 세션&amp;gt;
 insert into t values (9, 9, 9);       -- BLOCKED
@@ -538,7 +1195,62 @@ UPDATE t SET b=b+1 WHERE id = 15;     -- 성공&lt;/code&gt;
 &lt;li&gt;처음으로 좌측 개구간 &lt;code class=&quot;language-text&quot;&gt;(a=5, id=5)부터 (a=10, id=10)&lt;/code&gt; 까지 넥스트 키 락이 설정된다.&lt;/li&gt;
 &lt;li&gt;우측으로 탐색하며 &lt;code class=&quot;language-text&quot;&gt;(a=10, id=30)&lt;/code&gt; 레코드에 접근학데 되므로 &lt;code class=&quot;language-text&quot;&gt;(a=10, id=10)부터 (a=10, id=30)&lt;/code&gt;까지 넥스트 키 락이 설정된다.&lt;/li&gt;
 &lt;li&gt;LIMIT 2에 대한 조건을 만족했기 때문에 더 이상 검색을 진행하지 않고 종료한다.&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;넥스트-키-락갭-락--레코드-락으로-인한-데드락-발생-케이스&quot; style=&quot;position:relative;&quot;&gt;넥스트 키 락(갭 락 + 레코드 락)으로 인한 데드락 발생 케이스&lt;a href=&quot;#%EB%84%A5%EC%8A%A4%ED%8A%B8-%ED%82%A4-%EB%9D%BD%EA%B0%AD-%EB%9D%BD--%EB%A0%88%EC%BD%94%EB%93%9C-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-%EB%8D%B0%EB%93%9C%EB%9D%BD-%EB%B0%9C%EC%83%9D-%EC%BC%80%EC%9D%B4%EC%8A%A4&quot; aria-label=&quot;넥스트 키 락갭 락  레코드 락으로 인한 데드락 발생 케이스 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE t (
+  id int NOT NULL,
+  a int NULL,
+  b int NULL,
+  PRIMARY KEY (id),
+  KEY ix_a (a)
+) ENGINE=InnoDB;
+
++----+------+------+
+| id | a    | b    |
++----+------+------+
+|  0 |    0 |    0 |
+|  5 |    5 |    5 |
+| 10 |   10 |   10 |
+| 15 |   15 |   15 |
+| 20 |   20 |   20 |
+| 25 |   25 |   25 |
++----+------+------+
+
+-- &amp;lt;A 세션&amp;gt;
+BEGIN;
+select * from t where a = 10 for update;
+
++-----------+------------+---------------+------------------+-------------+
+| lock_type | index_name | lock_mode     | lock_type_detail | locked_data |
++-----------+------------+---------------+------------------+-------------+
+| TABLE     | NULL       | IX            | Next-Key Lock    | NULL        |
+| RECORD    | PRIMARY    | X,REC_NOT_GAP | Record Lock      | 10          |
+| RECORD    | ix_a       | X             | Next-Key Lock    | 10, 10      |
+| RECORD    | ix_a       | X,GAP         | Gap Lock         | 15, 15      |
++-----------+------------+---------------+------------------+-------------+
+
+-- &amp;lt;B 세션&amp;gt;
+UPDATE t SET b=b+1 WHERE a=10;   -- BLOCKED
+
+-- &amp;lt;A 세션&amp;gt;
+insert into t values (8,8,8);    -- 데드락을 감지하여 B 세션의 트랜잭션을 재시작해버리면서 성공한다.
+
+-- &amp;lt;B 세션&amp;gt;
+ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting transaction&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ol&gt;
+&lt;li&gt;A 세션이 &lt;code class=&quot;language-text&quot;&gt;a=10 FOR UPDATE&lt;/code&gt;를 실행하면, 인덱스 ix_a 기준 &lt;code class=&quot;language-text&quot;&gt;(5,10], (10,15)&lt;/code&gt;에 넥스트 키 락(갭 락+레코드 락)이 설정된다.&lt;/li&gt;
+&lt;li&gt;B 세션이 &lt;code class=&quot;language-text&quot;&gt;UPDATE t SET b=b+1 WHERE a=10;&lt;/code&gt;을 실행하면, 이미 A 세션이 소유한 레코드 락 때문에 세션 2는 대기한다.&lt;/li&gt;
+&lt;li&gt;이후 A 세션이 커밋/롤백 없이 &lt;code class=&quot;language-text&quot;&gt;INSERT INTO t VALUES (8,8,8);&lt;/code&gt;을 실행하면, 해당 값은 ix_a 인덱스의 &lt;code class=&quot;language-text&quot;&gt;(5,10) 갭&lt;/code&gt;에 삽입되어야 하므로, B 세션이 이미 &lt;code class=&quot;language-text&quot;&gt;(5,10) 구간의 갭 락&lt;/code&gt;을 소유하고 있을 경우 세션 1의 INSERT도 대기(블로킹)하게 된다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;결과적으로, A 세션은 B 세션의 갭 락을 기다리고, B 세션은 A 세션의 레코드 락을 기다리는 데드락이 성립하여 MySQL이 둘 중 하나의 트랜잭션을 강제 롤백시키면서 B 세션에 에러가 발생한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;핵심&lt;/strong&gt;&lt;br&gt;
+InnoDB는 팬텀 리드 등 트랜잭션 고립성을 위해 넥스트 키 락(갭 락+레코드 락) 구조를 채택&lt;br&gt;
+갭 락과 레코드 락이 분리되어 동작하기 때문에, 세션 간 대기가 서로 꼬이면 데드락이 자주 발생함&lt;br&gt;
+데드락 발생 시 애플리케이션에서 트랜잭션 재시도 처리를 해주는 것이 필요함&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;모니터링을 통해 보름 간격으로 한 번씩 &lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 발생하는 것을 확인했다.&lt;br&gt;
 외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
 &lt;p&gt;예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.&lt;/p&gt;
@@ -1552,6 +2264,54 @@ for [{url}]&lt;/code&gt;
 ] 
 for [{url}]&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
+&lt;h1 id=&quot;-db-connection-pool은-어떻게-설정하는게-좋을까&quot; style=&quot;position:relative;&quot;&gt;💡 DB Connection Pool은 어떻게 설정하는게 좋을까?&lt;a href=&quot;#-db-connection-pool%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%84%A4%EC%A0%95%ED%95%98%EB%8A%94%EA%B2%8C-%EC%A2%8B%EC%9D%84%EA%B9%8C&quot; aria-label=&quot; db connection pool은 어떻게 설정하는게 좋을까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;그렇다면 DB Connection Pool은 어떻게 설정해야 할까?&lt;br&gt;
+&lt;a href=&quot;https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing&quot;&gt;HikariCP About Pool Sizing&lt;/a&gt;을 통해 Pool Sizing에 대한 가이드를 읽을 수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;풀 사이즈 관련 설정들(&lt;strong&gt;maximumPoolSize&lt;/strong&gt;, minimumIdle, idleTimeout)&lt;/li&gt;
+&lt;li&gt;커넥션 생명주기 관리(maxLifetime, &lt;strong&gt;keepaliveTime&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;커넥션 요청 대기(&lt;strong&gt;connectionTimeout&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;풀 사이즈 관련 설정 중 maximumPoolSize에 대해 일반적으로 추천하는 사이즈는 아래와 같다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;core_count: 하이퍼스레딩 제외한 물리 코어 수
+effective_spindle_count: 실제 디스크 동시 처리 가능 수 (데이터가 메모리에 캐싱되어 있으면 0)
+
+connections = ((core_count * 2) + effective_spindle_count)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;그렇다고 풀 사이즈를 단순히 크게 지정한다고 해서 성능이 보장되는 것은 아니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;소수 커넥션이 스레드에 의해 포화될 때가 최적&lt;/li&gt;
+&lt;li&gt;나머지 스레드는 커넥션을 기다리도록 하고, &lt;strong&gt;데이터베이스가 동시에 처리할 수 있는 쿼리 수(max)를 기준으로 풀 크기 산정&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;기본 값은 10개 (4코어 + 1스핀들 -&gt; 9 ~ 10개 적정)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;또한 데드 락을 피할 수 있는 &lt;strong&gt;최소 커넥션 수 산정 공식&lt;/strong&gt;도 확인할 수 있다.&lt;/p&gt;
+&lt;deckgo-highlight-code  terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;Tn: 동시에 실행되는 최대 쓰레드 수 (예: 동시 처리 요청 수)
+Cm: 한 요청(Task)이 동시에 필요로 하는 커넥션 수 (예: ID 채번/메인 쿼리 등 다중 커넥션)
+
+최소 커넥션 풀 사이즈 = Tn × (Cm − 1) + 1&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;예를 들어, 16개의 요청(Tn)이 각각 2개(Cm)의 커넥션을 필요로 하면 최소 17개의 커넥션 풀을 설정해야 데드락이 발생하지 않는다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;동시 요청 10개(Tn=10), 요청당 최대 2개 커넥션 필요(Cm=2) → &lt;code class=&quot;language-text&quot;&gt;10×(2−1)+1=11&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;동시 요청 20개, 요청당 3개 커넥션 필요 → &lt;code class=&quot;language-text&quot;&gt;20×(3−1)+1=41&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;maximumPoolSize와 연관된 속성&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;minimumIdle: 풀에서 유지하는 최소 idle 커넥션 갯수 (default: maximumPoolSize와 동일)&lt;/li&gt;
+&lt;li&gt;idleTimeout: 풀에서 커넥션이 idle 상태로 유지되는 최대 시간 (minimum: 10초, default: 10분)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;서비스 환경의 네트워크와 DB 속성을 확인하여 아래의 설정도 확인하는 것이 좋다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;maxLifetime&lt;/strong&gt; : DB 혹은 네트워크 infra에서 설정된 &quot;최대 커넥션 생존 시간&quot;보다 수 초 짧게 설정 필요 (default 30분)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;keepaliveTime&lt;/strong&gt; : idle 커넥션 생존을 위해 상태 확인 주기, db/network timeout보다 짧게 (default 2분)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;connectionTimeout&lt;/strong&gt; : 풀에서 커넥션을 가져올 때 기다리는 최대 시간, 기본 값은 너무 커 트래픽이 몰리는 경우 서버 스레드가 커넥션을 획득하기 위해 대량으로 블로킹될 가능성이 있음 (default 30초)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;실제 최적값을 찾기 위해 공식 가이드나 추천을 통해 도움을 받을 수 있지만, 서비스 특성에 따른 트래픽 패턴이나 쿼리 패턴은 다 다르기 때문에 꾸준한 모니터링과 테스트가 필요하다.&lt;br&gt;
+프로메테우스와 그라파나를 이용하여 자세한 메트릭 수집이 가능하기에 세팅해서 테스트를 실제로 해봐야겠다.&lt;/p&gt;
 &lt;h1 id=&quot;느낀점&quot; style=&quot;position:relative;&quot;&gt;느낀점&lt;a href=&quot;#%EB%8A%90%EB%82%80%EC%A0%90&quot; aria-label=&quot;느낀점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;이번 PrematureCloseException 원인 분석을 통해 많은 것을 배울 수 있었다.&lt;br&gt;
 기존에는 WebClient의 기본 설정을 그대로 사용했었는데, 이번 경험을 통해 운영 환경의 특성을 파악하고 적절한 설정을 적용해야함을 깨달았다.&lt;/p&gt;
