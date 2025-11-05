@@ -1,7 +1,7 @@
 ---
 title: MySQL Lock 실험실
 date: "2025-10-26"
-update: "2025-10-27"
+update: "2025-11-05"
 tags:
    - mysql
    - lock

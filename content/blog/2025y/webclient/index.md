@@ -1,7 +1,7 @@
 ---
 title: WebClient PrematureCloseException 원인 분석하기
 date: "2025-09-22"
-update: "2025-10-02"
+update: "2025-11-05"
 tags:
    - deep-dive
    - network
