@@ -5,6 +5,7 @@ update: "2024-02-13"
 tags:
    - transaction
    - lock
+   - mysql
 ---
 
 - **[InnoDB Locking](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)**

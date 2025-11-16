@@ -775,16 +775,35 @@ Cm: 한 요청(Task)이 동시에 필요로 하는 커넥션 수 (예: ID 채번
 - 동시 요청 10개(Tn=10), 요청당 최대 2개 커넥션 필요(Cm=2) → `10×(2−1)+1=11`
 - 동시 요청 20개, 요청당 3개 커넥션 필요 → `20×(3−1)+1=41`
   
-> **maximumPoolSize와 연관된 속성**  
+> **maximumPoolSize (idle + in-use connection)와 연관된 속성**  
 > - minimumIdle: 풀에서 유지하는 최소 idle 커넥션 갯수 (default: maximumPoolSize와 동일)
 > - idleTimeout: 풀에서 커넥션이 idle 상태로 유지되는 최대 시간 (minimum: 10초, default: 10분)
+> 즉, idle connection 수가 minimulIdle보다 작고, 전체 connection 수도 maximumPoolSize보다 작다면 신속하게 추가로 connection을 만든다.  
+> **기본적으로 minimumIdle과 maximumPoolSize는 동일한 값으로 지정되어 있다. minimumIdle을 maximumPoolSize보다 작게 설정한 경우 예상하지 못한 트래픽이 몰려오면 connection을 생성하는 비용 때문에 병목이 생길 수 있기 때문에 기본값을 활용하는 것이 좋다.**
 
 서비스 환경의 네트워크와 DB 속성을 확인하여 아래의 설정도 확인하는 것이 좋다.
-1. **maxLifetime** : DB 혹은 네트워크 infra에서 설정된 "최대 커넥션 생존 시간"보다 수 초 짧게 설정 필요 (default 30분)
+1. **maxLifetime** : DB 혹은 네트워크 infra에서 설정된 "최대 커넥션 생존 시간(wait_timeout 등)"보다 수 초 짧게 설정 필요 (default 30분). pool로 반환이 안되면 connection을 제거할 수 없기 때문에 pool로 반환을 잘 시켜주는 것이 중요하다.
 2. **keepaliveTime** : idle 커넥션 생존을 위해 상태 확인 주기, db/network timeout보다 짧게 (default 2분)
 3. **connectionTimeout** : 풀에서 커넥션을 가져올 때 기다리는 최대 시간, 기본 값은 너무 커 트래픽이 몰리는 경우 서버 스레드가 커넥션을 획득하기 위해 대량으로 블로킹될 가능성이 있음 (default 30초)
   
+> 💡 DB 서버 설정은?
+> - `max_connections` : client와 맺을 수 있는 최대 connection 수이다. 스케일 아웃에 대비하여 클라이언트들의 최대 사용 수를 확인하여 설정하는게 좋다.
+> - `wait_timeout` (default 28800) : connection이 inactive할 때 다시 요청이 오기까지 얼마의 시간을 기다린뒤에 close 할 것인지를 결정한다. (애플리케이션의 keepaliveTime보다 길게 설정되어야 한다.)
+
 실제 최적값을 찾기 위해 공식 가이드나 추천을 통해 도움을 받을 수 있지만, 서비스 특성에 따른 트래픽 패턴이나 쿼리 패턴은 다 다르기 때문에 꾸준한 모니터링과 테스트가 필요하다.  
+
+maximumPoolSize: 5 <-> max_connections: 30
+현재 처리하고 있는 트래픽의 두,세 배가 유입되면 현재 설정으로 대응이 가능할까?  
+DB 서버 또는 애플리케이션 서버의 리소스를 더 잘 활용하고 싶은데 적절한 설정일까?  
+
+1. 모니터링 환경 구축 (서버 리소스, 서버 스레드 수, DBCP 등등)
+2. 백엔드 시스템 부하 테스트 (nGrinder, K6 등)
+3. request per second와 avg response time 확인
+4. 백엔드 서버, DB 서버의 CPU, Memory 등 리소스 사용률을 확인하여 인스턴스 스케일 아웃으로 대응 가능한지 확인
+   - 백엔드의 스레드 풀의 상태를 모니터링하여 모든 스레드를 활용하는지, 아니면 idle이 있는지로 어디 부분이 병목인지 유추할 수 있을 것이다.
+5. 스케일 아웃으로 대응 가능하지만 DB에서 병목이 생기는 경우 secondary 추가, cache 레이어 추가, 샤딩, 파티셔닝, 쿼리 튜닝 등등으로 개선점 확인
+
+
 프로메테우스와 그라파나를 이용하여 자세한 메트릭 수집이 가능하기에 세팅해서 테스트를 실제로 해봐야겠다.  
 
 # 느낀점
