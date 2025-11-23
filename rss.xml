@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 16 Nov 2025 06:21:52 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Nov 2025 15:38:50 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
@@ -682,6 +682,83 @@ InnoDB는 팬텀 리드 등 트랜잭션 고립성을 위해 넥스트 키 락(�
 &lt;p&gt;모니터링을 통해 보름 간격으로 한 번씩 &lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 발생하는 것을 확인했다.&lt;br&gt;
 외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
 &lt;p&gt;예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.&lt;/p&gt;
+&lt;h1 id=&quot;webclient-구조-이해하기&quot; style=&quot;position:relative;&quot;&gt;WebClient 구조 이해하기&lt;a href=&quot;#webclient-%EA%B5%AC%EC%A1%B0-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0&quot; aria-label=&quot;webclient 구조 이해하기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 773px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/303fabc729c5e02668cf3a163c98d1dd/612f7/webClient.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 90.22222222222221%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsTAAALEwEAmpwYAAADxUlEQVR42k1UaXPiRhDVP0gC2MYCCRAghIRA94UuEBhf69jeeHN98KY2qd3KtUn+f9XLG+xU5cPTzGh6err7vR6p1Wrh5OQUnc4JWq0O0Ua73ea6c/z/HzrtzhFiT6AlQNv/2whfkpjI/SHMlY28yZHXW5TbHZw4hKyNcD4YoasoMMIUYblFXm1QNntUze4IfW7hnOf7A+0YlNTiRxuNEdorbOMYhyzHdV5iF8VY20tkC8KyUbkBmjDGPkrQEBvOqyCCa5iYjyaYT3R8xQwkrdfDr4yqpsPd0sWdH+KRhm/DBE9xindJhic6eH9xhT/ePuKvh0f8SXz6+h4/v7nD8/UNvr+6xlNRYkpfkj0c4Q1vG/CWM2XI9IY4FegPjujIKtrdHhTDxpx2th8QERxm4HDtBDFWDGBl2ognUzpUh9hvczQXGxwuLnHN264OHC+vsds1MCwDYxpqoxFUZQBFfcVgAPlcgSwrODnrwZ3NURkGJH88hslFfzhmlFOo2hQK5wojFjhXRzjlId2Lke33KDcbFJstqh2JIXnVpkHO9YHz2rIgmbxtu3JhTWdwZiYc3UDpx2jiNWISEs0XSIjSC7FP1zi8Ys/abpn2LZ3tSOI+SuGMNEj9bhePLP6PaY5nMvyRsvhE/E7Dz5TF380F/tkd8JnE/VZU+MjDv6wLfMgKPNPxe65/4NkPHEeyDCmeTPAuzuC5DpIixVZojM7cMIMyWaDPMvQGE8yYcrAukZcV1lWNNC+oyRpL12dJVGY4RyJISfUZ7siUbVqwnCVsSsenZGbWErI6JkaQybpGls2Vj+XKg0f7iCm7lJhxFPaApE0QT3VIy+EQNZ0EhoWICEhQTGfJYoWE2ow4hoTPOnoCxgJrirymU0+fH8+F5gINL7LIvPQle3IxMZBTR9WruA+OhxuScMsI7qi1W+KG8yO8Fzyw3vesZcXLMp61pga+EL2s9/r4rirRpCmZJXNMZUPU7I4iDOGYJmwaR4xqzajE/ybNcCmYFYzT8ZYMf5usoQlScuZd5gmyOkclWpC6qsnunuJOixwqdSqzRqafoD7cHPdLklaKkfaCxCBbY+v4WIiU6/kc3/AGU9PROe/jjBBECHF3zmR0eyq6dHjC9hszUrE+o9C7Aj12Ctct7hW28+LQYUv9RH1FrMOCRfbImiCg8AJcUGv7JGdqOQ5CMkzbIwkubVYzCzbtxRl9rOOG5dD7Cp8vPpKGqiKiHkUvNpTPwVrgdrnCQxDgwX/BPedX/Cf2N8yqpO2akhMPgtCyq2nHB/ZfFRgz2ZfltGYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;webClient&quot;
+        title=&quot;&quot;
+        src=&quot;/static/303fabc729c5e02668cf3a163c98d1dd/612f7/webClient.png&quot;
+        srcset=&quot;/static/303fabc729c5e02668cf3a163c98d1dd/3684f/webClient.png 225w,
+/static/303fabc729c5e02668cf3a163c98d1dd/fc2a6/webClient.png 450w,
+/static/303fabc729c5e02668cf3a163c98d1dd/612f7/webClient.png 773w&quot;
+        sizes=&quot;(max-width: 773px) 100vw, 773px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;@Bean
+fun webClient(): WebClient {
+    // ConnectionProvider 설정
+    val connectionProvider = ConnectionProvider.builder(&amp;quot;custom&amp;quot;)
+        .maxConnections(100)                   // 최대 연결 수
+        .pendingAcquireMaxCount(50)            // 대기 큐 크기
+        .maxIdleTime(Duration.ofSeconds(20))   // 유휴 연결 유지 시간
+        .maxLifeTime(Duration.ofMinutes(5))    // 연결 최대 생존 시간
+        .evictInBackground(Duration.ofSeconds(30)) // 백그라운드 정리
+        .build()
+
+    // HttpClient 설정
+    val httpClient = HttpClient.create(connectionProvider)      // ConnectionProvider 주입
+        .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)     // Connection Timeout
+        .responseTimeout(Duration.ofSeconds(10))                // Response Timeout
+        .doOnConnected { conn -&amp;gt;
+            conn.addHandlerLast(ReadTimeoutHandler(10, TimeUnit.SECONDS))   // Read &amp;amp; Write Timeout
+                .addHandlerLast(WriteTimeoutHandler(10, TimeUnit.SECONDS))
+        }
+
+    return WebClient.builder()
+        .clientConnector(ReactorClientHttpConnector(httpClient))    // HttpClient 주입
+        .baseUrl(&amp;quot;https://api.example.com&amp;quot;)
+        .build()
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;ClientHttpConnector&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;WebClient와 실제 HTTP 클라이언트 라이브러리 사이의 어댑터 역할&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HttpClient&lt;/strong&gt; : 어떻게 HTTP 통신을 할지 결정
+&lt;ul&gt;
+&lt;li&gt;HTTP 프로토콜 레벨의 설정 담당&lt;/li&gt;
+&lt;li&gt;ConnectionProvider를 주입받음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ConnectionProvider&lt;/strong&gt; : Connection을 어떻게 관리할지 결정
+&lt;ul&gt;
+&lt;li&gt;TCP 연결의 물리적 관리를 위함&lt;/li&gt;
+&lt;li&gt;TCP 연결 생성/해제 비용이 크므로 재사용 관리&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&quot;webclient-connection-상태-변화&quot; style=&quot;position:relative;&quot;&gt;WebClient Connection 상태 변화&lt;a href=&quot;#webclient-connection-%EC%83%81%ED%83%9C-%EB%B3%80%ED%99%94&quot; aria-label=&quot;webclient connection 상태 변화 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;8080포트의 서버에서 9090포트의 서버로 요청을 보내고 1초 후에 응답하는 API를 테스트해보았다.&lt;br&gt;
@@ -863,7 +940,7 @@ Date: &amp;lt;filtered&amp;gt;
 &lt;li&gt;응답 완료&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;1-before-response-while-sending-request-body&quot; style=&quot;position:relative;&quot;&gt;1. BEFORE response while sending request body&lt;a href=&quot;#1-before-response-while-sending-request-body&quot; aria-label=&quot;1 before response while sending request body permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;1-while-sending-request-body&quot; style=&quot;position:relative;&quot;&gt;1. while sending request body&lt;a href=&quot;#1-while-sending-request-body&quot; aria-label=&quot;1 while sending request body permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;송신 서버의 요청을 수신 서버가 수신 중에 (바디를 완전히 받기 전에) 연결을 종료하는 경우에 발생한다.&lt;br&gt;
 &lt;strong&gt;테스트 시나리오&lt;/strong&gt;: 스트리밍 바디를 전송하는 중에 서버가 두 번째 청크를 받으면 즉시 연결을 종료&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -1052,8 +1129,8 @@ UTC Arrival Time: Oct  1, 2025 09:09:15.348334000 UTC
 Transmission Control Protocol, Src Port: 9090, Dst Port: 52226, Seq: 2, Ack: 4260, Len: 0
 Flags: 0x014 (RST, ACK)&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;h2 id=&quot;2-before-response&quot; style=&quot;position:relative;&quot;&gt;2. BEFORE response&lt;a href=&quot;#2-before-response&quot; aria-label=&quot;2 before response permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;BEFORE response while sending request body&lt;/code&gt;와 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.&lt;br&gt;
+&lt;h2 id=&quot;2-connection-prematurely-closed-before-response&quot; style=&quot;position:relative;&quot;&gt;2. Connection prematurely closed BEFORE response&lt;a href=&quot;#2-connection-prematurely-closed-before-response&quot; aria-label=&quot;2 connection prematurely closed before response permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;while sending request body&lt;/code&gt;와 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.&lt;br&gt;
 &lt;strong&gt;테스트 시나리오&lt;/strong&gt;: 요청 헤더만 받고 즉시 연결을 종료&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
           &lt;code slot=&quot;code&quot;&gt;fun main() {
@@ -1186,9 +1263,9 @@ reactor.netty.http.client.PrematureCloseException: Connection prematurely closed
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;BEFORE response while sending request body&lt;/code&gt; 다른 점은 Netty 서버에서 USER_EVENT가 발생하지 않는 차이점이 있다.&lt;/p&gt;
-&lt;h2 id=&quot;3-during-response&quot; style=&quot;position:relative;&quot;&gt;3. DURING response&lt;a href=&quot;#3-during-response&quot; aria-label=&quot;3 during response permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;송신 서버가 수신 서버에게 헤더를 정상적으로 응답받고 바디를 대기하는 도중 커넥션이 송신 서버가 커넥션을 일방적으로 닫는 경우이다.&lt;br&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;BEFORE response while sending request body&lt;/code&gt; 경우와 다른 점은 Netty 서버에서 USER_EVENT가 발생하지 않는 차이점이 있다.&lt;/p&gt;
+&lt;h2 id=&quot;3-connection-prematurely-closed-during-response&quot; style=&quot;position:relative;&quot;&gt;3. Connection Prematurely closed DURING response&lt;a href=&quot;#3-connection-prematurely-closed-during-response&quot; aria-label=&quot;3 connection prematurely closed during response permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;송신 서버가 수신 서버에게 헤더를 정상적으로 응답받고 바디를 받기 위해 대기하는 도중, 송신 서버가 커넥션을 일방적으로 닫는 경우이다.&lt;br&gt;
 즉, 송신 서버가 헤더를 정상적으로 받고 바디를 완전히 받기 위해 대기하는 중에 수신 서버가 일방적으로 커넥션을 종료하는 경우이다.&lt;br&gt;
 &lt;strong&gt;테스트 시나리오&lt;/strong&gt;: 응답 헤더와 일부 바디를 전송한 후 연결 종료&lt;/p&gt;
 &lt;deckgo-highlight-code language=&quot;kotlin&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
@@ -1331,6 +1408,29 @@ but response failed with cause: reactor.netty.http.client.PrematureCloseExceptio
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Active Closer의 정상적인 상태 진행&lt;/strong&gt; ESTABLISHED → FIN_WAIT1 → FIN_WAIT2 → TIME_WAIT → CLOSE&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 739px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 77.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA5lAAAOZQHwd0H4AAADeUlEQVR42k2Uy28bVRTG/f+xYo0qdnTLBolKwAoJIaQUQTd0ASpSJVaNlEohTUgRTRw58aOOU+fVJo4Tx4494/F43u8f3zhpYaQ7594593zn+849dypJlDC7sRgOrrno95jP57x/po7L8Pljekv3ufjxPrPGBpeXA447HSaDAfZkgmMYOJaF47pMTZOK60QY4xDDsLi6GjEeW8xmHq4bCjyhf7bO5dkfDPu/MbiskeUQxxFZllEUBVmakgbBBxKVJEllcgXnAik0EkzTF2ioQIjidQbDr5nOvhPIwV1YfvvOc/IS0PcX6zJBpZz0ej02N7dpNOo4zq3kIPDxPAfXi/HDfDEs21ns9QXgOg6d/X22Xr3ioN0mFeMFw/LV6RywvPyM1dU1RqPhwpFlqQJdMi+hiApRLSQtJQzDhT8S/XqjwcrKCs1mkyRJ/gMsqYuwGJXMwJ6HsrlsxO/9pzzqPuKno595MVol92Nc22ZmmKSRavm/+n0ALOm6niuQmFiJwiijVBDGBU+MJzwcLPHD9RLPzVUS18eZW1jGBHtqMrNM1Tq+reF7wCxT68gZODYkqpltYVxfkUcBhZIUKnwpIlB5S2UzK5R0JdV5pklxB3XHMNROO80oidtegB3GTCVjrKLPwohZmmPEOSMv43LqMnN8RqZN35hxZSVcGOoOxc4lyRdWpZcX7Mzb1Ky/qY9f0Eqn7CY5O4FHXYlb8Tu2x2ts9pbZGHd5q5M+nNtsmDe87K+xdvInDa/OXhFzqiatnEtK23vK3tnndMYPqDkd/jLmVHXCu5K07z7j9fAL2jcP2M/aDFXbvgKbRHSsh+y8k2/yvdYep8ISw4wdMdmZBzREuaHmLG1dElqSUtem7fD2e03ra9Wzp1FTTFPrl9Oc9UlAVad5Wko+V7Z6YdKy3/A6OqdVRAughgD3soJmalL3T2hFZ+zhM1BNe/Lt6iDa6TXV6TnNqC/JmQB1U87EoOX8QvX4Hs3BZ7SCDlXd7y3LoGqHNCa/snX0CbW392gkNa4k+VyANUL2ja/YOv5U9kslczkuJQ/kfCM5h5LQ1YcjzbuS1FHTlvMTsT0MQl47IV3NDfXKUKNb5AtfzUy0t1wXXAirUl7oQs5CtdSLUC1T/sI8NbqnjTfrj2l+8xH7336M0foH3T5dSbWIny+sM08lvozPFz+HfwF/IKbnliOK1wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tcp lifecycle&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c1757b36c69d0c457e9d022fa8515fe5/f1d1f/tcp-lifecycle.png&quot;
+        srcset=&quot;/static/c1757b36c69d0c457e9d022fa8515fe5/3684f/tcp-lifecycle.png 225w,
+/static/c1757b36c69d0c457e9d022fa8515fe5/fc2a6/tcp-lifecycle.png 450w,
+/static/c1757b36c69d0c457e9d022fa8515fe5/f1d1f/tcp-lifecycle.png 739w&quot;
+        sizes=&quot;(max-width: 739px) 100vw, 739px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;a href=&quot;https://intronetworks.cs.luc.edu/1/html/tcp.html&quot;&gt;출처: intronetworks&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;커널-레벨-처리-로직&quot; style=&quot;position:relative;&quot;&gt;커널 레벨 처리 로직&lt;a href=&quot;#%EC%BB%A4%EB%84%90-%EB%A0%88%EB%B2%A8-%EC%B2%98%EB%A6%AC-%EB%A1%9C%EC%A7%81&quot; aria-label=&quot;커널 레벨 처리 로직 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_ipv4.c#L1905&quot;&gt;tcp_ipv4.c &lt;code class=&quot;language-text&quot;&gt;tcp_v4_do_rcv(...)&lt;/code&gt;&lt;/a&gt; 함수를 보면 소켓 상태에 따른 처리 방식을 확인할 수 있다.&lt;/p&gt;
 &lt;h4&gt;주요 TCP 상태 설명&lt;/h4&gt;
@@ -1401,7 +1501,6 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
     case TCP_FIN_WAIT1:
     case TCP_FIN_WAIT2:
         if (sk-&amp;gt;sk_shutdown &amp;amp; RCV_SHUTDOWN) {
-            // 서버가 close()를 호출했으므로 RCV_SHUTDOWN이 설정됨
             if (TCP_SKB_CB(skb)-&amp;gt;end_seq != TCP_SKB_CB(skb)-&amp;gt;seq &amp;amp;&amp;amp;
                 after(TCP_SKB_CB(skb)-&amp;gt;end_seq - th-&amp;gt;fin, tp-&amp;gt;rcv_nxt)) {
                 // 데이터가 포함된 패킷이면
@@ -1427,8 +1526,14 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;이는 종료 절차가 진행 중인 연결에 새로운 데이터가 오는 것을 비정상적인 상황으로 간주하여 강제로 연결을 리셋하기 때문이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;중요한 점!&lt;/strong&gt;
+SEND_SHUTDOWN: 내가 먼저 데이터를 더 보내지 않을 때(내가 FIN 보냄/송신 종료)&lt;br&gt;
+RCV_SHUTDOWN: 상대가 데이터를 더 보내지 않을 때(상대가 FIN 보냄/수신 종료)&lt;br&gt;
+이들은 각각의 소켓 방향별로 독립적으로 관리되며, TCP 세션의 종료 과정에서 매우 중요한 역할을 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h1 id=&quot;원인과-예방-방법&quot; style=&quot;position:relative;&quot;&gt;원인과 예방 방법&lt;a href=&quot;#%EC%9B%90%EC%9D%B8%EA%B3%BC-%EC%98%88%EB%B0%A9-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;원인과 예방 방법 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt;예외가 무엇인지, 예외의 메세지가 왜 서로 다른지 알아보았다.&lt;br&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 무엇인지, 예외의 메세지가 왜 서로 다른지 알아보았다.&lt;br&gt;
 이 예외의 원인인 서버가 갑자기 연결을 끊는 경우는 어떤 경우가 있는지, 예방 방법은 무엇인지 알아보자.&lt;/p&gt;
 &lt;h2 id=&quot;로드밸런서와-서버간-timeout이-다른-경우&quot; style=&quot;position:relative;&quot;&gt;로드밸런서와 서버간 timeout이 다른 경우&lt;a href=&quot;#%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%84%9C%EC%99%80-%EC%84%9C%EB%B2%84%EA%B0%84-timeout%EC%9D%B4-%EB%8B%A4%EB%A5%B8-%EA%B2%BD%EC%9A%B0&quot; aria-label=&quot;로드밸런서와 서버간 timeout이 다른 경우 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span
@@ -1533,7 +1638,8 @@ The NLB has a fixed idle timeout of 350 seconds for TCP flows. Once the idle tim
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;실무의 운영환경은 위와 같이 로드밸러서와 수신 서버의 timeout 설정이 동일했기 때문에 세션 테이블 갱신이 원인이 되지는 않을 것이다.&lt;br&gt;
+&lt;p&gt;실무의 운영환경은 위와 같이 로드밸러서와 수신 서버의 timeout 설정이 동일했기 때문에 세션 테이블 갱신이 원인이 될 확률이 높지는 않아보인다.&lt;br&gt;
+&lt;em&gt;그래도 수신 서버의 timeout 설정을 로드밸런서의 timeout보다 짧게 설정해서 수신 서버가 로드밸런서보다 빠르게 끊게 하는게 좋을 것이다.&lt;/em&gt;&lt;br&gt;
 또 다른 추정으로는 Reactor Netty 클라이언트가 커넥션 풀을 통해 Connection을 획득했을 때는 열려 있었지만 그 직후 외부 요인(네트워크 구성요소 등)으로 인해 연결이 닫힌 경우이다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -1630,7 +1736,7 @@ for [{url}]&lt;/code&gt;
 &lt;ul&gt;
 &lt;li&gt;PrematureCloseException 발생 가능성 및 Stale Connection 문제를 예방할 수 있음.&lt;/li&gt;
 &lt;li&gt;하지만 idle 시간 초과로 인해 Connection이 자주 제거되어 새 연결을 계속 생성하기에 TCP 오버헤드 증가.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;연결 생성 속도 &amp;lt; 요청 속도&lt;/code&gt; 대기 큐에 요청이 쌓여 Connection 고갈 문제 발생할 수 있음.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;연결 생성 속도 &amp;lt; 요청 속도&lt;/code&gt; 대기 큐에 요청이 쌓여 Connection 고갈 문제가 발생할 수 있음.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -1728,23 +1834,28 @@ Cm: 한 요청(Task)이 동시에 필요로 하는 커넥션 수 (예: ID 채번
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;maximumPoolSize (idle + in-use connection)와 연관된 속성&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;minimumIdle: 풀에서 유지하는 최소 idle 커넥션 갯수 (default: maximumPoolSize와 동일)&lt;/li&gt;
-&lt;li&gt;idleTimeout: 풀에서 커넥션이 idle 상태로 유지되는 최대 시간 (minimum: 10초, default: 10분)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;minimumIdle&lt;/strong&gt; (default maximumPoolSize와 동일) : 풀에서 유지하는 최소 idle 커넥션 갯수&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idleTimeout&lt;/strong&gt; (최소 10초, default 10분) : 풀에서 커넥션이 idle 상태로 유지되는 최대 시간&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;즉, idle connection 수가 minimulIdle보다 작고, 전체 connection 수도 maximumPoolSize보다 작다면 신속하게 추가로 connection을 만든다.&lt;br&gt;
 &lt;strong&gt;기본적으로 minimumIdle과 maximumPoolSize는 동일한 값으로 지정되어 있다. minimumIdle을 maximumPoolSize보다 작게 설정한 경우 예상하지 못한 트래픽이 몰려오면 connection을 생성하는 비용 때문에 병목이 생길 수 있기 때문에 기본값을 활용하는 것이 좋다.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;서비스 환경의 네트워크와 DB 속성을 확인하여 아래의 설정도 확인하는 것이 좋다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;maxLifetime&lt;/strong&gt; : DB 혹은 네트워크 infra에서 설정된 &quot;최대 커넥션 생존 시간(wait_timeout 등)&quot;보다 수 초 짧게 설정 필요 (default 30분). pool로 반환이 안되면 connection을 제거할 수 없기 때문에 pool로 반환을 잘 시켜주는 것이 중요하다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;keepaliveTime&lt;/strong&gt; : idle 커넥션 생존을 위해 상태 확인 주기, db/network timeout보다 짧게 (default 2분)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;connectionTimeout&lt;/strong&gt; : 풀에서 커넥션을 가져올 때 기다리는 최대 시간, 기본 값은 너무 커 트래픽이 몰리는 경우 서버 스레드가 커넥션을 획득하기 위해 대량으로 블로킹될 가능성이 있음 (default 30초)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;maxLifetime&lt;/strong&gt; (default 30분) : DB 혹은 네트워크 infra에서 설정된 &quot;최대 커넥션 생존 시간(wait_timeout 등)&quot;보다 수 초 짧게 설정 필요. pool로 반환이 안되면 connection을 제거할 수 없기 때문에 pool로 반환을 잘 시켜주는 것이 중요하다.
+&lt;ul&gt;
+&lt;li&gt;데이터베이스 서버의 최신 변경사항을 반영하고 커넥션 유지 동안 발생할 수 있는 리소스의 누수를 막기 위한 선택이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;keepaliveTime&lt;/strong&gt; (default 2분) : idle 커넥션 생존을 위해 상태 확인 주기, db/network timeout보다 짧게&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;connectionTimeout&lt;/strong&gt; (default 30초) : 풀에서 커넥션을 가져올 때 기다리는 최대 시간, 기본 값은 너무 커 트래픽이 몰리는 경우 서버 스레드가 커넥션을 획득하기 위해 대량으로 블로킹될 가능성이 있음&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;💡 DB 서버 설정은?&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;connect_timeout&lt;/code&gt; (default 10초) : MySQL 서버가 TCP 연결 수락 이후 클라이언트로부터 연결 패킷(인증 정보)을 받기까지 기다리는 시간&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;max_connections&lt;/code&gt; : client와 맺을 수 있는 최대 connection 수이다. 스케일 아웃에 대비하여 클라이언트들의 최대 사용 수를 확인하여 설정하는게 좋다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;wait_timeout&lt;/code&gt; (default 28800) : connection이 inactive할 때 다시 요청이 오기까지 얼마의 시간을 기다린뒤에 close 할 것인지를 결정한다. (애플리케이션의 keepaliveTime보다 길게 설정되어야 한다.)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;wait_timeout&lt;/code&gt; (default 480분) : connection이 inactive할 때 다시 요청이 오기까지 얼마의 시간을 기다린뒤에 close 할 것인지를 결정한다. (애플리케이션의 keepaliveTime보다 길게 설정되어야 한다.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;실제 최적값을 찾기 위해 공식 가이드나 추천을 통해 도움을 받을 수 있지만, 서비스 특성에 따른 트래픽 패턴이나 쿼리 패턴은 다 다르기 때문에 꾸준한 모니터링과 테스트가 필요하다.&lt;/p&gt;
@@ -1763,6 +1874,37 @@ DB 서버 또는 애플리케이션 서버의 리소스를 더 잘 활용하고 
 &lt;li&gt;스케일 아웃으로 대응 가능하지만 DB에서 병목이 생기는 경우 secondary 추가, cache 레이어 추가, 샤딩, 파티셔닝, 쿼리 튜닝 등등으로 개선점 확인&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;프로메테우스와 그라파나를 이용하여 자세한 메트릭 수집이 가능하기에 세팅해서 테스트를 실제로 해봐야겠다.&lt;/p&gt;
+&lt;h1 id=&quot;문제가-진짜-해결된-것일까&quot; style=&quot;position:relative;&quot;&gt;문제가 진짜 해결된 것일까?&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C%EA%B0%80-%EC%A7%84%EC%A7%9C-%ED%95%B4%EA%B2%B0%EB%90%9C-%EA%B2%83%EC%9D%BC%EA%B9%8C&quot; aria-label=&quot;문제가 진짜 해결된 것일까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;운영에서 발생한 케이스는 Connection prematurely closed BEFORE response 이다. 즉, 수신 서버가 요청을 받았는데 커넥션을 일방적으로 닫은 경우이다.&lt;br&gt;
+궁금한 점이 생기는데,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q1.&lt;/strong&gt; Active Closer가 FIN을 전송하고 해당 커넥션의 상태가 &lt;code class=&quot;language-text&quot;&gt;FIN_WAIT_1&lt;/code&gt;인 경우에, 왜 커널 레벨에서 해당 커넥션을 통한 요청에 대해 예외를 직접 처리하지 않고 애플리케이션 레벨까지 전파하는 (Netty의 channelRead가 실행되는) 이유가 뭘까?&lt;br&gt;
+&lt;strong&gt;A1.&lt;/strong&gt; Active Closer는 FIN을 송신한 후에도 Passive Closer가 데이터를 보내는 것은 프로토콜상 허용하기 때문이다. &lt;strong&gt;정말로 &quot;양쪽 모두 FIN 송신 후 추가 데이터 수신&quot; 등 명백한 프로토콜 위반 시 커널이 이를 인지하고 오류 처리(RST)&lt;/strong&gt; 를 전송한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q2.&lt;/strong&gt; 이 문제가 발생한 정확한 상황은?&lt;br&gt;
+&lt;strong&gt;A2.&lt;/strong&gt; 해당 WebClient의 사용처는 &lt;code class=&quot;language-text&quot;&gt;일시적 부하가 발생하는 배치 로직&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;REST API 여러 곳&lt;/code&gt; 이다. 문제가 발생한 부분은 배치 로직에서 WebClient를 사용했을 때 발생했다. 현재로 유추하는 시나리오는 배치 로직을 제외한 곳에서 낮은 트래픽에 대한 요청을 처리하다 남은 Connection을 배치 로직이 실행되면서 Stale Connection을 이용한 것이라고 추정하고 있다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q3.&lt;/strong&gt; maxIdletime과 pendingAcquireMaxCount, pendingAcquireTimeout를 설정하여 해결되었다고 판단했는데 다른 방법은 없는지? 최선이였는지?&lt;br&gt;
+&lt;strong&gt;A3.&lt;/strong&gt; PrematureException과 WebClientRequestException을 WebClient 설정으로 해결하였는데 다른 해결 방법도 있어보인다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;배치 로직과 일반 로직에 대한 WebClient 분리&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;특정 시간에 요청이 몰리는 요구사항에 대해 설정 최적화 가능&lt;/li&gt;
+&lt;li&gt;대기 큐의 사이즈를 크게, 대기 시간을 넉넉하게, Connection 수는 수신 서버의 상황을 고려하여 적절하게 설정&lt;/li&gt;
+&lt;li&gt;하지만 장애 발생 또는 수신 서버에 대한 부하 증가 시 데이터 유실 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;재시도 전략&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;이 예외는 진짜 엄청 간간히 발생하던 문제였어서 재시도 전략을 적용하는 것도 좋은 방법일 수 있다&lt;/li&gt;
+&lt;li&gt;하지만 중복 처리가 발생할 수 있어서 수신 서버에 멱등 처리를 추가해야 한다&lt;/li&gt;
+&lt;li&gt;어떤 목적으로 외부 서비스를 호출하는지에 따라 다르겠지만, 현재는 알림 전송을 위한 기능이였기 때문에 사용자가 중복된 메세지를 받으면 신뢰가 떨어질 것 같기도함. (차라리 아예 안받는게 나을수도)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RDB 또는 메세지 큐&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;RDB에 알림 요청 데이터와 상태를 함께 기록해서 배치를 통해 주기적으로 전송하거나 메세지 큐에 공급해서 수신 서버가 컨슘하는 일관성을 추가하는 방법은 어떨까 싶다.&lt;/li&gt;
+&lt;li&gt;추가적인 비용은 들겠지만 정확한 일관성을 보장하고 싶다면 이 방법이 안전할 것 같다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&quot;느낀점&quot; style=&quot;position:relative;&quot;&gt;느낀점&lt;a href=&quot;#%EB%8A%90%EB%82%80%EC%A0%90&quot; aria-label=&quot;느낀점 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;이번 PrematureCloseException 원인 분석을 통해 많은 것을 배울 수 있었다.&lt;br&gt;
 기존에는 WebClient의 기본 설정을 그대로 사용했었는데, 이번 경험을 통해 운영 환경의 특성을 파악하고 적절한 설정을 적용해야함을 깨달았다.&lt;/p&gt;
@@ -1772,8 +1914,8 @@ DB 서버 또는 애플리케이션 서버의 리소스를 더 잘 활용하고 
 &lt;/ul&gt;
 &lt;p&gt;이번에 적용한 설정으로 문제가 상당히 개선되었지만, &lt;strong&gt;모든 네트워크 예외를 완전히 방지할 수는 없다&lt;/strong&gt;.&lt;br&gt;
 우리가 제어할 수 없는 영역인 외부 회사의 서비스 API는 불가피한 네트워크 예외에 대비한 적절한 재시도 전략과 알림 전략이 필요하다.&lt;/p&gt;
-&lt;p&gt;실무에서는 시간 압박으로 인해 급하게 처리했지만, FIN/RST 패킷의 송신자를 정확히 파악하기 위해 TCP dump를 뜨는 것이 더 정확할 것이다.&lt;br&gt;
-(ECS 환경에서의 TCP dump를 뜨기 위한 방법을 정리해야겠다.)&lt;/p&gt;
+&lt;p&gt;실무에서는 시간 압박으로 인해 급하게 처리했지만, 문제를 정확히 파악하기 위해 송신 서버와 수신 서버 모두 TCP dump를 뜨는 것이 더 정확할 것 같다.&lt;br&gt;
+(추후 ECS 환경에서의 TCP dump를 뜨기 위한 방법을 정리해야겠다.)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;참고&lt;/p&gt;
 &lt;ol&gt;
@@ -3180,7 +3322,46 @@ companyIds = [1, 2, 3]
 &lt;ul&gt;
 &lt;li&gt;DgsContext&lt;/li&gt;
 &lt;li&gt;DataLoaderRegistry&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[코틀린 코루틴 실무에서 코루틴 장애를 경험하게 되어서 원인을 확실히 이해하고 코루틴을 확실히 짚고 넘어가고 싶어 읽어보았다. API…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;코틀린-코루틴&quot; style=&quot;position:relative;&quot;&gt;코틀린 코루틴&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4&quot; aria-label=&quot;코틀린 코루틴 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2025년 기록]]></title><description><![CDATA[올리브영 : 비동기 요청-응답 패턴으로 풀어낸 발주 서비스 개발기 동기적으로 처리되는 API로 인해 너무 느린 문제와 다른 서비스에서 해당 API…]]></description><link>https://jdalma.github.io/2025y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/review/</guid><pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;올리브영--비동기-요청-응답-패턴으로-풀어낸-발주-서비스-개발기&quot; style=&quot;position:relative;&quot;&gt;올리브영 : 비동기 요청-응답 패턴으로 풀어낸 발주 서비스 개발기&lt;a href=&quot;#%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81--%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%9A%94%EC%B2%AD-%EC%9D%91%EB%8B%B5-%ED%8C%A8%ED%84%B4%EC%9C%BC%EB%A1%9C-%ED%92%80%EC%96%B4%EB%82%B8-%EB%B0%9C%EC%A3%BC-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C%EA%B8%B0&quot; aria-label=&quot;올리브영  비동기 요청 응답 패턴으로 풀어낸 발주 서비스 개발기 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;동기적으로 처리되는 API로 인해 너무 느린 문제와 다른 서비스에서 해당 API를 호출해야 할 상황이 발생했다.&lt;br&gt;
+유연하게 해결하기 위해 카프카를 이용한 비동기 아키텍처를 고민해본 내용이다.&lt;br&gt;
+(카프카를 썻을 때 장점 &lt;code class=&quot;language-text&quot;&gt;메세지 유실 방지&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;재시도 정책/실패 대처&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;분산 처리로 인한 성능 향상&lt;/code&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;request-reply 아키텍처&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Requestor : 요청 메세지를 보내고, 응답 메시지를 기다린다.&lt;/li&gt;
+&lt;li&gt;Supplier : 요청 메시지를 받아서 응답 메세지를 보낸다.&lt;/li&gt;
+&lt;li&gt;요청자는 Point-to-Point나 Publish-Subscribe 채널로 구성한다.&lt;/li&gt;
+&lt;li&gt;응답자는 대체로 응답 데이터를 브로드캐스팅 할 필요가 없으므로 Point-to-Point로 한정되는 것이 일반적이다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;응답 처리 방식&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;동기 블록 방식 : 요청자가 응답을 받을 때까지 대기&lt;/li&gt;
+&lt;li&gt;비동기 콜백 방식 : 요청을 보낸 후 콜백을 등록하고, 별도의 스레드가 응답 메시지를 대기&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;async-request-reply 아키텍처&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;클라이언트가 백엔드에 작업을 요청하고, 즉시 응답 받은 뒤 나중에 결과를 확인할 수 있도록 하는 구조&lt;/li&gt;
+&lt;li&gt;클라이언트가 요청하면 서버는 작업을 큐 등에서 비동기로 처리하고, 응답(202 Accepted)을 통해 “작업 접수됨”을 안내&lt;/li&gt;
+&lt;li&gt;Location 헤더와 Retry-After 헤더를 통해 결과를 조회할 수 있는 엔드포인트와 폴링 주기를 전달하는 방법&lt;/li&gt;
+&lt;li&gt;클라이언트의 최초 요청에 자원을 조회할 수 있는 식별자를 반환할 수 없는 구조라면 이 아키텍처는 못함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;request-reply 아키텍처를 지원하는 카프카에서 제공하는 ReplyingKafkaTemplate을 사용하면 쉽게 구현 가능하지만, 요청 정보를 메모리에 올려놓고 사용하기 때문에 유실 가능성이 있다.&lt;/p&gt;
+&lt;p&gt;두 아키텍처를 합쳐서 해결했다고 한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;클라이언트(백오피스 등)가 발주 요청을 API로 전송하면,&lt;/li&gt;
+&lt;li&gt;서버는 **요청 이력 ID(예: 전표번호 또는 요청키)**를 생성해 DB에 저장한 뒤,&lt;/li&gt;
+&lt;li&gt;즉시 요청 이력 ID를 응답으로 반환한다.&lt;/li&gt;
+&lt;li&gt;이후, 실제 발주,검증 등 비동기 처리는 내부적으로 Kafka Consumer에서 진행되어, 처리 결과(성공/실패 등)가 DB에 업데이트된다&lt;/li&gt;
+&lt;li&gt;클라이언트는 요청 이력 ID를 활용해 &lt;code class=&quot;language-text&quot;&gt;요청 결과 조회 API&lt;/code&gt;를 호출하여, DB에 반영된 처리 결과(진행 상태, 성공여부, 실패 사유 등)를 안전하게 확인한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;발주 처리에 성공하게 되면 Reply Topic에 공급되고, 실패되면 Dead Letter Topic에 공급되어 DLT Listener가 슬랙 알림/실패 이력 적재 등 처리 후 다시 Reply Topic에 공급한다.&lt;br&gt;
+의아한 점은 클라이언트는 Reply Topic에 의해 응답을 받는것이 아니라 API Polling으로 결과를 조회하는데 Reply Topic이 왜 존재하는지 의문이다.&lt;/p&gt;
+&lt;h1 id=&quot;코틀린-코루틴&quot; style=&quot;position:relative;&quot;&gt;코틀린 코루틴&lt;a href=&quot;#%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4&quot; aria-label=&quot;코틀린 코루틴 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;실무에서 코루틴 장애를 경험하게 되어서 원인을 확실히 이해하고 코루틴을 확실히 짚고 넘어가고 싶어 읽어보았다.&lt;br&gt;
 &lt;a href=&quot;https://jdalma.github.io/2025y/coroutinescope/&quot;&gt;API가 왜 멈췄을까? 코루틴 이해하기&lt;/a&gt;글을 참고하라.&lt;/p&gt;
 &lt;p&gt;단순히 사용하는 방법만 알려주지 않고 코루틴의 메커니즘까지 설명해줘서 좋았다.&lt;br&gt;
