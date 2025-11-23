@@ -1,7 +1,7 @@
 ---
 title: WebClient PrematureCloseException 원인 분석하기
 date: "2025-09-22"
-update: "2025-11-05"
+update: "2025-11-21"
 tags:
    - deep-dive
    - network
@@ -15,6 +15,47 @@ tags:
 외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.  
     
 예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.  
+
+# WebClient 구조 이해하기
+
+![](./webClient.png)
+
+```kotlin
+@Bean
+fun webClient(): WebClient {
+    // ConnectionProvider 설정
+    val connectionProvider = ConnectionProvider.builder("custom")
+        .maxConnections(100)                   // 최대 연결 수
+        .pendingAcquireMaxCount(50)            // 대기 큐 크기
+        .maxIdleTime(Duration.ofSeconds(20))   // 유휴 연결 유지 시간
+        .maxLifeTime(Duration.ofMinutes(5))    // 연결 최대 생존 시간
+        .evictInBackground(Duration.ofSeconds(30)) // 백그라운드 정리
+        .build()
+
+    // HttpClient 설정
+    val httpClient = HttpClient.create(connectionProvider)      // ConnectionProvider 주입
+        .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)     // Connection Timeout
+        .responseTimeout(Duration.ofSeconds(10))                // Response Timeout
+        .doOnConnected { conn ->
+            conn.addHandlerLast(ReadTimeoutHandler(10, TimeUnit.SECONDS))   // Read & Write Timeout
+                .addHandlerLast(WriteTimeoutHandler(10, TimeUnit.SECONDS))
+        }
+
+    return WebClient.builder()
+        .clientConnector(ReactorClientHttpConnector(httpClient))    // HttpClient 주입
+        .baseUrl("https://api.example.com")
+        .build()
+}
+```
+
+1. **ClientHttpConnector**
+   - WebClient와 실제 HTTP 클라이언트 라이브러리 사이의 어댑터 역할
+2. **HttpClient** : 어떻게 HTTP 통신을 할지 결정
+   - HTTP 프로토콜 레벨의 설정 담당
+   - ConnectionProvider를 주입받음
+3. **ConnectionProvider** : Connection을 어떻게 관리할지 결정
+   - TCP 연결의 물리적 관리를 위함
+   - TCP 연결 생성/해제 비용이 크므로 재사용 관리
 
 # WebClient Connection 상태 변화
 
@@ -141,7 +182,7 @@ Date: <filtered>
 > 6. 응답 바디 수신   ← 여기서 닫히면 `"DURING response"` **응답을 받기 시작했지만 응답이 완전히 안 온 상태**
 > 7. 응답 완료
 
-## 1. BEFORE response while sending request body
+## 1. while sending request body
 
 송신 서버의 요청을 수신 서버가 수신 중에 (바디를 완전히 받기 전에) 연결을 종료하는 경우에 발생한다.  
 **테스트 시나리오**: 스트리밍 바디를 전송하는 중에 서버가 두 번째 청크를 받으면 즉시 연결을 종료  
@@ -306,11 +347,11 @@ Transmission Control Protocol, Src Port: 9090, Dst Port: 52226, Seq: 2, Ack: 426
 Flags: 0x014 (RST, ACK)
 ```
 
-## 2. BEFORE response
+## 2. Connection prematurely closed BEFORE response
 
-`BEFORE response while sending request body`와 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.  
+`while sending request body`와 비슷한 케이스이지만 요청 body가 없는 경우 이 메세지의 예외가 발생한다.  
 **테스트 시나리오**: 요청 헤더만 받고 즉시 연결을 종료  
-  
+
 ```kotlin
 fun main() {
     val parentGroup = NioEventLoopGroup()
@@ -415,11 +456,11 @@ reactor.netty.http.client.PrematureCloseException: Connection prematurely closed
 
 ![](./beforeResponse.png)
 
-`BEFORE response while sending request body` 다른 점은 Netty 서버에서 USER_EVENT가 발생하지 않는 차이점이 있다.  
+`BEFORE response while sending request body` 경우와 다른 점은 Netty 서버에서 USER_EVENT가 발생하지 않는 차이점이 있다.  
 
-## 3. DURING response
+## 3. Connection Prematurely closed DURING response
 
-송신 서버가 수신 서버에게 헤더를 정상적으로 응답받고 바디를 대기하는 도중 커넥션이 송신 서버가 커넥션을 일방적으로 닫는 경우이다.  
+송신 서버가 수신 서버에게 헤더를 정상적으로 응답받고 바디를 받기 위해 대기하는 도중, 송신 서버가 커넥션을 일방적으로 닫는 경우이다.  
 즉, 송신 서버가 헤더를 정상적으로 받고 바디를 완전히 받기 위해 대기하는 중에 수신 서버가 일방적으로 커넥션을 종료하는 경우이다.  
 **테스트 시나리오**: 응답 헤더와 일부 바디를 전송한 후 연결 종료  
   
@@ -511,6 +552,9 @@ but response failed with cause: reactor.netty.http.client.PrematureCloseExceptio
 
 **Active Closer의 정상적인 상태 진행** ESTABLISHED → FIN_WAIT1 → FIN_WAIT2 → TIME_WAIT → CLOSE
   
+![](./tcp-lifecycle.png)
+[출처: intronetworks](https://intronetworks.cs.luc.edu/1/html/tcp.html)
+
 ## 커널 레벨 처리 로직
    
 [tcp_ipv4.c `tcp_v4_do_rcv(...)`](https://github.com/torvalds/linux/blob/master/net/ipv4/tcp_ipv4.c#L1905) 함수를 보면 소켓 상태에 따른 처리 방식을 확인할 수 있다.
@@ -583,7 +627,6 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
     case TCP_FIN_WAIT1:
     case TCP_FIN_WAIT2:
         if (sk->sk_shutdown & RCV_SHUTDOWN) {
-            // 서버가 close()를 호출했으므로 RCV_SHUTDOWN이 설정됨
             if (TCP_SKB_CB(skb)->end_seq != TCP_SKB_CB(skb)->seq &&
                 after(TCP_SKB_CB(skb)->end_seq - th->fin, tp->rcv_nxt)) {
                 // 데이터가 포함된 패킷이면
@@ -607,9 +650,14 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
   
 이는 종료 절차가 진행 중인 연결에 새로운 데이터가 오는 것을 비정상적인 상황으로 간주하여 강제로 연결을 리셋하기 때문이다.
 
+> 💡 **중요한 점!**
+> SEND_SHUTDOWN: 내가 먼저 데이터를 더 보내지 않을 때(내가 FIN 보냄/송신 종료)  
+> RCV_SHUTDOWN: 상대가 데이터를 더 보내지 않을 때(상대가 FIN 보냄/수신 종료)  
+> 이들은 각각의 소켓 방향별로 독립적으로 관리되며, TCP 세션의 종료 과정에서 매우 중요한 역할을 한다.
+
 # 원인과 예방 방법
 
-`PrematureCloseException`예외가 무엇인지, 예외의 메세지가 왜 서로 다른지 알아보았다.  
+`PrematureCloseException` 예외가 무엇인지, 예외의 메세지가 왜 서로 다른지 알아보았다.  
 이 예외의 원인인 서버가 갑자기 연결을 끊는 경우는 어떤 경우가 있는지, 예방 방법은 무엇인지 알아보자.
 
 ## 로드밸런서와 서버간 timeout이 다른 경우
@@ -632,7 +680,8 @@ tcp_rcv_state_process(struct sock *sk, struct sk_buff *skb)
 
 ![](./timeout.png)
 
-실무의 운영환경은 위와 같이 로드밸러서와 수신 서버의 timeout 설정이 동일했기 때문에 세션 테이블 갱신이 원인이 되지는 않을 것이다.  
+실무의 운영환경은 위와 같이 로드밸러서와 수신 서버의 timeout 설정이 동일했기 때문에 세션 테이블 갱신이 원인이 될 확률이 높지는 않아보인다.  
+*그래도 수신 서버의 timeout 설정을 로드밸런서의 timeout보다 짧게 설정해서 수신 서버가 로드밸런서보다 빠르게 끊게 하는게 좋을 것이다.*  
 또 다른 추정으로는 Reactor Netty 클라이언트가 커넥션 풀을 통해 Connection을 획득했을 때는 열려 있었지만 그 직후 외부 요인(네트워크 구성요소 등)으로 인해 연결이 닫힌 경우이다.  
 
 ![](./connection-race-condition.png)
@@ -705,7 +754,7 @@ for [{url}]
 
 - PrematureCloseException 발생 가능성 및 Stale Connection 문제를 예방할 수 있음.
 - 하지만 idle 시간 초과로 인해 Connection이 자주 제거되어 새 연결을 계속 생성하기에 TCP 오버헤드 증가.
-- `연결 생성 속도 < 요청 속도` 대기 큐에 요청이 쌓여 Connection 고갈 문제 발생할 수 있음.
+- `연결 생성 속도 < 요청 속도` 대기 큐에 요청이 쌓여 Connection 고갈 문제가 발생할 수 있음.
   
 ![](./rate-limiter.png)
 <br/>
@@ -776,19 +825,22 @@ Cm: 한 요청(Task)이 동시에 필요로 하는 커넥션 수 (예: ID 채번
 - 동시 요청 20개, 요청당 3개 커넥션 필요 → `20×(3−1)+1=41`
   
 > **maximumPoolSize (idle + in-use connection)와 연관된 속성**  
-> - minimumIdle: 풀에서 유지하는 최소 idle 커넥션 갯수 (default: maximumPoolSize와 동일)
-> - idleTimeout: 풀에서 커넥션이 idle 상태로 유지되는 최대 시간 (minimum: 10초, default: 10분)
+> - **minimumIdle** (default maximumPoolSize와 동일) : 풀에서 유지하는 최소 idle 커넥션 갯수
+> - **idleTimeout** (최소 10초, default 10분) : 풀에서 커넥션이 idle 상태로 유지되는 최대 시간
 > 즉, idle connection 수가 minimulIdle보다 작고, 전체 connection 수도 maximumPoolSize보다 작다면 신속하게 추가로 connection을 만든다.  
 > **기본적으로 minimumIdle과 maximumPoolSize는 동일한 값으로 지정되어 있다. minimumIdle을 maximumPoolSize보다 작게 설정한 경우 예상하지 못한 트래픽이 몰려오면 connection을 생성하는 비용 때문에 병목이 생길 수 있기 때문에 기본값을 활용하는 것이 좋다.**
 
 서비스 환경의 네트워크와 DB 속성을 확인하여 아래의 설정도 확인하는 것이 좋다.
-1. **maxLifetime** : DB 혹은 네트워크 infra에서 설정된 "최대 커넥션 생존 시간(wait_timeout 등)"보다 수 초 짧게 설정 필요 (default 30분). pool로 반환이 안되면 connection을 제거할 수 없기 때문에 pool로 반환을 잘 시켜주는 것이 중요하다.
-2. **keepaliveTime** : idle 커넥션 생존을 위해 상태 확인 주기, db/network timeout보다 짧게 (default 2분)
-3. **connectionTimeout** : 풀에서 커넥션을 가져올 때 기다리는 최대 시간, 기본 값은 너무 커 트래픽이 몰리는 경우 서버 스레드가 커넥션을 획득하기 위해 대량으로 블로킹될 가능성이 있음 (default 30초)
+1. **maxLifetime** (default 30분) : DB 혹은 네트워크 infra에서 설정된 "최대 커넥션 생존 시간(wait_timeout 등)"보다 수 초 짧게 설정 필요. pool로 반환이 안되면 connection을 제거할 수 없기 때문에 pool로 반환을 잘 시켜주는 것이 중요하다.
+   - 데이터베이스 서버의 최신 변경사항을 반영하고 커넥션 유지 동안 발생할 수 있는 리소스의 누수를 막기 위한 선택이다.
+2. **keepaliveTime** (default 2분) : idle 커넥션 생존을 위해 상태 확인 주기, db/network timeout보다 짧게
+3. **connectionTimeout** (default 30초) : 풀에서 커넥션을 가져올 때 기다리는 최대 시간, 기본 값은 너무 커 트래픽이 몰리는 경우 서버 스레드가 커넥션을 획득하기 위해 대량으로 블로킹될 가능성이 있음
   
 > 💡 DB 서버 설정은?
+> - `connect_timeout` (default 10초) : MySQL 서버가 TCP 연결 수락 이후 클라이언트로부터 연결 패킷(인증 정보)을 받기까지 기다리는 시간
 > - `max_connections` : client와 맺을 수 있는 최대 connection 수이다. 스케일 아웃에 대비하여 클라이언트들의 최대 사용 수를 확인하여 설정하는게 좋다.
-> - `wait_timeout` (default 28800) : connection이 inactive할 때 다시 요청이 오기까지 얼마의 시간을 기다린뒤에 close 할 것인지를 결정한다. (애플리케이션의 keepaliveTime보다 길게 설정되어야 한다.)
+> - `wait_timeout` (default 480분) : connection이 inactive할 때 다시 요청이 오기까지 얼마의 시간을 기다린뒤에 close 할 것인지를 결정한다. (애플리케이션의 keepaliveTime보다 길게 설정되어야 한다.)
+
 
 실제 최적값을 찾기 위해 공식 가이드나 추천을 통해 도움을 받을 수 있지만, 서비스 특성에 따른 트래픽 패턴이나 쿼리 패턴은 다 다르기 때문에 꾸준한 모니터링과 테스트가 필요하다.  
 
@@ -806,6 +858,33 @@ DB 서버 또는 애플리케이션 서버의 리소스를 더 잘 활용하고 
 
 프로메테우스와 그라파나를 이용하여 자세한 메트릭 수집이 가능하기에 세팅해서 테스트를 실제로 해봐야겠다.  
 
+
+# 문제가 진짜 해결된 것일까?
+
+운영에서 발생한 케이스는 Connection prematurely closed BEFORE response 이다. 즉, 수신 서버가 요청을 받았는데 커넥션을 일방적으로 닫은 경우이다.  
+궁금한 점이 생기는데,
+  
+**Q1.** Active Closer가 FIN을 전송하고 해당 커넥션의 상태가 `FIN_WAIT_1`인 경우에, 왜 커널 레벨에서 해당 커넥션을 통한 요청에 대해 예외를 직접 처리하지 않고 애플리케이션 레벨까지 전파하는 (Netty의 channelRead가 실행되는) 이유가 뭘까?  
+**A1.** Active Closer는 FIN을 송신한 후에도 Passive Closer가 데이터를 보내는 것은 프로토콜상 허용하기 때문이다. **정말로 "양쪽 모두 FIN 송신 후 추가 데이터 수신" 등 명백한 프로토콜 위반 시 커널이 이를 인지하고 오류 처리(RST)** 를 전송한다.  
+  
+**Q2.** 이 문제가 발생한 정확한 상황은?  
+**A2.** 해당 WebClient의 사용처는 `일시적 부하가 발생하는 배치 로직`, `REST API 여러 곳` 이다. 문제가 발생한 부분은 배치 로직에서 WebClient를 사용했을 때 발생했다. 현재로 유추하는 시나리오는 배치 로직을 제외한 곳에서 낮은 트래픽에 대한 요청을 처리하다 남은 Connection을 배치 로직이 실행되면서 Stale Connection을 이용한 것이라고 추정하고 있다.  
+  
+**Q3.** maxIdletime과 pendingAcquireMaxCount, pendingAcquireTimeout를 설정하여 해결되었다고 판단했는데 다른 방법은 없는지? 최선이였는지?  
+**A3.** PrematureException과 WebClientRequestException을 WebClient 설정으로 해결하였는데 다른 해결 방법도 있어보인다.  
+
+1. **배치 로직과 일반 로직에 대한 WebClient 분리**
+   - 특정 시간에 요청이 몰리는 요구사항에 대해 설정 최적화 가능
+   - 대기 큐의 사이즈를 크게, 대기 시간을 넉넉하게, Connection 수는 수신 서버의 상황을 고려하여 적절하게 설정
+   - 하지만 장애 발생 또는 수신 서버에 대한 부하 증가 시 데이터 유실 가능
+2. **재시도 전략**
+   - 이 예외는 진짜 엄청 간간히 발생하던 문제였어서 재시도 전략을 적용하는 것도 좋은 방법일 수 있다
+   - 하지만 중복 처리가 발생할 수 있어서 수신 서버에 멱등 처리를 추가해야 한다
+   - 어떤 목적으로 외부 서비스를 호출하는지에 따라 다르겠지만, 현재는 알림 전송을 위한 기능이였기 때문에 사용자가 중복된 메세지를 받으면 신뢰가 떨어질 것 같기도함. (차라리 아예 안받는게 나을수도)
+3. **RDB 또는 메세지 큐**
+   - RDB에 알림 요청 데이터와 상태를 함께 기록해서 배치를 통해 주기적으로 전송하거나 메세지 큐에 공급해서 수신 서버가 컨슘하는 일관성을 추가하는 방법은 어떨까 싶다.
+   - 추가적인 비용은 들겠지만 정확한 일관성을 보장하고 싶다면 이 방법이 안전할 것 같다.
+
 # 느낀점
 
 이번 PrematureCloseException 원인 분석을 통해 많은 것을 배울 수 있었다.  
@@ -817,8 +896,8 @@ DB 서버 또는 애플리케이션 서버의 리소스를 더 잘 활용하고 
 이번에 적용한 설정으로 문제가 상당히 개선되었지만, **모든 네트워크 예외를 완전히 방지할 수는 없다**.  
 우리가 제어할 수 없는 영역인 외부 회사의 서비스 API는 불가피한 네트워크 예외에 대비한 적절한 재시도 전략과 알림 전략이 필요하다.  
   
-실무에서는 시간 압박으로 인해 급하게 처리했지만, FIN/RST 패킷의 송신자를 정확히 파악하기 위해 TCP dump를 뜨는 것이 더 정확할 것이다.  
-(ECS 환경에서의 TCP dump를 뜨기 위한 방법을 정리해야겠다.)  
+실무에서는 시간 압박으로 인해 급하게 처리했지만, 문제를 정확히 파악하기 위해 송신 서버와 수신 서버 모두 TCP dump를 뜨는 것이 더 정확할 것 같다.  
+(추후 ECS 환경에서의 TCP dump를 뜨기 위한 방법을 정리해야겠다.)  
   
 > 참고  
 > 1. [[Kernel] 커널과 함께 알아보는 소켓과 TCP Deep Dive](https://brewagebear.github.io/linux-kernel-internal-3/)
