@@ -669,3 +669,82 @@ ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting trans
 > InnoDB는 팬텀 리드 등 트랜잭션 고립성을 위해 넥스트 키 락(갭 락+레코드 락) 구조를 채택  
 > 갭 락과 레코드 락이 분리되어 동작하기 때문에, 세션 간 대기가 서로 꼬이면 데드락이 자주 발생함  
 > 데드락 발생 시 애플리케이션에서 트랜잭션 재시도 처리를 해주는 것이 필요함  
+
+# 넥스트 키 락은 왜 양 쪽으로 락을 걸까?
+
+**MVCC(멀티 버전 동시성 제어)만으로 팬텀 리드를 완벽히 방지할 수 있는 게 아니기 때문에, InnoDB는 넥스트 키 락(Next-Key Lock)을 추가로 도입했다.**  
+  
+MVCC(멀티 버전 동시성 제어)만으로는 **'조회' 팬텀 리드 방지** 만 가능하다.  
+내 트랜잭션이 시작됐을 때의 스냅샷을 쿼리할 수 있기 때문에, 트랜잭션 도중 누가 새로 데이터를 넣든 "내가 바라보는 데이터셋"에는 영향이 없어서 "조회 팬텀 리드"는 막을 수 있다.  
+  
+하지만, **UPDATE/DELETE/SELECT ... FOR UPDATE 등 '쓰기/락 기반' 쿼리에서는 MVCC만으로는 한계가 있다**  
+내가 트랜잭션 중 특정 조건으로 UPDATE를 수행하면 동시에 다른 트랜잭션에서 그 조건에 부합하는 새 데이터를 INSERT할 수 있다.  
+이 경우 '조작(UPDATE/DELETE)'의 대상이 되는 레코드 집합이 트랜잭션 중에 변동 되기 때문에 **쓰기 팬텀 리드**가 발생할 수 있다.  
+**단순 스냅샷(읽기 일관성)만으로는 "조작 대상의 집합"을 동적으로 제약할 수 없다.**  
+  
+```sql
+CREATE TABLE employees (
+    id int NOT NULL,
+    first_name varchar(255) DEFAULT NULL,
+    last_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY idx_first_name (first_name)
+) ENGINE=InnoDB;
+
++----+------------+-----------+
+| id | first_name | last_name |
++----+------------+-----------+
+|  1 | John       | Doe1      |
+|  2 | John       | Doe2      |
+|  3 | John       | Doe3      |
+|  4 | John       | Doe4      |
+|  5 | Jane       | Ann1      |
+|  6 | Jane       | Ann2      |
+|  7 | Jane       | Ann3      |
+|  8 | Jack       | Tim1      |
+|  9 | Jack       | Tim2      |
+| 10 | Jack       | Tim3      |
++----+------------+-----------+
+
+-- <트랜잭션 A>
+set transaction_isolation = 'READ-COMMITTED';
+
+select * from employees where id >= 8 for update;
+-- 3 rows in set (0.01 sec)
+
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 8         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 9         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+
+-- <트랜잭션 B>
+set transaction_isolation = 'READ-COMMITTED';
+
+insert into employees(id, first_name, last_name) values (11, 'Test', 'Test1' );
+commit;
+-- Query OK, 1 row affected (0.03 sec)
+-- </트랜잭션 B>
+
+-- <트랜잭션 A>
+select * from employees where id >= 8 for update;
+-- 4 rows in set (0.00 sec)
+```
+
+넥스트 키 락으로 인해 **"현재 읽은 쿼리 결과에 포함되지 않았던 행이 이후 트랜잭션에서 추가"** 되는 현상을 차단하는 것이다.  
+자세한 테스트 내용은 [팬텀 리드 문제](https://jdalma.github.io/2024y/transaction/#phantom-read-%EB%AC%B8%EC%A0%9C)에서 확인할 수 있다.  
+
+즉, 넥스트 키 락은 **MVCC의 한계를 보완** 한다.
+- 트랜잭션이 조회,조작한 인덱스의 "사이 공간"에도 락을 걸어 **추가적인 INSERT(팬텀 레코드 삽입)** 을 막는다.
+- 실행한 트랜잭션 동안 UPDATE/DELETE/SELECT ... FOR UPDATE 조건에서 조작한 레코드뿐 아니라, 조건 사이 갭에도 갭락을 걸어 **"어떤 트랜잭션도 이 구간에 새 레코드 못 넣게"** 강제하는 것이다.
+
+## 결론
+
+**MVCC만으로는 "조회 일관성"만 보장되고, 같은 조건 대상으로 UPDATE/DELETE/SELECT ... FOR UPDATE 등에서는 '팬텀 리드' 발생 가능(쓰기 팬텀).**
+**InnoDB 넥스트 키 락은 이러한 상황까지 커버해서 "조작 대상 집합이 트랜잭션 내에서 변하지 않도록" 보장**
+- 즉, MVCC + Next-Key Lock이 합쳐져서 완전한 팬텀 리드 차단 메커니즘이 되는 것
+
+자세한 내용은 [MySQL docs: innodb-locking](https://dev.mysql.com/doc/refman/8.4/en/innodb-locking.html#innodb-next-key-locks)을 참고하자!
