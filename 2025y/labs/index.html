@@ -748,7 +748,82 @@ ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting trans
 InnoDB는 팬텀 리드 등 트랜잭션 고립성을 위해 넥스트 키 락(갭 락+레코드 락) 구조를 채택<br>
 갭 락과 레코드 락이 분리되어 동작하기 때문에, 세션 간 대기가 서로 꼬이면 데드락이 자주 발생함<br>
 데드락 발생 시 애플리케이션에서 트랜잭션 재시도 처리를 해주는 것이 필요함</p>
-</blockquote></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2025y/webclient/">← <!-- -->WebClient PrematureCloseException 원인 분석하기</a></li><li></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-blHHSb iJiwWZ"><ul>
+</blockquote>
+<h1 id="넥스트-키-락은-왜-양-쪽으로-락을-걸까" style="position:relative;">넥스트 키 락은 왜 양 쪽으로 락을 걸까?<a href="#%EB%84%A5%EC%8A%A4%ED%8A%B8-%ED%82%A4-%EB%9D%BD%EC%9D%80-%EC%99%9C-%EC%96%91-%EC%AA%BD%EC%9C%BC%EB%A1%9C-%EB%9D%BD%EC%9D%84-%EA%B1%B8%EA%B9%8C" aria-label="넥스트 키 락은 왜 양 쪽으로 락을 걸까 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<p><strong>MVCC(멀티 버전 동시성 제어)만으로 팬텀 리드를 완벽히 방지할 수 있는 게 아니기 때문에, InnoDB는 넥스트 키 락(Next-Key Lock)을 추가로 도입했다.</strong></p>
+<p>MVCC(멀티 버전 동시성 제어)만으로는 <strong>'조회' 팬텀 리드 방지</strong> 만 가능하다.<br>
+내 트랜잭션이 시작됐을 때의 스냅샷을 쿼리할 수 있기 때문에, 트랜잭션 도중 누가 새로 데이터를 넣든 "내가 바라보는 데이터셋"에는 영향이 없어서 "조회 팬텀 리드"는 막을 수 있다.</p>
+<p>하지만, <strong>UPDATE/DELETE/SELECT ... FOR UPDATE 등 '쓰기/락 기반' 쿼리에서는 MVCC만으로는 한계가 있다</strong><br>
+내가 트랜잭션 중 특정 조건으로 UPDATE를 수행하면 동시에 다른 트랜잭션에서 그 조건에 부합하는 새 데이터를 INSERT할 수 있다.<br>
+이 경우 '조작(UPDATE/DELETE)'의 대상이 되는 레코드 집합이 트랜잭션 중에 변동 되기 때문에 <strong>쓰기 팬텀 리드</strong>가 발생할 수 있다.<br>
+<strong>단순 스냅샷(읽기 일관성)만으로는 "조작 대상의 집합"을 동적으로 제약할 수 없다.</strong></p>
+<deckgo-highlight-code language="sql" terminal="carbon" theme="one-light" line-numbers="true"  >
+          <code slot="code">CREATE TABLE employees (
+    id int NOT NULL,
+    first_name varchar(255) DEFAULT NULL,
+    last_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY idx_first_name (first_name)
+) ENGINE=InnoDB;
+
++----+------------+-----------+
+| id | first_name | last_name |
++----+------------+-----------+
+|  1 | John       | Doe1      |
+|  2 | John       | Doe2      |
+|  3 | John       | Doe3      |
+|  4 | John       | Doe4      |
+|  5 | Jane       | Ann1      |
+|  6 | Jane       | Ann2      |
+|  7 | Jane       | Ann3      |
+|  8 | Jack       | Tim1      |
+|  9 | Jack       | Tim2      |
+| 10 | Jack       | Tim3      |
++----+------------+-----------+
+
+-- &lt;트랜잭션 A&gt;
+set transaction_isolation = &#39;READ-COMMITTED&#39;;
+
+select * from employees where id &gt;= 8 for update;
+-- 3 rows in set (0.01 sec)
+
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 8         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 9         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+
+-- &lt;트랜잭션 B&gt;
+set transaction_isolation = &#39;READ-COMMITTED&#39;;
+
+insert into employees(id, first_name, last_name) values (11, &#39;Test&#39;, &#39;Test1&#39; );
+commit;
+-- Query OK, 1 row affected (0.03 sec)
+-- &lt;/트랜잭션 B&gt;
+
+-- &lt;트랜잭션 A&gt;
+select * from employees where id &gt;= 8 for update;
+-- 4 rows in set (0.00 sec)</code>
+        </deckgo-highlight-code>
+<p>넥스트 키 락으로 인해 <strong>"현재 읽은 쿼리 결과에 포함되지 않았던 행이 이후 트랜잭션에서 추가"</strong> 되는 현상을 차단하는 것이다.<br>
+자세한 테스트 내용은 <a href="https://jdalma.github.io/2024y/transaction/#phantom-read-%EB%AC%B8%EC%A0%9C">팬텀 리드 문제</a>에서 확인할 수 있다.</p>
+<p>즉, 넥스트 키 락은 <strong>MVCC의 한계를 보완</strong> 한다.</p>
+<ul>
+<li>트랜잭션이 조회,조작한 인덱스의 "사이 공간"에도 락을 걸어 <strong>추가적인 INSERT(팬텀 레코드 삽입)</strong> 을 막는다.</li>
+<li>실행한 트랜잭션 동안 UPDATE/DELETE/SELECT ... FOR UPDATE 조건에서 조작한 레코드뿐 아니라, 조건 사이 갭에도 갭락을 걸어 <strong>"어떤 트랜잭션도 이 구간에 새 레코드 못 넣게"</strong> 강제하는 것이다.</li>
+</ul>
+<h2 id="결론" style="position:relative;">결론<a href="#%EA%B2%B0%EB%A1%A0" aria-label="결론 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p><strong>MVCC만으로는 "조회 일관성"만 보장되고, 같은 조건 대상으로 UPDATE/DELETE/SELECT ... FOR UPDATE 등에서는 '팬텀 리드' 발생 가능(쓰기 팬텀).</strong>
+<strong>InnoDB 넥스트 키 락은 이러한 상황까지 커버해서 "조작 대상 집합이 트랜잭션 내에서 변하지 않도록" 보장</strong></p>
+<ul>
+<li>즉, MVCC + Next-Key Lock이 합쳐져서 완전한 팬텀 리드 차단 메커니즘이 되는 것</li>
+</ul>
+<p>자세한 내용은 <a href="https://dev.mysql.com/doc/refman/8.4/en/innodb-locking.html#innodb-next-key-locks">MySQL docs: innodb-locking</a>을 참고하자!</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2025y/webclient/">← <!-- -->WebClient PrematureCloseException 원인 분석하기</a></li><li></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-blHHSb iJiwWZ"><ul>
+<li>
+<ul>
 <li><a href="#%EA%B0%AD-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-insert-%EC%8B%A4%ED%8C%A8">갭 락으로 인한 INSERT 실패</a></li>
 <li><a href="#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%8F%99%EB%93%B1-%EC%9E%A0%EA%B8%88-for-share">non-unique 세컨더리 인덱스 동등 잠금 (FOR SHARE)</a></li>
 <li><a href="#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EB%8F%99%EB%93%B1-%EC%9E%A5%EA%B8%88-for-update">non-unique 세컨더리 인덱스 동등 장금 (FOR UPDATE)</a></li>
@@ -759,6 +834,14 @@ InnoDB는 팬텀 리드 등 트랜잭션 고립성을 위해 넥스트 키 락(�
 <li><a href="#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%A4%91%EB%B3%B5%EB%90%9C-%ED%96%89-%EC%9E%A0%EA%B8%88-%EC%B6%94%EA%B0%80-%EC%BC%80%EC%9D%B4%EC%8A%A4">non-unique 세컨더리 인덱스 중복된 행 잠금 (추가 케이스)</a></li>
 <li><a href="#non-unique-%EC%84%B8%EC%BB%A8%EB%8D%94%EB%A6%AC-%EC%9D%B8%EB%8D%B1%EC%8A%A4-limit-%EC%9E%A0%EA%B8%88">non-unique 세컨더리 인덱스 LIMIT 잠금</a></li>
 <li><a href="#%EB%84%A5%EC%8A%A4%ED%8A%B8-%ED%82%A4-%EB%9D%BD%EA%B0%AD-%EB%9D%BD--%EB%A0%88%EC%BD%94%EB%93%9C-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-%EB%8D%B0%EB%93%9C%EB%9D%BD-%EB%B0%9C%EC%83%9D-%EC%BC%80%EC%9D%B4%EC%8A%A4">넥스트 키 락(갭 락 + 레코드 락)으로 인한 데드락 발생 케이스</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EB%84%A5%EC%8A%A4%ED%8A%B8-%ED%82%A4-%EB%9D%BD%EC%9D%80-%EC%99%9C-%EC%96%91-%EC%AA%BD%EC%9C%BC%EB%A1%9C-%EB%9D%BD%EC%9D%84-%EA%B1%B8%EA%B9%8C">넥스트 키 락은 왜 양 쪽으로 락을 걸까?</a></p>
+<ul>
+<li><a href="#%EA%B2%B0%EB%A1%A0">결론</a></li>
+</ul>
+</li>
 </ul></div></div><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2025<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2025y/labs/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Nov 2025 15:38:50 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 26 Nov 2025 07:23:49 GMT</lastBuildDate><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
@@ -678,7 +678,80 @@ ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting trans
 InnoDB는 팬텀 리드 등 트랜잭션 고립성을 위해 넥스트 키 락(갭 락+레코드 락) 구조를 채택&lt;br&gt;
 갭 락과 레코드 락이 분리되어 동작하기 때문에, 세션 간 대기가 서로 꼬이면 데드락이 자주 발생함&lt;br&gt;
 데드락 발생 시 애플리케이션에서 트랜잭션 재시도 처리를 해주는 것이 필요함&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;넥스트-키-락은-왜-양-쪽으로-락을-걸까&quot; style=&quot;position:relative;&quot;&gt;넥스트 키 락은 왜 양 쪽으로 락을 걸까?&lt;a href=&quot;#%EB%84%A5%EC%8A%A4%ED%8A%B8-%ED%82%A4-%EB%9D%BD%EC%9D%80-%EC%99%9C-%EC%96%91-%EC%AA%BD%EC%9C%BC%EB%A1%9C-%EB%9D%BD%EC%9D%84-%EA%B1%B8%EA%B9%8C&quot; aria-label=&quot;넥스트 키 락은 왜 양 쪽으로 락을 걸까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;MVCC(멀티 버전 동시성 제어)만으로 팬텀 리드를 완벽히 방지할 수 있는 게 아니기 때문에, InnoDB는 넥스트 키 락(Next-Key Lock)을 추가로 도입했다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MVCC(멀티 버전 동시성 제어)만으로는 &lt;strong&gt;&apos;조회&apos; 팬텀 리드 방지&lt;/strong&gt; 만 가능하다.&lt;br&gt;
+내 트랜잭션이 시작됐을 때의 스냅샷을 쿼리할 수 있기 때문에, 트랜잭션 도중 누가 새로 데이터를 넣든 &quot;내가 바라보는 데이터셋&quot;에는 영향이 없어서 &quot;조회 팬텀 리드&quot;는 막을 수 있다.&lt;/p&gt;
+&lt;p&gt;하지만, &lt;strong&gt;UPDATE/DELETE/SELECT ... FOR UPDATE 등 &apos;쓰기/락 기반&apos; 쿼리에서는 MVCC만으로는 한계가 있다&lt;/strong&gt;&lt;br&gt;
+내가 트랜잭션 중 특정 조건으로 UPDATE를 수행하면 동시에 다른 트랜잭션에서 그 조건에 부합하는 새 데이터를 INSERT할 수 있다.&lt;br&gt;
+이 경우 &apos;조작(UPDATE/DELETE)&apos;의 대상이 되는 레코드 집합이 트랜잭션 중에 변동 되기 때문에 &lt;strong&gt;쓰기 팬텀 리드&lt;/strong&gt;가 발생할 수 있다.&lt;br&gt;
+&lt;strong&gt;단순 스냅샷(읽기 일관성)만으로는 &quot;조작 대상의 집합&quot;을 동적으로 제약할 수 없다.&lt;/strong&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;sql&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;CREATE TABLE employees (
+    id int NOT NULL,
+    first_name varchar(255) DEFAULT NULL,
+    last_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY idx_first_name (first_name)
+) ENGINE=InnoDB;
+
++----+------------+-----------+
+| id | first_name | last_name |
++----+------------+-----------+
+|  1 | John       | Doe1      |
+|  2 | John       | Doe2      |
+|  3 | John       | Doe3      |
+|  4 | John       | Doe4      |
+|  5 | Jane       | Ann1      |
+|  6 | Jane       | Ann2      |
+|  7 | Jane       | Ann3      |
+|  8 | Jack       | Tim1      |
+|  9 | Jack       | Tim2      |
+| 10 | Jack       | Tim3      |
++----+------------+-----------+
+
+-- &amp;lt;트랜잭션 A&amp;gt;
+set transaction_isolation = &amp;#39;READ-COMMITTED&amp;#39;;
+
+select * from employees where id &amp;gt;= 8 for update;
+-- 3 rows in set (0.01 sec)
+
++-------------+------------+-----------+---------------+-------------+-----------+
+| OBJECT_NAME | INDEX_NAME | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |
++-------------+------------+-----------+---------------+-------------+-----------+
+| employees   | NULL       | TABLE     | IX            | GRANTED     | NULL      |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 8         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 9         |
+| employees   | PRIMARY    | RECORD    | X,REC_NOT_GAP | GRANTED     | 10        |
++-------------+------------+-----------+---------------+-------------+-----------+
+
+-- &amp;lt;트랜잭션 B&amp;gt;
+set transaction_isolation = &amp;#39;READ-COMMITTED&amp;#39;;
+
+insert into employees(id, first_name, last_name) values (11, &amp;#39;Test&amp;#39;, &amp;#39;Test1&amp;#39; );
+commit;
+-- Query OK, 1 row affected (0.03 sec)
+-- &amp;lt;/트랜잭션 B&amp;gt;
+
+-- &amp;lt;트랜잭션 A&amp;gt;
+select * from employees where id &amp;gt;= 8 for update;
+-- 4 rows in set (0.00 sec)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;넥스트 키 락으로 인해 &lt;strong&gt;&quot;현재 읽은 쿼리 결과에 포함되지 않았던 행이 이후 트랜잭션에서 추가&quot;&lt;/strong&gt; 되는 현상을 차단하는 것이다.&lt;br&gt;
+자세한 테스트 내용은 &lt;a href=&quot;https://jdalma.github.io/2024y/transaction/#phantom-read-%EB%AC%B8%EC%A0%9C&quot;&gt;팬텀 리드 문제&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;즉, 넥스트 키 락은 &lt;strong&gt;MVCC의 한계를 보완&lt;/strong&gt; 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;트랜잭션이 조회,조작한 인덱스의 &quot;사이 공간&quot;에도 락을 걸어 &lt;strong&gt;추가적인 INSERT(팬텀 레코드 삽입)&lt;/strong&gt; 을 막는다.&lt;/li&gt;
+&lt;li&gt;실행한 트랜잭션 동안 UPDATE/DELETE/SELECT ... FOR UPDATE 조건에서 조작한 레코드뿐 아니라, 조건 사이 갭에도 갭락을 걸어 &lt;strong&gt;&quot;어떤 트랜잭션도 이 구간에 새 레코드 못 넣게&quot;&lt;/strong&gt; 강제하는 것이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;결론&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;MVCC만으로는 &quot;조회 일관성&quot;만 보장되고, 같은 조건 대상으로 UPDATE/DELETE/SELECT ... FOR UPDATE 등에서는 &apos;팬텀 리드&apos; 발생 가능(쓰기 팬텀).&lt;/strong&gt;
+&lt;strong&gt;InnoDB 넥스트 키 락은 이러한 상황까지 커버해서 &quot;조작 대상 집합이 트랜잭션 내에서 변하지 않도록&quot; 보장&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;즉, MVCC + Next-Key Lock이 합쳐져서 완전한 팬텀 리드 차단 메커니즘이 되는 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;자세한 내용은 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.4/en/innodb-locking.html#innodb-next-key-locks&quot;&gt;MySQL docs: innodb-locking&lt;/a&gt;을 참고하자!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[WebClient PrematureCloseException 원인 분석하기]]></title><description><![CDATA[문제 발견 모니터링을 통해 보름 간격으로 한 번씩  예외가 발생하는 것을 확인했다. 외부 서비스로 초당 400~50…]]></description><link>https://jdalma.github.io/2025y/webclient/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/webclient/</guid><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;문제-발견&quot; style=&quot;position:relative;&quot;&gt;문제 발견&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EA%B2%AC&quot; aria-label=&quot;문제 발견 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;모니터링을 통해 보름 간격으로 한 번씩 &lt;code class=&quot;language-text&quot;&gt;PrematureCloseException&lt;/code&gt; 예외가 발생하는 것을 확인했다.&lt;br&gt;
 외부 서비스로 초당 400~500회 요청을 보내고, 응답을 기다리지 않는 비동기 방식으로 처리하는 중 부하가 몰릴 때 발생하는 것을 추가로 확인할 수 있었다.&lt;/p&gt;
 &lt;p&gt;예외의 원인을 확실하게 이해하기 위해 WebClient의 커넥션 풀이 어떻게 관리되는지 정상적인 케이스를 먼저 확인해보자.&lt;/p&gt;
