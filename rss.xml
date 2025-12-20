@@ -1,4 +1,437 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 17 Dec 2025 08:30:21 GMT</lastBuildDate><item><title><![CDATA[클로드 코드 잘 사용하기]]></title><description><![CDATA[내가 사용하는 방법을 기록하고 개선하기 위해 작성한다. Claude Code ADR.md : 의사결정 문서 TODO.md : 큰 작업을 한 번에 끝내기 힘든 경우 CLAUDE.md…]]></description><link>https://jdalma.github.io/wiki/claude/</link><guid isPermaLink="false">https://jdalma.github.io/wiki/claude/</guid><pubDate>Wed, 17 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;내가 사용하는 방법을 기록하고 개선하기 위해 작성한다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 20 Dec 2025 05:24:42 GMT</lastBuildDate><item><title><![CDATA[DBCP maximum-pool-size 튜닝하기]]></title><description><![CDATA[들어가며 DBCP…]]></description><link>https://jdalma.github.io/2025y/stress/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/stress/</guid><pubDate>Sat, 20 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;들어가며&quot; style=&quot;position:relative;&quot;&gt;들어가며&lt;a href=&quot;#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot; aria-label=&quot;들어가며 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;DBCP 튜닝을 해본적이 없다. 기본값을 그대로 사용하거나, 막연히 큰 값을 설정하는 것을 기존 프로젝트에서 봐왔다.&lt;br&gt;
+하지만 최적의 설정은 애플리케이션의 특성, 쿼리 실행 시간, 동시 사용자 수에 따라 달라지기 때문에 튜닝을 연습해보려 한다.&lt;/p&gt;
+&lt;p&gt;그래서 &lt;strong&gt;의도적으로 병목 상황을 만들고&lt;/strong&gt;, k6 부하 테스트와 Grafana 모니터링을 통해 &lt;strong&gt;임계점을 직접 확인&lt;/strong&gt;하면서 최적의 pool size를 찾아보려 한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing&quot;&gt;HikariCP GitHub - About Pool Sizing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby&quot;&gt;HikariCP Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;부하-테스트-기준&quot; style=&quot;position:relative;&quot;&gt;부하 테스트 기준&lt;a href=&quot;#%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B8%B0%EC%A4%80&quot; aria-label=&quot;부하 테스트 기준 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e097ac830ab6beafb96d3f4e6ef6cb4e/ac522/api.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 38.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcklEQVR42nWR247TQBBE/a088Ts88xO8IfHGaqVlb0pWIhIJeGM7viT2jB3fYif2+NA2GARSWir1jDRdXVNl8buGYeD/quuaJEk4HnPpijhWKJXS9wPj87KqUTpFZzlaelEUWF3XTcNj3+/3MhQTBAFhGE73vjcUmU+R/uBc+3RNJAjpmwBzDtH7FZF9RxJ9Z5RkLZYvk7q6qnAcB9/3sW17gtZa1B1x7HvWq49U6YJSPQmeyeMHTuoLt/efePvuAzcPN5Mw69t6LSp6DocDaZqSZdnUUyFLRO2oMnAeidzPVPqZJlvQHF+osyVdvuDp6x1v3t/yuFr+IhzJ5i9fLpd/YXqMqE+Vh4rXtJVLU3p/0FaC0qHNN3IOJ18trpUxcDoxjGhaTFFiLt00NMOYgV5ghr+hXiXs25bS89Cvr+jtlnSzIYsP5IUkqtRky5jqHOpcVwnP8uVIPHSEdDemLl56ux2u67KVBVorWlk6WzYT/gTQWWEf4s4jfwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;api&quot;
+        title=&quot;&quot;
+        src=&quot;/static/e097ac830ab6beafb96d3f4e6ef6cb4e/1cfc2/api.png&quot;
+        srcset=&quot;/static/e097ac830ab6beafb96d3f4e6ef6cb4e/3684f/api.png 225w,
+/static/e097ac830ab6beafb96d3f4e6ef6cb4e/fc2a6/api.png 450w,
+/static/e097ac830ab6beafb96d3f4e6ef6cb4e/1cfc2/api.png 900w,
+/static/e097ac830ab6beafb96d3f4e6ef6cb4e/21482/api.png 1350w,
+/static/e097ac830ab6beafb96d3f4e6ef6cb4e/d61c2/api.png 1800w,
+/static/e097ac830ab6beafb96d3f4e6ef6cb4e/ac522/api.png 2941w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;javascript&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;// k6/scripts/phase1-read-test.js
+export const options = {
+  scenarios: {
+    ramping_load: {
+      executor: &amp;#39;ramping-vus&amp;#39;,
+      startVUs: 1,
+      stages: [
+        { duration: &amp;#39;20s&amp;#39;, target: 10 },   // Warm-up
+        { duration: &amp;#39;30s&amp;#39;, target: 50 },   // Tomcat 스레드 포화 (max: 100)
+        { duration: &amp;#39;30s&amp;#39;, target: 100 },  // Tomcat 초과
+        { duration: &amp;#39;30s&amp;#39;, target: 125 },  // 고부하
+        { duration: &amp;#39;30s&amp;#39;, target: 150 },  // 최대 부하
+        { duration: &amp;#39;20s&amp;#39;, target: 0 },    // Cool-down
+      ],
+    },
+  },
+};&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tomcat 최대 스레드를 100개로 제한&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DBCP 최대 커넥션 수를 5개로 제한&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 상황에서 점진적으로 부하를 줘보자&lt;/p&gt;
+&lt;h2 id=&quot;정상적인-상황&quot; style=&quot;position:relative;&quot;&gt;정상적인 상황&lt;a href=&quot;#%EC%A0%95%EC%83%81%EC%A0%81%EC%9D%B8-%EC%83%81%ED%99%A9&quot; aria-label=&quot;정상적인 상황 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/78d4c62c1cb2a50f71ffb012578fe5df/10b63/baseline.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 68.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAACjUlEQVR42j1TWXbbMAzUHVpbC0lxp/bYSpPWr69N/nv/+0wHdF8/YJgQCGAGw2bdTxgbcWkHXDqFr/TXVsENGmOvYGmjGqGZY1xE2+uad2n/5fYG7WBqrNcOjbYBY8pYP35h+/yAXVf0yuBtWXFfN5zTjKPMMLFAjw7KecTzFfF+YrCO8Yx5v8GEhGm7oxl9rEXK90e1dEqiZbcRg7HoWFy7QIvoeB7ZwC47/PYCk0v9LvGr0rBs2qRpg88zhtHzg68XZQpJ7Al7oFf8FsqCwiJxWtkwoGNsYKOOdPS0jrCtT2hcjOTHkh+LpXgGPXqeN8bP9UAilI2dDS8Plt9YyNMWNrakoGWxIwRsqeB9O9AoJjle+v36hj+Pdyz7G4Z8wxQidkIK5GmltyFXGiKn/1YyfqxPixzAMyc5h528NyHNyIScOUWKE/0EHxfyx+79UGHLFg3hlMwFlIJI77mMwGUWnq+c8ks3kLaAZtlu5HCBEl54+cr1i28ph4tYp8kTl+FznVK7jOswVvn8Nza80ivDgsLLQC4eLwmf9wAfHC7saLj9NO91SdLQcqKeeYaQSyK8yeGgLZmUHCfycmCiphtJmBl8XT0tcDGBl54XR8IU3kRajpQochWCR04BMQZSFHgOlR5RhWPT5jh23G8H9v3APM+YSPg8cQksepEXwETxilsWnWlCV4Qt3vhSeRNKrsKzo2w0f0QKVVvaVrhiQrSjLhfGVz478Yl5ltNo5kmuCLplw5EqsWl6vhTjA4XLCexYtei9Q4keLyXifU6URsLPvVR7bJQK7bEWSor6Zb6Y0CPySxR9U9cfE6UjUJ+yEMhZ5EH4QbSYEjxN8uS/xOe5cIGpPsue08qWBfJfAxeGFyZtTXgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;baseline&quot;
+        title=&quot;&quot;
+        src=&quot;/static/78d4c62c1cb2a50f71ffb012578fe5df/1cfc2/baseline.png&quot;
+        srcset=&quot;/static/78d4c62c1cb2a50f71ffb012578fe5df/3684f/baseline.png 225w,
+/static/78d4c62c1cb2a50f71ffb012578fe5df/fc2a6/baseline.png 450w,
+/static/78d4c62c1cb2a50f71ffb012578fe5df/1cfc2/baseline.png 900w,
+/static/78d4c62c1cb2a50f71ffb012578fe5df/21482/baseline.png 1350w,
+/static/78d4c62c1cb2a50f71ffb012578fe5df/d61c2/baseline.png 1800w,
+/static/78d4c62c1cb2a50f71ffb012578fe5df/10b63/baseline.png 1897w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Tomcat 스레드보다 많이 요청됐지만 정상 처리됨&lt;/li&gt;
+&lt;li&gt;초당 700개의 요청을 처리&lt;/li&gt;
+&lt;li&gt;99%의 요청이 200ms 이내 처리&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;각-조회-api-300ms-지연-상황&quot; style=&quot;position:relative;&quot;&gt;각 조회 API 300ms 지연 상황&lt;a href=&quot;#%EA%B0%81-%EC%A1%B0%ED%9A%8C-api-300ms-%EC%A7%80%EC%97%B0-%EC%83%81%ED%99%A9&quot; aria-label=&quot;각 조회 api 300ms 지연 상황 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;처리를 300ms 지연시켜서 DB Connection 반환을 지연시켜보자&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📌 &lt;strong&gt;부하 테스트를 하면 메트릭 집계 안되는 경우&lt;/strong&gt;&lt;br&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bb5cd49e74c797d08c2828cfdfdfc2d3/6c68b/disappear.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 33.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABQElEQVR42n2R226DMBBE+Yk0BF/wBQwYQkJzaapITfvS//+j6dj0oZWqPhytLfDMzm7RdBOaMCJV10ZsK41NqfC0+59NKTPrXWY2pUChbYC2LbRroVi30qLSFju91nxWvyllzf8HKB/zuTIBwvaQpkPhQuSjmkKKVeMwODyeHYytsZMaQpHafGP5KIkajNMFl9sD7TCzkQDDdJ4pC5tiCosxLvg4HXGfLd6PHof9CSqcYfsrFJ0raWjg2BE7FElwwXg4Q5gGKaVp+jyyQrsOodvj8/UNj2XBFAzOQ4Pr8QWqv8GMd9QUlX7iGNwamR1WpKTJVtSZdE5GhedC5jhTKKJrAqwx8NZiHwY694xDXITmvCqKVVnMckSr4E+ScCFrnzcs6K5Mi2SQPsR+QsgGHtMwwXA5TdujpVHFRZTib74AxBfCrOuIHN4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;disappear&quot;
+        title=&quot;&quot;
+        src=&quot;/static/bb5cd49e74c797d08c2828cfdfdfc2d3/1cfc2/disappear.png&quot;
+        srcset=&quot;/static/bb5cd49e74c797d08c2828cfdfdfc2d3/3684f/disappear.png 225w,
+/static/bb5cd49e74c797d08c2828cfdfdfc2d3/fc2a6/disappear.png 450w,
+/static/bb5cd49e74c797d08c2828cfdfdfc2d3/1cfc2/disappear.png 900w,
+/static/bb5cd49e74c797d08c2828cfdfdfc2d3/21482/disappear.png 1350w,
+/static/bb5cd49e74c797d08c2828cfdfdfc2d3/d61c2/disappear.png 1800w,
+/static/bb5cd49e74c797d08c2828cfdfdfc2d3/6c68b/disappear.png 1888w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+부하 테스트를 진행하면서 메트릭이 안보이는 경우가 있었는데 &lt;code class=&quot;language-text&quot;&gt;/actuator/prometheus&lt;/code&gt; API도 8080 포트로 조회하고 있어서 이 API 요청을 처리할 스레드가 없어서 메트릭이 조회가 안되었다.&lt;br&gt;
+다른 포트로 할당해주면 된다. &lt;code class=&quot;language-text&quot;&gt;management.server.port&lt;/code&gt; 설정을 8080 포트와 분리해주면 된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c9ce19f5b404148390d5a8538f517c12/6c68b/300ms-delay.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 68%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAChklEQVR42lWT6XLUMBCE/Qwp1pcs65blY8+wSyAJKX7x/k/UtORQBT+6ZJ0z0/O5ui5HRGUh6w6qFVDdsKvt0TQ9Du2ATiiM2kNSTSdRc22X+E+HRqB6NgoXKXDzFj9/fMfH+/uu1wecd2jEiNF6DMahVwadVGiHES3HTumingkJE9FwvRqMR28s7OkKc77BnC6f4vfxDOkcBm2hecZYAxM83DTBp0RxnDmuG9dmDAxSLccL4rzBuAliZESpmQGjcnPIVvAxyaD53MoAKwNrFzEy47KnDZJWCMbwjkYlteZDIycSkunHYHGdmRGzEaMpe/nhjt9tKVeh7mVR9naTIzYmcuW5RkiWnLOgrJ/wYMm/7g/8/vbA5XSHmh/QfmE2vpQt6eGY7XEWx+gZOOItedyXCR+Lh8glh3REmDb4OMPzUalcyUhrB0Vpmt1Lw70Az+ZEz/JTwBQDm+axeYML9ZWSIx+clhNsmFmaRU1cmk4UHTIGROcL0Wlzp01gIMdzDl+IzFPd46nZz/QZsb/YZBRamtnTh8us8XayeDtbeKdRi92zgZkKltxnREZTGqaJ2+Q11qgojS1pGDanikx9ZvvPW8T9FPF8zF5yvkYE+hQnzwYRFZ/nExJxyefnedeUdi3EJ6NVrWTuxGasxEK5UHDIUpb+fSo3w8ZE1hayt8AywMzLyVLEJfI7N65g0426lJWRyKTXYkfi8I/yvKVERqUfMQ8SiWc97yy0YZMDfZblbiW4kDMoIqTSZDRMST/wL5n4+2VEbikWXVjea9rnZ5b8cky4k92B7+S3qom/UWCpgWV4GxBjpB8R28KRl1JRXvdFnp5fo8VLNLhxvEWHR8hY0Sbj8Ac93YiE06VDYwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;300ms delay&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c9ce19f5b404148390d5a8538f517c12/1cfc2/300ms-delay.png&quot;
+        srcset=&quot;/static/c9ce19f5b404148390d5a8538f517c12/3684f/300ms-delay.png 225w,
+/static/c9ce19f5b404148390d5a8538f517c12/fc2a6/300ms-delay.png 450w,
+/static/c9ce19f5b404148390d5a8538f517c12/1cfc2/300ms-delay.png 900w,
+/static/c9ce19f5b404148390d5a8538f517c12/21482/300ms-delay.png 1350w,
+/static/c9ce19f5b404148390d5a8538f517c12/d61c2/300ms-delay.png 1800w,
+/static/c9ce19f5b404148390d5a8538f517c12/6c68b/300ms-delay.png 1888w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Tomcat 스레드보다 많이 요청됐지만 정상 처리됨.&lt;/li&gt;
+&lt;li&gt;DB Connection 대기 시간도 30초 직전까지 보임&lt;/li&gt;
+&lt;li&gt;그렇기에 응답 시간도 최악 30초 직전&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;일단 이것을 보고 떠오른 속성은 &lt;code class=&quot;language-text&quot;&gt;db connection timeout&lt;/code&gt;이다.&lt;br&gt;
+일반적인 상황에서 DB Connection을 얻기 위해 30초 동안 대기한다는 것은 부하가 몰리는 경우 심각한 장애를 일으킬 확률이 높다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tomcat Thread Pool 고갈&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;사용자가 너무 많은 재시도를 할 확률이 높음&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;재시도를 많이하면 죽은 요청이 많이 발생함&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;빠르게 실패하도록 (Fail Fast) 타임아웃을 지정하고 테스트해보자.&lt;/p&gt;
+&lt;h2 id=&quot;connection-timeout-지정&quot; style=&quot;position:relative;&quot;&gt;connection-timeout 지정&lt;a href=&quot;#connection-timeout-%EC%A7%80%EC%A0%95&quot; aria-label=&quot;connection timeout 지정 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;deckgo-highlight-code language=&quot;diff&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;hikari:
+   pool-name: StockHikariPool
+   maximum-pool-size: 5             # 병목 시뮬레이션용 (기본값: 10)
++  connection-timeout: 3000         # 3초로 지정 (기본값: 30,000)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/76970ac563ea6a4a9775b98d060ee9a6/44d2c/300ms-stress-test.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 85.77777777777779%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADF0lEQVR42lVUyZLcRBTUJ0Dg6dZW+6qtJXW3x+MYGwJzBBwcuBNEcOXMlStfnaQkgz2HjKd69bbKylLh04Dcz6iFQVXW0OcK4tzAVS1MWaE513goW2RlsFiLQSpE+mNZIrftjtQ0yERTNii0T2i0xVkoeK2xriu+ffuM3z68w6/PdwxGs5lCZrGkWExKBGLsOqzXK5YN68K8BdYYFnQRxjkoJth+wriseMPNx3XGm+uC5TJBaIPWMMZZKO/g+oGxPVRK0CnvMGzQsnlhY8YwzXC0xoU9+dRKQqHkZIJTN1Jzv0fPuH7iJLFDw31JGj7DomReIdj5SJKohIC2Dkuf8HTJsKSjNREtmzTS7AmnRkKz0VMf8H5OL6BISSG0YwInMwEuZFzHGc/LFe/XK7p+hYwLhE2QbGRJTfAWj2PC60vCjbhPtMTjnOEdOXShwzzfkdK4F2yVw0OjOImG4FSSqLmWxsP4DMUBJE9VCV5Wq2nN/zjXPLLkZNqlPWFzlk0LZySsljg3Aqf6gGQh5/1+kppNTpTVFttQNkJsEGi4LpRlQCvIj+BEEvfekA+DdxfDIyg2UZxak1uP5DkR42pO563BGC2mZHc70kbHW5YsmPtMdBjHDsOQyV3GOHToaUOmNMidoLxCHuBTj0SJxJzhKJdNHZ6IuYNh02LwATdq6jaMmLZNThT4Ghxt5K11nC4riYETXULATIzU4+brtDos46w8KCoGqjvz/Ik8RNpITgKf0cKA74PBj4PDxyXipx3hwBrx8yds/o+0o1F4Ra53HbpN/c4jkvQcPKYu4jZmzEPChRRcqMsXGL78PvZ9pPR4msLzCIHKr1i95rV/c5JoKeCSAi65Litx2Fp8wvFdNS/99RbPm9/f8oYHJr5qG3z3WuDrut51locZmwocZWX8Z1hqd7N691Ob7vAJSq+o2u1vIvEVu/z94Qr8+Qt+fxq55kXw1cSel9Vd0I8LOiLT101ffjNmmHafowIoGw9LCWTir8e3+Of2A/643lGSj9CNu0x6Fkz8E/2HjoU2u+3n4YK4Wfq2n8a/2k3nZvyzjdsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;300ms stress test&quot;
+        title=&quot;&quot;
+        src=&quot;/static/76970ac563ea6a4a9775b98d060ee9a6/1cfc2/300ms-stress-test.png&quot;
+        srcset=&quot;/static/76970ac563ea6a4a9775b98d060ee9a6/3684f/300ms-stress-test.png 225w,
+/static/76970ac563ea6a4a9775b98d060ee9a6/fc2a6/300ms-stress-test.png 450w,
+/static/76970ac563ea6a4a9775b98d060ee9a6/1cfc2/300ms-stress-test.png 900w,
+/static/76970ac563ea6a4a9775b98d060ee9a6/21482/300ms-stress-test.png 1350w,
+/static/76970ac563ea6a4a9775b98d060ee9a6/d61c2/300ms-stress-test.png 1800w,
+/static/76970ac563ea6a4a9775b98d060ee9a6/44d2c/300ms-stress-test.png 1899w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;정상 처리량은 이전과 비슷하지만 DB Connection을 얻기 위해 3초까지만 대기하기 때문에 (예외 응답이긴 하지만) 3초로 유지되고 있는 것을 확인할 수 있다.&lt;br&gt;
+그럼에도 빠르게 응답을 반환하여 서버 자원을 빠르게 반환하고 예외를 통한 모니터링이나 서킷브레이커에 빠르게 전파하는게 좋다고 생각된다.&lt;/p&gt;
+&lt;deckgo-highlight-code language=&quot;java&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;java.sql.SQLTransientConnectionException: StockHikariPool - Connection is not available, request timed out after 3001ms (total=5, active=5, idle=0, waiting=94)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:714)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:184)
+   ...&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;maximum-pool-size-튜닝&quot; style=&quot;position:relative;&quot;&gt;maximum-pool-size 튜닝&lt;a href=&quot;#maximum-pool-size-%ED%8A%9C%EB%8B%9D&quot; aria-label=&quot;maximum pool size 튜닝 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;이 글의 핵심인 pool size를 튜닝해보자. 각 API는 300ms 지연은 불가피한 상황에서 pool size를 튜닝해서 처리량을 증가시키고 에러율을 낮출 수 있을지, 그리고 pool size가 크면 클수록 이득인건지 확인해보자.&lt;/p&gt;
+&lt;h3 id=&quot;pool-size-5개인-현재-상황-분석&quot; style=&quot;position:relative;&quot;&gt;pool size 5개인 현재 상황 분석&lt;a href=&quot;#pool-size-5%EA%B0%9C%EC%9D%B8-%ED%98%84%EC%9E%AC-%EC%83%81%ED%99%A9-%EB%B6%84%EC%84%9D&quot; aria-label=&quot;pool size 5개인 현재 상황 분석 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;지표&lt;/th&gt;
+&lt;th&gt;관찰 결과&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Request Rate&lt;/td&gt;
+&lt;td&gt;정상 응답률은 피크 시 &lt;code class=&quot;language-text&quot;&gt;8~9 req/s&lt;/code&gt;로 제한됨&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Response Time (avg)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;3초로 고정&lt;/strong&gt; (db connection-timeout에 의해 제한됨)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Connection Acquire p99&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;3초에서 평탄화&lt;/strong&gt; (커넥션 획득 대기가 db connection-timeout에 의해 제한됨)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pending Connections&lt;/td&gt;
+&lt;td&gt;최대 &lt;strong&gt;90개 이상&lt;/strong&gt; 대기 중&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Error Count&lt;/td&gt;
+&lt;td&gt;VU 25명 이상부터 &lt;strong&gt;에러&lt;/strong&gt; 발생 (최대 2K)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5개의 커넥션이 모두 active 상태이고, 대기 큐가 계속 쌓이고 있는 상황이다.&lt;br&gt;
+현재 환경 기준으로 단계별 테스트를 진행해보자.&lt;/p&gt;
+&lt;h3 id=&quot;테스트-결과&quot; style=&quot;position:relative;&quot;&gt;테스트 결과&lt;a href=&quot;#%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B2%B0%EA%B3%BC&quot; aria-label=&quot;테스트 결과 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;Pool Size&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;그라파나&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;초당 처리량&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;평균 응답 시간&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;응답 시간 (99% 기준)&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;커넥션 대기 요청 수&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;에러 수&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;MySQL 초당 쿼리&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;10개&lt;/strong&gt; (기본값, 현재 대비 2배)&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/stress/pool-size-10.png&quot; target=&quot;_blank&quot;&gt;보기&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;16 req/s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;2.3s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;3.22s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;90&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;1K&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;211&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;20개&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/stress/pool-size-20.png&quot; target=&quot;_blank&quot;&gt;보기&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;32 req/s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;1.4s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;3.17s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;80&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;560&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;418&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;30개&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/stress/pool-size-30.png&quot; target=&quot;_blank&quot;&gt;보기&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;48 req/s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;1.0s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;3.15s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;70&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;228&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;623&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;50개&lt;/strong&gt; (Tomcat 스레드의 50%)&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/stress/pool-size-50.png&quot; target=&quot;_blank&quot;&gt;보기&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;80 req/s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0.5s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;2.40s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;50&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;62&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;1.04K&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;70개&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/stress/pool-size-70.png&quot; target=&quot;_blank&quot;&gt;보기&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;112 req/s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0.45s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;1.07s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;30&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;1.45K&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;100개&lt;/strong&gt; (Tomcat 스레드와 동일)&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/stress/pool-size-100.png&quot; target=&quot;_blank&quot;&gt;보기&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;159 req/s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0.36s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0.62s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;2.06K&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;deckgo-highlight-code language=&quot;diff&quot; terminal=&quot;carbon&quot; theme=&quot;one-light&quot; line-numbers=&quot;true&quot;  &gt;
+          &lt;code slot=&quot;code&quot;&gt;+ 선형적 처리량 증가 (이 테스트에서는 Pool Size가 병목의 유일한 원인이었기 때문에 선형 증가가 나타난 것 같음)
+Pool 10 → 20 → 30 → 50 → 70 → 100
+TPS  16 → 32 → 48 → 80 → 112 → 159 (거의 비례 증가)
+
++ 응답 시간 급격한 개선
+Pool 10: p99 = 3.22초
+Pool 50: p99 = 2.40초
+Pool 70: p99 = 1.07초
+Pool 100: p99 = 0.62초
+
++ Pool 70부터 에러 0 달성
+Pool 100에서 Pending 0
+
++ MySQL 부하 비례 증가
+Pool 10: Connected 10, QPS 211
+Pool 100: Connected 100, QPS 2.06K (10배 증가)&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h2 id=&quot;pool-size를-최대로-잡는-게-최선일까&quot; style=&quot;position:relative;&quot;&gt;Pool Size를 최대로 잡는 게 최선일까?&lt;a href=&quot;#pool-size%EB%A5%BC-%EC%B5%9C%EB%8C%80%EB%A1%9C-%EC%9E%A1%EB%8A%94-%EA%B2%8C-%EC%B5%9C%EC%84%A0%EC%9D%BC%EA%B9%8C&quot; aria-label=&quot;pool size를 최대로 잡는 게 최선일까 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;병목 상황을 만들기 위해 조회 API에서 300ms 지연된다고 가정했는데, 이 상황에서는 에러율이 0인 70개가 적절할 수 있다.&lt;br&gt;
+만약 실제 운영 환경이라면 어떤 의사결정을 해야할까?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DB Connection 반환 지연을 줄일 수 있나?&lt;/li&gt;
+&lt;li&gt;목표로하는 TPS가 몇인가?&lt;/li&gt;
+&lt;li&gt;에러를 일부 허용할 수 있는 상황인가?&lt;/li&gt;
+&lt;li&gt;DB 서버 리소스 부담은 괜찮은가?
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;(서버 수 × pool size) &amp;lt; db max_connections&lt;/code&gt; 충분한가?&lt;/li&gt;
+&lt;li&gt;pool size만큼 한 번에 connection을 맺기에 커넥션 생성 시간은 괜찮은가?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;300ms에서 100ms로 개선에 성공했다고 가정하고, 목표 TPS는 150이라고 가정한 상황에서 최적의 pool size를 찾아보자&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;목표-tps-150으로-다시-테스트&quot; style=&quot;position:relative;&quot;&gt;목표 TPS 150으로 다시 테스트&lt;a href=&quot;#%EB%AA%A9%ED%91%9C-tps-150%EC%9C%BC%EB%A1%9C-%EB%8B%A4%EC%8B%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8&quot; aria-label=&quot;목표 tps 150으로 다시 테스트 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&quot;hikaricp-기본값&quot; style=&quot;position:relative;&quot;&gt;HikariCP 기본값&lt;a href=&quot;#hikaricp-%EA%B8%B0%EB%B3%B8%EA%B0%92&quot; aria-label=&quot;hikaricp 기본값 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;설정&lt;/th&gt;
+&lt;th&gt;기본값&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;maximum-pool-size&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;최대 커넥션 수&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;minimum-idle&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;최소 유휴 커넥션 (= maximum-pool-size)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;connection-timeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;30,000ms&lt;/td&gt;
+&lt;td&gt;커넥션 획득 대기 시간&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;idle-timeout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;600,000ms&lt;/td&gt;
+&lt;td&gt;유휴 커넥션 제거 시간 (10분)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;max-lifetime&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1,800,000ms&lt;/td&gt;
+&lt;td&gt;커넥션 최대 수명 (30분)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;모니터링 필수 지표&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;connections_active&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;connections_pending&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;connections_acquire_seconds&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[클로드 코드 잘 사용하기]]></title><description><![CDATA[내가 사용하는 방법을 기록하고 개선하기 위해 작성한다. Claude Code ADR.md : 의사결정 문서 TODO.md : 큰 작업을 한 번에 끝내기 힘든 경우 CLAUDE.md…]]></description><link>https://jdalma.github.io/wiki/claude/</link><guid isPermaLink="false">https://jdalma.github.io/wiki/claude/</guid><pubDate>Wed, 17 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;내가 사용하는 방법을 기록하고 개선하기 위해 작성한다.&lt;/p&gt;
 &lt;h2 id=&quot;claude-code&quot; style=&quot;position:relative;&quot;&gt;Claude Code&lt;a href=&quot;#claude-code&quot; aria-label=&quot;claude code permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;ADR.md : 의사결정 문서&lt;/li&gt;
@@ -185,7 +618,7 @@
 &lt;p&gt;터미널로 사용하다보면 실수로 세션을 끄는 경우가 있다. /resume으로 세션을 재개 할 수 있지만 마지막 출력이 동일하다면 어떤 세션이였는지 가물가물하다.&lt;br&gt;
 Claude Squad를 사용하면 내가 명시적으로 세션을 삭제하지 않는 이상 worktree 기반으로 관리되기 때문에 계속 존재한다.&lt;br&gt;
 세션별로 작업이 혼합되지 않고 PR도 각각 날릴 수 있어서 편하다.&lt;/p&gt;
-&lt;h2 id=&quot;그-다음은-뭐&quot; style=&quot;position:relative;&quot;&gt;그 다음은 뭐?&lt;a href=&quot;#%EA%B7%B8-%EB%8B%A4%EC%9D%8C%EC%9D%80-%EB%AD%90&quot; aria-label=&quot;그 다음은 뭐 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[DBCP 튜닝해보기]]></title><link>https://jdalma.github.io/2025y/stress/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/stress/</guid><pubDate>Tue, 16 Dec 2025 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;h2 id=&quot;그-다음은-뭐&quot; style=&quot;position:relative;&quot;&gt;그 다음은 뭐?&lt;a href=&quot;#%EA%B7%B8-%EB%8B%A4%EC%9D%8C%EC%9D%80-%EB%AD%90&quot; aria-label=&quot;그 다음은 뭐 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[MySQL Lock 실험실]]></title><description><![CDATA[InnoDB 행 잠금의 2원 2규칙 원칙 1: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다.  InnoDB…]]></description><link>https://jdalma.github.io/2025y/labs/</link><guid isPermaLink="false">https://jdalma.github.io/2025y/labs/</guid><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://devocean.sk.com/blog/techBoardDetail.do?ID=167948&amp;#x26;boardType=techBlog&quot;&gt;InnoDB 행 잠금의 2원 2규칙&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;원칙 1&lt;/strong&gt;: InnoDB의 기본 잠금 단위는 넥스트 키 락이며, 넥스트 키 락의 잠금 범위는 좌측으로는 개구간, 우측으로는 폐구간이다. &lt;code class=&quot;language-text&quot;&gt;ex) (R1, R10]&lt;/code&gt;
