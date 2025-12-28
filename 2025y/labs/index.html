@@ -821,7 +821,120 @@ select * from employees where id &gt;= 8 for update;
 <ul>
 <li>즉, MVCC + Next-Key Lock이 합쳐져서 완전한 팬텀 리드 차단 메커니즘이 되는 것</li>
 </ul>
-<p>자세한 내용은 <a href="https://dev.mysql.com/doc/refman/8.4/en/innodb-locking.html#innodb-next-key-locks">MySQL docs: innodb-locking</a>을 참고하자!</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2025y/webclient/">← <!-- -->WebClient PrematureCloseException 원인 분석하기</a></li><li><a rel="next" href="/wiki/claude/">클로드 코드 잘 사용하기<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-bRKDuR bCZExY"><ul>
+<p>자세한 내용은 <a href="https://dev.mysql.com/doc/refman/8.4/en/innodb-locking.html#innodb-next-key-locks">MySQL docs: innodb-locking</a>을 참고하자!</p>
+<h1 id="테스트-필요" style="position:relative;">테스트 필요!<a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%84%EC%9A%94" aria-label="테스트 필요 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<blockquote>
+<p>범위 조건 이후 컬럼은 스캔 범위를 좁히는데 사용되지 않고, 필터 조건으로만 동작한다</p>
+</blockquote>
+<p>-- 인덱스를 바꾼다면
+(contract_id, valid_to, valid_from)</p>
+<p>-- 쿼리
+WHERE contract_id = ?
+AND valid_to > ?      -- 범위 조건 (여기서 스캔 멈춤)
+AND valid_from &#x3C;= ?   -- 필터링만</p>
+<p>결론: 둘 다 범위 조건이면 어느 쪽을 앞에 두든 하나만 인덱스 스캔에 활용됩니다. 순서를 바꿔도 본질적으로 같습니다.</p>
+<hr>
+<p>그래서 현재 인덱스가 적절한가?</p>
+<p>(contract_id, valid_from, valid_to)</p>
+<ul>
+<li>contract_id = ? → 효율적 (등호 조건)</li>
+<li>valid_from &#x3C;= ? → 범위 스캔</li>
+<li>valid_to > ? → 필터링 (인덱스에 포함되어 있어서 커버링 인덱스로 동작 가능)</li>
+</ul>
+<p>세 번째 컬럼(valid_to)이 인덱스에 포함되어 있으면, 테이블을 다시 읽지 않고 인덱스만으로 필터링할 수 있어서 여전히 이점이 있습니다.</p>
+<hr>
+<p>요약</p>
+<table>
+<thead>
+<tr>
+<th>상황</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>범위 조건 이후 컬럼</td>
+<td>인덱스 스캔에는 사용 안 됨</td>
+</tr>
+<tr>
+<td>인덱스에 포함되면</td>
+<td>필터링은 인덱스 내에서 가능 (커버링)</td>
+</tr>
+<tr>
+<td>현재 인덱스</td>
+<td>적절함, contract_id로 좁히고 나머지는 필터링</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>인덱스: (contract_id, valid_from, valid_to)</p>
+<p>정렬 순서:</p>
+<table>
+<thead>
+<tr>
+<th>contract_id</th>
+<th>valid_from</th>
+<th>valid_to</th>
+</tr>
+</thead>
+</table>
+<deckgo-highlight-code  terminal="carbon" theme="one-light" line-numbers="true"  >
+          <code slot="code">  A       | 2025-01-01 | 2025-06-01
+  A       | 2025-01-01 | 2025-12-31
+  A       | 2025-01-15 | 2025-03-01
+  A       | 2025-02-01 | 9999-12-31
+  B       | 2025-01-01 | 2025-06-01
+  ...</code>
+        </deckgo-highlight-code>
+<p>첫 번째 컬럼으로 정렬 → 같은 값 내에서 두 번째로 정렬 → 같은 값 내에서 세 번째로 정렬</p>
+<hr>
+<p>범위 조건의 문제</p>
+<p>WHERE contract_id = 'A'
+AND valid_from &#x3C;= '2025-01-15'
+AND valid_to > '2025-01-15'</p>
+<ol>
+<li>contract_id = 'A' → A 블록으로 바로 이동 (등호)</li>
+<li>valid_from &#x3C;= '2025-01-15' → A 내에서 범위 스캔 시작</li>
+</ol>
+<p>이 시점에서 valid_to가 연속되어 있지 않음:</p>
+<table>
+<thead>
+<tr>
+<th>contract_id</th>
+<th>valid_from</th>
+<th>valid_to</th>
+<th>valid_to > '2025-01-15'?</th>
+</tr>
+</thead>
+</table>
+<deckgo-highlight-code  terminal="carbon" theme="one-light" line-numbers="true"  >
+          <code slot="code">  A       | 2025-01-01 | 2025-06-01    | ✓
+  A       | 2025-01-01 | 2025-12-31    | ✓
+  A       | 2025-01-15 | 2025-03-01    | ✓</code>
+        </deckgo-highlight-code>
+<p>valid_from이 같아도 valid_to는 다 다름 → 범위를 더 좁힐 수 없음</p>
+<hr>
+<p>그래서 정확히 말하면</p>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Index Range Scan</td>
+<td>범위 조건 이후 컬럼은 스캔 범위를 좁히는 데 사용 안 됨 ✓</td>
+</tr>
+<tr>
+<td>Index Filter</td>
+<td>인덱스 내에서 필터링은 가능 (ICP, 커버링 인덱스)</td>
+</tr>
+</tbody>
+</table>
+<p>스캔 범위: contract_id = 'A' AND valid_from &#x3C;= '2025-01-15'
+필터링:   valid_to > '2025-01-15' (스캔한 결과에서 걸러냄)</p></section><hr/><footer><div class="bio"><p><strong>정현준</strong> <!-- --> <a href="https://github.com/jdalma"><br/><img src="/GitHub-Mark-32px.png"/></a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2025y/webclient/">← <!-- -->WebClient PrematureCloseException 원인 분석하기</a></li><li><a rel="next" href="/wiki/claude/">클로드 코드 잘 사용하기<!-- --> →</a></li></ul></nav><div class="blog-post-tablecontent"><div class="sc-bRKDuR bCZExY"><ul>
 <li>
 <ul>
 <li><a href="#%EA%B0%AD-%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-insert-%EC%8B%A4%ED%8C%A8">갭 락으로 인한 INSERT 실패</a></li>
@@ -841,6 +954,9 @@ select * from employees where id &gt;= 8 for update;
 <ul>
 <li><a href="#%EA%B2%B0%EB%A1%A0">결론</a></li>
 </ul>
+</li>
+<li>
+<p><a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%84%EC%9A%94">테스트 필요!</a></p>
 </li>
 </ul></div></div><div class="comments-wrapper"><div>Loading script...</div><div></div></div></main><footer>© <!-- -->2025<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2025y/labs/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
