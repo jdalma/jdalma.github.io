@@ -1,13 +1,21 @@
 ---
 title: 클로드 코드 잘 사용하기
 date: "2025-12-17"
-update: "2025-12-17"
+update: "2026-01-11"
 tags:
    - ai
    - claude-code
 ---
 
 내가 사용하는 방법을 기록하고 개선하기 위해 작성한다.
+
+## plugins-for-claude-natives
+
+[team-attention의 plugin](https://github.com/team-attention/plugins-for-claude-natives/)
+
+## vibe-kanban
+
+[vibe-kanban](https://github.com/BloopAI/vibe-kanban)
 
 ## Claude Code
 
@@ -78,6 +86,4 @@ tags:
 터미널로 사용하다보면 실수로 세션을 끄는 경우가 있다. /resume으로 세션을 재개 할 수 있지만 마지막 출력이 동일하다면 어떤 세션이였는지 가물가물하다.  
 Claude Squad를 사용하면 내가 명시적으로 세션을 삭제하지 않는 이상 worktree 기반으로 관리되기 때문에 계속 존재한다.  
 세션별로 작업이 혼합되지 않고 PR도 각각 날릴 수 있어서 편하다.  
-
-## 그 다음은 뭐?
 
