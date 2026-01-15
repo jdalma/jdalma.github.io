@@ -9,9 +9,22 @@ tags:
 
 내가 사용하는 방법을 기록하고 개선하기 위해 작성한다.
 
+## code-tour
+
+[code-tour](https://github.com/gnoyes-mik/code-tour)
+
+- `/code-tour:tour {target}`
+   - 새 코드 베이스 분석
+   - 온보딩
+
 ## plugins-for-claude-natives
 
 [team-attention의 plugin](https://github.com/team-attention/plugins-for-claude-natives/)
+
+- `/history-insight`
+   - 여러 번에 걸쳐 같은 주제(예: 결제 시스템 설계)를 이야기했는데, 그 전체 히스토리에서 패턴/인사이트를 뽑고 싶을 때
+   - "우리가 대화 중에 뭘 자주 막혔는지, 어떤 선택 기준을 썼는지" 같은 메타 레벨의 피드백이 필요할 때
+   - 지난 세션들 기준으로 나에게 맞는 학습/개발 습관, 다음에 개선할 점 등을 리포트처럼 받고 싶을 때
 
 ## vibe-kanban
 
