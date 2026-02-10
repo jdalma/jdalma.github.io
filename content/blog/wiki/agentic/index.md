@@ -1,7 +1,7 @@
 ---
 title: 에이전틱 프로그래밍에 가까워지기
 date: "2025-12-17"
-update: "2026-02-03"
+update: "2026-02-10"
 tags:
    - ai
    - agentic
@@ -12,6 +12,25 @@ tags:
 > 1. AI로 인해 파생되는 콘텐츠, 아티클보다 
 > 2. 에이전틱 프롬프트를 위한 에센스에 관심가지자.
 > 3. 에센스를 자산화하자.
+
+## 2026-02-10
+
+처음에는 아키텍처, 클린 코드 같은 "사람을 위한 고민"이 AI에게 도움이 될지 의문이었다.  
+하지만 사람에게 인지부하가 낮다는 건 AI 컨텍스트도 작게 차지한다는 의미라는 걸 깨달았다.  
+  
+멀티 모듈의 특정 모듈, 아키텍처의 특정 레이어, 특정 패키지에는 우리가 목적과 책임을 부여한다.  
+이 목적과 책임을 에이전트별로 구분할 수 있다면, 에이전트의 컨텍스트 윈도우도 효율적으로 사용할 수 있다.  
+Claude Code의 Agent Teams(실험적 기능)를 사용해보면서 결국 **에이전트를 어떻게 배치하고 활용하느냐**가 핵심이라는 생각이 들었다.  
+  
+테스트 코드, 클린 코드 같은 기술적 컨벤션은 이미 많은 SKILL이 대중화되어 적용하기 쉽다.  
+그런데 **도메인 지식은 어떻게 계층화하여 AI 컨텍스트에 삽입할지**가 고민이다.  
+  
+부문장님의 [forge-prompt](https://github.com/JSON-OBJECT/claude-code/blob/main/plugins/deep-thinking/commands/forge-prompt.md)를 활용해서 도메인 에이전트를 설계해볼 생각이다.  
+핵심 비즈니스의 도메인 정보를 자산화하는 것이 중요한 과제처럼 느껴진다.  
+꾸준한 자산화를 통해 결국 도메인 정보도 AI에게 전적으로 의지할 수 있지 않을까?  
+  
+비즈니스별로 AI 컨텍스트를 잘 관리할 수 있다면, AI TPM(Technical Project Manager)을 만들 수 있지 않을까?  
+프론트, 이커머스, OMS 프로젝트에 AI 컨텍스트 구조를 설계하여 TPM을 구현하는 것이 현재 목표다.  
 
 ## 2026-02-03
 
@@ -33,26 +52,17 @@ AI친화 아키텍처를 고민해야하지 않을까? 라는 생각을 했다.
 4. SKILLS : 한 번에 너무 많은 정보를 전달하기 보다는 필요한 작업에 필요한 내용을 주입하기
 5. 커스텀 커맨드 : 예를 들어, 세션에서 나눈 기술적 의사결정을 ADR.md에 정리하도록 `/adr` 커맨드 추가 
 
-## superpowers
+## 플러그인
 
-[superpowers](https://github.com/obra/superpowers)
-
-## compound-engineering-plugin
-
-[compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin)
-
-## plugins-for-claude-natives
-
-[team-attention의 plugin](https://github.com/team-attention/plugins-for-claude-natives/)
-
-- `/history-insight`
-   - 여러 번에 걸쳐 같은 주제(예: 결제 시스템 설계)를 이야기했는데, 그 전체 히스토리에서 패턴/인사이트를 뽑고 싶을 때
-   - "우리가 대화 중에 뭘 자주 막혔는지, 어떤 선택 기준을 썼는지" 같은 메타 레벨의 피드백이 필요할 때
-   - 지난 세션들 기준으로 나에게 맞는 학습/개발 습관, 다음에 개선할 점 등을 리포트처럼 받고 싶을 때
-
-## vibe-kanban
-
-claude-sqaud를 쓰다가 [vibe-kanban](https://github.com/BloopAI/vibe-kanban)을 사용 중인데, 에러가 없고 터미널로 관리하는 것 보다 프로젝트별 태스크를 칸반으로 관리할 수 있어서 잘 활용 중이다.  
+- [superpowers](https://github.com/obra/superpowers)
+- [compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin)
+- [team-attention의 plugin](https://github.com/team-attention/plugins-for-claude-natives/)
+   - `/history-insight`
+      - 여러 번에 걸쳐 같은 주제(예: 결제 시스템 설계)를 이야기했는데, 그 전체 히스토리에서 패턴/인사이트를 뽑고 싶을 때
+      - "우리가 대화 중에 뭘 자주 막혔는지, 어떤 선택 기준을 썼는지" 같은 메타 레벨의 피드백이 필요할 때
+      - 지난 세션들 기준으로 나에게 맞는 학습/개발 습관, 다음에 개선할 점 등을 리포트처럼 받고 싶을 때
+- vibe-kanban
+  - claude-sqaud를 쓰다가 [vibe-kanban](https://github.com/BloopAI/vibe-kanban)을 사용 중인데, 에러가 없고 터미널로 관리하는 것 보다 프로젝트별 태스크를 칸반으로 관리할 수 있어서 잘 활용 중이다.  
 
 ## Super Claude
 
