@@ -5,9 +5,15 @@
       "Bash(npm ls:*)",
       "Bash(nvm list:*)",
       "Bash(npm install:*)",
-      "Bash(npx gatsby develop)"
+      "Bash(npx gatsby develop)",
+      "Bash(npm run:*)",
+      "Bash(node -e:*)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "mysql"
+  ]
 }
