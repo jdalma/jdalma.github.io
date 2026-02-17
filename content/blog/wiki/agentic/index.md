@@ -1,7 +1,7 @@
 ---
 title: 에이전틱 프로그래밍에 가까워지기
 date: "2025-12-17"
-update: "2026-02-10"
+update: "2026-02-17"
 tags:
    - ai
    - agentic
