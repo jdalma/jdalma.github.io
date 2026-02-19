@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 17 Feb 2026 15:18:30 GMT</lastBuildDate><item><title><![CDATA[2026년 기록]]></title><description><![CDATA[Amazon VPC 네트워킹 원리와 보안 요즘 개발자를 위한 시스템 설계 수업 데이터 중심 애플리케이션 설계 2판 2025-01-2…]]></description><link>https://jdalma.github.io/2026y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2026y/review/</guid><pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;amazon-vpc-네트워킹-원리와-보안&quot; style=&quot;position:relative;&quot;&gt;Amazon VPC 네트워킹 원리와 보안&lt;a href=&quot;#amazon-vpc-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9-%EC%9B%90%EB%A6%AC%EC%99%80-%EB%B3%B4%EC%95%88&quot; aria-label=&quot;amazon vpc 네트워킹 원리와 보안 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://jdalma.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 19 Feb 2026 04:33:49 GMT</lastBuildDate><item><title><![CDATA[2026년 기록]]></title><description><![CDATA[Amazon VPC 네트워킹 원리와 보안 요즘 개발자를 위한 시스템 설계 수업 데이터 중심 애플리케이션 설계 2판 2025-01-2…]]></description><link>https://jdalma.github.io/2026y/review/</link><guid isPermaLink="false">https://jdalma.github.io/2026y/review/</guid><pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;amazon-vpc-네트워킹-원리와-보안&quot; style=&quot;position:relative;&quot;&gt;Amazon VPC 네트워킹 원리와 보안&lt;a href=&quot;#amazon-vpc-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9-%EC%9B%90%EB%A6%AC%EC%99%80-%EB%B3%B4%EC%95%88&quot; aria-label=&quot;amazon vpc 네트워킹 원리와 보안 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;h3 id=&quot;요즘-개발자를-위한-시스템-설계-수업&quot; style=&quot;position:relative;&quot;&gt;요즘 개발자를 위한 시스템 설계 수업&lt;a href=&quot;#%EC%9A%94%EC%A6%98-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EC%88%98%EC%97%85&quot; aria-label=&quot;요즘 개발자를 위한 시스템 설계 수업 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;h3 id=&quot;데이터-중심-애플리케이션-설계-2판&quot; style=&quot;position:relative;&quot;&gt;데이터 중심 애플리케이션 설계 2판&lt;a href=&quot;#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A4%91%EC%8B%AC-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%84%A4%EA%B3%84-2%ED%8C%90&quot; aria-label=&quot;데이터 중심 애플리케이션 설계 2판 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;h3 id=&quot;2025-01-29-엔터프라이즈-애플리케이션-아키텍처-패턴&quot; style=&quot;position:relative;&quot;&gt;2025-01-29: 엔터프라이즈 애플리케이션 아키텍처 패턴&lt;a href=&quot;#2025-01-29-%EC%97%94%ED%84%B0%ED%94%84%EB%9D%BC%EC%9D%B4%EC%A6%88-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%ED%8C%A8%ED%84%B4&quot; aria-label=&quot;2025 01 29 엔터프라이즈 애플리케이션 아키텍처 패턴 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -607,26 +607,20 @@ minimumIdle을 maximumPoolSize보다 작게 설정한 경우 예상하지 못한
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;max_connections&lt;/code&gt; : client와 맺을 수 있는 최대 connection 수이다. 스케일 아웃에 대비하여 클라이언트들의 최대 사용 수를 확인하여 설정하는게 좋다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;wait_timeout&lt;/code&gt; (default 480분) : connection이 inactive할 때 다시 요청이 오기까지 얼마의 시간을 기다린뒤에 close 할 것인지를 결정한다. (애플리케이션의 keepaliveTime보다 길게 설정되어야 한다.)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[에이전틱 프로그래밍에 가까워지기]]></title><description><![CDATA[내가 사용하는 방법을 기록하고 개선하기 위해 작성한다. AI로 인해 파생되는 콘텐츠, 아티클보다 에이전틱 프롬프트를 위한 에센스에 관심가지자. 에센스를 자산화하자. 2026-02-17 사내의 에이전틱 코딩 TF…]]></description><link>https://jdalma.github.io/wiki/agentic/</link><guid isPermaLink="false">https://jdalma.github.io/wiki/agentic/</guid><pubDate>Wed, 17 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;내가 사용하는 방법을 기록하고 개선하기 위해 작성한다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;AI로 인해 파생되는 콘텐츠, 아티클보다&lt;/li&gt;
-&lt;li&gt;에이전틱 프롬프트를 위한 에센스에 관심가지자.&lt;/li&gt;
-&lt;li&gt;에센스를 자산화하자.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[에이전틱 프로그래밍에 가까워지기]]></title><description><![CDATA[에이전틱 프로그래밍을 위해 내가 사용하는 방법을 기록하고 개선하기 위해 작성한다. 2026-02-17 사내 에이전틱 코딩 TF를 맡게 됐다. 개인적으로 주최한 스터디가 회사의 방향과 맞아떨어지면서 자연스럽게 TF…]]></description><link>https://jdalma.github.io/wiki/agentic/</link><guid isPermaLink="false">https://jdalma.github.io/wiki/agentic/</guid><pubDate>Wed, 17 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;에이전틱 프로그래밍을 위해 내가 사용하는 방법을 기록하고 개선하기 위해 작성한다.&lt;/p&gt;
 &lt;h2 id=&quot;2026-02-17&quot; style=&quot;position:relative;&quot;&gt;2026-02-17&lt;a href=&quot;#2026-02-17&quot; aria-label=&quot;2026 02 17 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;사내의 에이전틱 코딩 TF를 도맡게 됐다. 회사에서 원하는 방향과 내가 현재 개인적으로 관심가지고 있는 방향이 동일하여 주최한 스터디가 TF로 변하게 됐다.&lt;br&gt;
-그래서 요즘 &lt;code class=&quot;language-text&quot;&gt;AI TPM&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;에이전틱 코딩 컨벤션&lt;/code&gt;에 대해 관심가지고 있다.&lt;/p&gt;
-&lt;p&gt;AI 관련 기술들이 쏟아지는 상황에서 백엔드 개발자로서 가장 의미있는 작업이 뭘까 고민을 하다보니 에이전틱 코딩에 관심가지게 된것 같다.&lt;/p&gt;
+&lt;p&gt;사내 에이전틱 코딩 TF를 맡게 됐다. 개인적으로 주최한 스터디가 회사의 방향과 맞아떨어지면서 자연스럽게 TF로 전환됐다.
+요즘은 &lt;code class=&quot;language-text&quot;&gt;AI TPM&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;에이전틱 코딩 컨벤션&lt;/code&gt;에 관심을 두고 있다.&lt;/p&gt;
+&lt;p&gt;AI 관련 기술이 쏟아지는 상황에서 백엔드 개발자로서 가장 의미 있는 작업이 뭘까 고민하다 보니 에이전틱 코딩에 관심을 가지게 됐다.
+현재 풀고 싶은 문제는 크게 세 가지다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;클로드 코드가 어떤 에이전트/스킬/훅을 의도한대로 호출하는지 확인할 수 있는 오케스트레이션 모니터링 툴&lt;/li&gt;
-&lt;li&gt;도메인 지식, 코드베이스 기반 상호 의존성 및 연관관계에 대한 컨텍스트 관리 방법
+&lt;li&gt;&lt;strong&gt;오케스트레이션 모니터링&lt;/strong&gt; : 클로드 코드가 에이전트/스킬/훅을 의도대로 호출하는지 확인할 수 있는 도구&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;도메인 컨텍스트 관리&lt;/strong&gt; : 도메인 지식과 코드베이스의 상호 의존성을 계층화하여 AI에게 전달하는 방법
 &lt;ul&gt;
-&lt;li&gt;CLAUDE.md 중첩하기, 라우팅 레이어 만들기, 서브에이전트가 실행될 때 해당 에이전트 전용 컨텍스트를 삽입하기, 특정 상황에는 에이전트 팀즈를 실행하기 등&lt;/li&gt;
+&lt;li&gt;CLAUDE.md 중첩, 라우팅 레이어, 서브에이전트 전용 컨텍스트 삽입, 상황별 에이전트 팀즈 활용 등&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;테스트 가능한 방법
+&lt;li&gt;&lt;strong&gt;검증 가능성 확보&lt;/strong&gt; : 에이전트 동작을 테스트할 수 있는 방법
 &lt;ul&gt;
 &lt;li&gt;중복된 CLAUDE.md를 읽었는가?&lt;/li&gt;
 &lt;li&gt;의도한 스킬이 트리거됐는가?&lt;/li&gt;
@@ -635,12 +629,29 @@ minimumIdle을 maximumPoolSize보다 작게 설정한 경우 예상하지 못한
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;위의 문제를 해결하기 위해 앤트로픽의 공식 문서부터 차츰 읽어가고 있다.&lt;/p&gt;
+&lt;p&gt;위 문제를 해결하기 위해 아래의 문서를 차근차근 읽어가고 있다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Codex 팀의 Ryan Lopopolo는 이걸 &quot;Harness Engineering&quot;이라고 부릅니다.&lt;br&gt;
+엔지니어의 역할이 코드를 작성하는 사람에서, 에이전트가 일할 수 있는 환경을 설계하고 의도를 명세하고 피드백 루프를 만드는 사람으로 바뀌는 겁니다.&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;Humans steer, agents execute&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://openai.com/ko-KR/index/unlocking-the-codex-harness/&quot;&gt;OpenAI Harness&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://openai.com/index/harness-engineering/&quot;&gt;OpenAI Harness Engineering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://tonylee.im/ko/blog/openai-harness-engineering-five-principles-codex/&quot;&gt;OpenAI Harness 5원칙 - toneylee&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://developers.openai.com/cookbook/articles/codex_exec_plans&quot;&gt;PLANS.md&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code&quot;&gt;AI 모범사례에 대해&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tonylee.im/ko/blog/openai-harness-engineering-five-principles-codex/&quot;&gt;toneylee - openai harness&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://architecture.md/&quot;&gt;ARCHITECTURE.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code&quot;&gt;AI는 좋은 코드를 강제한다&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;에이전트는 지치지 않고 꽤 똑똑하게 코딩하지만, 결국 놓여 있는 환경만큼만 잘한다.&lt;/li&gt;
+&lt;li&gt;지저분한 코드베이스에서 자기가 망쳐놓은 걸 알아서 수습하는 능력이 약하므로, 사람이 더 촘촘한 가드레일을 깔아줘야 한다.&lt;/li&gt;
+&lt;li&gt;그래서 그동안 “시간 없어서 미뤘던” 좋은 코드/인프라 작업을 이제는 진짜로 투자해야 하고, 이것을 에이전트 시대의 필수 엔지니어링 과제로 로드맵에 넣어야 한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;100% 테스트 커버리지&lt;/strong&gt; : 에이전트가 건드린 모든 코드 라인의 동작을 반드시 예시(테스트)로 검증하게 만드는 장치로 100% 커버리지를 요구&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;파일/디렉터리 구조와 작은 모듈&lt;/strong&gt; : 에이전트는 결국 파일 시스템을 보며 탐색하므로, 의미 있는 디렉터리/파일 이름과 잘게 쪼개진 파일이 중요한 인터페이스가 된다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;타입과 자동화된 베스트 프랙티스&lt;/strong&gt; : 린터/포매터를 최대한 엄격히 돌리고, 작업 종료나 커밋 시 자동으로 고치게 만드는 등 가급적 많은 규칙을 자동으로 강제한다.&lt;/li&gt;
+&lt;li&gt;API는 OpenAPI 기반 타입 세이프 클라이언트, 데이터는 타입,체크,트리거, ORM은 Kysely 같은 타이핑 좋은 툴을 통해 끝단까지 타입을 관통시키는 식으로 설계한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;2026-02-10&quot; style=&quot;position:relative;&quot;&gt;2026-02-10&lt;a href=&quot;#2026-02-10&quot; aria-label=&quot;2026 02 10 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;처음에는 아키텍처, 클린 코드 같은 &quot;사람을 위한 고민&quot;이 AI에게 도움이 될지 의문이었다.&lt;br&gt;
