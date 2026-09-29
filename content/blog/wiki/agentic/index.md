@@ -1,7 +1,7 @@
 ---
 title: AI 시대에 적응하기
 date: "2025-12-17"
-update: "2026-05-30"
+update: "2026-09-29"
 tags:
    - ai
    - agentic
